@@ -1,8 +1,6 @@
 ======================
 !!! Named Entities !!!
 ======================
-test
-
 
 ===================================================
 UMR guideline  3-1-2: seznam UMR pojmenovaných entit
