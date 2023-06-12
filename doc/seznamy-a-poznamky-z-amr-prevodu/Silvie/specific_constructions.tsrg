@@ -1,0 +1,568 @@
+%%%%%%% Specific Domains %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Temporal Structure Simplification
+
+TOWH=test
+
+relabel test time 
+
+TWHEN=test
+
+relabel test time
+
+/^TF*HL$/=test
+
+relabel test duration
+
+THO=test
+
+relabel test frequency
+
+TSIN=test
+
+relabel test op1
+adjoinF (time (HEADNODE (VAR #new)(CONCEPT since)) @) test
+
+TTILL=test
+
+relabel test op1
+adjoinF (time (HEADNODE (VAR #new)(CONCEPT until)) @) test
+
+(HEADNODE=test < (CONCEPT < /^([Dd]ecember|[nN]ovember|[Ss]eptember|[Jj]anuary|[Ff]ebruary|[Mm]arch|[Aa]pril|[Mm]ay|[Jj]une[Jj]uly|[Aa]ugust)$/))
+
+adjoinF (PARTIALDE (month @)) test
+relabel test HEADMOD
+
+(HEADNODE=test < (CONCEPT < /^([Ss]aturday|[Ss]unday|[Mm]onday|[Tt]uesday|[Ww]ednesday|[Tt]hursday|[Ff]riday)$/))
+
+adjoinF (PARTIALDE (weekday @)) test
+relabel test HEADMOD
+
+time < (HEADNODE=test < (CONCEPT < /^[1-2][0-9][0-9][0-9]$/))
+
+adjoinF (PARTIALDE (year @)) test
+relabel test HEADMOD
+
+
+time < (HEADNODE=test < (CONCEPT < /^([Nn]ov|[Oo]ct|[Dd]ec|[Ss]ept|[Aa]ug|[Jj]uly)\.*$/))
+
+adjoinF (PARTIALDE (month @)) test
+relabel test HEADMOD
+
+
+time=teen < (PARTIALDE=pde < __=code) < (RSTR=test < (HEADNODE < (CONCEPT < /^[1-2][0-9][0-9][0-9]$/))) <  (RSTR=test2 < (HEADNODE < (CONCEPT < /^[1-2][0-9]$/)))
+
+relabel test year
+relabel test2 day
+excise pde pde
+insert (HEADNODE (VAR #new ) (CONCEPT date-entity))  >1  teen
+
+
+time=teen < (PARTIALDE=pde < __=code) < (RSTR=test < (HEADNODE < (CONCEPT < /^[1-2][0-9]$/)))
+
+relabel test day
+excise pde pde
+insert (HEADNODE (VAR #new ) (CONCEPT date-entity))  >1  teen
+
+
+
+time=teen < (PARTIALDE=pde < __=code) < (RSTR=test < (HEADNODE < (CONCEPT < /^[1-2][0-9][0-9][0-9]$/)))
+
+relabel test year
+excise pde pde
+insert (HEADNODE (VAR #new ) (CONCEPT date-entity))  >1  teen
+
+
+time=teen < (PARTIALDE=pde <: __=code)
+
+insert (HEADNODE (VAR #new ) (CONCEPT date-entity))  >1  teen
+move code $- pde
+delete pde
+
+
+(CONCEPT < /PersPron/=pp) $ (LEMMA < __=test)
+
+replace pp test
+
+HEADMOD=test
+
+relabel test HEADNODE
+
+
+%%%%%%%%%% Getting relative clauses back in a
+
+CONCEPT < /^which|who|that$/ > (HEADNODE >: (ACT=test > /RSTR|DESCR/=restr))
+
+delete test
+relabel restr ACT-of
+
+CONCEPT < /^which|who|that$/ > (HEADNODE >: (PAT=test > /RSTR|DESCR/=restr))
+
+delete test
+relabel restr PAT-of
+
+CONCEPT < /^which|who|that$/ > (HEADNODE >: (LOC=test > /RSTR|DESCR/=restr))
+
+delete test
+relabel restr LOC-of
+
+HEADNODE < (VAR < /([a-zA-Z0-9]+)$/#0%index2=headvar) $ (/DESCR|RSTR/=restr < (ACT=actor <: (HEADNODE <  (VAR < /([a-zA-Z0-9]+)$/#0%index2=headvar2) < (CONCEPT  < /reentrancy/))))
+
+relabel restr ACT-of
+delete actor
+
+HEADNODE < (VAR < /([a-zA-Z0-9]+)$/#0%index2=headvar) $ (/DESCR|RSTR/=restr < (PAT=actor <: (HEADNODE <  (VAR < /([a-zA-Z0-9]+)$/#0%index2=headvar2) < (CONCEPT  < /reentrancy/))))
+
+relabel restr PAT-of
+delete actor
+
+HEADNODE < (VAR < /([a-zA-Z0-9]+)$/#0%index2=headvar) $ (/DESCR|RSTR/=restr < (ACT=actor <: (HEADNODE <  (CONCEPT < /^([a-zA-Z0-9]+)$/#0%index2=headvar2) < (VAR  < /constant/))))
+
+relabel restr ACT-of
+delete actor
+
+HEADNODE < (VAR < /([a-zA-Z0-9]+)$/#0%index2=headvar) $ (/DESCR|RSTR/=restr < (PAT=actor <: (HEADNODE <  (CONCEPT < /^([a-zA-Z0-9]+)$/#0%index2=headvar2) < (VAR  < /constant/))))
+
+relabel restr PAT-of
+delete actor
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%  APP code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+(HEADNODE < (CONCEPT < have-org-role-91)) $ (ARG2=arg < (APP=app < (HEADNODE < (BBN < /org/)))) ! $ ARG1
+
+move app $- arg
+relabel app ARG1
+
+(HEADNODE < (CONCEPT < have-org-role-91)) $ (ARG2=arg < (BEN=app < (HEADNODE < (BBN < /org/)))) ! $ ARG1
+
+move app $- arg
+relabel app ARG1
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%  MAT code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+__ < (HEADNODE=hn < (CONCEPT < /Percnt/=prc )) < (RSTR=value2 < (HEADNODE < (CONCEPT < /^[0-9]*$/))) < (MAT=mat > CPR)
+
+move hn >-1 mat
+relabel prc percentage-entityQ
+adjoinF (quant @) hn
+move value2 $- hn
+relabel value2 value
+
+
+
+__ < (HEADNODE=hn < (CONCEPT < /(spousta|počet|mnoho|málo|trocha|troška|množství|hromada|pytel|tucet|kilo|tuna|cent|metrák|korba|hrst|hrstka|řádka|řada|procento|většina|menšina|část|skupina|milión|milion|miliarda|tisíc|sto|#Percnt|polovina|půl|součást|desítka|nedostatek|dostatek|pár|zbytek|stovka|seznam|série|soubor|sbor|čtvrt|čtvrtka|čtvrtina|třetina|desetina|kus|síť|metr|okruh|podíl|trojice|dvojice|čtveřice|pětice|šestice|balík|zlomek|tisícovka|minimum|maximum|míra|skupinka|spektrum|cyklus|krabice|nadbytek|škála|souhrn|soustava|dav|desetitisíc|dvojnásobek|trojnásobek|násobek|desetinásobek|komplex|paleta|sada|oddíl|divize|parta|hejno|stádo|roj|armáda|balení|blok|houf|jednotka|kolona|krabička|kubík|láhev|míle|plejáda|přemíra|řádek|pytel|složka|šňůra|duo|trio|kvartet|kvarteto|kvintet|sextet|sud|vrstva|vzorek|zásoba|zástup|alej|špalír|arzenál|banda|tlupa|smečka|barel|cár|dekagram|deko|deka|generace|delegace|družstvo|mužstvo|tým|team|výbor|galon|hektar|hektolitr|ar|hodně|inventář|kapka|kapička|vědro|šálek|sklenice|klubko|karton|kartón|kategorie|kolektiv|kolonie|konvoj|kontingent|korbel|koš|košík|košíček|taška|kufr|kupa|kopa|kvantum|moc|mrak|nádrž|nádoba|oblak|příval|suma|polovice|populace|sbírka|sekvence|směsice|snítka|souprava|sortiment|společenství|seskupení|štůček|úlomek|záplava|zásilka)/=prc )) < (MAT=mat <: (HEADNODE=hn2 < (FORMEME < /n\:of/))) ! < 3 __
+
+move hn2 $+ hn
+move hn >1 mat
+relabel mat quant
+
+__ < (HEADNODE=hn < (CONCEPT < /Percnt/=prc )) < (RSTR=value2 < (HEADNODE < (CONCEPT < /^[0-9]*$/))) < (MAT=mat ! > CPR)
+
+move hn >-1 mat
+relabel prc percentage-entity
+adjoinF (quant @) hn
+move value2 $- hn
+relabel value2 value
+excise mat mat
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% be conversion %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/(TOP|PRED)/ < (HEADNODE=test < (CONCEPT < be=el)) < ACT=act ! < PAT ! < ADVS ! < APPS ! < CONJ < (LOC=test2 < (HEADNODE < (BBN < /gpe/)))
+
+relabel el be-located-at-91
+relabel test2 ARG2
+relabel act ARG1
+
+/(TOP|PRED)/ < (HEADNODE=test < (CONCEPT < be=el)) < ACT=act ! < ADVS ! < APPS ! < CONJ < (PAT=test2 < (HEADNODE=hn3 < (FORMEME < /adj\:compl/)))
+
+move hn3 $+ test
+delete test
+excise test2 test2
+
+/(TOP|PRED)/ < (HEADNODE=test < (CONCEPT < be=el)) < ACT=act ! < ADVS ! < APPS ! < CONJ < (PAT=test2 < (HEADNODE=hn3 < (FORMEME < /n\:obj/)))
+
+relabel el have-mod-91
+relabel act ARG1
+relabel test2 ARG2
+
+/(TOP|PRED)/ < (HEADNODE=test < (CONCEPT < be=el)) < ACT=act ! < ADVS ! < APPS ! < CONJ < (PAT=test2 < (HEADNODE=hn3 < (FORMEME < /v\:/)))
+
+move test2 $+ test
+delete test
+excise test2 test2
+relabel act domain
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% COMPL conversion %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+(COMPL=comp < (HEADNODE < (FORMEME < /v\:ger/))) > TOP=test
+
+relabel test op1
+relabel comp op2
+adjoinF (TOP (HEADNODE (VAR c99) (CONCEPT and)) @) test
+move comp $- test
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%  Monetary-quantity %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+HEADNODE=test2 < (CONCEPT < /^(\$|dollar)$/=test) $ (RSTR=qu ! $ RSTR < (HEADNODE < (CONCEPT < /illion|thousand|[0-9]+/))) > (__=thing ! < /ACT|PAT|AIM|DIR/)
+
+relabel test monetary-quantity
+insert (unit (HEADNODE (VAR #new) (CONCEPT dollar))) >-1 thing
+move qu >-1 thing
+relabel qu quant
+
+HEADNODE=test2 < (CONCEPT < /^(\$|cent)$/=test) $ (RSTR=qu  ! $ RSTR< (HEADNODE < (CONCEPT < /illion|thousand|[0-9]+/))) > (__=thing ! < /ACT|PAT|AIM|DIR/)
+
+relabel test monetary-quantity
+insert (unit (HEADNODE (VAR #new) (CONCEPT cent))) >-1 thing
+move qu >-1 thing
+relabel qu quant
+
+
+
+
+
+have-mod-91=test < ARG2=ao < (ARG1 < (HEADNODE < (BBN < per_desc)))
+
+relabel tet have-org-role-91
+relabel ao ARG0
+
+/gpe\:city/=test
+
+relabel test city
+
+ /gpe\:state_province/=test
+ 
+relabel test province
+
+/gpe\:country/=test
+
+relabel test country
+
+/organization\:other/=test
+
+relabel test organization
+
+(HEADNODE=hn2 < (CONCEPT < have-mod-91)) $ (ARG2=temp < HEADNODE=hn) $ ARG1=test
+
+move hn $+ hn2
+delete hn2
+excise temp temp
+relabel test domain
+
+
+
+LOC=test
+
+relabel test location
+
+/(RSTR|DESC|RESTR|DESCR|DSCR)/=test
+
+relabel test mod
+
+MOD=test
+
+relabel test mod
+
+MANN=test
+
+relabel test manner
+
+COND=test
+
+relabel  test condition
+
+DIR1=test
+
+relabel test source
+
+DIR2=test
+
+relabel test path
+
+DIR3=test
+
+relabel test destination
+
+mod < EXT=test
+
+relabel test degree
+
+
+CAUS=test
+
+relabel test ARG0
+adjoinF (ARG1-of (HEADNODE (VAR #new) (CONCEPT cause-01 )) @) test
+
+
+(CONCEPT  < him=test)
+
+relabel test he
+
+(CONCEPT  < her=test)
+
+relabel test she
+
+(CONCEPT  < me=test)
+
+relabel test i
+
+(CONCEPT  < my=test)
+
+relabel test i
+
+(CONCEPT  < us=test)
+
+relabel test we
+
+
+
+/(RHEM|CM|mod)/=test <: (HEADNODE < (CONCEPT < /Neg/=test2))
+
+relabel test polarity
+relabel test2 minussign
+
+
+/(RHEM|CM|mod)/=test <: (HEADNODE < (CONCEPT < no=test2))
+
+relabel test polarity
+relabel test2 minussign
+
+RHEM=test
+
+relabel test mod
+
+
+DPHR=test
+
+relabel test CPHR
+
+PAR=test
+
+relabel test mod
+
+EXT=test < (CONCEPT < /(so|very|more)/)
+
+relabel test degree
+
+PREC=test <: (CONCEPT < /(so|then|and)/) > TOP
+
+delete test
+
+
+organization:government=test
+
+relabel test government-organization
+
+EXT=test
+
+relabel test extent
+
+ATT=test
+
+relabel test mod
+
+RESL=test
+
+relabel test compared-to
+
+MEANS=test
+
+relabel test manner
+
+ACMP=test
+
+relabel test accompanier
+
+CPR=test
+
+relabel test manner
+
+AIM=test
+
+relabel test purpose
+
+INTT=test
+
+relabel test purpose
+
+/^(where|who|what)/=test
+
+relabel test amr-unknown
+
+
+
+
+CNCS=test
+
+relabel test concession
+
+PARTL=test
+
+relabel test  mod
+
+REG=test
+
+relabel test topic
+
+PREC=test < (HEADNODE < (CONCEPT < /(but|still|though|however)/=test2)) > TOP
+
+relabel test ARG2-of
+relabel test2 contrast-01
+
+/fac_desc\:building/=tst
+
+relabel tst facility
+
+/date\:date/=test
+
+relabel test date-entity
+
+/gpe_desc\:city/=test
+
+relabel test city 
+
+/org_desc\:other/=test
+
+relabel test organization
+
+/norp\:other/=test
+
+relabel test nationality
+
+/location\:region/=test
+
+relabel test world-region
+
+/location\:continent/=test
+
+relabel test continent
+
+/substance\:other/=test
+
+relabel test product
+
+/date\:duration/=test
+
+relabel test date-entity
+
+substance:drug=test
+
+relabel test product
+
+org_desc:government=test
+
+relabel test government-organization
+
+/work_of_art/=test
+
+relabel test product
+
+/norp/=test
+
+relabel test nationality
+
+mod=test2 < (CONCEPT < Neg=test)
+
+relabel test2 polarity
+relabel test -
+
+__ < (HEADNODE=enn < (CONCEPT < apposition-91)) < (ARG1=arg  ! << /desc/ <: (__=pop))  < (ARG2=tet << /desc/) ! < 4 __
+
+move pop $+ enn
+move tet >-1 arg
+relabel tet domainJ
+delete enn
+
+TPAR=test
+
+relabel test duration
+
+NE=test
+
+relabel test mod
+
+
+
+PREC=thena <: (HEADNODE < (CONCEPT < then))
+
+delete thena
+
+PREC=thena <: (HEADNODE < (CONCEPT < /(and|moreover|furthermore)/)) > TOP=top
+
+adjoinF (TOP @) top
+delete thena
+relabel top op2
+insert (HEADNODE (VAR new)(CONCEPT and)) $+ top
+
+
+VOCAT=test
+
+relabel test ARG2
+adjoinF (ARG1-of (HEADNODE (VAR new)(CONCEPT say-01)) @) test
+
+TOP=top < (ARG2-of=tail <: (HEADNODE < (CONCEPT < contrast-01)))
+
+adjoinF (TOP @) top
+relabel top ARG2
+insert (HEADNODE (VAR new)(CONCEPT contrast-01)) $+ top
+delete tail
+
+HEADNODE << /(and|or|but)/ $ (PRED=pr $++ PRED=pr2)
+
+relabel pr op1
+relabel pr2 op2
+
+(HEADNODE=hnn < (CONCEPT < be) $ (mod=mo <: (HEADNODE=hnr < (FORMEME < /adj\:comp/))))
+
+move hnr $+ hnn
+delete mo
+delete hnn
+
+(HEADNODE=hnn < (CONCEPT < be) $ (PAT=mo $ ACT=hrm))
+
+move mo $+ hnn
+excise mo mo
+relabel hrm domain
+delete hnn
+
+/^(us|our)$/=test  ! < __
+
+relabel test we
+
+/^(them|theirs|their)$/=test  ! < __
+
+relabel test they
+
+/^(her|hers)$/=test ! < __
+
+relabel test she
+
+these=test ! < __
+
+relabel test this
+
+those=test ! < __
+
+relabel test that
+

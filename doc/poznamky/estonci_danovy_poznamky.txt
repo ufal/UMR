@@ -1,0 +1,107 @@
+Věta: Estonci volili parlament.
+
+===================================================
+poznámky k NE:
+(p/ person
+    :mod (n/ nationality
+        :wiki "Q191"
+        :name (n2/ name :op1 "Estonsko"))
+    :ref-number Plural)
+
+UMR guidelines (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md) podávají přehled tříd, typů
+a podtypů entit (ne nutně pojmenovaných) v části 3-1-2 (momentálně na stranách 19–21).
+
+Jedna z hlavních tříd je "nationality" ("Estonci"). Vedle toho existuje třída "social_group" a typ "ethnic-group".
+Estonci by asi mohli být jak nationality, tak ethnic-group, ale v daném kontextu jde spíš o občanství než o etnicitu
+(mohli by to taky být estonští Rusové). Problém ale je, že "nationality" není podřízená třídě "person", takže to asi
+má být vždy samostatný uzel, který rozvíjí uzel typu person.
+    
+    ML: ?? "takže to ["nationality"/"ethnic-group"] asi má být vždy samostatný uzel, který rozvíjí uzel typu person" ... ???
+
+    ML: nedovedu si představit, jak podle návrhu z UMR anotovat - nejsme schopni vytáhnout z dat 
+    (ale ani případní  anotátoři nebudou schopni takhle detailně to rozlišovat)
+
+V anglickém příkladu Snt2 na straně 4 mají tu státní příslušnost wikifikovanou jako United States, čili článek o zemi.
+My bychom tedy mohli odkázat na Estonsko, a to buď do české Wikipedie (https://cs.wikipedia.org/wiki/Estonsko), nebo
+bezpečněji přímo do Wikidat (https://www.wikidata.org/wiki/Q191). Asi je to lepší než odkazovat na článek o Estoncích
+(https://cs.wikipedia.org/wiki/Estonci, https://www.wikidata.org/wiki/Q173302), protože ten je zase spíše o etnické
+skupině než o všech obyvatelích Estonska.
+
+    ML: takto to přece nejde anotovat ??
+    ML: ad "Edmond Pope is an American businessman" ... také zrovna nevíme, co se míní - zde asi, že má Americké občanství (protože za něj vyjednávaly USA), jinde to asi mlže být místo pobytu apod ...
+
+U parlamentu v tomto kontextu určitě nejde o místo ani o budovu, ale spíše o organizaci (specificky
+"government_organization"). I tak je trochu otázka, jestli to nemá být spíš soubor osob, protože Estonci volili lidi,
+kteří v parlamentu zasednou, ne tu organizaci jako takovou. To by ale bylo složité, protože bychom museli přidat další
+uzly a vyjádřit vztah těch osob k parlamentu.
+
+    ML: Ne!!!
+
+(g/ government_organization
+    :wiki "Q217799"
+    :name (n3/ name :op1 "parlament")
+    :ref-number Singular)
+
+Relace typu non-participant, modifier, jsou popsané v části 3-2-2-2 na straně 72. ":name" tam nevidím zmíněné. Pak je
+ale 3-2-2-4 přímo o pojmenovaných entitách. Tam se říká, že pojmenovaná entita (tj. ta, která má explicitní jméno
+v textu) má vždy relaci ":name", na níž visí uzel typu "name", který má tolik relací ":opX" (např. ":op1", ":op2",
+...), kolik ortografických slov má jméno entity v dané větě. Na těchto relacích už ale nevisí pořádný uzel, spíš jen
+řetězcová hodnota, takže nevím, proč se tomu říká relace a ne atribut. Možná proto, že toho může být více. Hodnota
+:opX není nutně přesně slovní tvar tak, jak byl ve větě. Např. v manuálu mají jméno "America", ale v textu bylo
+adjektivum "American".
+    
+    ML: relace je to proto, že to je název té hrany mezi n/name a těmi ortografickými slovy??
+
+===================================================
+poznámky k SSC:
+https://lindat.mff.cuni.cz/services/SynSemClass40/
+Nevidím tam třídu pojmenovanou "volit" a zatím nefunguje prohledávání, které by ověřilo, že se to sloveso nevyskytuje
+ve třídě pojmenované jinak.
+https://ufal.mff.cuni.cz/vallex/4.5/about.html
+https://ufal.mff.cuni.cz/vallex/4.5/#/lexeme/volit1/3
+Tenhle rámec je asi nejblíž, ale není úplně přesný, protože DIR3 je v naší větě v pozici přímého předmětu, zatímco
+rámec předpokládá, že akuzativ je nepovinný PAT.
+https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora
+T-rovina má val_frame.rf = "v#v-w7686f1", což asi vede do PDT-Vallexu. V každém případě parlament je tam PAT.
+
+(v/ volit-v-w7686f1-01
+    :ARG0-ACT (p/ person
+        :mod (n/ nationality
+            :wiki "Q191"
+            :name (n2/ name :op1 "Estonsko"))
+        :ref-number Plural)
+    :ARG1-PAT (g/ government_organization
+        :wiki "Q217799"
+        :name (n3/ name :op1 "parlament")
+        :ref-number Singular)
+    :aspect Imperfective
+    :modstr FullAff)
+    
+ML: Dan má pravdu, když pochybuje o rámci  pro volit v#v-w7686f1... ACT(1) PAT(4;↓c) ?ORIG(z+2;mezi+7)
+Zde jde o to, že Estonci.ACT volí zástupce.PAT do parlamentu.DIR3 (to ale bohužel PDT-Vallex nezachycuje a směšuje s příklady " Kdo.ACT volil (Hnutí za demokratické Slovensko).PAT či " volil nejsympatičtější dívku.PAT ze studentek").
+Takže by tam spíš měl být separátní rámec ACT(1) ?PAT(4;↓c) DIR3 .
+
+===================================================
+poznámky k vidu (Aspect):
+
+Vid (aspect) je UMR atribut a je rozebrán v části 3-3-1 na straně 78 a dále. V této konkrétní větě by přesněji šlo
+o "Atelic Process" (který se liší od "State"), ale my asi budeme nedokonavým slovesům dávat pouze Imperfective,
+protože na podrobnější členění nemáme vstupní anotace.
+
+Pro srovnání, z první verze Mišovy adaptace starého scénáře od party Ondry Duška na převod tektogramatické anotace
+do AMR vypadlo tohle:
+
+# ::id mf920922_133.t_tree-cs_amrConvertedFromT-s3-root
+# ::snt Estonci volili parlament
+(v / volit
+    :ACT (p2 / person
+        :name (n / name
+            :op1 "Estonec"))
+    :PAT (p / parlament))
+
+
+===================================================
+Danova konverze do nové u-roviny (Github ufal/treex, větev umr_layer):
+
+cd /net/work/people/zeman/hamledt/normalize/cs
+treex -Lcs Read::Treex from=data/treex/02/dev/tamw/mf920922_133.treex T2U::BuildUtree Write::Treex to=pokus.treex

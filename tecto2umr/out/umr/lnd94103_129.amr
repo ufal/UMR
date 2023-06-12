@@ -1,0 +1,156 @@
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s1-root
+# ::snt V pondělí bude v ČR polojasno, ojediněle přeháňky. 
+(c / #Comma
+    :TWHEN (p / pondělí)
+    :LOC (g / geographical
+        :name (n / name
+            :op1 "ČR"))
+    :PRED (b / být
+        :MANN (p2 / polojasný))
+    :PRED (b2 / být
+        :THO (o / ojedinělý)
+        :ACT (p3 / přeháňka)))
+
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s2-root
+# ::snt Noční teploty 5 až 1 st., při zmenšené oblačnosti i nižší, nejvyšší denní 12 až 16 st. C. 
+(c / #Comma
+    :CONJ (c2 / #Comma
+        :ACT (t / teplota
+            :RSTR (n / noční))
+        :PRED (e / #EmpVerb
+            :PAT (s / st
+                :OPER (a / až
+                    :RSTR (n3 / number
+                        :name (n4 / name
+                            :op1 "5"))
+                    :RSTR (n5 / number
+                        :name (n6 / name
+                            :op1 "1")))))
+        :PRED (e2 / #EmpVerb
+            :COND (o / oblačnost
+                :RSTR (z / zmenšený))
+            :RHEM (i / i)
+            :PAT (n2 / nízký)))
+    :PRED (e3 / #EmpVerb
+        :ACT (t2 / teplota
+            :RSTR (v / vysoký)
+            :RSTR (d / denní))
+        :PAT (s2 / st
+            :OPER (a2 / až
+                :RSTR (X3 / 12)
+                :RSTR (n7 / number
+                    :name (n8 / name
+                        :op1 "16")))
+            :APP (c3 / Celsius))))
+
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s3-root
+# ::snt V 1000 m na horách kolem 4 st. C. 
+(e / #EmpVerb
+    :LOC (p / product
+        :name (n3 / name
+            :op1 "m")
+        :RSTR (n / number
+            :name (n2 / name
+                :op1 "1000")))
+    :LOC (h / hora)
+    :PAT (s / st
+        :RSTR (n4 / number
+            :name (n5 / name
+                :op1 "4"))
+        :APP (c / Celsius)))
+
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s4-root
+# ::snt Slabý proměnlivý vítr. 
+(v / vítr
+    :RSTR (p / proměnlivý)
+    :RSTR (s / slabý))
+
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s5-root
+# ::snt V úterý a ve středu bude zpočátku polojasno, později přibývání oblačnosti s deštěm. 
+(c / #Comma
+    :CONJ (a / a
+        :TWHEN (u / úterý)
+        :TWHEN (s / středa))
+    :PRED (b / být
+        :TWHEN (z / zpočátku)
+        :MANN (p / polojasný))
+    :PRED (b2 / být
+        :TWHEN (p2 / pozdě)
+        :ACT (p3 / přibývání
+            :ACT (o / oblačnost
+                :ACMP (d / déšť)))))
+
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s6-root
+# ::snt Nejnižší noční teploty v úterý 4 až 0 st. C., ve středu 8 až 4 st. C. 
+(c / #Comma
+    :ACT (t / teplota
+        :RSTR (n / noční)
+        :RSTR (n2 / nízký)
+        :LOC (u / úterý))
+    :PRED (e / #EmpVerb
+        :PAT (s / st
+            :OPER (a / až
+                :RSTR (n3 / number
+                    :name (n4 / name
+                        :op1 "4"))
+                :RSTR (X2 / 0))
+            :APP (c2 / Celsius)))
+    :PRED (e2 / #EmpVerb
+        :TWHEN (s2 / středa)
+        :PAT (s3 / st
+            :OPER (a2 / až
+                :RSTR (n5 / number
+                    :name (n6 / name
+                        :op1 "8"))
+                :RSTR (n7 / number
+                    :name (n8 / name
+                        :op1 "4")))
+            :APP (c3 / Celsius))))
+
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s7-root
+# ::snt Nejvyšší denní teploty pro oba dny 14 až 18 st. C. 
+(e / #EmpVerb
+    :ACT (t / teplota
+        :BEN (d / den
+            :RSTR (o / oba))
+        :RSTR (d2 / denní)
+        :RSTR (v / vysoký))
+    :PAT (s / st
+        :OPER (a / až
+            :RSTR (t2 / time
+                :name (n / name
+                    :op1 "14"))
+            :RSTR (n2 / number
+                :name (n3 / name
+                    :op1 "18")))
+        :APP (c / Celsius)))
+
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s8-root
+# ::snt Slunce vychází v úterý v 5.34 a zapadá ve 20.21 hodin. 
+(a / a
+    :ACT (s / Slunce)
+    :PRED (v / vycházet
+        :TWHEN (u / úterý)
+        :TWHEN (t / time
+            :name (n / name
+                :op1 "5.34")))
+    :PRED (z / zapadat
+        :TWHEN (h / hodina
+            :RSTR (t2 / time
+                :name (n2 / name
+                    :op1 "20.21")))))
+
+# ::id lnd94103_129.t_tree-cs_amrConvertedFromT-s9-root
+# ::snt Měsíc vychází ve 2.22 a zapadá ve 13.06 hod. 
+(a / a
+    :ACT (m / Měsíc)
+    :PRED (v / vycházet
+        :TWHEN (t / time
+            :name (n / name
+                :op1 "2.22")))
+    :PRED (z / zapadat
+        :TWHEN (h / hodina
+            :RSTR (t2 / time
+                :name (n2 / name
+                    :op1 "13.06")))))
+

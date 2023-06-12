@@ -1,0 +1,295 @@
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s1-root
+# ::snt F. Castro: Za kubánský exodus nesou vinu Spojené státy 
+(c / #Colon
+    :ACT (c2 / Castro
+        :RSTR (f / F))
+    :PAT (n / nést
+        :CPHR (v / vina
+            :PAT (e / exodus
+                :RSTR (k / kubánský))
+            :ACT g)
+        :ACT (g / geographical
+            :name (n2 / name
+                :op1 "spojený"
+                :op2 "stát"))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s2-root
+# ::snt Havana - 
+(g / geographical
+    :name (n / name
+        :op1 "Havana"))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s3-root
+# ::snt Imigrační politika USA, nikoli kubánská vláda, je zodpovědná za současný exodus Kubánců z ostrova, řekl nejvyšší kubánský představitel Fidel Castro v televizním projevu. 
+(r / říci
+    :ACT (p5 / person
+        :name (n4 / name
+            :op1 "Fidel"
+            :op2 "Castro")
+        :RSTR (p / představitel
+            :RSTR (v / vysoký)
+            :RSTR (k / kubánský)))
+    :ADDR (g / #Gen)
+    :LOC (p2 / projev
+        :RSTR (t / televizní))
+    :EFF (b / být
+        :ADVS (c2 / #Comma
+            :ACT (p3 / politika
+                :RSTR (i / imigrační)
+                :APP (g2 / geographical
+                    :name (n2 / name
+                        :op1 "USA")))
+            :CM (n / nikoliv)
+            :ACT (v2 / vláda
+                :RSTR (k2 / kubánský)))
+        :PAT (z / zodpovědný
+            :PAT (e / exodus
+                :ACT (p4 / person
+                    :name (n3 / name
+                        :op1 "Kubánec"))
+                :RSTR (s / současný)
+                :DIR1 (o / ostrov)))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s4-root
+# ::snt Úsilí amerického prezidenta Billa Clintona zastavit příliv kubánských uprchlíků do USA označil za absurdní reakci na tento problém. 
+(o / označit
+    :PAT (u / úsilí
+        :ACT (p5 / person
+            :name (n2 / name
+                :op1 "Bill"
+                :op2 "Clinton")
+            :RSTR (p / prezident
+                :RSTR (a / americký)))
+        :PAT (z / zastavit
+            :ACT p5
+            :PAT (p2 / příliv
+                :ACT (u2 / uprchlík
+                    :RSTR (k / kubánský))
+                :DIR3 (g / geographical
+                    :name (n / name
+                        :op1 "USA")))))
+    :ACT (p3 / #PersPron)
+    :EFF (r / reakce
+        :PAT (p4 / problém
+            :RSTR (t / tento))
+        :RSTR (a2 / absurdní)))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s5-root
+# ::snt Castro odmítl Clintonovo rozhodnutí nepřijímat uprchlíky z Kuby. 
+(o / odmítnout
+    :ACT (p2 / person
+        :name (n2 / name
+            :op1 "Castro"))
+    :PAT (r / rozhodnutí
+        :ACT (p3 / person
+            :name (n3 / name
+                :op1 "Clintonův"))
+        :PAT (p / přijímat
+            :ACT (g / #Gen)
+            :RHEM (n / #Neg)
+            :PAT (u / uprchlík
+                :DIR1 (g2 / geographical
+                    :name (n4 / name
+                        :op1 "Kuba"))))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s6-root
+# ::snt Zdůraznil, že USA vytvářejí koncentrační tábor, když přesouvají uprchlíky na základnu Guantánamo na Kubě. 
+(z / zdůraznit
+    :ACT (p / #PersPron)
+    :PAT (v / vytvářet
+        :ACT (g2 / geographical
+            :name (n / name
+                :op1 "USA"))
+        :PAT (t / tábor
+            :RSTR (k / koncentrační))
+        :COND (p2 / přesouvat
+            :PAT (u2 / uprchlík)
+            :ACT g2
+            :DIR1 (o / #Oblfm)
+            :DIR3 (z2 / základna
+                :ID (g3 / geographical
+                    :name (n2 / name
+                        :op1 "Guantánamo"))
+                :LOC (g4 / geographical
+                    :name (n3 / name
+                        :op1 "Kuba"))))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s7-root
+# ::snt Prohlásil, že Spojené státy, ačkoli mohly udělit 150000 víz, poskytly jich pouze 11000. 
+(p / prohlásit
+    :ACT (p2 / #PersPron)
+    :EFF (p3 / poskytnout
+        :CNCS (u / udělit
+            :ACT (g3 / geographical
+                :name (n3 / name
+                    :op1 "spojený"
+                    :op2 "stát"))
+            :ADDR (g / #Gen)
+            :PAT (v / vízum
+                :RSTR (n / number
+                    :name (n2 / name
+                        :op1 "150000"))))
+        :ACT g3
+        :ADDR (g2 / #Gen)
+        :PAT (p5 / #PersPron
+            :RHEM (p6 / pouze)
+            :RSTR (X2 / 11000))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s8-root
+# ::snt V uplynulých letech bylo pro Kubánce velmi obtížné nebo prakticky nemožné emigrovat legálně nebo alespoň USA navštívit, dodal. 
+(d / dodat
+    :ACT (p / #PersPron)
+    :EFF (b / být
+        :TWHEN (r / rok
+            :RSTR (u / uplynulý))
+        :BEN (p3 / person
+            :name (n4 / name
+                :op1 "Kubánec"))
+        :DISJ (n / nebo
+            :PAT (o / obtížný
+                :EXT (v / velmi))
+            :PAT (m / možný
+                :ATT (p2 / prakticky)
+                :RHEM (n6 / #Neg)))
+        :DISJ (n2 / nebo
+            :ACT p3
+            :ACT (e / emigrovat
+                :DIR1 (o2 / #Oblfm)
+                :MANN (l / legální))
+            :CM (a / alespoň)
+            :ACT (n3 / navštívit
+                :PAT (g / geographical
+                    :name (n5 / name
+                        :op1 "USA"))))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s9-root
+# ::snt USA se pokoušejí zastavit proud kubánských uprchlíků s pomocí už více než 70 lodí, 14 letadel a vrtulníků a 8500 lidí. 
+(p / pokoušet_se
+    :ACT (g / geographical
+        :name (n / name
+            :op1 "USA"))
+    :PAT (z / zastavit
+        :ACT g
+        :PAT (p2 / proud
+            :ACT (u2 / uprchlík
+                :RSTR (k / kubánský)))
+        :RHEM (u3 / už)
+        :CONJ (a / a
+            :MEANS (h / hodně
+                :CPR (l / loď
+                    :RSTR (n2 / number
+                        :name (n3 / name
+                            :op1 "70"))))
+            :CONJ (a2 / a
+                :MEANS (l2 / letadlo)
+                :MEANS (v / vrtulník)
+                :RSTR (n4 / number
+                    :name (n5 / name
+                        :op1 "14")))
+            :MEANS (c2 / člověk
+                :RSTR (n6 / number
+                    :name (n7 / name
+                        :op1 "8500"))))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s10-root
+# ::snt Přesto se zdá, že největší nadějí na zmírnění vlny je bouřlivé počasí, které meteorologové čekají ode dneška. 
+(z / zdát_se
+    :PREC (p / přesto)
+    :ACT (g / #Gen)
+    :PAT (b / být
+        :PAT (n / naděje
+            :RSTR (v / velký)
+            :PAT (z2 / zmírnění
+                :ACT (v2 / vlna)))
+        :ACT (p2 / počasí
+            :RSTR (b2 / bouřlivý)
+            :RSTR (c / čekat
+                :ACT (m / meteorolog)
+                :PAT (k / který)
+                :TSIN (d / dnešek)))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s11-root
+# ::snt Několikametrové vlny v průlivu mezi Floridou a Kubou by mohly vážně ohrozit životy lidí prchajících na vratkých, přímo na pláži vyráběných plavidlech, kterým svěřují svůj osud. 
+(o / ohrozit
+    :ACT (v / vlna
+        :RSTR (n / několikametrový)
+        :LOC (p / průliv
+            :CONJ (a / a
+                :LOC (g / geographical
+                    :name (n2 / name
+                        :op1 "Florida"))
+                :LOC (g2 / geographical
+                    :name (n3 / name
+                        :op1 "Kuba")))))
+    :MANN (v2 / vážný)
+    :PAT (z / život
+        :APP (c / člověk
+            :RSTR (p2 / prchající
+                :MEANS (p3 / plavidlo
+                    :RSTR (v3 / vratký)
+                    :RSTR (v4 / vyráběný
+                        :RHEM (p4 / přímo)
+                        :LOC (p5 / pláž))
+                    :RSTR (s / svěřovat
+                        :ADDR (k2 / který)
+                        :ACT c
+                        :PAT (o2 / osud
+                            :APP c)))))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s12-root
+# ::snt Americké námořnictvo a pobřežní stráž se proto připravují na operaci v těchto ztížených podmínkách. 
+(p / připravovat_se
+    :CONJ (a / a
+        :ACT (n / námořnictvo
+            :RSTR (a2 / americký))
+        :ACT (s / stráž
+            :RSTR (p2 / pobřežní)))
+    :PREC (p3 / proto)
+    :PAT (o / operace
+        :COND (p4 / podmínka
+            :RSTR (t / tento)
+            :RSTR (z / ztížený))))
+
+# ::id ln94200_112.t_tree-cs_amrConvertedFromT-s13-root
+# ::snt Pentagon se nyní chystá vyslat asi 5000 až 7000 dalších vojáků a příslušníků vojenské policie na základnu v Guantánamu, aby posílili tamních 2900 amerických vojáků při udržování pořádku po příjezdu tisíců kubánských uprchlíků. 
+(c / chystat_se
+    :ACT (g2 / geographical
+        :name (n / name
+            :op1 "pentagon"))
+    :TWHEN (t / teď)
+    :PAT (v / vyslat
+        :ACT g2
+        :CONJ (a / a
+            :PAT (v2 / voják
+                :RSTR (d / další))
+            :PAT (p2 / příslušník
+                :APP (p3 / policie
+                    :RSTR (v3 / vojenský)))
+            :OPER (a2 / až
+                :RSTR (n2 / number
+                    :name (n3 / name
+                        :op1 "5000"))
+                :RSTR (n4 / number
+                    :name (n5 / name
+                        :op1 "7000"))
+                :EXT (a3 / asi)))
+        :DIR3 (z / základna
+            :LOC (g3 / geographical
+                :name (n6 / name
+                    :op1 "Guantánamo")))
+        :AIM (p4 / posílit
+            :ACT a
+            :PAT (v4 / voják
+                :RSTR (t2 / tamní)
+                :RSTR (a4 / americký)
+                :RSTR (n7 / number
+                    :name (n8 / name
+                        :op1 "2900")))
+            :TWHEN (u / udržování
+                :ACT v4
+                :PAT (p7 / pořádek)
+                :TWHEN (p8 / příjezd
+                    :ACT (t3 / tisíc
+                        :MAT (u2 / uprchlík
+                            :RSTR (k / kubánský))))))))
+

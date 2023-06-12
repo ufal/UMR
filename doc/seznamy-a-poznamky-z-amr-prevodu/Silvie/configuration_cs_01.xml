@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config language="czech">
+	<converter id="rule1" file="./czech_scripts/tims_scripts_in_adaptation/coordination_and_apposition.tsrg"/>
+	<converter id="rule2" file="./english_scripts/specific_constructions.tsrg"/>
+	<converter id="rule3" file="./czech_scripts/tims_scripts_in_adaptation/rules.tsrg"/>
+	<converter id="rule4" file="./czech_scripts/tims_scripts_in_adaptation/general_backoffs.tsrg"/>
+
+</config>

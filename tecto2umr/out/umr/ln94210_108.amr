@@ -1,0 +1,445 @@
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s1-root
+# ::snt V cizích pokojích 
+(e / #EmpVerb
+    :LOC (p / pokoj
+        :RSTR (c / cizí)))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s2-root
+# ::snt Galerie 
+(g / galerie)
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s3-root
+# ::snt Lenka Lindaurová 
+(p / person
+    :name (n / name
+        :op1 "Lenka"
+        :op2 "Lindaurová"))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s4-root
+# ::snt Když se mění prostředí tak rychle, jako nyní v Praze, nenávratně mizí i některá romantická zákoutí. 
+(m / mizet
+    :COND (m2 / měnit_se
+        :ACT (p / prostředí)
+        :MANN (r / rychlý
+            :EXT (t / tak
+                :CPR (m3 / měnit_se
+                    :TWHEN (t2 / teď)
+                    :ACT (p2 / #PersPron)
+                    :LOC (g / geographical
+                        :name (n2 / name
+                            :op1 "Praha"))))))
+    :MANN (n / návratný
+        :RHEM (n3 / #Neg))
+    :RHEM (i / i)
+    :ACT (z / zákoutí
+        :RSTR (r2 / romantický)
+        :RSTR (k / který)))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s5-root
+# ::snt Neleží výhradně na periferii, ale i v centru města, kde doznávají nejrychlejších změn. 
+(l / ležet
+    :ACT (p / #PersPron)
+    :GRAD (a / ale
+        :CM (n / #Neg)
+        :CM (v / výhradně)
+        :LOC (p2 / periferie)
+        :CM (i / i)
+        :LOC (c / centrum
+            :APP (m / město)
+            :RSTR (d / doznávat
+                :LOC (k / kde)
+                :ACT p
+                :PAT (z / změna
+                    :RSTR (r / rychlý))))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s6-root
+# ::snt Jedno takové místo si vyhlédli čeští a němečtí sochaři (čerství absolventi a studenti uměleckých škol) na Smíchově nedaleko Anděla, v ulici Na bělidle. 
+(v / vyhlédnout
+    :PAT (m / místo
+        :RSTR (t / takový)
+        :RSTR (j / jeden))
+    :BEN a
+    :APPS (b / #Bracket
+        :CONJ (a / a
+            :ACT (s / sochař
+                :RSTR (c / český))
+            :ACT (s2 / sochař
+                :RSTR (n / německý)))
+        :CONJ (a2 / a
+            :ACT (a3 / absolvent
+                :RSTR (c2 / čerstvý))
+            :ACT (s3 / student)
+            :PAT (s4 / škola
+                :RSTR (u / umělecký))))
+    :LOC (g / geographical
+        :name (n2 / name
+            :op1 "Smíchov"))
+    :LOC (a4 / Anděla)
+    :LOC (u2 / ulice
+        :ID (g2 / geographical
+            :name (n3 / name
+                :op1 "na"
+                :op2 "bělidlo"))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s7-root
+# ::snt V domě číslo pět, který je prázdný a brzy má být rekonstruován, obsadilo čtrnáct autorů prostory bývalých bytů a vytvořili zde vlastní reflexi na danou lokalitu a mizející čas. 
+(a / a
+    :PRED (o / obsadit
+        :LOC (d / dům
+            :RSTR (c / číslo
+                :RSTR (p / pět))
+            :CONJ (a2 / a
+                :RSTR (b / být
+                    :ACT (k / který)
+                    :PAT (p2 / prázdný))
+                :RSTR (r / rekonstruovat
+                    :TWHEN (b2 / brzy)
+                    :ACT (g / #Gen)
+                    :PAT (k2 / který))))
+        :ACT (a3 / autor
+            :RSTR (c2 / čtrnáct))
+        :PAT (p3 / prostor
+            :APP (b3 / byt
+                :RSTR (b4 / bývalý))))
+    :PRED (v / vytvořit
+        :LOC (t / tady)
+        :ACT a3
+        :PAT (r2 / reflexe
+            :CONJ (a4 / a
+                :PAT (l / lokalita
+                    :RSTR (d2 / daný))
+                :PAT (c3 / čas
+                    :RSTR (m / mizející)))
+            :RSTR (v2 / vlastní))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s8-root
+# ::snt V srpnu začali společně pracovat a minulý pátek zpřístupnili objekt veřejnosti (až do 11. září). 
+(a / a
+    :ACT (p / #PersPron)
+    :PRED (z / začít
+        :TWHEN (t / time
+            :name (n / name
+                :op1 "srpen"))
+        :PAT (p2 / pracovat
+            :ACT p
+            :MANN (s2 / společný)))
+    :PRED (z2 / zpřístupnit
+        :TWHEN (p3 / pátek
+            :RSTR (m / minulý))
+        :PAT (o / objekt)
+        :ADDR (v / veřejnost)
+        :RHEM (a2 / až)
+        :TTILL (t2 / time
+            :name (n2 / name
+                :op1 "11"
+                :op2 "."
+                :op3 "září"))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s9-root
+# ::snt Byty se zbytky koupelen, záchodů, tapet, obnažené elektroinstalace, trámů či kamen se projevily značně inspirativně. 
+(p / projevit_se
+    :ACT (b / byt
+        :ACMP (z / zbytek
+            :CONJ (c / či
+                :MAT (k / koupelna)
+                :MAT (z2 / záchod)
+                :MAT (t / tapeta)
+                :MAT (e / elektroinstalace
+                    :RSTR (o / obnažený))
+                :MAT (t2 / trám)
+                :MAT (k2 / kamna))))
+    :MANN (i / inspirativní
+        :EXT (z3 / značný)))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s10-root
+# ::snt Stanislavu Konvalinkovou motivovala bývalá kuchyň k vytvoření Tajemství černé kuchyně, kde se divákovi ze tmy vynořují magické záznamy bývalých obyvatel: recepty a návody, ale také světla kočičích očí v zatemněném okně. 
+(m / motivovat
+    :ADDR (p / person
+        :name (n2 / name
+            :op1 "Stanislava"
+            :op2 "Konvalinková"))
+    :ACT (k2 / kuchyně
+        :RSTR (b / bývalý))
+    :PAT (v / vytvoření
+        :ACT p
+        :PAT (t / tajemství
+            :APP (k3 / kuchyně
+                :RSTR (c / černý)
+                :RSTR (v2 / vynořovat_se
+                    :BEN (d / divák)
+                    :LOC (k4 / kde)
+                    :DIR1 (t2 / tma)
+                    :APPS (c2 / #Colon
+                        :ACT (z / záznam
+                            :APP (o / obyvatel
+                                :RSTR (b2 / bývalý))
+                            :RSTR (m2 / magický))
+                        :GRAD (a / ale
+                            :CONJ (a2 / a
+                                :ACT (r / recept)
+                                :ACT (n / návod))
+                            :CM (t3 / také)
+                            :ACT (s2 / světlo
+                                :APP (o2 / oko
+                                    :RSTR (k5 / kočičí)
+                                    :LOC (o3 / okno
+                                        :RSTR (z2 / zatemněný)))))))))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s11-root
+# ::snt Lenka Urbanová zapojila elektrické kabely do kovových desek na podlaze jedné místnosti, po kterých musí přejít návštěvník na vlastní nebezpečí, touží- li nahlédnout do třinácté komnaty, jen malinko pootevřené. 
+(z / zapojit
+    :ACT (p5 / person
+        :name (n4 / name
+            :op1 "Lenka"
+            :op2 "Urbanová"))
+    :PAT (k / kabela
+        :RSTR (e / elektrický))
+    :DIR3 (d / deska
+        :RSTR (k2 / kovový)
+        :LOC (p / podlaha
+            :APP (m / místnost
+                :RSTR (j / jeden)))
+        :RSTR (p2 / přejít
+            :DIR2 (k3 / který)
+            :ACT (n / návštěvník)
+            :MANN (n2 / nebezpečí
+                :RSTR (v / vlastní))
+            :COND (t / toužit
+                :ACT n
+                :PAT (n3 / nahlédnout
+                    :ACT n
+                    :DIR3 (k4 / komnata
+                        :RSTR (t2 / třináct)
+                        :RSTR (p4 / pootevřený
+                            :EXT (m2 / malinký
+                                :EXT (j2 / jen)))))))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s12-root
+# ::snt U dveří však zjistí, že dveře prázdného pokoje jsou zablokovány. 
+(z / zjistit
+    :PREC (v / však)
+    :LOC (d / dveře)
+    :ACT (p / #PersPron)
+    :PAT (z2 / zablokovat
+        :PAT (d2 / dveře
+            :APP (p2 / pokoj
+                :RSTR (p3 / prázdný)))
+        :ACT (g / #Gen)))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s13-root
+# ::snt Klaus Dobrunz rozvěsil sádrové prádlo a jakési chuchvalce v pravidelných řadách i do trychtýře. 
+(r / rozvěsit
+    :ACT (d / Dobrunz
+        :RSTR (p3 / person
+            :name (n / name
+                :op1 "Klaus")))
+    :CONJ (a / a
+        :PAT (p / prádlo
+            :RSTR (s / sádrový))
+        :PAT (c / chuchvalec
+            :RSTR (j / jaký)))
+    :CONJ (i / i
+        :MANN (r2 / řada
+            :RSTR (p2 / pravidelný))
+        :MANN (t / trychtýř)))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s14-root
+# ::snt Skvělého kontrastu a napětí mezi jinými časy dosáhl Thomas Majevszky instalací Čtyři pokoje: jeden je v původní poničené podobě, dva jsou vymalovány zčásti, jeden je bílý úplně. 
+(c / #Colon
+    :PRED (d / dosáhnout
+        :CONJ (a / a
+            :PAT (k / kontrast
+                :RSTR (s / skvělý))
+            :PAT (n / napětí
+                :LOC (c2 / čas
+                    :RSTR (j / jiný))))
+        :ACT (p5 / person
+            :name (n2 / name
+                :op1 "Thomas"
+                :op2 "Majevszky"))
+        :MEANS (i / instalace
+            :ID (p / pokoj
+                :RSTR (c3 / čtyři))))
+    :CONJ (c4 / #Comma
+        :PRED (b / být
+            :ACT (j2 / jeden)
+            :LOC (p2 / podoba
+                :RSTR (p3 / poničený)
+                :RSTR (p4 / původní)))
+        :PRED (v / vymalovat
+            :PAT (d2 / dva)
+            :ACT (g / #Gen)
+            :EXT (z / zčásti))
+        :PRED (b2 / být
+            :ACT (j3 / jeden)
+            :PAT (b3 / bílý
+                :EXT (u / úplný)))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s15-root
+# ::snt Horst Reuschke si z jednoho pokoje vytvořil muzeum. 
+(v / vytvořit
+    :ACT (p2 / person
+        :name (n / name
+            :op1 "Horst"
+            :op2 "Reuschke"))
+    :ORIG (p / pokoj
+        :RSTR (j / jeden))
+    :ADDR p2
+    :PAT (m / muzeum))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s16-root
+# ::snt Mezi banálními a technickými exponáty jsou také řady útvarů z chleba a zvlášť z másla. 
+(b / být
+    :CONJ (a / a
+        :LOC (e / exponát
+            :RSTR (b2 / banální))
+        :LOC (e2 / exponát
+            :RSTR (t / technický)))
+    :RHEM (t2 / také)
+    :ACT (r / řada
+        :GRAD (a2 / a
+            :MAT (u / útvar
+                :RSTR (c / chléb))
+            :CM (z / zvlášť)
+            :MAT (u2 / útvar
+                :RSTR (m / máslo)))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s17-root
+# ::snt Lenka Klodová natáhla do bytu domácí zvířata doslova. 
+(n / natáhnout
+    :ATT (d / doslova)
+    :ACT (p / person
+        :name (n2 / name
+            :op1 "Lenka"
+            :op2 "Klodová"))
+    :DIR3 (b / byt)
+    :PAT (z / zvíře
+        :RSTR (d2 / domácí)))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s18-root
+# ::snt Z jejich kožešin vytvořila pruh táhnoucí se kolem dokola, od podlahy, přes zeď a strop. 
+(v / vytvořit
+    :ORIG (k / kožešina
+        :APP (p / #PersPron))
+    :ACT (p2 / #PersPron)
+    :PAT (p3 / pruh
+        :RSTR (t / táhnoucí_se
+            :CONJ (c / #Comma
+                :DIR2 (k2 / kolem
+                    :MANN (d / dokola))
+                :DIR1 (p4 / podlaha)
+                :CONJ (a / a
+                    :DIR2 (z / zeď)
+                    :DIR2 (s / strop))))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s19-root
+# ::snt V jiném pokoji využila pohledu skrz okno na jakousi dopravní značku. 
+(v / využít
+    :LOC (p / pokoj
+        :RSTR (j / jiný))
+    :ACT (p2 / #PersPron)
+    :PAT (p3 / pohled
+        :DIR2 (o / okno)
+        :PAT (z / značka
+            :RSTR (d / dopravní)
+            :RSTR (j2 / jaký))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s20-root
+# ::snt Omalovala ji oranžově, a tak vznikl věčný západ slunce, který zopakovala ve vzoru na stěnách. 
+(a / a
+    :PRED (o / omalovat
+        :ACT (p / #PersPron)
+        :PAT (p2 / #PersPron)
+        :MANN (o2 / oranžový))
+    :PRED (v / vzniknout
+        :MANN (t / tak)
+        :ACT (z / západ
+            :RSTR (s / slunce)
+            :RSTR (v2 / věčný)
+            :RSTR (z2 / zopakovat
+                :PAT (k / který)
+                :ACT p
+                :LOC (v3 / vzor
+                    :LOC (s2 / stěna))))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s21-root
+# ::snt Ekkehard Böhnel položil do bytu křehkou papírovou postel. 
+(p / položit
+    :ACT (p4 / person
+        :name (n / name
+            :op1 "Ekkehard"
+            :op2 "Böhnel"))
+    :DIR3 (b2 / byt)
+    :PAT (p2 / postel
+        :RSTR (p3 / papírový)
+        :RSTR (k / křehký)))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s22-root
+# ::snt Tendencí Němců bylo uplatnit spíš objekty pro univerzální prostor, Češi hledali pointování instalace právě v daném místě. 
+(c / #Comma
+    :PRED (b / být
+        :PAT (t / tendence
+            :ACT (p4 / person
+                :name (n2 / name
+                    :op1 "Němec")))
+        :ACT (u / uplatnit
+            :ACT p4
+            :RHEM (s / spíše)
+            :PAT (o / objekt
+                :BEN (p / prostor
+                    :RSTR (u2 / univerzální)))))
+    :PRED (h / hledat
+        :ACT (p5 / person
+            :name (n3 / name
+                :op1 "Čech"))
+        :PAT (p2 / pointování
+            :PAT (i / instalace)
+            :ACT (g / #Gen))
+        :RHEM (p3 / právě)
+        :LOC (m / místo
+            :RSTR (d / daný))))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s23-root
+# ::snt Podobných projektů stále přibývá (Štencův dům, libeňská synagoga, odsvěcené kostely atd.). 
+(p / přibývat
+    :ACT (p2 / projekt
+        :RSTR (p3 / podobný))
+    :THL (s / stálý)
+    :CONJ (c / #Comma
+        :PAR (p4 / product
+            :name (n / name
+                :op1 "Štencův"
+                :op2 "dům"))
+        :PAR (s3 / synagoga
+            :RSTR (l / libeňský))
+        :PAR (k / kostel
+            :RSTR (o / odsvěcený))
+        :PAR (a / atd)))
+
+# ::id ln94210_108.t_tree-cs_amrConvertedFromT-s24-root
+# ::snt Možná by tedy každé firmě, která podobný pustý objekt zakoupí, stálo za to zamyslet se, zda výtvarná akce tohoto druhu neznamená pro místo i sponzora dobrou reklamu. 
+(s / stát
+    :PREC (t / tedy)
+    :ADDR (f / firma
+        :RSTR (k / který)
+        :RSTR (z / zakoupit
+            :ACT (k2 / který)
+            :PAT (o / objekt
+                :RSTR (p / podobný)
+                :RSTR (p2 / pustý))))
+    :PAT (t2 / ten)
+    :MOD (m / možná)
+    :ACT (z2 / zamyslet_se
+        :ACT f
+        :PAT (z3 / znamenat
+            :ACT (a / akce
+                :RSTR (d / druh
+                    :RSTR (t3 / tento))
+                :RSTR (v / výtvarný))
+            :RHEM (n / #Neg)
+            :CONJ (i / i
+                :BEN (m2 / místo)
+                :BEN (s2 / sponzor))
+            :PAT (r / reklama
+                :RSTR (d2 / dobrý)))))
+

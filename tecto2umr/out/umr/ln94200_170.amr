@@ -1,0 +1,568 @@
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s1-root
+# ::snt U nás v Kocourkově 
+(e / #EmpVerb
+    :LOC (p / #PersPron)
+    :LOC (k / Kocourkov))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s2-root
+# ::snt Poslední slovo 
+(s / slovo
+    :RSTR (p / poslední))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s3-root
+# ::snt Jiří Hanák 
+(p / person
+    :name (n / name
+        :op1 "Jiří"
+        :op2 "Hanák"))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s4-root
+# ::snt Za normálních okolností se život v Kocourkově odvíjel standardně. 
+(o / odvíjet_se
+    :COND (o2 / okolnost
+        :RSTR (n / normální))
+    :ACT (z / život
+        :LOC (k / Kocourkov))
+    :MANN (s / standardní))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s5-root
+# ::snt Slepice kradl Franta Kejvalů. 
+(k / krást
+    :PAT (s / slepice)
+    :ADDR (g / #Gen)
+    :ACT (p / person
+        :name (n / name
+            :op1 "Franta"
+            :op2 "Kejval")))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s6-root
+# ::snt Všichni to věděli a všichni na něho byli krátcí, protože Franta Kejval měl svá lidská a občanská práva. 
+(a / a
+    :PRED (v / vědět
+        :ACT (k / kdo)
+        :EFF (t / ten))
+    :PRED (b / být
+        :ACT (k2 / kdo)
+        :PAT (k3 / krátký
+            :PAT (p / #PersPron))
+        :CONJ (a2 / a
+            :ACT (p5 / person
+                :name (n / name
+                    :op1 "Franta"
+                    :op2 "Kejval"))
+            :CAUS (m / mít
+                :CPHR (p2 / právo
+                    :PAT (g / #Gen)
+                    :ACT p
+                    :RSTR (l / lidský)))
+            :CAUS (m2 / mít
+                :CPHR (p4 / právo
+                    :ACT (q / #QCor)
+                    :PAT (g2 / #Gen)
+                    :RSTR (o / občanský))))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s7-root
+# ::snt Biřice už unavovalo za Frantou se honit. 
+(u / unavovat
+    :PAT (b / biřic)
+    :RHEM (u2 / už)
+    :ACT (h / honit_se
+        :PAT (p / person
+            :name (n / name
+                :op1 "Franta"))
+        :ACT b))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s8-root
+# ::snt Po dopadení ho stejně vždycky museli po sepsání protokolu pustit. 
+(p / pustit
+    :PREC (s / stejně)
+    :TWHEN (d / dopadení
+        :ACT (p2 / #PersPron)
+        :PAT (p3 / #PersPron))
+    :ACT p2
+    :PAT p3
+    :TWHEN (k / kdy)
+    :TWHEN (s2 / sepsání
+        :ACT p2
+        :PAT (p7 / protokol)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s9-root
+# ::snt Vznikla z toho dokonce jakási gentlemanská dohoda. 
+(v / vzniknout
+    :PAT (t / ten)
+    :RHEM (d / dokonce)
+    :ACT (d2 / dohoda
+        :RSTR (g / gentlemanský)
+        :RSTR (j / jaký)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s10-root
+# ::snt Čas od času se Franta sám dostavil na biřickou služebnu, jako že ho chytili. 
+(d / dostavit_se
+    :ACT (p / person
+        :name (n / name
+            :op1 "Franta"
+            :op2 "Sám"))
+    :THO (c / čas
+        :RSTR (c2 / čas))
+    :DIR3 (s2 / služebna
+        :RSTR (b / biřický))
+    :MANN (c3 / chytit
+        :ACT (u / #Unsp)
+        :PAT p))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s11-root
+# ::snt A zase šel. 
+(j / jít
+    :PREC (a / a)
+    :ACT (p / #PersPron)
+    :DIR3 (o / #Oblfm)
+    :TWHEN (z / zase))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s12-root
+# ::snt Portmonky měla v referátu rodina Dunkových. 
+(m / mít
+    :PAT (p / portmonka)
+    :DPHR (v / v_referátu)
+    :ACT (r / rodina
+        :APP (p2 / person
+            :name (n / name
+                :op1 "Dunkův"))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s13-root
+# ::snt Všichni to věděli a všichni na ně byli krátcí, protože Dunků bylo moc a každý z nich měl svá lidská a občanská práva. 
+(a / a
+    :PRED (v / vědět
+        :ACT (k / kdo)
+        :EFF (t / ten))
+    :PRED (b / být
+        :ACT (k2 / kdo)
+        :PAT (k3 / krátký
+            :PAT (p / #PersPron))
+        :CONJ (a2 / a
+            :CAUS (b2 / být
+                :ACT (p4 / person
+                    :name (n / name
+                        :op1 "Dunka"))
+                :PAT (m / moc))
+            :CAUS (m2 / mít
+                :ACT (k4 / který
+                    :DIR1 p)
+                :CPHR (p3 / právo
+                    :PAT (g / #Gen)
+                    :ACT p
+                    :CONJ (a3 / a
+                        :RSTR (l / lidský)
+                        :RSTR (o / občanský)))))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s14-root
+# ::snt Z pálení ukradených peněženek se kolem jejich chalupy linul penetrantní čmoud. 
+(l / linout_se
+    :CAUS (p / pálení
+        :ACT (p2 / #PersPron)
+        :PAT (p3 / peněženka
+            :RSTR (u / ukradený)))
+    :LOC (c / chalupa
+        :APP p2)
+    :ACT (c2 / čmoud
+        :RSTR (p5 / penetrantní)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s15-root
+# ::snt Radní pro bezpečnost se pokusil alespoň na ten smrad Dunky nachytat. 
+(p / pokusit_se
+    :ACT (r / radní
+        :AIM (b / bezpečnost))
+    :PAT (n / nachytat
+        :RHEM (a / alespoň)
+        :MEANS (s / smrad
+            :RSTR (t / ten))
+        :ADDR (p2 / person
+            :name (n2 / name
+                :op1 "Dunka"))
+        :ACT r))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s16-root
+# ::snt Vytasili se však s vládní výjimkou a radnímu zmehlo. 
+(a / a
+    :PRED (v / vytasit_se
+        :PREC (v2 / však)
+        :ACT (p / #PersPron)
+        :PAT (v3 / výjimka
+            :RSTR (v4 / vládní)))
+    :PRED (z / zmehnout
+        :ACT (r / radní)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s17-root
+# ::snt V setmělých ulicích tloukli Kocourkovské bratři Kovářovi. 
+(t / tlouci
+    :LOC (u / ulice
+        :RSTR (s / setmělý))
+    :PAT (k / kocourkovský)
+    :ACT (p / person
+        :name (n / name
+            :op1 "Kovářův")
+        :RSTR (b / bratr)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s18-root
+# ::snt Všichni to věděli a všichni na ně byli krátcí, protože s nimi měli špatnou zkušenost. 
+(a / a
+    :PRED (v / vědět
+        :ACT (k / kdo)
+        :EFF (t / ten))
+    :PRED (b / být
+        :ACT (k2 / kdo)
+        :PAT (k3 / krátký
+            :PAT (p / #PersPron))
+        :CAUS (m / mít
+            :ACT k
+            :CPHR (z / zkušenost
+                :ACT (q / #QCor)
+                :PAT p
+                :RSTR (s / špatný)))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s19-root
+# ::snt Biřicové se jich báli, a tak si na ně jednou počíhala svépomocná domovská domobrana a dala jim parádní deku. 
+(a / a
+    :PRED (b / bát_se
+        :ACT (b2 / biřic)
+        :PAT (p / #PersPron))
+    :CM (t / tak)
+    :CONJ (a2 / a
+        :PRED (p2 / počíhat_si
+            :TWHEN (j / jeden)
+            :PAT p
+            :ACT (d / domobrana
+                :RSTR (d2 / domovský)
+                :RSTR (s / svépomocný)))
+        :PRED (d3 / dát
+            :ACT d
+            :ADDR p
+            :PAT (d4 / deka
+                :RSTR (p6 / parádní)))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s20-root
+# ::snt Všichni útočníci dostali pět měsíců natvrdo, protože nepočkali, až je rabijátští bráchové alespoň jednou, raději však dvakrát říznou břitvou. 
+(d / dostat
+    :ACT (u / útočník
+        :RSTR (k / který))
+    :PAT (m / měsíc
+        :RSTR (p / pět))
+    :MANN (n / natvrdo)
+    :CAUS (p2 / počkat
+        :ACT u
+        :RHEM (n2 / #Neg)
+        :CONJ (c / #Comma
+            :ACT (b / brácha
+                :RSTR (r / rabijátský))
+            :PAT u
+            :PAT (r2 / říznout
+                :RHEM (a / alespoň)
+                :THO (j / jeden))
+            :PAT (r3 / říznout
+                :ATT (r4 / raději)
+                :PREC (v / však)
+                :THO (d2 / dva)
+                :MEANS (b2 / břitva)))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s21-root
+# ::snt Všechno se k lepšímu obrátilo s blížícími se volbami do kocourkovského magistrátu. 
+(o / obrátit_se
+    :ACT (c / co)
+    :DIR3 (d / dobrý)
+    :TPAR (v / volba
+        :RSTR (b / blížící_se)
+        :DIR3 (m / magistrát
+            :RSTR (k / kocourkovský))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s22-root
+# ::snt V autobuse, pendlujícím mezi nádražím a kocourkovskou památkou, řidič každé tři minuty vykřikoval upozornění: Věnujte pozornost upozornění magistrátu! 
+(v / vykřikovat
+    :LOC (a / autobus
+        :RSTR (p / pendlující
+            :CONJ (a2 / a
+                :LOC (n / nádraží)
+                :LOC (p2 / památka
+                    :RSTR (k / kocourkovský)))))
+    :ACT (r / řidič)
+    :THO (m / minuta
+        :RSTR (t / tři)
+        :RSTR (k2 / který))
+    :PAT (u / upozornění
+        :ACT (g / #Gen)
+        :PAT (v2 / věnovat
+            :ACT (p3 / #PersPron)
+            :CPHR (p4 / pozornost
+                :ACT (q / #QCor))
+            :ADDR (u2 / upozornění
+                :PAT (g2 / #Gen)
+                :ACT (m2 / magistrát)))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s23-root
+# ::snt Projíždíme zónou zvýšeného výskytu lupičů. 
+(p / projíždět
+    :ACT (p2 / #PersPron)
+    :DIR2 (z / zóna
+        :APP (v / výskyt
+            :ACT (l / lupič)
+            :RSTR (z2 / zvýšený))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s24-root
+# ::snt Cestující jsou povinni dávat si na své prkenice pozor! 
+(b / být
+    :ACT (c / cestující)
+    :PAT (p / povinný
+        :PAT (d / dávat
+            :ACT c
+            :BEN c
+            :DPHR (p3 / pozor)
+            :PAT (p4 / prkenice
+                :APP c))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s25-root
+# ::snt Každého zadrženého lupiče nechť cestující předají radnímu pro bezpečnost! 
+(p / předat
+    :PAT (l / lupič
+        :RSTR (z / zadržený)
+        :RSTR (k / který))
+    :ACT (c / cestující)
+    :ADDR (r / radní
+        :AIM (b / bezpečnost)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s26-root
+# ::snt Pro zvýšení efektu řidič vždy zastavil a ládoval bambitku. 
+(a / a
+    :AIM (z / zvýšení
+        :PAT (e / efekt)
+        :ACT r)
+    :ACT (r / řidič)
+    :PRED (z2 / zastavit
+        :TWHEN (k / kdy))
+    :PRED (l / ládovat
+        :PAT (b / bambitka)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s27-root
+# ::snt To byl ovšem jen začátek. 
+(b / být
+    :ATT (o / ovšem)
+    :ACT (t / ten)
+    :RHEM (j / jen)
+    :PAT (z / začátek))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s28-root
+# ::snt S blížícími se volbami přituhlo. 
+(p / přituhnout
+    :ACMP (v / volba
+        :RSTR (b / blížící_se)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s29-root
+# ::snt Radní pro bezpečnost spolu s primátorem rozhodli, že provětrají noční metro. 
+(r / rozhodnout
+    :ACT (r2 / radní
+        :AIM (b / bezpečnost))
+    :ACMP (p / primátor)
+    :PAT (p2 / provětrat
+        :ACT (p3 / #PersPron)
+        :PAT (m / metro
+            :RSTR (n / noční))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s30-root
+# ::snt Na akci byli převedeni všichni tři kocourkovští biřicové. 
+(p / převést
+    :DIR3 (a / akce)
+    :ACT (g / #Gen)
+    :DIR1 (o / #Oblfm)
+    :PAT (b / biřic
+        :RSTR (k / kocourkovský)
+        :RSTR (t / tři)
+        :RSTR (k2 / který)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s31-root
+# ::snt Nespala ani galerka. 
+(s / spát
+    :RHEM (a / ani)
+    :RHEM (n / #Neg)
+    :ACT (g / galerka))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s32-root
+# ::snt Nejdříve si na magistrátu zařídila za úplatu dvou slepic a jedné peněženky únik informací o rozvrhu šťár. 
+(z / zařídit
+    :TWHEN (b / brzy)
+    :LOC (m / magistrát)
+    :ACT (p / #PersPron)
+    :BEN p
+    :MANN (u / úplata
+        :CONJ (a / a
+            :RSTR (s / slepice
+                :RSTR (d / dva))
+            :RSTR (p3 / peněženka
+                :RSTR (j / jeden))))
+    :PAT (u2 / únik
+        :ACT (i / informace
+            :PAT (r / rozvrh
+                :APP (s2 / šťára)))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s33-root
+# ::snt Jak odhalil nezávislý Kocourkovský deník, v poslední chvíli se přece jenom podařilo galerku přemluvit, aby ke každé plánované šťáře dodala do nočního metra jednu figuru, která bude zjištěna a zajištěna. 
+(p / podařit_se
+    :PAR (o / odhalit
+        :PAT p
+        :ACT (d / deník
+            :RSTR (k / kocourkovský)
+            :RSTR (z / závislý
+                :RHEM (n2 / #Neg))))
+    :ATT (p3 / přece
+        :DPHR (j / jenom))
+    :ACT (g / #Gen)
+    :TWHEN (c / chvíle
+        :RSTR (p4 / poslední))
+    :PAT (p5 / přemluvit
+        :ADDR (g2 / galerka)
+        :ACT g
+        :PAT (d2 / dodat
+            :DIR3 (s / šťára
+                :RSTR (p6 / plánovaný)
+                :RSTR (k2 / který))
+            :DIR3 (m / metro
+                :RSTR (n / noční))
+            :ACT g2
+            :PAT (f / figura
+                :RSTR (j2 / jeden)
+                :CONJ (a / a
+                    :PAT (k3 / který)
+                    :ACT (g3 / #Gen)
+                    :RSTR (z2 / zjistit)
+                    :RSTR (z3 / zajistit))))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s34-root
+# ::snt Na závěr každé půlnoční šťáry se totiž měl dostavit primátor a nechat se s úlovkem fotografovat. 
+(a / a
+    :PRED (d / dostavit_se
+        :PREC (t / totiž)
+        :DIR3 (o / #Oblfm)
+        :TWHEN (s / šťára
+            :RSTR (p / půlnoční)
+            :RSTR (k / který)))
+    :PRED (n / nechat
+        :PAT (f / fotografovat
+            :ACMP (u / úlovek)
+            :ACT (g / #Gen)
+            :PAT p3))
+    :ACT (p3 / primátor))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s35-root
+# ::snt Snad právě proto bylo v dodatku ke smlouvě stanoveno, že babu Peregrinovou nenastrčí galerka biřicům častěji než třikrát týdně. 
+(s / stanovit
+    :RHEM (p / právě)
+    :CAUS (p2 / proto)
+    :ACT (g / #Gen)
+    :LOC (d / dodatek
+        :RSTR (s2 / smlouva))
+    :MOD (s3 / snad)
+    :PAT (n / nastrčit
+        :PAT (p4 / person
+            :name (n3 / name
+                :op1 "Peregrinová")
+            :RSTR (b / baba))
+        :ACT (g2 / galerka)
+        :ADDR (b2 / biřic)
+        :RHEM (n2 / #Neg)
+        :THO (c / často
+            :CPR (t / tři
+                :TWHEN (t2 / týdně)))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s36-root
+# ::snt Její specializací byl totiž polní pych a její časté zadržování v metru by nakonec mohlo být podezřelé i opozici. 
+(a / a
+    :PRED (b / být
+        :PREC (t / totiž)
+        :PAT (s / specializace
+            :APP (p / #PersPron))
+        :ACT (p2 / pych
+            :RSTR (p3 / polní)))
+    :PRED (b2 / být
+        :ACT (z / zadržování
+            :ACT (g / #Gen)
+            :PAT p
+            :LOC (m / metro)
+            :THO (c / častý))
+        :TWHEN (n / nakonec)
+        :PAT (p5 / podezřelý)
+        :RHEM (i / i)
+        :BEN (o / opozice)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s37-root
+# ::snt Kromě toho byla ošklivá a primátor byl estét. 
+(a / a
+    :RESTR (t / ten)
+    :PRED (b / být
+        :ACT (p / #PersPron)
+        :PAT (o / ošklivý))
+    :PRED (b2 / být
+        :ACT (p2 / primátor)
+        :PAT (e / estét)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s38-root
+# ::snt Všechno klapalo. 
+(k / klapat
+    :ACT (c / co))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s39-root
+# ::snt Biřici si vždycky v posledním vagonu metra vyzvedli svého člověka, primátor se před půlnocí opásal pendrekem a pouty, která lapeným osobně nasazoval. 
+(c / #Comma
+    :PRED (v / vyzvednout
+        :ACT (b / biřic)
+        :BEN b
+        :TWHEN (k / kdy)
+        :LOC (v2 / vagón
+            :APP (m / metro)
+            :RSTR (p2 / poslední))
+        :PAT (c2 / člověk
+            :APP b))
+    :PRED (o / opásat
+        :ACT (p4 / primátor)
+        :PAT p4
+        :TWHEN (p6 / půlnoc)
+        :CONJ (a / a
+            :MEANS (p7 / pendrek)
+            :MEANS (p8 / pouto
+                :RSTR (n / nasazovat
+                    :PAT (k2 / který)
+                    :ADDR (l / lapený)
+                    :ACT p4
+                    :MANN (o2 / osobní))))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s40-root
+# ::snt Kocourkovský deník každý den uveřejňoval dokumentární fotografie, jak radnice ve dne v noci bojuje se zločinem. 
+(u / uveřejňovat
+    :ACT (d / deník
+        :RSTR (k / kocourkovský))
+    :THO (d2 / den
+        :RSTR (k2 / který))
+    :EFF (f / fotografie
+        :RSTR (d3 / dokumentární)
+        :RSTR (b / bojovat
+            :MANN (j / jak)
+            :ACT (r / radnice)
+            :TWHEN (d4 / den)
+            :TWHEN (n / noc)
+            :ADDR (z / zločin))))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s41-root
+# ::snt Výsledek se ve volbách nemohl nedostavit. 
+(m / moci
+    :ACT (v / výsledek)
+    :RHEM (n / #Neg)
+    :PAT (d / dostavit_se
+        :LOC (v2 / volba)
+        :ACT v
+        :DIR3 (o / #Oblfm)
+        :RHEM (n2 / #Neg)))
+
+# ::id ln94200_170.t_tree-cs_amrConvertedFromT-s42-root
+# ::snt Hlasy opozice se primátorkou stala baba Peregrinová. 
+(s / stát_se
+    :MEANS (h / hlas
+        :APP (o / opozice))
+    :PAT (p / primátorka)
+    :ACT (p2 / Peregrinová
+        :RSTR (b / baba)))
+

@@ -1,0 +1,53 @@
+=============================
+|| Základní struktura věty ||
+=============================
+
+Guidelines, Part 3-1. ... základní struktura převodem z tektogram. roviny
+
+východisko: převod do AMR z 2014
+
+
+SLOVESNÝ predikát + jeho valenční doplnění:
+-------------------------------------------
+- PŘEVOD z PDT (na základě tam anotovaného rámce)
+
+- ARG role mapování ... základní podle AMR převodu (asi tabulkou), 
+    - posléze buď využít ručního namapování pro jednotlivá slovesa (mapování přes SSC)
+    - nebo heuristiky ... typu reflexivní sloveso (v pdt-vallexu treba 2 tis. rámců??), ke kterému existuje nereflexivní, bude možná mít v subjektu jako ARG1 (nikoli ARG2) .
+
+
+    
+JMENNÝ predikát:
+----------------
+- v PDT asi nemají rámce (nebo aspoň ne všude), a to ani když v PDT mají anotované aktanty 
+    (viz prognóza ekonomiky.PAT bez rámce)
+
+- AMR převod ponechává jako substantiva (entities)
+    !!! ALE viz Silviin seznam (verbalization_list.cs.txt), který je mapuje na slovesa
+    (mapuje i jiné položky na slovesa ?? analyzovat	TO	verb; balit	TO	verb; bát_se	TO	verb??)
+    NĚKDE mapuje na LVC (atentát	TO	perform_atentát; boom	TO	happen_boom; dohra	TO	happen_dohra)
+    NĚKDE mapuje na adjektiva (dovednost	TO	be_dovedný)
+    
+    ?? lze použít a zkusit odhalit, jakého rámce se to může týkat ???
+
+    
+ADJEKTIVNÍ/ADVERBIÁLNÍ predikát ... ???
+---------------------------------------
+    
+ABSTRAKTNÍ predikáty:
+---------------------    
+
+MODÁLNÍ slovesa:
+----------------  
+
+
+
+=========================
+|| NEvalenční doplnění ||
+=========================
+
+
+============================
+|| UMR ATRIBUTY PREDIKÁTu ||
+============================
+
