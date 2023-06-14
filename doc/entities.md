@@ -55,3 +55,22 @@ the property defining the group.
 
 * (3) [cs] _Všichni Václavové by měli znát své slavné jmenovce._
            “All Václavs should know their famous namesakes.”
+
+
+## Representation of entities in UMR
+
+An entity that is referred to by a common noun is represented by a regular concept (node), typically with the lemma
+of the noun as the label of the concept (but occasionally the label may be a multi-word string). This is done
+no matter if the entity is specific or generic.
+
+An entity that is referred to by a name is represented by an abstract concept corresponding to the semantic class
+of the entity (e.g., “person” or “organization”; see below for the taxonomy of semantic classes). The name of the
+entity is in a separate node, which has the abstract concept “name” and is attached to the class concept via the
+relation `:name`. Individual orthographic words of the name are listed in the name concept each in its own attribute,
+the attributes are named `:opX` where X is the ordinal number of the word within the name. The words are not always
+exact copies from the sentence, as the name is converted to its canonical form. Note however that this does not
+mean that all words in the name are replaced by their lemmas; some will be lemmatized, others will stay in a frozen
+inflected form.
+
+An entity that is referred to by a pronoun is represented by an abstract concept corresponding to the semantic class
+of the entity. Unlike named entities, there is no child node with the “name” concept.
