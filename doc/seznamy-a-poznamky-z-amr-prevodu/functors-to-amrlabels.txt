@@ -1,0 +1,26 @@
+# copied from Treex::Block::T2TAMR::FunctorsToAMRLabels
+
+my %MAPPING = (
+    'ACT'   => 'ARG0',
+    'PAT'   => 'ARG1',
+    'ADDR'  => 'ARG2',
+    'ORIG'  => 'ARG3',
+    'EFF'   => 'ARG4',
+    'TWHEN' => 'time',
+    'THL'   => 'duration',
+    'DIR1'  => 'source',
+    'DIR3'  => 'direction',
+    'DIR2'  => 'location',
+    'LOC'   => 'location',
+    'BEN'   => 'beneficiary',
+    'ACMP'  => 'accompanier',
+    'MANN'  => 'manner',
+    'AIM'   => 'purpose',
+    'CAUS'  => 'cause',
+    'MEANS' => 'instrument',
+    'APP'   => 'poss',
+    'CMP'   => 'compared-to',
+    'RSTR'  => 'mod',
+    'EXT'   => 'scale',
+);
+
