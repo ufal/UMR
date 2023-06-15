@@ -75,7 +75,7 @@ inflected form.
 An entity that is referred to by a **pronoun** is represented by an abstract concept corresponding to the semantic class
 of the entity. Unlike named entities, there is no child node with the “name” concept.
 
-Common noun _muzeum_ “muzeum”:
+Common noun _muzeum_ “museum”:
 ```
 (m/ muzeum)
 ```
@@ -105,3 +105,41 @@ Named entity _Národní muzeum_ “National Museum”:
 Note that the canonical form of the multi-word name of the ministry in (4) is composed of the canonical form of the
 head (_Ministerstvu_ was converted to nominative singular, but its capitalization was retained) and the inflected
 forms of the dependent words; the comma is also a separate `:opX` attribute.
+
+
+## Anchoring entities in ontologies
+
+UMR defines the (optional) `:wiki` attribute, which can be used to link a concept to a corresponding article in
+Wikipedia. The examples in the UMR guidelines currently show names of English Wikipedia articles in these attributes;
+however, a more robust and thus preferred solution is to use Wikidata identifiers. They are not bound to a particular
+language mutation of Wikipedia (all Wikipedias that have an article about the concept are linked from the Wikidata
+page) and they should be more stable (e.g. when one of the Wikipedias decides that a different title should be used
+for the article and the old title should become a redirect). Obtaining Wikidata identifiers is easy: Let's assume
+we want to anchor the Czech entity _Národní muzeum_ and we find its article in the Czech Wikipedia at
+[https://cs.wikipedia.org/wiki/N%C3%A1rodn%C3%AD_muzeum](https://cs.wikipedia.org/wiki/N%C3%A1rodn%C3%AD_muzeum).
+In the menu on the right-hand side we see a link labeled “Položka Wikidat” and leading to
+[https://www.wikidata.org/wiki/Q188112](https://www.wikidata.org/wiki/Q188112).
+
+Although the attribute is optional in UMR, in our data we should strive to provide it for every mention of a specific
+entity that has a Wikidata entry. (In practice, we could use the coreference annotation in UMR to automatically
+propagate the anchor from one mention to all other mentions. Note however that it would be a mistake to say that we
+only fill the attribute manually for named entities. It can happen that a specific entity is never mentioned by its
+name in a document, yet the context doubtlessly points to a known entity described in Wikipedia.)
+
+```
+(o/ organization
+    :wiki "Q188112"
+    :name (n/ name
+        :op1 "Národní"
+        :op2 "muzeum"))
+```
+
+If a specific entity has no Wikidata presence, we have to register it in a local ontology that becomes part of the
+annotation, and provide a local identifier instead. Note that the entries in the local ontology are not always local
+to just one document. They are still part of the same universe that is partially described in Wikipedia. Consider,
+for example, a news article reporting that _A man (80) was killed this morning in a traffic accident._ There could
+be several other documents reporting on the same event, and if it can be established that they are indeed talking
+about the same accident, then all the mentions of the nameless man should be anchored to the same entry in the
+ontology.
+<span style="color:red">TODO: Implement a prototype of the local ontology and specify how it should be linked from
+the annotation. We should probably use a different attribute, e.g., `:lwiki`.</span>
