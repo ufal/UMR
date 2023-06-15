@@ -204,3 +204,36 @@ yet.)
     :ref-number Singular
     :ref-person 3)
 ```
+
+
+## Taxonomy of entity types
+
+The [UMR guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md) give a taxonomy of entity
+classes, types and subtypes in [Section 3-1-2](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-2-named-entities).
+They can be used as abstract concepts for named entities and for entities represented by pronouns. As of now (June 2023),
+the taxonomy is reportedly under revision by the UMR team. At any rate, the current table has a number of issues.
+We will now examine some of the entity types and discuss their utility.
+
+### person
+
+A top-level class without subordinate types and subtypes. Besides humans, the class could serve as a natural
+fallback for human-like beings that do not have a class of their own: deities, dwarves, hobbits, elves etc.
+What about robots?
+
+### animal
+
+A top-level class. As a named entity, it can be used to represent a pet that was given a name by its owner, or
+an animal character in a fairy tale, including fantastic beasts like dragons. The class is not suitable to represent
+_species_ of animals. (They have their own type in the taxonomy but it is problematic, see below.)
+
+### plant
+
+Analogous to animals but covering plants.
+
+### thing
+
+Not listed in the current UMR table but used in their examples (e.g. sentence (3) in Part 1) and clearly needed
+at least for pronouns that refer neither to persons nor to animals or plants or other types specifically listed
+in the taxonomy.
+
+### to be continued...
