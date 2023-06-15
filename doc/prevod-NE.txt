@@ -170,8 +170,8 @@ social-group (oni mají social_group, ale to podtržítko bych jim vymluvil)
 (c/ city
 	:name (n/ name
 	        :op1 "New"
-			:op2 "York"
-			:op3 "City")
+		:op2 "York"
+		:op3 "City")
 	:wiki "New_York_City")
 
 Příklad 2 v části 1: "American businessman"

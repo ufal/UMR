@@ -143,3 +143,64 @@ about the same accident, then all the mentions of the nameless man should be anc
 ontology.
 <span style="color:red">TODO: Implement a prototype of the local ontology and specify how it should be linked from
 the annotation. We should probably use a different attribute, e.g., `:lwiki`.</span>
+
+
+## Other attributes of entities
+
+Every entity concept should have the attribute `:ref-number`, with the value reflecting the grammatical number. UMR
+defines a number of possible values for the attribute, based on grammars of various languages. For Modern Czech data
+the value will probably (almost?) always be `Singular` or `Plural`. We will not use `Dual` just because we know that
+we are speaking about two people. The dual as a grammatical number has mostly vanished from Czech, and UMR has
+other means to annotate quantity (there is not a separate value of `:ref-number` for each integer number). A possible
+exception in Modern Czech is paired body parts _(nohy, ruce, oči, uši)_ because that is where grammatical dual still
+survives.
+
+Abstract entity concepts that correspond to personal pronouns (or their reflections in verbal morphology) will
+additionally have the attribute `:ref-person`. This attribute is not used with other entity mentions (for which it
+would be very unusual to interpret them as anything else than 3rd person).
+
+We now repeat example (1a) as (5) here and show the annotations of entities from the example, using all the rules
+specified so far. (We omit the monetary entity from the end because such types of entities have not been discussed
+yet.)
+
+* (5) [cs] _Národní muzeum v Praze získá nový bezpečnostní systém, který mu dodá firma CESS. Muzeum za něj zaplatí necelé 2 milióny korun._
+            “The National Museum in Prague will get a new security system, which will be supplied by CESS. The museum will pay almost 2 million crowns for it.”
+
+```
+(o/ organization
+    :wiki "Q188112"
+    :name (n/ name
+        :op1 "Národní"
+        :op2 "muzeum")
+    :ref-number Singular)
+
+(c/ city
+    :wiki "Q1085"
+    :name (n2/ name
+        :op1 "Praha")
+    :ref-number Singular)
+
+(s/ systém
+    :lwiki "L1"
+    :ref-number Singular)
+
+(o2/ organization
+    :wiki "Q188112"
+    :ref-number Singular
+    :ref-person 3)
+
+(o3/ organization
+    :lwiki "L2"
+    :name (n3/ name
+        :op1 "CESS")
+    :ref-number Singular)
+
+(m/ muzeum
+    :wiki "Q188112"
+    :ref-number Singular)
+
+(t/ thing
+    :lwiki "L1"
+    :ref-number Singular
+    :ref-person 3)
+```
