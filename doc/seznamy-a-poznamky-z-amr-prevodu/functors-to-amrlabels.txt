@@ -9,8 +9,8 @@ my %MAPPING = (
     'TWHEN' => 'time',
     'THL'   => 'duration',
     'DIR1'  => 'source',
-    'DIR3'  => 'direction',
-    'DIR2'  => 'location',
+    'DIR3'  => 'direction',   ?????? 'DIR3'  => 'destination' (možná)
+    'DIR2'  => 'location',    ?????? 'DIR2'  => 'path'
     'LOC'   => 'location',
     'BEN'   => 'beneficiary',
     'ACMP'  => 'accompanier',
@@ -18,9 +18,111 @@ my %MAPPING = (
     'AIM'   => 'purpose',
     'CAUS'  => 'cause',
     'MEANS' => 'instrument',
-    'APP'   => 'poss',
-    'CMP'   => 'compared-to',
+    'APP'   => 'poss',        ?????? 'APP'   => 'part'
+    'CMP'   => 'compared-to', !!!!!! CPR ... NIKOLI CMP (comparison … jako / jinak než / oproti / ve srovnání)
     'RSTR'  => 'mod',
-    'EXT'   => 'scale',
+    'EXT'   => 'scale',       ?????? 'EXT'   => 'extent'
 );
+
+směrová. lokální ... OK, vše
+
+časová
+'TFHL' => 'duration',
+'THO'  => 'frequency',
+??? TFRWH (ze kdy)
+??? TOWH (temporal: to when)
+??? TPAR (temporal parallel)
+??? TSIN (temporal: since when)
+??? TTILL (temporal: till)
+
+
+příčina / účel / podmínka
+'INTT'   => 'purpose',
+'CNCS'   => 'concession',
+'COND'   => 'condition',
+??? CONTR 
+
+způsob
+'DIFF'  => 'extent',     (o xx více)
+'RESL'  => 'extent',   ???
+??? CRIT (podle předpisu/normy/na základě přopomínek) 
+??? REG (z hlediska/na téma/…) 
+??? 'RESTR'
+
+specifická
+??? CONTRD (contradiction, zatímco) 
+??? HER
+??? SUBS
+
+substantivní
+??? AUTH
+??? ID
+??? MAT
+
+doplněk
+??? CPMPL 
+
+souřadná spojení - koordinace a apozice ... ADVS, CONFR, CONJ, CONTRA, CSQ, DISJ, GRAD, REAS ...  též diskurzní
+??? APPS
+??? OPER
+??? CM
+
+rhematozátory apod ... ATT, INTF, MOD, PREC, RHEM ... asi postoj, modalita apod
+
+víceslovní jednotky, cizojazyčné ... CPHR, DPHR, FPHR ... jinak
+
+??? medium ... channels of communications
+??? topic  ... 
+??? part?? APP střecha domu
+:subevent
+:consist-of?? MAT a team of monkeys, a ring of gold
+:example	?? EXT
+
+
+AMR non-core labels (z obsahu)
+▪ :time         TWHEN
+▪ :location     LOC, DIR2
+▪ :source       DIR1
+▪ :destination  ??? DIR3 (ale to je na direction)
+▪ :path         ??? DIR2 (ale to je na location)
+▪ :beneficiary  BEN
+▪ :accompanier  ACMP
+▪ :topic
+▪ :duration     THL, TFHL
+▪ :instrument   MEANS
+▪ :medium
+▪ :manner       MANN
+▪ :purpose      AIN, INTT
+▪ :cause        CAUS
+▪ :concession   CNCS
+▪ :condition    COND
+▪ :part         ??? APP (ale to je na poss)
+▪ :subevent
+▪ :consist-of
+▪ :example
+▪ :direction    DIR3
+▪ :frequency    THO
+▪ :extent       ??? EXT (ale to je na scale), DIFF, RESL
+
+
+AMR non-core (str. 10, others than above) 
+:age
+:degree, 
+:domain,
+:li, 
+:mod, 
+:mode
+:name
+:ord
+:polarity, (negace)
+:polite, 
+:poss,     (his boat)
+:quant
+
+Roles used in date-entity:
+:calendar, :century, :day, :dayperiod, :decade, :era, :month, :quarter, :season, :timezone, :weekday, :year, :year2
+
+
+?????? modality ???????
+possible-01, likely-01, obligate-01, permit-01, recommend-01, prefer-01, etc.:
 
