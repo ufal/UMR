@@ -1,5 +1,5 @@
 # UMR-CS Guidelines Notes
-## Part 4. Document-Level Representation
+## Part 4. Document-Level Representation 
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md
 
