@@ -1,4 +1,5 @@
 # copied from Treex::Block::T2TAMR::FunctorsToAMRLabels
+# skuska repozitara
 
 my %MAPPING = (
     'ACT'   => 'ARG0',
