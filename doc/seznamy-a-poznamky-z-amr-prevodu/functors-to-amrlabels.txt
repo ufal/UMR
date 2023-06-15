@@ -1,5 +1,5 @@
 # copied from Treex::Block::T2TAMR::FunctorsToAMRLabels
- 
+
 my %MAPPING = (
     'ACT'   => 'ARG0',
     'PAT'   => 'ARG1',
