@@ -59,11 +59,11 @@ the property defining the group.
 
 ## Representation of entities in UMR
 
-An entity that is referred to by a common noun is represented by a regular concept (node), typically with the lemma
+An entity that is referred to by a **common noun** is represented by a regular concept (node), typically with the lemma
 of the noun as the label of the concept (but occasionally the label may be a multi-word string). This is done
 no matter if the entity is specific or generic.
 
-An entity that is referred to by a name is represented by an abstract concept corresponding to the semantic class
+An entity that is referred to by a **name** is represented by an abstract concept corresponding to the semantic class
 of the entity (e.g., “person” or “organization”; see below for the taxonomy of semantic classes). The name of the
 entity is in a separate node, which has the abstract concept “name” and is attached to the class concept via the
 relation `:name`. Individual orthographic words of the name are listed in the name concept each in its own attribute,
@@ -72,5 +72,36 @@ exact copies from the sentence, as the name is converted to its canonical form. 
 mean that all words in the name are replaced by their lemmas; some will be lemmatized, others will stay in a frozen
 inflected form.
 
-An entity that is referred to by a pronoun is represented by an abstract concept corresponding to the semantic class
+An entity that is referred to by a **pronoun** is represented by an abstract concept corresponding to the semantic class
 of the entity. Unlike named entities, there is no child node with the “name” concept.
+
+Common noun _muzeum_ “muzeum”:
+```
+(m/ muzeum)
+```
+
+Named entity _Národní muzeum_ “National Museum”:
+```
+(o/ organization
+    :name (n/ name
+        :op1 "Národní"
+        :op2 "muzeum"))
+```
+
+* (4) [cs] _Získal práci na Ministerstvu školství, mládeže a tělovýchovy._
+           “He got a job at the Ministry of Education, Youth and Sports.”
+
+```
+(o/ organization
+    :name (n/ name
+        :op1 "Ministerstvo"
+        :op2 "školství"
+        :op3 ","
+        :op4 "mládeže"
+        :op5 "a"
+        :op6 "tělovýchovy"))
+```
+
+Note that the canonical form of the multi-word name of the ministry in (4) is composed of the canonical form of the
+head (_Ministerstvu_ was converted to nominative singular, but its capitalization was retained) and the inflected
+forms of the dependent words; the comma is also a separate `:opX` attribute.
