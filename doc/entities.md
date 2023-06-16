@@ -236,4 +236,30 @@ Not listed in the current UMR table but used in their examples (e.g. sentence (3
 at least for pronouns that refer neither to persons nor to animals or plants or other types specifically listed
 in the taxonomy.
 
+### geographic-entity
+
+A subset of what other named entity taxonomies often label as “location”. This subset contains only phenomena created
+by nature, not by mankind. The UMR guidelines currently provide 15 types belonging to this class, probably not
+exhaustive and to be extended in the future. The annotators should use the types as abstract concepts if they know
+them, otherwise they can fall back to the whole class.
+
+The types are: `ocean`, `sea`, `lake`, `river`, `gulf`, `bay`, `strait`, `island`, `peninsula`, `mountain`, `volcano`,
+`valley`, `canyon`, `desert`, `forest`.
+
+### celestial-body
+
+Like `geographic-entity` but on a cosmic scale. Currently four types: `moon`, `planet`, `star`, `constellation`.
+Again not exhaustive: What do we do with objects that are smaller than planets but are not moons?
+
+Note that for _Měsíc_ “Moon”, _Země_ “Earth” and _Slunce_ “Sun”, there is a blurred context-based borderline between
+a name of a celestial body and a common noun. But at least the Czech grammar puts the burden of decision on the
+shoulders of the author: if it is a name of a celestial body, it has to be written capitalized. So, unless it is the
+first word of a sentence, the annotator can take capitalization as the cue.
+
 ### to be continued...
+
+### language
+
+### nationality
+
+### social-group
