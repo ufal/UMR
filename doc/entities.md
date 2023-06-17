@@ -256,6 +256,38 @@ a name of a celestial body and a common noun. But at least the Czech grammar put
 shoulders of the author: if it is a name of a celestial body, it has to be written capitalized. So, unless it is the
 first word of a sentence, the annotator can take capitalization as the cue.
 
+### geo-political-entity
+
+A subset of what other named entity taxonomies often label as “location”. This subset contains only phenomena created
+by mankind, not by nature. The UMR guidelines currently provide 7 types belonging to this class, probably not
+exhaustive and to be extended in the future. The annotators should use the types as abstract concepts if they know
+them, otherwise they can fall back to the whole class.
+
+The types are: `country`, `state`, `province`, `territory`, `county`, `city`, `city-district`.
+
+The current selection is too much focused on North America. For example, the Czech sub-country administrative unit,
+_kraj_ “region”, is neither a state, nor a province, territory or county. Czech _okres_ could probably be annotated
+as `county`. See also the `region` class below.
+
+### region
+
+A class with three types: `world-region`, `country-region`, `local-region`. There is no definition and it is difficult
+to guess what the authors had in mind. But it is not in the `geo-political-entity` class, so it is probably not meant
+as an official administrative unit and it does not solve the problem with Czech _kraj_. Maybe it is meant for less
+official or formal regions such as _Valašsko_, _Morava_ or _Evropa_. Still, we need criteria to decide between the
+three types of regions.
+
+### facility
+
+A class of man-made entities that have a fixed location but the name does not pertain just to the location but also
+to the building (or whatever other facility it is). In some cases, a facility is also an organization (example:
+_museum_), which is a different entity class, but they may share a name. Then the annotator will have to decide by
+context whether the utterance is more about the legal entity (organization), or the place or building (facility).
+
+The guidelines currently list 19 types of facilities: `airport`, `station`, `port`, `tunnel`, `bridge`, `road`,
+`railway-line`, `canal`, `building`, `theater`, `museum`, `palace`, `hotel`, `worship-place`, `market`,
+`sports-facility`, `park`, `zoo`, `amusement-park`.
+
 ### to be continued...
 
 ### language
