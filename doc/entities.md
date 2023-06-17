@@ -288,6 +288,22 @@ The guidelines currently list 19 types of facilities: `airport`, `station`, `por
 `railway-line`, `canal`, `building`, `theater`, `museum`, `palace`, `hotel`, `worship-place`, `market`,
 `sports-facility`, `park`, `zoo`, `amusement-park`.
 
+### product
+
+This class is not listed in the current UMR guidelines, which seems to be a gap that has to be patched. But the
+current taxonomy lists some types that could be classified as special cases of `product`, such as `aircraft-type`
+or `car-make`. An example of a sentence where a named entity denotes a product (the category specification in the
+brackets is optional):
+
+* (6) [cs] _Používám (prací prostředek) Persil._
+           “I use Persil (detergent).”
+
+This kind of named entity deviates from everything we said about named entities so far. Clearly, _Persil_ is a proper
+name rather than a common noun, as it was invented specifically to distinguish this detergent from other detergents.
+However, the name denotes a type of products, not one particular instance. There are millions of packages of Persil,
+and they all share the name. And while the name could be used when referring to a specific package, in (6) it actually
+refers to a generic entity.
+
 ### to be continued...
 
 ### language
