@@ -312,10 +312,10 @@ The guidelines currently list 19 types of facilities: `airport`, `station`, `por
 
 ### product
 
-This class is not listed in the current UMR guidelines, which seems to be a gap that has to be patched. But the
-current taxonomy lists some types that could be classified as special cases of `product`, such as `aircraft-type`
-or `car-make`. But there are proper names for other products, like _Persil_ in example (4) above. Products are
-typical examples of what we call categorial named entity.
+This class is not listed in the current UMR guidelines, which seems to be a gap that has to be patched. The current
+taxonomy actually lists some types that could be classified as special cases of `product`, such as `aircraft-type`
+or `car-make`. But there are proper names for other products, like _Persil_ in example (4) above. Products are typical
+examples of what we call categorial named entity.
 
 ### to be continued...
 
