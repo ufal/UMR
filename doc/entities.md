@@ -56,6 +56,20 @@ the property defining the group.
 * (3) [cs] _Všichni Václavové by měli znát své slavné jmenovce._
            “All Václavs should know their famous namesakes.”
 
+While the use of _Václavové_ in (3) is unusual, there are proper names that denote a type rather than an instance.
+A primary example is product names, as in (4) (the specification of product category is enclosed in parentheses in
+the example because it is optional):
+
+* (4) [cs] _Používám (prací prostředek) Persil._
+           “I use Persil (detergent).”
+
+Clearly, _Persil_ is a proper name rather than a common noun, as it was invented specifically to distinguish this
+detergent from other detergents; it is not a common noun that we expect to find in dictionaries. However, the name
+denotes a type of product, not one particular instance. There are millions of packages of Persil, and they all share
+this name. And while the name could be used when referring to a specific package, in (4) it actually refers to
+a generic entity. We will use the term **categorial proper names / categorial named entities** with names that
+denote types (categories) rather than instances.
+
 
 ## Representation of entities in UMR
 
@@ -88,7 +102,7 @@ Named entity _Národní muzeum_ “National Museum”:
         :op2 "muzeum"))
 ```
 
-* (4) [cs] _Získal práci na Ministerstvu školství, mládeže a tělovýchovy._
+* (5) [cs] _Získal práci na Ministerstvu školství, mládeže a tělovýchovy._
            “He got a job at the Ministry of Education, Youth and Sports.”
 
 ```
@@ -102,9 +116,17 @@ Named entity _Národní muzeum_ “National Museum”:
         :op6 "tělovýchovy"))
 ```
 
-Note that the canonical form of the multi-word name of the ministry in (4) is composed of the canonical form of the
+Note that the canonical form of the multi-word name of the ministry in (5) is composed of the canonical form of the
 head (_Ministerstvu_ was converted to nominative singular, but its capitalization was retained) and the inflected
 forms of the dependent words; the comma is also a separate `:opX` attribute.
+
+With categorial named entities, the `:name` relation can occur even with a generic entity:
+
+```
+(p/ product
+    :name (n/ name
+        :op1 "Persil"))
+```
 
 
 ## Anchoring entities in ontologies
@@ -159,11 +181,11 @@ Abstract entity concepts that correspond to personal pronouns (or their reflecti
 additionally have the attribute `:ref-person`. This attribute is not used with other entity mentions (for which it
 would be very unusual to interpret them as anything else than 3rd person).
 
-We now repeat example (1a) as (5) here and show the annotations of entities from the example, using all the rules
+We now repeat example (1a) as (6) here and show the annotations of entities from the example, using all the rules
 specified so far. (We omit the monetary entity from the end because such types of entities have not been discussed
 yet.)
 
-* (5) [cs] _Národní muzeum v Praze získá nový bezpečnostní systém, který mu dodá firma CESS. Muzeum za něj zaplatí necelé 2 milióny korun._
+* (6) [cs] _Národní muzeum v Praze získá nový bezpečnostní systém, který mu dodá firma CESS. Muzeum za něj zaplatí necelé 2 milióny korun._
             “The National Museum in Prague will get a new security system, which will be supplied by CESS. The museum will pay almost 2 million crowns for it.”
 
 ```
@@ -292,17 +314,8 @@ The guidelines currently list 19 types of facilities: `airport`, `station`, `por
 
 This class is not listed in the current UMR guidelines, which seems to be a gap that has to be patched. But the
 current taxonomy lists some types that could be classified as special cases of `product`, such as `aircraft-type`
-or `car-make`. An example of a sentence where a named entity denotes a product (the category specification in the
-brackets is optional):
-
-* (6) [cs] _Používám (prací prostředek) Persil._
-           “I use Persil (detergent).”
-
-This kind of named entity deviates from everything we said about named entities so far. Clearly, _Persil_ is a proper
-name rather than a common noun, as it was invented specifically to distinguish this detergent from other detergents.
-However, the name denotes a type of products, not one particular instance. There are millions of packages of Persil,
-and they all share the name. And while the name could be used when referring to a specific package, in (6) it actually
-refers to a generic entity.
+or `car-make`. But there are proper names for other products, like _Persil_ in example (4) above. Products are
+typical examples of what we call categorial named entity.
 
 ### to be continued...
 
