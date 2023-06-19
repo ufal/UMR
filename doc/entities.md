@@ -317,6 +317,14 @@ taxonomy actually lists some types that could be classified as special cases of 
 or `car-make`. But there are proper names for other products, like _Persil_ in example (4) above. Products are typical
 examples of what we call categorial named entity.
 
+### vehicle
+
+This is a separate class with currently 5 types: `ship`, `aircraft`, `aircraft-type`, `spaceship`, `car-make`. Note
+that `aircraft-type` and `car-make` are categorial named entities that would be better described as special types of
+`product`. For `ship` and `spaceship` it is more typical that a name denotes a single instance (e.g., _Titanic_).
+Perhaps `aircraft` is also meant to denote an instance rather than a type. People may occasionally give a nickname
+to their car, then the name will also denote an instance and the entity type `car-make` will not be suitable for it.
+
 ### to be continued...
 
 ### language
