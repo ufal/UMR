@@ -325,6 +325,22 @@ that `aircraft-type` and `car-make` are categorial named entities that would be 
 Perhaps `aircraft` is also meant to denote an instance rather than a type. People may occasionally give a nickname
 to their car, then the name will also denote an instance and the entity type `car-make` will not be suitable for it.
 
+### cultural-artifact
+
+This is a separate class with currently 8 types: `work-of-art`, `picture`, `music`, `dance`, `show`,
+`broadcast-program`, `literature`, `publication`; the last one has subtypes `book`, `newspaper`, `magazine`, `journal`.
+Since there is no description, it is not clear what is the difference between `literature` and `publication` supposed
+to be. Also, there does not seem to be a category suitable for movies.
+
+Some works of art could be seen as a categorial named entity similar to `product`: Typically there are many copies of
+a book, a movie, or a CD. But even here the prototypical reading is that the name refers to the single intangible
+work, not to one of its copies.
+
+### cultural-activity
+
+This is a top-level class without definition and without types. It would be useful to have an example. See also
+`event` below.
+
 ### to be continued...
 
 ### language
