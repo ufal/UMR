@@ -336,10 +336,30 @@ Some works of art could be seen as a categorial named entity similar to `product
 a book, a movie, or a CD. But even here the prototypical reading is that the name refers to the single intangible
 work, not to one of its copies.
 
+### law
+
+This is a top-level class with two types: `court-decision`, `treaty`. Supposedly the class itself should be used for
+actual laws. There is a need for other types, such as a named dean's regulation at a university.
+
+One could say that laws are close to publications; but they can hardly be categorized as a cultural artifact.
+
 ### cultural-activity
 
 This is a top-level class without definition and without types. It would be useful to have an example. See also
 `event` below.
+
+### event
+
+This is a top-level class with currently 8 types: `incident`, `war`, `natural-disaster`, `earthquake`, `conference`,
+`game`, `festival`, `ceremony`. Besides the usual problem that types are not defined, it is not clear why `earthquake`
+shall be distinguished from other natural disasters. It is also unclear why `cultural-activity` is a class separate
+from `event`.
+
+Furthermore, note that this concept denotes events as entities, although events are typically processes (refer to the
+main distinction between entities, states and processes, shown in Table 1 in Section 3-1-1 of the UMR guidelines).
+Section 3-1-1 even uses the term “event” to refer to all processes in any packaging, plus entities and states when
+used in predication. Nevertheless, if an event has a name (such as _Druhá světová válka_ “World War II”), it is covered
+by this taxonomy. It would be helpful to have an annotated example here.
 
 ### to be continued...
 
