@@ -353,6 +353,20 @@ actual laws. There is a need for other types, such as a named dean's regulation 
 
 One could say that laws are close to publications; but they can hardly be categorized as a cultural artifact.
 
+### language
+
+This is a top-level class without types. Supposedly there is no distinction between languages and dialects, i.e.,
+names of dialects would also be labeled as `language`. Not sure about language groups and families. Note that names of
+languages are often (but not always) related to names of ethnic groups, nationalities, regions and countries.
+
+It is not clear how this label is intended to be used. Should it apply only to the name of the language (noun), e.g.,
+_angličtina_ “(the) English (language)”, or also to adverbs (_Mluví anglicky._ “He speaks English.”) and adjectives
+(_Procvičuje si anglická slovesa._ “She is practicing English verbs.”)
+
+Do we also use this label for constructed languages _(esperanto)_? I think we do.
+Do we also use it for programming languages _(Pascal, C, Perl, Python)_? I am not sure. Maybe those fall under the
+class `computer-program`.
+
 ### notational-system
 
 This is a top-level class with currently three types: `writing-script` (e.g. _dévanágarí_), `music-key`,
@@ -403,13 +417,11 @@ of the language since ancient times. But it would be neither tractable nor helpf
 Perhaps the only exception is the scientific names in Latin, provided that the language of the annotated text is not
 Latin.
 
-Similarly diseases may have scientific names but many common diseases are just common nouns or expressions (_angína_
+Similarly, diseases may have scientific names but many common diseases are just common nouns or expressions (_angína_
 “tonsillitis”, _chřipka_ “flu”, _mor_ “plague”, _neštovice_ “chickenpox”) and it is not clear why they should be
 handled differently from other common nouns. Moreover, diseases are states rather than entities.
 
 ### to be continued...
-
-### language
 
 ### nationality
 
