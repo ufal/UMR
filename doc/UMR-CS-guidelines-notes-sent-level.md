@@ -3,8 +3,8 @@
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md
 
-###### Struktura kapitol:
-1) **odkaz na konkrétní místo v guidelines**
+###### Structure of chapters/sections:
+1) **link to the guidelines**
 2) **American approach – summary in Czech**
 3) **our comments to the American approach**
 4) **corresponding materials available on the Czech side** (corpora, dictionaries etc.)
@@ -73,15 +73,20 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md
 * Part 6. Integrated examples
 * Part 7. Alphabetical Index of UMR Annotation Categories
 
+***
+***
+***
 
 # Part 3. Sentence-Level Representation
+
+***
 
 ## Part 3-1. UMR Concepts 
 ### Part 3-1-1. Eventive concepts
 Preparation: ML, 23/6/2023
 
-1) **odkaz na konkrétní místo v guidelines**
-****
+1) **link to the guidelines**
+
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-umr-concepts
 
 2) **American approach – summary in Czech**
@@ -130,11 +135,12 @@ Table 2: Constructions identified as events
 
 TO DO LATER, AFTER FINISHING ALL THE SUBPARTS BELOW
 
+***
 
 #### Part 3-1-1-1. Processes in predication 
 Preparation: ML, 23/6/2023
 
-1) **odkaz na konkrétní místo v guidelines**
+1) **link to the guidelines**
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-1-processes-in-predication
 
@@ -153,15 +159,16 @@ What about copula, existential "to be", ...?
 4) **corresponding materials available on the Czech side** (corpora, dictionaries etc.)
 
 - resources:
-- - SynSemCLass (SSC) ... slovesa
-- - PDT-Vallex ... slovesa, která nejsou v SSC
+- - SynSemCLass (SSC) ... verbs
+- - PDT-Vallex ... verbs not covered in SSC
 - problems:
 - - mapping of actants to AMR ARG labels 
 
-default: mapping using simple table (2014 table should be updated);
+*default*: mapping using simple table (2014 table should be updated);
 
-possible improvement: (i) heuristics for causative verb, ...
-(ii) verb specific mapping from SSC
+*possible improvements*:<br>
+(i) heuristics for individual groups of verbs (e.g., causative verbs), ...<br>
+(ii) verb-specific mapping from SSC
 
 - - mapping of free modifications to AMR non-core labels
 
@@ -176,10 +183,12 @@ default: mapping using simple table (2014 table should be updated)
 
     TO DO DURING THE MEETING / LATER
 
+***
+
 #### Part 3-1-1-2. Processes in modification and reference
 Preparation: ML, 23/6/2023
 
-1) **odkaz na konkrétní místo v guidelines**
+1) **link to the guidelines**
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2-processes-in-modification-and-reference
 
@@ -195,7 +204,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2
 
 **Problem with nouns**: 
 
-not clear how event nominals are defined ... (should be based on semantic type) ... BUT  not consistent in the guidelines:
+not clear how event nominals are defined ... (should be based on semantic type) ... BUT seems as not consistent in the guidelines examples:
 
    *The bus **driver** turned the corner too sharply.* ... bus driver as agent name (not process)
 
@@ -219,7 +228,7 @@ Participles (or other non-finite verb forms) are identified as events, unless th
 4) **corresponding materials available on the Czech side** (corpora, dictionaries etc.)
 - dictionaries:
 - - PDT-Vallex, Nom-Vallex ... only small number of frames, not systematic
-- - the list from 2014:  doc\seznamy-a-poznamky-z-amr-prevodu\Silvie\verbalization_list.cs.txt (but not clear origin)
+- - the list from 2014:  doc\seznamy-a-poznamky-z-amr-prevodu\Silvie\verbalization_list.cs.txt (perhaps extracted from PDT with some heuristics - not clear :-((
 - - the list of predicative nouns from VALLEX ... only those appearing in LVC
 - - nouns with CPHR label from PDT ???
 - corpora:
@@ -232,12 +241,13 @@ Participles (or other non-finite verb forms) are identified as events, unless th
 6) **proposal of the general Czech approach**
 
     TO DO DURING THE MEETING / LATER
- 
 
-#### Part 3-1-1-3. States and entities  AND also Part 3-2-1-1-1 Non-verbal clauses
+***
+
+#### Part 3-1-1-3. States and entities  (AND also Part 3-2-1-1-1 Non-verbal clauses)
 Preparation: ML, 23/6/2023
 
-1) **odkaz na konkrétní místo v guidelines**
+1) **link to the guidelines** 
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities
 
@@ -247,15 +257,15 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 
 (**BUT:** States and entities in modification or reference packaging are not identified as events :-)
 
-**Type A**: Statives as annotated in the same way as processes ... *My cat **loves** wet food*.
+**Type A**: Statives are annotated in the same way as processes ... *My cat **loves** wet food*.
 
-**Type B** (4 semantic types)... annotated as **non-verbal clauses** 
+**Type B**: **non-verbal clauses** ... 4 semantic types distinguished
 
 **Nine special abstract UMR Predicates**
-- **possession**:  ‘thetic’ (have-91 ... *The teacher has a dog.*) or ‘all-new’ (predicational = belong-91 ... *The dog is the teacher's*.)
-- **location**:  ‘thetic’ (exist-91) or ‘all-new’ (have-location-91)
-- **property**
-- **object**:  ‘predicational’ (ISA, part of a category of objects *Panda is a cat.*) or  ‘equational’ (two referents are the same *Panda is my cat.*)
+- **possession**:  ‘thetic’ (have-91 ... *The teacher **has** a dog.*) or ‘all-new’ (predicational = belong-91 ... *The dog **is** the teacher's*.)
+- **location**:  ‘thetic’ (exist-91 ... *On the rock **was** a symbol.*) or ‘all-new’ (have-location-91 ... *The symbol *was** on the rock.*)
+- **property** (have-mod-91 ... *The cat **is** black.*
+- **object**:  ‘predicational’ (ISA, part of a category of objects = have-role-91 ... *Panda **is** a cat.*) or  ‘equational’ (two referents are the same = identity-91 ... *Panda **is** my cat.*)
 
 <div id="tab:nonverbal_arguments">
 
@@ -268,6 +278,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <th>ARG3</th>  
 <th>ARG4</th>  
 <th>ARG5</th>  
+<th>Example</th>  
 </tr>  
 <tr>  
 <td>Thetic Possession</td>  
@@ -277,6 +288,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>---</td>  
 <td>---</td>  
 <td>---</td>  
+<td>The teacher has a dog.</td>  
 </tr>  
 <tr>  
 <td>Predicative Possession</td>  
@@ -286,6 +298,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>---</td>  
 <td>---</td>  
 <td>---</td>  
+<td>The dog is the teacher's.</td>  
 </tr>  
 <tr>  
 <td>Thetic Location</td>  
@@ -295,6 +308,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>---</td>  
 <td>---</td>  
 <td>---</td>  
+<td>On the rock was a symbol.</td>  
 </tr> 
 <tr>  
 <td>Predicative Location</td>  
@@ -304,6 +318,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>---</td>  
 <td>---</td>  
 <td>---</td>  
+<td>The symbol was on the rock.</td>  
 </tr>  
 <tr>  
 <td>Property Predication</td>  
@@ -313,6 +328,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>--- </td>  
 <td>---</td>  
 <td>---</td>  
+<td>The cat is black.</td>  
 </tr> 
 <tr>  
 <td rowspan="3">Object Predication</td>  
@@ -322,6 +338,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>object category, arg1</td>  
 <td>object category, arg2</td>  
 <td>---</td>  
+<td>Panda is a cat.</td>  
 </tr>  
 <tr>  
 <td>have-org-role-92</td>  
@@ -330,6 +347,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>title of role</td>  
 <td>job description</td>  
 <td>---</td>  
+<td>???</td>  
 </tr>  
 <tr>  
 <td>have-rel-role-92</td>  
@@ -338,6 +356,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>theme's role</td>  
 <td>relative's role</td>  
 <td>relationship basis</td>  
+<td>???</td>  
 </tr>  
 <tr>  
 <td>Equational</td>  
@@ -347,6 +366,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 <td>---</td>  
 <td>---</td>  
 <td>---</td>  
+<td>Panda is my cat.</td>  
 </tr>  
 </table>
 
@@ -381,11 +401,12 @@ abstract predicates:
 
     TO DO DURING THE MEETING / LATER
  
+***
 
 #### Part 3-1-1-4. Implicit events 
 Preparation: ML, 23/6/2023
 
-1) **odkaz na konkrétní místo v guidelines**
+1) **link to the guidelines**
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-4-implicit-events
 
@@ -425,12 +446,19 @@ Not clear to which extent type B can be identified (semi-)automatically ... exam
     TO DO DURING THE MEETING / LATER
 
 
+***
+***
+
 ### Part 3-1-2. Named entities
+
+
+***
+***
 
 ### Part 3-1-3. Concept-word mismatches
 Preparation: ŠZ, 21/6/2023
 
-1) **odkaz na konkrétní místo v guidelines**
+1) **link to the guidelines**
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-concept-word-mismatches
 
@@ -475,7 +503,7 @@ impression)
 #### Part 3-1-3-1. Predicate and argument as one word 
 Preparation: ŠZ, 21/6/2023
 
-1) **odkaz na konkrétní místo v guidelines**
+1) **link to the guidelines**
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-1-predicate-and-argument-as-one-word
 
@@ -534,7 +562,7 @@ possible parallels in Czech:
 #### Part 3-1-3-2. Valency-changing operations
 Preparation: ŠZ, 22/06/2023
  
-1) **odkaz na konkrétní místo v guidelines**
+1) **link to the guidelines**
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations
 
