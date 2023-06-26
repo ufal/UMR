@@ -325,6 +325,16 @@ that `aircraft-type` and `car-make` are categorial named entities that would be 
 Perhaps `aircraft` is also meant to denote an instance rather than a type. People may occasionally give a nickname
 to their car, then the name will also denote an instance and the entity type `car-make` will not be suitable for it.
 
+### computer-program
+
+This is a separate class with no types. It could be regarded as a type of `product`.
+
+### food-dish
+
+This is a separate class with no types. It seems to be a categorial named entity like `product` but it has an unsharp
+boundary between names and descriptions of dishes, so it is quite questionable whether, how, and where exactly the
+class concept should be used.
+
 ### cultural-artifact
 
 This is a separate class with currently 8 types: `work-of-art`, `picture`, `music`, `dance`, `show`,
@@ -342,6 +352,11 @@ This is a top-level class with two types: `court-decision`, `treaty`. Supposedly
 actual laws. There is a need for other types, such as a named dean's regulation at a university.
 
 One could say that laws are close to publications; but they can hardly be categorized as a cultural artifact.
+
+### notational-system
+
+This is a top-level class with currently three types: `writing-script` (e.g. _dévanágarí_), `music-key`,
+`musical-note`. It denotes an abstract entity.
 
 ### cultural-activity
 
@@ -361,6 +376,37 @@ Section 3-1-1 even uses the term “event” to refer to all processes in any pa
 used in predication. Nevertheless, if an event has a name (such as _Druhá světová válka_ “World War II”), it is covered
 by this taxonomy. It would be helpful to have an annotated example here.
 
+### award
+
+Top-level class with no types. Supposedly, _Nobelova cena za fyziku_ “Nobel Prize for Physics” would be an example.
+
+### biomedical-entity
+
+This is a top-level class with currently 18 types: `molecular-physical-entity`, `small-molecule`, `protein`,
+`protein-family`, `protein-segment`, `amino-acid`, `macro-molecular-complex`, `enzyme`, `nucleic-acid`, `pathway`,
+`gene`, `dna-sequence`, `cell`, `cell-line`, `species`, `taxon`, `disease`, `medical-condition`. They are obviously
+inspired by the bulk of work on biomedical processing and we would need more documentation to understand how the
+authors intended to use them.
+
+However, at least three types reach into layman's language: `species`, `taxon`, and `disease`. The closely related
+`species` and `taxon` would be categorial named entities (like `product`), where the name denotes a whole category
+(type) of entities rather than a single instance. That is, if they deserve to be treated as named entities in the
+first place. For example, _kočka_ “cat” is an animal with a particular set of characteristics, just like _dub_ “oak”
+is a particular type (hyponym) of tree, and _hrad_ “castle” is a particular type of building. But the first two words
+are biological genuses, hence `taxon`s, while _hrad_ has no special status in the UMR taxonomy. (In the Czech grammar,
+all three are common nouns.) There is no reason why _kočka_ and _dub_ should be named entities. And by extension,
+there is little reason why `species` should be named entities, for example _kočka domácí_ “cat (Felis catus)”, or
+_dub letní_ “pedunculate oak (Quercus robur)”, or why other taxons should, for example _šelmy_ “beasts of prey,
+Carnivora”, _savci_ “mammals”, or _živočichové_ “animals, Animalia”. It is true that some species have names that are
+less common than others and were invented by scholars who discovered and described the species, rather than being part
+of the language since ancient times. But it would be neither tractable nor helpful to attempt to distinguish them.
+Perhaps the only exception is the scientific names in Latin, provided that the language of the annotated text is not
+Latin.
+
+Similarly diseases may have scientific names but many common diseases are just common nouns or expressions (_angína_
+“tonsillitis”, _chřipka_ “flu”, _mor_ “plague”, _neštovice_ “chickenpox”) and it is not clear why they should be
+handled differently from other common nouns. Moreover, diseases are states rather than entities.
+
 ### to be continued...
 
 ### language
@@ -368,3 +414,5 @@ by this taxonomy. It would be helpful to have an annotated example here.
 ### nationality
 
 ### social-group
+
+### variable
