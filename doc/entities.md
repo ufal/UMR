@@ -339,8 +339,8 @@ A separate top-level class. I do not understand why the authors did not make it 
 context, any of the three: A member of the ethnic group (sharing the Czech language and traditions, including people
 who do not have Czech citizenship, as their ancestors left the country and settled abroad); a member of the nationality
 (having the citizenship of the Czech Republic, even if living abroad and/or having a mother tongue other than Czech);
-a member of a regional group, living in _Čechy_ “Bohemia” (as opposed to Moravia and Silesia, which are the other two
-parts of the country called _Česko_ “Czechia”).
+a member of a regional group, living or born in _Čechy_ “Bohemia” (as opposed to Moravia and Silesia, which are the
+other two parts of the country called _Česko_ “Czechia”).
 
 ### product
 
