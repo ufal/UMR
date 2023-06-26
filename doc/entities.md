@@ -314,7 +314,7 @@ The guidelines currently list 19 types of facilities: `airport`, `station`, `por
 
 A large class with 6 types: `family`, `clan`, `ethnic-group`, `regional-group`, `religious-group`, `organization`.
 The common characteristic of all six is that they denote groups of people. In the case of `organization`, it also
-has a common property, set of activities, and usually also some kind of legal existence; this may also true to some
+has a common property, set of activities, and usually also some kind of legal existence; this may be also true to some
 extent about families and even clans, but typically not about the other types of groups. More importantly, an
 organization typically has a name that refers to the organization as a single entity _(IBM)_, while an ethnic group
 is often denoted by a plural form of a name that labels one member of the group _(Baskové,_ the plural of _Bask_
