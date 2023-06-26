@@ -247,7 +247,7 @@ Participles (or other non-finite verb forms) are identified as events, unless th
 #### Part 3-1-1-3. States and entities  (AND also Part 3-2-1-1-1 Non-verbal clauses)
 Preparation: ML, 23/6/2023
 
-1) **link to the guidelines**
+1) **link to the guidelines** 
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities
 
