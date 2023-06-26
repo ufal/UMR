@@ -310,6 +310,38 @@ The guidelines currently list 19 types of facilities: `airport`, `station`, `por
 `railway-line`, `canal`, `building`, `theater`, `museum`, `palace`, `hotel`, `worship-place`, `market`,
 `sports-facility`, `park`, `zoo`, `amusement-park`.
 
+### social-group
+
+A large class with 6 types: `family`, `clan`, `ethnic-group`, `regional-group`, `religious-group`, `organization`.
+The common characteristic of all six is that they denote groups of people. In the case of `organization`, it also
+has a common property, set of activities, and usually also some kind of legal existence; this may also true to some
+extent about families and even clans, but typically not about the other types of groups. More importantly, an
+organization typically has a name that refers to the organization as a single entity _(IBM)_, while an ethnic group
+is often denoted by a plural form of a name that labels one member of the group _(Baskové,_ the plural of _Bask_
+“(a) Basque (person)”). It is thus unclear whether and why these diverse types should be analyzed the same way.
+An ethnic group is more like a categorial named entity (see also `product`), it denotes people who share a language
+and/or some cultural and historical heritage. Similarly, religious groups is just a common label for people who share
+beliefs. Do we also want a “named entity” for races, or for tall/short/slim/fat people etc., or for people who share
+political views, or love for rock-and-roll, or anything else?
+
+#### organization
+
+A large type of the `social-group` class, see above for my doubts about its (dis)similarity to other types. There is
+much less doubt (than for the other types) that organizations are named entities, but the definition of the subtypes
+has to be clarified. The type has currently 11 subtypes: `international-organization`, `business`, `company`,
+`government-organization`, `political-organization`, `criminal-organization`, `armed-organization`,
+`academic-organization`, `association`, `sports-organization`, `religious-organization`.
+
+### nationality
+
+A separate top-level class. I do not understand why the authors did not make it a type of `social-group`, just like
+`ethnic-group` and `regional-group`, to which it is very close. For example, _Čech_ “Czech” can be, depending on
+context, any of the three: A member of the ethnic group (sharing the Czech language and traditions, including people
+who do not have Czech citizenship, as their ancestors left the country and settled abroad); a member of the nationality
+(having the citizenship of the Czech Republic, even if living abroad and/or having a mother tongue other than Czech);
+a member of a regional group, living in _Čechy_ “Bohemia” (as opposed to Moravia and Silesia, which are the other two
+parts of the country called _Česko_ “Czechia”).
+
 ### product
 
 This class is not listed in the current UMR guidelines, which seems to be a gap that has to be patched. The current
@@ -421,10 +453,6 @@ Similarly, diseases may have scientific names but many common diseases are just 
 “tonsillitis”, _chřipka_ “flu”, _mor_ “plague”, _neštovice_ “chickenpox”) and it is not clear why they should be
 handled differently from other common nouns. Moreover, diseases are states rather than entities.
 
-### to be continued...
-
-### nationality
-
-### social-group
-
 ### variable
+
+What is this supposed to mean?
