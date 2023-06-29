@@ -89,15 +89,18 @@ Preparation: ML, 23/6/2023
 
 https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-umr-concepts
 
-2) **American approach – summary in Czech**
+2) **American approach – summary**
 
-identification of events … criteria adopted from TimeML
-- **semantic type:**
+identification of events … criteria adopted from TimeML (Pustejovsky et al. 2005)
+
+event identification based on a combination of semantic type and information packaging (Croft 2001)
+
+- **semantic type** (a categorization of things in the real world):
 - - **entities** (or, objects),
 - - **states** (or, properties), and
 - - **PROCESSES**
 
-- **information packaging** … discourse / information structure:
+- **information packaging** … discourse / information structure (how a particular linguistic expression “packages” the semantic content):
 - - **reference** (what the speaker is talking about)
 - - **modification** (additional information provided about the referent)
 - - **PREDICATION** (what the speaker is asserting about the referents in a particular utterance)
@@ -112,16 +115,26 @@ Prototypical combinations of semantic type and information packaging IN CAPS in 
 
 |               |                   Reference                   |                    Modification                    |                  **Predication**                  |
 | :-----------: | :-------------------------------------------: | :------------------------------------------------: | :-----------------------------------------------: |
-|   Entities    | UNMARKED NOUNS |                 relative clauses, PPs on nouns                  |              **predicate nominals,** **complements**             |
-|    States     |              deadjectival nouns               | UNMARKED ADJECTIVES |             **predicate adjectives,** **complements**           |
+|   Entities    | UNMARKED NOUNS |                 relative clauses*, PPs on nouns                  |              **predicate nominals,** **complements**             |
+|    States     |              deadjectival nouns               | UNMARKED ADJECTIVES, ML:relative clauses* |             **predicate adjectives,** **complements**           |
 | **Processes** |       **event nominals, complements,** **infinitives, gerunds**        |         **participles, relative clauses**          | **UNMARKED VERBS** |
 
-Table 2: Constructions identified as events
+Table 2: Constructions identified as events*
+ML: seems limited to the type *The man, who is tall...* (modification), *The man, who is a doctor...* (entity)
 </div>
+
+
 
 3) **our comments to the American approach**
 
-... see below 3-1-1-1 and 3-1-1-2
+Not entirely clear how to understand "information packaging".
+
+According to Croft, "constructions always involve the information packaging of the semantic content of the sentence, that is, the function of constructions has
+to be defined in terms of both *semantic content* and *information packaging*. ... *information packaging functions are much more isomorphic to syntactic structures* than semantic classes or semantic relations. 
+Information packaging functions are less variable across languages than semantics, especially lexical semantics." (Croft, invited talk, UDW17, http://universaldependencies.org/udw17/program.html)
+
+TO READ: W. Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft - June 2021)
+
 
 4) **corresponding materials available on the Czech side** (corpora, dictionaries etc.)
 
@@ -129,7 +142,9 @@ Table 2: Constructions identified as events
 
 5) **commentaries from the UMR Prague meeting**
 
-... see below 3-1-1-1 and 3-1-1-2
+Problem with the identification of eventive concepts when packaged as references or modifications.
+
+
 
 6) **proposal of the general Czech approach**
 
@@ -146,13 +161,16 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-1
 
 2) **American approach – summary in Czech**
 
-Predicated processes are the most prototypical subcategory of events, corresponding cross-linguistically to unmarked verbs --> always identified as events
+Predicated processes are the most prototypical subcategory of events, corresponding cross-linguistically to unmarked verbs --> always identified as events ... regardless of whether they are in an independent clause, or a dependent clause
+(and thus should be annotated with the use of the **frame files**)
 
 3) **our comments to the American approach**
 
-What about auxiliary, modal and phase verbs?
+- What about auxiliary, modal and phase verbs?
 
-What about LVC (CPHR)
+- What about LVC (CPHR) ... TO READ: J Bonn et al (2023): UMR Annotation of Multiword Expressions
+
+- What about MWEs ... TO READ: J Bonn et al (2023): UMR Annotation of Multiword Expressions
 
 What about copula, existential "to be", ...?
 
@@ -202,9 +220,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2
 
 3) **our comments to the American approach**
 
-**Problem with nouns**:
-
-not clear how event nominals are defined ... (should be based on semantic type) ... BUT seems as not consistent in the guidelines examples:
+**Agentive nouns**: their treatment seems inconsistent in the guidelines examples:
 
    *The bus **driver** turned the corner too sharply.* ... bus driver as agent name (not process)
 
@@ -236,7 +252,77 @@ Participles (or other non-finite verb forms) are identified as events, unless th
 
 5) **commentaries from the UMR Prague meeting**
 
-    TO DO DURING THE MEETING
+**How to identify eventive concepts when packed as modifiers** (additional info) **or referents** (what the speaker is talking about)?
+
+Not clear how eventive nominals are defined (should be based on semantic type = process) ... where are the borders between entities/objects (and states/properties) and events?
+
+- Word formation, Přemysl Hauser ... should be considered? probably not (focus on semantics (not from))
+- Words like *válka*, *storm* – what to do with them?
+- ŠZ: **Two possible solutions**:
+- - put as much as possible into entities (and states/properties)
+- - put as much as possible into events
+- HH: How is decided in Wikipedia what is an event and what not?
+- Dan: how can we use existing databases and their solutions? 
+- 	JH: Martha Palmer – „eventives“ – events and entities (i.e., entities with eventive meaning (= implying an event))
+- ŠZ: TO REST: Paducheva (1995) – types of (nominal) reference 
+
+
+- ML: What about the following distinction between events and -- would it work??
+- **events/eventive concepts should be linked to frame files**<br> 
+- - **OK for processes in predication** 
+
+     *Peter **went** to school;*
+     *The sharp thorns **scratched** me.*<br>
+
+- - **OK for processes in modification** - participles, rel. clauses 
+
+    *The student **playing** the violin likes Bach.;*<br>
+ 
+    *The student, who is **playing** the violin, likes Bach.*<br>
+ 
+    *the thorns **that [scratched** me] / the thorns [**scratching** me]*<br>
+ 
+- - **OK for states in predication** 
+
+    *Those thorns **are sharp**.*<br>
+    *My cat **loves** wet food.*<br>
+
+- - **OK for entities in predication** 
+
+    *It **is a thorn**.*<br>
+ 
+- - **Processes packaged as references**:<br>
+
+- - - **OK** for complements, infinitives, gerunds 
+
+    *I said [**that** the thorns **scratched** me]. / 
+    the [**scratching** of the thorns]*<br>
+ 
+- - - **OK** for generic events (storm, war, ceremony, bouře, válka, slavnost)<br>
+- - - **!!NO!!** for specific events (ukrajinská válka) ... *should be mapped to wiki*<br>
+
+
+ 
+- **entities and states (in references, in modifications) should be linked to wiki** 
+
+- - **entities in reference** 
+- - - **???** generic ones (*the sharp **thorns***) ... what to do with them?
+- - - **OK** specific ones (***Barack Obama***)
+
+- -  **entities in modification**
+- - - **???** generic (*the **bush’s** thorns*) ... what to do with them?
+- - - **OK** specific (***Barack Obama's** cabinet)
+
+- -  **states in reference** ... what to do with them?
+    (***sharpness***  https://www.wikidata.org/wiki/Q55433472 )
+
+- -  **states in modification** ... either without mapping OR, contrary to the guidelines, as eventive (being tall)
+
+    *the **sharp** thorns;*<br> 
+    *The **tall** man...;*
+    *The man, **who is tall**...*
+
+     
 
 6) **proposal of the general Czech approach**
 
@@ -259,11 +345,14 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 
 **Type A**: Statives are annotated in the same way as processes ... *My cat **loves** wet food*.
 
+
 **Type B**: **non-verbal clauses** ... 4 semantic types distinguished
 
 **Nine special abstract UMR Predicates**
-- **possession**:  ‘thetic’ (have-91 ... *The teacher **has** a dog.*) or ‘all-new’ (predicational = belong-91 ... *The dog **is** the teacher's*.)
-- **location**:  ‘thetic’ (exist-91 ... *On the rock **was** a symbol.*) or ‘all-new’ (have-location-91 ... *The symbol *was** on the rock.*)
+- **possession**:  ‘thetic’ = ‘all-new’ (= "uvádění na scénu") (have-91 ... *The teacher **has** a dog.*) <br>
+  or predicational (belong-91 ... *The dog **is** the teacher's*.)
+- **location**:  ‘thetic’ = ‘all-new’ (= "uvádění na scénu") (exist-91 ... *On the rock **was** a symbol.*) <br>
+or  predicational (have-location-91 ... *The symbol *was** on the rock.*)
 - **property** (have-mod-91 ... *The cat **is** black.*
 - **object**:  ‘predicational’ (ISA, part of a category of objects = have-role-91 ... *Panda **is** a cat.*) or  ‘equational’ (two referents are the same = identity-91 ... *Panda **is** my cat.*)
 
@@ -382,6 +471,17 @@ Table 8: Argument structure of non-verbal clause predicates
 3) **our comments to the American approach**
 
 Seems very complicated :-((
+
+Where to put "statives" (verbs describing states and properties rather than actions), Table 2 ... !!states packaged as predication!! 
+
+What about existential "to be" ... (There is a cat.) ??
+
+- 	ŠZ: abstract predicates – two perspectives:
+- -	Introduction of an element to a scene (There is a cat. A cat exists.) – thetic usages
+- -	Ascription of a feature to an element (The cat is black.) – predicative usages 
+-	JH: do we want to have 2 frames for each verb? It would be good to have more frames just at the most basic verbs (to be, have…).
+
+
 
 4) **corresponding materials available on the Czech side** (corpora, dictionaries etc.)
 
