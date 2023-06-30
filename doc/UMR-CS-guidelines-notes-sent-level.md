@@ -22,7 +22,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md
 * Part 2-2-5. Attributes
 * Part 3. Sentence-Level Representation
 * Part 3-1. UMR Concepts
-* Part 3-1-1. Eventive concepts ................................. ML 26.6.
+* Part 3-1-1. Eventive concepts ................................. ML 26.6. [separate document on the way] (https://github.com/ufal/UMR/blob/main/doc/eventive-concepts.md)
 * Part 3-1-1-1. Processes in predication ........................ ML 26.6.
 * Part 3-1-1-2. Processes in modification and reference ...... ML 26.6.
 * Part 3-1-1-3. States and entities ............................. ML 26.6.
@@ -91,39 +91,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-umr
 
 2) **American approach – summary**
 
-identification of events … criteria adopted from TimeML (Pustejovsky et al. 2005)
-
-event identification based on a combination of semantic type and information packaging (Croft 2001)
-
-- **semantic type** (a categorization of things in the real world):
-- - **entities** (or, objects),
-- - **states** (or, properties), and
-- - **PROCESSES**
-
-- **information packaging** … discourse / information structure (how a particular linguistic expression “packages” the semantic content):
-- - **reference** (what the speaker is talking about)
-- - **modification** (additional information provided about the referent)
-- - **PREDICATION** (what the speaker is asserting about the referents in a particular utterance)
-
-Prototypical combinations of semantic type and information packaging IN CAPS in table 2.
-
-**EVENTS** (annotated in UMR) ... in **bold** in table 2
-- prototypically: process in predication
-- plus whatever is a _process_ (semantic type) or is expressed as _predication_
-
-<div id="tab:eventive_concepts">
-
-|               |                   Reference                   |                    Modification                    |                  **Predication**                  |
-| :-----------: | :-------------------------------------------: | :------------------------------------------------: | :-----------------------------------------------: |
-|   Entities    | UNMARKED NOUNS |                 relative clauses*, PPs on nouns                  |              **predicate nominals,** **complements**             |
-|    States     |              deadjectival nouns               | UNMARKED ADJECTIVES, ML:relative clauses* |             **predicate adjectives,** **complements**           |
-| **Processes** |       **event nominals, complements,** **infinitives, gerunds**        |         **participles, relative clauses**          | **UNMARKED VERBS** |
-
-Table 2: Constructions identified as events*
-ML: seems limited to the type *The man, who is tall...* (modification), *The man, who is a doctor...* (entity)
-</div>
-
-
+[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts)
 
 3) **our comments to the American approach**
 
@@ -161,8 +129,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-1
 
 2) **American approach – summary in Czech**
 
-Predicated processes are the most prototypical subcategory of events, corresponding cross-linguistically to unmarked verbs --> always identified as events ... regardless of whether they are in an independent clause, or a dependent clause
-(and thus should be annotated with the use of the **frame files**)
+[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts)
 
 3) **our comments to the American approach**
 
@@ -212,11 +179,8 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2
 
 2) **American approach – summary in Czech**
 
-**Processes** packaged as *modifiers* or *referents* should also be identified as events - various forms, such as:
-- event nominals *The **storm** damaged the roads*,
-- non-finite complements *She wanted **to go** to school.*,
-- participles *The student **playing** the violin likes Bach*, or
-- relative clauses *The student, who is **playing** the violin, likes Bach*
+[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts)
+
 
 3) **our comments to the American approach**
 
@@ -232,11 +196,6 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2
 
 **Problem with compounds**:
 
-Participles (or other non-finite verb forms) are identified as events, unless they are part of a compound:
-
-   ***floating** hospitals* ... event ... (I saw the floating hospitals --> the seer witnessed the floating event)
-
-   ***firing** squad* ... not event (compound) ... even in the situation of no actual firing event
 
 **Criterion for compounds**: the event described by the participle must be ongoing at the reference time
 
@@ -264,65 +223,8 @@ Not clear how eventive nominals are defined (should be based on semantic type = 
 - HH: How is decided in Wikipedia what is an event and what not?
 - Dan: how can we use existing databases and their solutions? 
 - 	JH: Martha Palmer – „eventives“ – events and entities (i.e., entities with eventive meaning (= implying an event))
-- ŠZ: TO REST: Paducheva (1995) – types of (nominal) reference 
+- ŠZ: TO READ: Paducheva (1995) – types of (nominal) reference 
 
-
-- ML: What about the following distinction between events and -- would it work??
-- **events/eventive concepts should be linked to frame files**<br> 
-- - **OK for processes in predication** 
-
-     *Peter **went** to school;*
-     *The sharp thorns **scratched** me.*<br>
-
-- - **OK for processes in modification** - participles, rel. clauses 
-
-    *The student **playing** the violin likes Bach.;*<br>
- 
-    *The student, who is **playing** the violin, likes Bach.*<br>
- 
-    *the thorns **that [scratched** me] / the thorns [**scratching** me]*<br>
- 
-- - **OK for states in predication** 
-
-    *Those thorns **are sharp**.*<br>
-    *My cat **loves** wet food.*<br>
-
-- - **OK for entities in predication** 
-
-    *It **is a thorn**.*<br>
- 
-- - **Processes packaged as references**:<br>
-
-- - - **OK** for complements, infinitives, gerunds 
-
-    *I said [**that** the thorns **scratched** me]. / 
-    the [**scratching** of the thorns]*<br>
- 
-- - - **OK** for generic events (storm, war, ceremony, bouře, válka, slavnost)<br>
-- - - **!!NO!!** for specific events (ukrajinská válka) ... *should be mapped to wiki*<br>
-
-
- 
-- **entities and states (in references, in modifications) should be linked to wiki** 
-
-- - **entities in reference** 
-- - - **???** generic ones (*the sharp **thorns***) ... what to do with them?
-- - - **OK** specific ones (***Barack Obama***)
-
-- -  **entities in modification**
-- - - **???** generic (*the **bush’s** thorns*) ... what to do with them?
-- - - **OK** specific (***Barack Obama's** cabinet)
-
-- -  **states in reference** ... what to do with them?
-    (***sharpness***  https://www.wikidata.org/wiki/Q55433472 )
-
-- -  **states in modification** ... either without mapping OR, contrary to the guidelines, as eventive (being tall)
-
-    *the **sharp** thorns;*<br> 
-    *The **tall** man...;*
-    *The man, **who is tall**...*
-
-     
 
 6) **proposal of the general Czech approach**
 
@@ -343,10 +245,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3
 
 (**BUT:** States and entities in modification or reference packaging are not identified as events :-)
 
-**Type A**: Statives are annotated in the same way as processes ... *My cat **loves** wet food*.
-
-
-**Type B**: **non-verbal clauses** ... 4 semantic types distinguished
+**non-verbal clauses** ... 4 semantic types distinguished
 
 **Nine special abstract UMR Predicates**
 - **possession**:  ‘thetic’ = ‘all-new’ (= "uvádění na scénu") (have-91 ... *The teacher **has** a dog.*) <br>
@@ -462,17 +361,8 @@ or  predicational (have-location-91 ... *The symbol *was** on the rock.*)
 Table 8: Argument structure of non-verbal clause predicates
 </div>
 
-**BUT NOT AS EVENTS**
-- states in modification (*The tall man.*, *The man, who is tall...*), and
-- states in reference (*His happiness..*.),
-- entities in modification (*The man, who is a doctor*),
-- entities in reference (*The doctor*).
 
 3) **our comments to the American approach**
-
-Seems very complicated :-((
-
-Where to put "statives" (verbs describing states and properties rather than actions), Table 2 ... !!states packaged as predication!! 
 
 What about existential "to be" ... (There is a cat.) ??
 
