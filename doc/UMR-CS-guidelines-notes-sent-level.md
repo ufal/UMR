@@ -22,7 +22,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md
 * Part 2-2-5. Attributes
 * Part 3. Sentence-Level Representation
 * Part 3-1. UMR Concepts
-* Part 3-1-1. Eventive concepts ................................. ML 26.6. [separate document on the way] (https://github.com/ufal/UMR/blob/main/doc/eventive-concepts.md)
+* Part 3-1-1. Eventive concepts ................................. ML 26.6. [separate document on the way](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts.md)
 * Part 3-1-1-1. Processes in predication ........................ ML 26.6.
 * Part 3-1-1-2. Processes in modification and reference ...... ML 26.6.
 * Part 3-1-1-3. States and entities ............................. ML 26.6.
@@ -91,7 +91,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-umr
 
 2) **American approach – summary**
 
-[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts)
+[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts.md)
 
 3) **our comments to the American approach**
 
@@ -129,7 +129,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-1
 
 2) **American approach – summary in Czech**
 
-[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts)
+[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts.md)
 
 3) **our comments to the American approach**
 
@@ -179,7 +179,7 @@ https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2
 
 2) **American approach – summary in Czech**
 
-[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts)
+[separate document](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts.md)
 
 
 3) **our comments to the American approach**
