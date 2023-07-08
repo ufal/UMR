@@ -285,8 +285,17 @@ give a taxonomy of entity classes, types and subtypes in [Section
 They can be used as abstract concepts for named entities and for entities 
 represented by pronouns. As of now (June 2023), the taxonomy is reportedly 
 under revision by the UMR team. At any rate, the current table has a number 
-of issues. We will now examine some of the entity types and discuss their 
-utility. 
+of issues. Below we examine some of the entity types and discuss their 
+utility.
+
+Some other resources:
+
+* [Live Google spreadsheet](https://docs.google.com/spreadsheets/d/1OlUgqCTAL8j5B5KtorTLvzHYzc8yw1fN7q63T15loHk/edit#gid=0)
+  where the UMR team (Julia & Co.) update their view of the UMR taxonomy. This
+  is probably more up-to-date than the guidelines on Github. Some types have
+  links to wikidata, which should provide their definition.
+* [Comparison of AMR and Prague taxonomy of named entities](https://docs.google.com/spreadsheets/d/0B1qTziKgNeglNndFY25yQ0pkWFE/edit?resourcekey=0-Mutw6Gqz3VThnKQ86GiSGg#gid=273215418)
+  from the [JHU-PIRE workshop 2014](https://ufal.mff.cuni.cz/JHU-PIRE-workshop-2014).
 
 ### person
 
