@@ -120,7 +120,7 @@ driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in
 
 ### Possible supporting criterion based on the type of "anchoring"??? 
 
->RULE 3a 
+>RULE 3 
 >- events/eventive concepts should be linked to frame files
 
 **(1) PROCESSESS:**
@@ -133,7 +133,22 @@ driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in
        *I said [**that** the thorns **scratched** me]*. / the **[scratching of the thorns]**
   - ??? for event nominals
       - **?? OK** for generic mentions ... *war, storm, ceremony, válka, bouře*??
-      - **!! NO** for specific ... rather anchored in wikidata/wikipedie/... *ukrainian war*
+      - **!! NO** for specific mentions ... rather anchored in wikidata/wikipedie/  
+ 
+Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidata.org/wiki/Q110999040   
+      
+
+```
+(w/ war
+    :wiki "Q110999040"
+    :name (n/ name 
+        :op1 "Ruská"
+        :op2 "invaze"
+        :op3 "na"
+        :op4 "Ukrajině"))
+```
+
+ ... see [the document on entities](https://github.com/ufal/UMR/blob/main/doc/entities.md)
 
 **(2) non-PROCESSESS packed as predication:**
 - OK states in predication ...  prototypically adjectives, but also other nominal modifiers as PPs, relative clauses, participles<br>
@@ -143,7 +158,7 @@ driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in
     *It **is a thorn**.*
 
 
->RULE 3b 
+>RULE 4 
 >- non-eventive concepts should be linked to wiki
 
 **(3) STATES:**

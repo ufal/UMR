@@ -23,7 +23,7 @@ Proměnné pak mají jednotlivé **instance** (připojené relací instance), a 
 jsou ty **koncepty** (níže want-01, boy, believe-01, girl) - koncepty jsou 
 tedy právě listy daného grafu 
 
-```lisp
+```
 (w / want-01
    :ARG0 (b / boy)
    :ARG1 (b2 / believe-01
@@ -92,24 +92,23 @@ Relace jsou vztahy mezi koncepty, jsou to tedy orientované hrany v grafu UMR,
 spolu s řetězcem (ohodnocením), který určuje typ relace. Ve formátu UMR 
 vypadají jako dvojtečka následovaná typem a závorkou, za kterou začíná 
 podřízený uzel. Jednotlivé typy relací lze rozdělit do dvou skupin: (i) 
-participant roles (účastnické role v události, např. :ARG0) a (ii) sémantické 
-relace (např. :temporal, :ord, :range). Jsou popsané v částech 3-2-1, resp. 
+participant roles (účastnické role v události, např. `:ARG0`) a (ii) sémantické 
+relace (např. `:temporal`, `:ord`, `:range`). Jsou popsané v částech 3-2-1, resp. 
 3-2-2. Do té druhé skupiny (sémantické relace) mají zřejmě patřit také 
 rozvití (modifiers), popsaná v části 3-2-2-2. Pozor, text pravidel není 
 důsledný a později mluví i o některých atributech jako o relacích (např. 
-:polarity). 
+`:polarity`). 
 
 
 ## Atribut (attribute)
 
 Libovolná další vlastnost konceptu (uzlu) - text mluví zejm. o (iii) UMR 
-atributech (aspekt, mode, polarity, quant, (?value,) ref, degree) a o (iv) 
-anotaci modality (:modstr, :modpred, :quot). 
+atributech (`:aspekt`, `:mode`, `:polarity`, `:quant`, (?`:value`,) `:ref`, `:degree`) a o (iv) anotaci modality (`:modstr`, `:modpred`, `:quot`). 
 
 Podobně jako relace začínají dvojtečkou, za kterou následuje název atributu. 
 Na rozdíl od relace je ale následuje řetězcová hodnota, nikoli závorky a 
 podřízený uzel. Pojem atribut se zavádí v části 2-1 a některé jsou tam hned 
 vyjmenované. Pozor, text pravidel není důsledný a o některých atributech 
 později chybně mluví jako o relacích. Např. kvantita je už v části 2-1 jasně 
-uvedena jako atribut :quant, ale v části 2-2-5 se najednou objeví sousloví 
-„the :quant relation“, přestože se část 2-2-5 přímo jmenuje Attributes. 
+uvedena jako atribut `:quant`, ale v části 2-2-5 se najednou objeví sousloví 
+„the `:quant` relation“, přestože se část 2-2-5 přímo jmenuje Attributes. 
