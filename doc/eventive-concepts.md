@@ -1,4 +1,4 @@
-## Eventive concpets
+## Eventive concepts
 
 **Eventive concpets** (or **events**) constitute important building blocks in UMR annotation -- their identification is important for annotation  of participant roles (as well as for aspect and modality annotation).
 
@@ -8,30 +8,30 @@ According to the UMR Guidelines (Part 3-1-1.), identification of eventive concep
 Criteria for identification of eventive concepts are largely based on the criteria used in TimeML (Pustejovsky et al. 2005)
 
 >> (Pustejovsky et al. 2005): the following is classes of event expressions are identified:
->> - **tensed verbs** (*has left, was captured, will resign*), 
->> - **stative adjectives and other modifiers** (*sunken, stalled, on board*), and 
+>> - **tensed verbs** (*has left, was captured, will resign*),
+>> - **stative adjectives and other modifiers** (*sunken, stalled, on board*), and
 >> - **event nominals** (*merger, Military Operation, Gulf War*) are treated.
 
 
-### Semantic type 
-Semantic type refers to the difference between: 
+### Semantic type
+Semantic type refers to the difference between:
 - **entities** (or, objects) ... prototypically **nouns**, but also nominalizations as deadjectival or deverbal nouns or infinitives ... TO READ: Paducheva (1995) – types of (nominal) reference,
-- **states** (or, properties) ... prototypically **adjectives**, but also other nominal modifiers as PPs, relative clauses, participles, and 
+- **states** (or, properties) ... prototypically **adjectives**, but also other nominal modifiers as PPs, relative clauses, participles, and
 - **processes**  ... prototypically (finite) **lexical verbs**, but also predicate nouns or adjectives, complements).
 
 
-### Information packaging 
-Information packaging, on the other hand, concerns the way how the semantic content is 'expressed', i.e., whether it is packed as 
+### Information packaging
+Information packaging, on the other hand, concerns the way how the semantic content is 'expressed', i.e., whether it is packed as
 - **reference** (what the speaker is talking about),
--  **modification** (additional information provided about the referent), or 
+-  **modification** (additional information provided about the referent), or
 - **predication** (what the speaker is asserting about the referents in a particular utterance).
 
 ***
 
 ### Identifying eventive concepts
 
-> **RULE 1:** In UMR, the following should be annotated as an **eventive concept**: 
-> - whatever is a **process** (semantic type) or 
+> **RULE 1:** In UMR, the following should be annotated as an **eventive concept**:
+> - whatever is a **process** (semantic type) or
 > - whatever is expressed as **predication**.
 
 Examples:
@@ -48,7 +48,7 @@ Examples:
     [en] *The student **playing** the violin **likes** Bach.* (from the UMR Guidelines)<br>
     ... a process in modification (*play*, *hrát*) in predication (*like*, *mít_rád*)
 * (4b) [cs] *Student, který **hraje** na housle **má rád** Bacha.* <br>
-    [en] *The student, who is **playing** the violin, **likes** Bach.* (from the UMR Guidelines)<br> 
+    [en] *The student, who is **playing** the violin, **likes** Bach.* (from the UMR Guidelines)<br>
     ... a process in modification (*play*, *hrát*) in predication (*like*, *mít_rád*)
 * (5) [cs] *Jejího **příchodu** si nikdo **nevšiml**.*<br>
     [en] "Nobody **noticed** her **arrival**."<br>
@@ -69,7 +69,7 @@ Examples:
 * (7b) [cs] *???* <br>
     "???" <br>
     ... as event ???
-    
+
 
 > **RULE 1b:**
 > - **Stative verbs** should be annotated as events, even if not classified as processes.
@@ -78,7 +78,7 @@ Examples:
 * (8a) [cs] *Moje kočka **nesnáší** granule.*
 * (8b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
     ... ??state in predication (*love*, *nesnášet*), thus should be annotated as an event
- 
+
 > **RULE 1c:**
 > - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise.
 
@@ -93,9 +93,9 @@ Examples:
 ***
 
 ### Identifying non-eventive concepts
- 
+
 > **RULE 2:**
-> - **Entities** and **states** (=properties) **in modification** and **in reference** are not identified as event! 
+> - **Entities** and **states** (=properties) **in modification** and **in reference** are not identified as event!
 
 Based on examples from the Guidelines:
 
@@ -114,13 +114,13 @@ Based on examples from the Guidelines:
     ... a process in predication (*damage*) and as an event nominal (*storm*, *bouře*)
 
 #### agent nouns:
-driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in mentions where there is mothing about teaching :-(( 
+driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in mentions where there is mothing about teaching :-((
 
 ***
 
-### Possible supporting criterion based on the type of "anchoring"??? 
+### Possible supporting criterion based on the type of "anchoring"???
 
->RULE 3 
+>RULE 3
 >- events/eventive concepts should be linked to frame files
 
 **(1) PROCESSESS:**
@@ -128,20 +128,20 @@ driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in
     *Peter **went** to school; The sharp thorns **scratched** me.*
 - OK processes in modification ... participles, rel. clauses with lex. verbs<br>
      *The student **playing** the violin likes Bach.; The student, who is **playing** the violin, likes Bach. the thorns **that [scratched me]** / the thorns [**scratching** me]*
-- processes in reference: 
-  - OK for nominalizations as deadjectival or deverbal nouns, for infinitives<br> 
+- processes in reference:
+  - OK for nominalizations as deadjectival or deverbal nouns, for infinitives<br>
        *I said [**that** the thorns **scratched** me]*. / the **[scratching of the thorns]**
   - ??? for event nominals
       - **?? OK** for generic mentions ... *war, storm, ceremony, válka, bouře*??
-      - **!! NO** for specific mentions ... rather anchored in wikidata/wikipedie/  
- 
-Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidata.org/wiki/Q110999040   
-      
+      - **!! NO** for specific mentions ... rather anchored in wikidata/wikipedie/
+
+Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidata.org/wiki/Q110999040
+
 
 ```
 (w/ war
     :wiki "Q110999040"
-    :name (n/ name 
+    :name (n/ name
         :op1 "Ruská"
         :op2 "invaze"
         :op3 "na"
@@ -158,7 +158,7 @@ Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidat
     *It **is a thorn**.*
 
 
->RULE 4 
+>RULE 4
 >- non-eventive concepts should be linked to wiki
 
 **(3) STATES:**
@@ -185,21 +185,21 @@ Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidat
 - Croft (2001) ??? *Radical Construction Grammar: Syntactic Theory in Typological Perspective*
 - Pustejovsky et al. (2005) *The Specification Language TimeML*. https://www.researchgate.net/publication/242423032_The_Specification_Language_TimeML
 
-About events expressed as MWE: 
+About events expressed as MWE:
 - J. Bonn et al (2023) *UMR Annotation of Multiword Expressions* (sent by HH)
 - W. Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
-- ?? Paducheva 
+- ?? Paducheva
 
 
 
 
 
 
- 
 
 
 
- 
+
+
 
 
 
