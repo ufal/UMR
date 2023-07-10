@@ -579,6 +579,7 @@ tractable nor helpful to attempt to distinguish them. Perhaps the only
 exception is the scientific names in Latin, provided that the language of the 
 annotated text is not Latin. 
 
+ 
 Similarly, diseases may have scientific names but many common diseases are 
 just common nouns or expressions (_angína_ “tonsillitis”, _chřipka_ “flu”, 
 _mor_ “plague”, _neštovice_ “chickenpox”) and it is not clear why they should 
@@ -588,3 +589,13 @@ rather than entities.
 ### variable
 
 What is this supposed to mean?
+
+### ML notes: 
+Several questions about the named examples
+
+" the United States of America" is a "proper name", "America" is not - how to decide?
+Americas / America is a name of a continent, so I would say it is a "proper name" too?
+[Wikipedia on Americas](https://en.wikipedia.org/wiki/Americas) ?
+
+Proper noun by tedy mělo být to, čemu Dan říká "common noun" (part of speech)?
+[Dan's proposal](https://github.com/ufal/UMR/blob/main/doc/entities.md)
