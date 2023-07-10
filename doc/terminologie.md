@@ -1,7 +1,3 @@
-test
-
-
-
 # TERMINOLOGIE UMR (Uniform Meaning Representation) 
 
 ## Koncept (concept)
