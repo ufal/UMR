@@ -48,7 +48,7 @@ ARG0(b2, g) ^                  /* g is the believer in b2 */
 ARG1(b2, b)                    /* b is the believee in b2 */
 ```
 
-ALE nahradíme-li proměnné přímo jejich instancemi, platí 1. odstavec :-))
+***ALE nahradíme-li proměnné přímo jejich instancemi, platí 1. odstavec*** :-))
 
 
 ## Událost (event), proces (process), stav (state) a entita (entity)
@@ -62,8 +62,8 @@ Všechny procesy (v libovolném balení) a všechny predikace (procesů, stavů 
 entit), celkem tedy 5 z 9 polí tabulky, jsou považované za **události** 
 („events“, „eventive concepts“). 
 
-ML: **Rozlišení, co považovat za událost a co nikoli, se zdá dost 
-komplikované a chybí nám jasná kritéria  :-((** 
+ML: ***Rozlišení, co považovat za událost a co nikoli, se zdá dost 
+komplikované a chybí nám jasná kritéria  :-((*** 
 
 
 ## Entita (entity), pojmenovaná entita (named entity), objekt (object)
@@ -103,7 +103,7 @@ důsledný a později mluví i o některých atributech jako o relacích (např.
 ## Atribut (attribute)
 
 Libovolná další vlastnost konceptu (uzlu) - text mluví zejm. o (iii) UMR 
-atributech (aspekt, mode, polarity, quant, (?value,) ref, degree) a o (iv)  
+atributech (aspekt, mode, polarity, quant, (?value,) ref, degree) a o (iv) 
 anotaci modality (:modstr, :modpred, :quot). 
 
 Podobně jako relace začínají dvojtečkou, za kterou následuje název atributu. 
