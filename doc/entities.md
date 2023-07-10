@@ -42,7 +42,15 @@ instance, not to describe a category of entities by their properties or
 relations to other entities. Thus _muzeum_ is not a name because it can be 
 used to refer to any institution that meets certain parameters. The phrase 
 _Národní muzeum_ is a name because it was specifically designed to label one 
-particular museum. The name does not have to be unique: An important museum 
+particular museum. 
+
+> **proper name** ?= named entity (as "New Zealand" and "the United States of America") <br>
+BUT "Zealand" or "America" are not proper names - why not? <br>
+(confusing as Zealand is a Danish island and America may refer to the continent)
+
+> **proper noun** ?= common noun  (as "museum")
+
+The name does not have to be unique: An important museum 
 in another country may also be called _Národní muzeum_, just like there are 
 multiple people called _John Smith_. People may have to add more information 
 if misinterpretation is possible, but the intended purpose of a name is to 

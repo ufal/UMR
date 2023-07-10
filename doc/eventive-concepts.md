@@ -74,6 +74,8 @@ Examples:
 > **RULE 1b:**
 > - **Stative verbs** should be annotated as events, even if not classified as processes.
 
+[What are state verbs?](https://www.ecenglish.com/learnenglish/lessons/what-are-state-verbs)
+
 Examples:
 * (8a) [cs] *Moje kočka **nesnáší** granule.*
 * (8b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
@@ -101,7 +103,9 @@ Based on examples from the Guidelines:
 
 > **RULE 2a - limitation:**
 > - **relative clauses with lexical verb** (play, went, ...) considered as eventive concepts, but
-> - **relative clauses falling under "non-verbal clauses"** considered as non-eventive concepts!
+> - **relative clauses falling under "non-verbal clauses"** considered as non-eventive concepts! 
+
+(see below for four semantic types of non-verbal clauses: possession, location, property, and object ... [guidelines, part 3-1-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities) )
 
 ***
 
@@ -133,9 +137,13 @@ driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in
        *I said [**that** the thorns **scratched** me]*. / the **[scratching of the thorns]**
   - ??? for event nominals
       - **?? OK** for generic mentions ... *war, storm, ceremony, válka, bouře*??
-      - **!! NO** for specific mentions ... rather anchored in wikidata/wikipedie/
+      - **!! NO** for specific mentions ... rather anchored in wikidata/wikipedie/  
+        **?? OR both as an entity AND as an event??** 
 
-Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidata.org/wiki/Q110999040
+Examples:
+* (6a) [cs] druhá světová válka <br> 
+       [en] WW II ... ?? should be anchored to https://www.wikidata.org/wiki/Q362
+* (6b) [cs] *válka na Ukrajině*  ... ?? https://www.wikidata.org/wiki/Q110999040
 
 
 ```
@@ -150,6 +158,10 @@ Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidat
 
  ... see [the document on entities](https://github.com/ufal/UMR/blob/main/doc/entities.md)
 
+Examples:
+ * (7a) [cs] Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.<br>
+ * (7a) [en] 80 years ago, Germany started World War II by invading Poland.
+
 **(2) non-PROCESSESS packed as predication:**
 - OK states in predication ...  prototypically adjectives, but also other nominal modifiers as PPs, relative clauses, participles<br>
     *Those thorns **are sharp**.*
@@ -161,11 +173,11 @@ Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidat
 >RULE 4
 >- non-eventive concepts should be linked to wiki
 
-**(3) STATES:**
+**(3) STATES in modification or reference:**
 - **??** states in reference ... what to do with them? (sharpness https://www.wikidata.org/wiki/Q55433472 )
 - **??** states in modification ... either without any mapping OR, contrary to the guidelines, as eventive concepts (being tall)
 
-**(4) ENTITIES:**
+**(4) ENTITIES in modification or reference:**
 - entities in reference (proototypical)
   - **??** for generic mention  (*the sharp **thorns***) ... what to do with them?
   - **OK** for specific mentions (***Barack Obama***)
@@ -182,7 +194,7 @@ Example: *válka na Ukrajině* ... ?? should be anchored to  https://www.wikidat
 ***
 
 #### TO READ
-- Croft (2001) ??? *Radical Construction Grammar: Syntactic Theory in Typological Perspective*
+- Croft (2001) *Radical Construction Grammar: Syntactic Theory in Typological Perspective*
 - Pustejovsky et al. (2005) *The Specification Language TimeML*. https://www.researchgate.net/publication/242423032_The_Specification_Language_TimeML
 
 About events expressed as MWE:
