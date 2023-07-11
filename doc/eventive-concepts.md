@@ -1,6 +1,6 @@
 ## Eventive concepts
 
-**Eventive concpets** (or **events**) constitute important building blocks in UMR annotation -- their identification is important for annotation  of participant roles (as well as for aspect and modality annotation).
+**Eventive concepts** (or **events**) constitute important building blocks in UMR annotation -- their identification is important for annotation  of participant roles (as well as for aspect and modality annotation).
 
 (See also the short description in https://github.com/ufal/UMR/blob/main/doc/terminologie.md.)
 
@@ -69,6 +69,8 @@ Examples:
 * (7b) [cs] *???* <br>
     "???" <br>
     ... as event ???
+* [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
+    *itinerante* as event or entity ???
 
 
 > **RULE 1b:**
@@ -79,7 +81,8 @@ Examples:
 Examples:
 * (8a) [cs] *Moje kočka **nesnáší** granule.*
 * (8b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
-    ... ??state in predication (*love*, *nesnášet*), thus should be annotated as an event
+    ... ??state in predication (*love*, *nesnášet*), thus should be annotated as an event <br>
+    (FG) this phrasing may be misleading, as 'state' in the guidelines means a property. Stative verbs should still be processes (see the table with 9 cells).
 
 > **RULE 1c:**
 > - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise.
@@ -118,7 +121,14 @@ Based on examples from the Guidelines:
     ... a process in predication (*damage*) and as an event nominal (*storm*, *bouře*)
 
 #### agent nouns:
-driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in mentions where there is mothing about teaching :-((
+driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in mentions where there is nothing about teaching :-((
+
+[la] *praefectus* (en. *prefect*). <br>
+Originally *praefectus* is a past participle of *praeficio* meaning 'to put in charge', but it also occurs as a substantive. This alternation is reflected in the grammatical case its dependents occur in. Examples: <br>
+    *praefectus praetorio* (en. praetorian prefect): *praetorio* in dative, because the verb requires dative case. <br>
+    *praefectus annonae* (en. prefect of the provisions): *annonae* unclear, could be either dative or genitive. <br>
+    *praefectus Alexandreae et Aegypti*, *praefectus classis* (en. prefect of navy), *praefectus vigilum* (en. prefect of the watchmen): genitive case is used,         as in any nominal modification. *Praefectus* behaves like a substanstive, like *driver*/*teacher* (main difference: it has passive meaning). <br>
+
 
 ***
 
@@ -178,7 +188,7 @@ Examples:
 - **??** states in modification ... either without any mapping OR, contrary to the guidelines, as eventive concepts (being tall)
 
 **(4) ENTITIES in modification or reference:**
-- entities in reference (proototypical)
+- entities in reference (prototypical)
   - **??** for generic mention  (*the sharp **thorns***) ... what to do with them?
   - **OK** for specific mentions (***Barack Obama***)
 - entities in modification
