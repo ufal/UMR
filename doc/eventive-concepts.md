@@ -32,7 +32,7 @@ Semantic type refers to the difference between:
 
 Information packaging, on the other hand, concerns the way how the semantic content is 'expressed', i.e., whether it is packed as
 - **reference** (what the speaker is talking about),
--  **modification** (additional information provided about the referent), or
+- **modification** (additional information provided about the referent), or
 - **predication** (what the speaker is asserting about the referents in a particular utterance).
 
 ***
@@ -45,18 +45,19 @@ Information packaging, on the other hand, concerns the way how the semantic cont
 
 Examples:
 * (1a) [cs] *Muzeum **zaplatí** necelé 2 milióny korun za novou střechu.*<br>
-    "The museum will **pay** almost 2 million crowns for a new roof." <br>
+    *The museum will **pay** almost 2 million crowns for a new roof.* <br>
     ... a process in predication
 * (2) [cs] *Než **šla** do školy, **opravila** mi kolo.* <br>
     [en] *Before she **went** to school, she **repaired** my bike.* (from the UMR Guidelines)<br>
     ... both processes in predication
 * (3a) [cs] ***Chtěla** **jít** do školy.* <br>
     [en] *She **wanted** to **go** to school.* (from the UMR Guidelines)<br>
-    ... a process in predication (*want*, *chtít*) and in ??modification (*go*, *jít*)
-    ... DZ: These are two processes (wanting and going), both in predication.
+    ... a state in predication (*want*, *chtít*)<br>
+    ... a process in predication (*go*, *jít*)
 * (3b) [cs] ***Chtěla,** abych **šel** do školy.* <br>
     [en] *She **wanted** me to **go** to school.* <br>
-    ... two processes, both in predication (*want*, *chtít*; *go*, *jít*)
+    ... a state in predication (*want*, *chtít*)<br>
+    ... a process in predication (*go*, *jít*)
 * (4a) [cs] *Student **hrající** na housle **má rád** Bacha.*<br>
     [en] *The student **playing** the violin **likes** Bach.* (from the UMR Guidelines)<br>
     ... a process in modification (*play*, *hrát*)
@@ -66,7 +67,7 @@ Examples:
     ... a process in modification (*play*, *hrát*)
     ... another process in predication (*like*, *mít_rád*)
 * (5) [cs] *Jejího **příchodu** si nikdo **nevšiml**.*<br>
-    [en] "Nobody **noticed** her **arrival**."<br>
+    [en] *Nobody **noticed** her **arrival**.*<br>
     ... a process in predication (*arrive*, *(ne)všimnout*)
     ... another process in reference (event nominal) (*arrival*, *příchod*).
 
