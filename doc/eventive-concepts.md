@@ -72,7 +72,21 @@ Examples:
     ... another process in reference (event nominal) (*arrival*, *příchod*).
 
 
-> **RULE 1a:**
+> **RULE 1a: processes vs. states**
+> - **Adjectives** typically denote states, **verbs** typically denote processes – unless they are [stative verbs](https://www.ecenglish.com/learnenglish/lessons/what-are-state-verbs).
+> - **Stative verbs** can still be annotated as events if they are packaged as predication. In contrast, active verbs are processes, hence events regardless of information packaging.
+
+Examples:
+* (8a) [cs] *Moje kočka **nesnáší** granule.*
+* (8b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
+    ... a state in predication (*love*, *nesnášet*), thus should be annotated as an event <br>
+    (FG) this phrasing may be misleading, as 'state' in the guidelines means a property. Stative verbs should still be processes (see the table with 9 cells).
+    (DZ) The guidelines say "states (or, properties)" which is not necessarily equivalence, and even if it is, we do not have a definition of property. Anyways, in
+         [3-1-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities),
+         the guidelines explicitly acknowledge that there can be two-place states, and [en] _love_ is an example.
+
+
+> **RULE 1b:**
 > - **Participles** (or other non-finite verb forms) are identified as events (unless they are part of a compound.)
 
 Examples:
@@ -88,18 +102,6 @@ Examples:
     ... as event ???
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
     *itinerante* as event or entity ???
-
-
-> **RULE 1b:**
-> - **Stative verbs** should be annotated as events, even if not classified as processes.
-
-[What are state verbs?](https://www.ecenglish.com/learnenglish/lessons/what-are-state-verbs)
-
-Examples:
-* (8a) [cs] *Moje kočka **nesnáší** granule.*
-* (8b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
-    ... ??state in predication (*love*, *nesnášet*), thus should be annotated as an event <br>
-    (FG) this phrasing may be misleading, as 'state' in the guidelines means a property. Stative verbs should still be processes (see the table with 9 cells).
 
 > **RULE 1c:**
 > - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise.
