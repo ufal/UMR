@@ -50,18 +50,25 @@ Examples:
 * (2) [cs] *Než **šla** do školy, **opravila** mi kolo.* <br>
     [en] *Before she **went** to school, she **repaired** my bike.* (from the UMR Guidelines)<br>
     ... both processes in predication
-* (3) [cs] ***Chtěl** **jít** do školy.* <br>
+* (3a) [cs] ***Chtěla** **jít** do školy.* <br>
     [en] *She **wanted** to **go** to school.* (from the UMR Guidelines)<br>
     ... a process in predication (*want*, *chtít*) and in ??modification (*go*, *jít*)
+    ... DZ: These are two processes (wanting and going), both in predication.
+* (3b) [cs] ***Chtěla,** abych **šel** do školy.* <br>
+    [en] *She **wanted** me to **go** to school.* <br>
+    ... two processes, both in predication (*want*, *chtít*; *go*, *jít*)
 * (4a) [cs] *Student **hrající** na housle **má rád** Bacha.*<br>
     [en] *The student **playing** the violin **likes** Bach.* (from the UMR Guidelines)<br>
-    ... a process in modification (*play*, *hrát*) in predication (*like*, *mít_rád*)
+    ... a process in modification (*play*, *hrát*)
+    ... another process in predication (*like*, *mít_rád*)
 * (4b) [cs] *Student, který **hraje** na housle **má rád** Bacha.* <br>
     [en] *The student, who is **playing** the violin, **likes** Bach.* (from the UMR Guidelines)<br>
-    ... a process in modification (*play*, *hrát*) in predication (*like*, *mít_rád*)
+    ... a process in modification (*play*, *hrát*)
+    ... another process in predication (*like*, *mít_rád*)
 * (5) [cs] *Jejího **příchodu** si nikdo **nevšiml**.*<br>
     [en] "Nobody **noticed** her **arrival**."<br>
-    ... a process in predication (*arrive*, *(ne)všimnout*) and as an event nominal in reference (*arrival*, *příchod*).
+    ... a process in predication (*arrive*, *(ne)všimnout*)
+    ... another process in reference (event nominal) (*arrival*, *příchod*).
 
 
 > **RULE 1a:**
