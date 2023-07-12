@@ -77,27 +77,46 @@ Examples:
 > - **Stative verbs** can still be annotated as events if they are packaged as predication. In contrast, active verbs are processes, hence events regardless of information packaging.
 
 Examples:
-* (8a) [cs] *Moje kočka **nesnáší** granule.*
-* (8b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
+* (6a) [cs] *Moje kočka **nesnáší** granule.*
+* (6b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
     ... a state in predication (*love*, *nesnášet*), thus should be annotated as an event <br>
     (FG) this phrasing may be misleading, as 'state' in the guidelines means a property. Stative verbs should still be processes (see the table with 9 cells).
     (DZ) The guidelines say "states (or, properties)" which is not necessarily equivalence, and even if it is, we do not have a definition of property. Anyways, in
          [3-1-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities),
          the guidelines explicitly acknowledge that there can be two-place states, and [en] _love_ is an example.
 
+DZ: There is a gray zone with verbs such as _sleep_ or _sit_. They may not be
+"state verbs" according to the English grammar (it is grammatical to say _I
+am sleeping_ or _I am sitting on the couch_) but semantically they seem to be
+states rather than processes. Sitting generally does not involve any activity
+or any changes; the only possible change is the end of this state by changing
+to another state (_standing, lying, going..._) _Sleeping_ might be different,
+although also almost constant from the perspective of an observer. It may
+involve micro-sub-processes (_snoring, turning, dreaming_), and it may have a
+result at the end (compare it to _recharging battery_). So maybe _sleeping_
+is a process, even if not a frantic one.
+
+* (7a) [cs] *Moje dítě **sedí** na lavičce.* <br/>
+       [en] *My child **is sitting** on a bench.* <br/>
+       ... a state in predication (*sedět*, *sit*) <br/>
+* (7b) [cs] *Dítě sedící na lavičce **je moje**.* <br/>
+       [en] *The child sitting on the bench **is mine**.* <br/>
+       ... here the sitting state is in modification, hence not an event;
+           the other state (*můj*, *mine*) is in predication, hence it is an event.
+
 
 > **RULE 1b:**
 > - **Participles** (or other non-finite verb forms) are identified as events (unless they are part of a compound.)
 
 Examples:
-* (6a) [en] *firing squad* (from the UMR Guidelines)<br>
+* (8a) [en] *firing squad* (from the UMR Guidelines)<br>
     ... compound, thus entity (not process)
-* (6b) [en] *floating hospital* (from the UMR Guidelines)<br>
+* (8b) [en] *floating hospital* (from the UMR Guidelines)<br>
     ... *floating* as an event ... BUT "The Floating Hospital" is a non-profit organization ??? https://en.wikipedia.org/wiki/Floating_Hospital
-* (7a) [cs] *???* <br>
+* (9a) [cs] *???* <br>
     "???" <br>
     ... compound, thus entity (not process)
-* (7b) [cs] *???* <br>
+* (9b) [cs] *???* <br>
     "???" <br>
     ... as event ???
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
@@ -107,10 +126,10 @@ Examples:
 > - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise.
 
 Examples:
-* (9a) [cs] ***Exploze** **způsobila** **zhroucení** domu.*<br>
+* (10a) [cs] ***Exploze** **způsobila** **zhroucení** domu.*<br>
     [en] *The **explosion** **caused** the house **to collapse**.* (from the UMR Guidelines)<br>
     ... three eventive concepts: 1 causal verb in predication (*cause*, *způsobit*), 1 complement/nominalization (*collapse*, *zhroucení*), 1 event nominal in reference (*explosion*, *exploze*)
-* (9b) [cs] *Dům se **zhroutil** kvůli **explozi**.*<br>
+* (10b) [cs] *Dům se **zhroutil** kvůli **explozi**.*<br>
     [en] *The house **collapsed** because of the **explosion**.* (from the UMR Guidelines)<br>
     ... two eventive concepts: 1 process in predication (*collapse*, *zhroutit se*) and 1 event nominal in reference (*explosion*, *exploze*); causal relationship not expressed in predication
 
