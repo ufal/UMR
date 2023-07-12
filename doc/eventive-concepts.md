@@ -105,20 +105,22 @@ is a process, even if not a frantic one.
            the other state (*můj*, *mine*) is in predication, hence it is an event.
 
 
-> **RULE 1b:**
-> - **Participles** (or other non-finite verb forms) are identified as events (unless they are part of a compound.)
+> **RULE 1b: predication vs. modification**
+> - **Predicates of main clauses** (finite verbs, or nonverbal predicates with finite copula) are predication.
+> - **Relative clauses** (modifying a nominal) are modification. If their predicate is a process, they are still annotated as events; but stative relative clauses are not events.
+> - **Participles** (or other non-finite verb forms) are typically used in modification. They are annotated as events if they denote processes. They are not events if they denote states or if they are used in a compound or a name where the process cannot be automatically assumed.
 
 Examples:
 * (8a) [en] *firing squad* (from the UMR Guidelines)<br>
     ... compound, thus entity (not process)
 * (8b) [en] *floating hospital* (from the UMR Guidelines)<br>
     ... *floating* as an event ... BUT "The Floating Hospital" is a non-profit organization ??? https://en.wikipedia.org/wiki/Floating_Hospital
-* (9a) [cs] *???* <br>
-    "???" <br>
-    ... compound, thus entity (not process)
-* (9b) [cs] *???* <br>
-    "???" <br>
-    ... as event ???
+* (9a) [cs] *Tančící dům* <br>
+       [en] *Dancing House* <br>
+    ... a name of a [building in Prague](https://cs.wikipedia.org/wiki/Tan%C4%8D%C3%ADc%C3%AD_d%C5%AFm); the house is not really dancing, hence _tančící_ does not denote a process in this context.
+* (9b) [cs] *Náměstí bylo plné **tančících** lidí.* <br>
+       [en] *The square was full of **dancing** people.* <br>
+    ... here we have a process (*tančit*, *dance*) in modification; it will be annotated as an event.
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
     *itinerante* as event or entity ???
 
