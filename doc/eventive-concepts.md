@@ -1,11 +1,18 @@
 ## Eventive concepts
 
-**Eventive concepts** (or **events**) constitute important building blocks in UMR annotation -- their identification is important for annotation  of participant roles (as well as for aspect and modality annotation).
+**Eventive concepts** (or **events**) constitute important building blocks in
+UMR annotation – their identification is important for annotation  of
+participant roles (as well as for aspect and modality annotation).
 
-(See also the short description in https://github.com/ufal/UMR/blob/main/doc/terminologie.md.)
+(See also the short description in
+[terminologie.md](https://github.com/ufal/UMR/blob/main/doc/terminologie.md).)
 
-According to the UMR Guidelines (Part 3-1-1.), identification of eventive concepts should be "based on a combination of semantic type and information packaging (Croft 2001)".
-Criteria for identification of eventive concepts are largely based on the criteria used in TimeML (Pustejovsky et al. 2005)
+According to the [UMR Guidelines (Part
+3-1-1.)](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-eventive-concepts),
+identification of eventive concepts should be "based on a combination of
+semantic type and information packaging (Croft 2001)". Criteria for
+identification of eventive concepts are largely based on the criteria used in
+TimeML (Pustejovsky et al. 2005)
 
 >> (Pustejovsky et al. 2005): the following is classes of event expressions are identified:
 >> - **tensed verbs** (*has left, was captured, will resign*),
