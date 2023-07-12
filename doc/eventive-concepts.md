@@ -21,13 +21,15 @@ TimeML (Pustejovsky et al. 2005)
 
 
 ### Semantic type
+
 Semantic type refers to the difference between:
 - **entities** (or, objects) ... prototypically **nouns**, but also nominalizations as deadjectival or deverbal nouns or infinitives ... TO READ: Paducheva (1995) – types of (nominal) reference,
 - **states** (or, properties) ... prototypically **adjectives**, but also other nominal modifiers as PPs, relative clauses, participles, and
-- **processes**  ... prototypically (finite) **lexical verbs**, but also predicate nouns or adjectives, complements).
+- **processes**  ... prototypically (finite) **lexical verbs**, but also predicate nouns or adjectives, complements.
 
 
 ### Information packaging
+
 Information packaging, on the other hand, concerns the way how the semantic content is 'expressed', i.e., whether it is packed as
 - **reference** (what the speaker is talking about),
 -  **modification** (additional information provided about the referent), or
@@ -113,7 +115,7 @@ Based on examples from the Guidelines:
 
 > **RULE 2a - limitation:**
 > - **relative clauses with lexical verb** (play, went, ...) considered as eventive concepts, but
-> - **relative clauses falling under "non-verbal clauses"** considered as non-eventive concepts! 
+> - **relative clauses falling under "non-verbal clauses"** considered as non-eventive concepts!
 
 (see below for four semantic types of non-verbal clauses: possession, location, property, and object ... [guidelines, part 3-1-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities) )
 
@@ -154,11 +156,11 @@ Originally *praefectus* is a past participle of *praeficio* meaning 'to put in c
        *I said [**that** the thorns **scratched** me]*. / the **[scratching of the thorns]**
   - ??? for event nominals
       - **?? OK** for generic mentions ... *war, storm, ceremony, válka, bouře*??
-      - **!! NO** for specific mentions ... rather anchored in wikidata/wikipedie/  
-        **?? OR both as an entity AND as an event??** 
+      - **!! NO** for specific mentions ... rather anchored in wikidata/wikipedie/
+        **?? OR both as an entity AND as an event??**
 
 Examples:
-* (6a) [cs] druhá světová válka <br> 
+* (6a) [cs] druhá světová válka <br>
        [en] WW II ... ?? should be anchored to https://www.wikidata.org/wiki/Q362
 * (6b) [cs] *válka na Ukrajině*  ... ?? https://www.wikidata.org/wiki/Q110999040
 
@@ -218,17 +220,4 @@ About events expressed as MWE:
 - J. Bonn et al (2023) *UMR Annotation of Multiword Expressions* (sent by HH)
 - W. Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
 - ?? Paducheva
-
-
-
-
-
-
-
-
-
-
-
-
-
 
