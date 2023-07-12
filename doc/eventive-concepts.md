@@ -108,7 +108,7 @@ is a process, even if not a frantic one.
 > **RULE 1b: predication vs. modification**
 > - **Predicates of main clauses** (finite verbs, or nonverbal predicates with finite copula) are predication.
 > - **Relative clauses** (modifying a nominal) are modification. If their predicate is a process, they are still annotated as events; but stative relative clauses are not events.
-> - **Participles** (or other non-finite verb forms) are typically used in modification. They are annotated as events if they denote processes. They are not events if they denote states or if they are used in a compound or a name where the process cannot be automatically assumed.
+> - **Participles** are typically used in modification. They are annotated as events if they denote processes. They are not events if they denote states or if they are used in a compound or a name where the process cannot be automatically assumed.
 
 Examples:
 * (8a) [en] *firing squad* (from the UMR Guidelines)<br>
@@ -123,6 +123,7 @@ Examples:
     ... here we have a process (*tančit*, *dance*) in modification; it will be annotated as an event.
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
     *itinerante* as event or entity ???
+
 
 > **RULE 1c:**
 > - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise.
