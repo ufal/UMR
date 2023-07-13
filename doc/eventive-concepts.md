@@ -292,6 +292,10 @@ Examples:
 - **??** states in reference ... what to do with them? (sharpness https://www.wikidata.org/wiki/Q55433472 )
 - **??** states in modification ... either without any mapping OR, contrary to the guidelines, as eventive concepts (being tall)
 
+DZ: I think that primary anchoring of states should be in SynSemClass. It
+should provide anchors for all processes and states, regardless whether they
+are packaged as predication, modification, or reference.
+
 **(4) ENTITIES in modification or reference:**
 - entities in reference (prototypical)
   - **??** for generic mention  (*the sharp **thorns***) ... what to do with them?
@@ -300,6 +304,33 @@ Examples:
   - **??** generic mentions (*(any) **bush’s** thorns*) ... what to do with them?
   - **OK** for specific mentions (***Barack Obama's** cabinet*)
 
+DZ: Specific entities (instances) should be linked to Wikidata if they have
+an entry there. Regardless of information packaging. And even if the specific
+mention does not use the name (e.g., if the mention is _president_ but it is
+clear that it refers to Barack Obama, it should be linked to [Barack
+Obama](https://www.wikidata.org/wiki/Q76)). If the entity does not have an
+entry in Wikidata, we must create an entry for it in our local database, so
+that we can cross-reference that entity from various places even in different
+documents.
+
+DZ: Furthermore, we also want to anchor the generic type of the entity. This
+is relatively easy for generic mentions. If the sentence is _One day I want
+to be president_, we can link _president_ to the [corresponding Wikidata
+entry](https://www.wikidata.org/wiki/Q30461). Again, in the unlikely case
+that there is no such entry, we can create one in our local database. For
+specific mentions it is trickier. In theory, the specific Wikidata entry
+should contain information that gives us the type. But if we linked the word
+_president_ to the entry of Barack Obama, we will not get a one-click way to
+the entry of president. According to Wikidata, Barack Obama is an instance of
+a [human](https://www.wikidata.org/wiki/Q5). In the list called `position
+held`, we learn that he was [President of the United
+States](https://www.wikidata.org/wiki/Q11696), which is an instance of [head
+of state](https://www.wikidata.org/wiki/Q48352) (among other things of which
+it is an instance), and also a `subclass` of
+[president](https://www.wikidata.org/wiki/Q30461) (and also of _politician_).
+Given all this, maybe we want two anchors for a _president_ in a specific
+context: one for the individual (Barack Obama) and another for the type that
+is closest to the word used in the mention (president).
 
 ***
 ***
@@ -309,11 +340,12 @@ Examples:
 ***
 
 #### TO READ
-- Croft (2001) *Radical Construction Grammar: Syntactic Theory in Typological Perspective*
-- Pustejovsky et al. (2005) *The Specification Language TimeML*. https://www.researchgate.net/publication/242423032_The_Specification_Language_TimeML
+
+- William Croft (2001) *Radical Construction Grammar: Syntactic Theory in Typological Perspective*
+- James Pustejovsky et al. (2005) [The Specification Language TimeML](https://www.researchgate.net/publication/242423032_The_Specification_Language_TimeML).
 
 About events expressed as MWE:
-- J. Bonn et al (2023) *UMR Annotation of Multiword Expressions* (sent by HH)
-- W. Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
-- ?? Paducheva
+- Julia Bonn et al. (2023) *UMR Annotation of Multiword Expressions* (sent by HH)
+- William Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
+- Elena Paducheva?
 
