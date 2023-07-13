@@ -268,7 +268,10 @@ Examples:
         :op4 "Ukrajině"))
 ```
 
- ... see [the document on entities](https://github.com/ufal/UMR/blob/main/doc/entities.md)
+DZ: See also [issue 14 in UMR
+guidelines](https://github.com/umr4nlp/umr-guidelines/issues/14), as well as
+[the document on
+entities](https://github.com/ufal/UMR/blob/main/doc/entities.md).
 
 Examples:
  * (7a) [cs] Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.<br>
