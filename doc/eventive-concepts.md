@@ -195,11 +195,35 @@ DZ: What is unclear here? And how does it relate to the heading "generic vs.
 specific mention"? I think there is a process (*poničit*) whose `:ARG0` will
 be another process (*bouře*).
 
-#### agent nouns:
+#### agent (or, more generally, participant) nouns:
 
-driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in mentions where there is nothing about teaching :-((
+driver treated as an entity ([ex.](https://github.com/umr4nlp/umr-guidelines/blob/cbcb2555b36e99c7dc296f4fb3264136a31db953/guidelines.md?plain=1#L961-L974))
+but teacher as  ARG0-of teach-01 ([ex.](https://github.com/umr4nlp/umr-guidelines/blob/cbcb2555b36e99c7dc296f4fb3264136a31db953/guidelines.md?plain=1#L3339-L3341))
+even in mentions where there is nothing about teaching :-((
 
 DZ: See also [issue 16 in UMR guidelines](https://github.com/umr4nlp/umr-guidelines/issues/16).
+
+DZ: Supposedly the _teacher_ should receive the same annotation as _the
+person who teaches_, which might be the way how it is expressed in some
+languages. Note that the latter can occur also in utterances that are not
+(mainly) about teaching: _The person who teaches my daughter English has been
+sick for three weeks_ vs. _My daughter's English teacher has been sick for
+three weeks_. In both sentences, the teaching event is somehow present, even
+though it is not the main proposition. The teaching should probably be
+annotated with habitual aspect. As for the _driver_, it may be a mistake of
+the authors of the guidelines, but maybe not. They say that it does not refer
+to a process. That is correct even if we decompose it analogously to the
+_teacher_: it does not refer to a process, it refers to an entity involved in
+a process. The driver example is in a section where they do not show full UMR
+graphs, so we actually do not know whether they would decompose it as `(p/
+person :ARG0-of (d/ drive-01))`. [Nathan
+suggests](https://github.com/umr4nlp/umr-guidelines/issues/16#issuecomment-1631807454)
+that such decomposition should be done whenever a noun denoting a participant
+of a process is morphologically derived from the word denoting the process.
+And the participant does not have to be the agent. So, according to Nathan,
+Czech _jídlo_ "food" would be decomposed as `(t/ thing :ARG1-of (j/
+jíst-01))` (a thing that is eaten) while English _food_ would be simply `(f/
+food)` because there is no visible grammatical link between _food_ and _eat_.
 
 [la] *praefectus* (en. *prefect*). <br>
 Originally *praefectus* is a past participle of *praeficio* meaning 'to put in charge', but it also occurs as a substantive. This alternation is reflected in the grammatical case its dependents occur in. Examples: <br>
