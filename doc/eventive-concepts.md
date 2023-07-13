@@ -171,13 +171,13 @@ Some languages (e.g., Basque) have morphological causative:
 ### Identifying non-eventive concepts
 
 > **RULE 2:**
-> - **Entities** and **states** (=properties) **in modification** and **in reference** are not identified as event!
+> - **Entities** and **states** in **modification** and in **reference** are not identified as events!
 
 Based on examples from the Guidelines:
 
-> **RULE 2a - limitation:**
-> - **relative clauses with lexical verb** (play, went, ...) considered as eventive concepts, but
-> - **relative clauses falling under "non-verbal clauses"** considered as non-eventive concepts!
+> **RULE 2a - relative clause is modification:**
+> - **relative clauses with active verb** (play, went, ...) considered as eventive concepts (because active verb denotes a process), but
+> - **relative clauses with stative verb or non-verbal predicate** considered as non-eventive concepts (because they denote a state in modification)!
 
 (see below for four semantic types of non-verbal clauses: possession, location, property, and object ... [guidelines, part 3-1-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities) )
 
