@@ -60,16 +60,28 @@ Examples:
     ... a process in predication (*go*, *jít*)
 * (4a) [cs] *Student **hrající** na housle **má rád** Bacha.*<br>
     [en] *The student **playing** the violin **likes** Bach.* (from the UMR Guidelines)<br>
-    ... a process in modification (*play*, *hrát*)
+    ... a process in modification (*play*, *hrát*)<br>
     ... another process in predication (*like*, *mít_rád*)
 * (4b) [cs] *Student, který **hraje** na housle **má rád** Bacha.* <br>
     [en] *The student, who is **playing** the violin, **likes** Bach.* (from the UMR Guidelines)<br>
-    ... a process in modification (*play*, *hrát*)
+    ... a process in modification (*play*, *hrát*)<br>
     ... another process in predication (*like*, *mít_rád*)
-* (5) [cs] *Jejího **příchodu** si nikdo **nevšiml**.*<br>
+* (5a) [cs] *Jejího **příchodu** si nikdo **nevšiml**.*<br>
     [en] *Nobody **noticed** her **arrival**.*<br>
-    ... a process in predication (*arrive*, *(ne)všimnout*)
+    ... a process in predication (*notice*, *všimnout*)<br>
     ... another process in reference (event nominal) (*arrival*, *příchod*).
+* (5b) [cs] *Nikdo si **nevšiml**, že **přišla**.*<br>
+    [en] *Nobody **noticed** that she **arrived**.*<br>
+    ... a process in predication (*notice*, *všimnout*)<br>
+    ... another process in predication (*arrive*, *přijít*).
+* (6a) [cs] *Její rychlý **návrat** mě **zaskočil**.*<br>
+    [en] *Her quick **return** **surprised** me.*<br>
+    ... main process in predication (*surprise*, *zaskočit*)<br>
+    ... subject process in reference (*return*, *návrat*)
+* (6b) [cs] *Zaskočilo mě, jak rychle se vrátila.*<br>
+    [en] *I was **surprised** how quickly she **returned**.*<br>
+    ... main process in predication (*surprise*, *zaskočit*)<br>
+    ... subject process in predication (*return*, *vrátit*) – in the Czech sentence, it is a subject clause; in the English translation it is not.
 
 
 > **RULE 1a: processes vs. states**
@@ -77,8 +89,8 @@ Examples:
 > - **Stative verbs** can still be annotated as events if they are packaged as predication. In contrast, active verbs are processes, hence events regardless of information packaging.
 
 Examples:
-* (6a) [cs] *Moje kočka **nesnáší** granule.*
-* (6b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
+* (7a) [cs] *Moje kočka **nesnáší** granule.*
+* (7b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
     ... a state in predication (*love*, *nesnášet*), thus should be annotated as an event <br>
     (FG) this phrasing may be misleading, as 'state' in the guidelines means a property. Stative verbs should still be processes (see the table with 9 cells).
     (DZ) The guidelines say "states (or, properties)" which is not necessarily equivalence, and even if it is, we do not have a definition of property. Anyways, in
@@ -96,10 +108,10 @@ involve micro-sub-processes (_snoring, turning, dreaming_), and it may have a
 result at the end (compare it to _recharging battery_). So maybe _sleeping_
 is a process, even if not a frantic one.
 
-* (7a) [cs] *Moje dítě **sedí** na lavičce.* <br/>
+* (8a) [cs] *Moje dítě **sedí** na lavičce.* <br/>
        [en] *My child **is sitting** on a bench.* <br/>
        ... a state in predication (*sedět*, *sit*) <br/>
-* (7b) [cs] *Dítě sedící na lavičce **je moje**.* <br/>
+* (8b) [cs] *Dítě sedící na lavičce **je moje**.* <br/>
        [en] *The child sitting on the bench **is mine**.* <br/>
        ... here the sitting state is in modification, hence not an event;
            the other state (*můj*, *mine*) is in predication, hence it is an event.
@@ -114,15 +126,15 @@ is a process, even if not a frantic one.
 > - **Predicates of adverbial clauses** are (??probably??) predication. The term modification in the context of this page (??probably??) means modification of entities but not of processes (?) so adverbial clauses are different from relative clauses.
 
 Examples:
-* (8a) [en] *firing squad* (from the UMR Guidelines)<br>
+* (9a) [en] *firing squad* (from the UMR Guidelines)<br>
     ... compound, thus entity (not process)
-* (8b) [en] *floating hospital* (from the UMR Guidelines)<br>
+* (9b) [en] *floating hospital* (from the UMR Guidelines)<br>
     ... *floating* as an event ... BUT "The Floating Hospital" is a non-profit organization ??? https://en.wikipedia.org/wiki/Floating_Hospital
-* (9a) [cs] *Tančící dům* <br>
-       [en] *Dancing House* <br>
+* (10a) [cs] *Tančící dům* <br>
+        [en] *Dancing House* <br>
     ... a name of a [building in Prague](https://cs.wikipedia.org/wiki/Tan%C4%8D%C3%ADc%C3%AD_d%C5%AFm); the house is not really dancing, hence _tančící_ does not denote a process in this context.
-* (9b) [cs] *Náměstí bylo plné **tančících** lidí.* <br>
-       [en] *The square was full of **dancing** people.* <br>
+* (10b) [cs] *Náměstí bylo plné **tančících** lidí.* <br>
+        [en] *The square was full of **dancing** people.* <br>
     ... here we have a process (*tančit*, *dance*) in modification; it will be annotated as an event.
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
     *itinerante* as event or entity ???
@@ -150,21 +162,21 @@ Examples:
 > - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise).
 
 Examples:
-* (10a) [cs] ***Exploze** **způsobila** **zhroucení** domu.*<br>
+* (11a) [cs] ***Exploze** **způsobila** **zhroucení** domu.*<br>
     [en] *The **explosion** **caused** the house **to collapse**.* (from the UMR Guidelines)<br>
     ... three eventive concepts: 1 causal verb in predication (*cause*, *způsobit*), 1 complement/nominalization (*collapse*, *zhroucení*), 1 event nominal in reference (*explosion*, *exploze*)
-* (10b) [cs] *Dům se **zhroutil** kvůli **explozi**.*<br>
+* (11b) [cs] *Dům se **zhroutil** kvůli **explozi**.*<br>
     [en] *The house **collapsed** because of the **explosion**.* (from the UMR Guidelines)<br>
     ... two eventive concepts: 1 process in predication (*collapse*, *zhroutit se*) and 1 event nominal in reference (*explosion*, *exploze*); causal relationship not expressed in predication
-* (10c) [cs] *Dům se **zhroutil**, protože v něm něco **explodovalo**.* <br/>
+* (11c) [cs] *Dům se **zhroutil**, protože v něm něco **explodovalo**.* <br/>
         [en] *The house **collapsed** because something **exploded** in it.* <br/>
         ... main clause and adverbial clause, each with one event (process in predication); the causal relationship (*protože*, *because*) is not an additional event.
 
 Some languages (e.g., Basque) have morphological causative:
-* (11a) [eu] *Zopa izugarri **gustatzen zaio** mutilari.* <br/>
+* (12a) [eu] *Zopa izugarri **gustatzen zaio** mutilari.* <br/>
         lit. "soup greatly pleasing it.is.it to.boy" <br/>
         [en] "The boy likes the soup." (normal active voice)
-* (11b) [eu] *Goseak zopa izugarri **gustatuerazi zion** mutilari.* <br/>
+* (12b) [eu] *Goseak zopa izugarri **gustatuerazi zion** mutilari.* <br/>
         lit. "hunger soup greatly made.pleasing it.has.it.it to.boy" <br/>
         [en] "Hunger made the boy like the soup." (causative voice) <br/>
         ... (DZ) I suppose that both in (11a) and in (11b) there is just one event (*gustatzen* "like"). It is a state but it is packaged as predication. Or should we decompose (11b) to two events (causing and liking)?
