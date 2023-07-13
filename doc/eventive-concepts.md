@@ -109,6 +109,9 @@ is a process, even if not a frantic one.
 > - **Predicates of main clauses** (finite verbs, or nonverbal predicates with finite copula) are predication.
 > - **Relative clauses** (modifying a nominal) are modification. If their predicate is a process, they are still annotated as events; but stative relative clauses are not events.
 > - **Participles** are typically used in modification. They are annotated as events if they denote processes. They are not events if they denote states or if they are used in a compound or a name where the process cannot be automatically assumed.
+> - **Predicates of complement clauses** are predication.
+> - **Secondary predication** is predication.
+> - **Predicates of adverbial clauses** are (??probably??) predication. The term modification in the context of this page (??probably??) means modification of entities but not of processes (?) so adverbial clauses are different from relative clauses.
 
 Examples:
 * (8a) [en] *firing squad* (from the UMR Guidelines)<br>
@@ -123,10 +126,25 @@ Examples:
     ... here we have a process (*tančit*, *dance*) in modification; it will be annotated as an event.
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
     *itinerante* as event or entity ???
+* [cs] ***Řekl jsem,** že **je chytrý**.* <br>
+  [en] *I **said** that he **is smart**.* <br>
+  ... complement clause is predication (*chytrý*, *smart*), hence it is an event, although it is state and not process.
+* [cs] *Moje dcera **netouží** **být dospělá**.* <br>
+  [en] *My daughter **does not long** for **being adult**.* <br>
+  ... complement clause is predication (*dospělý*, *adult*), hence it is an event, although it is state and not process.
+* [cs] ***Koupala se** v jezeře **nahá**.* <br>
+  [en] *She **swam** in the lake **naked**.* <br>
+  ... state in secondary predication (*nahý*, *naked*) is an event.
+* [cs] *Pokud teplota **klesne** pod 7 stupňů, **nasadíme** zimní pneumatiky.* <br>
+  [en] *If the temperature **drops** below 7 degrees, we **will put on** winter tires.* <br>
+  ... process in adverbial clause (*klesnout*, *drop*) is an event.
+* [cs] *Když **budeš hodný**, **koupíme** ti zmrzlinu.* <br>
+  [en] *If you **are nice**, we **will buy** you ice cream.* <br>
+  ... state in adverbial clause (*hodný*, *nice*) is also an event because it is in predication.
 
 
 > **RULE 1c:**
-> - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise.
+> - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise).
 
 Examples:
 * (10a) [cs] ***Exploze** **způsobila** **zhroucení** domu.*<br>
@@ -162,7 +180,10 @@ Based on examples from the Guidelines:
     ... a process in predication (*damage*) and as an event nominal (*storm*, *bouře*)
 
 #### agent nouns:
+
 driver treated as an entity (ex.) but teacher as  ARG0-of teach-01 (ex.) even in mentions where there is nothing about teaching :-((
+
+DZ: See also [issue 16 in UMR guidelines](https://github.com/umr4nlp/umr-guidelines/issues/16).
 
 [la] *praefectus* (en. *prefect*). <br>
 Originally *praefectus* is a past participle of *praeficio* meaning 'to put in charge', but it also occurs as a substantive. This alternation is reflected in the grammatical case its dependents occur in. Examples: <br>
