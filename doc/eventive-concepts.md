@@ -141,6 +141,9 @@ Examples:
 * [cs] *Když **budeš hodný**, **koupíme** ti zmrzlinu.* <br>
   [en] *If you **are nice**, we **will buy** you ice cream.* <br>
   ... state in adverbial clause (*hodný*, *nice*) is also an event because it is in predication.
+* [cs] *Děti **jedly** zmrzlinu **sedíce** v autě.* <br>
+  [en] ***Sitting** in the car, the children **ate** ice cream.* <br>
+  ... the converb is a non-finite adverbial clause, hence a state in predication (*sedět*, *sit*), hence an event.
 
 
 > **RULE 1c:**
