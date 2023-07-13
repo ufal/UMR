@@ -281,7 +281,7 @@ Examples:
 - OK states in predication ...  prototypically adjectives, but also other nominal modifiers as PPs, relative clauses, participles<br>
     *Those thorns **are sharp**.*
     *My cat **loves** wet food.*
-- OK entities in predication ... non-verbal clauses with predicate nouns or adjectives, complements<br>
+- OK entities in predication ... non-verbal clauses with nouns as predicates<br>
     *It **is a thorn**.*
 
 
