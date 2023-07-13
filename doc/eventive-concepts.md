@@ -153,6 +153,18 @@ Examples:
 * (10b) [cs] *Dům se **zhroutil** kvůli **explozi**.*<br>
     [en] *The house **collapsed** because of the **explosion**.* (from the UMR Guidelines)<br>
     ... two eventive concepts: 1 process in predication (*collapse*, *zhroutit se*) and 1 event nominal in reference (*explosion*, *exploze*); causal relationship not expressed in predication
+* (10c) [cs] *Dům se **zhroutil**, protože v něm něco **explodovalo**.* <br/>
+        [en] *The house **collapsed** because something **exploded** in it.* <br/>
+        ... main clause and adverbial clause, each with one event (process in predication); the causal relationship (*protože*, *because*) is not an additional event.
+
+Some languages (e.g., Basque) have morphological causative:
+* (11a) [eu] *Zopa izugarri **gustatzen zaio** mutilari.* <br/>
+        lit. "soup greatly pleasing it.is.it to.boy" <br/>
+        [en] "The boy likes the soup." (normal active voice)
+* (11b) [eu] *Goseak zopa izugarri **gustatuerazi zion** mutilari.* <br/>
+        lit. "hunger soup greatly made.pleasing it.has.it.it to.boy" <br/>
+        [en] "Hunger made the boy like the soup." (causative voice) <br/>
+        ... (DZ) I suppose that both in (11a) and in (11b) there is just one event (*gustatzen* "like"). It is a state but it is packaged as predication. Or should we decompose (11b) to two events (causing and liking)?
 
 ***
 
