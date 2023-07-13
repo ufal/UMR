@@ -108,6 +108,16 @@ involve micro-sub-processes (_snoring, turning, dreaming_), and it may have a
 result at the end (compare it to _recharging battery_). So maybe _sleeping_
 is a process, even if not a frantic one.
 
+DZ: Note that the [English state
+verbs](https://www.ecenglish.com/learnenglish/lessons/what-are-state-verbs)
+are recognized by tests that are grammatical rather than semantic (you cannot
+use the progressive tense). Other languages may not have similar tests, or
+the tests may result in a different set of verbs. For example, [in
+Czech](https://www.czechency.org/slovnik/SLOVESO), examples of state verbs
+_(stavová slovesa)_ include _stát_ "stand", _mít_ "have", _patřit_ "belong";
+_to stand_ would perhaps not be grammatically a state verb in English, but
+semantically it is a state both in Czech and in English.
+
 * (8a) [cs] *Moje dítě **sedí** na lavičce.* <br/>
        [en] *My child **is sitting** on a bench.* <br/>
        ... a state in predication (*sedět*, *sit*) <br/>
