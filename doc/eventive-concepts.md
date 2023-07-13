@@ -79,9 +79,9 @@ Examples:
     ... main process in predication (*surprise*, *zaskočit*)<br>
     ... subject process in reference (*return*, *návrat*)
 * (6b) [cs] *Zaskočilo mě, jak rychle se vrátila.*<br>
-    [en] *I was **surprised** how quickly she **returned**.*<br>
+    [en] *It **surprised** me how quickly she **returned**.*<br>
     ... main process in predication (*surprise*, *zaskočit*)<br>
-    ... subject process in predication (*return*, *vrátit*) – in the Czech sentence, it is a subject clause; in the English translation it is not.
+    ... subject process in predication (*return*, *vrátit*)
 
 
 > **RULE 1a: processes vs. states**
@@ -121,6 +121,7 @@ is a process, even if not a frantic one.
 > - **Predicates of main clauses** (finite verbs, or nonverbal predicates with finite copula) are predication.
 > - **Relative clauses** (modifying a nominal) are modification. If their predicate is a process, they are still annotated as events; but stative relative clauses are not events.
 > - **Participles** are typically used in modification. They are annotated as events if they denote processes. They are not events if they denote states or if they are used in a compound or a name where the process cannot be automatically assumed.
+> - **Predicates of subject clauses** are predication.
 > - **Predicates of complement clauses** are predication.
 > - **Secondary predication** is predication.
 > - **Predicates of adverbial clauses** are (??probably??) predication. The term modification in the context of this page (??probably??) means modification of entities but not of processes (?) so adverbial clauses are different from relative clauses.
@@ -138,6 +139,17 @@ Examples:
     ... here we have a process (*tančit*, *dance*) in modification; it will be annotated as an event.
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
     *itinerante* as event or entity ???
+* [cs] ***Překvapilo** mě, jak **chytrý byl**.* <br>
+  [en] *It **surprised** me how **smart** he **was**.* <br>
+  ... subject clause is predication (*chytrý*, *smart*), hence it is an event, although it is state and not process.
+* [cs] *Kdo **neriskuje**, **nevyhraje**.* <br>
+  [en] *He who **does not risk**, **does not win**.* <br>
+  ... this is a *relative* subject clause, although it lacks the governing nominal in the Czech version.
+      It should be analyzed using the abstract concept `person` modified by the risking concept.
+      Risking is a process, hence it is still treated as event, despite being packaged as modification.
+* [cs] *Kdo **není mazaný**, **nevyhraje**.* <br>
+  [en] *He who **is not cunning** **does not win**.* <br>
+  ... a modification of the previous example. Now we have a state (not process) in modification, hence it is not event.
 * [cs] ***Řekl jsem,** že **je chytrý**.* <br>
   [en] *I **said** that he **is smart**.* <br>
   ... complement clause is predication (*chytrý*, *smart*), hence it is an event, although it is state and not process.
