@@ -183,13 +183,17 @@ Based on examples from the Guidelines:
 
 ***
 
-### Eventive vs. non-eventive concepts -- unclear cases
+### Eventive vs. non-eventive concepts – unclear cases
 
 #### generic vs. specific mention
 
 * (5) [cs] ***Bouře** **poničila** střechu.* <br>
-    [en] *The **storm** **damaged** the roads.* (from the UMR Guidelines)<br>
-    ... a process in predication (*damage*) and as an event nominal (*storm*, *bouře*)
+    [en] *The **storm** **damaged** the roads.* (from the [UMR Guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2-processes-in-modification-and-reference))<br>
+    ... a process in predication (*damage*, *poničit*) and as an event nominal (*storm*, *bouře*)
+
+DZ: What is unclear here? And how does it relate to the heading "generic vs.
+specific mention"? I think there is a process (*poničit*) whose `:ARG0` will
+be another process (*bouře*).
 
 #### agent nouns:
 
