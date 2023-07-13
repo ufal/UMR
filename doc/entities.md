@@ -21,17 +21,17 @@ category of museums.
 * (1b) [cs] _V každé zemi podléhají muzea jiné legislativě._
             “In each country, museums are subject to different legislation.”
 
-If a proper name is used, it typically refers to a specific entity, but as we
-see in (1a), specific entities can be referenced by other means, too. Even if
-the name were not present in the sentence, the context would tell us that we
-are talking about one specific museum, which probably has a name, and perhaps
-the context would be specific enough to allow us to identify the entity and
-its name in the real world. However, that is not a necessary condition for a
-specific entity. In (2a), _staršího muže_ “an elderly man” refers to a person
-whom we do not know and who may not even exist in the real world (the text
-may be a work of fiction). The man may not be mentioned again and we may not
-learn anything else about him, yet in this local context he is a specific
-entity and not a generic one.
+If a name is used, it typically refers to a specific entity, but as we see in
+(1a), specific entities can be referenced by other means, too. Even if the
+name were not present in the sentence, the context would tell us that we are
+talking about one specific museum, which probably has a name, and perhaps the
+context would be specific enough to allow us to identify the entity and its 
+name in the real world. However, that is not a necessary condition for a 
+specific entity. In (2a), _staršího muže_ “an elderly man” refers to a person 
+whom we do not know and who may not even exist in the real world (the text 
+may be a work of fiction). The man may not be mentioned again and we may not 
+learn anything else about him, yet in this local context he is a specific 
+entity and not a generic one. 
 
 * (2) [cs] _Když opouštěl budovu, zahlédl staršího muže, jenž nesl v náručí žlutou krabici._
            “As he was leaving the building, he saw an elderly man carrying a yellow box in his arms.”
@@ -63,37 +63,45 @@ On the other hand, depending on context, _Amerika_ may refer to a continent
 rather than to a country (North America, South America), or it may refer to a
 quarry southwest of Prague.
 
-Proper names are thus designed to label specific instances, while common
-nouns are meant to describe broader categories (types). The borderline may be
+Names are thus designed to label specific instances, while common nouns are
+meant to describe broader categories (types). The borderline may be
 occasionally blurry when a common noun is repurposed as a name (as we have
-seen with _Státy_ above) but it is much less likely that a proper name will
-be used for a generic entity. We can certainly define a category of all
-people named _Václav_, as in (3), but that does not convert the name into a
-common noun – all these people first got that name with the hope that it will
-make them identifiable and distinguishable from other people, and only later
-the speaker artificially grouped them, using their name as the property
-defining the group.
+seen with _Státy_ above) but it is much less likely that a name will be used
+for a generic entity. We can certainly define a category of all people named
+_Václav_, as in (3), but that does not convert the name into a common noun –
+all these people first got that name with the hope that it will make them
+identifiable and distinguishable from other people, and only later the
+speaker artificially grouped them, using their name as the property defining
+the group.
 
 * (3) [cs] _Všichni Václavové by měli znát své slavné jmenovce._
            “All Václavs should know their famous namesakes.”
 
-While the use of _Václavové_ in (3) is unusual, there are proper names that
-denote a type rather than an instance. A primary example is product names, as
-in (4) (the specification of product category is enclosed in parentheses in
-the example because it is optional):
+While the use of _Václavové_ in (3) is unusual, there are names that denote a
+type rather than an instance. A primary example is product names, as in (4)
+(the specification of product category is enclosed in parentheses in the
+example because it is optional):
 
 * (4) [cs] _Používám (prací prostředek) Persil._
            “I use Persil (detergent).”
 
-Clearly, _Persil_ is a proper name rather than a common noun, as it was
-invented specifically to distinguish this detergent from other detergents; it
-is not a common noun that we expect to find in dictionaries. However, the
-name denotes a type of product, not one particular instance. There are
-millions of packages of Persil, and they all share this name. And while the
-name could be used when referring to a specific package, in (4) it actually
-refers to a generic entity. We will use the term **categorial proper names /
-categorial named entities** with names that denote types (categories) rather
-than instances.
+Clearly, _Persil_ is a name rather than a common noun, as it was invented
+specifically to distinguish this detergent from other detergents; it is not a
+common noun that we expect to find in dictionaries. However, the name denotes
+a type of product, not one particular instance. There are millions of
+packages of Persil, and they all share this name. And while the name could be
+used when referring to a specific package, in (4) it actually refers to a
+generic entity. We will use the term **categorial names / categorial named
+entities** with names that denote types (categories) rather than instances.
+
+Speaking of terminology, **common nouns**
+([NOUN](https://universaldependencies.org/u/pos/NOUN.html) in UD) are
+contrasted with **proper nouns**
+([PROPN](https://universaldependencies.org/u/pos/PROPN.html) in UD). These
+are part-of-speech categories, used always for a single word. Proper nouns
+are single-word names. However, many names of entities are multiword
+expressions, and the individual words in those names may belong to other
+categories than `PROPN`.
 
 
 ## Representation of entities in UMR
@@ -236,7 +244,7 @@ entity from the end because such types of entities have not been discussed
 yet.)
 
 * (6) [cs] _Národní muzeum v Praze získá nový bezpečnostní systém, který mu dodá firma CESS. Muzeum za něj zaplatí necelé 2 milióny korun._
-            “The National Museum in Prague will get a new security system, which will be supplied by CESS. The museum will pay almost 2 million crowns for it.”
+           “The National Museum in Prague will get a new security system, which will be supplied by CESS. The museum will pay almost 2 million crowns for it.”
 
 ```
 (o/ organization
@@ -292,11 +300,13 @@ utility.
 
 Some other resources:
 
-* [Live Google spreadsheet](https://docs.google.com/spreadsheets/d/1OlUgqCTAL8j5B5KtorTLvzHYzc8yw1fN7q63T15loHk/edit#gid=0)
+* [Live Google
+  spreadsheet](https://docs.google.com/spreadsheets/d/1OlUgqCTAL8j5B5KtorTLvzHYzc8yw1fN7q63T15loHk/edit#gid=0)
   where the UMR team (Julia & Co.) update their view of the UMR taxonomy. This
   is probably more up-to-date than the guidelines on Github. Some types have
   links to wikidata, which should provide their definition.
-* [Comparison of AMR and Prague taxonomy of named entities](https://docs.google.com/spreadsheets/d/0B1qTziKgNeglNndFY25yQ0pkWFE/edit?resourcekey=0-Mutw6Gqz3VThnKQ86GiSGg#gid=273215418)
+* [Comparison of AMR and Prague taxonomy of named
+  entities](https://docs.google.com/spreadsheets/d/0B1qTziKgNeglNndFY25yQ0pkWFE/edit?resourcekey=0-Mutw6Gqz3VThnKQ86GiSGg#gid=273215418)
   from the [JHU-PIRE workshop 2014](https://ufal.mff.cuni.cz/JHU-PIRE-workshop-2014).
 
 ### person
@@ -442,9 +452,9 @@ and Silesia, which are the other two parts of the country called _Česko_
 This class is not listed in the current UMR guidelines, which seems to be a
 gap that has to be patched. The current taxonomy actually lists some types
 that could be classified as special cases of `product`, such as
-`aircraft-type` or `car-make`. But there are proper names for other products,
-like _Persil_ in example (4) above. Products are typical examples of what we
-call categorial named entity.
+`aircraft-type` or `car-make`. But there are names for other products, like
+_Persil_ in example (4) above. Products are typical examples of what we call
+categorial named entity.
 
 ### vehicle
 
