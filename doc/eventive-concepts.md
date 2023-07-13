@@ -253,9 +253,10 @@ Originally *praefectus* is a past participle of *praeficio* meaning 'to put in c
         **?? OR both as an entity AND as an event??**
 
 Examples:
-* (6a) [cs] druhá světová válka <br>
+* (6a) [cs] *druhá světová válka* <br>
        [en] WW II ... ?? should be anchored to https://www.wikidata.org/wiki/Q362
 * (6b) [cs] *válka na Ukrajině*  ... ?? https://www.wikidata.org/wiki/Q110999040
+* (7)  [cs] _Benátská noc_ (https://www.wikidata.org/wiki/Q11131287)
 
 
 ```
@@ -271,7 +272,14 @@ Examples:
 DZ: See also [issue 14 in UMR
 guidelines](https://github.com/umr4nlp/umr-guidelines/issues/14), as well as
 [the document on
-entities](https://github.com/ufal/UMR/blob/main/doc/entities.md).
+entities](https://github.com/ufal/UMR/blob/main/doc/entities.md). Named
+events are typically very complex processes that do not map easily to verbs
+with one actor and one patient. Nevertheless, they are processes, which means
+that the UMR guidelines want them annotated as events. At the same time, they
+have their class and types in Table 5 (the taxonomy of named entities), which
+means that the guidelines want them annotated as named entities. This is a
+conflict between different parts of the guidelines, which must be resolved
+somehow.
 
 Examples:
  * (7a) [cs] Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.<br>
