@@ -281,9 +281,39 @@ means that the guidelines want them annotated as named entities. This is a
 conflict between different parts of the guidelines, which must be resolved
 somehow.
 
+DZ: A possible compromise would be to annotate named events primarily as
+events, but with the `:wiki` attribute and `:name` relation used similarly to
+named entities. Hence [cs] _válka_ "war" would be mapped to the same concept
+as the verb _válčit_ "wage war" (possibly to
+[SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClass40/SynSemClass40.html)
+class `vec01002` _(fight, bojovat)_). The type `war` of class `event` in
+[Table 5 of the
+guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-2-named-entities)
+would not be used as an abstract concept.
+
 Examples:
  * (7a) [cs] Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.<br>
  * (7a) [en] 80 years ago, Germany started World War II by invading Poland.
+
+```
+(r/ rozpoutat-01
+    :ARG0 (c/ country
+        :synsemclass "???"
+        :wiki "Q7318"
+        :name (n/ :op1 "Německo"))
+    :ARG1 (v/ válčit-01
+        :synsemclass "vec01002"
+        :wiki "Q362"
+        :name (n2/ :op1 "druhá" :op2 "světová" :op3 "válka")))
+```
+
+DZ: _Válčit_ is an event and it could have :ARGX relations but it does not
+have them because they are not expressed in the sentence. (One could deduce
+that _Německo_ is one of the actors of _válčit_ but the sentence does not say
+it explicitly.) Note that Wikidata
+[Q7318](https://www.wikidata.org/wiki/Q7318) is the entry for Nazi Germany,
+not for the current country, which has
+[Q183](https://www.wikidata.org/wiki/Q183).
 
 **(2) non-PROCESSESS packed as predication:**
 - OK states in predication ...  prototypically adjectives, but also other nominal modifiers as PPs, relative clauses, participles<br>
