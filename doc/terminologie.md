@@ -5,7 +5,9 @@ vychází z [AMR](https://github.com/umr4nlp/amr-guidelines/blob/master/amr.md)
 a některé věci nevysvětluje možná proto, že předpokládá, že je uživatel zná z
 AMR. V AMR se hned na začátku říká, že reprezentace věty je zakořeněný
 orientovaný acyklický graf, ale není to pravda, protože i v témže dokumentu
-na konci připouštějí, že asi 0,3 % grafů AMR obsahuje legitimní cykly.
+[na
+konci](https://github.com/umr4nlp/amr-guidelines/blob/master/amr.md#cycles)
+připouštějí, že asi 0,3 % grafů AMR obsahuje legitimní cykly.
 
 
 ## Koncept (concept) a proměnná (variable)
