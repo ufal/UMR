@@ -80,60 +80,76 @@ ARG1(b2, b)                    /* b is the believee in b2 */
 
 Tabulka 1 v části 3-1-1 anotačních pravidel rozlišuje koncepty na **entity**,
 **stavy** a **procesy** („semantic type“), z nichž každý může být vyjádřen v
-rámci „information packaging“ jako **reference**, **modifikace**, nebo 
-**predikace**. 
+rámci „information packaging“ jako **reference**, **modifikace**, nebo
+**predikace**.
 
-Všechny procesy (v libovolném balení) a všechny predikace (procesů, stavů i 
-entit), celkem tedy 5 z 9 polí tabulky, jsou považované za **události** 
-(„events“, „eventive concepts“). 
+Všechny procesy (v libovolném balení) a všechny predikace (procesů, stavů i
+entit), celkem tedy 5 z 9 polí tabulky, jsou považované za **události**
+(„events“, „eventive concepts“).
 
-ML: ***Rozlišení, co považovat za událost a co nikoli, se zdá dost 
-komplikované a chybí nám jasná kritéria  :-((*** 
+Podrobněji rozebíráme, co je a co není událost, v dokumentu
+[eventive-concepts.md](https://github.com/ufal/UMR/blob/main/doc/eventive-concepts.md).
+Zatím však není jasné, na co vlastně toto rozlišení bude mít vliv. Např.
+napojení konceptu na slovník se asi sotva změní, jestliže koncept označující
+stav nebo entitu přestane, resp. začne být událostí. V tomto světle se zdá
+být problematický i samotný pojem „eventive concept“. Viz též [issue
+4](https://github.com/ufal/UMR/issues/4).
 
 
 ## Entita (entity), pojmenovaná entita (named entity), objekt (object)
 
-Pojem „named entity“ se v pravidlech používá, aniž by byl řádně definován. 
-Pojmenovaným entitám je věnována část 3-1-2 s Tabulkou 5, která vyjmenovává 
-jejich třídy, typy a podtypy. Přitom hloupě střídá pomlčky a podtržítka a 
-ponechává bez vysvětlení některé detaily (např. proč je ethnic-group ve třídě 
-social_group, ale nationality je samostatná třída). Předtím už jsou 
-pojmenované entity zmíněné v části 2-1 jako jeden z druhů konceptů v UMR. 
-Taxonomie entit z Tabulky 5 se nepoužívá pouze pro pojmenované entity, ale i 
-pro abstraktní entity, tj. uzly odpovídající osobním zájmenům (která mohou 
-být ve větě jako slova, nebo mohou být vydedukována z valence a morfologie 
-slovesa). Z některých příkladů v pravidlech vyplývá, že podobná taxonomie 
-funguje i pro obecná substantiva (např. _teacher_ je vyjádřen abstraktním 
-konceptem person, který je rozvitý dalším uzlem, ve kterém je teprve událost 
-_teach_, tj. „person who teaches“), ovšem v jiných případech jsou přímo 
-lemata těchto substantiv použita jako koncepty (např. _businessman_). Pozor, 
-v textu pravidel se občas místo pojmu „entity“ používá pojem „object“, např. 
-na začátku části 3-2-2-2 se mluví o „object concepts“. 
+Pojem „named entity“ se v pravidlech používá, aniž by byl řádně definován.
+Pojmenovaným entitám je věnována [část 3-1-2 s Tabulkou
+5](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-2-named-entities),
+která vyjmenovává jejich třídy, typy a podtypy. Přitom hloupě střídá pomlčky
+a podtržítka a ponechává bez vysvětlení některé detaily (např. proč je
+ethnic-group ve třídě social_group, ale nationality je samostatná třída).
+Předtím už jsou pojmenované entity zmíněné v části 2-1 jako jeden z druhů
+konceptů v UMR. Taxonomie entit z Tabulky 5 se nepoužívá pouze pro
+pojmenované entity, ale i pro abstraktní entity, tj. uzly odpovídající
+osobním zájmenům (která mohou být ve větě jako slova, nebo mohou být
+vydedukována z valence a morfologie slovesa). Z některých příkladů v
+pravidlech vyplývá, že podobná taxonomie funguje i pro obecná substantiva
+(např. _teacher_ je vyjádřen abstraktním konceptem person, který je rozvitý
+dalším uzlem, ve kterém je teprve událost _teach_, tj. „person who teaches“),
+ovšem v jiných případech jsou přímo lemata těchto substantiv použita jako
+koncepty (např. _businessman_). Pozor, v textu pravidel se občas místo pojmu
+„entity“ používá pojem „object“, např. na začátku části 3-2-2-2 se mluví o
+„object concepts“.
+
+Podrobněji se entitám věnujeme v dokumentu
+[entities.md](https://github.com/ufal/UMR/blob/main/doc/entities.md).
 
 
 ## Relace, vztah (relation)
 
-Relace jsou vztahy mezi koncepty, jsou to tedy orientované hrany v grafu UMR, 
-spolu s řetězcem (ohodnocením), který určuje typ relace. Ve formátu UMR 
-vypadají jako dvojtečka následovaná typem a závorkou, za kterou začíná 
-podřízený uzel. Jednotlivé typy relací lze rozdělit do dvou skupin: (i) 
-participant roles (účastnické role v události, např. `:ARG0`) a (ii) sémantické 
-relace (např. `:temporal`, `:ord`, `:range`). Jsou popsané v částech 3-2-1, resp. 
-3-2-2. Do té druhé skupiny (sémantické relace) mají zřejmě patřit také 
-rozvití (modifiers), popsaná v části 3-2-2-2. Pozor, text pravidel není 
-důsledný a později mluví i o některých atributech jako o relacích (např. 
-`:polarity`). 
+Relace jsou vztahy mezi koncepty, jsou to tedy orientované hrany v grafu UMR,
+spolu s řetězcem (ohodnocením), který určuje typ relace. Ve formátu UMR
+vypadají jako dvojtečka následovaná typem a závorkou, za kterou začíná
+podřízený uzel. Jednotlivé typy relací lze rozdělit do dvou skupin: (i)
+participant roles (účastnické role v události, např. `:ARG0`) a (ii)
+sémantické relace (např. `:temporal`, `:ord`, `:range`). Jsou popsané v
+částech 3-2-1, resp. 3-2-2. Do té druhé skupiny (sémantické relace) mají
+zřejmě patřit také rozvití (modifiers), popsaná v části 3-2-2-2. Pozor, text
+pravidel není důsledný a později mluví i o některých atributech jako o
+relacích (např. `:polarity`). Možná je to dědictví AMR, kde se podle všeho
+atributy a relace nerozlišovaly.
 
 
 ## Atribut (attribute)
 
-Libovolná další vlastnost konceptu (uzlu) - text mluví zejm. o (iii) UMR 
-atributech (`:aspekt`, `:mode`, `:polarity`, `:quant`, (?`:value`,) `:ref`, `:degree`) a o (iv) anotaci modality (`:modstr`, `:modpred`, `:quot`). 
+Libovolná další vlastnost konceptu (uzlu) – text mluví zejména o UMR
+atributech (`:aspect`, `:mode`, `:polarity`, `:quant`, (?`:value`,) `:ref`,
+`:degree`) a o anotaci modality (`:modstr`, `:modpred`, `:quot`).
 
-Podobně jako relace začínají dvojtečkou, za kterou následuje název atributu. 
-Na rozdíl od relace je ale následuje řetězcová hodnota, nikoli závorky a 
-podřízený uzel. Pojem atribut se zavádí v části 2-1 a některé jsou tam hned 
-vyjmenované. Pozor, text pravidel není důsledný a o některých atributech 
-později chybně mluví jako o relacích. Např. kvantita je už v části 2-1 jasně 
-uvedena jako atribut `:quant`, ale v části 2-2-5 se najednou objeví sousloví 
-„the `:quant` relation“, přestože se část 2-2-5 přímo jmenuje Attributes. 
+Podobně jako relace začínají dvojtečkou, za kterou následuje název atributu.
+Na rozdíl od relace je ale následuje jednoduchá hodnota (číslo,
+předdefinovaný identifikátor, nebo řetězec v uvozovkách), nikoli závorky a
+podřízený uzel. Pojem atribut se zavádí v [části
+2-1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-2-1-introduction)
+a některé jsou tam hned vyjmenované. Pozor, text pravidel není důsledný a o
+některých atributech později chybně mluví jako o relacích. Např. kvantita je
+už v části 2-1 jasně uvedena jako atribut `:quant`, ale v části 2-2-5 se
+najednou objeví sousloví „the `:quant` relation“, přestože se část 2-2-5
+přímo jmenuje Attributes. Možná je to dědictví AMR, kde se podle všeho
+atributy a relace nerozlišovaly.
