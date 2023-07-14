@@ -49,10 +49,11 @@ Note that some words will be mapped to concepts that are not their lemmas.
 Participial adjectives will typically be mapped to verbal concepts. Verbal
 nouns will be mapped to corresponding verbal concepts. This holds also about
 some deverbal nouns that denote states or processes and are not derived using
-the standard _-ní/-tí_ suffixes, such as _dřímota, objev, ochrana_ etc.
+the standard _-ní/-tí_ suffixes, such as _dřímota_ “slumber”, _objev_
+“discovery”, _ochrana_ “protection” etc.
 
-* _dodělávající_ --> `dodělávat-001`
-* _dodělavší_ --> `dodělat-001`
-* _dodělaný_ --> `dodělat-001`
-* _dušení_ --> `dusit-se-001`
-* _dřímota_ --> `dřímat-001`
+* _dodělávající_ “finishing” → `dodělávat-001`
+* _dodělavší_ “having finished” → `dodělat-001`
+* _dodělaný_ “finished” → `dodělat-001`
+* _dušení_ “choking” → `dusit-se-001`
+* _dřímota_ “slumber” → `dřímat-001`
