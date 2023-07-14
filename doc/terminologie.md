@@ -1,27 +1,54 @@
-# TERMINOLOGIE UMR (Uniform Meaning Representation) 
+# TERMINOLOGIE UMR (Uniform Meaning Representation)
 
-## Koncept (concept)
+[UMR](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md)
+vychází z [AMR](https://github.com/umr4nlp/amr-guidelines/blob/master/amr.md)
+a některé věci nevysvětluje možná proto, že předpokládá, že je uživatel zná z
+AMR. V AMR se hned na začátku říká, že reprezentace věty je zakořeněný
+orientovaný acyklický graf, ale není to pravda, protože i v témže dokumentu
+[na
+konci](https://github.com/umr4nlp/amr-guidelines/blob/master/amr.md#cycles)
+připouštějí, že asi 0,3 % grafů AMR obsahuje legitimní cykly.
 
-Významové vztahy jsou v UMR zachyceny jako orientovaný graf a **koncepty** 
-odpovídají uzlům takového grafu. Na koncept lze nahlížet jako na ohodnocení 
-uzlu, jako na jeho hlavní atribut (je ale zapsán jiným způsobem než běžné 
-atributy). Koncept je řetězec (typicky složený z písmen, pomlček a číslic, 
-ale přesnou specifikaci neznám). Může odpovídat lematu nebo posloupnosti 
-lemat, může to také být abstraktní koncept – ten je obvykle reprezentován 
-anglickým slovem bez ohledu na to, jaký jazyk anotujeme. Koncept není 
-jednoznačným identifikátorem uzlu; v jednom grafu může být několik uzlů se 
-stejným konceptem. Uzly mají také identifikátory, které jsou jednoznačné v 
-rámci věty (grafu). V UMR je zvykem tyto identifikátory volit jako první 
-písmeno z konceptu, v případě potřeby doplněné rozlišovacím číslem (opět 
-nevím, zda je to jen zvyk, nebo i formální požadavek). 
 
-ML: Podle AMR je to složitjší:
+## Koncept (concept) a proměnná (variable)
 
-Vnitřní uzly grafu jsou **proměnné** (to jsou ty identifikátory začínající 
-prvním písmenem reprezentovamńého slova, v příkaldu níže w, b, b2, g).<br> 
-Proměnné pak mají jednotlivé **instance** (připojené relací instance), a to 
-jsou ty **koncepty** (níže want-01, boy, believe-01, girl) - koncepty jsou 
-tedy právě listy daného grafu 
+Podle AMR se vnitřním uzlům grafu říká **proměnné** a listům **koncepty**.
+Každý koncept je připojen k nějaké proměnné hranou, která představuje relaci
+**instance**. Říkáme, že koncept X je instancí proměnné Y. V textové
+reprezentaci AMR i UMR se relace instance vyjadřuje lomítkem, před ním je
+proměnná a za ním je koncept:
+
+```
+(b / boy)
+```
+
+Koncept je řetězec (typicky složený z písmen, pomlček a číslic, ale přesnou
+specifikaci neznám). Může odpovídat lematu nebo posloupnosti lemat, může to
+také být abstraktní koncept – ten je obvykle reprezentován anglickým slovem
+bez ohledu na to, jaký jazyk anotujeme. Koncept lze chápat jako odkaz do
+slovníku; v jednom grafu může být několik uzlů se stejným konceptem. U
+proměnných je zvykem označovat je prvním písmenem z konceptu, v případě
+potřeby doplněným rozlišovacím číslem (opět nevím, zda je to jen zvyk, nebo i
+formální požadavek; nikde také není řečeno, zda může proměnná obsahovat
+písmena, která nejsou v anglické abecedě). Příklady v AMR mají typicky mezeru
+z obou stran lomítka, příklady v UMR ji obvykle mají jen za lomítkem,
+software by doufejme měl umět načíst obojí, ale formální specifikace chybí
+(resp. v guidelines na ni není odkaz).
+
+Podle příkladů se zdá, že platí následující (ale nikde jsem nenašel jasné
+vyjádření, že to musí platit):
+
+* Každá proměnná má právě jednu instanci (koncept).
+* Uzel s konceptem je připojen jako instance k právě jedné proměnné. Pokud
+  je v grafu více proměnných, jejichž instancí je stejný koncept, budou tyto
+  koncepty zobrazeny jako samostatné listy, přestože odpovídají téže položce
+  ve slovníku. Reentrance (více než jedna příchozí hrana) je možná u
+  proměnných, ale ne u konceptů.
+* Z toho ovšem plyne, že můžeme zavést zjednodušený graf UMR, kde hrany
+  instance neexistují a koncept byl se svou proměnnou stažen do jednoho uzlu.
+  Proměnná slouží jako jednoznačný identifikátor takového uzlu v rámci grafu,
+  zatímco koncept je ohodnocení uzlu a současně jednoznačný odkaz z proměnné
+  do slovníku.
 
 ```
 (w / want-01
@@ -31,11 +58,11 @@ tedy právě listy daného grafu
              :ARG1 b))
 ```
 
-Příslušný graf pak vypadá následně:
+Příslušný (nezjednodušený) graf pak vypadá následně:
 https://github.com/amrisi/amr-guidelines/blob/master/graph.png
 
-Při tomto pojetí pak lze sémantiku zachytit jako konjunkci logických 
-predikátů  (neo-Davidsonians semantics):
+Při tomto pojetí pak lze sémantiku zachytit jako konjunkci logických
+predikátů  (neo-Davidsonian semantics):
 
 ```
 instance(w, want-01) ^         /* w is an instance of wanting */
@@ -48,13 +75,11 @@ ARG0(b2, g) ^                  /* g is the believer in b2 */
 ARG1(b2, b)                    /* b is the believee in b2 */
 ```
 
-***ALE nahradíme-li proměnné přímo jejich instancemi, platí 1. odstavec*** :-))
-
 
 ## Událost (event), proces (process), stav (state) a entita (entity)
 
-Tabulka 1 v části 3-1-1 anotačních pravidel rozlišuje koncepty na **entity**, 
-**stavy** a **procesy** („semantic type“), z nichž každý může být vyjádřen v 
+Tabulka 1 v části 3-1-1 anotačních pravidel rozlišuje koncepty na **entity**,
+**stavy** a **procesy** („semantic type“), z nichž každý může být vyjádřen v
 rámci „information packaging“ jako **reference**, **modifikace**, nebo 
 **predikace**. 
 
