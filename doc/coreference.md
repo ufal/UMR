@@ -9,8 +9,8 @@ It is represented by a document-level ":coref" relation.
 It links two entities referred by identifiers that consist of a concatenation of the sentence identifier and the concept identifier.
 In addition, a relation type declares what kind of relation is between the two entities (e.g. ":same-entity" for identity coreference, ":subset-of" for split antecedents).
 
-## Coreference of relative pronouns
-Relative clauses are primarily used as event concept modifiers.
+## Coreference of relative pronouns and arguments of participles
+Relative clauses and participles are primarily used as event concept modifiers.
 In this case, an inversed numbered or general participant role is used to modify the parent concept.
 
 # TODO
