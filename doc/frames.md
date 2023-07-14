@@ -26,7 +26,8 @@ currently contains only samples of verbs from a few languages, but it can be
 extended. At present it is not easy to identify a class for a verb (the
 interface lists the verb that was selected in each language as the label for
 the class, but it does not list the other verbs which have similar meaning
-and belong to the same class). A better search tool is being developed.
+and belong to the same class). A better search tool is being developed
+(http://ufallab.ms.mff.cuni.cz/~fucikova/public_html/SSC_classmembers/).
 
 In the meantime, for Czech (and especially for data from PDT) we can use the
 [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora),
