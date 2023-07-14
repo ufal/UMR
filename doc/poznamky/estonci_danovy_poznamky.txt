@@ -2,55 +2,32 @@ Věta: Estonci volili parlament.
 
 ===================================================
 poznámky k NE:
+
+Mezitím existuje samostatný dokument entities.md, kde řešíme nejasnosti ohledně anotace pojmenovaných entit.
+Kloním se k tomu, že typ "nationality" (který znamená státní příslušnost, nikoli národnost) by se vůbec neměl
+používat, místo toho by se měl použít koncept pro osobu a rozvít ho vztahem k dotyčné zemi; půjde tedy o širší
+vztah, nemusí jít jen o občanství, ale třeba jen o bydliště nebo místo narození.
+
+Estonci:
+
 (p/ person
-    :mod (n/ nationality
+    :mod (c/ country
         :wiki "Q191"
         :name (n2/ name :op1 "Estonsko"))
     :ref-number Plural)
 
-UMR guidelines (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md) podávají přehled tříd, typů
-a podtypů entit (ne nutně pojmenovaných) v části 3-1-2 (momentálně na stranách 19–21).
-
-Jedna z hlavních tříd je "nationality" ("Estonci"). Vedle toho existuje třída "social_group" a typ "ethnic-group".
-Estonci by asi mohli být jak nationality, tak ethnic-group, ale v daném kontextu jde spíš o občanství než o etnicitu
-(mohli by to taky být estonští Rusové). Problém ale je, že "nationality" není podřízená třídě "person", takže to asi
-má být vždy samostatný uzel, který rozvíjí uzel typu person.
-    
-    ML: ?? "takže to ["nationality"/"ethnic-group"] asi má být vždy samostatný uzel, který rozvíjí uzel typu person" ... ???
-
-    ML: nedovedu si představit, jak podle návrhu z UMR anotovat - nejsme schopni vytáhnout z dat 
-    (ale ani případní  anotátoři nebudou schopni takhle detailně to rozlišovat)
-
-V anglickém příkladu Snt2 na straně 4 mají tu státní příslušnost wikifikovanou jako United States, čili článek o zemi.
-My bychom tedy mohli odkázat na Estonsko, a to buď do české Wikipedie (https://cs.wikipedia.org/wiki/Estonsko), nebo
-bezpečněji přímo do Wikidat (https://www.wikidata.org/wiki/Q191). Asi je to lepší než odkazovat na článek o Estoncích
-(https://cs.wikipedia.org/wiki/Estonci, https://www.wikidata.org/wiki/Q173302), protože ten je zase spíše o etnické
-skupině než o všech obyvatelích Estonska.
-
-    ML: takto to přece nejde anotovat ??
-    ML: ad "Edmond Pope is an American businessman" ... také zrovna nevíme, co se míní - zde asi, že má Americké občanství (protože za něj vyjednávaly USA), jinde to asi mlže být místo pobytu apod ...
-
 U parlamentu v tomto kontextu určitě nejde o místo ani o budovu, ale spíše o organizaci (specificky
-"government_organization"). I tak je trochu otázka, jestli to nemá být spíš soubor osob, protože Estonci volili lidi,
+"government-organization"). I tak je trochu otázka, jestli to nemá být spíš soubor osob, protože Estonci volili lidi,
 kteří v parlamentu zasednou, ne tu organizaci jako takovou. To by ale bylo složité, protože bychom museli přidat další
-uzly a vyjádřit vztah těch osob k parlamentu.
+uzly a vyjádřit vztah těch osob k parlamentu, takže zůstaneme u organizace. Ukotvení do Wikidat provedeme přímo pro
+estonský parlament, ne jen tak pro nějaký obecný parlament. Slovo "parlament" není jméno, nebudeme ho tedy anotovat
+jako pojmenovanou entitu (s abstraktním konceptem government-organization a s relací :name).
 
-    ML: Ne!!!
+parlament:
 
-(g/ government_organization
+(p2/ parlament
     :wiki "Q217799"
-    :name (n3/ name :op1 "parlament")
     :ref-number Singular)
-
-Relace typu non-participant, modifier, jsou popsané v části 3-2-2-2 na straně 72. ":name" tam nevidím zmíněné. Pak je
-ale 3-2-2-4 přímo o pojmenovaných entitách. Tam se říká, že pojmenovaná entita (tj. ta, která má explicitní jméno
-v textu) má vždy relaci ":name", na níž visí uzel typu "name", který má tolik relací ":opX" (např. ":op1", ":op2",
-...), kolik ortografických slov má jméno entity v dané větě. Na těchto relacích už ale nevisí pořádný uzel, spíš jen
-řetězcová hodnota, takže nevím, proč se tomu říká relace a ne atribut. Možná proto, že toho může být více. Hodnota
-:opX není nutně přesně slovní tvar tak, jak byl ve větě. Např. v manuálu mají jméno "America", ale v textu bylo
-adjektivum "American".
-    
-    ML: relace je to proto, že to je název té hrany mezi n/name a těmi ortografickými slovy??
 
 ===================================================
 poznámky k SSC:
@@ -64,19 +41,21 @@ rámec předpokládá, že akuzativ je nepovinný PAT.
 https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora
 T-rovina má val_frame.rf = "v#v-w7686f1", což asi vede do PDT-Vallexu. V každém případě parlament je tam PAT.
 
-(v/ volit-v-w7686f1-01
-    :ARG0-ACT (p/ person
-        :mod (n/ nationality
+V konverzním souboru od Evy se z dotyčného rámce stává koncept "volit-001", takže prozatím použijeme ten.
+Více viz dokument frames.md.
+
+(v/ volit-001
+    :ARG0 (p/ person
+        :mod (c/ country
             :wiki "Q191"
             :name (n2/ name :op1 "Estonsko"))
         :ref-number Plural)
-    :ARG1-PAT (g/ government_organization
+    :ARG1 (p2/ parlament
         :wiki "Q217799"
-        :name (n3/ name :op1 "parlament")
         :ref-number Singular)
     :aspect Imperfective
     :modstr FullAff)
-    
+
 ML: Dan má pravdu, když pochybuje o rámci  pro volit v#v-w7686f1... ACT(1) PAT(4;↓c) ?ORIG(z+2;mezi+7)
 Zde jde o to, že Estonci.ACT volí zástupce.PAT do parlamentu.DIR3 (to ale bohužel PDT-Vallex nezachycuje a směšuje s příklady " Kdo.ACT volil (Hnutí za demokratické Slovensko).PAT či " volil nejsympatičtější dívku.PAT ze studentek").
 Takže by tam spíš měl být separátní rámec ACT(1) ?PAT(4;↓c) DIR3 .
