@@ -11,3 +11,9 @@ and to explore possibilities of conversions between
 
 The research is conducted in the frame of the [GAČR project
 LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
+
+## Documentation
+
+* [UMR terminology](doc/terminologie.md) (currently in Czech)
+* [Entities](doc/entities.md)
+* [Events](doc/eventive-concepts.md)
