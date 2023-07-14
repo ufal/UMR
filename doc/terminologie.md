@@ -56,7 +56,7 @@ vyjádření, že to musí platit):
              :ARG1 b))
 ```
 
-Příslušný graf pak vypadá následně:
+Příslušný (nezjednodušený) graf pak vypadá následně:
 https://github.com/amrisi/amr-guidelines/blob/master/graph.png
 
 Při tomto pojetí pak lze sémantiku zachytit jako konjunkci logických
