@@ -58,3 +58,84 @@ the standard _-ní/-tí_ suffixes, such as _dřímota_ “slumber”, _objev_
 * _dodělaný_ “finished” → `dodělat-001`
 * _dušení_ “choking” → `dusit-se-001`
 * _dřímota_ “slumber” → `dřímat-002`
+
+
+## Non-verbal Clauses
+
+UMR proposes seven abstract concept predicates for situations where states or
+entities are predicated (i.e., they are events), and, as they say, “there is
+no overt predicate-word”. They do not say what qualifies as an overt
+predicate word. The term _non-verbal clauses_ seems to suggest that predicate
+words should be verbs. But they can hardly require it because verb is a
+part-of-speech category, and as they say [in the beginning of part
+3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-eventive-concepts),
+“event identification is not based on parts of speech or word classes, since
+these vary greatly across languages.” Indeed, languages such as Chinese
+practically do not distinguish state verbs from adjectives.
+
+Therefore, we should not take the word _non-verbal_ too strictly. If we can
+create frame files for all processes and states (including states expressed
+primarily by adjectives), we can treat all these events as “verbal”.
+
+On the other hand, entities are prototypically not used in predication, we
+will not have frames for them and they will be listed in a different lexicon
+than a valency lexicon. Nominal predicates where the noun denotes an entity
+may be treated as “non-verbal”.
+
+The 7 abstract predicates for non-verbal clauses are listed in [Tables 3 and
+4](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities).
+
+* [cs] _Vltava je řeka._ “Vltava is a river.” ... predicational `have-role-91`
+* [cs] _Tato řeka je Vltava._ “This river is Vltava.” ... equational `identity-91`
+
+Strictly speaking, such sentences are not completely non-verbal in Czech or
+English because they have a verbal copula. In Czech, the copula _být_
+corresponds to frame `být-007` (v-w243f80_ZU substituted with v-w243f187_MM).
+But in Polish the copula is not verbal, and in Russian there is no copula in
+the present tense at all.
+
+* [pl] _Wełtawa to rzeka._ “Vltava is a river.”
+* [pl] _Ta rzeka to Wełtawa._ “This river is Vltava.”
+* [ru] _Влтава — река._ “Vltava is a river.”
+* [ru] _Эта река — Влтава._ “This river is Vltava.”
+
+To ensure cross-linguistically more consistent treatment of such sentences,
+the abstract predicates `have-role-91`, resp. `identity-91`, are used in all
+languages, regardless whether a copula is used. That is shown in the examples
+in the guidelines since [part
+1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-1-introduction-what-is-umr-and-what-does-umr-annotation-look-like)
+in examples like (2) _Pope is the American businessman who..._
+(`identity-91`), or 3-1-2 (1) _Edmond Pope is an American businessman._
+(`have-role-91`). The distinction between identity and having role is another
+advantage of the abstract predicates: the copula in Czech and English is the
+same in both situations. It could be distinguished by different frames, but
+for example the Czech valency lexicon (PDT-Vallex) does not distinguish them
+and uses `být-007` for both of them.
+
+```
+(h/ have-role-91
+    :ARG1 (r/ river
+        :wiki "Q131574"
+        :name (n/ name :op1 "Vltava"))
+    :ARG3 (ř/ řeka
+        :wiki "Q4022"))
+```
+
+```
+(h/ have-role-91
+    :ARG1 (r/ river
+        :wiki "Q131574"
+        :name (n/ name :op1 "Wełtawa"))
+    :ARG3 (r2/ rzeka
+        :wiki "Q4022"))
+```
+
+```
+(h/ have-role-91
+    :ARG1 (r/ river
+        :wiki "Q131574"
+        :name (n/ name :op1 "Влтава"))
+    :ARG3 (р/ река
+        :wiki "Q4022"))
+```
+
