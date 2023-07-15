@@ -127,14 +127,14 @@ semantically it is a state both in Czech and in English.
            the other state (*můj*, *mine*) is in predication, hence it is an event.
 
 
-> **RULE 1b: predication vs. modification**
+> **RULE 1b: predication vs. modification or reference**
 > - **Predicates of main clauses** (finite verbs, or nonverbal predicates with finite copula) are predication.
+> - **Subjects (finite clauses, infinitives, verbal nouns)** are reference. If their predicate is a process, they are still annotated as events; but states as subjects are not events.
+> - **Objects / complements (finite clauses, infinitives, verbal nouns)** are reference. If their predicate is a process, they are still annotated as events; but states as objects are not events.
 > - **Relative clauses** (modifying a nominal) are modification. If their predicate is a process, they are still annotated as events; but stative relative clauses are not events.
 > - **Participles** are typically used in modification. They are annotated as events if they denote processes. They are not events if they denote states or if they are used in a compound or a name where the process cannot be automatically assumed.
-> - **Predicates of subject clauses** are predication.
-> - **Predicates of complement clauses** are predication.
 > - **Secondary predication** is predication.
-> - **Predicates of adverbial clauses** are (??probably??) predication. The term modification in the context of this page (??probably??) means modification of entities but not of processes (?) so adverbial clauses are different from relative clauses.
+> - **Predicates of adverbial clauses** are predication. The term modification in the context of this page probably means modification of entities but not of processes, so adverbial clauses are different from relative clauses.
 
 Examples:
 * (9a) [en] *firing squad* (from the UMR Guidelines)<br>
@@ -151,7 +151,10 @@ Examples:
     *itinerante* as event or entity ???
 * [cs] ***Překvapilo** mě, jak **chytrý byl**.* <br>
   [en] *It **surprised** me how **smart** he **was**.* <br>
-  ... subject clause is predication (*chytrý*, *smart*), hence it is an event, although it is state and not process.
+  ... subject clause is reference to a state (*chytrý*, *smart*), hence it is not an event.
+* [cs] *Jeho **chytrost** mě **překvapila**.* <br>
+  [en] *His **smartness** **surprised** me.* <br>
+  ... subject clause is reference to a state (*chytrý*, *smart*), hence it is not an event.
 * [cs] *Kdo **neriskuje**, **nevyhraje**.* <br>
   [en] *He who **does not risk**, **does not win**.* <br>
   ... this is a *relative* subject clause, although it lacks the governing nominal in the Czech version.
@@ -159,13 +162,13 @@ Examples:
       Risking is a process, hence it is still treated as event, despite being packaged as modification.
 * [cs] *Kdo **není mazaný**, **nevyhraje**.* <br>
   [en] *He who **is not cunning** **does not win**.* <br>
-  ... a modification of the previous example. Now we have a state (not process) in modification, hence it is not event.
+  ... a variant of the previous example. Now we have a state (not process) in modification, hence it is not event.
 * [cs] ***Řekl jsem,** že **je chytrý**.* <br>
   [en] *I **said** that he **is smart**.* <br>
-  ... complement clause is predication (*chytrý*, *smart*), hence it is an event, although it is state and not process.
+  ... complement clause is reference to a state (*chytrý*, *smart*), hence it is not an event.
 * [cs] *Moje dcera **netouží** **být dospělá**.* <br>
   [en] *My daughter **does not long** for **being adult**.* <br>
-  ... complement clause is predication (*dospělý*, *adult*), hence it is an event, although it is state and not process.
+  ... complement clause is reference to a state (*dospělý*, *adult*), hence it is not an event.
 * [cs] ***Koupala se** v jezeře **nahá**.* <br>
   [en] *She **swam** in the lake **naked**.* <br>
   ... state in secondary predication (*nahý*, *naked*) is an event.
