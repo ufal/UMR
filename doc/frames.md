@@ -101,8 +101,8 @@ the present tense at all.
 
 To ensure cross-linguistically more consistent treatment of such sentences,
 the abstract predicates `have-role-91`, resp. `identity-91`, are used in all
-languages, regardless whether a copula is used. That is shown in the examples
-in the guidelines since [part
+languages, regardless whether a copula is used. That is shown in the
+guidelines since [part
 1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-1-introduction-what-is-umr-and-what-does-umr-annotation-look-like)
 in examples like (2) _Pope is the American businessman who..._
 (`identity-91`), or 3-1-2 (1) _Edmond Pope is an American businessman._
