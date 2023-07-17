@@ -1,17 +1,77 @@
-# Annotation of coreference in UMR
+# Coreference
 
-## Intra-sentential coreference
-It is represented by a reference to the antecedent concept, using its identifier.
-It means that the first mention of the entity within a sentence is annotated as a concept and any consequent mention of the same entity is then represented by a reference.
+Relations that are in the Tecto theory annotated as coreference, i.e. those captured in 
+`coref_gram.rf` and `coref_text` (or `coref_text.rf` in older versions) attributes,
+are represented in three different ways in UMR:
+1. inversed participant role
+2. reference to an already specified concept variable
+3. the `:coref` attribute in the document-level annotation
 
-## Inter-sentential coreference
-It is represented by a document-level ":coref" relation.
+## Inversed participant role
+This annotation style is used for capturing coreference of relative pronouns and arguments
+of participles. According to the theory underlying UMR, relative clauses and participles 
+primarily serve as event concept modifiers. In such cases, an inversed numbered or general
+participant role (`:Stimulus-of` in the following example) is used to modify the parent concept:
+```
+I bought the sweater that you saw.
+(b/ buy-01
+	:actor (p/ person
+		:ref-person 1st
+		:ref-number Singular)
+	:theme (s/ sweater
+		:Stimulus-of (s2/ see-01
+			:experiencer (p2/ person
+				:ref-person 2nd
+				:ref-number Singular)
+			:aspect State
+			:modstr FullAff)
+		:ref-number Singular)
+	:aspect Performance
+	:modstr FullAff)
+```
+
+In the Tecto style, such coreference relations are annoted with grammatical coreference
+(the `coref_gram.rf` attribute). However, not all relations of grammatical coreference
+can be converted to this UMR style of annotation.
+
+## Reference to a concept variable
+This annotation style has been adopted from AMR and is one of the reasons that makes the
+UMR representation a graph, not just a tree. Reference to a variable is strictly used
+within a single sentence. An example is a reference to the entity under the `p` variable
+in the ARG1 argument of the concept `arrest-01`:
+
+```
+Snt7: Pope was in remission from a rare form of bone cancer when he was arrested in Russia.
+
+(h/ have-mod-91
+      :ARG1 (p/ person :wiki "Edmond_Pope"
+            :name (n/ name :op1 "Pope"))
+      :ARG2 (r/ remission-02
+            :ARG1 (d/ disease :wiki -
+                  :name (n2/ name :op1 "bone" :op2 "cancer")
+                  :ARG1-of (r2/ rare-02))
+            :temporal (a/ arrest-01
+                  :ARG1 p
+                  :place (c/ country :wiki "Russia"
+                        :name (n3/ name :op1 "Russia")))
+   	   :aspect Performance
+   	   :modstr FullAff)
+   :aspect State
+   :modstr FullAff)
+```
+
+However, not all intra-sentential links (set aside those covered by a previous annotation style)
+are represented in this way; some should be annotated with the style to be presented in the
+following section.
+
+## The `:coref` attribute
+
+The `:coref` attribute is a document-level attribute to capture coreference links. It must be 
+used to represent inter-sentential relations. It can be also used within a single sentence, but
+it is not clear from the guidelines in which cases to use it.
+
 It links two entities referred by identifiers that consist of a concatenation of the sentence identifier and the concept identifier.
 In addition, a relation type declares what kind of relation is between the two entities (e.g. ":same-entity" for identity coreference, ":subset-of" for split antecedents).
-
-## Coreference of relative pronouns and arguments of participles
-Relative clauses and participles are primarily used as event concept modifiers.
-In this case, an inversed numbered or general participant role is used to modify the parent concept.
 
 # TODO
 Try to identify specific cases that do not belong to any of the categories above.
