@@ -355,6 +355,14 @@ it explicitly.) Note that Wikidata
 not for the current country, which has
 [Q183](https://www.wikidata.org/wiki/Q183).
 
+CA: Some examples in Spanish/English of other named events with a link to Wikidata that could be also annotated as events:
+
+* (7b) [spa] España recuerda el papel de Adolfo Suárez en la Transición.
+* (7b) [en] Spain remembers the role of Adolfo Suarez in the [Spanish transition to democracy](https://www.wikidata.org/wiki/Q874209)
+
+* (7c) [spa] Esta situación no va a cambiar tras el anuncio del cese definitivo de la actividad armada de ETA. 
+* (7c) [en] This situation is not going to change after the [announcement of the definitive cessation of ETA's armed activity](https://www.wikidata.org/wiki/Q5700633)
+
 **(2) non-PROCESSESS packed as predication:**
 - OK states in predication ...  prototypically adjectives, but also other nominal modifiers as PPs, relative clauses, participles<br>
     *Those thorns **are sharp**.*
