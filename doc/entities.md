@@ -77,6 +77,11 @@ the group.
 * (3) [cs] _Všichni Václavové by měli znát své slavné jmenovce._
            “All Václavs should know their famous namesakes.”
 
+ŠZ: It is quite usual to use plural forms of personal names to denote a group of people with similar (character) features, like 
+* [cs] _všichni ti Havlové_ 
+"all those Havels" 
+(a critical mention from a political opponent, about the politian Havel and people sharing his point of view)
+
 While the use of _Václavové_ in (3) is unusual, there are names that denote a
 type rather than an instance. A primary example is product names, as in (4)
 (the specification of product category is enclosed in parentheses in the
