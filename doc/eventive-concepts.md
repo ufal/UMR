@@ -54,6 +54,8 @@ Examples:
     [en] *She **wanted** to **go** to school.* (from the UMR Guidelines)<br>
     ... a state in predication (*want*, *chtít*)<br>
     ... a process in predication (*go*, *jít*)
+ 
+ ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to   Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)  
 * (3b) [cs] ***Chtěla,** abych **šel** do školy.* <br>
     [en] *She **wanted** me to **go** to school.* <br>
     ... a state in predication (*want*, *chtít*)<br>
@@ -62,13 +64,13 @@ Examples:
     [en] *The student **playing** the violin **likes** Bach.* (from the UMR Guidelines)<br>
     ... a process in modification (*play*, *hrát*)<br>
     ... another process in predication (*like*, *mít_rád*)
-* (4b) [cs] *Student, který **hraje** na housle **má rád** Bacha.* <br>
+* (4b) [cs] *Student, který **hraje** na housle, **má rád** Bacha.* <br>
     [en] *The student, who is **playing** the violin, **likes** Bach.* (from the UMR Guidelines)<br>
     ... a process in modification (*play*, *hrát*)<br>
     ... another process in predication (*like*, *mít_rád*)
 * (5a) [cs] *Jejího **příchodu** si nikdo **nevšiml**.*<br>
     [en] *Nobody **noticed** her **arrival**.*<br>
-    ... a process in predication (*notice*, *všimnout*)<br>
+    ... a process in predication (*notice*, *všimnout si*)<br>
     ... another process in reference (event nominal) (*arrival*, *příchod*).
 * (5b) [cs] *Nikdo si **nevšiml**, že **přišla**.*<br>
     [en] *Nobody **noticed** that she **arrived**.*<br>
@@ -137,16 +139,21 @@ semantically it is a state both in Czech and in English.
 > - **Predicates of adverbial clauses** are predication. The term modification in the context of this page probably means modification of entities but not of processes, so adverbial clauses are different from relative clauses.
 
 Examples:
-* (9a) [en] *firing squad* (from the UMR Guidelines)<br>
+* (9a) [en] *firing squad* (cs. popravčí četa, from the UMR Guidelines)<br>
     ... compound, thus entity (not process)
 * (9b) [en] *floating hospital* (from the UMR Guidelines)<br>
     ... *floating* as an event ... BUT "The Floating Hospital" is a non-profit organization ??? https://en.wikipedia.org/wiki/Floating_Hospital
 * (10a) [cs] *Tančící dům* <br>
         [en] *Dancing House* <br>
     ... a name of a [building in Prague](https://cs.wikipedia.org/wiki/Tan%C4%8D%C3%ADc%C3%AD_d%C5%AFm); the house is not really dancing, hence _tančící_ does not denote a process in this context.
+    
+* Similarly: [cs]***létající** pivovar* (gypsy brewery. lit. flying brewery)<br>
+... a brewery company (society) working in different rental eqipped brewery houses - not an event.
 * (10b) [cs] *Náměstí bylo plné **tančících** lidí.* <br>
         [en] *The square was full of **dancing** people.* <br>
     ... here we have a process (*tančit*, *dance*) in modification; it will be annotated as an event.
+* Similarly: [cs] ***válčící** strany* (lit. warring/fighting parties, enemies)
+The parties are in a real fight as a process, thus the word *válčit* is an event.
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
     *itinerante* as event or entity ???
 * [cs] ***Překvapilo** mě, jak **chytrý byl**.* <br>
@@ -234,6 +241,8 @@ Based on examples from the Guidelines:
 DZ: What is unclear here? And how does it relate to the heading "generic vs.
 specific mention"? I think there is a process (*poničit*) whose `:ARG0` will
 be another process (*bouře*).
+
+ŠZ: other examples of possible processes: *Christmas, wind, (financial) inflation*
 
 #### agent (or, more generally, participant) nouns:
 
