@@ -126,14 +126,18 @@ Podrobněji se entitám věnujeme v dokumentu
 Relace jsou vztahy mezi koncepty, jsou to tedy orientované hrany v grafu UMR,
 spolu s řetězcem (ohodnocením), který určuje typ relace. Ve formátu UMR
 vypadají jako dvojtečka následovaná typem a závorkou, za kterou začíná
-podřízený uzel. Jednotlivé typy relací lze rozdělit do dvou skupin: (i)
-participant roles (účastnické role v události, např. `:ARG0`) a (ii)
-sémantické relace (např. `:temporal`, `:ord`, `:range`). Jsou popsané v
-částech 3-2-1, resp. 3-2-2. Do té druhé skupiny (sémantické relace) mají
-zřejmě patřit také rozvití (modifiers), popsaná v části 3-2-2-2. Pozor, text
-pravidel není důsledný a později mluví i o některých atributech jako o
-relacích (např. `:polarity`). Možná je to dědictví AMR, kde se podle všeho
-atributy a relace nerozlišovaly.
+podřízený uzel. Pouze v případě reentrance, kdy už byl podřízený uzel
+specifikován dříve jako podřízený uzel jiné relace, zde pouze odkážeme na
+uzel, čili místo závorky zde bude identifikátor jeho proměnné (v příkladu
+výše je to proměnná `b` pro koncept `boy`).
+
+Jednotlivé typy relací lze rozdělit do dvou skupin: (i) participant roles
+(účastnické role v události, např. `:ARG0`) a (ii) sémantické relace (např.
+`:temporal`, `:ord`, `:range`). Jsou popsané v částech 3-2-1, resp. 3-2-2. Do
+té druhé skupiny (sémantické relace) mají zřejmě patřit také rozvití
+(modifiers), popsaná v části 3-2-2-2. Pozor, text pravidel není důsledný a
+později mluví i o některých atributech jako o relacích (např. `:polarity`).
+Možná je to dědictví AMR, kde se podle všeho atributy a relace nerozlišovaly.
 
 
 ## Atribut (attribute)
