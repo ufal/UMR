@@ -452,6 +452,40 @@ regional group, living or born in _Čechy_ “Bohemia” (as opposed to Moravia
 and Silesia, which are the other two parts of the country called _Česko_
 “Czechia”).
 
+The nature and usage of the `nationality` class has been questioned in [issue
+10 of the UMR
+guidelines](https://github.com/umr4nlp/umr-guidelines/issues/10). Until the
+issue is resolved, we tentatively stick to the following rules:
+
+* Nationality is not distinguished from any other affiliation with a country.
+  Such affiliation is contained in expressions like _Američan_ “American”,
+  _americký občan_ “American citizen”, _americký usedlík_ “American resident”,
+  _obyvatel Spojených států_ “resident of the United States”, _americké auto_
+  “American car” etc.
+* Such affiliation is expressed with the `:mod` relation and the concept
+  describing the country as the child node. The `:wiki` of the child node will
+  always refer to the country, while the `:name` may differ depending on what
+  was in the text: "Spojené státy" for _Spojených států_, and "Amerika" for
+  _Američan, americký, americké_. No `nationality` concept is used.
+
+```
+(p/ person
+    :mod (c/ country
+        :wiki "Q30"
+        :name (n/ name :op1 "Amerika")))
+```
+
+Note that an analogous approach can be used to encode affiliation with
+regions other than countries, e.g., _Evropan_ “European”, _Moravan_
+“Moravian”, _Pražan_ “inhabitant of Prague, Praguer”.
+
+```
+(p/ person
+    :mod (c/ city
+        :wiki "Q1085"
+        :name (n/ name :op1 "Praha")))
+```
+
 ### product
 
 This class is not listed in the current UMR guidelines, which seems to be a
