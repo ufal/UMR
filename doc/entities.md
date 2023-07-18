@@ -25,13 +25,13 @@ If a name is used, it typically refers to a specific entity, but as we see in
 (1a), specific entities can be referenced by other means, too. Even if the
 name were not present in the sentence, the context would tell us that we are
 talking about one specific museum, which probably has a name, and perhaps the
-context would be specific enough to allow us to identify the entity and its 
-name in the real world. However, that is not a necessary condition for a 
-specific entity. In (2a), _staršího muže_ “an elderly man” refers to a person 
-whom we do not know and who may not even exist in the real world (the text 
-may be a work of fiction). The man may not be mentioned again and we may not 
-learn anything else about him, yet in this local context he is a specific 
-entity and not a generic one. 
+context would be specific enough to allow us to identify the entity and its
+name in the real world. However, that is not a necessary condition for a
+specific entity. In (2a), _staršího muže_ “an elderly man” refers to a person
+whom we do not know and who may not even exist in the real world (the text
+may be a work of fiction). The man may not be mentioned again and we may not
+learn anything else about him, yet in this local context he is a specific
+entity and not a generic one.
 
 * (2) [cs] _Když opouštěl budovu, zahlédl staršího muže, jenž nesl v náručí žlutou krabici._
            “As he was leaving the building, he saw an elderly man carrying a yellow box in his arms.”
@@ -68,22 +68,22 @@ meant to describe broader categories (types). The borderline may be
 occasionally blurry when a common noun is repurposed as a name (as we have
 seen with _Státy_ above) but it is much less likely that a name will be used
 for a generic entity. We can certainly define a category of all people named
-_Václav_, as in (3), but that does not convert the name into a common noun –
+_Václav_, as in (3a), but that does not convert the name into a common noun –
 all these people first got that name with the hope that it will make them
 identifiable and distinguishable from other people, and only later the
 speaker artificially grouped them, using their name as the property defining
-the group.
+the group. In (3b), the plural of a personal name denotes a group of people
+who do not even bear this name but rather share similar character features as
+someone whom the name refers to.
 
-* (3) [cs] _Všichni Václavové by měli znát své slavné jmenovce._
-           “All Václavs should know their famous namesakes.”
+* (3a) [cs] _Všichni Václavové by měli znát své slavné jmenovce._
+            “All Václavs should know their famous namesakes.”
+* (3b) [cs] _všichni ti Havlové_
+            “all those Havels” (a critical mention from a political opponent,
+            about the politian Havel and people sharing his point of view)
 
-ŠZ: It is quite usual to use plural forms of personal names to denote a group of people with similar (character) features, like 
-* [cs] _všichni ti Havlové_ 
-"all those Havels" 
-(a critical mention from a political opponent, about the politian Havel and people sharing his point of view)
-
-While the use of _Václavové_ in (3) is unusual, there are names that denote a
-type rather than an instance. A primary example is product names, as in (4)
+While the use of _Václavové_ in (3a) is unusual, there are names that denote
+a type rather than an instance. A primary example is product names, as in (4)
 (the specification of product category is enclosed in parentheses in the
 example because it is optional):
 
