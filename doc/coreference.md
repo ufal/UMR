@@ -66,12 +66,72 @@ following section.
 
 ## The `:coref` attribute
 
-The `:coref` attribute is a document-level attribute to capture coreference links. It must be 
-used to represent inter-sentential relations. It can be also used within a single sentence, but
-it is not clear from the guidelines in which cases to use it.
+The `:coref` attribute is a document-level attribute to capture coreference links. In general, the
+attribute links two entities referred to by identifiers that consist of a concatenation of the
+sentence identifier and the concept variable. In addition, a relation type declares the kind of
+relation between the two entities (e.g. `:same-entity` for identity coreference, `:subset-of` for
+split antecedents).
 
-It links two entities referred by identifiers that consist of a concatenation of the sentence identifier and the concept identifier.
-In addition, a relation type declares what kind of relation is between the two entities (e.g. ":same-entity" for identity coreference, ":subset-of" for split antecedents).
+```
+Snt5: Pope was flown to the U.S. military base at Ramstein, Germany.
+
+(f/ fly-01
+      :ARG1 (p/ person :wiki "Edmond_Pope"
+            :name (n/ name :op1 "Pope"))
+      :goal (b/ base
+            :mod (m/ military
+            :mod (c/ country :wiki "United_States"
+                  :name (n2/ name :op1 "U.S.")))
+            :place (c2/ city :wiki "Ramstein_Air_Base"
+                  :name (n3/ name :op1 "Ramstein")
+                  :place (c3/ country :wiki "Germany"
+                        :name (n4/ name :op1 "Germany"))))
+      :aspect Performance
+      :modstr FullAff)
+
+(s5/ sentence
+    :temporal(s4p :after s5f)
+    :modal(AUTH :FullAff s5f)
+    :coref(s4p4 :same-entity s5p))
+
+Snt6: He will spend the next several days at the medical center there before he returns home with his wife Sherry
+
+(s/ spend-02
+      :ARG0 (p/ person
+         :ref-person 3rd
+	 :ref-number Singular)
+      :ARG1 (t/ temporal-quantity
+         :quant (s2/ several)
+	 :unit (d/ day
+	 	:mod (n/ next)))
+      :temporal (b/ before
+         :op2 (r/ return-01
+	    :ARG1 p
+	    :ARG4 (h/ home)
+	    :companion (p2/ person :wiki -
+	       :name (n2/ name :op1 "Sherry")
+	       :ARG1-of (h2/ have-role-91
+	          :ARG2 p
+		  :ARG3 (w/ wife)))
+	    :aspect Performance
+	    :modstr FullAff))
+      :place (c/ center
+          :mod (m/ medical)
+	  :place (t2/ there))
+      :aspect State
+      :modstr FullAff)
+
+(s6/ sentence
+  :temporal((DCT :after s6s)
+            (s6s :after s6r))
+  :modal((AUTH :FullAff s6s)
+         (AUTH :FullAff s6r))
+  :coref((s5p :same-entity s6p)
+         (s5b :same-entity s6t2))
+```
+
+It must be used to represent inter-sentential relations. It can be also used within a single
+sentence, but it is not clear from the guidelines in which cases to use it.
 
 # TODO
 Try to identify specific cases that do not belong to any of the categories above.
