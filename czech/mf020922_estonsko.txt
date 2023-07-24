@@ -1,0 +1,36 @@
+ESTONSKO:
+
+(h/ have-location-91
+    :ARG1 (e/ event)
+    :ARG2 (c/ country
+        :wiki "Q191"
+        :name (n/ name :op1 "Estonsko")
+        :ref-number Singular))
+
+Estonci volili parlament
+
+(v/ volit-001
+    :ARG0 (p/ person
+        :mod (c/ country
+            :wiki "Q191"
+            :name (n2/ name :op1 "Estonsko"))
+        :ref-number Plural)
+    :ARG1 (p2/ parlament
+        :wiki "Q217799"
+        :ref-number Singular)
+    :aspect Imperfective
+    :modstr FullAff)
+
+Tallin -
+
+(h/ have-location-91
+    :ARG1 (e/ event)
+    :ARG2 (c/ city
+        :wiki "Q1770"
+        :name (n/ name :op1 "Tallin")
+        :ref-number Singular))
+
+V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+
