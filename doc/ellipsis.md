@@ -43,7 +43,10 @@ ESTONSKO:
     :ARG1 (e/ event)
     :ARG2 (c/ country
         :wiki "Q191"
-        :name (n/ name :op1 "Estonsko")))
+        :name (n/ name :op1 "Estonsko")
+        :ref-number Singular)
+    :aspect State
+    :modstr FullAff)
 ```
 
 ## Other implicit concepts?

@@ -5,7 +5,9 @@ ESTONSKO:
     :ARG2 (c/ country
         :wiki "Q191"
         :name (n/ name :op1 "Estonsko")
-        :ref-number Singular))
+        :ref-number Singular)
+    :aspect State
+    :modstr FullAff)
 
 Estonci volili parlament
 
@@ -28,7 +30,9 @@ Tallin -
     :ARG2 (c/ city
         :wiki "Q1770"
         :name (n/ name :op1 "Tallin")
-        :ref-number Singular))
+        :ref-number Singular)
+    :aspect State
+    :modstr FullAff)
 
 V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
 
@@ -37,8 +41,10 @@ V nedělních parlamentních volbách v Estonsku získal podle včerejších př
         :wiki "Q163347"
         :name (n/ :op1 "Vlast")
         :ref-number Singular)
-    :ARG1 nejvíce hlasů
-    :aspect ???
+    :ARG1 (h/ hlas
+        :quant (n2/ nejvíce)
+        :ref-number Plural)
+    :aspect Perfective
     :modstr FullAff)
 
 Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.

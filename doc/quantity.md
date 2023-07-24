@@ -35,6 +35,16 @@ více než tři domy “more than three houses”
     :quant (v/ více-než :op1 3))
 ```
 
+Other comparison-like quantities are probably treated similarly because the
+[degree](degree.md) attribute and abstract event seem to be intended only for
+the degree of a quality.
+
+```
+nejvíce hlasů “most votes”
+(h/ hlas
+    :quant (n/ nejvíce))
+```
+
 Units (both standardized and informal) are presented as a relation whose
 child node is the unit concept. The relation goes from the concept counted
 (it is a sibling of `:quant`).

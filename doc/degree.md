@@ -71,3 +71,13 @@ dívka je vyšší než chlapec “the girl is taller than the boy”
 
 AMR also uses :ARG6 to express purpose or result (_it is small enough to fit
 in your pocket_, _he was so tired that he slept for 10 hours_).
+
+## Comparison of quantity
+
+The [counterexamples in
+AMR](https://www.isi.edu/~ulf/amr/lib/popup/degree.html) indicate that the
+abstract event `have-degree-91` should not be used when comparing quantities,
+as in _I need more money_ or _Most students don't like math._ On the other
+hand, the way the AMR examples are annotated probably is not right in UMR,
+where we have the `:quant` attribute / relation. See
+[quantity.md](quantity.md).
