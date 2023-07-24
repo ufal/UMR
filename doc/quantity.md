@@ -58,3 +58,13 @@ child node of the `:quant` relation.
         :value 20.5))
 ```
 
+How to annotate **indefinite quantity**?
+```
+[la] paululum commoratus 'having waited for a while'
+(c/commoror
+    :ARG0 (p/person
+            ...)
+    :duration (t/temporal-quantity
+                :quant? (p2/paululum)))
+```
+
