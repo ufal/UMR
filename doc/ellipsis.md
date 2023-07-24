@@ -34,4 +34,16 @@ Examples of have-location-91: (2b) in
 (1c) and (1e) in
 [3-3-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-1-3-state).
 
+Perhaps we should use an abstract event as the theme and later make it
+coreferential with the actual events described in the article?
+
+```
+ESTONSKO:
+(h/ have-location-91
+    :ARG1 (e/ event)
+    :ARG2 (c/ country
+        :wiki "Q191"
+        :name (n/ name :op1 "Estonsko")))
+```
+
 ## Other implicit concepts?
