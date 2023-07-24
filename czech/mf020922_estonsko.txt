@@ -31,6 +31,16 @@ Tallin -
         :ref-number Singular))
 
 V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+
+(z/ získat-001
+    :ARG0 (b/ blok
+        :wiki "Q163347"
+        :name (n/ :op1 "Vlast")
+        :ref-number Singular)
+    :ARG1 nejvíce hlasů
+    :aspect ???
+    :modstr FullAff)
+
 Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
 Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
 
