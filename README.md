@@ -19,3 +19,5 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Events](doc/eventive-concepts.md)
 * [Frame files](doc/frames.md)
 * [Ellipsis](doc/ellipsis.md)
+* [Quantity](doc/quantity.md)
+* [Degree](doc/degree.md)
