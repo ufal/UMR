@@ -18,3 +18,4 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Entities](doc/entities.md)
 * [Events](doc/eventive-concepts.md)
 * [Frame files](doc/frames.md)
+* [Ellipsis](doc/ellipsis.md)
