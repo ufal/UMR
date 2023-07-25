@@ -60,6 +60,29 @@ the standard _-ní/-tí_ suffixes, such as _dřímota_ “slumber”, _objev_
 * _dřímota_ “slumber” → `dřímat-002`
 
 
+## Argument Roles
+
+Argument roles is another name used for some of the relations under eventive
+concepts. UMR [inherits them from AMR](https://amr.isi.edu/doc/roles.html),
+which in turn follows OntoNotes (PropBank) conventions. There are six
+argument roles: `:ARG0`, `:ARG1`, `:ARG2`, `:ARG3`, `:ARG4`, `:ARG5`. Their
+exact meaning [depends on each
+verb](https://amr.isi.edu/doc/propbank-amr-frames-arg-descr.txt) but there
+are still some general tendencies of the correspondence between role number
+and the semantic role. Hence not all frames will start with `:ARG0` and use
+the subsequent numbers in order.
+
+* `:ARG0` ... typically agent, experiencer. It often corresponds to `ACT` in
+PDT.
+* `:ARG1` ... typically patient, theme. It often corresponds to `PAT` in PDT.
+* `:ARG2` ... typically recipient (besides `:ARG2`, it could also use the
+relation `:beneficiary`). It often corresponds to `ADDR` in PDT.
+
+An example of a verb-specific (frame-specific) definition of roles:
+
+* receive-01 ([cs] získat-001) `ARG0`: receiver; `ARG1`: thing gotten; `ARG2`: received from; `ARG3`: price, in exchange for; `ARG4`: attribute of `ARG1` (???)
+
+
 ## Non-verbal Clauses
 
 UMR proposes seven abstract concept predicates for situations where states or
