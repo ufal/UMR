@@ -21,3 +21,4 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Ellipsis](doc/ellipsis.md)
 * [Quantity](doc/quantity.md)
 * [Degree](doc/degree.md)
+* [Glossary of relations and attributes](doc/relations-attributes.md)
