@@ -173,6 +173,37 @@ generic entity:
         :op1 "Persil"))
 ```
 
+If an entity is mentioned both by its name and by a descriptive common noun,
+we use a lexical concept of that common noun and add the name relation. If,
+in contrast, the entity is mentioned only by the name, we use an abstract
+concept (labeled with English words) from the taxonomy introduced below.
+Compare:
+
+* (6a) [cs] _Estonské volby vyhrál blok Vlast._
+            “The Fatherland bloc won the Estonian elections.”
+* (6b) [cs] _Vlast má více hlasů než všichni ostatní._
+            “Fatherland has more votes than everyone else.”
+
+In (6a), the name will be attached to the (Czech) concept `blok`. In (6b),
+the name will be attached to the (abstract, English-derived) concept
+`organization`, or here, the more specific `political-organization`.
+
+```
+(b/ blok
+    :wiki "Q163347"
+    :name (n/ name
+        :op1 "Vlast")
+    :ref-number Singular)
+```
+
+```
+(p/ political-organization
+    :wiki "Q163347"
+    :name (n/ name
+        :op1 "Vlast")
+    :ref-number Singular)
+```
+
 
 ## Anchoring entities in ontologies
 
@@ -248,7 +279,7 @@ from the example, using all the rules specified so far. (We omit the monetary
 entity from the end because such types of entities have not been discussed
 yet.)
 
-* (6) [cs] _Národní muzeum v Praze získá nový bezpečnostní systém, který mu dodá firma CESS. Muzeum za něj zaplatí necelé 2 milióny korun._
+* (7) [cs] _Národní muzeum v Praze získá nový bezpečnostní systém, který mu dodá firma CESS. Muzeum za něj zaplatí necelé 2 milióny korun._
            “The National Museum in Prague will get a new security system, which will be supplied by CESS. The museum will pay almost 2 million crowns for it.”
 
 ```
