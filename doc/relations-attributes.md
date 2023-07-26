@@ -118,7 +118,7 @@ StubHub website**._
 
 `:manner` – Example (3b) in 3-3-1-3.
 
-`:start` – Argument role used for languages that do not have frame files.
+`:material` – Argument role used for languages that do not have frame files.
 Introduced in 3-2-1-1. It only occurs with creation events, as in (1c): _She
 built a house **out of wood**._
 
