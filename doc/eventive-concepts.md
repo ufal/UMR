@@ -44,46 +44,56 @@ Information packaging, on the other hand, concerns the way how the semantic cont
 > - whatever is expressed as **predication**.
 
 Examples:
-* (1a) [cs] *Muzeum **zaplatí** necelé 2 milióny korun za novou střechu.*<br>
-    *The museum will **pay** almost 2 million crowns for a new roof.* <br>
+* [cs] *Muzeum **zaplatí** necelé 2 milióny korun za novou střechu.*<br>
+  [en]  *The museum will **pay** almost 2 million crowns for a new roof.* <br>
     ... a process in predication
-* (2) [cs] *Než **šla** do školy, **opravila** mi kolo.* <br>
-    [en] *Before she **went** to school, she **repaired** my bike.* (from the UMR Guidelines)<br>
+* [cs] *Než **šla** do školy, **opravila** mi kolo.* <br>
+  [en] *Before she **went** to school, she **repaired** my bike.* (from the UMR Guidelines)<br>
     ... both processes in predication
-* (3a) [cs] ***Chtěla** **jít** do školy.* <br>
-    [en] *She **wanted** to **go** to school.* (from the UMR Guidelines)<br>
+* [cs] ***Chtěla** **jít** do školy.* <br>
+  [en] *She **wanted** to **go** to school.* (from the UMR Guidelines)<br>
     ... a state in predication (*want*, *chtít*)<br>
-    ... a process in predication (*go*, *jít*)
+    ... a process in reference/modification (*go*, *jít*) (not sure which of them?)
  
  ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to   Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)  
-* (3b) [cs] ***Chtěla,** abych **šel** do školy.* <br>
-    [en] *She **wanted** me to **go** to school.* <br>
+ 
+ ML: According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), *want* is considered as a semi-modal concept and the fact that it can be modalized independently of the "go"-event on English indicates that desires are construed as independent events (in English), thus considered as independent events.  
+ This may be language-internal characteristics. 
+ 
+* [cs] ***Chtěla,** abych **šel** do školy.* <br>
+  [en] *She **wanted** me to **go** to school.* <br>
     ... a state in predication (*want*, *chtít*)<br>
-    ... a process in predication (*go*, *jít*)
-* (4a) [cs] *Student **hrající** na housle **má rád** Bacha.*<br>
-    [en] *The student **playing** the violin **likes** Bach.* (from the UMR Guidelines)<br>
+    ... a process in reference/modification (*go*, *jít*) 
+
+* [cs] ***Bouře** **poničila** střechu.* <br>
+  [en] *The **storm** **damaged** the roads.* (from the [UMR Guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2-processes-in-modification-and-reference))<br>
+    ... a process in predication (*damage*, *poničit*), the `:ARG0`of which is an event nominal (in reference) indicating another process (*storm*, *bouře*)  
+ŠZ: other examples of possible processes: *Christmas, wind, (financial) inflation*
+
+* [cs] *Student **hrající** na housle **má rád** Bacha.*<br>
+  [en] *The student **playing** the violin **likes** Bach.* (from the UMR Guidelines)<br>
     ... a process in modification (*play*, *hrát*)<br>
-    ... another process in predication (*like*, *mít_rád*)
-* (4b) [cs] *Student, který **hraje** na housle, **má rád** Bacha.* <br>
-    [en] *The student, who is **playing** the violin, **likes** Bach.* (from the UMR Guidelines)<br>
+    ... state in predication, thus eventive, see below (*like*, *mít_rád*)
+* [cs] *Student, který **hraje** na housle, **má rád** Bacha.* <br>
+  [en] *The student, who is **playing** the violin, **likes** Bach.* (from the UMR Guidelines)<br>
     ... a process in modification (*play*, *hrát*)<br>
-    ... another process in predication (*like*, *mít_rád*)
-* (5a) [cs] *Jejího **příchodu** si nikdo **nevšiml**.*<br>
-    [en] *Nobody **noticed** her **arrival**.*<br>
+    ... state in predication, thus eventive (*like*, *mít_rád*)
+* [cs] *Jejího **příchodu** si nikdo **nevšiml**.*<br>
+  [en] *Nobody **noticed** her **arrival**.*<br>
     ... a process in predication (*notice*, *všimnout si*)<br>
     ... another process in reference (event nominal) (*arrival*, *příchod*).
-* (5b) [cs] *Nikdo si **nevšiml**, že **přišla**.*<br>
-    [en] *Nobody **noticed** that she **arrived**.*<br>
-    ... a process in predication (*notice*, *všimnout*)<br>
-    ... another process in predication (*arrive*, *přijít*).
-* (6a) [cs] *Její rychlý **návrat** mě **zaskočil**.*<br>
-    [en] *Her quick **return** **surprised** me.*<br>
-    ... main process in predication (*surprise*, *zaskočit*)<br>
+* [cs] *Nikdo si **nevšiml**, že **přišla**.*<br>
+  [en] *Nobody **noticed** that she **arrived**.*<br>
+    ... a ??process in predication (*notice*, *všimnout*)<br>
+    ... another process in ~~predication~~ ?reference, see [Table 1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-eventive-concepts) (*arrive*, *přijít*).
+* [cs] *Její rychlý **návrat** mě **zaskočil**.*<br>
+  [en] *Her quick **return** **surprised** me.*<br>
+    ... main ??process in predication (*surprise*, *zaskočit*)<br>
     ... subject process in reference (*return*, *návrat*)
-* (6b) [cs] *Zaskočilo mě, jak rychle se vrátila.*<br>
-    [en] *It **surprised** me how quickly she **returned**.*<br>
-    ... main process in predication (*surprise*, *zaskočit*)<br>
-    ... subject process in predication (*return*, *vrátit*)
+* [cs] *Zaskočilo mě, jak rychle se vrátila.*<br>
+  [en] *It **surprised** me how quickly she **returned**.*<br>
+    ... main ??process in predication (*surprise*, *zaskočit*)<br>
+    ... subject process in ~~predication~~?reference, see RULE 1b below (*return*, *vrátit*)
 
 
 > **RULE 1a: processes vs. states**
@@ -91,13 +101,9 @@ Examples:
 > - **Stative verbs** can still be annotated as events if they are packaged as predication. In contrast, active verbs are processes, hence events regardless of information packaging.
 
 Examples:
-* (7a) [cs] *Moje kočka **nesnáší** granule.*
-* (7b) [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
-    ... a state in predication (*love*, *nesnášet*), thus should be annotated as an event <br>
-    (FG) this phrasing may be misleading, as 'state' in the guidelines means a property. Stative verbs should still be processes (see the table with 9 cells).
-    (DZ) The guidelines say "states (or, properties)" which is not necessarily equivalence, and even if it is, we do not have a definition of property. Anyways, in
-         [3-1-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities),
-         the guidelines explicitly acknowledge that there can be two-place states, and [en] _love_ is an example.
+* [cs] *Moje kočka **nesnáší** granule.*
+* [en] *My cat **loves** wet food.* (from the UMR Guidelines)<br>
+    ... a state in predication (*love*, *nesnášet*), thus should be annotated as an event, see [3-1-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities), where the guidelines explicitly acknowledge that there can be two-place states, and [en] _love_ is an example.
 
 DZ: There is a gray zone with verbs such as _sleep_ or _sit_. They may not be
 "state verbs" according to the English grammar (it is grammatical to say _I
@@ -120,11 +126,22 @@ _(stavová slovesa)_ include _stát_ "stand", _mít_ "have", _patřit_ "belong";
 _to stand_ would perhaps not be grammatically a state verb in English, but
 semantically it is a state both in Czech and in English.
 
-* (8a) [cs] *Moje dítě **sedí** na lavičce.* <br/>
-       [en] *My child **is sitting** on a bench.* <br/>
+ML: There is a simple Czech test for distinguishing state verbs (stavová slovesa) and action verbs (dějová činnostní): 
+-  action verbs ... *Co dělám? Běžím.* "What am I doing? I'm running."
+-  state/stative verbs ... *Co se děje se mnou? Mám dost peněz.* "What is happening to me? I have enough money."  
+The test illustrates also borderline cases like *stát*, as you can ask both questions  *Co dělám? Co se děje se mnou? Stojím.* "What am I doing? What is happening to me? I'm standing." 
+
+See also [SaS 17(4)](http://nase-rec.ujc.cas.cz/archiv.php?art=2685).
+
+ML: I suppose we should anchor both action and state/stative verbs in SynSemClass (PDT-Vallex), regardless they are packaged as predication, modification, or reference -- even in clear cases of state verbs as _stát_ "stand", _mít_ "have", _patřit_ "belong". It is still not clear (to me) whether there is any difference in UMR annotation of stative verbs when they are regarded as eventive concepts (i.e., in predication) and when they are non-eventive concepts (i.e., in reference and modification). 
+
+
+
+* [cs] *Moje dítě **sedí** na lavičce.* <br/>
+  [en] *My child **is sitting** on a bench.* <br/>
        ... a state in predication (*sedět*, *sit*) <br/>
-* (8b) [cs] *Dítě sedící na lavičce **je moje**.* <br/>
-       [en] *The child sitting on the bench **is mine**.* <br/>
+* [cs] *Dítě sedící na lavičce **je moje**.* <br/>
+  [en] *The child sitting on the bench **is mine**.* <br/>
        ... here the sitting state is in modification, hence not an event;
            the other state (*můj*, *mine*) is in predication, hence it is an event.
 
@@ -139,26 +156,26 @@ semantically it is a state both in Czech and in English.
 > - **Predicates of adverbial clauses** are predication. The term modification in the context of this page probably means modification of entities but not of processes, so adverbial clauses are different from relative clauses.
 
 Examples:
-* (9a) [en] *firing squad* (cs. popravčí četa, from the UMR Guidelines)<br>
+* [en] *firing squad* (cs. popravčí četa, from the UMR Guidelines)<br>
     ... compound, thus entity (not process)
-* (9b) [en] *floating hospital* (from the UMR Guidelines)<br>
+* [en] *floating hospital* (from the UMR Guidelines)<br>
     ... *floating* as an event ... BUT "The Floating Hospital" is a non-profit organization ??? https://en.wikipedia.org/wiki/Floating_Hospital
-* (10a) [cs] *Tančící dům* <br>
-        [en] *Dancing House* <br>
+* [cs] *Tančící dům* <br>
+  [en] *Dancing House* <br>
     ... a name of a [building in Prague](https://cs.wikipedia.org/wiki/Tan%C4%8D%C3%ADc%C3%AD_d%C5%AFm); the house is not really dancing, hence _tančící_ does not denote a process in this context.
     
-* Similarly: [cs]***létající** pivovar* (gypsy brewery. lit. flying brewery)<br>
+* Similarly: [cs] ***létající** pivovar* (gypsy brewery. lit. flying brewery)<br>
 ... a brewery company (society) working in different rental eqipped brewery houses - not an event.
-* (10b) [cs] *Náměstí bylo plné **tančících** lidí.* <br>
-        [en] *The square was full of **dancing** people.* <br>
+* [cs] *Náměstí bylo plné **tančících** lidí.* <br>
+  [en] *The square was full of **dancing** people.* <br>
     ... here we have a process (*tančit*, *dance*) in modification; it will be annotated as an event.
-* Similarly: [cs] ***válčící** strany* (lit. warring/fighting parties, enemies)
-The parties are in a real fight as a process, thus the word *válčit* is an event.
+* Similarly: [cs] ***válčící** strany* (lit. warring/fighting parties, enemies)  
+... the parties are in a real fight as a process, thus the word *válčit* is an event.
 * [it] *ambasciatore itinerante* (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.)) <br>
     *itinerante* as event or entity ???
 * [cs] ***Překvapilo** mě, jak **chytrý byl**.* <br>
   [en] *It **surprised** me how **smart** he **was**.* <br>
-  ... subject clause is reference to a state (*chytrý*, *smart*), hence it is not an event.
+  ... subject clause is reference to a state (*chytrý*, *smart*), hence it is not an event; another ?state in predication (*překvapit*, *surprise*)
 * [cs] *Jeho **chytrost** mě **překvapila**.* <br>
   [en] *His **smartness** **surprised** me.* <br>
   ... subject clause is reference to a state (*chytrý*, *smart*), hence it is not an event.
@@ -175,7 +192,7 @@ The parties are in a real fight as a process, thus the word *válčit* is an eve
   ... complement clause is reference to a state (*chytrý*, *smart*), hence it is not an event.
 * [cs] *Moje dcera **netouží** **být dospělá**.* <br>
   [en] *My daughter **does not long** for **being adult**.* <br>
-  ... complement clause is reference to a state (*dospělý*, *adult*), hence it is not an event.
+  ... complement clause is reference to a state (*dospělý*, *adult*), hence it is not an event; another state in main predication (*toužit*), thus event
 * [cs] ***Koupala se** v jezeře **nahá**.* <br>
   [en] *She **swam** in the lake **naked**.* <br>
   ... state in secondary predication (*nahý*, *naked*) is an event.
@@ -194,24 +211,24 @@ The parties are in a real fight as a process, thus the word *válčit* is an eve
 > - **Causal relationships** should be annotated as events if packaged as predication (and as non-events otherwise).
 
 Examples:
-* (11a) [cs] ***Exploze** **způsobila** **zhroucení** domu.*<br>
-    [en] *The **explosion** **caused** the house **to collapse**.* (from the UMR Guidelines)<br>
+* [cs] ***Exploze** **způsobila** **zhroucení** domu.*<br>
+  [en] *The **explosion** **caused** the house **to collapse**.* (from the UMR Guidelines)<br>
     ... three eventive concepts: 1 causal verb in predication (*cause*, *způsobit*), 1 complement/nominalization (*collapse*, *zhroucení*), 1 event nominal in reference (*explosion*, *exploze*)
-* (11b) [cs] *Dům se **zhroutil** kvůli **explozi**.*<br>
-    [en] *The house **collapsed** because of the **explosion**.* (from the UMR Guidelines)<br>
+* [cs] *Dům se **zhroutil** kvůli **explozi**.*<br>
+  [en] *The house **collapsed** because of the **explosion**.* (from the UMR Guidelines)<br>
     ... two eventive concepts: 1 process in predication (*collapse*, *zhroutit se*) and 1 event nominal in reference (*explosion*, *exploze*); causal relationship not expressed in predication
-* (11c) [cs] *Dům se **zhroutil**, protože v něm něco **explodovalo**.* <br/>
-        [en] *The house **collapsed** because something **exploded** in it.* <br/>
+* [cs] *Dům se **zhroutil**, protože v něm něco **explodovalo**.* <br/>
+  [en] *The house **collapsed** because something **exploded** in it.* <br/>
         ... main clause and adverbial clause, each with one event (process in predication); the causal relationship (*protože*, *because*) is not an additional event.
 
 Some languages (e.g., Basque) have morphological causative:
-* (12a) [eu] *Zopa izugarri **gustatzen zaio** mutilari.* <br/>
-        lit. "soup greatly pleasing it.is.it to.boy" <br/>
-        [en] "The boy likes the soup." (normal active voice)
-* (12b) [eu] *Goseak zopa izugarri **gustatuerazi zion** mutilari.* <br/>
-        lit. "hunger soup greatly made.pleasing it.has.it.it to.boy" <br/>
-        [en] "Hunger made the boy like the soup." (causative voice) <br/>
-        ... (DZ) I suppose that both in (11a) and in (11b) there is just one event (*gustatzen* "like"). It is a state but it is packaged as predication. Or should we decompose (11b) to two events (causing and liking)?
+* [eu] (a) *Zopa izugarri **gustatzen zaio** mutilari.* <br/>
+   lit. "soup greatly pleasing it.is.it to.boy" <br/>
+  [en] "The boy likes the soup." (normal active voice)
+* [eu] (b) *Goseak zopa izugarri **gustatuerazi zion** mutilari.* <br/>
+   lit. "hunger soup greatly made.pleasing it.has.it.it to.boy" <br/>
+  [en] "Hunger made the boy like the soup." (causative voice) <br/>
+ ... (DZ) I suppose that both in (a) and in (b) there is just one event (*gustatzen* "like"). It is a state but it is packaged as predication. Or should we decompose (b) to two events (causing and liking)?
 
 ***
 
@@ -232,17 +249,6 @@ Based on examples from the Guidelines:
 
 ### Eventive vs. non-eventive concepts – unclear cases
 
-#### generic vs. specific mention
-
-* (5) [cs] ***Bouře** **poničila** střechu.* <br>
-    [en] *The **storm** **damaged** the roads.* (from the [UMR Guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2-processes-in-modification-and-reference))<br>
-    ... a process in predication (*damage*, *poničit*) and as an event nominal (*storm*, *bouře*)
-
-DZ: What is unclear here? And how does it relate to the heading "generic vs.
-specific mention"? I think there is a process (*poničit*) whose `:ARG0` will
-be another process (*bouře*).
-
-ŠZ: other examples of possible processes: *Christmas, wind, (financial) inflation*
 
 #### agent (or, more generally, participant) nouns:
 
@@ -274,11 +280,42 @@ Czech _jídlo_ "food" would be decomposed as `(t/ thing :ARG1-of (j/
 jíst-01))` (a thing that is eaten) while English _food_ would be simply `(f/
 food)` because there is no visible grammatical link between _food_ and _eat_.
 
-[la] *praefectus* (en. *prefect*). <br>
+* [la] *praefectus* (en. *prefect*). <br>
 Originally *praefectus* is a past participle of *praeficio* meaning 'to put in charge', but it also occurs as a substantive. This alternation is reflected in the grammatical case its dependents occur in. Examples: <br>
     *praefectus praetorio* (en. praetorian prefect): *praetorio* in dative, because the verb requires dative case. <br>
     *praefectus annonae* (en. prefect of the provisions): *annonae* unclear, could be either dative or genitive. <br>
     *praefectus Alexandreae et Aegypti*, *praefectus classis* (en. prefect of navy), *praefectus vigilum* (en. prefect of the watchmen): genitive case is used,         as in any nominal modification. *Praefectus* behaves like a substanstive, like *driver*/*teacher* (main difference: it has passive meaning). <br>
+
+#### How to recognize event nominals:
+
+https://github.com/umr4nlp/umr-guidelines/issues/16
+
+Compare the annotation of *food* in 3-3-3 (1a) and in 3-2-1-1(6a)
+
+[Part 3-3-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-3-polarity)
+``` 
+Unhealthy food.  
+(t/ thing
+	:ARG1-of (e/ eat-01)
+	:mod (h/ healthy
+		:polarity -))
+```
+
+[3-2-1-1(6a)](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-1-stage-0)
+```
+He gave the cat some wet food.
+(g/ give-01  
+	:actor (p/ person
+		:ref-person 3rd
+		:ref-number Singular)  
+	:theme (f/ food
+		:mod (w/ wet)
+		:quant (s/ some))  
+	:recipient (c/ cat
+		:ref-number Singular)
+	:aspect Performance
+	:modstr FullAff)
+```
 
 
 ***
@@ -288,35 +325,20 @@ Originally *praefectus* is a past participle of *praeficio* meaning 'to put in c
 >RULE 3
 >- events/eventive concepts should be linked to frame files
 
-**(1) PROCESSESS:**
-- OK processes in predication ... prototypical case, lexical verb, but also predicate nouns or adjectives, complements) <br>
+**(1) PROCESSESS should be linked to frame files:**
+- **OK processes in predication** ... prototypical case, lexical verb, but also predicate nouns or adjectives, complements) <br>
     *Peter **went** to school; The sharp thorns **scratched** me.*
-- OK processes in modification ... participles, rel. clauses with lex. verbs<br>
+- **OK processes in modification** ... participles, rel. clauses with lex. verbs<br>
      *The student **playing** the violin likes Bach.; The student, who is **playing** the violin, likes Bach. the thorns **that [scratched me]** / the thorns [**scratching** me]*
 - processes in reference:
-  - OK for nominalizations as deadjectival or deverbal nouns, for infinitives<br>
-       *I said [**that** the thorns **scratched** me]*. / the **[scratching of the thorns]**
-  - ??? for event nominals
-      - **?? OK** for generic mentions ... *war, storm, ceremony, válka, bouře*??
-      - **!! NO** for specific mentions ... rather anchored in wikidata/wikipedie/
-        **?? OR both as an entity AND as an event??**
-
-Examples:
-* (6a) [cs] *druhá světová válka* <br>
-       [en] WW II ... ?? should be anchored to https://www.wikidata.org/wiki/Q362
-* (6b) [cs] *válka na Ukrajině*  ... ?? https://www.wikidata.org/wiki/Q110999040
-* (7)  [cs] _Benátská noc_ (https://www.wikidata.org/wiki/Q11131287)
-
-
-```
-(w/ war
-    :wiki "Q110999040"
-    :name (n/ name
-        :op1 "Ruská"
-        :op2 "invaze"
-        :op3 "na"
-        :op4 "Ukrajině"))
-```
+  - **OK for nominalizations** as deadjectival or verbal nouns, for infinitives<br>
+       *I said [**that** the thorns **scratched** me]*. / *the **[scratching of the thorns]***
+  - for event nominals
+      - **generic mentions ... BOTH annotations**  (*war, storm, ceremony, válka, bouře*)  
+      ... annotate them primarily as events (to map them primarily to the same concept as corresponding verb)  
+      BUT add also the `:wiki` attribute and the `:name` relation similarly to named entities
+      - **specific mentions ... ALSO as an event ???**  
+      ... primarily anchored in wikidata/wikipedie/  
 
 DZ: See also [issue 14 in UMR
 guidelines](https://github.com/umr4nlp/umr-guidelines/issues/14), as well as
@@ -340,9 +362,49 @@ class `vec01002` _(fight, bojovat)_). The type `war` of class `event` in
 guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-2-named-entities)
 would not be used as an abstract concept.
 
+ML: How to add event annotation to event nominals?  
+Probably should be represented as some relevant verb, e.g., *válka* should be the same concept as *válčit* (which is contained in the PDT-Vallex with ACT=ARG0, ADDR=ARG1, PAT=ARG1 (ARGs according to *fight-01*)), see below for two proposed annotations (*válka mezi Indií a Pákistánem o Kašmír* *and Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.*).  
+But there is a problem with event nominals with no clear ??morphological verbal counterpart ... see the discusion on *jídlo* vs. *food* above and [the UMR guidelines issue](https://github.com/umr4nlp/umr-guidelines/issues/16).
+
+```
+válka mezi Indií a Pákistánem o Kašmír "the war between India and Pakistan for Kashmir"
+(v/ válčit-01
+    :pdt-vallex "v-w7509f1"
+    :wiki "Q198"
+    :ARG0 (c/ country
+        :wiki "Q668"
+        :name (n/ :op1 "Indie"))
+    :ARG1 (c/ country
+        :wiki "Q843"
+        :name (n/ :op1 "Pákistán"))
+    :ARG2 (c/ local-region
+        :wiki "Q43100"
+        :name (n/ :op1 "Kašmír"))
+```
+
 Examples:
- * (7a) [cs] Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.<br>
- * (7a) [en] 80 years ago, Germany started World War II by invading Poland.
+* [cs] *druhá světová válka* <br>
+  [en] WW II ... ?? should be anchored to https://www.wikidata.org/wiki/Q362
+* [cs] *válka na Ukrajině*  ... ?? https://www.wikidata.org/wiki/Q110999040
+* [cs] _Benátská noc_ (https://www.wikidata.org/wiki/Q11131287)
+
+
+```
+(w/ war
+    :wiki "Q110999040"
+    :name (n/ name
+        :op1 "Ruská"
+        :op2 "invaze"
+        :op3 "na"
+        :op4 "Ukrajině"))
+```
+
+
+
+
+Examples:
+ * [cs] Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.<br>
+ * [en] 80 years ago, Germany started World War II by invading Poland.
 
 ```
 (r/ rozpoutat-01
@@ -366,13 +428,13 @@ not for the current country, which has
 
 CA: Some examples in Spanish/English of other named events with a link to Wikidata that could be also annotated as events:
 
-* (7b) [spa] España recuerda el papel de Adolfo Suárez en la Transición.
-* (7b) [en] Spain remembers the role of Adolfo Suarez in the [Spanish transition to democracy](https://www.wikidata.org/wiki/Q874209)
+* [spa] España recuerda el papel de Adolfo Suárez en la Transición.
+* [en] Spain remembers the role of Adolfo Suarez in the [Spanish transition to democracy](https://www.wikidata.org/wiki/Q874209)
 
-* (7c) [spa] Esta situación no va a cambiar tras el anuncio del cese definitivo de la actividad armada de ETA. 
-* (7c) [en] This situation is not going to change after the [announcement of the definitive cessation of ETA's armed activity](https://www.wikidata.org/wiki/Q5700633)
+* [spa] Esta situación no va a cambiar tras el anuncio del cese definitivo de la actividad armada de ETA. 
+* [en] This situation is not going to change after the [announcement of the definitive cessation of ETA's armed activity](https://www.wikidata.org/wiki/Q5700633)
 
-**(2) non-PROCESSESS packed as predication:**
+**(2) non-PROCESSESS packed as predication should be linked to frame files:**
 - OK states in predication ...  prototypically adjectives, but also other nominal modifiers as PPs, relative clauses, participles<br>
     *Those thorns **are sharp**.*
     *My cat **loves** wet food.*
@@ -383,7 +445,7 @@ CA: Some examples in Spanish/English of other named events with a link to Wikida
 >RULE 4
 >- non-eventive concepts should be linked to wiki
 
-**(3) STATES in modification or reference:**
+**(3) STATES in modification or reference should be linked to wiki:**
 - **??** states in reference ... what to do with them? (sharpness https://www.wikidata.org/wiki/Q55433472 )
 - **??** states in modification ... either without any mapping OR, contrary to the guidelines, as eventive concepts (being tall)
 
@@ -391,29 +453,27 @@ DZ: I think that primary anchoring of states should be in SynSemClass. It
 should provide anchors for all processes and states, regardless whether they
 are packaged as predication, modification, or reference.
 
-**(4) ENTITIES in modification or reference:**
-- entities in reference (prototypical)
-  - **??** for generic mention  (*the sharp **thorns***) ... what to do with them?
-  - **OK** for specific mentions (***Barack Obama***)
-- entities in modification
-  - **??** generic mentions (*(any) **bush’s** thorns*) ... what to do with them?
-  - **OK** for specific mentions (***Barack Obama's** cabinet*)
+**(4) ENTITIES in modification or reference should be linked to wiki:**
 
-DZ: Specific entities (instances) should be linked to Wikidata if they have
+- **specific entities**  (***Barack Obama***, ***Barack Obama's** cabinet*)
+
+Specific entities (instances) should be linked to Wikidata if they have
 an entry there. Regardless of information packaging. And even if the specific
 mention does not use the name (e.g., if the mention is _president_ but it is
 clear that it refers to Barack Obama, it should be linked to [Barack
-Obama](https://www.wikidata.org/wiki/Q76)). If the entity does not have an
-entry in Wikidata, we must create an entry for it in our local database, so
+Obama](https://www.wikidata.org/wiki/Q76)).  
+If the entity does not have an entry in Wikidata, we must create an entry for it in our local database, so
 that we can cross-reference that entity from various places even in different
 documents.
 
-DZ: Furthermore, we also want to anchor the generic type of the entity. This
-is relatively easy for generic mentions. If the sentence is _One day I want
+- **generic entities** (*sharp **thorns***, *(any) **bush’s** thorns*, *(any) **president***) 
+
+Furthermore, we also want to anchor the generic type of the entity.  
+This is relatively easy for **generic mentions**. If the sentence is _One day I want
 to be president_, we can link _president_ to the [corresponding Wikidata
 entry](https://www.wikidata.org/wiki/Q30461). Again, in the unlikely case
-that there is no such entry, we can create one in our local database. For
-specific mentions it is trickier. In theory, the specific Wikidata entry
+that there is no such entry, we can create one in our local database.  
+DZ: For **specific mentions** it is trickier. In theory, the specific Wikidata entry
 should contain information that gives us the type. But if we linked the word
 _president_ to the entry of Barack Obama, we will not get a one-click way to
 the entry of president. According to Wikidata, Barack Obama is an instance of
@@ -425,14 +485,24 @@ it is an instance), and also a `subclass` of
 [president](https://www.wikidata.org/wiki/Q30461) (and also of _politician_).
 Given all this, maybe we want two anchors for a _president_ in a specific
 context: one for the individual (Barack Obama) and another for the type that
-is closest to the word used in the mention (president).
+is closest to the word used in the mention (president).  
+ML: If I mention *president* having in mind *president Obama* - is it still a generic entity? I would suppose this falls under specific entities? Or do you mean a context like *Mr. Obama was a president.*? But this will be annotated using the abstract predicate `have-role-91` (based on 3-1-2 (1)), with  *Mr. Obama* mapped to the [Barack
+Obama](https://www.wikidata.org/wiki/Q76) and *president* to the respective [Wikidata entry](https://www.wikidata.org/wiki/Q30461). Or do we want to distinguish that we mean *US president* in this case [President of the United States](https://www.wikidata.org/wiki/Q11696)?
+
+```
+Mr. Obama was a president.
+(h/ have-role-91
+      :ARG1 (p/ person :wiki "Q76"
+            :name (n/ name :op1 "Mr." :op2 "Obama"))
+      :ARG3 (p2/ president
+      	    :wiki "Q30461")  ??? OR :wiki "Q11696"
+      :aspect State
+      :modstr FullAff) 
+```
 
 ***
 ***
 
-## Non-verbal clauses
-
-***
 
 #### TO READ
 
