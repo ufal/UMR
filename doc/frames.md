@@ -4,7 +4,7 @@ UMR
 [assumes](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-participant-roles)
 that [events](eventive-concepts.md) are linked to **frame files** (valency
 dictionaries), which describe the participants of the event and their
-semantic roles. The default source of English frame files is PropBank. Other
+semantic roles. The default source of English frame files is PropBank ([version 3.4](http://propbank.github.io/v3.4.0/frames/index.html)). Other
 languages may use a similar resource if there is one, or create a lexicon on
 the fly when working on UMR annotation.
 
