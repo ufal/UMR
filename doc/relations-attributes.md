@@ -16,6 +16,8 @@ colon-identifiers can be both (sometimes followed by a value, sometimes by a
 node). And if we view the attribute values as abstract concepts, i.e., nodes,
 relations and attributes become more or less the same thing.
 
+`:accompanier` (ML)
+
 `:actor` – Argument role used for languages that do not have frame files.
 Typically corresponds to `:ARG0`. See 3-2-1-4.
 
@@ -50,12 +52,15 @@ predicate frame in the dictionary.
 
 `:aspect` – Attribute used with every event. Set of predefined values.
 
+`:beneficiary` (ML)
+ 
+`:calendar` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (added by ML)
+
 `:cause` – Introduced in 3-2-1-1. See also `:reason`.
 
 `:causer` – Used in causatives. See Table 11 in 3-2-1-1-2.
 
-`:century` – This relation is mentioned in 3-2-2-1 but there are no examples
-how it is used.
+`:century` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:companion` – Argument role used for languages that do not have frame files.
 Appears in example (7b) in 3-2-1-1.
@@ -64,26 +69,28 @@ Appears in example (7b) in 3-2-1-1.
 
 `:condition` – Briefly mentioned at the end of 3-2.
 
-`:day` – Looks like attribute, introduced among relations in 3-2-2-1. The
-value is the day-of-month number. See also `:weekday`.
+`:consist-of` - examples from AMR guidelines: *a ring **of gold***, *a team **of monkeys*** (ML)
 
-`:dayperiod` – This relation is mentioned in 3-2-2-1 but there are no
-examples how it is used.
+`:day` – Looks like attribute, mentioned among relations in 3-2-2-1. The value is the day-of-month number; see also `:weekday`. It is used within `date-entity`concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
-`:decade` – This relation is mentioned in 3-2-2-1 but there are no examples
-how it is used.
+`:dayperiod` – This relation is mentioned in 3-2-2-1, it is used within `date-entity`concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
+
+`:decade` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:degree` – Attribute with values `Intensifier`, `Downtoner` or `Equal`, if
 expressed morphologically. Otherwise, it is a relation with the child node
 holding the lexical degree concept, e.g. the English word _very_. Defined in
 [3-3-6](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-6-degree).
 
+`:destination` (ML)
+
 `:direction` – _He drove **west**._ (1a) in 3-2-2-3.
+
+`:domain` (ML)
 
 `:duration` – _The soup cooled **for an hour**._ (2b) in 3-3-1-5.
 
-`:era` – This relation is mentioned in 3-2-2-1 but there are no examples how
-it is used.
+`:era` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:example` – _countries **like Germany and France**._ (1a) in 3-2-2-6.
 
@@ -139,9 +146,8 @@ declarative sentences, so most events lack this attribute.
 `:modstr` – Attribute used with every event. Expresses modality at sentence
 level. Typical value `FullAff` (fully affirmative).
 
-`:month` – Looks like attribute, introduced among relations in 3-2-2-1. The
-value is the month number. (Not sure what they do with lunar and other
-calendars.)
+`:month` – Looks like attribute, introduced among relations in 3-2-2-1. The value is the month number. (Not sure what they do with lunar and other calendars.) 
+It is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:name` – Always has a `name` concept as its child node, which in turn has
 `opX` attributes. Used in named entities.
@@ -187,8 +193,7 @@ an attribute with the boolean value `+`.
 As an attribute it has a numeric value. As a relation it has a child node
 with a concept describing approximate quantity.
 
-`:quarter` – This relation is mentioned in 3-2-2-1 but there are no examples
-how it is used.
+`:quarter` – Looks like attribute, introduced among relations in 3-2-2-1. The value is the number (1, 2, 3, 4). It is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:range` – Used with quantities. Example (1b) in 3-2-2-5.
 
@@ -209,8 +214,7 @@ other contextual clues).
 `:scale` – Used together with `:quant`, e.g. in _6.5 **on the Richter
 scale**_. Example (1h) in 3-2-2-5.
 
-`:season` – This relation is mentioned in 3-2-2-1 but there are no examples
-how it is used.
+`:season` – This relation is mentioned in 3-2-2-1,  it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:source` – Argument role used for languages that do not have frame files.
 
@@ -218,23 +222,23 @@ how it is used.
 
 `:stimulus` – Argument role used for languages that do not have frame files.
 
+`:subevent` - example from AMR guidelines: *The boy won **the race** in the Olympics.* (= the race being the subevent-of the Olympics game) (ML)
+
 `:subtraction` – Example (8) in 3-1-6: _**except for Joe**_.
 
-`:temporal` – _The soup cooled for an hour **before we ate it**._ (2b) in
-3-3-1-5.
+`:temporal` – _The soup cooled for an hour **before we ate it**._ (2b) in 3-3-1-5. According to the UMR guidelines, Part 3-2-1-1. Stage 0: "... UMR uses `:temporal` to annotate temporal circumstantials of events, while `:time` is only used as a daughter of date-entity concepts to annotate hours and minutes on the clock." (but example 3-1-3-7 (1b) uses `:time` for *soon*, by mistake??) 
+(Difference between AMR and UMR: `:time` as used in AMR are replaced by `:temporal` in UMR.) (ML)
 
 `:theme` – Argument role used for languages that do not have frame files.
 Typically corresponds to `:ARG1`.
 
-`:time` – Example (4d) in 3-3-1-3. It looks like attribute, introduced among
-relations in 3-2-2-1. The value is the local time in 24h format. See also
-`:timezone`.
+`:time` – Example (4d) in 3-3-1-3. It looks like attribute, introduced among relations in 3-2-2-1. The value is the local time in 24h format. See also
+`:timezone`(see date-entity below). The relation is used within `date-entity` concepts (see below). According to the UMR guidelines, Part 3-2-1-1. Stage 0: "... UMR uses `:temporal` to annotate temporal circumstantials of events, while `:time` is only used as a daughter of date-entity concepts to annotate hours and minutes on the clock." (but example 3-1-3-7 (1b) uses `:time` for *soon*, by mistake??). 
+(Difference between AMR and UMR: `:time` as used in AMR are replaced by `:temporal` in UMR.) (ML)
 
-`:timezone` – A relation introduced in 3-2-2-1. Typically used together with
-`:time`. The child node is a concept defining the zone. Apparently they
-assume some standardized time zone concepts, as the text contained
-_Albuquerque time_ but they converted it to `:timezone (z/ MST)`, i.e.,
-Mountain Standard Time.
+`:timezone` – A relation introduced in 3-2-2-1. Typically used together with `:time`. The child node is a concept defining the zone. Apparently they assume some standardized time zone concepts, as the text contained _Albuquerque time_ but they converted it to `:timezone (z/ MST)`, i.e.,
+Mountain Standard Time (see date-entity below).
+The relation is used within `date-entity` (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:topic` – Example (2f) in 3-2-2-2: _information **about the case**_.
 
@@ -247,10 +251,8 @@ Typically corresponds to `:ARG1`.
 `:value` – Used with `ordinal-entity`, `percentage-entity`, `url-entity` in
 3-2-2-5.
 
-`:weekday` – A relation introduced in 3-2-2-1. The child node is the concept
-with the name of the day of the week, presumably in the local language (they
-have an English example and there is `:weekday (f/ Friday)`). See also
-`:day`.
+`:weekday` – A relation introduced in 3-2-2-1. The child node is the concept with the name of the day of the week, presumably in the local language (they have an English example and there is `:weekday (f/ Friday)`). See also
+`:day`). This relation is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:wiki` – Attribute of an entity concept, containing a reference to the
 article in Wikipedia that describes the entity. The examples in the
@@ -260,9 +262,9 @@ titles instead ("Q"+number).
 `:year` – Looks like attribute, introduced among relations in 3-2-2-1. The
 value is the year number. (Not sure what they do with BCE or other
 calendars.)
+This relation is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
-`:year2` – This relation is mentioned in 3-2-2-1 but there are no examples
-how it is used.
+`:year2` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below), e.g., *academic year 2011-**2012*** (from AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls)) (ML)
 
 
 
@@ -270,7 +272,11 @@ how it is used.
 
 `and`
 
-`date-entity`
+`date-entity` - mentioned in AMR guidelines; roles used in `date-entity` are listed there in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), examples are in section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls); the same list presented in UMR Part 3-2-2-1:  
+`:calendar`, `:century`, `:day`, `:dayperiod` (as *afternoon*), `:decade`, `:era`, `:month`, `:quarter`, `:season`, `:timezone`, `:weekday`, `:year`, and `:year2`.  
+In UMR, `:time` is added to roles used within `date-entity` concepts.
+(According to the UMR guidelines, Part 3-2-1-1. Stage 0: "... UMR uses `:temporal` to annotate temporal circumstantials of events, while `:time` is only used as a daughter of date-entity concepts to annotate hours and minutes on the clock.") 
+
 
 `ordinal-entity`
 
