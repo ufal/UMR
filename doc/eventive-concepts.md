@@ -368,7 +368,7 @@ But there is a problem with event nominals with no clear ??morphological verbal 
 
 ```
 válka mezi Indií a Pákistánem o Kašmír "the war between India and Pakistan for Kashmir"
-(v/ válčit-01
+(v/ válčit-003
     :pdt-vallex "v-w7509f1"
     :wiki "Q198"
     :ARG0 (c/ country
