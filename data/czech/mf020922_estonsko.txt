@@ -44,8 +44,37 @@ V nedělních parlamentních volbách v Estonsku získal podle včerejších př
     :ARG1 (h/ hlas
         :quant (n2/ nejvíce)
         :ref-number Plural)
+    :location (v/ volit-001
+        :ARG1 (p/ parlament
+            :wiki "Q217799"
+            :ref-number Singular)
+        :location (c/ country
+            :wiki "Q191"
+            :name (n3/ name :op1 "Estonsko")
+            :ref-number Singular)
+            :temporal (d/ date-entity
+                :weekday (n4/ neděle
+                    :wiki "Q132")))
+    :mod (p2/ podle
+        :op1 (v2/ výsledek
+            :ARG0-of (p3/ předbíhat-001)
+            :temporal (v3/ včera)))
     :aspect Perfective
     :modstr FullAff)
+
+# At present it is unclear to me how to connect the following part to the main graph.
+# The components share the node 'b' but only as a target of two incoming edges.
+# We probably want something where the second edge will be reversed because this part is a modification of "blok Vlast".
+(h2/ have-role-91
+    :ARG1 (p4/ person
+        :wiki "Q153149"
+        :name (n5/ name :op1 "Lennart" :op2 "Meri"))
+    :ARG3 (k/ kandidát
+        :wiki "Q618536"
+        :mod (p5/ prezident
+            :wiki "Q30461")
+        :ARG1-of (n6/ nominovat-001
+            :ARG0 b)))
 
 Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
 Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
