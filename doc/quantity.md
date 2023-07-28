@@ -78,3 +78,9 @@ How to annotate **indefinite quantity**?
                 :quant? (p2/paululum)))
 ```
 
+
+### Quantity types
+
+AMR guidelines mention **Quantity types** in Sect. [Quantities](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#quantities):
+
+Quantity types include: `monetary-quantity`, `distance-quantity`, `area-quantity`, `volume-quantity`, `temporal-quantity`, `frequency-quantity`, `speed-quantity`, `acceleration-quantity`, `mass-quantity`, `force-quantity`, `pressure-quantity`, `energy-quantity`, `power-quantity`, `voltage-quantity` (zap!), `charge-quantity`, `potential-quantity`, `resistance-quantity`, `inductance-quantity`, `magnetic-field-quantity`, `magnetic-flux-quantity`, `radiation-quantity`, `concentration-quantity`, `temperature-quantity`, `score-quantity`, `fuel-consumption-quantity`, `seismic-quantity`, some of them are exemplified there. However, no exhaustive list and full descriptions/definitions are provided.
