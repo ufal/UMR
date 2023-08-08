@@ -59,7 +59,7 @@ The relation is also listed in the UMR [Reification section](https://github.com/
  
 `:calendar` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (added by ML)
 
-`:cause` – Introduced in 3-2-1-1. See also `:reason`.
+`:cause` – Introduced in 3-2-1-1 (not listed among AMR / UMR relations). See also `:reason`. ?? TWO SAME NAMES FOR THE SAME CONCEPT (but should be translated as cause-01, so :cause is just a shortcut.)
 
 `:causer` – Used in causatives. See Table 11 in 3-2-1-1-2.
 
@@ -201,7 +201,7 @@ with a concept describing approximate quantity.
 
 `:range` – Used with quentities,  to indicate a specific time period. Introduced in  3-2-2-5. Example (1b) in 3-2-2-5.
 
-`:reason` – Introduced in 3-2-1-1. See also `:cause`.
+`:reason` – Introduced in 3-2-1-1 (BUT not listed among AMR / UMR relations). See also `:cause`. 
 
 `:recipient` – Argument role used for languages that do not have frame files.
 Typically corresponds to `:ARG2`.
