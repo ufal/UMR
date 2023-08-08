@@ -145,7 +145,7 @@ specific relation is available. Used also with demonstratives: (2d) in
 Values: `expressive`, `imperative`, `interrogative`. There is no value for
 declarative sentences, so most events lack this attribute.
 
-`:modpred` – Example (2c) in 3-3-1-3.
+`:modpred` – Example (2c) in 3-3-1-3. Events under the scope of a modal identified as its own event are only annotated with a :modpred relation to the relevant modal.
 
 `:modstr` – Attribute used with every event. Expresses modality at sentence
 level. Typical value `FullAff` (fully affirmative).
