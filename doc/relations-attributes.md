@@ -220,7 +220,7 @@ scale**_. Example (1h) in 3-2-2-5.
 
 `:season` – This relation is mentioned in 3-2-2-1,  it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
-`:source` – Argument role used for languages that do not have frame files. But also a non-core role in AMR (_He drove west, *from Houston* to Austin._)
+`:source` – Argument role used for languages that do not have frame files. But also a non-core role in AMR (_He drove west, **from Houston** to Austin._)
 
 `:start` – Argument role used for languages that do not have frame files.
 
