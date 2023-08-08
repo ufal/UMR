@@ -162,7 +162,7 @@ coordination, the concepts of the conjuncts have each its own op. Some
 prepositions, like _before_ in (2b) in 3-3-1-5, introduce their argument as
 `:op1`.
 
-`:ord` – For ordinal numbers. Example (2a) in 3-3-1-1. Introduced in 3-2-2-5.
+`:ord` – Used with quentities, for ordinal numbers. Introduced in  3-2-2-5. It always takes an (o/ ordinal-entity) concept as its daughter. Example (2a) in 3-3-1-1. Introduced in 3-2-2-5.
 
 `:other-role` – Introduced in Table 5 in 3-2-1-1, described at the end of
 3-2. Used if the annotator encounters a concept for which UMR currently does
@@ -192,14 +192,14 @@ an attribute with the boolean value `+`.
 
 `:purpose` – Example (4c) in 3-3-1-3.
 
-`:quant` – Typically an attribute, sometimes a relation. Defined in
+`:quant` – Used with quentities, used for annotating both exact and approximate cardinalities of sets of countable objects (three houses, more than three houses) as well as for the number of "units" of non-countable substances (three cups of milk).  Introduced in  3-2-2-5. Typically an attribute, sometimes a relation. Defined in
 [3-3-4](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-4-quant).
 As an attribute it has a numeric value. As a relation it has a child node
 with a concept describing approximate quantity.
 
 `:quarter` – Looks like attribute, introduced among relations in 3-2-2-1. The value is the number (1, 2, 3, 4). It is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
-`:range` – Used with quantities. Example (1b) in 3-2-2-5.
+`:range` – Used with quentities,  to indicate a specific time period. Introduced in  3-2-2-5. Example (1b) in 3-2-2-5.
 
 `:reason` – Introduced in 3-2-1-1. See also `:cause`.
 
@@ -249,10 +249,10 @@ The relation is used within `date-entity` (see below). Examples in AMR guideline
 `:undergoer` – Argument role used for languages that do not have frame files.
 Typically corresponds to `:ARG1`.
 
-`:unit` – Relation used with quantities. The child node is a unit concept
+`:unit` – Used with quentities,  used for both standardized, well-established units such as (dollars, weeks) and for ad-hoc mensural constructions (three cups of milk). Introduced in  3-2-2-5. The child node is a unit concept
 (both standardized and informal units), e.g., _day_ for duration.
 
-`:value` – Used with `ordinal-entity`, `percentage-entity`, `url-entity` in 3-2-2-5 (in AMR, for other entities as well).
+`:value` – Used with quentities, used for annotating percentages, phone numbers, e-mail addresses, and urls; used with `ordinal-entity`, `percentage-entity`, `url-entity`. Introduced in  3-2-2-5 (in AMR, for other entities as well).
 
 `:weekday` – A relation introduced in 3-2-2-1. The child node is the concept with the name of the day of the week, presumably in the local language (they have an English example and there is `:weekday (f/ Friday)`). See also
 `:day`). This relation is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
