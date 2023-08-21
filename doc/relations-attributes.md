@@ -18,7 +18,8 @@ relations and attributes become more or less the same thing.
 
 Additional information can be found also in  [AMR annotation dictionary](https://amr.isi.edu/doc/amr-dict.html).
 
-`:accompanier` –  Introduced in the AMR guidelines as a non-core role in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), exemplified in  *The soldier hummed a tune **for the girl** as he walked with her to town.* (ML added)
+`:accompanier` –  Introduced in the AMR guidelines as a non-core role in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), exemplified in  *The soldier hummed a tune **for the girl** as he walked with her to town.* (ML added)  
+?Probably replaced by `:companion` in UMR, example 1 (6), _... before he returns home **with his wife Sherry**?
 
 `:actor` – Argument role used for languages that do not have frame files.
 Typically corresponds to `:ARG0`. See 3-2-1-4.
@@ -66,7 +67,8 @@ The relation is also listed in the UMR [Reification section](https://github.com/
 `:century` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:companion` – Argument role used for languages that do not have frame files.
-Appears in example (7b) in 3-2-1-1.
+Appears in example (7b) in 3-2-1-1.  
+Also used for Eng. as a replacement of `:acompanier`, example 1 (6) ??
 
 `:concession` – Briefly mentioned at the end of 3-2.
 
@@ -227,6 +229,8 @@ scale**_. Example (1h) in 3-2-2-5.
 `:stimulus` – Argument role used for languages that do not have frame files.
 
 `:subevent` - Introduced in the AMR guidelines as a non-core role in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), example from AMR guidelines: *The boy won **the race** in the Olympics.* (= the race being the subevent-of the Olympics game). (ML added)
+
+`:substitute` – Example 3-1-6 (4c), discourse relation:  _**Instead of** going out to eat, we barbecued chicken at home._
 
 `:subtraction` – Example (8) in 3-1-6: _**except for Joe**_.
 

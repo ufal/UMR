@@ -10,13 +10,13 @@ my %MAPPING = (
 ##### TEMPORAL ###########################
     'TWHEN' => 'temporal',          # corrected: AMR 'time' -> UMR 'temporal'   AMR: The soldier hummed a tune for the girl (as he walked with her to town).time
     'TFHL' => 'duration',           # added: AMR: He worked for two hours.duration.
-    'TFRWH' => 'temporal',          # provisional, no examples checked yet ("ze kdy")
+    'TFRWH' => 'temporal',          # provisional, no examples found yet ("ze kdy")
     'THL'   => 'duration',          # UMR: Pope was sentenced (to 20 years).duration
     'THO' => 'frequency',           # added: AMR: We met (three times).frequency
-    'TOWH' => 'temporal',           # provisional, no examples checked yet ("na kdy")
+    'TOWH' => 'temporal',           # provisional, no examples found yet  ("na kdy")
     'TPAR' => 'temporal',           # added: AMR: The soldier hummed a tune for the girl (as he walked with her to town).time
-    'TSIN' => 'temporal',           # provisional, no examples checked yet ("od kdy")
-    'TTLL' => 'temporal',           # provisional, no examples checked yet ("do kdy")
+    'TSIN' => 'temporal',           # provisional, no examples found yet ("od kdy")
+    'TTLL' => 'temporal',           # provisional, no examples found yet ("do kdy")
 ##### SPATIAL ###########################
     'DIR1'  => 'source',            # AMR: He drove west.direction, from Houston.source to Austin.destination.
     'DIR2'  => 'path',              # corrected: 'path' <- 'location',
@@ -38,10 +38,11 @@ my %MAPPING = (
                                             # AMR: The boy will sing (in case of a money donation).condition
     'INTT' => 'purpose',            # added: AMR: He went to the store (to buy wood (for a new fence.purpose)).purpose
 ##### MANNER ###########################
-    'ACMP'  => 'accompanier',       # AMR: The soldier hummed a tune for the girl as he walked with her.accompanier to town.
+    'ACMP'  => 'companion',         # UMR: ...  before he returns home with his wife Sherry.companion
+                                    # AMR: The soldier hummed a tune for the girl as he walked with her.accompanier to town.
     'CPR' => 'compared-to',         # corrected: 'CPR' <- 'CMP'
-    'CRIT' => 'manner',             # provisional, no examples checked yet ("kritérium, norma, pravidlo")
-    'DIFF' => 'extent',             # provisional, no examples checked yet ("o kolik")
+    'CRIT' => 'manner',             # provisional, no examples found yet ("kritérium, norma, pravidlo")
+    'DIFF' => 'extent',             # provisional, no examples found yet ("o kolik")
     'EXT' => 'extent',              # corrected: 'extent' <- 'scale' (scale only within quantities)
                                              # AMR: The road goes on forever.extent
                                              # UMR: Even if you arrive (only five minutes).extent late
@@ -51,12 +52,19 @@ my %MAPPING = (
     'MEANS' => 'instrument',        # AMR: I ate pasta with a fork.instrument
                                     # AMR: Iraq launched a missile attack.instrument
                                     # BUT: AMR: Nicole went to England by train.manner (MEANS in PDT)
-    'REG'  => 'manner',             # provisional, no examples checked yet ("uvádí nějaký aspekt, vzhledem k němuž řídící děj nebo vlastnost platí")
-    'RESL' => 'extent',             # provisional, no examples checked yet ("způsob uvedením výsledku, účinku děje")
+    'REG'  => 'manner',             # provisional, no examples found yet ("uvádí nějaký aspekt, vzhledem k němuž řídící děj nebo vlastnost platí")
+    'RESL' => 'extent',             # provisional, no examples found yet ("způsob uvedením výsledku, účinku děje")
     'RESTR' => 'subtraction',       # added: AMR: People don't own tigers, (except for Joe Exotic.).subtraction
 ##### NEW ###########################
     'BEN'   => 'beneficiary',       # AMR: The soldier hummed a tune for the girl.beneficiary as he walked with her to town.
+    'HER'   => 'source',            # provisional, no examples found yet 
 ##### NOMINAL ###########################
-    'APP'   => 'poss',              # !!!!  John's.poss car   BUT  Guitar.part strings  ....... NEED TO BE CHECKED !!!!!!!!!!!!!
+    'APP'   => 'poss',              # poss: John's.poss car ... PDT typ (5) vztah vlastnictví (possessum as the parent, owner as a child)
+                                    # have-rel-role-92: manžel slavné spisovatelky.APP ... PDT typ (1) příbuzenské vztahy 
+                                    # part: příslušník armády.APP; střecha domu.APP, Guitar.part strings  ... PDT typ (2) příslušnost k nějakému celku, instituci (part as the parent, whole as a child)
+                                    # group: tým brankářů.APP ... PDT typ (3) příslušnost osoby k nějakému celku, instituci (whole as the parent)
+                                    # extent: míra nezaměstnanosti.APP ... PDT typ (4) nositel vlastnosti (?? extent as the parent)
+    'AUTH' => 'source',             # provisional, probably should be converted to ARG0-of write/... 
+    'ID' => 'name',                 # provisional, probably should be converted to ARG0-of have-role-91 (or something like that)
     'RSTR'  => 'mod',               # AMR: The mayor proposed to lower crime (by hiring more.mod police officers).manner
-);
+)
