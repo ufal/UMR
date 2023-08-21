@@ -1,0 +1,208 @@
+# copied from Treex::Block::T2TAMR::FunctorsToAMRLabels
+# skuska repozitara
+
+my %MAPPING = (
+    'ACT'   => 'ARG0',
+    'PAT'   => 'ARG1',
+    'ADDR'  => 'ARG2',
+    'ORIG'  => 'ARG3',
+    'EFF'   => 'ARG4',
+    'TWHEN' => 'time',
+    'THL'   => 'duration',
+    'DIR1'  => 'source',
+    'DIR3'  => 'direction',   
+    'DIR2'  => 'location',    
+    'LOC'   => 'location',
+    'BEN'   => 'beneficiary',
+    'ACMP'  => 'accompanier',
+    'MANN'  => 'manner',
+    'AIM'   => 'purpose',
+    'CAUS'  => 'cause',
+    'MEANS' => 'instrument',
+    'APP'   => 'poss',          # John's.poss car  ALE  Guitar.part strings
+    'CMP'   => 'compared-to', !! CPR !!!
+    'RSTR'  => 'mod',
+    'EXT'   => 'scale', 
+);
+
+**směrová. lokální** ... OK, vše namapováno ... ALE:
+?? 'DIR3'  => 'direction' NEBO 'destination' 
+?? 'DIR2'  => 'location' NEBO'  => 'path'
+
+**časová**
+'TFHL' => 'duration',
+'THO'  => 'frequency',
+??? TFRWH (ze kdy)
+??? TOWH (temporal: to when)
+??? TPAR (temporal parallel)
+??? TSIN (temporal: since when)
+??? TTILL (temporal: till)
+
+**příčina / účel / podmínka**
+'INTT'   => 'purpose',
+'CNCS'   => 'concession',
+'COND'   => 'condition',
+??? CONTR 
+
+**způsob**
+!! 'CPR'   => 'compared-to', !!!!!! nikoli CMP (to nic není)
+?? CRIT (podle předpisu/normy/na základě přopomínek) 
+?? 'DIFF'  => 'extent',     (o xx více)
+?? 'EXT'   => 'scale' NEBO 'extent'
+??? REG (z hlediska/na téma/…) 
+'RESL'  => 'extent',   ???
+??? 'RESTR'
+
+**specifická**
+??? CONTRD (contradiction, zatímco) 
+??? HER
+??? SUBS
+
+**substantivní**
+?? 'APP'   => 'poss' NEBO 'part'               
+    UMR: anchoring modifiers:
+            - :poss: ownership (John's.poss car) ... situates a referent via reference to its owner 
+                            (possessum as the parent, possessor as the child)
+            - :part: part-whole (Guitar.part strings)... situates a referent via reference to a larger entity it is a part of 
+                            (part as the parent, whole as the child)
+            - kinship ... have-rel-role-92!!!!
+         typifying modifiers ... subcategorizing the referent or selecting the quantity of the head noun (cardinality, amount, proportion, piece)
+              :mod (a women's.mod magazine) ... subkategorizace či vlastnost (pokud není chápána jako event, tj. nemá rámec)
+                   (též pro určité členy, ukaz. zájmena apod.)
+              další více specializované ... :age, for indicating the age of referents ((The thirty year-old).age man)) 
+                                            :group, for indicating the membership of groups (A swarm (of bees).group); 
+                                            :topic, for indicating what a referent is about as in (2f), and 
+                                            :medium for indicating channels of communication, such as languages as in (2g).
+              
+    PDT: (1) příbuzenské vztahy (kinship)           
+            manžel slavné spisovatelky.APP                 --> !! ("kinship" příbuznost) ... have-rel-role-92!!!!
+            otec dítěte.APP (dítě.APP přináleží otci??) 
+            duchovní otec nové měny.APP 
+            její.APP otec, moji rodiče.APP  
+            přítel ministra.APP (ministr má přítele) 
+         (2) příslušnosti osoby k nějakému celku, instituci
+            příslušník armády.APP                          --> !! part ; OK struktura (part as the parent)
+            brankář vedoucího týmu.APP 
+         (3) příslušnosti osoby k nějakému celku, instituci
+            tým brankářů.APP                               --> !! group ... whole as the parent !! 
+            organizace neslyšících.APP   
+         (4) označení nositele nějaké (fyzikální, matematické, charakterové aj.) vlastnosti (vyjádřené řídícím slovem)
+            míra nezaměstnanosti.APP        --> ?? label ... extent as the parent !! 
+            úroveň ubytování.APP 
+            průměrnou délku vazby.APP 
+            autorova.APP upřímnost 
+         (5) vyjádření vztahu vlastnictví (označení vlastníka předmětu)
+            její.APP seznam                --> OK poss ("ownership"); OK struktura (possessum as the parent) 
+            má.APP vyšší postava
+            naše.APP kapela                 
+            dům mého otce.APP
+         (6) vyjádření vztahu mezi částí a celkem (označení celku).
+            střecha domu.APP               --> !! part ; OK struktura (part as the parent)
+            okraj chodníku.APP 
+            noha od stolu.APP 
+            vnitřek prodejny.APP 
+            inzertní oddělení redakce.APP 
+            široký pás území.APP  
+            závěr utkání.APP 
+         (7) vyjádření přináležitosti v širokém smyslu (u abstraktních výrazů).
+            auto roku.APP                  --> ?? label
+            poezie lásky.APP      
+??? AUTH
+??? ID
+??? MAT
+??? RSTR
+
+
+**doplněk**
+??? CPMPL 
+
+
+**souřadná spojení - koordinace* ... ADVS, CONFR, CONJ, CONTRA, CSQ, DISJ, GRAD, REAS ...  též diskurzní
+**souřadná spojení - apozice*
+??? APPS
+??? OPER
+??? CM
+
+**rhematozátory apod** ... ATT, INTF, MOD, PREC, RHEM ... asi postoj, modalita apod
+
+**víceslovní jednotky, cizojazyčné** ... CPHR, DPHR, FPHR ... jinak
+
+**specifické v PDT nerozlišované**
+??? medium ... channels of communications
+??? topic  ... 
+??? part?? APP střecha domu ... přináležitost
+:subevent
+:consist-of?? MAT a team of monkeys, a ring of gold
+:example	?? EXT
+
+**UMR Roles used in date-entity:** ... ... viz NameTag:
+
+               => :calendar, 
+tc - centuries => :century,      ??REMOVED
+td - days      => :day,          # 26 (March 26)
+               => :dayperiod, 
+               => :decade, 
+               => :era, 
+tm - months    => :month,        #  3 (March 26)
+               => :quarter, 
+               => :season,
+th - hours     => :time,       # 15:30   # 3.30 pm Albuquerque time
+               => :timezone,                           # z/ MST  # 3.30 pm Albuquerque time
+               => :weekday,      # Friday
+ty - years     => :year,         # 2021 
+               => :year2
+
+tf - feasts 
+tp - epochs                      ??REMOVED
+tn - minutes, ts - seconds       ?? changed to nc (cardinal number)
+
+
+
+
+**AMR non-core labels (z obsahu)**
+▪ :time         TWHEN
+▪ :location     LOC, DIR2
+▪ :source       DIR1
+▪ :destination  ??? DIR3 (ale to je na direction)
+▪ :path         ??? DIR2 (ale to je na location)
+▪ :beneficiary  BEN
+▪ :accompanier  ACMP
+▪ :topic        ... jako bližší specifikace :mod , for indicating what a referent is about (Information (about the case).topic)
+▪ :duration     THL, TFHL
+▪ :instrument   MEANS
+▪ :medium       ... jako bližší specifikace :mod , for indicating channels of communication, such as languages (a French.medium song)
+▪ :manner       MANN
+▪ :purpose      AIN, INTT
+▪ :cause        CAUS
+▪ :concession   CNCS
+▪ :condition    COND
+▪ :part         ??? APP (ale to je na poss) ... .. jako bližší specifikace :mod (Guitare.part strings) 
+▪ :subevent
+▪ :consist-of
+▪ :example
+▪ :direction    DIR3
+▪ :frequency    THO
+▪ :extent       ??? EXT (ale to je na scale), DIFF, RESL
+
+
+**AMR non-core (str. 10, others than above)** 
+:age ... jako bližší specifikace :mod ((The thirty year-old).age man))
+:degree, 
+:domain,
+:li, 
+:mod, 
+:mode
+:name
+:ord
+:polarity, (negace)
+:polite, 
+:poss ... jako bližší specifikace :mod (his.poss boat) 
+:quant
+?? :group .. jako bližší specifikace :mod  ... for indicating the membership of groups (A swarm (of bees).group); 
+
+              
+
+
+?????? modality ???????
+possible-01, likely-01, obligate-01, permit-01, recommend-01, prefer-01, etc.:
+
