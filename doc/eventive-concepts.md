@@ -524,7 +524,7 @@ that the UMR guidelines want them annotated as events. At the same time, they
 have their class and types in Table 5 (the taxonomy of named entities), which
 means that the guidelines want them annotated as named entities. This is a
 conflict between different parts of the guidelines, which must be resolved
-somehow.  ~~  
+somehow.~~  
 **ML: Based on the provisional solution for Czech annotation: this type of even nominals not anchored in the valency lexicon?** [31.7.2023 meeting minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings))
 
 ~~DZ: A possible compromise would be to annotate named events primarily as
@@ -535,12 +535,12 @@ as the verb _válčit_ "wage war" (possibly to
 class `vec01002` _(fight, bojovat)_). The type `war` of class `event` in
 [Table 5 of the
 guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-2-named-entities)
-would not be used as an abstract concept.  ~~  
+would not be used as an abstract concept.~~  
 **ML: Based on the provisional solution for Czech annotation: this type of even nominals not anchored in the valency lexicon?** [31.7.2023 meeting minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings))
 
-ML: How to add event annotation to event nominals?  
+~~ML: How to add event annotation to event nominals?  
 Probably should be represented as some relevant verb, e.g., *válka* should be the same concept as *válčit* (which is contained in the PDT-Vallex with ACT=ARG0, ADDR=ARG1, PAT=ARG1 (ARGs according to *fight-01*)), see below for two proposed annotations (*válka mezi Indií a Pákistánem o Kašmír* *and Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.*).  
-But there is a problem with event nominals with no clear morphological verbal counterpart ... see the discusion on *jídlo* vs. *food* above and [the UMR guidelines issue](https://github.com/umr4nlp/umr-guidelines/issues/16).
+But there is a problem with event nominals with no clear morphological verbal counterpart ... see the discusion on *jídlo* vs. *food* above and [the UMR guidelines issue](https://github.com/umr4nlp/umr-guidelines/issues/16).~~  
 **ML: Based on the provisional solution for Czech annotation: this type of even nominals not anchored in the valency lexicon?** [31.7.2023 meeting minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings))
 
 ```
@@ -603,7 +603,7 @@ that _Německo_ is one of the actors of _válčit_ but the sentence does not say
 it explicitly.) Note that Wikidata
 [Q7318](https://www.wikidata.org/wiki/Q7318) is the entry for Nazi Germany,
 not for the current country, which has
-[Q183](https://www.wikidata.org/wiki/Q183).  ~~
+[Q183](https://www.wikidata.org/wiki/Q183).~~  
 ML:  Thus the example above is too advanced :-) 
 **ML: Based on the provisional solution for Czech annotation: this type of even nominals not anchored in the valency lexicon?** [31.7.2023 meeting minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings))
 
