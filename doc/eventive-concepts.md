@@ -92,8 +92,7 @@ Similarly, entities in modification (_The man, who is a doctor..._) and entities
 
 ***
 
-### Identifying eventive concepts - rules applied in annotation of Czech
-
+### Identifying eventive concepts – rules applied in annotation of Czech
 
 > **RULE 2:** (internal criterion for Czech)
 > Whenever a **concept has a roleset** -->	represent it as an **event**.
@@ -102,8 +101,28 @@ Similarly, entities in modification (_The man, who is a doctor..._) and entities
 
 JH: ***Be conservative (at least for the time being)!***
 
-JH: Discussion on 31.7.2023, see the [31.7.2023 meeting minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings):
-"We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) / deverbal adjective (??). ... YES - morphological criterion!!!"
+JH: Discussion on 31.7.2023, see the [31.7.2023 meeting
+minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings):
+“We do not want to add a big number of nouns / adjectives to the lexicon OR
+represent them as verbs, unless we have a clear case of a deverbal noun
+(ending with -ní/-tí) or deverbal adjective (see below) ... YES – morphological
+criterion!!!”
+
+Thus:
+
+* _dělat_ “do” is an event because it is a verb, it denotes a process and it has a frame file.
+* _mýt_ “wash” is an event because it is a verb, it denotes a process and it has a frame file.
+* _milovat_ “love” is an event because it is a verb and it has a frame file; although it denotes a state, we will treat it always as an event, regardless information packaging **(conflict with UMR guidelines).**
+* _dělání_ “doing”, _mytí_ “washing”, _milování_ “loving, making love” are events because they are deverbal nouns, derived using the most productive _-ní/-tí_ suffixes.
+* _prodej_ “sale” is not an event – it is a deverbal noun but it is derived (from _prodávat_ “sell”) in a less productive way; note that the much less frequent _prodávání_ “selling” is an event **(conflict with UMR guidelines).**
+* _válka_ “war”, _koncert_ “concert” etc. are nouns but they are not derived from verbs, despite denoting processes. They are not events **(conflict with UMR guidelines).**
+* _myjící_ “washing” is an event because it is an active participial adjective derived from the present converb.
+* _mycí_ “to be used for washing” is not an event because it is a different type of derivation **(conflict with UMR guidelines?).**
+  * Analogously, _dělající, milující, skládající, plovoucí, plnící_ are events while _skládací, plovací, plnicí_ are not.
+* _udělavší_ “having done” is an event because it is an active participial adjective derived from the past converb.
+* _udělaný_ “done” is an event because it is a passive participial adjective. Analogously, _mytý, umytý, milovaný_ are events.
+* Derivations of adjectives from the l-participle are less productive. Therefore, _spadlý_ “fallen”, _vzrostlý_ “full-grown”, _bývalý_ “former” etc. are not events.
+* Other deverbal adjectives are also not events: _kulhavý_ “limping”, _učenlivý_ “quick to learn”, _představitelný_ “imaginable”, _obstojný_ “passable”.
 
 Examples:
 
