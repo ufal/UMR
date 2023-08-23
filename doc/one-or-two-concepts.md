@@ -9,11 +9,9 @@ být, bývat, stát se, stávat se (např. stal se učitelem)
 
 **non-verbal clauses**
 
----
 
 ## TODO temporal aux. … (pomocná have, be) jako atribut … OK, jako PDT
 
----
 
 ## TODO Modal verbs - one event
 
@@ -82,7 +80,6 @@ POZOR … pokud v PDT jako plnovýznamové, směr závislosti???
 o	PDT: něco přislíbit nemůže (tj. řídíví infinitive, závislé modální ve fokusu)  
 o	UMR: “hlavní” predikát non-finite She wants to go to school … jak vytipovat ???
 
----
 
 ## Phasal aspect - one event with aspect attribute label indicating phasal meaning
 
