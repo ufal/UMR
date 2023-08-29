@@ -66,6 +66,11 @@ test negace, ALE: nesmím přijít – smím nepřijít
 **Slovesa modální** (s infinitivem) (podle https://www.cestinadoma.cz/ucivo/slovesa-fazova-a-modalni)
 moci, smět, muset, chtít, mít (ve smyslu mít povinnost) (např. musíme studovat)
 
+ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to   Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)
+
+ ML: According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), _want_ is considered as a semi-modal concept and the fact that it can be modalized independently of the "go"-event on English indicates that desires are construed as independent events (in English), thus considered as independent events.
+ This may be language-internal characteristics.
+
 ---
 
 ## TODO Semimodal verbs - one event or two events<
