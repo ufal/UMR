@@ -2,8 +2,25 @@
 
 
 ## TODO Copula verbs - one event
-**Slovesa sponová** (podle https://www.cestinadoma.cz/ucivo/slovesa-fazova-a-modalni)
-být, bývat, stát se, stávat se (např. stal se učitelem)
+
+Copula verbs as recognized in Czech grammars:
+_být, bývat, stát se, stávat se_ (např. stal se učitelem)
+
+According to the UD guidelines:
+> The copula verb _být_ "be" is used in equational, attributional, locative, possessive and benefactory nonverbal clauses. Purely existential clauses (without indicating location) use _být_ as well but it is treated as the head of the clause and tagged VERB.
+
+PDT distinguishes sebveral types of constructions with _být_ "to be":
+- existential _být_ is designated as meaning that "something is/is not, exists/does not exist", e.g. _Strašidla.ACT na světě nejsou._ "There are no ghosts in the world." (PDT manual); it probably corresponds to `být-011`in PDT-Vallex,  
+- substitute _být_ stands for some full verb which can be substituted for it; two types are distinguished: 
+  - with just `ACT` and an optional free modification, e.g. _Jirka je na zahradě.LOC_ "George is in the garden." (= George is located/appears in the garden)
+  - with two (or more) arguments ???? 
+- copula 
+- phraseological 
+
+
+Thus `být-011` should be mapped onto one of the abstract predicates - probably `exist-91` , sometime with just ARG2 (theme)?
+
+
 
 **verbonominal predicates**
 
