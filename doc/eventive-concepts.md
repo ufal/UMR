@@ -63,15 +63,15 @@ Information packaging, on the other hand, concerns the way how the semantic cont
 
 #### Eventive concepts in UMR
 
-> **RULE 1:** (UMR rule)
+> **RULE 1:** (UMR rule)  
 > The following should be annotated as an **eventive concept**:
 > - whatever is a **process** (semantic type) or
 > - whatever is expressed as **predication**.
 
 Putting it differently:
 
-> **RULE 1a:** (UMR rule)
-> **Processes** packed as **predication** are events (esp. finite action verbs as predicates of main clauses)
+> **RULE 1a:** (based on the UMR rule and on examples provided in the Guidelines)  
+> **Processes** packed as **predication** are events (esp. finite action verbs as predicates of main clauses)  
 > **Processes** packed as **referents or modifiers** should also be identified as events, esp.:
 > - **event nominals** (e.g., _storm, conference, ..._).
 > - **complements, infinitives, gerunds** with action verbs (packed as reference, e.g., subject/object clauses, adverbial clauses, non-finite complement)
@@ -80,7 +80,7 @@ Putting it differently:
 > - **secondary predication** with action verbs (packed as modification)
 
 
-> **RULE 1b:** (UMR rule)
+> **RULE 1b:** (UMR rule)  
 > **Entities and states** packed as **predication** are events, esp.
 > - **stative verbs** as predicates of main clauses (e.g., _love_).
 > - **so called non-verbal clauses** (expressing possession, location, property/object predication, equational)
@@ -94,9 +94,9 @@ Similarly, entities in modification (_The man, who is a doctor..._) and entities
 
 ### Identifying eventive concepts – rules applied in annotation of Czech
 
-> **RULE 2:** (internal criterion for Czech)
-> Whenever a **concept has a roleset** -->	represent it as an **event**.
-> I.e., anchor it to the lexicon (with its roleset)
+> **RULE 2:** (internal criterion for Czech)  
+> Whenever a **concept has a roleset**,  represent it as an **event**.  
+> I.e., anchor it to the lexicon (with its roleset)  
 > ... ***CONFLICT with UMR guidelines for stative verbs!!***
 
 JH: ***Be conservative (at least for the time being)!***
@@ -135,14 +135,8 @@ Examples:
 * [cs] _**Chtěla** **jít** do školy._
   [en] _She **wanted** to **go** to school._ (from the UMR Guidelines)
     ... state in predication (_want, chtít_) PLUS process in ?modification (_go, jít_)
-    --> 2 events (UMR rule), 1 event in PDT
+    --> 2 events (UMR rule), 1 event in PDT ... see [One or two concepts?](https://github.com/ufal/UMR/blob/main/doc/one-or-two-concepts_modal-phase-verbs.md)  
     --> OK, annotate it as a single event in Czech (allowed by UMR guidelines)
-
- ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to   Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)
-
- ML: According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), _want_ is considered as a semi-modal concept and the fact that it can be modalized independently of the "go"-event on English indicates that desires are construed as independent events (in English), thus considered as independent events.
- This may be language-internal characteristics.
-
 * **BUT:** [cs] _**Chtěla,** abych **šel** do školy._
   [en] _She **wanted** me to **go** to school._
     ... state in predication (_want, chtít_) PLUS process in reference/modification (_go, jít_)
