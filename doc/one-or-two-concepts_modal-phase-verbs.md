@@ -124,20 +124,25 @@ paper	this	black-change (Manipuri)
 ```
 
 
-Possible UMR Aspect values at the default level of granularity include:   
+Possible UMR Aspect values at the **default level** of granularity include:   
 `Activity` - process that does not end,  
 `Habitual` - occurs/occurred usually or habitually,  
 `State` - unspecified type of state,  
 `Endeavor` - process that ends without reaching a result state,  
 `Performance` - process that ends and reaches a result state.  
 
+Further, we would probably want to make use of `Process`, which is ambiguous between `Atelic process` (process that does not reach a result state) and `Perfective` (process that comes to an end)?
+
 ### Aspect - conversion from PDT
 As for available resources for Czech:
 1) The PDT **grammateme for aspect** should be used. However, only 2 types are recognized (based on the morphological dictionary): 
-- cpl=complex for perfective verbs --> TODO ??? `Perfective`, i.e., process that comes to an end (includes `Endeavor` and `Performance`),
-- proc=procesual for imperfective verbs --> TODO ??? `Imperfective`, which is ambiguous between `State` and `Atelic process` (which includes `Activity` and `Endeavor`)
+- cpl=complex for perfective verbs --> TODO ??? `Perfective`   
+(process that comes to an end; it includes `Endeavor` and `Performance`, see above)
+- proc=procesual for imperfective verbs --> TODO ??? `Imperfective`,  
+which is ambiguous between `State` and `Atelic process` (process that does not reach a result state; it includes `Activity` and `Endeavor`, see above)
 2) Further, the **diat grammateme** (for diathesis), value resultative should indicate the process that ends and reaches a result state, i.e. `Performance`.
 
+In this way, all the default UMR Aspect values are covered.
 
 ### Phasal verbs in English
 
