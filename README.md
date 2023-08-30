@@ -16,7 +16,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 
 * [UMR terminology](doc/terminologie.md) (currently in Czech)
 * [Entities](doc/entities.md)
-* [Events](doc/eventive-concepts.md)
+* [Events](doc/eventive-concepts.md), see also [One or two concepts](doc/one-or-two-concepts_modal-phase-verbs.md)
 * [Frame files](doc/frames.md)
 * [Ellipsis](doc/ellipsis.md)
 * [Quantity](doc/quantity.md)
