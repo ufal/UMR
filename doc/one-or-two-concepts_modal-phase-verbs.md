@@ -32,6 +32,7 @@ Thus `být-011` should be mapped onto one of the abstract predicates - probably 
 
 ## TODO Modal verbs - one event
 
+
 AMR represents syntactic modals with concepts like the following ones:  
 
 `possible-01`
@@ -83,10 +84,10 @@ test negace, ALE: nesmím přijít – smím nepřijít
 **Slovesa modální** (s infinitivem) (podle https://www.cestinadoma.cz/ucivo/slovesa-fazova-a-modalni)
 moci, smět, muset, chtít, mít (ve smyslu mít povinnost) (např. musíme studovat)
 
-ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to   Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)
 
- ML: According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), _want_ is considered as a semi-modal concept and the fact that it can be modalized independently of the "go"-event on English indicates that desires are construed as independent events (in English), thus considered as independent events.
- This may be language-internal characteristics.
+Mluvnice 3 ... **vlastní** modální slovesa (nutně se kombinují s infinitivem): _muset, moci, mít, smět, chtít, hodlat, umět_
+
+"O tom, že infinitiv po modálních slovesech nemá povahu valenčního objektového komplementu, svědčí to, že při pasivní (deagentní) derivaci nepřechází do pozice podmětu: zůstává pevně spjat s modálním slovesem a mění se jen v infinitiv pasivní. Do podmětové pozice se naopak přesouvá eventuální patiens základového predikátu: _Petr musel pokárat Pavla -> Pavel musel být pokárán Petrem._"
 
 ---
 
@@ -103,7 +104,14 @@ o	PDT: něco přislíbit nemůže (tj. řídíví infinitive, závislé modáln�
 o	UMR: “hlavní” predikát non-finite She wants to go to school … jak vytipovat ???
 
 
-## Phasal aspect - one event with aspect attribute label indicating phasal meaning
+ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to   Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)
+
+ ML: According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), _want_ is considered as a semi-modal concept and the fact that it can be modalized independently of the "go"-event on English indicates that desires are construed as independent events (in English), thus considered as independent events.
+ This may be language-internal characteristics.
+
+---
+
+## Phasal aspectual meaning - one event with aspect attribute label
 
 Phasal aspectual meanings such as  
 - `inchoative` (denoting an aspect of a verb expressing the beginning of an action, typically one occurring of its own accord), 
@@ -168,6 +176,10 @@ The UMR Guidelines do not provide a list of English phasal verbs.
 (AMR does not elaborate this phenomenon.) 
  
 ### Phasal verbs in Czech
+
+Mluvnice 3 ... nic :-((
+
+Čas a modalita v češtině ??? 
 
 In PDT, phasal verbs are conceived as lexical words (= autosemantics), thus they are represented as separate nodes in t-trees. 
  
