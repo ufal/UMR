@@ -1,0 +1,224 @@
+# mf920922_133 ###########################################################################
+
+###########################################################################
+
+# :: snt1 	ESTONSKO :
+            "Estonia :"
+
+# sentence level graph:
+(s1p / publication-91
+    :place (s1s / state
+        :wiki "Q191"
+		:name (s1n/ name :op1 "Estonsko")
+        )
+)
+
+# alignment:
+s1p: 0-0
+s1s: 1-1
+s1n: 0-0
+
+# document level annotation:
+(s1s0 / sentence
+    :temporal ((document-creation-time :before s1p))
+    :modal ((root :modal author)
+            (author :full-affirmative s1p))
+)
+
+# Comments/Questions:
+# Similar type as  english_umr-0001.txt (snt2) - annotated with the abstract predicate "publication-91" as a root
+#       with unclear role structure :-(( :ARG3 (s2t / thing) in this sentence but :ARG1 in snt1
+#       --> WE NEED a file with abstract predicates
+# https://amr.isi.edu/doc/amr-dict.html#publication-91
+#    :ARG0 author(s)
+#    :ARG1 title
+#    :ARG2 abstract
+#    :ARG3 full text
+#    :ARG4 venue (journal, conference)
+#    :ARG5 volume
+#    :ARG6 issue
+#    :ARG7 pages
+#    :ARG8 ID(s), e.g. PubMed
+#    :ARG9 editor(s)
+# NE Estonsko ... in english_umr-0001.txt (snt2), Philippines annotated as country  - what is a difference between state and country
+#       (both under the geo-political-entity EN class, no definition)?
+#       "state" seems more appropriate here
+# Alignment ... why s1n identifier (labeling the proper name Estonsko) is not aligned with the appropriate position in the sentence?
+#       (based on english_umr-0001.txt (snt2), only its parent identifying the NE is alligned with the word)
+# No aspect, modstr annototion for similar sentence english_umr-0001.txt (snt2) rooted with the abstract predicate
+
+
+###########################################################################
+
+# :: snt2 	Estonci volili parlament .
+            "Estonians elected a parliament ."
+
+# sentence level graph:
+(s2p / publication-91
+    :ARG1 (s2v/ volit-001
+        :ARG0 (s2p/ person
+	   	   :mod (s2s/ state
+                :wiki "Q191"
+                :name (s2n/ name :op1 "Estonsko")
+                )
+		   :ref-number plural
+            )
+	:ARG1 (s2g/ government-organization
+		:wiki "Q217799 "
+		:name (s2n2/name :op1 "Riigikogu")
+        )
+	:aspect process	
+	:modstr FullAff	
+    )
+)
+
+# alignment:
+s2p 0-0
+s2v 2-2
+s2s 1-1
+s2s 0-0
+s2n 0-0
+s2g 3-3
+s2n2 0-0
+
+# document level annotation:
+(s2s0/ sentence
+    :temporal((document-creation-time :before s2v))	
+    :modal ((root :modal author)
+            (author :full-affirmative s2v))
+    :coref ((s1s :same-entity s2s)
+             s1p :same-entity s2p)
+)
+
+
+# Comments/Questions:
+# Abstract predicate "publication-91" as a root (s2p) ... based on snt1 from english_umr-0001.txt (BUT compare the roles structure in snt2)
+#       (and add :modal and :temporal for accordingly s2p)
+# volit … v-w7686f1 = volit-001 ... ACT(1)->ARG0, PAT(4;↓c)->ARG1, ?ORIG(z+2;mezi+7)->ARG2
+# Estonci ... annotation based on internal guidelines for nationality, see Entities
+# parlament ... should we infer that the sentence is about "Riigikogu (= Estonian parliament)"
+#               OR just annotate is as general "parliament", :wiki "Q35749" ?
+# aspect ... "process" subsumes "atelic process" (process that does not reach a result state) and "perfective" (process that comes to an end)
+#           we know that the elections already ended (performance?) but the imperfective verb in past tense indicates an ongoing process;
+#           based just on the aspect info, we can choose also "imperfective" (ambiguous between "state" and "atelic process")
+#           - but we know that we have process here
+# modstr ... epistemic strength (=degree of confidence/certainty)
+#           = an author/conceiver's certainty about the occurrence of the event in the real world
+#           (or certainty about another conceiver’s mental content
+
+###########################################################################
+
+# :: snt3 	Tallin -
+            Tallinn
+
+# sentence level graph:
+(s3p / publication-91
+    :place (s3c / city
+        :wiki "Q1770"
+        :name (s3n / name :op1 "Tallin"))
+)
+
+# alignment:
+s3p: 0-0
+s3c: 1-1
+s3n: 0-0
+
+# document level annotation:
+(s3s0/ sentence
+    :temporal(())	
+    :modal ((root :modal author)
+            (author :full-affirmative s3p))
+)
+
+# Comments/Questions:
+# Abstract predicate "publication-91" as a root, ... based on snt1 from english_umr-0001.txt BUT there is :ARG3 (s2t / thing) ...Why???
+(author :full-affirmative s2p)# NE Tallin ... in english_umr-0001.txt (snt2), the Tacloban city (wikipedia) is annotated as "human-settlement" (no such EN type in the Guidelines, https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-2-named-entities)
+
+
+###########################################################################
+
+# :: snt4 	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+            In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Vlast bloc, whose presidential candidate was Lennart Meri, won the most votes.
+
+
+# sentence level graph:
+(s4z / získat-001
+    :ARG0 (s4b / blok   #blok Vlast ... why not NE  political_organization?
+            :wiki "Q163347"
+            :name (s4n / name :op1 "Vlast")  # also Isamaa / Pro Patria and Res Publica Union / ... (wikidata - no Czech equivalent)
+                :mod (s4h4 / have-role-91
+                    :ARG1 (s4p3 person
+                        :wiki "Q153149"
+                        :name (s4n4/ name :op1 "Lennart" :op2 "Meri"))
+                    :ARG3 (s4k/ kandidát
+                        :part s4n  #How to indicate that the candidate is nominated by Vlast - simple reentrance of the variable?
+                        :mod (s4p4 / prezident))  #as in UMR example 1(4)))
+    :ARG1 (s4h / hlas
+            :ARG1-of (s4h2 have-quant-91
+                :ARG3 (s4m / most)
+                :ARG5 (s4h3 / hlas)    # ??"hlas" repeated according to AMR example "He sold the most cars of his competitors."
+            :ref-number plural))
+    :temporal (s4v / volby
+                :wiki "Q40231"  #link to wikidata - or wiki just for NE? alternative - relate to volit-001
+                :temporal (s4d / date-entity
+                    :weekday (s4n2/ neděle
+                    :wiki "Q132"))
+                :mod (s4p / parlamentní)
+                :place (s4s/ state
+                    :wiki "Q191"
+                    :name (s4n3/ name :op1 "Estonsko")))
+    :source (s4v2 / výsledek
+            :ref-number plural
+            :temporal (s4v3 / včerejší)
+            :mod (s4p2 / předběžný))
+	:aspect perfective	
+	:modstr FullAff	
+)
+
+# alignment:
+
+# document level annotation:
+(s4s0/ sentence
+    :temporal(())	
+    :modal ((root :modal author)
+            ())
+    :coref (()))
+)
+
+# Comments/Questions:
+# získat-001 = v-w9501f12_ZU, ACT(1)->ARG0, PAT(4)->ARG1, ?ORIG(z+2;na+6`od+2)->ARG2
+
+###########################################################################
+
+# :: snt5 	Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+            PŘEKLAD
+
+            # predikát - roleset
+
+# sentence level graph:
+
+# alignment:
+
+# document level annotation:
+(s4s0/ sentence
+    :temporal(())	
+    :modal ((root :modal author)
+            ())
+    :coref (()))
+)
+
+# Comments/Questions:
+
+###########################################################################
+
+# :: snt6 	Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+
+###########################################################################
+
+# source file
+snt1 ESTONSKO :
+snt2 Estonci volili parlament .
+snt3 Tallin -
+snt4 V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+snt5 Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+snt6 Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
