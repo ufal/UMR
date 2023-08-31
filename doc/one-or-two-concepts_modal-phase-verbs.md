@@ -74,6 +74,18 @@ UMR … modal dependencies moved to document-level annotation … esp. possible-
   :modal (AUTH :NEUT s0g))
 ```  
 
+The presence of modal verbs (or other verbs or expressions) also informs the attribute of epistemic strength `:modstr`and `:modpred`.
+As for `:modstr`
+- no modal verb; certainly, be sure, definitely, necessarily   
+ -> `:modstr` FullAff / FullNeg   
+ (complete certainty that the event occurs / does not occur )
+- must/must have, have to, expect that, deduce; probably, likely; ...;   
+ -> `:modstr` PartAff or PartNeg   
+ (there is strong, but not definitive certainty that the event occurs / does not occur)
+- can, may, might, possibly, likely  
+ -> `:modstr` NeutAff or NeutNeg (there is neutral certainty that the event occurs / does not occur; event is expressed positively / negation of event is expressed)
+
+
 
 ??? (might, should) jako atribut … OK, jako PDT
 
