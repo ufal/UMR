@@ -114,9 +114,11 @@ Thus:
 * _mýt_ “wash” is an event because it is a verb, it denotes a process and it has a frame file.
 * _milovat_ “love” is an event because it is a verb and it has a frame file; although it denotes a state, we will treat it always as an event, regardless information packaging **(conflict with UMR guidelines).**
 * _dělání_ “doing”, _mytí_ “washing”, _milování_ “loving, making love” are events because they are deverbal nouns, derived using the most productive _-ní/-tí_ suffixes.
+*ŠZ: what about deverbal nouns in a strict sense of a thing, such as mytí (lit. washing) as "a small hygienic bag", šití (lit. sewing) as "sewing kit"?
 * _prodej_ “sale” is not an event – it is a deverbal noun but it is derived (from _prodávat_ “sell”) in a less productive way; note that the much less frequent _prodávání_ “selling” is an event **(conflict with UMR guidelines).**
 * _válka_ “war”, _koncert_ “concert” etc. are nouns but they are not derived from verbs, despite denoting processes. They are not events **(conflict with UMR guidelines).**
 * _myjící_ “washing” is an event because it is an active participial adjective derived from the present converb.
+ŠZ: what about conversions such as cestující (lit. the travelling) in the sense of the "passenger"?
 * _mycí_ “to be used for washing” is not an event because it is a different type of derivation **(conflict with UMR guidelines?).**
   * Analogously, _dělající, milující, skládající, plovoucí, plnící_ are events while _skládací, plovací, plnicí_ are not.
 * _udělavší_ “having done” is an event because it is an active participial adjective derived from the past converb.
@@ -300,7 +302,7 @@ Some languages (e.g., Basque) have morphological causative:
 
 > **RULE 2b:** (internal criterion for Czech nouns)
 > - **(Primary) nouns** typically denote entities (in reference), thus without a roleset.
-> - **Event nominals ending with _-ní/-tí_** should be represented as coresponding verbs (e.g., _přijíždění_ "arrival")
+> - **Event nominals ending with _-ní/-tí_** should be represented as coresponding verbs (e.g., _přijíždění_ "arrival")ŠZ: again - are all these nominal expressing an event? Cf. šití (lit. sewing) as a sewing kit.
 > - **Agentive nouns** (e.g., _učitel_"teacher", _řidič_ "driver") represented as ARG0-of the respective noun
 > - **Other event nominals** (e.g., _příjezd_ "arrival", _jídlo_ "food") represent as entities (unless they are already covered by the valency lexicon)
 > ... ***CONFLICT with UMR guidelines with event nominals!!***
@@ -716,5 +718,5 @@ Mr. Obama was a president.
 About events expressed as MWE:
 - Julia Bonn et al. (2023) *UMR Annotation of Multiword Expressions* (sent by HH)
 - William Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
-- Elena Paducheva?
+- Elena Paducheva, 1995
 
