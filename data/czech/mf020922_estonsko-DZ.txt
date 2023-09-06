@@ -1,4 +1,4 @@
-ESTONSKO:
+# :: snt1	ESTONSKO:
 
 (h/ have-location-91
     :ARG1 (e/ event)
@@ -9,7 +9,7 @@ ESTONSKO:
     :aspect State
     :modstr FullAff)
 
-Estonci volili parlament
+# :: snt2	Estonci volili parlament
 
 (v/ volit-001
     :ARG0 (p/ person
@@ -23,7 +23,7 @@ Estonci volili parlament
     :aspect Imperfective
     :modstr FullAff)
 
-Tallin -
+# :: snt3	Tallin -
 
 (h/ have-location-91
     :ARG1 (e/ event)
@@ -34,7 +34,7 @@ Tallin -
     :aspect State
     :modstr FullAff)
 
-V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+# :: snt4	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
 
 (z/ získat-001
     :ARG0 (b/ blok
@@ -62,20 +62,20 @@ V nedělních parlamentních volbách v Estonsku získal podle včerejších př
     :aspect Perfective
     :modstr FullAff)
 
-# At present it is unclear to me how to connect the following part to the main graph.
-# The components share the node 'b' but only as a target of two incoming edges.
-# We probably want something where the second edge will be reversed because this part is a modification of "blok Vlast".
-(h2/ have-role-91
-    :ARG1 (p4/ person
-        :wiki "Q153149"
-        :name (n5/ name :op1 "Lennart" :op2 "Meri"))
-    :ARG3 (k/ kandidát
-        :wiki "Q618536"
-        :mod (p5/ prezident
-            :wiki "Q30461")
-        :ARG1-of (n6/ nominovat-001
-            :ARG0 b)))
+## At present it is unclear to me how to connect the following part to the main graph.
+## The components share the node 'b' but only as a target of two incoming edges.
+## We probably want something where the second edge will be reversed because this part is a modification of "blok Vlast".
+#(h2/ have-role-91
+#    :ARG1 (p4/ person
+#        :wiki "Q153149"
+#        :name (n5/ name :op1 "Lennart" :op2 "Meri"))
+#    :ARG3 (k/ kandidát
+#        :wiki "Q618536"
+#        :mod (p5/ prezident
+#            :wiki "Q30461")
+#        :ARG1-of (n6/ nominovat-001
+#            :ARG0 b)))
 
-Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
-Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+# :: snt5	Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+# :: snt6	Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
 
