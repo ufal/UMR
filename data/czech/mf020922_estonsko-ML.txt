@@ -150,7 +150,7 @@ s3n: 0-0
                         :name (s4n4 / name :op1 "Lennart" :op2 "Meri"))
                     :ARG3 (s4k / kandidát
                         :part s4n  #How to indicate that the candidate is nominated by Vlast - simple reentrance of the variable?
-                        :mod (s4p4 / prezident))  #as in UMR example 1(4)))
+                        :mod (s4p4 / prezident))))  #as in UMR example 1(4)
     :ARG1 (s4h / hlas
             :ARG1-of (s4h2 / have-quant-91
                 :ARG3 (s4m / most)
@@ -180,7 +180,7 @@ s3n: 0-0
     :temporal(())	
     :modal ((root :modal author)
             ())
-    :coref (()))
+    :coref (())
 )
 
 # Comments/Questions:
