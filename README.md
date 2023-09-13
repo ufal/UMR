@@ -23,3 +23,6 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Degree](doc/degree.md)
 * [Coreference](doc/coreference.md)
 * [Glossary of relations and attributes](doc/relations-attributes.md)
+
+## Useful links
+* [UMR-related links](https://github.com/ufal/UMR/blob/main/doc/UMR-related-links.md)
