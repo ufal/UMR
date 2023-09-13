@@ -25,4 +25,4 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Glossary of relations and attributes](doc/relations-attributes.md)
 
 ## Useful links
-* [UMR-related links](https://github.com/ufal/UMR/blob/main/doc/UMR-related-links.md)
+* [UMR-related links](https://github.com/ufal/UMR/blob/main/doc/UMR-related-links.md) - incl. working lists
