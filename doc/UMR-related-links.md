@@ -45,7 +45,8 @@
 
 
 ## Dictionaries
-[PropBank / development](https://verbs.colorado.edu/propbank-development/)
+[PropBank - development](https://verbs.colorado.edu/propbank-development/)  
+
 [PDT-Vallex in Teitok - version 4.0](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex)  (i.e., "all the verbs in the PDT3.5 that have a PDT-Vallex id. Those are mostly verbs, but there are also other word classes in PDT-Vallex. The occurrences are taken from PDT3.5, and the frame information is taken from PDT-Vallex 4.0, released as part of [PDT-C](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3185). If the verb is furthermore present in Vallex 3.0, a link is provided to that as well.")
 
 [PDT-Vallex - version 3.0](https://lindat.mff.cuni.cz/services/PDT-Vallex/) (version from PCEDT 2.0)
