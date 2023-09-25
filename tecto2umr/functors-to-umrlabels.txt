@@ -8,63 +8,43 @@ my %MAPPING = (
     'ORIG'  => 'ARG3',
     'EFF'   => 'ARG4',
 ##### TEMPORAL ###########################
-    'TWHEN' => 'temporal',          # corrected: AMR 'time' -> UMR 'temporal'   AMR: The soldier hummed a tune for the girl (as he walked with her to town).time
-    'TFHL' => 'duration',           # added: AMR: He worked for two hours.duration.
-    'TFRWH' => 'temporal',          # provisional, no examples found yet ("ze kdy")
-    'THL'   => 'duration',          # UMR: Pope was sentenced (to 20 years).duration
-    'THO' => 'frequency',           # added: AMR: We met (three times).frequency
-    'TOWH' => 'temporal',           # provisional, no examples found yet  ("na kdy")
-    'TPAR' => 'temporal',           # added: AMR: The soldier hummed a tune for the girl (as he walked with her to town).time
-    'TSIN' => 'temporal',           # provisional, no examples found yet ("od kdy")
-    'TTLL' => 'temporal',           # provisional, no examples found yet ("do kdy")
+    'TWHEN' => 'temporal',
+    'TFHL' => 'duration',
+    'TFRWH' => 'temporal',
+    'THL'   => 'duration', 
+    'THO' => 'frequency', 
+    'TOWH' => 'temporal',
+    'TPAR' => 'temporal',
+    'TSIN' => 'temporal', 
+    'TTILL' => 'temporal', 
 ##### SPATIAL ###########################
-    'DIR1'  => 'source',            # AMR: He drove west.direction, from Houston.source to Austin.destination.
-    'DIR2'  => 'path',              # corrected: 'path' <- 'location',
-                                            # AMR: I drove to Indianapolis on I-65.path.
-                                            # AMR: I drove through the tunnel.path.
-    'DIR3'  => 'direction',         # AMR: He drove west.direction, from Houston.source to Austin.destination.
-                                            # ??? OR destination ... not distinguished in PDT
-    'LOC'   => 'location',          # AMR: (Where=amr-unknown).location did the girl find the boy?
+    'DIR1'  => 'start',
+    'DIR2'  => 'path', 
+    'DIR3'  => 'goal', 
+    'LOC'   => 'place',
 ##### CAUSAL ###########################
-    'AIM'   => 'purpose',           # AMR: He went to the store (to buy wood (for a new fence.purpose)).purpose
-                                    # AMR: The boy murmured softly.manner (to soothe the girl).purpose, (because he worried (about her).topic).cause
-    'CAUS'  => 'cause',             # AMR: The boy murmured softly.manner (to soothe the girl).purpose, (because he worried (about her).topic).cause
-    'CNCS' => 'concession',         # added: AMR: The game continued (although it rained).concession
-                                            # AMR: The game continued (despite the rain).concession
-                                            # AMR: The game will continue (even_if (it rains).op1).concession
-                                            # AMR: They feared him (even_when (he was behind bars=he was imprisoned).op1).concession
-    'COND' => 'condition',          # added: AMR: The boy will sing (if he is given money).condition
-                                            # AMR: (If the boy is given money).condition, he will sing.
-                                            # AMR: The boy will sing (in case of a money donation).condition
-    'INTT' => 'purpose',            # added: AMR: He went to the store (to buy wood (for a new fence.purpose)).purpose
+    'AIM'   => 'purpose',
+    'CAUS'  => 'cause', 
+    'CNCS' => 'concession', 
+    'COND' => 'condition', 
+    'INTT' => 'purpose', 
 ##### MANNER ###########################
-    'ACMP'  => 'companion',         # UMR: ...  before he returns home with his wife Sherry.companion
-                                    # AMR: The soldier hummed a tune for the girl as he walked with her.accompanier to town.
-    'CPR' => 'compared-to',         # corrected: 'CPR' <- 'CMP'
-    'CRIT' => 'manner',             # provisional, no examples found yet ("kritérium, norma, pravidlo")
-    'DIFF' => 'extent',             # provisional, no examples found yet ("o kolik")
-    'EXT' => 'extent',              # corrected: 'extent' <- 'scale' (scale only within quantities)
-                                             # AMR: The road goes on forever.extent
-                                             # UMR: Even if you arrive (only five minutes).extent late
-    'MANN'  => 'manner',            # AMR: The boy sang very beautifully.manner
-                                    # AMR: He decorated the room in a creative way.manner
-                                    # AMR: The mayor proposed to lower crime (by hiring more police officers).manner
-    'MEANS' => 'instrument',        # AMR: I ate pasta with a fork.instrument
-                                    # AMR: Iraq launched a missile attack.instrument
-                                    # BUT: AMR: Nicole went to England by train.manner (MEANS in PDT)
-    'REG'  => 'manner',             # provisional, no examples found yet ("uvádí nějaký aspekt, vzhledem k němuž řídící děj nebo vlastnost platí")
-    'RESL' => 'extent',             # provisional, no examples found yet ("způsob uvedením výsledku, účinku děje")
-    'RESTR' => 'subtraction',       # added: AMR: People don't own tigers, (except for Joe Exotic.).subtraction
+    'ACMP'  => 'companion', 
+#    'CPR' => 'compared-to',
+    'CRIT' => 'manner',
+    'DIFF' => 'extent', 
+    'EXT' => 'extent', 
+    'MANN'  => 'manner',
+    'MEANS' => 'instrument',
+    'REG'  => 'manner',
+    'RESL' => 'extent',
+    'RESTR' => 'subtraction',
 ##### NEW ###########################
-    'BEN'   => 'beneficiary',       # AMR: The soldier hummed a tune for the girl.beneficiary as he walked with her to town.
-    'HER'   => 'source',            # provisional, no examples found yet 
+    'BEN'   => 'recipient',
+    'HER'   => 'source',  
 ##### NOMINAL ###########################
-    'APP'   => 'poss',              # poss: John's.poss car ... PDT typ (5) vztah vlastnictví (possessum as the parent, owner as a child)
-                                    # have-rel-role-92: manžel slavné spisovatelky.APP ... PDT typ (1) příbuzenské vztahy 
-                                    # part: příslušník armády.APP; střecha domu.APP, Guitar.part strings  ... PDT typ (2) příslušnost k nějakému celku, instituci (part as the parent, whole as a child)
-                                    # group: tým brankářů.APP ... PDT typ (3) příslušnost osoby k nějakému celku, instituci (whole as the parent)
-                                    # extent: míra nezaměstnanosti.APP ... PDT typ (4) nositel vlastnosti (?? extent as the parent)
-    'AUTH' => 'source',             # provisional, probably should be converted to ARG0-of write/... 
-    'ID' => 'name',                 # provisional, probably should be converted to ARG0-of have-role-91 (or something like that)
-    'RSTR'  => 'mod',               # AMR: The mayor proposed to lower crime (by hiring more.mod police officers).manner
+    'APP'   => 'poss', 
+    'AUTH' => 'source', 
+#    'ID' => 'name', 
+    'RSTR'  => 'mod',  
 )

@@ -1,5 +1,8 @@
 # Relations and Attributes in Sentence Level Annotation
 
+
+
+
 This document should serve as a reference list (alphabetically ordered) of
 relations and attributes used in UMR. The [UMR
 guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md)
@@ -15,6 +18,8 @@ quotation marks, sometimes just a symbol such as a hyphen). But some
 colon-identifiers can be both (sometimes followed by a value, sometimes by a
 node). And if we view the attribute values as abstract concepts, i.e., nodes,
 relations and attributes become more or less the same thing.
+
+Well organized [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) of abstract concepts, abstract rolesets (=abstract predicates), and roles (= relations/attributes identified by the colon mark) have been recently shared by Julia.
 
 Additional information can be found also in  [AMR annotation dictionary](https://amr.isi.edu/doc/amr-dict.html).
 
