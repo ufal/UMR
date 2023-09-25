@@ -148,7 +148,7 @@
             :ref-person 3rd)
     :PAT (c/ curo-14
             :ACT (p2/ person
-                    :name (n/ name :op1 "Caius" :op2 "Manlius"))
+                    :name (n1/ name :op1 "Caius" :op2 "Manlius"))
             :PAT? (something?)
             :location (p3/ pars
                          :mod (d/ dexter))
@@ -158,7 +158,7 @@
                             :ACT(p4/ person
                                     :mod (c3/ city
                                             :wiki "Q82670"
-                                            :name "Faesulae"
+                                            :name (n2/ name :op1 "Faesulae")
                                     :mod (q/ quidam))
                             :PAT? (something?)
                             :location (p5/ pars
