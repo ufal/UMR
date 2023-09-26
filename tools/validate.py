@@ -126,10 +126,10 @@ def lspec2ud(deprel):
 #==============================================================================
 
 sentid_re=re.compile('^# sent_id\s*=\s*(\S+)$')
-def sentences(inp, tag_sets, args):
+def sentences(inp, args):
     """
     `inp` a file-like object yielding lines as unicode
-    `tag_sets` and `args` are needed for choosing the tests
+    `args` are needed for choosing the tests
 
     This function does elementary checking of the input and yields one
     sentence at a time from the input stream.
@@ -139,6 +139,31 @@ def sentences(inp, tag_sets, args):
     the next sentence, that is, it will read the next sentence from the input
     stream. (Technically, the function returns an object, and the object will
     then read the sentences within the caller's loop.)
+
+    A sentence in a UMR file consists of:
+    - Comment lines. Their first character is '#'. Some of them may contain
+      machine-readable metadata. Others can be ignored.
+    - Empty lines. An empty line separates two annotation blocks of the same
+      sentence (e.g., document level graph from sentence level graph). Two empty
+      lines separate sentences. Empty lines must not occur inside annotation
+      blocks, e.g., inside the sentence level graph.
+    - Graph lines (either sentence level graph, or document level annotation).
+      They may start with whitespace (' ', "\t") and they typically do, except
+      for the first line of the graph. Whitespace can be ignored (but we may
+      want to report trailing whitespace, just to tidy up). After whitespace,
+      there must be either the opening bracket ('(') or a colon (':'). One or
+      more closing brackets may occur at the end of the line; they are never
+      put on a line of their own.
+    - Every opening bracket must be immediately followed by a variable id (e.g.,
+      's1p'), a slash ('/'), and a concept string.
+    - Every colon must be immediately followed by a relation/attribute label,
+      then whitespace and either an atomic value, or a string in double quotes,
+      or the opening bracket of a child node.
+    - The alignment block has its own type of lines. It starts with a variable
+      id of a concept node in the sentence graph, followed by a colon and
+      a space, followed by an integer range (e.g. '2-2'). These are 1-based
+      indices of tokens that represent the concept node on the surface. '0-0'
+      means that the concept is not overtly represented on the surface.
     """
     global curr_line, comment_start_line, sentence_line, sentence_id
     comments = [] # List of comment lines to go with the current sentence
