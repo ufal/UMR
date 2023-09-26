@@ -19,36 +19,32 @@ import json
 THISDIR=os.path.dirname(os.path.realpath(os.path.abspath(__file__))) # The folder where this script resides.
 
 # Global variables:
+curr_fname = None # Current input file
 curr_line = 0 # Current line in the input file
-comment_start_line = 0 # The line in the input file on which the current sentence starts, including sentence-level comments.
-sentence_line = 0 # The line in the input file on which the current sentence starts (the first node/token line, skipping comments)
+sentence_line = 0 # The line in the input file on which the current sentence starts
 sentence_id = None # The most recently read sentence id
 error_counter = {} # key: error type value: error count
 warn_on_missing_files = set() # langspec files which you should warn about in case they are missing (can be deprel, edeprel, feat_val, tokens_w_space)
 
-def warn(msg, error_type, testlevel=0, testid='some-test', lineno=True, nodelineno=0, nodeid=0, explanation=None):
+def warn(msg, testclass, testlevel, testid, lineno=0, explanation=None):
     """
     Print the error/warning message.
-    If lineno is True, print the number of the line last read from input. Note
-    that once we have read a sentence, this is the number of the empty line
-    after the sentence, hence we probably do not want to print it.
-    If we still have an error that pertains to an individual node, and we know
-    the number of the line where the node appears, we can supply it via
-    nodelineno. Nonzero nodelineno means that lineno value is ignored.
-    If lineno is False, print the number and starting line of the current tree.
+    If lineno is 0, print the number of the current line (most recently read from input).
+    If lineno is < 0, print the number of the first line of the current sentence.
+    If lineno is > 0, print lineno (probably pointing somewhere in the current sentence).
     If explanation contains a string and this is the first time we are reporting
     an error of this type, the string will be appended to the main message. It
     can be used as an extended explanation of the situation.
     """
-    global curr_fname, curr_line, sentence_line, sentence_id, error_counter, tree_counter, args
-    error_counter[error_type] = error_counter.get(error_type, 0)+1
+    global curr_fname, curr_line, sentence_line, sentence_id, error_counter, args
+    error_counter[testclass] = error_counter.get(testclass, 0)+1
     if not args.quiet:
-        if args.max_err > 0 and error_counter[error_type] == args.max_err:
-            print(('...suppressing further errors regarding ' + error_type), file=sys.stderr)
-        elif args.max_err > 0 and error_counter[error_type] > args.max_err:
+        if args.max_err > 0 and error_counter[testclass] == args.max_err:
+            print(('...suppressing further errors regarding ' + testclass), file=sys.stderr)
+        elif args.max_err > 0 and error_counter[testclass] > args.max_err:
             pass # suppressed
         else:
-            if explanation and error_counter[error_type] == 1:
+            if explanation and error_counter[testclass] == 1:
                 msg += ' ' + explanation
             if len(args.input) > 1: # several files, should report which one
                 if curr_fname=='-':
@@ -60,17 +56,14 @@ def warn(msg, error_type, testlevel=0, testid='some-test', lineno=True, nodeline
             sent = ''
             node = ''
             # Global variable (last read sentence id): sentence_id
-            # Originally we used a parameter sid but we probably do not need to override the global value.
             if sentence_id:
                 sent = ' Sent ' + sentence_id
-            if nodeid:
-                node = ' Node ' + str(nodeid)
-            if nodelineno:
-                print("[%sLine %d%s%s]: [L%d %s %s] %s" % (fn, nodelineno, sent, node, testlevel, error_type, testid, msg), file=sys.stderr)
-            elif lineno:
-                print("[%sLine %d%s%s]: [L%d %s %s] %s" % (fn, curr_line, sent, node, testlevel, error_type, testid, msg), file=sys.stderr)
+            if lineno > 0:
+                print("[%sLine %d%s%s]: [L%d %s %s] %s" % (fn, lineno, sent, node, testlevel, testclass, testid, msg), file=sys.stderr)
+            elif lineno < 0:
+                print("[%sLine %d%s%s]: [L%d %s %s] %s" % (fn, sentence_line, sent, node, testlevel, testclass, testid, msg), file=sys.stderr)
             else:
-                print("[%sTree number %d on line %d%s%s]: [L%d %s %s] %s" % (fn, tree_counter, sentence_line, sent, node, testlevel, error_type, testid, msg), file=sys.stderr)
+                print("[%sLine %d%s%s]: [L%d %s %s] %s" % (fn, curr_line, sent, node, testlevel, testclass, testid, msg), file=sys.stderr)
 
 ###### Support functions
 ws_re = re.compile(r"^\s+$")
@@ -95,7 +88,7 @@ attr_re = re.compile(r"^:[A-Za-z][-A-Za-z0-9]+")
 def is_attribute(line):
     return attr_re.match(line)
 
-align_re = re.compile(r"^s[0-9]+[a-z0-9]+: [0-9]+-[0-9]+$")
+align_re = re.compile(r"^s[0-9]+[a-z0-9]+:")
 def is_alignment(line):
     return align_re.match(line)
 
@@ -149,47 +142,58 @@ def sentences(inp, args):
       means that the concept is not overtly represented on the surface.
     """
     # global curr_line ... holds the 1-based number of the last read line; used in error messages
+    # global sentence_line ... holds the 1-based number of the first line of the current sentence; used in error messages
     # global sentence_id ... holds the id of the current sentence (or better: the most recently seen sentence id); used in error messages
-    global curr_line, comment_start_line, sentence_line, sentence_id
+    global curr_line, sentence_line, sentence_id
     blocks = [] # List of the annotation blocks (sentence annotation, document level annotation) of the current sentence.
+    bline0 = None # Number of the line where the current block starts.
     comments = [] # List of the comment lines at the beginning of the current block.
     lines = [] # List of the non-comment lines of the current block.
-    corrupted = False # In case of wrong number of columns check the remaining lines of the sentence but do not yield the sentence for further processing.
-    comment_start_line = None
+    corrupt = False # In case of spurious line check the remaining lines of the sentence but do not yield the sentence for further processing.
     testlevel = 1
     testclass = 'Format'
     for line_counter, line in enumerate(inp):
-        curr_line = line_counter+1
-        if not comment_start_line:
-            comment_start_line = curr_line
+        curr_line = line_counter + 1
+        if not sentence_line:
+            sentence_line = curr_line
+        if not bline0:
+            bline0 = curr_line
         line = line.rstrip("\n")
         if has_trailing_whitespace(line):
             if args.check_trailing_whitespace:
                 testid = 'trailing-whitespace'
                 testmessage = 'Trailing whitespace should be removed.'
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+                warn(testmessage, testclass, testlevel, testid)
             line = remove_trailing_whitespace(line)
         validate_unicode_normalization(line)
         # Unlike trailing whitespace, leading whitespace is legitimate (indentation) but we ignore it anyway.
         line = remove_leading_whitespace(line)
         if not line: # empty line means end of block (and possibly end of sentence)
             if comments or lines: # end of an annotation block
-                blocks.append(comments + lines)
+                blocks.append({'line0': bline0, 'comments': comments, 'lines': lines})
                 comments = []
                 lines = []
+                line0 = None
                 ###!!! Sentences typically have 4 annotation blocks: 1. intro; 2. sentence level; 3. alignment; 4. document level.
                 ###!!! If we see more blocks, maybe someone forgot to add a second empty line between sentences.
                 if len(blocks) > 4:
                     testid = 'too-many-blocks'
                     testmessage = 'Too many annotation blocks within one sentence. There should be two empty lines after each sentence.'
-                    warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+                    warn(testmessage, testclass, testlevel, testid)
             else: # two consecutive empty lines = end of sentence
                 if blocks:
-                    if not corrupted:
+                    if len(blocks) < 4:
+                        testid = 'too-few-blocks'
+                        testmessage = 'Too few annotation blocks in the sentence. Expected introduction, sentence level graph, alignment, and document level annotation.'
+                        warn(testmessage, testclass, testlevel, testid)
+                        corrupt = True
+                    if not corrupt:
                         yield blocks
                     blocks = []
-                    corrupted = False
-                    comment_start_line = None
+                    bline0 = None
+                    comments = []
+                    lines = []
+                    corrupt = False
                 else:
                     testid = 'extra-empty-line'
                     testmessage = 'Spurious empty line. One empty line is expected after every annotation block and two after every sentence.'
@@ -207,23 +211,23 @@ def sentences(inp, args):
             else:
                 testid = 'misplaced-comment'
                 testmessage = 'Spurious comment line. Comments are only allowed before a sentence.'
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+                warn(testmessage, testclass, testlevel, testid)
         elif is_root(line) or is_attribute(line) or is_alignment(line):
             lines.append(line)
         else: # A line which is neither a comment nor a token/word, nor empty. That's bad!
             testid = 'invalid-line'
             testmessage = "Spurious line: '%s'. All non-empty lines should start with a digit or the # character." % (line)
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+            warn(testmessage, testclass, testlevel, testid)
     else: # end of file
-        if comments or lines: # These should have been yielded on an empty line!
+        if blocks: # These should have been yielded on an empty line!
             testid = 'missing-empty-line'
             testmessage = 'Missing empty line after the last sentence.'
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-            if not corrupted:
-                yield comments, lines
+            warn(testmessage, testclass, testlevel, testid)
+            if not corrupt:
+                yield blocks
 
 #------------------------------------------------------------------------------
-# Low-level tests
+# Low-level tests: character encoding, line break format etc.
 #------------------------------------------------------------------------------
 
 def validate_unicode_normalization(text):
@@ -255,7 +259,7 @@ def validate_unicode_normalization(text):
         testclass = 'Unicode'
         testid = 'unicode-normalization'
         testmessage = "Unicode not normalized: %s.character[%d] is %s, should be %s." % (COLNAMES[firsti], firstj, inpfirst, nfcfirst)
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+        warn(testmessage, testclass, testlevel, testid)
 
 def validate_newlines(inp):
     """
@@ -269,7 +273,7 @@ def validate_newlines(inp):
         testclass = 'Format'
         testid = 'non-unix-newline'
         testmessage = 'Only the unix-style LF line terminator is allowed.'
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+        warn(testmessage, testclass, testlevel, testid)
 
 
 
@@ -289,10 +293,16 @@ def validate_sent_id(sentence, known_ids, lcode):
     # The sentence should contain 4 annotation blocks. The first block should
     # contain the comment line with the sentence id and the space-separated
     # tokens. Thanks to previous tests, we can be sure that there is at least
-    # one annotation block.
-    lines = sentence[0]
-    for l in lines:
-        match=sentid_re.match(l)
+    # one annotation block. However, we cannot be sure that it has comments.
+    if not 'comments' in sentence[0]:
+        testid = 'missing-sent-id'
+        testmessage = 'Missing sentence id.'
+        warn(testmessage, testclass, testlevel, testid, lineno=-1)
+        return
+    comments = sentence[0]['comments']
+    cline = 0
+    for c in comments:
+        match=sentid_re.match(c)
         if match:
             matched.append(match)
         else:
@@ -300,15 +310,16 @@ def validate_sent_id(sentence, known_ids, lcode):
             if c.startswith('# sent_id') or c.startswith('#sent_id'):
                 testid = 'invalid-sent-id'
                 testmessage = "Spurious sent_id line: '%s' Should look like '# sent_id = xxxxx' where xxxxx is not whitespace. Forward slash reserved for special purposes." % c
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+                warn(testmessage, testclass, testlevel, testid, lineno=sentence[0]['line0']+cline)
+        cline += 1
     if not matched:
         testid = 'missing-sent-id'
         testmessage = 'Missing sentence id.'
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+        warn(testmessage, testclass, testlevel, testid, lineno=-1)
     elif len(matched)>1:
         testid = 'multiple-sent-id'
         testmessage = 'Multiple sentence ids.'
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+        warn(testmessage, testclass, testlevel, testid, lineno=-1)
     else:
         # Uniqueness of sentence ids should be tested treebank-wide, not just file-wide.
         # For that to happen, all three files should be tested at once.
@@ -316,7 +327,7 @@ def validate_sent_id(sentence, known_ids, lcode):
         if sid in known_ids:
             testid = 'non-unique-sent-id'
             testmessage = "Non-unique sentence id '%s'." % sid
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+            warn(testmessage, testclass, testlevel, testid, lineno=-1)
         known_ids.add(sid)
 
 text_re = re.compile('^#\s*text\s*=\s*(.+)$')
@@ -324,21 +335,17 @@ def validate_text_meta(comments, tree):
     # Remember if SpaceAfter=No applies to the last word of the sentence.
     # This is not prohibited in general but it is prohibited at the end of a paragraph or document.
     global spaceafterno_in_effect
-    # In sentences(), sentence_line was already moved to the first token/node line
-    # after the sentence comment lines. While this is useful in most validation
-    # functions, it complicates things here where we also work with the comments.
-    global sentence_line
     testlevel = 2
     testclass = 'Metadata'
     text_matched = []
     if not text_matched:
         testid = 'missing-text'
         testmessage = 'Missing the text attribute.'
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+        warn(testmessage, testclass, testlevel, testid)
     elif len(text_matched) > 1:
         testid = 'multiple-text'
         testmessage = 'Multiple text attributes.'
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+        warn(testmessage, testclass, testlevel, testid)
     else:
         stext = text_matched[0].group(1)
         # Validate the text against the SpaceAfter attribute in MISC.
@@ -364,7 +371,7 @@ def build_tree(sentence):
     """
     testlevel = 2
     testclass = 'Syntax'
-    global sentence_line # the line of the first token/word of the current tree (skipping comments!)
+    global sentence_line # the line of the first line of the current sentence
     node_line = sentence_line - 1
     children = {} # node -> set of children
     tree = {
@@ -397,7 +404,7 @@ def build_tree(sentence):
         if head == id_:
             testid = 'head-self-loop'
             testmessage = 'HEAD == ID for %s' % cols[ID]
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid, nodelineno=node_line)
+            warn(testmessage, testclass, testlevel, testid, lineno=node_line)
             return None
         tree['nodes'].append(cols)
         tree['linenos'].append(node_line)
@@ -409,7 +416,7 @@ def build_tree(sentence):
     if len(tree['children'][0]) > 1 and args.single_root:
         testid = 'multiple-roots'
         testmessage = "Multiple root words: %s" % tree['children'][0]
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid, lineno=False)
+        warn(testmessage, testclass, testlevel, testid, lineno=-1)
         return None
     # Return None if there are any cycles. Avoid surprises when working with the graph.
     # Presence of cycles is equivalent to presence of unreachable nodes.
@@ -419,7 +426,7 @@ def build_tree(sentence):
     if unreachable:
         testid = 'non-tree'
         testmessage = 'Non-tree structure. Words %s are not reachable from the root 0.' % (','.join(str(w) for w in sorted(unreachable)))
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid, lineno=False)
+        warn(testmessage, testclass, testlevel, testid, lineno=-1)
         return None
     return tree
 
@@ -430,9 +437,8 @@ def build_tree(sentence):
 #==============================================================================
 
 def validate(inp, out, args, known_sent_ids):
-    global tree_counter
+    global sentence_line, sentence_id
     for sentence in sentences(inp, args):
-        tree_counter += 1
         if args.level > 1:
             validate_sent_id(sentence, known_sent_ids, args.lang) # level 2
             ###!!! if args.check_tree_text:
@@ -449,6 +455,10 @@ def validate(inp, out, args, known_sent_ids):
                 testid = 'skipped-corrupt-tree'
                 testmessage = "Skipping annotation tests because of corrupt tree structure."
                 ###!!! warn(testmessage, testclass, testlevel=testlevel, testid=testid, lineno=False)
+        # Before we read the next sentence, clear the current sentence variables
+        # so that sentences() knows they should be reset to new values.
+        sentence_line = None
+        sentence_id = None
     # After we have read the input, we can ask about the line breaks observed.
     validate_newlines(inp) # level 1
 
@@ -470,7 +480,6 @@ if __name__=="__main__":
 
     args = opt_parser.parse_args() # Parsed command-line arguments
     error_counter={} # Incremented by warn()  {key: error type value: its count}
-    tree_counter=0
 
     # Level of validation
     if args.level < 1:
