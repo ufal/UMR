@@ -181,9 +181,10 @@ def sentences(inp, args):
             comment_start_line = curr_line
         line = line.rstrip("\n")
         if has_trailing_whitespace(line):
-            testid = 'trailing-whitespace'
-            testmessage = 'Trailing whitespace should be removed.'
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+            if args.check_trailing_whitespace:
+                testid = 'trailing-whitespace'
+                testmessage = 'Trailing whitespace should be removed.'
+                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
             line = remove_trailing_whitespace(line)
         validate_unicode_normalization(line)
         # Unlike trailing whitespace, leading whitespace is legitimate (indentation) but we ignore it anyway.
@@ -238,7 +239,9 @@ def sentences(inp, args):
             if not corrupted:
                 yield comments, lines
 
-###### Tests applicable to a single row indpendently of the others
+#------------------------------------------------------------------------------
+# Low-level tests
+#------------------------------------------------------------------------------
 
 def validate_unicode_normalization(text):
     """
@@ -271,9 +274,13 @@ def validate_unicode_normalization(text):
         testmessage = "Unicode not normalized: %s.character[%d] is %s, should be %s." % (COLNAMES[firsti], firstj, inpfirst, nfcfirst)
         warn(testmessage, testclass, testlevel=testlevel, testid=testid)
 
-##### Tests applicable to the whole tree
-
 def validate_newlines(inp):
+    """
+    To be called after the input has been read. If the input uses '\r\n' as
+    line breaks, inp.newlines will have been set to '\r\n'. For Unix-style
+    line breaks, it should be empty. (Not sure what happens if the file is
+    inconsistent and line breaks are mixed.)
+    """
     if inp.newlines and inp.newlines != '\n':
         testlevel = 1
         testclass = 'Format'
@@ -349,10 +356,6 @@ def validate_text_meta(comments, tree):
         warn(testmessage, testclass, testlevel=testlevel, testid=testid)
     else:
         stext = text_matched[0].group(1)
-        if stext[-1].isspace():
-            testid = 'text-trailing-whitespace'
-            testmessage = 'The text attribute must not end with whitespace.'
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
         # Validate the text against the SpaceAfter attribute in MISC.
         skip_words = set()
         mismatch_reported = 0 # do not report multiple mismatches in the same sentence; they usually have the same cause
@@ -462,6 +465,7 @@ def validate(inp, out, args, known_sent_ids):
                 testid = 'skipped-corrupt-tree'
                 testmessage = "Skipping annotation tests because of corrupt tree structure."
                 warn(testmessage, testclass, testlevel=testlevel, testid=testid, lineno=False)
+    # After we have read the input, we can ask about the line breaks observed.
     validate_newlines(inp) # level 1
 
 if __name__=="__main__":
@@ -473,12 +477,12 @@ if __name__=="__main__":
     io_group.add_argument('input', nargs='*', help='Input file name(s), or "-" or nothing for standard input.')
 
     list_group = opt_parser.add_argument_group("Label sets", "Options relevant to checking label sets.")
-    list_group.add_argument("--lang", action="store", required=True, default=None, help="Which langauge are we checking? If you specify this (as a two-letter code), the validator will use language-specific guidelines.")
-    list_group.add_argument("--level", action="store", type=int, default=5, dest="level", help="Level 1: Test only the technical format backbone. Level 2: UMR format. Level 3: UMR contents. Level 4: Language-specific labels. Level 5: Language-specific contents.")
+    list_group.add_argument('--lang', action="store", required=True, default=None, help="Which langauge are we checking? If you specify this (as a two-letter code), the validator will use language-specific guidelines.")
+    list_group.add_argument('--level', action="store", type=int, default=5, dest="level", help="Level 1: Test only the technical format backbone. Level 2: UMR format. Level 3: UMR contents. Level 4: Language-specific labels. Level 5: Language-specific contents.")
 
     meta_group = opt_parser.add_argument_group("Metadata constraints", "Options for checking the validity of tree metadata.")
-    meta_group.add_argument("--no-tree-text", action="store_false", default=True, dest="check_tree_text", help="Do not test tree text. For internal use only, this test is required and on by default.")
-    meta_group.add_argument("--no-space-after", action="store_false", default=True, dest="check_space_after", help="Do not test presence of SpaceAfter=No.")
+    meta_group.add_argument('--no-tree-text', action="store_false", default=True, dest="check_tree_text", help="Do not test tree text. For internal use only, this test is required and on by default.")
+    meta_group.add_argument('--allow-trailing-whitespace', action='store_false', default=True, dest='check_trailing_whitespace', help='Do not report trailing whitespace.')
 
     args = opt_parser.parse_args() # Parsed command-line arguments
     error_counter={} # Incremented by warn()  {key: error type value: its count}
