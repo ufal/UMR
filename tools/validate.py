@@ -122,11 +122,11 @@ def lspec2ud(deprel):
 
 
 #==============================================================================
-# Level 1 tests. Only CoNLL-U backbone. Values can be empty or non-UD.
+# Level 1 tests. Only technical format backbone.
 #==============================================================================
 
 sentid_re=re.compile('^# sent_id\s*=\s*(\S+)$')
-def trees(inp, tag_sets, args):
+def sentences(inp, tag_sets, args):
     """
     `inp` a file-like object yielding lines as unicode
     `tag_sets` and `args` are needed for choosing the tests
@@ -253,63 +253,6 @@ def validate_unicode_normalization(text):
         testmessage = "Unicode not normalized: %s.character[%d] is %s, should be %s." % (COLNAMES[firsti], firstj, inpfirst, nfcfirst)
         warn(testmessage, testclass, testlevel=testlevel, testid=testid)
 
-whitespace_re = re.compile('.*\s', re.U)
-whitespace2_re = re.compile('.*\s\s', re.U)
-def validate_cols_level1(cols):
-    """
-    Tests that can run on a single line and pertain only to the CoNLL-U file
-    format, not to predefined sets of UD tags.
-    """
-    testlevel = 1
-    testclass = 'Format'
-    # Some whitespace may be permitted in FORM, LEMMA and MISC but not elsewhere.
-    for col_idx in range(MISC+1):
-        if col_idx >= len(cols):
-            break # this has been already reported in trees()
-        # Must never be empty
-        if not cols[col_idx]:
-            testid = 'empty-column'
-            testmessage = 'Empty value in column %s.' % (COLNAMES[col_idx])
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-        else:
-            # Must never have leading/trailing whitespace
-            if cols[col_idx][0].isspace():
-                testid = 'leading-whitespace'
-                testmessage = 'Leading whitespace not allowed in column %s.' % (COLNAMES[col_idx])
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-            if cols[col_idx][-1].isspace():
-                testid = 'trailing-whitespace'
-                testmessage = 'Trailing whitespace not allowed in column %s.' % (COLNAMES[col_idx])
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-            # Must never contain two consecutive whitespace characters
-            if whitespace2_re.match(cols[col_idx]):
-                testid = 'repeated-whitespace'
-                testmessage = 'Two or more consecutive whitespace characters not allowed in column %s.' % (COLNAMES[col_idx])
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-    # Multi-word tokens may have whitespaces in MISC but not in FORM or LEMMA.
-    # If it contains a space, it does not make sense to treat it as a MWT.
-    if is_multiword_token(cols):
-        for col_idx in (FORM, LEMMA):
-            if col_idx >= len(cols):
-                break # this has been already reported in trees()
-            if whitespace_re.match(cols[col_idx]):
-                testid = 'invalid-whitespace-mwt'
-                testmessage = "White space not allowed in multi-word token '%s'. If it contains a space, it is not one surface token." % (cols[col_idx])
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-    # These columns must not have whitespace.
-    for col_idx in (ID, UPOS, XPOS, FEATS, HEAD, DEPREL, DEPS):
-        if col_idx >= len(cols):
-            break # this has been already reported in trees()
-        if whitespace_re.match(cols[col_idx]):
-            testid = 'invalid-whitespace'
-            testmessage = "White space not allowed in column %s: '%s'." % (COLNAMES[col_idx], cols[col_idx])
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-    # Check for the format of the ID value. (ID must not be empty.)
-    if not (is_word(cols) or is_empty_node(cols) or is_multiword_token(cols)):
-        testid = 'invalid-word-id'
-        testmessage = "Unexpected ID format '%s'." % cols[ID]
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-
 ##### Tests applicable to the whole tree
 
 def validate_newlines(inp):
@@ -366,44 +309,18 @@ def validate_sent_id(comments, known_ids, lcode):
             warn(testmessage, testclass, testlevel=testlevel, testid=testid)
         known_ids.add(sid)
 
-newdoc_re = re.compile('^#\s*newdoc(\s|$)')
-newpar_re = re.compile('^#\s*newpar(\s|$)')
 text_re = re.compile('^#\s*text\s*=\s*(.+)$')
 def validate_text_meta(comments, tree):
     # Remember if SpaceAfter=No applies to the last word of the sentence.
     # This is not prohibited in general but it is prohibited at the end of a paragraph or document.
     global spaceafterno_in_effect
-    # In trees(), sentence_line was already moved to the first token/node line
+    # In sentences(), sentence_line was already moved to the first token/node line
     # after the sentence comment lines. While this is useful in most validation
     # functions, it complicates things here where we also work with the comments.
     global sentence_line
     testlevel = 2
     testclass = 'Metadata'
-    newdoc_matched = []
-    newpar_matched = []
     text_matched = []
-    for c in comments:
-        newdoc_match = newdoc_re.match(c)
-        if newdoc_match:
-            newdoc_matched.append(newdoc_match)
-        newpar_match = newpar_re.match(c)
-        if newpar_match:
-            newpar_matched.append(newpar_match)
-        text_match = text_re.match(c)
-        if text_match:
-            text_matched.append(text_match)
-    if len(newdoc_matched) > 1:
-        testid = 'multiple-newdoc'
-        testmessage = 'Multiple newdoc attributes.'
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-    if len(newpar_matched) > 1:
-        testid = 'multiple-newpar'
-        testmessage = 'Multiple newpar attributes.'
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-    if (newdoc_matched or newpar_matched) and spaceafterno_in_effect:
-        testid = 'spaceafter-newdocpar'
-        testmessage = 'New document or paragraph starts when the last token of the previous sentence says SpaceAfter=No.'
-        warn(testmessage, testclass, testlevel=testlevel, testid=testid)
     if not text_matched:
         testid = 'missing-text'
         testmessage = 'Missing the text attribute.'
@@ -421,74 +338,6 @@ def validate_text_meta(comments, tree):
         # Validate the text against the SpaceAfter attribute in MISC.
         skip_words = set()
         mismatch_reported = 0 # do not report multiple mismatches in the same sentence; they usually have the same cause
-        # We will sum sentence_line + iline, and sentence_line already points at
-        # the first token/node line after the sentence comments. Hence iline shall
-        # be 0 once we enter the cycle.
-        iline = -1
-        for cols in tree:
-            iline += 1
-            if MISC >= len(cols):
-                # This error has been reported elsewhere but we cannot check MISC now.
-                continue
-            if 'NoSpaceAfter=Yes' in cols[MISC]: # I leave this without the split("|") to catch all
-                testid = 'nospaceafter-yes'
-                testmessage = "'NoSpaceAfter=Yes' should be replaced with 'SpaceAfter=No'."
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid, nodelineno=sentence_line+iline)
-            if len([x for x in cols[MISC].split('|') if re.match(r'^SpaceAfter=', x) and x != 'SpaceAfter=No']) > 0:
-                testid = 'spaceafter-value'
-                testmessage = "Unexpected value of the 'SpaceAfter' attribute in MISC. Did you mean 'SpacesAfter'?"
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid, nodelineno=sentence_line+iline)
-            if '.' in cols[ID]: # empty node
-                if 'SpaceAfter=No' in cols[MISC]: # I leave this without the split("|") to catch all
-                    testid = 'spaceafter-empty-node'
-                    testmessage = "'SpaceAfter=No' cannot occur with empty nodes."
-                    warn(testmessage, testclass, testlevel=testlevel, testid=testid, nodelineno=sentence_line+iline)
-                continue
-            elif '-' in cols[ID]: # multi-word token
-                beg,end=cols[ID].split('-')
-                try:
-                    begi,endi = int(beg),int(end)
-                except ValueError as e:
-                    # This error has been reported elsewhere.
-                    begi,endi = 1,0
-                # If we see a multi-word token, add its words to an ignore-set - these will be skipped, and also checked for absence of SpaceAfter=No
-                for i in range(begi, endi+1):
-                    skip_words.add(str(i))
-            elif cols[ID] in skip_words:
-                if 'SpaceAfter=No' in cols[MISC]:
-                    testid = 'spaceafter-mwt-node'
-                    testmessage = "'SpaceAfter=No' cannot occur with words that are part of a multi-word token."
-                    warn(testmessage, testclass, testlevel=testlevel, testid=testid, nodelineno=sentence_line+iline)
-                continue
-            else:
-                # Err, I guess we have nothing to do here. :)
-                pass
-            # So now we have either a multi-word token or a word which is also a token in its entirety.
-            if not stext.startswith(cols[FORM]):
-                if not mismatch_reported:
-                    testid = 'text-form-mismatch'
-                    testmessage = "Mismatch between the text attribute and the FORM field. Form[%s] is '%s' but text is '%s...'" % (cols[ID], cols[FORM], stext[:len(cols[FORM])+20])
-                    if len(stext) >= 1 and stext[0].isspace():
-                        testmessage += " (perhaps extra SpaceAfter=No at previous token?)"
-                    warn(testmessage, testclass, testlevel=testlevel, testid=testid, nodelineno=sentence_line+iline)
-                    mismatch_reported = 1
-            else:
-                stext = stext[len(cols[FORM]):] # eat the form
-                if 'SpaceAfter=No' in cols[MISC].split("|"):
-                    spaceafterno_in_effect = True
-                else:
-                    spaceafterno_in_effect = False
-                    if args.check_space_after and (stext) and not stext[0].isspace():
-                        testid = 'missing-spaceafter'
-                        testmessage = "'SpaceAfter=No' is missing in the MISC field of node #%s because the text is '%s'." % (cols[ID], shorten(cols[FORM]+stext))
-                        warn(testmessage, testclass, testlevel=testlevel, testid=testid, nodelineno=sentence_line+iline)
-                    stext = stext.lstrip()
-        if stext:
-            testid = 'text-extra-chars'
-            testmessage = "Extra characters at the end of the text attribute, not accounted for in the FORM fields: '%s'" % stext
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-
-##### Tests applicable to a single row indpendently of the others
 
 ##### Tests applicable to the whole sentence
 
@@ -576,17 +425,15 @@ def build_tree(sentence):
 
 def validate(inp, out, args, known_sent_ids):
     global tree_counter
-    for comments, sentence in trees(inp, args):
+    for comments, sentence in sentences(inp, args):
         tree_counter += 1
-        # The individual lines were validated already in trees().
+        # The individual lines were validated already in sentences().
         # What follows is tests that need to see the whole tree.
         idseqok = validate_ID_sequence(sentence) # level 1
         if args.level > 1:
             validate_sent_id(comments, known_sent_ids, args.lang) # level 2
             if args.check_tree_text:
                 validate_text_meta(comments, sentence) # level 2
-            validate_root(sentence) # level 2
-            validate_ID_references(sentence) # level 2
             # Avoid building tree structure if the sequence of node ids is corrupted.
             if idseqok:
                 tree = build_tree(sentence) # level 2 test: tree is single-rooted, connected, cycle-free
