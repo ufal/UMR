@@ -437,10 +437,8 @@ def validate(inp, out, args, known_sent_ids):
             # Avoid building tree structure if the sequence of node ids is corrupted.
             if idseqok:
                 tree = build_tree(sentence) # level 2 test: tree is single-rooted, connected, cycle-free
-                egraph = build_egraph(sentence) # level 2 test: egraph is connected
             else:
                 tree = None
-                egraph = None
             if tree:
                 if args.level > 2:
                     validate_annotation(tree) # level 3
@@ -452,9 +450,6 @@ def validate(inp, out, args, known_sent_ids):
                 testid = 'skipped-corrupt-tree'
                 testmessage = "Skipping annotation tests because of corrupt tree structure."
                 warn(testmessage, testclass, testlevel=testlevel, testid=testid, lineno=False)
-            if egraph:
-                if args.level > 2:
-                    validate_enhanced_annotation(egraph) # level 3
     validate_newlines(inp) # level 1
 
 if __name__=="__main__":
