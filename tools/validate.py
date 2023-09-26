@@ -96,28 +96,30 @@ ws_re = re.compile(r"^\s+$")
 def is_whitespace(line):
     return ws_re.match(line)
 
-word_re = re.compile(r"^[1-9][0-9]*$")
-def is_word(cols):
-    return word_re.match(cols[ID])
+tws_re = re.compile(r"\s+$")
+def has_trailing_whitespace(line):
+    return tws_re.search(line)
+def remove_trailing_whitespace(line):
+    return tws_re.sub('', line)
 
-mwt_re = re.compile(r"^[1-9][0-9]*-[1-9][0-9]*$")
-def is_multiword_token(cols):
-    return mwt_re.match(cols[ID])
+lws_re = re.compile(r"^\s+")
+def remove_leading_whitespace(line):
+    return lws_re.sub('', line)
 
-empty_node_re = re.compile(r"^[0-9]+\.[1-9][0-9]*$")
-def is_empty_node(cols):
-    return empty_node_re.match(cols[ID])
+root_re = re.compile(r"^\(")
+def is_root(line):
+    return root_re.match(line)
 
-def parse_empty_node_id(cols):
-    m = re.match(r"^([0-9]+)\.([0-9]+)$", cols[ID])
-    assert m, 'parse_empty_node_id with non-empty node'
-    return m.groups()
+attr_re = re.compile(r"^:[A-Za-z][-A-Za-z0-9]+")
+def is_attribute(line):
+    return attr_re.match(line)
+
+align_re = re.compile(r"^s[0-9]+[a-z0-9]+: [0-9]+-[0-9]+$")
+def is_alignment(line):
+    return align_re.match(line)
 
 def shorten(string):
     return string if len(string) < 25 else string[:20]+'[...]'
-
-def lspec2ud(deprel):
-    return deprel.split(':', 1)[0]
 
 
 
@@ -166,8 +168,9 @@ def sentences(inp, args):
       means that the concept is not overtly represented on the surface.
     """
     global curr_line, comment_start_line, sentence_line, sentence_id
-    comments = [] # List of comment lines to go with the current sentence
-    lines = [] # List of token/word lines of the current sentence
+    blocks = [] # List of the annotation blocks (sentence annotation, document level annotation) of the current sentence.
+    comments = [] # List of the comment lines at the beginning of the current block.
+    lines = [] # List of the non-comment lines of the current block.
     corrupted = False # In case of wrong number of columns check the remaining lines of the sentence but do not yield the sentence for further processing.
     comment_start_line = None
     testlevel = 1
@@ -176,32 +179,38 @@ def sentences(inp, args):
         curr_line = line_counter+1
         if not comment_start_line:
             comment_start_line = curr_line
-        line = line.rstrip(u"\n")
-        if is_whitespace(line):
-            testid = 'pseudo-empty-line'
-            testmessage = 'Spurious line that appears empty but is not; there are whitespace characters.'
+        line = line.rstrip("\n")
+        if has_trailing_whitespace(line):
+            testid = 'trailing-whitespace'
+            testmessage = 'Trailing whitespace should be removed.'
             warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-            # We will pretend that the line terminates a sentence in order to avoid subsequent misleading error messages.
-            if lines:
-                if not corrupted:
-                    yield comments, lines
+            line = remove_trailing_whitespace(line)
+        validate_unicode_normalization(line)
+        # Unlike trailing whitespace, leading whitespace is legitimate (indentation) but we ignore it anyway.
+        line = remove_leading_whitespace(line)
+        if not line: # empty line means end of block (and possibly end of sentence)
+            if comments or lines: # end of an annotation block
+                blocks.append(lines)
                 comments = []
                 lines = []
-                corrupted = False
-                comment_start_line = None
-        elif not line: # empty line
-            if lines: # sentence done
-                if not corrupted:
-                    yield comments, lines
-                comments=[]
-                lines=[]
-                corrupted = False
-                comment_start_line = None
-            else:
-                testid = 'extra-empty-line'
-                testmessage = 'Spurious empty line. Only one empty line is expected after every sentence.'
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-        elif line[0]=='#':
+                ###!!! Sentences typically have 4 annotation blocks: 1. intro; 2. sentence level; 3. alignment; 4. document level.
+                ###!!! If we see more blocks, maybe someone forgot to add a second empty line between sentences.
+                if len(blocks) > 4:
+                    testid = 'too-many-blocks'
+                    testmessage = 'Too many annotation blocks within one sentence. There should be two empty lines after each sentence.'
+                    warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+            else: # two consecutive empty lines = end of sentence
+                if blocks:
+                    if not corrupted:
+                        yield blocks
+                    blocks = []
+                    corrupted = False
+                    comment_start_line = None
+                else:
+                    testid = 'extra-empty-line'
+                    testmessage = 'Spurious empty line. One empty line is expected after every annotation block and two after every sentence.'
+                    warn(testmessage, testclass, testlevel=testlevel, testid=testid)
+        elif line[0] == '#':
             # We will really validate sentence ids later. But now we want to remember
             # everything that looks like a sentence id and use it in the error messages.
             # Line numbers themselves may not be sufficient if we are reading multiple
@@ -215,24 +224,8 @@ def sentences(inp, args):
                 testid = 'misplaced-comment'
                 testmessage = 'Spurious comment line. Comments are only allowed before a sentence.'
                 warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-        elif line[0].isdigit():
-            validate_unicode_normalization(line)
-            if not lines: # new sentence
-                sentence_line=curr_line
-            cols=line.split(u"\t")
-            if len(cols)!=COLCOUNT:
-                testid = 'number-of-columns'
-                testmessage = 'The line has %d columns but %d are expected. The contents of the columns will not be checked.' % (len(cols), COLCOUNT)
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-                corrupted = True
-            # If there is an unexpected number of columns, do not test their contents.
-            # Maybe the contents belongs to a different column. And we could see
-            # an exception if a column value is missing.
-            else:
-                lines.append(cols)
-                validate_cols_level1(cols)
-                if args.level > 1:
-                    validate_cols(cols, tag_sets, args)
+        elif is_root(line) or is_attribute(line) or is_alignment(line):
+            lines.append(line)
         else: # A line which is neither a comment nor a token/word, nor empty. That's bad!
             testid = 'invalid-line'
             testmessage = "Spurious line: '%s'. All non-empty lines should start with a digit or the # character." % (line)
@@ -450,25 +443,19 @@ def build_tree(sentence):
 
 def validate(inp, out, args, known_sent_ids):
     global tree_counter
-    for comments, sentence in sentences(inp, args):
+    for sentence in sentences(inp, args):
         tree_counter += 1
-        # The individual lines were validated already in sentences().
-        # What follows is tests that need to see the whole tree.
-        idseqok = validate_ID_sequence(sentence) # level 1
         if args.level > 1:
+            comments = [] ###!!! dodělat
             validate_sent_id(comments, known_sent_ids, args.lang) # level 2
             if args.check_tree_text:
                 validate_text_meta(comments, sentence) # level 2
             # Avoid building tree structure if the sequence of node ids is corrupted.
-            if idseqok:
-                tree = build_tree(sentence) # level 2 test: tree is single-rooted, connected, cycle-free
-            else:
-                tree = None
+            ###!!! tree = build_tree(sentence) # level 2 test: tree is single-rooted, connected, cycle-free
+            tree = None ###!!!
             if tree:
                 if args.level > 2:
                     validate_annotation(tree) # level 3
-                    if args.level > 4:
-                        validate_lspec_annotation(sentence, args.lang) # level 5
             else:
                 testlevel = 2
                 testclass = 'Format'
