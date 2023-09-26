@@ -23,27 +23,8 @@ curr_line = 0 # Current line in the input file
 comment_start_line = 0 # The line in the input file on which the current sentence starts, including sentence-level comments.
 sentence_line = 0 # The line in the input file on which the current sentence starts (the first node/token line, skipping comments)
 sentence_id = None # The most recently read sentence id
-line_of_first_morpho_feature = None # features are optional, but if the treebank has features, then some become required
-delayed_feature_errors = {}
-line_of_first_enhanced_graph = None
-line_of_first_tree_without_enhanced_graph = None
-line_of_first_enhancement = None # any difference between non-empty DEPS and HEAD:DEPREL
-line_of_first_empty_node = None
-line_of_first_enhanced_orphan = None
-line_of_global_entity = None
-global_entity_attribute_string = None # to be able to check that repeated declarations are identical
-entity_attribute_number = 0 # to be able to check that an entity does not have extra attributes
-entity_attribute_index = {} # key: entity attribute name; value: the index of the attribute in the entity attribute list
-entity_types = {} # key: entity (cluster) id; value: tuple: (type of the entity, identity (Wikipedia etc.), line of the first mention)
-open_entity_mentions = [] # items are dictionaries with entity mention information
-open_discontinuous_mentions = {} # key: entity id; describes last part of a discontinuous mention of that entity; item is dict, its keys: last_ipart, npart, line
 error_counter = {} # key: error type value: error count
 warn_on_missing_files = set() # langspec files which you should warn about in case they are missing (can be deprel, edeprel, feat_val, tokens_w_space)
-warn_on_undoc_feats = '' # filled after reading docfeats.json; printed when an unknown feature is encountered in the data
-warn_on_undoc_deps = '' # filled after reading docdeps.json; printed when an unknown relation is encountered in the data
-warn_on_undoc_edeps = '' # filled after reading edeprels.json; printed when an unknown enhanced relation is encountered in the data
-mwt_typo_span_end = None # if Typo=Yes at multiword token, what is the end of the multiword span?
-spaceafterno_in_effect = False # needed to check that no space after last word of sentence does not co-occur with new paragraph or document
 
 def warn(msg, error_type, testlevel=0, testid='some-test', lineno=True, nodelineno=0, nodeid=0, explanation=None):
     """
@@ -127,7 +108,7 @@ def shorten(string):
 # Level 1 tests. Only technical format backbone.
 #==============================================================================
 
-sentid_re=re.compile('^# sent_id\s*=\s*(\S+)$')
+sentid_re=re.compile('^# :: (snt[0-9]+)\s')
 def sentences(inp, args):
     """
     `inp` a file-like object yielding lines as unicode
@@ -167,6 +148,8 @@ def sentences(inp, args):
       indices of tokens that represent the concept node on the surface. '0-0'
       means that the concept is not overtly represented on the surface.
     """
+    # global curr_line ... holds the 1-based number of the last read line; used in error messages
+    # global sentence_id ... holds the id of the current sentence (or better: the most recently seen sentence id); used in error messages
     global curr_line, comment_start_line, sentence_line, sentence_id
     blocks = [] # List of the annotation blocks (sentence annotation, document level annotation) of the current sentence.
     comments = [] # List of the comment lines at the beginning of the current block.
@@ -191,7 +174,7 @@ def sentences(inp, args):
         line = remove_leading_whitespace(line)
         if not line: # empty line means end of block (and possibly end of sentence)
             if comments or lines: # end of an annotation block
-                blocks.append(lines)
+                blocks.append(comments + lines)
                 comments = []
                 lines = []
                 ###!!! Sentences typically have 4 annotation blocks: 1. intro; 2. sentence level; 3. alignment; 4. document level.
@@ -299,38 +282,40 @@ def validate_newlines(inp):
 
 ###### Metadata tests #########
 
-def validate_sent_id(comments, known_ids, lcode):
+def validate_sent_id(sentence, known_ids, lcode):
     testlevel = 2
     testclass = 'Metadata'
     matched=[]
-    for c in comments:
-        match=sentid_re.match(c)
+    # The sentence should contain 4 annotation blocks. The first block should
+    # contain the comment line with the sentence id and the space-separated
+    # tokens. Thanks to previous tests, we can be sure that there is at least
+    # one annotation block.
+    lines = sentence[0]
+    for l in lines:
+        match=sentid_re.match(l)
         if match:
             matched.append(match)
         else:
+            ###!!! This is a remnant from UD validation. We have yet to see if there are repeated error patterns around sentence id syntax.
             if c.startswith('# sent_id') or c.startswith('#sent_id'):
                 testid = 'invalid-sent-id'
                 testmessage = "Spurious sent_id line: '%s' Should look like '# sent_id = xxxxx' where xxxxx is not whitespace. Forward slash reserved for special purposes." % c
                 warn(testmessage, testclass, testlevel=testlevel, testid=testid)
     if not matched:
         testid = 'missing-sent-id'
-        testmessage = 'Missing the sent_id attribute.'
+        testmessage = 'Missing sentence id.'
         warn(testmessage, testclass, testlevel=testlevel, testid=testid)
     elif len(matched)>1:
         testid = 'multiple-sent-id'
-        testmessage = 'Multiple sent_id attributes.'
+        testmessage = 'Multiple sentence ids.'
         warn(testmessage, testclass, testlevel=testlevel, testid=testid)
     else:
         # Uniqueness of sentence ids should be tested treebank-wide, not just file-wide.
         # For that to happen, all three files should be tested at once.
-        sid=matched[0].group(1)
+        sid = matched[0].group(1)
         if sid in known_ids:
             testid = 'non-unique-sent-id'
-            testmessage = "Non-unique sent_id attribute '%s'." % sid
-            warn(testmessage, testclass, testlevel=testlevel, testid=testid)
-        if sid.count(u"/")>1 or (sid.count(u"/")==1 and lcode!=u"ud" and lcode!=u"shopen"):
-            testid = 'slash-in-sent-id'
-            testmessage = "The forward slash is reserved for special use in parallel treebanks: '%s'" % sid
+            testmessage = "Non-unique sentence id '%s'." % sid
             warn(testmessage, testclass, testlevel=testlevel, testid=testid)
         known_ids.add(sid)
 
@@ -449,10 +434,9 @@ def validate(inp, out, args, known_sent_ids):
     for sentence in sentences(inp, args):
         tree_counter += 1
         if args.level > 1:
-            comments = [] ###!!! dodělat
-            validate_sent_id(comments, known_sent_ids, args.lang) # level 2
-            if args.check_tree_text:
-                validate_text_meta(comments, sentence) # level 2
+            validate_sent_id(sentence, known_sent_ids, args.lang) # level 2
+            ###!!! if args.check_tree_text:
+                ###!!! validate_text_meta(comments, sentence) # level 2
             # Avoid building tree structure if the sequence of node ids is corrupted.
             ###!!! tree = build_tree(sentence) # level 2 test: tree is single-rooted, connected, cycle-free
             tree = None ###!!!
@@ -464,7 +448,7 @@ def validate(inp, out, args, known_sent_ids):
                 testclass = 'Format'
                 testid = 'skipped-corrupt-tree'
                 testmessage = "Skipping annotation tests because of corrupt tree structure."
-                warn(testmessage, testclass, testlevel=testlevel, testid=testid, lineno=False)
+                ###!!! warn(testmessage, testclass, testlevel=testlevel, testid=testid, lineno=False)
     # After we have read the input, we can ask about the line breaks observed.
     validate_newlines(inp) # level 1
 
