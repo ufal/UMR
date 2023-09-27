@@ -101,7 +101,9 @@ def shorten(string):
 # Level 1 tests. Only technical format backbone.
 #==============================================================================
 
-sentid_re=re.compile('^# :: (snt[0-9]+)\s')
+sentid_re = re.compile('^#\s*::\s*(snt[0-9]+)\s')
+sentid_tokens_re = re.compile('^# :: (snt[0-9]+)\s+(.+)')
+
 def sentences(inp, args):
     """
     `inp` a file-like object yielding lines as unicode
@@ -278,10 +280,7 @@ def validate_newlines(inp):
 
 
 #==============================================================================
-# Level 2 tests. Tree structure, universal tags and deprels. Note that any
-# well-formed Feature=Valid pair is allowed (because it could be language-
-# specific) and any word form or lemma can contain spaces (because language-
-# specific guidelines may permit it).
+# Level 2 tests. ###!!! HOW DO WE DEFINE THEM?
 #==============================================================================
 
 ###### Metadata tests #########
@@ -302,14 +301,14 @@ def validate_sent_id(sentence, known_ids, lcode):
     comments = sentence[0]['comments']
     cline = 0
     for c in comments:
-        match=sentid_re.match(c)
+        match = sentid_tokens_re.match(c)
         if match:
             matched.append(match)
         else:
-            ###!!! This is a remnant from UD validation. We have yet to see if there are repeated error patterns around sentence id syntax.
-            if c.startswith('# sent_id') or c.startswith('#sent_id'):
+            match = sentid_re.match(c)
+            if match:
                 testid = 'invalid-sent-id'
-                testmessage = "Spurious sent_id line: '%s' Should look like '# sent_id = xxxxx' where xxxxx is not whitespace. Forward slash reserved for special purposes." % c
+                testmessage = "Spurious sentence metadata line: '%s' Should look like '# :: sntN token token ...' where N is the sentence number; the id is followed by token sequence." % c
                 warn(testmessage, testclass, testlevel, testid, lineno=sentence[0]['line0']+cline)
         cline += 1
     if not matched:
@@ -329,28 +328,14 @@ def validate_sent_id(sentence, known_ids, lcode):
             testmessage = "Non-unique sentence id '%s'." % sid
             warn(testmessage, testclass, testlevel, testid, lineno=-1)
         known_ids.add(sid)
-
-text_re = re.compile('^#\s*text\s*=\s*(.+)$')
-def validate_text_meta(comments, tree):
-    # Remember if SpaceAfter=No applies to the last word of the sentence.
-    # This is not prohibited in general but it is prohibited at the end of a paragraph or document.
-    global spaceafterno_in_effect
-    testlevel = 2
-    testclass = 'Metadata'
-    text_matched = []
-    if not text_matched:
-        testid = 'missing-text'
-        testmessage = 'Missing the text attribute.'
-        warn(testmessage, testclass, testlevel, testid)
-    elif len(text_matched) > 1:
-        testid = 'multiple-text'
-        testmessage = 'Multiple text attributes.'
-        warn(testmessage, testclass, testlevel, testid)
-    else:
-        stext = text_matched[0].group(1)
-        # Validate the text against the SpaceAfter attribute in MISC.
-        skip_words = set()
-        mismatch_reported = 0 # do not report multiple mismatches in the same sentence; they usually have the same cause
+        # Save the tokens so we can access them later.
+        tokens = matched[0].group(2).split(' ')
+        empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
+        if empty_tokens:
+            testid = 'empty-token'
+            testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % matched[0].group(2)
+            warn(testmessage, testclass, testlevel, testid, lineno=-1)
+        sentence[0]['tokens'] = tokens
 
 ##### Tests applicable to the whole sentence
 
@@ -441,8 +426,6 @@ def validate(inp, out, args, known_sent_ids):
     for sentence in sentences(inp, args):
         if args.level > 1:
             validate_sent_id(sentence, known_sent_ids, args.lang) # level 2
-            ###!!! if args.check_tree_text:
-                ###!!! validate_text_meta(comments, sentence) # level 2
             # Avoid building tree structure if the sequence of node ids is corrupted.
             ###!!! tree = build_tree(sentence) # level 2 test: tree is single-rooted, connected, cycle-free
             tree = None ###!!!
