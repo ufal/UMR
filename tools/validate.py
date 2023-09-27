@@ -173,9 +173,9 @@ def sentences(inp, args):
         if not line: # empty line means end of block (and possibly end of sentence)
             if comments or lines: # end of an annotation block
                 blocks.append({'line0': bline0, 'comments': comments, 'lines': lines})
+                bline0 = None
                 comments = []
                 lines = []
-                line0 = None
                 ###!!! Sentences typically have 4 annotation blocks: 1. intro; 2. sentence level; 3. alignment; 4. document level.
                 ###!!! If we see more blocks, maybe someone forgot to add a second empty line between sentences.
                 if len(blocks) > 4:
@@ -285,7 +285,7 @@ def validate_newlines(inp):
 
 ###### Metadata tests #########
 
-def validate_sent_id(sentence, known_ids, lcode):
+def validate_sentence_metadata(sentence, known_ids):
     testlevel = 2
     testclass = 'Metadata'
     matched=[]
@@ -338,6 +338,80 @@ def validate_sent_id(sentence, known_ids, lcode):
         sentence[0]['tokens'] = tokens
 
 ##### Tests applicable to the whole sentence
+
+variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*")
+concept_re = re.compile(r"^\S+")
+relation_re = re.compile(r"^:[-A-Za-z0-9]+")
+string_re = re.compile(r'^"[^"\s]+"')
+number_re = re.compile(r"^[0-9]+(\.[0-9]+)?(\s|\)|$)") ###!!! consuming the closing bracket is WRONG! (also in the line below)
+atom_re = re.compile(r"^[-a-z0-9]+(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), or node references ('s5p')
+
+def validate_sentence_graph(sentence):
+    testlevel = 2
+    testclass = 'Sentence'
+    # Does the comment confirm that we are processing the sentence level graph?
+    heading_found = False
+    if 'comments' in sentence[1]:
+        for c in sentence[1]['comments']:
+            if c == '# sentence level graph:':
+                heading_found = True
+                break
+    if not heading_found:
+        testid = 'missing-heading-sentence-level'
+        testmessage = "Missing heading comment '# sentence level graph:'"
+        warn(testmessage, testclass, testlevel, testid, lineno=sentence[1]['line0'])
+    iline = sentence[1]['line0'] + len(sentence[1]['comments']) - 1
+    for l in sentence[1]['lines']:
+        iline += 1
+        pline = l # processed line: we will remove stuff from pline but not from l
+        while pline:
+            # Remove leading whitespace.
+            pline = lws_re.sub('', pline)
+            if pline.startswith('('):
+                pline = lws_re.sub('', pline[1:])
+                # Now expecting variable identifier, e.g., 's15p'.
+                if variable_re.match(pline):
+                    pline = lws_re.sub('', variable_re.sub('', pline))
+                    # Now expecting the slash ('/').
+                    if pline.startswith('/'):
+                        pline = lws_re.sub('', pline[1:])
+                        # Now expecting the concept string, e.g., 'have-quant-91'.
+                        if concept_re.match(pline):
+                            # OK, we have read the beginning of a node, including its variable and concept.
+                            # Now store it somewhere. ###!!!
+                            pline = lws_re.sub('', concept_re.sub('', pline))
+                            pass
+                        else:
+                            testid = 'missing-concept-string'
+                            testmessage = "Expected concept string, found '%s'" % pline
+                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                    else:
+                        testid = 'missing-slash'
+                        testmessage = "Expected slash and concept string, found '%s'" % pline
+                        warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                else:
+                    testid = 'missing-variable'
+                    testmessage = "Expected node variable id, found '%s'" % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+            elif relation_re.match(pline):
+                ###!!! Only now we possibly expect a child node.
+                pline = lws_re.sub('', relation_re.sub('', pline))
+                # Besides a child node, there may be a numeric or string value.
+                if string_re.match(pline):
+                    pline = lws_re.sub('', string_re.sub('', pline))
+                elif atom_re.match(pline):
+                    pline = lws_re.sub('', atom_re.sub('', pline))
+                # Integer numbers would be consumed as atoms. This is here because of decimal numbers.
+                elif number_re.match(pline):
+                    pline = lws_re.sub('', number_re.sub('', pline))
+            elif pline.startswith(')'):
+                ###!!! We should remove a node from stack to verify well-formedness of bracketing.
+                pline = lws_re.sub('', pline[1:])
+            else:
+                testid = 'invalid-sentence-level'
+                testmessage = "Expected left bracket, right bracket or colon, found '%s'" % pline
+                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                pline = ''
 
 def build_tree(sentence):
     """
@@ -425,9 +499,10 @@ def validate(inp, out, args, known_sent_ids):
     global sentence_line, sentence_id
     for sentence in sentences(inp, args):
         if args.level > 1:
-            validate_sent_id(sentence, known_sent_ids, args.lang) # level 2
+            validate_sentence_metadata(sentence, known_sent_ids) # level 2
             # Avoid building tree structure if the sequence of node ids is corrupted.
             ###!!! tree = build_tree(sentence) # level 2 test: tree is single-rooted, connected, cycle-free
+            validate_sentence_graph(sentence)
             tree = None ###!!!
             if tree:
                 if args.level > 2:
