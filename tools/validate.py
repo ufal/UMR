@@ -343,8 +343,8 @@ variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*")
 concept_re = re.compile(r"^\S+")
 relation_re = re.compile(r"^:[-A-Za-z0-9]+")
 string_re = re.compile(r'^"[^"\s]+"')
-number_re = re.compile(r"^[0-9]+(\.[0-9]+)?(\s|\)|$)") ###!!! consuming the closing bracket is WRONG! (also in the line below)
-atom_re = re.compile(r"^[-a-z0-9]+(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), or node references ('s5p')
+number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
+atom_re = re.compile(r"^([-a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), or node references ('s5p')
 
 def validate_sentence_graph(sentence):
     testlevel = 2
@@ -400,10 +400,14 @@ def validate_sentence_graph(sentence):
                 if string_re.match(pline):
                     pline = lws_re.sub('', string_re.sub('', pline))
                 elif atom_re.match(pline):
-                    pline = lws_re.sub('', atom_re.sub('', pline))
+                    match = atom_re.match(pline)
+                    atom = match.group(1)
+                    pline = lws_re.sub('', match.group(2)+atom_re.sub('', pline))
                 # Integer numbers would be consumed as atoms. This is here because of decimal numbers.
                 elif number_re.match(pline):
-                    pline = lws_re.sub('', number_re.sub('', pline))
+                    match = number_re.match(pline)
+                    number = match.group(1)
+                    pline = lws_re.sub('', match.group(2)+number_re.sub('', pline))
             elif pline.startswith(')'):
                 ###!!! We should remove a node from stack to verify well-formedness of bracketing.
                 pline = lws_re.sub('', pline[1:])
