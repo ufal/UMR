@@ -346,7 +346,7 @@ string_re = re.compile(r'^"[^"\s]+"')
 number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
 atom_re = re.compile(r"^([-a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), or node references ('s5p')
 
-def validate_sentence_graph(sentence):
+def validate_sentence_graph(sentence, node_dict):
     testlevel = 2
     testclass = 'Sentence'
     # Does the comment confirm that we are processing the sentence level graph?
@@ -360,7 +360,13 @@ def validate_sentence_graph(sentence):
         testid = 'missing-heading-sentence-level'
         testmessage = "Missing heading comment '# sentence level graph:'"
         warn(testmessage, testclass, testlevel, testid, lineno=sentence[1]['line0'])
+    stack = []
     iline = sentence[1]['line0'] + len(sentence[1]['comments']) - 1
+    # expecting_node_definition means we either just read ':something', which is
+    # a relation or an attribute, and we did not see a value (atom / number /
+    # string / node reference), or it is the beginning of the sentence. In both
+    # cases we are expecting a full node definition.
+    expecting_node_definition = True
     for l in sentence[1]['lines']:
         iline += 1
         pline = l # processed line: we will remove stuff from pline but not from l
@@ -368,17 +374,31 @@ def validate_sentence_graph(sentence):
             # Remove leading whitespace.
             pline = lws_re.sub('', pline)
             if pline.startswith('('):
+                if not expecting_node_definition:
+                    testid = 'extra-opening-bracket'
+                    testmessage = "Not expecting full node definition (opening bracket), found '%s'" % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = lws_re.sub('', pline[1:])
                 # Now expecting variable identifier, e.g., 's15p'.
                 if variable_re.match(pline):
+                    match = variable_re.match(pline)
+                    variable = match.group(0)
                     pline = lws_re.sub('', variable_re.sub('', pline))
+                    # The variable serves as node id. It must be unique.
+                    if variable in node_dict:
+                        testid = 'non-unique-node-id'
+                        testmessage = "The node id (variable) '%s' is not unique. It was previously used on line %d." % (variable, node_dict[variable]['line0'])
+                        warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                    else:
+                        node_dict[variable] = {'line0': iline}
                     # Now expecting the slash ('/').
                     if pline.startswith('/'):
                         pline = lws_re.sub('', pline[1:])
                         # Now expecting the concept string, e.g., 'have-quant-91'.
                         if concept_re.match(pline):
                             # OK, we have read the beginning of a node, including its variable and concept.
-                            # Now store it somewhere. ###!!!
+                            # Now store it somewhere. ###!!! Not only to the stack!
+                            stack.append(variable)
                             pline = lws_re.sub('', concept_re.sub('', pline))
                             pass
                         else:
@@ -393,12 +413,34 @@ def validate_sentence_graph(sentence):
                     testid = 'missing-variable'
                     testmessage = "Expected node variable id, found '%s'" % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                expecting_node_definition = False
             elif relation_re.match(pline):
-                ###!!! Only now we possibly expect a child node.
+                if expecting_node_definition:
+                    testid = 'missing-node-definition'
+                    testmessage = "Expecting full node definition (opening bracket), found '%s'" % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = lws_re.sub('', relation_re.sub('', pline))
                 # Besides a child node, there may be a numeric or string value.
+                expecting_node_definition = False
                 if string_re.match(pline):
                     pline = lws_re.sub('', string_re.sub('', pline))
+                elif variable_re.match(pline):
+                    match = variable_re.match(pline)
+                    variable = match.group(0)
+                    if not variable in node_dict:
+                        testid = 'unknown-node-id'
+                        testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
+                        warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        ###!!! Maybe this test should be just a warning and the hard
+                        ###!!! test should take place when the whole graph has been
+                        ###!!! read. The released UMR data occasionally contain forward
+                        ###!!! references that are resolved within the same graph.
+                        ###!!! (But of course they could and should be normalized.)
+                        ###!!! Or we could add an option --allow-forward-references.
+                    ###!!! Not only should we check that the node is defined.
+                    ###!!! We should also check that it is defined in the current
+                    ###!!! sentence (and not in the previous sentences).
+                    pline = lws_re.sub('', variable_re.sub('', pline))
                 elif atom_re.match(pline):
                     match = atom_re.match(pline)
                     atom = match.group(1)
@@ -408,90 +450,32 @@ def validate_sentence_graph(sentence):
                     match = number_re.match(pline)
                     number = match.group(1)
                     pline = lws_re.sub('', match.group(2)+number_re.sub('', pline))
+                else:
+                    expecting_node_definition = True
             elif pline.startswith(')'):
-                ###!!! We should remove a node from stack to verify well-formedness of bracketing.
+                if expecting_node_definition:
+                    testid = 'missing-node-definition'
+                    testmessage = "Expecting full node definition (opening bracket), found '%s'" % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                # Check for the matching opening bracket and remove it from the stack.
+                if not stack:
+                    testid = 'extra-closing-bracket'
+                    testmessage = "Found closing bracket but there was no matching opening bracket: '%s'" % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                else:
+                    stack.pop()
                 pline = lws_re.sub('', pline[1:])
+                expecting_node_definition = False
             else:
-                testid = 'invalid-sentence-level'
-                testmessage = "Expected left bracket, right bracket or colon, found '%s'" % pline
-                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                if expecting_node_definition:
+                    testid = 'missing-node-definition'
+                    testmessage = "Expecting full node definition (opening bracket), found '%s'" % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                else:
+                    testid = 'invalid-sentence-level'
+                    testmessage = "Expecting colon or closing bracket, found '%s'" % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
-
-def build_tree(sentence):
-    """
-    Takes the list of non-comment lines (line = list of columns) describing
-    a sentence. Returns a dictionary with items providing easier access to the
-    tree structure. In case of fatal problems (missing HEAD etc.) returns None
-    but does not report the error (presumably it has already been reported).
-
-    tree ... dictionary:
-      nodes ... array of word lines, i.e., lists of columns;
-          mwt and empty nodes are skipped, indices equal to ids (nodes[0] is empty)
-      children ... array of sets of children indices (numbers, not strings);
-          indices to this array equal to ids (children[0] are the children of the root)
-      linenos ... array of line numbers in the file, corresponding to nodes
-          (needed in error messages)
-    """
-    testlevel = 2
-    testclass = 'Syntax'
-    global sentence_line # the line of the first line of the current sentence
-    node_line = sentence_line - 1
-    children = {} # node -> set of children
-    tree = {
-        'nodes':    [['0', '_', '_', '_', '_', '_', '_', '_', '_', '_']], # add artificial node 0
-        'children': [],
-        'linenos':  [sentence_line] # for node 0
-    }
-    for cols in sentence:
-        node_line += 1
-        if not is_word(cols):
-            continue
-        # Even MISC may be needed when checking the annotation guidelines
-        # (for instance, SpaceAfter=No must not occur inside a goeswith span).
-        if MISC >= len(cols):
-            # This error has been reported on lower levels, do not report it here.
-            # Do not continue to check annotation if there are elementary flaws.
-            return None
-        try:
-            id_ = int(cols[ID])
-        except ValueError:
-            # This error has been reported on lower levels, do not report it here.
-            # Do not continue to check annotation if there are elementary flaws.
-            return None
-        try:
-            head = int(cols[HEAD])
-        except ValueError:
-            # This error has been reported on lower levels, do not report it here.
-            # Do not continue to check annotation if there are elementary flaws.
-            return None
-        if head == id_:
-            testid = 'head-self-loop'
-            testmessage = 'HEAD == ID for %s' % cols[ID]
-            warn(testmessage, testclass, testlevel, testid, lineno=node_line)
-            return None
-        tree['nodes'].append(cols)
-        tree['linenos'].append(node_line)
-        # Incrementally build the set of children of every node.
-        children.setdefault(cols[HEAD], set()).add(id_)
-    for cols in tree['nodes']:
-        tree['children'].append(sorted(children.get(cols[ID], [])))
-    # Check that there is just one node with the root relation.
-    if len(tree['children'][0]) > 1 and args.single_root:
-        testid = 'multiple-roots'
-        testmessage = "Multiple root words: %s" % tree['children'][0]
-        warn(testmessage, testclass, testlevel, testid, lineno=-1)
-        return None
-    # Return None if there are any cycles. Avoid surprises when working with the graph.
-    # Presence of cycles is equivalent to presence of unreachable nodes.
-    projection = set()
-    get_projection(0, tree, projection)
-    unreachable = set(range(1, len(tree['nodes']) - 1)) - projection
-    if unreachable:
-        testid = 'non-tree'
-        testmessage = 'Non-tree structure. Words %s are not reachable from the root 0.' % (','.join(str(w) for w in sorted(unreachable)))
-        warn(testmessage, testclass, testlevel, testid, lineno=-1)
-        return None
-    return tree
 
 
 
@@ -501,12 +485,13 @@ def build_tree(sentence):
 
 def validate(inp, out, args, known_sent_ids):
     global sentence_line, sentence_id
+    # Dictionary of all concept nodes in the document.
+    node_dict = {}
     for sentence in sentences(inp, args):
         if args.level > 1:
             validate_sentence_metadata(sentence, known_sent_ids) # level 2
-            # Avoid building tree structure if the sequence of node ids is corrupted.
-            ###!!! tree = build_tree(sentence) # level 2 test: tree is single-rooted, connected, cycle-free
-            validate_sentence_graph(sentence)
+            ###!!! We should not try to parse the graph if we know that there are invalid or missing lines or blocks.
+            validate_sentence_graph(sentence, node_dict)
             tree = None ###!!!
             if tree:
                 if args.level > 2:
@@ -533,7 +518,7 @@ if __name__=="__main__":
     io_group.add_argument('input', nargs='*', help='Input file name(s), or "-" or nothing for standard input.')
 
     list_group = opt_parser.add_argument_group("Label sets", "Options relevant to checking label sets.")
-    list_group.add_argument('--lang', action="store", required=True, default=None, help="Which langauge are we checking? If you specify this (as a two-letter code), the validator will use language-specific guidelines.")
+    list_group.add_argument('--lang', action="store", default=None, help="Which langauge are we checking? If you specify this (as a two-letter code), the validator will use language-specific guidelines.")
     list_group.add_argument('--level', action="store", type=int, default=5, dest="level", help="Level 1: Test only the technical format backbone. Level 2: UMR format. Level 3: UMR contents. Level 4: Language-specific labels. Level 5: Language-specific contents.")
 
     meta_group = opt_parser.add_argument_group("Metadata constraints", "Options for checking the validity of tree metadata.")
