@@ -360,6 +360,11 @@ def validate_sentence_graph(sentence, node_dict):
         testid = 'missing-heading-sentence-level'
         testmessage = "Missing heading comment '# sentence level graph:'"
         warn(testmessage, testclass, testlevel, testid, lineno=sentence[1]['line0'])
+    # Besides the global node dictionary, we also need a temporary one for the
+    # current sentence because node references in the sentence level graph
+    # cannot lead to other sentences.
+    nodes_this_sentence = set()
+    node_references = []
     stack = []
     iline = sentence[1]['line0'] + len(sentence[1]['comments']) - 1
     # expecting_node_definition means we either just read ':something', which is
@@ -391,6 +396,7 @@ def validate_sentence_graph(sentence, node_dict):
                         warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     else:
                         node_dict[variable] = {'line0': iline}
+                        nodes_this_sentence.add(variable)
                     # Now expecting the slash ('/').
                     if pline.startswith('/'):
                         pline = lws_re.sub('', pline[1:])
@@ -427,19 +433,16 @@ def validate_sentence_graph(sentence, node_dict):
                 elif variable_re.match(pline):
                     match = variable_re.match(pline)
                     variable = match.group(0)
-                    if not variable in node_dict:
-                        testid = 'unknown-node-id'
-                        testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
-                        warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                        ###!!! Maybe this test should be just a warning and the hard
-                        ###!!! test should take place when the whole graph has been
-                        ###!!! read. The released UMR data occasionally contain forward
-                        ###!!! references that are resolved within the same graph.
-                        ###!!! (But of course they could and should be normalized.)
-                        ###!!! Or we could add an option --allow-forward-references.
-                    ###!!! Not only should we check that the node is defined.
-                    ###!!! We should also check that it is defined in the current
-                    ###!!! sentence (and not in the previous sentences).
+                    node_references.append({'variable': variable, 'line0': iline})
+                    if args.check_forward_references and not variable in nodes_this_sentence:
+                        if variable in node_dict:
+                            testid = 'cross-sentence-reference'
+                            testmessage = "Sentence level graph cannot contain nodes from other sentences: '%s' was defined on line %d." % (variable, node_dict[variable]['line0'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        else:
+                            testid = 'unknown-node-id'
+                            testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
+                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     pline = lws_re.sub('', variable_re.sub('', pline))
                 elif atom_re.match(pline):
                     match = atom_re.match(pline)
@@ -476,6 +479,21 @@ def validate_sentence_graph(sentence, node_dict):
                     testmessage = "Expecting colon or closing bracket, found '%s'" % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
+    # If checking forward references is on, we know that all node references
+    # either lead to defined nodes or have been reported as errors. But if it is
+    # off, we must check for undefined nodes now.
+    if not args.check_forward_references:
+        for r in node_references:
+            # If the node exists elsewhere in the
+            if not r['variable'] in nodes_this_sentence:
+                if r['variable'] in node_dict:
+                    testid = 'cross-sentence-reference'
+                    testmessage = "Sentence level graph cannot contain nodes from other sentences: '%s' was defined on line %d." % (r['variable'], node_dict[r['variable']]['line0'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                else:
+                    testid = 'unknown-node-id'
+                    testmessage = "The node id (variable) '%s' is unknown. No such node is defined in this sentence." % r['variable']
+                    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 
 
@@ -512,18 +530,18 @@ def validate(inp, out, args, known_sent_ids):
 if __name__=="__main__":
     opt_parser = argparse.ArgumentParser(description="UMR validation script. Python 3 is needed to run it!")
 
-    io_group = opt_parser.add_argument_group("Input / output options")
+    io_group = opt_parser.add_argument_group('Input / output options')
     io_group.add_argument('--quiet', dest="quiet", action="store_true", default=False, help='Do not print any error messages. Exit with 0 on pass, non-zero on fail.')
     io_group.add_argument('--max-err', action="store", type=int, default=20, help='How many errors to output before exiting? 0 for all. Default: %(default)d.')
     io_group.add_argument('input', nargs='*', help='Input file name(s), or "-" or nothing for standard input.')
 
-    list_group = opt_parser.add_argument_group("Label sets", "Options relevant to checking label sets.")
+    list_group = opt_parser.add_argument_group('Label sets', 'Options relevant to checking label sets.')
     list_group.add_argument('--lang', action="store", default=None, help="Which langauge are we checking? If you specify this (as a two-letter code), the validator will use language-specific guidelines.")
     list_group.add_argument('--level', action="store", type=int, default=5, dest="level", help="Level 1: Test only the technical format backbone. Level 2: UMR format. Level 3: UMR contents. Level 4: Language-specific labels. Level 5: Language-specific contents.")
 
-    meta_group = opt_parser.add_argument_group("Metadata constraints", "Options for checking the validity of tree metadata.")
-    meta_group.add_argument('--no-tree-text', action="store_false", default=True, dest="check_tree_text", help="Do not test tree text. For internal use only, this test is required and on by default.")
-    meta_group.add_argument('--allow-trailing-whitespace', action='store_false', default=True, dest='check_trailing_whitespace', help='Do not report trailing whitespace.')
+    meta_group = opt_parser.add_argument_group('Strictness', 'Options for relaxing selected tests.')
+    meta_group.add_argument('--allow-trailing-whitespace', dest='check_trailing_whitespace', action='store_false', default=True, help='Do not report trailing whitespace.')
+    meta_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
 
     args = opt_parser.parse_args() # Parsed command-line arguments
     error_counter={} # Incremented by warn()  {key: error type value: its count}
