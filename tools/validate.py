@@ -185,6 +185,7 @@ def sentences(inp, args):
                     testid = 'too-many-blocks'
                     testmessage = 'Too many annotation blocks within one sentence. There should be two empty lines after each sentence.'
                     warn(testmessage, testclass, testlevel, testid)
+                    corrupt = True
             else: # two consecutive empty lines = end of sentence
                 if blocks:
                     if len(blocks) < 4:
@@ -217,12 +218,14 @@ def sentences(inp, args):
                 testid = 'misplaced-comment'
                 testmessage = 'Spurious comment line. Comments are only allowed before a sentence.'
                 warn(testmessage, testclass, testlevel, testid)
+                corrupt = True
         elif is_root(line) or is_attribute(line) or is_alignment(line):
             lines.append(line)
         else: # A line which is neither a comment nor a token/word, nor empty. That's bad!
             testid = 'invalid-line'
             testmessage = "Spurious line: '%s'. All non-empty lines should start with a digit or the # character." % (line)
             warn(testmessage, testclass, testlevel, testid)
+            corrupt = True
     else: # end of file
         if blocks: # These should have been yielded on an empty line!
             testid = 'missing-empty-line'
@@ -571,21 +574,14 @@ def validate(inp, out, args, known_sent_ids):
     # Dictionary of all concept nodes in the document.
     node_dict = {}
     for sentence in sentences(inp, args):
+        # If fundamental errors were found already in sentences(), the function
+        # will skip the current sentence and go to the next one. So if we are
+        # here, we have a sentence with the expected set of annotation blocks
+        # and with lines that at least superficially look acceptable.
         if args.level > 1:
-            validate_sentence_metadata(sentence, known_sent_ids) # level 2
-            ###!!! We should not try to parse the graph if we know that there are invalid or missing lines or blocks.
+            validate_sentence_metadata(sentence, known_sent_ids) # level 2?
             validate_sentence_graph(sentence, node_dict)
             validate_alignment(sentence, node_dict)
-            tree = None ###!!!
-            if tree:
-                if args.level > 2:
-                    validate_annotation(tree) # level 3
-            else:
-                testlevel = 2
-                testclass = 'Format'
-                testid = 'skipped-corrupt-tree'
-                testmessage = "Skipping annotation tests because of corrupt tree structure."
-                ###!!! warn(testmessage, testclass, testlevel=testlevel, testid=testid, lineno=False)
         # Before we read the next sentence, clear the current sentence variables
         # so that sentences() knows they should be reset to new values.
         sentence_line = None
