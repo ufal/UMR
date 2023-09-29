@@ -563,6 +563,25 @@ def validate_alignment(sentence, node_dict):
             testmessage = "Expected node variable id, found '%s'." % pline
             warn(testmessage, testclass, testlevel, testid, lineno=iline)
 
+def validate_document_level(sentence, node_dict):
+    testlevel = 2
+    testclass = 'Document'
+    # Does the comment confirm that we are processing the document level annotation?
+    heading_found = False
+    if 'comments' in sentence[3]:
+        for c in sentence[3]['comments']:
+            if c == '# document level annotation:':
+                heading_found = True
+                break
+    if not heading_found:
+        testid = 'missing-heading-alignment'
+        testmessage = "Missing heading comment '# document level annotation:'."
+        warn(testmessage, testclass, testlevel, testid, lineno=sentence[3]['line0'])
+    iline = sentence[3]['line0'] + len(sentence[3]['comments']) - 1
+    for l in sentence[3]['lines']:
+        iline += 1
+        pline = l # processed line: we will remove stuff from pline but not from l
+
 
 
 #==============================================================================
@@ -582,6 +601,7 @@ def validate(inp, out, args, known_sent_ids):
             validate_sentence_metadata(sentence, known_sent_ids) # level 2?
             validate_sentence_graph(sentence, node_dict)
             validate_alignment(sentence, node_dict)
+            validate_document_level(sentence, node_dict)
         # Before we read the next sentence, clear the current sentence variables
         # so that sentences() knows they should be reset to new values.
         sentence_line = None
