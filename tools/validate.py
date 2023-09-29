@@ -65,7 +65,10 @@ def warn(msg, testclass, testlevel, testid, lineno=0, explanation=None):
             else:
                 print("[%sLine %d%s%s]: [L%d %s %s] %s" % (fn, curr_line, sent, node, testlevel, testclass, testid, msg), file=sys.stderr)
 
-###### Support functions
+#------------------------------------------------------------------------------
+# Support functions.
+#------------------------------------------------------------------------------
+
 ws_re = re.compile(r"^\s+$")
 def is_whitespace(line):
     return ws_re.match(line)
@@ -337,8 +340,6 @@ def validate_sentence_metadata(sentence, known_ids):
             warn(testmessage, testclass, testlevel, testid, lineno=-1)
         sentence[0]['tokens'] = tokens
 
-##### Tests applicable to the whole sentence
-
 variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*")
 concept_re = re.compile(r"^\S+")
 relation_re = re.compile(r"^:[-A-Za-z0-9]+")
@@ -358,20 +359,20 @@ def validate_sentence_graph(sentence, node_dict):
                 break
     if not heading_found:
         testid = 'missing-heading-sentence-level'
-        testmessage = "Missing heading comment '# sentence level graph:'"
+        testmessage = "Missing heading comment '# sentence level graph:'."
         warn(testmessage, testclass, testlevel, testid, lineno=sentence[1]['line0'])
     # Besides the global node dictionary, we also need a temporary one for the
     # current sentence because node references in the sentence level graph
     # cannot lead to other sentences.
-    nodes_this_sentence = set()
+    sentence[1]['nodes'] = set()
     node_references = []
     stack = []
-    iline = sentence[1]['line0'] + len(sentence[1]['comments']) - 1
     # expecting_node_definition means we either just read ':something', which is
     # a relation or an attribute, and we did not see a value (atom / number /
     # string / node reference), or it is the beginning of the sentence. In both
     # cases we are expecting a full node definition.
     expecting_node_definition = True
+    iline = sentence[1]['line0'] + len(sentence[1]['comments']) - 1
     for l in sentence[1]['lines']:
         iline += 1
         pline = l # processed line: we will remove stuff from pline but not from l
@@ -381,7 +382,7 @@ def validate_sentence_graph(sentence, node_dict):
             if pline.startswith('('):
                 if not expecting_node_definition:
                     testid = 'extra-opening-bracket'
-                    testmessage = "Not expecting full node definition (opening bracket), found '%s'" % pline
+                    testmessage = "Not expecting full node definition (opening bracket), found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = lws_re.sub('', pline[1:])
                 # Now expecting variable identifier, e.g., 's15p'.
@@ -396,7 +397,7 @@ def validate_sentence_graph(sentence, node_dict):
                         warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     else:
                         node_dict[variable] = {'line0': iline}
-                        nodes_this_sentence.add(variable)
+                        sentence[1]['nodes'].add(variable)
                     # Now expecting the slash ('/').
                     if pline.startswith('/'):
                         pline = lws_re.sub('', pline[1:])
@@ -409,21 +410,21 @@ def validate_sentence_graph(sentence, node_dict):
                             pass
                         else:
                             testid = 'missing-concept-string'
-                            testmessage = "Expected concept string, found '%s'" % pline
+                            testmessage = "Expected concept string, found '%s'." % pline
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     else:
                         testid = 'missing-slash'
-                        testmessage = "Expected slash and concept string, found '%s'" % pline
+                        testmessage = "Expected slash and concept string, found '%s'." % pline
                         warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     testid = 'missing-variable'
-                    testmessage = "Expected node variable id, found '%s'" % pline
+                    testmessage = "Expected node variable id, found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 expecting_node_definition = False
             elif relation_re.match(pline):
                 if expecting_node_definition:
                     testid = 'missing-node-definition'
-                    testmessage = "Expecting full node definition (opening bracket), found '%s'" % pline
+                    testmessage = "Expecting full node definition (opening bracket), found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = lws_re.sub('', relation_re.sub('', pline))
                 # Besides a child node, there may be a numeric or string value.
@@ -434,7 +435,7 @@ def validate_sentence_graph(sentence, node_dict):
                     match = variable_re.match(pline)
                     variable = match.group(0)
                     node_references.append({'variable': variable, 'line0': iline})
-                    if args.check_forward_references and not variable in nodes_this_sentence:
+                    if args.check_forward_references and not variable in sentence[1]['nodes']:
                         if variable in node_dict:
                             testid = 'cross-sentence-reference'
                             testmessage = "Sentence level graph cannot contain nodes from other sentences: '%s' was defined on line %d." % (variable, node_dict[variable]['line0'])
@@ -458,12 +459,12 @@ def validate_sentence_graph(sentence, node_dict):
             elif pline.startswith(')'):
                 if expecting_node_definition:
                     testid = 'missing-node-definition'
-                    testmessage = "Expecting full node definition (opening bracket), found '%s'" % pline
+                    testmessage = "Expecting full node definition (opening bracket), found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 # Check for the matching opening bracket and remove it from the stack.
                 if not stack:
                     testid = 'extra-closing-bracket'
-                    testmessage = "Found closing bracket but there was no matching opening bracket: '%s'" % pline
+                    testmessage = "Found closing bracket but there was no matching opening bracket: '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     stack.pop()
@@ -472,11 +473,11 @@ def validate_sentence_graph(sentence, node_dict):
             else:
                 if expecting_node_definition:
                     testid = 'missing-node-definition'
-                    testmessage = "Expecting full node definition (opening bracket), found '%s'" % pline
+                    testmessage = "Expecting full node definition (opening bracket), found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     testid = 'invalid-sentence-level'
-                    testmessage = "Expecting colon or closing bracket, found '%s'" % pline
+                    testmessage = "Expecting colon or closing bracket, found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
     # If checking forward references is on, we know that all node references
@@ -485,7 +486,7 @@ def validate_sentence_graph(sentence, node_dict):
     if not args.check_forward_references:
         for r in node_references:
             # If the node exists elsewhere in the
-            if not r['variable'] in nodes_this_sentence:
+            if not r['variable'] in sentence[1]['nodes']:
                 if r['variable'] in node_dict:
                     testid = 'cross-sentence-reference'
                     testmessage = "Sentence level graph cannot contain nodes from other sentences: '%s' was defined on line %d." % (r['variable'], node_dict[r['variable']]['line0'])
@@ -494,6 +495,70 @@ def validate_sentence_graph(sentence, node_dict):
                     testid = 'unknown-node-id'
                     testmessage = "The node id (variable) '%s' is unknown. No such node is defined in this sentence." % r['variable']
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+
+tokrng_re = re.compile(r"^0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
+
+def validate_alignment(sentence, node_dict):
+    testlevel = 2
+    testclass = 'Alignment'
+    # Does the comment confirm that we are processing the concept-token alignment?
+    heading_found = False
+    if 'comments' in sentence[2]:
+        for c in sentence[2]['comments']:
+            if c == '# alignment:':
+                heading_found = True
+                break
+    if not heading_found:
+        testid = 'missing-heading-alignment'
+        testmessage = "Missing heading comment '# alignment:'."
+        warn(testmessage, testclass, testlevel, testid, lineno=sentence[2]['line0'])
+    iline = sentence[2]['line0'] + len(sentence[2]['comments']) - 1
+    for l in sentence[2]['lines']:
+        iline += 1
+        pline = l # processed line: we will remove stuff from pline but not from l
+        if variable_re.match(pline):
+            match = variable_re.match(pline)
+            variable = match.group(0)
+            if not variable in sentence[1]['nodes']:
+                testid = 'unknown-node-id'
+                testmessage = "The node id (variable) '%s' is unknown. No such node is defined in this sentence." % variable
+                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+            pline = lws_re.sub('', variable_re.sub('', pline))
+            if pline.startswith(':'):
+                pline = lws_re.sub('', pline[1:])
+                if tokrng_re.match(pline):
+                    match = tokrng_re.match(pline)
+                    if match.group(0) == '0-0':
+                        t0 = 0
+                        t1 = 0
+                    else:
+                        t0 = int(match.group(1))
+                        t1 = int(match.group(2))
+                        if t1 < t0:
+                            testid = 'invalid-token-range'
+                            testmessage = "Index of the first token '%d' is greater than the index of the second token '%d'." % (t0, t1)
+                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        tmax = len(sentence[0]['tokens'])
+                        if t0 > tmax:
+                            testid = 'invalid-token-index'
+                            testmessage = "Index of the first token '%d' is out of range: there are %d tokens." % (t0, tmax)
+                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        if t1 > tmax:
+                            testid = 'invalid-token-index'
+                            testmessage = "Index of the second token '%d' is out of range: there are %d tokens." % (t1, tmax)
+                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                else:
+                    testid = 'invalid-token-range'
+                    testmessage = "Expecting 1-based token index range or '0-0', found '%s'." % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+            else:
+                testid = 'invalid-alignment'
+                testmessage = "Expecting colon, found '%s'." % pline
+                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+        else:
+            testid = 'missing-variable'
+            testmessage = "Expected node variable id, found '%s'." % pline
+            warn(testmessage, testclass, testlevel, testid, lineno=iline)
 
 
 
@@ -510,6 +575,7 @@ def validate(inp, out, args, known_sent_ids):
             validate_sentence_metadata(sentence, known_sent_ids) # level 2
             ###!!! We should not try to parse the graph if we know that there are invalid or missing lines or blocks.
             validate_sentence_graph(sentence, node_dict)
+            validate_alignment(sentence, node_dict)
             tree = None ###!!!
             if tree:
                 if args.level > 2:
@@ -568,7 +634,7 @@ if __name__=="__main__":
         for curr_fname, inp in zip(args.input, open_files):
             validate(inp, out, args, known_sent_ids)
     except:
-        warn('Exception caught!', 'Format')
+        warn('Exception caught!', 'Internal', 0, 'internal-error')
         # If the output is used in an HTML page, it must be properly escaped
         # because the traceback can contain e.g. "<module>". However, escaping
         # is beyond the goal of validation, which can be also run in a console.
