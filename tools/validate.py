@@ -550,6 +550,15 @@ def validate_alignment(sentence, node_dict):
                             testid = 'invalid-token-index'
                             testmessage = "Index of the second token '%d' is out of range: there are %d tokens." % (t1, tmax)
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                    # The variable should be in node_dict. If it is not there,
+                    # it has been already reported as error; but we must survive it here.
+                    if variable in node_dict:
+                        if 'alignment' in node_dict[variable]:
+                            testid = 'duplicate-alignment'
+                            testmessage = "Repeated alignment of node '%s'. It was already specified as %d-%d on line %d." % (variable, node_dict[variable]['alignment']['t0'], node_dict[variable]['alignment']['t1'], node_dict[variable]['alignment']['line0'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        else:
+                            node_dict[variable]['alignment'] = {'t0': t0, 't1': t1, 'line0': iline}
                 else:
                     testid = 'invalid-token-range'
                     testmessage = "Expecting 1-based token index range or '0-0', found '%s'." % pline
@@ -562,6 +571,13 @@ def validate_alignment(sentence, node_dict):
             testid = 'missing-variable'
             testmessage = "Expected node variable id, found '%s'." % pline
             warn(testmessage, testclass, testlevel, testid, lineno=iline)
+    # Check that all nodes in this sentence have an alignment.
+    # Even unaligned nodes should have alignment 0-0.
+    for n in sentence[1]['nodes']:
+        if not 'alignment' in node_dict[n]:
+            testid = 'missing-alignment'
+            testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
+            warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
 def validate_document_level(sentence, node_dict):
     testlevel = 2
