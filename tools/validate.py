@@ -381,18 +381,18 @@ def validate_sentence_graph(sentence, node_dict):
         pline = l # processed line: we will remove stuff from pline but not from l
         while pline:
             # Remove leading whitespace.
-            pline = lws_re.sub('', pline)
+            pline = remove_leading_whitespace(pline)
             if pline.startswith('('):
                 if not expecting_node_definition:
                     testid = 'extra-opening-bracket'
                     testmessage = "Not expecting full node definition (opening bracket), found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                pline = lws_re.sub('', pline[1:])
+                pline = remove_leading_whitespace(pline[1:])
                 # Now expecting variable identifier, e.g., 's15p'.
                 if variable_re.match(pline):
                     match = variable_re.match(pline)
                     variable = match.group(0)
-                    pline = lws_re.sub('', variable_re.sub('', pline))
+                    pline = remove_leading_whitespace(variable_re.sub('', pline, 1))
                     # The variable serves as node id. It must be unique.
                     if variable in node_dict:
                         testid = 'non-unique-node-id'
@@ -403,13 +403,13 @@ def validate_sentence_graph(sentence, node_dict):
                         sentence[1]['nodes'].add(variable)
                     # Now expecting the slash ('/').
                     if pline.startswith('/'):
-                        pline = lws_re.sub('', pline[1:])
+                        pline = remove_leading_whitespace(pline[1:])
                         # Now expecting the concept string, e.g., 'have-quant-91'.
                         if concept_re.match(pline):
                             # OK, we have read the beginning of a node, including its variable and concept.
                             # Now store it somewhere. ###!!! Not only to the stack!
                             stack.append(variable)
-                            pline = lws_re.sub('', concept_re.sub('', pline))
+                            pline = remove_leading_whitespace(concept_re.sub('', pline, 1))
                             pass
                         else:
                             testid = 'missing-concept-string'
@@ -429,11 +429,11 @@ def validate_sentence_graph(sentence, node_dict):
                     testid = 'missing-node-definition'
                     testmessage = "Expecting full node definition (opening bracket), found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                pline = lws_re.sub('', relation_re.sub('', pline))
+                pline = remove_leading_whitespace(relation_re.sub('', pline, 1))
                 # Besides a child node, there may be a numeric or string value.
                 expecting_node_definition = False
                 if string_re.match(pline):
-                    pline = lws_re.sub('', string_re.sub('', pline))
+                    pline = remove_leading_whitespace(string_re.sub('', pline, 1))
                 elif variable_re.match(pline):
                     match = variable_re.match(pline)
                     variable = match.group(0)
@@ -447,16 +447,16 @@ def validate_sentence_graph(sentence, node_dict):
                             testid = 'unknown-node-id'
                             testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                    pline = lws_re.sub('', variable_re.sub('', pline))
+                    pline = remove_leading_whitespace(variable_re.sub('', pline, 1))
                 elif atom_re.match(pline):
                     match = atom_re.match(pline)
                     atom = match.group(1)
-                    pline = lws_re.sub('', match.group(2)+atom_re.sub('', pline))
+                    pline = remove_leading_whitespace(match.group(2)+atom_re.sub('', pline, 1))
                 # Integer numbers would be consumed as atoms. This is here because of decimal numbers.
                 elif number_re.match(pline):
                     match = number_re.match(pline)
                     number = match.group(1)
-                    pline = lws_re.sub('', match.group(2)+number_re.sub('', pline))
+                    pline = remove_leading_whitespace(match.group(2)+number_re.sub('', pline, 1))
                 else:
                     expecting_node_definition = True
             elif pline.startswith(')'):
@@ -471,7 +471,7 @@ def validate_sentence_graph(sentence, node_dict):
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     stack.pop()
-                pline = lws_re.sub('', pline[1:])
+                pline = remove_leading_whitespace(pline[1:])
                 expecting_node_definition = False
             else:
                 if expecting_node_definition:
@@ -526,9 +526,9 @@ def validate_alignment(sentence, node_dict):
                 testid = 'unknown-node-id'
                 testmessage = "The node id (variable) '%s' is unknown. No such node is defined in this sentence." % variable
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
-            pline = lws_re.sub('', variable_re.sub('', pline))
+            pline = remove_leading_whitespace(variable_re.sub('', pline, 1))
             if pline.startswith(':'):
-                pline = lws_re.sub('', pline[1:])
+                pline = remove_leading_whitespace(pline[1:])
                 if tokrng_re.match(pline):
                     match = tokrng_re.match(pline)
                     if match.group(0) == '0-0':
@@ -579,6 +579,10 @@ def validate_alignment(sentence, node_dict):
             testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
             warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
+svariable_re = re.compile(r"^s[0-9]+s0")
+dvariable_re = re.compile(r"^document-creation-time|author|root|s[0-9]+[a-z]+[0-9]*")
+constant_re = re.compile(r"^document-creation-time|author|root")
+
 def validate_document_level(sentence, node_dict):
     testlevel = 2
     testclass = 'Document'
@@ -593,10 +597,99 @@ def validate_document_level(sentence, node_dict):
         testid = 'missing-heading-alignment'
         testmessage = "Missing heading comment '# document level annotation:'."
         warn(testmessage, testclass, testlevel, testid, lineno=sentence[3]['line0'])
+    expecting = 'initial opening bracket'
     iline = sentence[3]['line0'] + len(sentence[3]['comments']) - 1
     for l in sentence[3]['lines']:
         iline += 1
         pline = l # processed line: we will remove stuff from pline but not from l
+        while pline:
+            # Remove leading whitespace.
+            pline = remove_leading_whitespace(pline)
+            if pline.startswith('('):
+                if expecting == 'initial opening bracket':
+                    expecting = 'sentence variable id'
+                elif expecting == 'group opening bracket':
+                    expecting = 'relation opening bracket'
+                elif expecting == 'relation opening bracket' or expecting == 'relation opening bracket or group closing bracket':
+                    expecting = 'the first node of a relation'
+                else:
+                    testid = 'invalid-document-level'
+                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                pline = remove_leading_whitespace(pline[1:])
+            elif svariable_re.match(pline):
+                match = svariable_re.match(pline)
+                variable = match.group(0)
+                if expecting != 'sentence variable id':
+                    testid = 'invalid-document-level'
+                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                    pline = ''
+                    break
+                pline = remove_leading_whitespace(svariable_re.sub('', pline, 1))
+                # The variable serves as node id. It must be unique.
+                if variable in node_dict:
+                    testid = 'non-unique-node-id'
+                    testmessage = "The node id (variable) '%s' is not unique. It was previously used on line %d." % (variable, node_dict[variable]['line0'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                else:
+                    node_dict[variable] = {'line0': iline}
+                # Now expecting the slash ('/') and the concept 'sentence'.
+                if pline.startswith('/ sentence'):
+                    pline = remove_leading_whitespace(pline[10:])
+                else:
+                    testid = 'missing-sentence-concept'
+                    testmessage = "Expected '/ sentence', found '%s'." % pline
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                expecting = 'relation group'
+            elif dvariable_re.match(pline):
+                match = dvariable_re.match(pline)
+                variable = match.group(0)
+                if expecting == 'the first node of a relation':
+                    expecting = 'relation'
+                elif expecting == 'the second node of the relation':
+                    expecting = 'relation closing bracket'
+                else:
+                    testid = 'invalid-document-level'
+                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                    pline = ''
+                    break
+                pline = remove_leading_whitespace(dvariable_re.sub('', pline, 1))
+                # The variable must be either a known node from this or previous sentences, or it must be a constant (such as 'document-creation-time').
+                if not variable in node_dict and not constant_re.match(variable):
+                    testid = 'unknown-node-id'
+                    testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+            elif relation_re.match(pline):
+                if expecting == 'relation group' or expecting == 'relation group or final closing bracket':
+                    expecting = 'group opening bracket'
+                elif expecting == 'relation':
+                    expecting = 'the second node of the relation'
+                else:
+                    testid = 'invalid-document-level'
+                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                match = relation_re.match(pline)
+                relation = match.group(0)
+                pline = remove_leading_whitespace(relation_re.sub('', pline, 1))
+            elif pline.startswith(')'):
+                if expecting == 'relation closing bracket':
+                    expecting = 'relation opening bracket or group closing bracket'
+                elif expecting == 'relation opening bracket or group closing bracket':
+                    expecting = 'relation group or final closing bracket'
+                elif expecting == 'relation group or final closing bracket':
+                    expecting = 'end of document level annotation'
+                else:
+                    testid = 'invalid-document-level'
+                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                pline = remove_leading_whitespace(pline[1:])
+            else:
+                testid = 'invalid-document-level'
+                testmessage = "Not expecting this: '%s'." % pline
+                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                pline = ''
 
 
 
