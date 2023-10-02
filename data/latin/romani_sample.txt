@@ -1,4 +1,5 @@
 # :: snt1	Est et inde alia locutio secundaria nobis, quam Romani gramaticam vocaverunt.
+And hence we have another secondary kind of language, which the Romans called grammar.
 
 (s1b/ belong-91
 	:ARG1 (s1l/ locutio
