@@ -223,7 +223,7 @@ def sentences(inp, args):
             lines.append(line)
         else: # A line which is neither a comment nor a token/word, nor empty. That's bad!
             testid = 'invalid-line'
-            testmessage = "Spurious line: '%s'. All non-empty lines should start with a digit or the # character." % (line)
+            testmessage = "Spurious line: '%s'. All non-empty lines should start with the '#' character, opening bracket, colon, or node variable id. Leading whitespace is permitted." % (line)
             warn(testmessage, testclass, testlevel, testid)
             corrupt = True
     else: # end of file
