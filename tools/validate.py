@@ -580,7 +580,7 @@ def validate_alignment(sentence, node_dict):
             warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
 svariable_re = re.compile(r"^s[0-9]+s0")
-dvariable_re = re.compile(r"^[a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*") # constant or concept node id
+dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
 constant_re = re.compile(r"^[a-z]+(?:-[a-z]+)*") ###!!! document-creation-time|author|root|null-conceiver; valid constants should be tested on level 3
 
 def validate_document_level(sentence, node_dict):
@@ -644,7 +644,7 @@ def validate_document_level(sentence, node_dict):
                 expecting = 'relation group'
             elif dvariable_re.match(pline):
                 match = dvariable_re.match(pline)
-                variable = match.group(0)
+                variable = match.group(1)
                 if expecting == 'the first node of a relation':
                     expecting = 'relation'
                 elif expecting == 'the second node of the relation':
@@ -655,7 +655,7 @@ def validate_document_level(sentence, node_dict):
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     pline = ''
                     break
-                pline = remove_leading_whitespace(dvariable_re.sub('', pline, 1))
+                pline = remove_leading_whitespace(match.group(2) + dvariable_re.sub('', pline, 1))
                 # The variable must be either a known node from this or previous sentences, or it must be a constant (such as 'document-creation-time').
                 if not variable in node_dict and not constant_re.match(variable):
                     testid = 'unknown-node-id'
