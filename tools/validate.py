@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# Copyright (c) 2023 Dan Zeman <zeman@ufal.mff.cuni.cz>
+# Copyright © 2023 Dan Zeman <zeman@ufal.mff.cuni.cz>
 import fileinput
 import sys
 import io
@@ -580,8 +580,8 @@ def validate_alignment(sentence, node_dict):
             warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
 svariable_re = re.compile(r"^s[0-9]+s0")
-dvariable_re = re.compile(r"^document-creation-time|author|root|s[0-9]+[a-z]+[0-9]*")
-constant_re = re.compile(r"^document-creation-time|author|root")
+dvariable_re = re.compile(r"^[a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*") # constant or concept node id
+constant_re = re.compile(r"^[a-z]+(?:-[a-z]+)*") ###!!! document-creation-time|author|root|null-conceiver; valid constants should be tested on level 3
 
 def validate_document_level(sentence, node_dict):
     testlevel = 2
