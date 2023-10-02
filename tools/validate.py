@@ -348,7 +348,7 @@ concept_re = re.compile(r"^\S+")
 relation_re = re.compile(r"^:[-A-Za-z0-9]+")
 string_re = re.compile(r'^"[^"\s]+"')
 number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
-atom_re = re.compile(r"^([-a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), or node references ('s5p')
+atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
 
 def validate_sentence_graph(sentence, node_dict):
     testlevel = 2
