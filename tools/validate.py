@@ -641,7 +641,7 @@ def validate_document_level(sentence, node_dict):
                     testid = 'missing-sentence-concept'
                     testmessage = "Expected '/ sentence', found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                expecting = 'relation group'
+                expecting = 'relation group or final closing bracket'
             elif dvariable_re.match(pline):
                 match = dvariable_re.match(pline)
                 variable = match.group(1)
