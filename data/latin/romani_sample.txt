@@ -8,7 +8,7 @@ And hence we have another secondary kind of language, which the Romans called gr
         :ARG1-of (s1u/ uoco-13
                 :ARG0 (s1e/ ethnic_group
                     :wiki "Q1651392"
-                    :name (n/ name op1: "Romani"))
+                    :name (n/ name :op1 "Romani"))
                 :ARG2 (s1g/ gramatica)
                 :aspect performance
                 :modal-strength full-affirmative)
