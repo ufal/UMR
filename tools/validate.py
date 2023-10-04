@@ -104,8 +104,8 @@ def shorten(string):
 # Level 1 tests. Only technical format backbone.
 #==============================================================================
 
-sentid_re = re.compile('^#\s*::\s*(snt[0-9]+)\s')
-sentid_tokens_re = re.compile('^# :: (snt[0-9]+)\s+(.+)')
+sentid_re = re.compile(r"^#\s*::\s*(snt[0-9]+)\s")
+sentid_tokens_re = re.compile(r"^# :: (snt[0-9]+)\s+(.+)")
 
 def sentences(inp, args):
     """
