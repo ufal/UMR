@@ -83,6 +83,13 @@ lws_re = re.compile(r"^\s+")
 def remove_leading_whitespace(line):
     return lws_re.sub('', line)
 
+# For some languages (Arapaho, Navajo, Sanapana, Kukama), the initial block
+# contains multiple lines with inter-linear glossing. Each of these lines should
+# start with a header but these headers are different in Arapaho vs. the others.
+ilg_re = re.compile(r"^(Words|tx|Morphemes|mb|Morpheme Gloss\(English|Spanish\)|ge|Morpheme Cat|ps|Word Gloss|(English|Spanish) Sent Gloss:|tr)\s+")
+def is_ilg(line):
+    return ilg_re.match(line)
+
 root_re = re.compile(r"^\(")
 def is_root(line):
     return root_re.match(line)
@@ -104,7 +111,7 @@ def shorten(string):
 # Level 1 tests. Only technical format backbone.
 #==============================================================================
 
-sentid_re = re.compile(r"^#\s*::\s*(snt[0-9]+)\s")
+sentid_re = re.compile(r"^#\s*::\s*(snt[0-9]+)")
 sentid_tokens_re = re.compile(r"^# :: (snt[0-9]+)\s+(.+)")
 
 def sentences(inp, args):
@@ -128,6 +135,9 @@ def sentences(inp, args):
       sentence (e.g., document level graph from sentence level graph). Two empty
       lines separate sentences. Empty lines must not occur inside annotation
       blocks, e.g., inside the sentence level graph.
+    - Interlinear glossing lines. The line starts with a header that specifies
+      type of the contents on the line, then there are space-separated words
+      or morphs or their glosses (possible in multiple languages).
     - Graph lines (either sentence level graph, or document level annotation).
       They may start with whitespace (' ', "\t") and they typically do, except
       for the first line of the graph. Whitespace can be ignored (but we may
@@ -221,6 +231,8 @@ def sentences(inp, args):
                 corrupt = True
         elif is_root(line) or is_attribute(line) or is_alignment(line):
             lines.append(line)
+        elif is_ilg(line):
+            lines.append(line)
         else: # A line which is neither a comment nor a token/word, nor empty. That's bad!
             testid = 'invalid-line'
             testmessage = "Spurious line: '%s'. All non-empty lines should start with the '#' character, opening bracket, colon, or node variable id. Leading whitespace is permitted." % (line)
@@ -307,6 +319,11 @@ def validate_sentence_metadata(sentence, known_ids):
     comments = sentence[0]['comments']
     cline = 0
     for c in comments:
+        ###!!! ADAPT THIS: The first block either contains one comment line with
+        # both the sentence id and the sequence of tokens (English, Chinese), or
+        # it contains multiple lines, the first one is a comment with sentence
+        # id only, the following ones are not comments and they contain inter-
+        # linear glosses, starting with the actual token sequence.
         match = sentid_tokens_re.match(c)
         if match:
             matched.append(match)
