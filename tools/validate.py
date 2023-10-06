@@ -622,11 +622,12 @@ def validate_alignment(sentence, node_dict, args):
             warn(testmessage, testclass, testlevel, testid, lineno=iline)
     # Check that all nodes in this sentence have an alignment.
     # Even unaligned nodes should have alignment 0-0.
-    for n in sentence[1]['nodes']:
-        if not 'alignment' in node_dict[n]:
-            testid = 'missing-alignment'
-            testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
-            warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+    if args.check_complete_alignment:
+        for n in sentence[1]['nodes']:
+            if not 'alignment' in node_dict[n]:
+                testid = 'missing-alignment'
+                testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
+                warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
 svariable_re = re.compile(r"^s[0-9]+s0")
 dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
@@ -784,6 +785,7 @@ if __name__=="__main__":
     strict_group.add_argument('--allow-trailing-whitespace', dest='check_trailing_whitespace', action='store_false', default=True, help='Do not report trailing whitespace.')
     strict_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
     strict_group.add_argument('--optional-block-headers', dest='check_block_headers', action='store_false', default=True, help='Do not report missing or unknown header comments for annotation blocks.')
+    strict_group.add_argument('--optional-alignments', dest='check_complete_alignment', action='store_false', default=True, help='Do not require that every node has its alignment specified.')
 
     args = opt_parser.parse_args() # Parsed command-line arguments
     error_counter={} # Incremented by warn()  {key: error type value: its count}
