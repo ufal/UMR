@@ -86,7 +86,7 @@ def remove_leading_whitespace(line):
 # For some languages (Arapaho, Navajo, Sanapana, Kukama), the initial block
 # contains multiple lines with inter-linear glossing. Each of these lines should
 # start with a header but these headers are different in Arapaho vs. the others.
-ilg_re = re.compile(r"^(Words|tx|Morphemes|mb|Morpheme Gloss\(English|Spanish\)|ge|Morpheme Cat|ps|Word Gloss|(English|Spanish) Sent Gloss:|tr)\s+")
+ilg_re = re.compile(r"^(Words|tx|Morphemes|mb|Morpheme Gloss\((?:English|Spanish)\)|ge|Morpheme Cat|ps|Word Gloss|(?:English|Spanish) Sent Gloss:|tr)\s+(.+)")
 def is_ilg(line):
     return ilg_re.match(line)
 
@@ -111,7 +111,7 @@ def shorten(string):
 # Level 1 tests. Only technical format backbone.
 #==============================================================================
 
-sentid_re = re.compile(r"^#\s*::\s*(snt[0-9]+)")
+sentid_re = re.compile(r"^#\s*::\s*(snt[0-9]+)(?:\s|$)")
 sentid_tokens_re = re.compile(r"^# :: (snt[0-9]+)\s+(.+)")
 
 def sentences(inp, args):
@@ -303,7 +303,7 @@ def validate_newlines(inp):
 
 ###### Metadata tests #########
 
-def validate_sentence_metadata(sentence, known_ids):
+def validate_sentence_metadata(sentence, known_ids, args):
     testlevel = 2
     testclass = 'Metadata'
     matched=[]
@@ -317,23 +317,23 @@ def validate_sentence_metadata(sentence, known_ids):
         warn(testmessage, testclass, testlevel, testid, lineno=-1)
         return
     comments = sentence[0]['comments']
-    cline = 0
     for c in comments:
-        ###!!! ADAPT THIS: The first block either contains one comment line with
-        # both the sentence id and the sequence of tokens (English, Chinese), or
-        # it contains multiple lines, the first one is a comment with sentence
-        # id only, the following ones are not comments and they contain inter-
+        # The first block either contains one comment line with both the
+        # sentence id and the sequence of tokens (English, Chinese), or it
+        # contains multiple lines, the first one is a comment with sentence id
+        # only, the following ones are not comments and they contain inter-
         # linear glosses, starting with the actual token sequence.
-        match = sentid_tokens_re.match(c)
+        match = sentid_re.match(c)
+        tokens_included = False
         if match:
-            matched.append(match)
-        else:
-            match = sentid_re.match(c)
-            if match:
-                testid = 'invalid-sent-id'
-                testmessage = "Spurious sentence metadata line: '%s' Should look like '# :: sntN token token ...' where N is the sentence number; the id is followed by token sequence." % c
-                warn(testmessage, testclass, testlevel, testid, lineno=sentence[0]['line0']+cline)
-        cline += 1
+            # So the comment starts with a sentence id. Does it also contain the
+            # sequence of tokens?
+            match2 = sentid_tokens_re.match(c)
+            if match2:
+                matched.append(match2)
+                tokens_included = True
+            else:
+                matched.append(match)
     if not matched:
         testid = 'missing-sent-id'
         testmessage = 'Missing sentence id.'
@@ -352,13 +352,43 @@ def validate_sentence_metadata(sentence, known_ids):
             warn(testmessage, testclass, testlevel, testid, lineno=-1)
         known_ids.add(sid)
         # Save the tokens so we can access them later.
-        tokens = matched[0].group(2).split(' ')
-        empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
-        if empty_tokens:
-            testid = 'empty-token'
-            testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % matched[0].group(2)
-            warn(testmessage, testclass, testlevel, testid, lineno=-1)
-        sentence[0]['tokens'] = tokens
+        if tokens_included:
+            tokens = matched[0].group(2).split(' ')
+            empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
+            if empty_tokens:
+                testid = 'empty-token'
+                testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % matched[0].group(2)
+                warn(testmessage, testclass, testlevel, testid, lineno=-1)
+            sentence[0]['tokens'] = tokens
+            if sentence[0]['lines']:
+                testid = 'tokens-vs-ilg'
+                testmessage = "No interlinear glosses are expected because tokens were already introduced on the sentence id line."
+                warn(testmessage, testclass, testlevel, testid, lineno=sentence[0]['line0']+len(sentence[0]['comments']))
+        else:
+            iline = sentence[0]['line0']+len(sentence[0]['comments'])
+            if not 'lines' in sentence[0]:
+                testid = 'missing-ilg'
+                testmessage = "Expecting interlinear glosses because tokens were not introduced on the sentence id line."
+                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                return
+            lines = sentence[0]['lines']
+            for l in lines:
+                match = ilg_re.match(l)
+                if match:
+                    header = match.group(1)
+                    if header == 'Words' or header == 'tx':
+                        tokens = match.group(2).split(' ')
+                        empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
+                        if empty_tokens:
+                            testid = 'empty-token'
+                            testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % match.group(2)
+                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        sentence[0]['tokens'] = tokens
+                else:
+                    testid = 'invalid-ilg'
+                    testmessage = "Spurious interlinear glossing line (unknown line header)."
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                iline += 1
 
 variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*")
 concept_re = re.compile(r"^\S+")
@@ -367,20 +397,21 @@ string_re = re.compile(r'^"[^"\s]+"')
 number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
 atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
 
-def validate_sentence_graph(sentence, node_dict):
+def validate_sentence_graph(sentence, node_dict, args):
     testlevel = 2
     testclass = 'Sentence'
     # Does the comment confirm that we are processing the sentence level graph?
-    heading_found = False
-    if 'comments' in sentence[1]:
-        for c in sentence[1]['comments']:
-            if c == '# sentence level graph:':
-                heading_found = True
-                break
-    if not heading_found:
-        testid = 'missing-heading-sentence-level'
-        testmessage = "Missing heading comment '# sentence level graph:'."
-        warn(testmessage, testclass, testlevel, testid, lineno=sentence[1]['line0'])
+    if args.check_block_headers:
+        heading_found = False
+        if 'comments' in sentence[1]:
+            for c in sentence[1]['comments']:
+                if c == '# sentence level graph:':
+                    heading_found = True
+                    break
+        if not heading_found:
+            testid = 'missing-heading-sentence-level'
+            testmessage = "Missing heading comment '# sentence level graph:'."
+            warn(testmessage, testclass, testlevel, testid, lineno=sentence[1]['line0'])
     # Besides the global node dictionary, we also need a temporary one for the
     # current sentence because node references in the sentence level graph
     # cannot lead to other sentences.
@@ -518,20 +549,21 @@ def validate_sentence_graph(sentence, node_dict):
 
 tokrng_re = re.compile(r"^0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
 
-def validate_alignment(sentence, node_dict):
+def validate_alignment(sentence, node_dict, args):
     testlevel = 2
     testclass = 'Alignment'
     # Does the comment confirm that we are processing the concept-token alignment?
-    heading_found = False
-    if 'comments' in sentence[2]:
-        for c in sentence[2]['comments']:
-            if c == '# alignment:':
-                heading_found = True
-                break
-    if not heading_found:
-        testid = 'missing-heading-alignment'
-        testmessage = "Missing heading comment '# alignment:'."
-        warn(testmessage, testclass, testlevel, testid, lineno=sentence[2]['line0'])
+    if args.check_block_headers:
+        heading_found = False
+        if 'comments' in sentence[2]:
+            for c in sentence[2]['comments']:
+                if c == '# alignment:':
+                    heading_found = True
+                    break
+        if not heading_found:
+            testid = 'missing-heading-alignment'
+            testmessage = "Missing heading comment '# alignment:'."
+            warn(testmessage, testclass, testlevel, testid, lineno=sentence[2]['line0'])
     iline = sentence[2]['line0'] + len(sentence[2]['comments']) - 1
     for l in sentence[2]['lines']:
         iline += 1
@@ -600,20 +632,21 @@ svariable_re = re.compile(r"^s[0-9]+s0")
 dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
 constant_re = re.compile(r"^[a-z]+(?:-[a-z]+)*") ###!!! document-creation-time|author|root|null-conceiver; valid constants should be tested on level 3
 
-def validate_document_level(sentence, node_dict):
+def validate_document_level(sentence, node_dict, args):
     testlevel = 2
     testclass = 'Document'
     # Does the comment confirm that we are processing the document level annotation?
-    heading_found = False
-    if 'comments' in sentence[3]:
-        for c in sentence[3]['comments']:
-            if c == '# document level annotation:':
-                heading_found = True
-                break
-    if not heading_found:
-        testid = 'missing-heading-alignment'
-        testmessage = "Missing heading comment '# document level annotation:'."
-        warn(testmessage, testclass, testlevel, testid, lineno=sentence[3]['line0'])
+    if args.check_block_headers:
+        heading_found = False
+        if 'comments' in sentence[3]:
+            for c in sentence[3]['comments']:
+                if c == '# document level annotation:':
+                    heading_found = True
+                    break
+        if not heading_found:
+            testid = 'missing-heading-alignment'
+            testmessage = "Missing heading comment '# document level annotation:'."
+            warn(testmessage, testclass, testlevel, testid, lineno=sentence[3]['line0'])
     expecting = 'initial opening bracket'
     iline = sentence[3]['line0'] + len(sentence[3]['comments']) - 1
     for l in sentence[3]['lines']:
@@ -724,10 +757,10 @@ def validate(inp, out, args, known_sent_ids):
         # here, we have a sentence with the expected set of annotation blocks
         # and with lines that at least superficially look acceptable.
         if args.level > 1:
-            validate_sentence_metadata(sentence, known_sent_ids) # level 2?
-            validate_sentence_graph(sentence, node_dict)
-            validate_alignment(sentence, node_dict)
-            validate_document_level(sentence, node_dict)
+            validate_sentence_metadata(sentence, known_sent_ids, args) # level 2?
+            validate_sentence_graph(sentence, node_dict, args)
+            validate_alignment(sentence, node_dict, args)
+            validate_document_level(sentence, node_dict, args)
         # Before we read the next sentence, clear the current sentence variables
         # so that sentences() knows they should be reset to new values.
         sentence_line = None
@@ -747,9 +780,10 @@ if __name__=="__main__":
     list_group.add_argument('--lang', action="store", default=None, help="Which langauge are we checking? If you specify this (as a two-letter code), the validator will use language-specific guidelines.")
     list_group.add_argument('--level', action="store", type=int, default=5, dest="level", help="Level 1: Test only the technical format backbone. Level 2: UMR format. Level 3: UMR contents. Level 4: Language-specific labels. Level 5: Language-specific contents.")
 
-    meta_group = opt_parser.add_argument_group('Strictness', 'Options for relaxing selected tests.')
-    meta_group.add_argument('--allow-trailing-whitespace', dest='check_trailing_whitespace', action='store_false', default=True, help='Do not report trailing whitespace.')
-    meta_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
+    strict_group = opt_parser.add_argument_group('Strictness', 'Options for relaxing selected tests.')
+    strict_group.add_argument('--allow-trailing-whitespace', dest='check_trailing_whitespace', action='store_false', default=True, help='Do not report trailing whitespace.')
+    strict_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
+    strict_group.add_argument('--optional-block-headers', dest='check_block_headers', action='store_false', default=True, help='Do not report missing or unknown header comments for annotation blocks.')
 
     args = opt_parser.parse_args() # Parsed command-line arguments
     error_counter={} # Incremented by warn()  {key: error type value: its count}
