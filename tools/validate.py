@@ -353,12 +353,15 @@ def validate_sentence_metadata(sentence, known_ids, args):
         known_ids.add(sid)
         # Save the tokens so we can access them later.
         if tokens_included:
-            tokens = matched[0].group(2).split(' ')
-            empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
-            if empty_tokens:
-                testid = 'empty-token'
-                testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % matched[0].group(2)
-                warn(testmessage, testclass, testlevel, testid, lineno=-1)
+            if args.check_wide_space:
+                tokens = matched[0].group(2).split(' ')
+                empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
+                if empty_tokens:
+                    testid = 'empty-token'
+                    testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % matched[0].group(2)
+                    warn(testmessage, testclass, testlevel, testid, lineno=-1)
+            else:
+                tokens = re.split(r"\s+", matched[0].group(2))
             sentence[0]['tokens'] = tokens
             if sentence[0]['lines']:
                 testid = 'tokens-vs-ilg'
@@ -377,12 +380,15 @@ def validate_sentence_metadata(sentence, known_ids, args):
                 if match:
                     header = match.group(1)
                     if header == 'Words' or header == 'tx':
-                        tokens = match.group(2).split(' ')
-                        empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
-                        if empty_tokens:
-                            testid = 'empty-token'
-                            testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % match.group(2)
-                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        if args.check_wide_space:
+                            tokens = match.group(2).split(' ')
+                            empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
+                            if empty_tokens:
+                                testid = 'empty-token'
+                                testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % match.group(2)
+                                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        else:
+                            tokens = re.split(r"\s+", match.group(2))
                         sentence[0]['tokens'] = tokens
                 else:
                     testid = 'invalid-ilg'
@@ -783,6 +789,7 @@ if __name__=="__main__":
 
     strict_group = opt_parser.add_argument_group('Strictness', 'Options for relaxing selected tests.')
     strict_group.add_argument('--allow-trailing-whitespace', dest='check_trailing_whitespace', action='store_false', default=True, help='Do not report trailing whitespace.')
+    strict_group.add_argument('--allow-wide-space', dest='check_wide_space', action='store_false', default=True, help='Do not report multiple spaces between tokens, treat them as a single space.')
     strict_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
     strict_group.add_argument('--optional-block-headers', dest='check_block_headers', action='store_false', default=True, help='Do not report missing or unknown header comments for annotation blocks.')
     strict_group.add_argument('--optional-alignments', dest='check_complete_alignment', action='store_false', default=True, help='Do not require that every node has its alignment specified.')
