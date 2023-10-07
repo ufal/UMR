@@ -298,19 +298,35 @@ def validate_newlines(inp):
 
 
 #==============================================================================
-# Level 2 tests. ###!!! HOW DO WE DEFINE THEM?
+# Level 2 tests. General structure, known and/or unique labels, but not rules
+# for concept-relation or attribute-value compatibility.
 #==============================================================================
 
-###### Metadata tests #########
+variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*")
+concept_re = re.compile(r"^[^\s\(\):]+")
+relation_re = re.compile(r"^:[-A-Za-z0-9]+")
+string_re = re.compile(r'^"[^"\s]+"')
+number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
+atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
+
+tokrng_re = re.compile(r"^0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
+
+svariable_re = re.compile(r"^s[0-9]+s0")
+dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
+constant_re = re.compile(r"^[a-z]+(?:-[a-z]+)*") ###!!! document-creation-time|author|root|null-conceiver; valid constants should be tested on level 3
 
 def validate_sentence_metadata(sentence, known_ids, args):
+    """
+    Verifies the first annotation block of a sentence. There must be a comment
+    line with the sentence id, and the list of tokens. The tokens either
+    immediately follow the sentence id on the comment line, or are given as
+    part of interlinear glossing, if interlinear glossing is present.
+    """
     testlevel = 2
     testclass = 'Metadata'
     matched=[]
-    # The sentence should contain 4 annotation blocks. The first block should
-    # contain the comment line with the sentence id and the space-separated
-    # tokens. Thanks to previous tests, we can be sure that there is at least
-    # one annotation block. However, we cannot be sure that it has comments.
+    # Thanks to previous tests, we can be sure that there is at least one
+    # annotation block. However, we cannot be sure that it has comments.
     if not 'comments' in sentence[0]:
         testid = 'missing-sent-id'
         testmessage = 'Missing sentence id.'
@@ -396,14 +412,10 @@ def validate_sentence_metadata(sentence, known_ids, args):
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 iline += 1
 
-variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*")
-concept_re = re.compile(r"^\S+")
-relation_re = re.compile(r"^:[-A-Za-z0-9]+")
-string_re = re.compile(r'^"[^"\s]+"')
-number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
-atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
-
 def validate_sentence_graph(sentence, node_dict, args):
+    """
+    Verifies the second annotation block of a sentence: the sentence level graph.
+    """
     testlevel = 2
     testclass = 'Sentence'
     # Does the comment confirm that we are processing the sentence level graph?
@@ -446,6 +458,13 @@ def validate_sentence_graph(sentence, node_dict, args):
                 if variable_re.match(pline):
                     match = variable_re.match(pline)
                     variable = match.group(0)
+                    # If this is not the root node (i.e., there is something on
+                    # the stack), store this node as the child of the most recently
+                    # added relation of the parent node. (There must be at least
+                    # one relation and its type must be 'node'. Should we verify
+                    # it?)
+                    if stack:
+                        node_dict[stack[-1]]['relations'][-1]['value'] = variable
                     pline = remove_leading_whitespace(variable_re.sub('', pline, 1))
                     # The variable serves as node id. It must be unique.
                     if variable in node_dict:
@@ -453,18 +472,20 @@ def validate_sentence_graph(sentence, node_dict, args):
                         testmessage = "The node id (variable) '%s' is not unique. It was previously used on line %d." % (variable, node_dict[variable]['line0'])
                         warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     else:
+                        # We have read the beginning of a node, including its
+                        # variable. Now store it both globally and locally.
                         node_dict[variable] = {'line0': iline}
                         sentence[1]['nodes'].add(variable)
+                        stack.append(variable)
                     # Now expecting the slash ('/').
                     if pline.startswith('/'):
                         pline = remove_leading_whitespace(pline[1:])
                         # Now expecting the concept string, e.g., 'have-quant-91'.
                         if concept_re.match(pline):
-                            # OK, we have read the beginning of a node, including its variable and concept.
-                            # Now store it somewhere. ###!!! Not only to the stack!
-                            stack.append(variable)
+                            match = concept_re.match(pline)
+                            concept = match.group(0)
+                            node_dict[variable]['concept'] = concept
                             pline = remove_leading_whitespace(concept_re.sub('', pline, 1))
-                            pass
                         else:
                             testid = 'missing-concept-string'
                             testmessage = "Expected concept string, found '%s'." % pline
@@ -483,10 +504,30 @@ def validate_sentence_graph(sentence, node_dict, args):
                     testid = 'missing-node-definition'
                     testmessage = "Expecting full node definition (opening bracket), found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                match = relation_re.match(pline)
+                relation = match.group(0)
+                # Save the outgoing relation at the parent node.
+                # The topmost node on the stack is the parent node for this relation.
+                # But beware that the stack may be empty if the relation occurred unexpectedly!
+                parent = {'relations': []}
+                if stack:
+                    parent_id = stack[-1]
+                    parent = node_dict[parent_id]
+                    if not 'relations' in parent:
+                        parent['relations'] = []
+                # Some relations, like ':ARG0', should occur at most once per parent node,
+                # but others, like ':mod', can occur multiple times, so we assume that
+                # multiple same relations are allowed in general and we will rule out
+                # specific cases at level 3.
+                parent['relations'].append({'relation': relation, 'dir': 'out', 'line0': iline})
                 pline = remove_leading_whitespace(relation_re.sub('', pline, 1))
                 # Besides a child node, there may be a numeric or string value.
                 expecting_node_definition = False
                 if string_re.match(pline):
+                    match = string_re.match(pline)
+                    string = match.group(0)
+                    parent['relations'][-1]['type'] = 'string'
+                    parent['relations'][-1]['value'] = string
                     pline = remove_leading_whitespace(string_re.sub('', pline, 1))
                 elif variable_re.match(pline):
                     match = variable_re.match(pline)
@@ -501,17 +542,24 @@ def validate_sentence_graph(sentence, node_dict, args):
                             testid = 'unknown-node-id'
                             testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                    parent['relations'][-1]['type'] = 'node'
+                    parent['relations'][-1]['value'] = variable
                     pline = remove_leading_whitespace(variable_re.sub('', pline, 1))
                 elif atom_re.match(pline):
                     match = atom_re.match(pline)
                     atom = match.group(1)
+                    parent['relations'][-1]['type'] = 'atom'
+                    parent['relations'][-1]['value'] = atom
                     pline = remove_leading_whitespace(match.group(2)+atom_re.sub('', pline, 1))
                 # Integer numbers would be consumed as atoms. This is here because of decimal numbers.
                 elif number_re.match(pline):
                     match = number_re.match(pline)
                     number = match.group(1)
+                    parent['relations'][-1]['type'] = 'atom'
+                    parent['relations'][-1]['value'] = number
                     pline = remove_leading_whitespace(match.group(2)+number_re.sub('', pline, 1))
                 else:
+                    parent['relations'][-1]['type'] = 'node'
                     expecting_node_definition = True
             elif pline.startswith(')'):
                 if expecting_node_definition:
@@ -553,9 +601,12 @@ def validate_sentence_graph(sentence, node_dict, args):
                     testmessage = "The node id (variable) '%s' is unknown. No such node is defined in this sentence." % r['variable']
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
-tokrng_re = re.compile(r"^0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
-
 def validate_alignment(sentence, node_dict, args):
+    """
+    Verifies the third annotation block of a sentence: the alignment of the
+    concept nodes from the sentence level graph in the second block to the
+    tokens listed in the first block.
+    """
     testlevel = 2
     testclass = 'Alignment'
     # Does the comment confirm that we are processing the concept-token alignment?
@@ -635,11 +686,10 @@ def validate_alignment(sentence, node_dict, args):
                 testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
                 warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
-svariable_re = re.compile(r"^s[0-9]+s0")
-dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
-constant_re = re.compile(r"^[a-z]+(?:-[a-z]+)*") ###!!! document-creation-time|author|root|null-conceiver; valid constants should be tested on level 3
-
 def validate_document_level(sentence, node_dict, args):
+    """
+    Verifies the fourth annotation block of a sentence: the document level graph.
+    """
     testlevel = 2
     testclass = 'Document'
     # Does the comment confirm that we are processing the document level annotation?
