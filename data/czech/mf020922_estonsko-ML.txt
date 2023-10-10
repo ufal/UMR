@@ -1,4 +1,4 @@
-# :: snt1 ESTONSKO :
+# :: snt1  ESTONSKO :
 # [en] Estonia :
 
 # sentence level graph:
@@ -20,7 +20,7 @@ s1n: 0-0
 
 
 ###########################################################################
-# :: snt2 Estonci volili parlament .
+# :: snt2  Estonci volili parlament .
 # [en] Estonians elected a parliament .
 
 # sentence level graph:
@@ -56,7 +56,7 @@ s2n2: 0-0
 
 
 ###########################################################################
-# :: snt3 	Tallin -
+# :: snt3  Tallin -
 # [en] Tallinn -
 
 # sentence level graph:
@@ -78,7 +78,7 @@ s3n: 0-0
 
 
 ###########################################################################
-# :: snt4 	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+# :: snt4  V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
 # [en] In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Vlast bloc, whose presidential candidate was Lennart Meri, won the most votes.
 
 # sentence level graph:
@@ -149,7 +149,7 @@ S4p2: 10-10
 
 
 ###########################################################################
-# :: snt5 Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+# :: snt5  Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
 # [en] Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the Vlast bloc, which represents 28 parliamentary mandates in the new parliament.
 
 # sentence level graph:
@@ -218,7 +218,7 @@ s5n: 0-0
 
 
 ###########################################################################
-# :: snt6 Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+# :: snt6  Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
 # [en] In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic, Arnold Rüütel.
 
 # sentence level graph:
