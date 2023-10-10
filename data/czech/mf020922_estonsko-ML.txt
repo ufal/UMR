@@ -1,63 +1,33 @@
-# mf920922_133 ############################################################
-
-###########################################################################
-
-# :: snt1 	ESTONSKO :
+# :: snt1 ESTONSKO :
 # [en] Estonia :
 
 # sentence level graph:
 (s1p / publication-91
-    :place (s1s / state
+    :place (s1c / country
         :wiki "Q191"
-        :name (s1n / name :op1 "Estonsko")
-        )
-)
+        :name (s1n / name :op1 "Estonsko")))
 
 # alignment:
 s1p: 0-0
-s1s: 1-1
+s1c: 1-1
 s1n: 0-0
 
 # document level annotation:
 (s1s0 / sentence
     :temporal ((document-creation-time :before s1p))
     :modal ((root :modal author)
-            (author :full-affirmative s1p))
-)
-
-# Comments/Questions:
-# Similar type as  english_umr-0001.txt (snt2) - annotated with the abstract predicate "publication-91" as a root
-#       with unclear role structure :-(( :ARG3 (s2t / thing) in this sentence but :ARG1 in snt1
-#       --> WE NEED a file with abstract predicates
-# https://amr.isi.edu/doc/amr-dict.html#publication-91
-#    :ARG0 author(s)
-#    :ARG1 title
-#    :ARG2 abstract
-#    :ARG3 full text
-#    :ARG4 venue (journal, conference)
-#    :ARG5 volume
-#    :ARG6 issue
-#    :ARG7 pages
-#    :ARG8 ID(s), e.g. PubMed
-#    :ARG9 editor(s)
-# NE Estonsko ... in english_umr-0001.txt (snt2), Philippines annotated as country  - what is a difference between state and country
-#       (both under the geo-political-entity EN class, no definition)?
-#       "state" seems more appropriate here
-# Alignment ... why s1n identifier (labeling the proper name Estonsko) is not aligned with the appropriate position in the sentence?
-#       (based on english_umr-0001.txt (snt2), only its parent identifying the NE is alligned with the word)
-# No aspect, modstr annototion for similar sentence english_umr-0001.txt (snt2) rooted with the abstract predicate!!!
+            (author :full-affirmative s1p)))
 
 
 ###########################################################################
-
-# :: snt2 	Estonci volili parlament .
+# :: snt2 Estonci volili parlament .
 # [en] Estonians elected a parliament .
 
 # sentence level graph:
 (s2p / publication-91
     :ARG1 (s2v / volit-001
         :ARG0 (s2p2 / person
-            :mod (s2s / state
+            :mod (s2c / country
                   :wiki "Q191"
                   :name (s2n / name :op1 "Estonsko"))
             :ref-number plural)
@@ -65,46 +35,27 @@ s1n: 0-0
             :wiki "Q217799 "
             :name (s2n2 /name :op1 "Riigikogu"))
     :aspect process	
-    :modstr FullAff	
-    )
-)
+    :modstr FullAff))
 
 # alignment:
-s2p 0-0
-s2v 2-2
-s2s 1-1
-s2s 0-0
-s2n 0-0
-s2g 3-3
-s2n2 0-0
+s2p: 0-0
+s2v: 2-2
+s2p2: 1-1
+s2c: 0-0
+s2n: 0-0
+s2g: 3-3
+s2n2: 0-0
 
 # document level annotation:
 (s2s0/ sentence
     :temporal((document-creation-time :before s2v))	
     :modal ((root :modal author)
             (author :full-affirmative s2v))
-    :coref ((s1s :same-entity s2s)
-             s1p :same-entity s2p)
-)
+    :coref ((s1c :same-entity s2c)
+             s1p :same-entity s2p))
 
-
-# Comments/Questions:
-# Abstract predicate "publication-91" as a root (s2p) ... based on snt1 from english_umr-0001.txt (BUT compare the roles structure in snt2)
-#       (and add :modal and :temporal for accordingly s2p)
-# volit … v-w7686f1 = volit-001 ... SDC mapping: ACT(1)->ARG0, PAT(4;↓c)->ARG1, ?ORIG(z+2;mezi+7)->ARG2
-# Estonci ... annotation based on internal guidelines for nationality, see Entities
-# parlament ... should we infer that the sentence is about "Riigikogu (= Estonian parliament)"
-#               OR just annotate is as general "parliament", :wiki "Q35749" ?
-# aspect ... "process" subsumes "atelic process" (process that does not reach a result state) and "perfective" (process that comes to an end)
-#           we know that the elections already ended (performance?) but the imperfective verb in past tense indicates an ongoing process;
-#           based just on the aspect info, we can choose also "imperfective" (ambiguous between "state" and "atelic process")
-#           - but we know that we have process here
-# modstr ... epistemic strength (=degree of confidence/certainty)
-#           = an author/conceiver's certainty about the occurrence of the event in the real world
-#           (or certainty about another conceiver’s mental content
 
 ###########################################################################
-
 # :: snt3 	Tallin -
 # [en] Tallinn -
 
@@ -112,8 +63,7 @@ s2n2 0-0
 (s3p / publication-91
     :place (s3c / city
         :wiki "Q1770"
-        :name (s3n / name :op1 "Tallin"))
-)
+        :name (s3n / name :op1 "Tallin")))
 
 # alignment:
 s3p: 0-0
@@ -124,45 +74,38 @@ s3n: 0-0
 (s3s0/ sentence
     :temporal((document-creation-time :before s1p))	
     :modal ((root :modal author)
-            (author :full-affirmative s3p))
-)
-
-# Comments/Questions:
-# Abstract predicate "publication-91" as a root, ... based on snt1 from english_umr-0001.txt BUT there is :ARG3 (s2t / thing) ...Why???
-# (author :full-affirmative s2p)
-# NE Tallin ... in english_umr-0001.txt (snt2), the Tacloban city (wikipedia) is annotated as "human-settlement" (no such EN type in the Guidelines, https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-2-named-entities)
+            (author :full-affirmative s3p)))
 
 
 ###########################################################################
-
 # :: snt4 	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
 # [en] In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Vlast bloc, whose presidential candidate was Lennart Meri, won the most votes.
 
-
 # sentence level graph:
 (s4z / získat-001
-    :ARG0 (s4b / blok   #blok Vlast ... why not NE  political_organization?
+    :ARG0 (s4b / blok
             :wiki "Q163347"
-            :name (s4n / name :op1 "Vlast")  # also Isamaa / Pro Patria and Res Publica Union / ... (wikidata - no Czech equivalent)
-                :mod (s4h4 / have-role-91
+            :name (s4n / name :op1 "Vlast")
+                :mod (s4h3 / have-role-91
                     :ARG1 (s4p3 / person
                         :wiki "Q153149"
                         :name (s4n4 / name :op1 "Lennart" :op2 "Meri"))
                     :ARG3 (s4k / kandidát
-                        :part s4n  #How to indicate that the candidate is nominated by Vlast - simple reentrance of the variable?
+                        :part s4n
                         :mod (s4p4 / prezident))))  #as in UMR example 1(4)
     :ARG1 (s4h / hlas
             :ARG1-of (s4h2 / have-quant-91
                 :ARG3 (s4m / most)
-                :ARG5 (s4h3 / hlas)    # ??"hlas" repeated according to AMR example "He sold the most cars of his competitors."
+                :ARG5 (s4h
+                        ARG1-of (s7z))
             :ref-number plural))
     :temporal (s4v / volby
-                :wiki "Q40231"  #link to wikidata - or wiki just for NE? alternative: relate to volit-001
+                :wiki "Q40231"
                 :temporal (s4d / date-entity
                     :weekday (s4n2 / neděle
                     :wiki "Q132"))
                 :mod (s4p / parlamentní)
-                :place (s4s / state
+                :place (s4c / country
                     :wiki "Q191"
                     :name (s4n3 / name :op1 "Estonsko")))
     :source (s4v2 / výsledek
@@ -170,29 +113,43 @@ s3n: 0-0
             :temporal (s4v3 / včerejší)
             :mod (s4p2 / předběžný))
     :aspect perfective	
-    :modstr FullAff	
-)
+    :modstr FullAff	)
 
 # alignment:
+s4z: 7-7
+s4b: 14-15
+s4n: 0-0
+s4h3: 0-0
+s4p3: 21-22
+s4n4: 0-0
+s4k: 19-19
+s4p4: 18-18
+s4h: 13-13
+s4h2: 0-0
+s4m: 12-12
+s4v: 4-4
+s4d: 2-2
+S4n2: 0-0
+S4p: 3-3
+S4c: 6-6
+S4n3: 0-0
+S4v2: 11-11
+S4v3: 9-9
+S4p2: 10-10
 
 # document level annotation:
 (s4s0/ sentence
-    :temporal(())	
+    :temporal((document-creation-time :before s4z)
+              (s4z :overlaps s4v)
+               s4v :before s4h3)	
     :modal ((root :modal author)
-            ())
-    :coref (())
-)
+            (author :full-affirmative s4v)
+            (author :full-affirmative s4h3))
+    :coref ((s4s :same-entity s1c)))
 
-# Comments/Questions:
-# predicate rolesets:
-#    získat-001 = v-w9501f12_ZU ... SSC mapping: ACT(1)->ARG0, PAT(4)->ARG1, ?ORIG(z+2;na+6;od+2)->ARG2
-#    have-role-91
-#    have-quant-91
-# questions concerning NEs ... see above
 
 ###########################################################################
-
-# :: snt5 	Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+# :: snt5 Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
 # [en] Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the Vlast bloc, which represents 28 parliamentary mandates in the new parliament.
 
 # sentence level graph:
@@ -201,7 +158,7 @@ s3n: 0-0
                :ARG0-of (s5v / volit-001)
                      :quant (s5p2 / percentage-entity
                      :value (s5a / asi :op1 20.5))
-               :source (s5p :quant 457319
+               :source (s5q :quant 457319
                             :ARG1-of (s5i / identity-91
                                 :ARG2 (s5p3 / počet-001
                                           :ARG1 (s5p))
@@ -209,107 +166,108 @@ s3n: 0-0
                             :mod (s5p
                                 :ARG0-of (s5z / zúčastnit-se-001
                                 :ARG2 (s5v2 / volby)
-                                :aspect perfective    #zúčastnit-se-pf (process that comes to an end)
-                                :modstr FullAff
-                                )))
+                                :aspect perfective
+                                :modstr FullAff)))
                :ARG1-of (s5p4 / představovat-003
                             :ARG2 (s5m / mandát
                                     :quant 28
                                     :mod (s5p5 / poslanecký)
                                     :location (s5p6 / parlament
                                         :mod (s5n2 / nový)))
-                            :aspect state    #představovat-impf
+                            :aspect state
                             :modstr FullAff))
     :ARG1 (s5b / blok
             :wiki "Q163347"
-            :name (s5n / name :op1 "Vlast")     # also Isamaa / Pro Patria and Res Publica Union / ... (wikidata - no Czech equivalent)
-           )
-    :aspect process    #hlasovat-impf (process that comes to an end)
-    :modstr FullAff
-)
+            :name (s5n / name :op1 "Vlast"))
+    :aspect process
+    :modstr FullAff)
 
-# Comments/Questions:
-# predicate rolesets:
-#   hlasovat-003 = hlasovat (v-w1053f1) - substituted with v-w1053f5_ZU ... default mapping: ACT(1)->ARG0, ?PAT(pro+4;proti+3;za+4)->ARG1, free modifications: DIR1->source
-#   volit-001 = volit (v-w7686f1) ... SSC mapping: ACT(1)->ARG0, PAT(4,c)->ARG1/133, ?ORIG(z+2;mezi+7)->ARG2
-#   zúčastnit-se-001 = zúčastnit se (v-w9930f1) ... SSC mapping: ACT(1)->ARG0, PAT(2,na+6)->ARG2 (alternative: ACT->ARG1, PAT->ARG1)
-#   představovat-003 =	představovat (v-w4766f1) ... SSC mapping: ACT(1;.f;↓že)->ARG1, PAT(4;.f;↓že;↓aby)->ARG2 (alternative: ACT->ARG2(ARG0), PAT->ARG0,ARG1)
-# Percentage (asi 20.5 procenta (approx. 20.5) ... based on 3-2-2-5 (1c) 30 percent
-#                                                  and on 3-1-4 (1) The school has approximately 570 pupils.
-# How to annotate apposition? AMR: "When faced with an appositive, AMR calmly inserts facts into slots"
-#           exemplified on "Elsevier N.V. , the Dutch publishing group"
-#                                       with "group" being modified by
-#                                                             :wiki ("Reed_Elsevier#Elsevier_NV")
-#                                                             :name (e / name :op1 "Elsevier" :op2 "N.V.")
-#                                                             :mod (c / country :wiki "Netherlands" :name (h / name :op1 "Netherlands"))
-#                                                             :ARG0-of (p2 / publish-01))
-# Parlament ... OR as a NE??? s2g / government-organization
-#            :wiki "Q217799 "
-#            :name (s2n2 /name :op1 "Riigikogu")
-# blok Vlast ... why not NE  political_organization?
+# alignment:
+s5h: 12-12
+s5p: 0-0
+s5v: 5-5
+s5p2: 17-18
+s5a: 16-16
+s5q: 4-4
+s5i: 0-0
+s5p3: 3-3
+s5c: 2-2
+s5z: 8-8 10-10
+s5v2: 9-9
+s5p4: 21-21
+s5m: 22-22 24-24
+s5p5: 23-23
+s5p6: 27-27
+s5n2: 26-26
+s5b: 14-15
+s5n: 0-0
+
+# document level annotation:
+(s5s0/ sentence
+    :temporal((s4v :overlaps s5z)
+              (s5z :overlaps s5h)
+              (s5z :overlaps s5p4))
+    :modal ((root :modal author)
+            (author :full-affirmative s5z)
+            (author :full-affirmative s5h)
+            (author :full-affirmative s5p4))
+    :coref ((s2p2 :subset-of  s5v)
+            (s2v :same-event s5v2)
+            (s4b :same-entity  s5b)
+            (s2g :same-entity s5p6)))
+
 
 ###########################################################################
-
-# :: snt6 	Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+# :: snt6 Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
 # [en] In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic, Arnold Rüütel.
-
-###########################################################################
 
 # sentence level graph:
 (s6h / have-location-91
-     :ARG1 (s6b / blok   # why not NE  political_organization?       #theme, blok
-            :wiki "xxx"  #(not found )
-            :name (s6n / name :op1 "Spolehlivý" :op2 "dům")          #Spolehlivý dům
+     :ARG1 (s6b / blok
+            :wiki "xxx"
+            :name (s6n / name :op1 "Spolehlivý" :op2 "dům")
             :poss (s6p / person :wiki "Q194000"
-                    :name (s6n2 / name :op1 "Arnold" :op2 "Rüütel")  #Arnolda Rüütela
-                    :ARG1-of (s6p2 / představovat-003                #dosavadního nejvyššího představitele republiky
-                         :ARG2 (s6s / state                          #OR just "republika" - either with or without wikilink ???
+                    :name (s6n2 / name :op1 "Arnold" :op2 "Rüütel")
+                    :ARG1-of (s6p2 / představovat-003
+                         :ARG2 (s6c / country
                                       :wiki "Q191")
                                       :name (s1n / name :op1 "Estonsko")
                          :temporal (s6d dosavadní)
-                         :ARG1-of (s6h / have-degree-91              #nejvyšší (představitel)
+                         :ARG1-of (s6h2 / have-degree-91
                                       :ARG2 (s6v / vysoký
                                       :ARG1  s6p)
-                                      :ARG3 (m / most))
-           )         )       )
-     :ARG2 (s6m / místo
-            :ord (s6o/ ordinal-entity  :value 2) )                   #location, na druhém místě
-     :manner (s6h / hlas                                             # s 13.9 procenty hlasů  ... ACMP v PDT (podle formy)
-            :quant (s5p / percentage-entity :value 13.9))
-     :manner (s5m / mandát :quant 18)                                # (18 mandátů)
+                                      :ARG3 (s6m / most)))))
+     :ARG2 (s6m2 / místo
+            :ord (s6o/ ordinal-entity  :value 2))
+     :manner (s6h3 / hlas
+            :quant (s6p3 / percentage-entity :value 13.9))
+     :manner (s7m3 / mandát :quant 18)
      :temporal (s6z / zatím)
      :aspect state
-     :modstr FullAff
-)
+     :modstr FullAff)
 
+# alignment:
+s6h: 12-12
+s6b: 14-16
+s6n: 0-0
+s6p: 21-22
+s6n2: 0-0
+s6p2: 19-19
+s6c: 20-20
+s6d: 17-17
+s6h2: 0-0
+s6v: 18-18
+s6m: 0-0
+s6m2: 3-3
+s6o: 2-2
+s6h3: 7-7
+s6p3: 5-6
+s7m3: 9-10
+s6z: 13-13
 
-###########################################################################
-
-
-# Comments/Questions:
-# have-location-91 ... only primary meaning (be/appear/be located at some place) exemplified in UMR Guidelines, as 'The book is on the table.'
-#   Arapaho: no example :-(
-#   Chinese: no glosses, no translation
-#   English: no example :-(
-#   Kukama: only primary meaning
-#   Navajo: have-location-91 used also in methonymic/metaphoric meaning, e.g.
-#       and among these were some women.
-#       One of these women ... = women  one                          among
-#       So they began to think of the matter with bitterness. = "they become bitter inside of them"
-#       Today we had been placed among children who were to be taken off to school.
-#   Sanapana: seems like only primary meaning (only Spanish glosses :-(
-# How to annotate parenthesis?
-# predicate  představovat-003 =	představovat (v-w4766f1) ... SSC mapping: ACT(1;.f;↓že)->ARG1, PAT(4;.f;↓že;↓aby)->ARG2 (alternative: ACT->ARG2(ARG0), PAT->ARG0,ARG1)
-# představitel republiky ... we know that they mean Estonia ... how to annotate - using wikidata? what name?
-# dosavadní ... :mpd or :temporal
-# based on "so-far" annotation in english_umr-0001, snt19
-
-
-
-# source file
-snt1 ESTONSKO :
-snt2 Estonci volili parlament .
-snt3 Tallin -
-snt4 V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
-snt5 Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
-snt6 Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+# document level annotation:
+(s6s0/ sentence
+    :temporal((s4v :overlaps s6h))	
+    :modal ((root :modal author)
+            (author :full-affirmative s6h))
+    :coref ((s2c :same-entity s6c)))
