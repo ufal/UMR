@@ -1,4 +1,29 @@
-# TODO COMPLEMENT
+## Open questions
+#### 1. Relative clauses with state verbs: 
+We do not want to distinguish between **action and state verbs** (due to an unclear boundary in Czech, **_CONFLICT with UMR guidelines!!_**). However, as a consequence, **relative clauses** both with action and state verbs will be considered as eventive concept (and gets aspect = state (probably)) ... Is OK?  
+
+UMR does not explicitly states what to do with relative clauses with state verbs - the only examples concern verbonominal predicates with adjectives, which are conceived as non-events.
+
+"Anything that is predicated is identified as an event, even if it is not a process."  
+"States in modification, as in _The tall man..._ and _The man, who is tall..._, and states in reference, as in _His happiness..._, are not identified as events."
+
+Do we want to have different annotation in main clauses and in relative clauses?
+
+
+#### 2. Verbonominal predicates
+What to do with **verbonominal predicates** (esp. those with predicative adjectives)? OK in main clauses - but do we want to have different annotation in main clauses and in relative clauses?
+
+
+#### 3. Deverbal nouns other than _ní/-tí_:  
+JH: Be conservative (at least for the time being)!  
+Discussion on 31.7.2023, see the 31.7.2023 meeting minutes: “We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) or deverbal adjective (see below) … YES – morphological criterion!!!” 
+
+#### 4. Deverbal adjectives other than active/passive participial adjectives:  
+
+??? Derivations of adjectives from the l-participle are less productive. Therefore, spadlý “fallen”, vzrostlý “full-grown”, bývalý “former” etc. are not events.
+
+??? Other deverbal adjectives are also not events: kulhavý “limping”, učenlivý “quick to learn”, představitelný “imaginable”, obstojný “passable”.
+
 
 ## Eventive concepts
 
@@ -7,31 +32,6 @@ UMR annotation – their identification is **important** for
 - annotation of participant roles, as well as for
 - annotation of aspect and modality.
 
-
-
-<!-- DZ: The guidelines are not clear enough about the consequences for the
-annotation when a concept is or is not treated as an event. We can speculate
-that the intended difference is that events have `:ARGX` roles and non-events
-do not have them. At least it seems to indirectly follow from some parts of
-the guidelines. The guidelines also seem to suggest that the part of the
-lexicon that has frame files (i.e., the valency lexicon, defining the `:ARGX`
-participants for each predicate) contains concepts that are always events
-(eventive concepts), regardless the information packaging (see below);
-furthermore, I suspect that the UMR crowd assumes that eventive concepts are
-recognizable by a numeric suffix (e.g. `-01`), although no rule makes this
-assumption explicit, and one may need the suffix to disambiguate other
-concepts. In combination with the more clearly phrased parts of the
-guidelines this means that the valency lexicon contains only processes.
-States and entities, which may constitute events sometimes but not always,
-will be annotated with the help of abstract eventive concepts whenever they
-represent events. Even here the guidelines are not consistent because they
-say that two-place statives, such as English _love_, will be annotated
-without the abstract eventive concepts, that is, they have to be included in
-the valency lexicon. It makes the impression that after the nice typological
-introduction in [Part
-3-1-1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-eventive-concepts)
-they slipped back to what is convenient for annotation of English,
-distinguishing verbs from adjectives (and not processes from states). -->
 
 According to the [UMR Guidelines (Part
 3-1-1.)](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-eventive-concepts),
@@ -82,68 +82,65 @@ Putting it differently:
 > - **Processes** packed as **predication** are events (esp. finite action verbs as predicates of main clauses)  
 > - **Processes** packed as **referents or modifiers** should also be identified as events, esp.:
 >   - **event nominals** (e.g., _storm, conference, ..._).
->   - **complements, infinitives, gerunds** with action verbs (packed as reference, e.g., subject/object clauses, adverbial clauses, non-finite complement)
->   - **relative clauses** with action verbs (packed as modification)
->   - **participles** with action verbs (packed as modification)
->   - **secondary predication** with action verbs (packed as modification)  
+>   - **complements, infinitives, gerunds** with **action verbs** (packed as reference, e.g., subject/object clauses, adverbial clauses, non-finite complement)
+>   - **relative clauses** with **action verbs** (packed as modification)
+>   - **participles** with **action verbs** (packed as modification)
+>   - **secondary predication** with **action verbs** (packed as modification)  
 >(based on the UMR rule and on examples provided in the Guidelines)
-
-
-> **RULE 1b ... Eventive concpets:**   
-> **Entities and states** packed as **predication** are events, esp.
-> - **predicate nominals/adjectives, complements** - **_What exactly are meant_**??  
-> 
+> - **Entities and states** packed as **predication** are events, esp.
+>   - **predicate nominals/adjectives, complements** - **_What exactly are meant_**??;   
 > In particular:
-> - **stative verbs** as predicates of main clauses (e.g., _love_),
-> - **so called non-verbal clauses** (expressing possession, location, property/object predication, equational) 
+>     - **stative verbs** as predicates (e.g., _love_),
+>     - **so called non-verbal clauses** (expressing possession, location, property/object predication, equational)
 >(UMR rule)
 
-It implies that states in modification (_The tall man..._; _The man, who is tall..._) and states in reference (_His happiness..._) are not events.
+It implies that states in modification, e.g., as an attribute or in a relative clause (_The tall man..._; _The man, who is tall..._), and states in reference (_His happiness..._) are not events.
 
 Similarly, entities in modification (_The man, who is a doctor..._) and entities in reference (_The doctor_), are not identified as events.
 
+---
 
-***
+## Eventive concepts – rules applied in annotation of Czech
 
-### Identifying eventive concepts – rules applied in annotation of Czech
-
-#### Eventive concepts
+As there is no clear boundary between action and state verbs in Czech, we want to avoid distinguishing between these two classes – both types should be anchored in SynSemClass (PDT-Vallex), regardless of their information packaging (predication, modification, or reference); see below.   
+**_CONFLICT with UMR guidelines!!_**
 
 
 > **RULE 2:** (internal criterion for Czech)  
-> Whenever a **concept** 
+> Whenever a **"verb-based" concept** 
 > 1) denotes an **activity or a state** (in a broad sense) and  
 > 2) **has a roleset**,  
 > 
-> then it should be represented as an **event** and anchor in the (valency) lexicon (with its roleset)  
+> then it should be represented as an **event** and anchored in the (valency) lexicon (with its roleset(s)); it should get aspectual annotation 
 > 
-> ... _**CONFLICT with UMR guidelines for stative verbs** (if not packed as predication)**!!**_
+> ... _**CONFLICT with UMR guidelines for stative verbs** (not packed as predication)**!!**_  
 
 JH: ***Be conservative (at least for the time being)!***  
-JH: Discussion on 31.7.2023, see the [31.7.2023 meeting
+Discussion on 31.7.2023, see the [31.7.2023 meeting
 minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings):
 “We do not want to add a big number of nouns / adjectives to the lexicon OR
 represent them as verbs, unless we have a clear case of a deverbal noun
 (ending with -ní/-tí) or deverbal adjective (see below) ... YES – morphological
 criterion!!!” ... **_(CONFLICT with UMR guidelines!!)_**   
+
 However, those deverbal nouns/adjectives that are already covered in PDT-Vallex and clearly describe a process should be considered as events. 
 
 Thus:
 
 * _dělat_ “do” is an event because it is a verb, it denotes a process and it has a frame file.
 * _mýt_ “wash” is an event because it is a verb, it denotes a process and it has a frame file.
-* _milovat_ “love” is an event because it is a verb and it has a frame file; although it denotes a state, we will treat it always as an event, regardless information packaging **_(CONFLICT with UMR guidelines!!)_**  
+* _milovat_ “love” is an event because it is a verb and it has a frame file; although it denotes a state, we will treat it always as an event, regardless information packaging   
 ---
-* _dělání_ “doing”, _mytí_ “washing”, _milování_ “loving, making love” are events if they denote an activity or state  because they are deverbal nouns, derived using the most productive _-ní/-tí_ suffixes;  
+* _dělání_ “doing”, _mytí_ “washing”, _milování_ “loving, making love” are events if they denote an activity or state  because they are deverbal nouns, derived using the most productive _-ní/-tí_ suffixes (if describing a process);  
   * BUT: _mytí_ (lit. washing) as "a small hygienic bag", šití (lit. sewing) as "sewing kit" are (deverbal) nouns denoting things (in a strict sense) and as such, they should be annotated as entities ?
 * _prodej_ “sale”  is a deverbal noun derived (from _prodávat_ “sell”) in a less productive way;  it has an entry and thus a roleset in PDT-Vallex - ideally, it should it be annotated as an event (if describing a process), similarly like the much less frequent _prodávání_ “selling”;  
 * _válka_ “war” is a noun not derived from verb with the _-ní/-tí_ suffixes, despite denoting processes; it has two entries (and thus rolesets) in PDT-Vallex, thus it should it be annotated as an event (if describing a process)  
-* _koncert_ “concert” is a noun not derived from verb with the _-ní/-tí_ suffixes, despite it denotes a process. It is not covered by PDT-Vallex and thus it is not annotated as an event **_(CONFLICT with UMR guidelines!!)_**
+* _koncert_ “concert” is a noun not derived from verb with the _-ní/-tí_ suffixes, despite it denotes a process. It is not covered by PDT-Vallex and thus it is not annotated as an event **.
 ---
 * _myjící_ “washing” is an event because it is an active participial adjective derived from the present converb.  
-* _cestující_ "passenger" (lit. the travelling) - a conversion, it denotes a person so it is not an event); it should be annotated as `ARG0-of` of the verb _cestovat_ (i.e., the same way es e.g., _teacher_, ex. 3-2-1-1-1 (1b))
+* _cestující_ "passenger" (lit. the travelling) - a conversion, it denotes a person so it is not an event; still, it should be annotated as `ARG0-of` of the verb _cestovat_ (i.e., the same way es e.g., _teacher_, ex. 3-2-1-1-1 (1b))
 
-* ??? _mycí_ “to be used for washing” is not an event because it is a different type of derivation **(CONFLICT with UMR guidelines???).**
+* ??? _mycí_ “to be used for washing” is not an event because it is a different type of derivation.
   * ??? Analogously, _dělající, milující, skládající, plovoucí, plnící_ are events while _skládací, plovací, plnicí_ are not.
 * _udělavší_ “having done” is an event because it is an active participial adjective derived from the past converb.
 * _udělaný_ “done” is an event because it is a passive participial adjective. Analogously, _mytý, umytý, milovaný_ are events.
@@ -160,51 +157,34 @@ Examples:
     ... both processes in predication --> 2 events (OK both rules)
 * [cs] _**Chtěla** **jít** do školy._  
   [en] _She **wanted** to **go** to school._ (from the UMR Guidelines)  
-    ... state in predication (_want, chtít_) PLUS process in ?modification (_go, jít_)
+    ... state in predication (_want, chtít_) PLUS process (_go, jít_)
     --> 2 events (UMR rule), 1 event in PDT ... see [One or two concepts?](https://github.com/ufal/UMR/blob/main/doc/one-or-two-concepts_modal-phase-verbs.md)  
-    --> OK, annotate it as a single event in Czech (allowed by UMR guidelines)
-  * **BUT:** [cs] _**Chtěla,** abych **šel** do školy._  
+    --> **BUT:** annotated as a single event in Czech (allowed by UMR guidelines)  
+  Compare also:  
+  * [cs] _**Chtěla,** abych **šel** do školy._  
   [en] _She **wanted** me to **go** to school._  
     ... state in predication (_want, chtít_) PLUS process in reference/modification (_go, jít_)
     --> 2 events (OK both rules)
 
-#### Annotation of (Lexical) Verbs -- action verbs vs. state verbs
+### Annotation of (Lexical) Verbs -- action verbs vs. state verbs
 
 As there is no clear boundary between action and state verbs in Czech, we want to avoid distinguishing between these two classes -- both types should be anchored in SynSemClass (PDT-Vallex), regardless of their information packaging (predication, modification, or reference).
 
-<!-- ##### Action and state verbs
 
-DZ: Note that the [English state verbs](https://www.ecenglish.com/learnenglish/lessons/what-are-state-verbs)
-are recognized by tests that are grammatical rather than semantic (you cannot use the progressive tense).
-Other languages may not have similar tests, or the tests may result in a different set of verbs.
-For example, [in Czech](https://www.czechency.org/slovnik/SLOVESO), examples of state verbs _(stavová slovesa)_ include _stát_ "stand", _mít_ "have", _patřit_ "belong";
-_to stand_ would perhaps not be grammatically a state verb in English, but semantically it is a state both in Czech and in English.
-
-There is a gray zone with verbs such as _sleep_ or _sit_.
-They may not be "state verbs" according to the English grammar (it is grammatical to say _I am sleeping_ or _I am sitting on the couch_) but semantically they seem to be states rather than processes.
-Sitting generally does not involve any activity or any changes; the only possible change is the end of this state by changing
-to another state (_standing, lying, going..._)
-_Sleeping_ might be different, although also almost constant from the perspective of an observer.
-It may involve micro-sub-processes (_snoring, turning, dreaming_), and it may have a result at the end (compare it to _recharging battery_).
-So maybe _sleeping_ is a process, even if not a frantic one.
-
-ML: There is a simple Czech test for distinguishing state verbs (stavová slovesa) and action verbs (dějová / činnostní):
--  action verbs ... _Co dělám? Běžím._ "What am I doing? I'm running."
--  state/stative verbs ... _Co se děje se mnou? Mám dost peněz._ "What is happening to me? I have enough money."
-
-The test illustrates also borderline cases like _stát_, as you can ask both questions  _Co dělám? Co se děje se mnou? Stojím._ "What am I doing? What is happening to me? I'm standing."
-
-See also [SaS 17(4)](http://nase-rec.ujc.cas.cz/archiv.php?art=2685).
- -->
 
 > **RULE 2a:** (internal criterion for Czech verbs)
-> - **Verbs** denote **processes (action verbs) and states (state verbs)**. Both types should be annotated as events (regardless of their information packaging) and thus anchored in the lexicon (with their rolesets).
-> ... ***CONFLICT with UMR guidelines for state verbs!!***
-> - **Verbonominal predicates** (predicate nominals/adjectives) - nouns/adjectives in predication; the whole predicate as a single predication (thus a single event) (see below Rules 2b for nouns and 2c for adjectives).
-> - **Complex predicates** (= light verb constructions) should be identified as events (a single predication, thus a single event).
-> - **Secondary predication** (= doplněk) should be annotated as an event.
+> - **Verbs** denote **processes (action verbs) and states (state verbs)**. Both types should be annotated as events (regardless of their information packaging) and thus anchored in the lexicon (with their rolesets).  
+> ... _**CONFLICT with UMR guidelines for state verbs!!**_  
+> In particular:
+>   - **verbonominal predicates** (predicate nominals/adjectives = nouns/adjectives in predication) form a single unit with the copula verb (thus a single event) (see below Rules 2b for nouns and 2c for adjectives);
+>   - **complex predicates** (= light verb constructions) should be identified as events (a single predication, thus a single event);
+>   - **secondary predication** (= doplněk) should be annotated as an event;
+>   - **complement clauses** (e.g., subject/object clauses, adverbial clauses, non-finite complement) should be identified as events; 
+>   - **nominalizations, infinitives** should be identified as events;
+>   - **participles** with **action verbs** or state verbs should be annotated as events;
+>   - **??? relative clauses** ???
 
-##### Action and state verbs
+#### Action and state verbs
 
 Examples:
 
@@ -252,8 +232,8 @@ Examples:
   * **BUT:** [cs] _Kdo **není mazaný**, **nevyhraje**._  
   [en] _He who **is not cunning** **does not win**._  
   ... a variant of the previous example. Now we have a state (not process) in modification (hence not event according to the UMR Guidelines);  
-  BUT the subject clause with a verbonominal predicate (with `have-mod-91`), thus should be annotated using this predicate (non-verbal clause); see also Rule 2c for adjectives
-    -->  just 1 event (UMR rules) + a non-verbal clause
+  **BUT** it is a subject clause with a verbonominal predicate (with `have-mod-91`), thus should be annotated using this predicate (non-verbal clause); see also Rule 2c for adjectives
+    -->  just 1 event (UMR rules) + a non-verbal clause 
 
 
 * [cs] _Moje dítě **sedí** na lavičce._  
@@ -281,18 +261,15 @@ Examples:
   ... the converb is a non-finite adverbial clause, hence a state in predication (_sedět_ "sit"), hence an event.
   --> OK both rules
 
+#### Verbonominal predicates
 
-##### Complex predicates
+see below (Annotation of Nouns, Annotation of Adjectives)
 
-> - **Complex predicates** (= light verb constructions) should be identified as events (a single predication, thus a single event with single aspect annotation).
+#### Complex predicates = light verb constructions
 
-Example:
+see below (Annotation of Nouns, Annotation of Adjectives)
 
-* [en] _Where do you get this information from that Obama uses tax payer money to **do interviews and** bus **trips**?? (3-1-3-5 (1))  
- ... Guidelines: "In this case the UMR concept `interview-01` is created based on the eventive noun, while the verb is simply dropped. Note however the verb may contribute to the aspectual attribute of the concept." The same for the concept _trip_ anchored as `trip-03` -- `:aspect` Habitual in both cases.
-
-
-##### Secondary predication
+#### Secondary predication
 Examples:
 
 * [cs] ***Koupala se** v jezeře **nahá**.*
@@ -300,6 +277,27 @@ Examples:
   ... state in secondary predication (*nahý*, *naked*) is an event.
    --> OK 2 events by both rules
 
+#### Complement clauses
+
+*  [en] _Before she **went** to school, she **repaired** my bike._ (3-1-1-1 (1))  
+... both verb in the main (independent) clause (_repair_) and verb in the dependent clause (_go_) denote events
+
+#### Nominalizations, Infinitives
+
+TODO
+
+*  [en] _She **wanted** **to go** to school._  3-1-1-2 (1b)   
+...  both verb in the main (independent) clause (_want_) and infinite verb  (_go_) denote events .... BUT another solution for Czech (see modal verbs)
+
+The second training was cancelled yesterday.
+
+#### Participles
+
+TODO
+
+#### ??? relative clauses ???
+
+TODO
 
 ##### Note on causal relationships
 Causal relationship should be annotated as events if packaged as predication (and as non-events otherwise).
@@ -328,20 +326,22 @@ Some languages (e.g., Basque) have morphological causative:
  ... (DZ) I suppose that both in (a) and in (b) there is just one event (*gustatzen* "like"). It is a state but it is packaged as predication. Or should we decompose (b) to two events (causing and liking)?
 
 
-#### Annotation of nouns -- event nominals  vs. primary nouns
+### Annotation of nouns -- event nominals  vs. primary nouns
 
 > **RULE 2b:** (internal criterion for Czech nouns)
 > - **(Primary) nouns** typically denote entities (in reference), thus without a roleset.
 > - **Event nominals ending with _-ní/-tí_** should be represented as coresponding verbs (e.g., _přijíždění_ "arrival") if they denote a process (and thus they should get aspect annotation).  
 > - **Agentive nouns** (e.g., _učitel_"teacher", _řidič_ "driver"), even when  represented as ARG0-of the respective verb, are entities (persons).  
 > - **Other event nominals** (e.g., _příjezd_ "arrival", _jídlo_ "food") represent as entities (unless they are already covered by the valency lexicon).
-> ... _*CONFLICT with UMR guidelines!!**_
+> ... _**CONFLICT with UMR guidelines!!**_
+> - **Complex predicates** (= light verb constructions) - predicative nouns should be identified as events (a single predication, thus a single event);
 > - **Verbonominal predicates** (predicate nominals) - nouns in predication; the whole predicate as a single predication (thus a single event).
+
 
 **JH: Discussion on 31.7.2023**, see the [31.7.2023 meeting minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings):
 "We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) / deverbal adjective (??). ... YES - morphological criterion!!!"
 
-##### (Primary) nouns
+#### (Primary) nouns
 
 > - **(Primary) nouns** typically denote entities (in reference), thus without a roleset.
 Examples:
@@ -352,51 +352,14 @@ Examples:
   [en] _The **museum** will pay almost 2 million crowns for a new roof._
 ... the _muzeum_ "museum" as an entity and it probably refers (depending on the context) to a particular NE (no rolesets) 
 
-##### Event nominals ending with _-ní/-tí_**
+#### Event nominals ending with _-ní/-tí_
 
 > - **Event nominals ending with _-ní/-tí_** should be represented as coresponding verbs (e.g., _přijíždění_ "arrival") if they denote a process (and thus they should get aspect annotation). 
 
 Examples: see above
 
 
-
-##### Nouns in verbonominal predicates
-
-Entities (nouns) in predication are annotated as eventive concepts, these constructions are treated as an instance of the so-called non-verbal clauses with the abstract predicates (see alsa Rule 2b below).
-
-* [cs] _Je **vítěz/vítězem**!_  
-  [en] _She is **the winner**!_  
-* [en] _This young man is a shaman._ ? 
- ... the predicative nouns _vítěz_ "winner", _shaman_ with the `have-role-91` abstract predicate form a single event - so the aspect (value: state) should be annotated in such sentences.
-
-BUT: Event nominals that occur in predicate nominal constructions (as in the following example) ae not annotated as events (= they do not get aspect annotation in this phase, based on UMR example 3-3-1-1 (4))
-* [cs] _To bylo *zemětřesení*._  
-* [en] _It was *an earthquake*._ (UMR Guidelines, 3-3-1-1 (4))
-
-* [cs] _Petr je šťastným **otcem** dvojčat._  
-  [en] _Peter is the happy **father** of twins!_  
-
-BUT: Entities in other packaging than predication are not considered as events (thus do not get aspectual annotation). 
-* [en] _I *met* the happy father of twins._ (based on UMR example 3-2-1-3 (3a))  
- ... _meet_ as a single event with `aspect` value 'Performance'; _father_ is `ARG1-of` the predicate `have-rel-role-92` (no aspect), similarly as in 3-2-1-3 (3a): 
-
-
-```
-I met my father.
-(m/ meet-03
-	:ARG0 (p/ person
-		:ref-person 1st
-		:ref-number Singular)
-	:ARG1 (p2/ person
-		:ARG1-of (h/ have-rel-role-92
-			:ARG2 p
-			:ARG3 (f/ father)))
-	:aspect Performance
-	:modstr FullAff)
-```
-
-
-##### Agentive nouns
+#### Agentive nouns
 
 Agentive nouns like _teacher_, _driver_, _payer_ denote entities (persons) that conduct the respective process like _teaching_, _driving_, _paying_ , definitely not processes. They are annotated using  relation using the respective verb frameset (`teach-01`, `drive-01`, `pay-01` - even in contexts different than teaching, driving, paying (an intention of the speaker to use just these nouns)). This they do not get aspect annotation.  	
 
@@ -406,7 +369,7 @@ Agentive nouns like _teacher_, _driver_, _payer_ denote entities (persons) that 
 * [en] _... information that Obama uses tax **payer** money to do interviews and bus trips?_ 3-1-3-5 (1)  
 ... _tax payer_ is a person paying taxes, annotated as `:ARG0-of`of the predicate `pay-01`; as such, no aspect annotation is expected ... BUT it appears in the guidelines example 3-1-3-5 (1) _**CONFLICT???**_ 
 
-##### Entities as non-agentive participants
+#### Entities as non-agentive participants
 According to the guidelines, *driver* treated as an entity ([ex.](https://github.com/umr4nlp/umr-guidelines/blob/cbcb2555b36e99c7dc296f4fb3264136a31db953/guidelines.md?plain=1#L961-L974)).
 Similarly, *teacher* is an entity; in addition, it is annotated using `ARG0-of` teach-01 ([ex.](https://github.com/umr4nlp/umr-guidelines/blob/cbcb2555b36e99c7dc296f4fb3264136a31db953/guidelines.md?plain=1#L3339-L3341))
 even in mentions where there is nothing about teaching :-((
@@ -476,7 +439,7 @@ He gave the cat some wet food.
 	:modstr FullAff)
 ```
 
-##### Other event nominals
+#### Other event nominals
 
 > - **Other event nominals** (e.g., _příjezd_ "arrival", _jídlo_ "food") represent as entities (unless they are already covered by the valency lexicon).
 > ... _**CONFLICT with UMR guidelines!!**_
@@ -488,27 +451,71 @@ Examples:
     ... the `:ARG0` of which is an event nominal (_bouře_ "storm", in reference) indicating another process
     --> 2 events (the UMR rule)
     Czech: The eventive noun _bouře_ "storm" does not have a frame/roleset in PDT-Vallex so it shall be annotate as non-eventive concept
-    --> 1 event in Czech annotation _**CONFLICT with UMR guidelines!!**
+    --> 1 event in Czech annotation _
 
 * **Compare also to [3-2-1-1 (7g)](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-1-stage-0):**  
   [cs] _**Bouře** **poničila** elektrické vedení._
   [en] _The **storm** **damaged** the  power lines._ (3-2-1-1 (7g))  
     ... analysed as a single event (_damage_), with an non-eventive concept (_storm_) as a `:force` role (**???** not in PropBank for damage-01)
-    --> 1 event (both UMR for Eng and Czech) _**CONFLICT with UMR guidelines!!**_
+    --> 1 event (both UMR for Eng and Czech) 
 
 
 ŠZ: other examples of possible processes: *Christmas, wind, (financial) inflation*
 
 - **??** states in reference ... what to do with them? (sharpness https://www.wikidata.org/wiki/Q55433472 )
 
-##### Verbonominal predicates
+#### Complex predicates = light verb constructions
+
+> - **Complex predicates** (= light verb constructions) should be identified as events (a single predication, thus a single event with single aspect annotation).
+
+Example:
+
+* [en] _Where do you get this information from that Obama uses tax payer money to **do interviews and** bus **trips**?? (3-1-3-5 (1))  
+ ... Guidelines: "In this case the UMR concept `interview-01` is created based on the eventive noun, while the verb is simply dropped. Note however the verb may contribute to the aspectual attribute of the concept." The same for the concept _trip_ anchored as `trip-03` -- `:aspect` Habitual in both cases.
+
+
+#### Nouns in verbonominal predicates
 
 > - **Verbonominal predicates** (predicate nominals) - nouns in predication; the whole predicate as a single predication (thus a single event).
 
-Examples: see above
+Examples: 
+
+Entities (nouns) in predication are annotated as eventive concepts, these constructions are treated as an instance of the so-called non-verbal clauses with the abstract predicates (see alsa Rule 2b below).
+
+* [cs] _Je **vítěz/vítězem**!_  
+  [en] _She is **the winner**!_  
+* [en] _This young man is a shaman._ ? 
+ ... the predicative nouns _vítěz_ "winner", _shaman_ with the `have-role-91` abstract predicate form a single event - so the aspect (value: state) should be annotated in such sentences.
+
+BUT: Event nominals that occur in predicate nominal constructions (as in the following example) are not annotated as events (= they do not get aspect annotation in this phase, based on UMR example 3-3-1-1 (4))
+* [cs] _To bylo *zemětřesení*._  
+* [en] _It was *an earthquake*._ (UMR Guidelines, 3-3-1-1 (4))
+
+* [cs] _Petr je šťastným **otcem** dvojčat._  
+  [en] _Peter is the happy **father** of twins!_  
+
+BUT: Entities in other packaging than predication are not considered as events (thus do not get aspectual annotation). 
+* [en] _I *met* the happy father of twins._ (based on UMR example 3-2-1-3 (3a))  
+ ... _meet_ as a single event with `aspect` value 'Performance'; _father_ is `ARG1-of` the predicate `have-rel-role-92` (no aspect), similarly as in 3-2-1-3 (3a): 
 
 
-#### Annotation of adjectives -- event nominals  vs. primary nouns
+```
+I met my father.
+(m/ meet-03
+	:ARG0 (p/ person
+		:ref-person 1st
+		:ref-number Singular)
+	:ARG1 (p2/ person
+		:ARG1-of (h/ have-rel-role-92
+			:ARG2 p
+			:ARG3 (f/ father)))
+	:aspect Performance
+	:modstr FullAff)
+```
+
+
+
+### TODO Annotation of adjectives -- event adjectives  vs. primary adjectives
 
 > **RULE 2c:** (internal criterion for Czech adjectives)
 > - **(Primary) adjectives** typically denote state (in modification), thus without a roleset (_chytrý_ "clever", _vysoký_ "tall").
@@ -521,7 +528,7 @@ Examples: see above
 **JH: Discussion on 31.7.2023**, see the [31.7.2023 meeting minutes](https://github.com/ufal/UMR/tree/main/doc/minutes-from-meetings):
 "We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) / deverbal adjective (??). ... YES - morphological criterion!!!"
 
-##### TODO (Primary) adjectives
+#### TODO (Primary) adjectives
 
 > - **(Primary) adjectives** typically denote state (in modification), thus without a roleset (_chytrý_ "clever", _vysoký_ "tall").
 
@@ -553,7 +560,7 @@ The doctor is tall.
 ```
 
 
-##### Deverbal adjectives (participles)
+#### Deverbal adjectives (participles)
 
 > - **Deverbal adjectives (participles)** should be mapped onto coresponding verbs as ARGx-of (e.g., _přijíždějící_ "arriving"))
 
@@ -567,9 +574,13 @@ Examples:
 ... the parties are in a real fight as a process, thus the word _válčit_ is an event.
  --> OK both rules
 
-##### TODO Other deverbal adjectives
+#### TODO Other deverbal adjectives
 
 > - **Other deverbal adjectives** ... ??? should be mapped onto coresponding verbs as ARGx-of ??? )
+
+??? Derivations of adjectives from the l-participle are less productive. Therefore, spadlý “fallen”, vzrostlý “full-grown”, bývalý “former” etc. are not events.
+
+??? Other deverbal adjectives are also not events: kulhavý “limping”, učenlivý “quick to learn”, představitelný “imaginable”, obstojný “passable”.
 
 ?????
 (e.g., _podobný_ "resembing" --> _podobat se_ "resembe" (based on the derivative morphology!)
@@ -590,11 +601,21 @@ Compare also the AMR guidelines, sect. [Adjectives that invoke predicates](https
 * [en] adjectives like *sad*, *white*, and *free* … as predicates if there is an implied event or proces
 ... NOT for Czech ??
 
-##### TODO - SLOUČIT Adjectives in verbonominal predicates**
+#### Adjectives in verbonominal predicates
 
 > - **Verbonominal predicates** (predicate adjectives) - adjectives in predication; the whole predicate as a single predication (thus a single event)
 
 States/properties (esp. adjectives) in predication are annotated as eventive concepts, such constructions are treated as an instance of the so-called non-verbal clauses with one of the abstract predicates (see alsa Rule 2c below).
+
+* [cs] _Ta kočka je moje._  
+  [en] _Tha cat is mine._  
+       ... state in predication (_moje_ "my") as a non-verbal clause 
+       --> 1 event (OK both rules)
+
+* [cs] _Moje dítě **sedí** na lavičce._  
+  [en] _My child **is sitting** on a bench._  
+       ... modification (_můj_ "my") PLUS state in predication (_sedět_ "sit")  
+       --> 1 event (OK both rules)
 
 * [cs] _Jirka **je** moc **mazaný**!_  
   [en] _Jirka **is** very **crafty**!_  
@@ -606,35 +627,24 @@ States/properties (esp. adjectives) in predication are annotated as eventive con
   ... _(být) mazaný_ "(be) cunning" is a state (not process) in modification (hence not event according to the UMR Guidelines) in the subject clause (with a verbonominal predicate `have-mod-91`), see also Rule 2c for adjectives, PLUS event predicate _vyhrát_ "win"
     -->  just 1 event (UMR rules) + a non-verbal clause
 
-* [cs] _Ta kočka je moje._  
-  [en] _Tha cat is mine._  
-       ... state in predication (_moje_ "my") as a non-verbal clause 
-       --> 1 event (OK both rules)
-
-* [cs] _Moje dítě **sedí** na lavičce._  
-  [en] _My child **is sitting** on a bench._  
-       ... modification (_můj_ "my") PLUS state in predication (_sedět_ "sit")  
-       --> 1 event (OK both rules)
-       
-
-
 * [cs] _Jirka **je** moc **mazaný**!_  
   [en] _Jirka **is** very **crafty**!_  
 ... _(být) mazaný_ "(be) crafty" is a state (not process) in predication (hence event according to the UMR Guidelines), should be annotated using the verbonominal predicate `have-mod-91`, see also Rule 2c for adjectives
     -->  just 1 event (UMR rules)
  
-BUT:
+**BUT:**
 
 * [cs] _**Překvapilo** mě, jak **chytrý byl**._  
   [en] _It **surprised** me how **smart** he **was**._  
-  ... subject clause is reference to a state (_chytrý_, "smart"), hence it is not an event; ???? COMPLEMENT CLAUSE as EVENT another ?state in predication (_překvapit_, "surprise");
+  ... subject clause is reference to a state (_chytrý_, "smart"), hence it is not an event; another ?state in predication (_překvapit_, "surprise");
   _být chytrý_ as a predication (verbonominal predicate, probably with *být-007* or its -91 analogy)
-  --> 1 events in Czech data
+  --> 1 events in Czech data _**Do we want to distinguishe between state and action in a dependent clause??<**_
 
   * [cs] *Jeho **chytrost** mě **překvapila**.*  
   [en] *His **smartness** **surprised** me.*  
   ... the subject is reference to a state in reference (deadjectival nouns _chytrý_, "smart"), hence it is not an event.; another ?state in predication (_překvapit_, "surprise"), thus event
    --> 1 event by both rules, OK
+
 
 * [it] _ambasciatore **itinerante**_ (en. *ambassador-at-large*? check [wikipedia](https://en.wikipedia.org/wiki/Ambassador-at-large#:~:text=An%20ambassador%2Dat%2Dlarge%20is,country%20and%20its%20people%20internationally.))
     *itinerante* as event or entity ???
@@ -642,13 +652,13 @@ BUT:
 
 * [cs] _**Řekl jsem,** že **je chytrý**._  
   [en] _I **said** that he **is smart**._  
-  ... complement clause is reference to a state (_chytrý_ "smart"), hence it is not an event according to the UMR rules   ???? COMPLEMENT CLAUSE as EVENT
-     **BUT** there is a predication there (verbonominal predicate _být chytrý_ "be smart"), thus will be annotated as a "non-verbal clause" with the `have-mod-91` predicate (property)
+  ... complement clause is reference to a state (_chytrý_ "smart"), hence it is not an event according to the UMR rules  
+     **BUT** there is a predication there (verbonominal predicate _být chytrý_ "be smart"), thus will be annotated as a "non-verbal clause" with the `have-mod-91` predicate (property) ... _**Do we want to distinguish between state and action verb**_
 
 * [cs] _Moje dcera **netouží** **být dospělá**._  
   [en] _My daughter **does not long** for **being adult**._  
-  ... complement clause is reference to a state (_dospělý_ "adult"), hence it is not an event; another state in main predication (_toužit_ "long"), thus event   ???? COMPLEMENT CLAUSE as EVENT
-       **BUT** _být dospělá_ is a verbonominal predicate, thus will be annotated as a "non-verbal clause" with the `have-mod-91` predicate (property),
+  ... complement clause is reference to a state (_dospělý_ "adult"), hence it is not an event; another state in main predication (_toužit_ "long"), thus event   
+       **BUT** _být dospělá_ is a verbonominal predicate, thus will be annotated as a "non-verbal clause" with the `have-mod-91` predicate (property)???
 
  **Compounds with adjectives:**
 * [en] _**firing** squad_ (cs. "popravčí četa", from the UMR Guidelines)
@@ -669,11 +679,74 @@ BUT:
 
 
 
-***
+---
 
-### Previous discussions - _válka_ "war" 
+### TO READ
 
-<!-- ~~DZ: See also [issue 14 in UMR
+- William Croft (2001) *Radical Construction Grammar: Syntactic Theory in Typological Perspective*
+- James Pustejovsky et al. (2005) [The Specification Language TimeML](https://www.researchgate.net/publication/242423032_The_Specification_Language_TimeML).
+
+About events expressed as MWE:
+- Julia Bonn et al. (2023) *UMR Annotation of Multiword Expressions* (sent by HH)
+- William Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
+- Elena Paducheva, 1995
+
+---
+
+### Previous discussions 
+
+##### Events as frame/bearing- concepts
+~~DZ: The guidelines are not clear enough about the consequences for the
+annotation when a concept is or is not treated as an event. We can speculate
+that the intended difference is that events have `:ARGX` roles and non-events
+do not have them. At least it seems to indirectly follow from some parts of
+the guidelines. The guidelines also seem to suggest that the part of the
+lexicon that has frame files (i.e., the valency lexicon, defining the `:ARGX`
+participants for each predicate) contains concepts that are always events
+(eventive concepts), regardless the information packaging (see below);
+furthermore, I suspect that the UMR crowd assumes that eventive concepts are
+recognizable by a numeric suffix (e.g. `-01`), although no rule makes this
+assumption explicit, and one may need the suffix to disambiguate other
+concepts. In combination with the more clearly phrased parts of the
+guidelines this means that the valency lexicon contains only processes.
+States and entities, which may constitute events sometimes but not always,
+will be annotated with the help of abstract eventive concepts whenever they
+represent events. Even here the guidelines are not consistent because they
+say that two-place statives, such as English _love_, will be annotated
+without the abstract eventive concepts, that is, they have to be included in
+the valency lexicon. It makes the impression that after the nice typological
+introduction in [Part
+3-1-1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-eventive-concepts)
+they slipped back to what is convenient for annotation of English,
+distinguishing verbs from adjectives (and not processes from states).~~
+
+##### Action and state verbs
+
+DZ: Note that the [English state verbs](https://www.ecenglish.com/learnenglish/lessons/what-are-state-verbs)
+are recognized by tests that are grammatical rather than semantic (you cannot use the progressive tense).
+Other languages may not have similar tests, or the tests may result in a different set of verbs.
+For example, [in Czech](https://www.czechency.org/slovnik/SLOVESO), examples of state verbs _(stavová slovesa)_ include _stát_ "stand", _mít_ "have", _patřit_ "belong";
+_to stand_ would perhaps not be grammatically a state verb in English, but semantically it is a state both in Czech and in English.
+
+There is a gray zone with verbs such as _sleep_ or _sit_.
+They may not be "state verbs" according to the English grammar (it is grammatical to say _I am sleeping_ or _I am sitting on the couch_) but semantically they seem to be states rather than processes.
+Sitting generally does not involve any activity or any changes; the only possible change is the end of this state by changing
+to another state (_standing, lying, going..._)
+_Sleeping_ might be different, although also almost constant from the perspective of an observer.
+It may involve micro-sub-processes (_snoring, turning, dreaming_), and it may have a result at the end (compare it to _recharging battery_).
+So maybe _sleeping_ is a process, even if not a frantic one.
+
+ML: There is a simple Czech test for distinguishing state verbs (stavová slovesa) and action verbs (dějová / činnostní):
+-  action verbs ... _Co dělám? Běžím._ "What am I doing? I'm running."
+-  state/stative verbs ... _Co se děje se mnou? Mám dost peněz._ "What is happening to me? I have enough money."
+
+The test illustrates also borderline cases like _stát_, as you can ask both questions  _Co dělám? Co se děje se mnou? Stojím._ "What am I doing? What is happening to me? I'm standing."
+
+See also [SaS 17(4)](http://nase-rec.ujc.cas.cz/archiv.php?art=2685).
+
+##### válka_ "war" 
+
+~~DZ: See also [issue 14 in UMR
 guidelines](https://github.com/umr4nlp/umr-guidelines/issues/14), as well as
 [the document on
 entities](https://github.com/ufal/UMR/blob/main/doc/entities.md). Named
@@ -697,7 +770,7 @@ would not be used as an abstract concept.~~
 
 ~~ML: How to add event annotation to event nominals?
 Probably should be represented as some relevant verb, e.g., *válka* should be the same concept as *válčit* (which is contained in the PDT-Vallex with ACT=ARG0, ADDR=ARG1, PAT=ARG1 (ARGs according to *fight-01*)), see below for two proposed annotations (*válka mezi Indií a Pákistánem o Kašmír* *and Před 80 lety Německo přepadením Polska rozpoutalo druhou světovou válku.*).
-But there is a problem with event nominals with no clear morphological verbal counterpart ... see the discusion on *jídlo* vs. *food* above and [the UMR guidelines issue](https://github.com/umr4nlp/umr-guidelines/issues/16).~~ -->
+But there is a problem with event nominals with no clear morphological verbal counterpart ... see the discusion on *jídlo* vs. *food* above and [the UMR guidelines issue](https://github.com/umr4nlp/umr-guidelines/issues/16).~~
 
 ```
 válka mezi Indií a Pákistánem o Kašmír "the war between India and Pakistan for Kashmir"
@@ -772,7 +845,7 @@ CA: Some examples in Spanish/English of other named events with a link to Wikida
 * [en] This situation is not going to change after the [announcement of the definitive cessation of ETA's armed activity](https://www.wikidata.org/wiki/Q5700633)
 
 
-#### Specific entities - _Barack Obama_
+##### Specific entities - _Barack Obama_
 
   (**_Barack Obama_**, _**Barack Obama's** cabinet_)
 
@@ -823,13 +896,5 @@ Mr. Obama was a president.
 ***
 
 
-#### TO READ
 
-- William Croft (2001) *Radical Construction Grammar: Syntactic Theory in Typological Perspective*
-- James Pustejovsky et al. (2005) [The Specification Language TimeML](https://www.researchgate.net/publication/242423032_The_Specification_Language_TimeML).
-
-About events expressed as MWE:
-- Julia Bonn et al. (2023) *UMR Annotation of Multiword Expressions* (sent by HH)
-- William Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
-- Elena Paducheva, 1995
 
