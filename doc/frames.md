@@ -8,14 +8,13 @@ semantic roles. The default source of English frame files is PropBank ([version 
 languages may use a similar resource if there is one, or create a lexicon on
 the fly when working on UMR annotation.
 
-There is a minor terminological glitch: while all processes are events (even if nominalized, cf. event nominals),
-states and entities may or may not be events depending on how they are used
-in the sentence. It would not make sense to identify a state with an entry in
+There is a minor terminological glitch: while all processes are events (even if nominalized, cf. event nominals), states and entities may or may not be events depending on how they are used in the sentence. 
+It would not make sense to identify a state with an entry in
 a valency lexicon when it is used as an event (that is, in predication) and
 to link it to a different entry in another lexicon when it is used in
-modification or reference. We will thus assume that all processes and states
-have entries in a valency lexicon, i.e., their frames are available. Entities
-can be in a separate lexicon. This also relates to anchoring of concepts:
+modification or reference. 
+We will thus we assume that **all processes and (some of) states have entries in a valency lexicon**, i.e., their frames are available. 
+Entities can be in a separate lexicon. This also relates to anchoring of concepts:
 entities are primarily anchored in Wikipedia (Wikidata), while states and
 processes would ideally be anchored in the frame file (valency lexicon).  
 
@@ -30,11 +29,11 @@ and belong to the same class). A better search tool is being developed (https://
 
 In the meantime, for Czech (and especially for data from PDT) we can use the
 [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora),
-searchable [here](http://lindat.mff.cuni.cz/services/PDT-Vallex/). There are
-verbs (both active and stative) but not other parts of speech denoting
-processes or states. We have [conversion files](../valency-frames-cs-verbs)
-that map the PDT-Vallex frames to strings that can be used as eventive
-concepts in UMR. The concept strings are lemmas of the verbs (infinitives),
+searchable [here](http://lindat.mff.cuni.cz/services/PDT-Vallex/) or in Teitok [here](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex). 
+There are
+verbs (both active and stative) but only a small number of other parts of speech denoting processes or states. 
+We have [conversion files](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx) that map the PDT-Vallex frames (column B) to strings that can be used as eventive
+concepts in UMR (column A). The concept strings are lemmas of the verbs (infinitives),
 always followed by a hyphen and a numeric index. This seems to be required
 for eventive concepts in UMR (although the guidelines do not say explicitly
 that it is needed). The examples in the guidelines use two-digit indexes (-01
@@ -85,9 +84,13 @@ An example of a verb-specific (frame-specific) definition of roles:
 e.g., *(The company).ARG0 hadn't yet **received** (any documents).ARG1 (from OSHA).ARG2
 (regarding the penalty or fine).ARG4.*
 
+For some verbs, their arguments have been mapped onto ARGx roles - either within the  SynSemClass project, or within CzEngVallex - the mapping can be found in the [conversion files](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx), column C (via CzEngVallex) and D (via CzEngVallex).  
+
+For verbs without a frame-specific mapping, the default [conversion table](../tecto2umr/functors-to-umrlabels.txt) will be used.
+
 ## Non-verbal Clauses
 
-UMR proposes seven abstract concept predicates for situations where states or
+UMR proposes seven abstract concept predicates (plus two subclasses) for situations where states or
 entities are predicated (i.e., they are events), and, as they say, “there is
 no overt predicate-word”. They do not say what qualifies as an overt
 predicate word. The term _non-verbal clauses_ seems to suggest that predicate
@@ -107,8 +110,8 @@ will not have frames for them and they will be listed in a different lexicon
 than a valency lexicon. Nominal predicates where the noun denotes an entity
 may be treated as “non-verbal”.
 
-The 7 abstract predicates for non-verbal clauses are listed in [Tables 3 and
-4](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities).
+The 7 (or 9) abstract predicates for non-verbal clauses are listed in [Tables 3 and
+4](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-1-3-states-and-entities). See also [Lists for UMR tools, sheet Abstract Rolesets](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) (under non-prototypical pred rolesets): 
 
 * [cs] _Vltava je řeka._ “Vltava is a river.” ... predicational `have-role-91`
 * [cs] _Tato řeka je Vltava._ “This river is Vltava.” ... equational `identity-91`
@@ -164,3 +167,87 @@ and uses `být-007` for both of them.
         :wiki "Q4022"))
 ```
 
+
+## Other "Abstract Rolesets"
+
+UMR works with a list of so called abstract predicates (each of which has their semantic roles). These predicates are used in annotation to ensure cross-linguistically more consistent treatment of specific constructions. 
+
+Although these abstract predicates are not systematically listed in the Guidelines, we can work with the [Lists for UMR tools, sheet Abstract Rolesets](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453).
+
+There are 4 types abstract rolesets specified in the above lists, serving for:
+- non-prototypical pred rolesets (= rolesets for non-verbal clauses), see above;
+- implicite roles for specific syntactic constructions;
+- reification, and
+- discourse relations.
+
+### Implicite roles - Specific semantic concepts and specific syntactic constructions
+
+Examples:
+
+* [en] _"It was **like** mud running down the mountain and it covered the village in seconds," she said, quoting survivors._ (english_umr-0001.txt)  
+... with `resemble-91` relation with 2 roles, `ARG1` (for copy, here "thing" as an abstract concept) and `ARG2` (original, here _mud_). 
+
+* [en] _Military helicopters were able to reach the area despite *heavy clouds* but the flights ceased after nightfall because the aircraft did not have night - flying capabilities._ (english_umr-0001.txt)  
+* .. where the abstract predicate `weather-91` is used to annotate _heavy clouds_.
+ 
+ * [en] _**The more** I read your stuff, **the more** I am convinced that you have a black heart._  
+... where the abstract predicate `correlate-91` is used to annotate the "the X-er, the Y-er" construction and `have-degree-91` to annotate the comparative construction.
+
+```
+ (c2 / correlate-91
+       :aspect Habitual
+       :ARG1 (m / more
+                  :frequency-of (r / read-01
+                        :ARG0 (p / person
+			         :ref-person  1st
+				 :ref-number Singular)
+                        :ARG1 (s2 / stuff
+                              :poss (p2 / person
+			                :ref-person 2nd
+					:ref-number Singular))))
+        :ARG2 (m2 / more
+                  :ARG3-of (h3 / have-degree-91
+                        :ARG1 0
+                        :ARG2 (c / convince-01
+                              :ARG1 p
+                              :ARG2 (h / have-03
+                                    :ARG0 p2
+                                    :ARG1 (h2 / heart
+                                          :ARG1-of (b / black-06)))))))
+```
+
+
+
+### Reification
+
+Further, abstract predicates are used for so-called reification, i.e., converting a role into a concept -- e.g., the relation `:cause` might be replaced by `cause-01`; instead of `x :cause y`, we have `x :ARG1-of (c / cause-01 :ARG0 y)` (AMR quidelines).  
+The AMR Guidelines provides the following example:
+
+* [en] _The torpedo struck, causing the ship to be damaged. / The torpedo struck, causing damage to the ship. / The torpedo struck, damaging the ship._
+
+```
+ (s / strike-01
+   :ARG0 (t / torpedo)
+   :cause-of (d / damage-01
+                :ARG1 (s2 / ship)))
+```
+
+* [en] _The girl left because the boy arrived._
+```
+AMR without reification:        AMR with reification:
+(l / leave                      (l / leave
+   :ARG0 (g / girl)                :ARG0 (g / girl)
+   :cause (a / arrive              :ARG1-of (c / cause-01
+             :ARG0 (b / boy)))                 :ARG0 (a / arrive
+                                               :ARG0 (b / boy))))
+```
+
+
+### Discourse relation rolesets
+
+when multiple events are expressed in a complex sentence (combines also with reification)
+
+
+
+
+ 
