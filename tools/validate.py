@@ -243,6 +243,11 @@ def sentences(inp, args):
             testid = 'missing-empty-line'
             testmessage = 'Missing empty line after the last sentence.'
             warn(testmessage, testclass, testlevel, testid)
+            if len(blocks) < 4:
+                testid = 'too-few-blocks'
+                testmessage = 'Too few annotation blocks in the sentence. Expected introduction, sentence level graph, alignment, and document level annotation.'
+                warn(testmessage, testclass, testlevel, testid)
+                corrupt = True
             if not corrupt:
                 yield blocks
 
@@ -813,7 +818,7 @@ def validate(inp, out, args, known_sent_ids):
         # will skip the current sentence and go to the next one. So if we are
         # here, we have a sentence with the expected set of annotation blocks
         # and with lines that at least superficially look acceptable.
-        ###!!! But sanity check anyway:
+        # But let's do a sanity check anyway:
         if len(sentence)<4:
             testlevel = 0
             testclass = 'Internal'
