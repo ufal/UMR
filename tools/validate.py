@@ -813,6 +813,14 @@ def validate(inp, out, args, known_sent_ids):
         # will skip the current sentence and go to the next one. So if we are
         # here, we have a sentence with the expected set of annotation blocks
         # and with lines that at least superficially look acceptable.
+        ###!!! But sanity check anyway:
+        if len(sentence)<4:
+            testlevel = 0
+            testclass = 'Internal'
+            testid = 'invalid-sentence'
+            testmessage = "Skipping further tests of sentence with less than 4 annotation blocks."
+            warn(testmessage, testclass, testlevel, testid)
+            continue
         if args.level > 1:
             validate_sentence_metadata(sentence, known_sent_ids, args) # level 2?
             validate_sentence_graph(sentence, node_dict, args)
