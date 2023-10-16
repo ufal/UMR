@@ -1,4 +1,4 @@
-# :: snt1	  ESTONSKO :
+# :: snt1 ESTONSKO :
 # [en] Estonia :
 
 # sentence level graph:
@@ -34,7 +34,7 @@ s1n: 0-0
          :ARG1 (s2g / government-organization
             :wiki "Q217799 "
             :name (s2n2 /name :op1 "Riigikogu"))
-    :aspect process	
+    :aspect process
     :modstr FullAff))
 
 # alignment:
@@ -48,7 +48,7 @@ s2n2: 0-0
 
 # document level annotation:
 (s2s0/ sentence
-    :temporal((document-creation-time :before s2v))	
+    :temporal((document-creation-time :before s2v))
     :modal ((root :modal author)
             (author :full-affirmative s2v))
     :coref ((s1c :same-entity s2c)
@@ -72,7 +72,7 @@ s3n: 0-0
 
 # document level annotation:
 (s3s0/ sentence
-    :temporal((document-creation-time :before s1p))	
+    :temporal((document-creation-time :before s1p))
     :modal ((root :modal author)
             (author :full-affirmative s3p)))
 
@@ -112,7 +112,7 @@ s3n: 0-0
             :ref-number plural
             :temporal (s4v3 / včerejší)
             :mod (s4p2 / předběžný))
-    :aspect perfective	
+    :aspect perfective
     :modstr FullAff	)
 
 # alignment:
@@ -141,7 +141,7 @@ S4p2: 10-10
 (s4s0/ sentence
     :temporal((document-creation-time :before s4z)
               (s4z :overlaps s4v)
-               s4v :before s4h3)	
+               s4v :before s4h3)
     :modal ((root :modal author)
             (author :full-affirmative s4v)
             (author :full-affirmative s4h3))
@@ -267,7 +267,7 @@ s6z: 13-13
 
 # document level annotation:
 (s6s0/ sentence
-    :temporal((s4v :overlaps s6h))	
+    :temporal((s4v :overlaps s6h))
     :modal ((root :modal author)
             (author :full-affirmative s6h))
     :coref ((s2c :same-entity s6c)))

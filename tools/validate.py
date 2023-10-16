@@ -112,7 +112,7 @@ def shorten(string):
 #==============================================================================
 
 sentid_re = re.compile(r"^#\s*::\s*(snt[0-9]+)(?:\s|$)")
-sentid_tokens_re = re.compile(r"^# :: (snt[0-9]+)\s+(.+)")
+sentid_tokens_re = re.compile(r"^#\s*::\s*(snt[0-9]+)\s+(.+)$")
 
 def sentences(inp, args):
     """
@@ -333,6 +333,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
         warn(testmessage, testclass, testlevel, testid, lineno=-1)
         return
     comments = sentence[0]['comments']
+    tokens_included = False
     for c in comments:
         # The first block either contains one comment line with both the
         # sentence id and the sequence of tokens (English, Chinese), or it
@@ -340,7 +341,6 @@ def validate_sentence_metadata(sentence, known_ids, args):
         # only, the following ones are not comments and they contain inter-
         # linear glosses, starting with the actual token sequence.
         match = sentid_re.match(c)
-        tokens_included = False
         if match:
             # So the comment starts with a sentence id. Does it also contain the
             # sequence of tokens?
