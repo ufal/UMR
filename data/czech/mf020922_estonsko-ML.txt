@@ -1,4 +1,4 @@
-# :: snt1 ESTONSKO :
+# :: snt1  ESTONSKO :
 # [en] Estonia :
 
 # sentence level graph:
@@ -20,22 +20,22 @@ s1n: 0-0
 
 
 ###########################################################################
-# :: snt2	  Estonci volili parlament .
+# :: snt2  Estonci volili parlament .
 # [en] Estonians elected a parliament .
 
 # sentence level graph:
 (s2p / publication-91
     :ARG1 (s2v / volit-001
-        :ARG0 (s2p2 / person
+         :ARG0 (s2p2 / person
             :mod (s2c / country
                   :wiki "Q191"
                   :name (s2n / name :op1 "Estonsko"))
             :ref-number plural)
          :ARG1 (s2g / government-organization
-            :wiki "Q217799 "
-            :name (s2n2 /name :op1 "Riigikogu"))
-    :aspect process
-    :modstr FullAff))
+            :wiki "Q217799"
+            :name (s2n2 / name :op1 "Riigikogu"))
+         :aspect process
+         :modstr FullAff))
 
 # alignment:
 s2p: 0-0
@@ -52,11 +52,11 @@ s2n2: 0-0
     :modal ((root :modal author)
             (author :full-affirmative s2v))
     :coref ((s1c :same-entity s2c)
-             s1p :same-entity s2p))
+             (s1p :same-entity s2p)))
 
 
 ###########################################################################
-# :: snt3	  Tallin -
+# :: snt3  Tallin -
 # [en] Tallinn -
 
 # sentence level graph:
@@ -78,7 +78,7 @@ s3n: 0-0
 
 
 ###########################################################################
-# :: snt4	  V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+# :: snt4  V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
 # [en] In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Vlast bloc, whose presidential candidate was Lennart Meri, won the most votes.
 
 # sentence level graph:
@@ -92,12 +92,12 @@ s3n: 0-0
                         :name (s4n4 / name :op1 "Lennart" :op2 "Meri"))
                     :ARG3 (s4k / kandidát
                         :part s4n
-                        :mod (s4p4 / prezident))))  #as in UMR example 1(4)
+                        :mod (s4p4 / prezident))))
     :ARG1 (s4h / hlas
             :ARG1-of (s4h2 / have-quant-91
                 :ARG3 (s4m / most)
-                :ARG5 (s4h
-                        ARG1-of (s7z))
+                :ARG5 s4h
+                        :ARG1-of s4z
             :ref-number plural))
     :temporal (s4v / volby
                 :wiki "Q40231"
@@ -113,7 +113,7 @@ s3n: 0-0
             :temporal (s4v3 / včerejší)
             :mod (s4p2 / předběžný))
     :aspect perfective
-    :modstr FullAff	)
+    :modstr FullAff)
 
 # alignment:
 s4z: 7-7
@@ -129,19 +129,19 @@ s4h2: 0-0
 s4m: 12-12
 s4v: 4-4
 s4d: 2-2
-S4n2: 0-0
-S4p: 3-3
-S4c: 6-6
-S4n3: 0-0
-S4v2: 11-11
-S4v3: 9-9
-S4p2: 10-10
+s4n2: 0-0
+s4p: 3-3
+s4c: 6-6
+s4n3: 0-0
+s4v2: 11-11
+s4v3: 9-9
+s4p2: 10-10
 
 # document level annotation:
 (s4s0/ sentence
     :temporal((document-creation-time :before s4z)
               (s4z :overlaps s4v)
-               s4v :before s4h3)
+               (s4v :before s4h3))
     :modal ((root :modal author)
             (author :full-affirmative s4v)
             (author :full-affirmative s4h3))
@@ -149,7 +149,7 @@ S4p2: 10-10
 
 
 ###########################################################################
-# :: snt5	  Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+# :: snt5  Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
 # [en] Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the Vlast bloc, which represents 28 parliamentary mandates in the new parliament.
 
 # sentence level graph:
@@ -158,16 +158,16 @@ S4p2: 10-10
                :ARG0-of (s5v / volit-001)
                      :quant (s5p2 / percentage-entity
                      :value (s5a / asi :op1 20.5))
-               :source (s5q :quant 457319
+               :source (s5p7 /person :quant 457319
                             :ARG1-of (s5i / identity-91
                                 :ARG2 (s5p3 / počet-001
-                                          :ARG1 (s5p))
+                                          :ARG1 s5p7)
                                           :extent (s5c / celkový))
-                            :mod (s5p
+                            :mod s5p
                                 :ARG0-of (s5z / zúčastnit-se-001
                                 :ARG2 (s5v2 / volby)
                                 :aspect perfective
-                                :modstr FullAff)))
+                                :modstr FullAff))
                :ARG1-of (s5p4 / představovat-003
                             :ARG2 (s5m / mandát
                                     :quant 28
@@ -188,7 +188,7 @@ s5p: 0-0
 s5v: 5-5
 s5p2: 17-18
 s5a: 16-16
-s5q: 4-4
+s5p7: 4-4
 s5i: 0-0
 s5p3: 3-3
 s5c: 2-2
@@ -218,7 +218,7 @@ s5n: 0-0
 
 
 ###########################################################################
-# :: snt6	  Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+# :: snt6  Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
 # [en] In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic, Arnold Rüütel.
 
 # sentence level graph:
@@ -231,12 +231,12 @@ s5n: 0-0
                     :ARG1-of (s6p2 / představovat-003
                          :ARG2 (s6c / country
                                       :wiki "Q191")
-                                      :name (s1n / name :op1 "Estonsko")
-                         :temporal (s6d dosavadní)
+                                      :name (s6n3 / name :op1 "Estonsko")
+                         :temporal (s6d / dosavadní)
                          :ARG1-of (s6h2 / have-degree-91
                                       :ARG2 (s6v / vysoký
-                                      :ARG1  s6p)
-                                      :ARG3 (s6m / most)))))
+                                      :ARG1  s6p
+                                      :ARG3 (s6m / most))))
      :ARG2 (s6m2 / místo
             :ord (s6o/ ordinal-entity  :value 2))
      :manner (s6h3 / hlas
@@ -254,6 +254,7 @@ s6p: 21-22
 s6n2: 0-0
 s6p2: 19-19
 s6c: 20-20
+s6n3: 0-0
 s6d: 17-17
 s6h2: 0-0
 s6v: 18-18
@@ -270,4 +271,8 @@ s6z: 13-13
     :temporal((s4v :overlaps s6h))
     :modal ((root :modal author)
             (author :full-affirmative s6h))
-    :coref ((s2c :same-entity s6c)))
+    :coref ((s2c :same-entity s6c)
+            (s1n :same-entity s6n3)))
+
+
+###END
