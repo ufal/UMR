@@ -118,7 +118,7 @@ done no matter if the entity is specific or generic.
 
 An entity that is referred to by a **name** is represented by an abstract
 concept corresponding to the semantic class of the entity (e.g., “person” or
-“organization”; see below for the taxonomy of semantic classes). The name of
+“organization”; see below for the taxonomy of semantic classes), [Guidelines, Part 3-2-2-5]( https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-2-4-named-entities). The name of
 the entity is in a separate node, which has the abstract concept “name” and
 is attached to the class concept via the relation `:name`. Individual
 orthographic words of the name are listed in the name concept each in its own

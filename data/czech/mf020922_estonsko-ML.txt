@@ -31,9 +31,7 @@ s1n: 0-0
                   :wiki "Q191"
                   :name (s2n / name :op1 "Estonsko"))
             :ref-number plural)
-         :ARG1 (s2g / government-organization
-            :wiki "Q217799"
-            :name (s2n2 / name :op1 "Riigikogu"))
+         :ARG1 (s2p3 / parlament))
          :aspect process
          :modstr FullAff))
 
@@ -43,7 +41,7 @@ s2v: 2-2
 s2p2: 1-1
 s2c: 0-0
 s2n: 0-0
-s2g: 3-3
+s2p3: 3-3
 s2n2: 0-0
 
 # document level annotation:
