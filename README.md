@@ -20,9 +20,14 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Frame files](doc/frames.md) and [participant roles](doc/roles.md)
 * specific construction 
   * [Ellipsis](doc/ellipsis.md)
-  * [Quantity](doc/quantity.md)
-  * [Degree](doc/degree.md)
   * [Coreference](doc/coreference.md)
+* UMR attributes
+  * Aspect
+  * Mode
+  * Polarity
+  * Quant ... [Quantity](doc/quantity.md)
+  * Ref
+  * Degree ... [Degree](doc/degree.md)
 * [Glossary of relations and attributes](doc/relations-attributes.md)
 
 ## Useful links
