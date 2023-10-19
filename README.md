@@ -18,10 +18,11 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Entities](doc/entities.md)
 * [Events](doc/eventive-concepts.md), see also [One or two concepts](doc/one-or-two-concepts_modal-phase-verbs.md)
 * [Frame files](doc/frames.md) and [participant roles](doc/roles.md)
-* [Ellipsis](doc/ellipsis.md)
-* [Quantity](doc/quantity.md)
-* [Degree](doc/degree.md)
-* [Coreference](doc/coreference.md)
+* specific construction 
+  * [Ellipsis](doc/ellipsis.md)
+  * [Quantity](doc/quantity.md)
+  * [Degree](doc/degree.md)
+  * [Coreference](doc/coreference.md)
 * [Glossary of relations and attributes](doc/relations-attributes.md)
 
 ## Useful links
