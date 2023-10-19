@@ -1,6 +1,15 @@
 # Relations and Attributes in Sentence Level Annotation
 
+**Disclaimer:** We should use the  [**UMR lists**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) as provided by the UMR team - these lists are updated from time to time (and they should be  used in the current UMR tool - probably UMR Writer). The lists specify: 
+- **Abstract concepts** ... like (i) "person", "thing", "place", etc.; but also (ii) discourse connectors as "but" or "multi-sentence" and (iii) structured entities as "date-entity" or "quantities" and others;
+- **Abstract rolesets**  ... like (i) frames for "non-verbal" clauses, (ii) discourse rolesets and (iii) implicite relation for specific constructions as titles, citations or addresses; 
+- **Roles** ... for (i) participant relations (both general and ARGx) and (ii) non-participant relations (and their subroles) but also for (iii) ?some? attributes (like ":aspect", ":modstr", ":quot"), and (iv) discourse relations as ":condition"
+- **Named entities**.  
 
+The file provides also sheets with AMR to UMR mappings.
+
+---
+---
 
 
 This document should serve as a reference list (alphabetically ordered) of

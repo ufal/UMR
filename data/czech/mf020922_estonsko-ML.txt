@@ -29,7 +29,7 @@ s1n: 0-0
          :ARG0 (s2p2 / person
             :mod (s2c / country
                   :wiki "Q191"
-                  :name (s2n / name :op1 "Estonsko"))
+                  :name (s2n / name :op1 "Estonec"))
             :ref-number plural)
          :ARG1 (s2p3 / parlament))
          :aspect process

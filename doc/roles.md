@@ -162,9 +162,11 @@ In the Guidelines, the term "modifier" refers to relations mostly modifying obje
 
 Anchoring modifiers "situate the intended referent ... via reference to another object". In other words, "they provide referential grounding for a referent expression". 
 
-This referential grounding are often expressed as possessive relations:  
+This referential grounding are often expressed as possessive relations.  
 
-**1. Ownership relation** `:poss`,  with the possessum as the parent and the possessor as the daughter
+###### Ownership relation (:poss)
+
+The ownership relations are annotated using the `:poss` label, which indicates the relation between the possessum (as the parent) and the possessor (as the daughter):
 
 ```
 John's car
@@ -177,7 +179,10 @@ John's car
 - In PDT, the `:poss` relation corresponds to one type of relations subsumed under the `APP` functor: 
    - PDT typ (5) = vztah vlastnictví, označení vlastníka (_její.APP seznam_, _má.APP vyšší postava_, _dům mého otce.APP_)... OK, possessum as the parent, owner as a child
 
-**2. Part-whole relations** (`:part`),  with the part as the parent and the whole as the daughter
+
+###### Part-whole relation (:part)
+
+The part-whole relations are annotated using the `:part` label, which indicates the relation between the part (as the parent) and the whole (as the daughter):
 ```
 Guitar strings
 (s/ string
@@ -195,7 +200,9 @@ Guitar strings
   - PDT typ (7) = vyjádření přináležitosti v širokém smyslu (u abstraktních výrazů) (_auto roku.APP_, _poezie lásky.APP_)
 
 
-**3. Kinship relations** (`have-rel-role-92`)
+###### Kinship relation (have-rel-role-9)
+
+The kinship relations are annotated using the `have-rel-role-92` predicate, with `:ARG1` for the entity and `:ARG3` for its role (in case of two entities, `:ARG2`and `:ARG4` are used for the second entity and its role, respectively - example??):
 
 ```
 Grandmother  ...
@@ -207,10 +214,9 @@ Grandmother  ...
 
 - In PDT, the kinship relation corresponds to one type of relations subsumed under the `APP` functor: 
   - PDT typ (1) =  příbuzenské (a přátelské) vztahy (_manžel slavné spisovatelky.APP,_ _duchovní otec nové měny.APP_, _její.APP příbuzná_, _přítel ministra.APP_)
-) 
  
 
-##### Typifying modifiers (:mod and subtypes)
+##### Typifying modifiers (:mod and its subtypes)
 
 Typifying modifiers "enrich the referent description by subcategorizing it or selecting the quantity (...) of the category or type denoted by the head noun." For this cases, general `:mod` relation is available, e.g., in _a women's.mod magazine_ (reading: _a magazine for women_; as opposed to _that woman's.poss magazine_ reading: the magazine belonging to the/a woman).  
 This relation is used to annotate property concept modifiers that do not have their own frame files (, _my.poss quirky.mod shirts_):
@@ -251,10 +257,48 @@ a French song
 
 Number of relations modifying events rather than objects, adopted from AMR, as  locatives `:direction` and `:path` or tempotrals `:duration` and `frequency`.
 
-#### Named entities
+#### Named entities (:name, :wiki`, and :opX)
 
-#### Quantification
+UMR: "The relations `:name`, `:wiki`, and `:opX` are mostly used in the treatment of named entities."
 
-#### Other relations
+```
+Edmond_Pope
+(s1p / person
+        :wiki "Edmond_Pope"
+        :name (s1n / name :op1 "Edmund" :op2 "Pope"))
+ ```
+ 
+ ```    
+New York City
+(c/ city
+		:name (n/ name
+			:op1 "New"
+			:op2 "York"
+			:op3 "City")
+		:wiki "New_York_City")
+```
+
+#### Quantification (:ord, :quant, :range, :scale, :unit,  :value)
+
+See [Quantity](quantity.md)!
+
+#### Other relations 
+
+- `:example` ... to annotate illustrative examples of object categories (_countries like Germany and France_), 
+-  `:polite` ... to indicate that an utterance (often a command) is marked for deference with respect to the interlocutor ... _**!!!attribute (not relation)!!!**_,
+```
+Could you close the window?
+(c/ close-01
+	:ARG0 (p/ person
+		:ref-person 2nd
+		:ref-number Singular)
+	:ARG1 (w/ window)
+	:aspect Performance
+	:mode Imperative
+	:polite +)
+```
+- `:li` ... to mark entities as entries on a bulleted list
+- `:condition` and `:concession` ... alternative ways of annotating the `have-condition-91` and `have-concession-91`
+- `:other-role` ... for  concepts not (currently) covered by UMR that should be annotated
 
 
