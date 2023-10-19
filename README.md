@@ -17,11 +17,17 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [UMR terminology](doc/terminologie.md) (currently in Czech)
 * [Entities](doc/entities.md)
 * [Events](doc/eventive-concepts.md), see also [One or two concepts](doc/one-or-two-concepts_modal-phase-verbs.md)
-* [Frame files and participant roles](doc/frames.md)
-* [Ellipsis](doc/ellipsis.md)
-* [Quantity](doc/quantity.md)
-* [Degree](doc/degree.md)
-* [Coreference](doc/coreference.md)
+* [Frame files](doc/frames.md) and [participant roles](doc/roles.md)
+* specific construction 
+  * [Ellipsis](doc/ellipsis.md)
+  * [Coreference](doc/coreference.md)
+* UMR attributes
+  * Aspect
+  * Mode
+  * Polarity
+  * Quant ... [Quantity](doc/quantity.md)
+  * Ref
+  * Degree ... [Degree](doc/degree.md)
 * [Glossary of relations and attributes](doc/relations-attributes.md)
 
 ## Useful links
