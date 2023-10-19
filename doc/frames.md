@@ -1,4 +1,4 @@
-# Frame Files and Participant Roles
+# Frame Files = Rolesets
 
 UMR
 [assumes](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-participant-roles)
@@ -60,9 +60,8 @@ the standard _-ní/-tí_ suffixes, such as _dřímota_ “slumber”, _objev_
 * _válka_ “war” → `válčit-003`
 * _jídlo_ “food” → `jíst-001`
 
-# I. Argument Roles
 
-### I.1. Argument Roles Specified in Frames 
+## Verb-specific frames = argument rolesets
 
 Argument roles is another name used for some of the relations under eventive
 concepts. UMR [inherits them from AMR](https://amr.isi.edu/doc/roles.html),
@@ -86,13 +85,13 @@ An example of a verb-specific (frame-specific) definition of roles:
 e.g., *(The company).ARG0 hadn't yet **received** (any documents).ARG1 (from OSHA).ARG2
 (regarding the penalty or fine).ARG4.*
 
-#### Argument Roles for Czech verbs
+### Argument Roles for Czech verbs
 
 For some Czech verbs, their arguments have already been mapped onto ARGx roles - either within the  SynSemClass project, or within CzEngVallex - the mapping can be found in the [conversion files](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx), column C (via CzEngVallex) and D (via CzEngVallex).  
 
 For verbs without a frame-specific mapping, the default [conversion table](../tecto2umr/functors-to-umrlabels.txt) will be used.
 
-### I.2. "Non-verbal Clauses" and Their Arguments
+## "Non-verbal Clauses" and their arguments
 
 UMR proposes seven abstract concept predicates (plus two subclasses) for situations where states or
 entities are predicated (i.e., they are events), and, as they say, “there is
@@ -172,7 +171,7 @@ and uses `být-007` for both of them.
 ```
 
 
-### I.3. Arguments in Other "Abstract Rolesets"
+## Arguments in other "abstract rolesets"
 
 UMR works with a list of so called abstract predicates (each of which has their semantic roles). These predicates are used in annotation to ensure cross-linguistically more consistent treatment of specific constructions. 
 
@@ -184,7 +183,7 @@ There are 4 types abstract rolesets specified in the above lists, serving for:
 - reification, and
 - discourse relations.
 
-#### I.3.1 Implicite roles - Specific semantic concepts and specific syntactic constructions
+### 1. Implicite roles - Specific semantic concepts and specific syntactic constructions
 
 Examples:
 
@@ -222,7 +221,7 @@ Examples:
 
 
 
-#### I.3.2 Reification
+### 2 Reification
 
 Further, abstract predicates are used for so-called reification, i.e., converting a role into a concept -- e.g., the relation `:cause` might be replaced by `cause-01`; instead of `x :cause y`, we have `x :ARG1-of (c / cause-01 :ARG0 y)` (AMR quidelines).  
 The AMR Guidelines provides the following example:
@@ -247,124 +246,7 @@ AMR without reification:        AMR with reification:
 ```
 
 
-#### I.3.3 Discourse relation rolesets
+### 3 TODO Discourse relation rolesets
 
 These rolesets when multiple events are expressed in a complex sentence (combines also with reification).
 
-# II. Non-participant Role UMR Relations
-Non-participant roles are not verb-specific - they are mainly used 
-- to mark NP-internal relations, 
-- to mark some types of modifiers of predicates, and 
-- to make the meanings of certain natural language expressions computationally tractable.
-
-Most of them inherited from AMR but some changes were applied - we can work with the [UMR working list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=235257559) with the latest updates. 
-
-#### Temporal relations
-
-While the `:temporal` relation is listed among participants in the [UMR working list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=235257559), the Guidelines in this section mentions temporal modifications expressed as the NE date-entity.  
- 
-
-#### Modifiers 
-
-In the Guidelines, the term "modifier" refers to relations mostly modifying object concepts, i.e., modifiers are mostly attributes (in our terminology). Semantically, they distinguish anchoring and typifying modifiers (Croft, to appear).
-
-##### Anchoring modifiers (:poss, :part, have-rel-role-92)
-
-Anchoring modifiers "situate the intended referent ... via reference to another object". In other words, "they provide referential grounding for a referent expression". 
-
-This referential grounding are often expressed as possessive relations:  
-
-**1. Ownership relation** `:poss`,  with the possessum as the parent and the possessor as the daughter
-
-```
-John's car
-(c/ car
-	:poss (p/ person
-		:name (n/ name	:op1 "John"))
-	:ref-number Singular)
-```
-
-- In PDT, the `:poss` relation corresponds to one type of relations subsumed under the `APP` functor: 
-   - PDT typ (5) = vztah vlastnictví, označení vlastníka (_její.APP seznam_, _má.APP vyšší postava_, _dům mého otce.APP_)... OK, possessum as the parent, owner as a child
-
-**2. Part-whole relations** (`:part`),  with the part as the parent and the whole as the daughter
-```
-Guitar strings
-(s/ string
-	:part (g/ guitar)
-	:ref-number Plural)
-```
-
-- In PDT, the `:part` relation corresponds to several types of relations subsumed under the `APP` functor: 
-  - PDT typ (2) =  příslušnost osoby k nějakému celku, instituci (_příslušník armády.APP_, _brankář vedoucího týmu.APP_, _člen výkonného výboru.APP_)  ... OK, part as the parent, whole as a child)
-  - PDT typ (3) = příslušnost osoby k nějakému celku, instituci (_tým brankářů.APP_, _organizace neslyšících.APP_) ... KO, whole as the parent ... HERE the  `:group` relation should be used, as in _a swarm of bees.group_
-  - PDT typ (6) = část-celek ( _střecha domu.APP_, _široký pás území.APP_, _závěr utkání.APP_,_Guitar.part strings_) 
-
-- **??? Other mappings of APP: ???**
-  - ??? PDT typ (4) = nositel vlastnosti (vyjádřené řídícím slovem) (_míra nezaměstnanosti.APP_, _úroveň ubytování.APP_, _průměrná délka vazby.APP_, _autorova.APP upřímnost_) ...   ??? how to annotate in UMR
-  - PDT typ (7) = vyjádření přináležitosti v širokém smyslu (u abstraktních výrazů) (_auto roku.APP_, _poezie lásky.APP_)
-
-
-**3. Kinship relations** (`have-rel-role-92`)
-
-```
-Grandmother  ...
-(p/ person
-	:ARG1-of (h/ have-rel-role-92
-	:ARG3 (g/ grandmother))
-	:ref-number Singular)
-```
-
-- In PDT, the kinship relation corresponds to one type of relations subsumed under the `APP` functor: 
-  - PDT typ (1) =  příbuzenské (a přátelské) vztahy (_manžel slavné spisovatelky.APP,_ _duchovní otec nové měny.APP_, _její.APP příbuzná_, _přítel ministra.APP_)
-) 
- 
-
-##### Typifying modifiers (:mod and subtypes)
-
-Typifying modifiers "enrich the referent description by subcategorizing it or selecting the quantity (...) of the category or type denoted by the head noun." For this cases, general `:mod` relation is available, e.g., in _a women's.mod magazine_ (reading: _a magazine for women_; as opposed to _that woman's.poss magazine_ reading: the magazine belonging to the/a woman).  
-This relation is used to annotate property concept modifiers that do not have their own frame files (, _my.poss quirky.mod shirts_):
-```
-My quirky shirts
-(s/ shirt
-	:poss (p/ person
-		:ref-person 1st
-		:ref-number Singular)
-	:mod (q/ quirky)
-	:ref-number Plural)
-```
-(This relation also used to annotate demonstrative determiners, _these.mod shirts of mine.poss_).
-
-A number of subtypes ara available: 
-- `:age`,  as in _The thirty year-old man_:
-```
-The thirty year-old man
-(m/ man
-	:age (t/ temporal-quantity
-		:quant 30
-		:unit (y/ year))
-	:ref-number Singular)
-```
-- `:group`, as in _a swarm of bees.group_,
-- `:topic`, as in _Information about the case.topic_,
-- `:medium`, as in  _a French.medium song_
-```
-a French song
-(t/ thing
-	:ARG1-of (s/ sing-01)
-	:medium (l/ language
-		:wiki "French_language"
-		:name (n/ name :op1 "French")))
-```
-
-#### Circumstantial temporals and locatives
-
-Number of relations modifying events rather than objects, adopted from AMR, as  locatives `:direction` and `:path` or tempotrals `:duration` and `frequency`.
-
-#### Named entities
-
-#### Quantification
-
-#### Other relations
-
-update
