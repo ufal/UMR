@@ -32,4 +32,4 @@ It is assigned to all nodes representing finite verb forms (and its value is  us
 - **ind** for indicative (both for declarative sentences, _Studenti přišli.ind na schůzi včas._ "The students came to the meeting in time" and interrogative ones,  _Přišli.ind včas?_ "Did they come in time?"), 
 - **imp** for imperative (_Přijďte.imp na schůzi včas!_ "Come to the meeting in time!"),  
 - **cnd** for conditional (_My (bychom přišli).cnd určitě včas._ "We would definitely come in time"), and 
-- **nil** for nodes representing infinitives, participles or transgressives (gerunds).
+- **nil** for nodes representing infinitives, participles or transgressives (gerunds).   
