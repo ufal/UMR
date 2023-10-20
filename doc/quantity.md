@@ -42,54 +42,109 @@ tři domy “three houses”
     :quant 3)
 ```
 
-The Guidelines give an English example for _more than 3_. The `more-then` is listed among abstract UMR concepts in the [UMR list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0), thus this `more-than` concept should be used as a cross-lingual abstract concept  (instead of native concepts in other languages).
-Furthermore, example (1f) in
+~~DZ: The guidelines give an English example for _more than 3_, see (1f) below. It is thus unclear whether we should use native concepts in other languages, or should we use more-than as a cross-lingual abstract concept? Furthermore, example (1f) in the guidelines shows an :op1 attribute of more-than, which gives the numeric value to compare with.~~
+
+```
+(1f) more than three houses
+(h/ house
+	:quant (m/ more-than :op1 3))
+```
+
+
+ML: The UMR Guidelines give an English example for  _more than 3_, see (1f) above. The [UMR list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0) of abstract concepts offers  `more-than`  as a cross-lingual abstract concept which should be used in such examples (instead of native concepts in other languages). 
+Further, example (1f) in
 the guidelines shows an `:op1` attribute of `more-than`, which gives the
 numeric value to compare with.
 
 ```
 více než tři domy “more than three houses”
 (d/ dům
-    :quant (v/ více-než :op1 3))
+    :quant (v/ více-než :op1 3))   OR RATHER  :quant (m/ more-than :op1 3))
 ```
 
-The question arise whether other comparison-like quantities should be treated similarly (TODO because the [degree](degree.md) attribute and abstract event seem to be intended only for the degree of a quality).  
+However, the superlative-like construction _nejvíce hlasů_ “most votes” will be annotated as an elliptical construction (= _nejvíce hlasů ze všech odevzdaných hlasů_) using the `have-quant-91`abstract predicate, as described in the following section.
+
+Having this in mind, comparison-like constructions as _více něž 3 domy_ could be alternatively interpreted as elliptical, too (meaning _více domů než 3 (domy)_ ). Then, their annotation would be parallel to the one offered for superlative-like constructions. However, this possibility is not mentioned in the Guidelines.
+
+Alternatively, comparison constructions can be treated as elliptical constructions, as suggested in the :
+
+### Comparisons and superlatives relating to amounts of things (`have-quant-91`)
+
+As the UMR Guidelines do not discuss comparative-like and superlative-like constructions,  we have to consult the AMR Guidelines.
+ 
+For comparison-like quantities, the [AMR Guidelines](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#quantities) suggest to use `have-quant-91` with the following roleset:
+
 ```
-nejvíce hlasů “most votes”
-(h/ hlas
-    :quant (n/ nejvíce))
+have-quant-91
+ARG1: entity (thing being quantified)
+ARG2: quantity (numerical or quantifier: many, much)
+ARG3: degree mention (more, less, equal, too)
+ARG4: compared-to
+ARG5: superlative: reference to superset
+ARG6: consequence, result
 ```
 
-Alternatively, comparison constructions can be treated as elliptical constructions, as suggested in the [AMR Guidelines](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#quantities):
+And exemplified this:
+
+* [en] _He sold **as many** cars as his competitor._   
+(= He sold cars the quantity of which.ARG1 is equal.ARG3 comparing to those cars.ARG4 which were sold by his competitor.)
 
 ```
-He sold as many cars as his competitor. (= He sold cars the quantity of which.ARG1 is equal.ARG3 comparing to those cars.ARG4 which were sold by his competitor.)
+He sold as many cars as his competitor. 
 (s / sell-01
-      :ARG0 (h / he)
-      :ARG1 (c / car
-            :ARG1-of (h2 / have-quant-91
-                  :ARG3 (e2 / equal)
-                  :ARG4 (c3 / car
-                        :ARG1-of (s2 / sell-01
-                              :ARG0 (p / person
-                                    :ARG0-of (c2 / compete-02
+      :ARG0 (h/ he)
+      :ARG1 (c/ car
+            :ARG1-of (h2/ have-quant-91
+                  :ARG3 (e2/ equal)
+                  :ARG4 (c3/ car
+                        :ARG1-of (s2/ sell-01
+                              :ARG0 (p/ person
+                                    :ARG0-of (c2/ compete-02
+                                          :ARG1 h)))))))
+```
+
+* [en] _He sold **the most** cars of his competitors._   
+(= He sold cars the quantity of which.ARG1 has degree most.ARG3, which is superlative with respect to   those cars.ARG5 (=reference to the superset) which were sold by his competitor.)
+
+```
+He sold the most cars of his competitors. 
+(s / sell-01
+      :ARG0 (h/ he)
+      :ARG1 (c/ car
+            :ARG1-of (h2/ have-quant-91
+                  :ARG3 (m/ most)
+                  :ARG5 (c3/ car
+                        :ARG1-of (s2/ sell-01
+                              :ARG0 (p/ person
+                                    :ARG0-of (c2/ compete-02
                                           :ARG1 h)))))))
 ```
 
 
+* [en] _I had **scarcely enough** drinking water to last a week._
+
+
 ```
-He sold the most cars of his competitors. (= He sold cars the quantity of which.ARG1 has degree most.ARG3, which is superlative with respect to   those cars.ARG5 (=reference to the superset) which were sold by his competitor.)
-(s / sell-01
-      :ARG0 (h / he)
-      :ARG1 (c / car
-            :ARG1-of (h2 / have-quant-91
-                  :ARG3 (m / most)
-                  :ARG5 (c3 / car
-                        :ARG1-of (s2 / sell-01
-                              :ARG0 (p / person
-                                    :ARG0-of (c2 / compete-02
-                                          :ARG1 h)))))))
+(h / have-03
+      :ARG0 (i/ i)
+      :ARG1 (w/ water
+            :purpose (d2/ drink-01
+                  :ARG0 i)
+            :ARG1-of (h3/ have-quant-91
+                  :ARG3 (e/ enough
+                        :mod (s/ scarce))
+                  :ARG6 (l/ last-03
+                        :ARG1 w
+                        :ARG2 (t/ temporal-quantity :quant 1
+                              :unit (w2/ week))
+                        :ARG3 i))))
+
 ```
+
+### Comparison of quality 
+
+For **comparisons and superlatives of quality**, the `have-degree-91` abstract predicate is used (in a parallel way as `have-quant-91` for comparison of qualities of things), see [Degree](degree.md).
+
 
 
 ## :units
