@@ -25,9 +25,9 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
   * Aspect
   * Mode   ... [Mode](doc/mode.md)
   * Polarity
-  * Quant ... [Quantity](doc/quantity.md)
+  * Quant ... [Quantity](doc/quantity.md) (incl. comparison of quantity)
   * Ref
-  * Degree ... [Degree](doc/degree.md)
+  * Degree ... [Degree](doc/degree.md) (incl. comparison of quality)
 * [Glossary of relations and attributes](doc/relations-attributes.md)
 
 ## Useful links
