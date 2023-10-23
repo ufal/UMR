@@ -33,7 +33,7 @@ s1n: 0-0
             :ref-number plural)
          :ARG1 (s2p3 / parlament))
          :aspect process
-         :modstr FullAff))
+         :modstr full-affirmative)
 
 # alignment:
 s2p: 0-0
@@ -42,7 +42,6 @@ s2p2: 1-1
 s2c: 0-0
 s2n: 0-0
 s2p3: 3-3
-s2n2: 0-0
 
 # document level annotation:
 (s2s0/ sentence
@@ -76,8 +75,8 @@ s3n: 0-0
 
 
 ###########################################################################
-# :: snt4  V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
-# [en] In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Vlast bloc, whose presidential candidate was Lennart Meri, won the most votes.
+# :: snt4  V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
+# [en] In Sunday's parliamentary elections in Estonia , according to yesterday's preliminary results , the Vlast bloc , whose presidential candidate was Lennart Meri , won the most votes .
 
 # sentence level graph:
 (s4z / získat-001
@@ -111,7 +110,7 @@ s3n: 0-0
             :temporal (s4v3 / včerejší)
             :mod (s4p2 / předběžný))
     :aspect perfective
-    :modstr FullAff)
+    :modstr full-affirmative)
 
 # alignment:
 s4z: 7-7
@@ -147,8 +146,8 @@ s4p2: 10-10
 
 
 ###########################################################################
-# :: snt5  Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
-# [en] Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the Vlast bloc, which represents 28 parliamentary mandates in the new parliament.
+# :: snt5  Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
+# [en] Of the total number of 457,319 voters who took part in the elections , about 20.5 percent voted for the Vlast bloc , which represents 28 parliamentary mandates in the new parliament .
 
 # sentence level graph:
 (s5h / hlasovat-003
@@ -165,7 +164,7 @@ s4p2: 10-10
                                 :ARG0-of (s5z / zúčastnit-se-001
                                 :ARG2 (s5v2 / volby)
                                 :aspect perfective
-                                :modstr FullAff))
+                                :modstr full-affirmative))
                :ARG1-of (s5p4 / představovat-003
                             :ARG2 (s5m / mandát
                                     :quant 28
@@ -173,12 +172,12 @@ s4p2: 10-10
                                     :location (s5p6 / parlament
                                         :mod (s5n2 / nový)))
                             :aspect state
-                            :modstr FullAff))
+                            :modstr full-affirmative))
     :ARG1 (s5b / blok
             :wiki "Q163347"
             :name (s5n / name :op1 "Vlast"))
     :aspect process
-    :modstr FullAff)
+    :modstr full-affirmative)
 
 # alignment:
 s5h: 12-12
@@ -190,10 +189,10 @@ s5p7: 4-4
 s5i: 0-0
 s5p3: 3-3
 s5c: 2-2
-s5z: 8-8 10-10
+s5z: 8-8, 10-10
 s5v2: 9-9
 s5p4: 21-21
-s5m: 22-22 24-24
+s5m: 22-22, 24-24
 s5p5: 23-23
 s5p6: 27-27
 s5n2: 26-26
@@ -216,8 +215,8 @@ s5n: 0-0
 
 
 ###########################################################################
-# :: snt6  Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
-# [en] In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic, Arnold Rüütel.
+# :: snt6  Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela .
+# [en] In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic , Arnold Rüütel .
 
 # sentence level graph:
 (s6h / have-location-91
@@ -242,7 +241,7 @@ s5n: 0-0
      :manner (s7m3 / mandát :quant 18)
      :temporal (s6z / zatím)
      :aspect state
-     :modstr FullAff)
+     :modstr full-affirmative)
 
 # alignment:
 s6h: 12-12
