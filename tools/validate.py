@@ -315,6 +315,7 @@ number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recogniz
 atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
 
 tokrng_re = re.compile(r"^0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
+tokrngs_re = re.compile(r"^(?:0-0|([1-9][0-9]*)-([1-9][0-9]*)(,\s*[1-9][0-9]*-[1-9][0-9]*)*)$")
 
 svariable_re = re.compile(r"^s[0-9]+s0")
 dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
@@ -640,39 +641,61 @@ def validate_alignment(sentence, node_dict, args):
             pline = remove_leading_whitespace(variable_re.sub('', pline, 1))
             if pline.startswith(':'):
                 pline = remove_leading_whitespace(pline[1:])
-                if tokrng_re.match(pline):
-                    match = tokrng_re.match(pline)
-                    if match.group(0) == '0-0':
-                        t0 = 0
-                        t1 = 0
+                if tokrngs_re.match(pline):
+                    match = tokrngs_re.match(pline)
+                    if match.group(3):
+                        # The span is discontiguous and group(3) contains the tail.
+                        spans = re.split(r",\s*", pline)
                     else:
-                        t0 = int(match.group(1))
-                        t1 = int(match.group(2))
-                        if t1 < t0:
-                            testid = 'invalid-token-range'
-                            testmessage = "Index of the first token '%d' is greater than the index of the second token '%d'." % (t0, t1)
-                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                        tmax = len(sentence[0]['tokens'])
-                        if t0 > tmax:
-                            testid = 'invalid-token-index'
-                            testmessage = "Index of the first token '%d' is out of range: there are %d tokens." % (t0, tmax)
-                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                        if t1 > tmax:
-                            testid = 'invalid-token-index'
-                            testmessage = "Index of the second token '%d' is out of range: there are %d tokens." % (t1, tmax)
-                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                    # The variable should be in node_dict. If it is not there,
-                    # it has been already reported as error; but we must survive it here.
-                    if variable in node_dict:
-                        if 'alignment' in node_dict[variable]:
-                            testid = 'duplicate-alignment'
-                            testmessage = "Repeated alignment of node '%s'. It was already specified as %d-%d on line %d." % (variable, node_dict[variable]['alignment']['t0'], node_dict[variable]['alignment']['t1'], node_dict[variable]['alignment']['line0'])
-                            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        spans = [pline]
+                    t1 = -1
+                    for s in spans:
+                        # If we previously matched tokrngs_re, we must now match tokrng_re.
+                        match = tokrng_re.match(s)
+                        if match.group(0) == '0-0':
+                            # The regular expression tokrngs_re excludes '0-0' combined with anything else,
+                            # so we do not have to check it here.
+                            t0 = 0
+                            t1 = 0
                         else:
-                            node_dict[variable]['alignment'] = {'t0': t0, 't1': t1, 'line0': iline}
+                            old_t1 = t1
+                            t0 = int(match.group(1))
+                            t1 = int(match.group(2))
+                            if t0 <= old_t1 + 1:
+                                testid = 'invalid-token-range'
+                                testmessage = "Index of the first token of segment '%s' must be at least %d because the previous segment ended at %d." % (s, old_t1+2, old_t1)
+                                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                            if t1 < t0:
+                                testid = 'invalid-token-range'
+                                testmessage = "Index of the first token '%d' is greater than the index of the second token '%d'." % (t0, t1)
+                                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                            tmax = len(sentence[0]['tokens'])
+                            if t0 > tmax:
+                                testid = 'invalid-token-index'
+                                testmessage = "Index of the first token '%d' is out of range: there are %d tokens." % (t0, tmax)
+                                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                            if t1 > tmax:
+                                testid = 'invalid-token-index'
+                                testmessage = "Index of the second token '%d' is out of range: there are %d tokens." % (t1, tmax)
+                                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                        # The variable should be in node_dict. If it is not there,
+                        # it has been already reported as error; but we must survive it here.
+                        if variable in node_dict:
+                            # There must not be multiple lines aligning the same node.
+                            # However, there may be multiple alignment segments on one alignment line of the node.
+                            if 'alignment' in node_dict[variable]:
+                                if node_dict[variable]['alignment']['line0'] != iline:
+                                    testid = 'duplicate-alignment'
+                                    testmessage = "Repeated alignment of node '%s'. It was already specified as %d-%d on line %d." % (variable, node_dict[variable]['alignment']['t0'], node_dict[variable]['alignment']['t1'], node_dict[variable]['alignment']['line0'])
+                                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                                else:
+                                    node_dict[variable]['alignment']['tokids'].extend(range(t0, t1+1))
+                            else:
+                                node_dict[variable]['alignment'] = {'tokids': [], 'line0': iline}
+                                node_dict[variable]['alignment']['tokids'].extend(range(t0, t1+1))
                 else:
                     testid = 'invalid-token-range'
-                    testmessage = "Expecting 1-based token index range or '0-0', found '%s'." % pline
+                    testmessage = "Expecting 1-based token index range, or multiple comma-separated ranges, or '0-0', found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
             else:
                 testid = 'invalid-alignment'
