@@ -18,11 +18,67 @@ What to do with **verbonominal predicates** (esp. those with predicative adjecti
 JH: Be conservative (at least for the time being)!  
 Discussion on 31.7.2023, see the 31.7.2023 meeting minutes: “We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) or deverbal adjective (see below) … YES – morphological criterion!!!” 
 
+However, compare the following example from the Guidelines (exemplifying polarity there):
+```
+3-3-3 (1a) Unhealthy food.
+(t/ thing
+	:ARG1-of (e/ eat-01)
+	:mod (h/ healthy
+		:polarity -))
+```
+
+BUT:
+3-2-1-1 (6a) _He gave the cat some wet **food**._
+```
+He gave the cat some wet food.
+(g/ give-01  
+	:actor (p/ person
+		:ref-person 3rd
+		:ref-number Singular)  
+	:theme (f/ food
+		:mod (w/ wet)
+		:quant (s/ some))  
+	:recipient (c/ cat
+		:ref-number Singular)
+	:aspect Performance
+	:modstr FullAff)
+```
+
 #### 4. Deverbal adjectives other than active/passive participial adjectives:  
 
 ??? Derivations of adjectives from the l-participle are less productive. Therefore, spadlý “fallen”, vzrostlý “full-grown”, bývalý “former” etc. are not events.
 
 ??? Other deverbal adjectives are also not events: kulhavý “limping”, učenlivý “quick to learn”, představitelný “imaginable”, obstojný “passable”.
+
+ 
+According to the Guidelines, the abstract predicate `have-mod-91` is used in case of predication and simple `:mod` if packed otherwise:
+
+[en] _The cat is black._
+
+```  
+The cat is black.  
+(h/ have-mod-91
+	:ARG1 (c/ cat
+		:ref-number Singular) 
+	:ARG2 (b/ black)
+	:aspect State
+	:modstr FullAff)  
+```
+
+
+[en] _The black.mod cat ..._
+
+
+However, the Guidelines provide also the following example (the original example focused on "the more - the more" constructions, within Part 3-1-3-8 "Miscellaneous constructions").
+
+[en] _... that you have a black heart. (=you have heart that is black)_
+
+```
+(h / have-03
+    :ARG0 (p/ person)
+    :ARG1 (h/ heart  
+       :ARG1-of (b / black-06)))
+```
 
 
 ## Eventive concepts
@@ -68,6 +124,14 @@ Information packaging, on the other hand, concerns the way how the semantic cont
 - **reference** (what the speaker is talking about),
 - **modification** (additional information provided about the referent), or
 - **predication** (what the speaker is asserting about the referents in a particular utterance).
+
+**Comment:**  
+Not entirely clear how to understand “information packaging”.
+
+According to Croft, “constructions always involve the information packaging of the semantic content of the sentence, that is, the function of constructions has to be defined in terms of both semantic content and information packaging. … information packaging functions are much more isomorphic to syntactic structures than semantic classes or semantic relations. Information packaging functions are less variable across languages than semantics, especially lexical semantics.” (Croft, invited talk, UDW17, http://universaldependencies.org/udw17/program.html)
+
+TO READ: William Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
+
 
 #### Eventive concepts in UMR
 
@@ -333,7 +397,7 @@ Some languages (e.g., Basque) have morphological causative:
 > - **Event nominals ending with _-ní/-tí_** should be represented as coresponding verbs (e.g., _přijíždění_ "arrival") if they denote a process (and thus they should get aspect annotation).  
 > - **Agentive nouns** (e.g., _učitel_"teacher", _řidič_ "driver"), even when  represented as ARG0-of the respective verb, are entities (persons).  
 > - **Other event nominals** (e.g., _příjezd_ "arrival", _jídlo_ "food") represent as entities (unless they are already covered by the valency lexicon).
-> ... _**CONFLICT with UMR guidelines!!**_
+> ... _**CONFLICT with UMR guidelines (which are not consistent!!**_, compare _food_ in 3-2-1-1 (6a) and in 3-3-3 (1a))_
 > - **Complex predicates** (= light verb constructions) - predicative nouns should be identified as events (a single predication, thus a single event);
 > - **Verbonominal predicates** (predicate nominals) - nouns in predication; the whole predicate as a single predication (thus a single event).
 
@@ -685,6 +749,7 @@ States/properties (esp. adjectives) in predication are annotated as eventive con
 
 - William Croft (2001) *Radical Construction Grammar: Syntactic Theory in Typological Perspective*
 - James Pustejovsky et al. (2005) [The Specification Language TimeML](https://www.researchgate.net/publication/242423032_The_Specification_Language_TimeML).
+
 
 About events expressed as MWE:
 - Julia Bonn et al. (2023) *UMR Annotation of Multiword Expressions* (sent by HH)
