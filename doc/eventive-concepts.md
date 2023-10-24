@@ -18,6 +18,33 @@ What to do with **verbonominal predicates** (esp. those with predicative adjecti
 JH: Be conservative (at least for the time being)!  
 Discussion on 31.7.2023, see the 31.7.2023 meeting minutes: “We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) or deverbal adjective (see below) … YES – morphological criterion!!!” 
 
+**ad food-related discussion:**
+
+ [en] _unhealthy food_ (3-3-3 (1a))
+
+```
+(t/ thing
+	:ARG1-of (e/ eat-01)
+	:mod (h/ healthy
+		:polarity -))
+```
+
+* [en] 3-2-1-1 (6a) _He gave the cat some wet **food**._
+```
+He gave the cat some wet food.
+(g/ give-01  
+	:actor (p/ person
+		:ref-person 3rd
+		:ref-number Singular)  
+	:theme (f/ food
+		:mod (w/ wet)
+		:quant (s/ some))  
+	:recipient (c/ cat
+		:ref-number Singular)
+	:aspect Performance
+	:modstr FullAff)
+```
+
 #### 4. Deverbal adjectives other than active/passive participial adjectives:  
 
 ??? Derivations of adjectives from the l-participle are less productive. Therefore, spadlý “fallen”, vzrostlý “full-grown”, bývalý “former” etc. are not events.
