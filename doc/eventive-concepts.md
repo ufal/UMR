@@ -18,32 +18,6 @@ What to do with **verbonominal predicates** (esp. those with predicative adjecti
 JH: Be conservative (at least for the time being)!  
 Discussion on 31.7.2023, see the 31.7.2023 meeting minutes: “We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) or deverbal adjective (see below) … YES – morphological criterion!!!” 
 
-However, compare the following example from the Guidelines (exemplifying polarity there):
-```
-3-3-3 (1a) Unhealthy food.
-(t/ thing
-	:ARG1-of (e/ eat-01)
-	:mod (h/ healthy
-		:polarity -))
-```
-
-BUT:
-3-2-1-1 (6a) _He gave the cat some wet **food**._
-```
-He gave the cat some wet food.
-(g/ give-01  
-	:actor (p/ person
-		:ref-person 3rd
-		:ref-number Singular)  
-	:theme (f/ food
-		:mod (w/ wet)
-		:quant (s/ some))  
-	:recipient (c/ cat
-		:ref-number Singular)
-	:aspect Performance
-	:modstr FullAff)
-```
-
 #### 4. Deverbal adjectives other than active/passive participial adjectives:  
 
 ??? Derivations of adjectives from the l-participle are less productive. Therefore, spadlý “fallen”, vzrostlý “full-grown”, bývalý “former” etc. are not events.
@@ -71,7 +45,7 @@ The cat is black.
 
 However, the Guidelines provide also the following example (the original example focused on "the more - the more" constructions, within Part 3-1-3-8 "Miscellaneous constructions").
 
-[en] _... that you have a black heart. (=you have heart that is black)_
+[en] _... that you have a black heart. (= you have a heart and the heart is black)_
 
 ```
 (h / have-03
@@ -397,7 +371,7 @@ Some languages (e.g., Basque) have morphological causative:
 > - **Event nominals ending with _-ní/-tí_** should be represented as coresponding verbs (e.g., _přijíždění_ "arrival") if they denote a process (and thus they should get aspect annotation).  
 > - **Agentive nouns** (e.g., _učitel_"teacher", _řidič_ "driver"), even when  represented as ARG0-of the respective verb, are entities (persons).  
 > - **Other event nominals** (e.g., _příjezd_ "arrival", _jídlo_ "food") represent as entities (unless they are already covered by the valency lexicon).
-> ... _**CONFLICT with UMR guidelines (which are not consistent!!**_, compare _food_ in 3-2-1-1 (6a) and in 3-3-3 (1a))_
+> ... _**CONFLICT with UMR guidelines!!**_
 > - **Complex predicates** (= light verb constructions) - predicative nouns should be identified as events (a single predication, thus a single event);
 > - **Verbonominal predicates** (predicate nominals) - nouns in predication; the whole predicate as a single predication (thus a single event).
 
