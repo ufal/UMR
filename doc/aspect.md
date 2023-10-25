@@ -116,18 +116,29 @@ Event nominals also include  underived nominals, nominalizations, and gerunds - 
 
 # PDT aspect annotation
 
-
-In PDT 2.0, the `aspect` grammateme has two possible values (based on the morphological dictionary):
+**First**, the PDT `aspect` grammateme has two possible values (based on the morphological dictionary):
 - `proc` (=procesual) for (morphologically) imperfective verbs,
 - `cpl` (=complex) for (morphologically) perfective verbs
--  (biasp: některým přidělena podle kontextu, jiná nr)   
 
-Further, 
-gramatém iter ... `habitual`
+Biaspectual / double-aspect verbs are (partially) disambiguated based on the context. When this was not possible, the verns got the `nr` value. 
 
-gramatém diat … typ rezultativ (for diathesis), value resultative should indicate the process that ends and reaches a result state, i.e. `Performance`.
+**Second**, the `iterativeness` grammateme (value `it1`) indicates verbs denoting multiple/iterated events. 
+ 
+* [cs] _**Chodíval** k nám často._ [iterativeness=it1]
 
-# Conversion of the aspect annotation from PDT
+However, as a a temporary solution, only selected types of verbs are covered, namely those with one of the iterative suffixes _-ívat / -ávat, -ávávat / -ívávat_ (all other verbs have the `it0` value, despite of their possible multiple/iterative semantics).
+
+* [cs] _**Chodí** plavat pravidelně / každé pondělí._ [iterativeness=it0]
+* [cs] _**Zaplaval** si a **odešel**._ in both cases [iterativeness=it0]
+* [cs] _**Plaval** dvě hodiny._ [iterativeness=it0]
+
+
+**Third,**  resultative constructions might indicate events that end/ended and each/reached a resulting state (indicated by the  `diathesis` grammateme, values    `res1`, `res2.1` and `res2.1`).
+
+
+
+## Conversion of the aspect annotation from PDT
+
 
 - `proc` (=procesual) for (morphologically) imperfective verbs -- these verbs are supposed to present the denoted event as ongoing, thus should be in general converted to the `activity` UMR aspect value (by default);  
 However,
@@ -186,9 +197,14 @@ TODO:
     K 31. lednu 1995 registrovaly úřady práce v České republice celkem 75 659 nových pracovních míst. [aspect=cpl] (=By January 31st 1995, the employment agencies registered 75 659 new positions...)
 
 
+the process that ends and reaches a result state ... dále to potvrzují rezult.konstrukce (for gramatém diat, values ... )  --> `Performance`.
 
 
+- aspect `nr` (biasp. slovesa) --> `process`
+
+gramatém iter ... `habitual`
 
 Habitual ... ???
 
 State ... ???
+
