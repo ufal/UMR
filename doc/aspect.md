@@ -139,22 +139,48 @@ However, as a a temporary solution, only selected types of verbs are covered, na
 
 ## Conversion of the aspect annotation from PDT
 
+#### PDT `proc` aspect value (possibly combined with `it1`  iterativeness value) 
+The PDT aspect grammateme `proc` is assigned to verbs that denoted event as ongoing -- thus these events should get the `activity` UMR aspect value (by default).  
 
-- `proc` (=procesual) for (morphologically) imperfective verbs -- these verbs are supposed to present the denoted event as ongoing, thus should be in general converted to the `activity` UMR aspect value (by default);  
-However,
+* [cs] _Radnice **hledá.activity** vhodné místo s ohledem na bezpečnost._  
+  [en] _The town hall is looking for a suitable place with safety in mind._
 
-> BUT examples ... spí nesedí!!!!
-> 
-> Nejraději kupuje / nakupuje nábytek. [aspect=proc] (=He likes to buy furniture best)
-> 
-> Na schůzky s přáteli mě Pavel nikdy nebral. [aspect=proc] (=Pavel never took me to his get-togethers with friends)
+The PDT aspect grammateme `proc` may be combined with the `it1` value of the `iterativeness` grammateme, which mark multiple/iterated events (disclaimer: this distinction is applied only for limited class of verbs with clear morphological marking, see above).  Each verb with the `it1` value should be annotate as `habitual`.
 
-  - TODO in case of iteratives, the aspect value should be `habitual`
-  -
+* [cs] _**Chodíval.habitual** k nám často._ [iterativeness=it1]  
+... _chodívat_ as "it1" verb gets the `habitual` aspect value in UMR. 
+
+However, as noted above, many Czech imperfective verbs annotated as non-iteratives in PDT (see above) may denote also repeated/usual events where the `habitual` aspect value would be more appropriate:
+
+* [cs] _**Beru.activity** za kliku a **odcházím.activity**._  
+  [en]  _**I am taking** the handle and **leaving**_.  
+    ... _brát_ and _odcházet_ as "impf" verbs get `proc` in PDT and they denote ongoing events.   
+   
+BUT:
+* [cs] _Na schůzky s přáteli mě Pavel nikdy **nebral.habitual**._   
+  [en] _Pavel never took me to his get-togethers with friends._  
+  ... _brát_ as "impf" verb gets `proc` and as such it may denote not only ongoing but also usually occurred events   
+
+* [cs] _**Kupuji/?nakupuji.activity** mléko a rychle **mizím.activity**._   
+  [en] _I'm buying milk and disappearing fast._  
+    ... _kupovat_ and _mizet_ as "impf" verbs get `proc` in PDT and they denote ongoing events.   
+    
+* [cs] _Nejraději **kupuje / nakupuje.habitual** nábytek._   
+    (= He likes shopping for furniture the most.)
+  ... _kupovat_ and _nakupovat_ as "impf" verbs get `proc` in PDT and as such it may denote not only ongoing but also usually occurred events   
+
+Unfortunately, this ambiguity is not reflected in the UMR aspect lattice.
+
+#### PDT `cpl` aspect value 
+
+==============================
+
 - `cpl` (=complex) for (morphologically) perfective verbs -- these verbs are supposed to present the denoted event as completed/a whole, thus such events should (by default) get the `performance` UMR aspect value.  
 However,  
   - in case of special terminative marking TODO --> `endeavor` 
 
+Podle předběžných ujednání by hlavní město **poskytlo.cpl** na vybudování čtvrti svůj pozemek
+According to preliminary arrangements, the capital city would provide its land to build the district
 
 > Koupil / nakoupil už vše potřebné. [aspect=cpl] (=He has already bought everything we needed)
 > 
