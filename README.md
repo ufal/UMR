@@ -22,7 +22,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
   * [Ellipsis](doc/ellipsis.md)
   * [Coreference](doc/coreference.md)
 * UMR attributes
-  * Aspect
+  * Aspect ... [Aspect](doc/aspect.md)
   * Mode   ... [Mode](doc/mode.md)
   * Polarity ... [Polarity](doc/polarity.md)
   * Quant ... [Quantity](doc/quantity.md) (incl. comparison of quantity)
