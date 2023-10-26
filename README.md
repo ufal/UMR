@@ -22,12 +22,12 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
   * [Ellipsis](doc/ellipsis.md)
   * [Coreference](doc/coreference.md)
 * UMR attributes
-  * Aspect ... [Aspect](doc/aspect.md)
-  * Mode   ... [Mode](doc/mode.md)
-  * Polarity ... [Polarity](doc/polarity.md)
-  * Quant ... [Quantity](doc/quantity.md) (incl. comparison of quantity)
-  * Ref ... [Person and Number](doc/reference.md)
-  * Degree ... [Degree](doc/degree.md) (incl. comparison of quality)
+  * [Aspect](doc/aspect.md)
+  * [Mode](doc/mode.md)
+  * [Polarity](doc/polarity.md)
+  * [Quantity](doc/quantity.md) (incl. comparison of quantity)
+  * Ref = [Person and Number](doc/reference.md)
+  * [Degree](doc/degree.md) (incl. comparison of quality)
 * [Glossary of relations and attributes](doc/relations-attributes.md)
 
 ## Useful links
