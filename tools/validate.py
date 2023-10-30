@@ -689,10 +689,16 @@ def validate_alignment(sentence, node_dict, args):
                                     testmessage = "Repeated alignment of node '%s'. It was already specified as %d-%d on line %d." % (variable, node_dict[variable]['alignment']['t0'], node_dict[variable]['alignment']['t1'], node_dict[variable]['alignment']['line0'])
                                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                                 else:
-                                    node_dict[variable]['alignment']['tokids'].extend(range(t0, t1+1))
+                                    tokids = node_dict[variable]['alignment']['tokids']
+                                    tokids.extend(range(t0, t1+1))
+                                    tokens = [sentence[0]['tokens'][tokid-1] for tokid in tokids] if len(tokids) > 1 or tokids[0] != 0 else []
+                                    node_dict[variable]['alignment']['tokids'] = tokids
+                                    node_dict[variable]['alignment']['tokstr'] = ' '.join(tokens)
                             else:
-                                node_dict[variable]['alignment'] = {'tokids': [], 'line0': iline}
-                                node_dict[variable]['alignment']['tokids'].extend(range(t0, t1+1))
+                                tokids = []
+                                tokids.extend(range(t0, t1+1))
+                                tokens = [sentence[0]['tokens'][tokid-1] for tokid in tokids] if len(tokids) > 1 or tokids[0] != 0 else []
+                                node_dict[variable]['alignment'] = {'tokids': tokids, 'tokstr': ' '.join(tokens), 'line0': iline}
                 else:
                     testid = 'invalid-token-range'
                     testmessage = "Expecting 1-based token index range, or multiple comma-separated ranges, or '0-0', found '%s'." % pline
@@ -734,6 +740,11 @@ def validate_document_level(sentence, node_dict, args):
             warn(testmessage, testclass, testlevel, testid, lineno=sentence[3]['line0'])
     expecting = 'initial opening bracket'
     iline = sentence[3]['line0'] + len(sentence[3]['comments']) - 1
+    current_relation_group = ''
+    current_relation = ''
+    current_first_node = ''
+    current_line0 = iline
+    sentence[3]['relations'] = []
     for l in sentence[3]['lines']:
         iline += 1
         pline = l # processed line: we will remove stuff from pline but not from l
@@ -781,8 +792,11 @@ def validate_document_level(sentence, node_dict, args):
                 match = dvariable_re.match(pline)
                 variable = match.group(1)
                 if expecting == 'the first node of a relation':
+                    current_first_node = variable
+                    current_line0 = iline
                     expecting = 'relation'
                 elif expecting == 'the second node of the relation':
+                    sentence[3]['relations'].append({'group': current_relation_group, 'relation': current_relation, 'node0': current_first_node, 'node1': variable, 'line0': current_line0})
                     expecting = 'relation closing bracket'
                 else:
                     testid = 'invalid-document-level'
@@ -797,16 +811,18 @@ def validate_document_level(sentence, node_dict, args):
                     testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
             elif relation_re.match(pline):
+                match = relation_re.match(pline)
+                relation = match.group(0)
                 if expecting == 'relation group' or expecting == 'relation group or final closing bracket':
+                    current_relation_group = relation
                     expecting = 'group opening bracket'
                 elif expecting == 'relation':
+                    current_relation = relation
                     expecting = 'the second node of the relation'
                 else:
                     testid = 'invalid-document-level'
                     testmessage = "Expecting %s, found '%s'." % (expecting, pline)
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                match = relation_re.match(pline)
-                relation = match.group(0)
                 pline = remove_leading_whitespace(relation_re.sub('', pline, 1))
             elif pline.startswith(')'):
                 if expecting == 'relation closing bracket':
@@ -847,12 +863,10 @@ def detect_events(sentence, node_dict):
         outrel = [r for r in node['relations'] if r['dir'] == 'out' and r['type'] == 'node']
         for r in outrel:
             node_dict[r['value']]['relations'].append({'dir': 'in', 'type': 'node', 'value': nid, 'relation': r['relation'], 'line0': r['line0']})
-    for nid in sentence[1]['nodes']:
+    for nid in sorted(sentence[1]['nodes']):
         node = node_dict[nid]
         ###!!! For now, just print the nodes and relations.
-        tokids = node['alignment']['tokids']
-        tokens = [sentence[0]['tokens'][tokid-1] for tokid in tokids] if len(tokids) > 1 or tokids[0] != 0 else []
-        print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(tokids), ' '.join(tokens)))
+        print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(node['alignment']['tokids']), node['alignment']['tokstr']))
         relations = node['relations']
         event = False
         event_reason = ''
@@ -868,6 +882,19 @@ def detect_events(sentence, node_dict):
         if event:
             print("  This node is an event because %s." % event_reason)
         print('')
+    # Check document level annotation.
+    events = {}
+    for r in sentence[3]['relations']:
+        # Concepts included in temporal and modal relations are probably events.
+        if r['group'] in [':temporal', ':modal']:
+            if not r['node0'] in events:
+                events[r['node0']] = {'reason': "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])}
+            if not r['node1'] in events:
+                events[r['node1']] = {'reason': "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])}
+    for e in events:
+        if not e in ['document-creation-time', 'root', 'author']:
+            print("Node %s (concept=%s, tokens=%s) is an event because %s." % (e, node_dict[e]['concept'], node_dict[e]['alignment']['tokstr'], events[e]['reason']))
+    print('')
 
 
 
