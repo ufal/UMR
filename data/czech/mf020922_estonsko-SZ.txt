@@ -20,47 +20,47 @@ Snt1: Estonci volili parlament.
 	:ref-person 3rd
 	:aspect process
 	:modstr Full) 
-Any temporal annotation? 
+#Any temporal annotation? 
 
-Commentaries:
-(v/ volit
-- Is v/ just an initial letter from some list of verbs? Where does this letter come from? Cf. Manual: i/ identity-91, d/deny-01
-- volit: is it a verb from a certain list of verbs? Should it have some number for a specific meaning?
-- :ARG0, ARG1 where do I take these arguments from? Are they in some official lexicon of verbal valency we use? Or do I just assign them as I understand the roles in the sentence?
-- :ARG0, ARG1 how do I know which Arg is 0 and which is 1? Some subjects (with copulative to_be) are ARG1. 
+#Commentaries:
+#(v/ volit
+#- Is v/ just an initial letter from some list of verbs? Where does this letter come from? Cf. Manual: i/ identity-91, d/deny-01
+#- volit: is it a verb from a certain list of verbs? Should it have some number for a specific meaning?
+#- :ARG0, ARG1 where do I take these arguments from? Are they in some official lexicon of verbal valency we use? Or do I just assign them as I understand the roles in the sentence?
+#- :ARG0, ARG1 how do I know which Arg is 0 and which is 1? Some subjects (with copulative to_be) are ARG1. 
 
-(p/ person Estonec how should I describe the Estonians? Are there any more specifications, like ethnicity etc.? How will I set the relation to Wikipedia and e.g. Estonia? 
-o my suggestion, based on the manual, p. 25 – table total set of entity types:
-class: person, further description: class – nationality. Is it possible to combine two classes, person and nationality?
-o How should the nationality be graphically connected to the ARG0? Any other signs or abbreviations, except for column?
-o n2 – I take this from the example with Edmund Pope in the manual, p. 25 (n is name, n2 si nationality). Is there any list of these abbreviations in the manual?
-o Is gender important here?
+#(p/ person Estonec how should I describe the Estonians? Are there any more specifications, like ethnicity etc.? How will I set the relation to Wikipedia and e.g. Estonia? 
+#o my suggestion, based on the manual, p. 25 – table total set of entity types:
+#class: person, further description: class – nationality. Is it possible to combine two classes, person and nationality?
+#o How should the nationality be graphically connected to the ARG0? Any other signs or abbreviations, except for column?
+#o n2 – I take this from the example with Edmund Pope in the manual, p. 25 (n is name, n2 si nationality). Is there any list of these abbreviations in the manual?
+#o Is gender important here?
 
-:ARG1 (p/ parlament
-      :social_group	:organization	:government_organization (g/ government_organization	:wiki “parlament”)
-		:ref-number Singular
-		:mod – how will I describe the reference to Estonians? (They voted for THEIR parliament.)
-
-
-- How do I describe the parlament? How do I graphically connect the class – type – subtype in the description of an entity (see Table on p. 25). Now I am using just columns and tabulators.
-- Do I connect it to Wikipedia?
-- Shall I connect it to Estonia, Estonian people? How
-
-(v/ volit
-…
-	:ref-person 3rd
-- Probably should not be described here? The person is just a congruency category here. 
-
-:aspect proces
-- Unclear, the result is very important, the expression does not correspond with the meaning.
-
-:modstr 
-- Manual: Part 4-3-1-1.
-- Values: full, partial, neutral (Neutral: The cat might have already eaten the breakfast.)
+#:ARG1 (p/ parlament
+#     :social_group	:organization	:government_organization (g/ government_organization	:wiki “parlament”)
+#		:ref-number Singular
+#		:mod – how will I describe the reference to Estonians? (They voted for THEIR parliament.)
 
 
-Any temporal annotation? 
+#- How do I describe the parlament? How do I graphically connect the class – type – subtype in the description of an entity (see Table on p. 25). Now I am using just columns and tabulators.
+#- Do I connect it to Wikipedia?
+#- Shall I connect it to Estonia, Estonian people? How
+
+#(v/ volit
+#…
+#	:ref-person 3rd
+#- Probably should not be described here? The person is just a congruency category here. 
+
+#:aspect proces
+#- Unclear, the result is very important, the expression does not correspond with the meaning.
+
+#:modstr 
+#- Manual: Part 4-3-1-1.
+#- Values: full, partial, neutral (Neutral: The cat might have already eaten the breakfast.)
+
+
+#Any temporal annotation? 
 
 
 
-There is an annotation cheat sheet at the end of the manual, Part 5, pp. 155. 
+#There is an annotation cheat sheet at the end of the manual, Part 5, pp. 155. 
