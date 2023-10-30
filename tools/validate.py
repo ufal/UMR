@@ -842,10 +842,11 @@ def validate_document_level(sentence, node_dict, args):
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
 
-def detect_events(sentence, node_dict):
+def detect_events(sentence, node_dict, args):
     """
     Tries to figure out which concept nodes in the current sentence are events.
     Possible clues:
+    * If it is one of the predefined *-91 concepts, it is an event.
     * If it has an ":ARG?" child, it is an event.
     * If it has an ":ARG?-of" parent, it is an event.
     * If it has ":modstr" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
@@ -865,36 +866,39 @@ def detect_events(sentence, node_dict):
             node_dict[r['value']]['relations'].append({'dir': 'in', 'type': 'node', 'value': nid, 'relation': r['relation'], 'line0': r['line0']})
     for nid in sorted(sentence[1]['nodes']):
         node = node_dict[nid]
-        ###!!! For now, just print the nodes and relations.
-        print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(node['alignment']['tokids']), node['alignment']['tokstr']))
+        if args.print_relations:
+            print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(node['alignment']['tokids']), node['alignment']['tokstr']))
         relations = node['relations']
-        event = False
-        event_reason = ''
         for r in relations:
             print("  Relation %s %s, type=%s, value=%s, line=%d" % (r['dir'], r['relation'], r['type'], r['value'], r['line0']))
-            if not event:
+            if not 'event_reason' in node:
                 if r['dir'] == 'out' and re.match(r"^:(ARG[0-5]|aspect|modstr)$", r['relation']):
-                    event = True
-                    event_reason = "it has outgoing relation %s on line %d" % (r['relation'], r['line0'])
+                    node['event_reason'] = "it has outgoing relation %s on line %d" % (r['relation'], r['line0'])
                 elif r['dir'] == 'in' and re.match(r"^:ARG[0-5]-of$", r['relation']):
-                    event = True
-                    event_reason = "it has incoming relation %s on line %d" % (r['relation'], r['line0'])
-        if event:
-            print("  This node is an event because %s." % event_reason)
-        print('')
+                    node['event_reason'] = "it has incoming relation %s on line %d" % (r['relation'], r['line0'])
+        if args.print_relations:
+            if 'event_reason' in node:
+                print("  This node is an event because %s." % node['event_reason'])
+            print('')
     # Check document level annotation.
-    events = {}
+    events = []
     for r in sentence[3]['relations']:
         # Concepts included in temporal and modal relations are probably events.
         if r['group'] in [':temporal', ':modal']:
-            if not r['node0'] in events:
-                events[r['node0']] = {'reason': "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])}
-            if not r['node1'] in events:
-                events[r['node1']] = {'reason': "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])}
-    for e in events:
-        if not e in ['document-creation-time', 'root', 'author']:
-            print("Node %s (concept=%s, tokens=%s) is an event because %s." % (e, node_dict[e]['concept'], node_dict[e]['alignment']['tokstr'], events[e]['reason']))
-    print('')
+            # The 'node' can be also a constant (e.g. 'document-creation-time') which we do not have in node_dict.
+            if r['node0'] in node_dict and not 'event_reason' in node_dict[r['node0']]:
+                node_dict[r['node0']]['event_reason'] = "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])
+                events.append(r['node0'])
+            if r['node1'] in node_dict and not 'event_reason' in node_dict[r['node1']]:
+                node_dict[r['node1']]['event_reason'] = "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])
+                events.append(r['node1'])
+    if args.print_relations:
+        something_printed = False
+        for e in events:
+            print("Node %s (concept=%s, tokens=%s) is an event because %s." % (e, node_dict[e]['concept'], node_dict[e]['alignment']['tokstr'], node_dict[e]['event_reason']))
+            something_printed = True
+        if something_printed:
+            print('')
 
 
 
@@ -924,8 +928,7 @@ def validate(inp, out, args, known_sent_ids):
             validate_sentence_graph(sentence, node_dict, args)
             validate_alignment(sentence, node_dict, args)
             validate_document_level(sentence, node_dict, args)
-            if args.print_relations:
-                detect_events(sentence, node_dict)
+            detect_events(sentence, node_dict, args)
         # Before we read the next sentence, clear the current sentence variables
         # so that sentences() knows they should be reset to new values.
         sentence_line = None
