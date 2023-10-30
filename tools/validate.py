@@ -881,9 +881,9 @@ def detect_events(sentence, node_dict, args):
         for r in relations:
             print("  Relation %s %s, type=%s, value=%s, line=%d" % (r['dir'], r['relation'], r['type'], r['value'], r['line0']))
             if not 'event_reason' in node:
-                if r['dir'] == 'out' and re.match(r"^:(ARG[0-5]|aspect|modstr)$", r['relation']):
+                if r['dir'] == 'out' and re.match(r"^:(ARG[0-6]|aspect|modstr)$", r['relation']):
                     node['event_reason'] = "it has outgoing relation %s on line %d" % (r['relation'], r['line0'])
-                elif r['dir'] == 'in' and re.match(r"^:ARG[0-5]-of$", r['relation']):
+                elif r['dir'] == 'in' and re.match(r"^:ARG[0-6]-of$", r['relation']):
                     node['event_reason'] = "it has incoming relation %s on line %d" % (r['relation'], r['line0'])
         if args.print_relations:
             if 'event_reason' in node:
@@ -916,6 +916,10 @@ def validate_events(sentence, node_dict, args):
     """
     testlevel = 3
     testclass = 'Sentence'
+    values = {
+        ':aspect': ['habitual', 'imperfective', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement'],
+        ':modstr': ['full-affirmative', 'partial-affirmative', 'neutral-affirmative', 'neutral-negative', 'partial-negative', 'full-negative']
+    }
     for nid in sentence[1]['nodes']:
         node = node_dict[nid]
         if 'event_reason' in node:
@@ -923,10 +927,10 @@ def validate_events(sentence, node_dict, args):
             # On the other hand, :aspect and :modstr seem to be required according to the guidelines.
             # Only one :aspect and one :modstr relation is expected.
             for rtype in [':aspect', ':modstr']:
-                relations = [r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == rtype]
+                relations = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == rtype], key=lambda x: x['line0'])
                 if len(relations) > 1:
                     testid = 'non-unique-attribute'
-                    testmessage = "Repeated assertion of %s for the same node." % rtype
+                    testmessage = "Repeated assertion of %s for node %s (other %s on line %d)." % (rtype, nid, rtype, relations[0]['line0'])
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[1]['line0'])
                 elif len(relations) < 1:
                     testid = 'missing-attribute'
@@ -934,9 +938,13 @@ def validate_events(sentence, node_dict, args):
                     warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
                 elif relations[0]['type'] != 'atom':
                     testid = 'invalid-attribute'
-                    testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (relations[0]['type'], relations[0]['value'])
+                    testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (rtype, relations[0]['type'], relations[0]['value'])
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
-            for rtype in [':ARG0', ':ARG1', ':ARG2', ':ARG3', ':ARG4', ':ARG5']:
+                elif not relations[0]['value'] in values[rtype]:
+                    testid = 'invalid-attribute-value'
+                    testmessage = "Unknown value '%s' of attribute %s." % (rtype, relations[0]['value'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
+            for rtype in [':ARG0', ':ARG1', ':ARG2', ':ARG3', ':ARG4', ':ARG5', ':ARG6']:
                 irel = [r for r in node['relations'] if r['dir'] == 'in' and r['relation'] == rtype+'-of']
                 orel = [r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == rtype]
                 relations = sorted(irel + orel, key=lambda x: x['line0'])

@@ -164,7 +164,10 @@ declarative sentences, so most events lack this attribute.
 `:modpred` – Example (2c) in 3-3-1-3. Events under the scope of a modal identified as its own event are only annotated with a :modpred relation to the relevant modal.
 
 `:modstr` – Attribute used with every event. Expresses modality at sentence
-level. Typical value `FullAff` (fully affirmative).
+level. Typical value `FullAff` (fully affirmative). See [4-3-1-1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-4-3-1-1-modstr-values).
+In UMR release 1.0, the annotators diverge from the guidelines.
+The attribute is called `:modal-strength` instead of `:modstr`.
+The values of `:modal-strength` are also different and more in line with the lowercase-hyphen style of AMR. For example, `full-affirmative` is used instead of `FullAff`.
 
 `:month` – Looks like attribute, introduced among relations in 3-2-2-1. The value is the month number. (Not sure what they do with lunar and other calendars.)
 It is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
