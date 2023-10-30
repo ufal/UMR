@@ -826,6 +826,40 @@ def validate_document_level(sentence, node_dict, args):
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
 
+def detect_events(sentence, node_dict):
+    """
+    Tries to figure out which concept nodes in the current sentence are events.
+    Possible clues:
+    * If it has an ":ARG?" child, it is an event.
+    * If it has an ":ARG?-of" parent, it is an event.
+    * If it has ":modstr" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
+    * If in document annotation it participates in a relation from the ":temporal" or ":modal" group, it is probably an event.
+    """
+    # Make sure that every node has the relation list, even if empty.
+    for nid in sentence[1]['nodes']:
+        node = node_dict[nid]
+        if not 'relations' in node:
+            node['relations'] = []
+    # So far we know for each node its outgoing relations.
+    # Store also the incoming relations at each node.
+    for nid in sentence[1]['nodes']:
+        node = node_dict[nid]
+        outrel = [r for r in node['relations'] if r['dir'] == 'out' and r['type'] == 'node']
+        for r in outrel:
+            node_dict[r['value']]['relations'].append({'dir': 'in', 'type': 'node', 'value': nid, 'relation': r['relation'], 'line0': r['line0']})
+    for nid in sentence[1]['nodes']:
+        node = node_dict[nid]
+        ###!!! For now, just print the nodes and relations.
+        tokids = node['alignment']['tokids']
+        tokens = [sentence[0]['tokens'][tokid-1] for tokid in tokids] if len(tokids) > 1 or tokids[0] != 0 else []
+        print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(tokids), ' '.join(tokens)))
+        if 'relations' in node:
+            outrel = node['relations']
+            for r in outrel:
+                print("  Relation %s %s, type=%s, value=%s, line=%d" % (r['dir'], r['relation'], r['type'], r['value'], r['line0']))
+        else:
+            print("  No relations.")
+
 
 
 #==============================================================================
@@ -854,6 +888,7 @@ def validate(inp, out, args, known_sent_ids):
             validate_sentence_graph(sentence, node_dict, args)
             validate_alignment(sentence, node_dict, args)
             validate_document_level(sentence, node_dict, args)
+            detect_events(sentence, node_dict)
         # Before we read the next sentence, clear the current sentence variables
         # so that sentences() knows they should be reset to new values.
         sentence_line = None
