@@ -2,7 +2,7 @@
 
 The aspect attribute should be annotated for any eventive concept. The UMR Guidelines provide quite a rich aspect [lattice](https://github.com/umr4nlp/umr-guidelines/blob/master/Guidelines_figures/Aspect%20Lattice_2022.png) without any useful description (like `state` = unspecified type of state).
 
-**Five values** at the default level of granularity, plud one for event nominals:
+**Five values** at the default level of granularity (plus one for event nominals):
 1. `habitual` (occurs usually; simple present, "used to+"),
 2. `state` (no change takes place over the course of the event; also modals),
 3. `activity` (process with **no evidence that it has come to an end**), which is either
@@ -10,18 +10,20 @@ The aspect attribute should be annotated for any eventive concept. The UMR Guide
    - it is not clear whether or not the process continues
 4. `performance` (**default** for process that **ends and reaches a result state**)
 5. `endeavor` only in case of explicit marking that evidences non-reaching a result state (like terminative _stop_, durative adverbials)   
-6. `process` for event nominals.
+6. PLUS `process` for event nominals.
 
 
-**Termonological note:** There are also more coarse-grained values, esp. 
+**Terminological note:** There are also more coarse-grained values, esp. 
 - `imperfective`, which is ambiguous between state and atelic process, and 
 - `perfective`, which covers both processes that ends without reaching a result state (`endeavor`) and process that ends and reaches a result state (`performance`)  
-**Do not confuse these with the morpholiogical categories of aspect in Czech!**
+**Do not confuse these with the morphological categories of aspect in Czech!**
 
 ## 1. `Habitual`
 
 This aspect value marks events that occur/occurred usually or habitually:
+
 * [en] _He bakes pies._ / _She rides her bike to work._ / _They vacation in Taos every winter._ / _They used to vacation in Taos every winter._  
+
 The Guidelines rely on the **morphological category of tense** here (simple Present or "used to" construction for past tense habitual events).  
 NOT for ability modals! 
 
@@ -47,7 +49,7 @@ Those modals in English that are recognized as separate events get the `state` v
 
 #### Events under the scope of ability modals
 
-According to the Guidelines, "Ability modals refer to a static state of affairs, i.e. an entity possesses the relevant ability." In such cases, UMR treats the modal verbs in the same way as we are used to in PDT (modals are reflected as attributes, here `aspect` = state, `modstr` = neutral-affirmative)
+According to the Guidelines, "Ability modals refer to a static state of affairs, i.e., an entity possesses the relevant ability." In such cases, UMR treats the modal verbs in the same way as we are used to in PDT (modals are reflected as attributes, here `aspect` = state, `modstr` = neutral-affirmative)
  
 * [en] _She (is able to sing).state that aria._ ... NO separate node for modal verb
 * [en] _This car (can go).state up to 150 mph._ ... NO separate node for modal verb
@@ -96,7 +98,7 @@ This aspect value marks such events which clearly end/ended **without reaching a
 
 * [en] _They walked.endeavor along the river._ 
 * [en] _They (finished walking).performance along the river._ / _They walked.performance along the river in 3 hours._  
-... non-result path only weak indicator  of the endeavor (aspect) -- completitive markers (_finish_) and/or container adverbials  (_in 3 hours_) indicate that an event has reached a distinct result state (thus `performance`)
+... non-result path only weak indicator  of the endeavor (aspect) -- completive markers (_finish_) and/or container adverbials  (_in 3 hours_) indicate that an event has reached a distinct result state (thus `performance`)
 
 Several types of the endeavor aspect can be annotated, see the Guidelines.
 
@@ -120,7 +122,7 @@ Event nominals also include  underived nominals, nominalizations, and gerunds - 
 - `proc` (=procesual) for (morphologically) imperfective verbs,
 - `cpl` (=complex) for (morphologically) perfective verbs
 
-Biaspectual / double-aspect verbs are (partially) disambiguated based on the context. When this was not possible, the verns got the `nr` value. 
+Biaspectual / double-aspect verbs are (partially) disambiguated based on the context. When this was not possible, the verbs got the `nr` value. 
 
 **Second**, the `iterativeness` grammateme (value `it1`) indicates verbs denoting multiple/iterated events. 
  
@@ -171,7 +173,7 @@ BUT:
 
 Unfortunately, this ambiguity is not reflected in the UMR aspect lattice.
 
-#### PDT `cpl` aspect value 
+#### TODO: PDT `cpl` aspect value 
 
 ==============================
 
