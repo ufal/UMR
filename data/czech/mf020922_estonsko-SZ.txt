@@ -3,20 +3,20 @@ Estonci volili parlament
 ESTONSKO: 
 Estonci volili parlament 
 Tallin - 
-V nedìlních parlamentních volbách v Estonsku získal podle vèerejších pøedbìnıch vısledkù nejvíce hlasù blok Vlast, jeho prezidentskım kandidátem byl Lennart Meri. 
-Z celkového poètu 457319 volièù, kteøí se voleb zúèastnili, hlasovalo pro blok Vlast asi 20.5 procenta, co pøedstavuje 28 poslaneckıch mandátù v novém parlamentu. 
-Na druhém místì s 13.9 procenty hlasù (18 mandátù) je zatím blok Spolehlivı dùm dosavadního nejvyššího pøedstavitele republiky Arnolda Rüütela. 
+V nedÄ›lnÃ­ch parlamentnÃ­ch volbÃ¡ch v Estonsku zÃ­skal podle vÄerejÅ¡Ã­ch pÅ™edbÄ›Å¾nÃ½ch vÃ½sledkÅ¯ nejvÃ­ce hlasÅ¯ blok Vlast, jehoÅ¾ prezidentskÃ½m kandidÃ¡tem byl Lennart Meri. 
+Z celkovÃ©ho poÄtu 457319 voliÄÅ¯, kteÅ™Ã­ se voleb zÃºÄastnili, hlasovalo pro blok Vlast asi 20.5 procenta, coÅ¾ pÅ™edstavuje 28 poslaneckÃ½ch mandÃ¡tÅ¯ v novÃ©m parlamentu. 
+Na druhÃ©m mÃ­stÄ› s 13.9 procenty hlasÅ¯ (18 mandÃ¡tÅ¯) je zatÃ­m blok SpolehlivÃ½ dÅ¯m dosavadnÃ­ho nejvyÅ¡Å¡Ã­ho pÅ™edstavitele republiky Arnolda RÃ¼Ã¼tela. 
 
 Snt1: Estonci volili parlament.
 
 (v/ volit
 	:ARG0	(p/ person Estonec
-		:nationality (n2/ nationality	:wiki “Estonsko”)
+		:nationality (n2/ nationality	:wiki â€œEstonskoâ€)
 		:ref-number Plural)
 	:ARG1 (p/ parlament
-		:social_group	:organization	:government_organization (g/ government_organization	:wiki “parlament”)
+		:social_group	:organization	:government_organization (g/ government_organization	:wiki â€œparlamentâ€)
 		:ref-number Singular
-		:mod – make a reference to Estonci, they elected THEIR parliament)
+		:mod â€“ make a reference to Estonci, they elected THEIR parliament)
 	:ref-person 3rd
 	:aspect process
 	:modstr Full) 
@@ -30,24 +30,24 @@ Commentaries:
 - :ARG0, ARG1 how do I know which Arg is 0 and which is 1? Some subjects (with copulative to_be) are ARG1. 
 
 (p/ person Estonec how should I describe the Estonians? Are there any more specifications, like ethnicity etc.? How will I set the relation to Wikipedia and e.g. Estonia? 
-o my suggestion, based on the manual, p. 25 – table total set of entity types:
-class: person, further description: class – nationality. Is it possible to combine two classes, person and nationality?
+o my suggestion, based on the manual, p. 25 â€“ table total set of entity types:
+class: person, further description: class â€“ nationality. Is it possible to combine two classes, person and nationality?
 o How should the nationality be graphically connected to the ARG0? Any other signs or abbreviations, except for column?
-o n2 – I take this from the example with Edmund Pope in the manual, p. 25 (n is name, n2 si nationality). Is there any list of these abbreviations in the manual?
+o n2 â€“ I take this from the example with Edmund Pope in the manual, p. 25 (n is name, n2 si nationality). Is there any list of these abbreviations in the manual?
 o Is gender important here?
 
 :ARG1 (p/ parlament
-      :social_group	:organization	:government_organization (g/ government_organization	:wiki “parlament”)
+      :social_group	:organization	:government_organization (g/ government_organization	:wiki â€œparlamentâ€)
 		:ref-number Singular
-		:mod – nìjak reference k Estoncùm, volili svùj parlament)
+		:mod â€“ how will I describe the reference to Estonians? (They voted for THEIR parliament.)
 
 
-- How do I describe the parlament? How do I graphically connect the class – type – subtype in the description of an entity (see Table on p. 25). Now I am using just columns and tabulators.
+- How do I describe the parlament? How do I graphically connect the class â€“ type â€“ subtype in the description of an entity (see Table on p. 25). Now I am using just columns and tabulators.
 - Do I connect it to Wikipedia?
 - Shall I connect it to Estonia, Estonian people? How
 
 (v/ volit
-…
+â€¦
 	:ref-person 3rd
 - Probably should not be described here? The person is just a congruency category here. 
 
