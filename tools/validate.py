@@ -854,10 +854,20 @@ def detect_events(sentence, node_dict):
         tokens = [sentence[0]['tokens'][tokid-1] for tokid in tokids] if len(tokids) > 1 or tokids[0] != 0 else []
         print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(tokids), ' '.join(tokens)))
         relations = node['relations']
+        event = False
+        event_reason = ''
         for r in relations:
             print("  Relation %s %s, type=%s, value=%s, line=%d" % (r['dir'], r['relation'], r['type'], r['value'], r['line0']))
-            if r['dir'] == 'out' and re.match(r"^:ARG[0-5]$", r['relation']) or r['dir'] == 'in' and re.match(r"^:ARG[0-5]-of$", r['relation']):
-               print("    ===> EVENT!")
+            if not event:
+                if r['dir'] == 'out' and re.match(r"^:(ARG[0-5]|aspect|modstr)$", r['relation']):
+                    event = True
+                    event_reason = "it has outgoing relation %s on line %d" % (r['relation'], r['line0'])
+                elif r['dir'] == 'in' and re.match(r"^:ARG[0-5]-of$", r['relation']):
+                    event = True
+                    event_reason = "it has incoming relation %s on line %d" % (r['relation'], r['line0'])
+        if event:
+            print("  This node is an event because %s." % event_reason)
+        print('')
 
 
 
