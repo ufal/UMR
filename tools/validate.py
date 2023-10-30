@@ -879,7 +879,8 @@ def detect_events(sentence, node_dict, args):
             node['event_reason'] = "its concept is %s on line %d" % (node['concept'], node['line0'])
         relations = node['relations']
         for r in relations:
-            print("  Relation %s %s, type=%s, value=%s, line=%d" % (r['dir'], r['relation'], r['type'], r['value'], r['line0']))
+            if args.print_relations:
+                print("  Relation %s %s, type=%s, value=%s, line=%d" % (r['dir'], r['relation'], r['type'], r['value'], r['line0']))
             if not 'event_reason' in node:
                 if r['dir'] == 'out' and re.match(r"^:(ARG[0-6]|aspect|modstr)$", r['relation']):
                     node['event_reason'] = "it has outgoing relation %s on line %d" % (r['relation'], r['line0'])
