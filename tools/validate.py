@@ -842,6 +842,13 @@ def validate_document_level(sentence, node_dict, args):
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
 
+
+
+#==============================================================================
+# Level 3 tests. Concept-relation compatibility, attribute-value compatibility,
+# required relations etc. Language-neutral.
+#==============================================================================
+
 def detect_events(sentence, node_dict, args):
     """
     Tries to figure out which concept nodes in the current sentence are events.
@@ -902,6 +909,46 @@ def detect_events(sentence, node_dict, args):
         if something_printed:
             print('')
 
+def validate_events(sentence, node_dict, args):
+    """
+    Revisits concepts that have been identified as events and checks that they
+    have the relations that are required for events.
+    """
+    testlevel = 3
+    testclass = 'Sentence'
+    for nid in sentence[1]['nodes']:
+        node = node_dict[nid]
+        if 'event_reason' in node:
+            # :ARG relations imply that it is an event but they are not required.
+            # On the other hand, :aspect and :modstr seem to be required according to the guidelines.
+            # Only one :aspect and one :modstr relation is expected.
+            for rtype in [':aspect', ':modstr']:
+                relations = [r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == rtype]
+                if len(relations) > 1:
+                    testid = 'non-unique-attribute'
+                    testmessage = "Repeated assertion of %s for the same node." % rtype
+                    warn(testmessage, testclass, testlevel, testid, lineno=relations[1]['line0'])
+                elif len(relations) < 1:
+                    testid = 'missing-attribute'
+                    testmessage = "Missing attribute %s. Node %s is an event because %s." % (rtype, nid, node['event_reason'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
+                elif relations[0]['type'] != 'atom':
+                    testid = 'invalid-attribute'
+                    testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (relations[0]['type'], relations[0]['value'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
+            for rtype in [':ARG0', ':ARG1', ':ARG2', ':ARG3', ':ARG4', ':ARG5']:
+                irel = [r for r in node['relations'] if r['dir'] == 'in' and r['relation'] == rtype+'-of']
+                orel = [r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == rtype]
+                relations = sorted(irel + orel, key=lambda x: x['line0'])
+                if len(relations) > 1:
+                    testid = 'non-unique-relation'
+                    testmessage = "Repeated relation %s for node %s (other %s on line %d)." % (rtype, nid, rtype, relations[0]['line0'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=relations[1]['line0'])
+                elif len(relations) == 1 and relations[0]['type'] != 'node':
+                    testid = 'invalid-relation'
+                    testmessage = "Expected child node of relation %s, found type=%s, value=%s." % (relations[0]['type'], relations[0]['value'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
+
 
 
 #==============================================================================
@@ -931,6 +978,7 @@ def validate(inp, out, args, known_sent_ids):
             validate_alignment(sentence, node_dict, args)
             validate_document_level(sentence, node_dict, args)
             detect_events(sentence, node_dict, args)
+            validate_events(sentence, node_dict, args)
         # Before we read the next sentence, clear the current sentence variables
         # so that sentences() knows they should be reset to new values.
         sentence_line = None
