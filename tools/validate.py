@@ -869,7 +869,7 @@ def detect_events(sentence, node_dict, args):
         if args.print_relations:
             print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(node['alignment']['tokids']), node['alignment']['tokstr']))
         if not 'event_reason' in node and re.match(r"^.+-91$", node['concept']):
-            node['event_reason'] = "its concept is %s" % node['concept']
+            node['event_reason'] = "its concept is %s on line %d" % (node['concept'], node['line0'])
         relations = node['relations']
         for r in relations:
             print("  Relation %s %s, type=%s, value=%s, line=%d" % (r['dir'], r['relation'], r['type'], r['value'], r['line0']))
