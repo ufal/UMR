@@ -1,10 +1,10 @@
 # Relations and Attributes in Sentence Level Annotation
 
-**Disclaimer:** We should use the  [**UMR lists**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) as provided by the UMR team - these lists are updated from time to time (and they should be  used in the current UMR tool - probably UMR Writer). The lists specify: 
+**Disclaimer:** We should use the  [**UMR lists**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) as provided by the UMR team - these lists are updated from time to time (and they should be  used in the current UMR tool - probably UMR Writer). The lists specify:
 - **Abstract concepts** ... like (i) "person", "thing", "place", etc.; but also (ii) discourse connectors as "but" or "multi-sentence" and (iii) structured entities as "date-entity" or "quantities" and others;
-- **Abstract rolesets**  ... like (i) frames for "non-verbal" clauses, (ii) discourse rolesets and (iii) implicite relation for specific constructions as titles, citations or addresses; 
+- **Abstract rolesets**  ... like (i) frames for "non-verbal" clauses, (ii) discourse rolesets and (iii) implicite relation for specific constructions as titles, citations or addresses;
 - **Roles** ... for (i) participant relations (both general and ARGx) and (ii) non-participant relations (and their subroles) but also for (iii) ?some? attributes (like ":aspect", ":modstr", ":quot"), and (iv) discourse relations as ":condition"
-- **Named entities**.  
+- **Named entities**.
 
 The file provides also sheets with AMR to UMR mappings.
 
@@ -32,7 +32,7 @@ Well organized [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWL
 
 Additional information can be found also in  [AMR annotation dictionary](https://amr.isi.edu/doc/amr-dict.html).
 
-`:accompanier` –  Introduced in the AMR guidelines as a non-core role in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), exemplified in  *The soldier hummed a tune **for the girl** as he walked with her to town.* (ML added)  
+`:accompanier` –  Introduced in the AMR guidelines as a non-core role in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), exemplified in  *The soldier hummed a tune **for the girl** as he walked with her to town.* (ML added)
 ?Probably replaced by `:companion` in UMR, example 1 (6), _... before he returns home **with his wife Sherry**?
 
 `:actor` – Argument role used for languages that do not have frame files.
@@ -67,11 +67,11 @@ predicate frame in the dictionary.
 `:ARG6` – Argument role of an event. Meaning depends on the particular
 predicate frame in the dictionary.
 
-`:aspect` – Attribute used with every event. Set of predefined values.
+`:aspect` – Attribute used with every event. Set of predefined values. See [Part 3-3-1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-1-Aspect) of the UMR guidelines.
 
 `:beneficiary` – Introduced in AMR as a non-core role in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations) exemplified in  *The soldier hummed a tune for the girl as **he** walked with her to town.* (probably error - the annotation suggests different sentence structure: *The soldier hummed a tune for the girl as she walked with **him** to town.*)
 The relation is also listed in the UMR [Reification section](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#reification) there where mapped onto the `benefit-01' predicate (as in *the 5k run is **for kids*** ). (ML added)
- 
+
 `:calendar` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (added by ML)
 
 `:cause` – Introduced in 3-2-1-1 (not listed among AMR / UMR relations). See also `:reason`. ?? TWO SAME NAMES FOR THE SAME CONCEPT (but should be translated as cause-01, so :cause is just a shortcut.)
@@ -81,7 +81,7 @@ The relation is also listed in the UMR [Reification section](https://github.com/
 `:century` – This relation is mentioned in 3-2-2-1, it is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:companion` – Argument role used for languages that do not have frame files.
-Appears in example (7b) in 3-2-1-1.  
+Appears in example (7b) in 3-2-1-1.
 Also used for Eng. as a replacement of `:acompanier`, example 1 (6) ??
 
 `:concession` – Briefly mentioned at the end of 3-2.
@@ -166,7 +166,7 @@ declarative sentences, so most events lack this attribute.
 `:modstr` – Attribute used with every event. Expresses modality at sentence
 level. Typical value `FullAff` (fully affirmative).
 
-`:month` – Looks like attribute, introduced among relations in 3-2-2-1. The value is the month number. (Not sure what they do with lunar and other calendars.) 
+`:month` – Looks like attribute, introduced among relations in 3-2-2-1. The value is the month number. (Not sure what they do with lunar and other calendars.)
 It is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
 
 `:name` – Always has a `name` concept as its child node, which in turn has
@@ -217,7 +217,7 @@ with a concept describing approximate quantity.
 
 `:range` – Used with quentities,  to indicate a specific time period. Introduced in  3-2-2-5. Example (1b) in 3-2-2-5.
 
-`:reason` – Introduced in 3-2-1-1 (BUT not listed among AMR / UMR relations). See also `:cause`. 
+`:reason` – Introduced in 3-2-1-1 (BUT not listed among AMR / UMR relations). See also `:cause`.
 
 `:recipient` – Argument role used for languages that do not have frame files.
 Typically corresponds to `:ARG2`.
@@ -248,14 +248,14 @@ scale**_. Example (1h) in 3-2-2-5.
 
 `:subtraction` – Example (8) in 3-1-6: _**except for Joe**_.
 
-`:temporal` – _The soup cooled for an hour **before we ate it**._ (2b) in 3-3-1-5. According to the UMR guidelines, Part 3-2-1-1. Stage 0: "... UMR uses `:temporal` to annotate temporal circumstantials of events, while `:time` is only used as a daughter of date-entity concepts to annotate hours and minutes on the clock." (but example 3-1-3-7 (1b) uses `:time` for *soon*, by mistake??) 
+`:temporal` – _The soup cooled for an hour **before we ate it**._ (2b) in 3-3-1-5. According to the UMR guidelines, Part 3-2-1-1. Stage 0: "... UMR uses `:temporal` to annotate temporal circumstantials of events, while `:time` is only used as a daughter of date-entity concepts to annotate hours and minutes on the clock." (but example 3-1-3-7 (1b) uses `:time` for *soon*, by mistake??)
 (Difference between AMR and UMR: `:time` as used in AMR are replaced by `:temporal` in UMR.) (ML)
 
 `:theme` – Argument role used for languages that do not have frame files.
 Typically corresponds to `:ARG1`.
 
 `:time` – Example (4d) in 3-3-1-3. It looks like attribute, introduced among relations in 3-2-2-1. The value is the local time in 24h format. See also
-`:timezone`(see date-entity below). The relation is used within `date-entity` concepts (see below). According to the UMR guidelines, Part 3-2-1-1. Stage 0: "... UMR uses `:temporal` to annotate temporal circumstantials of events, while `:time` is only used as a daughter of date-entity concepts to annotate hours and minutes on the clock." (but example 3-1-3-7 (1b) uses `:time` for *soon*, by mistake??). 
+`:timezone`(see date-entity below). The relation is used within `date-entity` concepts (see below). According to the UMR guidelines, Part 3-2-1-1. Stage 0: "... UMR uses `:temporal` to annotate temporal circumstantials of events, while `:time` is only used as a daughter of date-entity concepts to annotate hours and minutes on the clock." (but example 3-1-3-7 (1b) uses `:time` for *soon*, by mistake??).
 (Difference between AMR and UMR: `:time` as used in AMR are replaced by `:temporal` in UMR.) (ML)
 
 `:timezone` – A relation introduced in 3-2-2-1. Typically used together with `:time`. The child node is a concept defining the zone. Apparently they assume some standardized time zone concepts, as the text contained _Albuquerque time_ but they converted it to `:timezone (z/ MST)`, i.e.,
@@ -295,15 +295,15 @@ This relation is used within `date-entity` concepts (see below). Examples in AMR
 
 `and`
 
-`date-entity` - Mentioned in UMR guidelines, exemplified in 2-2-3 (2c). Introduced in AMR guidelines; roles used in `date-entity` are listed there in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), examples are in section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls); the same list presented in UMR Part 3-2-2-1: `:calendar`, `:century`, `:day`, `:dayperiod` (as *afternoon*), `:decade`, `:era`, `:month`, `:quarter`, `:season`, `:timezone`, `:weekday`, `:year`, and `:year2`.  
+`date-entity` - Mentioned in UMR guidelines, exemplified in 2-2-3 (2c). Introduced in AMR guidelines; roles used in `date-entity` are listed there in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), examples are in section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls); the same list presented in UMR Part 3-2-2-1: `:calendar`, `:century`, `:day`, `:dayperiod` (as *afternoon*), `:decade`, `:era`, `:month`, `:quarter`, `:season`, `:timezone`, `:weekday`, `:year`, and `:year2`.
 In UMR, `:time` is added to roles used within `date-entity` concepts.
 (According to the UMR guidelines, Part 3-2-1-1. Stage 0: "... UMR uses `:temporal` to annotate temporal circumstantials of events, while `:time` is only used as a daughter of date-entity concepts to annotate hours and minutes on the clock.") (ML)
 
-?? `date-interval` Defined in the AMR guidelines, used with `:opx` rekation; no mention in UMR (ML added) 
+?? `date-interval` Defined in the AMR guidelines, used with `:opx` rekation; no mention in UMR (ML added)
 
-`distance-quantity` - Mentioned in UMR guidelines, no examples there. Used in the AMR guidelines in examples but apparently without any description. (ML added)  
+`distance-quantity` - Mentioned in UMR guidelines, no examples there. Used in the AMR guidelines in examples but apparently without any description. (ML added)
 
-??`email-address-entity` - Defined in the AMR guidelines, no mention in UMR, used together with `:value` relation/attribute  (ML added) 
+??`email-address-entity` - Defined in the AMR guidelines, no mention in UMR, used together with `:value` relation/attribute  (ML added)
 
 `monetary-quantity` - Mentioned in UMR guidelines, exemplified in 2-2-3 (2b) (ML added)
 
@@ -311,17 +311,17 @@ In UMR, `:time` is added to roles used within `date-entity` concepts.
 
 `percentage-entity` - Mentioned in UMR guidelines, used together with `:value` relation/attribute; exemplified in 3-2-2-5 (1c)
 
-??`phone-number-entity` - Defined in the AMR guidelines, no mention in UMR, used together with `:value` relation/attribute  (ML added) 
+??`phone-number-entity` - Defined in the AMR guidelines, no mention in UMR, used together with `:value` relation/attribute  (ML added)
 
-??`product-of` - Defined in the AMR guidelines, no mention in UMR (ML added) 
+??`product-of` - Defined in the AMR guidelines, no mention in UMR (ML added)
 
 `seismic-quantity`- Used in 3-2-2-5 (1h), example: ***6.5 on the Richter scale*** (ML added)
 
 `speed-quantity` - Used in 3-3-1-3 (3b), example: *This car can go up to **150 mph**.* (ML added)
 
-?? `sum-of` - Defined in the AMR guidelines, no mention in UMR (ML added) 
+?? `sum-of` - Defined in the AMR guidelines, no mention in UMR (ML added)
 
-`temporal-quantity` - Mentioned in UMR guidelines, exemplified in 2-2-3 (2a), 2-2-3 (2b); used with `:quant` and  `:unit` relation(s)/attribute(s); example: *The **thirty year**-old man.* 
+`temporal-quantity` - Mentioned in UMR guidelines, exemplified in 2-2-3 (2a), 2-2-3 (2b); used with `:quant` and  `:unit` relation(s)/attribute(s); example: *The **thirty year**-old man.*
 
 `thing`
 
