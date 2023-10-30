@@ -1,67 +1,73 @@
-# :: snt1	ESTONSKO:
+# :: snt1	ESTONSKO :
 
-(h/ have-location-91
-    :ARG1 (e/ event)
-    :ARG2 (c/ country
+# sentence level graph:
+(s1h / have-location-91
+    :ARG1 (s1e / event)
+    :ARG2 (s1c / country
         :wiki "Q191"
-        :name (n/ name :op1 "Estonsko")
-        :ref-number Singular)
-    :aspect State
-    :modstr FullAff)
+        :name (s1n / name :op1 "Estonsko")
+        :ref-number singular)
+    :aspect state
+    :modstr full-affirmative)
+
+# alignment:
+s1h: 0-0
+s1e: 0-0
+s1c: 1-1
+s1n: 0-0
+
+# document level annotation:
+
 
 # :: snt2	Estonci volili parlament
 
-(v/ volit-001
-    :ARG0 (p/ person
-        :mod (c/ country
+# sentence level graph:
+(s2v / volit-001
+    :ARG0 (s2p / person
+        :mod (s2c / country
             :wiki "Q191"
-            :name (n2/ name :op1 "Estonsko"))
-        :ref-number Plural)
-    :ARG1 (p2/ parlament
+            :name (s2n2 / name :op1 "Estonsko"))
+        :ref-number plural)
+    :ARG1 (s2p2 / parlament
         :wiki "Q217799"
-        :ref-number Singular)
-    :aspect Imperfective
-    :modstr FullAff)
+        :ref-number singular)
+    :aspect imperfective
+    :modstr full-affirmative)
+
+# alignment:
+s2v: 2-2
+s2p: 1-1
+s2c: 0-0
+s2n2: 0-0
+s2p2: 3-3
+
+# document level annotation:
+
 
 # :: snt3	Tallin -
 
-(h/ have-location-91
-    :ARG1 (e/ event)
-    :ARG2 (c/ city
+# sentence level graph:
+(s3h / have-location-91
+    :ARG1 (s3e / event)
+    :ARG2 (s3c / city
         :wiki "Q1770"
-        :name (n/ name :op1 "Tallin")
-        :ref-number Singular)
-    :aspect State
-    :modstr FullAff)
+        :name (s3n / name :op1 "Tallin")
+        :ref-number singular)
+    :aspect state
+    :modstr full-affirmative)
 
-# :: snt4	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+# alignment:
+s3h: 0-0
+s3e: 0-0
+s3c: 1-1
+s3n: 0-0
 
-(z/ získat-001
-    :ARG0 (b/ blok
-        :wiki "Q163347"
-        :name (n/ :op1 "Vlast")
-        :ref-number Singular)
-    :ARG1 (h/ hlas
-        :quant (n2/ nejvíce)
-        :ref-number Plural)
-    :location (v/ volit-001
-        :ARG1 (p/ parlament
-            :wiki "Q217799"
-            :ref-number Singular)
-        :location (c/ country
-            :wiki "Q191"
-            :name (n3/ name :op1 "Estonsko")
-            :ref-number Singular)
-            :temporal (d/ date-entity
-                :weekday (n4/ neděle
-                    :wiki "Q132")))
-    :mod (p2/ podle
-        :op1 (v2/ výsledek
-            :ARG0-of (p3/ předbíhat-001)
-            :temporal (v3/ včera)))
-    :aspect Perfective
-    :modstr FullAff)
+# document level annotation:
 
+
+# :: snt4	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
+
+# sentence level graph:
 ## At present it is unclear to me how to connect the following part to the main graph.
 ## The components share the node 'b' but only as a target of two incoming edges.
 ## We probably want something where the second edge will be reversed because this part is a modification of "blok Vlast".
@@ -75,7 +81,67 @@
 #            :wiki "Q30461")
 #        :ARG1-of (n6/ nominovat-001
 #            :ARG0 b)))
+(s4z / získat-001
+    :ARG0 (s4b / blok
+        :wiki "Q163347"
+        :name (s4n / name :op1 "Vlast")
+        :ref-number singular)
+    :ARG1 (s4h / hlas
+        :quant (s4n2 / nejvíce)
+        :ref-number plural)
+    :location (s4v / volit-001
+        :ARG1 (s4p / parlament
+            :wiki "Q217799"
+            :ref-number singular)
+        :location (s4c / country
+            :wiki "Q191"
+            :name (s4n3 / name :op1 "Estonsko")
+            :ref-number singular)
+            :temporal (s4d / date-entity
+                :weekday (s4n4 / neděle
+                    :wiki "Q132")))
+    :mod (s4p2 / podle
+        :op1 (s4v2 / výsledek
+            :ARG0-of (s4p3 / předbíhat-001)
+            :temporal (s4v3 / včera)))
+    :aspect perfective
+    :modstr full-affirmative)
+
+# alignment:
+s4z: 7-7
+s4b: 14-15
+s4n: 0-0
+s4h: 13-13
+s4n2: 12-12
+s4v: 1-1, 4-4
+s4p: 3-3
+s4c: 5-6
+s4n3: 0-0
+s4d: 0-0
+s4n4: 2-2
+s4p2: 8-8
+s4v2: 11-11
+s4p3: 10-10
+s4v3: 9-9
+
+# document level annotation:
+
 
 # :: snt5	Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+
+# sentence level graph:
+
+# alignment:
+
+# document level annotation:
+
+
 # :: snt6	Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+
+# sentence level graph:
+
+# alignment:
+
+# document level annotation:
+
 

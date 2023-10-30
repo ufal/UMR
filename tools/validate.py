@@ -686,7 +686,7 @@ def validate_alignment(sentence, node_dict, args):
                             if 'alignment' in node_dict[variable]:
                                 if node_dict[variable]['alignment']['line0'] != iline:
                                     testid = 'duplicate-alignment'
-                                    testmessage = "Repeated alignment of node '%s'. It was already specified as %d-%d on line %d." % (variable, node_dict[variable]['alignment']['t0'], node_dict[variable]['alignment']['t1'], node_dict[variable]['alignment']['line0'])
+                                    testmessage = "Repeated alignment of node '%s'. It was already specified as %s on line %d." % (variable, str(node_dict[variable]['alignment']['tokids']), node_dict[variable]['alignment']['line0'])
                                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                                 else:
                                     tokids = node_dict[variable]['alignment']['tokids']
@@ -713,12 +713,14 @@ def validate_alignment(sentence, node_dict, args):
             warn(testmessage, testclass, testlevel, testid, lineno=iline)
     # Check that all nodes in this sentence have an alignment.
     # Even unaligned nodes should have alignment 0-0.
-    if args.check_complete_alignment:
-        for n in sentence[1]['nodes']:
-            if not 'alignment' in node_dict[n]:
+    for n in sentence[1]['nodes']:
+        if not 'alignment' in node_dict[n]:
+            if args.check_complete_alignment:
                 testid = 'missing-alignment'
                 testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
                 warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+            # We will later want to access the alignment, so set the default, i.e., unaligned.
+            node_dict[n]['alignment'] = {'tokids': [0], 'tokstr': ''}
 
 def validate_document_level(sentence, node_dict, args):
     """
@@ -862,15 +864,22 @@ def detect_events(sentence, node_dict, args):
     # Make sure that every node has the relation list, even if empty.
     for nid in sentence[1]['nodes']:
         node = node_dict[nid]
+        if not 'concept' in node:
+            node['concept'] = ''
         if not 'relations' in node:
             node['relations'] = []
+        # Make sure that every relation has the information we expect, even if empty.
+        for r in node['relations']:
+            if not 'value' in r:
+                r['value'] = ''
     # So far we know for each node its outgoing relations.
     # Store also the incoming relations at each node.
     for nid in sentence[1]['nodes']:
         node = node_dict[nid]
         outrel = [r for r in node['relations'] if r['dir'] == 'out' and r['type'] == 'node']
         for r in outrel:
-            node_dict[r['value']]['relations'].append({'dir': 'in', 'type': 'node', 'value': nid, 'relation': r['relation'], 'line0': r['line0']})
+            if r['value'] in node_dict:
+                node_dict[r['value']]['relations'].append({'dir': 'in', 'type': 'node', 'value': nid, 'relation': r['relation'], 'line0': r['line0']})
     for nid in sorted(sentence[1]['nodes']):
         node = node_dict[nid]
         if args.print_relations:
