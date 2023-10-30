@@ -18,7 +18,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Entities](doc/entities.md)
 * [Events](doc/eventive-concepts.md), see also [One or two concepts](doc/one-or-two-concepts_modal-phase-verbs.md)
 * [Frame files](doc/frames.md) and [participant roles](doc/roles.md)
-* specific construction 
+* specific construction
   * [Ellipsis](doc/ellipsis.md)
   * [Coreference](doc/coreference.md)
 * UMR attributes
@@ -31,4 +31,5 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Glossary of relations and attributes](doc/relations-attributes.md)
 
 ## Useful links
-* [UMR-related links](https://github.com/ufal/UMR/blob/main/doc/UMR-related-links.md) - incl. working lists
+* [UMR-related links](https://github.com/ufal/UMR/blob/main/doc/UMR-related-links.md) – including working lists
+* [UMR 1.0 in Lindat](http://hdl.handle.net/11234/1-5198)
