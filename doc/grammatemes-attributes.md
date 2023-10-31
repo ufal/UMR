@@ -99,7 +99,7 @@ Unhealthy food.
 		:polarity -))
 ```
 
-Only marked (negative) polarity is annotated in UMR, roughly corresponding to PDT `negation=neg1`.
+Only marked (negative) polarity is annotated in UMR, i.e. affirmative polarity is not annotated. The UMR `-` polarity value roughly corresponds to PDT `negation=neg1`.
 
 In the released data there are not many instances of `polarity`. The occurrences that were retrieved only concern clausal negation. Example from [file 4](https://ufallab.ms.mff.cuni.cz/~mnovak/umr/graphs/umr-v1.0/english/english_umr-0004.txt/visualization.html):
 ```
@@ -113,8 +113,7 @@ I don't know .
   :aspect state)
 ```
 
-BUT also case of **unknown** polarity (  `:polarity (s14u / umr-unknown)`  ). 3 occurrences in [file 4](https://ufallab.ms.mff.cuni.cz/~mnovak/umr/graphs/umr-v1.0/english/english_umr-0004.txt/visualization.html) + 3 occurrences in [file 4](https://ufallab.ms.mff.cuni.cz/~mnovak/umr/graphs/umr-v1.0/english/english_umr-0005.txt/visualization.html).\
-Example:
+Additionally, cases of **unknown** polarity are found (  `:polarity (s14u / umr-unknown)`  ). 3 occurrences in [file 4](https://ufallab.ms.mff.cuni.cz/~mnovak/umr/graphs/umr-v1.0/english/english_umr-0004.txt/visualization.html) + 3 occurrences in [file 4](https://ufallab.ms.mff.cuni.cz/~mnovak/umr/graphs/umr-v1.0/english/english_umr-0005.txt/visualization.html). Example:
 ```
 I don't know if that's important or not .
 
@@ -132,7 +131,7 @@ I don't know if that's important or not .
         :aspect state)
 ```
 
-In the guidelines only one instance of unknown polarity, but it is not explained and nothing is said about this possible value. Also, the example seems different from the previous one in s14k. In s14k it stands for *important or not* (two alternative polarities in a single event), while in the example from the guidelines polarity is simply unspecified and not inferrable from the context (it is a question).
+In the guidelines only one instance of unknown polarity is found, but no explanation is provided.
 
 ```
 3-3-2 (1c)
@@ -148,7 +147,51 @@ Did you see that?
       :mode interrogative
       :polarity umr-unknown)
 ```
-True to its name, unknwon polarity still remains quite uncertain.
+What the two examples (from the guidelines and from released data) have in common is that they both are interrogative sentences. The approach of marking questions with `unknown` polarity seems to be inherited from AMR. \
+Cf. AMR guidelines: "AMR uses the concept `amr-unknown` to indicate questions."
+
+```
+What did the girl find?
+
+(f / find-01
+   :ARG0 (g / girl)
+   :ARG1 (a / amr-unknown))
+```
+
+ Plus: "AMR also uses `amr-unknown` for yes-no questions. For such yes-no questions, the `amr-unknown` bears the `:polarity` relation, essentially asking *what is the truth of this assertion?*".
+
+```
+Did the girl find the boy?
+
+(f / find-01
+   :ARG0 (g / girl)
+   :ARG1 (b / boy)
+   :polarity (a / amr-unknown))
+```
+
+AMR (and UMR inherits this approach) "also uses inverse roles for embedded interrogative clauses, such as those that start with *whether*". Instead of `amr-unknown`, the `truth-value` concept is used to refer to whether or not an event happened. \
+See an example from UMR guidelines:
+
+```
+3-2-1-3 (1b)
+
+I didn't see whether he bought the sweater.
+(s/ see-01
+	:ARG0 (p/ person
+		:ref-person 1st
+		:ref-number Singular)
+	:ARG1 (t/ truth-value
+		:Polarity-of (b/ buy-01
+			:ARG0 (p2/ person
+				:ref-person 3rd
+				:ref-number Singular)
+			:ARG1 (s2/ sweater
+				:ref-number Singular)
+			:aspect Performance
+			:modstr NeutAff))
+	:Aspect State
+	:Modstr FullNeg)﻿
+```
 
 ### ASPECT (UMR: `aspect`)
 See Marketa's document about [`aspect`](https://github.com/ufal/UMR/blob/main/doc/aspect.md).
@@ -178,6 +221,64 @@ The `tense` grammateme is a tectogrammatical correlate of the morphological cate
 It does not correspond directly to any UMR attribute. However, there is a partial overlap with information that UMR expresses in document-level annotation (e.g., `:after`, `:before`). It might be exploited to automatically derive/validate temporal document-level relations. (Possibly, TODO.)  
 
 
+### NUMERTYPE
+The PDT grammateme can take five values: 
+- `basic`: cardinal numeral (*tři (=three)*, *kolik (=how_many)*)
+- `frac`: fraction numeral (*třetina (=one_third)*, *šestina (=one_sixth)*)
+- `kind`: sort numeral (*trojí (=three_kinds_of)*, *kolikerý (=how_many_kinds_of)*)
+- `ord`: ordinal numeral (*třetí (=the_third)*, *šestý (=the_sixth)*, *kolikátý (=how_many.ord)*)
+- `set`: set numeral (*troje (=three_sets_of)*, *šestery, kolikery (=six_sets_of, how_many_sets_of)*)
+
+
+Treatment in UMR:
+- `basic` &rarr; cardinal numbers tendentially appear as `:quant` + numerical values. Example form the guidelines:
+```
+Three houses
+(h/ house
+	:quant 3)
+```
+
+However, the `:quant` relation is used for annotating not exact quantities (as in the previous example), but also approximate cardinalities of sets of countable objects, as well as for the number of "units" of non-countable substances. Cf. *some* in the following example, taken again from the guidelines:
+
+```
+He gave the cat some wet food.
+(g/ give-01  
+	:actor (p/ person
+		:ref-person 3rd
+		:ref-number Singular)  
+	:theme (f/ food
+		:mod (w/ wet)
+		:quant (s/ some))  
+	:recipient (c/ cat
+		:ref-number Singular)
+	:aspect Performance
+	:modstr FullAff)
+```
+
+- `frac` &rarr; could not find examples.
+- `kind` &rarr; no specific relation. Most probably, the `:quant` relation would be used to express the quantity of kinds.
+- `ord` &rarr; The `:ord` role is used to express ordinals. It always takes an `(o/ ordinal-entity)` concept as its daughter, which in turn takes a `:value` relation to express the ordinal position. It may furthermore take a `:range` relation to indicate a specific time period in which the relevant ordinal position holds, as in this example:
+```
+I visited New York for the third time in six months.
+(v/ visit-01
+	:ARG0 (p/ person
+		:ref-person 1st
+		:ref-number Singular)
+	:ARG1 (c/ city
+		:name (n/ name
+			:op1 "New"
+			:op2 "York")
+		:wiki "New_York_City")
+	:ord (o/ ordinal-entity
+		:value 3
+		:range (t/ temporal-quantity
+			:quant 6
+			:unit (m/ month)))
+	:aspect Performance
+	:modstr FullAff)
+```
+- `set` &rarr; no specific relation. Most probably, the `:quant` relation would be used to express the quantity of sets.
+
 ### OTHER GRAMMATEMES
 - **`politeness`**: non relevant for UMR.
 
@@ -190,5 +291,5 @@ It does not correspond directly to any UMR attribute. However, there is a partia
 - **`iterativeness`**: same as above (`resultative`). This kind of information is expressed in UMR by `aspect`.
 
 
-### NUMERTYPE
-Unclear.
+### Grammatemes in Latin PDT
+Grammatemes are regularly found in Latin PDT.
