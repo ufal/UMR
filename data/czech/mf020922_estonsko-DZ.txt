@@ -68,24 +68,24 @@ s3n: 0-0
 # :: snt4	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
 
 # sentence level graph:
-## At present it is unclear to me how to connect the following part to the main graph.
-## The components share the node 'b' but only as a target of two incoming edges.
-## We probably want something where the second edge will be reversed because this part is a modification of "blok Vlast".
-#(h2/ have-role-91
-#    :ARG1 (p4/ person
-#        :wiki "Q153149"
-#        :name (n5/ name :op1 "Lennart" :op2 "Meri"))
-#    :ARG3 (k/ kandidát
-#        :wiki "Q618536"
-#        :mod (p5/ prezident
-#            :wiki "Q30461")
-#        :ARG1-of (n6/ nominovat-001
-#            :ARG0 b)))
 (s4z / získat-001
     :ARG0 (s4b / blok
         :wiki "Q163347"
         :name (s4n / name :op1 "Vlast")
-        :ref-number singular)
+        :ref-number singular
+        :ARG0-of (s4n6 / nominovat-001
+            :ARG1 (s4k / kandidát
+                :wiki "Q618536"
+                :mod (s4p5 / prezident
+                    :wiki "Q30461")
+                :ARG3-of (s4h2 / have-role-91
+                    :ARG1 (s4p4 / person
+                        :wiki "Q153149"
+                        :name (s4n5 / name :op1 "Lennart" :op2 "Meri"))
+                    :aspect state
+                    :modstr full-affirmative))
+            :aspect perfective
+            :modstr full-affirmative))
     :ARG1 (s4h / hlas
         :quant (s4n2 / nejvíce)
         :ref-number plural)
@@ -99,10 +99,14 @@ s3n: 0-0
             :ref-number singular)
             :temporal (s4d / date-entity
                 :weekday (s4n4 / neděle
-                    :wiki "Q132")))
+                    :wiki "Q132"))
+        :aspect process
+        :modstr full-affirmative)
     :mod (s4p2 / podle
         :op1 (s4v2 / výsledek
-            :ARG0-of (s4p3 / předbíhat-001)
+            :ARG0-of (s4p3 / předbíhat-001
+                :aspect state
+                :modstr full-affirmative)
             :temporal (s4v3 / včera)))
     :aspect perfective
     :modstr full-affirmative)
@@ -111,6 +115,12 @@ s3n: 0-0
 s4z: 7-7
 s4b: 14-15
 s4n: 0-0
+s4n6: 17-17
+s4n5: 0-0
+s4h2: 20-20
+s4p5: 18-18
+s4k: 19-19
+s4p4: 21-22
 s4h: 13-13
 s4n2: 12-12
 s4v: 1-1, 4-4
