@@ -1,8 +1,16 @@
 # Quantity
 
-The UMR Guidelines list `:quant` among attributes in [Part 3-3.](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-UMR-attributes) as it is followed by a single value, not by a daughter node representing a concept. This single value is
+The UMR Guidelines list `:quant` among attributes in [Part 
+3-3.](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-UMR-attributes) 
+as it is followed by a single value, not by a child node representing a 
+concept. This single value is
+
 - typically a **number**, but there are also other options as
-- a **pre-defined identifier** (I suppose they refer to concepts like "more-then", "most", "between", "as-many-as", but also "all", "many", "several" or "a-few" - which looks like a concept at first sight, as it is in brackets and has its variable, typically followed by `op1` with a number or other numerical value) or 
+- a **pre-defined identifier** (I suppose they refer to concepts like
+  "more-than", "most", "between", "as-many-as", but also "all", "many",
+  "several" or "a-few" – which looks like a concept at first sight, as it is
+  in brackets and has its variable, typically followed by `op1` with a number
+  or other numerical value) or 
 - ??? a **string in quotation marks** - not found in the English data)
 
 In more detail, they discuss quantitative concepts in [Part
@@ -31,10 +39,15 @@ In the typical situation, it is an attribute with a numeric value. But when
 it is used to annotate approximate cardinalities (_more than_, _most_), it
 will look as a relation whose child node is the approximative concept.
 
-The `:quant` attribute is used for both exact and approximate cardinalities of sets of countable objects (_three.quant houses_, _more than.quant three.op1 houses_) as well as for the number of "units" of non-countable substances (_three.quant cups.unit of milk_),
+The `:quant` attribute is used for both exact and approximate cardinalities 
+of sets of countable objects (_three.quant houses_, _more than.quant 
+three.op1 houses_) as well as for the number of "units" of non-countable 
+substances (_three.quant cups.unit of milk_), 
 
-For exact quantities, the value is expressed in digits even if the surface
-expression was verbose. The guidelines do not specify how it is normalized; I suppose that in languages where decimal comma is used in the text, it will be normalized to decimal point in UMR.
+For exact quantities, the value is expressed in digits even if the surface 
+expression was verbose. The guidelines do not specify how it is normalized; I 
+suppose that in languages where decimal comma is used in the text, it will be 
+normalized to decimal point in UMR.
 
 ```
 tři domy “three houses”
@@ -42,7 +55,55 @@ tři domy “three houses”
     :quant 3)
 ```
 
-~~DZ: The guidelines give an English example for _more than 3_, see (1f) below. It is thus unclear whether we should use native concepts in other languages, or should we use more-than as a cross-lingual abstract concept? Furthermore, example (1f) in the guidelines shows an :op1 attribute of more-than, which gives the numeric value to compare with.~~
+### Quantified nominals vs. quantities in predication
+
+In the simplest case, quantity is an attribute of an entity concept. The 
+concept node should thus be aligned to both the numeral and the noun. 
+
+```
+Snědla tři knedlíky. “She ate three dumplings.”
+(s / sníst-001
+    :ARG0 (p / person
+        :ref-person 3rd
+        :ref-number singular)
+    :ARG1 (k / knedlík
+        :quant 3
+        :ref-number plural))
+```
+
+```
+Sedm dětí snědlo 45 knedlíků. “Seven children ate 45 dumplings.”
+(s / sníst-001
+    :ARG0 (d / dítě
+        :quant 7
+        :ref-number plural)
+    :ARG1 (k / knedlík
+        :quant 45
+        :ref-number plural))
+```
+
+In predication we use the [abstract 
+roleset](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) 
+(reification) `have-quant-91`. The `:ARG1` role is the counted entity, 
+`:ARG2` is the quantity, numerical or not. They do not say it explicitly but 
+“numerical” could mean that we actually do not create a concept node for the 
+quantity and `:ARG2` will be turned from a relation to an attribute. 
+
+```
+Těch knedlíků bylo pět. “The dumplings were five (there were five dumplings).”
+(h / have-quant-91
+    :ARG1 (k / knedlík
+        :ref-number plural)
+    :ARG2 5)
+```
+
+### Approximate quantities
+
+~~DZ: The guidelines give an English example for _more than 3_, see (1f) 
+below. It is thus unclear whether we should use native concepts in other 
+languages, or should we use more-than as a cross-lingual abstract concept? 
+Furthermore, example (1f) in the guidelines shows an :op1 attribute of 
+more-than, which gives the numeric value to compare with.~~ 
 
 ```
 (1f) more than three houses
@@ -50,11 +111,13 @@ tři domy “three houses”
 	:quant (m/ more-than :op1 3))
 ```
 
-
-ML: The UMR Guidelines give an English example for  _more than 3_, see (1f) above. The [UMR list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0) of abstract concepts offers  `more-than`  as a cross-lingual abstract concept which should be used in such examples (instead of native concepts in other languages). 
-Further, example (1f) in
-the guidelines shows an `:op1` attribute of `more-than`, which gives the
-numeric value to compare with.
+ML: The UMR Guidelines give an English example for  _more than 3_, see (1f) 
+above. The [UMR 
+list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0) 
+of abstract concepts offers `more-than` as a cross-lingual abstract concept 
+which should be used in such examples (instead of native concepts in other 
+languages). Further, example (1f) in the guidelines shows an `:op1` attribute 
+of `more-than`, which gives the numeric value to compare with. 
 
 ```
 více než tři domy “more than three houses”
@@ -62,11 +125,19 @@ více než tři domy “more than three houses”
     :quant (v/ více-než :op1 3))   OR RATHER  :quant (m/ more-than :op1 3))
 ```
 
-However, the superlative-like construction _nejvíce hlasů_ “most votes” will be annotated as an elliptical construction (= _nejvíce hlasů ze všech odevzdaných hlasů_) using the `have-quant-91`abstract predicate, as described in the following section.
+However, the superlative-like construction _nejvíce hlasů_ “most votes” will 
+be annotated as an elliptical construction (= _nejvíce hlasů ze všech 
+odevzdaných hlasů_) using the `have-quant-91`abstract predicate, as described 
+in the following section. 
 
-Having this in mind, comparison-like constructions as _více něž 3 domy_ could be alternatively interpreted as elliptical, too (meaning _více domů než 3 (domy)_ ). Then, their annotation would be parallel to the one offered for superlative-like constructions. However, this possibility is not mentioned in the Guidelines.
+Having this in mind, comparison-like constructions as _více něž 3 domy_ could 
+be alternatively interpreted as elliptical, too (meaning _více domů než 3 
+(domy)_ ). Then, their annotation would be parallel to the one offered for 
+superlative-like constructions. However, this possibility is not mentioned in 
+the Guidelines. 
 
-Alternatively, comparison constructions can be treated as elliptical constructions, as suggested in the :
+Alternatively, comparison constructions can be treated as elliptical 
+constructions, as suggested in the : 
 
 ### Comparisons and superlatives relating to amounts of things (`have-quant-91`)
 
