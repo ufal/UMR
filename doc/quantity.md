@@ -127,6 +127,35 @@ However, the situation is different if the fraction relates to some larger
 set, as in _Snědla polovinu (všech) knedlíků_ “She ate half of (all) the
 dumplings.”
 
+DZ: I haven't seen a solution in the guidelines nor in the UMR 1.0 data.
+Supposedly the relation `:part` (`:part-of`, `have-part-91`) and the abstract
+concept `percentage-entity` could be used.
+
+```
+Snědla polovinu knedlíků. “She ate half of the dumplings.”
+(s / sníst-001
+    :ARG0 (p / person
+        :ref-person 3rd
+        :ref-number singular)
+    :ARG1 (k / knedlík
+        :ref-number plural
+        :part (p2 / percentage-entity
+            :value 50)))
+```
+
+```
+Hlasovalo pro ně 20,5 procenta z celkového počtu 457319 voličů. “20.5 percent of the total number of 457,319 voters voted for them.”
+(h / hlasovat-003
+    :ARG0 (v / volič
+        :quant 457319
+        :ref-number plural
+        :part (p / percentage-entity
+            :value 20.5))
+    :ARG1 (p2 / person
+        :ref-person 3rd
+        :ref-number plural))
+```
+
 ### Approximate quantities
 
 The UMR Guidelines give an English example for  _more than 3_, see (1f) 
