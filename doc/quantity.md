@@ -99,20 +99,8 @@ Těch knedlíků bylo pět. “The dumplings were five (there were five dumpling
 
 ### Approximate quantities
 
-~~DZ: The guidelines give an English example for _more than 3_, see (1f) 
-below. It is thus unclear whether we should use native concepts in other 
-languages, or should we use more-than as a cross-lingual abstract concept? 
-Furthermore, example (1f) in the guidelines shows an :op1 attribute of 
-more-than, which gives the numeric value to compare with.~~ 
-
-```
-(1f) more than three houses
-(h/ house
-	:quant (m/ more-than :op1 3))
-```
-
-ML: The UMR Guidelines give an English example for  _more than 3_, see (1f) 
-above. The [UMR 
+The UMR Guidelines give an English example for  _more than 3_, see (1f) 
+below. The [UMR 
 list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0) 
 of abstract concepts offers `more-than` as a cross-lingual abstract concept 
 which should be used in such examples (instead of native concepts in other 
@@ -120,9 +108,17 @@ languages). Further, example (1f) in the guidelines shows an `:op1` attribute
 of `more-than`, which gives the numeric value to compare with. 
 
 ```
+(1f) more than three houses
+(h / house
+	:quant (m / more-than
+        :op1 3))
+```
+
+```
 více než tři domy “more than three houses”
-(d/ dům
-    :quant (v/ více-než :op1 3))   OR RATHER  :quant (m/ more-than :op1 3))
+(d / dům
+    :quant (m / more-than
+        :op1 3))
 ```
 
 However, the superlative-like construction _nejvíce hlasů_ “most votes” will 
