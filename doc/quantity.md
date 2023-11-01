@@ -82,12 +82,12 @@ Sedm dětí snědlo 45 knedlíků. “Seven children ate 45 dumplings.”
         :ref-number plural))
 ```
 
-In predication we use the [abstract 
-roleset](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) 
-(reification) `have-quant-91`. The `:ARG1` role is the counted entity, 
-`:ARG2` is the quantity, numerical or not. They do not say it explicitly but 
-“numerical” could mean that we actually do not create a concept node for the 
-quantity and `:ARG2` will be turned from a relation to an attribute. 
+In predication we use the [abstract
+roleset](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)
+(reification) `have-quant-91`. The `:ARG1` role is the counted entity,
+`:ARG2` is the quantity, numerical or not. They do not say it explicitly but
+“numerical” could mean that we actually do not create a concept node for the
+quantity and `:ARG2` will be turned from a relation to an attribute.
 
 ```
 Těch knedlíků bylo pět. “The dumplings were five (there were five dumplings).”
@@ -96,6 +96,36 @@ Těch knedlíků bylo pět. “The dumplings were five (there were five dumpling
         :ref-number plural)
     :ARG2 5)
 ```
+
+### Fractions
+
+In some cases, non-integer quantities work the same way as integer quantities:
+
+```
+Snědla tři a půl knedlíku. “She ate three and a half dumplings.”
+(s / sníst-001
+    :ARG0 (p / person
+        :ref-person 3rd
+        :ref-number singular)
+    :ARG1 (k / knedlík
+        :quant 3.5
+        :ref-number plural))
+```
+
+```
+Snědla polovinu knedlíku. “She ate half a dumpling.”
+(s / sníst-001
+    :ARG0 (p / person
+        :ref-person 3rd
+        :ref-number singular)
+    :ARG1 (k / knedlík
+        :quant 0.5
+        :ref-number plural))
+```
+
+However, the situation is different if the fraction relates to some larger
+set, as in _Snědla polovinu (všech) knedlíků_ “She ate half of (all) the
+dumplings.”
 
 ### Approximate quantities
 
@@ -133,7 +163,7 @@ superlative-like constructions. However, this possibility is not mentioned in
 the Guidelines. 
 
 Alternatively, comparison constructions can be treated as elliptical 
-constructions, as suggested in the : 
+constructions, as suggested in the:
 
 ### Comparisons and superlatives relating to amounts of things (`have-quant-91`)
 
@@ -307,5 +337,3 @@ In special cases,
 ~~Quantity types include:  
 `monetary-quantity`, `distance-quantity`, `area-quantity`, `volume-quantity`, `temporal-quantity`, `frequency-quantity`, `speed-quantity`, `acceleration-quantity`, `mass-quantity`, `force-quantity`, `pressure-quantity`, `energy-quantity`, `power-quantity`, `voltage-quantity` (zap!), `charge-quantity`, `potential-quantity`, `resistance-quantity`, `inductance-quantity`, `magnetic-field-quantity`, `magnetic-flux-quantity`, `radiation-quantity`, `concentration-quantity`, `temperature-quantity`, `score-quantity`, `fuel-consumption-quantity`, `seismic-quantity`, some of them are exemplified there.~~   
 ~~However, no exhaustive list and full descriptions/definitions are provided.~~
-
-
