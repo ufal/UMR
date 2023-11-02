@@ -152,7 +152,7 @@ built a house **out of wood**._
 `:medium` – Used to introduce language in which something is said or written.
 Example (2g) in 3-2-2-2: _a **French** song_.
 
-`:mod` – Generic negation for modifiers. Seems to be used whenever no more
+`:mod` – Generic relation for modifiers. Seems to be used whenever no more
 specific relation is available. Used also with demonstratives: (2d) in
 3-2-2-2.
 
