@@ -851,6 +851,123 @@ def validate_document_level(sentence, node_dict, args):
 # required relations etc. Language-neutral.
 #==============================================================================
 
+# Known relations / attributes / roles.
+# https://github.com/ufal/UMR/blob/main/doc/relations-attributes.md
+# Types:
+# - participant ... either :ARG0 to :ARG6, or descriptive semantic roles for
+#   arguments in languages that do not have frame files.
+# - modifier ... any relation that is not participant.
+# - attribute ... atomic / numerical / string value; not a child node.
+known_relations = {
+    # :accompanier from AMR, maybe replaced by :companion in UMR?
+    ':actor': 'participant',
+    ':affectee': 'participant',
+    ':age': 'modifier',
+    ':apprehensive': 'modifier',
+    ':ARG0': 'participant',
+    ':ARG1': 'participant',
+    ':ARG2': 'participant',
+    ':ARG3': 'participant',
+    ':ARG4': 'participant',
+    ':ARG5': 'participant',
+    ':ARG6': 'participant',
+    ':aspect': 'attribute',
+    ':beneficiary': 'participant',
+    ':calendar': 'modifier',
+    ':cause': 'modifier',
+    ':causer': 'participant',
+    ':century': 'modifier',
+    ':companion': 'participant',
+    ':concession': 'modifier',
+    ':condition': 'modifier',
+    ':consist-of': 'modifier',
+    ':day': 'attribute',
+    ':dayperiod': 'attribute',
+    ':decade': 'modifier',
+    ':degree': 'attribute',
+    ':destination': 'modifier',
+    ':direction': 'modifier',
+    ':domain': 'modifier',
+    ':duration': 'modifier',
+    ':era': 'modifier',
+    ':example': 'modifier',
+    ':experiencer': 'participant',
+    ':extent': 'modifier',
+    ':force': 'participant',
+    ':frequency': 'modifier',
+    ':goal': 'participant',
+    ':group': 'modifier',
+    ':instrument': 'participant',
+    ':li': 'modifier',
+    ':location': 'modifier',
+    ':manner': 'modifier',
+    ':material': 'participant',
+    ':medium': 'modifier',
+    ':mod': 'modifier',
+    ':mode': 'attribute',
+    ':modpred': 'modifier',
+    ':modstr': 'attribute',
+    ':month': 'modifier',
+    ':name': 'modifier',
+    ':op1': 'attribute',
+    ':op2': 'attribute',
+    ':op3': 'attribute',
+    ':ord': 'modifier',
+    ':other-role': 'modifier',
+    ':part': 'modifier',
+    ':path': 'modifier',
+    ':place': 'participant',
+    ':polarity': 'attribute',
+    ':polite': 'attribute',
+    ':poss': 'modifier',
+    ':purpose': 'modifier',
+    ':quant': 'attribute',
+    ':quarter': 'modifier',
+    ':range': 'modifier',
+    ':reason': 'modifier',
+    ':recipient': 'participant',
+    ':ref-number': 'attribute',
+    ':ref-person': 'attribute',
+    ':scale': 'modifier',
+    ':source': 'participant',
+    ':start': 'participant',
+    ':stimulus': 'participant',
+    ':subevent': 'modifier',
+    ':substitute': 'modifier',
+    ':subtraction': 'modifier',
+    ':temporal': 'modifier',
+    ':theme': 'participant',
+    ':time': 'attribute',
+    ':timezone': 'modifier',
+    ':topic': 'modifier',
+    ':undergoer': 'participant',
+    ':unit': 'modifier',
+    ':value': 'attribute',
+    ':weekday': 'modifier',
+    ':wiki': 'attribute',
+    ':year': 'attribute',
+    ':year2': 'attribute'
+}
+
+def validate_relations(sentence, node_dict, args):
+    """
+    Checks every sentence level relation whether we know it.
+    """
+    testlevel = 3
+    testclass = 'Sentence'
+    for nid in sentence[1]['nodes']:
+        node = node_dict[nid]
+        if 'relations' in node:
+            relations = sorted([r for r in node['relations'] if r['dir'] == 'out'], key=lambda x: x['line0'])
+            for r in relations:
+                ###!!! For now assume that every relation can be inverted using the '-of' suffix.
+                ###!!! Later this should be banned at least for pure attributes.
+                relation = re.sub(r"-of$", '', r['relation'])
+                if not relation in known_relations:
+                    testid = 'unknown-relation'
+                    testmessage = "Unknown relation '%s'." % r['relation']
+                    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+
 def detect_events(sentence, node_dict, args):
     """
     Tries to figure out which concept nodes in the current sentence are events.
@@ -995,6 +1112,8 @@ def validate(inp, out, args, known_sent_ids):
             validate_sentence_graph(sentence, node_dict, args)
             validate_alignment(sentence, node_dict, args)
             validate_document_level(sentence, node_dict, args)
+        if args.level > 2:
+            validate_relations(sentence, node_dict, args)
             detect_events(sentence, node_dict, args)
             validate_events(sentence, node_dict, args)
         # Before we read the next sentence, clear the current sentence variables
