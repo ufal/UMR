@@ -1,8 +1,8 @@
 # Quantity
 
-The UMR Guidelines list `:quant` among attributes in [Part 
-3-3.](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-UMR-attributes) 
-as it is followed by a single value, not by a child node representing a 
+The UMR Guidelines list `:quant` among attributes in [Part
+3-3.](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-UMR-attributes)
+as it is followed by a single value, not by a child node representing a
 concept. This single value is
 
 - typically a **number**, but there are also other options as
@@ -10,7 +10,7 @@ concept. This single value is
   "more-than", "most", "between", "as-many-as", but also "all", "many",
   "several" or "a-few" – which looks like a concept at first sight, as it is
   in brackets and has its variable, typically followed by `op1` with a number
-  or other numerical value) or 
+  or other numerical value) or
 - ??? a **string in quotation marks** - not found in the English data)
 
 In more detail, they discuss quantitative concepts in [Part
@@ -18,15 +18,15 @@ In more detail, they discuss quantitative concepts in [Part
 
 For quantification, the following relations and attributes are available:
 - `:quant` (role) ... as a basic keyword,
-- `:ord` (role) ... for ordinals, with obligatory o/ordinal-entity as its daughter complemented with the `:value` relation.  
+- `:ord` (role) ... for ordinals, with obligatory o/ordinal-entity as its daughter complemented with the `:value` relation.
 
 These non-participant roles are supplemented by the following sub-roles:
-- `:unit`... both for standardized, well-established units _dollars_, _weeks_) and for ad-hoc mensural constructions (_cups_), 
-- `:value`... for numerical expressions incl. ordinals; further, for percentages, phone numbers, e-mail addresses, and urls. 
+- `:unit`... both for standardized, well-established units _dollars_, _weeks_) and for ad-hoc mensural constructions (_cups_),
+- `:value`... for numerical expressions incl. ordinals; further, for percentages, phone numbers, e-mail addresses, and urls.
 
 Further, two sub-roles are available:
-- `:range` ... to specify a time period, 
-- `:scale`...  for special cases like (_Richter scale_, _Decibel scale_). 
+- `:range` ... to specify a time period,
+- `:scale`...  for special cases like (_Richter scale_, _Decibel scale_).
 
 ## :quant (role)
 
@@ -39,14 +39,14 @@ In the typical situation, it is an attribute with a numeric value. But when
 it is used to annotate approximate cardinalities (_more than_, _most_), it
 will look as a relation whose child node is the approximative concept.
 
-The `:quant` attribute is used for both exact and approximate cardinalities 
-of sets of countable objects (_three.quant houses_, _more than.quant 
-three.op1 houses_) as well as for the number of "units" of non-countable 
-substances (_three.quant cups.unit of milk_), 
+The `:quant` attribute is used for both exact and approximate cardinalities
+of sets of countable objects (_three.quant houses_, _more than.quant
+three.op1 houses_) as well as for the number of "units" of non-countable
+substances (_three.quant cups.unit of milk_),
 
-For exact quantities, the value is expressed in digits even if the surface 
-expression was verbose. The guidelines do not specify how it is normalized; I 
-suppose that in languages where decimal comma is used in the text, it will be 
+For exact quantities, the value is expressed in digits even if the surface
+expression was verbose. The guidelines do not specify how it is normalized; I
+suppose that in languages where decimal comma is used in the text, it will be
 normalized to decimal point in UMR.
 
 ```
@@ -57,8 +57,8 @@ tři domy “three houses”
 
 ### Quantified nominals vs. quantities in predication
 
-In the simplest case, quantity is an attribute of an entity concept. The 
-concept node should thus be aligned to both the numeral and the noun. 
+In the simplest case, quantity is an attribute of an entity concept. The
+concept node should thus be aligned to both the numeral and the noun.
 
 ```
 Snědla tři knedlíky. “She ate three dumplings.”
@@ -146,25 +146,27 @@ Snědla polovinu knedlíků. “She ate half of the dumplings.”
 ```
 Hlasovalo pro ně 20,5 procenta z celkového počtu 457319 voličů. “20.5 percent of the total number of 457,319 voters voted for them.”
 (h / hlasovat-003
-    :ARG0 (v / volič
+    :ARG0 (p / person
+        :ARG0-of (v / volit-001
+            :aspect habitual)
         :quant 457319
         :ref-number plural
-        :part (p / percentage-entity
+        :part (p2 / percentage-entity
             :value 20.5))
-    :ARG1 (p2 / person
+    :ARG1 (p3 / person
         :ref-person 3rd
         :ref-number plural))
 ```
 
 ### Approximate quantities
 
-The UMR Guidelines give an English example for  _more than 3_, see (1f) 
-below. The [UMR 
-list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0) 
-of abstract concepts offers `more-than` as a cross-lingual abstract concept 
-which should be used in such examples (instead of native concepts in other 
-languages). Further, example (1f) in the guidelines shows an `:op1` attribute 
-of `more-than`, which gives the numeric value to compare with. 
+The UMR Guidelines give an English example for  _more than 3_, see (1f)
+below. The [UMR
+list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0)
+of abstract concepts offers `more-than` as a cross-lingual abstract concept
+which should be used in such examples (instead of native concepts in other
+languages). Further, example (1f) in the guidelines shows an `:op1` attribute
+of `more-than`, which gives the numeric value to compare with.
 
 ```
 (1f) more than three houses
@@ -180,24 +182,24 @@ více než tři domy “more than three houses”
         :op1 3))
 ```
 
-However, the superlative-like construction _nejvíce hlasů_ “most votes” will 
-be annotated as an elliptical construction (= _nejvíce hlasů ze všech 
-odevzdaných hlasů_) using the `have-quant-91`abstract predicate, as described 
-in the following section. 
+However, the superlative-like construction _nejvíce hlasů_ “most votes” will
+be annotated as an elliptical construction (= _nejvíce hlasů ze všech
+odevzdaných hlasů_) using the `have-quant-91`abstract predicate, as described
+in the following section.
 
-Having this in mind, comparison-like constructions as _více něž 3 domy_ could 
-be alternatively interpreted as elliptical, too (meaning _více domů než 3 
-(domy)_ ). Then, their annotation would be parallel to the one offered for 
-superlative-like constructions. However, this possibility is not mentioned in 
-the Guidelines. 
+Having this in mind, comparison-like constructions as _více něž 3 domy_ could
+be alternatively interpreted as elliptical, too (meaning _více domů než 3
+(domy)_ ). Then, their annotation would be parallel to the one offered for
+superlative-like constructions. However, this possibility is not mentioned in
+the Guidelines.
 
-Alternatively, comparison constructions can be treated as elliptical 
+Alternatively, comparison constructions can be treated as elliptical
 constructions, as suggested in the:
 
 ### Comparisons and superlatives relating to amounts of things (`have-quant-91`)
 
 As the UMR Guidelines do not discuss comparative-like and superlative-like constructions,  we have to consult the AMR Guidelines.
- 
+
 For comparison-like quantities, the [AMR Guidelines](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#quantities) suggest to use `have-quant-91` with the following roleset:
 
 ```
@@ -212,11 +214,11 @@ ARG6: consequence, result
 
 And exemplified this:
 
-* [en] _He sold **as many** cars as his competitor._   
+* [en] _He sold **as many** cars as his competitor._
 (= He sold cars the quantity of which.ARG1 is equal.ARG3 comparing to those cars.ARG4 which were sold by his competitor.)
 
 ```
-He sold as many cars as his competitor. 
+He sold as many cars as his competitor.
 (s / sell-01
       :ARG0 (h/ he)
       :ARG1 (c/ car
@@ -229,11 +231,11 @@ He sold as many cars as his competitor.
                                           :ARG1 h)))))))
 ```
 
-* [en] _He sold **the most** cars of his competitors._   
+* [en] _He sold **the most** cars of his competitors._
 (= He sold cars the quantity of which.ARG1 has degree most.ARG3, which is superlative with respect to   those cars.ARG5 (=reference to the superset) which were sold by his competitor.)
 
 ```
-He sold the most cars of his competitors. 
+He sold the most cars of his competitors.
 (s / sell-01
       :ARG0 (h/ he)
       :ARG1 (c/ car
@@ -267,7 +269,7 @@ He sold the most cars of his competitors.
 
 ```
 
-### Comparison of quality 
+### Comparison of quality
 
 For **comparisons and superlatives of quality**, the `have-degree-91` abstract predicate is used (in a parallel way as `have-quant-91` for comparison of qualities of things), see [Degree](degree.md).
 
@@ -288,9 +290,9 @@ tři hrnky mléka “three cups of milk”
 
 ## :value
 
-A value of the `:value` attribute is typically a numerical number. 
+A value of the `:value` attribute is typically a numerical number.
 
-Thus attribute is also used also for annotating ordinal numbers (with obligatory abstract concept `ordinal-entity`). 
+Thus attribute is also used also for annotating ordinal numbers (with obligatory abstract concept `ordinal-entity`).
 ```
 The second training was cancelled yesterday.
 (c/ cancel-01
@@ -300,9 +302,9 @@ The second training was cancelled yesterday.
 		:aspect Process)
 	:temporal (y/ yesterday)
 	:aspect Performance
-	:modstr FullAff) 
+	:modstr FullAff)
 ```
-	
+
 However, the same keyword `:value` is used as a relation for annotating percentages, phone numbers, e-mail addresses, and urls.
 
 **Percentage** should use the abstract concept `percentage-entity` with the
@@ -322,7 +324,7 @@ child node of the `:quant` relation.
         :value 20.5))
 ```
 
-**Urls** 
+**Urls**
 ```
 http://umr-tool.cs.brandeis.edu/display_post
 (u/ url-entity
@@ -331,10 +333,10 @@ http://umr-tool.cs.brandeis.edu/display_post
 
 
 ## :ord (role)
-... for ordinals, with obligatory o/ordinal-entity as its daughter complemented with the `:value` relation, 
+... for ordinals, with obligatory o/ordinal-entity as its daughter complemented with the `:value` relation,
 
 ## :range
- ... to specify a time period, 
+ ... to specify a time period,
 
 ## :scale
 ...  for special cases like (_Richter scale_, _Decibel scale_).
@@ -354,15 +356,15 @@ How to annotate **indefinite quantity**?
 
 # Quantity types
 
-The [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0) provide also a set of pre-defined **quantities** (as abstract concepts) covering mainly **physical quantities** (fyzikální veličiny) like speed, volume, distance, temperature, acidity, etc., but also, e.g., monetary values. 
-These quantities share 
-- the `:quant` role (relation/attribute) for the amount and 
-- `:unit` role (relation/attribute), represented as siblings in UMR graphs.   
-In special cases,   
+The [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0) provide also a set of pre-defined **quantities** (as abstract concepts) covering mainly **physical quantities** (fyzikální veličiny) like speed, volume, distance, temperature, acidity, etc., but also, e.g., monetary values.
+These quantities share
+- the `:quant` role (relation/attribute) for the amount and
+- `:unit` role (relation/attribute), represented as siblings in UMR graphs.
+In special cases,
 - `:scale` is used instead `:unit` (for acidity-quantity and seismic-quantity), or as its alternative (temperature-quantity with `:unit` for degree and `:scale` for celsius, kelvin, or farenheit).
 
 ~~AMR guidelines mention **Quantity types** in Sect. [Quantities](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#quantities):~~
 
-~~Quantity types include:  
-`monetary-quantity`, `distance-quantity`, `area-quantity`, `volume-quantity`, `temporal-quantity`, `frequency-quantity`, `speed-quantity`, `acceleration-quantity`, `mass-quantity`, `force-quantity`, `pressure-quantity`, `energy-quantity`, `power-quantity`, `voltage-quantity` (zap!), `charge-quantity`, `potential-quantity`, `resistance-quantity`, `inductance-quantity`, `magnetic-field-quantity`, `magnetic-flux-quantity`, `radiation-quantity`, `concentration-quantity`, `temperature-quantity`, `score-quantity`, `fuel-consumption-quantity`, `seismic-quantity`, some of them are exemplified there.~~   
+~~Quantity types include:
+`monetary-quantity`, `distance-quantity`, `area-quantity`, `volume-quantity`, `temporal-quantity`, `frequency-quantity`, `speed-quantity`, `acceleration-quantity`, `mass-quantity`, `force-quantity`, `pressure-quantity`, `energy-quantity`, `power-quantity`, `voltage-quantity` (zap!), `charge-quantity`, `potential-quantity`, `resistance-quantity`, `inductance-quantity`, `magnetic-field-quantity`, `magnetic-flux-quantity`, `radiation-quantity`, `concentration-quantity`, `temperature-quantity`, `score-quantity`, `fuel-consumption-quantity`, `seismic-quantity`, some of them are exemplified there.~~
 ~~However, no exhaustive list and full descriptions/definitions are provided.~~
