@@ -923,6 +923,7 @@ known_relations = {
     ':purpose': 'modifier',
     ':quant': 'attribute',
     ':quarter': 'modifier',
+    ':quot': 'modifier', # Note: The guidelines and the spreadsheet define ':quot' but the released data contain ':quote' instead.
     ':range': 'modifier',
     ':reason': 'modifier',
     ':recipient': 'participant',
