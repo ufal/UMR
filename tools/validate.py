@@ -1119,7 +1119,8 @@ def validate(inp, out, args, known_sent_ids):
         if args.level > 2:
             validate_relations(sentence, node_dict, args)
             detect_events(sentence, node_dict, args)
-            validate_events(sentence, node_dict, args)
+            if args.check_aspect_modstr:
+                validate_events(sentence, node_dict, args)
         # Before we read the next sentence, clear the current sentence variables
         # so that sentences() knows they should be reset to new values.
         sentence_line = None
@@ -1145,6 +1146,7 @@ if __name__=="__main__":
     strict_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
     strict_group.add_argument('--optional-block-headers', dest='check_block_headers', action='store_false', default=True, help='Do not report missing or unknown header comments for annotation blocks.')
     strict_group.add_argument('--optional-alignments', dest='check_complete_alignment', action='store_false', default=True, help='Do not require that every node has its alignment specified.')
+    strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
 
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
     report_group.add_argument('--print-relations', dest='print_relations', action='store_true', default=False, help='Print detailed info about all nodes and relations.')
