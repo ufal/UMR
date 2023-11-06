@@ -480,7 +480,7 @@ def validate_sentence_graph(sentence, node_dict, args):
                     else:
                         # We have read the beginning of a node, including its
                         # variable. Now store it both globally and locally.
-                        node_dict[variable] = {'line0': iline}
+                        node_dict[variable] = {'variable': variable, 'line0': iline}
                         sentence[1]['nodes'].add(variable)
                         stack.append(variable)
                     # Now expecting the slash ('/').
@@ -955,8 +955,10 @@ def validate_relations(sentence, node_dict, args):
     """
     testlevel = 3
     testclass = 'Sentence'
-    for nid in sentence[1]['nodes']:
-        node = node_dict[nid]
+    # Sort the nodes by their first line so that the validation report is stable and can be diffed.
+    nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
+    for node in nodes:
+        nid = node['variable']
         if 'relations' in node:
             relations = sorted([r for r in node['relations'] if r['dir'] == 'out'], key=lambda x: x['line0'])
             for r in relations:
@@ -1047,8 +1049,10 @@ def validate_events(sentence, node_dict, args):
         ':aspect': ['habitual', 'imperfective', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement'],
         ':modstr': ['full-affirmative', 'partial-affirmative', 'neutral-affirmative', 'neutral-negative', 'partial-negative', 'full-negative']
     }
-    for nid in sentence[1]['nodes']:
-        node = node_dict[nid]
+    # Sort the nodes by their first line so that the validation report is stable and can be diffed.
+    nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
+    for node in nodes:
+        nid = node['variable']
         if 'event_reason' in node:
             # :ARG relations imply that it is an event but they are not required.
             # On the other hand, :aspect and :modstr seem to be required according to the guidelines.
@@ -1081,7 +1085,7 @@ def validate_events(sentence, node_dict, args):
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[1]['line0'])
                 elif len(relations) == 1 and relations[0]['type'] != 'node':
                     testid = 'invalid-relation'
-                    testmessage = "Expected child node of relation %s, found type=%s, value=%s." % (relations[0]['type'], relations[0]['value'])
+                    testmessage = "Expected child node of relation %s, found type=%s, value=%s." % (relations[0]['relation'], relations[0]['type'], relations[0]['value'])
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
 
 
