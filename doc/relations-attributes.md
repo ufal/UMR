@@ -1,16 +1,36 @@
 # Relations and Attributes in Sentence Level Annotation
 
-**Disclaimer:** We should use the  [**UMR lists**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) as provided by the UMR team - these lists are updated from time to time (and they should be  used in the current UMR tool - probably UMR Writer). The lists specify:
-- **Abstract concepts** ... like (i) "person", "thing", "place", etc.; but also (ii) discourse connectors as "but" or "multi-sentence" and (iii) structured entities as "date-entity" or "quantities" and others;
-- **Abstract rolesets**  ... like (i) frames for "non-verbal" clauses, (ii) discourse rolesets and (iii) implicite relation for specific constructions as titles, citations or addresses;
-- **Roles** ... for (i) participant relations (both general and ARGx) and (ii) non-participant relations (and their subroles) but also for (iii) ?some? attributes (like ":aspect", ":modstr", ":quot"), and (iv) discourse relations as ":condition"
+**Disclaimer:** We should use the  [**UMR 
+lists**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) 
+as provided by the UMR team – these lists are updated from time to time, 
+hopefully more often than the 
+[guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md) 
+from which the relations on this page were extracted. The keywords from the 
+UMR lists should also be used in the current UMR tool (UMR Writer). The lists
+specify:
+
+- **Abstract concepts** ... like (i) "person", "thing", "place", etc.; but
+  also (ii) discourse connectors as "but" or "multi-sentence" and (iii)
+  structured entities as "date-entity" or "quantities" and others;
+- **Abstract rolesets**  ... like (i) frames for "non-verbal" clauses, (ii)
+  discourse rolesets and (iii) implicite relation for specific constructions as
+  titles, citations or addresses;
+- **Roles** ... for (i) participant relations (both general and ARGx) and
+  (ii) non-participant relations (and their subroles) but also for (iii) ?some?
+  attributes (like ":aspect", ":modstr", ":quot"), and (iv) discourse relations
+  as ":condition"
 - **Named entities**.
 
 The file provides also sheets with AMR to UMR mappings.
 
----
----
+**Disclaimer on the disclaimer:** While the UMR lists are supposed to be the
+most authoritative source available, it is not guaranteed that they match the
+[UMR 1.0 data](http://hdl.handle.net/11234/1-5198). For example, both the
+guidelines and the UMR lists define the relation `:quot` but the data contain
+`:quote` instead (see [this
+issue](https://github.com/umr4nlp/umr-guidelines/issues/22)).
 
+---
 
 This document should serve as a reference list (alphabetically ordered) of
 relations and attributes used in UMR. The [UMR
@@ -28,9 +48,14 @@ colon-identifiers can be both (sometimes followed by a value, sometimes by a
 node). And if we view the attribute values as abstract concepts, i.e., nodes,
 relations and attributes become more or less the same thing.
 
-Well organized [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) of abstract concepts, abstract rolesets (=abstract predicates), and roles (= relations/attributes identified by the colon mark) have been recently shared by Julia.
+Well organized [UMR
+lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)
+of abstract concepts, abstract rolesets (=abstract predicates), and roles (=
+relations/attributes identified by the colon mark) have been recently shared
+by Julia.
 
-Additional information can be found also in  [AMR annotation dictionary](https://amr.isi.edu/doc/amr-dict.html).
+Additional information can be found also in [AMR annotation
+dictionary](https://amr.isi.edu/doc/amr-dict.html).
 
 `:accompanier` –  Introduced in the AMR guidelines as a non-core role in Part II. [Concepts and relations](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#part-ii--concepts-and-relations), exemplified in  *The soldier hummed a tune **for the girl** as he walked with her to town.* (ML added)
 ?Probably replaced by `:companion` in UMR, example 1 (6), _... before he returns home **with his wife Sherry**?
@@ -211,14 +236,34 @@ an attribute with the boolean value `+`.
 
 `:purpose` – Example (4c) in 3-3-1-3.
 
-`:quant` – Used with quentities, used for annotating both exact and approximate cardinalities of sets of countable objects (three houses, more than three houses) as well as for the number of "units" of non-countable substances (three cups of milk).  Introduced in  3-2-2-5. Typically an attribute, sometimes a relation. Defined in
+`:quant` – Used with quentities, used for annotating both exact and
+approximate cardinalities of sets of countable objects (three houses, more
+than three houses) as well as for the number of "units" of non-countable
+substances (three cups of milk).  Introduced in  3-2-2-5. Typically an
+attribute, sometimes a relation. Defined in
 [3-3-4](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-4-quant).
 As an attribute it has a numeric value. As a relation it has a child node
 with a concept describing approximate quantity.
 
-`:quarter` – Looks like attribute, introduced among relations in 3-2-2-1. The value is the number (1, 2, 3, 4). It is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
+`:quarter` – Looks like attribute, introduced among relations in 3-2-2-1. The
+value is the number (1, 2, 3, 4). It is used within `date-entity` concepts
+(see below). Examples in AMR guidelines, section [Other entities: dates,
+times, percentages, phone, email,
+URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls)
+(ML)
 
-`:range` – Used with quentities,  to indicate a specific time period. Introduced in  3-2-2-5. Example (1b) in 3-2-2-5.
+`:quot` – Modal relation that goes from a reported event back to the
+reporting event (speech verb), thus forming a cycle because the reported
+event is also the `:ARG1` of the reporting event. Mentioned at various places
+in the guidelines, defined in
+[4-3-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-4-3-1-3-quot-relation)
+(in the chapter on document level annotation, although the relation is used
+in sentence level graphs!), also shown on the Roles tab in the UMR list
+spreadsheet. Nevertheless, the UMR 1.0 data use the relation `:quote` instead
+(see also [this issue](https://github.com/umr4nlp/umr-guidelines/issues/22)).
+
+`:range` – Used with quentities,  to indicate a specific time period.
+Introduced in  3-2-2-5. Example (1b) in 3-2-2-5.
 
 `:reason` – Introduced in 3-2-1-1 (BUT not listed among AMR / UMR relations). See also `:cause`.
 
@@ -338,4 +383,3 @@ In UMR, `:time` is added to roles used within `date-entity` concepts.
 AMR guidelines mention Quantity types in Sect. [Quantities](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#quantities):
 
 Quantity types include: `monetary-quantity`, `distance-quantity`, `area-quantity`, `volume-quantity`, `temporal-quantity`, `frequency-quantity`, `speed-quantity`, `acceleration-quantity`, `mass-quantity`, `force-quantity`, `pressure-quantity`, `energy-quantity`, `power-quantity`, `voltage-quantity` (zap!), `charge-quantity`, `potential-quantity`, `resistance-quantity`, `inductance-quantity`, `magnetic-field-quantity`, `magnetic-flux-quantity`, `radiation-quantity`, `concentration-quantity`, `temperature-quantity`, `score-quantity`, `fuel-consumption-quantity`, `seismic-quantity`, some of them are exemplified there. However, no exhaustive list and descriptions/definitions are provided.
-
