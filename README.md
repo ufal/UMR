@@ -29,6 +29,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
   * Ref = [Person and Number](doc/reference.md)
   * [Degree](doc/degree.md) (incl. comparison of quality)
 * [Glossary of relations and attributes](doc/relations-attributes.md)
+* [Alignment rules](doc/alignment.md)
 
 ## Useful links
 * [UMR-related links](https://github.com/ufal/UMR/blob/main/doc/UMR-related-links.md) – including working lists
