@@ -67,3 +67,54 @@ annotation repository](https://github.com/cu-clear/UMR-Annotation/issues/2).
 ## Overlapping alignments?
 
 ??? – to investigate whether two nodes can map to the same token
+
+## What to align to what
+
+These are our (ÚFAL) guidelines. They may be inspired by what we saw in UMR
+1.0 but they do not attempt to mimic exactly the approach taken there.
+
+* The easiest alignment is between a content word and the concept node that
+represents it: entities to nouns, states to adjectives or verbs, and
+processes to verbs.
+
+* Overtly expressed discourse connectives often have their own nodes, too.
+
+* Auxiliary verbs are aligned together with the main verb to the same event
+concept. The same holds for non-referential reflexive markers (_smát se_ “to
+laugh”) and for verbal particles (_come up_).
+
+* Some prepositions may have their own concept nodes. If they do not, then
+they should be aligned to the same node as their noun (they are like case
+markers in other languages). Note that this may lead to discontinuous
+alignment if there is an adjective between the preposition and the noun.
+
+* Numerical quantities? They do not have a node.
+
+* Subordinating conjunctions?
+
+* Punctuation tokens are normally not aligned with nodes. An exception would
+be that a node is aligned to a range of tokens, there is a punctuation symbol
+somewhere in the middle of the range and excluding it from the alignment
+would break the otherwise contiguous alignment into two sub-ranges.
+
+* Reifications (the \*-91 event concepts) are meant as abstract concepts,
+meaning that they _typically_ do not have a corresponding token. However, if
+there is a token that is not aligned to anything else and that gave rise to
+the event, we should align it with the \*-91 node. In particular, the copula
+(_být_ “to be”) will often correspond to `have-property-91`.
+
+* The abstract concepts `person`, `thing` etc. may be aligned to overtly
+expressed pronouns. If the concept is only inferred from morphological
+agreement marked on the verb, it will stay unaligned.
+
+* Somewhat schizophrenic situation arises with named entities. Typically
+there is an abstract concept (`person`, `organization` etc.) with a `name`
+child node. The abstract parent is aligned to the name tokens in the
+sentence. The `name` child stays unaligned, although it directly points to
+the orthographic words of the name via its `:opN` attributes. (This rule is
+inferred from the data relased in UMR 1.0.)
+
+* While the above rules strive to align as many non-punctuation tokens as
+possible, it is not required that all of them are aligned to concepts. There
+may be words that are not even distantly related to any individual node; such
+words will stay unaligned.
