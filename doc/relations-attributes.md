@@ -1,11 +1,11 @@
 # Relations and Attributes in Sentence Level Annotation
 
-**Disclaimer:** We should use the  [**UMR 
-lists**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) 
-as provided by the UMR team – these lists are updated from time to time, 
-hopefully more often than the 
-[guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md) 
-from which the relations on this page were extracted. The keywords from the 
+**Disclaimer:** We should use the  [**UMR
+lists**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)
+as provided by the UMR team – these lists are updated from time to time,
+hopefully more often than the
+[guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md)
+from which the relations on this page were extracted. The keywords from the
 UMR lists should also be used in the current UMR tool (UMR Writer). The lists
 specify:
 
@@ -252,15 +252,17 @@ times, percentages, phone, email,
 URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls)
 (ML)
 
-`:quot` – Modal relation that goes from a reported event back to the
-reporting event (speech verb), thus forming a cycle because the reported
-event is also the `:ARG1` of the reporting event. Mentioned at various places
-in the guidelines, defined in
+`:quote` (originally `:quot`) – Modal relation that goes from a reported
+event back to the reporting event (speech verb), thus forming a cycle because
+the reported event is also the `:ARG1` of the reporting event. Mentioned at
+various places in the guidelines, defined in
 [4-3-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-4-3-1-3-quot-relation)
 (in the chapter on document level annotation, although the relation is used
 in sentence level graphs!), also shown on the Roles tab in the UMR list
 spreadsheet. Nevertheless, the UMR 1.0 data use the relation `:quote` instead
 (see also [this issue](https://github.com/umr4nlp/umr-guidelines/issues/22)).
+Julia has confirmed that there were a number of last-minute changes to make
+the annotations more human-readable.
 
 `:range` – Used with quentities,  to indicate a specific time period.
 Introduced in  3-2-2-5. Example (1b) in 3-2-2-5.
@@ -270,14 +272,16 @@ Introduced in  3-2-2-5. Example (1b) in 3-2-2-5.
 `:recipient` – Argument role used for languages that do not have frame files.
 Typically corresponds to `:ARG2`.
 
-`:ref-number` – An attribute used with (almost?) every entity concept. Values
-correspond to grammatical number (`Singular`, `Plural` etc.) but the
-attribute is here because of the semantics. On the other hand, it is not a
-general means to indicate quantity; for that, the `:quant` attribute is used.
+`:refer-number` (originally `:ref-number`) – An attribute used with (almost?)
+every entity concept. Values correspond to grammatical number (`singular`,
+`dual`, `paucal`, `plural` etc.) but the attribute is here because of the
+semantics. On the other hand, it is not a general means to indicate quantity;
+for that, the `:quant` attribute is used.
 
-`:ref-person` – An attribute used with entity nodes corresponding to personal
-pronouns (overt or not; they can be deduced from verbal morphology or from
-other contextual clues).
+`:refer-person` (originally `:ref-person`) – An attribute used with entity
+nodes corresponding to personal pronouns (overt or not; they can be deduced
+from verbal morphology or from other contextual clues). Known values are
+`1st`, `2nd`, `3rd`, and `4th`.
 
 `:scale` – Used together with `:quant`, e.g. in _6.5 **on the Richter
 scale**_. Example (1h) in 3-2-2-5.
