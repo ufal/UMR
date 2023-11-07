@@ -181,6 +181,12 @@ Example (2g) in 3-2-2-2: _a **French** song_.
 specific relation is available. Used also with demonstratives: (2d) in
 3-2-2-2.
 
+`modal-predicate` (originally `:modpred`) – Example (2c) in
+[3-3-1-3](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-3-1-3-state).
+If a modal word is identified as its own event, events under its scope are
+annotated with a `:modal-predicate` relation going back to the modal. This
+typically means that a cycle is formed in the graph.
+
 `:modal-strength` (originally `:modstr`) – Attribute used with every event.
 Expresses modality at sentence level. Typical value `full-affirmative`. See
 [4-3-1-1](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-4-3-1-1-modstr-values).
@@ -197,10 +203,13 @@ are `partial-affirmative`, `neutral-affirmative`, `neutral-negative`,
 Values: `expressive`, `imperative`, `interrogative`. There is no value for
 declarative sentences, so most events lack this attribute.
 
-`:modpred` – Example (2c) in 3-3-1-3. Events under the scope of a modal identified as its own event are only annotated with a :modpred relation to the relevant modal.
-
-`:month` – Looks like attribute, introduced among relations in 3-2-2-1. The value is the month number. (Not sure what they do with lunar and other calendars.)
-It is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
+`:month` – Looks like attribute, introduced among relations in 3-2-2-1. The
+value is the month number. (Not sure what they do with lunar and other
+calendars.) It is used within `date-entity` concepts (see below). Examples in
+AMR guidelines, section [Other entities: dates, times, percentages, phone,
+email,
+URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls)
+(ML)
 
 `:name` – Always has a `name` concept as its child node, which in turn has
 `opX` attributes. Used in named entities.
@@ -211,7 +220,9 @@ coordination, the concepts of the conjuncts have each its own op. Some
 prepositions, like _before_ in (2b) in 3-3-1-5, introduce their argument as
 `:op1`.
 
-`:ord` – Used with quentities, for ordinal numbers. Introduced in  3-2-2-5. It always takes an (o/ ordinal-entity) concept as its daughter. Example (2a) in 3-3-1-1. Introduced in 3-2-2-5.
+`:ord` – Used with quantities, for ordinal numbers. Introduced in  3-2-2-5.
+It always takes an (o/ ordinal-entity) concept as its daughter. Example (2a)
+in 3-3-1-1. Introduced in 3-2-2-5.
 
 `:other-role` – Introduced in Table 5 in 3-2-1-1, described at the end of
 3-2. Used if the annotator encounters a concept for which UMR currently does
