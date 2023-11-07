@@ -713,7 +713,7 @@ def validate_alignment(sentence, node_dict, args):
             warn(testmessage, testclass, testlevel, testid, lineno=iline)
     # Check that all nodes in this sentence have an alignment.
     # Even unaligned nodes should have alignment 0-0.
-    for n in sentence[1]['nodes']:
+    for n in sorted(sentence[1]['nodes']):
         if not 'alignment' in node_dict[n]:
             if args.check_complete_alignment:
                 testid = 'missing-alignment'
@@ -972,7 +972,7 @@ def validate_relations(sentence, node_dict, args):
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                 elif known_relations[relation] != 'attribute' and r['type'] != 'node':
                     testid = 'unexpected-value'
-                    testmessage = "Expected child node because '%s' is relation, not attribute; found '%s'." % (r['relation'], r['type'])
+                    testmessage = "Expected child node because '%s' is relation, not attribute; found %s with value '%s'." % (r['relation'], r['type'], r['value'])
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 def detect_events(sentence, node_dict, args):
