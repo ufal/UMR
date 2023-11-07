@@ -904,9 +904,9 @@ known_relations = {
     ':material': {'type': 'participant'},
     ':medium': {'type': 'modifier'},
     ':mod': {'type': 'modifier'},
+    ':modal-strength': {'type': 'attribute', 'values': ['full-affirmative', 'partial-affirmative', 'neutral-affirmative', 'neutral-negative', 'partial-negative', 'full-negative']}, # Note: The guidelines and the spreadsheet originally defined ':modstr' but it was changed to ':modal-strength' in UMR 1.0 to make the annotation more human-readable.
     ':mode': {'type': 'attribute'},
     ':modpred': {'type': 'modifier'},
-    ':modstr': {'type': 'attribute'},
     ':month': {'type': 'attribute'},
     ':name': {'type': 'modifier'},
     ':op1': {'type': 'attribute'},
