@@ -88,9 +88,12 @@ they should be aligned to the same node as their noun (they are like case
 markers in other languages). Note that this may lead to discontinuous
 alignment if there is an adjective between the preposition and the noun.
 
-* Numerical quantities? They do not have a node.
+* Subordinating conjunctions are to clauses what prepositions are to
+nominals, so we might treat them accordingly and align them with verbs,
+unless they have their own node. This would be parallel to languages where
+subordination is marked morphologically on the verb.
 
-* Subordinating conjunctions?
+* Numerical quantities? They do not have a node.
 
 * Punctuation tokens are normally not aligned with nodes. An exception would
 be that a node is aligned to a range of tokens, there is a punctuation symbol
