@@ -904,14 +904,15 @@ known_relations = {
     ':material': {'type': 'participant'},
     ':medium': {'type': 'modifier'},
     ':mod': {'type': 'modifier'},
+    ':modal-predicate': {'type': 'modifier'}, # Note: The guidelines and the spreadsheet originally defined ':modpred' but it was changed to ':modal-predicate' in UMR 1.0 to make the annotation more human-readable.
     ':modal-strength': {'type': 'attribute', 'values': ['full-affirmative', 'partial-affirmative', 'neutral-affirmative', 'neutral-negative', 'partial-negative', 'full-negative']}, # Note: The guidelines and the spreadsheet originally defined ':modstr' but it was changed to ':modal-strength' in UMR 1.0 to make the annotation more human-readable.
     ':mode': {'type': 'attribute'},
-    ':modpred': {'type': 'modifier'},
     ':month': {'type': 'attribute'},
     ':name': {'type': 'modifier'},
     ':op1': {'type': 'attribute'},
     ':op2': {'type': 'attribute'},
     ':op3': {'type': 'attribute'},
+    ':op4': {'type': 'attribute'},
     ':ord': {'type': 'modifier'},
     ':other-role': {'type': 'modifier'},
     ':part': {'type': 'modifier'},
