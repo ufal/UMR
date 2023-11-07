@@ -923,7 +923,7 @@ known_relations = {
     ':purpose': 'modifier',
     ':quant': 'attribute',
     ':quarter': 'modifier',
-    ':quot': 'modifier', # Note: The guidelines and the spreadsheet define ':quot' but the released data contain ':quote' instead.
+    ':quote': 'modifier', # Note: The guidelines and the spreadsheet originally defined ':quot' but it was changed to ':quote' in UMR 1.0 to make the annotation more human-readable.
     ':range': 'modifier',
     ':reason': 'modifier',
     ':recipient': 'participant',
