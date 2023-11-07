@@ -927,7 +927,7 @@ known_relations = {
     ':range': {'type': 'modifier'},
     ':reason': {'type': 'modifier'},
     ':recipient': {'type': 'participant'},
-    ':refer-number': {'type': 'attribute'}, # Note: The guidelines and the spreadsheet originally defined ':ref-number' but it was changed to ':refer-number' in UMR 1.0 to make the annotation more human-readable.
+    ':refer-number': {'type': 'attribute', 'values': ['singular', 'dual', 'paucal', 'plural']}, # Note: The guidelines and the spreadsheet originally defined ':ref-number' but it was changed to ':refer-number' in UMR 1.0 to make the annotation more human-readable.
     ':refer-person': {'type': 'attribute', 'values': ['1st', '2nd', '3rd', '4th']}, # Note: The guidelines and the spreadsheet originally defined ':ref-person' but it was changed to ':refer-person' in UMR 1.0 to make the annotation more human-readable.
     ':scale': {'type': 'modifier'},
     ':source': {'type': 'participant'},
