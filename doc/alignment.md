@@ -59,3 +59,11 @@ Certain special nodes (such as the `name` concept attached via a `:name`
 relation to a concept representing a named entity) are anchored to "-1"
 instead of 0, so their range is -1--1. See also [issue #2 in the UMR
 annotation repository](https://github.com/cu-clear/UMR-Annotation/issues/2).
+
+## Unaligned tokens
+
+??? – to investigate
+
+## Overlapping alignments?
+
+??? – to investigate whether two nodes can map to the same token
