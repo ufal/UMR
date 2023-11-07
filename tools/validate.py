@@ -907,7 +907,7 @@ known_relations = {
     ':mode': 'attribute',
     ':modpred': 'modifier',
     ':modstr': 'attribute',
-    ':month': 'modifier',
+    ':month': 'attribute',
     ':name': 'modifier',
     ':op1': 'attribute',
     ':op2': 'attribute',
@@ -969,6 +969,10 @@ def validate_relations(sentence, node_dict, args):
                 if not relation in known_relations:
                     testid = 'unknown-relation'
                     testmessage = "Unknown relation '%s'." % r['relation']
+                    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                elif known_relations[relation] != 'attribute' and r['type'] != 'node':
+                    testid = 'unexpected-value'
+                    testmessage = "Expected child node because '%s' is relation, not attribute; found '%s'." % (r['relation'], r['type'])
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 def detect_events(sentence, node_dict, args):
