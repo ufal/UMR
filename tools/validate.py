@@ -950,6 +950,7 @@ known_relations = {
     ':undergoer': {'type': 'participant'},
     ':unit': {'type': 'modifier'},
     ':value': {'type': 'attribute'},
+    ':vocative': {'type': 'modifier'},
     ':weekday': {'type': 'modifier'},
     ':wiki': {'type': 'attribute'},
     ':year': {'type': 'attribute'},

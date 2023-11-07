@@ -338,10 +338,24 @@ Typically corresponds to `:ARG1`.
 `:unit` – Used with quentities,  used for both standardized, well-established units such as (dollars, weeks) and for ad-hoc mensural constructions (three cups of milk). Introduced in  3-2-2-5. The child node is a unit concept
 (both standardized and informal units), e.g., _day_ for duration.
 
-`:value` – Used with quentities, used for annotating percentages, phone numbers, e-mail addresses, and urls; used with `ordinal-entity`, `percentage-entity`, `url-entity`. Introduced in  3-2-2-5 (in AMR, for other entities as well).
+`:value` – Used with quentities, used for annotating percentages, phone
+numbers, e-mail addresses, and urls; used with `ordinal-entity`,
+`percentage-entity`, `url-entity`. Introduced in  3-2-2-5 (in AMR, for other
+entities as well).
 
-`:weekday` – A relation introduced in 3-2-2-1. The child node is the concept with the name of the day of the week, presumably in the local language (they have an English example and there is `:weekday (f/ Friday)`). See also
-`:day`). This relation is used within `date-entity` concepts (see below). Examples in AMR guidelines, section [Other entities: dates, times, percentages, phone, email, URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls) (ML)
+`:vocative` – Not mentioned in the guidelines but listed in the spreadsheet
+(Lists for UMR tool) and used in the data. Parent node is the event of the
+clause (e.g., a question) that contains the vocative. Child node is the
+person to whom the clause is addressed.
+
+`:weekday` – A relation introduced in 3-2-2-1. The child node is the concept
+with the name of the day of the week, presumably in the local language (they
+have an English example and there is `:weekday (f/ Friday)`). See also
+`:day`). This relation is used within `date-entity` concepts (see below).
+Examples in AMR guidelines, section [Other entities: dates, times,
+percentages, phone, email,
+URLs](https://github.com/amrisi/amr-guidelines/blob/master/amr.md#other-entities-dates-times-percentages-phone-email-urls)
+(ML)
 
 `:wiki` – Attribute of an entity concept, containing a reference to the
 article in Wikipedia that describes the entity. The examples in the
