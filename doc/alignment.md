@@ -93,7 +93,12 @@ nominals, so we might treat them accordingly and align them with verbs,
 unless they have their own node. This would be parallel to languages where
 subordination is marked morphologically on the verb.
 
-* Numerical quantities? They do not have a node.
+* Numerical quantities do not have their own concept node because they are
+annotated as numerical `:quant` attributes, e.g. `(s1h / house :quant 10)`.
+Therefore we should align `s1h` to the whole expression _ten houses_. (This
+is different from approximate quantities that have their own node and
+`:quant` is the relation that attaches them, e.g. `(s1h / house :quant (s1s /
+several))` will have `s1h` attached to _houses_ and `s1s` to _several_.)
 
 * Punctuation tokens are normally not aligned with nodes. An exception would
 be that a node is aligned to a range of tokens, there is a punctuation symbol
