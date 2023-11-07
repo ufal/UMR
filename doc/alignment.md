@@ -114,6 +114,20 @@ sentence. The `name` child stays unaligned, although it directly points to
 the orthographic words of the name via its `:opN` attributes. (This rule is
 inferred from the data relased in UMR 1.0.)
 
+* More generally, the approach in UMR 1.0 seems to be:
+  * If the parent node covers the same tokens as its child node, the alignment
+    will be assigned to the parent and the child will be formally unaligned.
+    For example (english_umr-0003, snt8), _doctor_ is represented as
+    `(s8p2 / person :ARG1-of (s8h / have-role-91 :ARG3 (s8d / doctor)))`;
+    the token is aligned to `s8p2`, while `s8h` and `s8d` are unaligned.
+  * If the parent node has multiple children that together completely cover
+    the parent's span, the alignment will be assigned to the children and the
+    parent will be formally unaligned. For example (english_umr-0003, snt6),
+    _next several days_ is represented as
+    `(s6t / temporal-quantity :quant (s6s2 / several) :unit (s6d / day) :mod (s6n / next))`;
+    here, `s6s2`, `s6d` and `s6n` are aligned to their respective tokens while
+    `s6t` is unaligned.
+
 * While the above rules strive to align as many non-punctuation tokens as
 possible, it is not required that all of them are aligned to concepts. There
 may be words that are not even distantly related to any individual node; such

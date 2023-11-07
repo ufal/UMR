@@ -316,6 +316,8 @@ atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some att
 
 tokrng_re = re.compile(r"^0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
 tokrngs_re = re.compile(r"^(?:0-0|([1-9][0-9]*)-([1-9][0-9]*)(,\s*[1-9][0-9]*-[1-9][0-9]*)*)$")
+tokrng_neg_re = re.compile(r"^-1--1|0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
+tokrngs_neg_re = re.compile(r"^(?:-1--1|0-0|([1-9][0-9]*)-([1-9][0-9]*)(,\s*[1-9][0-9]*-[1-9][0-9]*)*)$")
 
 svariable_re = re.compile(r"^s[0-9]+s0")
 dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
@@ -615,6 +617,9 @@ def validate_alignment(sentence, node_dict, args):
     """
     testlevel = 2
     testclass = 'Alignment'
+    if not args.check_nonnegative_alignment:
+        tokrng_re = tokrng_neg_re
+        tokrngs_re = tokrngs_neg_re
     # Does the comment confirm that we are processing the concept-token alignment?
     if args.check_block_headers:
         heading_found = False
@@ -652,7 +657,7 @@ def validate_alignment(sentence, node_dict, args):
                     for s in spans:
                         # If we previously matched tokrngs_re, we must now match tokrng_re.
                         match = tokrng_re.match(s)
-                        if match.group(0) == '0-0':
+                        if match.group(0) == '0-0' or match.group(0) == '-1--1':
                             # The regular expression tokrngs_re excludes '0-0' combined with anything else,
                             # so we do not have to check it here.
                             t0 = 0
@@ -1156,6 +1161,7 @@ if __name__=="__main__":
     strict_group.add_argument('--allow-trailing-whitespace', dest='check_trailing_whitespace', action='store_false', default=True, help='Do not report trailing whitespace.')
     strict_group.add_argument('--allow-wide-space', dest='check_wide_space', action='store_false', default=True, help='Do not report multiple spaces between tokens, treat them as a single space.')
     strict_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
+    strict_group.add_argument('--allow--1', dest='check_nonnegative_alignment', action='store_false', default=True, help='Do not report alignment -1--1. Unaligned nodes normally get the pseudo-alignment 0-0 but in UMR 1.0 some of them have -1--1.')
     strict_group.add_argument('--optional-block-headers', dest='check_block_headers', action='store_false', default=True, help='Do not report missing or unknown header comments for annotation blocks.')
     strict_group.add_argument('--optional-alignments', dest='check_complete_alignment', action='store_false', default=True, help='Do not require that every node has its alignment specified.')
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
