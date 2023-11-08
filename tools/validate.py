@@ -932,7 +932,7 @@ known_relations = {
     ':purpose': {'type': 'modifier', 'repeat': True},
     ':quant': {'type': 'attribute', 'repeat': False},
     ':quarter': {'type': 'modifier', 'repeat': False},
-    ':quote': {'type': 'modifier', 'repeat': False}, # Note: The guidelines and the spreadsheet originally defined ':quot' but it was changed to ':quote' in UMR 1.0 to make the annotation more human-readable.
+    ':quote': {'type': 'modifier', 'repeat': True}, # Note: The guidelines and the spreadsheet originally defined ':quot' but it was changed to ':quote' in UMR 1.0 to make the annotation more human-readable.
     ':range': {'type': 'modifier', 'repeat': False},
     ':reason': {'type': 'modifier', 'repeat': True},
     ':recipient': {'type': 'participant', 'repeat': False},
