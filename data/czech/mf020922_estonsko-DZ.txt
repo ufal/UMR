@@ -6,9 +6,9 @@
     :ARG2 (s1c / country
         :wiki "Q191"
         :name (s1n / name :op1 "Estonsko")
-        :ref-number singular)
+        :refer-number singular)
     :aspect state
-    :modstr full-affirmative)
+    :modal-strength full-affirmative)
 
 # alignment:
 s1h: 0-0
@@ -28,12 +28,12 @@ s1n: 0-0
         :mod (s2c / country
             :wiki "Q191"
             :name (s2n2 / name :op1 "Estonsko"))
-        :ref-number plural)
+        :refer-number plural)
     :ARG1 (s2p2 / parlament
         :wiki "Q217799"
-        :ref-number singular)
+        :refer-number singular)
     :aspect imperfective
-    :modstr full-affirmative)
+    :modal-strength full-affirmative)
 
 # alignment:
 s2v: 2-2
@@ -53,9 +53,9 @@ s2p2: 3-3
     :ARG2 (s3c / city
         :wiki "Q1770"
         :name (s3n / name :op1 "Tallin")
-        :ref-number singular)
+        :refer-number singular)
     :aspect state
-    :modstr full-affirmative)
+    :modal-strength full-affirmative)
 
 # alignment:
 s3h: 0-0
@@ -73,7 +73,7 @@ s3n: 0-0
     :ARG0 (s4b / blok
         :wiki "Q163347"
         :name (s4n / name :op1 "Vlast")
-        :ref-number singular
+        :refer-number singular
         :ARG0-of (s4n6 / nominovat-001
             :ARG1 (s4k / kandidát
                 :wiki "Q618536"
@@ -84,34 +84,34 @@ s3n: 0-0
                         :wiki "Q153149"
                         :name (s4n5 / name :op1 "Lennart" :op2 "Meri"))
                     :aspect state
-                    :modstr full-affirmative))
+                    :modal-strength full-affirmative))
             :aspect perfective
-            :modstr full-affirmative))
+            :modal-strength full-affirmative))
     :ARG1 (s4h / hlas
         :quant (s4n2 / nejvíce)
-        :ref-number plural)
+        :refer-number plural)
     :location (s4v / volit-001
         :wiki "Q372557"
         :ARG1 (s4p / parlament
             :wiki "Q217799"
-            :ref-number singular)
+            :refer-number singular)
         :location (s4c / country
             :wiki "Q191"
             :name (s4n3 / name :op1 "Estonsko")
-            :ref-number singular)
+            :refer-number singular)
             :temporal (s4d / date-entity
                 :weekday (s4n4 / neděle
                     :wiki "Q132"))
         :aspect process
-        :modstr full-affirmative)
+        :modal-strength full-affirmative)
     :mod (s4p2 / podle
         :op1 (s4v2 / výsledek
             :ARG0-of (s4p3 / předbíhat-001
                 :aspect state
-                :modstr full-affirmative)
+                :modal-strength full-affirmative)
             :temporal (s4v3 / včera)))
     :aspect perfective
-    :modstr full-affirmative)
+    :modal-strength full-affirmative)
 
 # alignment:
 s4z: 7-7
@@ -146,8 +146,8 @@ s4v3: 9-9
     :ARG0 (s5p / person
         :ARG0-of (s5v / volit-001
             :aspect habitual
-            :modstr full-affirmative)
-        :ref-number plural
+            :modal-strength full-affirmative)
+        :refer-number plural
         :quant 457319
         :part (s5p2 / percentage-entity
             :value 20.5
@@ -156,25 +156,25 @@ s4v3: 9-9
                     :mod (s5p5 / poslanec)
                     :location (s5p6 / parlament
                         :wiki "Q217799"
-                        :ref-number singular
+                        :refer-number singular
                         :mod (s5n2 / nový))
                     :quant 28
-                    :ref-number plural)
+                    :refer-number plural)
                 :aspect state
-                :modstr full-affirmative))
+                :modal-strength full-affirmative))
         :ARG0-of (s5z / zúčastnit-se-001
             :ARG1 (s5v2 / volit-001
                 :wiki "Q372557"
                 :aspect process
-                :modstr full-affirmative)
+                :modal-strength full-affirmative)
             :aspect perfective
-            :modstr full-affirmative))
+            :modal-strength full-affirmative))
     :ARG1 (s5b / blok
         :wiki "Q163347"
         :name (s5n / name :op1 "Vlast")
-        :ref-number singular)
+        :refer-number singular)
     :aspect perfective
-    :modstr full-affirmative)
+    :modal-strength full-affirmative)
 
 # alignment:
 s5h: 12-12
@@ -208,22 +208,22 @@ s5n2: 26-26
             :ARG0-of (s6p3 / představovat-003
                 :ARG1 (s6r / republika
                     :wiki "Q191"
-                    :ref-number singular)
+                    :refer-number singular)
                 :temporal (s6d / dosud)
                 :manner (s6n3 / nejvýše)
                 :aspect habitual
-                :modstr full-affirmative))
-        :ref-number singular)
+                :modal-strength full-affirmative))
+        :refer-number singular)
     :ord (s6o / ordinal-entity :value 2)
     :cause (s6h2 / hlas
         :part (s6p / percentage-entity
             :value 13.9)
-        :ref-number plural
+        :refer-number plural
         :mod (s6m / mandát
             :quant 18))
     :temporal (s6z / zatím)
     :aspect reversible-state
-    :modstr full-affirmative)
+    :modal-strength full-affirmative)
 
 # alignment:
 s6h: 12-12

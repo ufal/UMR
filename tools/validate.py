@@ -617,6 +617,8 @@ def validate_alignment(sentence, node_dict, args):
     """
     testlevel = 2
     testclass = 'Alignment'
+    global tokrng_re
+    global tokrngs_re
     if not args.check_nonnegative_alignment:
         tokrng_re = tokrng_neg_re
         tokrngs_re = tokrngs_neg_re
