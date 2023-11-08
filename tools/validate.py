@@ -1020,6 +1020,19 @@ def validate_relations(sentence, node_dict, args):
                     testid = 'repeated-relation'
                     testmessage = "Node '%s' is not supposed to have more than one relation '%s' but it has %d: first on line %d." % (nid, r, relcount[r], relfirst[r])
                     warn(testmessage, testclass, testlevel, testid, lineno=rellast[r])
+            # For :op1, :op2 etc., check that higher numbers occur only if lower numbers do.
+            relations = [r for r in node['relations'] if r['dir'] == 'out' and re.match(r"^:op[1-9][0-9]*$", r['relation'])]
+            if relations:
+                for r in relations:
+                    r['opnumber'] = int(re.sub(r"^:op([1-9][0-9]*)$", r"\1", r['relation']))
+                relations = sorted(relations, key=lambda x: x['opnumber'])
+                for i in range(len(relations)):
+                    opnumber = relations[i]['opnumber']
+                    if opnumber > i + 1:
+                        testid = 'skipped-op-relation'
+                        testmessage = "Missing relation ':op%d' while there is relation ':op%d'." % (opnumber-1, opnumber)
+                        warn(testmessage, testclass, testlevel, testid, lineno=relations[i]['line0'])
+                        break
 
 def detect_events(sentence, node_dict, args):
     """
