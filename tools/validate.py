@@ -1050,7 +1050,8 @@ def detect_events(sentence, node_dict, args):
     events = []
     for r in sentence[3]['relations']:
         # Concepts included in temporal and modal relations are probably events.
-        if r['group'] in [':temporal', ':modal']:
+        ###!!! Exclude :temporal because they do not have to be events. They can be temporal concepts such as 'yesterday'.
+        if r['group'] in [':modal']:
             # The 'node' can be also a constant (e.g. 'document-creation-time') which we do not have in node_dict.
             if r['node0'] in node_dict and not 'event_reason' in node_dict[r['node0']]:
                 node_dict[r['node0']]['event_reason'] = "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])

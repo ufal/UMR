@@ -2,7 +2,9 @@
 
 # sentence level graph:
 (s1h / have-location-91
-    :ARG1 (s1e / event)
+    :ARG1 (s1e / event
+        :aspect process
+        :modal-strength full-affirmative)
     :ARG2 (s1c / country
         :wiki "Q191"
         :name (s1n / name :op1 "Estonsko")
@@ -17,6 +19,12 @@ s1c: 1-1
 s1n: 0-0
 
 # document level annotation:
+(s1s0 / sentence
+    :temporal ((document-creation-time :before s1h)
+            (s1h :overlap s1e))
+    :modal ((root :modal author)
+            (author :full-affirmative s1h)
+            (author :full-affirmative s1e)))
 
 
 # :: snt2	Estonci volili parlament
@@ -43,13 +51,21 @@ s2n2: 0-0
 s2p2: 3-3
 
 # document level annotation:
+(s2s0 / sentence
+    :temporal ((document-creation-time :before s2v)
+            (s2v :overlap s1e))
+    :modal ((root :modal author)
+            (author :full-affirmative s2v))
+    :coref ((s1c :same-entity s2c)))
 
 
 # :: snt3	Tallin -
 
 # sentence level graph:
 (s3h / have-location-91
-    :ARG1 (s3e / event)
+    :ARG1 (s3e / event
+        :aspect process
+        :modal-strength full-affirmative)
     :ARG2 (s3c / city
         :wiki "Q1770"
         :name (s3n / name :op1 "Tallin")
@@ -64,6 +80,13 @@ s3c: 1-1
 s3n: 0-0
 
 # document level annotation:
+(s3s0 / sentence
+    :temporal ((document-creation-time :before s3h)
+            (s3h :overlap s1h)
+            (s3h :overlap s3e))
+    :modal ((root :modal author)
+            (author :full-affirmative s3h)
+            (author :full-affirmative s3e)))
 
 
 # :: snt4	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
@@ -137,6 +160,24 @@ s4p3: 10-10
 s4v3: 9-9
 
 # document level annotation:
+(s4s0 / sentence
+    :temporal ((document-creation-time :before s4z)
+            (s4z :before s4v)
+            (s4v :overlap s4d)
+            (s4v :overlap s4h2)
+            (s4v :before s4n6)
+            (s4h2 :before s4n6)
+            (document-creation-time :before s4v3)
+            (document-creation-time :before s4p3)
+            (s4v3 :overlap s4p3))
+    :modal ((root :modal author)
+            (author :full-affirmative s4z)
+            (author :full-affirmative s4v)
+            (author :full-affirmative s4h2)
+            (author :full-affirmative s4n6)
+            (author :full-affirmative s4p3))
+    :coref ((s2c :same-entity s4c)
+            (s2p2 :same-entity s4p)))
 
 
 # :: snt5	Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
@@ -192,6 +233,23 @@ s5p6: 25-25, 27-27
 s5n2: 26-26
 
 # document level annotation:
+(s5s0 / sentence
+    :temporal ((document-creation-time :before s5h)
+            (document-creation-time :before s5z)
+            (document-creation-time :before s5v2)
+            (document-creation-time :overlap s5p4)
+            (s5h :overlap s5z)
+            (s5h :overlap s5v2)
+            (s5z :overlap s5v2))
+    :modal ((root :modal author)
+            (author :full-affirmative s5h)
+            (author :full-affirmative s5v)
+            (author :full-affirmative s5p4)
+            (author :full-affirmative s5z)
+            (author :full-affirmative s5v2))
+    :coref ((s2p :same-entity s5p)
+            (s4b :same-entity s5b)
+            (s4p :same-entity s5p6)))
 
 
 # :: snt6	Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela .
@@ -242,5 +300,12 @@ s6d: 17-17
 s6n3: 18-18
 
 # document level annotation:
+(s6s0 / sentence
+    :temporal ((document-creation-time :overlap s6h)
+            (document-creation-time :before s6p3))
+    :modal ((root :modal author)
+            (author :full-affirmative s6h)
+            (author :full-affirmative s6p3))
+    :coref ((s4c :same-entity s6r)))
 
 
