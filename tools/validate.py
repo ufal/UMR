@@ -876,7 +876,7 @@ known_relations = {
     ':ARG4': {'type': 'participant'},
     ':ARG5': {'type': 'participant'},
     ':ARG6': {'type': 'participant'},
-    ':aspect': {'type': 'attribute'},
+    ':aspect': {'type': 'attribute', 'values': ['habitual', 'imperfective', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement']},
     ':beneficiary': {'type': 'participant'},
     ':calendar': {'type': 'modifier'},
     ':cause': {'type': 'modifier'},
@@ -1071,10 +1071,6 @@ def validate_events(sentence, node_dict, args):
     """
     testlevel = 3
     testclass = 'Sentence'
-    values = {
-        ':aspect': ['habitual', 'imperfective', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement'],
-        ':modstr': ['full-affirmative', 'partial-affirmative', 'neutral-affirmative', 'neutral-negative', 'partial-negative', 'full-negative']
-    }
     # Sort the nodes by their first line so that the validation report is stable and can be diffed.
     nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
     for node in nodes:
@@ -1083,7 +1079,7 @@ def validate_events(sentence, node_dict, args):
             # :ARG relations imply that it is an event but they are not required.
             # On the other hand, :aspect and :modstr seem to be required according to the guidelines.
             # Only one :aspect and one :modstr relation is expected.
-            for rtype in [':aspect', ':modstr']:
+            for rtype in [':aspect', ':modal-strength']:
                 relations = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == rtype], key=lambda x: x['line0'])
                 if len(relations) > 1:
                     testid = 'non-unique-attribute'
@@ -1096,10 +1092,6 @@ def validate_events(sentence, node_dict, args):
                 elif relations[0]['type'] != 'atom':
                     testid = 'invalid-attribute'
                     testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (rtype, relations[0]['type'], relations[0]['value'])
-                    warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
-                elif not relations[0]['value'] in values[rtype]:
-                    testid = 'invalid-attribute-value'
-                    testmessage = "Unknown value '%s' of attribute %s." % (rtype, relations[0]['value'])
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
             for rtype in [':ARG0', ':ARG1', ':ARG2', ':ARG3', ':ARG4', ':ARG5', ':ARG6']:
                 irel = [r for r in node['relations'] if r['dir'] == 'in' and r['relation'] == rtype+'-of']
