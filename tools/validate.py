@@ -865,98 +865,99 @@ def validate_document_level(sentence, node_dict, args):
 #   arguments in languages that do not have frame files.
 # - modifier ... any relation that is not participant.
 # - attribute ... atomic / numerical / string value; not a child node.
+# Repeat=True: One node is allowed to have multiple such relations/attributes.
 known_relations = {
     # :accompanier from AMR, maybe replaced by :companion in UMR?
-    ':actor': {'type': 'participant'},
-    ':affectee': {'type': 'participant'},
-    ':age': {'type': 'modifier'},
-    ':apprehensive': {'type': 'modifier'},
-    ':ARG0': {'type': 'participant'},
-    ':ARG1': {'type': 'participant'},
-    ':ARG2': {'type': 'participant'},
-    ':ARG3': {'type': 'participant'},
-    ':ARG4': {'type': 'participant'},
-    ':ARG5': {'type': 'participant'},
-    ':ARG6': {'type': 'participant'},
-    ':aspect': {'type': 'attribute', 'values': ['habitual', 'imperfective', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement']},
-    ':beneficiary': {'type': 'participant'},
-    ':calendar': {'type': 'modifier'},
-    ':cause': {'type': 'modifier'},
-    ':causer': {'type': 'participant'},
-    ':century': {'type': 'modifier'},
-    ':companion': {'type': 'participant'},
-    ':concession': {'type': 'modifier'},
-    ':condition': {'type': 'modifier'},
-    ':consist-of': {'type': 'modifier'},
-    ':day': {'type': 'attribute'},
-    ':dayperiod': {'type': 'attribute'},
-    ':decade': {'type': 'modifier'},
-    ':degree': {'type': 'attribute'},
-    ':destination': {'type': 'modifier'},
-    ':direction': {'type': 'modifier'},
-    ':domain': {'type': 'modifier'},
-    ':duration': {'type': 'modifier'},
-    ':era': {'type': 'modifier'},
-    ':example': {'type': 'modifier'},
-    ':experiencer': {'type': 'participant'},
-    ':extent': {'type': 'modifier'},
-    ':force': {'type': 'participant'},
-    ':frequency': {'type': 'modifier'},
-    ':goal': {'type': 'participant'},
-    ':group': {'type': 'modifier'},
-    ':instrument': {'type': 'participant'},
-    ':li': {'type': 'modifier'},
-    ':location': {'type': 'modifier'},
-    ':manner': {'type': 'modifier'},
-    ':material': {'type': 'participant'},
-    ':medium': {'type': 'modifier'},
-    ':mod': {'type': 'modifier'},
-    ':modal-predicate': {'type': 'modifier'}, # Note: The guidelines and the spreadsheet originally defined ':modpred' but it was changed to ':modal-predicate' in UMR 1.0 to make the annotation more human-readable.
-    ':modal-strength': {'type': 'attribute', 'values': ['full-affirmative', 'partial-affirmative', 'neutral-affirmative', 'neutral-negative', 'partial-negative', 'full-negative']}, # Note: The guidelines and the spreadsheet originally defined ':modstr' but it was changed to ':modal-strength' in UMR 1.0 to make the annotation more human-readable.
-    ':mode': {'type': 'attribute'},
-    ':month': {'type': 'attribute'},
-    ':name': {'type': 'modifier'},
-    ':op1': {'type': 'attribute'},
-    ':op2': {'type': 'attribute'},
-    ':op3': {'type': 'attribute'},
-    ':op4': {'type': 'attribute'},
-    ':ord': {'type': 'modifier'},
-    ':other-role': {'type': 'modifier'},
-    ':part': {'type': 'modifier'},
-    ':path': {'type': 'modifier'},
-    ':place': {'type': 'participant'},
-    ':polarity': {'type': 'attribute'},
-    ':polite': {'type': 'attribute'},
-    ':poss': {'type': 'modifier'},
-    ':purpose': {'type': 'modifier'},
-    ':quant': {'type': 'attribute'},
-    ':quarter': {'type': 'modifier'},
-    ':quote': {'type': 'modifier'}, # Note: The guidelines and the spreadsheet originally defined ':quot' but it was changed to ':quote' in UMR 1.0 to make the annotation more human-readable.
-    ':range': {'type': 'modifier'},
-    ':reason': {'type': 'modifier'},
-    ':recipient': {'type': 'participant'},
-    ':refer-number': {'type': 'attribute', 'values': ['singular', 'dual', 'paucal', 'plural']}, # Note: The guidelines and the spreadsheet originally defined ':ref-number' but it was changed to ':refer-number' in UMR 1.0 to make the annotation more human-readable.
-    ':refer-person': {'type': 'attribute', 'values': ['1st', '2nd', '3rd', '4th']}, # Note: The guidelines and the spreadsheet originally defined ':ref-person' but it was changed to ':refer-person' in UMR 1.0 to make the annotation more human-readable.
-    ':scale': {'type': 'modifier'},
-    ':source': {'type': 'participant'},
-    ':start': {'type': 'participant'},
-    ':stimulus': {'type': 'participant'},
-    ':subevent': {'type': 'modifier'},
-    ':substitute': {'type': 'modifier'},
-    ':subtraction': {'type': 'modifier'},
-    ':temporal': {'type': 'modifier'},
-    ':theme': {'type': 'participant'},
-    ':time': {'type': 'attribute'},
-    ':timezone': {'type': 'modifier'},
-    ':topic': {'type': 'modifier'},
-    ':undergoer': {'type': 'participant'},
-    ':unit': {'type': 'modifier'},
-    ':value': {'type': 'attribute'},
-    ':vocative': {'type': 'modifier'},
-    ':weekday': {'type': 'modifier'},
-    ':wiki': {'type': 'attribute'},
-    ':year': {'type': 'attribute'},
-    ':year2': {'type': 'attribute'}
+    ':actor': {'type': 'participant', 'repeat': False},
+    ':affectee': {'type': 'participant', 'repeat': False},
+    ':age': {'type': 'modifier', 'repeat': False},
+    ':apprehensive': {'type': 'modifier', 'repeat': False},
+    ':ARG0': {'type': 'participant', 'repeat': False},
+    ':ARG1': {'type': 'participant', 'repeat': False},
+    ':ARG2': {'type': 'participant', 'repeat': False},
+    ':ARG3': {'type': 'participant', 'repeat': False},
+    ':ARG4': {'type': 'participant', 'repeat': False},
+    ':ARG5': {'type': 'participant', 'repeat': False},
+    ':ARG6': {'type': 'participant', 'repeat': False},
+    ':aspect': {'type': 'attribute', 'repeat': False, 'values': ['habitual', 'imperfective', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement']},
+    ':beneficiary': {'type': 'participant', 'repeat': False},
+    ':calendar': {'type': 'modifier', 'repeat': False},
+    ':cause': {'type': 'modifier', 'repeat': True},
+    ':causer': {'type': 'participant', 'repeat': False},
+    ':century': {'type': 'modifier', 'repeat': False},
+    ':companion': {'type': 'participant', 'repeat': False},
+    ':concession': {'type': 'modifier', 'repeat': True},
+    ':condition': {'type': 'modifier', 'repeat': True},
+    ':consist-of': {'type': 'modifier', 'repeat': False},
+    ':day': {'type': 'attribute', 'repeat': False},
+    ':dayperiod': {'type': 'attribute', 'repeat': False},
+    ':decade': {'type': 'modifier', 'repeat': False},
+    ':degree': {'type': 'attribute', 'repeat': False},
+    ':destination': {'type': 'modifier', 'repeat': True},
+    ':direction': {'type': 'modifier', 'repeat': True},
+    ':domain': {'type': 'modifier', 'repeat': False},
+    ':duration': {'type': 'modifier', 'repeat': True},
+    ':era': {'type': 'modifier', 'repeat': False},
+    ':example': {'type': 'modifier', 'repeat': True},
+    ':experiencer': {'type': 'participant', 'repeat': False},
+    ':extent': {'type': 'modifier', 'repeat': False},
+    ':force': {'type': 'participant', 'repeat': False},
+    ':frequency': {'type': 'modifier', 'repeat': False},
+    ':goal': {'type': 'participant', 'repeat': False},
+    ':group': {'type': 'modifier', 'repeat': False},
+    ':instrument': {'type': 'participant', 'repeat': False},
+    ':li': {'type': 'modifier', 'repeat': False},
+    ':location': {'type': 'modifier', 'repeat': True},
+    ':manner': {'type': 'modifier', 'repeat': True},
+    ':material': {'type': 'participant', 'repeat': False},
+    ':medium': {'type': 'modifier', 'repeat': False},
+    ':mod': {'type': 'modifier', 'repeat': True},
+    ':modal-predicate': {'type': 'modifier', 'repeat': False}, # Note: The guidelines and the spreadsheet originally defined ':modpred' but it was changed to ':modal-predicate' in UMR 1.0 to make the annotation more human-readable.
+    ':modal-strength': {'type': 'attribute', 'repeat': False, 'values': ['full-affirmative', 'partial-affirmative', 'neutral-affirmative', 'neutral-negative', 'partial-negative', 'full-negative']}, # Note: The guidelines and the spreadsheet originally defined ':modstr' but it was changed to ':modal-strength' in UMR 1.0 to make the annotation more human-readable.
+    ':mode': {'type': 'attribute', 'repeat': False},
+    ':month': {'type': 'attribute', 'repeat': False},
+    ':name': {'type': 'modifier', 'repeat': False},
+    ':op1': {'type': 'attribute', 'repeat': False},
+    ':op2': {'type': 'attribute', 'repeat': False},
+    ':op3': {'type': 'attribute', 'repeat': False},
+    ':op4': {'type': 'attribute', 'repeat': False},
+    ':ord': {'type': 'modifier', 'repeat': False},
+    ':other-role': {'type': 'modifier', 'repeat': True},
+    ':part': {'type': 'modifier', 'repeat': True},
+    ':path': {'type': 'modifier', 'repeat': True},
+    ':place': {'type': 'participant', 'repeat': False},
+    ':polarity': {'type': 'attribute', 'repeat': False},
+    ':polite': {'type': 'attribute', 'repeat': False},
+    ':poss': {'type': 'modifier', 'repeat': True},
+    ':purpose': {'type': 'modifier', 'repeat': True},
+    ':quant': {'type': 'attribute', 'repeat': False},
+    ':quarter': {'type': 'modifier', 'repeat': False},
+    ':quote': {'type': 'modifier', 'repeat': False}, # Note: The guidelines and the spreadsheet originally defined ':quot' but it was changed to ':quote' in UMR 1.0 to make the annotation more human-readable.
+    ':range': {'type': 'modifier', 'repeat': False},
+    ':reason': {'type': 'modifier', 'repeat': True},
+    ':recipient': {'type': 'participant', 'repeat': False},
+    ':refer-number': {'type': 'attribute', 'repeat': False, 'values': ['singular', 'dual', 'paucal', 'plural']}, # Note: The guidelines and the spreadsheet originally defined ':ref-number' but it was changed to ':refer-number' in UMR 1.0 to make the annotation more human-readable.
+    ':refer-person': {'type': 'attribute', 'repeat': False, 'values': ['1st', '2nd', '3rd', '4th']}, # Note: The guidelines and the spreadsheet originally defined ':ref-person' but it was changed to ':refer-person' in UMR 1.0 to make the annotation more human-readable.
+    ':scale': {'type': 'modifier', 'repeat': False},
+    ':source': {'type': 'participant', 'repeat': False},
+    ':start': {'type': 'participant', 'repeat': False},
+    ':stimulus': {'type': 'participant', 'repeat': False},
+    ':subevent': {'type': 'modifier', 'repeat': False},
+    ':substitute': {'type': 'modifier', 'repeat': False},
+    ':subtraction': {'type': 'modifier', 'repeat': False},
+    ':temporal': {'type': 'modifier', 'repeat': True},
+    ':theme': {'type': 'participant', 'repeat': False},
+    ':time': {'type': 'attribute', 'repeat': True},
+    ':timezone': {'type': 'modifier', 'repeat': False},
+    ':topic': {'type': 'modifier', 'repeat': False},
+    ':undergoer': {'type': 'participant', 'repeat': False},
+    ':unit': {'type': 'modifier', 'repeat': False},
+    ':value': {'type': 'attribute', 'repeat': False},
+    ':vocative': {'type': 'modifier', 'repeat': False},
+    ':weekday': {'type': 'modifier', 'repeat': False},
+    ':wiki': {'type': 'attribute', 'repeat': False},
+    ':year': {'type': 'attribute', 'repeat': False},
+    ':year2': {'type': 'attribute', 'repeat': False}
 }
 
 def validate_relations(sentence, node_dict, args):
@@ -997,6 +998,28 @@ def validate_relations(sentence, node_dict, args):
                             testid = 'unexpected-value'
                             testmessage = "Unexpected value '%s' of attribute '%s'." % (r['value'], r['relation'])
                             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+            # Check repeated same-name relations. Include incoming inverted relations.
+            relations = sorted(node['relations'], key=lambda x: x['line0'])
+            relcount = {}
+            relfirst = {}
+            rellast = {}
+            for r in relations:
+                uninvert = re.sub(r"-of$", '', r['relation'])
+                if r['dir'] == 'out' and uninvert == r['relation'] or r['dir'] == 'in' and uninvert != r['relation']:
+                    if uninvert in relfirst:
+                        relcount[uninvert] += 1
+                        rellast[uninvert] = r['line0']
+                    else:
+                        relfirst[uninvert] = r['line0']
+                        relcount[uninvert] = 1
+                        rellast[uninvert] = r['line0']
+            # Now relations will hold just the names, not the full records.
+            relations = sorted(list(relcount), key=lambda x: rellast[x])
+            for r in relations:
+                if relcount[r] > 1 and r in known_relations and not known_relations[r]['repeat']:
+                    testid = 'repeated-relation'
+                    testmessage = "Node '%s' is not supposed to have more than one relation '%s' but it has %d: first on line %d." % (nid, r, relcount[r], relfirst[r])
+                    warn(testmessage, testclass, testlevel, testid, lineno=rellast[r])
 
 def detect_events(sentence, node_dict, args):
     """
@@ -1049,9 +1072,9 @@ def detect_events(sentence, node_dict, args):
     # Check document level annotation.
     events = []
     for r in sentence[3]['relations']:
-        # Concepts included in temporal and modal relations are probably events.
-        ###!!! Exclude :temporal because they do not have to be events. They can be temporal concepts such as 'yesterday'.
-        if r['group'] in [':modal']:
+        # Concepts included in modal relations are probably events.
+        # We cannot say the same about temporal relations because besides events, they can be also temporal concepts such as 'yesterday'.
+        if r['group'] == ':modal':
             # The 'node' can be also a constant (e.g. 'document-creation-time') which we do not have in node_dict.
             if r['node0'] in node_dict and not 'event_reason' in node_dict[r['node0']]:
                 node_dict[r['node0']]['event_reason'] = "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])
