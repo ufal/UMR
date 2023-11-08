@@ -977,16 +977,24 @@ def validate_relations(sentence, node_dict, args):
                     testid = 'unknown-relation'
                     testmessage = "Unknown relation '%s'." % r['relation']
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                elif known_relations[relation]['type'] != 'attribute':
-                    if r['type'] != 'node':
-                        testid = 'unexpected-value'
-                        testmessage = "Expected child node because '%s' is relation, not attribute; found %s with value '%s'." % (r['relation'], r['type'], r['value'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                else: # type == attribute
-                    if 'values' in known_relations[relation] and not r['value'] in known_relations[relation]['values']:
-                        testid = 'unexpected-value'
-                        testmessage = "Unexpected value '%s' of attribute '%s'." % (r['value'], r['relation'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                else:
+                    type = known_relations[relation]['type']
+                    values = known_relations[relation]['values'] if 'values' in known_relations[relation] else []
+                    # Non-attributes should have child nodes rather than scalar values, but there are exceptions.
+                    # :ARG2 of have-polarity-91 has values '+' and '-'.
+                    if r['relation'] == ':ARG2' and node['concept'] == 'have-polarity-91':
+                        type = 'attribute'
+                        values = ['+', '-']
+                    if type != 'attribute':
+                        if r['type'] != 'node':
+                            testid = 'unexpected-value'
+                            testmessage = "Expected child node because '%s' is relation, not attribute; found %s with value '%s'." % (r['relation'], r['type'], r['value'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                    else: # type == attribute
+                        if values and not r['value'] in values:
+                            testid = 'unexpected-value'
+                            testmessage = "Unexpected value '%s' of attribute '%s'." % (r['value'], r['relation'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 def detect_events(sentence, node_dict, args):
     """
