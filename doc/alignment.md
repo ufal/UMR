@@ -121,6 +121,17 @@ child node. The abstract parent is aligned to the name tokens in the
 sentence. The `name` child stays unaligned, although it directly points to
 the orthographic words of the name via its `:opN` attributes. (This rule is
 inferred from the data relased in UMR 1.0.)
+  * Nevertheless, there are situations when a `name` node is aligned to
+    the name tokens. If the parent node has other children and they are
+    aligned, then the parent node will not be aligned to the name tokens,
+    hence the name node will align with them. For example, _the Philippine
+    island of Leyte_ is analyzed as
+    `(s4i2 / island :wiki "Leyte"
+        :name (s4n2 / name :op1 "Leyte")
+        :place (s4c / country  :wiki "Philippines"
+            :name (s4n3 / name :op1 "Philippine")))`
+    where `s4i2` is aligned to _island_, `s4n2` to _Leyte_, `s4c` to
+    _Philippine_, and `s4n3` is unaligned.
 
 * More generally, the approach in UMR 1.0 seems to be:
   * If the parent node covers the same tokens as its child node, the alignment

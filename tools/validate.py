@@ -1098,12 +1098,13 @@ def validate_name(sentence, node_dict, args):
                 testid = 'missing-outgoing-name'
                 testmessage = "Missing outgoing ':op1' relation from the 'name' concept %s." % (node['variable'])
                 warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
-            # The name node should stay unaligned (either 0-0 or -1--1).
+            # The name node is usually unaligned (either 0-0 or -1--1).
             # The alignment goes to its parent node instead.
-            if 'alignment' in node and node['alignment']['tokids'] != [0]:
-                testid = 'invalid-name-alignment'
-                testmessage = "Name nodes should stay unaligned (unlike their parents), but %s is aligned to %s (%s)." % (node['variable'], str(node['alignment']['tokids']), node['alignment']['tokstr'])
-                warn(testmessage, testclass, testlevel, testid, lineno=node['alignment']['line0'])
+            ###!!! However, there are exceptions, so we cannot require this.
+            #if 'alignment' in node and node['alignment']['tokids'] != [0]:
+            #    testid = 'invalid-name-alignment'
+            #    testmessage = "Name nodes should stay unaligned (unlike their parents), but %s is aligned to %s (%s)." % (node['variable'], str(node['alignment']['tokids']), node['alignment']['tokstr'])
+            #    warn(testmessage, testclass, testlevel, testid, lineno=node['alignment']['line0'])
 
 def detect_events(sentence, node_dict, args):
     """
