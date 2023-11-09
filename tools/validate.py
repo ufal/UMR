@@ -310,7 +310,7 @@ def validate_newlines(inp):
 variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*")
 concept_re = re.compile(r"^[^\s\(\):]+")
 relation_re = re.compile(r"^:[-A-Za-z0-9]+")
-string_re = re.compile(r'^"[^"\s]+"')
+string_re = re.compile(r'^"([^"\s]+)"')
 number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
 atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
 
@@ -533,7 +533,7 @@ def validate_sentence_graph(sentence, node_dict, args):
                 expecting_node_definition = False
                 if string_re.match(pline):
                     match = string_re.match(pline)
-                    string = match.group(0)
+                    string = match.group(1) # without the quotation marks
                     parent['relations'][-1]['type'] = 'string'
                     parent['relations'][-1]['value'] = string
                     pline = remove_leading_whitespace(string_re.sub('', pline, 1))
@@ -1106,6 +1106,30 @@ def validate_name(sentence, node_dict, args):
             #    testmessage = "Name nodes should stay unaligned (unlike their parents), but %s is aligned to %s (%s)." % (node['variable'], str(node['alignment']['tokids']), node['alignment']['tokstr'])
             #    warn(testmessage, testclass, testlevel, testid, lineno=node['alignment']['line0'])
 
+def validate_wiki(sentence, node_dict, args):
+    """
+    Checks the relations of a name node.
+    """
+    testlevel = 3
+    testclass = 'Sentence'
+    # Sort the nodes by their first line so that the validation report is stable and can be diffed.
+    nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
+    for node in nodes:
+        relations = sorted(node['relations'], key=lambda x: x['line0'])
+        for r in relations:
+            if r['relation'] == ':wiki':
+                if r['type'] != 'string':
+                    testid = 'unexpected-value'
+                    testmessage = "Expected string attribute of '%s', found '%s'." % (r['relation'], r['type'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                else:
+                    # At ÚFAL we require the :wiki value to be a Wikidata identifier (from URL after stripping https://wikidata.org/wiki/).
+                    # The US UMR team allow article title from English Wikipedia instead, so this test is not universally applicable.
+                    if not re.match(r"^Q[1-9][0-9]*$", r['value']):
+                        testid = 'unexpected-value'
+                        testmessage = "Expected Wikidata id (Q+number), found '%s'." % (r['value'])
+                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+
 def detect_events(sentence, node_dict, args):
     """
     Tries to figure out which concept nodes in the current sentence are events.
@@ -1212,6 +1236,7 @@ def validate(inp, out, args, known_sent_ids):
         if args.level > 2:
             validate_relations(sentence, node_dict, args)
             validate_name(sentence, node_dict, args)
+            validate_wiki(sentence, node_dict, args)
             detect_events(sentence, node_dict, args)
             if args.check_aspect_modstr:
                 validate_events(sentence, node_dict, args)
