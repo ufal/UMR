@@ -608,6 +608,25 @@ def validate_sentence_graph(sentence, node_dict, args):
                     testid = 'unknown-node-id'
                     testmessage = "The node id (variable) '%s' is unknown. No such node is defined in this sentence." % r['variable']
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+    # Make sure that every node has the relation list, even if empty.
+    for nid in sentence[1]['nodes']:
+        node = node_dict[nid]
+        if not 'concept' in node:
+            node['concept'] = ''
+        if not 'relations' in node:
+            node['relations'] = []
+        # Make sure that every relation has the information we expect, even if empty.
+        for r in node['relations']:
+            if not 'value' in r:
+                r['value'] = ''
+    # So far we know for each node its outgoing relations.
+    # Store also the incoming relations at each node.
+    for nid in sentence[1]['nodes']:
+        node = node_dict[nid]
+        outrel = [r for r in node['relations'] if r['dir'] == 'out' and r['type'] == 'node']
+        for r in outrel:
+            if r['value'] in node_dict:
+                node_dict[r['value']]['relations'].append({'dir': 'in', 'type': 'node', 'value': nid, 'relation': r['relation'], 'line0': r['line0']})
 
 def validate_alignment(sentence, node_dict, args):
     """
@@ -1036,6 +1055,56 @@ def validate_relations(sentence, node_dict, args):
                         warn(testmessage, testclass, testlevel, testid, lineno=relations[i]['line0'])
                         break
 
+def validate_name(sentence, node_dict, args):
+    """
+    Checks the relations of a name node.
+    """
+    testlevel = 3
+    testclass = 'Sentence'
+    # Sort the nodes by their first line so that the validation report is stable and can be diffed.
+    nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
+    for node in nodes:
+        if node['concept'] == 'name':
+            relations = sorted(node['relations'], key=lambda x: x['line0'])
+            in_name_found = False
+            out_op1_found = False
+            for r in relations:
+                if r['dir'] == 'in':
+                    if r['relation'] == ':name':
+                        in_name_found = True
+                    else:
+                        testid = 'wrong-incoming-name'
+                        testmessage = "Incoming relation to a 'name' concept should not be '%s'." % r['relation']
+                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                else:
+                    if op_re.match(r['relation']):
+                        if r['relation'] == ':op1':
+                            out_op1_found = True
+                        # In general ':opN' can be relation (leading to a child node) or attribute (with string or numeric value).
+                        # However, ':opN' of a 'name' concept should always be strings.
+                        if r['type'] != 'string':
+                            testid = 'unexpected-value'
+                            testmessage = "Expected string attribute of '%s', found '%s'." % (r['relation'], r['type'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                    else:
+                        testid = 'wrong-outgoing-name'
+                        testmessage = "Outgoing relation from a 'name' concept should not be '%s'." % r['relation']
+                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+            if not in_name_found:
+                testid = 'missing-incoming-name'
+                testmessage = "Missing incoming ':name' relation to the 'name' concept %s." % (node['variable'])
+                warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
+            if not out_op1_found:
+                testid = 'missing-outgoing-name'
+                testmessage = "Missing outgoing ':op1' relation from the 'name' concept %s." % (node['variable'])
+                warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
+            # The name node should stay unaligned (either 0-0 or -1--1).
+            # The alignment goes to its parent node instead.
+            if 'alignment' in node and node['alignment']['tokids'] != [0]:
+                testid = 'invalid-name-alignment'
+                testmessage = "Name nodes should stay unaligned (unlike their parents), but %s is aligned to %s (%s)." % (node['variable'], str(node['alignment']['tokids']), node['alignment']['tokstr'])
+                warn(testmessage, testclass, testlevel, testid, lineno=node['alignment']['line0'])
+
 def detect_events(sentence, node_dict, args):
     """
     Tries to figure out which concept nodes in the current sentence are events.
@@ -1046,25 +1115,6 @@ def detect_events(sentence, node_dict, args):
     * If it has ":modstr" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
     * If in document annotation it participates in a relation from the ":temporal" or ":modal" group, it is probably an event.
     """
-    # Make sure that every node has the relation list, even if empty.
-    for nid in sentence[1]['nodes']:
-        node = node_dict[nid]
-        if not 'concept' in node:
-            node['concept'] = ''
-        if not 'relations' in node:
-            node['relations'] = []
-        # Make sure that every relation has the information we expect, even if empty.
-        for r in node['relations']:
-            if not 'value' in r:
-                r['value'] = ''
-    # So far we know for each node its outgoing relations.
-    # Store also the incoming relations at each node.
-    for nid in sentence[1]['nodes']:
-        node = node_dict[nid]
-        outrel = [r for r in node['relations'] if r['dir'] == 'out' and r['type'] == 'node']
-        for r in outrel:
-            if r['value'] in node_dict:
-                node_dict[r['value']]['relations'].append({'dir': 'in', 'type': 'node', 'value': nid, 'relation': r['relation'], 'line0': r['line0']})
     for nid in sorted(sentence[1]['nodes']):
         node = node_dict[nid]
         if args.print_relations:
@@ -1160,6 +1210,7 @@ def validate(inp, out, args, known_sent_ids):
             validate_document_level(sentence, node_dict, args)
         if args.level > 2:
             validate_relations(sentence, node_dict, args)
+            validate_name(sentence, node_dict, args)
             detect_events(sentence, node_dict, args)
             if args.check_aspect_modstr:
                 validate_events(sentence, node_dict, args)
