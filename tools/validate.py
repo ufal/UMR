@@ -917,10 +917,7 @@ known_relations = {
     ':mode': {'type': 'attribute', 'repeat': False},
     ':month': {'type': 'attribute', 'repeat': False},
     ':name': {'type': 'modifier', 'repeat': False},
-    ':op1': {'type': 'attribute', 'repeat': False},
-    ':op2': {'type': 'attribute', 'repeat': False},
-    ':op3': {'type': 'attribute', 'repeat': False},
-    ':op4': {'type': 'attribute', 'repeat': False},
+    ':op1': {'type': 'attribute', 'repeat': False}, # There is no theoretical limit on the number after ':op'. When ':op2' or higher occurs, we will clone ':op1' on the fly.
     ':ord': {'type': 'modifier', 'repeat': False},
     ':other-role': {'type': 'modifier', 'repeat': True},
     ':part': {'type': 'modifier', 'repeat': True},
@@ -959,6 +956,7 @@ known_relations = {
     ':year': {'type': 'attribute', 'repeat': False},
     ':year2': {'type': 'attribute', 'repeat': False}
 }
+op_re = re.compile(r"^:op([1-9][0-9]*)$")
 
 def validate_relations(sentence, node_dict, args):
     """
@@ -976,6 +974,9 @@ def validate_relations(sentence, node_dict, args):
                 ###!!! For now assume that every relation can be inverted using the '-of' suffix.
                 ###!!! Later this should be banned at least for pure attributes.
                 relation = re.sub(r"-of$", '', r['relation'])
+                # Make sure that ':opN' is known for any N.
+                if not relation in known_relations and op_re.match(relation):
+                    known_relations[relation] = known_relations[':op1']
                 if not relation in known_relations:
                     testid = 'unknown-relation'
                     testmessage = "Unknown relation '%s'." % r['relation']
@@ -1021,10 +1022,11 @@ def validate_relations(sentence, node_dict, args):
                     testmessage = "Node '%s' is not supposed to have more than one relation '%s' but it has %d: first on line %d." % (nid, r, relcount[r], relfirst[r])
                     warn(testmessage, testclass, testlevel, testid, lineno=rellast[r])
             # For :op1, :op2 etc., check that higher numbers occur only if lower numbers do.
-            relations = [r for r in node['relations'] if r['dir'] == 'out' and re.match(r"^:op[1-9][0-9]*$", r['relation'])]
+            relations = [r for r in node['relations'] if r['dir'] == 'out' and op_re.match(r['relation'])]
             if relations:
                 for r in relations:
-                    r['opnumber'] = int(re.sub(r"^:op([1-9][0-9]*)$", r"\1", r['relation']))
+                    match = op_re.match(r['relation'])
+                    r['opnumber'] = int(match.group(1))
                 relations = sorted(relations, key=lambda x: x['opnumber'])
                 for i in range(len(relations)):
                     opnumber = relations[i]['opnumber']
