@@ -160,7 +160,9 @@ s4p2: 10-10
 # sentence level graph:
 (s5h / hlasovat-003
     :ARG0 (s5p / person
-               :ARG0-of (s5v / volit-001)
+               :ARG0-of (s5v / volit-001
+                            :aspect 0
+                            :modal-strength 0)
                      :quant (s5p2 / percentage-entity
                      :value (s5a / asi :op1 20.5))
                :source (s5p7 /person :quant 457319
@@ -235,13 +237,15 @@ s5n: 0-0
             :poss (s6p / person :wiki "Q194000"
                     :name (s6n2 / name :op1 "Arnold" :op2 "Rüütel")
                     :ARG1-of (s6p2 / představovat-003
-                         :ARG2 (s6c / country
+                               :ARG2 (s6c / country
                                       :wiki "Q191"
                                       :name (s6n3 / name :op1 "Estonsko"))
-                         :temporal (s6d / dosavadní)
-                         :ARG1-of (s6h2 / have-degree-91
+                               :temporal (s6d / dosavadní)
+                               :ARG1-of (s6h2 / have-degree-91
                                       :ARG2 (s6v / vysoký)
-                                      :ARG3 (s6m / most)))))
+                                      :ARG3 (s6m / most))
+                               :aspect 0
+                               :modal-strength 0)))
      :ARG2 (s6m2 / místo
             :ord (s6o/ ordinal-entity  :value 2))
      :manner (s6h3 / hlas
