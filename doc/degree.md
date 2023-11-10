@@ -34,6 +34,28 @@ ak-yav-ay'-a “very large”
     :degree Intensifier)
 ```
 
+Compare example 3-3-6 (1) from the Guidelines -- the first part represents the annotation for the morphologically expressed “very” intensifier (in Sanapaná), the second one is for the lexical degree adverb _very_ (in English).
+
+```
+ak-yav-ay'-a=ngkoye		yamet
+2/3F-be.large-TI-PFV.NMLZ=INTNS	tree
+'The tree is very large.'
+(h/ have-mod-91
+	:ARG1 (y/ yamet 'tree')
+	:ARG2 (e/ enyavay'a-00 'large'
+		:degree Intensifier)
+	:aspect State
+	:modstr FullAff)
+	
+(h/ have-mod-91
+	:ARG1 (t/ tree)
+	:ARG2 (l/ large
+		:degree (v/ very))
+	:aspect State
+	:modstr FullAff)
+Lexicon: Very - Intensifier
+```
+
 They suggest that in Czech, the lexicon will explain that _velmi_ is an
 `Intensifier`. (They actually show it on the example of English _very_.)
 
