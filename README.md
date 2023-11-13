@@ -3,6 +3,7 @@
 This repository serves the UMR group at [ÚFAL](https://ufal.mff.cuni.cz/) to
 discuss, understand and elaborate the [UMR
 guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md)
+(see also [our fork here](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md))
 and to explore possibilities of conversions between
 [PDT](https://ufal.mff.cuni.cz/prague-dependency-treebank),
 [UD](https://universaldependencies.org/),
