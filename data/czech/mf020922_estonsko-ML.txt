@@ -7,7 +7,9 @@
 (s1p / publication-91
     :place (s1c / country
         :wiki "Q191"
-        :name (s1n / name :op1 "Estonsko")))
+        :name (s1n / name :op1 "Estonsko"))
+    :aspect 1
+    :modal-strength 1)
 
 # alignment:
 s1p: 0-0
@@ -36,7 +38,9 @@ s1n: 0-0
             :refer-number plural)
          :ARG1 (s2p3 / parlament)
          :aspect activity
-         :modal-strength full-affirmative))
+         :modal-strength full-affirmative)
+    :aspect 1
+    :modal-strength 1)
 
 # alignment:
 s2p: 0-0
@@ -64,7 +68,9 @@ s2p3: 3-3
 (s3p / publication-91
     :place (s3c / city
         :wiki "Q1770"
-        :name (s3n / name :op1 "Tallin")))
+        :name (s3n / name :op1 "Tallin"))
+    :aspect 1
+    :modal-strength 1)
 
 # alignment:
 s3p: 0-0
@@ -88,19 +94,22 @@ s3n: 0-0
     :ARG0 (s4b / blok
             :wiki "Q163347"
             :name (s4n / name :op1 "Vlast")
-            :have-part-19 (s4k / kandidát
-                        :mod (s4p4 / prezident))
-                            :ARG3-of (s4h3 / have-role-91
-                                     :ARG1 (s4p3 / person
+            :mod (s4h3 / have-role-91
+                            :ARG1 (s4k / kandidát
+                                :mod (s4p4 / prezident))
+                                :part s4b
+                            :ARG3 (s4p3 / person
                                            :wiki "Q153149"
                                            :name (s4n4 / name :op1 "Lennart" :op2 "Meri"))
-                                     :aspect state
-                                     :modal-strength full-affirmative))
+                                :aspect 1
+                                :modal-strength 1))
     :ARG1 (s4h / hlas
+            :refer-number plural
             :ARG1-of (s4h2 / have-quant-91
                 :ARG3 (s4m / most)
                 :ARG5 s4h
-            :refer-number plural))
+                :aspect 1
+                :modal-strength 1))
     :temporal (s4v / volby
                 :wiki "Q40231"
                 :temporal (s4d / date-entity
@@ -168,8 +177,12 @@ s4p2: 10-10
                :source (s5p7 /person :quant 457319
                             :ARG1-of (s5i / identity-91
                                 :ARG2 (s5p3 / počet-001
-                                          :ARG1 s5p7)
-                                          :extent (s5c / celkový))
+                                          :ARG1 s5p7
+                                          :extent (s5c / celkový)
+                                          :aspect 1
+                                          :modal-strength 1)
+                                :aspect 1
+                                :modal-strength 1)
                             :mod s5p
                                 :ARG0-of (s5z / zúčastnit-se-001
                                 :ARG2 (s5v2 / volby)
@@ -232,7 +245,7 @@ s5n: 0-0
 # sentence level graph:
 (s6h / have-location-91
      :ARG1 (s6b / blok
-            :wiki "Qxxx"
+            :wiki "Q0"
             :name (s6n / name :op1 "Spolehlivý" :op2 "dům")
             :poss (s6p / person :wiki "Q194000"
                     :name (s6n2 / name :op1 "Arnold" :op2 "Rüütel")
@@ -243,7 +256,9 @@ s5n: 0-0
                                :temporal (s6d / dosavadní)
                                :ARG1-of (s6h2 / have-degree-91
                                       :ARG2 (s6v / vysoký)
-                                      :ARG3 (s6m / most))
+                                      :ARG3 (s6m / most)
+                                      :aspect 1
+                                      :modal-strength 1)
                                :aspect 0
                                :modal-strength 0)))
      :ARG2 (s6m2 / místo
