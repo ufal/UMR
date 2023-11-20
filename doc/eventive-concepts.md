@@ -1,20 +1,38 @@
 ## Open questions
-#### 1. Relative clauses with state verbs: 
-We do not want to distinguish between **action and state verbs** (due to an unclear boundary in Czech, **_CONFLICT with UMR guidelines!!_**). However, as a consequence, **relative clauses** both with action and state verbs will be considered as eventive concept (and gets aspect = state (probably)) ... Is OK?  
+### 1. "Non-Action" verbs  in references and modification 
 
-UMR does not explicitly states what to do with relative clauses with state verbs - the only examples concern verbonominal predicates with adjectives, which are conceived as non-events.
+##### Stative verbs 
+We do not want to distinguish between **action and state verbs** (due to an unclear boundary in Czech. 
 
-"Anything that is predicated is identified as an event, even if it is not a process."  
-"States in modification, as in _The tall man..._ and _The man, who is tall..._, and states in reference, as in _His happiness..._, are not identified as events."
-
-Do we want to have different annotation in main clauses and in relative clauses?
+If stative verbs such as _milovat_ “love” occur as concepts, they will be treated as events regardless whether they are used in predication (_on ji miluje_), modification (_muž, který ji miluje_) or reference (_milovat ji je jeho osud_).
 
 
-#### 2. Verbonominal predicates
-What to do with **verbonominal predicates** (esp. those with predicative adjectives)? OK in main clauses - but do we want to have different annotation in main clauses and in relative clauses?
+ **_CONFLICT with the UMR guidelines:_** Stative verbs in reference or modification should not be treated as events (they do not denote processes and are not used in predication). **Pending feedback from Julia!**
 
 
-#### 3. Deverbal nouns other than _ní/-tí_:  
+##### "Abstract predicates" such as have-91, ... identity-91 
+These 9 predicates are definitely considered events if structured as predication, as, e.g., in _Petr je bohatý_ (with the _have-mod-91_ predicate).
+We tentatively  decided that the abstract predicates (reifications) will in general be treated as stative verbs, i.e., as events, independently of their packaging.   
+**Pending feedback from Julia!**
+
+These predicates are used less frequently in modification because then we can use the relation they reify, e.g., `:mod`.   
+**Pending feedback from Julia!**
+
+##### "Discourse relation rolesets/reifications"
+However, abstract predicates that the UMR spreadsheet lists under “discourse relation rolesets/reifications” (10 types) will not be treated as events.
+
+**Pending feedback from Julia!**
+
+##### Rolesets have-quant-91 AND have-degree-91
+Rolesets for quantities and rolesets for comparative/superlative constructions should not be considered events? Also other quantity-related abstract predicates like _rate-entity-91_, _range-91_, etc. 
+**Pending feedback from Julia!**
+
+##### Other abstract predicates (should be listed here?)
+Abstract predicates for indicating metadata info (_publication-91_, _hyperlink-91_, _street-address-91_, ...)
+
+
+
+### 2. Deverbal nouns other than _ní/-tí_:  
 JH: Be conservative (at least for the time being)!  
 Discussion on 31.7.2023, see the 31.7.2023 meeting minutes: “We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) or deverbal adjective (see below) … YES – morphological criterion!!!” 
 
@@ -45,7 +63,7 @@ He gave the cat some wet food.
 	:modstr FullAff)
 ```
 
-#### 4. Deverbal adjectives other than active/passive participial adjectives:  
+### 3. Deverbal adjectives other than active/passive participial adjectives:  
 
 ??? Derivations of adjectives from the l-participle are less productive. Therefore, spadlý “fallen”, vzrostlý “full-grown”, bývalý “former” etc. are not events.
 
@@ -80,6 +98,12 @@ However, the Guidelines provide also the following example (the original example
     :ARG1 (h/ heart  
        :ARG1-of (b / black-06)))
 ```
+
+###
+---
+---
+---
+
 
 
 ## Eventive concepts
@@ -360,7 +384,7 @@ The second training was cancelled yesterday.
 
 TODO
 
-#### ??? relative clauses ???
+#### TODO relative clauses ???
 
 TODO
 
