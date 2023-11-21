@@ -1,115 +1,155 @@
-# One or two concepts?
+# Specific verbal constructions and their rolesets
+
+UMR, following AMR, represents some verbal constructions in a different way than we are used to in PDT-like annotations. 
+
+- PDT distinguish lexical verbs (= autosemantic verbs as  action verbs like _jít, dělat, snídat, měnit_ but also phase verbs like _začít, skončit_ combined with infinite verbs (_Začal pracovat._) and copula _být_ (_Petr je doktor / chytrý._, _Jan bývá často nemocný._)) represented as t-nodes and auxiliary verbs (= synsemantic units, esp. auxiliary _být_, but also modal verbs like _muset, chtít_) represented as  attributes of respective t-nodes. 
+
+- In UMR, there are also two types of "predicates" in UMR -- those headed by "lexical" predicates (corresponding to particular verbs and their rolesets, as defined in PropBank) and those referred to as "abstract rolesets" of different types, which are meant to annotate the crosslinguistically stable meanings. 
+
+Also the distinction what should be considered a single event and what are two events (annotated as two verbs) differ 
+
+## Autosemantic _být_ (incl. copula verbs)
+
+PDT distinguishes several types of constructions with _být_ "to be":
+1. existential _být_,
+2. substitute _být_, 
+3. copula _být_, 
+4. phrasal _být_, and
+5. _být_ in constructions with a single constituent.
+
+All of them are treated as lexical verbs in PDT and they should also be treated as a (single) eventive concepts in UMR.
+
+#### 1. Existential _být_ 
+
+**Existential** _být_ is designated as meaning that "something is/is not, exists/does not exist", as:  
+ _Strašidla.ACT na světě nejsou._ "There are no ghosts in the world." (PDT manual).  
+ 
+It should correspond to `být-011` in PDT-Vallex.  
+
+In UMR,  thetic location `exist-91` or  presentational location `have-place-91` are probably the best fit for the existential _být_.
 
 
-## TODO Copula verbs - one event
+#### 2. Substitute _být_
 
-Copula verbs as recognized in Czech grammars:
-_být, bývat, stát se, stávat se_ (např. stal se učitelem)
+**Substitute** _být_ stands for some full verb which can be substituted for it;    
+
+- Typically, it is characterized by a valency frame with just `ACT`, possibly complemented with an optional free modification, as:  
+       _Jirka je na zahradě.LOC_ "George is in the garden." (= George is located/appears in the garden)  
+
+This type also corresponds to `být-011` in PDT-Vallex (i.e., existential and substitute 
+_být_ is not distinguished in PDT-Vallex).  
+
+As for UMR, different types of UMR abstract predicates or other -91 substitutes should be used. 
+
+- Rarely, valency frames with two (or more) arguments come into play, as in:  
+       _Rukavice.ACT mu.PAT nejsou._ "The gloves do not fit him."  
+
+
+#### 3. Copula verb
+
+**Copula** verb as a part of verbonominal predicate, i.e. predicate constituted of: 
+
+- a verbal part (_být, bývat, stát se, stávat se_, as _Stal se učitelem._"He became a teacher." and 
+
+- a non-verbal part
+     - typically a semantic adjective or a noun in the nominative or the instrumental, as:  
+        _Kočka je savec.PAT._ "The cat is a mammal." -->  `have-mod-91`  
+        _Jirka je hodný.PAT._ "George is good."  `have-mod-91`  
+        _Dětí je pět.PAT_ "There are five children."  --> `have-quant-91`  
+     - also a noun in the genitive, an infinitive, a dependent clause, an adverb or an interjection, as 
+        _Je vidět.PAT Sněžka._ "Sněžka can be seen." -->  `??`    
+        _Končit není umřít.PAT_ "To finish is not to die."  -->  `??  
+        _Jeho výklad je, že zahrají.PAT_ "According to him, they will play."  
+        _To je moc.PAT_ "That is too much."  --> `have-quant-91`     
+        _To je fuk.PAT_ "That doesn't matter. -->  `??`    
+     - a subtype with a noun or an adjective with modal meaning are also treated verbonominal predicates, like:  
+         _být schopný.PAT_ (=to be capable), _být možné.PAT_ (=to be possible), _být povinností.PAT_ (=to be an obligation)  -->  `??`     
+
+Copula verb _být_ corresponds to the `být-007` roleset (with 2 arguments, `ACT` and `PAT`).
 
 According to the UD guidelines:
 > The copula verb _být_ "be" is used in equational, attributional, locative, possessive and benefactory nonverbal clauses. Purely existential clauses (without indicating location) use _být_ as well but it is treated as the head of the clause and tagged VERB.
 
-PDT distinguishes sebveral types of constructions with _být_ "to be":
-- existential _být_ is designated as meaning that "something is/is not, exists/does not exist", e.g. _Strašidla.ACT na světě nejsou._ "There are no ghosts in the world." (PDT manual); it probably corresponds to `být-011`in PDT-Vallex,  
-- substitute _být_ stands for some full verb which can be substituted for it; two types are distinguished: 
-  - with just `ACT` and an optional free modification, e.g. _Jirka je na zahradě.LOC_ "George is in the garden." (= George is located/appears in the garden)
-  - with two (or more) arguments ???? 
-- copula 
-- phraseological 
+
+4. **phraseological** _být_ is characterized by the `DPHR` functor in its valency frame.
 
 
-Thus `být-011` should be mapped onto one of the abstract predicates - probably `exist-91` , sometime with just ARG2 (theme)?
+5.  **_být_ in constructions with a single constituent** 
+    - impersonal constructions ... `být-017` _je horko_ "It is hot."  -->  `??`     
+    - constructions of experience (with ACTor in dative) ... `být-009` _je mi horko_  -->  `??`    
 
 
 
-**verbonominal predicates**
+## Temporal and modal auxiliaries - a single event
 
-**non-verbal clauses**
+Czech is an inflective language so analytical verb forms are not so frequent as in English. However, auxiliaries are still used to create some verb forms, as simple past tense (just 1st and 2nd person) _Přišel jsem._ "I came." or future tense _Budu teprve obědvat_. "I'll have lunch only now." (imperfective verbs).
+
+#### Temporal auxiliaries
+
+In PDT, the following verbs are treated as (temporal) auxiliaries:
+- _být_ "be" 
+- in diatheses, also _mít_ "have" (resultative diathesis) and _dostat_ "get" (recipient diathesis) are used.
+
+As a consequence, these verbs are not treated as separate t-nodes - instead, they contribute to values of selected grammatemes (esp. the grammatemes of tense, diatgram, and factual modality (condition).  
+
+The treatment of temporal auxiliaries in UMR is similar: they are not identified independently as events - instead, they are treated within temporal dependency annotation, as in _She has gone/is going to school._ (treated as on going event). 
+
+#### Modal auxiliaries
+
+##### Modal auxiliaries in PDT
+In PDT, modal auxiliaries are covered by the deontmod grammateme with the following values:
+- deb (debitive) the event is understood as "necessary" ... _muset_ "must, have to",
+- hrt (hortative) the event is understood as "obligatory (an obligation)" ... _mít_"be supposed to",
+- vol (volitive) the event is understood as "wanted/intended" ... _chtít_"want", _hodlat_ "intent",
+- poss (possibilitive) the event is understood as "possible" ... _moci_, _dát se_ "can, be possible",
+- perm (permissive) the event is understood as "permitted" ... _smět_ "be allowed to",
+- fac (facultative) the event is understood as "an ability (to do sth)" ... _umět_, _dovést_ "can, be able, ?could",
+- decl (declarative) basic (unmarked) modality.
 
 
-## TODO temporal aux. … (pomocná have, be) jako atribut … OK, jako PDT
+##### Modal auxiliaries in UMR
+
+UMR treats modal auxiliaries in a similar way as temporal ones, they inform the modal dependency annotation (and are not identified as separate events), thus _He might/should go to school._ is identified as a single event.  
+
+However, the class of English "true modal auxiliaries" is different - it comprises the following verbs, based on [4-3-2](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-4-3-2-english-modals):
+- no modal verb, declarative sentences (also _will_, non-intentional _be going to_) 
+-  strong epistemic modals: _must_, _have to_, also _should_, _ought to_, _need_
+-  weak epistemic modals: _may_, _might_, ??_shall_, ??_would_  --> neutral affirmative
+
+Comparing the two approaches, we can conclude that the modal verbs are treated in PDT and UMR  (more-or-less) in the same way. The only exception represents 
+
+- vol (volitive) modals ... _chtít_"want", _hodlat_ "intent"
+
+which are treated as semi-modals in UMR.
 
 
-## TODO Modal verbs - one event
-
-
-AMR represents syntactic modals with concepts like the following ones:  
-
-`possible-01`
-* [en] _The boy can go. --> It is possible that the boy goes._  
-```
-(p / possible-01
-   :ARG1 (g / go-02
-           :ARG0 (b / boy)))
-```
-
-* [en] _It may rain. / It might rain. --> Rain is possible. / It’s possible that it will rain._  
+<!-- AMR represents syntactic modals with concepts like the following ones: `possible-01`
+ [en] _The boy can go. -> It is possible that the boy goes._  
+ [en] _It may rain. / It might rain. -> Rain is possible. / It’s possible that it will rain._  
 `likely-01`   
-* [en] _The boy is likely to go. --> It is likely that the boy will go._  
+ [en] _The boy is likely to go. -> It is likely that the boy will go._  
 `obligate-01`  
-* [en] _The boy must go. --> The boy is obligated to go. / It is obligatory that the boy go._  
+ [en] _The boy must go. -> The boy is obligated to go. / It is obligatory that the boy go._  
 `permit-01`  
-* [en] _The boy may go. --> The boy is permitted to go. / It is permissible that the boy go._  
+ [en] _The boy may go. -> The boy is permitted to go. / It is permissible that the boy go._  
 `recommend-01`  
-* [en] _The boy should go. --> It is recommended that the boy go._  
+ [en] _The boy should go. -> It is recommended that the boy go._  
 `prefer-01`  
-* [en] _The boy would rather go. --> The boy prefers to go._  
+ [en] _The boy would rather go. -> The boy prefers to go._  
 ??? `use-02`  
-* [en] _I am used to working._  
-etc.:
+ [en] _I am used to working._  
+etc.: -->
 
-UMR … modal dependencies moved to document-level annotation … esp. possible-01, obligate-01
-[Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories)
+## TODO Semi-modal verbs - separate events in UMR 
 
-* [en] _The boy can go._, example 2 (2b)
-
-```
-(g/ go-01  
-    :ARG0 (b/ boy
-    	:ref-number Singular)
-    :aspect State
-    :modstr NeutAff)
-
-(s0/sentence
-  :modal (AUTH :NEUT s0g))
-```  
-
-The presence of modal verbs (or other verbs or expressions) also informs the attribute of epistemic strength `:modstr`and `:modpred`.
-As for `:modstr`
-- no modal verb; certainly, be sure, definitely, necessarily   
- -> `:modstr` FullAff / FullNeg   
- (complete certainty that the event occurs / does not occur )
-- must/must have, have to, expect that, deduce; probably, likely; ...;   
- -> `:modstr` PartAff or PartNeg   
- (there is strong, but not definitive certainty that the event occurs / does not occur)
-- can, may, might, possibly, likely  
- -> `:modstr` NeutAff or NeutNeg (there is neutral certainty that the event occurs / does not occur; event is expressed positively / negation of event is expressed)
-
-
-
-??? (might, should) jako atribut … OK, jako PDT
-
-… podle gramatému deontmod (??? příp. omezit na muset, moci, mít, smět)
-test negace, ALE: nesmím přijít – smím nepřijít
-
-
-**Slovesa modální** (s infinitivem) (podle https://www.cestinadoma.cz/ucivo/slovesa-fazova-a-modalni)
-moci, smět, muset, chtít, mít (ve smyslu mít povinnost) (např. musíme studovat)
-
-
-Mluvnice 3 ... **vlastní** modální slovesa (nutně se kombinují s infinitivem): _muset, moci, mít, smět, chtít, hodlat, umět_
-
-"O tom, že infinitiv po modálních slovesech nemá povahu valenčního objektového komplementu, svědčí to, že při pasivní (deagentní) derivaci nepřechází do pozice podmětu: zůstává pevně spjat s modálním slovesem a mění se jen v infinitiv pasivní. Do podmětové pozice se naopak přesouvá eventuální patiens základového predikátu: _Petr musel pokárat Pavla -> Pavel musel být pokárán Petrem._"
-
----
-
-## TODO Semimodal verbs - one event or two events<
-
-semi-modal:	… podle gramatému deontmod  
-- desideratives (want to) … 2 koncepty v Eng
+According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), and [3-3-1-3 ](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-1-3-state)  verbs like  _want_ , _need_, and _dread_ are categorized as semi-modal.
+ 
+The following types are  also considered as semimodals in some sources: 
+- desideratives ('want to') 
 - conatives ('try to')
 - optatives ('wish that'), and 
 - frustratives ('fail to')
+
 !! ASI nechat jako pomocná podle PDT, když to může být language specific !!!  
 POZOR … pokud v PDT jako plnovýznamové, směr závislosti???   
 o	PDT: něco přislíbit nemůže (tj. řídíví infinitive, závislé modální ve fokusu)  
@@ -118,8 +158,7 @@ o	UMR: “hlavní” predikát non-finite She wants to go to school … jak vyti
 
 ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to   Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)
 
- ML: According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), _want_ is considered as a semi-modal concept and the fact that it can be modalized independently of the "go"-event on English indicates that desires are construed as independent events (in English), thus considered as independent events.
- This may be language-internal characteristics.
+ ML: 
 
 ---
 
@@ -207,7 +246,37 @@ NE vrhat_se - vrhnout_se (nesplněné b, do+2,na+4,inf)-->
 
 When these verbs combines with infinitives, they should NOT be identified as separate events (based on examples 3-3-1-4 (2) and 3-3-1-4 (3a), (3b)).  
 Instead, they will be represented at the document level -- HOW? 
-The Guidelines does not describe their treatment (unless I missed something important)!
+The Guidelines does not describe their treatment (unless I missed something important)! -->
+
+
+
+### MOVE TO MODAL DEPENDENCY ANNOTATION 
+UMR … modal dependencies moved to document-level annotation … esp. possible-01, obligate-01
+[Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories)
+
+* [en] _The boy can go._, example 2 (2b)
+```
+(g/ go-01  
+    :ARG0 (b/ boy
+    	:ref-number Singular)
+    :aspect State
+    :modstr NeutAff)
+
+(s0/sentence
+  :modal (AUTH :NEUT s0g))
+```  
+
+
+The presence of modal verbs (or other verbs or expressions) also informs the attribute of epistemic strength `:modstr`and `:modpred`.
+As for `:modstr`
+- no modal verb; certainly, be sure, definitely, necessarily   
+ -> `:modstr` FullAff / FullNeg   
+ (complete certainty that the event occurs / does not occur )
+- must/must have, have to, expect that, deduce; probably, likely; ...;   
+ -> `:modstr` PartAff or PartNeg   
+ (there is strong, but not definitive certainty that the event occurs / does not occur)
+- can, may, might, possibly, likely  
+ -> `:modstr` NeutAff or NeutNeg (there is neutral certainty that the event occurs / does not occur; event is expressed positively / negation of event is expressed)
 
 
 

@@ -6,25 +6,30 @@ UMR Guidelines: "Every entity and event identified as a participant is related t
 
 UMR 
 [assumes](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-participant-roles)
-that [events](eventive-concepts.md) are linked to **frame files** (valency
-dictionaries), which describe the participants of the event and their
-semantic roles. 
+that [events](eventive-concepts.md) (and also other concepts) are linked to **frame files** (valency dictionaries), which describe the participants of the event and their semantic roles. 
 
 For language with an existing PropBank-style lexicon (frame files), this lexicon defines UMR predicate-specific roles (target annotation = stage 1). 
 For language without such a lexicon, a set of general participant roles should be used (stage 0) and a PropBank-style lexicon is build "on the way" to move towards Stage 1 annotation.
 
-For Czech, we want to use [SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClass40/), the frames of which can (to some extent) be mapped to PropBank-style roles: 
+For Czech, we want to use [SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClass40/), the **frames of which can (to some extent) be mapped to PropBank-style roles**: 
 - For some verbs, their arguments have been mapped onto ARGx roles - either within the  SynSemClass project, or within CzEngVallex - the mapping can be found in the [conversion files](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx), column C (via CzEngVallex) and D (via CzEngVallex).  
 - For verbs without a frame-specific mapping, the default [conversion table](../tecto2umr/functors-to-umrlabels.txt) will be used. 
 
 
-Thus, we skip the [stage 0 roles annotation](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-1-stage-0) (using general / non-lexicalized / not frame-specific semantic roles) and focus on the [stage 1 roles annotation](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-2-stage-1) (using ARGx roles) - although the mapping is not perfect). 
+Thus, we skip the [stage 0 roles annotation](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-1-stage-0) (using general / non-lexicalized / not frame-specific semantic roles) and **focus on the [stage 1 roles annotation](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-2-stage-1) (using ARGx roles)** - although the mapping is not perfect). 
+
+Further, we can identify **several other problems**, mainly:
+1. change of structure in case of so called **inverse participant roles**;
+2. **abstract rolesets**, see [notes on Frames here](frames.md), which UMR adopts to annotate so called non-verbal clauses but also some specific relations and constructions;   
+3. **discourse relations** covering structure of complex sentences in UMR (esp. coordination and some types of subordinated structures; not covered by the conversion table yet);  see also [notes on discourse relations here](discourse-relations.md).
+
+
 
 ### Stage 0 - comments on alternations 
 
 UMR distinguishes two types of alternations:
- -  alternations describing the same "real-world" event but packaging differently (often with different TFA), UMR reffers to them as to valency / pragmatic alternations, and 
- -  alternations that  do not refer to the same "real-world" event, called semantic alternations in UMR.
+ -  alternations describing the same "real-world" event but packaging differently (often with different TFA), UMR reffers to them as to **valency / pragmatic alternations**, and 
+ -  alternations that  do not refer to the same "real-world" event, called **semantic alternations** in UMR.
 
 
 #### "Valency / pragmatic" alternations
@@ -90,7 +95,7 @@ they 	PERF	they-REFL 	love
 	:modstr FullAff)
 ```
 
-PDT-Vallex, due to its theoretical background in GFGD, does not reflect these considerations. 
+PDT-Vallex, due to its theoretical background in FGD, does not reflect these considerations. 
 
 ### Stage 1 Roles Annotation
 
@@ -153,7 +158,7 @@ Most of them inherited from AMR but some changes were applied - we can work with
 
 #### Temporal relations
 
-While the `:temporal` relation is listed among participants in the [UMR working list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=235257559), the Guidelines in this section mentions temporal modifications expressed as the NE date-entity.  
+While the `:temporal` relation is listed among participants in the [UMR working list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=235257559), the Guidelines in this section mentions only temporal modifications expressed as the NE date-entity.  
  
 
 #### Modifiers 
