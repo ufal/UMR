@@ -31,6 +31,9 @@ Rolesets for quantities and rolesets for comparative/superlative constructions s
 Abstract predicates for indicating metadata info (_publication-91_, _hyperlink-91_, _street-address-91_, ...)
 
 
+**Inverse participant roles** (typically `ARGx-of` roles), see [Part 3-2-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-3-inverse-participant-roles) and [the notes on roles here](roles.md) are typically used in nominal modifications (esp. relative clauses like _sweater that ..._, kindship relations like _his father_, etc.) and in references (esp. participant nominalizations like _runner_.).
+
+
 
 ### 2. Deverbal nouns other than _ní/-tí_:  
 JH: Be conservative (at least for the time being)!  

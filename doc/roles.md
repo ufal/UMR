@@ -98,14 +98,16 @@ Stage 1 annotation is based on PropBank-style frame files, in our case derived f
 
 ### Inverse participant roles
 
-The inverse participant roles (i.e., `ARGx-of` roles) are used in AMR to annotate:
--  events that function as modifiers (typically relative clauses or participles, as in _I bought the sweater **that you saw**.,_ with _sweater_ annotated as `ARG1-of` the predicate _see_), 
-- embedded interrogatives, and 
-- participant nominalizations.  
-- 
+Based on [Part 3-2-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-3-inverse-participant-roles), the **inverse participant roles** (esp., `ARGx-of` roles) are used in AMR to annotate:
+-  events that function as **modifiers** (typically relative clauses or participles, as in _I bought the sweater **that you saw**.,_ with _sweater_ annotated as `ARG1-of` the predicate _see_), 
+- **embedded interrogatives** (as in _I didn't see **whether** he **bought** the sweater_, with truth-value.ARG1 modified by :polarity-of buy !!!), and 
+- participant **nominalizations** (as in _The **runner** was wearing a sweater_, with _runner_ = person ARG0-of run).  
+
+According to the guidelines, such event concept nodes (= which are linked to other concepts by means of inverse participant roles) can then further take their own full argument structure annotation and attribute values for e.g. aspect.
+
 Upon these, UMR adds: 
 - inverses for the general (i.e. non-predicate-specific) participant roles (like `Actor-of` and `Undergoer-of` roles);
-- inverse relations for mostly considered as nominal modification, like kinship relations (e.g., _my father_) and certain other relational noun (e.g., the President of the University of New Mexico) - UMR annotates these using the abstract predicate  `have-role-91` (or more specific `have-rel-role-92`, `have-org-role-92`):
+- inverse relations that mostly considered as **nominal modification**, like kinship relations (e.g., _my father_) and certain other relational noun (e.g., the President of the University of New Mexico) - UMR annotates these using the abstract predicate  `have-role-91` (or more specific `have-rel-role-92`, `have-org-role-92`):
 
 ```I met my father.
 (m/ meet-03
