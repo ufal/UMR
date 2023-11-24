@@ -1,0 +1,125 @@
+# newdoc id = mf920922-133
+# global.Entity = eid-etype-head-other
+# newpar id = mf920922-133-p1
+# sent_id = mf920922-133-p1s1
+# text = Estonci volili parlament
+# orig_file_sentence mf920922_133#1
+# Tectogrammatical annotation available.
+1	Estonci	Estonec	PROPN	NNMP1-----A----	Animacy=Anim|Case=Nom|Gender=Masc|NameType=Nat|Number=Plur|Polarity=Pos	2	nsubj	2:nsubj	Entity=(mf920922133c2--1-gstype:gen)|Functor=2:ACT
+2	volili	volit	VERB	VpMP----R-AAI--	Animacy=Anim|Aspect=Imp|Gender=Masc|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Part|Voice=Act	0	root	0:root	Functor=0:PRED
+3	parlament	parlament	NOUN	NNIS4-----A----	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing|Polarity=Pos	2	obj	2:obj	Bridge=mf920922133c1<mf920922133c3:funct|Entity=(mf920922133c3--1-gstype:gen)|Functor=2:PAT
+
+# newpar id = mf920922-133-p2
+# sent_id = mf920922-133-p2s1
+# text = ESTONSKO:
+# orig_file_sentence mf920922_133#2
+# Tectogrammatical annotation available.
+1	ESTONSKO	Estonsko	PROPN	NNNS1-----A----	Case=Nom|Gender=Neut|NameType=Geo|Number=Sing|Polarity=Pos	0	root	0:root	Bridge=mf920922133c2<mf920922133c1:other|Entity=(mf920922133c1--1-gstype:spec)|Functor=0:DENOM|SpaceAfter=No
+2	:	:	PUNCT	Z:-------------	_	1	punct	1:punct	_
+
+# newpar id = mf920922-133-p3
+# sent_id = mf920922-133-p3s1
+# text = Estonci volili parlament
+# orig_file_sentence mf920922_133#3
+# Tectogrammatical annotation available.
+1	Estonci	Estonec	PROPN	NNMP1-----A----	Animacy=Anim|Case=Nom|Gender=Masc|NameType=Nat|Number=Plur|Polarity=Pos	2	nsubj	2:nsubj	Entity=(mf920922133c5--2-gstype:spec(mf920922133c2--1-gstype:gen)|Functor=2:ACT
+2	volili	volit	VERB	VpMP----R-AAI--	Animacy=Anim|Aspect=Imp|Gender=Masc|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Part|Voice=Act	0	root	0:root	Functor=0:PRED
+3	parlament	parlament	NOUN	NNIS4-----A----	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing|Polarity=Pos	2	obj	2:obj	Entity=(mf920922133c3--1-ClusterTypeMismatch:spec:gen:2,gstype:gen)mf920922133c5)|Functor=2:PAT
+
+# newpar id = mf920922-133-p4
+# sent_id = mf920922-133-p4s1
+# text = Tallin -
+# orig_file_sentence mf920922_133#4
+# Tectogrammatical annotation available.
+1	Tallin	Tallin	PROPN	NNIS1-----A----	Animacy=Inan|Case=Nom|Gender=Masc|NameType=Geo|Number=Sing|Polarity=Pos	0	root	0:root	Bridge=mf920922133c1<mf920922133c4:part|Entity=(mf920922133c4--1)|Functor=0:DENOM|LGloss=(^DD**Tallinn)
+2	-	-	PUNCT	Z:-------------	_	1	punct	1:punct	_
+
+# sent_id = mf920922-133-p4s2
+# text = V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+# orig_file_sentence mf920922_133#5
+# Tectogrammatical annotation available.
+1	V	v	ADP	RR--6----------	AdpType=Prep|Case=Loc	4	case	4:case	Entity=(mf920922133c5--4-gstype:spec|LId=v-1
+2	nedělních	nedělní	ADJ	AAFP6----1A----	Case=Loc|Degree=Pos|Gender=Fem|Number=Plur|Polarity=Pos	4	amod	4:amod	Functor=4:RSTR
+3	parlamentních	parlamentní	ADJ	AAFP6----1A----	Case=Loc|Degree=Pos|Gender=Fem|Number=Plur|Polarity=Pos	4	amod	4:amod	Functor=4:RSTR
+4	volbách	volba	NOUN	NNFP6-----A----	Case=Loc|Gender=Fem|Number=Plur|Polarity=Pos	7	obl	7:obl:v:loc	Functor=7:TWHEN
+5	v	v	ADP	RR--6----------	AdpType=Prep|Case=Loc	6	case	6:case	Entity=(mf920922133c1--2-gstype:spec|LId=v-1
+6	Estonsku	Estonsko	PROPN	NNNS6-----A----	Case=Loc|Gender=Neut|NameType=Geo|Number=Sing|Polarity=Pos	4	nmod	4:nmod:v:loc	Entity=mf920922133c1)mf920922133c5)|Functor=4:LOC
+7	získal	získat	VERB	VpYS----R-AAP--	Aspect=Perf|Gender=Masc|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Part|Voice=Act	0	root	0:root	Functor=0:PRED
+8	podle	podle	ADP	RR--2----------	AdpType=Prep|Case=Gen	11	case	11:case	LId=podle-2
+9	včerejších	včerejší	ADJ	AAIP2----1A----	Animacy=Inan|Case=Gen|Degree=Pos|Gender=Masc|Number=Plur|Polarity=Pos	11	amod	11:amod	Functor=11:RSTR
+10	předběžných	předběžný	ADJ	AAIP2----1A----	Animacy=Inan|Case=Gen|Degree=Pos|Gender=Masc|Number=Plur|Polarity=Pos	11	amod	11:amod	Functor=11:RSTR
+11	výsledků	výsledek	NOUN	NNIP2-----A----	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur|Polarity=Pos	7	obl	7:obl:podle:gen	Functor=7:CRIT
+12	nejvíce	více	ADV	Dg-------3A----	Degree=Sup|Polarity=Pos	7	obj	7:obj	Functor=7:RSTR
+13	hlasů	hlas	NOUN	NNIP2-----A----	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur|Polarity=Pos	12	nmod	12:nmod:gen	Functor=12:PAT
+14	blok	blok	NOUN	NNIS1-----A----	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing|Polarity=Pos	7	nsubj	7:nsubj|19:nmod:gen	Entity=(mf920922133c6--1-gstype:spec|Functor=7:ACT
+15	Vlast	vlast	NOUN	NNFS1-----A----	Case=Nom|Gender=Fem|Number=Sing|Polarity=Pos	14	nmod	14:nmod:nom	SpaceAfter=No|Functor=14:ID
+16	,	,	PUNCT	Z:-------------	_	19	punct	19:punct	_
+17	jehož	jenž	PRON	P4ZS2----------	Case=Gen|Gender=Masc,Neut|Number=Sing|PrepCase=Npr|PronType=Rel	19	nmod	14:ref	Entity=(mf920922133c6--1-gstype:spec)|Functor=19:APP|LGloss=(který_[ve_vedl.větě])
+18	prezidentským	prezidentský	ADJ	AAMS7----1A----	Animacy=Anim|Case=Ins|Degree=Pos|Gender=Masc|Number=Sing|Polarity=Pos	19	amod	19:amod	Functor=19:RSTR
+19	kandidátem	kandidát	NOUN	NNMS7-----A----	Animacy=Anim|Case=Ins|Gender=Masc|Number=Sing|Polarity=Pos	14	acl:relcl	14:acl:relcl	Functor=14:PAT
+20	byl	být	AUX	VpYS----R-AAI--	Aspect=Imp|Gender=Masc|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Part|Voice=Act	19	cop	19:cop	Functor=19:RSTR
+21	Lennart	Lennart	PROPN	NNMS1-----A----	Animacy=Anim|Case=Nom|Gender=Masc|NameType=Giv|Number=Sing|Polarity=Pos	19	nsubj	19:nsubj	Functor=19:RSTR
+22	Meri	Meri	PROPN	NNMS1-----A----	Animacy=Anim|Case=Nom|Gender=Masc|NameType=Giv|Number=Sing|Polarity=Pos	21	flat	21:flat	Entity=mf920922133c6)|Functor=21:ACT.cop|SpaceAfter=No
+23	.	.	PUNCT	Z:-------------	_	7	punct	7:punct	_
+
+# sent_id = mf920922-133-p4s3
+# text = Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+# orig_file_sentence mf920922_133#6
+# Tectogrammatical annotation available.
+1	Z	z	ADP	RR--2----------	AdpType=Prep|Case=Gen	3	case	3:case	Bridge=mf920922133c2<mf920922133c7:subset|Entity=(mf920922133c7[1/2]--14|LId=z-1
+2	celkového	celkový	ADJ	AAIS2----1A----	Animacy=Inan|Case=Gen|Degree=Pos|Gender=Masc|Number=Sing|Polarity=Pos	3	amod	3:amod	Functor=3:RSTR
+3	počtu	počet	NOUN	NNIS2-----A----	Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing|Polarity=Pos	17	nmod	17:nmod:z:gen	Functor=17:DIR1
+4	457319	457319	NUM	C=-------------	NumForm=Digit|NumType=Card	5	nummod:gov	5:nummod:gov	Entity=(mf920922133c2--2-gstype:gen|Functor=5:RSTR
+5	voličů	volič	NOUN	NNMP2-----A----	Animacy=Anim|Case=Gen|Gender=Masc|Number=Plur|Polarity=Pos	3	nmod	3:nmod|10:nsubj	Functor=3:MAT|SpaceAfter=No
+6	,	,	PUNCT	Z:-------------	_	10	punct	10:punct	_
+7	kteří	který	DET	P4MP1----------	Animacy=Anim|Case=Nom|Gender=Masc|Number=Plur|PronType=Int,Rel	10	nsubj	5:ref	Entity=(mf920922133c2--1-gstype:gen)|Functor=10:ACT
+8	se	se	PRON	P7-X4----------	Case=Acc|PronType=Prs|Reflex=Yes|Variant=Short	10	expl:pv	10:expl:pv	LGloss=(zvr._zájmeno/částice)
+9	voleb	volba	NOUN	NNFP2-----A----	Case=Gen|Gender=Fem|Number=Plur|Polarity=Pos	10	obl:arg	10:obl:arg:gen	Entity=(mf920922133c5--1-gstype:spec)|Functor=10:PAT
+10	zúčastnili	zúčastnit	VERB	VpMP----R-AAP--	Animacy=Anim|Aspect=Perf|Gender=Masc|Number=Plur|Polarity=Pos|Tense=Past|VerbForm=Part|Voice=Act	5	acl:relcl	5:acl:relcl	Entity=mf920922133c2)|Functor=5:RSTR|SpaceAfter=No
+11	,	,	PUNCT	Z:-------------	_	10	punct	10:punct	Entity=mf920922133c7[1/2])
+12	hlasovalo	hlasovat	VERB	VpNS----R-AAI--	Aspect=Imp|Gender=Neut|Number=Sing|Polarity=Pos|Tense=Past|VerbForm=Part|Voice=Act	0	root	0:root	Functor=0:PRED
+13	pro	pro	ADP	RR--4----------	AdpType=Prep|Case=Acc	14	case	14:case	Entity=(mf920922133c6--2-gstype:spec|LId=pro-1
+14	blok	blok	NOUN	NNIS4-----A----	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing|Polarity=Pos	12	obl:arg	12:obl:arg:pro:acc	Functor=12:PAT
+15	Vlast	vlast	NOUN	NNFS4-----A----	Case=Acc|Gender=Fem|Number=Sing|Polarity=Pos	14	nmod	14:nmod:acc	Entity=mf920922133c6)|Functor=14:ID
+16	asi	asi	PART	TT-------------	_	17	advmod:emph	17:advmod:emph	Entity=(mf920922133c7[2/2]--14|Functor=17:EXT
+17	20.5	20.5	NUM	C=-------------	NumForm=Digit|NumType=Card	18	nummod:gov	18:nummod:gov	Functor=18:RSTR
+18	procenta	procento	NOUN	NNNS2-----A----	Case=Gen|Gender=Neut|Number=Sing|Polarity=Pos	12	nsubj	12:nsubj	Entity=mf920922133c7[2/2])|Functor=12:ACT|SpaceAfter=No
+19	,	,	PUNCT	Z:-------------	_	21	punct	21:punct	Functor=21:APPS
+20	což	což	PRON	PQ--1----------	Case=Nom|PronType=Int,Rel	21	nsubj	21:nsubj	Entity=(mf920922133c7--1)|Functor=21:ACT|LId=což-1
+21	představuje	představovat	VERB	VB-S---3P-AAI--	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin|Voice=Act	12	conj	0:root|12:conj	Functor=12:ACT
+22	28	28	NUM	C=-------------	NumForm=Digit|NumType=Card	24	nummod:gov	24:nummod:gov	Functor=24:RSTR
+23	poslaneckých	poslanecký	ADJ	AAIP2----1A----	Animacy=Inan|Case=Gen|Degree=Pos|Gender=Masc|Number=Plur|Polarity=Pos	24	amod	24:amod	Functor=24:RSTR
+24	mandátů	mandát	NOUN	NNIP2-----A----	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur|Polarity=Pos	21	obj	21:obj	Functor=21:PAT
+25	v	v	ADP	RR--6----------	AdpType=Prep|Case=Loc	27	case	27:case	Entity=(mf920922133c3--3-ClusterTypeMismatch:spec:gen:2,gstype:gen|LId=v-1
+26	novém	nový	ADJ	AAIS6----1A----	Animacy=Inan|Case=Loc|Degree=Pos|Gender=Masc|Number=Sing|Polarity=Pos	27	amod	27:amod	Functor=27:RSTR
+27	parlamentu	parlament	NOUN	NNIS6-----A---1	Animacy=Inan|Case=Loc|Gender=Masc|Number=Sing|Polarity=Pos	24	nmod	24:nmod:v:loc	Entity=mf920922133c3)|Functor=24:LOC|SpaceAfter=No
+28	.	.	PUNCT	Z:-------------	_	12	punct	12:punct	_
+
+# sent_id = mf920922-133-p4s4
+# text = Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+# orig_file_sentence mf920922_133#7
+# Tectogrammatical annotation available.
+1	Na	na	ADP	RR--6----------	AdpType=Prep|Case=Loc	3	case	3:case	LId=na-1
+2	druhém	druhý	ADJ	CrNS6----------	Case=Loc|Gender=Neut|Number=Sing|NumType=Ord	3	amod	3:amod	LNumValue=2|Functor=3:RSTR
+3	místě	místo	NOUN	NNNS6-----A----	Case=Loc|Gender=Neut|Number=Sing|Polarity=Pos	0	root	0:root	LId=místo-1|LGloss=(fyzické_umístění)|Functor=0:LOC
+4	s	s	ADP	RR--7----------	AdpType=Prep|Case=Ins	6	case	6:case	LId=s-1
+5	13.9	13.9	NUM	C=-------------	NumForm=Digit|NumType=Card	6	nummod	6:nummod	Functor=6:RSTR
+6	procenty	procento	NOUN	NNNP7-----A----	Case=Ins|Gender=Neut|Number=Plur|Polarity=Pos	3	obl	3:obl:s:ins	Functor=3:ACMP
+7	hlasů	hlas	NOUN	NNIP2-----A----	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur|Polarity=Pos	6	nmod	6:nmod:gen	Functor=6:MAT
+8	(	(	PUNCT	Z:-------------	_	6	punct	6:punct	SpaceAfter=No
+9	18	18	NUM	C=-------------	NumForm=Digit|NumType=Card	10	nummod:gov	10:nummod:gov	Functor=10:RSTR
+10	mandátů	mandát	NOUN	NNIP2-----A----	Animacy=Inan|Case=Gen|Gender=Masc|Number=Plur|Polarity=Pos	6	dep	6:dep	SpaceAfter=No|Functor=6:PAR
+11	)	)	PUNCT	Z:-------------	_	6	punct	6:punct	_
+12	je	být	AUX	VB-S---3P-AAI--	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin|Voice=Act	3	cop	3:cop	Functor=3:PRED
+13	zatím	zatím	ADV	Db-------------	_	3	advmod	3:advmod	Functor=3:TWHEN
+14	blok	blok	NOUN	NNIS1-----A----	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing|Polarity=Pos	3	nsubj	3:nsubj	Functor=3:ACT.cop
+15	Spolehlivý	spolehlivý	ADJ	AAIS1----1A----	Animacy=Inan|Case=Nom|Degree=Pos|Gender=Masc|Number=Sing|Polarity=Pos	16	amod	16:amod	Functor=16:RSTR
+16	dům	dům	NOUN	NNIS1-----A----	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing|Polarity=Pos	14	nmod	14:nmod:nom	Functor=14:ID
+17	dosavadního	dosavadní	ADJ	AAMS2----1A----	Animacy=Anim|Case=Gen|Degree=Pos|Gender=Masc|Number=Sing|Polarity=Pos	19	amod	19:amod	Functor=19:RSTR
+18	nejvyššího	vysoký	ADJ	AAMS2----3A----	Animacy=Anim|Case=Gen|Degree=Sup|Gender=Masc|Number=Sing|Polarity=Pos	19	amod	19:amod	Functor=19:RSTR
+19	představitele	představitel	NOUN	NNMS2-----A----	Animacy=Anim|Case=Gen|Gender=Masc|Number=Sing|Polarity=Pos	14	nmod	14:nmod:gen	Functor=14:RSTR
+20	republiky	republika	NOUN	NNFS2-----A----	Case=Gen|Gender=Fem|Number=Sing|Polarity=Pos	19	nmod	19:nmod:gen	Entity=(mf920922133c1--1-gstype:spec)|Functor=19:PAT
+21	Arnolda	Arnold	PROPN	NNMS2-----A----	Animacy=Anim|Case=Gen|Gender=Masc|NameType=Giv|Number=Sing|Polarity=Pos	19	flat	19:flat	Functor=19:RSTR
+22	Rüütela	Rüütel	PROPN	NNMS2-----A----	Animacy=Anim|Case=Gen|Gender=Masc|NameType=Giv|Number=Sing|Polarity=Pos	19	flat	19:flat	SpaceAfter=No|Functor=19:APP
+23	.	.	PUNCT	Z:-------------	_	3	punct	3:punct	_
+
