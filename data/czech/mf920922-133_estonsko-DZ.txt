@@ -344,7 +344,8 @@ s7n3: 18-18
 
 # document level annotation:
 (s7s0 / sentence
-    :temporal ((document-creation-time :overlap s7h)
+    :temporal ((document-creation-time :before s7d)
+            (document-creation-time :overlap s7h)
             (document-creation-time :before s7p3))
     :modal ((root :modal author)
             (author :full-affirmative s7h)
