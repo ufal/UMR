@@ -1,6 +1,42 @@
 ###########################################################################
-#          1        2
-# :: snt1  ESTONSKO :
+#         1       2      3         4
+# :: snt0 Estonci volili parlament .
+# [en] Estonians elected a parliament.
+
+# sentence level graph:
+(s0p / publication-91
+    :ARG1 (s0v / volit-001
+         :wiki "Q372557"
+         :ARG0 (s0p2 / person
+            :mod (s0c / country
+                  :wiki "Q191"
+                  :name (s0n / name :op1 "Estonsko"))
+            :refer-number plural)
+         :ARG1 (s0p3 / parlament
+                :wiki "Q217799"
+                :refer-number singular)
+         :aspect activity
+         :modal-strength full-affirmative)
+    :aspect reversible-state
+    :modal-strength full-affirmative)
+
+# alignment:
+s0p: 0-0
+s0v: 2-2
+s0p2: 1-1
+s0c: 0-0
+s0n: 0-0
+s0p3: 3-3
+
+# document level annotation:
+(s0s0/ sentence
+    :temporal((document-creation-time :before s0v))
+    :modal ((root :modal author)
+            (author :full-affirmative s0v)))
+
+###########################################################################
+#         1        2
+# :: snt1 ESTONSKO :
 # [en] Estonia :
 
 # sentence level graph:
@@ -21,7 +57,9 @@ s1n: 0-0
 (s1s0 / sentence
     :temporal ((document-creation-time :before s1p))
     :modal ((root :modal author)
-            (author :full-affirmative s1p)))
+            (author :full-affirmative s1p))
+    :coref (s0p :same-entity s1p)
+           (s0c :same-entity s1c))
 
 
 ###########################################################################
@@ -59,7 +97,8 @@ s2p3: 3-3
     :temporal((document-creation-time :before s2v))
     :modal ((root :modal author)
             (author :full-affirmative s2v))
-    :coref ((s1c :same-entity s2c)
+    :coref ( ()
+             (s1c :same-entity s2c)
              (s1p :same-entity s2p)))
 
 
@@ -86,7 +125,8 @@ s3n: 0-0
 (s3s0/ sentence
     :temporal((document-creation-time :before s1p))
     :modal ((root :modal author)
-            (author :full-affirmative s3p)))
+            (author :full-affirmative s3p)
+    :coref (s1p :same-entity s2p))
 
 
 ###########################################################################
@@ -167,7 +207,9 @@ s4p2: 10-10
     :modal ((root :modal author)
             (author :full-affirmative s4v)
             (author :full-affirmative s4h3))
-    :coref ((s4s :same-entity s1c)))
+    :coref ((s2c :same-entity s4c)
+            (s2p3 :same-entity s4p)
+            (s2v :same-entity s4v)))
 
 
 ###########################################################################
