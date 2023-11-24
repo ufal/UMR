@@ -99,7 +99,7 @@ s3n: 0-0
     :ARG0 (s4b / blok
             :wiki "Q163347"
             :name (s4n / name :op1 "Vlast")
-            :mod (s4h3 / have-role-91
+            :part-of (s4h3 / have-role-91
                             :ARG1 (s4k / kandidát
                                 :wiki "Q618536"
                                 :mod (s4p4 / prezident
@@ -115,7 +115,6 @@ s3n: 0-0
             :refer-number plural
             :ARG1-of (s4h2 / have-quant-91
                 :ARG3 (s4m / most)
-                :ARG5 s4h
                 :aspect reversible-state
                 :modal-strength full-affirmative))
     :temporal (s4v / volby
