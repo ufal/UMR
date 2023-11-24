@@ -13,7 +13,7 @@
         :ARG1 (s1p2 / parlament
             :wiki "Q217799"
             :refer-number singular)
-        :aspect imperfective
+        :aspect activity
         :modal-strength full-affirmative)
     :aspect directed-achievement
     :modal-strength full-affirmative)
@@ -76,7 +76,7 @@ s2n: 0-0
         :ARG1 (s3p2 / parlament
             :wiki "Q217799"
             :refer-number singular)
-        :aspect imperfective
+        :aspect activity
         :modal-strength full-affirmative)
     :aspect directed-achievement
     :modal-strength full-affirmative)
@@ -149,7 +149,7 @@ s4n: 0-0
                         :name (s5n5 / name :op1 "Lennart" :op2 "Meri"))
                     :aspect state
                     :modal-strength full-affirmative))
-            :aspect perfective
+            :aspect performance
             :modal-strength full-affirmative))
     :ARG1 (s5h / hlas
         :quant (s5n2 / nejvíce)
@@ -174,7 +174,7 @@ s4n: 0-0
                 :aspect state
                 :modal-strength full-affirmative)
             :temporal (s5v3 / včera)))
-    :aspect perfective
+    :aspect performance
     :modal-strength full-affirmative)
 
 # alignment:
@@ -250,13 +250,13 @@ s5v3: 9-9
                 :wiki "Q372557"
                 :aspect process
                 :modal-strength full-affirmative)
-            :aspect perfective
+            :aspect endeavor
             :modal-strength full-affirmative))
     :ARG1 (s6b / blok
         :wiki "Q163347"
         :name (s6n / name :op1 "Vlast")
         :refer-number singular)
-    :aspect perfective
+    :aspect activity
     :modal-strength full-affirmative)
 
 # alignment:
