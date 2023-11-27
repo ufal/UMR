@@ -738,6 +738,7 @@ def validate_alignment(sentence, node_dict, args):
             warn(testmessage, testclass, testlevel, testid, lineno=iline)
     # Check that all nodes in this sentence have an alignment.
     # Even unaligned nodes should have alignment 0-0.
+    tokal = [False for x in sentence[0]['tokens']]
     for n in sorted(sentence[1]['nodes']):
         if not 'alignment' in node_dict[n]:
             if args.check_complete_alignment:
@@ -746,6 +747,26 @@ def validate_alignment(sentence, node_dict, args):
                 warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
             # We will later want to access the alignment, so set the default, i.e., unaligned.
             node_dict[n]['alignment'] = {'tokids': [0], 'tokstr': ''}
+        elif node_dict[n]['alignment']['tokids'] != [0]:
+            # Check that two nodes are not aligned to the same surface token.
+            # It is not clear that this should be required but it seems to be
+            # typically the case, so we are tentatively going to report any
+            # deviations.
+            for tokid in node_dict[n]['alignment']['tokids']:
+                if tokal[tokid-1]:
+                    testid = 'overlapping-alignment'
+                    testmessage = "Multiple nodes aligned to token '%s'." % tokid
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+                else:
+                    tokal[tokid-1] = True
+    # Check that every non-punctuation token is aligned to a node. This is
+    # probably not required but let's tentatively report it to see the
+    # deviations.
+    for i in range(len(sentence[0]['tokens'])):
+        if not tokal[i] and not re.match(r"^[-.,;:\?\!\(\)]$", sentence[0]['tokens'][i]):
+            testid = 'unaligned-token'
+            testmessage = "Non-punctuation token %d ('%s') is not aligned to any node in the sentence level graph." % (i+1, sentence[0]['tokens'][i])
+            warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
 def validate_document_level(sentence, node_dict, args):
     """
