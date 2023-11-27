@@ -152,6 +152,7 @@ s4n: 0-0
             :aspect performance
             :modal-strength full-affirmative))
     :ARG1 (s5h / hlas
+        :wiki "Q189760"
         :quant (s5n2 / nejvíce)
         :refer-number plural)
     :temporal (s5v / volit-001

@@ -166,7 +166,8 @@ treated as coordination, so the parent of `:li` is a child of `:opX` of the
 `and` concept. Example (1c) in 3-2-2-6.
 
 `:location` – Used in example (1) in 3-3-4: _Tickets have been sold **on the
-StubHub website**._
+StubHub website**._ Nevertheless, it seems to be obsolete (probably inherited
+from AMR but never used in real UMR annotation). Use `:place` instead.
 
 `:manner` – Example (3b) in 3-3-1-3.
 

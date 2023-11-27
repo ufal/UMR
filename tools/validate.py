@@ -925,7 +925,7 @@ known_relations = {
     ':group': {'type': 'modifier', 'repeat': False},
     ':instrument': {'type': 'participant', 'repeat': False},
     ':li': {'type': 'modifier', 'repeat': False},
-    ':location': {'type': 'modifier', 'repeat': True},
+    #':location': {'type': 'modifier', 'repeat': True}, # obsolete; use :place instead
     ':manner': {'type': 'modifier', 'repeat': True},
     ':material': {'type': 'participant', 'repeat': False},
     ':medium': {'type': 'modifier', 'repeat': False},
