@@ -126,7 +126,7 @@ s3n: 0-0
     :temporal((document-creation-time :before s1p))
     :modal ((root :modal author)
             (author :full-affirmative s3p)
-    :coref (s1p :same-entity s2p))
+    :coref (s1p :same-entity s2p)))
 
 
 ###########################################################################
