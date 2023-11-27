@@ -154,12 +154,12 @@ s4n: 0-0
     :ARG1 (s5h / hlas
         :quant (s5n2 / nejvíce)
         :refer-number plural)
-    :location (s5v / volit-001
+    :temporal (s5v / volit-001
         :wiki "Q372557"
         :ARG1 (s5p / parlament
             :wiki "Q217799"
             :refer-number singular)
-        :location (s5c / country
+        :place (s5c / country
             :wiki "Q191"
             :name (s5n3 / name :op1 "Estonsko")
             :refer-number singular)
@@ -237,7 +237,7 @@ s5v3: 9-9
             :ARG0-of (s6p4 / představovat-003
                 :ARG1 (s6m / mandát
                     :mod (s6p5 / poslanec)
-                    :location (s6p6 / parlament
+                    :place (s6p6 / parlament
                         :wiki "Q217799"
                         :refer-number singular
                         :mod (s6n2 / nový))
