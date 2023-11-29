@@ -39,13 +39,13 @@ s1b: 2-2
 
 # sentence level graph:
 (s2p / publication-91
-     :place (s2e / country
+     :place (s2c / country
          :wiki "Q191"
          :name (s2n / name :op1 "Estonsko")))
           
 # alignment:
 s2p: 0-0
-s2e: 0-0
+s2c: 0-0
 s2n: 1-1
 
 # document level annotation:
@@ -62,12 +62,12 @@ s2n: 1-1
 
 (s3p / publication-91
      :ARG1 (s3v / volit
-            :ARG0 (s3p / person
+            :ARG0 (s3p2 / person
 		                :mod (s3n / nationality
                     :wiki "Q191"
                     :name (s3n2 / name :op1 "Estonsko"))
 		          :refer-number plural)
-	           :ARG1 (s3p2 / parlament
+	           :ARG1 (s3p3 / parlament
 		               :wiki "Q217799"
 		               :refer-number singular)
 	:refer-person 3rd
@@ -76,20 +76,127 @@ s2n: 1-1
 	:temporal (s3b/before :op (n/now))))
 
 # alignment:
+s3p: 0-0
 s3v: 2-2
-s3p: 1-1
+s3p2: 1-1
 s3n: 0-0
 s3n2: 0-0
-s3p2: 3-3
+s3p3: 3-3
 s3b: 2-2
 
 # document level annotation:
 (s3s0 / sentence
     :modal ((root :modal author)
-           (author :full-affirmtative s2v))
+           (author :full-affirmative s3v))
     :coref ((s1n2 :same-entity s3n2)
              (s1v :same-entity s3v)
-             (s1p3 :same-entity s3p2)))
+             (s1p3 :same-entity s3p3)))
 
 
 ###########################################################################
+
+#         1      2
+# :: snt4 Tallin -
+# [en]    Tallin - 
+
+# sentence level graph:
+(s4p / publication-91
+      :place (s4c / city
+         :wiki "Q63761031"
+         :name (s4n / name :op1 "Tallin")))
+
+# alignment:
+s4p: 0-0
+s4c: 1-1
+s4n: 0-0
+
+# document level annotation:
+(s4s0 / sentence)
+      
+
+###########################################################################
+
+#         1 2         3             4       5 6        7       8    9          10          11       12      13    14   15   16  17    18            19         20  21      22   23
+# :: snt5 V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
+# [en] In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Pro Patria Union (est.: Isamaaliit), whose presidential candidate was Lennart Meri, won the most votes.
+
+# sentence level graph:
+(s5z získat-001
+      ARG0 (s5b / blok
+         :name (s5n / name op1 "Vlast")
+         :wiki "Q1428217"
+         :mod (s5b2 / have-mod-91
+             ARG0 (s5p / person
+                    :wiki "Q153149"
+                    :name (s5n2 / name :op1 "Lennart" :op2 "Meri"))
+             ARG1 (s5p2 / person
+                    :mod (s5k / kandidovat-002
+                         ARG0 (s5p3 / person)
+                         ARG1 (s5p4 / prezident
+                               :wiki "Q30461")
+                    :poss (s5j / on)))))                
+      ARG1 (s5h / hlas
+             ARG1-of (s5h2/ have-quant-91
+                       ARG3 (s5n3 / nejvíce)
+                       ARG5 (s5h2 / hlas
+                              :ref-number plural))            
+            :ref-number plural)       
+      ARG2 (s5v / volit-002
+            ARG0 (s5p5 / person)
+            ARG1 (s5p6 / person)
+            ARG2 (s5p7 / function
+                 :mod place (s5p8 / parlament)
+            :wiki "Q40231"
+            :aspect performance
+            :modal-strength full-affirmative
+            :temporal (s5d / date-entity
+			             :weekday (s5n4/ neděle))
+            :place (s5c / country
+                :wiki "Q191"
+                :name (s5n5 / name :op1 "Estonsko")))
+      :manner (s5v2 / výsledek
+            :ref-number plural
+            :temporal (s5v3 / včera)
+            :mod (s5p9 / předběžný))
+      :aspect performance
+	    :modal-strength full-affirmative)
+	    
+# alignment:
+s5z: 7-7
+s5b: 14-14
+s5n: 15-15
+s5b2: 20-20
+s5p: 21-22
+s5n2: 0-0
+s5p2: 19-19
+s5k: 0-0
+s5p3: 0-0
+s5p4: 18-18
+s5j: 17-17
+s5h: 13-13
+s5n3: 12-12
+s5h2: 0-0
+s5v: 1-1, 4-4
+s5p5: 0-0
+s5p6: 0-0
+s5p7: 0-0
+s5p8: 3-3
+s5d: 2-2
+s5n4: 0-0
+s5c: 5-6
+s5n5: 0-0
+s5v2: 8-8, 11-11
+s5v3: 9-9
+s5p9: 10-10
+
+# document level annotation:
+(s5s0 / sentence
+    :modal ((root :modal author)
+           (author :full-affirmative s5z))
+    :coref ((s5p8 :same-entity s3p3) 
+             (s5v :same-entity s3v)
+             (s5c :same-entity s3p2)
+             (s5j :same-entity s5b)))
+ 
+ 
+ ###########################################################################
