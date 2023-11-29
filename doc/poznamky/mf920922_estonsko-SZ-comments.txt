@@ -1,0 +1,98 @@
+########################################################################################
+snt1  Estonci volili parlament 
+
+refer-person: 
+- how do we recognize "Estonci volili parlament" from "My Estonci jsme volili parlament"?
+(Estonians elected a parliament. vs We, Estonians, elected a parliament.?
+########################################################################################
+
+snt2 ESTONSKO: 
+
+
+########################################################################################
+
+snt3 Estonci volili parlament 
+
+
+########################################################################################
+
+snt4 Tallin - 
+
+document level annotation:
+- if the annotated sentence is not a full sentence, e.g. it is just a noun, what 
+should be annotated on the document level there?
+I have annotated:
+Estonsko (snt2, Estonia) - just coref (with Estonci-Estonians in the previous sentence)
+Tallin - nothing?
+- where can I find the information about standard document level annotation?
+(Which values should not be ommitted with a full sentence, with a nominal sentence etc.)
+Markéta: not solved yet, we are not so far.
+
+########################################################################################
+
+snt5 V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků
+ nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
+
+sentence level annotation:
+- SOLVED the main verb is získat. Markéta is annotating získat-001. Where do I get this number (001) from?
+- SOLVED the arguments of the verb získat - where do I get their numbers from? (What is ARG0, what is ARG1...)
+    - based on our Markéta's paper on UMR Roles (https://github.com/ufal/UMR/blob/main/doc/roles.md),
+    I am searching in SynSemClass
+    - SynSemClass: Class ID: vec00189, získat v-w9501f4, roleset: Recipient, Acquired, Source. 
+       https://lindat.mff.cuni.cz/services/SynSemClass40/SynSemClass40.html
+    - Markéta is annotating získat-001. Where does the number come from?
+    SOLUTION: excel by Eva Fučíková, https://github.com/ufal/UMR/blob/main/tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx
+    Markéta will put this into Useful links on Github. Which argument is which - taken from the Excel sheet,
+    CzEngvallex column, the first number (ARG0, ARG1). AR0/3000 means "This role was 3000 annotated
+    as as ARG0.). Easy frames can be found via Teitok, more difficult via PDT Vallex, both 
+    in https://github.com/ufal/UMR/blob/main/doc/UMR-related-links.md chapter dictionaries
+    
+    
+    
+- SOLVED information structure annotation - shall I mark focus there? (the Pro Patria Union)
+    - Martéta: we are not so far yet.
+    
+- SOLVED how to get to the English data: from the basic page UMR at ÚFAL, down there, Lindat link - download.
+    
+- SOLVED Lennart Meri - op1 - op2 - podle toho, kolik je slov ve vlastním jméně. Dan to popisuje v entities.
+- op = všechno, co má několik složek, které neanalyzuju (op1 až opx). Vlastní jména + některé spojky.
+
+
+- SOLVED někdo je něco - abstract predicate, have-role-91. In guidelines + google spreadsheet (UMR lists). 
+How to recognize a usual být from the abstract predicate: Markéta's file
+
+- kandidát, prezident - is there any label called "function"? Where can I find it?
+
+- SOLVED jehož (whose) - how do we annotate possessives? and relatives?
+Markéta: Alenčiny knížky: it would be Knížka, with the relation part (part-of - the other side). 
+The child is the owner.
+Šárka: possessives: UMR guidelines 3-2-2-2 Modifiers:
+John's car
+(c/ car
+	:poss (p/ person
+		:name (n/ name	:op1 "John"))
+	:ref-number Singular)
+Šárka: relatives - I will solve it via pure coreference. The surface expression maybe relative or not.
+
+- SOLVED quantification - nejvíc hlasů, based on Markéta's description of the quanities in AMR
+
+- SOLVED values aspect - Markéta's paper on github, very good, overview
+- SOLVED modal-strength - 6 values, English guidelines
+
+- podle včerejších výsledků - how to annotate this? Based on the Tecto2UMR table, CRIT corresponds with UMR manner.
+Nevertheless, the "manner" examples in the UMR guidelines seem to be a pure manner in a narrow sense.
+Markéta is annotating :basis there, but I cannot find the mention about "basis" anywhere.
+
+- včerejší - I am annotating just :temporal (s5v3 / včera) there. Mabye there shoudl be something like "a day before 
+the date of the real publication of the text"?
+
+
+Alignment:
+- not sure about the alignment "prezidentský kandidát", since one notion (prezident) is included in the other one (kandidovat - sb.
+candidates for president). Should the candidate be described in a more detailed way, as somebody 
+who candidates for a certain function, and this function is in this context "president"?
+- the same with "nejvíce hlasů" - the parent node hlas includes the quantity nejvíce, should they be aligned both?
+(double alignment with nejvíce then)?
+- prepositions - V Estonsku, ve volbách, podle výsledků - I am aligning even the preposition there, is it correct? s5c: 5-6 (V - Estonsku, place)
+
+
