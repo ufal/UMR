@@ -22,11 +22,14 @@ All of them are treated as lexical verbs in PDT and they should also be treated 
 #### 1. Existential _být_ 
 
 **Existential** _být_ is designated as meaning that "something is/is not, exists/does not exist", as:  
- _Strašidla.ACT na světě nejsou._ "There are no ghosts in the world." (PDT manual).  
+ * [cs] _Strašidla.ACT na světě nejsou._   
+        "There are no ghosts in the world." (PDT manual).  
  
 It should correspond to `být-011` in PDT-Vallex.  
 
 In UMR,  thetic location `exist-91` or  presentational location `have-place-91` are probably the best fit for the existential _být_.
+ * [cs] _V pohádkách jsou různá strašidla.ACT._  ... ?? `exist-91` (thetic location)
+ * [cs] _Strašidla.ACT jsou jen v pohádkách._ ... ?? `have-place-91` (predicative location) 
 
 
 #### 2. Substitute _být_
@@ -39,10 +42,23 @@ In UMR,  thetic location `exist-91` or  presentational location `have-place-91` 
 This type also corresponds to `být-011` in PDT-Vallex (i.e., existential and substitute 
 _být_ is not distinguished in PDT-Vallex).  
 
-As for UMR, different types of UMR abstract predicates or other -91 substitutes should be used. 
+As for UMR, different types of UMR abstract predicates, other -91 substitutes, or even full verb predicates should be used. 
 
-- Rarely, valency frames with two (or more) arguments come into play, as in:  
-       _Rukavice.ACT mu.PAT nejsou._ "The gloves do not fit him."  
+ * [cs] Jirka je na zahradě.LOC   "George is in the garden." ... ?? `have-place-91` (predicative location) 
+ * [cs] Úkol byl na pátek.TOWH   "The assignment was for Friday." ...`???`
+ * [cs] To je pro mě.BEN   "That is for me." ... `???`
+ * [cs] Je pozdě. TWHEN cokoliv dělat. "It is too late to do anything." ...`???`
+ * [cs] Vystoupení bude bez ohledu na počasí.REG "The performance will take place regardless of the weather." ...`???`
+ * [cs] Zájezd byl prostřednictvím kanceláře.MEANS "The excursion was arranged by the office." ... `???`
+ * [cs] To bylo schválně.CAUS "That was on purpose." ...`???`
+ * [cs] To bylo o chlup.DIFF "That was close." ...`???`
+ * [cs] Chaloupka je jako dlaň.CPR "The cottage is tiny." ... `have-mod-91`
+ * [cs] Tento nástroj je na stáčení. AIM vína. "This instrument is for bottling wine." ...`???`
+ * [cs] Byli jsme to obhlížet.INTT "We have been to inspect it." ...`???`
+ * [cs] Zahrada je souseda.APP "The garden is the neighbour's." ...`???`
+
+Rarely, valency frames with two (or more) arguments come into play, as in:  
+* [cs]  _Rukavice.ACT mu.PAT nejsou._ "The gloves do not fit him."  ...`???`
 
 
 #### 3. Copula verb
