@@ -164,7 +164,7 @@ s4n: 0-0
             :wiki "Q191"
             :name (s5n3 / name :op1 "Estonsko")
             :refer-number singular)
-            :temporal (s5d / date-entity
+        :temporal (s5d / date-entity
                 :weekday (s5n4 / neděle
                     :wiki "Q132"))
         :aspect process
@@ -352,5 +352,3 @@ s7n3: 18-18
             (author :full-affirmative s7h)
             (author :full-affirmative s7p3))
     :coref ((s5c :same-entity s7r)))
-
-

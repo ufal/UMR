@@ -1,0 +1,122 @@
+TODO:
+=====
+Honza - email o NE z 13.11.2023
+
+
+
+ad validate.py:
+===============
+1. aspect + modal-strength:
+Guidelines: aspect+modstr téměř všude, kde je nějaká argumentová struktura (chybí v př. 3-1-3-8 (1))
+Released data (pro angličtinu): v řadě případů neanotováno (?chyba či záměr?)
+ALE:
+- ne vše, co má ARGx nebo ARGx-of, má mít anotován aspect+modal-strength!!
+- diskurzní relace (příklady 3-1-6) … e.g., contrast-91 (podle Guidelines)
+- entity … vč. toho, kde je predikát “identity”, ať už bez přípony (4-1-2 (2b)), NEBo s příponou -91 (podle Guidelines)
+- ARGx-of … můžou (pokud je tak připojená např. závislá klauze)
+  ALE NEmusí např. pro konatelská jména ... guidelines nejednotné,
+  tak jsme se dohodli (23.10.), že budeme anotovat s hodnotou 0, abychom snadno našli
+- publication-91 je zcela umělý koncept (obálka pro publikaci), jako taková podle mě nemá mít aspekt!
+  english_umr-0001.txt … snt 1 NEMÁ anotaci aspektu ani modstr u publication-91
+- have-quant-91 , have-degree-91 … podle mě nemají mít aspect
+  (nemá ho ani v angl. anotaci, v guidelines příklad s have-quant-91 není)
+ANOTACE: ML: pro konatelská jména anotovaná jako ARGx-of  :aspect 0, :modal-strength 0
+             pro stavy u abstraktních predikátů :aspect reversible-state, :modal-strength full-affirmative
+
+VIZ též mail Julii 	(14 November, 2023)
+
+2. Jak anotovat NE, u kterých jsme nenašli položku ve wikidatech?
+   --> Q0
+
+3. alignment
+- sloveso být nahrazeno abstraktním predikátem, který ale podle všeho má alignment 0-0
+- NE: alignment vyznačen pro obstraktní koncept (person, thing, ...), nikoli pro vlastní jméno
+      OK, aby bylo jedinečné mapování na tokeny - což ale NENÍ v PDT
+                                               (viz elipsy, koordinace - předložka, ale i uzel pro sloveso má několik .rf)
+
+Estonci:
+========
+#snt1 Estonci volili parlament .
+   ??? aspect for "publication-91"
+       DZ: fine-grained "directed-achievement"
+       ML: coarse-grained (basic level) "reversible-state" ... as "publication-91" does not refer to a process
+   ??? doc-level ML :temporal, DZ NO
+
+#snt2 ESTONSKO :
+   ??? aspect for "publication-91", see above
+   ??? doc-level DZ: :temporal, :modal ... s2h, s2e not introduced on sent-level (repeated several times in the document)??
+       doc-level ML: :coref also country
+
+#snt3 Estonci volili parlament .
+   ??? aspect for "publication-91", see above
+   ??? doc-level DZ: :temporal, :modal ... s2e ??
+   ??? doc-level ML: :coref also Estonci, volili, parlament
+
+#snt4 Tallin -
+   ??? aspect for "publication-91", see above
+   NE Tallin: in english_umr-0001.txt (snt2), the Tacloban city (wikipedia) is annotated as "human-settlement"
+      (no such EN type in the Guidelines or in the UMR lists)
+   ??? doc-level DZ: :temporal, :modal ... s4h, s4e ??
+
+#snt5 V nedělních parlamentních volbách v Estonsku ...
+   ??? relative clause introduced with possesive pronoun: ... blok Vlast, **jehož** prezidentský kandidát ...
+       (obsolete ML: kandidát :part (blok Vlast), inverse relation blok Vlast :part-of (kandidát))
+   ??? nominovat ML: :ARG1 (person ML) :ARG2 (kandidát)
+                 DZ: :ARG1 kandidát :ARG3-of (have-role :ARG1 (person LM)
+   ??? nejvíce hlasů
+       ML: have-quant-91 … “nejvíce”, ARG3 … ?? most
+       DZ: quant
+       v PDT: RSTR (nikoli srovnání)
+   ??? podle výsledků
+       ML: NOVÁ relace :basis (výsledek)
+       DZ: :mod (podle :op1 (výsledek))
+       PDT: podle předložka, funktor CRIT
+   ??? DZ: předběžný výsledek jako výsledek :ARG0-of (předbíhat)
+       ML: výsledek je stav, nikoli event, proto :mod (předběžný)
+   ??? blok Vlast ... why not abstract NE political_organization?
+   ??? parlament, volby ... add link to wikidata (for Czech annotation)
+   ??? vybíráme konkrétní volby na základě kontextu (daná země, dané datum), nebo obecný koncept???
+   ??? different wiki:
+       hlas ML: :wiki Q1306135,
+            DZ: :wiki Q189760
+       volit-001 ML: :wiki Q40231
+                 DZ: :wiki Q372557
+       blok Vlast ML vs. SZ
+       wikidata: also Isamaa / Pro Patria and Res Publica Union / ... (no Czech equivalent)
+   ??? doc-level: DZ: much more temporal, modal relations??
+                  ML: coref also volit
+
+#snt6 Z celkového počtu 457319 voličů, ...
+   ??? voliči = :ARG0-of volit, ML bez aspektu, DZ habitual
+   ??? zcela jiná struktura :-(( .. POTŘEBA vizualizace
+       Z 457319 voličů hlasovalo 20.3 procent pro blok
+       ML: voliči.ACT0 (v počtu 20.3% (z 457319...).source).quant hlasovali (pro blok).ARG1
+       DZ: voliči.ACT0 (v počtu 457319 (z celku 20.3%).part ... ).quant hlasovali (pro blok).ARG1
+       DZ: chybí anotace "asi"
+           asi 20.5 procenta … podle “about 200 people”
+	               (s3p / person
+                       :quant (s3a2 / about
+                              :op1 200))
+       PDT:  (asi 20.5% (z celkového počtu voličů (kteří se zůčastnili).RSTR).DIR1).ACT APOZICE (což představuje).ACT hlasovalo (pro Vlast).PAT
+   ??? zúčastnit-se-001 ... ARG1 vs ARG2
+   ??? představovat-003 ... ARG0 ARG1 vs ARG1 ARG2
+   ??? poslenecký :mod (poslanec) vs. (posanecký)
+   ??? DZ ??celkový počet
+   ??? different wiki:
+       ML: also volit-001
+       ML: also mandát
+   ??? doc-level: DA much more relations
+
+#snt7  Na druhém místě s 13.9 procenty hlasů ...
+
+
+
+Česká dokumentace:
+==================
+NE
+Estonci ... see the internal guidelines for nationality, part Entities
+parlament ... there in not NE in the text (just common noun parlament)
+    Guidelines: Whenever an entity is explicitly mentioned by name in the text to be annotated,
+    it receives a :name relation ... ” ... does it means that **the entity name** must be mentioned?
+parlament, volby ... add link to wikidata (for Czech annotation)
+    ?? vybírám konkrétní volby nja základě kontextu (daná země, dané datum), nebo obecný koncept???
