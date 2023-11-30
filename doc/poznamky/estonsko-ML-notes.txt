@@ -63,6 +63,7 @@ Estonci:
        (obsolete ML: kandidát :part (blok Vlast), inverse relation blok Vlast :part-of (kandidát))
    ??? nominovat ML: :ARG1 (person ML) :ARG2 (kandidát)
                  DZ: :ARG1 kandidát :ARG3-of (have-role :ARG1 (person LM)
+   ??? kandidát or kandidovat-001 (ACT(1) PAT(4) ?EFF(na+4)
    ??? nejvíce hlasů
        ML: have-quant-91 … “nejvíce”, ARG3 … ?? most
        DZ: quant
