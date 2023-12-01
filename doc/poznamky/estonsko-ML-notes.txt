@@ -5,6 +5,29 @@ Honza - email o NE z 13.11.2023
 poznámky z minutes (na zapracování do dokumentace)
 ==================================================
 
+- apposition: How to annotate apposition?  Compare ex. 4-1-2 (2b):
+The loan, a sum of 12.5 million US dollars, is an export credit …
+
+(i/ identity-91                              #the loan is an export credit
+    :ARG1 (t/ thing
+        :ARG1-of (l/ loan)                   #the loan
+        -------
+        :ARG0-of (i2/ identity               #[the loan] = a sum of 12.5 million US dollars
+			:ARG1 (m/ monetary-quantity
+				:quant 12500000
+				:unit (d/ dollar
+					:mod (c/ country
+						:wiki "United_States"
+						:name (n/ name :op1 "US")))))
+        -------)
+    :ARG2 (c2/ credit 		                 #export credit
+		:mod (e/ export-01)
+		...)
+...)
+
+- parenthesis: How to annotate apposition?
+
+
 - Events ... UPRAVIT, jestli se dočkáme reakce od Julie (anotace u všeho, co má role, vč. abstr. predikátů)
   !! neděláme rozdíl mezi stative / action verbs!!
   ?? diskurzní relace
@@ -263,7 +286,7 @@ refer-number:
            ("Estonsko" does not appear in the sentence; remove also :coref for s7n3)
    ??? dosavadní:
        DZ: dosud
-       ML: dosavadní
+       ML: dosavadní ... :mod or :temporal … based on "so-far" annotation in english_umr-0001, snt19
    ??? nejvýše:
        DZ: :manner (s7n3 / nejvýše)
        ML: :ARG1-of (s7h2 / have-degree-91
