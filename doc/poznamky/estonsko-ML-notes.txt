@@ -2,7 +2,128 @@ TODO:
 =====
 Honza - email o NE z 13.11.2023
 
+poznámky z minutes (na zapracování do dokumentace)
+==================================================
 
+- Events ... UPRAVIT, jestli se dočkáme reakce od Julie (anotace u všeho, co má role, vč. abstr. predikátů)
+  !! neděláme rozdíl mezi stative / action verbs!!
+  ?? diskurzní relace
+  ?? entity (typu date-entity, quant, ...)
+  !! konatelská jména --> slovesa
+  !! adjektiva od slovesa (resp. s exist. slovesem, bez ohledu na směr derivace) --> slovesa
+  ?? -	What about words like válka, příchod? (Either entities – conservative approach, or events – based on the Vallex, they have a valency frame.
+     Problem: not consistent, some similar words in PDT Vallex are not assigned a valency frame.)
+  !! agentive nouns and aspect ... special value (e.g., aspect: 0)
+     Šárka: a teacher teaches habitually vs. for a murderer, it is enough to commit just one murder to be a murderer.
+            Do we want to mark the aspect at the verb to_teach, to_kill?
+     Dan, Markéta, Šárka – solution of the discussion:
+            we want to mark these verbs in a specific way (e.g., aspect: 0) so that we are able to find them later again and mark the aspect there consistently later.
+
+- Functor conversion ... TODO: should be completed
+
+- Entities
+  ?? number UMR: entities have number (derived from morphology)
+         - Questionable: Philippines (1 country) – no number is given in the example
+         - Dan: proposed solution: if the form says you the number and you agree with that from the semantic point of view,
+           write there the number as you feel it.
+           If you are not sure, write there “?” so that these examples can be found later.
+  ?? gender - Dan: just the semantic gender should be marked
+     Dan: Do we need a gender as a semantic feature?
+     Šárka: yes, we (in Czech) need it to be able to imagine the situation
+     Dan: yes, if we know the biologic gender, we should annotate it.
+     Julia: NOT annotated so far - need of deeper typological analysis
+
+- grammatemes:
+   FG went through, see her conclusions ... Github: doc/grammatemes-attributes
+   ML aspect
+
+- tense: the PDT recognizes the following values: simultaneous, preceding, subsequent. They cover absolute as well as relative tenses
+   Šárka: this can be misleading when transferring this annotation of tenses to the UMR
+   Dan: we have to check the tense annotation and know exactly what can be transferred to the UMR.
+
+- Named Entities ... country: group people (nationality), adjectives, ... --> a general affiliation to a country rather than nationality etc
+   FG ... quam Romani gramaticam vocaverunt. (… which the Romans called grammar.)
+   suggestion: annotate as NE, type ethnic-group
+      :wiki "Q1651392"
+      :name (n/ name :op1 "Romanus")	
+      We decided to at least normalise Romani (nomin. plur.) to the singular form Romanus.
+   BUT: American businessman as NE America ex. 1(2)?
+      The annotation as ethnic-group was confirmed, as the context here does not make any reference to the citizenship of Romans
+      (not treated as a political group, which would have justified the annotation of p/ person from a certain c/ country),
+      but the focus is on the fact that they speak the same language (i.e. ethnic/cultural feature).
+
+- polarity:
+   ?? unclear: unknown polarity, like in “Did you see him?”
+   Dan: one possibility – the polarity of yes-no questions is always “unknown”.
+   Jan Hajič: ask Julia about the value “unknown”? In the data, it seems connected to questions. (Where do you… - the argument for Where is “unknown”).
+   Dan: so, it is not connected to yes/not questions only, but to questions in general
+   Federica: + to indirect questions: I don’t know if that's important or not
+   Dan: can we see in the annotation the interrogative mode, elsewhere?
+   Zdeňka: in AMR manual, they say “unknown” is used to mark questions. Used specifically for yes/no questions (what is the truth about the assertion).
+        - With relative dependent clauses, instead of “unknown”, the “truth-value” should be used.
+        - Federica: this is not in accordance with the example from the UMR manual: I don’t know if that's important or not (using “unknown” value).
+
+- wiki ... as extensive as possible
+   ?? Types and tokens:
+      The most important difference is between
+      - specific cases (my running at Marathon) and
+      - concepts (running itself)
+      DZ: Do we want to connect a general entry of war (a type) to Wikipedia, as well as special occurrences (WW2)?
+          Do we want to have both connections with one phrase in our text?
+      JH: maybe it would be good to make a differences (and mark it) between a type and an occurrence (individuum).
+          Maybe, we should always have a type (or valency frame, or later on Synsemclass, Propbank…).
+--> JH: in UMR, there is just an unclear border between entities and events. But we have to follow the instructions. It would be good to put “type” everywhere where it is possible.
+        The primary database for us is “Wikidata”.
+        Example in UMR data: file 0001, sentence 4: Eyewitness is a person who witnesses.
+        Míša: should the types be linked to the Wikidata?
+   !! wiki with specific events:
+      *	There are articles there about Estonian parliamentary election, therefore “volit” is labelled with the wikipage
+          (English manual: specific events can be named entities.)
+          (English manual would probably not link this verb with a wiki link.)
+
+
+
+- :quant ... typically an attribute with a numeric value
+         ... but sometimes understood as a relation, esp. with approximate cardinalities (more than, most) - only in English data; NOT in the Guidelines
+             "Such examples are quite a few already ..."
+              ALSO for COMPARISON
+
+- :quot ... The :quot relation indicates that an event is being reported. Cf. snt3 of the first English file:
+       "About 200 people were believed killed ... when a landslide buried an entire village , the Red Cross said ."
+       N.B.: in the released data it's quote, while in the guidelines it is called quot.
+   !! quot --> quote
+
+
+- Eng concepts in Czech annotation - if in the https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0
+
+- discourse relations = conjunctions ... TODO
+
+- coreference :
+  ?? :coref for two/more mentions  within a single sentence
+      MN: Suggestion: Use the :coref attribute for two (or more) mentions of the same entity within a single sentence only when necessary
+     (i.e., when some of their values differ)
+  ?? coreferring events:
+     DZ: How should coreference look like? All events in the article annotated as subset-of event?
+  ?? coreferential chains:
+     ŠZ: Are we going to connect each occurrence of mentioning a person in a text to Wikipedia, or will we do it each time?
+     DZ: how would we say which one should be connected to Wikipedia and which one not?
+     ŠZ: maybe just the first occurrence in the coreferential chains should be connected to Wikipedia?
+     FG: the text about Edmund Pope (file 5)
+         Name – American businessman – name (there is a coreference chain like in the PDT)
+         In the first / third / four sentence there is a wiki-link (i.e. from the Named Entity)
+     MN,DZ: this could be solved automatically or semi-automatically,
+            e.g., when we have one coreference chain with two wiki-links, it should be the same wiki-link.
+            If we have two coreferential chains with the same wiki-link, the coreferential chains should be probably connected.
+
+- newspaper titles:
+   !! should it be annotated as “publication-91”
+      - Argument for: specific features of the title in the text structure
+      - Argument against: it has usually a standard sentence structure, there is nothing specific about that
+      - General conclusion: for metadata, we are going to use publication-91 label (title, location etc.)
+           * We are not sure whether the temporal and modal characteristics should be included in the document-level annotation
+           * English data (Philippines): first sentence (title) – no information about temporal or modal relations.
+               The first sentence includes an event.
+               Second sentence (just location – Tacloban, Philippines) – modality is described on the document level.
 
 ad validate.py:
 ===============
@@ -29,18 +150,37 @@ VIZ též mail Julii 	(14 November, 2023)
    --> Q0
 
 3. alignment
-- sloveso být nahrazeno abstraktním predikátem, který ale podle všeho má alignment 0-0
+- sloveso "být" nahrazeno abstraktním predikátem, který ale podle všeho má alignment 0-0 (podle dat) ... neměl by být alignován s tím (povrchovým) slvesem??
 - NE: alignment vyznačen pro obstraktní koncept (person, thing, ...), nikoli pro vlastní jméno
       OK, aby bylo jedinečné mapování na tokeny - což ale NENÍ v PDT
                                                (viz elipsy, koordinace - předložka, ale i uzel pro sloveso má několik .rf)
 
 Estonci:
 ========
+Commented line with token ids:
+  ?? How to standardize it?
+     Currently, sometimes the token line appears before the sentence, sometimes after, often it is not present at all.
+     Sometimes it starts with tk, sometimes not, etc.
+
+refer-number:
+  ?? number for NOUNs
+         - annotate for each noun (DZ)  OR
+         - singular as default, reference-number only when plural (ML)
+         It seems that English UMR 1.0 annotates singular only for personal pronouns.
+  ?? number for PRONOUNs
+         - for all of them
+  ?? number for abstract concepts (person, thing, event, ...) ... ??? like for nouns
+  ?? number for NE ... not given in English data
+         - probably should be there (like for nouns)
+====
+
 #snt1 Estonci volili parlament .
    ??? aspect for "publication-91"
        DZ: fine-grained "directed-achievement"
        ML: coarse-grained (basic level) "reversible-state" ... as "publication-91" does not refer to a process
    ??? doc-level ML :temporal, DZ NO
+   ??? aspect for "volili"  ... we decided to follow the morphology
+       (saying this is imperfective, disregarding that the result is very important in this case)
 
 #snt2 ESTONSKO :
    ??? aspect for "publication-91", see above
@@ -61,12 +201,13 @@ Estonci:
 #snt5 V nedělních parlamentních volbách v Estonsku ...
    ??? relative clause introduced with possesive pronoun: ... blok Vlast, **jehož** prezidentský kandidát ...
        (obsolete ML: kandidát :part (blok Vlast), inverse relation blok Vlast :part-of (kandidát))
-   ??? nominovat ML: :ARG1 (person ML) :ARG2 (kandidát)
+       DZ solution: inserted "nominovat"
+       nominovat ML: :ARG1 (person ML) :ARG2 (kandidát)
                  DZ: :ARG1 kandidát :ARG3-of (have-role :ARG1 (person LM)
    ??? kandidát or kandidovat-001 (ACT(1) PAT(4) ?EFF(na+4)
    ??? nejvíce hlasů
        ML: have-quant-91 … “nejvíce”, ARG3 … ?? most
-       DZ: quant
+       DZ: :quant
        v PDT: RSTR (nikoli srovnání)
    ??? podle výsledků
        ML: NOVÁ relace :basis (výsledek)
@@ -109,11 +250,43 @@ Estonci:
    ??? doc-level: DA much more relations
 
 #snt7  Na druhém místě s 13.9 procenty hlasů ...
+   ??? Na druhém místě ... je ...
+       ML: have-location-91 --> ARG1 blok, ARG2 (s7m2 / místo :ord (s7o/ ordinal-entity  :value 2))
+       DZ: have-ord-91 --> ARG0 blok, NE koncept "místo" - jen  :ord (s7o / ordinal-entity :value 2)
+
+   ??? Spolehlivý dům
+       ML: have not found wiki link
+       DZ: Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882
+   ??? představitel republiky
+       DZ: ARG1 republika as a concept (ordinary noun) ... :wiki "Q191" (= Estonia/Estonsko)
+       ML: ARG2 abstract entity country + Estonsko ... Dan is correct
+           ("Estonsko" does not appear in the sentence; remove also :coref for s7n3)
+   ??? dosavadní:
+       DZ: dosud
+       ML: dosavadní
+   ??? nejvýše:
+       DZ: :manner (s7n3 / nejvýše)
+       ML: :ARG1-of (s7h2 / have-degree-91
+                           :ARG2 (s7v / vysoký)
+                           :ARG3 (s7m / most)
+   ??? aspect: ML state (reversible), DZ: habitual
+   ??? ... s 13.9 procenty hlasů ( 18 mandátů ) ...
+      - cause vs. manner (PDT ACMP)
+      - part vs. quant (no example in the Guidelines)
+      - attribute (i.e. "hlas" as the governor, "mandát" as dependent) vs apposition (siblings) (PDT: PAR "mandát" modifying "procemto")
+      - ML: wiki for mandát
+      DZ: :cause (s7h2 / hlas   :part  (s7p / percentage-entity   :value 13.9)   :refer-number plural
+                 :mod (s7m / mandát :quant 18))  ... tj. mandát jako přívlastek
+      ML: :manner (s7h3 / hlas  :quant (s7p3 / percentage-entity :value 13.9))
+          :manner (s7m3 / mandát :wiki "Q486839" :quant 18)
+   ??? doc-level: Dan annotates allso for "dosavadní"
+                  ML missing annotation for  představovat-003
 
 
 
-Česká dokumentace:
-==================
+
+Interní dokumentace:
+====================
 NE
 Estonci ... see the internal guidelines for nationality, part Entities
 parlament ... there in not NE in the text (just common noun parlament)
