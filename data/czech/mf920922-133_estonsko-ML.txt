@@ -240,10 +240,10 @@ s5p2: 10-10
                                        :source (s6p7 /person :quant 457319
                                             :ARG1-of (s6i / identity-91
                                                    :ARG2 (s6p3 / počet-001
-                                                   :ARG1 s6p7
-                                                   :extent (s6c / celkový)
-                                                   :aspect reversible-state
-                                                   :modal-strength full-affirmative)
+                                                          :ARG1 s6p7
+                                                          :extent (s6c / celkový)
+                                                          :aspect reversible-state
+                                                          :modal-strength full-affirmative)
                                             :aspect reversible-state
                                             :modal-strength full-affirmative)
                                             :mod s6p
@@ -314,7 +314,6 @@ s6n: 0-0
 # sentence level graph:
 (s7h / have-location-91
      :ARG1 (s7b / blok
-            :wiki "Q0"
             :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
             :poss (s7p / person :wiki "Q194000"
                     :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")

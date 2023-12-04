@@ -255,17 +255,17 @@ refer-number:
    ??? voliči = :ARG0-of volit, ML bez aspektu, DZ habitual
    ??? zcela jiná struktura :-(( .. POTŘEBA vizualizace
        Z 457319 voličů hlasovalo 20.3 procent pro blok
-       ML: voliči.ACT0 (v počtu 20.3% (z 457319...).source).quant hlasovali (pro blok).ARG1
-       DZ: voliči.ACT0 (v počtu 457319 (z celku 20.3%).part ... ).quant hlasovali (pro blok).ARG1
+       ML: voliči.ACT (v počtu 20.3% (z 457319...).source).quant hlasovali (pro blok).ARG1
+       DZ: voliči.ACT (v počtu 457319 (z celku 20.3%).part ... ).quant hlasovali (pro blok).ARG1
        DZ: chybí anotace "asi"
            asi 20.5 procenta … podle “about 200 people”
 	               (s3p / person
                        :quant (s3a2 / about
                               :op1 200))
-       PDT:  (asi 20.5% (z celkového počtu voličů (kteří se zůčastnili).RSTR).DIR1).ACT APOZICE (což představuje).ACT hlasovalo (pro Vlast).PAT
+       PDT:  (asi 20.5% (z celkového počtu voličů (kteří se zúčastnili).RSTR).DIR1).ACT APOZICE (což představuje).ACT hlasovalo (pro Vlast).PAT
    ??? zúčastnit-se-001 ... ARG1 vs ARG2
    ??? představovat-003 ... ARG0 ARG1 vs ARG1 ARG2
-   ??? poslenecký :mod (poslanec) vs. (posanecký)
+   ??? poslanecký DZ :mod (poslanec) vs. (posanecký) ML, lépe substantivum
    ??? DZ ??celkový počet
    ??? different wiki:
        ML: also volit-001
