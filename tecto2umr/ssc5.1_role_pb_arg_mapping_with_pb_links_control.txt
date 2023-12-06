@@ -1,0 +1,7186 @@
+vec00002
+	Cognizer
+		arg-0	5
+	Phenomenon
+		arg-1	8
+	Source
+		arg-1	2
+vec00003
+	Protagonist
+		arg-0	151
+		arg-1	87
+		arg-2	2
+	Event_expected
+		arg-1	162
+		arg-2	103
+		arg-m-TMP	2
+vec00005
+	Entity
+		arg-1	4
+	Origin
+		arg-2	13
+vec00006
+	Event
+		arg-1	147
+	Undergoer
+		arg-2	28
+vec00008
+	Agent
+		arg-0	2
+	Project
+		arg-1	6
+vec00009
+	Perpetrator
+		arg-0	11
+	Deed
+		arg-1	13
+vec00011
+	Transporter
+		arg-0	117
+	Transported
+		arg-0	1
+		arg-1	219
+		arg-2	1
+	Recipient
+		arg-2	8
+vec00012
+	Authority
+		arg-0	313
+		arg-1	1
+	Affected
+		arg-1	455
+		arg-2	84
+	Permitted
+		arg-1	540
+		arg-2	3
+vec00013
+	Cognizer
+		arg-0	103
+	Information
+		arg-1	173
+		arg-3	2
+	Source
+		arg-2	27
+vec00014
+	Agent
+		arg-0	38
+	Entity
+		arg-0	2
+		arg-1	43
+	State
+		arg-1	78
+vec00016
+	Stimulus
+		arg-0	2
+	Phenomenon
+		arg-1	3
+vec00017
+	Entity
+		arg-1	446
+vec00018
+	Explosive
+		arg-1	19
+vec00019
+	Arguer_1
+		arg-0	11
+	Issue
+		arg-1	7
+		arg-2	1
+	Arguer_2
+vec00020
+	Agent
+		arg-0	56
+		arg-2	1
+	Chosen
+		arg-1	60
+vec00021
+	Seeker
+		arg-0	352
+		arg-2	1
+	Sought
+		arg-1	489
+		arg-2	5
+vec00022
+	Mover
+		arg-0	4
+		arg-1	193
+	Area_1
+	Area_2
+vec00024
+	Defender
+		arg-0	54
+		arg-1	2
+		arg-3	19
+	Entity
+		arg-0	10
+		arg-1	179
+		arg-2	2
+	Undesirable
+		arg-1	16
+		arg-2	71
+vec00026
+	Mover
+		arg-0	26
+	Vehicle
+		arg-1	17
+	Area
+vec00027
+	Entity
+		arg-1	39
+	Purpose
+		arg-2	34
+vec00028
+	Item
+		arg-0	193
+		arg-1	1533
+		arg-2	5
+	Value_initial
+		arg-3	273
+		arg-4	5
+		arg-m-LOC	1
+	Value_final
+		arg-1	219
+		arg-2	16
+		arg-4	890
+		arg-m-LOC	2
+	Difference
+		arg-2	995
+		arg-4	2
+vec00029
+	Protagonist
+		arg-0	38
+vec00030
+	Owner_initial
+		arg-0	120
+		arg-1	2
+	Entity_1
+		arg-1	239
+		arg-2	1
+		arg-3	5
+	Owner_final
+		arg-0	1
+		arg-2	4
+	Entity_2
+		arg-1	190
+		arg-2	71
+		arg-3	35
+vec00031
+	Speaker
+		arg-0	481
+		arg-1	2
+	Information
+		arg-1	553
+		arg-2	5
+	Audience_Addressee
+		arg-1	18
+		arg-2	400
+vec00032
+	Thinker
+		arg-0	568
+		arg-1	5
+	Judgment
+		arg-1	558
+		arg-2	2
+	Phenomenon
+		arg-1	99
+		arg-2	4
+vec00033
+	Offerer
+		arg-0	572
+		arg-1	2
+	Offered
+		arg-1	767
+		arg-2	53
+		arg-3	1
+	Recipient
+		arg-1	10
+		arg-2	176
+		arg-3	86
+vec00035
+	Buyer
+		arg-0	506
+		arg-1	1
+	Payment
+		arg-3	16
+	Seller
+		arg-1	1
+		arg-2	70
+	Goods
+		arg-0	2
+		arg-1	927
+		arg-3	1
+	Party_benefited
+		arg-1	1
+		arg-4	7
+vec00037
+	Creator
+		arg-0	19
+	Created
+		arg-1	24
+vec00038
+	Cause
+		arg-0	590
+		arg-1	186
+		arg-2	6
+	Action
+		arg-1	713
+		arg-2	1
+vec00039
+	Proposer
+		arg-0	305
+	Proposed
+		arg-1	329
+		arg-2	8
+	Impactee
+		arg-1	3
+		arg-2	16
+		arg-3	7
+vec00040
+	Proposer
+		arg-0	71
+		arg-1	1
+	Created
+		arg-1	143
+vec00042
+	Visitor
+		arg-0	75
+		arg-1	82
+	Visited
+		arg-1	81
+		arg-4	3
+vec00043
+	Namer
+		arg-0	200
+	Name
+		arg-1	1
+		arg-2	382
+		arg-3	10
+	Named
+		arg-1	232
+		arg-2	3
+vec00045
+	Escapee
+		arg-0	85
+	Situation_undesirable
+		arg-1	172
+vec00046
+	Buyer
+		arg-2	6
+	Goods
+		arg-1	81
+	Seller
+		arg-0	38
+vec00047
+	Agent
+		arg-0	43
+		arg-1	2
+	Entity_1
+		arg-1	133
+		arg-3	1
+	Entity_2
+		arg-2	8
+vec00048
+	Mover
+		arg-0	38
+		arg-1	79
+	Area_1
+		arg-1	4
+	Area_2
+vec00049
+	Agent
+		arg-0	1
+	Situation_undesirable
+		arg-1	2
+vec00050
+	Authority
+		arg-0	606
+	Proposed
+		arg-1	640
+	Proposer
+		arg-2	12
+vec00053
+	Rimming
+		arg-1	2
+	Rimmed
+		arg-2	1
+vec00054
+	Protagonist
+		arg-0	73
+		arg-1	64
+	Place
+		arg-1	88
+		arg-2	2
+vec00055
+	Cause
+		arg-0	93
+	Weakened
+		arg-1	132
+		arg-2	1
+vec00057
+	Speaker
+		arg-0	50
+		arg-1	48
+	Audience_Addressee
+		arg-1	17
+		arg-2	34
+	Topic
+		arg-1	27
+		arg-2	5
+vec00058
+	Assessor
+		arg-0	28
+		arg-1	1
+	Phenomenon
+		arg-1	45
+vec00059
+	Event
+		arg-1	37
+	Manner
+		arg-m-EXT	25
+		arg-m-MNR	21
+vec00060
+	Speaker
+		arg-0	13898
+		arg-1	47
+	Information
+		arg-0	5
+		arg-1	12570
+		arg-2	25
+		arg-3	29
+	Audience_Addressee
+		arg-1	22
+		arg-2	40
+vec00063
+	Mover
+		arg-0	8
+vec00065
+	Attitudal
+		arg-0	3
+	Recipient
+		arg-1	6
+	Reason
+		arg-2	5
+vec00067
+	Protagonist
+		arg-0	166
+		arg-1	128
+		arg-2	1
+	Event
+		arg-1	53
+		arg-2	295
+vec00069
+	Helper
+		arg-0	626
+		arg-1	7
+		arg-3	9
+	Supported
+		arg-1	842
+		arg-2	17
+vec00070
+	Item
+		arg-0	4
+		arg-1	472
+		arg-2	3
+	Rank
+		arg-1	2
+		arg-2	305
+		arg-4	163
+vec00071
+	Entity
+		arg-0	1
+		arg-1	57
+	Origin
+vec00072
+	Authority
+	Issue
+	Undergoer
+vec00074
+	Provider
+		arg-0	919
+		arg-2	1
+	Recipient
+		arg-1	43
+		arg-2	795
+	Provided
+		arg-1	1291
+		arg-2	10
+vec00075
+	Protagonist
+	Affected
+	Hindrance
+vec00077
+	Protagonist
+		arg-0	521
+		arg-1	6
+		arg-2	5
+	Required
+		arg-1	670
+		arg-2	2
+vec00078
+	Authority
+		arg-0	289
+		arg-2	3
+	Topic
+		arg-1	354
+	Protagonist
+		arg-2	2
+vec00079
+	Protagonist
+		arg-0	360
+		arg-1	32
+	Instrument
+		arg-1	704
+		arg-2	35
+vec00080
+	Agent
+		arg-0	37
+	Influenced
+		arg-1	44
+		arg-2	2
+	Goal
+		arg-1	3
+		arg-2	36
+vec00082
+	Perceiver
+		arg-0	429
+		arg-1	6
+	Perceived
+		arg-1	591
+		arg-2	1
+		arg-3	4
+vec00083
+	Seller
+		arg-0	555
+		arg-1	12
+		arg-2	5
+	Goods
+		arg-0	8
+		arg-1	1170
+		arg-2	3
+	Buyer
+		arg-2	221
+	Recompensated
+		arg-1	1
+		arg-3	142
+vec00084
+	Agent
+		arg-0	522
+		arg-1	5
+		arg-2	3
+	Created
+		arg-1	918
+		arg-3	1
+		arg-4	5
+	Component
+		arg-1	1
+		arg-2	38
+vec00086
+	Phenomenon
+		arg-1	19
+vec00087
+	Prover
+		arg-0	30
+		arg-1	29
+	Proved
+		arg-1	83
+	Cognizer
+		arg-1	1
+		arg-2	5
+vec00089
+	Agent
+		arg-0	23
+	Deed
+		arg-1	38
+vec00090
+	Inspector
+		arg-0	266
+	Inspected
+		arg-1	398
+vec00091
+	New
+		arg-0	5
+	Old
+		arg-1	13
+vec00092
+	Agent
+		arg-0	736
+		arg-1	1
+	Attribute
+		arg-1	836
+vec00093
+	Predicting
+		arg-0	200
+	Predicted
+		arg-1	220
+vec00094
+	Stimulus
+		arg-0	31
+		arg-1	1
+		arg-2	1
+	Attitudal
+		arg-0	1
+		arg-1	48
+vec00095
+	Agent
+		arg-0	133
+		arg-1	5
+	Entity
+		arg-1	286
+		arg-2	2
+		arg-3	2
+	State_initial
+		arg-2	1
+		arg-3	10
+	State_final
+		arg-1	2
+		arg-2	96
+		arg-3	2
+		arg-4	27
+vec00096
+	Agent
+		arg-0	78
+		arg-1	1
+	Entity
+		arg-1	73
+	Source
+		arg-3	4
+vec00097
+	Event
+		arg-0	2
+		arg-1	239
+vec00098
+	Force
+		arg-0	352
+	Affected
+		arg-0	1
+		arg-1	593
+		arg-2	8
+	Action
+		arg-1	282
+		arg-2	260
+vec00099
+	Stimulus
+		arg-0	13
+		arg-1	13
+	Cognizer
+		arg-2	18
+	Phenomenon
+		arg-1	15
+		arg-2	21
+vec00101
+	Comparator
+		arg-0	29
+	Item_standard
+		arg-1	55
+		arg-2	2
+	Item_profiled
+		arg-1	3
+		arg-2	61
+vec00102
+	Protagonist
+		arg-0	151
+	Stimulus
+		arg-1	126
+		arg-2	1
+	Manner
+		arg-1	1
+		arg-2	35
+vec00103
+	Cognizer
+		arg-0	4
+	Item
+		arg-1	5
+	Category
+		arg-2	3
+vec00104
+	Protagonist
+		arg-0	20
+	Asset
+		arg-1	25
+vec00105
+	Force
+		arg-0	3
+	Entity
+		arg-1	5
+vec00106
+	Cognizer
+		arg-0	108
+	Chosen
+		arg-1	133
+		arg-3	2
+	Possibilities
+		arg-1	1
+		arg-2	3
+vec00107
+	Cognizer
+		arg-0	54
+	Phenomenon
+		arg-1	79
+vec00108
+	Speaker
+		arg-0	31
+	Topic
+		arg-1	36
+vec00109
+	Item
+		arg-0	10
+		arg-1	1902
+		arg-2	8
+	Value_initial
+		arg-3	540
+		arg-4	1
+	Value_final
+		arg-1	9
+		arg-2	48
+		arg-4	1380
+	Difference
+		arg-2	1383
+		arg-4	5
+vec00112
+	Gambler
+		arg-0	16
+	Phenomenon
+		arg-2	22
+vec00113
+	Finished
+		arg-0	13
+		arg-1	168
+vec00115
+	Monitoring
+		arg-0	129
+	Phenomenon
+		arg-1	188
+		arg-2	6
+vec00117
+	Striving
+		arg-0	452
+	Goal
+		arg-1	613
+		arg-2	2
+vec00118
+	Agent
+		arg-0	441
+		arg-1	20
+	Item
+		arg-1	844
+		arg-2	9
+		arg-4	13
+	Value_initial
+		arg-3	56
+		arg-4	1
+	Value_final
+		arg-2	46
+		arg-3	1
+		arg-4	90
+		arg-5	1
+	Difference
+		arg-2	107
+		arg-3	2
+		arg-4	2
+vec00120
+	Communicator
+		arg-0	593
+	Proposed
+		arg-1	592
+		arg-2	4
+vec00121
+	Competitor_1
+		arg-0	72
+	Competitor_2
+		arg-1	54
+		arg-2	2
+	Prize
+		arg-1	22
+		arg-2	30
+vec00125
+	Payer
+		arg-0	376
+		arg-1	3
+		arg-2	1
+	Obligation
+		arg-1	528
+		arg-2	13
+		arg-3	26
+	Payee
+		arg-0	1
+		arg-1	12
+		arg-2	156
+		arg-3	4
+vec00126
+	Perpetrator
+		arg-0	2
+	Affected
+		arg-1	9
+vec00127
+	Protagonist
+		arg-0	189
+	Decision
+		arg-1	387
+vec00128
+	Item
+		arg-1	116
+		arg-2	2
+	Affected
+		arg-3	40
+	Value
+		arg-2	136
+vec00131
+	Protagonist
+	State_final
+vec00132
+	Communicator
+		arg-0	95
+	Issue
+		arg-1	90
+	Affected
+		arg-2	6
+vec00134
+	Asset_controller
+	Asset
+vec00135
+	Attitudal
+		arg-0	12
+	Evaluee
+		arg-1	11
+vec00141
+	Indicator
+		arg-0	168
+	Indicated
+		arg-1	601
+vec00143
+	Protagonist
+		arg-0	2
+	Area
+		arg-1	2
+vec00144
+	Asset_controller
+		arg-0	19
+		arg-3	4
+	Asset
+		arg-1	32
+	Resource
+		arg-2	4
+vec00145
+	Attitudal
+		arg-0	2
+	Perceiver
+		arg-1	1
+vec00146
+	Escapee
+	Undesirable
+vec00147
+	Protagonist
+		arg-0	207
+		arg-3	1
+	Resource
+		arg-0	1
+		arg-1	112
+		arg-2	7
+		arg-3	143
+	Recompensated
+		arg-1	112
+		arg-2	2
+		arg-3	1
+vec00149
+	Cognizer
+		arg-0	123
+		arg-3	2
+	Topic
+		arg-1	102
+		arg-2	37
+		arg-3	1
+vec00153
+	Protagonist
+		arg-0	111
+		arg-1	15
+		arg-m-MNR	2
+	Manner
+		arg-1	2
+		arg-2	2
+		arg-m-MNR	22
+vec00154
+	Perceiver
+		arg-0	386
+		arg-1	1
+	Perceived
+		arg-1	526
+		arg-2	1
+		arg-3	1
+vec00157
+	Protagonist
+		arg-0	1
+	Entity
+		arg-1	1
+vec00158
+	Perpetrator
+		arg-0	3
+	Victim
+		arg-1	3
+		arg-2	1
+vec00159
+	Assessor
+		arg-0	30
+	Phenomenon
+		arg-1	83
+	Value
+vec00160
+	Participant_1
+	Participant_2
+	Manner
+vec00161
+	Communicator
+		arg-0	48
+	Topic
+		arg-1	82
+vec00162
+	Participant_1
+		arg-0	92
+	Topic
+		arg-1	12
+		arg-2	64
+	Participant_2
+		arg-1	106
+		arg-2	3
+vec00163
+	Agent
+		arg-0	35
+	Valued
+		arg-1	51
+	Audience_Addressee
+vec00164
+	Phenomenon
+		arg-0	91
+		arg-1	206
+		arg-2	3
+	Perceiver
+		arg-0	2
+		arg-1	3
+		arg-2	10
+		arg-3	1
+	Judgment
+		arg-1	241
+		arg-2	55
+		arg-3	10
+vec00166
+	Agent
+		arg-0	42
+		arg-1	1
+	Valued
+		arg-1	58
+	Source
+vec00167
+	Grown
+		arg-1	8
+vec00169
+	Recipient
+		arg-0	23
+		arg-1	80
+	Acquired
+	Source
+		arg-0	66
+		arg-1	44
+vec00171
+	Agent
+	Captive
+	Place
+vec00172
+	Transporter
+		arg-0	40
+	Transported
+		arg-1	80
+	Area_1
+	Area_2
+vec00174
+	Cause
+		arg-0	183
+		arg-1	1
+		arg-3	6
+	Event
+		arg-0	1
+		arg-1	452
+		arg-2	2
+vec00175
+	Agent
+		arg-0	21
+		arg-1	1
+		arg-2	27
+	Member_new
+		arg-1	1094
+		arg-2	2
+	Member_old
+		arg-0	6
+		arg-1	6
+		arg-2	492
+vec00176
+	Preserver
+		arg-0	415
+		arg-1	162
+	Preserved
+		arg-1	637
+vec00178
+	Agent
+		arg-0	54
+	Entity
+		arg-1	63
+		arg-2	6
+	Undergoer
+		arg-2	28
+vec00179
+	Creator
+		arg-0	260
+		arg-1	1
+	Created
+		arg-1	400
+	Component
+		arg-2	6
+vec00180
+	Outcome
+		arg-0	46
+		arg-1	1
+		arg-2	1
+	Determinant
+		arg-1	84
+		arg-2	1
+vec00182
+	Activating
+		arg-0	9
+	Activated
+		arg-1	15
+vec00185
+	Authority
+		arg-0	35
+	Held
+		arg-1	107
+vec00187
+	Agent
+		arg-0	19
+		arg-1	44
+	Item
+		arg-1	81
+	Value_initial
+		arg-3	11
+		arg-4	9
+	Value_final
+		arg-3	4
+		arg-4	28
+vec00188
+	Recipient
+		arg-0	6
+		arg-2	1
+	Attractee
+		arg-1	9
+vec00189
+	Recipient
+		arg-0	1056
+		arg-1	10
+	Acquired
+		arg-1	1524
+		arg-2	2
+		arg-4	1
+	Source
+		arg-1	10
+		arg-2	174
+		arg-3	5
+vec00194
+	Representing
+		arg-1	419
+		arg-2	20
+	Represented
+		arg-0	216
+		arg-1	22
+		arg-2	80
+vec00195
+	Cognizer
+	Entity
+vec00196
+	Cause
+		arg-0	553
+		arg-1	2
+		arg-2	38
+	Effect
+		arg-0	1
+		arg-1	810
+		arg-2	2
+	Affected
+		arg-1	3
+		arg-2	14
+		arg-3	1
+		arg-4	79
+vec00197
+	Entity
+		arg-1	2
+	Source
+		arg-0	2
+vec00198
+	Agent
+		arg-0	108
+		arg-1	14
+	Abandoned
+		arg-1	199
+		arg-2	1
+vec00199
+	Entity
+		arg-0	17
+		arg-1	3683
+		arg-2	296
+		arg-3	1
+	State
+		arg-1	124
+		arg-2	3551
+		arg-3	415
+vec00201
+	Arguer
+		arg-0	229
+	Phenomenon
+		arg-1	341
+vec00203
+	Perceiver
+		arg-0	4
+	Phenomenon
+		arg-1	3
+vec00204
+	Experiencer
+		arg-0	17
+		arg-1	4
+	Emotion
+		arg-1	21
+vec00205
+	Protagonist
+		arg-0	170
+		arg-1	3
+	Situation_undesirable
+		arg-1	199
+vec00206
+	Item
+		arg-0	58
+		arg-1	316
+		arg-2	2
+	Value
+		arg-0	3
+		arg-1	52
+		arg-2	405
+		arg-3	5
+vec00207
+	Perceiver
+		arg-0	1
+		arg-1	8
+	Perceived
+		arg-1	1
+		arg-3	10
+vec00209
+	Provider
+		arg-0	172
+		arg-1	1
+	Provided
+		arg-1	356
+	Recipient
+		arg-1	1
+		arg-2	110
+vec00211
+	Authority
+		arg-0	138
+	Governed
+		arg-1	154
+		arg-2	5
+vec00212
+	Protagonist
+		arg-0	70
+	Goal
+		arg-1	99
+vec00213
+	Agent
+		arg-0	237
+		arg-1	9
+	Finished
+		arg-1	453
+		arg-2	1
+		arg-m-EXT	1
+		arg-m-MNR	2
+vec00214
+	Governing
+		arg-0	56
+	Dominated
+		arg-1	51
+vec00215
+	Communicator
+		arg-0	113
+	Advised
+		arg-1	68
+		arg-2	63
+		arg-3	1
+	Impactee
+		arg-1	58
+		arg-2	6
+vec00217
+	Cognizer
+		arg-0	139
+	Conclusion
+		arg-1	179
+vec00218
+	Protagonist
+		arg-0	139
+		arg-1	262
+	Place
+		arg-1	135
+vec00219
+	Protagonist
+		arg-0	815
+	Event_expected
+		arg-1	855
+vec00221
+	Functioning
+		arg-0	57
+		arg-1	37
+vec00222
+	Functioning
+vec00225
+	Protagonist
+		arg-0	18
+		arg-1	3
+	Manner
+vec00226
+	Issue
+	NoSr
+vec00227
+	Mover
+		arg-0	25
+		arg-1	1
+	Area_1
+	Area_2
+vec00228
+	Authority
+		arg-0	33
+	Chosen
+		arg-1	161
+		arg-2	7
+	Function
+		arg-1	1
+		arg-2	81
+vec00230
+	Accuser
+		arg-0	83
+	Accused
+		arg-1	118
+vec00231
+	Experiencer
+		arg-0	58
+		arg-1	33
+	Stimulus
+		arg-0	16
+		arg-1	63
+		arg-2	9
+vec00233
+	Seeker
+		arg-0	291
+		arg-1	2
+	Found
+		arg-0	1
+		arg-1	397
+vec00239
+	Member_new
+		arg-0	182
+		arg-1	101
+		arg-3	6
+	Group
+		arg-1	232
+vec00241
+	Protagonist
+		arg-0	93
+		arg-1	2
+	Attribute
+		arg-0	2
+		arg-1	120
+vec00242
+	Wearer
+		arg-0	37
+	Worn
+		arg-1	71
+vec00243
+	Attitudal
+		arg-0	131
+		arg-1	21
+	Feared
+		arg-0	28
+		arg-1	146
+vec00244
+	Defender
+		arg-0	61
+	Defended
+		arg-1	86
+	Opposing
+		arg-1	1
+vec00245
+	Emerging
+		arg-1	127
+	Place
+vec00246
+	Agent
+		arg-0	68
+		arg-1	11
+	Action
+		arg-1	134
+vec00250
+	Compared_1
+		arg-0	4
+		arg-1	34
+	Compared_2
+		arg-1	48
+		arg-2	12
+vec00251
+	Protagonist
+		arg-0	23
+		arg-2	3
+	Influenced
+		arg-1	51
+	Undesirable
+		arg-2	29
+vec00252
+	Cause
+		arg-0	61
+	Impactee
+		arg-1	56
+		arg-2	8
+vec00254
+	Influencing
+		arg-0	32
+	Affected
+		arg-1	46
+vec00256
+	Agent
+		arg-0	406
+		arg-1	7
+	Planned
+		arg-1	438
+		arg-2	51
+vec00257
+	Protagonist
+		arg-0	60
+		arg-1	146
+	Achievement
+		arg-0	2
+		arg-1	57
+		arg-2	144
+vec00258
+	Entity
+		arg-1	104
+		arg-2	22
+	Source
+		arg-0	2
+		arg-1	50
+		arg-2	84
+vec00260
+	Securing
+		arg-0	14
+		arg-1	1
+	Asset
+		arg-1	33
+	Situation_harmful
+		arg-4	3
+vec00261
+	Event
+		arg-0	9
+		arg-1	174
+vec00265
+	Violating
+		arg-0	65
+	Norm
+		arg-1	83
+vec00270
+	Protagonist
+		arg-0	458
+		arg-1	4
+		arg-2	4
+	Required
+		arg-1	597
+		arg-2	2
+	Source
+		arg-1	3
+		arg-2	43
+vec00272
+	Claimant
+		arg-0	469
+		arg-1	3
+		arg-2	4
+	Required
+		arg-1	605
+		arg-2	81
+	Impactee
+		arg-1	75
+		arg-2	180
+vec00273
+	Protagonist
+		arg-0	241
+vec00274
+	Agent
+		arg-0	42
+	Entity
+		arg-1	82
+	Value_initial
+		arg-3	1
+	Value_final
+		arg-1	2
+		arg-2	16
+		arg-4	1
+	Difference
+		arg-2	9
+vec00275
+	Loser
+		arg-0	28
+	Competition
+		arg-0	1
+		arg-1	16
+	Winner
+		arg-2	1
+vec00276
+	Agent
+		arg-0	18
+	Advertised
+		arg-1	72
+vec00277
+	Governing
+		arg-0	90
+		arg-1	1
+	Governed
+		arg-1	125
+vec00279
+	Protagonist
+		arg-0	158
+	Hindrance
+		arg-0	1
+		arg-1	241
+vec00280
+	Entity
+		arg-0	134
+		arg-1	13
+	Value
+		arg-0	1
+		arg-1	162
+		arg-2	13
+	Difference
+		arg-2	16
+vec00283
+	Transporter
+		arg-0	93
+	Transported
+		arg-0	1
+		arg-1	176
+	Source
+	Targeted
+		arg-2	74
+vec00286
+	Attracting
+		arg-0	72
+		arg-1	2
+		arg-2	1
+	Attractee
+		arg-0	1
+		arg-1	60
+		arg-2	5
+		arg-3	1
+	Goal
+		arg-0	2
+		arg-1	96
+		arg-2	9
+		arg-3	2
+vec00290
+	Protagonist
+		arg-0	23
+	Action
+		arg-2	33
+vec00291
+	Attributor
+		arg-0	92
+	Attribute
+		arg-1	94
+		arg-2	8
+	Recipient
+		arg-1	4
+		arg-2	124
+vec00296
+	Protagonist
+		arg-0	22
+	Whole
+		arg-1	50
+	Component
+		arg-1	2
+		arg-2	18
+vec00297
+	Cognizer
+		arg-0	269
+	Decision
+		arg-1	361
+vec00298
+	Agent
+		arg-0	280
+		arg-1	6
+	Item
+		arg-1	504
+		arg-2	1
+		arg-4	6
+	Value_initial
+		arg-3	43
+	Value_final
+		arg-2	4
+		arg-4	94
+	Difference
+		arg-2	39
+		arg-4	3
+vec00301
+	Protagonist
+		arg-0	152
+	Issue
+		arg-1	386
+		arg-2	7
+vec00302
+	Authority
+		arg-0	305
+	Governed
+		arg-1	271
+vec00303
+	Protagonist
+		arg-0	54
+		arg-1	2
+	Norm
+		arg-1	79
+		arg-2	1
+vec00304
+	Participant_1
+		arg-0	37
+	Entity
+		arg-1	49
+	Participant_2
+		arg-2	19
+vec00305
+	Protagonist
+		arg-1	52
+	Place
+vec00307
+	Participant_1
+		arg-0	102
+		arg-1	3
+	Participant_2
+		arg-1	79
+vec00308
+	Resident
+		arg-0	3
+		arg-1	119
+		arg-2	1
+		arg-m-LOC	1
+	Place
+		arg-1	5
+		arg-2	2
+		arg-m-LOC	137
+vec00309
+	Finished
+		arg-1	171
+		arg-2	2
+	Outcome
+		arg-1	37
+		arg-2	113
+vec00310
+	Watcher
+		arg-0	52
+		arg-1	1
+	Phenomenon
+		arg-1	86
+vec00311
+	Communicator
+		arg-0	99
+		arg-2	1
+	Commitment
+		arg-1	26
+		arg-2	90
+	Recipient
+		arg-0	2
+		arg-1	28
+vec00313
+	Perceiver
+		arg-0	37
+	Phenomenon
+		arg-1	50
+		arg-2	4
+vec00314
+	Protagonist
+		arg-0	125
+		arg-1	2
+		arg-2	1
+	Field
+		arg-1	127
+		arg-2	2
+vec00316
+	Protagonist
+		arg-0	43
+		arg-1	17
+	Item_standard
+		arg-1	87
+		arg-2	20
+vec00317
+	Phenomenon
+		arg-1	19
+	Source
+		arg-0	7
+		arg-2	1
+vec00318
+	Participant_1
+		arg-0	16
+		arg-1	32
+	Participant_2
+		arg-1	19
+		arg-2	24
+	Whole
+		arg-1	5
+		arg-2	3
+		arg-3	2
+vec00319
+	Participant_1
+		arg-0	206
+	Participant_2
+		arg-1	13
+		arg-2	1
+		arg-3	45
+	Undertaking
+		arg-1	75
+		arg-2	17
+		arg-3	1
+vec00321
+	Cause
+		arg-0	30
+	Moved
+		arg-1	38
+		arg-2	13
+	Place
+vec00322
+	Authority
+		arg-0	302
+		arg-1	4
+	Value
+		arg-1	8
+		arg-2	530
+	Valued
+		arg-1	684
+		arg-2	6
+vec00323
+	Protagonist
+		arg-0	1
+		arg-1	40
+	Place
+		arg-1	1
+		arg-2	35
+vec00325
+	Protagonist
+		arg-0	62
+		arg-1	1
+	Time
+		arg-1	74
+	Manner
+		arg-1	4
+		arg-2	66
+vec00326
+	Protagonist
+		arg-0	106
+	Enforced
+		arg-1	114
+vec00328
+	Influencing
+		arg-0	18
+		arg-1	54
+		arg-2	80
+	Affected
+		arg-1	230
+		arg-2	80
+vec00329
+	Impactor
+		arg-0	2
+	Affected
+		arg-1	2
+	State_initial
+	State_final
+		arg-2	2
+vec00330
+	Protagonist
+		arg-0	114
+		arg-1	1
+	Phenomenon
+		arg-1	149
+	Audience_Addressee
+		arg-2	14
+vec00331
+	Phenomenon
+		arg-0	4
+		arg-1	64
+		arg-2	2
+	Attribute
+		arg-1	33
+vec00332
+	Communicator
+		arg-0	67
+	Impactee
+		arg-1	44
+	Phenomenon
+		arg-1	56
+		arg-2	30
+vec00334
+	Attitudal
+		arg-0	97
+		arg-1	4
+	Entity_1
+		arg-1	103
+	Entity_2
+		arg-2	7
+vec00337
+	Agent
+		arg-0	76
+		arg-2	30
+	Item
+		arg-1	116
+	Value_initial
+	Value_final
+	Difference
+vec00338
+	Protagonist
+		arg-0	25
+		arg-1	13
+	Goal
+		arg-1	16
+vec00340
+	Victim
+		arg-0	83
+	Harm
+		arg-1	75
+vec00341
+	Cognizer
+		arg-0	356
+		arg-1	4
+		arg-2	3
+	Phenomenon
+		arg-1	396
+		arg-2	22
+		arg-3	3
+vec00342
+	Protagonist
+		arg-0	82
+	Focused
+		arg-1	129
+	Goal
+vec00344
+	Agent
+		arg-0	172
+	Impactee
+		arg-1	53
+		arg-2	28
+	Situation_undesirable
+		arg-1	114
+		arg-2	61
+vec00345
+	Cognizer
+		arg-0	339
+		arg-1	3
+	Information
+		arg-1	367
+vec00347
+	Accuser
+		arg-0	275
+	Accused
+		arg-1	221
+		arg-2	5
+	Cause
+		arg-1	174
+		arg-2	204
+vec00348
+	Asset_controller
+		arg-0	293
+	Asset
+		arg-1	270
+vec00351
+	Creator
+		arg-0	209
+		arg-1	1
+		arg-2	1
+	Outcome
+		arg-0	1
+		arg-1	303
+vec00352
+	Winner
+		arg-0	59
+	Loser
+	Competition
+		arg-1	44
+		arg-2	1
+vec00355
+	Action
+		arg-0	278
+		arg-1	6
+	Acquired
+		arg-1	654
+	Recipient
+		arg-2	4
+		arg-3	1
+vec00356
+	Changing
+		arg-0	10
+		arg-2	69
+	Entity_1
+		arg-1	121
+	Entity_2
+		arg-2	8
+vec00358
+	Broadcaster
+		arg-0	20
+		arg-1	6
+	Broadcasted
+		arg-1	36
+vec00359
+	Cause
+		arg-0	101
+	Effect
+		arg-2	115
+vec00360
+	Creator
+		arg-0	197
+		arg-1	3
+	Created
+		arg-1	285
+	Component
+		arg-2	3
+vec00361
+	Agent
+		arg-0	34
+	Impactee
+		arg-1	31
+		arg-2	5
+	Goal
+		arg-1	16
+		arg-2	30
+vec00364
+	Cognizer
+		arg-0	95
+	Phenomenon
+		arg-1	114
+vec00365
+	Cause
+		arg-0	95
+	Victim
+		arg-1	210
+vec00366
+	Whole
+		arg-0	114
+		arg-1	78
+		arg-2	150
+	Component
+		arg-0	18
+		arg-1	524
+		arg-2	123
+vec00367
+	Authority
+		arg-0	77
+		arg-1	1
+		arg-3	13
+	Impactee
+		arg-1	113
+		arg-2	13
+	Prohibited
+		arg-1	82
+		arg-2	108
+vec00369
+	Employer
+		arg-0	141
+	Employee
+		arg-1	171
+		arg-2	3
+	Function
+		arg-1	4
+		arg-2	7
+vec00370
+	Protagonist
+		arg-0	38
+	Entity
+		arg-0	1
+		arg-1	38
+vec00371
+	Cognizer
+		arg-0	16
+	Phenomenon
+		arg-1	28
+vec00372
+	Undesirable
+		arg-0	128
+		arg-1	3
+		arg-2	38
+	Affected
+		arg-1	223
+		arg-2	4
+vec00373
+	Protagonist
+		arg-0	186
+		arg-1	3
+	Function
+vec00374
+	Agent
+		arg-0	6
+		arg-1	1
+	Reached
+		arg-1	86
+vec00375
+	Representing
+		arg-0	155
+	Represented
+		arg-1	221
+vec00376
+	Agent
+		arg-0	58
+		arg-1	18
+	Finished
+		arg-1	136
+vec00379
+	Experiencer
+		arg-0	45
+		arg-1	10
+	Experience
+		arg-1	48
+		arg-2	10
+vec00380
+	Owner
+		arg-0	74
+	Undesirable
+		arg-1	145
+vec00381
+	Phenomenon
+		arg-1	178
+	Cognizer
+		arg-0	40
+		arg-1	6
+		arg-2	8
+vec00382
+	Communicator
+		arg-0	112
+	Information
+		arg-1	112
+	Audience_Addressee
+vec00383
+	Protagonist
+		arg-1	71
+vec00384
+	Speaker
+		arg-0	178
+		arg-1	2
+	Audience_Addressee
+		arg-0	1
+		arg-1	21
+		arg-2	39
+	Information
+		arg-1	212
+		arg-2	1
+vec00386
+	Cause
+		arg-0	177
+		arg-1	67
+		arg-2	17
+	Improved
+		arg-1	354
+		arg-4	70
+	State_initial
+		arg-2	1
+		arg-3	24
+	State_final
+		arg-2	5
+		arg-4	41
+vec00389
+	Destroyer
+		arg-0	84
+		arg-2	6
+	Destroyed
+		arg-1	178
+vec00390
+	Recovered
+		arg-0	3
+		arg-1	15
+	Situation_harmful
+vec00391
+	Cognizer
+		arg-0	144
+		arg-1	2
+	Phenomenon
+		arg-1	152
+		arg-2	13
+vec00392
+	Agent
+		arg-1	3
+	Influenced
+		arg-1	45
+vec00393
+	Loser
+		arg-0	167
+		arg-1	2
+	Lost
+		arg-1	198
+		arg-2	1
+vec00394
+	Protagonist
+		arg-0	1
+		arg-1	134
+	Place
+		arg-3	92
+vec00400
+	Protagonist
+		arg-0	11
+vec00402
+	Cognizer
+		arg-0	108
+		arg-1	1
+		arg-2	1
+	Phenomenon
+		arg-1	176
+	Judgment
+		arg-1	3
+		arg-2	156
+vec00403
+	Protagonist
+		arg-0	31
+		arg-1	78
+	Destination
+		arg-1	10
+vec00404
+	Cause
+	Affected
+		arg-1	5
+	State_final
+		arg-1	8
+vec00406
+	Provider
+		arg-1	1
+		arg-2	37
+	Provided
+		arg-0	1
+		arg-1	29
+	Recipient
+		arg-0	27
+vec00407
+	Agent
+		arg-0	9
+		arg-2	1
+	Item
+		arg-1	38
+		arg-2	3
+	Component
+		arg-0	26
+		arg-1	2
+vec00410
+	Helper
+		arg-0	61
+		arg-1	1
+		arg-2	13
+	Supported
+		arg-1	176
+vec00411
+	Agent
+		arg-0	28
+	Action
+		arg-1	34
+vec00412
+	Participant_1
+		arg-0	13
+	Participant_2
+		arg-1	14
+		arg-2	4
+vec00415
+	Competitor_1
+		arg-0	31
+		arg-1	3
+	Competitor_2
+	Competition
+		arg-1	37
+	Targeted
+vec00416
+	Situation_undesirable
+		arg-1	199
+	Affected
+		arg-0	170
+		arg-1	3
+vec00417
+	Communicator
+		arg-0	118
+	Described
+		arg-1	178
+		arg-2	1
+	Audience_Addressee
+	Judgment
+		arg-0	1
+		arg-1	1
+		arg-2	125
+vec00418
+	Boaster
+		arg-0	24
+	Undergoer
+		arg-2	1
+	Reason
+		arg-1	28
+vec00419
+	Missing
+		arg-0	41
+	Missed
+		arg-1	56
+		arg-2	1
+vec00423
+	Competitor
+		arg-0	11
+	Function
+		arg-1	8
+vec00425
+	Agent
+		arg-0	10
+	Entity_1
+		arg-1	18
+		arg-2	2
+	Entity_2
+		arg-2	2
+vec00426
+	Speaker
+		arg-0	34
+	Information
+		arg-1	37
+	Impactee
+		arg-1	1
+		arg-2	1
+vec00427
+	Mover
+		arg-0	2
+		arg-1	40
+	Area_1
+	Area_2
+vec00428
+	Attitudal
+		arg-0	12
+	Entity
+		arg-1	10
+vec00429
+	Agent
+		arg-0	24
+		arg-2	8
+	Old
+		arg-1	68
+	New
+		arg-1	2
+		arg-2	20
+		arg-3	6
+vec00430
+	Changing
+		arg-0	1
+		arg-1	75
+vec00431
+	Cognizer
+		arg-0	6
+		arg-2	16
+	Entity
+		arg-1	47
+vec00432
+	Attitudal
+		arg-0	19
+	Affected
+		arg-1	24
+vec00433
+	Agent
+		arg-0	1
+	Item
+		arg-1	12
+	Value_initial
+	Value_final
+	Difference
+vec00434
+	Protagonist
+		arg-0	25
+		arg-1	2
+	Place
+		arg-2	2
+vec00435
+	Speaker
+		arg-0	10
+		arg-1	1
+	Manner
+		arg-1	7
+vec00436
+	Changing
+		arg-0	25
+		arg-1	1
+	Changed
+		arg-1	76
+vec00439
+	Entity
+		arg-0	57
+		arg-1	63
+		arg-2	1
+	State_of_affairs
+		arg-1	59
+vec00440
+	Agent
+		arg-0	45
+	Item
+		arg-1	93
+	Place
+		arg-1	2
+vec00441
+	Assailant
+		arg-0	24
+		arg-2	2
+	Victim
+		arg-1	36
+vec00442
+	Born
+		arg-0	1
+		arg-1	16
+	Origin
+		arg-0	5
+vec00443
+	Collector
+		arg-0	43
+		arg-1	1
+	Collected
+		arg-1	85
+vec00444
+	Subsequent
+		arg-0	2
+		arg-1	3
+	Time
+		arg-1	2
+vec00445
+	Perceiver
+		arg-0	21
+	Phenomenon
+		arg-1	22
+vec00449
+	Protagonist
+		arg-0	17
+	Phenomenon
+		arg-1	30
+	Recipient
+		arg-2	1
+vec00450
+	Communicator
+		arg-0	73
+	Issue
+		arg-1	102
+	Audience_Addressee
+		arg-2	11
+vec00451
+	Orderer
+		arg-0	11
+	Ordered
+		arg-1	13
+	Source
+vec00453
+	Entity
+		arg-0	6
+	Value
+		arg-1	20
+	Property
+		arg-2	1
+vec00456
+	Agent
+		arg-0	4
+	Targeted
+		arg-1	20
+vec00457
+	Communicator
+	Decision
+	Authority
+vec00458
+	Speaker
+		arg-0	33
+		arg-1	2
+	Repeated
+		arg-1	45
+	Source
+	Audience_Addressee
+vec00459
+	Event
+vec00460
+	Ignorer
+		arg-0	52
+	Ignored
+		arg-1	79
+vec00461
+	Opposing
+		arg-0	91
+		arg-1	1
+	Opposed
+		arg-1	110
+vec00462
+	Repairing
+		arg-0	9
+	Item
+		arg-1	37
+vec00463
+	Weakened
+		arg-0	1
+		arg-1	86
+	State_initial
+	State_final
+		arg-3	1
+vec00464
+	Defender
+		arg-0	14
+	Defended
+		arg-1	38
+vec00465
+	Agent
+		arg-0	69
+		arg-2	2
+	Opened
+		arg-1	92
+vec00466
+	Event
+		arg-0	38
+	Affected
+		arg-1	48
+vec00467
+	Falling
+		arg-1	33
+	Area_1
+	Area_2
+vec00468
+	Raiser
+		arg-0	21
+	Bred
+		arg-1	44
+vec00469
+	Entity
+		arg-1	61
+	Affected
+vec00470
+	Experiencer
+		arg-0	52
+		arg-1	1
+	Attitude
+		arg-1	61
+vec00472
+	Assessor
+		arg-0	10
+	Valued
+		arg-1	24
+	Difference
+		arg-2	3
+vec00475
+	Helper
+		arg-0	442
+		arg-1	3
+	Party_benefited
+		arg-1	277
+		arg-2	59
+	Goal
+		arg-0	1
+		arg-1	361
+vec00476
+	Absorber
+		arg-0	25
+	Absorbed
+		arg-1	38
+vec00477
+	Agent
+		arg-0	9
+	Affected
+		arg-2	15
+	Undesirable
+		arg-0	1
+		arg-1	6
+		arg-2	1
+vec00478
+	Authority
+		arg-0	4
+	Offender
+		arg-2	23
+	Offense
+		arg-3	7
+	Money
+		arg-1	30
+vec00480
+	Comparator
+		arg-0	27
+	Compared_1
+		arg-1	53
+	Compared_2
+		arg-1	1
+		arg-2	55
+vec00483
+	Category
+		arg-0	36
+	Attribute
+		arg-1	51
+vec00484
+	Authority
+		arg-0	21
+	Perpetrator
+		arg-1	64
+	Cause
+		arg-2	29
+vec00485
+	Authority
+		arg-0	20
+	Undergoer
+		arg-1	30
+	Goal
+vec00486
+	Authority
+		arg-0	120
+	Action
+		arg-0	5
+		arg-1	228
+vec00487
+	Agent
+		arg-0	12
+	Impactee
+		arg-1	20
+	Place
+vec00488
+	Speaker
+		arg-0	44
+	Entity
+		arg-1	45
+	Name
+		arg-1	74
+		arg-2	14
+vec00490
+	Owner
+		arg-0	8
+	Property
+		arg-1	19
+	Recipient
+		arg-2	7
+vec00491
+	Survivor
+		arg-0	46
+		arg-1	45
+	Situation_harmful
+		arg-1	42
+		arg-2	10
+vec00493
+	Cognizer
+		arg-0	17
+	Phenomenon
+		arg-1	25
+vec00496
+	Protagonist
+		arg-0	18
+		arg-1	12
+	Source
+		arg-2	1
+		arg-3	2
+	State_final
+		arg-1	2
+		arg-2	25
+vec00497
+	Owner
+		arg-0	21
+	Acquired
+		arg-1	30
+	Recipient
+		arg-1	4
+		arg-2	19
+vec00499
+	Provider
+		arg-0	1
+		arg-1	3
+	Provided
+		arg-1	1
+		arg-2	2
+	Recipient
+vec00500
+	Agent
+		arg-0	14
+	Action
+		arg-1	20
+vec00502
+	Agent
+		arg-0	153
+		arg-1	1
+	Planned
+		arg-1	195
+vec00503
+	Protagonist
+		arg-0	268
+		arg-1	2
+	Admitted
+		arg-1	251
+		arg-2	28
+	Audience_Addressee
+		arg-2	2
+vec00505
+	Borrower
+		arg-0	30
+	Borrowed
+		arg-1	24
+	Lender
+		arg-2	12
+		arg-3	1
+vec00507
+	Agent
+		arg-0	67
+	Phenomenon
+		arg-1	103
+		arg-2	1
+		arg-3	2
+	Place
+		arg-1	1
+		arg-2	27
+vec00509
+	Authority
+		arg-0	196
+		arg-2	1
+	Issue
+		arg-1	220
+	Outcome
+		arg-1	1
+		arg-3	2
+vec00510
+	Changing
+		arg-0	10
+		arg-1	65
+vec00511
+	Authority
+		arg-0	68
+	Commitment
+		arg-1	113
+	Claimant
+		arg-2	11
+vec00514
+	Hiding
+		arg-0	11
+		arg-2	3
+	Hidden
+		arg-0	2
+		arg-1	42
+	Onlooker
+		arg-2	4
+vec00515
+	Helper
+		arg-0	27
+	Party_benefited
+		arg-1	2
+		arg-2	49
+vec00516
+	Protagonist
+		arg-0	62
+		arg-1	73
+	Goal
+		arg-1	71
+		arg-2	71
+vec00518
+	Protagonist
+		arg-0	9
+vec00519
+	Connector
+		arg-0	41
+	Entity_1
+		arg-1	144
+		arg-2	4
+	Entity_2
+		arg-1	96
+		arg-2	82
+vec00520
+	Relying
+		arg-0	90
+	Relied
+		arg-1	120
+		arg-2	10
+vec00521
+	Stabilizing
+		arg-0	5
+	Affected
+		arg-1	27
+vec00522
+	Stabilizing
+		arg-0	7
+		arg-1	51
+		arg-4	1
+vec00524
+	State_initial
+		arg-1	565
+		arg-2	6
+	State_final
+		arg-2	626
+vec00526
+	Protagonist
+		arg-0	1
+	Item
+		arg-1	15
+	Manner
+		arg-2	9
+vec00527
+	Cognizer
+		arg-0	49
+	Field
+		arg-1	62
+vec00528
+	Creator
+		arg-0	12
+	Created
+		arg-1	24
+vec00530
+	Action
+		arg-0	55
+		arg-1	3
+		arg-2	1
+	Protagonist
+	Time
+		arg-1	59
+vec00531
+	Authority
+		arg-0	37
+	Impactee
+		arg-1	13
+		arg-2	19
+	Knowledge
+		arg-1	40
+		arg-2	11
+vec00532
+	Payer
+		arg-1	2
+		arg-2	22
+		arg-3	1
+	Payment
+		arg-0	1
+		arg-1	84
+		arg-3	1
+	Payee
+		arg-0	70
+		arg-1	1
+	Recompensated
+		arg-1	3
+		arg-3	25
+vec00533
+	Agent
+		arg-0	61
+	Deed
+		arg-1	6
+		arg-2	34
+		arg-3	1
+	Focused
+		arg-1	80
+vec00535
+	Communicator
+		arg-0	28
+	Audience_Addressee
+		arg-1	23
+	Issue
+		arg-1	15
+		arg-2	21
+vec00536
+	Stimulus
+		arg-0	34
+		arg-2	2
+	Attitudal
+		arg-1	60
+vec00539
+	Stabilizing
+		arg-0	73
+		arg-2	33
+	Affected
+		arg-1	160
+vec00540
+	Protagonist
+		arg-0	5
+		arg-1	2
+		arg-2	5
+	Claimant
+		arg-0	1
+		arg-1	26
+vec00541
+	Authority
+		arg-0	11
+	Perpetrator
+		arg-1	40
+	Offense
+		arg-2	23
+vec00544
+	Authority
+		arg-0	13
+	Accused
+		arg-1	32
+vec00545
+	Authority
+		arg-0	6
+	Phenomenon
+		arg-1	17
+vec00546
+	Authority
+		arg-0	6
+	Norm
+		arg-1	30
+vec00547
+	Situation_undesirable
+		arg-0	9
+		arg-1	11
+	Affected
+		arg-0	9
+		arg-1	16
+vec00548
+	Protagonist
+		arg-1	9
+	Value
+		arg-3	17
+vec00549
+	Leader
+		arg-0	99
+	Group
+		arg-1	38
+vec00551
+	Entity
+		arg-1	13
+	Place
+		arg-2	2
+vec00552
+	Agent
+		arg-0	11
+	Entity
+		arg-1	38
+		arg-2	4
+	Undesirable
+		arg-1	3
+		arg-2	3
+vec00555
+	Agent
+		arg-0	80
+	Undesirable
+		arg-1	184
+		arg-2	1
+	Place
+		arg-1	3
+		arg-2	14
+vec00556
+	Authority
+		arg-0	47
+	Resource
+		arg-1	66
+		arg-2	1
+	Targeted
+		arg-2	15
+vec00557
+	Speaker
+		arg-0	20
+	Information
+		arg-1	37
+	Audience_Addressee
+		arg-2	24
+vec00558
+	Communicator
+		arg-0	28
+	Excluded
+		arg-1	47
+vec00560
+	Authority
+		arg-0	32
+	Omitted
+		arg-1	53
+vec00561
+	Speaker
+		arg-0	14
+	Information
+		arg-1	7
+	Focused
+		arg-1	5
+		arg-2	2
+vec00562
+	Creator
+		arg-0	22
+		arg-2	2
+	Created
+		arg-1	35
+vec00564
+	Cause
+		arg-0	11
+	Affected
+		arg-1	10
+		arg-2	13
+	Influence
+		arg-1	16
+		arg-2	13
+vec00565
+	New
+		arg-0	114
+		arg-2	21
+	Old
+		arg-1	173
+		arg-2	1
+vec00566
+	Transporter
+		arg-0	24
+	Transported
+		arg-1	29
+		arg-3	1
+	Area_1
+	Area_2
+vec00569
+	Authority
+		arg-0	34
+	Property
+		arg-1	89
+	Owner
+		arg-1	1
+		arg-2	22
+vec00570
+	Impactor
+		arg-0	3
+	Place
+		arg-1	2
+vec00571
+	Agent
+		arg-0	82
+	Impactee
+		arg-2	71
+	Assignment
+		arg-1	118
+vec00574
+	Cognizer
+		arg-0	80
+		arg-1	15
+	Focused
+		arg-1	74
+vec00575
+	Protagonist
+	Abandoned
+	Place
+vec00576
+	Entity
+		arg-0	11
+		arg-1	2
+		arg-2	8
+	Affected
+		arg-1	34
+		arg-2	4
+vec00577
+	Agent
+		arg-0	11
+		arg-2	1
+	Container
+		arg-0	1
+		arg-1	12
+		arg-2	1
+	Contained
+		arg-0	2
+		arg-2	7
+vec00579
+	Protagonist
+		arg-0	5
+		arg-1	14
+	Place
+		arg-1	1
+		arg-4	3
+vec00580
+	Item_profiled
+		arg-0	16
+	Item_standard
+		arg-1	17
+vec00581
+	Speaker
+		arg-0	38
+	Information
+		arg-1	3
+		arg-2	3
+	Audience_Addressee
+		arg-1	45
+vec00583
+	Value_final
+		arg-1	4
+	Whole
+		arg-1	1
+		arg-3	3
+vec00584
+	Recipient
+		arg-0	8
+	Received
+		arg-1	8
+	Owner_initial
+vec00586
+	Recipient
+		arg-0	440
+		arg-1	25
+	Acquired
+		arg-1	697
+		arg-2	2
+		arg-4	1
+vec00587
+	Stimulus
+		arg-0	9
+	Attitudal
+		arg-1	20
+		arg-2	1
+vec00588
+	Agent
+		arg-0	92
+	Item
+		arg-1	192
+	Value_initial
+		arg-2	1
+		arg-3	19
+		arg-4	1
+	Value_final
+		arg-2	10
+		arg-4	33
+	Difference
+		arg-2	39
+vec00589
+	Stimulus
+		arg-0	13
+		arg-1	1
+	Attitudal
+		arg-1	19
+		arg-2	2
+vec00590
+	Property
+	Owner
+	New
+vec00591
+	Abuser
+	Abused
+vec00592
+	Source
+		arg-0	1
+		arg-1	3
+	Manner
+vec00595
+	Authority
+		arg-0	13
+	Protagonist
+		arg-1	35
+		arg-2	12
+	Undesirable
+		arg-1	11
+		arg-2	25
+vec00597
+	Destroyed
+		arg-1	39
+vec00599
+	Effort
+		arg-1	15
+vec00600
+	Participant_1
+		arg-0	64
+	Participant_2
+vec00601
+	Protagonist
+		arg-1	4
+	Activity
+		arg-2	6
+vec00602
+	Agent
+	Communicated
+	Recipient
+vec00603
+	Packer
+		arg-0	11
+	Packed
+		arg-1	17
+		arg-2	4
+	Container
+vec00604
+	Assailant
+		arg-0	5
+	Target
+		arg-1	8
+vec00606
+	Protagonist
+		arg-0	5
+	Activity
+		arg-1	1
+vec00607
+	Ignorer
+		arg-0	1
+		arg-1	5
+	Ignored
+		arg-1	1
+		arg-2	5
+vec00608
+	Stimulus
+		arg-0	27
+	Experiencer
+		arg-1	32
+vec00609
+	Stimulus
+		arg-0	7
+	Experiencer
+		arg-1	9
+vec00610
+	Protagonist
+		arg-0	30
+		arg-1	28
+		arg-2	1
+	Goal
+		arg-1	26
+		arg-2	1
+vec00611
+	Performer
+		arg-0	41
+		arg-1	7
+	Role
+		arg-1	49
+vec00613
+	Agent
+		arg-0	35
+	Targeted
+		arg-1	53
+vec00614
+	Creator
+		arg-0	3
+	Created
+		arg-1	5
+vec00615
+	Recipient
+		arg-0	3
+	Item
+		arg-1	3
+vec00616
+	Protagonist
+		arg-0	3
+	Activity
+		arg-1	4
+vec00618
+	Protagonist
+		arg-0	10
+		arg-1	4
+	Activity
+		arg-1	7
+		arg-2	11
+vec00619
+	Pursuer
+		arg-0	10
+	Targeted
+		arg-1	16
+vec00620
+	Agent
+		arg-0	12
+	Affected
+		arg-1	17
+	Undesirable
+		arg-2	11
+vec00621
+	Speaker
+		arg-0	2
+	Information
+		arg-1	5
+	Audience_Addressee
+vec00622
+	Protagonist
+		arg-0	7
+vec00623
+	Agent
+		arg-0	20
+		arg-1	5
+	Entity_1
+		arg-1	62
+		arg-2	2
+	Entity_2
+		arg-1	7
+		arg-2	29
+		arg-3	1
+vec00624
+	Provider
+		arg-0	6
+	Ingestor
+		arg-1	2
+		arg-2	14
+vec00625
+	Victim
+		arg-0	3
+	Cause
+vec00626
+	Mover
+		arg-0	7
+		arg-1	33
+vec00628
+	Healer
+		arg-3	3
+	Undesirable
+		arg-1	5
+		arg-2	16
+vec00629
+	Protagonist
+		arg-0	1
+	Place
+vec00631
+	Attitudal
+		arg-0	7
+	Instrument
+		arg-1	6
+	Party_benefited
+		arg-2	7
+vec00633
+	Speaker
+		arg-0	3
+	Undesirable
+		arg-1	2
+vec00634
+	Protagonist
+		arg-0	11
+	Phenomenon
+		arg-1	23
+vec00635
+	Infector
+		arg-2	2
+	Infected
+		arg-1	5
+		arg-2	1
+	Infection
+		arg-2	2
+vec00636
+	Infected
+		arg-1	6
+	Infection
+		arg-2	6
+	Source
+vec00637
+	Mover
+		arg-0	9
+		arg-1	8
+	Place
+vec00638
+	Creator
+		arg-0	5
+	Created
+		arg-1	9
+vec00639
+	Impactor
+		arg-0	21
+		arg-1	11
+		arg-2	23
+	Impactee
+		arg-1	50
+vec00640
+	Creator
+		arg-0	37
+	Created
+		arg-1	54
+vec00641
+	Attitudal
+		arg-0	10
+	Affected
+		arg-1	9
+vec00642
+	Protagonist
+	Superfluous
+vec00643
+	Surrounding
+		arg-0	3
+		arg-1	16
+	Surrounded
+		arg-2	30
+vec00645
+	Changing
+		arg-0	1
+vec00646
+	Authority
+		arg-0	62
+		arg-1	1
+	Occupied
+		arg-1	94
+vec00648
+	Agent
+		arg-0	14
+	Component
+		arg-1	31
+	Whole
+		arg-2	11
+vec00649
+	Agent
+		arg-0	4
+		arg-1	1
+	Removed
+		arg-1	13
+	Value_initial
+vec00650
+	Compared_1
+		arg-0	2
+		arg-1	1
+	Compared_2
+		arg-1	2
+		arg-2	2
+vec00651
+	Cause
+	Entity
+vec00652
+	Agent
+		arg-0	1
+	Disconnected
+		arg-1	5
+	Source
+		arg-2	1
+vec00653
+	Entity
+		arg-1	41
+	State_initial
+		arg-3	12
+vec00656
+	Cause
+		arg-0	145
+	Paralyzed
+		arg-1	198
+vec00657
+	Perpetrator
+	Asset
+	Victim
+		arg-1	5
+vec00658
+	Agent
+		arg-0	3
+	Offender
+		arg-0	2
+		arg-2	2
+	Offense
+		arg-1	4
+	Audience_Addressee
+		arg-1	2
+vec00659
+	Agent
+		arg-0	9
+	Reciprocated
+		arg-1	9
+vec00660
+	Fertilizer
+		arg-0	2
+	Fertilized
+		arg-1	6
+vec00663
+	Celebrating
+		arg-0	16
+	Celebrated
+		arg-1	23
+		arg-2	1
+vec00664
+	Helper
+		arg-0	2
+	Undesirable
+		arg-2	3
+	Party_benefited
+		arg-1	6
+		arg-2	1
+vec00665
+	Mover
+		arg-0	13
+	Area_1
+	Area_2
+vec00667
+	Stimulus
+		arg-0	2
+	Affected
+		arg-1	3
+vec00668
+	Protagonist
+		arg-0	7
+		arg-1	1
+	Authority
+		arg-1	10
+		arg-2	3
+vec00669
+	Agent
+		arg-0	1
+	Subordinate
+		arg-1	2
+	Superior
+		arg-2	2
+vec00671
+	Manipulator
+		arg-0	2
+	Victim
+		arg-1	1
+		arg-2	1
+vec00674
+	Attitudal
+		arg-0	9
+	Affected
+		arg-1	11
+vec00675
+	Authority
+		arg-0	39
+	Evaluee
+		arg-1	73
+		arg-2	3
+vec00676
+	Speaker
+		arg-0	5
+	Topic
+	Information
+		arg-1	4
+vec00677
+	Collector
+		arg-0	28
+	Collected
+		arg-1	54
+vec00678
+	Defender
+		arg-0	1
+	Defended
+		arg-1	1
+vec00679
+	Experiencer
+		arg-0	3
+vec00681
+	Changing
+		arg-0	1
+		arg-1	10
+vec00683
+	Authority
+		arg-0	3
+	Property
+		arg-1	6
+vec00684
+	Inspector
+		arg-0	12
+	Area
+		arg-1	11
+vec00685
+	Mover
+		arg-0	1
+		arg-1	11
+	Path
+vec00686
+	Party_benefited
+		arg-0	3
+	Action
+		arg-1	3
+vec00687
+	Pursuer
+		arg-0	14
+	Targeted
+		arg-1	14
+vec00688
+	Protagonist
+		arg-0	4
+	New
+		arg-1	7
+vec00689
+	Winner
+		arg-0	1
+		arg-1	2
+	Field
+vec00690
+	Speaker
+		arg-0	52
+	Information
+		arg-1	72
+		arg-3	4
+	Audience_Addressee
+		arg-2	1
+vec00692
+	Antecedent
+		arg-0	4
+		arg-1	2
+	Subsequent
+		arg-1	7
+		arg-2	3
+vec00693
+	Protagonist
+	Phenomenon
+		arg-1	4
+	Audience_Addressee
+vec00694
+	Distributor
+		arg-0	15
+		arg-1	1
+	Distributed
+		arg-1	38
+	Recipient
+		arg-2	14
+vec00695
+	Contributor
+		arg-0	145
+		arg-1	1
+	Contribution
+		arg-1	30
+		arg-2	2
+		arg-3	1
+	Recipient
+		arg-1	3
+		arg-2	128
+vec00696
+	Adjusting
+		arg-0	103
+		arg-1	9
+	Norm
+		arg-1	263
+		arg-2	17
+		arg-3	3
+		arg-4	5
+vec00698
+	Agent
+		arg-0	10
+		arg-1	3
+	Action
+		arg-1	8
+		arg-2	6
+vec00701
+	Stimulus
+		arg-0	14
+	Attitudal
+		arg-1	18
+vec00703
+	Emerging
+		arg-1	17
+vec00704
+	Agent
+		arg-0	47
+	Asset
+		arg-1	95
+	Owner
+		arg-1	2
+		arg-2	21
+vec00705
+	Protagonist
+		arg-1	8
+	Place
+vec00707
+	Abuser
+		arg-0	1
+	Abused
+		arg-0	1
+		arg-1	2
+vec00708
+	Collector
+		arg-0	21
+	Collected
+		arg-1	32
+	Source
+		arg-1	1
+		arg-2	2
+vec00709
+	Communicator
+		arg-0	21
+		arg-2	2
+	Information
+		arg-1	17
+		arg-2	1
+	Conclusion
+		arg-1	1
+		arg-2	2
+vec00710
+	Participant
+		arg-0	4
+		arg-1	4
+	Place
+vec00712
+	Gatherer
+		arg-0	3
+	Harvest
+		arg-0	1
+		arg-1	7
+vec00713
+	Protagonist
+		arg-0	11
+	Opportunity
+		arg-1	12
+vec00714
+	Hiding
+		arg-1	3
+	Place
+vec00717
+	Reason
+		arg-2	3
+	Attitudal
+		arg-0	6
+vec00718
+	Attitudal
+		arg-0	8
+	Party_benefited
+vec00719
+	Experiencer
+		arg-0	24
+		arg-1	3
+	Undesirable
+		arg-1	90
+		arg-2	1
+vec00720
+	Authority
+		arg-0	13
+		arg-3	2
+	Accused
+		arg-1	48
+		arg-2	1
+		arg-3	1
+	Reason
+		arg-2	23
+vec00721
+	Victim
+		arg-0	1
+		arg-1	11
+	Situation_harmful
+		arg-0	6
+		arg-1	1
+vec00722
+	Mover
+		arg-1	2
+	Place
+vec00723
+	Connector
+		arg-0	9
+	Entity_1
+		arg-1	28
+	Entity_2
+		arg-1	2
+		arg-2	11
+		arg-3	1
+	Whole
+		arg-2	5
+		arg-3	1
+vec00724
+	Cognizer
+		arg-0	3
+	Outcome
+		arg-1	3
+		arg-2	1
+vec00725
+	Destroyer
+	Destroyed
+		arg-1	3
+vec00727
+	Activist
+		arg-0	2
+		arg-1	3
+	Goal
+		arg-2	1
+vec00728
+	Affector
+		arg-0	21
+	Entity
+		arg-1	31
+vec00729
+	Shooter
+		arg-0	3
+	Projectile
+		arg-1	2
+vec00730
+	Phenomenon
+		arg-0	1
+		arg-1	36
+vec00732
+	Agent
+		arg-0	2
+	Acquired
+		arg-1	7
+		arg-2	1
+vec00733
+	Phenomenon
+		arg-1	9
+vec00734
+	Protagonist
+		arg-1	2
+vec00735
+	Mover
+		arg-0	156
+		arg-1	1
+	Moved
+		arg-1	255
+		arg-2	3
+	Place
+		arg-2	2
+vec00736
+	Protagonist
+		arg-0	4
+	Attitudal
+		arg-1	8
+vec00739
+	Capitulator
+		arg-0	27
+		arg-1	1
+	Force
+		arg-1	39
+		arg-2	1
+vec00740
+	Victim
+		arg-1	124
+	Cause
+		arg-0	34
+		arg-2	77
+vec00741
+	Entity
+		arg-1	421
+	Finished
+	Value_final
+		arg-1	1
+		arg-2	22
+		arg-4	38
+		arg-m-EXT	392
+		arg-m-MNR	281
+vec00742
+	Experiencer
+		arg-0	51
+	Stimulus
+		arg-1	65
+		arg-2	1
+vec00743
+	Agent
+		arg-0	135
+		arg-1	1
+	Undesirable
+		arg-1	147
+		arg-2	56
+	Recipient
+		arg-1	7
+		arg-2	39
+vec00744
+	Protagonist
+		arg-0	6
+		arg-1	28
+	State_initial
+		arg-1	5
+vec00745
+	Borrower
+		arg-0	93
+	Borrowed
+		arg-1	178
+		arg-2	2
+	Lender
+		arg-1	1
+		arg-2	17
+vec00747
+	Mover
+		arg-0	5
+	Place
+		arg-1	1
+vec00748
+	Emotion
+		arg-0	4
+		arg-1	5
+	Place
+vec00749
+	Protagonist
+vec00750
+	Communicator
+		arg-0	12
+	Information
+		arg-1	7
+		arg-2	4
+	Audience_Addressee
+vec00751
+	Mover
+		arg-0	9
+	Place
+		arg-1	12
+vec00752
+	Supplier
+		arg-0	76
+	Recipient
+		arg-0	1
+		arg-1	14
+		arg-2	73
+	Supplies
+		arg-1	91
+		arg-2	17
+vec00753
+	Manipulator
+		arg-0	4
+	Victim
+		arg-1	2
+		arg-2	1
+vec00755
+	Disappeared
+		arg-1	34
+vec00756
+	Phenomenon
+		arg-0	6
+	Norm
+		arg-1	11
+vec00757
+	Resource
+		arg-1	20
+	Party_benefited
+vec00759
+	Mover
+		arg-0	1
+	Place
+vec00760
+	Evaluee
+		arg-1	8
+	Attitudal
+		arg-0	7
+vec00761
+	Stimulus
+		arg-0	20
+		arg-2	5
+	Victim
+		arg-1	33
+vec00762
+	Agent
+		arg-0	3
+	Projectile
+		arg-1	4
+	Target
+vec00763
+	Authority
+		arg-0	2
+		arg-2	2
+	Impactee
+		arg-1	1
+		arg-2	12
+	Skill
+		arg-1	8
+		arg-2	1
+vec00764
+	Removing
+		arg-0	1
+	Removed
+		arg-1	2
+	Source
+vec00765
+	Communicator
+		arg-0	2
+	Communicated
+		arg-1	4
+	Audience_Addressee
+vec00766
+	Winner
+	Loser
+		arg-2	1
+vec00769
+	Hiding
+		arg-0	2
+		arg-2	3
+	Hidden
+		arg-1	5
+vec00770
+	Communicator
+		arg-0	8
+	Hidden
+		arg-1	13
+	Audience_Addressee
+vec00771
+	Authority
+		arg-0	85
+	Planned
+		arg-1	113
+		arg-2	4
+	Phenomenon
+vec00772
+	Agent
+		arg-0	85
+		arg-1	1
+	Component
+		arg-1	161
+	Whole
+vec00773
+	Influencing
+		arg-0	7
+	Attitudal
+		arg-1	9
+vec00774
+	Authority
+		arg-0	35
+		arg-1	13
+	Undesirable
+		arg-1	33
+vec00775
+	Influencing
+		arg-0	17
+		arg-1	1
+	Influenced
+		arg-1	5
+		arg-2	36
+vec00778
+	Agent
+		arg-0	94
+	Payment
+		arg-1	74
+	System
+		arg-2	5
+vec00780
+	Authority
+		arg-0	1
+	Asset
+		arg-2	2
+		arg-3	4
+vec00782
+	Attribute
+		arg-2	4
+	Wearer
+		arg-1	2
+vec00783
+	Agent
+		arg-0	2
+	Action
+		arg-1	4
+vec00784
+	Communicator
+		arg-0	26
+	Communicated
+		arg-1	28
+vec00785
+	Cause
+		arg-0	78
+	Affected
+		arg-1	99
+		arg-2	1
+vec00786
+	Entity
+		arg-0	1
+		arg-1	168
+	State_initial
+		arg-3	5
+	State_final
+		arg-2	55
+		arg-4	70
+vec00788
+	Agent
+		arg-0	4
+	Entity
+		arg-1	24
+	State_initial
+	State_final
+vec00789
+	Destroyer
+		arg-0	11
+		arg-2	3
+	Destroyed
+		arg-1	16
+vec00790
+	Spoiled
+		arg-1	3
+vec00791
+	Manipulator
+		arg-0	16
+	Affected
+		arg-1	27
+vec00793
+	Weakened
+		arg-0	1
+		arg-1	727
+		arg-2	4
+vec00794
+	Speaker
+		arg-0	18
+	Information
+		arg-1	11
+	Audience_Addressee
+vec00796
+	Representing
+		arg-2	3
+	Represented
+		arg-1	5
+vec00800
+	Ingestor
+		arg-0	2
+	Ingestibles
+		arg-1	6
+vec00801
+	Agent
+		arg-0	6
+		arg-1	2
+	Issue
+		arg-1	14
+		arg-2	2
+vec00804
+	Authority
+	Centralized
+		arg-1	2
+vec00806
+	Agent
+	Entity
+		arg-1	9
+vec00807
+	Authority
+		arg-0	4
+	Protagonist
+		arg-1	5
+	State_initial
+		arg-3	1
+	State_final
+		arg-2	2
+vec00808
+	Abuser
+		arg-0	3
+	Abused
+		arg-1	2
+vec00810
+	Resource
+		arg-1	10
+vec00811
+	Escapee
+		arg-0	31
+	Area_1
+vec00812
+	Stimulus
+		arg-0	164
+		arg-1	1
+	Affected
+		arg-1	232
+	State_final
+		arg-1	19
+		arg-2	22
+		arg-3	37
+vec00813
+	Authority
+		arg-0	3
+	Impactee
+		arg-1	7
+	Place
+vec00815
+	Cause
+		arg-0	26
+	Entity
+		arg-1	60
+vec00816
+	Removing
+		arg-0	3
+	Removed
+		arg-1	9
+	Source
+vec00817
+	Protagonist
+		arg-0	7
+	Entity
+		arg-1	6
+vec00818
+	Influencing
+		arg-0	2
+	Influenced
+		arg-1	9
+vec00819
+	Transporter
+		arg-0	24
+	Transported
+		arg-1	29
+	Recipient
+		arg-2	1
+vec00820
+	Watcher
+		arg-0	6
+	Guarded
+		arg-1	6
+vec00821
+	Evaluee
+		arg-1	16
+	Fitted
+		arg-1	13
+vec00822
+	Host
+		arg-0	5
+	Guest
+		arg-1	7
+vec00823
+	Performer
+	Music
+vec00824
+	Agent
+		arg-0	2
+	Instrument
+		arg-1	4
+vec00825
+	Party_benefited
+vec00827
+	Authority
+		arg-0	182
+	Impactee
+		arg-1	14
+	Information
+		arg-1	179
+		arg-2	12
+		arg-3	1
+vec00828
+	Ingestor
+		arg-0	22
+		arg-1	1
+	Ingestibles
+		arg-1	21
+vec00829
+	Compared_1
+		arg-0	1
+		arg-1	51
+	Compared_2
+		arg-1	8
+		arg-2	11
+		arg-3	1
+vec00830
+	Ingestor
+		arg-0	5
+	Ingestibles
+		arg-1	1
+vec00831
+	Mover
+		arg-0	1
+		arg-1	1
+vec00832
+	Communicator
+		arg-0	2
+	Information_untrue
+		arg-1	3
+	Audience_Addressee
+vec00833
+	Protagonist
+		arg-0	18
+		arg-1	3
+		arg-2	2
+	Place
+		arg-1	11
+		arg-2	1
+vec00834
+	Agent
+	Entity
+		arg-1	7
+vec00835
+	Agent
+		arg-0	2
+	Instrument
+		arg-1	3
+	Target
+vec00836
+	Proliferating
+		arg-0	4
+		arg-1	21
+vec00837
+	Stimulus
+	Effect
+vec00838
+	Attitudal
+		arg-0	4
+	Party_benefited
+		arg-2	1
+vec00839
+	Mistaken
+		arg-0	5
+vec00840
+	Washer
+		arg-0	4
+	Washed
+		arg-1	10
+vec00841
+	Protagonist
+		arg-0	5
+		arg-2	4
+	Contained
+		arg-0	1
+		arg-1	7
+		arg-2	1
+	Container
+		arg-1	4
+vec00844
+	Opposing
+		arg-0	92
+		arg-1	2
+	Objection
+		arg-1	1
+	Issue
+		arg-1	24
+	Audience_Addressee
+		arg-2	1
+vec00845
+	Emerging
+		arg-1	10
+vec00846
+	Communicator
+	Audience_Addressee
+		arg-1	1
+	Information
+		arg-2	1
+vec00847
+	Collector
+		arg-0	1
+	Collected
+		arg-1	3
+		arg-2	3
+	Source
+vec00848
+	Agent
+		arg-0	1
+	Affected
+		arg-1	1
+	Area_1
+vec00849
+	Entity
+		arg-0	7
+	Norm
+		arg-1	1
+vec00850
+	Mover
+		arg-0	8
+	Moved
+		arg-1	10
+	Place
+vec00852
+	Opposing
+		arg-0	3
+	Opposed
+		arg-1	6
+vec00854
+	Manipulator
+		arg-0	9
+	Focused
+		arg-1	6
+	Undesirable
+		arg-2	8
+	Desirable
+vec00855
+	Deducer
+		arg-0	12
+		arg-1	2
+	Deduced
+		arg-1	18
+		arg-2	2
+	Origin
+		arg-2	8
+vec00857
+	Entity
+		arg-0	2
+		arg-2	1
+	Attribute
+		arg-1	3
+vec00858
+	Authority
+	Document
+		arg-1	1
+vec00859
+	Authority
+		arg-0	28
+		arg-1	2
+	Focused
+		arg-0	1
+		arg-1	93
+		arg-2	12
+	Goal
+		arg-1	19
+		arg-2	98
+vec00860
+	Manipulator
+		arg-0	1
+	Victim
+		arg-1	3
+vec00861
+	Starting
+		arg-0	1
+		arg-1	41
+vec00862
+	Opportunity
+		arg-1	5
+		arg-2	7
+	Party_benefited
+		arg-1	12
+	NoSr
+		arg-0	7
+		arg-2	1
+vec00863
+	Participant_1
+		arg-1	5
+	Participant_2
+		arg-2	3
+vec00864
+	Protagonist
+		arg-1	9
+vec00865
+	Entity
+		arg-1	919
+		arg-2	2
+	Category
+		arg-0	6
+		arg-1	3
+		arg-2	427
+vec00866
+	Ingestor
+		arg-0	9
+	Ingestibles
+		arg-1	8
+vec00867
+	Experiencer
+		arg-0	12
+		arg-1	1
+	Stimulus
+		arg-1	7
+vec00869
+	Observer
+		arg-0	68
+	Targeted
+		arg-1	76
+		arg-2	1
+vec00870
+	Capitulator
+	Force
+vec00872
+	Covering
+		arg-0	2
+		arg-2	4
+	Covered
+		arg-1	13
+vec00873
+	Entity
+		arg-1	3
+vec00875
+	Changing
+vec00876
+	Cognizer
+		arg-0	9
+	Person
+		arg-1	11
+vec00877
+	Protagonist
+		arg-0	9
+	Desirable
+		arg-1	8
+vec00879
+	Sorter
+		arg-0	1
+	Sorted
+		arg-1	6
+vec00880
+	Protagonist
+		arg-0	1
+		arg-1	9
+	State
+vec00881
+	Mover
+		arg-0	5
+		arg-1	2
+	Path
+vec00882
+	Mover
+		arg-0	36
+	Path
+		arg-1	13
+vec00883
+	Phenomenon
+	Feature
+vec00884
+	Authority
+		arg-0	5
+	Goal
+		arg-1	1
+		arg-2	1
+	Hindrance
+		arg-1	2
+vec00885
+	Destroyer
+		arg-0	4
+	Destroyed
+		arg-1	7
+vec00886
+	Wasting
+		arg-0	16
+	Wasted
+		arg-1	23
+vec00888
+	Innovator
+	Goal
+vec00889
+	Determinant
+		arg-0	2
+	Determined
+		arg-1	3
+	Goal
+		arg-2	2
+vec00890
+	Boaster
+		arg-0	3
+	Audience_Addressee
+		arg-1	3
+vec00891
+	Namer
+		arg-0	2
+	Name_final
+		arg-2	8
+	Named
+		arg-1	9
+	Name_initial
+vec00892
+	Entity_1
+		arg-0	6
+		arg-1	3
+	Entity_2
+		arg-1	4
+vec00893
+	Protagonist
+		arg-0	1
+		arg-1	1
+	Emotion
+		arg-1	1
+		arg-2	1
+vec00894
+	Mover
+		arg-0	63
+		arg-1	1
+	Moved
+		arg-1	164
+	Area_1
+	Area_2
+		arg-2	1
+		arg-3	1
+vec00895
+	Redirecting
+		arg-0	1
+	Redirected
+		arg-1	2
+	Goal
+vec00896
+	Cause
+		arg-0	2
+	Changed
+		arg-1	4
+	State_initial
+	State_final
+vec00898
+	Helper
+	Party_benefited
+vec00899
+	Agent
+		arg-0	5
+	Item
+		arg-1	6
+		arg-2	1
+	Place
+vec00900
+	Creator
+		arg-0	2
+	Created
+		arg-1	5
+	Component
+vec00901
+	Landing
+		arg-0	1
+		arg-1	8
+	Place
+		arg-1	1
+vec00902
+	Adjusting
+		arg-0	7
+		arg-1	2
+	Adjusted
+		arg-1	30
+	Norm
+		arg-2	1
+		arg-4	25
+vec00903
+	Destroyer
+		arg-0	38
+	Destroyed
+		arg-1	79
+	Component
+		arg-2	2
+		arg-3	1
+vec00904
+	Stimulus
+		arg-0	1
+		arg-1	2
+	Attitudal
+		arg-0	5
+		arg-1	2
+vec00905
+	Participant_1
+		arg-1	1
+	Participant_2
+vec00909
+	Cognizer
+		arg-0	86
+	Phenomenon
+		arg-1	141
+		arg-3	1
+vec00910
+	Stimulus
+		arg-0	3
+	Undesirable
+		arg-1	10
+vec00911
+	Distributed
+		arg-1	1
+vec00912
+	Distributor
+		arg-0	9
+	Distributed
+		arg-1	14
+	Recipient
+vec00914
+	Affector
+		arg-0	2
+	Item
+		arg-1	1
+vec00915
+	Cause
+		arg-0	4
+	Affected
+		arg-1	9
+vec00916
+	Authority
+		arg-0	10
+	Phenomenon
+		arg-1	29
+	Rank
+		arg-2	22
+vec00917
+	Item
+		arg-1	40
+	Area_1
+	Area_2
+vec00918
+	Agent
+		arg-0	6
+	Impactee
+		arg-1	10
+vec00919
+	Agent
+	Component
+		arg-1	2
+vec00921
+	Agent
+		arg-0	9
+		arg-2	1
+	Goods
+		arg-1	15
+	Place
+vec00922
+	Mover
+		arg-0	4
+vec00923
+	Cause
+		arg-0	2
+	Removed
+		arg-1	7
+vec00924
+	Mover
+		arg-0	1
+	Moved
+		arg-1	2
+	Area
+vec00926
+	Phenomenon
+		arg-1	4
+	Judgment
+vec00929
+	Compared_1
+		arg-1	3
+	Compared_2
+		arg-2	3
+vec00930
+	Assailant
+	Victim
+vec00931
+	Mover
+		arg-0	11
+		arg-1	28
+	Goal
+vec00932
+	Manipulator
+		arg-0	6
+	Manipulated
+		arg-1	10
+	Place
+vec00934
+	Protagonist
+		arg-0	2
+vec00935
+	Protagonist
+	Issue
+		arg-1	1
+vec00937
+	Experiencer
+		arg-0	3
+		arg-1	8
+vec00940
+	Cause
+		arg-0	3
+	Resource
+		arg-1	3
+vec00941
+	Owner
+		arg-1	8
+	Asset
+		arg-3	6
+	Recipient
+vec00942
+	Protagonist
+		arg-0	98
+		arg-1	5
+	Abandoned
+		arg-1	141
+		arg-2	1
+vec00943
+	Affector
+		arg-0	12
+	Manipulated
+		arg-1	17
+vec00944
+	Creator
+		arg-0	4
+	Created
+		arg-2	4
+	Resource
+		arg-1	13
+vec00946
+	Creator
+		arg-0	34
+	Created
+		arg-1	68
+vec00947
+	Authority
+		arg-0	1
+	Asset
+		arg-1	2
+vec00948
+	Hidden
+	Undesirable
+		arg-2	1
+vec00949
+	Mover
+		arg-1	10
+vec00950
+	Ingestor
+		arg-0	1
+	Ingestibles
+vec00951
+	Dominating
+		arg-0	1
+vec00952
+	Mover
+		arg-0	1
+		arg-1	21
+	Place
+vec00956
+	Winner
+		arg-0	57
+	Acquired
+		arg-1	74
+	Competitor
+		arg-1	1
+		arg-2	1
+		arg-3	6
+vec00957
+	Absorber
+		arg-0	18
+	Resource
+		arg-1	33
+vec00958
+	Authority
+		arg-0	2
+	Offender
+		arg-1	1
+vec00959
+	Attitudal
+		arg-0	1
+vec00960
+	Evaluee
+		arg-1	1
+	Experiencer
+		arg-2	3
+vec00961
+	Stimulus
+		arg-0	1
+	Attitudal
+		arg-1	1
+vec00962
+	Protagonist
+		arg-0	9
+	Removed
+		arg-1	26
+		arg-2	1
+	Place
+		arg-1	1
+		arg-2	12
+vec00964
+	Superior
+	Subordinate
+	Skill
+vec00966
+	Creator
+	Information
+		arg-1	3
+vec00970
+	Experiencer
+		arg-0	6
+	Undesirable
+		arg-1	5
+vec00972
+	Agent
+		arg-0	2
+	Improved
+		arg-1	3
+vec00973
+	Cause
+	Removed
+		arg-1	2
+	Place
+		arg-2	2
+vec00975
+	Entity
+		arg-1	50
+	Time
+		arg-2	38
+vec00976
+	Cause
+	Improved
+vec00977
+	Culminating
+		arg-1	11
+vec00978
+	Emerging
+		arg-1	32
+vec00979
+	Protagonist
+vec00981
+	Withholder
+		arg-0	9
+	Withheld
+		arg-1	17
+vec00984
+	Protagonist
+		arg-2	3
+	Area
+		arg-1	4
+vec00986
+	Igniter
+		arg-0	2
+	Ignited
+		arg-1	1
+vec00988
+	Deserving
+		arg-0	20
+	Deserved
+		arg-1	23
+	Source
+vec00989
+	Representing
+		arg-0	2
+	Attribute
+		arg-1	3
+vec00990
+	Entity
+		arg-0	1
+	Attribute
+		arg-1	2
+vec00991
+	Mover
+		arg-0	1
+	Moved
+		arg-1	1
+vec00992
+	Victim
+		arg-1	11
+	Assailant
+		arg-0	6
+vec00993
+	Item
+		arg-1	10
+vec00994
+	Speaker
+		arg-0	215
+	Information
+		arg-1	245
+	Audience_Addressee
+		arg-2	1
+vec00995
+	Cause
+		arg-2	1
+	Victim
+		arg-1	2
+vec00996
+	Stimulus
+		arg-0	4
+	Attitudal
+		arg-1	10
+vec00997
+	Stabilizing
+		arg-0	1
+		arg-1	32
+	Value
+		arg-1	2
+	Value_initial
+		arg-3	1
+	Value_final
+		arg-4	8
+vec01000
+	Authority
+		arg-0	1
+	Party_benefited
+		arg-1	3
+vec01001
+	Item_standard
+		arg-0	50
+		arg-1	11
+	Item_profiled
+		arg-1	138
+		arg-2	14
+vec01002
+	Competitor
+		arg-0	18
+	Competition
+		arg-1	55
+vec01003
+	Perceiver
+		arg-0	9
+	Perceived
+		arg-1	10
+	Manner
+		arg-2	7
+vec01004
+	Ingestor
+		arg-0	27
+	Ingestibles
+		arg-1	35
+vec01005
+	Cause
+	Weakened
+vec01008
+	Authority
+		arg-0	2
+	Information
+		arg-1	1
+vec01009
+	Speaker
+		arg-0	110
+	Communicated
+		arg-1	224
+		arg-2	2
+vec01010
+	Cognizer
+vec01011
+	Cause
+		arg-0	2
+	Affected
+		arg-1	3
+vec01012
+	Authority
+		arg-0	4
+	Affected
+		arg-1	6
+vec01013
+	Authority
+		arg-0	72
+	Ordered
+		arg-1	34
+		arg-2	94
+	Impactee
+		arg-1	77
+		arg-2	1
+vec01015
+	Cause
+		arg-0	87
+	Affected
+		arg-1	129
+	State_final
+		arg-1	18
+		arg-2	30
+		arg-3	46
+vec01017
+	Pursuer
+		arg-1	4
+	Goal
+		arg-2	7
+vec01018
+	Ripening
+		arg-1	4
+vec01019
+	Protagonist
+		arg-0	6
+vec01020
+	Authority
+	Area
+		arg-1	1
+vec01021
+	Agent
+		arg-1	5
+		arg-2	1
+	Affected
+		arg-0	6
+vec01022
+	Entity
+		arg-0	6
+	Place
+		arg-1	7
+vec01023
+	Attitudal
+		arg-0	2
+	Party_benefited
+		arg-1	3
+	Achievement
+		arg-2	1
+vec01024
+	Authority
+	Affected
+		arg-1	4
+vec01025
+	Mover
+		arg-0	24
+	Path
+		arg-1	7
+vec01026
+	Ingestibles
+		arg-1	2
+	Manner
+		arg-2	2
+vec01027
+	Agent
+		arg-0	1
+	Item
+		arg-1	3
+	Place
+vec01028
+	Advertising
+		arg-0	5
+	Advertised
+vec01029
+	Communicator
+		arg-0	114
+	Entity
+		arg-1	252
+		arg-2	13
+	Audience_Addressee
+vec01030
+	Authority
+	Value
+		arg-2	4
+	Evaluee
+		arg-1	7
+vec01031
+	Creator
+		arg-0	1
+	Issue
+		arg-1	1
+vec01032
+	Mover
+		arg-0	1
+	Moved
+		arg-1	1
+	Area_1
+	Area_2
+vec01034
+	Oviparous
+		arg-0	2
+	Created
+		arg-1	7
+vec01035
+	Agent
+		arg-0	4
+	Obstacle
+		arg-1	7
+vec01036
+	Comparator
+		arg-0	3
+	Compared_1
+		arg-1	3
+	Compared_2
+		arg-2	5
+vec01037
+	Governing
+		arg-0	6
+	Governed
+		arg-1	9
+vec01038
+	Assailant
+		arg-0	4
+	Victim
+		arg-1	3
+vec01039
+	Protagonist
+	Targeted
+vec01040
+	Protagonist
+		arg-0	1
+	Desirable
+		arg-1	2
+vec01041
+	Protagonist
+		arg-0	1
+vec01042
+	Authority
+	Affected
+vec01043
+	Reason
+	Attitudal
+		arg-0	2
+vec01044
+	Thinker
+		arg-0	8
+vec01046
+	Creator
+		arg-0	1
+	Created
+		arg-1	3
+		arg-2	1
+vec01047
+	Proposer
+		arg-0	5
+	Proposed
+		arg-1	9
+	Function
+vec01048
+	Perceiver
+		arg-0	2
+	Phenomenon
+		arg-1	2
+vec01049
+	Assailant
+		arg-0	3
+	Victim
+		arg-1	3
+vec01050
+	Agent
+		arg-0	3
+	Worn
+		arg-1	4
+	Wearer
+vec01051
+	Wearer
+		arg-0	3
+	Manner
+vec01052
+	Protagonist
+		arg-0	1
+	Recipient
+		arg-0	4
+		arg-1	4
+	Acquired
+vec01054
+	Agent
+		arg-0	9
+	Undesirable
+		arg-1	9
+vec01055
+	Agent
+		arg-0	4
+	Place
+		arg-1	1
+vec01056
+	Speaker
+		arg-0	3
+	Communicated
+		arg-1	4
+vec01058
+	Evaluator
+		arg-0	2
+	Guilty
+		arg-1	2
+	Offense
+		arg-2	7
+vec01059
+	Affected
+	Undesirable
+vec01060
+	Speaker
+		arg-0	12511
+		arg-1	38
+	Information
+		arg-0	4
+		arg-1	10906
+		arg-2	55
+		arg-3	29
+	Audience_Addressee
+		arg-1	6
+		arg-2	332
+vec01061
+	Protagonist
+		arg-0	8
+		arg-1	4
+	Action
+		arg-1	7
+		arg-2	4
+vec01063
+	Attitudal
+		arg-0	1
+	Despised
+		arg-1	1
+vec01064
+	Changing
+		arg-1	3
+vec01065
+	Cognizer
+		arg-0	8
+	Knowledge
+		arg-1	10
+vec01067
+	Ingestor
+		arg-0	2
+	Place
+		arg-1	1
+vec01068
+	Assailant
+		arg-0	3
+	Affected
+		arg-1	6
+vec01069
+	Mover
+		arg-0	2
+vec01070
+	Stimulus
+		arg-0	2
+	Experiencer
+		arg-1	1
+vec01071
+	Loser
+		arg-0	1
+	Winner
+		arg-1	1
+vec01072
+	Payer
+		arg-0	8
+	Payee
+		arg-1	12
+vec01073
+	Missing
+	Missed
+		arg-1	6
+vec01074
+	Absorber
+		arg-0	5
+	Absorbed
+		arg-1	2
+vec01076
+	Authority
+	Protagonist
+	Function
+vec01080
+	Action
+		arg-1	5
+	Affected
+		arg-2	6
+vec01081
+	Thinker
+		arg-0	2
+	Issue
+		arg-1	5
+vec01082
+	Owner
+		arg-2	3
+	Property
+		arg-1	8
+	Recipient
+		arg-0	6
+vec01084
+	Agent
+		arg-0	4
+	Desirable
+		arg-1	4
+	Party_benefited
+		arg-1	1
+		arg-2	3
+vec01085
+	Mover
+		arg-0	3
+	Area
+vec01086
+	Mover
+	Area_1
+	Area_2
+vec01087
+	Giver
+		arg-0	93
+	Given
+		arg-1	146
+		arg-2	2
+	Recipient
+		arg-1	7
+		arg-2	128
+vec01089
+	Winner
+	Loser
+vec01093
+	Evaluator
+		arg-0	76
+	Valued
+		arg-1	53
+vec01094
+	Sender
+		arg-0	14
+	Sent
+		arg-1	45
+	Area_1
+	Area_2
+vec01096
+	Desirable
+		arg-1	2
+vec01098
+	Recycling
+		arg-0	1
+	Old
+		arg-1	11
+	New
+vec01099
+	Compared_1
+		arg-1	4
+	Compared_2
+		arg-2	2
+vec01102
+	Distinguishing
+		arg-0	2
+	Compared_1
+		arg-1	18
+	Compared_2
+		arg-2	9
+vec01103
+	Disappeared
+		arg-1	3
+vec01104
+	Participant_1
+		arg-0	2
+	Participant_2
+		arg-1	2
+vec01105
+	Recipient
+		arg-0	1
+	Acquired
+		arg-1	2
+	Source
+vec01106
+	Transporter
+		arg-0	2
+	Transported
+		arg-1	3
+	Area_1
+	Area_2
+vec01107
+	Force
+		arg-0	4
+	Item
+		arg-1	3
+	Area_1
+	Area_2
+vec01108
+	Protagonist
+	Value
+		arg-1	1
+vec01109
+	Protagonist
+		arg-0	13
+	State_of_affairs
+		arg-1	15
+vec01110
+	Protagonist
+		arg-0	2
+vec01111
+	Sower
+		arg-0	5
+	Sowed
+		arg-1	5
+	Place
+vec01113
+	Mover
+		arg-0	3
+vec01114
+	Speaker
+		arg-0	11
+	Cry
+		arg-1	12
+vec01115
+	Protagonist
+		arg-1	7
+	State
+		arg-2	5
+vec01117
+	Adjusting
+		arg-0	8
+		arg-2	3
+	Adjusted
+		arg-1	15
+vec01118
+	Creator
+		arg-0	10
+	Created
+		arg-1	78
+	Basis
+		arg-2	200
+vec01119
+	Authority
+		arg-0	5
+	Offender
+		arg-1	14
+vec01121
+	Representing
+		arg-1	2
+	Represented
+		arg-2	2
+vec01122
+	Attracting
+	Attractee
+vec01123
+	Creator
+		arg-0	1
+		arg-2	2
+	Area
+		arg-1	3
+vec01124
+	Force
+		arg-0	7
+	Affected
+		arg-1	8
+	State
+vec01126
+	Focusing
+	Focused
+vec01127
+	Cause
+		arg-2	6
+	Experiencer
+		arg-1	2
+vec01128
+	Protagonist
+		arg-0	11
+	Perpetrator
+	Undesirable
+		arg-1	16
+vec01130
+	Affected
+		arg-0	4
+	State
+		arg-1	8
+vec01131
+	Mover
+		arg-0	3
+	Place
+vec01132
+	Changing
+		arg-0	1
+		arg-1	135
+		arg-2	2
+	State_initial
+		arg-2	1
+		arg-3	4
+	State_final
+		arg-1	2
+		arg-2	35
+vec01133
+	Experiencer
+		arg-1	6
+	Cause
+		arg-0	4
+vec01136
+	Protagonist
+		arg-0	3
+	Deed
+		arg-1	4
+vec01137
+	Protagonist
+		arg-0	2
+	Undesirable
+		arg-1	2
+vec01138
+	Perpetrator
+		arg-0	2
+	Victim
+		arg-1	3
+	Area_1
+	Area_2
+vec01140
+	Agent
+		arg-0	13
+	Vacated
+		arg-1	6
+vec01141
+	Protagonist
+		arg-0	2
+	Asset
+		arg-1	4
+	Goal
+		arg-2	2
+vec01142
+	Cognizer
+	Evaluee
+vec01143
+	Transmitter
+		arg-0	10
+	Transmitted
+		arg-1	18
+vec01145
+	Host
+		arg-0	19
+	Guest
+		arg-1	33
+vec01146
+	Transporter
+		arg-0	5
+	Transported
+		arg-1	10
+vec01147
+	Mover
+		arg-0	1
+		arg-1	2
+vec01148
+	Participant_1
+		arg-0	5
+	Participant_2
+		arg-2	1
+		arg-3	1
+	Outcome
+		arg-1	1
+		arg-2	2
+	Prize
+		arg-1	1
+		arg-2	2
+		arg-3	1
+vec01149
+	Authority
+		arg-0	1
+	Held
+		arg-1	5
+	Recipient
+vec01150
+	Pretending
+		arg-0	2
+		arg-1	3
+	Pretended
+		arg-1	5
+		arg-2	3
+vec01151
+	Seller
+		arg-0	8
+	Goods
+		arg-1	19
+vec01153
+	Protagonist
+		arg-0	3
+	Ejected
+		arg-1	4
+vec01155
+	Speaker
+	Information
+	Audience_Addressee
+vec01156
+	Removing
+	Container
+		arg-1	3
+vec01159
+	Payer
+		arg-0	2
+	Payee
+		arg-1	7
+		arg-2	2
+vec01160
+	Protagonist
+		arg-0	1
+	Container
+		arg-1	4
+vec01161
+	Removing
+		arg-0	1
+	Removed
+		arg-1	1
+	Place
+		arg-2	1
+vec01162
+	Agent
+	Experiencer
+		arg-1	1
+	State_initial
+vec01163
+	Speaker
+		arg-0	2
+	Information
+		arg-1	7
+	Audience_Addressee
+vec01164
+	Recipient
+		arg-0	4
+	Item
+		arg-1	11
+	Place
+vec01166
+	Experiencer
+	Phenomenon
+vec01167
+	Creator
+		arg-0	2
+	Component
+		arg-1	7
+	Whole
+vec01168
+	Connector
+	Entity_1
+	Entity_2
+vec01169
+	Detecting
+		arg-0	389
+		arg-1	4
+		arg-2	164
+	Phenomenon
+		arg-1	778
+		arg-2	7
+vec01170
+	Confuser
+		arg-1	2
+	Entity_1
+		arg-2	4
+	Entity_2
+		arg-2	3
+vec01171
+	Filled
+		arg-0	1
+	Filling
+vec01173
+	Protagonist
+		arg-0	1
+		arg-1	1
+vec01176
+	Remainder
+		arg-1	15
+		arg-3	2
+	Protagonist
+		arg-0	6
+		arg-1	1
+		arg-2	1
+		arg-3	9
+vec01178
+	Agent
+		arg-0	3
+	Property
+		arg-1	4
+vec01180
+	Perpetrator
+		arg-0	5
+	Victim
+		arg-1	6
+vec01181
+	Item
+		arg-1	1
+	State_initial
+	State_final
+vec01182
+	Cause
+		arg-0	5
+	Affected
+		arg-1	5
+vec01183
+	Cause
+		arg-0	4
+		arg-2	1
+	Experiencer
+		arg-1	10
+vec01184
+	Generalizing
+	Generalized
+		arg-1	1
+vec01185
+	Authority
+	Action
+		arg-1	11
+	Protagonist
+		arg-0	11
+vec01187
+	Perpetrator
+		arg-0	2
+	Asset
+		arg-3	3
+	Victim
+		arg-1	10
+vec01188
+	Agent
+		arg-0	186
+	Goal
+		arg-1	357
+vec01189
+	Creator
+		arg-0	6
+	Source
+		arg-2	1
+	Created
+		arg-1	23
+vec01190
+	Changing
+	Value_initial
+	Value_final
+vec01191
+	Compared_1
+		arg-0	1
+	Compared_2
+	Phenomenon
+vec01192
+	Protagonist
+		arg-0	3
+	Affected
+		arg-0	1
+		arg-1	9
+vec01193
+	Loser
+		arg-0	5
+	Value
+		arg-1	1
+		arg-2	1
+	Cause
+vec01194
+	Mover
+		arg-0	10
+	Moved
+		arg-1	15
+vec01195
+	Source
+		arg-1	1
+vec01196
+	Force
+		arg-0	2
+		arg-1	1
+	Instrument
+		arg-1	4
+vec01197
+	Changing
+		arg-0	43
+		arg-1	1
+	Changed
+		arg-1	79
+	State_initial
+	State_final
+		arg-2	41
+vec01198
+	Changing
+		arg-1	1
+	Undesirable
+		arg-4	2
+vec01199
+	Perceiver
+	Perceived
+vec01200
+	Scrounger
+		arg-0	2
+	Desirable
+		arg-1	2
+vec01201
+	Item
+		arg-0	1
+		arg-1	23
+	State
+		arg-2	25
+vec01203
+	Event_expected
+vec01206
+	Orderer
+		arg-0	87
+	Affected
+		arg-1	175
+	Action
+		arg-1	169
+vec01207
+	Cognizer
+		arg-0	11
+	Undesirable
+		arg-1	3
+		arg-2	16
+vec01209
+	Experiencer
+	Stimulus
+vec01210
+	Stimulus
+		arg-0	3
+		arg-2	4
+	Experiencer
+		arg-1	8
+vec01212
+	Assailant
+		arg-0	2
+	Victim
+		arg-1	2
+vec01213
+	Protagonist
+		arg-0	6
+		arg-1	1
+	Attractee
+		arg-1	8
+		arg-2	1
+vec01214
+	Authority
+	Moved
+		arg-2	1
+	Situation_harmful
+vec01215
+	Ignited
+		arg-1	2
+vec01216
+	Agent
+		arg-0	2
+	Manipulated
+		arg-1	6
+vec01219
+	Mover
+		arg-1	1
+vec01220
+	Winner
+	Loser
+		arg-1	2
+vec01221
+	Authority
+		arg-0	15
+		arg-1	14
+	Chosen
+		arg-1	13
+		arg-2	12
+	Purpose
+		arg-1	23
+		arg-2	22
+vec01222
+	Speaker
+vec01224
+	Cognizer
+	Focused
+vec01226
+	Agent
+		arg-0	7
+	Instrument
+		arg-1	9
+vec01227
+	Affector
+		arg-0	6
+	Targeted
+		arg-1	7
+vec01228
+	Thinker
+		arg-0	180
+	Phenomenon
+		arg-1	214
+vec01229
+	Protagonist
+	Entity
+vec01230
+	Protagonist
+	Possibilities
+vec01231
+	Agent
+		arg-0	267
+		arg-1	1
+	Action
+		arg-0	1
+		arg-1	306
+vec01232
+	Recovered
+		arg-1	24
+vec01234
+	Communicator
+		arg-0	365
+		arg-1	1
+	Communicated
+		arg-1	405
+	Audience_Addressee
+		arg-2	4
+vec01236
+	Agent
+	Moved
+	State_final
+vec01237
+	Changing
+		arg-1	1
+	State_final
+		arg-1	3
+vec01238
+	Buyer
+		arg-0	2
+	Goods
+		arg-1	2
+vec01240
+	Mover
+		arg-1	41
+	Place_initial
+		arg-3	12
+vec01241
+	Mover
+		arg-1	12
+	Place
+vec01242
+	Disappeared
+		arg-1	2
+	Area_1
+	Area_2
+vec01244
+	Authority
+	Armed
+		arg-1	3
+vec01245
+	Visitor
+		arg-0	9
+	Visited
+		arg-2	17
+vec01246
+	Creator
+		arg-0	5
+	Item
+		arg-1	15
+vec01247
+	Authority
+		arg-0	47
+	Affected
+		arg-1	129
+		arg-2	1
+	Entity_limited
+		arg-2	41
+vec01248
+	Protagonist
+	Undesirable
+		arg-2	1
+vec01249
+	Creator
+		arg-0	5
+	Document
+		arg-1	9
+vec01250
+	Agent
+		arg-0	3
+	Manipulated
+		arg-1	1
+vec01251
+	Mover
+		arg-0	1
+	Moved
+		arg-1	1
+vec01252
+	Protagonist
+		arg-1	3
+	Phenomenon
+		arg-3	2
+vec01254
+	Entity
+		arg-1	2
+vec01255
+	Protagonist
+	Recipient
+	Given
+vec01256
+	Agent
+		arg-0	303
+	Given
+		arg-1	425
+		arg-2	2
+	Recipient
+		arg-1	6
+		arg-2	355
+		arg-4	2
+vec01258
+	Authority
+	Event
+		arg-1	2
+	Condition
+		arg-2	2
+vec01261
+	Party_benefited
+		arg-1	31
+vec01263
+	Observer
+		arg-0	1
+vec01264
+	Cognizer
+		arg-0	97
+	Information
+		arg-1	117
+	Source
+		arg-2	15
+vec01265
+	Influencing
+		arg-0	1
+	Entity_1
+		arg-1	1
+	Entity_2
+		arg-2	1
+vec01266
+	Mover
+		arg-1	1
+	Area
+vec01268
+	Agent
+		arg-0	231
+		arg-1	1
+	Project
+		arg-1	120
+		arg-2	37
+		arg-3	1
+vec01271
+	Changing
+		arg-1	3
+	Value_initial
+	Value_final
+vec01272
+	Entity
+		arg-0	29
+		arg-1	133
+vec01273
+	Agent
+	Hindrance
+vec01276
+	Destroyer
+		arg-0	1
+	Destroyed
+		arg-1	1
+vec01278
+	Information
+	Topic
+vec01279
+	Protagonist
+		arg-0	1
+	Event
+vec01280
+	Adjusting
+	Adjusted
+vec01281
+	Wearer
+		arg-0	1
+	Worn
+		arg-1	1
+vec01284
+	Changing
+		arg-0	112
+	Changed
+		arg-1	226
+	Time_from
+		arg-3	1
+	Time_to
+		arg-2	5
+		arg-3	2
+		arg-4	5
+vec01285
+	Payer
+		arg-0	4
+	Payee
+		arg-1	3
+		arg-2	1
+vec01286
+	Destroyer
+		arg-0	2
+	Whole
+		arg-1	6
+vec01287
+	Mover
+	Obstacle
+vec01289
+	Agent
+	Wearer
+	Represented
+		arg-2	2
+vec01290
+	Claimant
+		arg-0	109
+	Required
+		arg-1	137
+vec01291
+	Entity
+vec01292
+	Proposer
+		arg-0	107
+		arg-1	1
+		arg-2	2
+	Proposed
+		arg-1	181
+vec01293
+	Protagonist
+vec01294
+	Agent
+		arg-0	2
+	Desirable
+		arg-1	2
+	Party_benefited
+vec01296
+	Participant_1
+		arg-0	5
+		arg-1	17
+	Participant_2
+		arg-1	4
+		arg-2	13
+vec01297
+	Speaker
+		arg-0	14
+	Audience_Addressee
+		arg-2	18
+		arg-3	1
+	Information
+		arg-1	17
+vec01299
+	Protagonist
+		arg-0	28
+	Affected
+		arg-1	57
+	Manner
+		arg-2	21
+		arg-3	1
+vec01300
+	Changing
+vec01301
+	Agent
+		arg-0	84
+		arg-1	1
+	Enforced
+		arg-1	176
+vec01303
+	Perpetrator
+	Asset
+		arg-1	1
+vec01304
+	Inspector
+		arg-0	172
+	Inspected
+		arg-1	324
+vec01305
+	Whole
+		arg-0	10
+		arg-1	42
+	Component
+		arg-2	19
+vec01307
+	Changing
+		arg-1	2
+vec01308
+	Arguer_1
+		arg-0	127
+	Arguer_2
+		arg-1	23
+		arg-2	8
+	Issue
+		arg-1	66
+		arg-2	7
+vec01309
+	Speaker
+		arg-0	1
+	Influenced
+		arg-1	5
+	Planned
+		arg-2	4
+vec01310
+	Experiencer
+		arg-0	2
+	Stimulus
+		arg-1	3
+vec01311
+	Adjusting
+		arg-1	3
+	Adjusted
+		arg-1	3
+vec01313
+	Attitudal
+		arg-0	46
+		arg-1	47
+	Opinion
+		arg-1	59
+vec01315
+	Protagonist
+		arg-1	15
+	State_final
+		arg-2	16
+vec01316
+	Source
+vec01318
+	Mover
+		arg-1	101
+	Place
+vec01319
+	Entity
+		arg-0	43
+	Targeted
+vec01320
+	Attitudal
+		arg-0	202
+		arg-1	18
+	Agreement
+		arg-0	1
+		arg-1	166
+		arg-2	7
+	Audience_Addressee
+		arg-1	27
+		arg-2	50
+vec01322
+	Collector
+		arg-0	16
+		arg-3	4
+	Money
+		arg-1	27
+vec01323
+	Consumer
+		arg-0	328
+		arg-1	1
+	Resource
+		arg-1	641
+		arg-2	1
+vec01325
+	Influencing
+		arg-0	1
+	Affected
+		arg-1	1
+	Rank
+vec01326
+	Speaker
+	Information
+	State_final
+vec01327
+	Agent
+		arg-0	1
+	Affected
+		arg-1	1
+vec01328
+	Protagonist
+		arg-0	19
+	Desirable
+		arg-1	22
+vec01330
+	Host
+		arg-0	310
+		arg-1	1
+	Event
+		arg-1	418
+vec01332
+	Event
+		arg-0	5
+		arg-1	6
+	Time
+vec01333
+	Cognizer
+		arg-0	30
+	Phenomenon
+		arg-1	3
+vec01335
+	Whole
+	Component
+vec01336
+	Entity
+		arg-0	1
+	Place
+		arg-1	1
+vec01337
+	Mover
+		arg-0	10
+		arg-1	2
+	Place
+vec01338
+	Perpetrator
+	Entity
+vec01340
+	Creator
+	Ingestibles
+		arg-1	1
+vec01341
+	Cognizer
+		arg-0	56
+	Information
+		arg-1	1
+	Communicator
+		arg-2	2
+vec01342
+	Agent
+		arg-0	51
+		arg-2	1
+	Entity
+		arg-1	64
+vec01344
+	Influenced
+		arg-3	2
+	Influence
+		arg-1	1
+vec01345
+	Creator
+		arg-0	13
+	Information
+		arg-1	24
+		arg-2	8
+	Place
+vec01347
+	Entity
+		arg-0	2
+		arg-1	2
+	Path
+vec01348
+	Device
+		arg-0	3
+		arg-1	1
+vec01349
+	Stimulus
+		arg-0	1
+	Cognizer
+vec01352
+	Cognizer
+	Topic
+vec01353
+	Speaker
+		arg-0	12453
+		arg-1	38
+	Information
+		arg-0	4
+		arg-1	10918
+		arg-2	3
+		arg-3	29
+	Audience_Addressee
+		arg-1	2
+		arg-2	332
+vec01354
+	Helper
+		arg-0	2
+	Party_benefited
+		arg-1	5
+	Situation_harmful
+vec01355
+	Comparator
+		arg-0	1
+	Compared_1
+		arg-1	9
+	Compared_2
+vec01356
+	Payer
+		arg-0	378
+		arg-1	4
+		arg-2	8
+	Money
+		arg-1	459
+		arg-2	29
+		arg-3	20
+	Payee
+		arg-0	1
+		arg-1	110
+		arg-2	145
+		arg-3	4
+vec01357
+	Mover
+		arg-0	1
+	Moved
+		arg-1	2
+	Area_1
+	Area_2
+vec01358
+	Mover
+		arg-0	36
+	Moved
+		arg-1	61
+	Container
+vec01359
+	Device
+	Created
+vec01361
+	Cognizer
+		arg-0	215
+		arg-1	19
+	Conclusion
+		arg-1	291
+		arg-4	3
+	Source
+vec01363
+	Agent
+		arg-0	6
+	Improved
+		arg-1	10
+vec01364
+	Entity
+		arg-0	26
+		arg-1	2
+	Attribute
+		arg-0	4
+		arg-1	77
+vec01367
+	Mover
+vec01368
+	Recovered
+		arg-1	1
+vec01369
+	Action
+		arg-0	26
+		arg-1	134
+		arg-2	1
+	State
+		arg-1	17
+		arg-2	141
+vec01370
+	Authority
+	Information
+	Document
+vec01371
+	Ingestor
+		arg-0	1
+	Ingestibles
+		arg-1	1
+vec01372
+	Seeker
+		arg-0	26
+	Target
+		arg-1	35
+		arg-2	1
+vec01375
+	Authority
+		arg-0	125
+		arg-1	3
+		arg-3	3
+	Mover
+		arg-0	1
+		arg-1	229
+vec01376
+	Supplier
+		arg-0	12
+		arg-1	1
+		arg-2	6
+	Recipient
+		arg-1	31
+		arg-2	1
+	Supplies
+		arg-2	9
+vec01377
+	Leader
+		arg-0	131
+	Moved
+		arg-0	1
+		arg-1	249
+		arg-2	1
+	Place
+		arg-2	8
+vec01378
+	Entity
+		arg-0	30
+		arg-1	105
+vec01380
+	Changing
+		arg-1	152
+		arg-2	1
+vec01381
+	Perpetrator
+		arg-0	11
+	Affected
+		arg-1	16
+vec01382
+	Entity
+vec01385
+	Stimulus
+		arg-0	40
+		arg-1	1
+	Affected
+		arg-0	6
+		arg-1	58
+vec01386
+	Authority
+		arg-0	268
+		arg-2	3
+	Withheld
+		arg-1	473
+		arg-2	5
+	Audience_Addressee
+		arg-1	12
+		arg-2	174
+		arg-3	29
+vec01387
+	Attitudal
+vec01388
+	Entity
+vec01390
+	Mover
+		arg-1	117
+	Place
+		arg-2	18
+vec01393
+	Protagonist
+		arg-0	319
+		arg-1	6
+	Achievement
+		arg-1	509
+vec01394
+	Participant_1
+		arg-0	26
+	Participant_2
+		arg-1	23
+	Destination
+vec01396
+	Protagonist
+		arg-0	187
+		arg-1	2
+	Manipulated
+		arg-1	205
+vec01398
+	Speaker
+		arg-0	1
+	Music
+		arg-1	3
+	Audience_Addressee
+vec01400
+	Creator
+		arg-0	1
+	Improved
+		arg-1	2
+vec01401
+	Protagonist
+vec01403
+	Mover
+		arg-0	1
+	Affected
+		arg-1	4
+vec01406
+	Filling
+	Filled
+vec01407
+	Authority
+		arg-0	239
+	Assignment
+		arg-1	342
+		arg-2	1
+	Affected
+		arg-1	4
+		arg-2	309
+vec01409
+	Agent
+		arg-0	2
+	Affected
+		arg-1	2
+vec01411
+	Removing
+	Removed
+	Place
+vec01413
+	Component
+	Whole
+vec01414
+	Agent
+		arg-0	298
+		arg-1	3
+		arg-3	1
+	Activity
+		arg-1	432
+vec01415
+	Armed
+vec01416
+	Affector
+		arg-0	54
+	Affected
+		arg-1	104
+	Improved
+vec01417
+	Affector
+	Affected
+vec01418
+	Adjusting
+	Adjusted
+		arg-1	1
+vec01419
+	Authority
+		arg-0	236
+		arg-1	1
+		arg-2	3
+	Goal
+		arg-1	381
+	Affected
+		arg-1	22
+		arg-2	77
+		arg-3	34
+vec01420
+	Affector
+		arg-0	2
+	Affected
+		arg-1	6
+		arg-2	1
+vec01422
+	Affector
+		arg-0	3
+		arg-2	64
+	Affected
+		arg-1	68
+vec01424
+	Affector
+	Affected
+vec01425
+	Agent
+		arg-0	149
+	Asset
+		arg-1	234
+	Owner
+		arg-0	108
+		arg-1	1
+		arg-2	19
+vec01427
+	Agent
+		arg-0	187
+		arg-1	64
+	Entity
+		arg-1	4
+		arg-2	1
+		arg-3	45
+		arg-4	1
+vec01428
+	Agent
+		arg-0	1
+	Focused
+		arg-1	1
+	Instrument
+vec01429
+	Agent
+	Changed
+vec01430
+	Protagonist
+		arg-0	19
+		arg-1	10
+	Desirable
+		arg-1	22
+		arg-2	8
+vec01431
+	Speaker
+	Information
+	Audience_Addressee
+vec01432
+	Speaker
+		arg-0	3
+		arg-1	1
+	Admitted
+		arg-1	5
+vec01433
+	Striving
+vec01436
+	Cognizer
+		arg-0	5
+		arg-1	2
+	Information
+		arg-1	6
+		arg-2	3
+vec01437
+	Authority
+		arg-0	1
+	Person
+		arg-1	5
+	Place_initial
+vec01439
+	Protagonist
+		arg-0	1
+	Situation_undesirable
+		arg-1	1
+vec01441
+	Changing
+	Changed
+		arg-1	1
+	Place
+		arg-2	1
+vec01443
+	Agent
+	Undesirable
+		arg-1	1
+vec01444
+	Creator
+		arg-0	1
+	Component
+		arg-1	1
+	Whole
+vec01446
+	Attitudal
+		arg-0	53
+	Affected
+		arg-1	72
+vec01449
+	Protagonist
+		arg-0	17
+		arg-1	6
+	Whole
+		arg-1	37
+		arg-2	2
+	Component
+		arg-1	2
+		arg-2	15
+vec01450
+	Affector
+		arg-0	13
+	Manipulated
+		arg-1	20
+vec01451
+	Removing
+		arg-0	1
+	Place
+		arg-1	1
+vec01455
+	Protagonist
+		arg-0	215
+		arg-1	4
+	Skill
+		arg-1	272
+vec01456
+	Removing
+		arg-0	9
+	Component
+		arg-1	17
+	Whole
+		arg-1	1
+		arg-2	4
+vec01458
+	Agent
+		arg-0	654
+		arg-1	40
+		arg-2	18
+		arg-3	1
+	Activity
+		arg-0	1
+		arg-1	776
+		arg-2	59
+		arg-3	1
+vec01460
+	Protagonist
+	Manner
+vec01462
+	Agent
+		arg-0	3
+	Manipulated
+		arg-1	1
+vec01463
+	Protagonist
+		arg-0	6
+		arg-1	13
+vec01464
+	Agent
+		arg-0	3
+	Goal
+		arg-1	3
+		arg-2	1
+vec01465
+	Escapee
+		arg-0	26
+		arg-1	1
+	Situation_undesirable
+		arg-1	17
+		arg-2	1
+vec01466
+	Protagonist
+		arg-0	29
+	Information
+		arg-1	35
+	Audience_Addressee
+		arg-2	3
+vec01467
+	Protagonist
+		arg-0	7
+	Audience_Addressee
+vec01468
+	Arguer_1
+		arg-0	144
+	Issue
+		arg-0	1
+		arg-1	210
+		arg-2	8
+	Arguer_2
+		arg-1	4
+		arg-2	2
+vec01469
+	Agent
+		arg-0	99
+	Affected
+		arg-1	165
+	State
+vec01470
+	Agent
+		arg-0	72
+	Item
+		arg-1	482
+	Place
+vec01471
+	Cause
+		arg-0	2
+	State
+	Affected
+		arg-1	3
+vec01474
+	Protagonist
+	Phenomenon
+		arg-1	1
+vec01475
+	Action
+		arg-0	7
+		arg-1	17
+		arg-2	1
+	Hindrance
+		arg-0	2
+		arg-1	15
+vec01476
+	Protagonist
+vec01477
+	Protagonist
+		arg-0	81
+		arg-1	4
+	Attribute
+		arg-1	115
+		arg-2	3
+vec01478
+	Obstacle
+	Entity
+vec01479
+	Connector
+		arg-0	1
+	Component
+		arg-1	4
+vec01480
+	Agent
+		arg-0	4
+		arg-1	1
+	Device
+		arg-1	12
+	Source
+		arg-1	14
+		arg-2	3
+vec01481
+	Changing
+		arg-0	24
+	Changed
+		arg-1	41
+	State_final
+		arg-2	41
+vec01482
+	Cause
+		arg-0	14
+	Affected
+		arg-1	23
+vec01483
+	Agent
+	Improved
+vec01485
+	Protagonist
+	Source
+vec01486
+	Agent
+vec01487
+	Source
+		arg-0	3
+		arg-1	1
+vec01488
+	Competitor_1
+		arg-0	5
+	Competitor_2
+		arg-1	8
+vec01489
+	Communicator
+		arg-0	6
+	Issue
+		arg-1	3
+vec01490
+	Creator
+		arg-0	753
+		arg-1	4
+	Created
+		arg-1	1211
+		arg-2	2
+	State_initial
+		arg-1	1
+		arg-2	18
+	State_final
+		arg-1	1
+vec01491
+	Recipient
+		arg-0	830
+		arg-1	11
+	Given
+		arg-1	1184
+		arg-2	2
+		arg-4	1
+	Giver
+		arg-1	5
+		arg-2	159
+		arg-3	8
+vec01493
+	Agent
+		arg-0	7
+	Place
+vec01495
+	Speaker
+		arg-0	643
+	Communicated
+		arg-1	669
+		arg-2	3
+	Party_benefited
+	Authority
+		arg-1	8
+		arg-2	3
+vec01496
+	Creator
+		arg-0	53
+	Created
+		arg-1	113
+vec01498
+	Changing
+		arg-0	12
+		arg-1	20
+vec01499
+	Affector
+		arg-0	11
+		arg-1	1
+		arg-2	5
+	Affected
+		arg-1	30
+		arg-2	1
+vec01500
+	Wearer
+	Worn
+vec01502
+	Destroyer
+	Destroyed
+vec01503
+	Defender
+		arg-0	77
+		arg-1	1
+		arg-3	18
+	Defended
+		arg-1	194
+		arg-2	2
+	Harm
+		arg-1	1
+		arg-2	43
+vec01504
+	Changing
+	Changed
+vec01505
+	Assailant
+		arg-0	7
+	Victim
+		arg-1	18
+vec01506
+	Stimulus
+		arg-0	29
+		arg-1	1
+		arg-2	1
+	Experiencer
+		arg-0	1
+		arg-1	47
+vec01507
+	Changing
+vec01508
+	Adjusting
+		arg-0	371
+		arg-1	3
+	Adjusted
+		arg-1	748
+		arg-2	3
+		arg-4	4
+	State_initial
+		arg-2	5
+		arg-3	45
+		arg-4	1
+	State_final
+		arg-2	46
+		arg-4	82
+vec01509
+	Adjusting
+		arg-0	10
+	Adjusted
+		arg-1	12
+vec01510
+	Cause
+		arg-0	187
+		arg-2	83
+	Weakened
+		arg-1	356
+vec01511
+	Speaker
+	Issue
+vec01512
+	Mover
+		arg-0	5
+		arg-1	1295
+		arg-2	4
+	Place_initial
+		arg-3	250
+		arg-4	5
+	Place_final
+		arg-2	7
+		arg-4	772
+		arg-m-LOC	1
+vec01514
+	Authority
+		arg-0	8
+	Absorber
+		arg-0	1
+		arg-1	7
+	Absorbed
+		arg-1	1
+vec01515
+	Observer
+		arg-0	68
+	Inspected
+		arg-1	103
+		arg-2	1
+vec01516
+	Speaker
+	Item
+	State_initial
+	State_final
+vec01517
+	Ignited
+	State_initial
+	State_final
+vec01518
+	Emerging
+		arg-0	39
+		arg-1	403
+vec01519
+	Creator
+		arg-0	215
+		arg-1	3
+	Resource
+		arg-2	2
+	Created
+		arg-1	296
+vec01520
+	Entity
+		arg-0	2
+		arg-1	52
+vec01521
+	Entity
+vec01522
+	Agent
+		arg-0	1
+	Entity_1
+		arg-1	1
+	Entity_2
+		arg-2	1
+vec01523
+	Fitted
+		arg-0	4
+		arg-1	29
+	Party_benefited
+		arg-1	48
+		arg-2	3
+vec01524
+	Phenomenon
+		arg-1	1
+vec01525
+	Washer
+		arg-0	7
+	Washed
+		arg-1	24
+		arg-2	2
+vec01526
+	Authority
+		arg-0	8
+	Chosen
+		arg-1	21
+vec01527
+	Seeker
+		arg-0	4
+	Place
+		arg-1	2
+vec01528
+	Speaker
+		arg-0	2
+	Phenomenon
+		arg-1	3
+vec01529
+	Speaker
+		arg-0	13220
+		arg-1	39
+	Information
+		arg-0	4
+		arg-1	11735
+		arg-2	3
+		arg-3	30
+	Audience_Addressee
+		arg-1	3
+		arg-2	355
+vec01531
+	Mover
+vec01532
+	Assailant
+		arg-0	19
+		arg-1	1
+		arg-2	22
+	Target
+		arg-1	47
+vec01533
+	Moved
+	Place
+vec01534
+	Attitudal
+		arg-0	110
+	Norm
+		arg-1	119
+vec01535
+	Lender
+		arg-0	295
+	Borrower
+		arg-1	20
+		arg-2	170
+	Money
+		arg-1	448
+		arg-2	2
+vec01536
+	Agent
+		arg-0	106
+		arg-1	2
+		arg-2	26
+	Component
+		arg-1	305
+	Whole
+		arg-2	11
+vec01537
+	Agent
+		arg-0	4
+	Opened
+		arg-1	6
+vec01538
+	Agent
+		arg-0	28
+	Contained
+		arg-1	94
+	Container
+		arg-2	5
+vec01539
+	Agent
+		arg-0	40
+		arg-1	1
+	Chosen
+		arg-1	128
+vec01540
+	Attitudal
+vec01542
+	Disappeared
+		arg-0	71
+		arg-1	26
+	Area
+		arg-1	78
+vec01543
+	Agent
+	Instrument
+	Targeted
+vec01545
+	Cognizer
+		arg-0	41
+	Stimulus
+		arg-1	57
+vec01546
+	Changing
+vec01547
+	Helper
+		arg-0	274
+		arg-2	2
+	Supported
+		arg-1	357
+		arg-2	13
+vec01548
+	Emerging
+	Affected
+vec01549
+	Protagonist
+vec01550
+	Entity
+vec01551
+	Agent
+	Affected
+vec01552
+	Agent
+		arg-0	8
+		arg-1	1
+	Component
+		arg-1	22
+	Whole
+vec01553
+	Source
+	Affected
+		arg-1	1
+vec01554
+	Protagonist
+vec01555
+	Agent
+		arg-0	484
+		arg-1	224
+		arg-2	5
+	Action
+		arg-1	565
+		arg-2	1
+vec01556
+	Emerging
+vec01558
+	Attitudal
+	Stimulus
+vec01559
+	Agent
+		arg-0	12
+	Planned
+		arg-1	12
+vec01560
+	Changing
+		arg-0	1
+		arg-1	543
+		arg-2	6
+	State_initial
+		arg-2	1
+		arg-3	3
+	State_final
+		arg-1	2
+		arg-2	517
+vec01561
+	Entity
+		arg-0	1
+vec01562
+	Agent
+	Affected
+		arg-1	2
+vec01563
+	Participant_1
+	Participant_2
+vec01564
+	Possibilities
+vec01565
+	Removing
+		arg-0	2
+	Entity
+		arg-1	7
+vec01566
+	Mover
+		arg-0	1
+		arg-1	18
+vec01567
+	Mover
+		arg-0	39
+	Entity
+		arg-1	8
+vec01568
+	Disappeared
+		arg-1	9
+vec01570
+	Activity
+		arg-0	6
+	Purpose
+		arg-1	7
+vec01571
+	Changing
+		arg-0	2
+	Changed
+		arg-1	12
+	State_initial
+	State_final
+vec01572
+	Speaker
+		arg-0	33
+	Information
+		arg-1	17
+vec01573
+	Agent
+	Manipulated
+vec01574
+	Proposed
+	Audience_Addressee
+vec01575
+	Speaker
+		arg-0	33
+	Created
+		arg-1	51
+vec01576
+	Affector
+		arg-0	31
+		arg-2	66
+	Manipulated
+		arg-1	199
+vec01577
+	Mover
+		arg-0	85
+		arg-1	84
+	Moved
+		arg-0	5
+		arg-1	238
+		arg-m-LOC	1
+	Place
+		arg-4	1
+		arg-m-LOC	23
+vec01578
+	Mover
+		arg-1	1
+	Moved
+		arg-1	1
+vec01579
+	Agent
+		arg-0	257
+		arg-1	171
+	Event
+		arg-1	378
+	Value_initial
+		arg-3	1
+	Value_final
+		arg-1	2
+		arg-2	16
+		arg-4	1
+vec01580
+	Absorber
+		arg-0	12
+	Absorbed
+		arg-1	23
+vec01583
+	Authority
+	Item
+	Recipient
+vec01584
+	Removing
+		arg-0	1
+	Removed
+		arg-1	1
+vec01585
+	Agent
+		arg-0	18
+	Asset
+		arg-1	46
+	Source
+		arg-1	1
+		arg-2	5
+vec01586
+	Creator
+		arg-1	13
+	Surrounded
+		arg-2	28
+vec01587
+	Experiencer
+		arg-0	1
+		arg-1	35
+vec01588
+	Authority
+	Participant_1
+	Participant_2
+vec01589
+	Creator
+	Ingestibles
+	Component
+vec01590
+	Protagonist
+		arg-0	1
+	Area
+vec01591
+	Experiencer
+		arg-0	36
+		arg-1	1
+	Stimulus
+		arg-0	2
+		arg-1	45
+vec01592
+	Cause
+		arg-0	188
+		arg-2	76
+	Affected
+		arg-1	344
+vec01593
+	Securing
+		arg-0	102
+	Entity
+		arg-1	160
+vec01594
+	Agent
+	Deed
+vec01595
+	Creator
+	Born
+vec01596
+	Speaker
+		arg-0	31
+	Audience_Addressee
+		arg-2	20
+	Source
+vec01597
+	Giver
+vec01598
+	Speaker
+		arg-0	31
+		arg-1	44
+	Audience_Addressee
+		arg-1	44
+vec01599
+	Agent
+	Money
+	Asset
+vec01600
+	Agent
+	Manipulated
+vec01601
+	Capitulator
+		arg-0	100
+		arg-1	1
+	Force
+		arg-1	158
+		arg-2	1
+vec01602
+	Participant_1
+		arg-0	54
+		arg-1	1
+		arg-2	7
+	Participant_2
+	Goal
+		arg-1	119
+vec01603
+	Desirable
+		arg-1	59
+vec01605
+	Source
+		arg-0	194
+		arg-1	4
+vec01606
+	Affector
+	Affected
+	State_final
+vec01607
+	Wearer
+	Worn
+vec01608
+	Mover
+		arg-1	156
+	Destination
+vec01609
+	Assailant
+	Victim
+vec01610
+	Agent
+vec01611
+	Host
+		arg-0	268
+		arg-2	1
+	Guest
+		arg-1	28
+		arg-2	146
+	Place
+		arg-1	416
+		arg-2	2
+vec01612
+	Protagonist
+		arg-0	21
+		arg-1	1
+		arg-2	23
+	Obstacle
+	Affected
+		arg-1	50
+vec01613
+	Cause
+		arg-0	4
+	Affected
+		arg-1	10
+vec01614
+	Attitudal
+	Cause
+vec01615
+	Collector
+		arg-0	2
+	Collected
+		arg-0	1
+		arg-1	3
+vec01616
+	Creator
+		arg-0	22
+	Ingestibles
+		arg-1	20
+	Component
+vec01617
+	Changing
+		arg-1	5
+vec01618
+	Fitted
+	Container
+vec01619
+	Attitudal
+	Affected
+vec01620
+	Agent
+vec01621
+	Entity
+	Place
+vec01622
+	Protagonist
+	Activity
+vec01623
+	Protagonist
+	Place
+vec01624
+	Changing
+		arg-0	42
+		arg-1	1
+	Changed
+		arg-1	104
+		arg-2	2
+	State_final
+		arg-2	104
+		arg-3	1
+vec01625
+	Agent
+	Affected
+vec01626
+	Asset
+		arg-1	154
+		arg-2	1
+	Payee
+		arg-0	12
+		arg-2	49
+vec01627
+	Disappeared
+vec01628
+	Changing
+vec01629
+	Attitudal
+		arg-0	2
+	Attitude
+vec01630
+	Cognizer
+		arg-0	33
+		arg-1	9
+	Phenomenon
+		arg-1	33
+vec01631
+	Phenomenon
+		arg-1	3
+vec01632
+	Entity
+vec01633
+	Entity
+		arg-1	64
+	Place
+vec01634
+	Experiencer
+		arg-1	2
+	State
+vec01635
+	Protagonist
