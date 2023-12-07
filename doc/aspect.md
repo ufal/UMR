@@ -1,6 +1,6 @@
 # Aspect
 
-#### Quick Howto for annotating Czech sentences:
+#### Quick HowTo for annotating Czech sentences:
 
 1. **event nominals** --> `process`, like _After the **game.process**, she went.performance home._
 2. **not processes** (no changes) like statives, modals and similar verbs --> `state` (_He **likes.stat** fish and chips, she **prefers.state** cheesburgers._)
@@ -10,6 +10,8 @@ also `performance` may be considered (with stressed result)
 4. **processes, perfective verb** (morphologically) --> `performance` (by default);  
 also `endeavor` may be considered (if it is clear that the process stopped/was interrupted without reaching a result state)
 5. **processes, double aspect verbs** --> `process` (as a back-up) if it is hard/ impossible to distinguish 
+
+Typically, we adhere to surface marking - e.g.,  the sentence _Estonci volili parlament._ should get the `activity` aspect value due to the imperfective verb _volit_ (and we do not imply that it means their parliament is renewed).
 
 ---
 ## Aspect in UMR

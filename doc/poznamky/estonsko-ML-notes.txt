@@ -2,7 +2,7 @@ TODO:
 =====
 Honza - email o NE z 13.11.2023
 
-poznámky z minutes (na zapracování do dokumentace)
+poznámky z minutes (na zapracování do dokumentace) ... TODO Monday Dec 4!!!
 ==================================================
 
 - apposition: How to annotate apposition?  Compare ex. 4-1-2 (2b):
@@ -41,6 +41,7 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
             Do we want to mark the aspect at the verb to_teach, to_kill?
      Dan, Markéta, Šárka – solution of the discussion:
             we want to mark these verbs in a specific way (e.g., aspect: 0) so that we are able to find them later again and mark the aspect there consistently later.
+   !! JH: in UMR, there is just an unclear border between entities and events. But we have to follow the instructions. 
 
 - Functor conversion ... TODO: should be completed
 
@@ -86,40 +87,33 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
         - With relative dependent clauses, instead of “unknown”, the “truth-value” should be used.
         - Federica: this is not in accordance with the example from the UMR manual: I don’t know if that's important or not (using “unknown” value).
 
-- wiki ... as extensive as possible
-   ?? Types and tokens:
-      The most important difference is between
-      - specific cases (my running at Marathon) and
-      - concepts (running itself)
+- Wikification: ... as extensive as possible
+   !! JH: The primary database for us is “Wikidata”.
+      Types and tokens:
+          The most important difference is between
+          - specific cases (my running at Marathon) and
+          - concepts (running itself)
+      JH: maybe it would be good to make a differences (and mark it) between a type and an occurrence (individuum).
+      ??? wiki with specific events:
+          There are articles there about Estonian parliamentary election, therefore “volit” is labelled with the wikipage
+            (English manual: specific events can be named entities.)
+            (English manual would probably not link this verb with a wiki link.)
+--> We should reserve the :wiki relation to wiki instances of NEs (like Q217799, i.e. Riigikogu when we refer to the Estonian parliament). 
       DZ: Do we want to connect a general entry of war (a type) to Wikipedia, as well as special occurrences (WW2)?
           Do we want to have both connections with one phrase in our text?
-      JH: maybe it would be good to make a differences (and mark it) between a type and an occurrence (individuum).
-          Maybe, we should always have a type (or valency frame, or later on Synsemclass, Propbank…).
---> JH: in UMR, there is just an unclear border between entities and events. But we have to follow the instructions. It would be good to put “type” everywhere where it is possible.
-        The primary database for us is “Wikidata”.
-        Example in UMR data: file 0001, sentence 4: Eyewitness is a person who witnesses.
-        Míša: should the types be linked to the Wikidata?
-   !! wiki with specific events:
-      *	There are articles there about Estonian parliamentary election, therefore “volit” is labelled with the wikipage
-          (English manual: specific events can be named entities.)
-          (English manual would probably not link this verb with a wiki link.)
+      Míša: should the types be linked to the Wikidata?
+      JH: Maybe, we should always have a type (or valency frame, or later on Synsemclass, Propbank…).
+      JH: It would be good to put “type” everywhere where it is possible.    
+          Example in UMR data: file 0001, sentence 4: Eyewitness is a person who witnesses. ... i.e., anchored in PropBank (witness-01)
+ Suggestion: We might introduce a new type of the :wiki relation for types, i.e. common nouns (appelatives) like hlas, volby, parlament … 
+      TODO: should be further discussed with Jan! 
 
 
-
-- :quant ... typically an attribute with a numeric value
-         ... but sometimes understood as a relation, esp. with approximate cardinalities (more than, most) - only in English data; NOT in the Guidelines
-             "Such examples are quite a few already ..."
-              ALSO for COMPARISON
-
-- :quot ... The :quot relation indicates that an event is being reported. Cf. snt3 of the first English file:
-       "About 200 people were believed killed ... when a landslide buried an entire village , the Red Cross said ."
-       N.B.: in the released data it's quote, while in the guidelines it is called quot.
-   !! quot --> quote
-
-
-- Eng concepts in Czech annotation - if in the https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0
-
-- discourse relations = conjunctions ... TODO
+Wikification and coreferential chains: 
+     We do not want to systematically repeat wikilinks within coreferential chains. 
+     However, if there are more links, they should be the same … TODO: candidate to automatic validation?
+     ?? volby, parlament, ... vybírám konkrétní volby na základě kontextu (daná země, dané datum), nebo obecný koncept 
+     ... asi dost záleží na koreferenci??? 
 
 - coreference :
   ?? :coref for two/more mentions  within a single sentence
@@ -138,6 +132,16 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
             e.g., when we have one coreference chain with two wiki-links, it should be the same wiki-link.
             If we have two coreferential chains with the same wiki-link, the coreferential chains should be probably connected.
 
+
+- :quot ... The :quot relation indicates that an event is being reported. Cf. snt3 of the first English file:
+       "About 200 people were believed killed ... when a landslide buried an entire village , the Red Cross said ."
+       N.B.: in the released data it's quote, while in the guidelines it is called quot.
+   !! quot --> quote
+
+- Eng concepts in Czech annotation - if in the https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=0
+
+- discourse relations = conjunctions ... TODO
+
 - newspaper titles:
    !! should it be annotated as “publication-91”
       - Argument for: specific features of the title in the text structure
@@ -147,6 +151,7 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
            * English data (Philippines): first sentence (title) – no information about temporal or modal relations.
                The first sentence includes an event.
                Second sentence (just location – Tacloban, Philippines) – modality is described on the document level.
+
 
 ad validate.py:
 ===============
@@ -170,7 +175,7 @@ ANOTACE: ML: pro konatelská jména anotovaná jako ARGx-of  :aspect 0, :modal-s
 VIZ též mail Julii 	(14 November, 2023)
 
 2. Jak anotovat NE, u kterých jsme nenašli položku ve wikidatech?
-   --> Q0
+   --> Q0 ... NEZNÁ Michalovo zobrazovadlo --> DOPLNIT (varov8n9, ne aby to krachlo)
 
 3. alignment
 - sloveso "být" nahrazeno abstraktním predikátem, který ale podle všeho má alignment 0-0 (podle dat) ... neměl by být alignován s tím (povrchovým) slvesem??
@@ -185,62 +190,17 @@ Commented line with token ids:
      Currently, sometimes the token line appears before the sentence, sometimes after, often it is not present at all.
      Sometimes it starts with tk, sometimes not, etc.
 
-refer-number:
-  ?? number for NOUNs
-         - annotate for each noun (DZ)  OR
-         - singular as default, reference-number only when plural (ML)
-         It seems that English UMR 1.0 annotates singular only for personal pronouns.
-  ?? number for PRONOUNs
-         - for all of them
-  ?? number for abstract concepts (person, thing, event, ...) ... ??? like for nouns
-  ?? number for NE ... not given in English data
-         - probably should be there (like for nouns)
 ====
-
-#snt1 Estonci volili parlament .
-   ??? aspect for "publication-91"
-       DZ: fine-grained "directed-achievement"
-       ML: coarse-grained (basic level) "reversible-state" ... as "publication-91" does not refer to a process
-   ??? doc-level ML :temporal, DZ NO
-   ??? aspect for "volili"  ... we decided to follow the morphology
-       (saying this is imperfective, disregarding that the result is very important in this case)
-
-#snt2 ESTONSKO :
-   ??? aspect for "publication-91", see above
-   ??? doc-level DZ: :temporal, :modal ... s2h, s2e not introduced on sent-level (repeated several times in the document)??
-       doc-level ML: :coref also country
-
-#snt3 Estonci volili parlament .
-   ??? aspect for "publication-91", see above
-   ??? doc-level DZ: :temporal, :modal ... s2e ??
-   ??? doc-level ML: :coref also Estonci, volili, parlament
-
-#snt4 Tallin -
-   ??? aspect for "publication-91", see above
-   NE Tallin: in english_umr-0001.txt (snt2), the Tacloban city (wikipedia) is annotated as "human-settlement"
-      (no such EN type in the Guidelines or in the UMR lists)
-   ??? doc-level DZ: :temporal, :modal ... s4h, s4e ??
 
 #snt5 V nedělních parlamentních volbách v Estonsku ...
    ??? relative clause introduced with possesive pronoun: ... blok Vlast, **jehož** prezidentský kandidát ...
-       (obsolete ML: kandidát :part (blok Vlast), inverse relation blok Vlast :part-of (kandidát))
        DZ solution: inserted "nominovat"
-       nominovat ML: :ARG1 (person ML) :ARG2 (kandidát)
-                 DZ: :ARG1 kandidát :ARG3-of (have-role :ARG1 (person LM)
-   ??? kandidát or kandidovat-001 (ACT(1) PAT(4) ?EFF(na+4)
-   ??? nejvíce hlasů
-       ML: have-quant-91 … “nejvíce”, ARG3 … ?? most
-       DZ: :quant
-       v PDT: RSTR (nikoli srovnání)
-   ??? podle výsledků
-       ML: NOVÁ relace :basis (výsledek)
-       DZ: :mod (podle :op1 (výsledek))
-       PDT: podle předložka, funktor CRIT
+                    DZ:  kandidát :ARG1-of (have-role-91 (ARG1 (person LM))) 
+   --> ML: kandidovat-001 ... blok :ACT=ARG0-of (kandidovat :ARG1(person LM).PAT :ARG2 (na prezidenta).EFF)
    ??? DZ: předběžný výsledek jako výsledek :ARG0-of (předbíhat)
        ML: výsledek je stav, nikoli event, proto :mod (předběžný)
    ??? blok Vlast ... why not abstract NE political_organization?
-   ??? parlament, volby ... add link to wikidata (for Czech annotation)
-   ??? vybíráme konkrétní volby na základě kontextu (daná země, dané datum), nebo obecný koncept???
+   !!! parlament, volby ... add link to wikidata (for Czech annotation)
    ??? different wiki:
        hlas ML: :wiki Q1306135,
             DZ: :wiki Q189760
@@ -248,72 +208,37 @@ refer-number:
                  DZ: :wiki Q372557
        blok Vlast ML vs. SZ
        wikidata: also Isamaa / Pro Patria and Res Publica Union / ... (no Czech equivalent)
-   ??? doc-level: DZ: much more temporal, modal relations??
-                  ML: coref also volit
+
 
 #snt6 Z celkového počtu 457319 voličů, ...
-   ??? voliči = :ARG0-of volit, ML bez aspektu, DZ habitual
-   ??? zcela jiná struktura :-(( .. POTŘEBA vizualizace
-       Z 457319 voličů hlasovalo 20.3 procent pro blok
-       ML: voliči.ACT (v počtu 20.3% (z 457319...).source).quant hlasovali (pro blok).ARG1
-       DZ: voliči.ACT (v počtu 457319 (z celku 20.3%).part ... ).quant hlasovali (pro blok).ARG1
-       DZ: chybí anotace "asi"
+   !! jiná "hlava":
+       Z 457319 voličů hlasovalo 20.3 procent pro blok ... 
+       DZ: "20.5 procenta" jako řídící tak i v PDT)
+       ML: "voliči" jako řídící 
            asi 20.5 procenta … podle “about 200 people”
 	               (s3p / person
                        :quant (s3a2 / about
                               :op1 200))
-       PDT:  (asi 20.5% (z celkového počtu voličů (kteří se zúčastnili).RSTR).DIR1).ACT APOZICE (což představuje).ACT hlasovalo (pro Vlast).PAT
-   ??? zúčastnit-se-001 ... ARG1 vs ARG2
-   ??? představovat-003 ... ARG0 ARG1 vs ARG1 ARG2
-   ??? poslanecký DZ :mod (poslanec) vs. (posanecký) ML, lépe substantivum
-   ??? DZ ??celkový počet
-   ??? different wiki:
-       ML: also volit-001
-       ML: also mandát
-   ??? doc-level: DA much more relations
+   ??? celkový počet
 
 #snt7  Na druhém místě s 13.9 procenty hlasů ...
    ??? Na druhém místě ... je ...
        ML: have-location-91 --> ARG1 blok, ARG2 (s7m2 / místo :ord (s7o/ ordinal-entity  :value 2))
        DZ: have-ord-91 --> ARG0 blok, NE koncept "místo" - jen  :ord (s7o / ordinal-entity :value 2)
-
    ??? Spolehlivý dům
        ML: have not found wiki link
        DZ: Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882
-   ??? představitel republiky
-       DZ: ARG1 republika as a concept (ordinary noun) ... :wiki "Q191" (= Estonia/Estonsko)
-       ML: ARG2 abstract entity country + Estonsko ... Dan is correct
-           ("Estonsko" does not appear in the sentence; remove also :coref for s7n3)
    ??? dosavadní:
        DZ: dosud
        ML: dosavadní ... :mod or :temporal … based on "so-far" annotation in english_umr-0001, snt19
-   ??? nejvýše:
-       DZ: :manner (s7n3 / nejvýše)
-       ML: :ARG1-of (s7h2 / have-degree-91
-                           :ARG2 (s7v / vysoký)
-                           :ARG3 (s7m / most)
-   ??? aspect: ML state (reversible), DZ: habitual
-   ??? ... s 13.9 procenty hlasů ( 18 mandátů ) ...
+    ??? ... s 13.9 procenty hlasů ( 18 mandátů ) ...
       - cause vs. manner (PDT ACMP)
       - part vs. quant (no example in the Guidelines)
-      - attribute (i.e. "hlas" as the governor, "mandát" as dependent) vs apposition (siblings) (PDT: PAR "mandát" modifying "procemto")
+      - apposition (siblings) VS. attribute (i.e. "hlas" as the governor, "mandát" as dependent) (PDT: PAR "mandát" modifying "procento")
       - ML: wiki for mandát
-      DZ: :cause (s7h2 / hlas   :part  (s7p / percentage-entity   :value 13.9)   :refer-number plural
-                 :mod (s7m / mandát :quant 18))  ... tj. mandát jako přívlastek
-      ML: :manner (s7h3 / hlas  :quant (s7p3 / percentage-entity :value 13.9))
-          :manner (s7m3 / mandát :wiki "Q486839" :quant 18)
-   ??? doc-level: Dan annotates allso for "dosavadní"
-                  ML missing annotation for  představovat-003
 
 
 
 
-Interní dokumentace:
-====================
-NE
-Estonci ... see the internal guidelines for nationality, part Entities
-parlament ... there in not NE in the text (just common noun parlament)
-    Guidelines: Whenever an entity is explicitly mentioned by name in the text to be annotated,
-    it receives a :name relation ... ” ... does it means that **the entity name** must be mentioned?
-parlament, volby ... add link to wikidata (for Czech annotation)
-    ?? vybírám konkrétní volby nja základě kontextu (daná země, dané datum), nebo obecný koncept???
+
+

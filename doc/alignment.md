@@ -109,7 +109,7 @@ would break the otherwise contiguous alignment into two sub-ranges.
 meaning that they _typically_ do not have a corresponding token. However, if
 there is a token that is not aligned to anything else and that gave rise to
 the event, we should align it with the \*-91 node. In particular, the copula
-(_být_ “to be”) will often correspond to `have-property-91`.
+(_být_ “to be”) will often correspond to `have-mod-91`.
 
 * The abstract concepts `person`, `thing` etc. may be aligned to overtly
 expressed pronouns. If the concept is only inferred from morphological

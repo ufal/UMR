@@ -20,20 +20,20 @@ processes would ideally be anchored in the frame file (valency lexicon).
 In addition, **all non-eventive concepts related to an event** (as, e.g., agentive nouns like _teacher_) **are also linked to the respective frames** (via the so-called reification, e.g., _teacher_ is treated as `ARG0-of` the teaching event and thus linked to the respective frame of the verb _teach_ in the lexicon). 
 
 In the long run, we want to use
-[SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClass40/) to anchor
+[SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0) to anchor
 processes and states in a cross-linguistically applicable manner. It
 currently contains only samples of verbs from a few languages, but it can be
 extended. At present it is not easy to identify a class for a verb (the
 interface lists the verb that was selected in each language as the label for
 the class, but it does not list the other verbs which have similar meaning
-and belong to the same class). A better search tool is being developed (https://quest.ms.mff.cuni.cz/SynSemClassSearch/ , contains version SynSemClass4.0 as it is stored in Lindat repository). For the latest version of the data (under development), see http://ufallab.ms.mff.cuni.cz/~fucikova/public_html/SSC_classmembers/.
+and belong to the same class). A better [search tool is now available](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0), contains version SynSemClass 5.0 as it is stored in Lindat repository). For the latest version of the data (under development), see http://ufallab.ms.mff.cuni.cz/~fucikova/public_html/SSC_classmembers/.
 
 In the meantime, for Czech (and especially for data from PDT) we can use the
 [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora),
 searchable [here](http://lindat.mff.cuni.cz/services/PDT-Vallex/) or in Teitok [here](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex). 
 There are
 verbs (both active and stative) but only a small number of other parts of speech denoting processes or states. 
-We have [conversion files](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx) that map the PDT-Vallex frames (column B) to strings that can be used as eventive
+We have [MUST BE RREVISED conversion files](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx) that map the PDT-Vallex frames (column B) to strings that can be used as eventive
 concepts in UMR (column A). The concept strings are lemmas of the verbs (infinitives),
 always followed by a hyphen and a numeric index. This seems to be required
 for eventive concepts in UMR (although the guidelines do not say explicitly

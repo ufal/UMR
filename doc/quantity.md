@@ -16,6 +16,8 @@ concept. This single value is
 In more detail, they discuss quantitative concepts in [Part
 3-2-2-5](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-2-5-quantification).
 
+However, `:quant` is used as a relation, as discussed below 
+
 For quantification, the following relations and attributes are available:
 - `:quant` (role) ... as a basic keyword,
 - `:ord` (role) ... for ordinals, with obligatory o/ordinal-entity as its daughter complemented with the `:value` relation.
@@ -28,7 +30,7 @@ Further, two sub-roles are available:
 - `:range` ... to specify a time period,
 - `:scale`...  for special cases like (_Richter scale_, _Decibel scale_).
 
-## :quant (role)
+## :quant (relation)
 
 The most basic keyword for quantification is `:quant`. The guidelines
 sometimes call it a “relation”, which would mean that it should be understood
@@ -190,11 +192,11 @@ in the following section.
 Having this in mind, comparison-like constructions as _více něž 3 domy_ could
 be alternatively interpreted as elliptical, too (meaning _více domů než 3
 (domy)_ ). Then, their annotation would be parallel to the one offered for
-superlative-like constructions. However, this possibility is not mentioned in
-the Guidelines.
+superlative-like constructions. While this possibility is not mentioned in
+the Guidelines, it is described in the AMR Guidelines, see below. 
 
-Alternatively, comparison constructions can be treated as elliptical
-constructions, as suggested in the:
+As it is not clear enough where to simply use the `:quant` relation/attribute and where to use the `have-quant-91` predicate, the suggestion is to reserve `have-quant-91` only for explicitly expressed comparisons and superlatives (or for cases annotated as comparison in PDT). 
+
 
 ### Comparisons and superlatives relating to amounts of things (`have-quant-91`)
 
@@ -268,6 +270,7 @@ He sold the most cars of his competitors.
                         :ARG3 i))))
 
 ```
+
 
 ### Comparison of quality
 

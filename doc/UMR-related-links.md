@@ -53,7 +53,9 @@
 
 [PDT-VALLEX to PropBank mapping](https://github.com/ufal/UMR/blob/main/tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx)
 
-[SynSemClass - Search](https://quest.ms.mff.cuni.cz/SynSemClassSearch/) (under development, SSC version 4.0)
+[SynSemClass - Search](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0) - SSC version 5.0
+
+~~[SynSemClass - Search](https://quest.ms.mff.cuni.cz/SynSemClassSearch/) (under development, SSC version 4.0)~~
 
 [SynSemClass Search - working data](http://ufallab.ms.mff.cuni.cz/~fucikova/public_html/SSC_classmembers/) (SSC 4.0 and updates)
 

@@ -13,7 +13,8 @@
                   :name (s1n / name :op1 "Estonsko"))
             :refer-number plural)
          :ARG1 (s1p3 / parlament
-                :wiki "Q217799")
+                :wiki "Q217799"
+                :refer-number singular)
          :aspect activity
          :modal-strength full-affirmative)
     :aspect reversible-state
@@ -44,7 +45,8 @@ s1p3: 3-3
     :ARG3 (s2t / thing)
     :place (s2c / country
         :wiki "Q191"
-        :name (s2n / name :op1 "Estonsko"))
+        :name (s2n / name :op1 "Estonsko")
+        :refer-number singular)
     :aspect reversible-state
     :modal-strength full-affirmative)
 
@@ -78,7 +80,8 @@ s2n: 0-0
                   :name (s3n / name :op1 "Estonsko"))
             :refer-number plural)
          :ARG1 (s3p3 / parlament
-                :wiki "Q217799")
+                :wiki "Q217799"
+                :refer-number singular)
          :aspect activity
          :modal-strength full-affirmative)
     :aspect reversible-state
@@ -114,7 +117,8 @@ s3p3: 3-3
     :ARG3 (s4t / thing)
     :place (s4c / city
         :wiki "Q1770"
-        :name (s4n / name :op1 "Tallin"))
+        :name (s4n / name :op1 "Tallin")
+        :refer-number singular)
     :aspect reversible-state
     :modal-strength full-affirmative)
 
@@ -140,45 +144,41 @@ s4n: 0-0
 # sentence level graph:
 (s5z / získat-001
     :ARG0 (s5b / blok
+            :refer-number singular
             :wiki "Q163347"
             :name (s5n / name :op1 "Vlast")
-            :ARG0-of (s5n5 / nominovat-001
-                            :ARG1 (s5p3 / person
-                                           :wiki "Q153149"
-                                           :name (s5n4 / name :op1 "Lennart" :op2 "Meri"))
-                            :ARG2 (s5p5 / person
-                                    :ARG0-of (s5k / kandidovat-001
-                                        :wiki "Q19772737"
-                                        :ARG1 s5p3
-                                        :ARG2 (s5p4 / prezident
-                                                 :wiki "Q30461")
-                                         :aspect 0
-                                         :modal-strength 0))
-                                :aspect reversible-state
-                                :modal-strength full-affirmative))
+            :ARG0-of (s5k / kandidovat-001
+                           :ARG1 (s5p3 / person
+                                   :wiki "Q153149"
+                                   :name (s5n4 / name :op1 "Lennart" :op2 "Meri")
+                                   :refer-number singular)
+                           :ARG2 (s5p4 / prezident
+                                      :wiki "Q30461"
+                                      :refer-number singular)
+                           :aspect performance
+                           :modal-strength full-affirmative))
     :ARG1 (s5h / hlas
             :wiki "Q1306135"
             :refer-number plural
-            :ARG1-of (s5h2 / have-quant-91
-                :ARG3 (s5m / most)
-                :aspect reversible-state
-                :modal-strength full-affirmative))
+            :quant (s5m / nejvíce))
     :temporal (s5v / volit-001
-                :wiki "Q40231"
+                :wiki "Q372557"
                 :ARG1 (s5p / parlament
-                    :wiki "Q217799")
+                    :wiki "Q217799"
+                    :refer-number singular)
                 :temporal (s5d / date-entity
                     :weekday (s5n2 / neděle
                     :wiki "Q132"))
                 :place (s5c / country
                     :wiki "Q191"
+                    :refer-number singular
                     :name (s5n3 / name :op1 "Estonsko"))
                 :aspect process
                 :modal-strength full-affirmative)
-    :basis (s5v2 / výsledek
+    :according-to (s5v2 / výsledek
             :wiki "Q51591359"
             :refer-number plural
-            :temporal (s5v3 / včeraejší)
+            :temporal (s5v3 / včera)
             :mod (s5p2 / předběžný))
     :aspect performance
     :modal-strength full-affirmative)
@@ -187,14 +187,11 @@ s4n: 0-0
 s5z: 7-7
 s5b: 14-15, 17-17
 s5n: 0-0
-s5n5: 0-0
-s5p5: 19-19
-s5k: 0-0
+s5k: 19-20
 s5p4: 18-18
 s5p3: 21-22
 s5n4: 0-0
 s5h: 13-13
-s5h2: 0-0
 s5m: 12-12
 s5v: 1-1, 4-4
 s5d: 2-2
@@ -210,10 +207,10 @@ s5p2: 10-10
 (s5s0/ sentence
     :temporal((document-creation-time :before s5z)
               (s5z :overlaps s5v)
-              (s5v :before s5n5))
+              (s5v :before s5k))
     :modal ((root :modal author)
             (author :full-affirmative s5v)
-            (author :full-affirmative s5n5)
+            (author :full-affirmative s5k)
             (author :full-affirmative s5z))
     :coref ((s3c :same-entity s5c)
             (s3p3 :same-entity s5p)
@@ -231,42 +228,36 @@ s5p2: 10-10
     :ARG0 (s6p / person
                :refer-number plural
                :ARG0-of (s6v / volit-001
-                            :wiki "Q189760"
                             :aspect 0
                             :modal-strength 0)
                :quant (s6a / asi
                           :op1 (s6p2 / percentage-entity
                                   :value  20.5
-                                       :source (s6p7 /person :quant 457319
-                                            :ARG1-of (s6i / identity-91
-                                                   :ARG2 (s6p3 / počet-001
-                                                          :ARG1 s6p7
-                                                          :extent (s6c / celkový)
-                                                          :aspect reversible-state
-                                                          :modal-strength full-affirmative)
-                                            :aspect reversible-state
-                                            :modal-strength full-affirmative)
-                                            :mod s6p
-                                                  :ARG0-of (s6z / zúčastnit-se-001
-                                                        :ARG2 (s6v2 / volit-001
-                                                                :wiki "Q372557"
-                                                                :aspect reversible-state
-                                                                :modal-strength full-affirmative)
-                                                        :aspect performance
-                                                        :modal-strength full-affirmative))))
-               :ARG1-of (s6p4 / představovat-003
-                            :ARG2 (s6m / mandát
-                                    :wiki "Q486839"
-                                    :quant 28
-                                    :refer-number plural
-                                    :mod (s6p5 / poslanecký)
-                                    :place (s6p6 / parlament
-                                        :wiki "Q217799"
-                                        :mod (s6n2 / nový)))
-                            :aspect state
-                            :modal-strength full-affirmative))
+                          :source (s6p7 /person
+                                      :quant 457319
+                                      :refer-number plural
+                                      :ARG0-of (s6z / zúčastnit-se-001
+                                                    :ARG1 (s6v2 / volit-001
+                                                             :wiki "Q372557"
+                                                             :aspect reversible-state
+                                                             :modal-strength full-affirmative)
+                                                    :aspect performance
+                                                    :modal-strength full-affirmative))
+                           :ARG0-of (s6p4 / představovat-003
+                                 :ARG1 (s6m / mandát
+                                        :wiki "Q486839"
+                                        :quant 28
+                                        :refer-number plural
+                                        :mod (s6p5 / poslanec)
+                                        :place (s6p6 / parlament
+                                           :wiki "Q217799"
+                                           :mod (s6n2 / nový)
+                                           :refer-number singular))
+                                :aspect state
+                                :modal-strength full-affirmative))))
     :ARG1 (s6b / blok
             :wiki "Q163347"
+            :refer-number singular
             :name (s6n / name :op1 "Vlast"))
     :aspect activity
     :modal-strength full-affirmative)
@@ -277,10 +268,7 @@ s6p: 0-0
 s6v: 5-5, 7-7
 s6p2: 17-18, 20-20
 s6a: 16-16
-s6p7: 4-4
-s6i: 0-0
-s6p3: 1-1, 3-3
-s6c: 2-2
+s6p7: 1-4
 s6z: 8-8, 10-10
 s6v2: 9-9
 s6p4: 21-21
@@ -314,29 +302,28 @@ s6n: 0-0
 # sentence level graph:
 (s7h / have-location-91
      :ARG1 (s7b / blok
+            :refer-number singular
             :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
-            :poss (s7p / person :wiki "Q194000"
+            :poss (s7p / person
+                    :wiki "Q194000"
+                    :refer-number singular
                     :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")
-                    :ARG1-of (s7p2 / představovat-003
-                               :wiki "Q890005"
-                               :ARG2 (s7c / country
-                                      :wiki "Q191"
-                                      :name (s7n3 / name :op1 "Estonsko"))
+                    :ARG0-of (s7p2 / představovat-003
+                               :ARG1 (s7r / republika
+                                    :wiki "Q191")
                                :temporal (s7d / dosavadní)
-                               :ARG1-of (s7h2 / have-degree-91
-                                      :ARG2 (s7v / vysoký)
-                                      :ARG3 (s7m / most)
-                                      :aspect reversible-state
-                                      :modal-strength full-affirmative)
+                               :manner (s7n3 / nejvyšší)
                                :aspect state
                                :modal-strength full-affirmative)))
      :ARG2 (s7m2 / místo
             :ord (s7o/ ordinal-entity  :value 2))
      :manner (s7h3 / hlas
+            :refer-number plural
             :quant (s7p3 / percentage-entity :value 13.9))
      :manner (s7m3 / mandát
               :wiki "Q486839"
-              :quant 18)
+              :quant 18
+              :refer-number plural)
      :temporal (s7z / zatím)
      :aspect state
      :modal-strength full-affirmative)
@@ -348,12 +335,9 @@ s7n: 0-0
 s7p: 21-22
 s7n2: 0-0
 s7p2: 19-19
-s7c: 20-20
-s7n3: 0-0
+s7r: 20-20
 s7d: 17-17
-s7h2: 0-0
-s7v: 18-18
-s7m: 0-0
+s7n3: 18-18
 s7m2: 1-1, 3-3
 s7o: 2-2
 s7h3: 4-4, 7-7
@@ -366,8 +350,7 @@ s7z: 13-13
     :temporal((s5v :overlaps s7h))
     :modal ((root :modal author)
             (author :full-affirmative s7h))
-    :coref ((s3c :same-entity s7c)
-            (s2n :same-entity s7n3)))
+    :coref ((s3c :same-entity s7r)))
 
 
 ###END

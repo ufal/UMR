@@ -37,8 +37,14 @@ The default level for `:ref-number` comprises the distinction between **singular
 
 For **English**, the released data use the `:refer-number` attribute (instead of `:ref-number`, as in the Guidelines). This attribute seems to be fully  annotated with  _person_ or _thing_ (used for implicit arguments/arguments expressed through verbal cross-referencing, see above) but only **in those cases where the number cannot be restored via coreference** (document level annotation).  
 
-For other entity concepts (esp. unmarked nouns, NE, etc.), the `:refer-number` attribute is used only to mark for non-default value(s), i.e. other than singular number
+In English data, the `:refer-number` attribute is used only to mark for non-default value(s), i.e. other than singular number for other entity concepts (esp. unmarked nouns, NE, etc.).
 
+Contrary, for Czech, we have decided **to enter it explicitly even for the singular values** with all nouns and (personal) pronouns. We apply this also with abstract entities and with named entities (their abstract concepts, not with names). 
+
+**But:** What about, e.g., a NE denoting 1 entity with a plural :name (as in _Zbabělci_ "Cowards" (the book title").  
+**But:** NOT for “place holders” like in snt2 _Estonsko:_ with `ARG3` (thing) for the **publication-91** abstract predicate! 
+
+====  
 As far as I can see, English data are covered be the singular and plural values. The same seems appropriate for Czech where the PDT grammateme `number` can be used. This grammateme correctly covers also 
 - pluralia tantum (_jedny dveře.sg / dvoje dveře.pl_),
 - polite forms of the 2nd person ("vykání", _Vy.sg jste se nepřihlásil?_)

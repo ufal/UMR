@@ -11,8 +11,8 @@ that [events](eventive-concepts.md) (and also other concepts) are linked to **fr
 For language with an existing PropBank-style lexicon (frame files), this lexicon defines UMR predicate-specific roles (target annotation = stage 1). 
 For language without such a lexicon, a set of general participant roles should be used (stage 0) and a PropBank-style lexicon is build "on the way" to move towards Stage 1 annotation.
 
-For Czech, we want to use [SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClass40/), the **frames of which can (to some extent) be mapped to PropBank-style roles**: 
-- For some verbs, their arguments have been mapped onto ARGx roles - either within the  SynSemClass project, or within CzEngVallex - the mapping can be found in the [conversion files](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx), column C (via CzEngVallex) and D (via CzEngVallex).  
+For Czech, we want to use [SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0), the **frames of which can (to some extent) be mapped to PropBank-style roles**: 
+- For some verbs, their arguments have been mapped onto ARGx roles - either within the  SynSemClass project, or within CzEngVallex - the mapping can be found in the [MUST BE REVISED conversion files](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx), column C (via CzEngVallex) and D (via CzEngVallex).  
 - For verbs without a frame-specific mapping, the default [conversion table](../tecto2umr/functors-to-umrlabels.txt) will be used. 
 
 
@@ -99,7 +99,7 @@ PDT-Vallex, due to its theoretical background in FGD, does not reflect these con
 
 ### Stage 1 Roles Annotation
 
-Stage 1 annotation is based on PropBank-style frame files, in our case derived from the [PDT-Vallex (via the SynSemClass annotation or via CzEngVallex)](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx), with the general [conversion table](../tecto2umr/functors-to-umrlabels.txt) for those predicates that are not covered by this mapping.  
+Stage 1 annotation is based on PropBank-style frame files, in our case derived from the [PDT-Vallex (via the SynSemClass annotation or via CzEngVallex) MUST BE REVISED](../tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx), with the general [conversion table](../tecto2umr/functors-to-umrlabels.txt) for those predicates that are not covered by this mapping.  
 
 ### Inverse participant roles
 
