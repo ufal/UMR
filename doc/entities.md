@@ -1,4 +1,4 @@
-# Entities
+# EntitiesZU
 
 **Entities** constitute one of the three main types of concepts in UMR,
 alongside **states** and **processes.** They typically correspond to physical
