@@ -16,7 +16,7 @@
 	         :refer-person 3rd
 	         :aspect process
 	         :modal-strength full-affirmative
-	         :temporal (s1b/before :op "(n/now)")))
+	         :temporal (s1b/before :op1 "(n/now)")))
 
 # alignment:
 s1p: 0-0
@@ -72,7 +72,7 @@ s2n: 1-1
 	:refer-person 3rd
 	:aspect process
 	:modal-strength full-affirmative
-	:temporal (s3b/before :op (n/now))))
+	:temporal (s3b / before :op1 (s3n4 / now))))
 
 # alignment:
 s3p: 0-0
@@ -82,6 +82,7 @@ s3n: 0-0
 s3n2: 0-0
 s3p3: 3-3
 s3b: 2-2
+s3n4: 0-0
 
 # document level annotation:
 (s3s0 / sentence
@@ -118,9 +119,9 @@ s4n: 0-0
 # [en] In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Pro Patria Union (est.: Isamaaliit), whose presidential candidate was Lennart Meri, won the most votes.
 
 # sentence level graph:
-(s5z získat-001
+(s5z / získat-001
       :ARG0 (s5b / blok
-         :name (s5n / name op1 "Vlast")
+         :name (s5n / name :op1 "Vlast")
          :wiki "Q1428217"
          :mod (s5b2 / have-mod-91
              :ARG0 (s5p / person
@@ -135,14 +136,13 @@ s4n: 0-0
       :ARG1 (s5h / hlas
              :ARG1-of (s5h2/ have-quant-91
                        :ARG3 (s5n3 / nejvíce)
-                       :ARG5 (s5h2 / hlas
-                              :ref-number plural))
-            :ref-number plural)
+                       :ARG5 s5h))
+             :refer-number plural)
       :ARG2 (s5v / volit-002
             :ARG0 (s5p5 / person)
             :ARG1 (s5p6 / person)
             :ARG2 (s5p7 / function
-                 :mod place (s5p8 / parlament)
+                 :mod (s5p8 / parlament)
             :wiki "Q40231"
             :aspect performance
             :modal-strength full-affirmative
@@ -152,7 +152,7 @@ s4n: 0-0
                 :wiki "Q191"
                 :name (s5n5 / name :op1 "Estonsko")))
       :manner (s5v2 / výsledek
-            :ref-number plural
+            :refer-number plural
             :temporal (s5v3 / včera)
             :mod (s5p9 / předběžný))
       :aspect performance
@@ -206,12 +206,12 @@ s5p9: 10-10
  :op1 (s6h / hlasovat
     :wiki "Q189760"
     :ARG0 (s6p / person
-            :ref-number plural
+            :refer-number plural
             :ARG0-of (s6v / volit-001
                        :aspect performance
                        :modal-strength full-affirmative)
                  :part-of (s6p2 / person
-                      :ref-number plural
+                      :refer-number plural
                       :ARG0-of (s6v2 / volit-001
                           :aspect performance
                           :modal-strength full-affirmative)
@@ -228,21 +228,21 @@ s5p9: 10-10
     :ARG1 (s6b / blok
            :name "Vlast"
            :wiki "Q1428217"
-           :ref-number singular)
+           :refer-number singular)
     :aspect performance
-    :modal-strength full-affirmative)
+    :modal-strength full-affirmative))
   :op2 (s6i / identity-91
            :aspect state
            :modal-strength full-affirmative
            :ARG0 s6p
            :ARG1 (s6m / mandát
-                   :ref-number plural
+                   :refer-number plural
                    :wiki "Q23853076"
                    :mod (s6p4/ poslanec
                            :wiki "Q1055894")
                    :quant 28
                    :mod (s6p5 / parlament
-                          :ref-number singular
+                          :refer-number singular
                           :wiki "Q217799"
                           :mod (s6n / nový)))))
 
@@ -274,5 +274,3 @@ s6n: 26-26
     :coref ((s6v3 :same-entity s5v)
            (s6b :same-entity s5b)
            (s6p5 :same-entity s5p8)))
-
-
