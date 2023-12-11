@@ -216,8 +216,8 @@ s5p9: 10-10
                           :aspect performance
                           :modal-strength full-affirmative)
                       :quant (s6q / 457319
-                          :mod s6c / celkem))
-                      :mod (ARG0-of s6z / zúčastnit-se-001
+                          :mod (s6c / celkem))
+                      :ARG0-of (s6z / zúčastnit-se-001
                              :aspect performance
                              :modal-strength full-affirmative
                              :ARG1 (s6v3 / volit-001
@@ -263,8 +263,8 @@ s6a2: 16-16
 s6b: 14-15
 s6i: 21-21
 s6m: 24-24
-s6p5: 23-23
-s6p6: 27-27
+s6p4: 23-23
+s6p5: 27-27
 s6n: 26-26
 
 # document level annotation:
