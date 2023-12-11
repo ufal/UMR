@@ -42,7 +42,7 @@ s1b: 2-2
      :place (s2c / country
          :wiki "Q191"
          :name (s2n / name :op1 "Estonsko")))
-          
+
 # alignment:
 s2p: 0-0
 s2c: 0-0
@@ -59,7 +59,6 @@ s2n: 1-1
 # [en] Estonians elected a parliament.
 
 # sentence level graph:
-
 (s3p / publication-91
      :ARG1 (s3v / volit
             :ARG0 (s3p2 / person
@@ -94,10 +93,9 @@ s3b: 2-2
 
 
 ###########################################################################
-
 #         1      2
 # :: snt4 Tallin -
-# [en]    Tallin - 
+# [en]    Tallin -
 
 # sentence level graph:
 (s4p / publication-91
@@ -112,10 +110,9 @@ s4n: 0-0
 
 # document level annotation:
 (s4s0 / sentence)
-      
+
 
 ###########################################################################
-
 #         1 2         3             4       5 6        7       8    9          10          11       12      13    14   15   16  17    18            19         20  21      22   23
 # :: snt5 V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
 # [en] In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Pro Patria Union (est.: Isamaaliit), whose presidential candidate was Lennart Meri, won the most votes.
@@ -134,13 +131,13 @@ s4n: 0-0
                          :ARG0 (s5p3 / person)
                          :ARG1 (s5p4 / prezident
                                :wiki "Q30461")
-                    :poss (s5j / on)))))                
+                    :poss (s5j / on)))))
       :ARG1 (s5h / hlas
              :ARG1-of (s5h2/ have-quant-91
                        :ARG3 (s5n3 / nejvíce)
                        :ARG5 (s5h2 / hlas
-                              :ref-number plural))            
-            :ref-number plural)       
+                              :ref-number plural))
+            :ref-number plural)
       :ARG2 (s5v / volit-002
             :ARG0 (s5p5 / person)
             :ARG1 (s5p6 / person)
@@ -160,7 +157,7 @@ s4n: 0-0
             :mod (s5p9 / předběžný))
       :aspect performance
 	    :modal-strength full-affirmative)
-	    
+
 # alignment:
 s5z: 7-7
 s5b: 14-14
@@ -193,21 +190,20 @@ s5p9: 10-10
 (s5s0 / sentence
     :modal ((root :modal author)
            (author :full-affirmative s5z))
-    :coref ((s5p8 :same-entity s3p3) 
+    :coref ((s5p8 :same-entity s3p3)
              (s5v :same-entity s3v)
              (s5c :same-entity s3p2)
              (s5j :same-entity s5b)))
- 
- 
- ###########################################################################
- 
- #         1  2        3      4      5     6 7      8  9     10        11 12        13  14   15    16  17   18      19 20  21         22  23           24     25  26   27        28   
- # :: snt6 Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
- # [en]: Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the the Pro Patria Union, which represents 28 parliamentary mandates in the new parliament.
- 
- # sentence level graph:
+
+
+###########################################################################
+#         1  2        3      4      5     6 7      8  9     10        11 12        13  14   15    16  17   18      19 20  21         22  23           24     25  26   27        28
+# :: snt6 Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
+# [en]: Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the the Pro Patria Union, which represents 28 parliamentary mandates in the new parliament.
+
+# sentence level graph:
 (s6a / and
- :op1 (s6h / hlasovat 
+ :op1 (s6h / hlasovat
     :wiki "Q189760"
     :ARG0 (s6p / person
             :ref-number plural
@@ -225,10 +221,10 @@ s5p9: 10-10
                              :aspect performance
                              :modal-strength full-affirmative
                              :ARG1 (s6v3 / volit-001
-                                    :aspect performance))                 
+                                    :aspect performance))
                   :quant (s6p3/ percentage-entity
 	                     :value (s6d / 20.5
-	                              :mod (s6a2 / asi))))                          
+	                              :mod (s6a2 / asi))))
     :ARG1 (s6b / blok
            :name "Vlast"
            :wiki "Q1428217"
@@ -236,7 +232,7 @@ s5p9: 10-10
     :aspect performance
     :modal-strength full-affirmative)
   :op2 (s6i / identity-91
-           :aspect state 
+           :aspect state
            :modal-strength full-affirmative
            :ARG0 s6p
            :ARG1 (s6m / mandát
@@ -249,7 +245,7 @@ s5p9: 10-10
                           :ref-number singular
                           :wiki "Q217799"
                           :mod (s6n / nový)))))
-           
+
 # alignment:
 s6a: 19-19
 s6h: 12-12
@@ -266,10 +262,10 @@ s6d: 17-17
 s6a2: 16-16
 s6b: 14-15
 s6i: 21-21
-s6m: 24-24           
-s6p5: 23-23    
+s6m: 24-24
+s6p5: 23-23
 s6p6: 27-27
-s6n: 26-26    
+s6n: 26-26
 
 # document level annotation:
 (s6s0 / sentence
@@ -280,4 +276,3 @@ s6n: 26-26
            (s6p5 :same-entity s5p8)))
 
 
-##############################################################################################################################################
