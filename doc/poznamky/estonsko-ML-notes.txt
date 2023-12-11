@@ -213,7 +213,83 @@ Commented line with token ids:
 	               (s3p / person
                        :quant (s3a2 / about
                               :op1 200))
+       ŠZ: "voliči" jako řídící
+           asi 20.5 procenta - "asi" anotováno nepřesně, jako modifikace
+           :quant (s6p3/ percentage-entity
+	                     :value (s6d / 20.5
+	                              :mod (s6a2 / asi)))) 
+                           
+      20.5 %
+      DZ: :ARG0 (s6p2 / percentage-entity
+            :value 20.5
+            :part-of (s6p / person
+                :ARG0-of (s6v / volit-001
+                    :aspect habitual
+                    :modal-strength full-affirmative)
+                :refer-number plural
+                :quant 457319
+                :ARG0-of (s6z / zúčastnit-se-001
+                           
+      ML:  :quant (s6a / asi
+                          :op1 (s6p2 / percentage-entity
+                                  :value  20.5
+                          :source (s6p7 /person
+                                      :quant 457319
+                                      :refer-number plural
+                                      :ARG0-of (s6z / zúčastnit-se-001
+                                                    :ARG1 (s6v2 / volit-001
+                                                             :wiki "Q372557"
+                                                             :aspect reversible-state
+                                                             :modal-strength full-affirmative)
+                                                    :aspect performance
+                                                    :modal-strength full-affirmative))
+       ŠZ: :ARG0 (s6p / person
+            :ref-number plural
+            :ARG0-of (s6v / volit-001
+                       :aspect performance
+                       :modal-strength full-affirmative)
+                 :part-of (s6p2 / person
+                      :ref-number plural
+                      :ARG0-of (s6v2 / volit-001
+                          :aspect performance
+                          :modal-strength full-affirmative)
+                      :quant (s6q / 457319
+                          :mod s6c / celkem))
+                      :mod (ARG0-of s6z / zúčastnit-se-001
+                             :aspect performance
+                             :modal-strength full-affirmative
+                             :ARG1 (s6v3 / volit-001
+                                    :aspect performance))                 
+                  :quant (s6p3/ percentage-entity
+	                     :value (s6d / 20.5
+	                              :mod (s6a2 / asi))))                          
+                            
+                           
+                              
    ??? "celkový" chybí anotace
+       ŠZ: "celkový" - převedeno na "celkem"
+       :quant (s6q / 457319
+                          :mod s6c / celkem))
+                          
+   což představuje.... - discourse relation vs relativní návaznost
+   ŠZ: discourse relation "and" - jako "pro blok hlasovalo 20.5 procenta A TO představuje 28 mandátů
+   s6a / and
+     :op1 hlasovat...
+     :op2 s6i / identity-91 (tj. představovat)
+   ML, DZ: 20.5 % voliřů je "ARG0-of představovat"
+   
+   představovat - full verb vs abstract concept identity-91
+   ŠZ: identity-91
+   ML, DZ: představovat
+                       
+   wiki:
+   hlasovat - DZ 0, ML a ŠZ shodně Q189760   
+                          
+                          
+                          
+                          
+                          
+                          
 
 #snt7  Na druhém místě s 13.9 procenty hlasů ...
    ??? Na druhém místě ... je ...
