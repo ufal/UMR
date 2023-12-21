@@ -35,7 +35,7 @@ Tento sloupec udává **PB argument**, který však není "jistý":
 
 ##### sloupec F -- **Mapping without CzEngVallex**
 Tento sloupec udává **PB argument**, i když se liší návrhy mapování u CzEngVallexu a SSC:
-- Uvádí se argument podle SSC, pokud má v SSC jednoznačné mapování (ignoruje se ??TODO:~~SSC~~CzEngVallex)   
+- Uvádí se argument podle SSC, pokud má v SSC jednoznačné mapování (ignoruje se CzEngVallex)   
 Pokud se CzEngVallex a SSC liší a navíc má SSC nejednoznačné mapování, nenavrhuje se nic :).
 
 ##### sloupec G -- MAPPING
@@ -43,7 +43,8 @@ Tento sloupec obsahuje finální automatické mapování s odfiltrováním dupli
 Tento sloupec udává finální návrh mapování v těch případech, kdy 
 - automatické mapování dává s dostatečnou spolehlivostí mapování jednotlivých funktorů (sloupce D+E CHANGE), 
 - argumenty se neopakují,
-- TODO v argumentech nejsou diry a tvori souvislou radu TODO: to je jedna, nebo 2 podmínky??
+- v argumentech nejsou diry
+- argumenty tvori souvislou radu 
 
 ##### sloupec (new CHANGE) -- Manual mapping
 
@@ -55,8 +56,8 @@ Tento sloupec udává informaci o typu problému, který znemožnil návrh mapov
 - nesouvislé ... indexy u navržených funktorů netvoří souvislou řadu (nemusí začínat ARG0), tj. např. ARG0, ARG1, ARG2 nebo ARG1, ARG2 atd. (a to i když zdroje mapování jsou různé)   
 (ARGM se při testování souvislosti řady zahazují)
 - neúplné ... ne všechny funktory mají navržené mapování
-- opakované ... některé (alespoň 2) funktory se mapuje na stejný argument  
-- spor ... mapování přes CzEngVallex a přes SSC se sice liší, ale SSC má jednoznačné mapování (tj. je neprázdný sloupec F CHANGE)
+- opakované ... některé (alespoň 2) funktory se mapují na stejný argument  
+- spor ... mapování přes CzEngVallex a přes SSC se liší, navíc má SSC nejednoznačné mapování 
 
 
 ##### sloupec I -- Source
