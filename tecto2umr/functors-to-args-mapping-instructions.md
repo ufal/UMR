@@ -1,7 +1,9 @@
-## Mapování PDT valenčních rámců (a jednotlivých funktorů) na Rolesets v UMR / PropBank (a jejich argumenty)  
+## Mapování PDT valenčních rámců na UMR rámce
+
+UMR předpokládá, že jednotlivé významy sloves jsou popsány pomocí tzv. **Rolesets** ze slovníku [PropBank](https://verbs.colorado.edu/propbank-development/), tedy obdobou valenčních rámců. Pro češtinu chceme pracovat s valenčním slovníkem [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora) (vyhledávání [zde](http://lindat.mff.cuni.cz/services/PDT-Vallex/) nebo v [Teitoku](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex)), resp. se slovníkem [SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0). Potřebujeme tedy mapování jednotlivých PDT rámců (a jednotlivých funktorů) na tyto Rolesets v UMR / PropBank (a jejich argumenty).  
 
 Dostupné mapování je uvedeno v [Google tabulce](https://docs.google.com/spreadsheets/d/1AuIASjkdAdKom7bgjDN5BxMKeRUefHlN/edit#gid=452142481): 
-- v sloupci **CHANGE G** je návrh získaný automatickým převodem z SSC a CzEnVallexu, pokud byl tento převod víceméné spolehlivý (více viz níž);
+- v sloupci **CHANGE** je návrh získaný automatickým převodem z SSC a CzEnVallexu, pokud byl tento převod víceméně spolehlivý (více viz níž);
 - v sloupci **CHANGE** doplňte svůj návrh, pokud automatický návrh neexistuje či s ním nesouhlasíte; též zde můžete opravit návrh kolegy, pokud s ním nesouhlasíte;
 - v případě jakékoliv úpravy okomentujte v sloupci **CHANGE**. 
 
@@ -13,14 +15,14 @@ Udává ID pro valenční rámec českého slovesa.
 ##### sloupec B -- **PDT frame**
  Jeden UMR rámec může odpovídat více PDT rámcům, pak mu odpovídá více záznamů (= několik řádků pro ramec a jeho funktory). 
 Je tomu tak v následujících případech:
--  V CzEngVallexu a někde i v SSC jsou rámce, které byly v PDT-C nahrazeny novými; nahrazené rámce zde mají uvedeno "substituted" a odkaz na nový rámec (i řetězově nahrazovaný).   
-Pro snazší orientaci mají takové rámce šedé pozadí a NEPRACUJEME s nimi.
+-  V CzEngVallexu a někde i v SSC jsou rámce, které byly v PDT-C nahrazeny novými (některé nahrazovány i řetězově); neaktuální (nahrazené) rámce zde mají uvedeno "substituted" a odkaz na nový rámec.   
+Pro snazší orientaci mají neaktuální rámce šedé pozadí a NEPRACUJEME s nimi.
 -  Jeden PDT rámec může být navázán na více tříd -- pak je v tabulce samostatný záznam   pro každou třídu, ve které se rámec vyskytuje.
 
 ##### sloupec C -- **Role mapping**
 Tento sloupec udává: 
 - číslo **SSC třídy**, a to pokud se daný rámec vyskytuje v nějake SSC třídě, 
-- **sémantické role** odpovídající jednotlivým funktorům (na řádcích odpovídajících jednotlivým funktorům)   
+- **sémantické role** odpovídající jednotlivým funktorům (vždy jednomu funktoru odpovídá jeden řádek)   
 (EF: upozorňuji, že asi v 90 případech máme nejednoznačné mapování funktorů na role třídy -- tady jsem se o automatické mapování radši zatím vůbec nepouštěla; můžu kdyžtak poslat jejich seznam, jinak se daji vyfiltrovat (_měly by to být řádky, které ve sloupci C obsahují středník_)
 
 ##### sloupec D -- **Mapping**
@@ -30,34 +32,37 @@ Tento sloupec udává **PB argument**, u kterého jsme si "jisti" mapováním:
 - Za "jisté" se též považuje, pokud existuje **jednoznačné mapování** (tj. funktor jen na jeden argument z PB) **jenom z jednoho zdroje** (jenom z CzEngVallexu nebo jenom ze SSC). 
 
 ##### sloupec E -- **Suggested mapping** ???TODO:OPRAVDU TO TAKTO CHCEME
-Tento sloupec udává **PB argument**, který však není "jistý":
-- Pokud nemá argument jednoznačné mapování ??TODO míra jistoty??, uvádí se jenom ten nejčetnější argument (_v případě více hodnot se stejnou četností uvedeny obě, oddělené znakem "#"_).
+Tento sloupec uvádí návrh mapování funktoru na **PB argument** na základě SSC, které však není "jisté" (přičemž CzEngVallex mapování nenabízí):
+- SSC udává pro daný funktor několik možných argumentů -- v tabulce se pak uvádí jen ten nejčetnější argument (_v případě více hodnot se stejnou četností uvedeny obě, oddělené znakem "#"_).  
+TODO:POZOR ... v info by pak mělo být asi "SSC spor"?? A někam přidat celkové součty??
 
 ##### sloupec F -- **Mapping without CzEngVallex**
 Tento sloupec udává **PB argument**, i když se liší návrhy mapování u CzEngVallexu a SSC:
 - Uvádí se argument podle SSC, pokud má v SSC jednoznačné mapování (ignoruje se CzEngVallex)   
 Pokud se CzEngVallex a SSC liší a navíc má SSC nejednoznačné mapování, nenavrhuje se nic :).
+TODO: toto by se mělo použít pro automatický návrh do G jen pokud by CzEngVallex měl marginální čílsla (< 10%)??
 
 ##### sloupec G -- MAPPING
-Tento sloupec obsahuje finální automatické mapování s odfiltrováním duplicit a nesouvislých indexů u argumentů (viz Info, sloupec CHANGE)
-Tento sloupec udává finální návrh mapování v těch případech, kdy 
-- automatické mapování dává s dostatečnou spolehlivostí mapování jednotlivých funktorů (sloupce D+E+F CHANGE), 
-- argumenty se neopakují,
-- v argumentech nejsou diry
-- argumenty tvori souvislou radu 
+Tento sloupec obsahuje finální automatické mapování s odfiltrováním duplicit a nesouvislých indexů u argumentů (viz též Info, sloupec CHANGE). 
+Tento sloupec tedy udává finální návrh mapování v těch případech, kdy: 
+- automatické mapování dává s dostatečnou spolehlivostí mapování jednotlivých funktorů (sloupce D+E+F CHANGE), (viz "nejednoznačné" TODO změnit na "SSC spor" a "spor" ve sloupci "Info CHANGE")
+- indexy u argumentů tvoří souvislou řadu (viz "nesouvislé" ve sloupci "Info CHANGE")
+- v argumentech nejsou diry ... co to znamená??? že "ne všechny funktory jsou namapované" (viz "neúplné" ve sloupci "Info CHANGE") 
+- argumenty se neopakují (viz "opakované" ve sloupci "Info CHANGE") 
+
 
 ##### sloupec (new CHANGE) -- Manual mapping
 
 ##### sloupec (new CHANGE) -- Comment on manual mapping
 
 ##### sloupec H -- Info on automatic mapping
-Tento sloupec udává informaci o typu problému, který znemožnil návrh mapování: 
-- nejednoznačné ... ve sloupci E CHANGE jsou pro nějaký funktor minimálně dva PB argumenty, tj. těch "nejčastějších" bylo víc než jeden) TODO ??? (kde je míra "spolehlivosti")
-- nesouvislé ... indexy u navržených funktorů netvoří souvislou řadu (nemusí začínat ARG0), tj. např. ARG0, ARG1, ARG2 nebo ARG1, ARG2 atd. (a to i když zdroje mapování jsou různé)   
+Tento sloupec udává informaci o typu problému, který typicky znemožní návrh mapování (případně finální mapování navrhne, ale s vyšší mírou nejistoty): 
+- nejednoznačné TODO "SSC spor" ... ve sloupci E CHANGE udávajícím SSC mapování  jsou pro nějaký funktor minimálně dva PB argumenty (při neexistujícím CzEngVallexím mapování); ~~tj. těch "nejčastějších" bylo víc než jeden) TODO ??? (kde je míra "spolehlivosti")~~
+- nesouvislé ... indexy u navržených funktorů netvoří souvislou řadu (nemusí začínat ARG0), tj. např. ARG0, ARG1, ARG2 nebo ARG1, ARG2 atd. (a to i když zdroje mapování jsou různé);   
 (ARGM se při testování souvislosti řady zahazují)
-- neúplné ... ne všechny funktory mají navržené mapování
-- opakované ... některé (alespoň 2) funktory se mapují na stejný argument  
-- spor ... mapování přes CzEngVallex a přes SSC se liší, navíc má SSC nejednoznačné mapování 
+- neúplné ... ne všechny funktory mají navržené mapování;
+- opakované ... některé (alespoň 2) funktory se mapují na stejný argument;  
+- spor ... mapování přes CzEngVallex a přes SSC se liší, navíc má SSC nejednoznačné mapování. 
 
 
 ##### sloupec I -- Source
