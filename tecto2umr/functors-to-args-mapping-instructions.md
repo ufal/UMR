@@ -41,7 +41,7 @@ Pokud se CzEngVallex a SSC liší a navíc má SSC nejednoznačné mapování, n
 ##### sloupec G -- MAPPING
 Tento sloupec obsahuje finální automatické mapování s odfiltrováním duplicit a nesouvislých indexů u argumentů (viz Info, sloupec CHANGE)
 Tento sloupec udává finální návrh mapování v těch případech, kdy 
-- automatické mapování dává s dostatečnou spolehlivostí mapování jednotlivých funktorů (sloupce D+E CHANGE), 
+- automatické mapování dává s dostatečnou spolehlivostí mapování jednotlivých funktorů (sloupce D+E+F CHANGE), 
 - argumenty se neopakují,
 - v argumentech nejsou diry
 - argumenty tvori souvislou radu 
