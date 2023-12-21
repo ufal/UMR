@@ -52,7 +52,7 @@ Tento sloupec udává finální návrh mapování v těch případech, kdy
 
 ##### sloupec H -- Info on automatic mapping
 Tento sloupec udává informaci o typu problému, který znemožnil návrh mapování: 
-- nejednoznačné ... ve sloupci E CHANGE jsou pro nějaký funktor minimálně dva PB argumenty, tj. těch "nejčastějších" bylo víc neč jeden) TODO ??? (kde je míra "spolehlivosti")
+- nejednoznačné ... ve sloupci E CHANGE jsou pro nějaký funktor minimálně dva PB argumenty, tj. těch "nejčastějších" bylo víc než jeden) TODO ??? (kde je míra "spolehlivosti")
 - nesouvislé ... indexy u navržených funktorů netvoří souvislou řadu (nemusí začínat ARG0), tj. např. ARG0, ARG1, ARG2 nebo ARG1, ARG2 atd. (a to i když zdroje mapování jsou různé)   
 (ARGM se při testování souvislosti řady zahazují)
 - neúplné ... ne všechny funktory mají navržené mapování
