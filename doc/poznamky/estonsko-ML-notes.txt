@@ -1,11 +1,19 @@
+ML: pravidla pro events pro validátor (podle Juliina mailu, viz níž)
+??Dan: standardizace  "hlavičky" pro větu (věta, překlad, čísla tokenů, ??? )
+??Dan: koreferenční řetězce by měly mít stejný odkaz na wiki (co nejkonkrétnější)
+?? Porovnat data
+  :part vs. :part-of
+
+
 TODO:
 =====
 Honza - email o NE z 13.11.2023
 
-poznámky z minutes (na zapracování do dokumentace) ... TODO Monday Dec 4!!!
+poznámky z minutes (na zapracování do dokumentace) 
 ==================================================
 
-- apposition: How to annotate apposition?  Compare ex. 4-1-2 (2b):
+- apposition: How to annotate apposition?  
+Compare ex. 4-1-2 (2b):
 The loan, a sum of 12.5 million US dollars, is an export credit …
 
 (i/ identity-91                              #the loan is an export credit
@@ -28,26 +36,32 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
 - parenthesis: How to annotate apposition?
 
 
-- Events ... UPRAVIT, jestli se dočkáme reakce od Julie (anotace u všeho, co má role, vč. abstr. predikátů)
-  !! neděláme rozdíl mezi stative / action verbs!!
-  ?? diskurzní relace
-  ?? entity (typu date-entity, quant, ...)
-  !! konatelská jména --> slovesa
-  !! adjektiva od slovesa (resp. s exist. slovesem, bez ohledu na směr derivace) --> slovesa
+- Events ... TODO ... podle Julie (anotace u všeho, co má role, vč. abstr. predikátů) ... (A-E už promítnuto do dokumentace)
+  !! A. neděláme rozdíl mezi stative / action verbs ---> tudíž mají všude aspekt+modal+... (preliminary)!!
+  !! B. abstraktní predikáty (těch 9 definovaných v guidelines) jen tam, kde jde o predikaci 
+        (jinak se jim vyhýbáme a použijeme příslušnou relaci, od které jde o reifikaci) --> tudíž mají všude aspekt+modal+...(preliminary)!!
+  !! C. další abstraktní rolesets (reification, implicit rolesets) ... totéž jako pro -91 predikáty --> všude aspekt+modal+...(preliminary)!!
+  !! D. srovnání entity (have-quant-91, have-degree-91) ... predikace --> mají všude aspekt+modal+... (preliminary)!!
+  !! E. diskurzní relace ... NEJDE o "events" (i když mají argumenty) 
+  ?? F. konatelská jména --> slovesa
+        agentive nouns and aspect ... special value (e.g., aspect: 0)
+        Šárka: a teacher teaches habitually vs. for a murderer, it is enough to commit just one murder to be a murderer.
+               Do we want to mark the aspect at the verb to_teach, to_kill?
+        Dan, Markéta, Šárka – solution of the discussion:
+               We want to mark these verbs in a specific way (e.g., aspect: 0) so that we are able to find them later again and mark the aspect there consistently later.
   ?? -	What about words like válka, příchod? (Either entities – conservative approach, or events – based on the Vallex, they have a valency frame.
      Problem: not consistent, some similar words in PDT Vallex are not assigned a valency frame.)
-  !! agentive nouns and aspect ... special value (e.g., aspect: 0)
-     Šárka: a teacher teaches habitually vs. for a murderer, it is enough to commit just one murder to be a murderer.
-            Do we want to mark the aspect at the verb to_teach, to_kill?
-     Dan, Markéta, Šárka – solution of the discussion:
-            we want to mark these verbs in a specific way (e.g., aspect: 0) so that we are able to find them later again and mark the aspect there consistently later.
-   !! JH: in UMR, there is just an unclear border between entities and events. But we have to follow the instructions.
+  !! adjektiva od slovesa (resp. s exist. slovesem, bez ohledu na směr derivace) --> slovesa
 
-- Functor conversion ... TODO: should be completed
+- Functor conversion ... TODO: should be completed!!
 
-- Entities
-  ?? number UMR: entities have number (derived from morphology)
-         - Questionable: Philippines (1 country) – no number is given in the example
+- Entities - number and gender
+  ?? number UMR: entities have number (derived from morphology) ... but singular seems to be default in Eng. data (NOT annotated)
+  !! we will enter it explicitly even if singular (entities, named entities (their abstract concepts), personal pronouns)
+     ?? even with quantitative modification (like in 18 mandátů, 13.9 % hlasů)
+     But: NOT for “place holders” like in snt2 Estonsko: with ARG3 (thing) for the publication-91 abstract predicate! 
+     ?? But: What about, e.g., a NE denoting 1 entity with a plural :name (as in Zbabělci) 
+                                                      or Philippines (1 country) – no number is given in the example
          - Dan: proposed solution: if the form says you the number and you agree with that from the semantic point of view,
            write there the number as you feel it.
            If you are not sure, write there “?” so that these examples can be found later.
@@ -57,11 +71,12 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
      Dan: yes, if we know the biologic gender, we should annotate it.
      Julia: NOT annotated so far - need of deeper typological analysis
 
-- grammatemes:
-   FG went through, see her conclusions ... Github: doc/grammatemes-attributes
+- grammatemes: TODO 
+   FG went through ... see her conclusions ... Github: doc/grammatemes-attributes
    ML aspect
 
-- tense: the PDT recognizes the following values: simultaneous, preceding, subsequent. They cover absolute as well as relative tenses
+- tense: TODO, see the grammatemes overview
+   the PDT recognizes the following values: simultaneous, preceding, subsequent. They cover absolute as well as relative tenses
    Šárka: this can be misleading when transferring this annotation of tenses to the UMR
    Dan: we have to check the tense annotation and know exactly what can be transferred to the UMR.
 
@@ -76,7 +91,7 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
       (not treated as a political group, which would have justified the annotation of p/ person from a certain c/ country),
       but the focus is on the fact that they speak the same language (i.e. ethnic/cultural feature).
 
-- polarity:
+- polarity: TODO
    ?? unclear: unknown polarity, like in “Did you see him?”
    Dan: one possibility – the polarity of yes-no questions is always “unknown”.
    Jan Hajič: ask Julia about the value “unknown”? In the data, it seems connected to questions. (Where do you… - the argument for Where is “unknown”).
@@ -107,12 +122,18 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
           Example in UMR data: file 0001, sentence 4: Eyewitness is a person who witnesses. ... i.e., anchored in PropBank (witness-01)
  Suggestion: We might introduce a new type of the :wiki relation for types, i.e. common nouns (appelatives) like hlas, volby, parlament …
       TODO: should be further discussed with Jan!
+--> Annotate as much :wiki as possible 
+           + as concrete events as possible. 
+    E.g., if there is a wiki entry for "hlasovat" and for these specific "Estonian elections", the second option should be picked.
+    Whenever possible, we would like to have the reference to the concrete event. 
 
 Wikification and coreferential chains:
      We do not want to systematically repeat wikilinks within coreferential chains.
      However, if there are more links, they should be the same … TODO: candidate to automatic validation?
      ?? volby, parlament, ... vybírám konkrétní volby na základě kontextu (daná země, dané datum), nebo obecný koncept
      ... asi dost záleží na koreferenci???
+--> If there is a coreferential chain, the chained elements should have the same :wiki (if present). 
+    A test for this in the validator will be needed.
 
 - coreference :
   ?? :coref for two/more mentions  within a single sentence
@@ -130,7 +151,6 @@ Wikification and coreferential chains:
      MN,DZ: this could be solved automatically or semi-automatically,
             e.g., when we have one coreference chain with two wiki-links, it should be the same wiki-link.
             If we have two coreferential chains with the same wiki-link, the coreferential chains should be probably connected.
-
 
 - :quot ... The :quot relation indicates that an event is being reported. Cf. snt3 of the first English file:
        "About 200 people were believed killed ... when a landslide buried an entire village , the Red Cross said ."
@@ -151,51 +171,61 @@ Wikification and coreferential chains:
                The first sentence includes an event.
                Second sentence (just location – Tacloban, Philippines) – modality is described on the document level.
 
+==================================================================================================================================================
+==================================================================================================================================================
 
 ad validate.py:
 ===============
-1. aspect + modal-strength:
+1. EVENT --> má argumentovou strukturu
+         --> anotovno aspect (snt graph) / modal-strength (snt+doc graph) + temporal dependency (doc graph) ... 
 Guidelines: aspect+modstr téměř všude, kde je nějaká argumentová struktura (chybí v př. 3-1-3-8 (1))
 Released data (pro angličtinu): v řadě případů neanotováno (?chyba či záměr?)
-ALE:
-- ne vše, co má ARGx nebo ARGx-of, má mít anotován aspect+modal-strength!!
-- diskurzní relace (příklady 3-1-6) … e.g., contrast-91 (podle Guidelines)
-- entity … vč. toho, kde je predikát “identity”, ať už bez přípony (4-1-2 (2b)), NEBo s příponou -91 (podle Guidelines)
-- ARGx-of … můžou (pokud je tak připojená např. závislá klauze)
-  ALE NEmusí např. pro konatelská jména ... guidelines nejednotné,
-  tak jsme se dohodli (23.10.), že budeme anotovat s hodnotou 0, abychom snadno našli
-- publication-91 je zcela umělý koncept (obálka pro publikaci), jako taková podle mě nemá mít aspekt!
-  english_umr-0001.txt … snt 1 NEMÁ anotaci aspektu ani modstr u publication-91
-- have-quant-91 , have-degree-91 … podle mě nemají mít aspect
-  (nemá ho ani v angl. anotaci, v guidelines příklad s have-quant-91 není)
+
+Na základě Juliina stanoviska:
+1) kdykoli existuje roleset (pro daný predikát nebo abstraktní), tak jí využijem
+2) !! ne vše, co má roleset (ARGx nebo ARGx-of), má nutně anotováno aspect/modal-strength/temporal dependency
+  ALE:
+  - action / stative verbs ... nerozlišujeme --> všude roleset + aspect/modal-strength/temporal dependency (preliminary)!!
+  - 9 abstraktních predikátů ... používáme jen tam, kde to interpretujeme jako predikaci --> všude roleset + aspect/modal-strength/temporal dependency (preliminary)!!
+  - další abstraktní rolesets (reification, implicit rolesets) ... totéž jako pro -91 predikáty --> všude roleset + aspect/modal-strength/temporal dependency (preliminary)!!
+          (publication-91: english_umr-0001.txt (snt 1) NEMÁ anotaci aspektu ani modstr u publication-91 :-((
+  - speciálně srovnávací konstrukce (have-quant-91, have-degree-91) ... predikace --> všude roleset + aspect/modal-strength/temporal dependency (preliminary)!!
+          (nemá abstr/modstr v angl. anotaci, v guidelines příklad s have-quant-91 není)
+  !!! diskurzní relace (příklady 3-1-6) ... e.g., contrast-91 (podle Guidelines) ... JEDINÉ, kde rozhodně nechceme anotovat aspect/modal-strength/temporal dependency!!!
+  ?? entity ... vč. toho, kde je predikát “identity”, ať už bez přípony (4-1-2 (2b)), NEBo s příponou -91 (podle Guidelines)
+  ?? ARGx-of … můžou (pokud je tak připojená např. závislá klauze)
+     ALE NEmusí např. pro konatelská jména ... guidelines nejednotné,
+     tak jsme se dohodli (23.10.), že budeme anotovat s hodnotou 0, abychom snadno našli
+ 
 ANOTACE: ML: pro konatelská jména anotovaná jako ARGx-of  :aspect 0, :modal-strength 0
              pro stavy u abstraktních predikátů :aspect reversible-state, :modal-strength full-affirmative
 
-VIZ též mail Julii 	(14 November, 2023)
-
 2. Jak anotovat NE, u kterých jsme nenašli položku ve wikidatech?
-   --> Q0 ... NEZNÁ Michalovo zobrazovadlo --> DOPLNIT (varov8n9, ne aby to krachlo)
+   --> Q0 ... NEZNÁ Michalovo zobrazovadlo --> DOPLNIT (varování, ne aby to krachlo)
 
 3. alignment
 - sloveso "být" nahrazeno abstraktním predikátem, který ale podle všeho má alignment 0-0 (podle dat) ... neměl by být alignován s tím (povrchovým) slvesem??
 - NE: alignment vyznačen pro obstraktní koncept (person, thing, ...), nikoli pro vlastní jméno
       OK, aby bylo jedinečné mapování na tokeny - což ale NENÍ v PDT
                                                (viz elipsy, koordinace - předložka, ale i uzel pro sloveso má několik .rf)
+4. coreferential chain
+    If there is a coreferential chain, the chained elements should have the same :wiki (if present). 
+    A test for this in the validator will be needed.
 
-Estonci:
-========
+5. "header" standardization ... Dan should decide!!
 Commented line with token ids:
   ?? How to standardize it?
      Currently, sometimes the token line appears before the sentence, sometimes after, often it is not present at all.
      Sometimes it starts with tk, sometimes not, etc.
 
-====
+
+==================================================================================================================================================
+==================================================================================================================================================
 
 #snt5 V nedělních parlamentních volbách v Estonsku ...
-   ??? relative clause introduced with possesive pronoun: ... blok Vlast, **jehož** prezidentský kandidát ...
-       DZ solution: inserted "nominovat"
-                    DZ:  kandidát :ARG1-of (have-role-91 (ARG1 (person LM)))
-   --> ML: kandidovat-001 ... blok :ACT=ARG0-of (kandidovat :ARG1(person LM).PAT :ARG2 (na prezidenta).EFF)
+   -relative clause introduced with possesive pronoun: ... blok Vlast, **jehož** prezidentský kandidát ...
+       ML: kandidovat-001 ... blok :ACT=ARG0-of (kandidovat :ARG1(person LM).PAT :ARG2 (na prezidenta).EFF)
+       --> By using kandidovat-001 the graph looks very simple and nice, although it is a paraphrase. Agreed to annotate this way.
    ??? DZ: předběžný výsledek jako výsledek :ARG0-of (předbíhat)
        ML: výsledek je stav, nikoli event, proto :mod (předběžný)
    ??? different wiki:
@@ -203,13 +233,13 @@ Commented line with token ids:
             DZ: :wiki Q189760
        blok Vlast ML vs. SZ
        wikidata: also Isamaa / Pro Patria and Res Publica Union / ... (no Czech equivalent)
+========
 
 #snt6 Z celkového počtu 457319 voličů, ...
    !! jiná "hlava":
-       Z 457319 voličů hlasovalo 20.3 procent pro blok ...
-       DZ: "20.5 procenta" jako řídící tak i v PDT), chybí anotace "asi"
-       ML: "voliči" jako řídící
-           asi 20.5 procenta … podle “about 200 people”
+       Z 457319 voličů hlasovalo 20.5 procent pro blok ...
+       DZ: "20.5 procenta" jako řídící (tak i v PDT), chybí anotace "asi"
+       ML: "voliči" jako řídící ...  podle “about 200 people”
 	               (s3p / person
                        :quant (s3a2 / about
                               :op1 200))
@@ -219,10 +249,11 @@ Commented line with token ids:
 	                     :value (s6d / 20.5
 	                              :mod (s6a2 / asi)))) 
                            
-      20.5 %
+   !! 20.5 % z celkového počtu 457319 voličů, kteří se voleb zúčastnili, ...
       DZ: :ARG0 (s6p2 / percentage-entity
             :value 20.5
-            :part-of (s6p / person
+            :part-of (s6p / person                              !!! AMR: (e / engine :part-of (c / car))
+								!!! UMR: (s/ string :part (g/ guitar))
                 :ARG0-of (s6v / volit-001
                     :aspect habitual
                     :modal-strength full-affirmative)
@@ -236,7 +267,7 @@ Commented line with token ids:
                           :source (s6p7 /person
                                       :quant 457319
                                       :refer-number plural
-                                      :ARG0-of (s6z / zúčastnit-se-001
+                                      :ARG0-of (s6z / zúčastnit-se-001      OK, lze převést zůčastnili se voleb --> volili
                                                     :ARG1 (s6v2 / volit-001
                                                              :wiki "Q372557"
                                                              :aspect reversible-state
@@ -276,7 +307,7 @@ Commented line with token ids:
    s6a / and
      :op1 hlasovat...
      :op2 s6i / identity-91 (tj. představovat)
-   ML, DZ: 20.5 % voliřů je "ARG0-of představovat"
+   ML, DZ: 20.5 % voličů je "ARG0-of představovat"
    
    představovat - full verb vs abstract concept identity-91
    ŠZ: identity-91
@@ -285,10 +316,7 @@ Commented line with token ids:
    wiki:
    hlasovat - DZ 0, ML a ŠZ shodně Q189760   
                           
-                          
-                          
-                          
-                          
+========                                          
                           
 
 #snt7  Na druhém místě s 13.9 procenty hlasů ...

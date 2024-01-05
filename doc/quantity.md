@@ -99,6 +99,14 @@ Těch knedlíků bylo pět. “The dumplings were five (there were five dumpling
     :ARG2 5)
 ```
 
+**Problem:** `:quant` vs. `have-quant-91`:   
+Where we should use the `:quant` attribute (not relation, see below!!) and where the `have-quant-91` predicate?   
+Possible solution: Reserve `have-quant-91` only for explicitly expressed comparisons and superlatives (or for cases annotated as comparison in PDT). 
+
+**Feedback from Julia:**
+I use these in the same way you mentioned above. For sentences like _there are 10 more blue blocks than red blocks_, I would use _have-quant-91_ as the top node of the graph and treat it as an event, with :aspect/:modstr/:temporal dependency. 
+
+
 ### Fractions
 
 In some cases, non-integer quantities work the same way as integer quantities:

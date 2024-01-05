@@ -121,6 +121,14 @@ dívka je vyšší než chlapec “the girl is taller than the boy”
 AMR also uses :ARG6 to express purpose or result (_it is small enough to fit
 in your pocket_, _he was so tired that he slept for 10 hours_).
 
+**Problem:** `:degree` vs. `have-degree-91`:   
+Where we should use the `:degree` relation and where the `have-degree-91` predicate?   
+Possible solution: Reserve `have-degree-91` only for explicitly expressed comparisons and superlatives (or for cases annotated as comparison in PDT). 
+
+**Feedback from Julia:**
+I use these in the same way you mentioned above. For sentences like _He was the tallest boy in the room_, I would use _have-degree-91_ as the top node of the graph and treat it as an event, with :aspect/:modstr/:temporal dependency. 
+
+But for a sentence like _she ate the biggest banana of the bunch_, I would use _have-degree-91_ so that I could capture the superset entity as a numbered argument (the bunch), but I wouldn't treat it as an event.
 
 ## Comparison of quantity
 

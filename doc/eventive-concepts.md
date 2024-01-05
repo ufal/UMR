@@ -1,37 +1,76 @@
 ## Open questions
 ### 1. "Non-Action" verbs  in references and modification 
 
-##### Stative verbs 
+##### 1.A Stative verbs 
 We do not want to distinguish between **action and state verbs** (due to an unclear boundary in Czech. 
 
 If stative verbs such as _milovat_ “love” occur as concepts, they will be treated as events regardless whether they are used in predication (_on ji miluje_), modification (_muž, který ji miluje_) or reference (_milovat ji je jeho osud_).
+(UMR guidelines: "Two-place statives, such as _love_ in  _My cat loves wet food._, are annotated in the same way as predicated processes, i.e. an event is identified and labelled with the predicate in the language.")
+
+What about **stative verbs** in **reference or modification**? One would suppose that they should not be treated as events (they do not denote processes and are not used in predication). Am I right?  
+
+ **Feedback from Julia:**   
+ This question is one of my own great questions right now.   
+1. If a state is being used as **modification** of some referent, and it's not given as a predicate, then theoretically it wouldn't be treated as an event.   
+For me, with English, I would still use an applicable roleset if one exists-- I just wouldn't complete :aspect, :modal-strength, or :temporal dependency annotation.
+2. For states in **reference** though, the guidelines specify that they should not be treated as events, but I'm not sure I agree. It seems to me like referring to the abstraction notion of 'kindness' is one thing-- certainly that doesn't seem like it needs :aspect, :modal-strength, or :temporal dependency annotation. But 'his kindness to his mother last week' is much more event-like.   
+I'm not sure where to draw the line. I am hoping to get some clarification on this soon.
+
+**Preliminary conclusion for Czech annotations:**  
+ We will annotate statives in the same way as action verbs, i.e., as eventive concepts (regardless the information packaging), unless it is a clear case of a non-eventive concept. To put it differently, we will: 
+ - represent it using its roleset (if exists)
+ - annotate `:aspect`, `:modal-strength` (both in the sentence and document graphs);   
+  further, it qualifies for placement in the document-level `:temporal dependency` annotation. 
 
 
- **_CONFLICT with the UMR guidelines:_** Stative verbs in reference or modification should not be treated as events (they do not denote processes and are not used in predication). **Pending feedback from Julia!**
-
-
-##### "Abstract predicates" such as have-91, ... identity-91 
-These 9 predicates are definitely considered events if structured as predication, as, e.g., in _Petr je bohatý_ (with the _have-mod-91_ predicate).
-We tentatively  decided that the abstract predicates (reifications) will in general be treated as stative verbs, i.e., as events, independently of their packaging.   
-**Pending feedback from Julia!**
+##### 1.B "Abstract predicates" such as have-91, ... identity-91 
+These 9 predicates introduced in 3.1.1.3 are definitely considered events if structured as predication, as, e.g., in _Petr je bohatý_ (with the _have-mod-91_ predicate).
+~~We tentatively  decided that the abstract predicates (reifications) will in general be treated as stative verbs, i.e., as events, independently of their packaging.~~   
 
 These predicates are used less frequently in modification because then we can use the relation they reify, e.g., `:mod`.   
-**Pending feedback from Julia!**
 
-##### "Discourse relation rolesets/reifications"
+**Feedback from Julia:**  
+"Abstract predicates" (like _have-91_, ... _identity-91_) are events if they are structured as predication but non-events if structured as reference or modification (e.g., in relative clauses), right?
+
+**Preliminary conclusion for Czech annotations:**  
+We will use "abstract predicates" only in cases of predication (using their rolesets and including the aspect, modal and temporal dependency annotation).   
+Otherwise we will stick to the relation they reify.
+
+##### 1.C Other abstract rolesets - reification, implicit rolesets 
+Abstract predicates for reifications and predicates for indicating metadata info (_publication-91_, _hyperlink-91_, _street-address-91_, ...)
+
+**Feedback from Julia:**
+I think it's much more unusual for a lot of the other **implicit rolesets** to come up in a predicated form, but some of them do occasionally, and that goes for the -91 rolesets used for **reification** as well. (Generally, this is a copular or existential construction in English).   
+I can't think of a case with publication-91 offhand-- maybe that one isn't one that occurs in English. **My goal is to try to follow the same predicating/non-predicating guidelines with all of the -91 rolesets.**
+
+**Preliminary conclusion for Czech annotations:**  
+The abstract rolesets (reification, implicit rolesets) will be treated in the same way as other -91 predicates  (others than those for discourse relations).
+
+##### 1.D Rolesets have-quant-91 AND have-degree-91
+Rolesets for quantities and rolesets for comparative/superlative constructions (as the special cases of reification / abstract rolesets) should not be considered events? Also other quantity-related abstract predicates like _rate-entity-91_, _range-91_, etc. 
+
+**Feedback from Julia:**
+I use these in the same way you mentioned above. For sentences like _He was the tallest boy in the room_ or _there are 10 more blue blocks than red blocks_, I would use _have-degree-91_ or _have-quant-91_ as the top node of the graph and treat it as an event, with :aspect/:modstr/:temporal dependency. 
+
+But for a sentence like _she ate the biggest banana of the bunch_, I would use _have-degree-91_ so that I could capture the superset entity as a numbered argument (the bunch), but I wouldn't treat it as an event.
+
+**Preliminary conclusion for Czech annotations:**  
+Due to an unclear boundary, we will consider all cases annotated with _have-quant-91_ or _have-degree-91_ as predicates (unless it is a clear case of a non-eventive concept), i.e. using their rolesets and including :aspect/:modstr/:temporal dependency.
+
+##### 1.E "Discourse relation rolesets/reifications"
 However, abstract predicates that the UMR spreadsheet lists under “discourse relation rolesets/reifications” (10 types) will not be treated as events.
 
-**Pending feedback from Julia!**
+**Feedback from Julia:**  
+ML: In particular, I suppose that discourse relations (10 types) should not be considered events even if the respective rolesets are referred to as abstract predicates from time to time in the Guidelines?
+JB: Yes, this too! 
 
-##### Rolesets have-quant-91 AND have-degree-91
-Rolesets for quantities and rolesets for comparative/superlative constructions should not be considered events? Also other quantity-related abstract predicates like _rate-entity-91_, _range-91_, etc. 
-**Pending feedback from Julia!**
-
-##### Other abstract predicates (should be listed here?)
-Abstract predicates for indicating metadata info (_publication-91_, _hyperlink-91_, _street-address-91_, ...)
+**Conclusion for Czech annotations:**  
+Discourse relations should NOT be considered as events even if they have rolesets!
 
 
-**Inverse participant roles** (typically `ARGx-of` roles), see [Part 3-2-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-3-inverse-participant-roles) and [the notes on roles here](roles.md) are typically used in nominal modifications (esp. relative clauses like _sweater that ..._, kindship relations like _his father_, etc.) and in references (esp. participant nominalizations like _runner_.).
+##### 1.F Inverse participant roles
+
+(typically `ARGx-of` roles), see [Part 3-2-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-3-inverse-participant-roles) and [the notes on roles here](roles.md) are typically used in nominal modifications (esp. relative clauses like _sweater that ..._, kindship relations like _his father_, etc.) and in references (esp. participant nominalizations like _runner_.).
 
 
 

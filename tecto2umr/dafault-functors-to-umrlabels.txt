@@ -1,0 +1,51 @@
+# original copied from Treex::Block::T2TAMR::FunctorsToAMRLabels
+# updates 2023
+
+my %MAPPING = (
+    'ACT'   => 'ARG0',
+    'PAT'   => 'ARG1',
+    'ADDR'  => 'ARG2',
+    'ORIG'  => 'ARG3',
+    'EFF'   => 'ARG4',
+##### TEMPORAL ###########################
+    'TWHEN' => 'temporal',
+    'TFHL' => 'duration',
+    'TFRWH' => 'temporal',
+    'THL'   => 'duration',
+    'THO' => 'frequency',
+    'TOWH' => 'temporal',
+    'TPAR' => 'temporal',
+    'TSIN' => 'temporal',
+    'TTILL' => 'temporal',
+##### SPATIAL ###########################
+    'DIR1'  => 'start',
+    'DIR2'  => 'path',
+    'DIR3'  => 'goal',
+    'LOC'   => 'place',
+##### CAUSAL ###########################
+    'AIM'   => 'purpose',
+    'CAUS'  => 'cause',
+    'CNCS' => 'concession',
+    'COND' => 'condition',
+    'INTT' => 'purpose',
+##### MANNER ###########################
+    'ACMP'  => 'companion',
+#    'CPR' => 'compared-to',
+    'CRIT' => 'according-to',  #temporarily
+    'DIFF' => 'extent',
+    'EXT' => 'extent',
+    'MANN'  => 'manner',
+    'MEANS' => 'instrument',
+    'NORM' => 'according-to',  #temporarily
+    'REG'  => 'manner',
+    'RESL' => 'extent',
+    'RESTR' => 'subtraction',
+##### NEW ###########################
+    'BEN'   => 'recipient',
+    'HER'   => 'source',
+##### NOMINAL ###########################
+    'APP'   => 'poss',  # ?? or 'part' ??
+    'AUTH' => 'source',
+#    'ID' => 'name',
+    'RSTR'  => 'mod',
+)
