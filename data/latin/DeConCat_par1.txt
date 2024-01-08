@@ -83,7 +83,7 @@ s1v2: 23-23
 
 # sent_id = SlaT-2774-a
 # 			1	  2		3	  4	 5	 6	  7		8	  9	  10
-# :: snt1	Sed nostra omnis vis in animo et corpore sita est:
+# :: snt2	Sed nostra omnis vis in animo et corpore sita est:
 # @en: All our power is situate in the mind and in the body.
 
 # sentence level graph:
