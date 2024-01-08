@@ -9,10 +9,10 @@ TODO:
 =====
 Honza - email o NE z 13.11.2023
 
-poznámky z minutes (na zapracování do dokumentace) 
+poznámky z minutes (na zapracování do dokumentace)
 ==================================================
 
-- apposition: How to annotate apposition?  
+- apposition: How to annotate apposition?
 Compare ex. 4-1-2 (2b):
 The loan, a sum of 12.5 million US dollars, is an export credit …
 
@@ -38,19 +38,15 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
 
 - Events ... TODO ... podle Julie (anotace u všeho, co má role, vč. abstr. predikátů) ... (A-E už promítnuto do dokumentace)
   !! A. neděláme rozdíl mezi stative / action verbs ---> tudíž mají všude aspekt+modal+... (preliminary)!!
-  !! B. abstraktní predikáty (těch 9 definovaných v guidelines) jen tam, kde jde o predikaci 
+  !! B. abstraktní predikáty (těch 9 definovaných v guidelines) jen tam, kde jde o predikaci
         (jinak se jim vyhýbáme a použijeme příslušnou relaci, od které jde o reifikaci) --> tudíž mají všude aspekt+modal+...(preliminary)!!
   !! C. další abstraktní rolesets (reification, implicit rolesets) ... totéž jako pro -91 predikáty --> všude aspekt+modal+...(preliminary)!!
   !! D. srovnání entity (have-quant-91, have-degree-91) ... predikace --> mají všude aspekt+modal+... (preliminary)!!
-  !! E. diskurzní relace ... NEJDE o "events" (i když mají argumenty) 
-  ?? F. konatelská jména --> slovesa
-        agentive nouns and aspect ... special value (e.g., aspect: 0)
-        Šárka: a teacher teaches habitually vs. for a murderer, it is enough to commit just one murder to be a murderer.
-               Do we want to mark the aspect at the verb to_teach, to_kill?
-        Dan, Markéta, Šárka – solution of the discussion:
-               We want to mark these verbs in a specific way (e.g., aspect: 0) so that we are able to find them later again and mark the aspect there consistently later.
-  ?? -	What about words like válka, příchod? (Either entities – conservative approach, or events – based on the Vallex, they have a valency frame.
-     Problem: not consistent, some similar words in PDT Vallex are not assigned a valency frame.)
+  !! E. diskurzní relace ... NEJDE o "events" (i když mají argumenty)
+  !! F. konatelská jména --> slovesa - events
+  !! G. jmén označující procesy (válka, příchod, bouře) ---> events
+        - ruční anotace ... doplnit, pokud nejsou v PDT-Vallexu (??? jak technicky)
+        - konverze: asi na to rezignujeme 
   !! adjektiva od slovesa (resp. s exist. slovesem, bez ohledu na směr derivace) --> slovesa
 
 - Functor conversion ... TODO: should be completed!!
@@ -59,8 +55,8 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
   ?? number UMR: entities have number (derived from morphology) ... but singular seems to be default in Eng. data (NOT annotated)
   !! we will enter it explicitly even if singular (entities, named entities (their abstract concepts), personal pronouns)
      ?? even with quantitative modification (like in 18 mandátů, 13.9 % hlasů)
-     But: NOT for “place holders” like in snt2 Estonsko: with ARG3 (thing) for the publication-91 abstract predicate! 
-     ?? But: What about, e.g., a NE denoting 1 entity with a plural :name (as in Zbabělci) 
+     But: NOT for “place holders” like in snt2 Estonsko: with ARG3 (thing) for the publication-91 abstract predicate!
+     ?? But: What about, e.g., a NE denoting 1 entity with a plural :name (as in Zbabělci)
                                                       or Philippines (1 country) – no number is given in the example
          - Dan: proposed solution: if the form says you the number and you agree with that from the semantic point of view,
            write there the number as you feel it.
@@ -71,7 +67,7 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
      Dan: yes, if we know the biologic gender, we should annotate it.
      Julia: NOT annotated so far - need of deeper typological analysis
 
-- grammatemes: TODO 
+- grammatemes: TODO
    FG went through ... see her conclusions ... Github: doc/grammatemes-attributes
    ML aspect
 
@@ -122,17 +118,17 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
           Example in UMR data: file 0001, sentence 4: Eyewitness is a person who witnesses. ... i.e., anchored in PropBank (witness-01)
  Suggestion: We might introduce a new type of the :wiki relation for types, i.e. common nouns (appelatives) like hlas, volby, parlament …
       TODO: should be further discussed with Jan!
---> Annotate as much :wiki as possible 
-           + as concrete events as possible. 
+--> Annotate as much :wiki as possible
+           + as concrete events as possible.
     E.g., if there is a wiki entry for "hlasovat" and for these specific "Estonian elections", the second option should be picked.
-    Whenever possible, we would like to have the reference to the concrete event. 
+    Whenever possible, we would like to have the reference to the concrete event.
 
 Wikification and coreferential chains:
      We do not want to systematically repeat wikilinks within coreferential chains.
      However, if there are more links, they should be the same … TODO: candidate to automatic validation?
      ?? volby, parlament, ... vybírám konkrétní volby na základě kontextu (daná země, dané datum), nebo obecný koncept
      ... asi dost záleží na koreferenci???
---> If there is a coreferential chain, the chained elements should have the same :wiki (if present). 
+--> If there is a coreferential chain, the chained elements should have the same :wiki (if present).
     A test for this in the validator will be needed.
 
 - coreference :
@@ -177,7 +173,7 @@ Wikification and coreferential chains:
 ad validate.py:
 ===============
 1. EVENT --> má argumentovou strukturu
-         --> anotovno aspect (snt graph) / modal-strength (snt+doc graph) + temporal dependency (doc graph) ... 
+         --> anotovno aspect (snt graph) / modal-strength (snt+doc graph) + temporal dependency (doc graph) ...
 Guidelines: aspect+modstr téměř všude, kde je nějaká argumentová struktura (chybí v př. 3-1-3-8 (1))
 Released data (pro angličtinu): v řadě případů neanotováno (?chyba či záměr?)
 
@@ -196,7 +192,7 @@ Na základě Juliina stanoviska:
   ?? ARGx-of … můžou (pokud je tak připojená např. závislá klauze)
      ALE NEmusí např. pro konatelská jména ... guidelines nejednotné,
      tak jsme se dohodli (23.10.), že budeme anotovat s hodnotou 0, abychom snadno našli
- 
+
 ANOTACE: ML: pro konatelská jména anotovaná jako ARGx-of  :aspect 0, :modal-strength 0
              pro stavy u abstraktních predikátů :aspect reversible-state, :modal-strength full-affirmative
 
@@ -209,7 +205,7 @@ ANOTACE: ML: pro konatelská jména anotovaná jako ARGx-of  :aspect 0, :modal-s
       OK, aby bylo jedinečné mapování na tokeny - což ale NENÍ v PDT
                                                (viz elipsy, koordinace - předložka, ale i uzel pro sloveso má několik .rf)
 4. coreferential chain
-    If there is a coreferential chain, the chained elements should have the same :wiki (if present). 
+    If there is a coreferential chain, the chained elements should have the same :wiki (if present).
     A test for this in the validator will be needed.
 
 5. "header" standardization ... Dan should decide!!
@@ -247,8 +243,8 @@ Commented line with token ids:
            asi 20.5 procenta - "asi" anotováno nepřesně, jako modifikace
            :quant (s6p3/ percentage-entity
 	                     :value (s6d / 20.5
-	                              :mod (s6a2 / asi)))) 
-                           
+	                              :mod (s6a2 / asi))))
+
    !! 20.5 % z celkového počtu 457319 voličů, kteří se voleb zúčastnili, ...
       DZ: :ARG0 (s6p2 / percentage-entity
             :value 20.5
@@ -260,7 +256,7 @@ Commented line with token ids:
                 :refer-number plural
                 :quant 457319
                 :ARG0-of (s6z / zúčastnit-se-001
-                           
+
       ML:  :quant (s6a / asi
                           :op1 (s6p2 / percentage-entity
                                   :value  20.5
@@ -290,34 +286,34 @@ Commented line with token ids:
                              :aspect performance
                              :modal-strength full-affirmative
                              :ARG1 (s6v3 / volit-001
-                                    :aspect performance))                 
+                                    :aspect performance))
                   :quant (s6p3/ percentage-entity
 	                     :value (s6d / 20.5
-	                              :mod (s6a2 / asi))))                          
-                            
-                           
-                              
+	                              :mod (s6a2 / asi))))
+
+
+
    ??? "celkový" chybí anotace
        ŠZ: "celkový" - převedeno na "celkem"
        :quant (s6q / 457319
                           :mod s6c / celkem))
-                          
+
    což představuje.... - discourse relation vs relativní návaznost
    ŠZ: discourse relation "and" - jako "pro blok hlasovalo 20.5 procenta A TO představuje 28 mandátů
    s6a / and
      :op1 hlasovat...
      :op2 s6i / identity-91 (tj. představovat)
    ML, DZ: 20.5 % voličů je "ARG0-of představovat"
-   
+
    představovat - full verb vs abstract concept identity-91
    ŠZ: identity-91
    ML, DZ: představovat
-                       
+
    wiki:
-   hlasovat - DZ 0, ML a ŠZ shodně Q189760   
-                          
-========                                          
-                          
+   hlasovat - DZ 0, ML a ŠZ shodně Q189760
+
+========
+
 
 #snt7  Na druhém místě s 13.9 procenty hlasů ...
    ??? Na druhém místě ... je ...
