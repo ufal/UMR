@@ -4,7 +4,7 @@
 # @en: It is suitable that all men, who desire to excel other animals, strive, to the utmost of their power, not to pass through life in obscurity, like the beasts of the field, which nature has formed groveling and subservient to appetite. 
 
 # sentence level graph:
-(s1n / nitor-06
+(s1n1 / nitor-06
 	:ACT (s1h / homo
 			:refer-number plural
 			:quant (s1o / omnis)
@@ -33,7 +33,7 @@
 						:ARG2 (s1p3 / pecus
 									:refer-number plural
 									:PAT-of (s1f / fingo-02
-												:ACT (s1n / natura)
+												:ACT (s1n2 / natura)
 												:EFF (s1a2 / atque
 															:op1 (s1p4 / pronus)
 															:op2 (s1o3 / oboedio-NEW-01
