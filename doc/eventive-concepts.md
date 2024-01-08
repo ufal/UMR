@@ -58,14 +58,15 @@ But for a sentence like _she ate the biggest banana of the bunch_, I would use _
 Due to an unclear boundary, we will consider all cases annotated with _have-quant-91_ or _have-degree-91_ as predicates (unless it is a clear case of a non-eventive concept), i.e. using their rolesets and including :aspect/:modstr/:temporal dependency.
 
 ##### 1.E "Discourse relation rolesets/reifications"
-However, abstract predicates that the UMR spreadsheet lists under “discourse relation rolesets/reifications” (10 types) will not be treated as events.
+However, abstract predicates that the UMR spreadsheet lists under “discourse relation rolesets/reifications” (10 types (Jan 2024), see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)) will not be treated as events.  
+discourse. 
 
 **Feedback from Julia:**  
 ML: In particular, I suppose that discourse relations (10 types) should not be considered events even if the respective rolesets are referred to as abstract predicates from time to time in the Guidelines?
 JB: Yes, this too! 
 
 **Conclusion for Czech annotations:**  
-Discourse relations should NOT be considered as events even if they have rolesets!
+Discourse relations, see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) should NOT be considered as events (despite having rolesets)!
 
 
 ##### 1.F Inverse participant roles
