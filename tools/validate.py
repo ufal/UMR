@@ -1267,6 +1267,82 @@ def validate_document_relations(sentence, node_dict, args):
             # Add the variable to node_dict so that we do not get KeyError later.
             node_dict[r['node1']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
 
+def collect_coreference_clusters(document, node_dict, args):
+    """
+    Once all sentences of the document have been read, this function should be
+    called. It re-visits the document-level graphs of all sentences, traces
+    the coreference relations and constructs clusters of nodes that refer to
+    the same entity.
+    """
+    # Collect coreference clusters.
+    document['clusters'] = {}
+    for s in document['sentences']:
+        for r in s[3]['relations']:
+            if r['group'] == ':coref' and r['relation'] == ':same-entity':
+                n0 = r['node0']
+                n1 = r['node1']
+                # The cluster will be represented by the id of its first node (the one first mentioned).
+                cid = get_coref_cluster_id(n0, n1, node_dict)
+                if not cid in document['clusters']:
+                    document['clusters'][cid] = set()
+                # If the node was already member of this cluster, do nothing.
+                # If it was in a cluster but the cluster id was different, move its members to the new cluster.
+                # If it was not in any cluster, add it to this one.
+                if 'cluster' in node_dict[n0]:
+                    if node_dict[n0]['cluster'] != cid:
+                        oldcid = node_dict[n0]['cluster']
+                        for cm in document['clusters'][oldcid]:
+                            document['clusters'][oldcid].remove(cm)
+                            document['clusters'][cid].add(cm)
+                            node_dict[cm]['cluster'] = cid
+                else:
+                    node_dict[n0]['cluster'] = cid
+                    document['clusters'][cid].add(n0)
+                if 'cluster' in node_dict[n1]:
+                    if node_dict[n1]['cluster'] != cid:
+                        oldcid = node_dict[n1]['cluster']
+                        for cm in document['clusters'][oldcid]:
+                            document['clusters'][oldcid].remove(cm)
+                            document['clusters'][cid].add(cm)
+                            node_dict[cm]['cluster'] = cid
+                else:
+                    node_dict[n1]['cluster'] = cid
+                    document['clusters'][cid].add(n1)
+    if args.print_clusters:
+        for c in document['clusters']:
+            print("Coreference cluster '%s': " % c)
+            members = sorted(list(document['clusters'][c]))
+            for cm in members:
+                wiki = ''
+                wikidatalist = [x['value'] for x in node_dict[cm]['relations'] if x['relation'] == ':wiki']
+                if len(wikidatalist) > 0:
+                    wiki = wikidatalist[0]
+                print("  %s (%s / %s) wiki '%s' line %d" % (cm, node_dict[cm]['alignment']['tokstr'], node_dict[cm]['concept'], wiki, node_dict[cm]['line0']))
+
+def get_coref_cluster_id(n0, n1, node_dict):
+    """
+    Takes ids of two nodes from the same coreference cluster. Decides which of
+    the two ids should serve as the id of the cluster.
+    """
+    # If one of the nodes already is member of a cluster, replace it with its current cluster id.
+    if 'cluster' in node_dict[n0]:
+        n0 = node_dict[n0]['cluster']
+    if 'cluster' in node_dict[n1]:
+        n1 = node_dict[n1]['cluster']
+    # The node mentioned earlier (line-wise) wins.
+    l0 = node_dict[n0]['line0']
+    l1 = node_dict[n1]['line0']
+    if l0 < l1:
+        return n0
+    if l1 < l0:
+        return n1
+    # If both nodes were introduced on the same line, we don't know which one was first.
+    # So we order them alphabetically by their ids.
+    if n0 < n1:
+        return n0
+    else:
+        return n1
+
 
 
 #==============================================================================
@@ -1314,74 +1390,7 @@ def validate(inp, out, args, known_sent_ids):
     # After we have read the input, we can ask about the line breaks observed.
     validate_newlines(inp) # level 1
     # Document-level tests.
-    # Collect coreference clusters.
-    document['clusters'] = {}
-    for s in document['sentences']:
-        for r in s[3]['relations']:
-            if r['group'] == ':coref' and r['relation'] == ':same-entity':
-                n0 = r['node0']
-                n1 = r['node1']
-                # The cluster will be represented by the id of its first node (the one first mentioned).
-                cid = get_coref_cluster_id(n0, n1, node_dict)
-                if not cid in document['clusters']:
-                    document['clusters'][cid] = set()
-                # If the node was already member of this cluster, do nothing.
-                # If it was in a cluster but the cluster id was different, move its members to the new cluster.
-                # If it was not in any cluster, add it to this one.
-                if 'cluster' in node_dict[n0]:
-                    if node_dict[n0]['cluster'] != cid:
-                        oldcid = node_dict[n0]['cluster']
-                        for cm in document['clusters'][oldcid]:
-                            document['clusters'][oldcid].remove(cm)
-                            document['clusters'][cid].add(cm)
-                            node_dict[cm]['cluster'] = cid
-                else:
-                    node_dict[n0]['cluster'] = cid
-                    document['clusters'][cid].add(n0)
-                if 'cluster' in node_dict[n1]:
-                    if node_dict[n1]['cluster'] != cid:
-                        oldcid = node_dict[n1]['cluster']
-                        for cm in document['clusters'][oldcid]:
-                            document['clusters'][oldcid].remove(cm)
-                            document['clusters'][cid].add(cm)
-                            node_dict[cm]['cluster'] = cid
-                else:
-                    node_dict[n1]['cluster'] = cid
-                    document['clusters'][cid].add(n1)
-    # Debugging: Print all coreference clusters in the document.
-    for c in document['clusters']:
-        print("Coreference cluster '%s': " % c)
-        members = sorted(list(document['clusters'][c]))
-        for cm in members:
-            wiki = ''
-            wikidatalist = [x['value'] for x in node_dict[cm]['relations'] if x['relation'] == ':wiki']
-            if len(wikidatalist) > 0:
-                wiki = wikidatalist[0]
-            print("  %s (%s / %s) wiki '%s' line %d" % (cm, node_dict[cm]['alignment']['tokstr'], node_dict[cm]['concept'], wiki, node_dict[cm]['line0']))
-
-def get_coref_cluster_id(n0, n1, node_dict):
-    """
-    Takes ids of two nodes from the same coreference cluster. Decides which of
-    the two ids should serve as the id of the cluster.
-    """
-    # If one of the nodes already is member of a cluster, replace it with its current cluster id.
-    if 'cluster' in node_dict[n0]:
-        n0 = node_dict[n0]['cluster']
-    if 'cluster' in node_dict[n1]:
-        n1 = node_dict[n1]['cluster']
-    # The node mentioned earlier (line-wise) wins.
-    l0 = node_dict[n0]['line0']
-    l1 = node_dict[n1]['line0']
-    if l0 < l1:
-        return n0
-    if l1 < l0:
-        return n1
-    # If both nodes were introduced on the same line, we don't know which one was first.
-    # So we order them alphabetically by their ids.
-    if n0 < n1:
-        return n0
-    else:
-        return n1
+    collect_coreference_clusters(document, node_dict, args)
 
 if __name__=="__main__":
     opt_parser = argparse.ArgumentParser(description="UMR validation script. Python 3 is needed to run it!")
@@ -1406,6 +1415,7 @@ if __name__=="__main__":
 
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
     report_group.add_argument('--print-relations', dest='print_relations', action='store_true', default=False, help='Print detailed info about all nodes and relations.')
+    report_group.add_argument('--print-clusters', dest='print_clusters', action='store_true', default=False, help='Print detailed info about coreference clusters (entities).')
 
     args = opt_parser.parse_args() # Parsed command-line arguments
     error_counter={} # Incremented by warn()  {key: error type value: its count}
