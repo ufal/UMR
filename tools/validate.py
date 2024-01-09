@@ -771,6 +771,10 @@ def validate_alignment(sentence, node_dict, args):
 def validate_document_level(sentence, node_dict, args):
     """
     Verifies the fourth annotation block of a sentence: the document level graph.
+    Saves the document-level relations in the list sentence[3]['relations']. It
+    means that if we later want to see all document-level relations in the
+    document, we will have to collect them from the sentences; such collection
+    is not created now.
     """
     testlevel = 2
     testclass = 'Document'
@@ -1225,6 +1229,36 @@ def validate_events(sentence, node_dict, args):
                     testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (rtype, relations[0]['type'], relations[0]['value'])
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
 
+def validate_document_relations(sentence, node_dict, args):
+    """
+    Checks for every document level relation whether we know it.
+    """
+    testlevel = 3
+    testclass = 'Document'
+    # Sort the nodes by their first line so that the validation report is stable and can be diffed.
+    nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
+    for r in sentence[3]['relations']:
+        if r['group'] == ':temporal':
+            if not r['relation'] in [':before', ':after', ':overlap']:
+                testid = 'unknown-document-relation'
+                testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
+                warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+        elif r['group'] == ':modal':
+            # The relation ':modal' is used between 'root' and 'author'.
+            if not r['relation'] in [':modal', ':full-affirmative']:
+                testid = 'unknown-document-relation'
+                testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
+                warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+        elif r['group'] == ':coref':
+            if not r['relation'] in [':same-entity']:
+                testid = 'unknown-document-relation'
+                testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
+                warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+        else:
+            testid = 'unknown-document-relation-group'
+            testmessage = "Unknown document-level relation group '%s'." % r['group']
+            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+
 
 
 #==============================================================================
@@ -1235,6 +1269,8 @@ def validate(inp, out, args, known_sent_ids):
     global sentence_line, sentence_id
     # Dictionary of all concept nodes in the document.
     node_dict = {}
+    # Collected data of the whole document.
+    document = {'sentences': []}
     for sentence in sentences(inp, args):
         # If fundamental errors were found already in sentences(), the function
         # will skip the current sentence and go to the next one. So if we are
@@ -1260,12 +1296,16 @@ def validate(inp, out, args, known_sent_ids):
             detect_events(sentence, node_dict, args)
             if args.check_aspect_modstr:
                 validate_events(sentence, node_dict, args)
+            validate_document_relations(sentence, node_dict, args)
+        # Remember the sentence for further document-level tests.
+        document['sentences'].append(sentence)
         # Before we read the next sentence, clear the current sentence variables
         # so that sentences() knows they should be reset to new values.
         sentence_line = None
         sentence_id = None
     # After we have read the input, we can ask about the line breaks observed.
     validate_newlines(inp) # level 1
+    # Document-level tests.
 
 if __name__=="__main__":
     opt_parser = argparse.ArgumentParser(description="UMR validation script. Python 3 is needed to run it!")
