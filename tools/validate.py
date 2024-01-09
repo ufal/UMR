@@ -1349,6 +1349,33 @@ def collect_coreference_clusters(document, node_dict, args):
                 else:
                     node_dict[n1]['cluster'] = cid
                     document['clusters'][cid].add(n1)
+    # Check that nodes in the same cluster do not have conflicting wiki links.
+    for c in document['clusters']:
+        cwiki = ''
+        cwikinode = ''
+        members = sorted(list(document['clusters'][c]))
+        for cm in members:
+            wiki = ''
+            wikidatalist = [x['value'] for x in node_dict[cm]['relations'] if x['relation'] == ':wiki']
+            if len(wikidatalist) > 0:
+                wiki = wikidatalist[0]
+            if wiki != '':
+                if cwiki != '':
+                    if wiki != cwiki:
+                        label = get_wikidata_label(wiki)
+                        if label:
+                            wikilabel = wiki + ' (' + label + ')'
+                        label = get_wikidata_label(cwiki)
+                        if label:
+                            cwikilabel = cwiki + ' (' + label + ')'
+                        testlevel = 3
+                        testclass = 'Document'
+                        testid = 'coref-wiki-mismatch'
+                        testmessage = "The node '%s' has wikidata link %s but it is coreferential with node '%s' whose wikidata is %s." % (cm, wikilabel, cwikinode, cwikilabel)
+                        warn(testmessage, testclass, testlevel, testid, lineno=node_dict[cm]['line0'])
+                else:
+                    cwiki = wiki
+                    cwikinode = cm
     if args.print_clusters:
         for c in document['clusters']:
             print("Coreference cluster '%s': " % c)
