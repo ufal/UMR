@@ -39,13 +39,13 @@ TODO:POZOR ... v info by pak mělo být asi "SSC spor"?? A někam přidat celkov
 ##### sloupec F -- **Mapping without CzEngVallex**
 Tento sloupec udává **PB argument**, i když se liší návrhy mapování u CzEngVallexu a SSC:
 - Uvádí se argument podle SSC, pokud má v SSC jednoznačné mapování (ignoruje se CzEngVallex)   
-Pokud se CzEngVallex a SSC liší a navíc má SSC nejednoznačné mapování, nenavrhuje se nic :).
-TODO: toto by se mělo použít pro automatický návrh do G jen pokud by CzEngVallex měl marginální čílsla (< 10%)??
+Pokud se CzEngVallex a SSC liší a navíc má SSC nejednoznačné mapování, nenavrhuje se nic ... spor v I CHANGE označeno jako spor).
+TODO: toto by se mělo použít pro automatický návrh do G jen pokud by CzEngVallex měl marginální čísla (< 10%) ... Eva vyíše případy s velkýni CEV čísly??
 
 ##### sloupec G -- MAPPING
 Tento sloupec obsahuje finální automatické mapování s odfiltrováním duplicit a nesouvislých indexů u argumentů (viz též Info, sloupec CHANGE). 
 Tento sloupec tedy udává finální návrh mapování v těch případech, kdy: 
-- automatické mapování dává s dostatečnou spolehlivostí mapování jednotlivých funktorů (sloupce D+E+F CHANGE), (viz "nejednoznačné" TODO změnit na "SSC spor" a "spor" ve sloupci "Info CHANGE")
+- automatické mapování dává s dostatečnou spolehlivostí mapování jednotlivých funktorů (sloupce D+E+F CHANGE), (viz "nejednoznačné" TODO změnit na "spor" ve sloupci "Info CHANGE")
 - indexy u argumentů tvoří souvislou řadu (viz "nesouvislé" ve sloupci "Info CHANGE")
 - v argumentech nejsou diry ... co to znamená??? že "ne všechny funktory jsou namapované" (viz "neúplné" ve sloupci "Info CHANGE") 
 - argumenty se neopakují (viz "opakované" ve sloupci "Info CHANGE") 
@@ -57,7 +57,7 @@ Tento sloupec tedy udává finální návrh mapování v těch případech, kdy:
 
 ##### sloupec H -- Info on automatic mapping
 Tento sloupec udává informaci o typu problému, který typicky znemožní návrh mapování (případně finální mapování navrhne, ale s vyšší mírou nejistoty): 
-- nejednoznačné TODO "SSC spor" ... ve sloupci E CHANGE udávajícím SSC mapování  jsou pro nějaký funktor minimálně dva PB argumenty (při neexistujícím CzEngVallexím mapování); ~~tj. těch "nejčastějších" bylo víc než jeden) TODO ??? (kde je míra "spolehlivosti")~~
+- nejednoznačné TODO "SSC" ... ve sloupci E CHANGE udávajícím SSC mapování  jsou pro nějaký funktor minimálně dva PB argumenty (CzEngVallexí mapování může a nemusí existovat), přičemž ani jeden nich není převládající TODO ??stanovit meze; ~~tj. těch "nejčastějších" bylo víc než jeden) TODO ??? (kde je míra "spolehlivosti")~~
 - nesouvislé ... indexy u navržených funktorů netvoří souvislou řadu (nemusí začínat ARG0), tj. např. ARG0, ARG1, ARG2 nebo ARG1, ARG2 atd. (a to i když zdroje mapování jsou různé);   
 (ARGM se při testování souvislosti řady zahazují)
 - neúplné ... ne všechny funktory mají navržené mapování;

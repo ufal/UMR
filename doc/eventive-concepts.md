@@ -1,7 +1,7 @@
 ## Open questions
 ### 1. "Non-Action" verbs  in references and modification 
 
-##### 1.A Stative verbs 
+#### 1.A Stative verbs 
 We do not want to distinguish between **action and state verbs** (due to an unclear boundary in Czech. 
 
 If stative verbs such as _milovat_ “love” occur as concepts, they will be treated as events regardless whether they are used in predication (_on ji miluje_), modification (_muž, který ji miluje_) or reference (_milovat ji je jeho osud_).
@@ -23,7 +23,7 @@ I'm not sure where to draw the line. I am hoping to get some clarification on th
   further, it qualifies for placement in the document-level `:temporal dependency` annotation. 
 
 
-##### 1.B "Abstract predicates" such as have-91, ... identity-91 
+#### 1.B "Abstract predicates" such as have-91, ... identity-91 
 These 9 predicates introduced in 3.1.1.3 are definitely considered events if structured as predication, as, e.g., in _Petr je bohatý_ (with the _have-mod-91_ predicate).
 ~~We tentatively  decided that the abstract predicates (reifications) will in general be treated as stative verbs, i.e., as events, independently of their packaging.~~   
 
@@ -36,7 +36,7 @@ These predicates are used less frequently in modification because then we can us
 We will use "abstract predicates" only in cases of predication (using their rolesets and including the aspect, modal and temporal dependency annotation).   
 Otherwise we will stick to the relation they reify.
 
-##### 1.C Other abstract rolesets - reification, implicit rolesets 
+#### 1.C Other abstract rolesets - reification, implicit rolesets 
 Abstract predicates for reifications and predicates for indicating metadata info (_publication-91_, _hyperlink-91_, _street-address-91_, ...)
 
 **Feedback from Julia:**
@@ -46,7 +46,7 @@ I can't think of a case with publication-91 offhand-- maybe that one isn't one t
 **Preliminary conclusion for Czech annotations:**  
 The abstract rolesets (reification, implicit rolesets) will be treated in the same way as other -91 predicates  (others than those for discourse relations).
 
-##### 1.D Rolesets have-quant-91 AND have-degree-91
+#### 1.D Rolesets have-quant-91 AND have-degree-91
 Rolesets for quantities and rolesets for comparative/superlative constructions (as the special cases of reification / abstract rolesets) should not be considered events? Also other quantity-related abstract predicates like _rate-entity-91_, _range-91_, etc. 
 
 **Feedback from Julia:**
@@ -57,7 +57,7 @@ But for a sentence like _she ate the biggest banana of the bunch_, I would use _
 **Preliminary conclusion for Czech annotations:**  
 Due to an unclear boundary, we will consider all cases annotated with _have-quant-91_ or _have-degree-91_ as predicates (unless it is a clear case of a non-eventive concept), i.e. using their rolesets and including :aspect/:modstr/:temporal dependency.
 
-##### 1.E "Discourse relation rolesets/reifications"
+#### 1.E "Discourse relation rolesets/reifications"
 However, abstract predicates that the UMR spreadsheet lists under “discourse relation rolesets/reifications” (10 types (Jan 2024), see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)) will not be treated as events.  
 discourse. 
 
@@ -69,9 +69,35 @@ JB: Yes, this too!
 Discourse relations, see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) should NOT be considered as events (despite having rolesets)!
 
 
-##### 1.F Inverse participant roles
+#### 1.F Agentive nouns (and other cases of inverse participant roles)
 
-(typically `ARGx-of` roles), see [Part 3-2-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-3-inverse-participant-roles) and [the notes on roles here](roles.md) are typically used in nominal modifications (esp. relative clauses like _sweater that ..._, kindship relations like _his father_, etc.) and in references (esp. participant nominalizations like _runner_.).
+Inverse participant roles (typically `ARGx-of` roles), see [Part 3-2-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-3-inverse-participant-roles) and [the notes on roles here](roles.md), are typically used in nominal modifications (esp. relative clauses like _sweater that ..._, kindship relations like _his father_, etc.) and in references (esp. participant nominalizations like _runner_.).   
+Further, it allows us to annotate agentive nouns using the corresponding verb (with its frame = roleset): e.g., _runner_ is a person who runs or _volič_ is a person who takes part in the elections, i.e., is represented as ARG0-of the verb _volit_:
+
+```
+runner
+ (p/ person 
+     :ARG0-of r / run-02)
+```
+
+```
+volič
+ (p/ person 
+     :ARG0-of v / volit-001)
+```
+
+**Preliminary conclusion for Czech annotations:**  
+In these cases, we not only use the verbs' rolesets to annotate agentive nouns but also include aspect annotation (and modstr/?temporal atributes as well). Typically, the `habitual` value serves as default (esp. for imperfective verbs), like for _učitel_ "teacher" (= ten, kdo učí) as _a teacher teaches habitually_, _řidič_ "driver" (= ten, kdo řídí / umí řídit). Depending on semantics of verb,  `performance` can be relevant, e.g., _vrah_ "murderer" (it is enough to commit just one murder to be a murderer).  
+
+#### 1.G Nouns denoting processes
+Based on the [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2-processes-in-modification-and-reference), nouns denoting processes like _válka_ "war", _příchod_ "arrival", _bouře_ "storm" should be annotated as eventive concepts.  
+
+Following the guidelines, the ideal solution for Czech is to annotate them as events. 
+- We will definitely interpret them as events if there is a frame for such nouns available in the PDT-Vallex.  
+- However, not all nouns denoting processes are stored in PDT-Vallex (in particular, some similar words in PDT-Vallex are not assigned a valency frame). Thus, when annotating from  scratch, we will have to create new entries and valency frames for such nouns when necessary.
+- For (semi)automatic transfer from PDT, this might not be achievable so nouns missing in PDT-Vallex will be probably left without eventive annotation  
+ 
+See Section 2. Deverbal nouns other than _ní/-tí_ below for more details.
 
 
 
