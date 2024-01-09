@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# Copyright © 2023 Dan Zeman <zeman@ufal.mff.cuni.cz>
+# Copyright © 2023, 2024 Dan Zeman <zeman@ufal.mff.cuni.cz>
 import fileinput
 import sys
 import io
@@ -14,6 +14,14 @@ import traceback
 import regex as re
 import unicodedata
 import json
+# Optionally we can access Wikidata API through the requests library.
+# Install the library with pip3 install requests (or python3 -m pip install requests).
+# If the library is not installed, this script should still work, just skipping any dereferences of Wikidata codes.
+try:
+    import requests
+    requests_installed = True
+except ImportError:
+    requests_installed = False
 
 
 THISDIR=os.path.dirname(os.path.realpath(os.path.abspath(__file__))) # The folder where this script resides.
@@ -103,6 +111,39 @@ def is_alignment(line):
 
 def shorten(string):
     return string if len(string) < 25 else string[:20]+'[...]'
+
+wikidata_cache = {}
+
+def get_wikidata_label(id):
+    if requests_installed:
+        if id in wikidata_cache:
+            return wikidata_cache[id]
+        # Create parameters.
+        params = {
+            'action': 'wbgetentities',
+            'ids': id,
+            'format': 'json',
+            'languages': 'en'
+        }
+        # Fetch the API.
+        data = fetch_wikidata(params)
+        if data:
+            # Extract the label.
+            data = data.json()
+            label = str(data['entities'][id]['labels']['en']['value'])
+            wikidata_cache[id] = label
+            return label
+        else:
+            return ''
+    else:
+        return ''
+
+def fetch_wikidata(params):
+    url = 'https://www.wikidata.org/w/api.php'
+    try:
+        return requests.get(url, params=params)
+    except:
+        return '' # error
 
 
 
@@ -1317,6 +1358,9 @@ def collect_coreference_clusters(document, node_dict, args):
                 wikidatalist = [x['value'] for x in node_dict[cm]['relations'] if x['relation'] == ':wiki']
                 if len(wikidatalist) > 0:
                     wiki = wikidatalist[0]
+                    label = get_wikidata_label(wiki)
+                    if label:
+                        wiki += ' (' + label + ')'
                 print("  %s (%s / %s) wiki '%s' line %d" % (cm, node_dict[cm]['alignment']['tokstr'], node_dict[cm]['concept'], wiki, node_dict[cm]['line0']))
 
 def get_coref_cluster_id(n0, n1, node_dict):
@@ -1393,7 +1437,7 @@ def validate(inp, out, args, known_sent_ids):
     collect_coreference_clusters(document, node_dict, args)
 
 if __name__=="__main__":
-    opt_parser = argparse.ArgumentParser(description="UMR validation script. Python 3 is needed to run it!")
+    opt_parser = argparse.ArgumentParser(description="UMR validation script. Python 3 is needed to run it! Optionally, if the 'requests' library is installed (try 'pip install requests'), some functions can show Wikidata labels together with Q-codes.")
 
     io_group = opt_parser.add_argument_group('Input / output options')
     io_group.add_argument('--quiet', dest="quiet", action="store_true", default=False, help='Do not print any error messages. Exit with 0 on pass, non-zero on fail.')
