@@ -320,7 +320,6 @@ tokrngs_neg_re = re.compile(r"^(?:-1--1|0-0|([1-9][0-9]*)-([1-9][0-9]*)(,\s*[1-9
 
 svariable_re = re.compile(r"^s[0-9]+s0")
 dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
-constant_re = re.compile(r"^[a-z]+(?:-[a-z]+)*") ###!!! document-creation-time|author|root|null-conceiver; valid constants should be tested on level 3
 
 def validate_sentence_metadata(sentence, known_ids, args):
     """
@@ -857,11 +856,6 @@ def validate_document_level(sentence, node_dict, args):
                     pline = ''
                     break
                 pline = remove_leading_whitespace(match.group(2) + dvariable_re.sub('', pline, 1))
-                # The variable must be either a known node from this or previous sentences, or it must be a constant (such as 'document-creation-time').
-                if not variable in node_dict and not constant_re.match(variable):
-                    testid = 'unknown-node-id'
-                    testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
-                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
             elif relation_re.match(pline):
                 match = relation_re.match(pline)
                 relation = match.group(0)
@@ -1239,7 +1233,7 @@ def validate_document_relations(sentence, node_dict, args):
     nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
     for r in sentence[3]['relations']:
         if r['group'] == ':temporal':
-            if not r['relation'] in [':before', ':after', ':overlap']:
+            if not r['relation'] in [':contained', ':before', ':after', ':overlap']:
                 testid = 'unknown-document-relation'
                 testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
@@ -1250,7 +1244,7 @@ def validate_document_relations(sentence, node_dict, args):
                 testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         elif r['group'] == ':coref':
-            if not r['relation'] in [':same-entity']:
+            if not r['relation'] in [':same-entity', ':same-event', ':subset-of']:
                 testid = 'unknown-document-relation'
                 testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
@@ -1258,6 +1252,20 @@ def validate_document_relations(sentence, node_dict, args):
             testid = 'unknown-document-relation-group'
             testmessage = "Unknown document-level relation group '%s'." % r['group']
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+        # Participants in document-level relations must be either known concept nodes
+        # or one of the constants: root, author, document-creation-time.
+        if not r['node0'] in node_dict and not r['node0'] in ['root', 'author', 'null-conceiver', 'document-creation-time']:
+            testid = 'unknown-node-id'
+            testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % r['node0']
+            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+            # Add the variable to node_dict so that we do not get KeyError later.
+            node_dict[r['node0']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
+        if not r['node1'] in node_dict and not r['node0'] in ['root', 'author', 'null-conceiver', 'document-creation-time']:
+            testid = 'unknown-node-id'
+            testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % r['node1']
+            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+            # Add the variable to node_dict so that we do not get KeyError later.
+            node_dict[r['node1']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
 
 
 
@@ -1306,6 +1314,74 @@ def validate(inp, out, args, known_sent_ids):
     # After we have read the input, we can ask about the line breaks observed.
     validate_newlines(inp) # level 1
     # Document-level tests.
+    # Collect coreference clusters.
+    document['clusters'] = {}
+    for s in document['sentences']:
+        for r in s[3]['relations']:
+            if r['group'] == ':coref' and r['relation'] == ':same-entity':
+                n0 = r['node0']
+                n1 = r['node1']
+                # The cluster will be represented by the id of its first node (the one first mentioned).
+                cid = get_coref_cluster_id(n0, n1, node_dict)
+                if not cid in document['clusters']:
+                    document['clusters'][cid] = set()
+                # If the node was already member of this cluster, do nothing.
+                # If it was in a cluster but the cluster id was different, move its members to the new cluster.
+                # If it was not in any cluster, add it to this one.
+                if 'cluster' in node_dict[n0]:
+                    if node_dict[n0]['cluster'] != cid:
+                        oldcid = node_dict[n0]['cluster']
+                        for cm in document['clusters'][oldcid]:
+                            document['clusters'][oldcid].remove(cm)
+                            document['clusters'][cid].add(cm)
+                            node_dict[cm]['cluster'] = cid
+                else:
+                    node_dict[n0]['cluster'] = cid
+                    document['clusters'][cid].add(n0)
+                if 'cluster' in node_dict[n1]:
+                    if node_dict[n1]['cluster'] != cid:
+                        oldcid = node_dict[n1]['cluster']
+                        for cm in document['clusters'][oldcid]:
+                            document['clusters'][oldcid].remove(cm)
+                            document['clusters'][cid].add(cm)
+                            node_dict[cm]['cluster'] = cid
+                else:
+                    node_dict[n1]['cluster'] = cid
+                    document['clusters'][cid].add(n1)
+    # Debugging: Print all coreference clusters in the document.
+    for c in document['clusters']:
+        print("Coreference cluster '%s': " % c)
+        members = sorted(list(document['clusters'][c]))
+        for cm in members:
+            wiki = ''
+            wikidatalist = [x['value'] for x in node_dict[cm]['relations'] if x['relation'] == ':wiki']
+            if len(wikidatalist) > 0:
+                wiki = wikidatalist[0]
+            print("  %s (%s / %s) wiki '%s' line %d" % (cm, node_dict[cm]['alignment']['tokstr'], node_dict[cm]['concept'], wiki, node_dict[cm]['line0']))
+
+def get_coref_cluster_id(n0, n1, node_dict):
+    """
+    Takes ids of two nodes from the same coreference cluster. Decides which of
+    the two ids should serve as the id of the cluster.
+    """
+    # If one of the nodes already is member of a cluster, replace it with its current cluster id.
+    if 'cluster' in node_dict[n0]:
+        n0 = node_dict[n0]['cluster']
+    if 'cluster' in node_dict[n1]:
+        n1 = node_dict[n1]['cluster']
+    # The node mentioned earlier (line-wise) wins.
+    l0 = node_dict[n0]['line0']
+    l1 = node_dict[n1]['line0']
+    if l0 < l1:
+        return n0
+    if l1 < l0:
+        return n1
+    # If both nodes were introduced on the same line, we don't know which one was first.
+    # So we order them alphabetically by their ids.
+    if n0 < n1:
+        return n0
+    else:
+        return n1
 
 if __name__=="__main__":
     opt_parser = argparse.ArgumentParser(description="UMR validation script. Python 3 is needed to run it!")
