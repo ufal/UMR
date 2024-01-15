@@ -95,4 +95,13 @@ who candidates for a certain function, and this function is in this context "pre
 (double alignment with nejvíce then)?
 - prepositions - V Estonsku, ve volbách, podle výsledků - I am aligning even the preposition there, is it correct? s5c: 5-6 (V - Estonsku, place)
 
+#############################################################################################################################
 
+
+snt 7 Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela .
+
+alignment:
+- what about brackets (18 mandátů)? Do they have a specific number? I am numbering them (two numbers), following Dan's example.
+
+wikidata:
+- Spolehlivý dům - I cannot find it.
