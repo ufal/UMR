@@ -794,19 +794,20 @@ def validate_alignment(sentence, node_dict, args):
             # deviations.
             for tokid in node_dict[n]['alignment']['tokids']:
                 if tokal[tokid-1]:
-                    testid = 'overlapping-alignment'
-                    testmessage = "Multiple nodes aligned to token '%s'." % tokid
-                    warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+                    if args.check_overlapping_alignment:
+                        testid = 'overlapping-alignment'
+                        testmessage = "Multiple nodes aligned to token '%s'." % tokid
+                        warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
                 else:
                     tokal[tokid-1] = True
     # Check that every non-punctuation token is aligned to a node. This is
-    # probably not required but let's tentatively report it to see the
-    # deviations.
-    for i in range(len(sentence[0]['tokens'])):
-        if not tokal[i] and not re.match(r"^[-.,;:\?\!\(\)]$", sentence[0]['tokens'][i]):
-            testid = 'unaligned-token'
-            testmessage = "Non-punctuation token %d ('%s') is not aligned to any node in the sentence level graph." % (i+1, sentence[0]['tokens'][i])
-            warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+    # not required but let's tentatively report it to see the deviations.
+    if args.check_unaligned_token:
+        for i in range(len(sentence[0]['tokens'])):
+            if not tokal[i] and not re.match(r"^[-.,;:\?\!\(\)]$", sentence[0]['tokens'][i]):
+                testid = 'unaligned-token'
+                testmessage = "Non-punctuation token %d ('%s') is not aligned to any node in the sentence level graph." % (i+1, sentence[0]['tokens'][i])
+                warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
 def validate_document_level(sentence, node_dict, args):
     """
@@ -1482,6 +1483,8 @@ if __name__=="__main__":
     strict_group.add_argument('--allow--1', dest='check_nonnegative_alignment', action='store_false', default=True, help='Do not report alignment -1--1. Unaligned nodes normally get the pseudo-alignment 0-0 but in UMR 1.0 some of them have -1--1.')
     strict_group.add_argument('--optional-block-headers', dest='check_block_headers', action='store_false', default=True, help='Do not report missing or unknown header comments for annotation blocks.')
     strict_group.add_argument('--optional-alignments', dest='check_complete_alignment', action='store_false', default=True, help='Do not require that every node has its alignment specified.')
+    strict_group.add_argument('--warn-overlapping-alignment', dest='check_overlapping_alignment', action='store_true', default=False, help='Report words that are aligned to more than one node. This is a warning only, and it is turned off by default.')
+    strict_group.add_argument('--no-warn-unaligned-token', dest='check_unaligned_token', action='store_false', default=True, help='Report words that are not aligned to any node. This is a warning only, and it is turned on by default.')
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
 
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
