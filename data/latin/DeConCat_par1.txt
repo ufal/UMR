@@ -1,52 +1,61 @@
 # sent_id = SlaT-2773
-#			  1		2		3	4		5		6		7		8			9	10	11		12	13	14		15		16		 17		18		19	20		21	  22	 23		 24			25		
-# :: snt1	Omnis homines, qui sese student praestare ceteris animalibus, summa ope niti decet, ne vitam silentio transeant veluti pecora, quae natura prona atque ventri oboedientia finxit.
-# @en: It is suitable that all men, who desire to excel other animals, strive, to the utmost of their power, not to pass through life in obscurity, like the beasts of the field, which nature has formed groveling and subservient to appetite. 
+#             1     2       3   4       5       6       7       8           9    10   11   12     13  14      15      16       17     18       19    20    21    22     23      24         25      
+# :: snt1   Omnis homines , qui sese student praestare ceteris animalibus , summa ope niti decet , ne vitam silentio transeant veluti pecora , quae natura prona atque ventri oboedientia finxit .
+# [en] It is suitable that all men, who desire to excel other animals, strive, to the utmost of their power, not to pass through life in obscurity, like the beasts of the field, which nature has formed groveling and subservient to appetite. 
 
 # sentence level graph:
-(s1n1 / nitor-06
-	:ACT (s1h / homo
-			:refer-number plural
-			:quant (s1o / omnis)
-			:ACT-of (s1s / studeo-NEW-07
-						:PAT (s1p / praesto2-06
-								:ACT (s1p2 / person
-										:refer-person 3rd
-										:refer-number plural)
-								:PAT (s1a / animal
-										:refer-number plural
-										:mod (s1c / ceterus))
-								:DIFF x
-								:aspect state
-								:modpred s1p)))
-	:manner (s1o2 / ops
-				:mod (s1s2 / superus
-						:degree intensifier))
-	:PAT (s1t / transeo-15
-			:ACT s1h
-			:PAT (s1v / vita)
-			:manner (s1t2 / taceo-NEW-05
-			            :ACT s1h)
-			:polarity -
-			:manner (s1r / resemble-91
-						:ARG1 s1h
-						:ARG2 (s1p3 / pecus
-									:refer-number plural
-									:PAT-of (s1f / fingo-02
-												:ACT (s1n2 / natura)
-												:EFF (s1a2 / atque
-															:op1 (s1p4 / pronus)
-															:op2 (s1o3 / oboedio-NEW-01
-																		:ACT s1p3
-																		:PAT (s1v2 / venter)))))
-						:aspect state
-						:modal-strength full-affirmative)
-			:aspect state
-			:modal-strength full-negative)
-	:aspect process
-	:modal-strength partial-affirmative)
-			
+(s1d / decet-02
+    :ARG1 (s1n / nitor-06
+            :ARG0 (s1h / homo
+                    :refer-number plural
+                    :quant (s1o / omnis)
+                    :ARG0-of (s1s / studeo-NEW-07
+                                :ARG1 (s1p / praesto2-06
+                                        :ARG0 (s1p2 / person
+                                                :refer-person 3rd
+                                                :refer-number plural)
+                                        :ARG1 (s1a / animal
+                                                :refer-number plural
+                                                :mod (s1c / ceterus))
+                                        :aspect state
+                                        :modpred s1p)
+                                :aspect state
+                                :modal-strength partial-affirmative))
+            :manner (s1o2 / ops
+                        :mod (s1s2 / superus
+                                :degree intensifier))
+            :ARG1 (s1t / transeo-15
+                    :ARG0 s1h
+                    :ARG1 (s1v / vita)
+                    :manner (s1t2 / taceo-NEW-05
+                                :ARG0 s1h
+                                :aspect state
+                                :modal-strength full-affirmative)
+                    :polarity -
+                    :manner (s1r / resemble-91
+                                :ARG1 s1h
+                                :ARG2 (s1p3 / pecus
+                                            :refer-number plural
+                                            :ARG1-of (s1f / fingo-02
+                                                        :ARG0 (s1n2 / natura)
+                                                        :ARG4 (s1a2 / and
+                                                                    :op1 (s1p4 / pronus)
+                                                                    :op2 (s1o3 / oboedio-NEW-01
+                                                                                :ARG0 s1p3
+                                                                                :ARG1 (s1v2 / venter)
+                                                                                :aspect state
+                                                                                :modal-strength full-affirmative))
+                                                        :aspect performance
+                                                        :modal-strength full-affirmative))
+                                :aspect state
+                                :modal-strength full-affirmative)
+                    :aspect state
+                    :modal-strength full-negative)
+            :aspect process
+            :modal-strength partial-affirmative))
+
 # alignment:
+s1d: 12-12
 s1n: 11-11
 s1h: 2-2
 s1o: 1-1
@@ -62,7 +71,7 @@ s1t2: 15-15
 s1v: 14-14
 s1p3: 18-18
 s1r: 17-17
-s1n: 20-20
+s1n2: 20-20
 s1f: 25-25
 s1p4: 21-21
 s1a2: 22-22
@@ -71,47 +80,212 @@ s1v2: 23-23
 
 # document level annotation:
 (s1 / sentence
-    :temporal ((s1n :before s1f))
+    :temporal ((s1n :before s1f)
+    ?)
     :modal ((root :modal author)
             (author :full-affirmative s1s)
             (author :full-affirmative s1p)
             (author :full-affirmative s1n)
             (author :full-affirmative s1t)
             (author :full-affirmative s1f))
-	:coref ((s1h :same-entity s1p2)))
-	
+    :coref ((s1h :same-entity s1p2)))
+    
 
-# sent_id = SlaT-2774-a
-# 			1	  2		3	  4	 5	 6	  7		8	  9	  10
-# :: snt2	Sed nostra omnis vis in animo et corpore sita est:
-# @en: All our power is situate in the mind and in the body.
+# sent_id = SlaT-2774
+#           1     2     3     4  5   6    7     8     9   10
+# :: snt2   Sed nostra omnis vis in animo et corpore sita est :
+# [en] All our power is situated in the mind and in the body.
 
 # sentence level graph:
 (s2h / have-place-91
-		:ARG1 (s2v / vis
-					:poss (s2p/ person
-							:refer-person 1st
-							:refer-number plural)
-					:mod (s2o / omnis))
-		:ARG2 (s2e / et
-					:op1 (s2a / animus)
-					:op2 (s2c / corpus))
-		:aspect state
-		:modal-strength full-affirmative)
-		
+        :ARG1 (s2v / vis
+                    :poss (s2p/ person
+                            :refer-person 1st
+                            :refer-number plural)
+                    :mod (s2o / omnis))
+        :ARG2 (s2a / and
+                    :op1 (s2a2 / animus)
+                    :op2 (s2c / corpus))
+        :aspect state
+        :modal-strength full-affirmative)
+        
 # alignment:
 s2h: 9-10
 s2v: 4-4
 s2p: 2-2
 s2o: 3-3
-s2e: 7-7
-s2a: 5-6
-s2c: 8-8
-# 5? 5-6 but not 5-8? or both?
+s2a: 7-7
+s2a2: 5-6
+s2c: 5-5, 8-8
 
 # document level annotation:
 (s2 / sentence
-	:temporal ((?))
-	:modal ((root :modal author)
-			(author :full-affirmative s2h))
-	:coref (s2p :subset-of s1h))
+    :temporal ((?))
+    :modal ((root :modal author)
+            (author :full-affirmative s2h))
+    :coref (s2p :subset-of s1h))
+
+
+# sent_id = SlaT-2775
+#             1      2         3       4        5      6    
+# :: snt3   animi imperio , corporis servitio magis utimur ;
+# [en] Of the mind we rather employ the government; of the body, the service.
+
+# sentence level graph:
+(s3c / contrast-91
+            :ARG1 (s3u / utor-03
+                    :ARG0 (s3p/ person
+                                :refer-person 1st
+                                :refer-number plural)
+                    :ARG1 (s3i / imperium
+                                :poss (s3a2 / animus))
+                    :aspect habitual
+                    :modal-strength full-affirmative)
+            :ARG2 (s3u2 / utor-03
+                    :ARG0 s3p
+                    :ARG1 (s3s / servitium
+                            :poss (s3c2 / corpus))
+                    :aspect habitual
+                    :modal-strength full-affirmative))
+
+# alignment:
+s3c: 5-5?
+s3u: 6-6
+s3p: 0-0 o verbo
+s3i: 2-2
+s3a2: 1-1
+s3u2: 6-6
+s3s: 4-4
+s3c2: 3-3
+
+# document level annotation:
+
+
+# sent_id = SlaT-2775
+#             1      2     3  4        5     6    7      8      9
+# :: snt4   alterum nobis cum dis , alterum cum beluis commune est .
+# [en] The one is common to us with the gods; the other with the brutes.
+
+# sentence level graph:
+(s4c3 / contrast-91
+            :ARG1 (s4h / have-mod-91
+                        :ARG1 (s4a3 / alter)
+                        :ARG2 (s4c4 / communis-13
+                                :ARG2 (s4d / deus
+                                        :refer-number plural))
+                        :aspect state
+                        :modal-strength full-affirmative)
+            :ARG2 (s4h2 / have-mod-91
+                        :ARG1 (s4a4 / alter)
+                        :ARG2 (s4c5 / communis-13
+                                    :ARG2 (s3b / belua
+                                            :refer-number plural))
+                        :aspect state
+                        :modal-strength full-affirmative))
+
+# NOBIS??
+
+# alignment:
+s4c3: 0 o alter?
+s4h: 9-9
+s4a3: 1-1
+s4d: 3-4
+s4c4: 8-8
+s4h2: 9-9
+s4a4: 5-5
+s4b: 6-7
+s4c5: 8-8
+
+# document level annotation:
+
+
+# sent_id = SlaT-2777
+#            1   2       3     4       5     6     7      8      9        10    11     12     13   14  15    16      17   18       19      20    21   22   23     24
+# :: snt5   Quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere et , quoniam vita ipsa qua fruimur brevis est , memoriam nostri quam maxume longam efficere .
+# [en] It appears to me, therefore, more reasonable to pursue glory by means of the intellect than of bodily strength, and, since the life which we enjoy is short, to make the remembrance of us as lasting as possible. 
+
+# sentence level graph:
+(s5v / video-10
+    :ARG0 (s5p / person
+            :refer-person 1st
+            :refer-number singular)
+    :ARG1 (s5a / and
+              :op1 (s5q / quaero-15
+                        :ARG0 ?
+                        :ARG1 (s5g / gloria
+                                  :refer-number singular)
+                        :instrument (s5o / ops
+                                        :refer-number plural
+                                        :mod (s5i / ingenium
+                                                  :refer-number singular))
+                        :aspect process
+                        :modal-strength full-affirmative)
+              :op2 (s5e / efficio-02
+                        :ARG0 ?
+                        :ARG1 (s5m2 / memoria-06
+                                  :ARG0 ?
+                                  :ARG1 (s5p2 / person
+                                            :refer-person 1st
+                                            :refer-number plural))
+                        :ARG4 (s5l / longus)
+                        :extent (s5m3 / magnus)
+                        :cause (s5h2 / have-mod-91
+                                    :ARG1 (s5v3 / vita
+                                              :refer-number singular
+                                              :mod (s5i2 / ipse)
+                                              :ARG1-of (s5f / fruor-04
+                                                            :ARG0 s5p2
+                                                            :aspect habitual
+                                                            :modal-strength full-affirmative))
+                                    :ARG2 (s5b / brevis)
+                                    :aspect state
+                                    :modal-strength full-affirmative)
+                        :aspect process
+                        :modal-strength full-affirmative))
+    :ARG4 (s5h / have-degree-91
+              :ARG1 s5a
+              :ARG2 (s5r / rectus)
+              :ARG3 (s5m / more?)
+              :ARG4 (s5q2 / quaero-15
+                        :ARG0 ?
+                        :ARG1 s5g
+                        :instrument (s5o2 / ops
+                                        :refer-number plural
+                                        :mod (s5v2 / vis
+                                                  :refer-number plural))
+                        :aspect process
+                        :modal-strength full-affirmative)
+               :aspect state
+               :modal-strength partial-affirmative)
+    :QUO (cause?)
+    :aspect state
+    :modal-strength full-affirmative)
+
+# alignment:
+s5v: 4-4
+s5p: 2-2
+s5h: 3-3
+s5a: 11-11
+s5r:
+s5m:
+s5q2: 10-10
+s5o2: 8-8
+s5v2: 7-7
+s5q: 10-10
+s5g: 9-9
+s5o: 8-8
+s5i: 5-5
+s5e: 24-24
+s5m2: 19-19
+s5p2: 20-20
+s5l: 23-23
+s5m3: 21-22
+s5h2: 18-18
+s5v3: 13-13
+s5i2: 14-14
+s5f: 16-16
+s5b: 17-17
+
+# document level annotation:
+
+
