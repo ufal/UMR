@@ -222,7 +222,7 @@ s5v3: 9-9
 # sentence level graph:
 (s6h / hlasovat-003
     :ARG0 (s6p2 / percentage-entity
-            :value 20.5
+            :value (s6a / asi :op1 20.5)
             :part-of (s6p / person
                 :ARG0-of (s6v / volit-001
                     :aspect habitual
@@ -258,7 +258,7 @@ s5v3: 9-9
 s6h: 12-12
 s6p: 1-7
 s6v: 0-0
-s6p2: 17-20
+s6p2: 16-20
 s6z: 8-8, 10-10
 s6v2: 9-9
 s6b: 13-15
