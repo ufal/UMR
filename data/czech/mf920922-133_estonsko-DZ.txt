@@ -53,8 +53,6 @@ s2n: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-    :temporal ((document-creation-time :before s2h)
-            (s2h :overlap s2e))
     :modal ((root :modal author)
             (author :full-affirmative s2h)
             (author :full-affirmative s2e))
