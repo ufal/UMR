@@ -796,7 +796,7 @@ def validate_alignment(sentence, node_dict, args):
                 if tokal[tokid-1]:
                     testid = 'overlapping-alignment'
                     testmessage = "Multiple nodes aligned to token '%s'." % tokid
-                    warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+                    warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
                 else:
                     tokal[tokid-1] = True
     # Check that every non-punctuation token is aligned to a node. This is
