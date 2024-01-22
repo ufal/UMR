@@ -1037,6 +1037,20 @@ known_relations = {
 }
 op_re = re.compile(r"^:op([1-9][0-9]*)$")
 
+# Abstract concepts for discourse relations. Some of them have just :opN
+# children. Others have :ARGN children and thus look like events, but they
+# should not be considered events. They should not be required to contain
+# :aspect and :modal-strength.
+discourse_concepts = [
+    # These have :opN children:
+    'multi-sentence', 'and', 'or', 'inclusive-disjunction', 'exclusive-disjunction', 'and-but', 'consecutive', 'additive', 'and-unexpected', 'and-contrast',
+    # These are rolesets and have :ARGN children:
+    'but-91', 'unexpected-co-occurrence-91', 'contrast-91',
+    # These are reifications, thus rolesets, and have :ARGN children:
+    'have-apprehensive-91', 'have-condition-91', 'have-pure-addition-91', 'have-substitution-91', 'have-concession-91', 'have-concessive-condition-91', 'have-subtraction-91'
+]
+discourse_concept_re = re.compile(r"^(" + '|'.join(discourse_concepts) + r")$")
+
 def validate_relations(sentence, node_dict, args):
     """
     Checks every sentence level relation whether we know it.
@@ -1194,16 +1208,20 @@ def detect_events(sentence, node_dict, args):
     """
     Tries to figure out which concept nodes in the current sentence are events.
     Possible clues:
+    * If it is a discourse connective concept, it is not an event (regardless of the other cluse below).
     * If it is one of the predefined *-91 concepts, it is an event.
     * If it has an ":ARG?" child, it is an event.
     * If it has an ":ARG?-of" parent, it is an event.
-    * If it has ":modstr" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
+    * If it has ":modal-strength" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
     * If in document annotation it participates in a relation from the ":temporal" or ":modal" group, it is probably an event.
     """
     for nid in sorted(sentence[1]['nodes']):
         node = node_dict[nid]
         if args.print_relations:
             print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(node['alignment']['tokids']), node['alignment']['tokstr']))
+        # If it is a discourse connective, stop here.
+        if re.match(discourse_concept_re, node['concept']):
+            continue
         if not 'event_reason' in node and re.match(r"^.+-91$", node['concept']):
             node['event_reason'] = "its concept is %s on line %d" % (node['concept'], node['line0'])
         relations = node['relations']
