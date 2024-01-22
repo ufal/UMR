@@ -89,8 +89,7 @@ s3p2: 3-3
 
 # document level annotation:
 (s3s0 / sentence
-    :temporal ((document-creation-time :before s3v)
-            (s3v :overlap s2e))
+    :temporal ((document-creation-time :before s3v))
     :modal ((root :modal author)
             (author :full-affirmative s3v))
     :coref ((s2p :same-entity s3p3)
@@ -118,9 +117,6 @@ s4n: 0-0
 
 # document level annotation:
 (s4s0 / sentence
-    :temporal ((document-creation-time :before s4h)
-            (s4h :overlap s2h)
-            (s4h :overlap s4e))
     :modal ((root :modal author)
             (author :full-affirmative s4h)
             (author :full-affirmative s4e))
