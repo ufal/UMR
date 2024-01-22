@@ -1,19 +1,8 @@
-:part vs. :part-of
-:poss vs. :poss-of
-The AMR and UMR Guidelines differ in :part vs. :part-of relation?
-UMR: 	:part and :poss relations
-his blood/hand/shoe … (blood/hand/shoe :part (person))
-	guitar strings … (string :part (guitar))
-	your stuff/ticket … (stuff/ticket/dog :poss (person))
-	NO example with the :part-of or :poss-of relations in the Guidelines
-AMR: :part-of and :poss relations
-	the engine of the car / the car’s engine … (engine :part-of (car))
-the south of France / southern France … (south :part-of
-(country :wiki "France" :name (name :op1 "France")))
-	BUT: his boat/team/house … (boat/team/house :poss (he))
-	Whose toy … (toy :poss (amr-unknown))
-	the speed of sound … (speed :poss (sound))
-
+ML: pravidla pro events pro validátor (podle Juliina mailu, viz níž)
+??Dan: standardizace  "hlavičky" pro větu (věta, překlad, čísla tokenů, ??? )
+??Dan: koreferenční řetězce by měly mít stejný odkaz na wiki (co nejkonkrétnější)
+?? Porovnat data
+  :part vs. :part-of
 
 
 TODO:
@@ -57,7 +46,7 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
   !! F. konatelská jména --> slovesa - events
   !! G. jmén označující procesy (válka, příchod, bouře) ---> events
         - ruční anotace ... doplnit, pokud nejsou v PDT-Vallexu (??? jak technicky)
-        - konverze: asi na to rezignujeme
+        - konverze: asi na to rezignujeme 
   !! adjektiva od slovesa (resp. s exist. slovesem, bez ohledu na směr derivace) --> slovesa
 
 - Functor conversion ... TODO: should be completed!!

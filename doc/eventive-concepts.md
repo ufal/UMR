@@ -37,7 +37,7 @@ We will use "abstract predicates" only in cases of predication (using their role
 Otherwise we will stick to the relation they reify.
 
 #### 1.C Other abstract rolesets - reification, implicit rolesets 
-Abstract rolesets (i) for reifications and predicates (ii) for indicating metadata info (_publication-91_, _hyperlink-91_, _street-address-91_, ...) are used in the same way as "abstract predicates" (above). 
+Abstract predicates for reifications and predicates for indicating metadata info (_publication-91_, _hyperlink-91_, _street-address-91_, ...)
 
 **Feedback from Julia:**
 I think it's much more unusual for a lot of the other **implicit rolesets** to come up in a predicated form, but some of them do occasionally, and that goes for the -91 rolesets used for **reification** as well. (Generally, this is a copular or existential construction in English).   
@@ -52,7 +52,7 @@ Rolesets for quantities and rolesets for comparative/superlative constructions (
 **Feedback from Julia:**
 I use these in the same way you mentioned above. For sentences like _He was the tallest boy in the room_ or _there are 10 more blue blocks than red blocks_, I would use _have-degree-91_ or _have-quant-91_ as the top node of the graph and treat it as an event, with :aspect/:modstr/:temporal dependency. 
 
-But for a sentence like _she ate the biggest banana of the bunch_, I would use _have-degree-91_ so that I could capture the superset entity as a numbered argument (the bunch), but I wouldn't treat it as an event. Otherwise `:quant` and `:degree` relation/attribute are used.
+But for a sentence like _she ate the biggest banana of the bunch_, I would use _have-degree-91_ so that I could capture the superset entity as a numbered argument (the bunch), but I wouldn't treat it as an event.
 
 **Preliminary conclusion for Czech annotations:**  
 Due to an unclear boundary, we will consider all cases annotated with _have-quant-91_ or _have-degree-91_ as predicates (unless it is a clear case of a non-eventive concept), i.e. using their rolesets and including :aspect/:modstr/:temporal dependency.
@@ -66,7 +66,7 @@ ML: In particular, I suppose that discourse relations (10 types) should not be c
 JB: Yes, this too! 
 
 **Conclusion for Czech annotations:**  
-Discourse relations, see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453), should NOT be considered as events (despite having rolesets)!
+Discourse relations, see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) should NOT be considered as events (despite having rolesets)!
 
 
 #### 1.F Agentive nouns (and other cases of inverse participant roles)
@@ -225,18 +225,6 @@ Not entirely clear how to understand “information packaging”.
 According to Croft, “constructions always involve the information packaging of the semantic content of the sentence, that is, the function of constructions has to be defined in terms of both semantic content and information packaging. … information packaging functions are much more isomorphic to syntactic structures than semantic classes or semantic relations. Information packaging functions are less variable across languages than semantics, especially lexical semantics.” (Croft, invited talk, UDW17, http://universaldependencies.org/udw17/program.html)
 
 TO READ: William Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
-
-
-#### Consequences of being designated an 'event' in UMR
-
-The consequences of being designated an 'event' in UMR are the following (as summarized by Julia Bonn):
- - **roleset use:**: if rolesets are being used, qualifying as an 'event' means that it is reasonable to represent the expression in question using a roleset.   
- (But note that it is also possible to use rolesets for expressions that do not qualify as 'events'. For example, in English, the roleset `hunger-01` has been used to cover expressions 'hunger-verb', 'hunger-noun', and 'hungry-adjective'. According to the guidelines, 'hungry' in the sentence _the hungry man_ is a state in modification, and therefore doesn't count as an 'event'. But the roleset for _hunger_ is still semantically relevant -- both in terms of sense disambiguation and in terms of the allowed argument structure. What I've been proposing (and which seems to be agreed to by everyone now) is that we should be allowed to use the `hunger-01` roleset here.) 
-- **:aspect annotation:** 'events' receive aspect annotation. 
-- **:modal-strength annotation:** 'events' receive modal annotation in the sentence and document graphs
-- **:temporal dependency annotation:** 'events' qualify for placement in the document-level temporal dependency. 
-
----
 
 
 #### Eventive concepts in UMR

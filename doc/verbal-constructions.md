@@ -158,7 +158,7 @@ etc.: -->
 
 ## TODO Semi-modal verbs - separate events in UMR 
 
-According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), and [Part 3-3-1-3. State](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-1-3-state)  verbs like  _want_ , _need_, and _dread_ are categorized as semi-modal.
+According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), and [3-3-1-3 ](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-1-3-state)  verbs like  _want_ , _need_, and _dread_ are categorized as semi-modal.
  
 The following types are  also considered as semimodals in some sources: 
 - desideratives ('want to') 
