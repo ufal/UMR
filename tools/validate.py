@@ -1299,7 +1299,8 @@ def validate_document_relations(sentence, node_dict, args):
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         elif r['group'] == ':modal':
             # The relation ':modal' is used between 'root' and 'author'.
-            if not r['relation'] in [':modal', ':full-affirmative']:
+            # It can be also used between 'root' and a node from the sentence graph, if that node represents an entity (typically a person) who says something.
+            if not r['relation'] in [':modal', ':full-affirmative', ':partial-affirmative', ':strong-partial-affirmative', ':weak-partial-affirmative', ':neutral-affirmative', ':strong-neutral-affirmative', ':weak-neutral-affirmative', ':full-negative', ':partial-negative', ':strong-partial-negative', ':weak-partial-negative', ':neutral-negative', ':strong-neutral-negative', ':weak-neutral-negative']:
                 testid = 'unknown-document-relation'
                 testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
