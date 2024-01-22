@@ -299,13 +299,10 @@ s6n: 26-26
                         :name (s7n3 / name :op1 "Arnold" :op2 "Rüütel")
                         :wiki "Q194000")))
       :temporal (s7z / zatím)
-      TADY POKRAČOVAT - JAK ZAPSAT "DRUHÉ MÍSTO"?
- - jaká doplnění má have-ord-91?     
-                        
-                        
-                        HLAS
-                        :quant (s6p3/ percentage-entity
-	                             :value (s6d / 13.9))
+      :ord (s7o / 2)
+      :caus (s7h / hlas
+           :quant (s6p3/ percentage-entity
+	                :value (s6d / 13.9)))
  - jak zapsat apozici procenta hlasů (18 mandátů)
  - hlas - přidat wiki
        
