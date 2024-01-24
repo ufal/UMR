@@ -28,7 +28,7 @@ Tento sloupec udává:
 ##### sloupec D -- **Mapping**
 Tento sloupec udává **PB argument**, u kterého jsme si "jisti" mapováním: 
 - Buď existují mapování z **CzEngVallexu** i **SSC** a tahle dvě mapování jsou **shodná**.       
-(Pracuje se pouze se SSC verze 5.1 - měla by být bohatší než verze 5.0 a bohatší a přesnější než ta stará, ale lze to přepočítat i pro verzi 5.0, kdybychom to chtěli mít nad nějakou fixní verzí.)
+(Pracuje se pouze se SSC verze 5.1 - r.16488 ze svn - měla by být bohatší než verze 5.0 a bohatší a přesnější než ta stará, ale lze to přepočítat i pro verzi 5.0, kdybychom to chtěli mít nad poslední verzí vydanou v Lindatu.)
 - Za "jisté" se též považuje, pokud existuje **jednoznačné mapování** (tj. funktor jen na jeden argument z PB) **jenom z jednoho zdroje** (jenom z CzEngVallexu nebo jenom ze SSC). 
 
 ##### sloupec E -- **Suggested mapping** ???TODO:OPRAVDU TO TAKTO CHCEME
