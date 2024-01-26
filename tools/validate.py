@@ -794,19 +794,20 @@ def validate_alignment(sentence, node_dict, args):
             # deviations.
             for tokid in node_dict[n]['alignment']['tokids']:
                 if tokal[tokid-1]:
-                    testid = 'overlapping-alignment'
-                    testmessage = "Multiple nodes aligned to token '%s'." % tokid
-                    warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+                    if args.check_overlapping_alignment:
+                        testid = 'overlapping-alignment'
+                        testmessage = "Multiple nodes aligned to token '%s'." % tokid
+                        warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
                 else:
                     tokal[tokid-1] = True
     # Check that every non-punctuation token is aligned to a node. This is
-    # probably not required but let's tentatively report it to see the
-    # deviations.
-    for i in range(len(sentence[0]['tokens'])):
-        if not tokal[i] and not re.match(r"^[-.,;:\?\!\(\)]$", sentence[0]['tokens'][i]):
-            testid = 'unaligned-token'
-            testmessage = "Non-punctuation token %d ('%s') is not aligned to any node in the sentence level graph." % (i+1, sentence[0]['tokens'][i])
-            warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+    # not required but let's tentatively report it to see the deviations.
+    if args.check_unaligned_token:
+        for i in range(len(sentence[0]['tokens'])):
+            if not tokal[i] and not re.match(r"^[-.,;:\?\!\(\)]$", sentence[0]['tokens'][i]):
+                testid = 'unaligned-token'
+                testmessage = "Non-punctuation token %d ('%s') is not aligned to any node in the sentence level graph." % (i+1, sentence[0]['tokens'][i])
+                warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
 def validate_document_level(sentence, node_dict, args):
     """
@@ -1036,6 +1037,20 @@ known_relations = {
 }
 op_re = re.compile(r"^:op([1-9][0-9]*)$")
 
+# Abstract concepts for discourse relations. Some of them have just :opN
+# children. Others have :ARGN children and thus look like events, but they
+# should not be considered events. They should not be required to contain
+# :aspect and :modal-strength.
+discourse_concepts = [
+    # These have :opN children:
+    'multi-sentence', 'and', 'or', 'inclusive-disjunction', 'exclusive-disjunction', 'and-but', 'consecutive', 'additive', 'and-unexpected', 'and-contrast',
+    # These are rolesets and have :ARGN children:
+    'but-91', 'unexpected-co-occurrence-91', 'contrast-91',
+    # These are reifications, thus rolesets, and have :ARGN children:
+    'have-apprehensive-91', 'have-condition-91', 'have-pure-addition-91', 'have-substitution-91', 'have-concession-91', 'have-concessive-condition-91', 'have-subtraction-91'
+]
+discourse_concept_re = re.compile(r"^(" + '|'.join(discourse_concepts) + r")$")
+
 def validate_relations(sentence, node_dict, args):
     """
     Checks every sentence level relation whether we know it.
@@ -1193,16 +1208,20 @@ def detect_events(sentence, node_dict, args):
     """
     Tries to figure out which concept nodes in the current sentence are events.
     Possible clues:
+    * If it is a discourse connective concept, it is not an event (regardless of the other cluse below).
     * If it is one of the predefined *-91 concepts, it is an event.
     * If it has an ":ARG?" child, it is an event.
     * If it has an ":ARG?-of" parent, it is an event.
-    * If it has ":modstr" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
+    * If it has ":modal-strength" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
     * If in document annotation it participates in a relation from the ":temporal" or ":modal" group, it is probably an event.
     """
     for nid in sorted(sentence[1]['nodes']):
         node = node_dict[nid]
         if args.print_relations:
             print("Node %s, concept=%s, line=%d, tokens=%s %s" % (nid, node['concept'], node['line0'], str(node['alignment']['tokids']), node['alignment']['tokstr']))
+        # If it is a discourse connective, stop here.
+        if re.match(discourse_concept_re, node['concept']):
+            continue
         if not 'event_reason' in node and re.match(r"^.+-91$", node['concept']):
             node['event_reason'] = "its concept is %s on line %d" % (node['concept'], node['line0'])
         relations = node['relations']
@@ -1280,7 +1299,8 @@ def validate_document_relations(sentence, node_dict, args):
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         elif r['group'] == ':modal':
             # The relation ':modal' is used between 'root' and 'author'.
-            if not r['relation'] in [':modal', ':full-affirmative']:
+            # It can be also used between 'root' and a node from the sentence graph, if that node represents an entity (typically a person) who says something.
+            if not r['relation'] in [':modal', ':full-affirmative', ':partial-affirmative', ':strong-partial-affirmative', ':weak-partial-affirmative', ':neutral-affirmative', ':strong-neutral-affirmative', ':weak-neutral-affirmative', ':full-negative', ':partial-negative', ':strong-partial-negative', ':weak-partial-negative', ':neutral-negative', ':strong-neutral-negative', ':weak-neutral-negative']:
                 testid = 'unknown-document-relation'
                 testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
@@ -1482,6 +1502,8 @@ if __name__=="__main__":
     strict_group.add_argument('--allow--1', dest='check_nonnegative_alignment', action='store_false', default=True, help='Do not report alignment -1--1. Unaligned nodes normally get the pseudo-alignment 0-0 but in UMR 1.0 some of them have -1--1.')
     strict_group.add_argument('--optional-block-headers', dest='check_block_headers', action='store_false', default=True, help='Do not report missing or unknown header comments for annotation blocks.')
     strict_group.add_argument('--optional-alignments', dest='check_complete_alignment', action='store_false', default=True, help='Do not require that every node has its alignment specified.')
+    strict_group.add_argument('--warn-overlapping-alignment', dest='check_overlapping_alignment', action='store_true', default=False, help='Report words that are aligned to more than one node. This is a warning only, and it is turned off by default.')
+    strict_group.add_argument('--no-warn-unaligned-token', dest='check_unaligned_token', action='store_false', default=True, help='Report words that are not aligned to any node. This is a warning only, and it is turned on by default.')
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
 
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
