@@ -1,5 +1,5 @@
 ###########################################################################
-# :: sntXXXXXXXXX
+# :: snt
 # Index:                1         2       3          4
 # Words:                Estonci   volili  parlament  .
 # Word Gloss (en):      Estonians elected parliament .
