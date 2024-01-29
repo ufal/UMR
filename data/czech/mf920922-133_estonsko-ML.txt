@@ -1,5 +1,5 @@
 ###########################################################################
-# :: snt1
+# :: snt
 # Index:                1         2       3          4
 # Words:                Estonci   volili  parlament  .
 # Word Gloss (en):      Estonians elected parliament .
@@ -42,7 +42,7 @@ s1p3: 3-3
 
 
 ###########################################################################
-# :: snt2
+# :: snt
 # Index:               1        2
 # Words:               ESTONSKO :
 # Word Gloss (en):     Estonia  :
@@ -78,7 +78,7 @@ s2n: 0-0
 
 
 ###########################################################################
-# :: snt3
+# :: snt
 # Index:               1         2       3          4
 # Words:               Estonci   volili  parlament  .
 # Word Gloss (en):     Estonians elected parliament .
@@ -126,7 +126,7 @@ s3p3: 3-3
 
 
 ###########################################################################
-# :: snt4
+# :: snt
 # Index:               1       2
 # Words:               Tallin  -
 # Word Gloss (en):     Tallinn -
@@ -341,7 +341,7 @@ s6n: 0-0
 # [en] In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic , Arnold Rüütel .
 
 # sentence level graph:
-(s7h / have-location-91
+(s7h / have-ord-91
      :ARG1 (s7b / blok
             :refer-number singular
             :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
@@ -356,8 +356,7 @@ s6n: 0-0
                                :manner (s7n3 / nejvyšší)
                                :aspect state
                                :modal-strength full-affirmative)))
-     :ARG2 (s7m2 / místo
-            :ord (s7o/ ordinal-entity  :value 2))
+     :ARG2 (s7d dva)
      :manner (s7h3 / hlas
             :refer-number plural
             :quant (s7p3 / percentage-entity :value 13.9))
@@ -379,8 +378,7 @@ s7p2: 19-19
 s7r: 20-20
 s7d: 17-17
 s7n3: 18-18
-s7m2: 1-1, 3-3
-s7o: 2-2
+s7d: 1-3
 s7h3: 4-4, 7-7
 s7p3: 5-6
 s7m3: 9-10
