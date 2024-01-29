@@ -191,21 +191,19 @@ s3c2: 4-4
       :ARG1 (s4h / have-mod-91
                   :ARG1 (s4a / alter)
                   :ARG2 (s4c2 / communis-13
-                          :ARG2 (s4a2 / and
-                                    :op1 (s4p / person
-                                              :refer-person 1st
-                                              :refer-number plural)
-                                    :op2 (s4d / deus
-                                              :refer-number plural)))
+                          :ARG2 (s4d / deus
+                                      :refer-number plural))
+                  :affectee (s4p / person
+                                  :refer-person 1st
+                                  :refer-number plural)
                   :aspect state
                   :modal-strength full-affirmative)
       :ARG2 (s4h2 / have-mod-91
-                  :ARG1 (s4a3 / alter)
+                  :ARG1 (s4a2 / alter)
                   :ARG2 (s4c3 / communis-13
-                               :ARG2 (s4a4 / and
-                                    :op1 s4p
-                                    :op2 (s4b / belua
-                                            :refer-number plural)))
+                               :ARG2 (s4b / belua
+                                            :refer-number plural))
+                  :affectee s4p
                   :aspect state
                   :modal-strength full-affirmative))
 
@@ -213,15 +211,13 @@ s3c2: 4-4
 s4c: 0-0
 s4h: 10-10
 s4a: 1-1
-s4a2: 0-0
 s4d: 3-4
 s4c2: 9-9
 s4h2: 10-10
 s4p: 2-2
-s4a3: 6-6
+s4a2: 6-6
 s4b: 7-8
 s4c3: 9-9
-s4a4: 0-0
 
 # document level annotation:
 (s4s0 / sentence
