@@ -1,13 +1,13 @@
 ## Mapování PDT valenčních rámců na UMR rámce
 
-UMR předpokládá, že jednotlivé významy sloves jsou popsány pomocí tzv. **Rolesets** ze slovníku [PropBank](https://verbs.colorado.edu/propbank-development/), tedy obdobou valenčních rámců. Pro češtinu chceme pracovat s valenčním slovníkem [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora) (vyhledávání [zde](http://lindat.mff.cuni.cz/services/PDT-Vallex/) nebo v [Teitoku](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex)), resp. se slovníkem [SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0). Potřebujeme tedy mapování jednotlivých PDT rámců (a jednotlivých funktorů) na tyto Rolesets v UMR / PropBank (a jejich argumenty).  
+UMR předpokládá, že jednotlivé významy sloves jsou popsány pomocí tzv. **Rolesets** ze slovníku [PropBank](https://verbs.colorado.edu/propbank-development/), tedy obdobou valenčních rámců. Pro češtinu chceme pracovat s valenčním slovníkem [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora) (vyhledávání [zde](http://lindat.mff.cuni.cz/services/PDT-Vallex/) nebo v [Teitoku](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex)), resp. se slovníkem [SynSemClass](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0).EF_start Honza dava prednost nazvu ontologie pred slovnikem, takze bych dala spis "resp. s ontologií [SynSemClass](https://ufal.mff.cuni.cz/synsemclass) (vyhledávání [zde](https://lindat/mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0))." EF_end Potřebujeme tedy mapování jednotlivých PDT rámců (a jednotlivých EF_start mne by se vic libilo "jejich" EF_end funktorů) na tyto Rolesets v UMR / PropBank (a jejich argumenty).  
 
 Dostupné mapování je uvedeno v [Google tabulce](https://docs.google.com/spreadsheets/d/1AuIASjkdAdKom7bgjDN5BxMKeRUefHlN/edit#gid=452142481): 
 - ve sloupci **D -- AUTOMATIC MAPPING** je návrh získaný automatickým převodem ze SynSemClass (dále též  SSC) a CzEnVallexu (dále též CEV), pokud byl tento převod víceméně spolehlivý (více viz níž);
 - ve sloupci **E -- CORRECTION** doplňte svůj návrh, pokud automatický návrh neexistuje či s ním nesouhlasíte; též zde můžete opravit návrh kolegy, pokud s ním nesouhlasíte;
 - v případě jakékoliv úpravy okomentujte v sloupci **F -- COMMENTS**. 
 
-V případě, kdy zpracovávané sloveso v tabulce nenajdete, lze se opřít o defaultní mapování, které je [zde](dafault-functors-to-umrlabels.txt) (zejména pro automaticjý převod).
+V případě, kdy zpracovávané sloveso v tabulce nenajdete, lze se opřít o defaultní mapování, které je [zde](dafault-functors-to-umrlabels.txt) (zejména pro automatický převod).
 
 ### Struktura tabulky
 
@@ -34,30 +34,31 @@ Tento sloupec D tedy udává finální návrh mapování v těch případech, kd
 - indexy u argumentů tvoří souvislou řadu (viz též vysvětlení hodnoty  "discontinuous ARGs" ve sloupci J -- Info on automatic mapping)
 - všechny funktory jsou namapované na argumenty (viz též vysvětlení hodnoty "partial" ve sloupci J -- Info on automatic mapping) 
 - argumenty se neopakují (viz též vysvětlení hodnoty "repeated ARGs" ve sloupci J -- Info on automatic mapping) 
+EF_start "- pokud je mapování do sloupce D převzato ze sloupce I, považujeme jeho spolehlivost za trochu nižší, proto se před něj dává otazník" EF_end
 
 ##### sloupec E -- **CORRECTION (zeleně)**
-Pokud sloupec D neobsahuje návrh automatického mapování nebo je tento návrh v rozporu s popisem argumentů u odpovídajícího slovesa v [PropBanku](https://verbs.colorado.edu/propbank-development/), uveďte zde vhodnější mapování (které bude v souhlasu s anotovanou větou). Toto mapování "přebije" automatická návrh. Každý návrh vždy okomentujte ve sloupci F -- COMMENTS.
+Pokud sloupec D neobsahuje návrh automatického mapování nebo je tento návrh v rozporu s popisem argumentů u odpovídajícího slovesa v [PropBanku](https://verbs.colorado.edu/propbank-development/), uveďte zde vhodnější mapování (které bude v souhlasu s anotovanou větou). Toto mapování "přebije" automatický návrh. Každý návrh vždy okomentujte ve sloupci F -- COMMENTS.
 
 ##### sloupec F -- **COMMENTS (zeleně)**
 Pokud navrhujete mapování do sloupce E, pak do sloupce E -- CORRECTIONS napište své iniciály a okomentujte navržené mapování!!
 
 ##### sloupec G -- **Unambiguous mapping - SSC and/or CEV**
 Tento sloupec udává **PB argument**, u kterého jsme si "jisti" mapováním: 
-- Buď existují mapování z **CEV = CzEngVallexu** i **SynSemClasses = SSC** (verze 5.1 (r.16488)) a tahle dvě mapování jsou **shodná**.       
-- Za "jisté" se též považuje, pokud existuje **jednoznačné mapování** (tj. funktor jen na jeden argument z PB) **jenom z jednoho zdroje** (jenom z CEV nebo jenom ze SSC).   
+- Buď existují mapování EF_start misto mapovani bych dala "**jednoznačné mapování** (tj. funktor jen na jeden argument z PB)" patri to uz i sem EF_end z **CEV = CzEngVallexu** i **SynSemClasses = SSC** (verze 5.1 (r.16488)) a tahle dvě mapování jsou **shodná**.       
+- Za "jisté" se též považuje, pokud existuje **jednoznačné mapování** (tj. funktor jen na jeden argument z PB) EF_start tady uz tu vysvetlujici zavorku nebude potreba EF_end **jenom z jednoho zdroje** (jenom z CEV nebo jenom ze SSC).   
 
 Info o zdroji mapování (sloupce G-I) je uvedeno ve sloupci K -- Source. V případě, že žádné mapování navrženo není, přestože mapování v SSC a/nebo CEV je k dispozici, je důvod uveden ve sloupci J -- Info. 
 
 ##### sloupec H -- **Prevailing mapping - SSC and/or CEV** 
-Tento sloupec uvádí návrh mapování funktoru na **PB argument** na základě převažujícího mapování v SSC a/nebo CEV (tj. mapování nemusí být "jisté"), a to podle následujících pravidel: 
-- v H je uveden **převládající argument** (tj. argument, jehož četnost je alespoň o 10% vyšší než četnost jakéhokoli jiného argumentu), pokud lze v SSC a/nebo CEV identifikovat jediný převládající argument (v případě mapování přes SSC i CEV se převlásající argument musí rovnat);
-- v H je více uvedeno argumentů (oddělených znakem "#"), pokud SSC a/nebo CEV udává pro daný funktor mapování na více argumentů, kde žádný z nich není převládající (jejich četnost se liší o méně než 10%).  !! TODO je to tak ???
+Tento sloupec uvádí návrh mapování funktoru na **PB argument** na základě převažujícího mapování v SSC a/nebo CEV (tj. mapování nemusí být EF_start misto  "nemusi byt" by melo byt "neni" EF_end "jisté"), a to podle následujících pravidel: 
+- v H je uveden **převládající argument** (tj. argument, jehož četnost je alespoň o 10% vyšší než četnost jakéhokoli jiného argumentu), pokud lze v SSC a/nebo CEV identifikovat jediný převládající argument (v případě mapování přes SSC i CEV se převládající argument musí rovnat);
+- v H je uvedeno více argumentů (oddělených znakem "#"), pokud SSC a/nebo CEV udává pro daný funktor mapování na více EF_start misto argumentů a zbytku vety bych napsala " **převládajících argumentů** (tj. argumentů, jejichž četnost se liší o méně než 10% od maximální četnosti)." - nevim tedy, jestli mužu pro mnozne cislo pouzit trochu jiny popis nez pro jednotne, pokud ne, tak bych k tomu jednotnemu v predchozim bode dala neco jako '**jediný převládající argument**' EF_end argumentů, kde žádný z nich není převládající (jejich četnost se liší o méně než 10%).  !! TODO je to tak ???
 
 Info o zdroji mapování (sloupce G-I) je uvedeno ve sloupci K -- Source. V případě, že žádné mapování navrženo není, přestože mapování v SSC a/nebo CEV je k dispozici, je důvod uveden ve sloupci J -- Info. 
 
 ##### sloupec I -- **Unambiguous SSC Mapping (other than CEV)**
 Tento sloupec udává  **PB argument** podle SSC, i když se liší návrhy mapování u SSC z CEV:
-- Uvádí se zde argument podle SSC, pokud má v SSC jednoznačné mapování (ignoruje se CEV, neboť anotátoři při budování SSC k CEV přihlíželi a rozhodli se ho nezohlednit) TODO JE TO TAK ??   
+- Uvádí se zde argument podle SSC, pokud má v SSC jednoznačné mapování (ignoruje se CEV, neboť anotátoři při budování SSC k CEV přihlíželi a rozhodli se ho nezohlednit) TODO JE TO TAK EF_start ANO EF_end??   
 - Pokud se CEV a SSC liší a navíc má SSC nejednoznačné mapování, nenavrhuje se nic (a doplní se hodnote "disagree" do sloupce J -- Info on automatic mapping).
 
 Info o zdroji mapování (sloupce G-I) je uvedeno ve sloupci K -- Source. V případě, že žádné mapování navrženo není, přestože mapování v SSC a/nebo CEV je k dispozici, je důvod uveden ve sloupci J -- Info. 
@@ -83,10 +84,10 @@ Info o zdroji mapování (sloupce G-I) je uvedeno ve sloupci K -- Source. V př�
 ##### sloupec J -- Info on automatic mapping
 Tento sloupec udává informaci o typu problému, který neumožnil automatické mapování s dostatečnou jistotou (sloupec D), přestože SSC a/nebo CEV nějaké mapování mají: 
 - **SSC ambiguous** (159 případů) - ve sloupci H udávajícím převládající SSC mapování jsou pro nějaký funktor minimálně dva PB argumenty (CEV mapování může či nemusí existovat), tedy ani jeden z nich není převládající; 
-- **discontinuous ARGs** (371 případů) - indexy u navržených funktorů netvoří souvislou řadu (nemusí začínat ARG0), tj. např. ARG0, ARG1, ARG2 nebo ARG1, ARG2 atd. (a to i když zdroje mapování jsou různé) TODO KTERE SLOUPCE SE BEROU V POTAZ ??;   
+- **discontinuous ARGs** (371 případů) - indexy u navržených funktorů netvoří souvislou řadu (nemusí začínat ARG0), tj. např. ARG0, ARG1, ARG2 nebo ARG1, ARG2 atd. (a to i když zdroje mapování jsou různé) TODO KTERE SLOUPCE SE BEROU V POTAZ ?? EF_start vsechny - G, H, I - hodnota je maximalne v jednom z nich pro kazdy funktor a v tomhle sloupci se zduvodnuje, proc se hodnota z vyplneneho sloupce G, H, I neprepise do sloupce D (ani s otaznikem, pokud je ze sloupce I) EF_end;   
 (ARGM se při testování souvislosti řady zahazují)
-- **partial** (1 390 případů) - ne všechny funktory mají navržené mapování TODO KTERE SLOUPCE SE BEROU V POTAZ (myslela jsem, ze je to info, proc neni navrzeno D)??;
-- **repeated ARGs** (491 případů) - některé (alespoň 2) funktory se mapují na stejný argument TODO KTERE SLOUPCE SE BEROU V POTAZ ??;  
+- **partial** (1 390 případů) - ne všechny funktory mají navržené mapování TODO KTERE SLOUPCE SE BEROU V POTAZ (myslela jsem, ze je to info, proc neni navrzeno D)?? EF_start opet se divam na vsechny sloupce G, H a I, ale pokud mam pro nejaky funktor nevyplnenou hodnotu aspon v jednom z techto sloupcu, tak to beru, jakoze je mapovani celeho zpracovavaneho ramce na PB 'rozbite' a tudiz nic nedavam do sloupce D EF_end;
+- **repeated ARGs** (491 případů) - některé (alespoň 2) funktory se mapují na stejný argument TODO KTERE SLOUPCE SE BEROU V POTAZ ?? EF_start opet se divam na sloupce G, H, I EF_end;  
 - **disagree** (1 101 případů) - mapování přes CEV a přes SSC se liší, navíc má SSC nejednoznačné mapování. 
 
 <!-- Source i Info se vztahuji k celemu ramci, ne k jednotlivym funktorum. A ukladaji ruzne informace - ta Source je ten zdroj, odkud jsme mapovani ziskali, zatimco Info je informace o tom, proc se navrhovane mapovani ze sloupcu G, H a I nepresune do toho automatickeho mapovani ve sloupci D. -->
