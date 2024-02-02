@@ -37,9 +37,13 @@
 - (AMR -> UMR NE mapping)
 - (NE types to review ... concrete examples on NEs and their annotation)
 
-[PDT-Vallex to ARG roles conversion](https://github.com/ufal/UMR/blob/main/tecto2umr/pdt_pb_mapping.xlsx)
 
-[Default functors to UMR roles conversion](https://github.com/ufal/UMR/blob/main/tecto2umr/functors-to-umrlabels.txt)
+**PDT-Vallex to ARG roles conversion:** 
+ 
+- verb-specific conversion
+  - [instructions](../tecto2umr/functors-to-args-mapping-instructions.md)
+  - [conversion table](https://docs.google.com/spreadsheets/d/1AuIASjkdAdKom7bgjDN5BxMKeRUefHlN/)
+- verb-nonspecific [default mapping](../tecto2umr/dafault-functors-to-umrlabels.txt)
 
 **NE classes / types** ... do we have access to the googlesheet with revised EN classes/types **???**
 
