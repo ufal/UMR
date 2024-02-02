@@ -7,6 +7,8 @@ Dostupné mapování je uvedeno v [Google tabulce](https://docs.google.com/sprea
 - ve sloupci **E -- CORRECTION** doplňte svůj návrh, pokud automatický návrh neexistuje či s ním nesouhlasíte; též zde můžete opravit návrh kolegy, pokud s ním nesouhlasíte;
 - v případě jakékoliv úpravy okomentujte v sloupci **F -- COMMENTS**. 
 
+V případě, kdy zpracovávané sloveso v tabulce nenajdete, lze se opřít o defaultní mapování, které je [zde](dafault-functors-to-umrlabels.txt) (zejména pro automaticjý převod).
+
 ### Struktura tabulky
 
 ##### sloupec A -- **UMR ID**
