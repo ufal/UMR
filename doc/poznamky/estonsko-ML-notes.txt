@@ -1,18 +1,68 @@
-:part vs. :part-of
-:poss vs. :poss-of
-The AMR and UMR Guidelines differ in :part vs. :part-of relation?
-UMR: 	:part and :poss relations
-his blood/hand/shoe … (blood/hand/shoe :part (person))
-	guitar strings … (string :part (guitar))
-	your stuff/ticket … (stuff/ticket/dog :poss (person))
-	NO example with the :part-of or :poss-of relations in the Guidelines
-AMR: :part-of and :poss relations
-	the engine of the car / the car’s engine … (engine :part-of (car))
-the south of France / southern France … (south :part-of
-(country :wiki "France" :name (name :op1 "France")))
-	BUT: his boat/team/house … (boat/team/house :poss (he))
-	Whose toy … (toy :poss (amr-unknown))
-	the speed of sound … (speed :poss (sound))
+POSSESSION (:poss, :poss-of, have-poss-91)
+==========================================
+see doc/poss-part.md !!!!
+
+
+PART-WHOLE relation (:part, :part-of, have-part-91)
+===================================================
+the Guidelines: “UMR uses :poss and :part relations with the possessum or part as the parent and the possessor or whole as the daughter, ...”
+
+!!! part as the parent and the whole as the daughter !!!
+i.e., (part :part (whole)) ............!!! the same as AMR :part-of !!!
+
+:part examples (the Guidelines, English data):
+   his blood/hand   ... (blood/hand :part (person))
+   the government office (= the office is part of the government)
+                         ... (office :part (government))
+   blood pressure = pressure of his blood  (pressure-01 :ARG1 (blood :part person))
+OK in the Guidelines, OK for some examples in the English data
+KO annotation in the English data (2/5 plus 1 unclear):
+   in the central Philippines	(Philippines :part (center))	KO
+   like an apron with pockets = thing [resembling apron] with pockets  (thing :part (pocket))				KO
+
+:part-of examples:
+Guidelines NO example
+English data 4 examples, all of them wrong ... should be  (part :part whole)
+   in the south of Leyte 	(south :part-of (Leyte)	)	KO
+   at the top of the ladder	(top :part-of (ladder))		KO
+   on the front ?		(front :part-of (thing)) 	KO
+   to the side of the road 	(side :part-of (road))		KO
+
+have-part-91 examples:
+Guidelines NO example
+English data just 1 example
+   And the movie had sound track.   (have-part-91
+                                         :ARG1 (movie)         ... entity = whole
+                                         :ARG2 (sound-track))  ... part
+
+==> 1. Use :part when talk about a part of something (like in _Petrova noha_ or _kniha pana profesora_)!!!
+    2. Use :part-of relation when talk about the whole entity (like in _kluk s bolavou nohou_) !!!
+    3. Use have-part-91 when interpreted as predication, with ARG1=entity and ARG2=part.
+
+================================================================================================
+
+
+AMR Guidelines:
+:poss relation (generalized, rather belong to) ... possession as the parent and the possessor/owner as the daughter !!!
+	his boat/team/house ... (boat/team/house :poss (he))
+	Whose toy           ... (toy :poss (amr-unknown))
+	the speed of sound  ... (speed :poss (sound))
+    aircraft's velocity ... (velocity :poss (aircraft))
+
+:part-of relation (part as the parent and the whole as the daughter)
+	the engine of the car / the car’s engine   ... (engine :part-of (car))
+    a unit of the company / the company’s unit ... (unit :part-of (company))
+    the south of France / southern France      ... (south :part-of (France))
+
+:consist-of
+   a band of marauders (=bandits) ... (band :consist-of (bandit))
+   a team of monkeys              ... (team :consist-of (monkey)) --> UMR have-group-91 (ARG1 entity, ARG2 group)
+   a ring of gold                 ... (ring :consist-of (gold))   --> UMR have-material-91 (ARG1 entity, ARG2 material)
+
+
+
+================================================================================================
+================================================================================================
 
 
 
@@ -20,8 +70,8 @@ TODO:
 =====
 Honza - email o NE z 13.11.2023
 
-poznámky z minutes (na zapracování do dokumentace)
-==================================================
+poznámky z minutes (na zapracování do dokumentace) ... hotovo DO January 29, 2024!!
+===================================================================================
 
 - apposition: How to annotate apposition?
 Compare ex. 4-1-2 (2b):

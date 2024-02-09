@@ -22,6 +22,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * specific construction
   * [Ellipsis](doc/ellipsis.md)
   * [Coreference](doc/coreference.md)
+  * [Possession relation and part-whole relation](doc/poss-part.md)
 * UMR attributes
   * [Aspect](doc/aspect.md)
   * [Mode](doc/mode.md)
