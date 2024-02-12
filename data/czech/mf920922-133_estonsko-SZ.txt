@@ -54,7 +54,7 @@ s2n: 1-1
 
 # document level annotation:
 (s2s0/ sentence
-     :coref ((s1n2 :same-entity s2n))
+     :coref ((s1n2 :same-entity s2n)))
 
 
 ###########################################################################
