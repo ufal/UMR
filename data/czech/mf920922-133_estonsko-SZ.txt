@@ -4,6 +4,8 @@
 
 # sentence level graph:
 (s1p / publication-91
+     :modal-strength full-affirmative
+     :aspect state
      :ARG1 (s1v / volit
            :ARG0 (s1p2 / person
 		          :mod (s1n / nationality
@@ -39,6 +41,8 @@ s1b: 2-2
 
 # sentence level graph:
 (s2p / publication-91
+     :aspect state
+     :modal-strength full-affirmative
      :place (s2c / country
          :wiki "Q191"
          :name (s2n / name :op1 "Estonsko")))
@@ -60,6 +64,8 @@ s2n: 1-1
 
 # sentence level graph:
 (s3p / publication-91
+     :aspect state
+     :modal-strength full-affirmative
      :ARG1 (s3v / volit
             :ARG0 (s3p2 / person
 		                :mod (s3n / nationality
@@ -100,6 +106,8 @@ s3n4: 0-0
 
 # sentence level graph:
 (s4p / publication-91
+      :aspect state
+      :modal-strength full-affirmative
       :place (s4c / city
          :wiki "Q63761031"
          :name (s4n / name :op1 "Tallin")))
@@ -120,21 +128,29 @@ s4n: 0-0
 
 # sentence level graph:
 (s5z / získat-001
+      :aspect performance
+      :modal-strength full-affirmative
       :ARG0 (s5b / blok
          :name (s5n / name :op1 "Vlast")
          :wiki "Q1428217"
          :mod (s5b2 / have-mod-91
+             :aspect state
+             :modal-strength full-affirmative
              :ARG0 (s5p / person
                     :wiki "Q153149"
                     :name (s5n2 / name :op1 "Lennart" :op2 "Meri"))
              :ARG1 (s5p2 / person
                     :mod (s5k / kandidovat-002
+                         :aspect activity
+                         :modal-strength full-affirmative
                          :ARG0 (s5p3 / person)
                          :ARG1 (s5p4 / prezident
                                :wiki "Q30461")
                     :poss (s5j / on)))))
       :ARG1 (s5h / hlas
              :ARG1-of (s5h2/ have-quant-91
+                       :aspect state
+                       :modal-strength full-affirmative
                        :ARG3 (s5n3 / nejvíce)
                        :ARG5 s5h))
              :refer-number plural)
@@ -221,7 +237,8 @@ s5p9: 10-10
                              :aspect performance
                              :modal-strength full-affirmative
                              :ARG1 (s6v3 / volit-001
-                                    :aspect performance)))
+                                    :aspect performance
+                                    :modal-strength full-affirmative)))
                   :quant (s6p3/ percentage-entity
 	                     :value (s6d / 20.5
 	                              :mod (s6a2 / asi)))))
@@ -303,11 +320,15 @@ s6n2: 0-0
       :ord (s7o / 2)
       :cause (s7t / thing
             :ARG1-of (s7h2 / hlas
+                 :aspect state
+                 :modal-strength full-affirmative
                  :wiki "Q1306135"
                  :refer-number singular
                  :quant (s7p2/ percentage-entity
 	                    :value (s7t2 / 13.9)))
 	          :ARG0-of (s7i / identity
+	             :aspect state
+	             :modal-strength full-affirmative
 	             :ARG1 (s7m / mandát
 	                :refer-number singular
 	                :quant (s7q / 18))))
