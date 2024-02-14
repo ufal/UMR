@@ -228,7 +228,7 @@ s4c3: 9-9
             (author :full-affirmative s4h)
             (author :full-affirmative s4h2))
     :coref ((s3a :same-entity s4a)
-            (s3c2 :same-entity s4a3)
+            (s3c2 :same-entity s4a2)
             (s3p :same-entity s4p)))
 
 
@@ -338,3 +338,73 @@ s5q3: 1-1
             (s1v :same-entity s5v3)))
 
 
+# sent_id = SlaT-2778
+#            1       2     3     4      5     6     7       8     9  10  11    12      13   14    15    16
+# :: snt6   Nam divitiarum et formae gloria fluxa atque fragilis est , virtus clara aeterna que habetur .
+# [en] For the glory of wealth and beauty is fleeting and perishable; that of intellectual power is considered illustrious and immortal.
+# check poss + divitiae plural although mostly grammatical
+
+# sentence level graph:
+(s6c / contrast-91
+     :ARG1 (s6h / have-mod-91
+                :ARG1 (s6g / gloria
+                           :refer-number singular
+                           :poss (s6a / and
+                                      :op1 (s6d / divitiae
+                                                :refer-number plural)
+                                      :op2 (s6f / forma
+                                                :refer-number singular)))
+                :ARG2 (s6a2 / and
+                            :op1 (s6f2 / fluo-17
+                                       :ARG0 s6g
+                                       :aspect atelic-process
+                                       :modal-strength full-affirmative)
+                            :op2 (s6f3 / fragilis))
+                :aspect state
+                :modal-strength full-affirmative)
+     :ARG2 (s6h2 / habeo-07
+                 :ARG1 (s6v / virtus
+                            :refer-number singular)
+                 :ARG4 (s6a3 / and
+                             :op1 (s6c2 / clarus)
+                             :op2 (s6a4 / aeternus))
+                 :aspect state
+                 :modal-strength full-affirmative))
+
+# alignment:
+s6c: 0-0
+s6h: 9-9
+s6g: 5-5
+s6a: 3-3
+s6d: 2-2
+s6f: 4-4
+s6a2: 7-7
+s6f2: 6-6
+s6f3: 8-8
+s6h2: 15-15
+s6v: 11-11
+s6a3: 14-14
+s6c2: 12-12
+s6a4: 13-13
+
+# document level annotation:
+# can I reverse the second one, or DCT should be the first node? check both
+# do I need to anchor every event to DCT or just those that are not anchored to anything else?
+(s6s0 / sentence
+    :temporal ((document-creation-time :overlap s6h)
+            (s6h2 :contained document-creation-time)
+            (s6h :overlap s6f2)
+            (s6h :overlap s6h2))
+    :modal ((root :modal author)
+            (author :full-affirmative s6h)
+            (author :full-affirmative s6f2)
+            (author :full-affirmative s6h2))
+    :coref ((s5g :subset-of s6g)))
+
+
+############# VALIDATOR REPORT ############
+# [Line 13 Sent snt1]: [L3 Sentence missing-attribute] Missing attribute :modal-strength. Node s1p is an event because it has outgoing relation :ARG0 on line 14.
+# [Line 193 Sent snt4]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s4c2 is an event because it has outgoing relation :ARG2 on line 194.
+# [Line 203 Sent snt4]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s4c3 is an event because it has outgoing relation :ARG2 on line 204.
+# [Line 242 Sent snt5]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s5p is an event because it participates in :modal relation :modal on line 329.
+# [Line 395 Sent snt6]: [L3 Document unknown-node-id] The node id (variable) 'document-creation-time' is unknown. No such node has been defined so far.
