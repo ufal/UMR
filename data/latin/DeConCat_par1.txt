@@ -342,7 +342,7 @@ s5q3: 1-1
 #            1       2     3     4      5     6     7       8     9  10  11    12      13   14    15    16
 # :: snt6   Nam divitiarum et formae gloria fluxa atque fragilis est , virtus clara aeterna que habetur .
 # [en] For the glory of wealth and beauty is fleeting and perishable; that of intellectual power is considered illustrious and immortal.
-# check poss + divitiae plural although mostly grammatical
+# Q [divitiae]: check poss + plural although mostly grammatical (plurale tantum)
 
 # sentence level graph:
 (s6c / contrast-91
@@ -388,11 +388,9 @@ s6c2: 12-12
 s6a4: 13-13
 
 # document level annotation:
-# can I reverse the second one, or DCT should be the first node? check both
-# do I need to anchor every event to DCT or just those that are not anchored to anything else?
 (s6s0 / sentence
     :temporal ((document-creation-time :overlap s6h)
-            (s6h2 :contained document-creation-time)
+            (document-creation-time :overlap s6h2)
             (s6h :overlap s6f2)
             (s6h :overlap s6h2))
     :modal ((root :modal author)
@@ -402,9 +400,188 @@ s6a4: 13-13
     :coref ((s5g :subset-of s6g)))
 
 
-############# VALIDATOR REPORT ############
+# sent_id = SlaT-2779
+#            1   2    3      4      5        6      7   8 9  10    11    12   13     14   15    16       17      18     19
+# :: snt7   Sed diu magnum inter mortalis certamen fuit , vi ne corporis an virtute animi res militaris magis procederet .
+# [en] Yet for a long time men have discussed the question whether success in arms depends more on strength of body or excellence of mind.
+# Q [REG]: in PropBank 'discuss/debate' my REG is ARG1. REG as manner in default mapping - no.
+# Q [DIR1]: same for procederet. PB (e.g. 'originate from') has source/DIR as ARG2.
+# Q [res_militaris]: or mod militaris? lit. military stuff. not things that are military (like, green, big, ...) but 'strategy/tactic'.
+# Q [magis]: check the whole construction
+# Q [neutral-affirmative]: would be sure if I split procederet in 2 events
+
+# sentence level graph:
+(s7b / but-91
+        :ARG2 (s7c / certo-01
+                     :ARG0 (s7m / mortalis
+                                 :refer-number plural)
+                     :duration (s7d / diu)
+                     :manner (s7m2 / magnus)
+                     :ARG1 (s7p / procedo-21
+                                 :ARG0 (s7r / res_militaris
+                                            :refer-number singular)
+                                 :ARG2 (s7o / or
+                                            :op1 (s7v / vis
+                                                    :refer-number singular
+                                                    :poss (s7c2 / corpus
+                                                                :refer-number singular))
+                                            :op2 (s7v2 / virtus
+                                                    :refer-number singular
+                                                    :poss (s7a / animus
+                                                                :refer-number singular)))
+                                :quant (s7m3 / magis)
+                                :aspect process
+                                :modal-strength neutral-affirmative)
+                     :aspect performance
+                     :modal-strength full-affirmative))
+
+# alignment:
+s7b: 1-1
+s7c: 6-7
+s7m: 4-5
+s7d: 2-2
+s7m2: 3-3
+s7p: 18-18
+s7r: 15-16
+s7o: 10-10, 12-12
+s7v: 9-9
+s7c2: 11-11
+s7v2: 13-13
+s7a: 14-14
+s7m3: 17-17
+
+# document level annotation:
+# Q [s7c]: check neutral-affirmative
+(s7s0 / sentence
+    :temporal ((document-creation-time :before s7c)
+            (s7c :overlap s7p))
+    :modal ((root :modal author)
+            (author :full-affirmative s7c)
+            (s7m :neutral-affirmative s7p))
+    :coref ((s3c2 :same-entity s7c2)
+            (s3a :same-entity s7a)))
+
+
+# sent_id = SlaT-2780
+#            1  2    3    4      5        6     7 8   9       10       11    12    13  14  15
+# :: snt8   Nam et prius quam incipias consulto , et ubi consulueris mature facto opus est .
+# [en] For before you begin, deliberation is necessary, and when you have deliberated, prompt action.
+# Q [nam 'indeed']
+# Q [opus-est and its frame]
+
+# sentence level graph:
+(s8a / and
+        :op1 (s8o / opus-est-01
+                :ARG0 (s8p / person
+                        :refer-person 2nd
+                        :refer-number singular)
+                :ARG1 (s8c / consulo-04
+                            :ARG0 s8p
+                            :aspect process
+                            :modal-strength full-affirmative)
+                :temporal (s8b / before
+                            :op1 (s8i / incipio-06
+                                :ARG0 s8p
+                                :aspect process
+                                :modal-strength full-affirmative))
+                :aspect state
+                :modal-strength full-affirmative)
+        :op2 (s8o2 / opus-est-01
+                :ARG0 s8p
+                :ARG1 (s8f / facio-02
+                            :ARG0 s8p
+                            :manner (s8m / mature)
+                            :aspect process
+                            :modal-strength full-affirmative)
+                :temporal (s8a2 / after
+                            :op1 (s8c2 / consulo-04
+                                    :ARG0 s8p
+                                    :aspect performance
+                                    :modal-strength full-affirmative))
+                :aspect state
+                :modal-strength full-affirmative))
+
+# alignment:
+s8a: 2-2, 8-8
+s8o: 13-14
+s8o2: 13-14
+s8p: 0-0
+s8c: 6-6
+s8i: 5-5
+s8c2: 10-10
+s8m: 11-11
+s8f: 12-12
+s8b: 3-4
+s8a2: 9-9
+
+# document level annotation:
+(s8s0 / sentence
+    :temporal ((document-creation-time :overlap s8o)
+            (document-creation-time :overlap s8o)
+            (s8o :overlap s8c)
+            (s8o2 :overlap s8f)
+            (s8c :after s8i)
+            (s8f :before s8c2))
+    :modal ((root :modal author)
+            (author :full-affirmative s8i)
+            (author :full-affirmative s8c)
+            (author :full-affirmative s8c2)
+            (author :full-affirmative s8f))
+    :coref ((s8c :same-event s8c2)))
+
+
+# sent_id = SlaT-2781
+#            1      2     3   4    5        6       7        8     9  10
+# :: snt9   Ita utrumque per se indigens alterum alterius auxilio eget .
+# [en] Thus each of these, being incomplete in itself, requires the other's aid.
+# Q [per se]: could not find anything better than :manner + ok person for pronoun?
+
+# sentence level graph:
+(s9e / egeo-01
+    :ARG0 (s9u / uterque
+                :refer-number singular
+                :ARG0-of (s9i / indigeo-03
+                            :manner (s9p / person
+                                        :refer-person 3rd
+                                        :refer-number singular)
+                            :aspect state
+                            :modal-strength full-affirmative))
+    :ARG1 (s9a / auxilior-03
+                :ARG0 (s9a2 / alter
+                        :refer-number singular)
+                :ARG1 (s9a3 / alter
+                        :refer-number singular)
+                :aspect process
+                :modal-strength full-affirmative)
+    :aspect state
+    :modal-strength full-affirmative)
+
+# alignment:
+s9e: 9-9
+s9u: 2-2
+s9i: 5-5
+s9a: 8-8
+s9p:3-4
+s9a2: 6-6
+s9a3: 7-7
+
+# document level annotation:
+(s9s0 / sentence
+    :temporal ((document-creation-time :overlap s9e)
+            (s9e :overlap s9i)
+            (s9e :overlap s9a))
+    :modal ((root :modal author)
+            (author :full-affirmative s9e)
+            (author :full-affirmative s9a)
+            (author :full-affirmative s9i))
+    :coref ((s9u :subset-of s7a)
+            (s9u :subset-of s7c2)
+            (s9u :same-entity s9p)))
+
+
+############# VALIDATOR REPORT #############
 # [Line 13 Sent snt1]: [L3 Sentence missing-attribute] Missing attribute :modal-strength. Node s1p is an event because it has outgoing relation :ARG0 on line 14.
 # [Line 193 Sent snt4]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s4c2 is an event because it has outgoing relation :ARG2 on line 194.
 # [Line 203 Sent snt4]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s4c3 is an event because it has outgoing relation :ARG2 on line 204.
 # [Line 242 Sent snt5]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s5p is an event because it participates in :modal relation :modal on line 329.
-# [Line 395 Sent snt6]: [L3 Document unknown-node-id] The node id (variable) 'document-creation-time' is unknown. No such node has been defined so far.
+# [Line 416 Sent snt7]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s7m is an event because it participates in :modal relation :neutral-affirmative on line 460.
