@@ -342,14 +342,13 @@ s5q3: 1-1
 #            1       2     3     4      5     6     7       8     9  10  11    12      13   14    15    16
 # :: snt6   Nam divitiarum et formae gloria fluxa atque fragilis est , virtus clara aeterna que habetur .
 # [en] For the glory of wealth and beauty is fleeting and perishable; that of intellectual power is considered illustrious and immortal.
-# Q [divitiae]: check poss + plural although mostly grammatical (plurale tantum)
 
 # sentence level graph:
 (s6c / contrast-91
      :ARG1 (s6h / have-mod-91
                 :ARG1 (s6g / gloria
                            :refer-number singular
-                           :poss (s6a / and
+                           :mod (s6a / and
                                       :op1 (s6d / divitiae
                                                 :refer-number plural)
                                       :op2 (s6f / forma
@@ -404,11 +403,6 @@ s6a4: 13-13
 #            1   2    3      4      5        6      7   8 9  10    11    12   13     14   15    16       17      18     19
 # :: snt7   Sed diu magnum inter mortalis certamen fuit , vi ne corporis an virtute animi res militaris magis procederet .
 # [en] Yet for a long time men have discussed the question whether success in arms depends more on strength of body or excellence of mind.
-# Q [REG]: in PropBank 'discuss/debate' my REG is ARG1. REG as manner in default mapping - no.
-# Q [DIR1]: same for procederet. PB (e.g. 'originate from') has source/DIR as ARG2.
-# Q [res_militaris]: or mod militaris? lit. military stuff. not things that are military (like, green, big, ...) but 'strategy/tactic'.
-# Q [magis]: check the whole construction
-# Q [neutral-affirmative]: would be sure if I split procederet in 2 events
 
 # sentence level graph:
 (s7b / but-91
@@ -417,21 +411,27 @@ s6a4: 13-13
                                  :refer-number plural)
                      :duration (s7d / diu)
                      :manner (s7m2 / magnus)
-                     :ARG1 (s7p / procedo-21
-                                 :ARG0 (s7r / res_militaris
-                                            :refer-number singular)
-                                 :ARG2 (s7o / or
-                                            :op1 (s7v / vis
-                                                    :refer-number singular
-                                                    :poss (s7c2 / corpus
-                                                                :refer-number singular))
-                                            :op2 (s7v2 / virtus
-                                                    :refer-number singular
-                                                    :poss (s7a / animus
-                                                                :refer-number singular)))
-                                :quant (s7m3 / magis)
-                                :aspect process
-                                :modal-strength neutral-affirmative)
+                     :ARG1 (s7o / or
+                              :op1 (s7p / procedo-21
+                                      :ARG0 (s7r / res
+                                                :refer-number singular
+                                                :mod (s7m3 / militaris))
+                                      :ARG2 (s7v / vis
+                                                :refer-number singular
+                                                :mod (s7c2 / corpus
+                                                            :refer-number singular))
+                                      :quant (s7m4 / magis)
+                                      :aspect process
+                                      :modal-strength neutral-affirmative)
+                              :op2 (s7p2 / procedo-21
+                                      :ARG0 s7r
+                                      :ARG2 (s7v2 / virtus
+                                                :refer-number singular
+                                                :mod (s7a / animus
+                                                            :refer-number singular))
+                                      :quant s7m4
+                                      :aspect process
+                                      :modal-strength neutral-affirmative))
                      :aspect performance
                      :modal-strength full-affirmative))
 
@@ -442,16 +442,17 @@ s7m: 4-5
 s7d: 2-2
 s7m2: 3-3
 s7p: 18-18
-s7r: 15-16
+s7p2: 18-18
+s7r: 15-15
+s7m3: 16-16
 s7o: 10-10, 12-12
 s7v: 9-9
 s7c2: 11-11
 s7v2: 13-13
 s7a: 14-14
-s7m3: 17-17
+s7m4: 17-17
 
 # document level annotation:
-# Q [s7c]: check neutral-affirmative
 (s7s0 / sentence
     :temporal ((document-creation-time :before s7c)
             (s7c :overlap s7p))
@@ -466,8 +467,6 @@ s7m3: 17-17
 #            1  2    3    4      5        6     7 8   9       10       11    12    13  14  15
 # :: snt8   Nam et prius quam incipias consulto , et ubi consulueris mature facto opus est .
 # [en] For before you begin, deliberation is necessary, and when you have deliberated, prompt action.
-# Q [nam 'indeed']
-# Q [opus-est and its frame]
 
 # sentence level graph:
 (s8a / and
@@ -534,7 +533,6 @@ s8a2: 9-9
 #            1      2     3   4    5        6       7        8     9  10
 # :: snt9   Ita utrumque per se indigens alterum alterius auxilio eget .
 # [en] Thus each of these, being incomplete in itself, requires the other's aid.
-# Q [per se]: could not find anything better than :manner + ok person for pronoun?
 
 # sentence level graph:
 (s9e / egeo-01
