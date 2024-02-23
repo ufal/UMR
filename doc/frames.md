@@ -1,7 +1,6 @@
-# Frame Files = Rolesets
+# Frame Files (for verbs) and Rolesets (for verb senses)
 
-UMR
-[assumes](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-participant-roles)
+UMR [assumes](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-participant-roles)
 that **[events](eventive-concepts.md) are linked to frame files** (also referred to as **rolesets**, might be viewed as composing a valency dictionary) that describe the **participants of the event and their
 semantic roles**. The default source of English frame files is PropBank ([version 3.4](http://propbank.github.io/v3.4.0/frames/index.html)). Other
 languages may use a similar resource if there is one, or create a lexicon on

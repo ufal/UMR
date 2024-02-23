@@ -18,7 +18,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [UMR terminology](doc/terminologie.md) (currently in Czech)
 * [Entities](doc/entities.md)
 * [Events](doc/eventive-concepts.md), see also [Specific verbal constructions](doc/verbal-constructions.md)
-* [Frame files](doc/frames.md) and [participant roles](doc/roles.md)
+* [Frame files](doc/frames.md) and [participant roles](doc/roles.md) (and [PDT-frames to PropBank rolesets mapping](tecto2umr/functors-to-args-mapping-instructions.md))
 * specific construction
   * [Ellipsis](doc/ellipsis.md)
   * [Coreference](doc/coreference.md)
