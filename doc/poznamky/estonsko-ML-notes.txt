@@ -1,46 +1,5 @@
-POSSESSION (:poss, :poss-of, have-poss-91)
-==========================================
-see doc/poss-part.md !!!!
-
-
 PART-WHOLE relation (:part, :part-of, have-part-91)
 ===================================================
-the Guidelines: “UMR uses :poss and :part relations with the possessum or part as the parent and the possessor or whole as the daughter, ...”
-
-!!! part as the parent and the whole as the daughter !!!
-i.e., (part :part (whole)) ............!!! the same as AMR :part-of !!!
-
-:part examples (the Guidelines, English data):
-   his blood/hand   ... (blood/hand :part (person))
-   the government office (= the office is part of the government)
-                         ... (office :part (government))
-   blood pressure = pressure of his blood  (pressure-01 :ARG1 (blood :part person))
-OK in the Guidelines, OK for some examples in the English data
-KO annotation in the English data (2/5 plus 1 unclear):
-   in the central Philippines	(Philippines :part (center))	KO
-   like an apron with pockets = thing [resembling apron] with pockets  (thing :part (pocket))				KO
-
-:part-of examples:
-Guidelines NO example
-English data 4 examples, all of them wrong ... should be  (part :part whole)
-   in the south of Leyte 	(south :part-of (Leyte)	)	KO
-   at the top of the ladder	(top :part-of (ladder))		KO
-   on the front ?		(front :part-of (thing)) 	KO
-   to the side of the road 	(side :part-of (road))		KO
-
-have-part-91 examples:
-Guidelines NO example
-English data just 1 example
-   And the movie had sound track.   (have-part-91
-                                         :ARG1 (movie)         ... entity = whole
-                                         :ARG2 (sound-track))  ... part
-
-==> 1. Use :part when talk about a part of something (like in _Petrova noha_ or _kniha pana profesora_)!!!
-    2. Use :part-of relation when talk about the whole entity (like in _kluk s bolavou nohou_) !!!
-    3. Use have-part-91 when interpreted as predication, with ARG1=entity and ARG2=part.
-
-================================================================================================
-
 
 AMR Guidelines:
 :poss relation (generalized, rather belong to) ... possession as the parent and the possessor/owner as the daughter !!!

@@ -1,3 +1,38 @@
+# UMR relations for attributes
+
+UMR distinguishes 2 types of modifiers:
+
+**Anchoring** modifiers "situate the intended referent of the referring expression via reference to another object" (Croft); i.e., they provide referential grounding for a referent expression:
+- `:poss` relation
+- `:part` relation
+- `have-rel-role-92` ... the predicate for kinship relation (father of somebody)
+
+**Anchoring** modifiers "enrich the referent description by subcategorizing it or selecting the quantity (cardinality, amount, proportion, piece) of the category or type denoted by the head noun." 
+- `:mod` (_a women's magazine_ as a magazine belonging to some subclass of magazines), also for demonstrative determiners (_these shirts_), for property concept modifiers (without their own frame files as e.g. _quirky shirts_)
+- `:age`, `:age-of`, `have-age-91` (_the thirty year-old man_)
+- `:group`, `:group-of`, `:have-group-91` for indicating the membership of groups (_a swarm of bees_)
+- `:topic`, `:topic-of`, `have-topic-91` for indicating what a referent is about as in (_Information about the case_), and 
+- `:medium`, `:medium-of`, `have-medium-91` for indicating channels of communication, such as languages, ... (_a French song_)
+ 
+**Quantification** ... [Part 3-2-2-5](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-2-2-5-quantification)
+- `:ord` (always with an (o/ ordinal-entity) concept as a daughter, :value), `:quant`, `:range`, `:scale`, `:unit`, and `:value` 
+
+**Others**
+- `:example` is used to annotate illustrative examples of object categories (_countries like Germany and France_);
+- `:name` introducing named entities 
+
+AMR: 
+- :consist-of (UMR -->  have-group-91, have-material-91) 
+- :subevent (_presentation at a conference_) ... ???
+- :subset (with include-91 as reification) ...UMR --> include-91
+```
+AMR: nine of the twenty soldiers 
+(s/soldier :quant 9   
+               :subset-of (s3/soldier :quant 20))
+```
+
+---
+
 # Possession
 
 `:poss` (= `:possessor`) vs. `:poss-of` (`:possessor-of`) ... CHANGE of labels in UMR  
@@ -43,15 +78,6 @@ ML: Based on context, I would interpret it as :mod (the attribute "goat" serves 
 **`have-poss-91` examples:**  
 NO example in the Guidelines nor in the English data
 
-**Summary:**
-1. Use `:poss` (= `:possessor`) when talk about a thing that is possessed by someone (like in _Petrova kniha_)!!! 
-2. Use `:poss-of` relation (= `:possessor-of`) when talk about an owner/possessor of something (like in _liščí majitel_, _majitel lišek_)) !!!
-3. Use `have-poss-91` when interpreted as predication, with `ARG1`=possessor and `ARG2`=possessum.
-       
-**??? is it the same predicate as :have-91 ???**
-
-
-### Comparison to PDT
 
 ### Comparison to AMR 
 
@@ -59,6 +85,9 @@ OK, UMR and AMR relation `:poss` is the same.
 (c / car
    :poss (h / he))
    
+
+
+### Comparison to PDT
 --- 
 ---
  
@@ -75,30 +104,51 @@ The Guidelines:
        :part (whole entity))
 ```
 
-
 **Summary:**
 1. Use `:part` when talk about a thing that belongs to some bigger entity (like in ...)
 2. Use `:poss-of` relation when talk about the whole entity (like in ...)
 3. Use `have-poss-91` when interpreted as predication, with `ARG1`=the whole entity and `ARG2`= its part/fragment
-
-See ale `:group`, `:group-of`, `:have-group-91`
-       
-*
 ---
 
-**`:part` examples** (the Guidelines, English data):  
+**`:part` examples** (the UMR Guidelines, the English released data):  
+
+ - his blood/hand/string/car   ... (blood/hand/string/car :part (person)) ... from the UMR Guidelines
+ - guitar's string ... (string :part (guitar) ... from the UMR Guidelines
+ - blood pressure = pressure of his blood  ... (pressure-01 :ARG1 (blood :part person)) ... from the UMR Guidelines     
+ - the government office (= the office is part of the government, the data)
+                         ... (office :part (government))  
+ 
+--> OK in the Guidelines, OK for some examples in the English data
+
+**KO annotation** in the English data (2/5 plus 1 unclear):
+ -  in the central Philippines ... (Philippines :part (center))
+ -  like an apron with pockets (= thing [resembling apron] with pockets ) ... (thing :part (pocket))
+Both should be annotated as `:part-of`!!
 
 **`:part-of` examples:**  
+UMR Guidelines NO example!!   
+English data 4 examples, **all of them wrong** ... should be  (part :part whole)!!
+  - in the south of Leyte ... (south :part-of (Leyte)	)	KO
+  - at the top of the ladder ... (top :part-of (ladder))		KO
+  - on the front ... (front :part-of (thing)) 	KO
+  - to the side of the road ...	(side :part-of (road))		KO
 
 **`have-part-91` examples:**  
+UMR Guidelines NO example!!   
+English data just 1 example:  
+ -  And the movie had sound track.   (have-part-91
+                                         :ARG1 (movie)         ... entity = whole
+                                         :ARG2 (sound-track))  ... part
+--> OK
 
-
-### Comparison to PDT
 
 ### Comparison to AMR 
 
-!!! UMR `:part` has and opposite than that in AMR, at least based on examples from the Guidelines!!! (in fact, UMR `:part` corresponds to AMR `:part-of`) !!!
+!!! UMR `:part` has and opposite direction compared to that in AMR, at least based on examples from the Guidelines!!! (in fact, UMR `:part` corresponds to AMR `:part-of`) !!!
 
 
 UMR: (engine :part (car))                                                                                     
-AMR: (engine :part-of (car))                                                                                     
+AMR: (engine :part-of (car))                                                                                 
+
+
+### Comparison to PDT

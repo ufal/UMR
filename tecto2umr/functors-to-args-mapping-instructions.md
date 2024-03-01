@@ -7,7 +7,7 @@ resp. s ontologií [SynSemClass](https://ufal.mff.cuni.cz/synsemclass)
 Dostupné mapování je uvedeno v [Google tabulce](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/): 
 <!-- stará nezamčená tabulka 
 https://docs.google.com/spreadsheets/d/1AuIASjkdAdKom7bgjDN5BxMKeRUefHlN/edit#gid=452142481
-https://docs.google.com/spreadsheets/d/1AuIASjkdAdKom7bgjDN5BxMKeRUefHlN/edit#gid=1231600085 -->
+https://docs.google.com/spreadsheets/d/1AuIASjkdAdKom7bgjDN5BxMKeRUef~~~~HlN/edit#gid=1231600085 -->
 - ve sloupci **D -- AUTOMATIC MAPPING** je návrh získaný automatickým převodem ze SynSemClass (dále též  SSC) a CzEnVallexu (dále též CEV), pokud byl tento převod víceméně spolehlivý (více viz níž);
 - ve sloupci **E -- CORRECTION** doplňte svůj návrh, pokud automatický návrh neexistuje či s ním nesouhlasíte; též zde můžete opravit návrh kolegy, pokud s ním nesouhlasíte;
 - v případě jakékoliv úpravy okomentujte v sloupci **F -- COMMENTS**. 
@@ -89,7 +89,7 @@ Info o zdroji mapování (sloupce G-I) je uvedeno ve sloupci K -- Source. V př�
 
 ##### sloupec J -- Info on automatic mapping
 Tento sloupec udává informaci o typu problému, který neumožnil automatické mapování s dostatečnou jistotou (sloupec D), přestože SSC a/nebo CEV nějaké mapování mají: 
-- **SSC ambiguous** (159 případů) - ve sloupci H udávajícím převládající mapování jsou pro nějaký funktor minimálně dva PB argumenty, tedy ani jeden z nich není převládající;  
+- **ambiguous** (159 případů) - ve sloupci H udávajícím převládající mapování jsou pro nějaký funktor minimálně dva PB argumenty, tedy ani jeden z nich není převládající;  
 - **discontinuous ARGs** (371 případů) - indexy u navržených funktorů netvoří souvislou řadu (souvislá řada nemusí začínat ARG0; tj. např. ARG0, ARG1, ARG2 nebo ARG1, ARG2 atd.), zohledňují se všechny zdroje mapování (tj. sloupce - G, H, I);  
 <!-- (hodnota je maximalne v jednom z nich pro každý funktor a v tomhle sloupci se zdůvodňuje, proč se hodnota z vyplněného sloupce G, H, I nepřepíše do sloupce D -->    
 (ARGM se při testování souvislosti řady zahazují);
