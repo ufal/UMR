@@ -1254,16 +1254,20 @@ def validate_events(sentence, node_dict, args):
         if 'event_reason' in node:
             # :ARG relations imply that it is an event but they are not required.
             # On the other hand, :aspect and :modal-strength seem to be required according to the guidelines.
-            for rtype in [':aspect', ':modal-strength']:
-                relations = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == rtype], key=lambda x: x['line0'])
-                if len(relations) < 1:
+            # :modal-strength can be replaced by :modal-predicate. Only one of them is expected (guidelines 4-3-1-2).
+            relations = {}
+            relations[':aspect'] = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == ':aspect'], key=lambda x: x['line0'])
+            relations[':modal-strength/predicate'] = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] in [':modal-strength', ':modal-predicate']], key=lambda x: x['line0'])
+            for rtype in [':aspect', ':modal-strength/predicate']:
+                if len(relations[rtype]) < 1:
                     testid = 'missing-attribute'
                     testmessage = "Missing attribute %s. Node %s is an event because %s." % (rtype, nid, node['event_reason'])
                     warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
-                elif relations[0]['type'] != 'atom':
+                # :modal-strength must be atom but :modal-predicate is a node.
+                elif relations[rtype][0]['relation'] == ':modal-strength' and relations[rtype][0]['type'] != 'atom':
                     testid = 'invalid-attribute'
-                    testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (rtype, relations[0]['type'], relations[0]['value'])
-                    warn(testmessage, testclass, testlevel, testid, lineno=relations[0]['line0'])
+                    testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (':modal-strength', relations[rtype][0]['type'], relations[rtype][0]['value'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=relations[rtype][0]['line0'])
 
 def validate_document_relations(sentence, node_dict, args):
     """
