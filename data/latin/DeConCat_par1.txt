@@ -18,7 +18,7 @@
                                                 :refer-number plural
                                                 :mod (s1c / ceterus))
                                         :aspect state
-                                        :modal-predicate s1p)
+                                        :modal-predicate s1s)
                                 :aspect state
                                 :modal-strength full-affirmative))
             :manner (s1o2 / ops
@@ -407,12 +407,13 @@ s6a4: 13-13
 # sentence level graph:
 (s7b / but-91
         :ARG2 (s7c / certo-01
-                     :ARG0 (s7m / mortalis
+                     :ARG0 (s7p / person
+                                 :mod (s7m / mortalis)
                                  :refer-number plural)
                      :duration (s7d / diu)
                      :manner (s7m2 / magnus)
                      :ARG1 (s7o / or
-                              :op1 (s7p / procedo-21
+                              :op1 (s7p2 / procedo-21
                                       :ARG0 (s7r / res
                                                 :refer-number singular
                                                 :mod (s7m3 / militaris))
@@ -423,7 +424,7 @@ s6a4: 13-13
                                       :quant (s7m4 / magis)
                                       :aspect process
                                       :modal-strength neutral-affirmative)
-                              :op2 (s7p2 / procedo-21
+                              :op2 (s7p3 / procedo-21
                                       :ARG0 s7r
                                       :ARG2 (s7v2 / virtus
                                                 :refer-number singular
@@ -438,11 +439,12 @@ s6a4: 13-13
 # alignment:
 s7b: 1-1
 s7c: 6-7
+s7p: 0-0
 s7m: 4-5
 s7d: 2-2
 s7m2: 3-3
-s7p: 18-18
 s7p2: 18-18
+s7p3: 18-18
 s7r: 15-15
 s7m3: 16-16
 s7o: 10-10, 12-12
@@ -455,10 +457,10 @@ s7m4: 17-17
 # document level annotation:
 (s7s0 / sentence
     :temporal ((document-creation-time :before s7c)
-            (s7c :overlap s7p))
+            (s7c :overlap s7p2))
     :modal ((root :modal author)
             (author :full-affirmative s7c)
-            (s7m :neutral-affirmative s7p))
+            (s7p :neutral-affirmative s7p2))
     :coref ((s3c2 :same-entity s7c2)
             (s3a :same-entity s7a)))
 
@@ -578,8 +580,4 @@ s9a3: 7-7
 
 
 ############# VALIDATOR REPORT #############
-# [Line 13 Sent snt1]: [L3 Sentence missing-attribute] Missing attribute :modal-strength. Node s1p is an event because it has outgoing relation :ARG0 on line 14.
 # [Line 193 Sent snt4]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s4c2 is an event because it has outgoing relation :ARG2 on line 194.
-# [Line 203 Sent snt4]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s4c3 is an event because it has outgoing relation :ARG2 on line 204.
-# [Line 242 Sent snt5]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s5p is an event because it participates in :modal relation :modal on line 329.
-# [Line 416 Sent snt7]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s7m is an event because it participates in :modal relation :neutral-affirmative on line 460.
