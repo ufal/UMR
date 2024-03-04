@@ -1213,7 +1213,9 @@ def detect_events(sentence, node_dict, args):
     * If it has an ":ARG?" child, it is an event.
     * If it has an ":ARG?-of" parent, it is an event.
     * If it has ":modal-strength" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
-    * If in document annotation it participates in a relation from the ":temporal" or ":modal" group, it is probably an event.
+    * If in document annotation it participates in a relation from the ":temporal" or ":modal" group, it is likely an event,
+      however, this condition is not sufficient. Entities such as persons can participate in modal relations ("Rob thinks that...")
+      and temporal entities ("yesterday", "December 21") participate in temporal relations.
     """
     for nid in sorted(sentence[1]['nodes']):
         node = node_dict[nid]
@@ -1236,26 +1238,6 @@ def detect_events(sentence, node_dict, args):
         if args.print_relations:
             if 'event_reason' in node:
                 print("  This node is an event because %s." % node['event_reason'])
-            print('')
-    # Check document level annotation.
-    events = []
-    for r in sentence[3]['relations']:
-        # Concepts included in modal relations are probably events.
-        # We cannot say the same about temporal relations because besides events, they can be also temporal concepts such as 'yesterday'.
-        if r['group'] == ':modal':
-            # The 'node' can be also a constant (e.g. 'document-creation-time') which we do not have in node_dict.
-            if r['node0'] in node_dict and not 'event_reason' in node_dict[r['node0']]:
-                node_dict[r['node0']]['event_reason'] = "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])
-                events.append(r['node0'])
-            if r['node1'] in node_dict and not 'event_reason' in node_dict[r['node1']]:
-                node_dict[r['node1']]['event_reason'] = "it participates in %s relation %s on line %d" % (r['group'], r['relation'], r['line0'])
-                events.append(r['node1'])
-    if args.print_relations:
-        something_printed = False
-        for e in events:
-            print("Node %s (concept=%s, tokens=%s) is an event because %s." % (e, node_dict[e]['concept'], node_dict[e]['alignment']['tokstr'], node_dict[e]['event_reason']))
-            something_printed = True
-        if something_printed:
             print('')
 
 def validate_events(sentence, node_dict, args):
