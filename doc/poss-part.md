@@ -3,11 +3,11 @@
 UMR distinguishes 2 types of modifiers:
 
 **Anchoring** modifiers "situate the intended referent of the referring expression via reference to another object" (Croft); i.e., they provide referential grounding for a referent expression:
-- `:poss` relation
-- `:part` relation
-- `have-rel-role-92` ... the predicate for kinship relation (father of somebody)
+- `:poss` relation,
+- `:part` relation,
+- `have-rel-role-92` ... the predicate for kinship relation (as in _father of somebody_).
 
-**Anchoring** modifiers "enrich the referent description by subcategorizing it or selecting the quantity (cardinality, amount, proportion, piece) of the category or type denoted by the head noun." 
+**Typifying** modifiers "enrich the referent description by subcategorizing it or selecting the quantity (cardinality, amount, proportion, piece) of the category or type denoted by the head noun." 
 - `:mod` (_a women's magazine_ as a magazine belonging to some subclass of magazines), also for demonstrative determiners (_these shirts_), for property concept modifiers (without their own frame files as e.g. _quirky shirts_)
 - `:age`, `:age-of`, `have-age-91` (_the thirty year-old man_)
 - `:group`, `:group-of`, `:have-group-91` for indicating the membership of groups (_a swarm of bees_)
@@ -19,12 +19,16 @@ UMR distinguishes 2 types of modifiers:
 
 **Others**
 - `:example` is used to annotate illustrative examples of object categories (_countries like Germany and France_);
-- `:name` introducing named entities 
+- `:name` introduces named entities. 
 
 AMR: 
-- :consist-of (UMR -->  have-group-91, have-material-91) 
-- :subevent (_presentation at a conference_) ... ???
-- :subset (with include-91 as reification) ...UMR --> include-91
+- `:consist-of` (UMR -->  `have-group-91`, `have-material-91`)   
+   _a team of monkeys_   
+   AMR: (team :consist-of (monkey)) --> UMR: have-group-91 (ARG1 entity, ARG2 group)  
+    _a ring of gold_   
+   AMR: (ring :consist-of (gold))   --> UMR: have-material-91 (ARG1 entity, ARG2 material) 
+- `:subevent` (_presentation at a conference_) ... ???
+- `:subset` (with `include-91` as reification) ...UMR --> `include-91`
 ```
 AMR: nine of the twenty soldiers 
 (s/soldier :quant 9   
@@ -49,10 +53,8 @@ The Guidelines:
 **Summary:**
 1. Use `:poss` (= `:possessor`) when talk about a thing that is possessed by someone (like in _Petrova kniha_)!!! 
 2. Use `:poss-of` relation (= `:possessor-of`) when talk about an owner/possessor of something (like in _liščí majitel_, _majitel lišek_)) !!!
-3. Use `have-poss-91` when interpreted as predication, with `ARG1`=possessor and `ARG2`=possessum.
+3. Use `have-poss-91` --> `have-91` when interpreted as predication, with `ARG1`=possessor and `ARG2`=possessum.
        
-**??? is it the same predicate as :have-91 ???**
-
 ---
 
 **`:poss` examples** (the Guidelines, English data):  
@@ -76,7 +78,9 @@ English data just 1 example
 ML: Based on context, I would interpret it as :mod (the attribute "goat" serves to identify the man (there are 2 men there)).
 
 **`have-poss-91` examples:**  
-NO example in the Guidelines nor in the English data
+NO example in the Guidelines nor in the English data.  
+NO example and no mention in the UMR Guidelines.  
+Just listed among UMR roles (as a reification of the poss relation; however, `have-91` also listed there as a reification of the poss relation) ... `have-poss-91` --> `have-91`?? (Ask Julia!!)
 
 
 ### Comparison to AMR 
