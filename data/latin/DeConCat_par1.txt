@@ -192,7 +192,9 @@ s3c2: 4-4
                   :ARG1 (s4a / alter)
                   :ARG2 (s4c2 / communis-13
                           :ARG2 (s4d / deus
-                                      :refer-number plural))
+                                      :refer-number plural)
+                          :aspect state
+                          :modal-strength full-affirmative)
                   :affectee (s4p / person
                                   :refer-person 1st
                                   :refer-number plural)
@@ -202,7 +204,9 @@ s3c2: 4-4
                   :ARG1 (s4a2 / alter)
                   :ARG2 (s4c3 / communis-13
                                :ARG2 (s4b / belua
-                                            :refer-number plural))
+                                            :refer-number plural)
+                               :aspect state
+                               :modal-strength full-affirmative)
                   :affectee s4p
                   :aspect state
                   :modal-strength full-affirmative))
@@ -579,5 +583,3 @@ s9a3: 7-7
             (s9u :same-entity s9p)))
 
 
-############# VALIDATOR REPORT #############
-# [Line 193 Sent snt4]: [L3 Sentence missing-attribute] Missing attribute :aspect (+modal-strength). Node s4c2 is an event because it has outgoing relation :ARG2 on line 194.
