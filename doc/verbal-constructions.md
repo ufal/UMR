@@ -159,6 +159,47 @@ etc.: -->
 ## TODO Semi-modal verbs - separate events in UMR 
 
 According to [Part 3-1-3-3. TAM categories](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-3-TAM-categories), and [Part 3-3-1-3. State](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-1-3-state)  verbs like  _want_ , _need_, and _dread_ are categorized as semi-modal.
+
+These verbs are annotated as separate events, they take an infinitive verb as a complement (i.e., an autosemantic verb is annotated as its child, :ARG1 in case of _want_ in the following example). In addition, `:modal-predicate` relation should be annotated between the semi-modal and the complement.  
+
+```
+(w/ want-01
+    :ARG0 (p/ person
+    	:refer-person 3rd
+	:refer-number singular)
+    :ARG1 (g/ go-01
+    	:ARG1 p
+        :ARG4 (s/ school)
+        :aspect performance
+	**:modal-predicate w)**
+    :aspect state
+    :modal-strength full-affirmative)
+```
+
+This `:modal-predicate` relation is applied also for other verbs with an infinitive complement, see the following example: 
+
+```
+I saw him knock on the door.
+
+(s1s/ see-01
+	:ARG0 (s1p/ person
+		:refer-person 1st
+		:refer-number singular)
+	:ARG1 (s1k/ knock-01
+		:ARG0 (s1p2/ person
+			:refer-person 3rd
+			:refer-number singular)
+		:ARG1 (s1d/ door
+			:refer-number singular))
+		:aspect performance
+		**:modal-predicate s1s)**
+	:aspect state
+	:modal-strength full-affirmative)
+
+(s/ sentence
+	:temporal ((past-reference :contained s1s)
+		 (s1s :overlap s1k)))
+```
  
 The following types are  also considered as semimodals in some sources: 
 - desideratives ('want to') 
@@ -166,15 +207,14 @@ The following types are  also considered as semimodals in some sources:
 - optatives ('wish that'), and 
 - frustratives ('fail to')
 
+ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to  Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)
+
 !! ASI nechat jako pomocná podle PDT, když to může být language specific !!!  
 POZOR … pokud v PDT jako plnovýznamové, směr závislosti???   
-o	PDT: něco přislíbit nemůže (tj. řídíví infinitive, závislé modální ve fokusu)  
+o	PDT: něco přislíbit nemůže (tj. řídící infinitive, závislé modální ve fokusu)  
 o	UMR: “hlavní” predikát non-finite She wants to go to school … jak vytipovat ???
 
 
-ŠZ: just one semantic concept consisting of two words (want to go) (?) - based on the test of negation, similar to   Valency-changing operations (?), (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-1-3-2-Valency-changing-operations)
-
- ML: 
 
 ---
 
