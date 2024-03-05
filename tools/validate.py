@@ -500,6 +500,13 @@ def validate_sentence_metadata(sentence, known_ids, args):
                         testid = 'word-gloss-mismatch'
                         testmessage = "Words have %d items while %s have %d items." % (m, header, n)
                         warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
+                    elif header == 'Index':
+                        expected_items = str([str(x) for x in range(len(ilg[header]['items'])+1)[1:]])
+                        observed_items = str(ilg[header]['items'])
+                        if observed_items != expected_items:
+                            testid = 'spurious-index'
+                            testmessage = "Incorrect index sequence.\n  Expected: %s\n  Observed: %s" % (expected_items, observed_items)
+                            warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
                 elif header == 'Morphemes':
                     n = len(ilg[header]['items'])
                     if n < m:
