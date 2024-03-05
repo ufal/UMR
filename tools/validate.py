@@ -375,34 +375,32 @@ def validate_sentence_metadata(sentence, known_ids, args):
     testlevel = 2
     testclass = 'Metadata'
     matched=[]
+    tokens_included = False
+    iline = sentence[0]['line0']
     # Thanks to previous tests, we can be sure that there is at least one
     # annotation block. However, we cannot be sure that it has comments.
-    if not 'comments' in sentence[0]:
-        testid = 'missing-sent-id'
-        testmessage = 'Missing sentence id.'
-        warn(testmessage, testclass, testlevel, testid, lineno=-1)
-        return
-    comments = sentence[0]['comments']
-    tokens_included = False
-    for c in comments:
-        # The first block either contains one comment line with both the
-        # sentence id and the sequence of tokens (English, Chinese), or it
-        # contains multiple lines, the first one is a comment with sentence id
-        # only, the following ones are not comments and they contain inter-
-        # linear glosses, starting with the actual token sequence.
-        match = sentid_re.match(c)
-        if match:
-            # So the comment starts with a sentence id. Does it also contain the
-            # sequence of tokens?
-            match2 = sentid_tokens_re.match(c)
-            if match2:
-                matched.append(match2)
-                tokens_included = True
-                testid = 'tokens-in-sent-id-comment'
-                testmessage = 'The comment line with the sentence id seems to also contain the tokens, which is deprecated.'
-                warn(testmessage, 'Warning', testlevel, testid, lineno=-1)
-            else:
-                matched.append(match)
+    if 'comments' in sentence[0]:
+        comments = sentence[0]['comments']
+        for c in comments:
+            # The first block either contains one comment line with both the
+            # sentence id and the sequence of tokens (English, Chinese), or it
+            # contains multiple lines, the first one is a comment with sentence id
+            # only, the following ones are not comments and they contain inter-
+            # linear glosses, starting with the actual token sequence.
+            match = sentid_re.match(c)
+            if match:
+                # So the comment starts with a sentence id. Does it also contain the
+                # sequence of tokens?
+                match2 = sentid_tokens_re.match(c)
+                if match2:
+                    matched.append(match2)
+                    tokens_included = True
+                    testid = 'tokens-in-sent-id-comment'
+                    testmessage = 'The comment line with the sentence id seems to also contain the tokens, which is deprecated.'
+                    warn(testmessage, 'Warning', testlevel, testid, lineno=-1)
+                else:
+                    matched.append(match)
+        iline += len(sentence[0]['comments'])
     if not matched:
         testid = 'missing-sent-id'
         testmessage = 'Missing sentence id.'
@@ -436,99 +434,102 @@ def validate_sentence_metadata(sentence, known_ids, args):
                 testid = 'tokens-vs-ilg'
                 testmessage = "No interlinear glosses are expected because tokens were already introduced on the sentence id line."
                 warn(testmessage, testclass, testlevel, testid, lineno=sentence[0]['line0']+len(sentence[0]['comments']))
-        else:
-            iline = sentence[0]['line0']+len(sentence[0]['comments'])
-            if not 'lines' in sentence[0]:
-                testid = 'missing-ilg'
-                testmessage = "Expecting list of tokens/words (optionally followed by interlinear glosses)."
-                warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                return
-            # Following the proposal in https://github.com/ufal/UMR/issues/9,
-            # we expect the following lines in any order (header is capitalized
-            # and terminated by a colon, ':'; glosses can be in any language,
-            # with the ISO 639 language code given in parentheses):
-            # Index:           1         2         3          4
-            # Words:           Estonci   volili    parlament  .
-            # Word Gloss (en): Estonians elected   parliament .
-            # Word Gloss (es): Estonios  eligieron parlamento .
-            # Morphemes:           Eston   -c    -i     vol   -il       -i            parlament  -0     .
-            # Morpheme Gloss (en): Estonia DERIV PL.NOM elect  PAST.PART PL.MASC.ANIM parliament SG.ACC .
-            # Morpheme Gloss (es): Estonia DERIV PL.NOM elegir PAST.PART PL.MASC.ANIM parlamento SG.ACC .
-            # Sentence: Estonci volili parlament.
-            # Sentence Gloss (en): Estonians elected the parliament.
-            # Sentence Gloss (es): Los estonios eligieron el parlamento.
-            lines = sentence[0]['lines']
-            ilg = {}
-            for l in lines:
-                match = ilg_re.match(l)
-                match_old = ilg_old_re.match(l)
-                if match:
-                    header = match.group(1)
-                    items = re.split(r"\s+", match.group(2))
-                    if header in ilg:
-                        testid = 'duplicate-ilg'
-                        testmessage = "Duplicate interlinear glossing line '%s' (first occurred on line %d)." % (header, ilg[header]['line0'])
-                        warn(testmessage, 'Warning', testlevel, testid, lineno=iline)
-                    ilg[header] = {'items': items, 'line0': iline}
-                    if header == 'Words':
-                        sentence[0]['tokens'] = items
-                elif match_old:
-                    header = match_old.group(1)
-                    testid = 'obsolete-ilg'
-                    testmessage = "Obsolete interlinear glossing line (obsolete line header '%s'; see https://github.com/ufal/UMR/issues/9)." % header
+    # If we did not find the sentence id line or it did not contain the tokens,
+    # look for the interlinear glosses (including the tokens).
+    if not tokens_included:
+        if not 'lines' in sentence[0]:
+            testid = 'missing-ilg'
+            testmessage = "Expecting list of tokens/words (optionally followed by interlinear glosses)."
+            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+            sentence[0]['tokens'] = []
+            return
+        # Following the proposal in https://github.com/ufal/UMR/issues/9,
+        # we expect the following lines in any order (header is capitalized
+        # and terminated by a colon, ':'; glosses can be in any language,
+        # with the ISO 639 language code given in parentheses):
+        # Index:           1         2         3          4
+        # Words:           Estonci   volili    parlament  .
+        # Word Gloss (en): Estonians elected   parliament .
+        # Word Gloss (es): Estonios  eligieron parlamento .
+        # Morphemes:           Eston   -c    -i     vol   -il       -i            parlament  -0     .
+        # Morpheme Gloss (en): Estonia DERIV PL.NOM elect  PAST.PART PL.MASC.ANIM parliament SG.ACC .
+        # Morpheme Gloss (es): Estonia DERIV PL.NOM elegir PAST.PART PL.MASC.ANIM parlamento SG.ACC .
+        # Sentence: Estonci volili parlament.
+        # Sentence Gloss (en): Estonians elected the parliament.
+        # Sentence Gloss (es): Los estonios eligieron el parlamento.
+        lines = sentence[0]['lines']
+        ilg = {}
+        for l in lines:
+            match = ilg_re.match(l)
+            match_old = ilg_old_re.match(l)
+            if match:
+                header = match.group(1)
+                items = re.split(r"\s+", match.group(2))
+                if header in ilg:
+                    testid = 'duplicate-ilg'
+                    testmessage = "Duplicate interlinear glossing line '%s' (first occurred on line %d)." % (header, ilg[header]['line0'])
                     warn(testmessage, 'Warning', testlevel, testid, lineno=iline)
-                    if header == 'Words' or header == 'tx':
-                        tokens = re.split(r"\s+", match_old.group(2))
-                        sentence[0]['tokens'] = tokens
-                else:
-                    testid = 'invalid-ilg'
-                    testmessage = "Spurious interlinear glossing line (unknown line header; see https://github.com/ufal/UMR/issues/9)."
-                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
-                iline += 1
-            # Check whether the interlinear glosses make sense.
-            if not 'Words' in ilg:
-                testid = 'missing-words'
-                testmessage = "Missing the Words line in the first annotation block."
-                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                ilg[header] = {'items': items, 'line0': iline}
+                if header == 'Words':
+                    sentence[0]['tokens'] = items
+            elif match_old:
+                header = match_old.group(1)
+                testid = 'obsolete-ilg'
+                testmessage = "Obsolete interlinear glossing line (obsolete line header '%s'; see https://github.com/ufal/UMR/issues/9)." % header
+                warn(testmessage, 'Warning', testlevel, testid, lineno=iline)
+                if header == 'Words' or header == 'tx':
+                    tokens = re.split(r"\s+", match_old.group(2))
+                    sentence[0]['tokens'] = tokens
             else:
-                m = len(ilg['Words']['items'])
-                for header in ilg:
-                    if re.match(r"^Word Gloss \([a-z]{2,3}\)$", header):
-                        n = len(ilg[header]['items'])
-                        if n != m:
-                            testid = 'word-gloss-mismatch'
-                            testmessage = "Words have %d items while %s have %d items." % (m, header, n)
+                testid = 'invalid-ilg'
+                testmessage = "Spurious interlinear glossing line (unknown line header; see https://github.com/ufal/UMR/issues/9)."
+                warn(testmessage, testclass, testlevel, testid, lineno=iline)
+            iline += 1
+        # Check whether the interlinear glosses make sense.
+        if not 'Words' in ilg:
+            testid = 'missing-words'
+            testmessage = "Missing the Words line in the first annotation block."
+            warn(testmessage, testclass, testlevel, testid, lineno=iline)
+            sentence[0]['tokens'] = []
+        else:
+            m = len(ilg['Words']['items'])
+            for header in ilg:
+                if re.match(r"^(Index|Word Gloss \([a-z]{2,3}\))$", header):
+                    n = len(ilg[header]['items'])
+                    if n != m:
+                        testid = 'word-gloss-mismatch'
+                        testmessage = "Words have %d items while %s have %d items." % (m, header, n)
+                        warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
+                elif header == 'Morphemes':
+                    n = len(ilg[header]['items'])
+                    if n < m:
+                        testid = 'morpheme-word-mismatch'
+                        testmessage = "Words have %d items while Morphemes have only %d items." % (m, n)
+                        warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
+                elif re.match(r"^Morpheme Gloss \([a-z]{2,3}\)$", header):
+                    n = len(ilg[header]['items'])
+                    if 'Morphemes' in ilg:
+                        o = len(ilg['Morphemes']['items'])
+                        if n != o:
+                            testid = 'morpheme-gloss-mismatch'
+                            testmessage = "Morphemes have %d items while %s have %d items." % (o, header, n)
                             warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
-                    elif header == 'Morphemes':
-                        n = len(ilg[header]['items'])
-                        if n < m:
-                            testid = 'morpheme-word-mismatch'
-                            testmessage = "Words have %d items while Morphemes have only %d items." % (m, n)
-                            warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
-                    elif re.match(r"^Morpheme Gloss \([a-z]{2,3}\)$", header):
-                        n = len(ilg[header]['items'])
-                        if 'Morphemes' in ilg:
-                            o = len(ilg['Morphemes']['items'])
-                            if n != o:
-                                testid = 'morpheme-gloss-mismatch'
-                                testmessage = "Morphemes have %d items while %s have %d items." % (o, header, n)
-                                warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
-                        else:
-                            testid = 'missing-morphemes'
-                            testmessage = "There are morpheme glosses but the Morphemes line is missing."
-                            warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
-                    elif header == 'Sentence':
-                        n = len(ilg[header]['items'])
-                        if n > m:
-                            testid = 'sentence-word-mismatch'
-                            testmessage = "Words have only %d items while the (untokenized) Sentence has %d items." % (m, n)
-                            warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
-                    elif re.match(r"^Sentence Gloss \([a-z]{2,3}\)$", header):
-                        n = len(ilg[header]['items'])
-                        if not 'Sentence' in ilg:
-                            testid = 'missing-sentence'
-                            testmessage = "There is a sentence gloss but the (original) Sentence line is missing."
-                            warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
+                    else:
+                        testid = 'missing-morphemes'
+                        testmessage = "There are morpheme glosses but the Morphemes line is missing."
+                        warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
+                elif header == 'Sentence':
+                    n = len(ilg[header]['items'])
+                    if n > m:
+                        testid = 'sentence-word-mismatch'
+                        testmessage = "Words have only %d items while the (untokenized) Sentence has %d items." % (m, n)
+                        warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
+                elif re.match(r"^Sentence Gloss \([a-z]{2,3}\)$", header):
+                    n = len(ilg[header]['items'])
+                    if not 'Sentence' in ilg:
+                        testid = 'missing-sentence'
+                        testmessage = "There is a sentence gloss but the (original) Sentence line is missing."
+                        warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
 
 def validate_sentence_graph(sentence, node_dict, args):
     """
@@ -1104,7 +1105,9 @@ known_relations = {
     ':weekday': {'type': 'modifier', 'repeat': False},
     ':wiki': {'type': 'attribute', 'repeat': False},
     ':year': {'type': 'attribute', 'repeat': False},
-    ':year2': {'type': 'attribute', 'repeat': False}
+    ':year2': {'type': 'attribute', 'repeat': False},
+    # We added the following relations that are not in the guidelines:
+    ':according-to': {'type': 'modifier', 'repeat': False} # child node is the source of the information
 }
 op_re = re.compile(r"^:op([1-9][0-9]*)$")
 
