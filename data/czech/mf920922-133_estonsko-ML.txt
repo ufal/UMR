@@ -1,14 +1,11 @@
 ###########################################################################
 # :: test
-# :: snt
-# Index:                1         2       3          4
-# Words:                Estonci   volili  parlament  .
-# Word Gloss (en):      Estonians elected parliament .
-# Sentence:             Estonci volili parlament.
-# Sentence Gloss (en):  Estonians elected the parliament.
-#          1        2     3         4
-# :: snt1  Estonci volili parlament .
-# [en] Estonians elected the parliament .
+# :: snt1
+Index:                1         2       3          4
+Words:                Estonci   volili  parlament  .
+Word Gloss (en):      Estonians elected parliament .
+Sentence:             Estonci volili parlament.
+Sentence Gloss (en):  Estonians elected the parliament.
 
 # sentence level graph:
 (s1p / publication-91
@@ -43,15 +40,12 @@ s1p3: 3-3
 
 
 ###########################################################################
-# :: snt
-# Index:               1        2
-# Words:               ESTONSKO :
-# Word Gloss (en):     Estonia  :
-# Sentence:            ESONSKO:
-# Sentence Gloss (en): Estonia.
-#         1        2
-# :: snt2 ESTONSKO :
-# [en] Estonia :
+# :: snt2
+Index:               1        2
+Words:               ESTONSKO :
+Word Gloss (en):     Estonia  :
+Sentence:            ESONSKO:
+Sentence Gloss (en): Estonia.
 
 # sentence level graph:
 (s2p / publication-91
@@ -79,15 +73,12 @@ s2n: 0-0
 
 
 ###########################################################################
-# :: snt
-# Index:               1         2       3          4
-# Words:               Estonci   volili  parlament  .
-# Word Gloss (en):     Estonians elected parliament .
-# Sentence:            Estonci volili parlament.
-# Sentence Gloss (en): Estonians elected the parliament.
-#          1        2     3         4
-# :: snt3  Estonci volili parlament .
-# [en] Estonians elected the parliament .
+# :: snt3
+Index:               1         2       3          4
+Words:               Estonci   volili  parlament  .
+Word Gloss (en):     Estonians elected parliament .
+Sentence:            Estonci volili parlament.
+Sentence Gloss (en): Estonians elected the parliament.
 
 # sentence level graph:
 (s3p / publication-91
@@ -127,15 +118,12 @@ s3p3: 3-3
 
 
 ###########################################################################
-# :: snt
-# Index:               1       2
-# Words:               Tallin  -
-# Word Gloss (en):     Tallinn -
-# Sentence:            Tallin -
-# Sentence Gloss (en): Tallinn -
-#          1       2
-# :: snt4  Tallin -
-# [en] Tallinn -
+# :: snt4
+Index:               1       2
+Words:               Tallin  -
+Word Gloss (en):     Tallinn -
+Sentence:            Tallin -
+Sentence Gloss (en): Tallinn -
 
 # sentence level graph:
 (s4p / publication-91
@@ -162,15 +150,11 @@ s4n: 0-0
 
 
 ###########################################################################
-# :: snt
-# Index:
-# Words:
-# Word Gloss (en):
-# Sentence:
-# Sentence Gloss (en):
-#          1 2         3             4       5 6        7      8     9          10          11       12      13    14   15    16 17   18            19         20  21      22   23
-# :: snt5  V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
-# [en] In Sunday's parliamentary elections in Estonia , according to yesterday's preliminary results , the Vlast bloc , whose presidential candidate was Lennart Meri , won the most votes .
+# :: snt5
+Index: 1 2         3             4       5 6        7      8     9          10          11       12      13    14   15    16 17   18            19         20  21      22   23
+Words: V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
+Sentence:            V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Vlast bloc, whose presidential candidate was Lennart Meri, won the most votes.
 
 # sentence level graph:
 (s5z / získat-001
@@ -249,15 +233,11 @@ s5p2: 10-10
 
 
 ###########################################################################
-# :: snt
-# Index:
-# Words:
-# Word Gloss (en):
-# Sentence:
-# Sentence Gloss (en):
-#          1 2         3     4      5      6 7     8  9     10         11 12       13  14   15    16  17   18       19 20 21          22 23           24      25 26   27         28
-# :: snt6  Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
-# [en] Of the total number of 457,319 voters who took part in the elections , about 20.5 percent voted for the Vlast bloc , which represents 28 parliamentary mandates in the new parliament .
+# :: snt6
+Index: 1 2         3     4      5      6 7     8  9     10         11 12       13  14   15    16  17   18       19 20 21          22 23           24      25 26   27         28
+Words: Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
+Sentence:            Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+Sentence Gloss (en): Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the Vlast bloc, which represents 28 parliamentary mandates in the new parliament.
 
 # sentence level graph:
 (s6h / hlasovat-003
@@ -331,15 +311,11 @@ s6n: 0-0
 
 
 ###########################################################################
-# :: snt
-# Index:
-# Words:
-# Word Gloss (en):
-# Sentence:
-# Sentence Gloss (en):
-#          1  2      3     4 5    6        7     8 9  10      11 12 13   14   15         16  17          18         19            20        21      22      23
-# :: snt7  Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela .
-# [en] In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic , Arnold Rüütel .
+# :: snt7
+Index: 1  2      3     4 5    6        7     8 9  10      11 12 13   14   15         16  17          18         19            20        21      22      23
+Words: Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela .
+Sentence:            Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic, Arnold Rüütel.
 
 # sentence level graph:
 (s7h / have-ord-91

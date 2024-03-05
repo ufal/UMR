@@ -1,3 +1,25 @@
+March 4, 2024:
+
+Federika – 2 issues with personal (issue) and modal annotation in validator
+
+ML – update on poss, part relation (see the internal documentation)
+
+Dan – validator: 1 issue corrected, the second one also relevant (Dan will consider it)
+Dan - standardized headings (will implement it in the velidator)
+
+
+Federika – question on modal annotation:
+
+sentences like „I do something …“ … how to identify that I =
+author?
+
+2 examples … apron (s. 13,14, file 004)
+
+
+
+ML – homework: read the guidelines (document level annotation)
+
+
 PART-WHOLE relation (:part, :part-of, have-part-91)
 ===================================================
 
@@ -12,12 +34,6 @@ AMR Guidelines:
 	the engine of the car / the car’s engine   ... (engine :part-of (car))
     a unit of the company / the company’s unit ... (unit :part-of (company))
     the south of France / southern France      ... (south :part-of (France))
-
-:consist-of
-   a band of marauders (=bandits) ... (band :consist-of (bandit))
-   a team of monkeys              ... (team :consist-of (monkey)) --> UMR have-group-91 (ARG1 entity, ARG2 group)
-   a ring of gold                 ... (ring :consist-of (gold))   --> UMR have-material-91 (ARG1 entity, ARG2 material)
-
 
 
 ================================================================================================
@@ -69,8 +85,6 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
         - konverze: asi na to rezignujeme
   !! adjektiva od slovesa (resp. s exist. slovesem, bez ohledu na směr derivace) --> slovesa
 
-- Functor conversion ... TODO: should be completed!!
-
 - Entities - number and gender
   ?? number UMR: entities have number (derived from morphology) ... but singular seems to be default in Eng. data (NOT annotated)
   !! we will enter it explicitly even if singular (entities, named entities (their abstract concepts), personal pronouns)
@@ -81,6 +95,8 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
          - Dan: proposed solution: if the form says you the number and you agree with that from the semantic point of view,
            write there the number as you feel it.
            If you are not sure, write there “?” so that these examples can be found later.
+     --> base the refer-number annotation on **grammatical form** (following the UMR Guidelines)
+         PDT ... number grammateme based on semnatics ... for future use!!!
   ?? gender - Dan: just the semantic gender should be marked
      Dan: Do we need a gender as a semantic feature?
      Šárka: yes, we (in Czech) need it to be able to imagine the situation

@@ -1,5 +1,12 @@
 # sent_id = mf920922-133-p1s1
-# :: snt1	Estonci volili parlament
+# :: snt1
+Index:           1         2         3          4
+Words:           Estonci   volili    parlament  .
+Word Gloss (en): Estonians elected   parliament .
+Morphemes:           Eston   -c    -i     vol   -il       -i            parlament  -0     .
+Morpheme Gloss (en): Estonia DERIV PL.NOM elect  PAST.PART PL.MASC.ANIM parliament SG.ACC .
+Sentence:            Estonci volili parlament.
+Sentence Gloss (en): Estonians elected the parliament.
 
 # sentence level graph:
 (s1p3 / publication-91
@@ -33,7 +40,14 @@ s1p2: 3-3
 
 
 # sent_id = mf920922-133-p2s1
-# :: snt2	ESTONSKO :
+# :: snt2
+Index:           1        2
+Words:           ESTONSKO :
+Word Gloss (en): Estonia  :
+Morphemes:           ESTON   -SK   -O     :
+Morpheme Gloss (en): Estonia DERIV SG.NOM :
+Sentence:            ESTONSKO:
+Sentence Gloss (en): ESTONIA:
 
 # sentence level graph:
 (s2p / publication-91
@@ -60,7 +74,14 @@ s2n: 0-0
 
 
 # sent_id = mf920922-133-p3s1
-# :: snt3	Estonci volili parlament
+# :: snt3
+Index:           1         2         3
+Words:           Estonci   volili    parlament
+Word Gloss (en): Estonians elected   parliament
+Morphemes:           Eston   -c    -i     vol   -il       -i            parlament  -0
+Morpheme Gloss (en): Estonia DERIV PL.NOM elect  PAST.PART PL.MASC.ANIM parliament SG.ACC
+Sentence:            Estonci volili parlament
+Sentence Gloss (en): Estonians elected the parliament
 
 # sentence level graph:
 (s3p3 / publication-91
@@ -97,7 +118,14 @@ s3p2: 3-3
 
 
 # sent_id = mf920922-133-p4s1
-# :: snt4	Tallin -
+# :: snt4
+Index:           1       2
+Words:           Tallin  -
+Word Gloss (en): Tallinn -
+Morphemes:           Tallin  -
+Morpheme Gloss (en): Tallinn -
+Sentence:            Tallin -
+Sentence Gloss (en): Tallinn -
 
 # sentence level graph:
 (s4p / publication-91
@@ -124,7 +152,14 @@ s4n: 0-0
 
 
 # sent_id = mf920922-133-p4s2
-# :: snt5	V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
+# :: snt5
+Index:           1  2         3             4         5  6        7      8            9          10          11       12      13    14   15       16 17    18            19         20  21      22   23
+Words:           V  nedělních parlamentních volbách   v  Estonsku získal podle        včerejších předběžných výsledků nejvíce hlasů blok Vlast    ,  jehož prezidentským kandidátem byl Lennart Meri .
+Word Gloss (en): In Sunday    parliametary  elections in Estonia  won    according.to yesterday  preliminary results  most    votes bloc Homeland ,  whose presidential  candidate  was Lennart Meri .
+Morphemes:           V neděl   -n    -ích   parlament  -n    -ích   volb     -ách   v  Eston   -sk   -u     získ -al          podle        včer      -ejš  -ích   před- běž -n    -ých   vý-  sled -k  -ů     nej- více hlas -ů     blok Vlast    , jehož prezident -sk   -ým         kandidát  -em    byl Lennart Meri .
+Morpheme Gloss (en): In Sunday DERIV PL.LOC parliament DERIV PL.LOC election PL.LOC in Estonia DERIV SG.LOC win  PAST.SG.MASC according.to yesterday DERIV PL.GEN pre-  run DERIV PL.GEN out- come DIM PL.GEN SUP- more vote PL.GEN bloc Homeland , whose president DERIV SG.INS.MASC candidate SG.INS was Lennart Meri .
+Sentence:            V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Homeland bloc, whose presidential candidate was Lennart Meri, won the most votes.
 
 # sentence level graph:
 (s5z / získat-001
@@ -217,7 +252,14 @@ s5v3: 9-9
 
 
 # sent_id = mf920922-133-p4s3
-# :: snt6	Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
+# :: snt6
+Index:           1  2         3      4       5      6 7     8    9         10         11 12        13  14   15       16    17   18       19 20    21          22 23            24       25 26    27         28
+Words:           Z  celkového počtu  457319  voličů , kteří se   voleb     zúčastnili ,  hlasovalo pro blok Vlast    asi   20.5 procenta ,  což   představuje 28 poslaneckých  mandátů  v  novém parlamentu .
+Word Gloss (en): Of total     number 457,319 voters , who   REFL elections took.part  ,  voted     for bloc Homeland about 20.5 percent  ,  which represents  28 parliamentary mandates in new   parliament .
+Morphemes:           Z  cel   -k    -ov   -ého        počt  -u     457319  vol  -ič   -ů     , kteř -í               se       vol      -eb   -0     z-   účast -n    -ili              , hlas -ov   -alo         pro blok -0     Vlast    -0     asi   20.5 procent -a     , což   před- stav    -uj   -e        28 poslanec             -k    -ých   mandát  -ů     v  nov -ém         parlament  -u     .
+Morpheme Gloss (en): Of whole DERIV DERIV SG.GEN.MASC count SG.GEN 457,319 vote DERIV PL.GEN , who  PL.NOM.MASC.ANIM REFL.ACC election DERIV PL.GEN PERF part  DERIV PAST.PL.MASC.ANIM , vote DERIV PAST.SG.NEUT for bloc SG.ACC Homeland SG.ACC about 20.5 percent SG.GEN , which re-   present DERIV PRES.3.SG 28 member.of.parliament DERIV PL.GEN mandate PL.GEN in new SG.LOC.MASC parliament SG.LOC .
+Sentence:            Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+Sentence Gloss (en): Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the Homeland bloc, which represents 28 parliamentary mandates in the new parliament.
 
 # sentence level graph:
 (s6h / hlasovat-003
@@ -291,7 +333,14 @@ s6n2: 26-26
 
 
 # sent_id = mf920922-133-p4s4
-# :: snt7	Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela .
+# :: snt7
+Index:           1  2      3     4    5    6        7     8 9  10       11 12 13     14   15         16    17          18         19             20        21      22      23
+Words:           Na druhém místě s    13.9 procenty hlasů ( 18 mandátů  )  je zatím  blok Spolehlivý dům   dosavadního nejvyššího představitele  republiky Arnolda Rüütela .
+Word Gloss (en): On second place with 13.9 percent  votes ( 18 mandates )  is so.far bloc Reliable   house current     highest    representative republic  Arnold  Rüütel  .
+Morphemes:           Na druh   -ém         míst  -ě     s    13.9 procent -y     hlas -ů     ( 18 mandát  -ů     ) je zatím  blok Spolehliv -ý          dům   -0     dosavad -n    -ího        nej- vyš  -š  -ího        před- stav    -it   -el   -e     republik -y     Arnold -a     Rüütel -a     .
+Morpheme Gloss (en): On second SG.LOC.NEUT place SG.LOC with 13.9 percent PL.INS vote PL.GEN ( 18 mandate PL.GEN ) is so.far bloc Reliable  SG.NOM.MASC house SG.NOM current DERIV SG.GEN.MASC SUP  high CMP SG.GEN.MASC re-   present DERIV DERIV SG.GEN republic SG.GEN Arnold SG.GEN Rüütel SG.GEN .
+Sentence:            Na druhém místě s 13.9 procenty hlasů (18 mandátů) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+Sentence Gloss (en): The Safe House bloc of the current highest representative of the republic, Arnold Rüütel, occupies the second place with 13.9 percent of the votes (18 mandates).
 
 # sentence level graph:
 # Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882
