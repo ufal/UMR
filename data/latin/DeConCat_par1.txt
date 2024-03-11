@@ -3,7 +3,7 @@
 Index:             1     2     3  4    5           6        7        8        9      10  11   12          13     14             15 16   17     18         19           20    21   22 23    24      25       26     27            28        29      30
 Words:           Omnis homines , qui sese        student praestare ceteris animalibus , summa ope        niti   decet            , ne  vitam silentio   transeant    veluti pecora , quae natura prona     atque ventri      oboedientia finxit     .
 Word Gloss (en): All   men     , who themselves  desire  to.excel  other   animals    , most  with.power strive it.is.convenient , not life  in.silence pass.through like   sheep  , that nature groveling and   to.appetite subservient has.formed .
-Morphemes:           Omn -is         homin -es    , qu  -i     se         -se   stude   -nt          praest -are     ceter -is         animal -ibus  , summ -a         op    -e     nit    -i       dece             -t            , ne  vit  -am    silenti -o     transe       -a        -nt  veluti pecor -a          , qu   -ae         natur  -a     pron      -a          atque ventr    -i     oboedi  -ent      -ia         fin  -x       -it  . 
+Morphemes:           Omn -is         homin -es    , qu  -i     se         -se   stude   -nt          praest -are     ceter -is         animal -ibus  , summ -a         op    -e     nit    -i       dece             -t            , ne  vit  -am    silenti -o     transe       -a        -nt  veluti pecor -a          , qu   -ae         natur  -a     pron      -a          atque ventr    -i     oboedi  -ent      -ia         fin  -x       -it  .
 Morpheme Gloss (en): All PL.NOM.MASC man   PL.NOM , who PL.NOM themself   REDUP desire IND.PRES.3.PL excel  INF.PRES other PL.DAT.NEUT animal PL.DAT , most SG.ABL.FEM power SG.ABL strive INF.PRES it.is.convenient IND.PRES.3.SG , not life SG.ACC silence SG.ABL pass.through SUBJ.PRES 3.PL like   beast PL.NOM.NEUT , that PL.ACC.NEUT nature SG.NOM groveling PL.ACC.NEUT and   appetite SG.DAT servile PART.PRES PL.ACC.NEUT form IND.PAST SG.3 .
 Sentence:            Omnis homines, qui sese student praestare ceteris animalibus, summa ope niti decet, ne vitam silentio transeant veluti pecora, quae natura prona atque ventri oboedientia finxit.
 Sentence Gloss (en): It is suitable that all men, who desire to excel other animals, strive, to the utmost of their power, not to pass through life in obscurity, like the beasts of the field, which nature has formed groveling and subservient to appetite.
@@ -201,7 +201,7 @@ s3c2: 4-4
 Index:              1      2     3   4   5    6       7     8      9     10  11
 Words:           alterum nobis cum  dis  , alterum   cum  beluis commune est .
 Word Gloss (en): other   to.us with gods , other     with beasts common  is  .
-Morphemes:           alter-um          no -bis cum  d   -is    , alter -um         cum  belu  -is     commun -e          es -t            .
+Morphemes:           alter -um         no -bis cum  d   -is    , alter -um         cum  belu  -is     commun -e          es -t            .
 Morpheme Gloss (en): other SG.NOM.NEUT us DAT  with god PL.ABL , other SG.NOM.NEUT with beast  PL.ABL common SG.NOM.NEUT be IND.PRES.3.SG .
 Sentence:            alterum nobis cum dis, alterum cum beluis commune est.
 Sentence Gloss (en): The one is common to us with the gods; the other with the beasts.
@@ -261,7 +261,7 @@ s4c3: 9-9
 Index:            1         2       3               4         5          6     7               8         9        10    11 12   13    14   15     16      17      18    19 20   21          22    23           24     25      26   27
 Words:           Quo       mihi  rectius         videtur   ingeni       quam virium          opibus   gloriam quaerere  et  , quoniam vita ipsa   qua   fruimur  brevis est , memoriam    nostri quam        maxume longam efficere .
 Word Gloss (en): Therefore to.me more.reasonable appears   of.intellect than bodily.strength by.means glory   to.pursue and , since   life itself which we.enjoy short  is  , remembrance of.us  as.possible most   long   to.make  .
-Morphemes:           Quo       mihi   rect       -ius vide   -tur               ingen     -i     quam vir      -ium   op   -ibus  glori -am    quaer  -ere     et  , quoniam vit  -a     ips    -a         qu    -a         fru   -imur         brev  -is        es-t             , memori      -am    nostr -i  quam        maxume long -am        effic -ere     .
+Morphemes:           Quo       mihi   rect       -ius vide   -tur               ingen     -i     quam vir      -ium   op   -ibus  glori -am    quaer  -ere     et  , quoniam vit  -a     ips    -a         qu    -a         fru   -imur         brev  -is        es -t            , memori      -am    nostr -i  quam        maxume long -am        effic -ere     .
 Morpheme Gloss (en): therefore me.DAT reasonable COMP appear IND.PRES.3.SG.PASS intellect SG.GEN than strength PL.GEN mean PL.ABL glory SG.ACC pursue INF.PRES and , since   life SG.NOM itself SG.NOM.FEM which SG.ABl.FEM enjoy IND.PRES.1.PL short SG.NOM.FEM be IND.PRES.3.SG , remembrance SG.ACC us    GEN as.possible much   long SG.ACC.FEM make  INF.PRES .
 Sentence:            Quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere et, quoniam vita ipsa qua fruimur brevis est, memoriam nostri quam maxume longam efficere.
 Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glory by means of the intellect than of bodily strength, and, since the life which we enjoy is short, to make the remembrance of us as lasting as possible.
@@ -438,8 +438,8 @@ s6a4: 13-13
 Index:            1   2                 3      4      5          6      7      8 9           10    11    12   13           14     15      16       17      18     19
 Words:           Sed diu             magnum inter mortalis   certamen fuit     , vi          ne corporis an virtute       animi   res   militaris magis procederet .
 Word Gloss (en): But for.a.long.time big    among mortal.men debate   has.been , on.strength or of.body  or on.value      of.mind thing military  more  depends    .
-Morphemes:           Sed diu             magn -um         inter mortal -is         certamen -0     fu          -it  , v        -i     ne corpor -is    an virtut -e     anim -i     re    -s     militar  -is magis proced  -ere      -t   .
-Morpheme Gloss (en): But for.a.long.time big  SG.NOM.NEUT among mortal PL.ACC.MASC debate   SG.NOM be.IND.PAST 3.SG , strength SG.ABL or body   SG.GEN or value  SG.ABL mind SG.GEN thing SG.NOM military SG.NOM.FEM depend SUBJ.IMPF 3.SG .
+Morphemes:           Sed diu             magn -um         inter mortal -is         certamen -0     fu          -it  , v        -i     ne corpor -is    an virtut -e     anim -i     re    -s     militar  -is        magis proced  -ere      -t   .
+Morpheme Gloss (en): But for.a.long.time big  SG.NOM.NEUT among mortal PL.ACC.MASC debate   SG.NOM be.IND.PAST 3.SG , strength SG.ABL or body   SG.GEN or value  SG.ABL mind SG.GEN thing SG.NOM military SG.NOM.FEM more  depend SUBJ.IMPF 3.SG .
 Sentence:            Sed diu magnum inter mortalis certamen fuit, vi ne corporis an virtute animi res militaris magis procederet.
 Sentence Gloss (en): Yet for a long time men have discussed the question whether success in arms depends more on strength of body or excellence of mind.
 
@@ -510,7 +510,7 @@ Index:            1  2     3     4      5         6        7 8   9        10    
 Words:           Nam et  prius  quam incipias  consulto    , et ubi   consulueris     mature   facto opus est .
 Word Gloss (en): For and before than you.begin deliberated , and when you.deliberated promptly acted need is  .
 Morphemes:           Nam et  prius  quam incipi -a        -s   consul -t        -o          , et ubi   consul -uer    -is  mature   fac -t        -o          op   -us    es -t            .
-Morpheme Gloss (en): For and before than begin  SUBJ.PRES 2.SG decide PART.PAST SG.ABL.NEUT , and when decide IND.PPQ 2.SG promptly act PART.PAST SG.ABL.NEUT need SG.NOM be IND.PRES.3.SG . 
+Morpheme Gloss (en): For and before than begin  SUBJ.PRES 2.SG decide PART.PAST SG.ABL.NEUT , and when decide IND.PPQ 2.SG promptly act PART.PAST SG.ABL.NEUT need SG.NOM be IND.PRES.3.SG .
 Sentence:            Nam et prius quam incipias consulto, et ubi consulueris mature facto opus est.
 Sentence Gloss (en): For before you begin, deliberation is necessary, and when you have deliberated, prompt action.
 
