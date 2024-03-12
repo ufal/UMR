@@ -91,7 +91,7 @@ OK, UMR and AMR relation `:poss` is the same.
    
 
 
-### Comparison to PDT
+### TODO: Comparison to PDT
 --- 
 ---
  
@@ -154,5 +154,15 @@ English data just 1 example:
 UMR: (engine :part (car))                                                                                     
 AMR: (engine :part-of (car))                                                                                 
 
+<!-- :poss relation (generalized, rather belong to) ... possession as the parent and the possessor/owner as the daughter !!!
+	his boat/team/house ... (boat/team/house :poss (he))
+	Whose toy           ... (toy :poss (amr-unknown))
+	the speed of sound  ... (speed :poss (sound))
+    aircraft's velocity ... (velocity :poss (aircraft))
 
-### Comparison to PDT
+:part-of relation (part as the parent and the whole as the daughter)
+	the engine of the car / the car’s engine   ... (engine :part-of (car))
+    a unit of the company / the company’s unit ... (unit :part-of (company))
+    the south of France / southern France      ... (south :part-of (France)) -->
+
+### TODO: Comparison to PDT

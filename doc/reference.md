@@ -35,18 +35,19 @@ The default level annotation (standard 1st, 2nd, and 3rd person values) is appro
 
 The default level for `:ref-number` comprises the distinction between **singular** and **non-singular**, the latter covering paucal ('a few', a small inexactly numbered group of referents) and plural ('many').
 
-For **English**, the released data use the `:refer-number` attribute (instead of `:ref-number`, as in the Guidelines). This attribute seems to be fully  annotated with  _person_ or _thing_ (used for implicit arguments/arguments expressed through verbal cross-referencing, see above) but only **in those cases where the number cannot be restored via coreference** (document level annotation).  
+For **English**, the released data use the `:refer-number` attribute (instead of `:ref-number`, as in the Guidelines). This attribute seems to be fully  annotated with  _person_ or _thing_ (used for implicit arguments/arguments expressed through verbal cross-referencing, see above) but only **in those cases where the number cannot be restored via coreference** (document level annotation).  ML: not sure about this - it seems that placeholders like "thing" often do not have this attribute annotated (even if there is no info on coreference there, like in snt2 _Estonsko:_ with `ARG3` (thing) for the **publication-91** abstract predicate!ú.
 
 In English data, the `:refer-number` attribute is used only to mark for non-default value(s), i.e. other than singular number for other entity concepts (esp. unmarked nouns, NE, etc.).
 
 Contrary, for Czech, we have decided **to enter it explicitly even for the singular values** with all nouns and (personal) pronouns. We apply this also with abstract entities and with named entities (their abstract concepts, not with names). 
 
 **But:** What about, e.g., a NE denoting 1 entity with a plural :name (as in _Zbabělci_ "Cowards" (the book title").  
-**But:** NOT for “place holders” like in snt2 _Estonsko:_ with `ARG3` (thing) for the **publication-91** abstract predicate! 
+
 
 ====  
-As far as I can see, English data are covered be the singular and plural values. The same seems appropriate for Czech where the PDT grammateme `number` can be used. This grammateme correctly covers also 
-- pluralia tantum (_jedny dveře.sg / dvoje dveře.pl_),
+As far as I can see, English data are covered be the singular and plural values. The same seems appropriate for Czech where the PDT grammateme `number` can be used. This grammateme correctly covers also: 
+- pluralia tantum (_jedny dveře.sg / dvoje dveře.pl_)   
+-->  we decided to stick (at least tentatively) to the grammatical number (derived from morphology ... based on the UMR guidelines, Part 3-3-5. Ref: "[the attribute]`:refer-number` for grammatical number marking")
 - polite forms of the 2nd person ("vykání", _Vy.sg jste se nepřihlásil?_)
 - indefinite pronouns (_Řekněte, kdo.sg přišel / kdo.pl přišli_)
 - "container" numerals (_Přišlo sto.sg studentů. / Přišlo dvě stě.pl studentů._; probably not relevant for UMR??)

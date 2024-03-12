@@ -1,117 +1,24 @@
-March 4, 2024:
-
-Federika – 2 issues with personal (issue) and modal annotation in validator
-
-ML – update on poss, part relation (see the internal documentation)
-
-Dan – validator: 1 issue corrected, the second one also relevant (Dan will consider it)
-Dan - standardized headings (will implement it in the velidator)
-
-
-Federika – question on modal annotation:
-
-sentences like „I do something …“ … how to identify that I =
-author?
-
-2 examples … apron (s. 13,14, file 004)
-
-
-
 ML – homework: read the guidelines (document level annotation)
 
+poznámky z minutes (na zapracování do dokumentace) ... hotovo DO Feb 26, 2024 (OK 12.3.24)!!
 
-PART-WHOLE relation (:part, :part-of, have-part-91)
-===================================================
-
-AMR Guidelines:
-:poss relation (generalized, rather belong to) ... possession as the parent and the possessor/owner as the daughter !!!
-	his boat/team/house ... (boat/team/house :poss (he))
-	Whose toy           ... (toy :poss (amr-unknown))
-	the speed of sound  ... (speed :poss (sound))
-    aircraft's velocity ... (velocity :poss (aircraft))
-
-:part-of relation (part as the parent and the whole as the daughter)
-	the engine of the car / the car’s engine   ... (engine :part-of (car))
-    a unit of the company / the company’s unit ... (unit :part-of (company))
-    the south of France / southern France      ... (south :part-of (France))
-
-
-================================================================================================
-================================================================================================
+==================================================================================================================================================
+==================================================================================================================================================
 
 
 
-TODO:
-=====
-Honza - email o NE z 13.11.2023
 
-poznámky z minutes (na zapracování do dokumentace) ... hotovo DO January 29, 2024!!
-===================================================================================
-
-- apposition: How to annotate apposition?
-Compare ex. 4-1-2 (2b):
-The loan, a sum of 12.5 million US dollars, is an export credit …
-
-(i/ identity-91                              #the loan is an export credit
-    :ARG1 (t/ thing
-        :ARG1-of (l/ loan)                   #the loan
-        -------
-        :ARG0-of (i2/ identity               #[the loan] = a sum of 12.5 million US dollars
-			:ARG1 (m/ monetary-quantity
-				:quant 12500000
-				:unit (d/ dollar
-					:mod (c/ country
-						:wiki "United_States"
-						:name (n/ name :op1 "US")))))
-        -------)
-    :ARG2 (c2/ credit 		                 #export credit
-		:mod (e/ export-01)
-		...)
-...)
-
-- parenthesis: How to annotate apposition?
-
-
-- Events ... TODO ... podle Julie (anotace u všeho, co má role, vč. abstr. predikátů) ... (A-E už promítnuto do dokumentace)
-  !! A. neděláme rozdíl mezi stative / action verbs ---> tudíž mají všude aspekt+modal+... (preliminary)!!
-  !! B. abstraktní predikáty (těch 9 definovaných v guidelines) jen tam, kde jde o predikaci
-        (jinak se jim vyhýbáme a použijeme příslušnou relaci, od které jde o reifikaci) --> tudíž mají všude aspekt+modal+...(preliminary)!!
-  !! C. další abstraktní rolesets (reification, implicit rolesets) ... totéž jako pro -91 predikáty --> všude aspekt+modal+...(preliminary)!!
-  !! D. srovnání entity (have-quant-91, have-degree-91) ... predikace --> mají všude aspekt+modal+... (preliminary)!!
-  !! E. diskurzní relace ... NEJDE o "events" (i když mají argumenty)
-  !! F. konatelská jména --> slovesa - events
-  !! G. jmén označující procesy (válka, příchod, bouře) ---> events
-        - ruční anotace ... doplnit, pokud nejsou v PDT-Vallexu (??? jak technicky)
-        - konverze: asi na to rezignujeme
-  !! adjektiva od slovesa (resp. s exist. slovesem, bez ohledu na směr derivace) --> slovesa
-
-- Entities - number and gender
-  ?? number UMR: entities have number (derived from morphology) ... but singular seems to be default in Eng. data (NOT annotated)
-  !! we will enter it explicitly even if singular (entities, named entities (their abstract concepts), personal pronouns)
-     ?? even with quantitative modification (like in 18 mandátů, 13.9 % hlasů)
-     But: NOT for “place holders” like in snt2 Estonsko: with ARG3 (thing) for the publication-91 abstract predicate!
-     ?? But: What about, e.g., a NE denoting 1 entity with a plural :name (as in Zbabělci)
-                                                      or Philippines (1 country) – no number is given in the example
-         - Dan: proposed solution: if the form says you the number and you agree with that from the semantic point of view,
-           write there the number as you feel it.
-           If you are not sure, write there “?” so that these examples can be found later.
-     --> base the refer-number annotation on **grammatical form** (following the UMR Guidelines)
-         PDT ... number grammateme based on semnatics ... for future use!!!
-  ?? gender - Dan: just the semantic gender should be marked
-     Dan: Do we need a gender as a semantic feature?
-     Šárka: yes, we (in Czech) need it to be able to imagine the situation
-     Dan: yes, if we know the biologic gender, we should annotate it.
-     Julia: NOT annotated so far - need of deeper typological analysis
-
-- grammatemes: TODO
-   FG went through ... see her conclusions ... Github: doc/grammatemes-attributes
-   ML aspect
-
+==================================================================================================================================================
+Grammatemes: TODO
+==================================================================================================================================================
 - tense: TODO, see the grammatemes overview
    the PDT recognizes the following values: simultaneous, preceding, subsequent. They cover absolute as well as relative tenses
    Šárka: this can be misleading when transferring this annotation of tenses to the UMR
    Dan: we have to check the tense annotation and know exactly what can be transferred to the UMR.
 
+==================================================================================================================================================
+NAMED ENTITIES ... Honza - email o NE z 13.11.2023
+==================================================================================================================================================
 - Named Entities ... country: group people (nationality), adjectives, ... --> a general affiliation to a country rather than nationality etc
    FG ... quam Romani gramaticam vocaverunt. (… which the Romans called grammar.)
    suggestion: annotate as NE, type ethnic-group
@@ -123,6 +30,9 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
       (not treated as a political group, which would have justified the annotation of p/ person from a certain c/ country),
       but the focus is on the fact that they speak the same language (i.e. ethnic/cultural feature).
 
+==================================================================================================================================================
+POLARITY
+==================================================================================================================================================
 - polarity: TODO
    ?? unclear: unknown polarity, like in “Did you see him?”
    Dan: one possibility – the polarity of yes-no questions is always “unknown”.
@@ -134,7 +44,9 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
         - With relative dependent clauses, instead of “unknown”, the “truth-value” should be used.
         - Federica: this is not in accordance with the example from the UMR manual: I don’t know if that's important or not (using “unknown” value).
 
-- Wikification: ... as extensive as possible
+==================================================================================================================================================
+WIKIFICATION ...  as extensive as possible
+==================================================================================================================================================
    !! JH: The primary database for us is “Wikidata”.
       Types and tokens:
           The most important difference is between
@@ -159,6 +71,9 @@ The loan, a sum of 12.5 million US dollars, is an export credit …
     E.g., if there is a wiki entry for "hlasovat" and for these specific "Estonian elections", the second option should be picked.
     Whenever possible, we would like to have the reference to the concrete event.
 
+==================================================================================================================================================
+WIKIFICATION and COREFERENCE
+==================================================================================================================================================
 Wikification and coreferential chains:
      We do not want to systematically repeat wikilinks within coreferential chains.
      However, if there are more links, they should be the same … TODO: candidate to automatic validation?
@@ -167,13 +82,7 @@ Wikification and coreferential chains:
 --> If there is a coreferential chain, the chained elements should have the same :wiki (if present).
     A test for this in the validator will be needed.
 
-- coreference :
-  ?? :coref for two/more mentions  within a single sentence
-      MN: Suggestion: Use the :coref attribute for two (or more) mentions of the same entity within a single sentence only when necessary
-     (i.e., when some of their values differ)
-  ?? coreferring events:
-     DZ: How should coreference look like? All events in the article annotated as subset-of event?
-  ?? coreferential chains:
+?? coreferential chains:
      ŠZ: Are we going to connect each occurrence of mentioning a person in a text to Wikipedia, or will we do it each time?
      DZ: how would we say which one should be connected to Wikipedia and which one not?
      ŠZ: maybe just the first occurrence in the coreferential chains should be connected to Wikipedia?
@@ -184,6 +93,18 @@ Wikification and coreferential chains:
             e.g., when we have one coreference chain with two wiki-links, it should be the same wiki-link.
             If we have two coreferential chains with the same wiki-link, the coreferential chains should be probably connected.
 
+==================================================================================================================================================
+COREFERENCE
+==================================================================================================================================================
+  ?? :coref for two/more mentions  within a single sentence
+      MN: Suggestion: Use the :coref attribute for two (or more) mentions of the same entity within a single sentence only when necessary
+     (i.e., when some of their values differ)
+  ?? coreferring events:
+     DZ: How should coreference look like? All events in the article annotated as subset-of event?
+
+==================================================================================================================================================
+:QUOT relation
+==================================================================================================================================================
 - :quot ... The :quot relation indicates that an event is being reported. Cf. snt3 of the first English file:
        "About 200 people were believed killed ... when a landslide buried an entire village , the Red Cross said ."
        N.B.: in the released data it's quote, while in the guidelines it is called quot.
@@ -193,21 +114,12 @@ Wikification and coreferential chains:
 
 - discourse relations = conjunctions ... TODO
 
-- newspaper titles:
-   !! should it be annotated as “publication-91”
-      - Argument for: specific features of the title in the text structure
-      - Argument against: it has usually a standard sentence structure, there is nothing specific about that
-      - General conclusion: for metadata, we are going to use publication-91 label (title, location etc.)
-           * We are not sure whether the temporal and modal characteristics should be included in the document-level annotation
-           * English data (Philippines): first sentence (title) – no information about temporal or modal relations.
-               The first sentence includes an event.
-               Second sentence (just location – Tacloban, Philippines) – modality is described on the document level.
 
 ==================================================================================================================================================
 ==================================================================================================================================================
-
 ad validate.py:
-===============
+==================================================================================================================================================
+==================================================================================================================================================
 1. EVENT --> má argumentovou strukturu
          --> anotovno aspect (snt graph) / modal-strength (snt+doc graph) + temporal dependency (doc graph) ...
 Guidelines: aspect+modstr téměř všude, kde je nějaká argumentová struktura (chybí v př. 3-1-3-8 (1))
@@ -240,19 +152,13 @@ ANOTACE: ML: pro konatelská jména anotovaná jako ARGx-of  :aspect 0, :modal-s
 - NE: alignment vyznačen pro obstraktní koncept (person, thing, ...), nikoli pro vlastní jméno
       OK, aby bylo jedinečné mapování na tokeny - což ale NENÍ v PDT
                                                (viz elipsy, koordinace - předložka, ale i uzel pro sloveso má několik .rf)
-4. coreferential chain
-    If there is a coreferential chain, the chained elements should have the same :wiki (if present).
-    A test for this in the validator will be needed.
-
-5. "header" standardization ... Dan should decide!!
-Commented line with token ids:
-  ?? How to standardize it?
-     Currently, sometimes the token line appears before the sentence, sometimes after, often it is not present at all.
-     Sometimes it starts with tk, sometimes not, etc.
-
 
 ==================================================================================================================================================
 ==================================================================================================================================================
+ESTONCI - POROVNÁNÍ ANOTACE (ML, DZ)
+==================================================================================================================================================
+==================================================================================================================================================
+HEADER - viz Danova standardizace!!
 
 #snt5 V nedělních parlamentních volbách v Estonsku ...
    -relative clause introduced with possesive pronoun: ... blok Vlast, **jehož** prezidentský kandidát ...
