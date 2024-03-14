@@ -1,4 +1,4 @@
-# Summary: How to distinguish events and npn-events
+# Summary: How to distinguish events and non-events
 
 ## 1. "Non-Action" verbs  in references and modification 
 
