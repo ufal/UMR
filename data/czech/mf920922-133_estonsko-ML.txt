@@ -1,5 +1,4 @@
 ###########################################################################
-# :: test
 # :: snt1
 Index:                1         2       3          4
 Words:                Estonci   volili  parlament  .
@@ -20,9 +19,7 @@ Sentence Gloss (en):  Estonians elected the parliament.
                 :wiki "Q217799"
                 :refer-number singular)
          :aspect activity
-         :modal-strength full-affirmative)
-    :aspect reversible-state
-    :modal-strength full-affirmative)
+         :modal-strength full-affirmative))
 
 # alignment:
 s1p: 0-0
@@ -53,9 +50,7 @@ Sentence Gloss (en): Estonia.
     :place (s2c / country
         :wiki "Q191"
         :name (s2n / name :op1 "Estonsko")
-        :refer-number singular)
-    :aspect reversible-state
-    :modal-strength full-affirmative)
+        :refer-number singular))
 
 # alignment:
 s2p: 0-0
@@ -93,9 +88,7 @@ Sentence Gloss (en): Estonians elected the parliament.
                 :wiki "Q217799"
                 :refer-number singular)
          :aspect activity
-         :modal-strength full-affirmative)
-    :aspect reversible-state
-    :modal-strength full-affirmative)
+         :modal-strength full-affirmative))
 
 # alignment:
 s3p: 0-0
@@ -131,9 +124,7 @@ Sentence Gloss (en): Tallinn -
     :place (s4c / city
         :wiki "Q1770"
         :name (s4n / name :op1 "Tallin")
-        :refer-number singular)
-    :aspect reversible-state
-    :modal-strength full-affirmative)
+        :refer-number singular))
 
 # alignment:
 s4p: 0-0
