@@ -131,9 +131,7 @@ Sentence Gloss (en): Tallinn -
     :place (s4c / city
         :wiki "Q1770"
         :name (s4n / name :op1 "Tallin")
-        :refer-number singular)
-    :aspect directed-achievement
-    :modal-strength full-affirmative)
+        :refer-number singular))
 
 # alignment:
 s4p: 0-0
