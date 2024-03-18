@@ -580,8 +580,8 @@ s8a2: 9-9
 Index:            1       2     3   4        5          6           7            8     9      10
 Words:           Ita  utrumque per se     indigens   alterum     alterius     auxilio eget     .
 Word Gloss (en): Thus each     in  itself incomplete the.one     of.the.other aid     requires .
-Morphemes:           Ita  utr  -um         -que per se     indige -ns                   alter -um         alter-ius   auxili -o     ege  -t            .
-Morpheme Gloss (en): Thus each SG.NOM.NEUT _    in  itself miss   PART.PRES.SG.NOM.NEUT other SG.NOM.NEUT SG.GEN.NEUT aid    SG.ABL need IND.PRES.3.SG .
+Morphemes:           Ita  utr  -um         -que per se     indige -ns                   alter -um         alter -ius        auxili -o     ege  -t            .
+Morpheme Gloss (en): Thus each SG.NOM.NEUT _    in  itself miss   PART.PRES.SG.NOM.NEUT other SG.NOM.NEUT other SG.GEN.NEUT aid    SG.ABL need IND.PRES.3.SG .
 Sentence:            Ita utrumque per se indigens alterum alterius auxilio eget.
 Sentence Gloss (en): Thus each of these, being incomplete in itself, requires the other's aid.
 
