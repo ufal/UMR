@@ -33,6 +33,7 @@ s1p2: 3-3
 
 # document level annotation:
 (s1s0 / sentence
+    :temporal ((document-creation-time :before s1v))
     :modal ((root :modal author)
             (author :full-affirmative s1v)))
 
@@ -53,9 +54,7 @@ Sentence Gloss (en): ESTONIA:
     :place (s2c / country
         :wiki "Q191"
         :name (s2n / name :op1 "Estonsko")
-        :refer-number singular)
-    :aspect directed-achievement
-    :modal-strength full-affirmative)
+        :refer-number singular))
 
 # alignment:
 s2p: 0-0
@@ -65,10 +64,11 @@ s2n: 0-0
 
 # document level annotation:
 (s2s0 / sentence
+    :temporal ((document-creation-time :before s2p))
     :modal ((root :modal author)
-            (author :full-affirmative s2h)
-            (author :full-affirmative s2e))
-    :coref ((s2p :same-entity s1p3)))
+            (author :full-affirmative s2p))
+    :coref ((s2p :same-entity s1p3)
+            (s2c :same-entity s1c)))
 
 
 # sent_id = mf920922-133-p3s1
@@ -143,9 +143,9 @@ s4n: 0-0
 
 # document level annotation:
 (s4s0 / sentence
+    :temporal ((document-creation-time :before s4p))
     :modal ((root :modal author)
-            (author :full-affirmative s4h)
-            (author :full-affirmative s4e))
+            (author :full-affirmative s4p))
     :coref ((s3p3 :same-entity s4p)))
 
 
