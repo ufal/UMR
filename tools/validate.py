@@ -1305,6 +1305,9 @@ def detect_events(sentence, node_dict, args):
         # If it is a discourse connective, stop here.
         if re.match(discourse_concept_re, node['concept']):
             continue
+        # If it is 'publication-91' (document metadata), stop here.
+        if node['concept'] == 'publication-91':
+            continue
         if not 'event_reason' in node and re.match(r"^.+-91$", node['concept']):
             node['event_reason'] = "its concept is %s on line %d" % (node['concept'], node['line0'])
         relations = node['relations']

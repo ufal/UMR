@@ -21,9 +21,7 @@ Sentence Gloss (en): Estonians elected the parliament.
             :wiki "Q217799"
             :refer-number singular)
         :aspect activity
-        :modal-strength full-affirmative)
-    :aspect directed-achievement
-    :modal-strength full-affirmative)
+        :modal-strength full-affirmative))
 
 # alignment:
 s1p3: 0-0
