@@ -94,9 +94,7 @@ Sentence Gloss (en): Estonians elected the parliament
             :wiki "Q217799"
             :refer-number singular)
         :aspect activity
-        :modal-strength full-affirmative)
-    :aspect directed-achievement
-    :modal-strength full-affirmative)
+        :modal-strength full-affirmative))
 
 # alignment:
 s3p3: 0-0
@@ -112,7 +110,9 @@ s3p2: 3-3
     :modal ((root :modal author)
             (author :full-affirmative s3v))
     :coref ((s2p :same-entity s3p3)
-            (s2c :same-entity s3c)))
+            (s2c :same-entity s3c)
+            (s1p :same-entity s3p)
+            (s1p2 :same-entity s3p2)))
 
 
 # sent_id = mf920922-133-p4s1
