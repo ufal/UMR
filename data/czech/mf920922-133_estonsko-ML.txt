@@ -1,10 +1,10 @@
 ###########################################################################
 # :: snt1
-Index:                1         2       3          4
-Words:                Estonci   volili  parlament  .
-Word Gloss (en):      Estonians elected parliament .
-Sentence:             Estonci volili parlament.
-Sentence Gloss (en):  Estonians elected the parliament.
+Index:                1         2       3
+Words:                Estonci   volili  parlament
+Word Gloss (en):      Estonians elected parliament
+Sentence:             Estonci volili parlament
+Sentence Gloss (en):  Estonians elected the parliament
 
 # sentence level graph:
 (s1p / publication-91
@@ -69,11 +69,11 @@ s2n: 0-0
 
 ###########################################################################
 # :: snt3
-Index:               1         2       3          4
-Words:               Estonci   volili  parlament  .
-Word Gloss (en):     Estonians elected parliament .
-Sentence:            Estonci volili parlament.
-Sentence Gloss (en): Estonians elected the parliament.
+Index:               1         2       3
+Words:               Estonci   volili  parlament
+Word Gloss (en):     Estonians elected parliament
+Sentence:            Estonci volili parlament
+Sentence Gloss (en): Estonians elected the parliament
 
 # sentence level graph:
 (s3p / publication-91
@@ -104,7 +104,7 @@ s3p3: 3-3
     :modal ((root :modal author)
             (author :full-affirmative s3v))
     :coref ((s2p :same-entity s3p)
-             (s1v :same-entity s3v)
+             (s1v :same-event s3v)
              (s2c :same-entity s3c)
              (s1p2 :same-entity s3p2)
              (s1p3 :same-entity s3p3)))
@@ -137,7 +137,7 @@ s4n: 0-0
     :temporal((document-creation-time :before s4p))
     :modal ((root :modal author)
             (author :full-affirmative s4p))
-    :coref ((s2p :same-entity s3p)))
+    :coref ((s3p :same-entity s4p)))
 
 
 ###########################################################################

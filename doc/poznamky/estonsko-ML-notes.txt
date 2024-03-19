@@ -125,18 +125,6 @@ ad validate.py:
 Guidelines: aspect+modstr téměř všude, kde je nějaká argumentová struktura (chybí v př. 3-1-3-8 (1))
 Released data (pro angličtinu): v řadě případů neanotováno (?chyba či záměr?)
 
-Na základě Juliina stanoviska:
-1) kdykoli existuje roleset (pro daný predikát nebo abstraktní), tak jí využijem
-2) !! ne vše, co má roleset (ARGx nebo ARGx-of), má nutně anotováno aspect/modal-strength/temporal dependency
-  ALE:
-  - action / stative verbs ... nerozlišujeme --> všude roleset + aspect/modal-strength/temporal dependency (preliminary)!!
-  - 9 abstraktních predikátů ... používáme jen tam, kde to interpretujeme jako predikaci --> všude roleset + aspect/modal-strength/temporal dependency (preliminary)!!
-  - další abstraktní rolesets (reification, implicit rolesets) ... totéž jako pro -91 predikáty --> všude roleset + aspect/modal-strength/temporal dependency (preliminary)!!
-          (publication-91: english_umr-0001.txt (snt 1) NEMÁ anotaci aspektu ani modstr u publication-91 :-((
-  - speciálně srovnávací konstrukce (have-quant-91, have-degree-91) ... predikace --> všude roleset + aspect/modal-strength/temporal dependency (preliminary)!!
-          (nemá abstr/modstr v angl. anotaci, v guidelines příklad s have-quant-91 není)
-  !!! diskurzní relace (příklady 3-1-6) ... e.g., contrast-91 (podle Guidelines) ... JEDINÉ, kde rozhodně nechceme anotovat aspect/modal-strength/temporal dependency!!!
-  ?? entity ... vč. toho, kde je predikát “identity”, ať už bez přípony (4-1-2 (2b)), NEBo s příponou -91 (podle Guidelines)
   ?? ARGx-of … můžou (pokud je tak připojená např. závislá klauze)
      ALE NEmusí např. pro konatelská jména ... guidelines nejednotné,
      tak jsme se dohodli (23.10.), že budeme anotovat s hodnotou 0, abychom snadno našli
