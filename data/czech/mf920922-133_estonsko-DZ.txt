@@ -1,12 +1,12 @@
 # sent_id = mf920922-133-p1s1
 # :: snt1
-Index:           1         2         3          4
-Words:           Estonci   volili    parlament  .
-Word Gloss (en): Estonians elected   parliament .
-Morphemes:           Eston   -c    -i     vol   -il       -i            parlament  -0     .
-Morpheme Gloss (en): Estonia DERIV PL.NOM elect  PAST.PART PL.MASC.ANIM parliament SG.ACC .
-Sentence:            Estonci volili parlament.
-Sentence Gloss (en): Estonians elected the parliament.
+Index:           1         2         3
+Words:           Estonci   volili    parlament
+Word Gloss (en): Estonians elected   parliament
+Morphemes:           Eston   -c    -i     vol   -il       -i            parlament  -0
+Morpheme Gloss (en): Estonia DERIV PL.NOM elect  PAST.PART PL.MASC.ANIM parliament SG.ACC
+Sentence:            Estonci volili parlament
+Sentence Gloss (en): Estonians elected the parliament
 
 # sentence level graph:
 (s1p3 / publication-91
@@ -392,5 +392,3 @@ s7n3: 18-18
             (author :full-affirmative s7h)
             (author :full-affirmative s7p3))
     :coref ((s5c :same-entity s7r)))
-
-

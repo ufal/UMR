@@ -1,12 +1,12 @@
 # sent_id = mf920922-133-p1s1
 # :: snt1
-Index:           1         2         3          4
-Words:           Estonci   volili    parlament  .
-Word Gloss (en): Estonians elected   parliament .
-Morphemes:           Eston   -c    -i     vol   -il       -i            parlament  -0     .
-Morpheme Gloss (en): Estonia DERIV PL.NOM elect  PAST.PART PL.MASC.ANIM parliament SG.ACC .
-Sentence:            Estonci volili parlament.
-Sentence Gloss (en): Estonians elected the parliament.
+Index:           1         2         3
+Words:           Estonci   volili    parlament
+Word Gloss (en): Estonians elected   parliament
+Morphemes:           Eston   -c    -i     vol   -il       -i            parlament  -0
+Morpheme Gloss (en): Estonia DERIV PL.NOM elect  PAST.PART PL.MASC.ANIM parliament SG.ACC
+Sentence:            Estonci volili parlament
+Sentence Gloss (en): Estonians elected the parliament
 
 # sentence level graph:
 (s1p / publication-91
@@ -24,7 +24,7 @@ Sentence Gloss (en): Estonians elected the parliament.
 	         :refer-person 3rd
 	         :aspect process
 	         :modal-strength full-affirmative
-	         :temporal (s1b/before :op1 "(n/now)")))
+	         :temporal (s1b / before :op1 "(n / now)")))
 
 # alignment:
 s1p: 0-0
@@ -67,7 +67,7 @@ s2c: 0-0
 s2n: 1-1
 
 # document level annotation:
-(s2s0/ sentence
+(s2s0 / sentence
      :coref ((s1n2 :same-entity s2n)))
 
 
