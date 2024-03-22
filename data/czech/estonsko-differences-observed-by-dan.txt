@@ -1,0 +1,81 @@
+Rozdíly
+
+ŠZ: dává :refer-person 3rd ke slovesu (např. volit v 1. větě)
+ŠZ: "volit" v 1. větě místo volit-001
+ŠZ: :temporal (before :op1 (now)) ... v grafu věty to snad být nemá?
+ŠZ: "Estonci volili parlament" ... používá typ entity "nationality", já a ML používáme "country"
+ŠZ: U jednoslovné věty-entity ("Estonsko", "Tallin") vynechává uzel "thing" (a díky tomu se vyhýbá chybě v zobrazovači, který kreslí thing a entitu přes sebe).
+
+Věta 5
+
+DZ: předběžných = předbíhat-001
+ML: :mod (předběžný)
+
+DZ: hlas = Q189760 (voting)
+ML: hlas = Q1306135 (vote)
+
+ŠZ: jinak zavěšené "jehož prezidentským kandidátem byl"; "jehož" je koncept on visící jako :poss na kandidovat-002 (koreference je vyznačena v grafu na úrovni dokumentu; přitom by to :poss, resp. :possessor mohlo vést rovnou nahoru na blok Vlast.
+
+ŠZ: blok Vlast má jiné wiki (Q1428217 "Pro Patria Union")
+
+Věta 6
+
+ŠZ: navíc koordinace mezi "hlasovalo" a "představuje", proč?
+
+ML: hlasovat-003 má wiki Q189760 (voting)
+DZ: žádné wiki
+
+ML: volit-001 (volič) má aspect activity
+DZ: habitual
+
+ML vs. DZ: Zcela rozdílné uspořádání "voličů", jejich absolutního počtu a percentage-entity.
+
+ML: mandátů wiki Q486839 (member of parliament)
+DZ: žádné wiki
+
+ML: voleb aspect activity
+DZ: process
+
+ML: zúčastnit-se-001 :aspect performance
+DZ: endeavor
+
+ŠZ: "poslanec" má wiki Q1055894 "deputy"; u DZ a ML žádné wiki
+
+Věta 7
+
+have-ord-91
+DZ: :aspect reversible-state
+ML: state
+
+Na druhém místě
+ML: koncept "dva", visí jako :ARG2 na have-ord-91
+DZ: koncept "ordinal-entity" :value 2, visí jako :ord na have-ord-91
+
+s hlasů
+DZ: visí jako :cause
+ML: visí jako :manner
+
+13.9 procenty
+DZ: visí jako part
+ML: visí jako quant
+
+18 mandátů
+DZ: visí jako :mod na hlasů
+ML: visí jako :manner na have-ord-91
+
+blok Spolehlivý dům
+DZ: visí jako :ARG0
+ML: visí jako :ARG1
+u Dana má wiki, u Markéty ne
+
+představitele (představovat-003)
+ML: aspect state
+DZ: habitual
+
+republiky
+DZ: refer-number singular
+ML: nic
+
+nejvyššího
+DZ: koncept "nejvýše"
+ML: koncept "nejvyšší"
