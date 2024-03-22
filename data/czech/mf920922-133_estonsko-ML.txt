@@ -253,7 +253,7 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
                                       :ARG0-of (s6z / zúčastnit-se-001
                                                     :ARG1 (s6v2 / volit-001
                                                              :wiki "Q372557"
-                                                             :aspect reversible-state
+                                                             :aspect activity
                                                              :modal-strength full-affirmative)
                                                     :aspect performance
                                                     :modal-strength full-affirmative))
@@ -278,8 +278,8 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
 
 # alignment:
 s6h: 12-12
-s6p: 0-0
-s6v: 5-5, 7-7
+s6p: 5-5, 7-7
+s6v: 0-0
 s6p2: 17-18, 20-20
 s6a: 16-16
 s6p7: 1-4
