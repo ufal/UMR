@@ -163,17 +163,14 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
         :wiki "Q163347"
         :name (s5n / name :op1 "Vlast")
         :refer-number singular
-        :ARG0-of (s5n6 / nominovat-001
-            :ARG1 (s5k / kandidát
-                :wiki "Q618536"
-                :mod (s5p5 / prezident
-                    :wiki "Q30461")
-                :ARG3-of (s5h2 / have-role-91
-                    :ARG1 (s5p4 / person
-                        :wiki "Q153149"
-                        :name (s5n5 / name :op1 "Lennart" :op2 "Meri"))
-                    :aspect state
-                    :modal-strength full-affirmative))
+        :ARG0-of (s5k / kandidovat-001
+            :ARG1 (s5p4 / person
+                :wiki "Q153149"
+                :name (s5n5 / name :op1 "Lennart" :op2 "Meri")
+                :refer-number singular)
+            :ARG2 (s5p5 / prezident
+                :wiki "Q30461"
+                :refer-number singular)
             :aspect performance
             :modal-strength full-affirmative))
     :ARG1 (s5h / hlas
@@ -194,24 +191,21 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
                     :wiki "Q132"))
         :aspect process
         :modal-strength full-affirmative)
-    :mod (s5p2 / podle
-        :op1 (s5v2 / výsledek
-            :ARG0-of (s5p3 / předbíhat-001
-                :aspect state
-                :modal-strength full-affirmative)
-            :temporal (s5v3 / včera)))
+    :according-to (s5v2 / výsledek
+        :ARG0-of (s5p3 / předbíhat-001
+            :aspect state
+            :modal-strength full-affirmative)
+        :temporal (s5v3 / včera))
     :aspect performance
     :modal-strength full-affirmative)
 
 # alignment:
 s5z: 7-7
-s5b: 14-15
+s5b: 14-15, 17-17
 s5n: 0-0
-s5n6: 17-17
 s5n5: 0-0
-s5h2: 20-20
 s5p5: 18-18
-s5k: 19-19
+s5k: 19-20
 s5p4: 21-22
 s5h: 13-13
 s5n2: 12-12
@@ -219,10 +213,9 @@ s5v: 1-1, 4-4
 s5p: 3-3
 s5c: 5-6
 s5n3: 0-0
-s5d: 0-0
-s5n4: 2-2
-s5p2: 8-8
-s5v2: 11-11
+s5d: 2-2
+s5n4: 0-0
+s5v2: 8-8, 11-11
 s5p3: 10-10
 s5v3: 9-9
 
@@ -231,17 +224,12 @@ s5v3: 9-9
     :temporal ((document-creation-time :before s5z)
             (s5z :before s5v)
             (s5v :overlap s5d)
-            (s5v :overlap s5h2)
-            (s5v :before s5n6)
-            (s5h2 :before s5n6)
             (document-creation-time :before s5v3)
             (document-creation-time :before s5p3)
             (s5v3 :overlap s5p3))
     :modal ((root :modal author)
             (author :full-affirmative s5z)
             (author :full-affirmative s5v)
-            (author :full-affirmative s5h2)
-            (author :full-affirmative s5n6)
             (author :full-affirmative s5p3))
     :coref ((s3c :same-entity s5c)
             (s3p2 :same-entity s5p)))
@@ -392,3 +380,5 @@ s7n3: 18-18
             (author :full-affirmative s7h)
             (author :full-affirmative s7p3))
     :coref ((s5c :same-entity s7r)))
+
+
