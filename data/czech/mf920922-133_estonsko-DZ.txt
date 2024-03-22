@@ -342,7 +342,8 @@ Sentence Gloss (en): The Safe House bloc of the current highest representative o
                 :temporal (s7d / dosud)
                 :manner (s7n3 / nejvýše)
                 :aspect habitual
-                :modal-strength full-affirmative))
+                :modal-strength full-affirmative)
+            :refer-number singular)
         :refer-number singular)
     :ord (s7o / ordinal-entity :value 2)
     :cause (s7h2 / hlas
