@@ -332,7 +332,7 @@ Sentence Gloss (en): The Safe House bloc of the current highest representative o
     :ARG0 (s7b / blok
         :wiki "Q31271882"
         :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
-        :poss (s7p2 / person
+        :possessor (s7p2 / person
             :wiki "Q194000"
             :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")
             :ARG0-of (s7p3 / představovat-003

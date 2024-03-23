@@ -178,7 +178,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
                          :ARG0 (s5p3 / person)
                          :ARG1 (s5p4 / prezident
                                :wiki "Q30461")
-                    :poss (s5j / on)))))
+                    :possessor (s5j / on)))))
       :ARG1 (s5h / hlas
              :ARG1-of (s5h2/ have-quant-91
                        :aspect state

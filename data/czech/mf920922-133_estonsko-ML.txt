@@ -320,7 +320,7 @@ Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates
      :ARG1 (s7b / blok
             :refer-number singular
             :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
-            :poss (s7p / person
+            :possessor (s7p / person
                     :wiki "Q194000"
                     :refer-number singular
                     :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")
