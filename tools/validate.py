@@ -1397,6 +1397,21 @@ def validate_document_relations(sentence, node_dict, args):
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
             # Add the variable to node_dict so that we do not get KeyError later.
             node_dict[r['node1']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
+        # At least one of the participants must be a concept node from the current
+        # sentence. For example, it is not allowed to annotate coreference between
+        # nodes s2p (from sentence 2) and s3p (from sentence 3) in the document-
+        # level graph of sentence 4. We have a global dictionary of nodes, which
+        # does not tell us the sentence to which the node belongs. We can use
+        # either the node variable (so far we require that variables start with
+        # 's' and the sentence number) or the line where the node is defined
+        # (and compare it with the first line of the current sentence).
+        current_sentence_line = sentence[0]['line0']
+        node0_line = node_dict[r['node0']]['line0'] if r['node0'] in node_dict else -1
+        node1_line = node_dict[r['node1']]['line0'] if r['node1'] in node_dict else -1
+        if node0_line < current_sentence_line and node1_line < current_sentence_line and not (r['node0'] == 'root' and r['node1'] == 'author'):
+            testid = 'misplaced-document-relation'
+            testmessage = "At least one of the nodes must be from the current sentence but neither '%s' nor '%s' is." % (r['node0'], r['node1'])
+            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 def collect_coreference_clusters(document, node_dict, args):
     """
