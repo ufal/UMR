@@ -38,6 +38,7 @@ s1n3: 0-0
 
 # document level annotation:
 (s1s0 / sentence
+    :temporal ((document-creation-time :before s1v))
     :modal ((root :modal author)
            (author :full-affirmative s1v)))
 
@@ -112,6 +113,7 @@ s3n4: 0-0
 
 # document level annotation:
 (s3s0 / sentence
+    :temporal ((document-creation-time :before s3v))
     :modal ((root :modal author)
            (author :full-affirmative s3v))
     :coref ((s1n2 :same-entity s3n2)
@@ -236,6 +238,8 @@ s5p9: 10-10
 
 # document level annotation:
 (s5s0 / sentence
+    :temporal((document-creation-time :before s5z)
+            (document-creation-time :before s5k))
     :modal ((root :modal author)
            (author :full-affirmative s5z))
     :coref ((s5p8 :same-entity s3p3)
@@ -325,6 +329,8 @@ s6n2: 0-0
 
 # document level annotation:
 (s6s0 / sentence
+    :temporal ((document-creation-time :before s6z)
+           (document-creation-time :before s6h))
     :modal ((root :modal author)
            (author :full-affirmative s6h))
     :coref ((s6v3 :same-entity s5v)

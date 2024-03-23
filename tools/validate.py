@@ -1352,6 +1352,21 @@ def validate_events(sentence, node_dict, args):
                     testid = 'invalid-attribute'
                     testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (':modal-strength', relations[rtype][0]['type'], relations[rtype][0]['value'])
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[rtype][0]['line0'])
+            # Check also document level relations. Every event must have at least
+            # :temporal against document-creation-time.
+            found = False
+            for r in sentence[3]['relations']:
+                if r['group'] == ':temporal':
+                    if r['node0'] == nid or r['node1'] == nid:
+                        found = True
+                        break
+            if not found:
+                event = "%s / %s" % (nid, node['concept'])
+                if node['alignment']['tokstr'] != '':
+                    event += " '%s'" % node['alignment']['tokstr']
+                testid = 'missing-temporal'
+                testmessage = "Missing temporal relation (at least with document-creation-time) for event %s." % event
+                warn(testmessage, 'Document', testlevel, testid, lineno=sentence[3]['line0'])
 
 def validate_document_relations(sentence, node_dict, args):
     """

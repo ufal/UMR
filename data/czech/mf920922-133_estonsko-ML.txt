@@ -297,7 +297,9 @@ s6n: 0-0
 (s6s0/ sentence
     :temporal((s5v :overlap s6z)
               (s6z :overlap s6h)
-              (s6z :overlap s6p4))
+              (s6z :overlap s6p4)
+              (document-creation-time :before s6v)
+              (document-creation-time :before s6v2))
     :modal ((root :modal author)
             (author :full-affirmative s6z)
             (author :full-affirmative s6h)
@@ -361,7 +363,8 @@ s7z: 13-13
 
 # document level annotation:
 (s7s0/ sentence
-    :temporal((s5v :overlap s7h))
+    :temporal((s5v :overlap s7h)
+            (document-creation-time :before s7p2))
     :modal ((root :modal author)
             (author :full-affirmative s7h))
     :coref ((s3c :same-entity s7r)))
