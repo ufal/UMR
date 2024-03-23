@@ -10,8 +10,6 @@ Sentence Gloss (en): Estonians elected the parliament
 
 # sentence level graph:
 (s1p / publication-91
-     :modal-strength full-affirmative
-     :aspect state
      :ARG1 (s1v / volit
            :ARG0 (s1p2 / person
 		          :mod (s1n / nationality
@@ -56,8 +54,6 @@ Sentence Gloss (en): ESTONIA:
 
 # sentence level graph:
 (s2p / publication-91
-     :aspect state
-     :modal-strength full-affirmative
      :place (s2c / country
          :wiki "Q191"
          :name (s2n / name :op1 "Estonsko")))
@@ -85,8 +81,6 @@ Sentence Gloss (en): Estonians elected the parliament
 
 # sentence level graph:
 (s3p / publication-91
-     :aspect state
-     :modal-strength full-affirmative
      :ARG1 (s3v / volit
             :ARG0 (s3p2 / person
 		                :mod (s3n / nationality
@@ -134,8 +128,6 @@ Sentence Gloss (en): Tallinn -
 
 # sentence level graph:
 (s4p / publication-91
-      :aspect state
-      :modal-strength full-affirmative
       :place (s4c / city
          :wiki "Q63761031"
          :name (s4n / name :op1 "Tallin")))

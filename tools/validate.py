@@ -1335,13 +1335,13 @@ def validate_events(sentence, node_dict, args):
     nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
     for node in nodes:
         nid = node['variable']
+        relations = {}
+        relations[':aspect'] = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == ':aspect'], key=lambda x: x['line0'])
+        relations[':modal-strength/predicate'] = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] in [':modal-strength', ':modal-predicate']], key=lambda x: x['line0'])
         if 'event_reason' in node:
             # :ARG relations imply that it is an event but they are not required.
             # On the other hand, :aspect and :modal-strength seem to be required according to the guidelines.
             # :modal-strength can be replaced by :modal-predicate. Only one of them is expected (guidelines 4-3-1-2).
-            relations = {}
-            relations[':aspect'] = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] == ':aspect'], key=lambda x: x['line0'])
-            relations[':modal-strength/predicate'] = sorted([r for r in node['relations'] if r['dir'] == 'out' and r['relation'] in [':modal-strength', ':modal-predicate']], key=lambda x: x['line0'])
             for rtype in [':aspect', ':modal-strength/predicate']:
                 if len(relations[rtype]) < 1:
                     testid = 'missing-attribute'
@@ -1367,6 +1367,13 @@ def validate_events(sentence, node_dict, args):
                 testid = 'missing-temporal'
                 testmessage = "Missing temporal relation (at least with document-creation-time) for event %s." % event
                 warn(testmessage, 'Document', testlevel, testid, lineno=sentence[3]['line0'])
+        # On the other hand, some concepts look like events but they are not events and should not have :aspect and :modal-strength.
+        elif node['concept'] == 'publication-91' or re.match(discourse_concept_re, node['concept']):
+            for rtype in [':aspect', ':modal-strength/predicate']:
+                if len(relations[rtype]) > 0:
+                    testid = 'unexpected-attribute'
+                    testmessage = "Attribute %s not expected because %s is not an event." % (relations[rtype][0]['relation'], node['concept'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=relations[rtype][0]['line0'])
 
 def validate_document_relations(sentence, node_dict, args):
     """
