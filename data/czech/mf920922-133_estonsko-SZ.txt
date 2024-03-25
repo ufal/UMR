@@ -19,7 +19,7 @@ Sentence Gloss (en): Estonians elected the parliament
            :ARG1 (s1p3 / parlament
 		          :wiki "Q217799"
 		          :refer-number singular)
-	         :refer-person 3rd
+         :refer-person 3rd
 	         :aspect process
 	         :modal-strength full-affirmative
 	         :temporal (s1b / before :op1 (s1n3 / now))))

@@ -64,9 +64,7 @@ s2n: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-    :temporal ((document-creation-time :before s2p))
     :modal ((root :modal author)
-            (author :full-affirmative s2p))
     :coref ((s2p :same-entity s1p3)
             (s2c :same-entity s1c)))
 
@@ -141,9 +139,7 @@ s4n: 0-0
 
 # document level annotation:
 (s4s0 / sentence
-    :temporal ((document-creation-time :before s4p))
-    :modal ((root :modal author)
-            (author :full-affirmative s4p))
+    :modal ((root :modal author))
     :coref ((s3p3 :same-entity s4p)))
 
 
@@ -383,5 +379,3 @@ s7n3: 18-18
             (author :full-affirmative s7h)
             (author :full-affirmative s7p3))
     :coref ((s5c :same-entity s7r)))
-
-
