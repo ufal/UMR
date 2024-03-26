@@ -43,7 +43,7 @@ s1p3: 3-3
 Index:               1        2
 Words:               ESTONSKO :
 Word Gloss (en):     Estonia  :
-Sentence:            ESONSKO:
+Sentence:            ESTONSKO:
 Sentence Gloss (en): ESTONIA:
 
 # sentence level graph:
@@ -62,9 +62,7 @@ s2n: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-    :temporal ((document-creation-time :before s2p))
-    :modal ((root :modal author)
-            (author :full-affirmative s2p))
+    :modal ((root :modal author))
     :coref ((s1p :same-entity s2p)
            (s1c :same-entity s2c)))
 
@@ -138,9 +136,7 @@ s4n: 0-0
 
 # document level annotation:
 (s4s0 / sentence
-    :temporal ((document-creation-time :before s4p))
-    :modal ((root :modal author)
-            (author :full-affirmative s4p))
+    :modal ((root :modal author))
     :coref ((s3p :same-entity s4p)))
 
 
