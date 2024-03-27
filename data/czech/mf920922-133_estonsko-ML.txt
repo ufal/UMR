@@ -212,16 +212,18 @@ s5p2: 10-10
 
 # document level annotation:
 (s5s0/ sentence
-    :temporal((document-creation-time :before s5z)
-              (s5z :overlap s5v)
-              (s5v :before s5k))
+    :temporal((document-creation-time :before s5v3)
+              (s5v3 :before s5d)
+              (s5v .after s5z)
+              (s5d :contained s5v)
+              (s5d :before s5k))
     :modal ((root :modal author)
             (author :full-affirmative s5v)
             (author :full-affirmative s5k)
             (author :full-affirmative s5z))
     :coref ((s3c :same-entity s5c)
             (s3p3 :same-entity s5p)
-            (s3v :same-entity s5v)))
+            (s3v :same-event s5v)))
 
 
 ###########################################################################
