@@ -167,7 +167,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
     :ARG1 (s5h / hlas
             :wiki "Q1306135"
             :refer-number plural
-            :quant (s5m / nejvíce))
+            :quant (s5n / nejvíce))
     :temporal (s5v / volit-001
                 :wiki "Q372557"
                 :ARG1 (s5p / parlament
@@ -199,7 +199,7 @@ s5p4: 18-18
 s5p3: 21-22
 s5n4: 0-0
 s5h: 13-13
-s5m: 12-12
+s5n: 12-12
 s5v: 1-1, 4-4
 s5d: 2-2
 s5n2: 0-0
@@ -214,7 +214,7 @@ s5p2: 10-10
 (s5s0/ sentence
     :temporal((document-creation-time :before s5v3)
               (s5v3 :before s5d)
-              (s5v .after s5z)
+              (s5v :after s5z)
               (s5d :contained s5v)
               (s5d :before s5k))
     :modal ((root :modal author)
@@ -235,54 +235,48 @@ Sentence:            Z celkového počtu 457319 voličů, kteří se voleb zúč
 Sentence Gloss (en): Of the total number of 457,319 voters who took part in the elections, about 20.5 percent voted for the Vlast bloc, which represents 28 parliamentary mandates in the new parliament.
 
 # sentence level graph:
-(s6h / hlasovat-003
-    :wiki "Q189760"
-    :ARG0 (s6p / person
-               :refer-number plural
-               :ARG0-of (s6v / volit-001
-                            :aspect activity
-                            :modal-strength full-affirmative)
-               :ARG1-of (s6i / include-91
-                          :ARG2(s6p7 / person
-                                      :quant 457319
-                                      :refer-number plural
-                                      :ARG0-of (s6z / zúčastnit-se-001
-                                                    :ARG1 (s6v2 / volit-001
-                                                             :wiki "Q372557"
-                                                             :aspect activity
-                                                             :modal-strength full-affirmative)
-                                                    :aspect performance
-                                                    :modal-strength full-affirmative))
-                          :ARG3(s6a / asi
-                                  :op1 (s6p2 / percentage-entity
-                                  :value  20.5))
-                          :ARG3(s6p4 / představovat-003
-                                 :ARG1 (s6m / mandát
-                                        :wiki "Q486839"
-                                        :quant 28
-                                        :refer-number plural
-                                        :mod (s6p5 / poslanec)
-                                        :place (s6p6 / parlament
-                                           :wiki "Q217799"
-                                           :mod (s6n2 / nový)
-                                           :refer-number singular))
-                                :aspect state
-                                :modal-strength full-affirmative)))
-    :ARG1 (s6b / blok
-            :wiki "Q163347"
-            :refer-number singular
-            :name (s6n / name :op1 "Vlast"))
-    :aspect activity
-    :modal-strength full-affirmative)
-
-
-
-
+(s6i / include-91
+       :ARG2 (s6p7 / person
+                    :quant 457319
+                    :refer-number plural
+                    :ARG0-of (s6z / zúčastnit-se-001
+                                    :ARG1 (s6v2 / volit-001
+                                                 :wiki "Q372557"
+                                                 :aspect activity
+                                                 :modal-strength full-affirmative)
+                              :aspect performance
+                              :modal-strength full-affirmative))
+      :ARG1(s6p / person
+                 :refer-number plural
+                 :ARG0-of (s6h / hlasovat-003
+                                :wiki "Q189760"
+                                :ARG1 (s6b / blok
+                                             :wiki "Q163347"
+                                             :refer-number singular
+                                             :name (s6n / name :op1 "Vlast"))
+                                :aspect activity
+                                :modal-strength full-affirmative))
+      :ARG3 (s6a / asi
+                   :op1 (s6p2 / percentage-entity
+                                :value  20.5)
+                   :ARG0-of(s6p4 / představovat-003
+                                   :ARG1 (s6m / mandát
+                                                :wiki "Q486839"
+                                                :quant 28
+                                                :refer-number plural
+                                                :mod (s6p5 / poslanec)
+                                                :place (s6p6 / parlament
+                                                               :wiki "Q217799"
+                                                               :mod (s6n2 / nový)
+                                                               :refer-number singular))
+                                   :aspect state
+                                   :modal-strength full-affirmative))
+      :aspect state
+      :modal-strength full-affirmative)
 
 # alignment:
 s6h: 12-12
 s6p: 0-0
-s6v: 0-0
 s6i: 0-0
 s6p2: 17-18, 20-20
 s6a: 16-16
@@ -299,18 +293,21 @@ s6n: 0-0
 
 # document level annotation:
 (s6s0/ sentence
-    :temporal((s5v :overlap s6z)
+    :temporal((document-creation-time :before s6z)
+              (s6z :overlap s6v)
               (s6z :overlap s6h)
               (s6z :overlap s6p4)
-              (document-creation-time :before s6v)
-              (document-creation-time :before s6v2))
+              (s6z :overlap s6i))
     :modal ((root :modal author)
             (author :full-affirmative s6z)
+            (author :full-affirmative s6v)
             (author :full-affirmative s6h)
-            (author :full-affirmative s6p4))
-    :coref ((s3p2 :subset-of  s6v)
+            (author :full-affirmative s6p4)
+            (author :full-affirmative s6i))
+    :coref ((s3p2 :same-entity s6p7)
             (s3v :same-event s6v2)
-            (s5b :same-entity  s6b)))
+            (s5b :same-entity s6b)
+            (s5p :same-entity s6p6))
 
 
 ###########################################################################

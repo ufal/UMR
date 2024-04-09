@@ -178,13 +178,13 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
         :ARG1 (s5p / parlament
             :wiki "Q217799"
             :refer-number singular)
+        :temporal (s5d / date-entity
+                :weekday (s5n4 / neděle
+                    :wiki "Q132"))
         :place (s5c / country
             :wiki "Q191"
             :name (s5n3 / name :op1 "Estonsko")
             :refer-number singular)
-            :temporal (s5d / date-entity
-                :weekday (s5n4 / neděle
-                    :wiki "Q132"))
         :aspect process
         :modal-strength full-affirmative)
     :according-to (s5v2 / výsledek
