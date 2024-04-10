@@ -23,6 +23,8 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
   * [Ellipsis](doc/ellipsis.md)
   * [Coreference](doc/coreference.md)
   * [Attribute relations, esp. possession relation and part-whole relation](doc/poss-part.md)
+  * [Degree](doc/degree.md) (incl. comparison of quality)
+  * [Subset/superset](doc/subset.md) (incl. portion indicated as percentage)
 * UMR attributes
   * [Aspect](doc/aspect.md)
   * [Mode](doc/mode.md)
