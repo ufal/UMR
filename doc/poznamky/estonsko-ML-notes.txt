@@ -1,6 +1,6 @@
 ML – homework: read the guidelines (document level annotation)
 
-poznámky z minutes (na zapracování do dokumentace) ... hotovo DO Feb 26, 2024 (OK 12.3.24)!!
+poznámky z minutes (na zapracování do dokumentace) ... hotovo DO March 25 / April 1, 2024 (OK 1.4.24)!!
 
 ==================================================================================================================================================
 ==================================================================================================================================================
@@ -128,135 +128,13 @@ Released data (pro angličtinu): v řadě případů neanotováno (?chyba či z�
   ?? ARGx-of … můžou (pokud je tak připojená např. závislá klauze)
      ALE NEmusí např. pro konatelská jména ... guidelines nejednotné,
      tak jsme se dohodli (23.10.), že budeme anotovat s hodnotou 0, abychom snadno našli
-
 ANOTACE: ML: pro konatelská jména anotovaná jako ARGx-of  :aspect 0, :modal-strength 0
-             pro stavy u abstraktních predikátů :aspect reversible-state, :modal-strength full-affirmative
 
 2. Jak anotovat NE, u kterých jsme nenašli položku ve wikidatech?
    --> Q0 ... NEZNÁ Michalovo zobrazovadlo --> DOPLNIT (varování, ne aby to krachlo)
 
 3. alignment
-- sloveso "být" nahrazeno abstraktním predikátem, který ale podle všeho má alignment 0-0 (podle dat) ... neměl by být alignován s tím (povrchovým) slvesem??
+- sloveso "být" nahrazeno abstraktním predikátem, který ale podle všeho má alignment 0-0 (podle dat) ... neměl by být alignován s tím (povrchovým) slovesem??
 - NE: alignment vyznačen pro obstraktní koncept (person, thing, ...), nikoli pro vlastní jméno
       OK, aby bylo jedinečné mapování na tokeny - což ale NENÍ v PDT
                                                (viz elipsy, koordinace - předložka, ale i uzel pro sloveso má několik .rf)
-
-==================================================================================================================================================
-==================================================================================================================================================
-ESTONCI - POROVNÁNÍ ANOTACE (ML, DZ)
-==================================================================================================================================================
-==================================================================================================================================================
-HEADER - viz Danova standardizace!!
-
-#snt5 V nedělních parlamentních volbách v Estonsku ...
-   -relative clause introduced with possesive pronoun: ... blok Vlast, **jehož** prezidentský kandidát ...
-       ML: kandidovat-001 ... blok :ACT=ARG0-of (kandidovat :ARG1(person LM).PAT :ARG2 (na prezidenta).EFF)
-       --> By using kandidovat-001 the graph looks very simple and nice, although it is a paraphrase. Agreed to annotate this way.
-   ??? DZ: předběžný výsledek jako výsledek :ARG0-of (předbíhat)
-       ML: výsledek je stav, nikoli event, proto :mod (předběžný)
-   ??? different wiki:
-       hlas ML: :wiki Q1306135,
-            DZ: :wiki Q189760
-       blok Vlast ML vs. SZ
-       wikidata: also Isamaa / Pro Patria and Res Publica Union / ... (no Czech equivalent)
-========
-
-#snt6 Z celkového počtu 457319 voličů, ...
-   !! jiná "hlava":
-       Z 457319 voličů hlasovalo 20.5 procent pro blok ...
-       DZ: "20.5 procenta" jako řídící (tak i v PDT), chybí anotace "asi"
-       ML: "voliči" jako řídící ...  podle “about 200 people”
-	               (s3p / person
-                       :quant (s3a2 / about
-                              :op1 200))
-       ŠZ: "voliči" jako řídící
-           asi 20.5 procenta - "asi" anotováno nepřesně, jako modifikace
-           :quant (s6p3/ percentage-entity
-	                     :value (s6d / 20.5
-	                              :mod (s6a2 / asi))))
-
-   !! 20.5 % z celkového počtu 457319 voličů, kteří se voleb zúčastnili, ...
-      DZ: :ARG0 (s6p2 / percentage-entity
-            :value 20.5
-            :part-of (s6p / person                              !!! AMR: (e / engine :part-of (c / car))
-								!!! UMR: (s/ string :part (g/ guitar))
-                :ARG0-of (s6v / volit-001
-                    :aspect habitual
-                    :modal-strength full-affirmative)
-                :refer-number plural
-                :quant 457319
-                :ARG0-of (s6z / zúčastnit-se-001
-
-      ML:  :quant (s6a / asi
-                          :op1 (s6p2 / percentage-entity
-                                  :value  20.5
-                          :source (s6p7 /person
-                                      :quant 457319
-                                      :refer-number plural
-                                      :ARG0-of (s6z / zúčastnit-se-001      OK, lze převést zůčastnili se voleb --> volili
-                                                    :ARG1 (s6v2 / volit-001
-                                                             :wiki "Q372557"
-                                                             :aspect reversible-state
-                                                             :modal-strength full-affirmative)
-                                                    :aspect performance
-                                                    :modal-strength full-affirmative))
-       ŠZ: :ARG0 (s6p / person
-            :ref-number plural
-            :ARG0-of (s6v / volit-001
-                       :aspect performance
-                       :modal-strength full-affirmative)
-                 :part-of (s6p2 / person
-                      :ref-number plural
-                      :ARG0-of (s6v2 / volit-001
-                          :aspect performance
-                          :modal-strength full-affirmative)
-                      :quant (s6q / 457319
-                          :mod s6c / celkem))
-                      :mod (ARG0-of s6z / zúčastnit-se-001
-                             :aspect performance
-                             :modal-strength full-affirmative
-                             :ARG1 (s6v3 / volit-001
-                                    :aspect performance))
-                  :quant (s6p3/ percentage-entity
-	                     :value (s6d / 20.5
-	                              :mod (s6a2 / asi))))
-
-
-
-   ??? "celkový" chybí anotace
-       ŠZ: "celkový" - převedeno na "celkem"
-       :quant (s6q / 457319
-                          :mod s6c / celkem))
-
-   což představuje.... - discourse relation vs relativní návaznost
-   ŠZ: discourse relation "and" - jako "pro blok hlasovalo 20.5 procenta A TO představuje 28 mandátů
-   s6a / and
-     :op1 hlasovat...
-     :op2 s6i / identity-91 (tj. představovat)
-   ML, DZ: 20.5 % voličů je "ARG0-of představovat"
-
-   představovat - full verb vs abstract concept identity-91
-   ŠZ: identity-91
-   ML, DZ: představovat
-
-   wiki:
-   hlasovat - DZ 0, ML a ŠZ shodně Q189760
-
-========
-
-
-#snt7  Na druhém místě s 13.9 procenty hlasů ...
-   ??? Na druhém místě ... je ...
-       ML: have-location-91 --> ARG1 blok, ARG2 (s7m2 / místo :ord (s7o/ ordinal-entity  :value 2))
-       DZ: have-ord-91 --> ARG0 blok, NE koncept "místo" - jen  :ord (s7o / ordinal-entity :value 2)
-   ??? Spolehlivý dům
-       ML: have not found wiki link
-       DZ: Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882
-   ??? dosavadní:
-       DZ: dosud
-       ML: dosavadní ... :mod or :temporal … based on "so-far" annotation in english_umr-0001, snt19
-    ??? ... s 13.9 procenty hlasů ( 18 mandátů ) ...
-      - cause vs. manner (PDT ACMP)
-      - part vs. quant (no example in the Guidelines)
-      - apposition (siblings) VS. attribute (i.e. "hlas" as the governor, "mandát" as dependent) (PDT: PAR "mandát" modifying "procento")
-      - ML: wiki for mandát

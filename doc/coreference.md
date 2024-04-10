@@ -66,15 +66,25 @@ following section.
 
 ## The `:coref` attribute
 
-The `:coref` attribute is a document-level attribute to capture coreference links. In general, the
-attribute links two entities referred to by identifiers that consist of a concatenation of the
-sentence identifier and the concept variable. In addition, a relation type declares the kind of
-relation between the two entities (e.g. `:same-entity` for identity coreference, `:subset-of` for
-split antecedents).
+The `:coref` attribute is a document-level attribute to capture coreference links. 
+In general, the attribute links two entities referred to by identifiers that consist of a concatenation of the sentence identifier and the concept variable. 
+In addition, a relation type declares the kind of relation between the two entities.
 
+### Entity coreference
+UMR focuses on pronouns (as anaphorical expression). 
+However, we would like to generalize it to cover all coreference relations as identified in PDT.
+
+Two types of relations are recognized:
+- identity relation, marked with the `:same-entity` relation (two expressions have the same referent), see examples Snt5 and Snt6 and their annotation below:   
+   - [en] Snt5: _Pope was flown to the U.S. military base at Ramstein, Germany._
+   - [en] Snt6: _He will spend the next several days at the medical center there before he returns home with his wife Sherry._
+-  `:subset-of` relation for split antecedents (relates sets of entities to entities belonging to such a set), UMR exemplifies it by the following sentence:
+   - [en] _He is very possessive and controlling but he has no right to be as we are not together._   
+   ... UMR describes as "_he_ (p2) is annotated with a `:subset-of` relation to the _we_ (p3) node".  
+   **In schema, there is  `:coref (he :subset-of we)`   !!  
+   ML: should be rather  `:coref (we :subset-of he)` ... "he" is a subset of "we"**, compare to examples for event coreference below??
 ```
 Snt5: Pope was flown to the U.S. military base at Ramstein, Germany.
-
 (f/ fly-01
       :ARG1 (p/ person :wiki "Edmond_Pope"
             :name (n/ name :op1 "Pope"))
@@ -130,8 +140,22 @@ Snt6: He will spend the next several days at the medical center there before he 
          (s5b :same-entity s6t2))
 ```
 
-It must be used to represent inter-sentential relations. It can be also used within a single
-sentence, but it is not clear from the guidelines in which cases to use it.
+
+
+It must be used to represent inter-sentential relations. 
+It can be also used within a single sentence, but it is not clear from the guidelines in which cases to use it.
+
+### Event coreference
+
+Two types of relations are recognized:
+- identity relation `same-event`
+- subset relation `subset-of`
+  - [en] _1 **arrest** took place in the Netherlands and another **[arrest]** in Germany. **The arrests** were ordered by anti-terrorism judge fragnoli._   
+  ... _the arests_ (2nd sentence) annotated as the parent of _each of arrests_ from the first sentence (children) 
+```
+(:coref ((s2a :subset-of s1a2) 
+         (s2a :subset-of s1a3)))
+```
 
 # TODO
 Try to identify specific cases that do not belong to any of the categories above.

@@ -240,9 +240,9 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
                     :quant 457319
                     :refer-number plural
                     :ARG0-of (s6z / zúčastnit-se-001
-                                    :ARG1 (s6v2 / volit-001
+                                    :ARG1 (s6v / volit-001
                                                  :wiki "Q372557"
-                                                 :aspect activity
+                                                 :aspect process
                                                  :modal-strength full-affirmative)
                               :aspect performance
                               :modal-strength full-affirmative))
@@ -282,7 +282,7 @@ s6p2: 17-18, 20-20
 s6a: 16-16
 s6p7: 1-5, 7-7
 s6z: 8-8, 10-10
-s6v2: 9-9
+s6v: 9-9
 s6p4: 21-21
 s6m: 22-22, 24-24
 s6p5: 23-23
@@ -304,8 +304,8 @@ s6n: 0-0
             (author :full-affirmative s6h)
             (author :full-affirmative s6p4)
             (author :full-affirmative s6i))
-    :coref ((s3p2 :same-entity s6p7)
-            (s3v :same-event s6v2)
+    :coref ((s3p2 :subset-of s6p7)
+            (s3v :same-event s6v)
             (s5b :same-entity s6b)
             (s5p :same-entity s6p6))
 
