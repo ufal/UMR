@@ -19,24 +19,25 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Entities](doc/entities.md)
 * [Events](doc/eventive-concepts.md), see also [Specific verbal constructions](doc/verbal-constructions.md)
 * [Frame files](doc/frames.md) and [participant roles](doc/roles.md) (and [PDT-frames to PropBank rolesets mapping](tecto2umr/functors-to-args-mapping-instructions.md))
-* specific construction
+* Special constructions
   * [Ellipsis](doc/ellipsis.md)
-  * [Coreference](doc/coreference.md) (the same as link as below)
+  * [Coreference](doc/coreference.md) ... the same as link as below (sect. Document level representation)
   * [Attribute relations, esp. Possession relation and part-whole relation](doc/poss-part.md)
+  * [Degree](doc/degree.md) (incl. comparison of quality) ... the same as link as below (sect. UMR attributes)
 * UMR attributes
   * [Aspect](doc/aspect.md)
   * [Mode](doc/mode.md)
   * [Polarity](doc/polarity.md)
   * [Quantity](doc/quantity.md) (incl. comparison of quantity)
   * Ref = [Person and Number](doc/reference.md)
-  * [Degree](doc/degree.md) (incl. comparison of quality) (the same as link as above)
-* obsolete:~~[Glossary of relations and attributes](doc/relations-attributes.md)~~
+  * [Degree](doc/degree.md) (incl. comparison of quality) .. the same as link as above (sect. Special constructions)
+* obsolete: ~~[Glossary of relations and attributes](doc/relations-attributes.md)~~
 * [Alignment rules](doc/alignment.md)
 
 ### Document level representation
-* [Coreference](doc/coreference.md)  (the same as link as above)
-* Temporal relation (rather than dependency)
-* Modal dependency 
+* [Coreference](doc/coreference.md)  ... the same as link as above (sect. Sentence level representation)
+* [Temporal relations](doc/temporal.md) (rather than dependency)
+* [Modal dependency](doc/modal.md)
 
 
 ## Useful links
