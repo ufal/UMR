@@ -1,0 +1,13 @@
+Util::SetGlobal selector=
+# Detect NEs
+Util::Eval zone='$.remove_tree("n") if $.has_ntree;' # remove any previous n-trees to avoid duplicates
+A2N::CS::NameTag
+A2N::FixMissingLinks
+A2N::NestEntities
+# PDT lacks formemes
+# on the other hand, grammatemes should be set
+A2T::CS::MarkRelClauseHeads
+A2T::CS::SetFormeme
+#A2T::CS::SetGrammatemes
+T2U::BuildUtree
+T2U::ConvertCoreference
