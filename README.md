@@ -21,9 +21,12 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Frame files](doc/frames.md) and [participant roles](doc/roles.md) (and [PDT-frames to PropBank rolesets mapping](tecto2umr/functors-to-args-mapping-instructions.md))
 * Special constructions
   * [Ellipsis](doc/ellipsis.md)
-  * [Coreference](doc/coreference.md) ... the same link as below (sect. Document level representation)
   * [Attribute relations, esp. Possession relation and part-whole relation](doc/poss-part.md)
-  * [Degree](doc/degree.md) (incl. comparison of quality) ... the same link as below (sect. UMR attributes)
+  * [Degree](doc/degree.md) (incl. comparison of quality) ... the same link as below 
+ (sect. UMR attributes)
+  * [Coreference](doc/coreference.md) ... the same link as below (sect. Document level representation) 
+  * [Temporal relations](doc/temporal.md) ... the same link as below (sect. Document level representation)
+  * [Modal dependency](doc/modal.md) ... the same link as below (sect. Document level representation)
 * UMR attributes
   * [Aspect](doc/aspect.md)
   * [Mode](doc/mode.md)
@@ -36,8 +39,8 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 
 ### Document level representation
 * [Coreference](doc/coreference.md)  ... the same link as above (sect. Sentence level representation)
-* [Temporal relations](doc/temporal.md) (rather than dependency)
-* [Modal dependency](doc/modal.md)
+* [Temporal relations](doc/temporal.md) (rather than dependency) ... the same link as above (sect. Sentence level representation)
+* [Modal dependency](doc/modal.md) ... the same link as above (sect. Sentence level representation)
 
 
 ## Useful links

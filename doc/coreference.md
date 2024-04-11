@@ -3,11 +3,13 @@
 Relations that are in the Tecto theory annotated as coreference, i.e. those captured in 
 `coref_gram.rf` and `coref_text` (or `coref_text.rf` in older versions) attributes,
 are represented in three different ways in UMR:
-1. inversed participant role
-2. reference to an already specified concept variable
-3. the `:coref` attribute in the document-level annotation
+1. inversed participant role (sentence level annotation)
+2. reference to an already specified concept variable (sentence level annotation)
+3. the `:coref` attribute in the document-level annotation (document level annotation)
 
-## Inversed participant role
+## Sentence level annotation 
+
+### Inversed participant role
 This annotation style is used for capturing coreference of relative pronouns and arguments
 of participles. According to the theory underlying UMR, relative clauses and participles 
 primarily serve as event concept modifiers. In such cases, an inversed numbered or general
@@ -34,7 +36,7 @@ In the Tecto style, such coreference relations are annoted with grammatical core
 (the `coref_gram.rf` attribute). However, not all relations of grammatical coreference
 can be converted to this UMR style of annotation.
 
-## Reference to a concept variable
+### Reference to a concept variable
 This annotation style has been adopted from AMR and is one of the reasons that makes the
 UMR representation a graph, not just a tree. Reference to a variable is strictly used
 within a single sentence. An example is a reference to the entity under the `p` variable
@@ -64,13 +66,15 @@ However, not all intra-sentential links (set aside those covered by a previous a
 are represented in this way; some should be annotated with the style to be presented in the
 following section.
 
-## The `:coref` attribute
+## Document level annotation 
+
+### The `:coref` attribute
 
 The `:coref` attribute is a document-level attribute to capture coreference links. 
 In general, the attribute links two entities referred to by identifiers that consist of a concatenation of the sentence identifier and the concept variable. 
 In addition, a relation type declares the kind of relation between the two entities.
 
-### Entity coreference
+#### Entity coreference
 UMR focuses on pronouns (as anaphorical expression). 
 However, we would like to generalize it to cover all coreference relations as identified in PDT.
 
@@ -145,7 +149,7 @@ Snt6: He will spend the next several days at the medical center there before he 
 It must be used to represent inter-sentential relations. 
 It can be also used within a single sentence, but it is not clear from the guidelines in which cases to use it.
 
-### Event coreference
+#### Event coreference
 
 Two types of relations are recognized:
 - identity relation `same-event`
