@@ -321,6 +321,7 @@ Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates
 # sentence level graph:
 (s7h / have-ord-91
      :ARG1 (s7b / blok
+            :wiki "Q31271882"
             :refer-number singular
             :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
             :possessor (s7p / person
@@ -329,7 +330,8 @@ Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates
                     :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")
                     :ARG0-of (s7p2 / představovat-003
                                :ARG1 (s7r / republika
-                                    :wiki "Q191")
+                                    :wiki "Q191"
+                                    :refer-number singular)
                                :temporal (s7d / dosavadní)
                                :manner (s7n3 / nejvyšší)
                                :aspect state
@@ -337,7 +339,10 @@ Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates
      :ARG2 (s7d2 / dva)
      :manner (s7h3 / hlas
             :refer-number plural
-            :quant (s7p3 / percentage-entity :value 13.9))
+            :ARG2-of (s7i / include-91
+            :ARG3 (s7p3 / percentage-entity :value 13.9)
+            :aspect state
+            :modal-strength full-affirmative))
      :manner (s7m3 / mandát
               :wiki "Q486839"
               :quant 18
@@ -364,10 +369,15 @@ s7z: 13-13
 
 # document level annotation:
 (s7s0/ sentence
-    :temporal((s5v :overlap s7h)
-            (document-creation-time :before s7p2))
+    :temporal((document-creation-time :depends-on s7z)
+              (document-creation-time :depends-on s7d)
+              (s7z :overlap s7h)
+              (s7d :overlap s7p2)
+              (s7z :overlap s7i))
     :modal ((root :modal author)
-            (author :full-affirmative s7h))
+            (author :full-affirmative s7h)
+            (author :full-affirmative s7i)
+            (author :full-affirmative s7p2))
     :coref ((s3c :same-entity s7r)))
 
 

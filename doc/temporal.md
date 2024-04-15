@@ -46,7 +46,40 @@ As for temporal expressions, all of them should be identified in a document and 
 
 #### 2. phase: Adding events to the temporal dependency structure
 
-XXXXXXXXX Part 4-2-2 Time relations XXXXXXXXX
+4 temporal relations -- **note that the labels characterize the relation from child to parent!!!**
+- `:contained` ... parent begins before child and parent ends after child, including
+  - **subevent structures** (a subevent as a child)
+  - events with a **purely temporal** (not causal or conceptual) relation between them
+- `:after`
+  - incl. **causally-related** events   
+  _The crops grew well because it rained enough_ ... (rain :after grow) 
+- `:before`
+- `:overlap`
+  - incl. perfectly **simultaneous events** (beginning and ending at the exact same time point)
+
+**For each event:**  
+**A. Relate it to a time expression** (if possible)
+  - exception:  when an event is contained in another event contained in a time expression  
+
+**B. Relate it to other event** (if no time expression is available) -- the parent event must meet the following criteria:
+  - there is a **clear temporal relation** between both events;
+  - the parent event is (a subtype of) a **process** (in particular, not state, not habitual);
+  - both events have **the same modal annotation** (parent+value)   
+  OR the parent event has `:full-affirmative` relation to the AUTH.  
+
+**Principle**: Make a **timeline** and try to relate each event to **immediately preceding / following** event or time expression! 
+
+- [en] _The opening of the food can prompted my cat to meow_   ... first, I open a can (1), and this is a prompt (2) causing my cat to meow (3); thus the annotation should be the following:  
+```  
+  :temporal ((present-reference: contained open)  
+             (open :after prompt)  
+             (prompt :after meow))
+```
+
+For events related to a time expression, a second annotation specifying its relationship with another event may also be added!!
+
+**C.** Events with NO such relations should be related to the appropriate tense metanode
+
 
 
 
