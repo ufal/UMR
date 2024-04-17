@@ -2,6 +2,35 @@
 
 In UMR, temporal annotation is done at both the sentence level and the document level representation.
 
+  
+
+## Short HowTo for Czech annotations:
+- **sentence level representation:**
+  - any **time expression** (overtly present) should be identified and annotated using the `:temporal` relation  
+  (we do not annotate (for the time being?) temporal relations between events and DCT)
+- **document level annotation:**
+  - each **locatable time expression** should be related: 
+     - to the `root` (absolute values as _May 15, 2024_), or 
+     - to  `DCT` (_today_), or
+     - to `past/present/future-reference`.
+  - create **a timeline** with all detected time expressions and all events (if possible);
+  - each **event** should be added to the temporal annotation:
+    - primarily to the relevant time expression (esp. to those in the same line as the event), or
+    - to other event(s)  
+      (this parent event must be a process and has the same modal annotation OR `:full-affirmative relation to the AUTH`)
+   - use one of the following relations: `:contained`, `:overlap`, `:after`, `:before` (see below).
+- **The labels characterize the relation from child to parent!!!**
+- special cases:
+  - complement-taking predicates  
+  (see below; main idea: the complement-taking predicate serves as the parent/reference point for its complement)
+  - reporting predicates  
+  (see below; main idea: the reporting event serves as the parent/reference point for reported events)
+  - purpose clauses --> always `:after` temporal relation  
+   (the main clause as a parent, the purpose clause/infinitive as a child)
+
+---
+---
+
 ## Sentence level annotation
 According to the UMR guidelines, the sentence level annotation captures two cases:
 - **Time expressions** -- like _včera_ "yesterday", _minulý týden_ "last week",  _4. dubna_ "April 4th", _každý rok_ "every year", _poté co dokončil školu_ "after he finished the school" -- that serve as temporal modifiers of a predicate are annotated using the `:temporal` relation, similarly as in PDT.  
@@ -30,9 +59,10 @@ The document level annotation focuses on
   - only when the temporal relations are clearly supported by morpho-syntactic clues, or
   - clear temporal sequence can be inferred.
 
+
 #### 1. phase: Setting up the temporal superstructure 
 The temporal superstructure contains: 
-- the **temporal expressions** in the text (see below for their classification),  
+- the **locatable temporal expressions** in the text (see below for their classification),  
 - **pre-defined metanodes**, namely `past-reference`, `present-reference`, `future-reference`, and `document-creation-time` or (`DCT`) ... and also `root` (not explicitely mentioned in the Guidelines),
 - and their temporal relations to each other -- just 1 relation is mentioned in the guidelines, namely the `:depends-on` relation.
 
@@ -58,7 +88,7 @@ As for temporal expressions, all of them should be identified in a document and 
   - incl. perfectly **simultaneous events** (beginning and ending at the exact same time point)
 
 **For each event:**  
-**A. Relate it to a time expression** (if possible)
+**A. Relate it to a time expression** (if possible, i.e., to those in the same line as the event or other in the text)
   - exception:  when an event is contained in another event contained in a time expression  
 
 **B. Relate it to other event** (if no time expression is available) -- the parent event must meet the following criteria:
@@ -85,5 +115,63 @@ For events related to a time expression, a second annotation specifying its rela
 
 ### Special cases:
 #### Complement-taking predicates
+The complement-taking predicate acts as the reference time for its complement.
+
+- First, find the complement-taking predicate and add the corresponding event event to the document level temporal structure, i.e., relate it to appropriate time expression (or to the DCT/past/present/future-reference node).  
+- Second, create a timeline (just for you).
+- Finally, link the event expressed as the complement to the complement-taking predicate (with the appropriate temporal relation).   
+  In case of multiple complements, at least one of them must be related to the complement-taking verb. With the others, you must consider whether the complements are ordered with respect to each other OR to the main predicate.
+
+Example:
+
+- [en] _I want to go to the city and visit a museum._  
+  timeline: ... **want** ... go ... visit ... _want_ as being a complement-taking verb)
+
+```
+:temporal ((present-reference :contained want)
+           (want :after visit)) !!not city (as in the Guidelines)!!
+```
+
+- [en] _I saw him knock on the door._  ... _see_ as a complement-taking verb  
+   timeline: _seeing_ and _knocking_ overlap)
+
+```
+:temporal ((past-reference :contained see)
+           (see :overlap knock)))
+```
+
+
+  
 #### Reporting events
+The reporting event serves as the reference time for the reported events.
+
+- First, find the reporting verb and add the reporting event to the document level temporal structure, i.e., relate it to appropriate time expression (or to the DCT/past/present/future-reference node).  
+- Second, create a timeline (just for you).
+- Finally, link reported events linked to the reporting predicate (with the appropriate temporal relation).   
+  In case of multiple reported events, one of them must be related to the reporting verb. With the others, you may link them to the reporting verb OR to each other.
+
+Examples:
+
+- [en] _Magdalena said she arrived home, ate dinner, and will meet us at the theater.._  ... _say_ as the reporting verb
+  timeline: ... arrive ... eat ... **say** ... meet ...
+
+```
+:temporal ((past-reference :contained say)
+           (say :before eat)
+           (eat :before arrive)
+           (s1s :after s1m)))
+```
+
+
+
 #### Purpose clauses
+Events in purpose clauses are always linked to their main clauses in the temporal structure using the `:after` relation.
+
+- [en]  _He went home (in order) to wash the dishes._  
+  :temporal ((past-reference :contained s1g)
+		 (s1g :after s1w)))
+
+```
+:temporal ((past-reference :contained go)
+           (go :after wash))
+```
