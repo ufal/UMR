@@ -30,7 +30,6 @@ s1p2: 1-1
 s1c: 0-0
 s1n: 0-0
 s1p3: 3-3
-s1b: 2-2
 
 # document level annotation:
 (s1s0 / sentence
@@ -55,9 +54,9 @@ Sentence Gloss (en): ESTONIA:
      :ARG3 (s2t / thing)
      :place (s2c / country
          :wiki "Q191"
-         :name (s2n / name :op1 "Estonsko")))
-      :refer-number singular
-      
+         :name (s2n / name :op1 "Estonsko")
+         :refer-number singular))
+
 # alignment:
 s2p: 0-0
 s2t: 0-0
@@ -102,7 +101,6 @@ s3p2: 1-1
 s3c: 0-0
 s3n1: 0-0
 s3p3: 3-3
-s3b: 2-2
 
 
 # document level annotation:
