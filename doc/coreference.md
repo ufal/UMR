@@ -74,6 +74,12 @@ The `:coref` attribute is a document-level attribute to capture coreference link
 In general, the attribute links two entities referred to by identifiers that consist of a concatenation of the sentence identifier and the concept variable. 
 In addition, a relation type declares the kind of relation between the two entities.
 
+Note that all concepts linked within the `:coref` attribute should be anchored in the same way, i.e. 
+- they should share the same `:wiki` link (if exists) (exception: the `:wiki` link may be omitted with some of the interlinked instances), or
+- ?? they should be represented as the same UMR predicate, i.e., as the SynSemClass / PDT-Vallex verb sense.
+
+(The validator being developed by Dan checks this for entities, option --print-clusters .)   
+
 #### Entity coreference
 UMR focuses on pronouns (as anaphorical expression). 
 However, we would like to generalize it to cover all coreference relations as identified in PDT.
