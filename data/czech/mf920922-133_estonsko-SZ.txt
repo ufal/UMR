@@ -10,29 +10,27 @@ Sentence Gloss (en): Estonians elected the parliament
 
 # sentence level graph:
 (s1p / publication-91
-     :ARG1 (s1v / volit
+     :ARG1 (s1v / volit-001
+           :wiki "Q372557"
            :ARG0 (s1p2 / person
-		          :mod (s1n / nationality
+		          :mod (s1c / country
                     :wiki "Q191"
-                    :name (s1n2 / name :op1 "Estonsko"))
+                    :name (s1n / name :op1 "Estonsko"))
 		          :refer-number plural)
            :ARG1 (s1p3 / parlament
 		          :wiki "Q217799"
 		          :refer-number singular)
-         :refer-person 3rd
-	         :aspect process
-	         :modal-strength full-affirmative
-	         :temporal (s1b / before :op1 (s1n3 / now))))
+           :aspect activity
+	         :modal-strength full-affirmative))
 
 # alignment:
 s1p: 0-0
 s1v: 2-2
 s1p2: 1-1
+s1c: 0-0
 s1n: 0-0
-s1n2: 0-0
 s1p3: 3-3
 s1b: 2-2
-s1n3: 0-0
 
 # document level annotation:
 (s1s0 / sentence
@@ -54,19 +52,22 @@ Sentence Gloss (en): ESTONIA:
 
 # sentence level graph:
 (s2p / publication-91
+     :ARG3 (s2t / thing)
      :place (s2c / country
          :wiki "Q191"
          :name (s2n / name :op1 "Estonsko")))
-
+      :refer-number singular
+      
 # alignment:
 s2p: 0-0
-s2c: 0-0
-s2n: 1-1
+s2t: 0-0
+s2c: 1-1
+s2n: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-     :coref ((s1n2 :same-entity s2n)))
-
+     :coref ((s1n :same-entity s2n))
+     :modal ((root :modal author)))
 
 ###########################################################################
 # sent_id = mf920922-133-p3s1
@@ -81,37 +82,37 @@ Sentence Gloss (en): Estonians elected the parliament
 
 # sentence level graph:
 (s3p / publication-91
-     :ARG1 (s3v / volit
+     :ARG1 (s3v / volit-001
+            :wiki "Q372557"
             :ARG0 (s3p2 / person
-		                :mod (s3n / nationality
+		                :mod (s3c / country
                     :wiki "Q191"
-                    :name (s3n2 / name :op1 "Estonsko"))
+                    :name (s3n1 / name :op1 "Estonsko"))
 		          :refer-number plural)
 	           :ARG1 (s3p3 / parlament
 		               :wiki "Q217799"
 		               :refer-number singular)
-	:refer-person 3rd
-	:aspect process
-	:modal-strength full-affirmative
-	:temporal (s3b / before :op1 (s3n4 / now))))
+	:aspect activity
+	:modal-strength full-affirmative))
 
 # alignment:
 s3p: 0-0
 s3v: 2-2
 s3p2: 1-1
-s3n: 0-0
-s3n2: 0-0
+s3c: 0-0
+s3n1: 0-0
 s3p3: 3-3
 s3b: 2-2
-s3n4: 0-0
+
 
 # document level annotation:
 (s3s0 / sentence
     :temporal ((document-creation-time :before s3v))
     :modal ((root :modal author)
            (author :full-affirmative s3v))
-    :coref ((s1n2 :same-entity s3n2)
-             (s1v :same-entity s3v)
+    :coref ((s1v :same-event s3v)
+             (s1p2 :same-entity s3p2)
+             (s1c :same-entity s3c)
              (s1p3 :same-entity s3p3)))
 
 
