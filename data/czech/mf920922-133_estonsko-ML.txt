@@ -167,7 +167,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
     :ARG1 (s5h / hlas
             :wiki "Q1306135"
             :refer-number plural
-            :quant (s5n / nejvíce))
+            :quant (s5n1 / nejvíce))
     :temporal (s5v / volit-001
                 :wiki "Q372557"
                 :ARG1 (s5p / parlament
@@ -199,7 +199,7 @@ s5p4: 18-18
 s5p3: 21-22
 s5n4: 0-0
 s5h: 13-13
-s5n: 12-12
+s5n1: 12-12
 s5v: 1-1, 4-4
 s5d: 2-2
 s5n2: 0-0
@@ -307,7 +307,7 @@ s6n: 0-0
     :coref ((s3p2 :subset-of s6p7)
             (s3v :same-event s6v)
             (s5b :same-entity s6b)
-            (s5p :same-entity s6p6))
+            (s5p :same-entity s6p6)))
 
 
 ###########################################################################
@@ -363,6 +363,7 @@ s7d: 17-17
 s7n3: 18-18
 s7d2: 1-3
 s7h3: 4-4, 7-7
+s7i: 0-0
 s7p3: 5-6
 s7m3: 9-10
 s7z: 13-13

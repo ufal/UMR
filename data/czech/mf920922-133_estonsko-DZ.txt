@@ -64,7 +64,7 @@ s2n: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-    :modal ((root :modal author)
+    :modal ((root :modal author))
     :coref ((s2p :same-entity s1p3)
             (s2c :same-entity s1c)))
 
