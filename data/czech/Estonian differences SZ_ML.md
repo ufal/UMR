@@ -164,4 +164,75 @@ Proposed solution: ŠZ: add this link.
 
 ############################################################
 
-NEXT: snt5 V nedělních parlamentních volbách...
+snt5 
+V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+
+- ML: blok :wiki "Q163347" (= Isamaa)
+ŠZ: :wiki "Q1428217" (= Pro Patria Union)
+Proposed solution: ???
+
+
+-jehož kandidátem byl:
+ML: kandidovat-001, ARG0-of = blok, ARG1 = Lennart Meri, ARG2 = prezident
+ŠZ: have-mod-91, ARG0 = Meri Lennart, ARG1 = person who candidates, with possessor "on"
+Proposed solution: ???
+
+
+- hlas:
+ML: wiki"Q1306135"
+ŠZ: --
+Proposed solution: ŠZ will add the wikipage there.
+
+
+- nejvíce:
+ML: simple structure:     :quant (s5n / nejvíce)
+ŠZ: (s5h / hlas
+       :ARG1-of (s5h2 / have-quant-91
+       		:aspect state
+       		:modal-strength full-affirmative
+       		:ARG3 (s5n3 / nejvíce)
+       		:ARG5 s5h))
+       :refer-number plural)
+
+
+- ve volbách
+ML: :temporal (s5v / volit-001
+				:wiki...
+				:ARG1 (... parlament)
+					:wiki...
+					:refer-number...
+				:temporal (s5d / date-entity)
+					:weekday (s5n2 / neděle
+					:wiki....)
+ŠZ: :ARG2 (s5v / volit-002) - ARG2 for získat-001 (získat odkud - ve volbách)
+
+
+- neděle:
+ML: wikipage :wiki "Q132"
+ŠZ: --
+proposed solution: ŠZ will add the wikipage there
+
+
+- v Estonsku:
+ML: refer-number singular
+ŠZ: --
+Proposed solution: ŠZ will add the refer-number there
+
+
+- podle výsledků
+ML: :according-to (s5v2 / výsledek) + wiki "Q51591359"
+ŠZ: :manner (s5v2 / výsledek) wiki = 0
+
+------------------------------------------------------------
+
+#alignment:
+
+s5b (blok) 
+- ML: 14-15, 17-17, tj. "blok Vlast, jehož"
+- ŠZ: 14-14, tj. "blok"
+
+s5n (Vlast)
+- ML: 0-0
+- ŠZ: 15-15
+
+NEXT....
