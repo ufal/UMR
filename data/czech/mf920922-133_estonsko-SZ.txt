@@ -158,7 +158,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
       :modal-strength full-affirmative
       :ARG0 (s5b / blok
          :name (s5n / name :op1 "Vlast")
-         :wiki "Q1428217"
+         :wiki "Q163347"
          :mod (s5b2 / have-mod-91
              :aspect state
              :modal-strength full-affirmative
@@ -174,6 +174,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
                                :wiki "Q30461")
                     :possessor (s5j / on)))))
       :ARG1 (s5h / hlas
+             :wiki "Q1306135"
              :ARG1-of (s5h2/ have-quant-91
                        :aspect state
                        :modal-strength full-affirmative
@@ -189,10 +190,12 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
             :aspect performance
             :modal-strength full-affirmative
             :temporal (s5d / date-entity
-			             :weekday (s5n4/ neděle))
+			             :weekday (s5n4/ neděle
+                              :wiki "Q132"))
             :place (s5c / country
                 :wiki "Q191"
-                :name (s5n5 / name :op1 "Estonsko")))
+                :name (s5n5 / name :op1 "Estonsko"
+                          refer-number singular)))
       :manner (s5v2 / výsledek
             :refer-number plural
             :temporal (s5v3 / včera)
