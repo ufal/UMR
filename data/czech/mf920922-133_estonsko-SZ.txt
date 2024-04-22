@@ -233,13 +233,16 @@ s5p9: 10-10
 
 # document level annotation:
 (s5s0 / sentence
-    :temporal((document-creation-time :before s5z)
-            (document-creation-time :before s5k))
+     :temporal ((document-creation-time :before s5v3)
+            (s5v3 :before s5n4)
+            (s5v :contained s5n4)
+            (s5b2 :contained s5v)
+            (s5z :contained s5v))
     :modal ((root :modal author)
            (author :full-affirmative s5z))
     :coref ((s5p8 :same-entity s3p3)
              (s5v :same-entity s3v)
-             (s5c :same-entity s3p2)
+             (s5c :same-entity s3c)
              (s5j :same-entity s5b)))
 
 

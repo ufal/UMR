@@ -229,10 +229,58 @@ ML: :according-to (s5v2 / výsledek) + wiki "Q51591359"
 
 s5b (blok) 
 - ML: 14-15, 17-17, tj. "blok Vlast, jehož"
-- ŠZ: 14-14, tj. "blok"
+- ŠZ: 14-14, tj. "blok".
+- Proposal: Š will correct the annotation according to M 
 
 s5n (Vlast)
 - ML: 0-0
 - ŠZ: 15-15
+- Proposal: Š will correct the annotation according to M (no alignment with named entities)
 
-NEXT....
+-----------------------------------------------------------
+
+#document level annotation 
+
+temporal
+- ŠZ:
+:temporal ((document-creation-time :before s5v3) - včera je před teď
+
+(s5v3 :before s5n4) - neděle je před včera
+
+(s5v :contained s5n4) - neděle v sobě obsahuje volby
+
+(s5b2 :overlap s5v) - volby se kryjí s bytím kandidátem
+
+(s5z :contained s5v) - volby obsahují získání hlasů
+
+- Timeline:
+
+teď
+
+včera
+
+neděle, získal, byl, volby
+
+- ML: referring to the "day of week" instead of "Sunday"; získal after volby (?); volby obsahují neděli? (direction of contained - ?); kandidoval před nedělí - ?)
+
+modality
+- ML has there three modalities (full-affirmative): s5v volit-001, s5k kandidovat-001, s5z získat-001
+- ŠZ has there just one modality (full-affirmative): s5z získat-001. What about her other verbs? (volit instead of volby, být - někdo je něčím)
+- proposed solution: ???
+
+
+coreference 
+- ŠZ has a coreference there between BLOK and JEHOŽ, 
+- ML: 0
+- proposed solution: ML will add this link there 
+
+############################################################
+snt6 
+
+Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20,5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+
+NEXT...
+
+#document level annotation FINISH ACCORDING TO MARKÉTA'S NEW RULES!!!
+
+
