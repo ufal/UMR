@@ -1,14 +1,13 @@
 # Modal Dependency
 
-
-
 In UMR, the modal annotation captures the **modal strength** of events, but not the modal type of the event (i.e., epistemic/evidential, deontic, permissive, etc.).
 
 Modal annotation is done at both the sentence level and the document level representation.
 
 **Question 1**:
-I am not sure what is the added value of the document level annotation - it seems to simple copy the sentence level annotation?  
-In fact, in several examples in the section on reported events, the document level modal structures do not mirror the sentence level `:modal-strength` values. However, these differences are not discussed and in fact, I do not understand the reasoning underlying the document level annotation.  
+The modal structure within the document-level annotation specifies, for each event, its conceiver, i.e. "a source, an entity whose perspective on an event is modelled in the text)".  The `:modal-strength` values, if I understand it correctly, simply copy the sentence level annotation? So is it necessary there?
+ 
+In fact, in several examples in the section on reported events (Part 4-3-1-3), the document level modal structures do not mirror the sentence level `:modal-strength` values. However, these differences are not discussed and in fact, I do not understand the reasoning underlying the document level annotation. Is it by mistake or I miss something? 
 
 **Question 2**:  
 It is not clear (to me) why the `:purpose` and `:condition` relations need specific treatment -- in which aspects they are different compared to, e.g., `:cause` or `:reason` .  
@@ -27,9 +26,12 @@ What about their **inverse** relations or their **reifications**?
 (using their ID as the child node);  
   - the `:modal-predicate` is used **instead of**  `:modal-strength` (these verbs form the only exception);   
 
-**Notes/reminders**:   
+**Notes on modality**:   
 - **Deontic modality** (_can_, _must_, _may_, …, _probably_, …) is conceived as just 1 event, with just `:modal-strength` annotation (`full/partial/neutral-affirnaive/negative`) at the sentence level.
-- UMR seems to use **very broad interpretation for modal predicates** (see below and the Guidelines, [Part 4-3-1-6](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-4-3-1-6-modal-dependency-structure) and [Part 4-3-2](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-4-3-2-english-modals).
+- UMR seems to use **very broad interpretation for modal predicates** (see below and the Guidelines, [Part 4-3-1-6](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-4-3-1-6-modal-dependency-structure) and [Part 4-3-2](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-4-3-2-english-modals)). [Part 4-3-2. English modals](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-4-3-2-english-modals) offers **a list of English means expressing modality** (synt. structure, modal verbs, modal adverbs) -- this can be used as a guide for Czech annotations!! 
+- The Guidelines mention that information on modal characteristics should be added to the frame files for modal verbs (as the annotation progresses). 
+
+
 
 **Document level representation:**
 - identify the **root** and the **author**... (root :modal author);   
@@ -40,10 +42,10 @@ What about their **inverse** relations or their **reifications**?
    - for **purpose** clauses, the **"actor/agens"** of the main clause should be linked to the author (more complex, see below);
    - (for **conditional** clauses, no additional conceivers are supposed);
 - identify all **event concepts** and add each of them to the modal structure: 
-     - **"default"**: as a chil of the "author" node with the appropriate relation (`full/partial/neutral-affirmative/negative`) 
+     - **"default"**: as a child of the "author" node with the appropriate relation (`full/partial/neutral-affirmative/negative`) 
      - **reported event**: as a child of the "speaker/sayer/reporter" node (=conceiver) with the appropriate relation (`full/partial/neutral-affirmative/negative`), see below; 
-     - XXXXXXXXXXXXXXXX **modalized event**: more complex, see below;  
-       - **1.** the modal verb is linked to the "author" node indirectly via its subject entity (author -- subject; subject -- modal verb); 
+     - **modalized event**: more complex, see below;  
+       - **1.** the modal verb is linked to the "author" node indirectly **via its subject entity** (author -- subject; subject -- modal verb) (i.e., not directly author -- event as in the default case); 
        - **2.** the modalized event is represented as a child of the modal with the `:Unsp` relation;
      - **purpose**:  more complex, see below;    
        - the main clause "actor/agens" as the parent of the special "purpose" node with the `:partial-affirmative` relation, 
@@ -110,14 +112,48 @@ Reporting predicates  are annotated with a `:modal-strength` value (correspondin
 Reported events get -- on addition to the `:modal-strength` attribute (corresponding to the certainty with which the **speaker/sayer/reporter** reports the events) -- also the `:quote` relations in the sentence level annotation. (The reporting event). 
 
 ### Modal predicates 
-While **a modal verb** gets the usual `:modal-strength` attribute in the sentence level annotation, with a modalized verb (i.e., verb) 
+While **a modal verb** gets the usual `:modal-strength` attribute in the sentence level annotation, with a **modalized verb** (i.e., verb under the scope of the modal verb), the `:modal-predicate` relation identifying the relevant modal verb is used instead.  
 
-XXXXXXXXXXXXXXXXXXXXXXXXXX
+- [en] a. _Mary **wants** to **visit** France._
+```
+Mary wants to visit France.
+(w/ want-01
+	:ARG0 (p/ person
+		:name (n/ name :op1 "Mary"))
+	:ARG1 (v/ visit-01
+		:ARG0 p
+		:ARG1 (c/ country
+			:wiki "France"
+			:name (n/ name :op1 "France"))
+		:aspect performance
+	  **:modal-predicate w**)
+	:aspect state
+  **:modal-strength full-affirmative**)
+```
 
-In some examples (but not consistently), UMR seems to use very extensive interpretation of modal predicates, they **include more-or-less ALL complement taking verbs** (incl., e.g., _see_ in _I saw him knock on the door._).  
+- [en] d. _His parents **forbid** him from **smoking**._
+```
+(f/ forbid-01
+	:ARG0 (p/ person
+		:ARG0-of (k/ kinship)
+			:ARG1 (p2/ person
+				:refer-person 3rd
+				:refer-number singular)
+			:ARG2 (p3/ parent)
+		:refer-number plural)
+	:ARG1 (s/ smoke-01
+		:ARG0 p2
+		:aspect process
+		**:modal-predicate f)**
+	:ARG2 p2
+	:aspect state
+	**:modal-strength full-affirmative**)
+```
 
-BUT for some predicates identified as modals in the Guidelines (the Edmund Pope examples), the `:modal-predicate` relation is removed in the released English data (e.g., english_umr-0003.txt, snt2 _charge-05_).  
-For other predicates, the English data combines `:modal-strength` and `:modal-predicate` annotation, which contradicts the above mentioned principles (e.g., english_umr-0001.txt, snt21: _... come ... to help look for bodies_ with _help_ annotated as modal predicate and _look_ with both attributes) 
+Based on English examples (which are not consistent, unfortunately), UMR seems to use very extensive interpretation of modal predicates, they **include more-or-less ALL complement taking verbs** (incl., e.g., _see_ in _I saw him knock on the door._).  
+
+**BUT** for some predicates identified as modals in the Guidelines (see the Edmund Pope examples), the `:modal-predicate` relation is removed in the released English data (e.g., english_umr-0003.txt, snt2 _charge-05_, remains without any modal value at the sentence level; on the other hand, this event has two parents at the document level (author and null-conceiver)).  
+For other predicates, the English data combines `:modal-strength` and `:modal-predicate` annotation, which contradicts the above mentioned principles (e.g., english_umr-0001.txt, snt21: _... come ... to help look for bodies_ with _help_ annotated as a modal predicate and _look_ with both attributes) 
 
 
 ## Document-level representation
@@ -188,20 +224,81 @@ The following examples are from [Part  4-3-1-3](https://github.com/ufal/umr-guid
 
 
 #### Modal-predicate relation 
-(the `:modal-predicate` relation in the sentence structure)  
+In the document level annotation, a **modal verb** (if identified as its own event (with the `modal-predicate` relation in the sentence structure)) is represented as **conceived by its subject**, i.e., it is linked to its subject (as a child) (and not directly as a child node of the author, as in the default case of "normal" events). 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXX
+Then, a **modalized event** is  represented as a child of the modal with the `:Unsp` relation -- this means, the relation among them is not further specified at Stage 0.  
+The Guidelines mention that "It will be taken up in the lexical entries of modal complement-taking predicates and space-builders as the lexicon is being built, and will then automatically replace the unspecified link between the modal event and the modalized event in the document-level structure."
 
-NOTE:  UMR seems to use very broad interpretation for modal predicates (but the Guidelines examples and the English released data are not consistent wrt to modals and their annotation).  
+The following examples are from [Part  4-3-1-2](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-4-3-1-2-modal-predicate-relation).
+
+
+- [en] a. _Mary **wants** to **visit** France._
+```
+:modal ((root :modal author)             ???
+        (author :full-affirmative Mary)
+		(Mary :full-affirmative want)
+		(want :Unsp visit))
+```
+- [en] b. _Bob **thinks** the dog **escaped** through the fence._
+```
+:modal ((root :modal author)             ???
+        (author :full-affirmative Bob)
+		(Bob :full-affirmative think)
+		(think :Unsp escape))
+```
+- [en] c. _They probably **decided** to **leave** on Monday._
+```
+:modal ((root :modal author)             ???
+        (author :full-affirmative they)
+		(they :full-affirmative decide)
+		(decide :Unsp leave))
+```
+- [en] d. _His parents **forbid** him from **smoking**._
+```
+:modal ((root :modal author)             ???
+        (author :full-affirmative parent)
+		(parent :full-affirmative forbid)
+		(forbid :Unsp smoke))
+```
+
+**NOTE:**  
+A special "NULL_CHARGER" / "null-conceiver" is used in one of the introductory examples (sentence 1 (2) in the Guidelines / in the released data english_umr-0003.txt) if the **subject of the modal verb is not expressed**. 
+~~However, in these cases, the modal verb has two parents :-(( 
+probably mistake in the variable name (both the "null-conceiver -- modal verb" relation, and the "author -- modal verb" relation)!!~~
+
+- [en] _... [businessman] who was convicted on spying charges ..._  
+   ... the verb _charge_ is considered a modal verb (modalizing the _spying_ event) in the Guidelines (not in the released data)
+```
+(:ARG1-of (c/ convict-01
+	         :ARG2 (c2/ charge-05
+	                    :ARG1 b=businessman
+	                    :ARG2 (s/ spy-02
+	                           :ARG0 b
+		                       :modal-predicate c2))   ... only in the Guidelines
+	         :aspect performance
+	         :modal-strength full-affirmative))
+...
+(s2/ sentence
+    :modal((author :full-affirmative s2c)           ?? (should be sc = convict) ??
+	       (author :full-affirmative null-conceiver)
+	       (null-conceiver :full-affirmative s2c)   !!!
+	       (s2c :Unsp s2s)))
+```
+The Guidelines: "The modal dependencies indicate that from the author's perspective the _conviction_ event ... definitely happened,... . It introduces a NULL_CHARGER conceiver to indicate that the authority that charged Pope (which is not explicit in the text) presents the spying event as a certainty. "
+
+**NOTE:**  
+ UMR seems to use very broad interpretation for modal predicates (but the Guidelines examples and the English released data are not consistent wrt to modals and their annotation).  
   The Guidelines mention that the relevant information will be added to the frame files for modal verbs (e.g., for _want_, its frame file will indicate (in addition to the argument structure), also the `:modal-strength of complement: neutral-affirmative`).
   
+ 
+The Guidelines: 
+- "Some predicates impart full, positive (`:full-affirmative`) strength on their complements, often called **factive** predicates (e.g., _manage to_). 
+- **Strong epistemic modals** (e.g., _expect that_, _deduce_) and **strong deontic modals**, including intention modals (e.g., _plan to_, _decide to_) and obligation modals (e.g., _need_, _demand_), impart `:partial-affirmative` strength on their complements. 
+- **Weak deontic modals**, including desire (e.g., _want_) and permission (e.g., _allow_), impart `:neutral-affirmative` strength on their complements. 
+- Certain modals may also **lexicalize negation**, such as _doubt_, _forbid_, or _wish_. These are annotated with the `:neutral-negative`, `:partial-negative`, and `:full-negative` values, respectively.
   
-Some predicates impart full, positive (full-affirmative) strength on their complements, often called factive predicates (e.g., manage to). Strong epistemic modals (e.g., expect that, deduce) and strong deontic modals, including intention modals (e.g., plan to, decide to) and obligation modals (e.g., need, demand), impart partial-affirmative strength on their complements. Weak deontic modals, including desire (e.g., want) and permission (e.g., allow), impart neutral-affirmative strength on their complements. Certain modals may also lexicalize negation, such as doubt, forbid, or wish. These are annotated with the neutral-negative, partial-negative, and full-negative values, respectively.
-  
-
-
-
-XXXXXXXXXXXX následující už OK
+ 
+The Guidelines also list (some) English modals and their interpretation (not only verbs, but also adverbs and syntactic structures) in [Part 4-3-2. English modals](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-4-3-2-english-modals) -- this definitely can serve as an inspiration for Czech annotations! 
 
 #### Purpose relations
 (the `:purpose` relation in the sentence structure)  
