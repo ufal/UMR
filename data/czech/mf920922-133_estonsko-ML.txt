@@ -214,9 +214,9 @@ s5p2: 10-10
 (s5s0/ sentence
     :temporal((document-creation-time :before s5v3)
               (s5v3 :before s5d)
-              (s5v :after s5z)
+              (s5d :before s5k)
               (s5d :contained s5v)
-              (s5d :before s5k))
+              (s5v :after s5z))
     :modal ((root :modal author)
             (author :full-affirmative s5v)
             (author :full-affirmative s5k)
