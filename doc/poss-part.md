@@ -110,8 +110,8 @@ The Guidelines:
 
 **Summary:**
 1. Use `:part` when talk about a thing that belongs to some bigger entity (like in ...)
-2. Use `:poss-of` relation when talk about the whole entity (like in ...)
-3. Use `have-poss-91` when interpreted as predication, with `ARG1`=the whole entity and `ARG2`= its part/fragment
+2. Use `:part-of` relation when talk about the whole entity (like in ...)
+3. Use `have-part-91` when interpreted as predication, with `ARG1`=the whole entity and `ARG2`= its part/fragment
 ---
 
 **`:part` examples** (the UMR Guidelines, the English released data):  
