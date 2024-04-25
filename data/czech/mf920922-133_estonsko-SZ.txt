@@ -65,7 +65,7 @@ s2n: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-     :coref ((s1n :same-entity s2n))
+     :coref ((s1c :same-entity s2c))
      :modal ((root :modal author)))
 
 
@@ -129,7 +129,7 @@ Sentence Gloss (en): Tallinn -
 # sentence level graph:
 (s4p / publication-91
       :place (s4c / city
-         :wiki "Q63761031"
+         :wiki "Q1770"
          :name (s4n / name :op1 "Tallin")))
 
 # alignment:
@@ -178,8 +178,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
              :ARG1-of (s5h2/ have-quant-91
                        :aspect state
                        :modal-strength full-affirmative
-                       :ARG3 (s5n3 / nejvíce)
-                       :ARG5 s5h))
+                       :ARG3 (s5n3 / nejvíce))
              :refer-number plural)
       :ARG2 (s5v / volit-002
             :ARG0 (s5p5 / person)
@@ -195,7 +194,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
             :place (s5c / country
                 :wiki "Q191"
                 :name (s5n5 / name :op1 "Estonsko"
-                          refer-number singular)))
+                          refer-number singular))))
       :manner (s5v2 / výsledek
             :refer-number plural
             :temporal (s5v3 / včera)

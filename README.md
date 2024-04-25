@@ -21,7 +21,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Frame files](doc/frames.md) and [participant roles](doc/roles.md) (and [PDT-frames to PropBank rolesets mapping](tecto2umr/functors-to-args-mapping-instructions.md))
 * Special constructions
   * [Ellipsis](doc/ellipsis.md)
-  * [Attribute relations, esp. Possession relation and part-whole relation](doc/poss-part.md)
+  * [Attribute relations, esp. possession relation and part-whole relation](doc/poss-part.md)
   * [Degree](doc/degree.md) (incl. comparison of quality) ... the same link as below 
  (sect. UMR attributes)
   * [Coreference](doc/coreference.md) ... the same link as below (sect. Document level representation) 

@@ -180,7 +180,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
                     :wiki "Q191"
                     :refer-number singular
                     :name (s5n3 / name :op1 "Estonsko"))
-                :aspect process
+                :aspect activity
                 :modal-strength full-affirmative)
     :according-to (s5v2 / výsledek
             :wiki "Q51591359"
@@ -192,7 +192,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
 
 # alignment:
 s5z: 7-7
-s5b: 14-15, 17-17
+s5b: 14-17
 s5n: 0-0
 s5k: 19-20
 s5p4: 18-18
