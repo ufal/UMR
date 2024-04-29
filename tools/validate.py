@@ -1297,6 +1297,8 @@ def detect_events(sentence, node_dict, args):
     * If in document annotation it participates in a relation from the ":temporal" or ":modal" group, it is likely an event,
       however, this condition is not sufficient. Entities such as persons can participate in modal relations ("Rob thinks that...")
       and temporal entities ("yesterday", "December 21") participate in temporal relations.
+    * If in document annotation it participates in the ":same-event" relation from the ":coref" group, it is an event
+      (otherwise the coreference relation would be ":same-entity").
     """
     for nid in sorted(sentence[1]['nodes']):
         node = node_dict[nid]
@@ -1323,6 +1325,46 @@ def detect_events(sentence, node_dict, args):
             if 'event_reason' in node:
                 print("  This node is an event because %s." % node['event_reason'])
             print('')
+    # Check document-level annotation.
+    testlevel = 3
+    testclass = 'Document'
+    testid = 'coref-entity-event-mismatch'
+    for r in sentence[3]['relations']:
+        if r['group'] == ':coref':
+            # Same event coreference means that both nodes are events.
+            if r['relation'] == ':same-event':
+                if r['node0'] in node_dict:
+                    node = node_dict[r['node0']]
+                    if 'entity_reason' in node:
+                        testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
+                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                    if not 'event_reason' in node:
+                        node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
+                if r['node1'] in node_dict:
+                    node = node_dict[r['node1']]
+                    if 'entity_reason' in node:
+                        testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
+                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                    if not 'event_reason' in node:
+                        node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
+            # Same entity coreference means that none of the nodes is event;
+            # remember it so that we can later report errors if it is included
+            # in event coreference.
+            elif r['relation'] == ':same-entity':
+                if r['node0'] in node_dict:
+                    node = node_dict[r['node0']]
+                    if 'event_reason' in node:
+                        testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node0'], node['event_reason'])
+                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                    if not 'entity_reason' in node:
+                        node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
+                if r['node1'] in node_dict:
+                    node = node_dict[r['node1']]
+                    if 'event_reason' in node:
+                        testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node1'], node['event_reason'])
+                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                    if not 'entity_reason' in node:
+                        node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
 
 def validate_events(sentence, node_dict, args):
     """
@@ -1453,7 +1495,7 @@ def collect_coreference_clusters(document, node_dict, args):
     document['clusters'] = {}
     for s in document['sentences']:
         for r in s[3]['relations']:
-            if r['group'] == ':coref' and r['relation'] == ':same-entity':
+            if r['group'] == ':coref' and r['relation'] in [':same-entity', ':same-event']:
                 n0 = r['node0']
                 n1 = r['node1']
                 # The cluster will be represented by the id of its first node (the one first mentioned).

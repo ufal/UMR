@@ -232,7 +232,7 @@ s5v3: 9-9
             (author :full-affirmative s5p3))
     :coref ((s3c :same-entity s5c)
             (s3p2 :same-entity s5p)
-            (s3v :same-entity s5v)))
+            (s3v :same-event s5v)))
 
 
 # sent_id = mf920922-133-p4s3
