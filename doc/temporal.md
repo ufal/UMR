@@ -36,7 +36,7 @@ Process in the following way:
 3. Step by step, add all **other events** -- relate them:     
    - primarily to the relevant time expression (esp. to those in the same line as the event), or
    - to other event(s)  
-      (this parent event must be a process and has the same modal annotation OR `:full-affirmative relation to the AUTH`).
+      (this parent event must be a process and has the same modal annotation OR `:full-affirmative` relation to the `author`)
    - Use one of the following relations: `:contained`, `:overlap`, `:after`, `:before` (see below).
    - The **labels** characterize the relation **from child to parent** !!!
 
@@ -115,7 +115,7 @@ As for temporal expressions, all of them should be identified in a document and 
   - there is a **clear temporal relation** between both events;
   - the parent event is (a subtype of) a **process** (in particular, not state, not habitual);
   - both events have **the same modal annotation** (parent+value)   
-  OR the parent event has `:full-affirmative` relation to the AUTH.  
+  OR the parent event has `:full-affirmative` relation to the `author`.
 
 **Principle**: Make a **timeline** and try to relate each event to **immediately preceding / following** event or time expression! 
 
