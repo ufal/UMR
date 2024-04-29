@@ -168,7 +168,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
             :wiki "Q1306135"
             :refer-number plural
             :quant (s5n1 / nejvíce))
-    :temporal (s5v / volit-001
+    :ARG2 (s5v / volit-001
                 :wiki "Q372557"
                 :ARG1 (s5p / parlament
                     :wiki "Q217799"
@@ -182,7 +182,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
                     :name (s5n3 / name :op1 "Estonsko"))
                 :aspect activity
                 :modal-strength full-affirmative)
-    :according-to (s5v2 / výsledek
+    :manner (s5v2 / výsledek
             :wiki "Q51591359"
             :refer-number plural
             :temporal (s5v3 / včera)

@@ -9,10 +9,7 @@ The modal structure within the document-level annotation specifies, for each eve
  
 In fact, in several examples in the section on reported events (Part 4-3-1-3), the document level modal structures do not mirror the sentence level `:modal-strength` values. However, these differences are not discussed and in fact, I do not understand the reasoning underlying the document level annotation. Is it by mistake or I miss something? 
 
-**Question 2**:  
-It is not clear (to me) why the `:purpose` and `:condition` relations need specific treatment -- in which aspects they are different compared to, e.g., `:cause` or `:reason` .  
-What about their **inverse** relations or their **reifications**? 
-  
+
 
 ## Short HowTo for Czech annotations:
 

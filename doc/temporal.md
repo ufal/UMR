@@ -5,22 +5,42 @@ In UMR, temporal annotation is done at both the sentence level and the document 
   
 
 ## Short HowTo for Czech annotations:
-- **sentence level representation:**
-  - any **time expression** (overtly present) should be identified and annotated using the `:temporal` relation  
-  (we do not annotate (for the time being?) temporal relations between events and DCT)
-- **document level annotation:**
-  - each **locatable time expression** should be related: 
-     - to the `root` (absolute values as _May 15, 2024_), or 
-     - to  `DCT` (_today_), or
-     - to `past/present/future-reference`.
-  - create **a timeline** with all detected time expressions and all events (if possible);
-  - each **event** should be added to the temporal annotation:
-    - primarily to the relevant time expression (esp. to those in the same line as the event), or
-    - to other event(s)  
-      (this parent event must be a process and has the same modal annotation OR `:full-affirmative relation to the AUTH`)
-   - use one of the following relations: `:contained`, `:overlap`, `:after`, `:before` (see below).
-- **The labels characterize the relation from child to parent!!!**
-- special cases:
+
+### Sentence level representation:
+  - Any **time expression** (overtly present) should be identified and annotated using the `:temporal` relation.  
+  Comment: we do NOT annotate (for the time being?) temporal relations between events and DCT!
+  
+
+### Document level annotation:**
+**First**, create a temporal **superstructure** (= the top levels of the dependency structure), which contains:
+- Nodes for predefined "metanodes":
+    - there are 4 values of metanodes `DCT` and `past/present/future-reference`;
+    - the "metanodes" are connected directly to the `ROOT` node;  
+- nodes for **temporal expressions** (from the text),
+     - their mutual temporal relations to each other.  
+**Question:**  There should be "a generic `:depends-on` relation between all nodes in the temporal superstructure". But this relation appears only sporadically in the data (typically, "normal" temporal relations are used, see below).
+
+
+**Second**,  relate each **locatable time expression**: 
+- to the `root` (absolute values as _May 15, 2024_), or
+- to the metanodes `DCT` or `past/present/future-reference`.
+
+**Third**, add all events to the temporal annotation -- each event is annotated as **the child of either a time expression** in the superstructure **or another event** (or both). In other words, each event (child) is related to a time expression (which is already anchored) OR to other already anchored event.    
+
+
+Process in the following way: 
+1. Create **a timeline** with all detected time expressions and all events (if possible); this will help you to select the "main" event to which you will relate the other events (not anchored in a time expression). 
+2. Add the **"main" event** to the temporal annotation (the one which is "closest" to the referential time expression) -- relate it:
+    - to the referential **time expression** (esp. to those in the same line as the event), or one of the **metanodes**;
+    - use one of the following relations: `:contained`, `:overlap`, `:after`, `:before` (see below).
+3. Step by step, add all **other events** -- relate them:     
+   - primarily to the relevant time expression (esp. to those in the same line as the event), or
+   - to other event(s)  
+      (this parent event must be a process and has the same modal annotation OR `:full-affirmative relation to the AUTH`).
+   - Use one of the following relations: `:contained`, `:overlap`, `:after`, `:before` (see below).
+   - The **labels** characterize the relation **from child to parent** !!!
+
+- **special cases**:
   - complement-taking predicates  
   (see below; main idea: the complement-taking predicate serves as the parent/reference point for its complement)
   - reporting predicates  
