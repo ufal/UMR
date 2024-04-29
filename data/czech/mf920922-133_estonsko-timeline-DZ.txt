@@ -36,10 +36,6 @@ s7p3 / představovat-003 (nejvyššího představitele)
 ... overlap se vším? (Začalo to už před volbami a trvá to dosud, tedy i chvilku po volbách.)
 
 document-creation-time
-= s1p3 / publication-91
-= s2p / publication-91
-= s3p3 / publication-91
-= s4p / publication-91
 ... až po všem výše uvedeném
 
 s7d / dosud (dosavadního představitele)
