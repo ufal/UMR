@@ -65,8 +65,8 @@ s2n: 0-0
 # document level annotation:
 (s2s0 / sentence
     :modal ((root :modal author))
-    :coref ((s2p :same-entity s1p3)
-            (s2c :same-entity s1c)))
+    :coref ((s1p3 :same-entity s2p)
+            (s1c :same-entity s2c)))
 
 
 # sent_id = mf920922-133-p3s1
@@ -110,7 +110,8 @@ s3p2: 3-3
     :coref ((s2p :same-entity s3p3)
             (s2c :same-entity s3c)
             (s1p :same-entity s3p)
-            (s1p2 :same-entity s3p2)))
+            (s1p2 :same-entity s3p2)
+            (s1v :same-event s3v)))
 
 
 # sent_id = mf920922-133-p4s1
@@ -191,7 +192,8 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
         :ARG0-of (s5p3 / předbíhat-001
             :aspect state
             :modal-strength full-affirmative)
-        :temporal (s5v3 / včera))
+        :temporal (s5v3 / včera)
+        :refer-number plural)
     :aspect performance
     :modal-strength full-affirmative)
 
@@ -223,13 +225,14 @@ s5v3: 9-9
             (s5v :overlap s5d)
             (document-creation-time :before s5v3)
             (document-creation-time :before s5p3)
-            (s5v3 :overlap s5p3))
+            (s5p3 :overlap s5v3))
     :modal ((root :modal author)
             (author :full-affirmative s5z)
             (author :full-affirmative s5v)
             (author :full-affirmative s5p3))
     :coref ((s3c :same-entity s5c)
-            (s3p2 :same-entity s5p)))
+            (s3p2 :same-entity s5p)
+            (s3v :same-entity s5v)))
 
 
 # sent_id = mf920922-133-p4s3
@@ -379,3 +382,5 @@ s7n3: 18-18
             (author :full-affirmative s7h)
             (author :full-affirmative s7p3))
     :coref ((s5c :same-entity s7r)))
+
+

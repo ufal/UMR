@@ -1434,6 +1434,13 @@ def validate_document_relations(sentence, node_dict, args):
             testid = 'misplaced-document-relation'
             testmessage = "At least one of the nodes must be from the current sentence but neither '%s' nor '%s' is." % (r['node0'], r['node1'])
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+        # By convention, node0 of a document-level relation is from the same
+        # sentence as node1 or from an earlier one. We could probably extend this
+        # convention so that node0 is the one defined before node1 (line-wise).
+        if node0_line > node1_line:
+            testid = 'wrong-node-order'
+            testmessage = "Document-level relation should not go from a newer node ('%s' defined on line %d) to an older node ('%s' defined on line %d)." % (r['node0'], node0_line, r['node1'], node1_line)
+            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 def collect_coreference_clusters(document, node_dict, args):
     """
