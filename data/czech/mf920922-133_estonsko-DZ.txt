@@ -225,7 +225,7 @@ s5v3: 9-9
             (s5v :overlap s5d)
             (document-creation-time :before s5v3)
             (document-creation-time :before s5p3)
-            (s5v3 :overlap s5p3))
+            (s5p3 :overlap s5v3))
     :modal ((root :modal author)
             (author :full-affirmative s5z)
             (author :full-affirmative s5v)
