@@ -149,6 +149,7 @@ Sentence:            V nedělních parlamentních volbách v Estonsku získal po
 Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according to yesterday's preliminary results, the Vlast bloc, whose presidential candidate was Lennart Meri, won the most votes.
 
 # sentence level graph:
+# comments 
 (s5z / získat-001
     :ARG0 (s5b / blok
             :refer-number singular
