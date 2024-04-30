@@ -1495,7 +1495,9 @@ def validate_document_relations(sentence, node_dict, args):
         # By convention, node0 of a document-level relation is from the same
         # sentence as node1 or from an earlier one. We could probably extend this
         # convention so that node0 is the one defined before node1 (line-wise).
-        if node0_line > node1_line:
+        # We only cannot extend it to the ':contained' relations because there
+        # is no way of inverting them following the guidelines.
+        if r['relation'] != ':contained' and node0_line > node1_line:
             testid = 'wrong-node-order'
             testmessage = "Document-level relation should not go from a newer node ('%s' defined on line %d) to an older node ('%s' defined on line %d)." % (r['node0'], node0_line, r['node1'], node1_line)
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
@@ -1739,8 +1741,8 @@ def build_temporal_graph(document, node_dict, args):
                     testlevel = 3
                     testclass = 'Document'
                     testid = 'temporal-depends-on'
-                    testmessage = "The temporal relation ':depends-on' could probably be replaced by more specific ':before', ':after' or ':overlap'."
-                    warn(testmessage, testclass, testlevel, testid, line0)
+                    testmessage = "The temporal relation ':depends-on' could probably be replaced by more specific ':before', ':after', ':contained' or ':overlap'."
+                    warn(testmessage, testclass, testlevel, testid, r['line0'])
 
 def is_temporal_relation(document, n0, n1, relation_list):
     """

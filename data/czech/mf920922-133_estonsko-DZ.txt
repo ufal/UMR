@@ -222,7 +222,7 @@ s5v3: 9-9
     :temporal ((document-creation-time :before s5z)
             (document-creation-time :before s5k)
             (s5z :before s5v)
-            (s5v :overlap s5d)
+            (s5d :contained s5v)
             (document-creation-time :before s5v3)
             (document-creation-time :before s5p3)
             (s5p3 :overlap s5v3))
@@ -314,7 +314,8 @@ s6n2: 26-26
             (author :full-affirmative s6v2))
     :coref ((s3p :same-entity s6p)
             (s5b :same-entity s6b)
-            (s5p :same-entity s6p6)))
+            (s5p :same-entity s6p6)
+            (s5v :same-event s6v2)))
 
 
 # sent_id = mf920922-133-p4s4
