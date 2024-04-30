@@ -1705,6 +1705,14 @@ def build_temporal_graph(document, node_dict, args):
                             reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
                             add_temporal_relation(document, node_dict, r['node1'], n, ':contains', r['line0'], reason1)
                             add_temporal_relation(document, node_dict, n, r['node1'], ':contained', r['line0'], reason1)
+                        if r['node0'] in document['temporal'][n] and document['temporal'][n][r['node0']]['relation'] in [':before', ':after']:
+                            # We already know that n0 contains n1. Now n0 is before/after n.
+                            # Therefore, n1 is also before/after n.
+                            reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
+                            relation_n_n1 = document['temporal'][n][r['node0']]['relation']
+                            relation_n1_n = ':before' if relation_n_n1 == ':after' else ':after'
+                            add_temporal_relation(document, node_dict, n, r['node1'], relation_n_n1, r['line0'], reason1)
+                            add_temporal_relation(document, node_dict, r['node1'], n, relation_n1_n, r['line0'], reason1)
                 elif r['relation'] == ':overlap':
                     add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':overlap', r['line0'], reason)
 
