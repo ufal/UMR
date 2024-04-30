@@ -1514,6 +1514,7 @@ def collect_coreference_clusters(document, node_dict, args):
             if r['group'] == ':coref' and r['relation'] in [':same-entity', ':same-event']:
                 n0 = r['node0']
                 n1 = r['node1']
+                reason = "\n  Line %s: %s %s %s" % (r['line0'], debugnode(r['node0'], node_dict), r['relation'], debugnode(r['node1'], node_dict))
                 # The cluster will be represented by the id of its first node (the one first mentioned).
                 cid = get_coref_cluster_id(n0, n1, node_dict)
                 if not cid in document['clusters']:
@@ -1541,6 +1542,18 @@ def collect_coreference_clusters(document, node_dict, args):
                 else:
                     node_dict[n1]['cluster'] = cid
                     document['clusters'][cid].add(n1)
+                if not 'cluster_reason' in node_dict[n0]:
+                    node_dict[n0]['cluster_reason'] = reason
+                else:
+                    node_dict[n0]['cluster_reason'] += ' and' + reason
+                if not 'cluster_reason' in node_dict[n1]:
+                    node_dict[n1]['cluster_reason'] = reason
+                else:
+                    node_dict[n1]['cluster_reason'] += ' and' + reason
+                if not 'cluster_line0' in node_dict[n0]:
+                    node_dict[n0]['cluster_line0'] = r['line0']
+                if not 'cluster_line0' in node_dict[n1]:
+                    node_dict[n1]['cluster_line0'] = r['line0']
     # Check that nodes in the same cluster do not have conflicting wiki links.
     for c in document['clusters']:
         cwiki = ''
@@ -1621,12 +1634,7 @@ def build_temporal_graph(document, node_dict, args):
         for cmi in members:
             for cmj in members:
                 if cmj != cmi:
-                    line0 = str(node_dict[cmi]['line0'])
-                    line1 = str(node_dict[cmj]['line0'])
-                    if line1 != line0:
-                        line0 += ', ' + line1
-                    reason = "\n  Line %s: %s :identity %s" % (line0, debugnode(cmi, node_dict), debugnode(cmj, node_dict))
-                    add_temporal_relation(document, node_dict, cmi, cmj, ':identity', line0, reason)
+                    add_temporal_relation(document, node_dict, cmi, cmj, ':identity', node_dict[cmi]['cluster_line0'], node_dict[cmi]['cluster_reason'])
     # Collect and infer temporal relations.
     for s in document['sentences']:
         for r in s[3]['relations']:
@@ -1675,6 +1683,28 @@ def build_temporal_graph(document, node_dict, args):
                             reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
                             add_temporal_relation(document, node_dict, r['node1'], n, ':before', r['line0'], reason1)
                             add_temporal_relation(document, node_dict, n, r['node1'], ':after', r['line0'], reason1)
+                elif r['relation'] == ':contained':
+                    # The guidelines do not define any inverse relation to ':contained'
+                    # but we need it to block the slot and not allow other relations here
+                    # (and also to see the relation from both sides).
+                    add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':contains', r['line0'], reason)
+                    # Identity and transitive :contained between n0, n1, and their neighbors.
+                    # (n0 :contained n1) and (n1 :contained n) => (n0 :contained n)
+                    for n in document['temporal']:
+                        if n == r['node0'] or n == r['node1']:
+                            continue
+                        if r['node1'] in document['temporal'][n] and document['temporal'][n][r['node1']]['relation'] in [':contains', ':identity']:
+                            # We already know that n1 is contained in n0. Now n is contained in n1 or they are coreferential.
+                            # Therefore, n is contained in n0.
+                            reason1 = reason + ' and' + document['temporal'][n][r['node1']]['reason']
+                            add_temporal_relation(document, node_dict, r['node0'], n, ':contained', r['line0'], reason1)
+                            add_temporal_relation(document, node_dict, n, r['node0'], ':contains', r['line0'], reason1)
+                        if r['node0'] in document['temporal'][n] and document['temporal'][n][r['node0']]['relation'] in [':contained', ':identity']:
+                            # We already know that n0 contains n1. Now n contains n0 or they are coreferential.
+                            # Therefore, n contains n1.
+                            reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
+                            add_temporal_relation(document, node_dict, r['node1'], n, ':contains', r['line0'], reason1)
+                            add_temporal_relation(document, node_dict, n, r['node1'], ':contained', r['line0'], reason1)
                 elif r['relation'] == ':overlap':
                     add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':overlap', r['line0'], reason)
 
