@@ -24,7 +24,7 @@ s5p3 / předbíhat-001 (předběžných výsledků)
 ... po volbách
 
 s5v3 / včera (včerejších předběžných výsledků)
-... overlap s předbíháním (včera je větší než předběhnutí)
+... contains předbíhání (včera je větší než předběhnutí)
 
 s6p4 / představovat-003 (což představuje 28 mandátů)
 ... po předběžných výsledcích nebo přinejmenším po volbách?
@@ -34,6 +34,7 @@ s7h / have-ord-91 (na druhém místě je zatím)
 
 s7p3 / představovat-003 (nejvyššího představitele)
 ... overlap se vším? (Začalo to už před volbami a trvá to dosud, tedy i chvilku po volbách.)
+... tedy s6v2 (volby) je contained v s7p3
 
 document-creation-time
 ... až po všem výše uvedeném
