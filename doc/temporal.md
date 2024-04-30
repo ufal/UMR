@@ -43,7 +43,7 @@ Process in the following way:
    - Use one of the following relations: `:contained`, `:overlap`, `:after`, `:before` (see below).
    - The **labels** characterize the relation **from child to parent** !!!
 
-- **Fourth**, take care of **special cases**:
+**Fourth**, take care of **special cases**:
   - **complement-taking predicates**  
   (see below; main idea: the complement-taking predicate serves as the parent/reference point for its complement);
   - **reporting predicates**  
@@ -52,17 +52,17 @@ Process in the following way:
    (the main clause as a parent, the purpose clause/infinitive as a child).
 
 
-**Fifth,** check whether **repeated mentions** of the same event got consistent annotation!
+**Fifth,** check whether **repeated mentions** of the same event got consistent annotation:
 - the two (or more) mentions must have the same relation to `DCT`;
 - if both of them specify their relation to a third node (or to a third and a fourth node which are coreferential), it must be the same relation;
-- ??? more complex situations (as suggested by Dan):?
+- ??? more complex situations (as suggested by Dan):
    - the relations `:before`, `:after`, and `:contained` are transitive 
    - `:before` is the opposite of `:after`
    - if X is contained in Y and Z is `:before/:after` Y, then Z is also `:before/:after X`  
 **Dan's comments:** The validator can use the above rules to infer temporal relations between other pairs of nodes, where the relation is not annotated explicitly. And it must never happen that two information sources lead to conflicting relations between a given pair of nodes.
   - `:overlap` does not provide information that can be used for inference but it is mutually exclusive with `:before`, `:after`, and `:contained`;
   -  `:depends-on` does not provide useful information and it should be probably avoided because usually we can use one of the more specific relations.  
-  !!ML!!: _Na druhém místě je zatím blok Spolehlivý dům ..._ ... the temporal relation _zatím_ seems to depend on `DCT` but I am not sure about the appropriate relation -- what about to reserve `:depends-on` for such cases?  
+  **Markéta's comment:** _Na druhém místě je zatím blok Spolehlivý dům ..._ ... the temporal relation _zatím_ seems to depend on `DCT` but I am not sure about the appropriate relation -- what about to reserve `:depends-on` for such cases?  
 
 ---
 ---
