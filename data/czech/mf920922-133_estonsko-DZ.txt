@@ -222,7 +222,6 @@ s5v3: 9-9
     :temporal ((document-creation-time :before s5z)
             (document-creation-time :before s5k)
             (s5z :before s5v)
-            (s3v :before s5z)
             (s5v :overlap s5d)
             (document-creation-time :before s5v3)
             (document-creation-time :before s5p3)
