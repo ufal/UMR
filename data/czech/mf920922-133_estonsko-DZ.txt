@@ -249,9 +249,9 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
 
 # sentence level graph:
 (s6h / hlasovat-003
-    :ARG0 (s6p2 / percentage-entity
-            :value (s6a / asi :op1 20.5)
-            :part-of (s6p / person
+    :ARG0 (s6p7 / person
+        :ARG1-of (s6i / include-91
+            :ARG2 (s6p / person
                 :ARG0-of (s6v / volit-001
                     :aspect habitual
                     :modal-strength full-affirmative)
@@ -259,22 +259,27 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
                 :quant 457319
                 :ARG0-of (s6z / zúčastnit-se-001
                     :ARG1 (s6v2 / volit-001
-                         :wiki "Q372557"
-                         :aspect process
-                         :modal-strength full-affirmative)
+                        :wiki "Q372557"
+                        :aspect process
+                        :modal-strength full-affirmative)
                     :aspect endeavor
                     :modal-strength full-affirmative))
-            :ARG0-of (s6p4 / představovat-003
-                :ARG1 (s6m / mandát
-                    :mod (s6p5 / poslanec)
-                    :place (s6p6 / parlament
-                        :wiki "Q217799"
-                        :refer-number singular
-                        :mod (s6n2 / nový))
-                    :quant 28
-                    :refer-number plural)
-                :aspect state
-                :modal-strength full-affirmative))
+            :ARG3 (s6p2 / percentage-entity
+                :value (s6a / asi :op1 20.5)
+                :ARG0-of (s6p4 / představovat-003
+                    :ARG1 (s6m / mandát
+                        :mod (s6p5 / poslanec)
+                        :place (s6p6 / parlament
+                            :wiki "Q217799"
+                            :refer-number singular
+                            :mod (s6n2 / nový))
+                        :quant 28
+                        :refer-number plural)
+                    :aspect state
+                    :modal-strength full-affirmative))
+            :aspect state
+            :modal-strength full-affirmative)
+        :refer-number plural)
     :ARG1 (s6b / blok
         :wiki "Q163347"
         :name (s6n / name :op1 "Vlast")
@@ -284,6 +289,8 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
 
 # alignment:
 s6h: 12-12
+s6p7: 0-0
+s6i: 0-0
 s6p: 1-7
 s6v: 0-0
 s6p2: 16-20
@@ -309,7 +316,8 @@ s6n2: 26-26
             (s6z :overlap s6v2)
             (document-creation-time :before s6v)
             (s5p3 :after s6p4)
-            (s6v :overlap s6v2))
+            (s6v :overlap s6v2)
+            (s6h :overlap s6i))
     :modal ((root :modal author)
             (author :full-affirmative s6h)
             (author :full-affirmative s6v)
