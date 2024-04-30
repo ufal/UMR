@@ -72,6 +72,22 @@ def warn(msg, testclass, testlevel, testid, lineno=0, explanation=None):
         else:
             print("[%sLine %d%s%s]: [L%d %s %s] %s" % (fn, curr_line, sent, node, testlevel, testclass, testid, msg), file=sys.stderr)
 
+def debugnode(nid, node_dict):
+    """
+    Takes node id (variable). Returns a string that also contains node concept
+    and aligned words if available.
+    """
+    result = nid
+    if nid in node_dict:
+        concept = 'UNKNOWN CONCEPT'
+        alignment = 'UNALIGNED'
+        if 'concept' in node_dict[nid]:
+            concept = node_dict[nid]['concept']
+        if 'alignment' in node_dict[nid] and node_dict[nid]['alignment']['tokstr'] != '':
+            alignment = node_dict[nid]['alignment']['tokstr']
+        result = "%s (%s '%s')" % (nid, concept, alignment)
+    return result
+
 #------------------------------------------------------------------------------
 # Support functions.
 #------------------------------------------------------------------------------
@@ -1590,6 +1606,94 @@ def get_coref_cluster_id(n0, n1, node_dict):
     else:
         return n1
 
+def build_temporal_graph(document, node_dict, args):
+    """
+    Once all sentences of the document have been read and coreference clusters
+    have been collected, this function should be called. It re-visits the
+    document-level graphs of all sentences, traces the temporal relations and
+    infers additional temporal relations where possible.
+    """
+    # Add identity relations to the temporal graph for coreferential entities and events.
+    # (We need entities because of temporal expressions. Other entities will be added but not used.)
+    document['temporal'] = {}
+    for c in document['clusters']:
+        members = list(document['clusters'][c])
+        for cmi in members:
+            for cmj in members:
+                if cmj != cmi:
+                    line0 = str(node_dict[cmi]['line0'])
+                    line1 = str(node_dict[cmj]['line0'])
+                    if line1 != line0:
+                        line0 += ', ' + line1
+                    add_temporal_relation(document, node_dict, cmi, cmj, ':identity', line0)
+    # Collect and infer temporal relations.
+    for s in document['sentences']:
+        for r in s[3]['relations']:
+            if r['group'] == ':temporal':
+                # Save the current relation in the graph. Report error in case of conflict.
+                add_temporal_relation(document, node_dict, r['node0'], r['node1'], r['relation'], r['line0'])
+                # Save the opposite relation in the graph. Then look for transitively inferred relations.
+                if r['relation'] == ':before':
+                    add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':after', r['line0'])
+                    # Identity and transitive :before between n0, n1, and their neighbors.
+                    # (n0 :before n1) and (n1 :before n) => (n0 :before n)
+                    # No need for recursion, as shortcuts to distant layers already exist in the graph.
+                    for n in document['temporal']:
+                        if n == r['node0'] or n == r['node1']:
+                            continue
+                        if r['node1'] in document['temporal'][n] and document['temporal'][n][r['node1']]['relation'] in [':after', ':identity']:
+                            # We already know that n1 is before n0. Now n is before n1 or they are coreferential.
+                            # Therefore, n is before n0.
+                            add_temporal_relation(document, node_dict, r['node0'], n, ':before', r['line0'])
+                            add_temporal_relation(document, node_dict, n, r['node0'], ':after', r['line0'])
+                        if r['node0'] in document['temporal'][n] and document['temporal'][n][r['node0']]['relation'] in [':before', ':identity']:
+                            # We already know that n0 is after n1. Now n is after n0 or they are coreferential.
+                            # Therefore, n is after n1.
+                            add_temporal_relation(document, node_dict, r['node1'], n, ':after', r['line0'])
+                            add_temporal_relation(document, node_dict, n, r['node1'], ':before', r['line0'])
+                elif r['relation'] == ':after':
+                    add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':before', r['line0'])
+                    # Identity and transitive :after between n0, n1, and their neighbors.
+                    # (n0 :after n1) and (n1 :after n) => (n0 :after n)
+                    # No need for recursion, as shortcuts to distant layers already exist in the graph.
+                    for n in document['temporal']:
+                        if n == r['node0'] or n == r['node1']:
+                            continue
+                        if r['node1'] in document['temporal'][n] and document['temporal'][n][r['node1']]['relation'] in [':before', ':identity']:
+                            # We already know that n1 is after n0. Now n is after n1 or they are coreferential.
+                            # Therefore, n is after n0.
+                            add_temporal_relation(document, node_dict, r['node0'], n, ':after', r['line0'])
+                            add_temporal_relation(document, node_dict, n, r['node0'], ':before', r['line0'])
+                        if r['node0'] in document['temporal'][n] and document['temporal'][n][r['node0']]['relation'] in [':after', ':identity']:
+                            # We already know that n0 is before n1. Now n is before n0 or they are coreferential.
+                            # Therefore, n is before n1.
+                            add_temporal_relation(document, node_dict, r['node1'], n, ':before', r['line0'])
+                            add_temporal_relation(document, node_dict, n, r['node1'], ':after', r['line0'])
+                elif r['relation'] == ':overlap':
+                    add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':overlap', r['line0'])
+
+def add_temporal_relation(document, node_dict, n0, n1, r, line0):
+    """
+    Adds a temporal relation to the graph in document['temporal']. Reports an
+    error if there already is a conflicting relation between the same nodes.
+    """
+    if n0 in document['temporal'] and n1 in document['temporal'][n0]:
+        # If the relation matches, do nothing. Keep the previous line0 of the temporal relation.
+        if document['temporal'][n0][n1]['relation'] != r:
+            testlevel = 3
+            testclass = 'Document'
+            testid = 'temporal-mismatch'
+            testmessage = "Older temporal relation '%s %s %s' (line %s) collides with newly inferred '%s'." % (debugnode(n0, node_dict), document['temporal'][n0][n1]['relation'], debugnode(n1, node_dict), document['temporal'][n0][n1]['line0'], r)
+            warn(testmessage, testclass, testlevel, testid, line0)
+    else:
+        #print("Adding %s %s %s" % (n0, r, n1))
+        if not n0 in document['temporal']:
+            document['temporal'][n0] = {}
+        if not n1 in document['temporal'][n0]:
+            document['temporal'][n0][n1] = {}
+        document['temporal'][n0][n1]['relation'] = r
+        document['temporal'][n0][n1]['line0'] = line0
+
 
 
 #==============================================================================
@@ -1638,6 +1742,7 @@ def validate(inp, out, args, known_sent_ids):
     validate_newlines(inp) # level 1
     # Document-level tests.
     collect_coreference_clusters(document, node_dict, args)
+    build_temporal_graph(document, node_dict, args)
 
 if __name__=="__main__":
     opt_parser = argparse.ArgumentParser(description="UMR validation script. Python 3 is needed to run it! Optionally, if the 'requests' library is installed (try 'pip install requests'), some functions can show Wikidata labels together with Q-codes.")
