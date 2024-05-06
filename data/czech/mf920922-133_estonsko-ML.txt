@@ -170,6 +170,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
             :quant (s5n1 / nejvíce))
     :ARG2 (s5v / volit-001
                 :wiki "Q372557"
+                :ARG0 (s5p4 / person))
                 :ARG1 (s5p / parlament
                     :wiki "Q217799"
                     :refer-number singular)
@@ -216,7 +217,8 @@ s5p2: 10-10
               (s5v3 :before s5d)
               (s5d :before s5k)
               (s5d :contained s5v)
-              (s5v :after s5z))
+              (s5v :after s5z)
+              (s5d :contained s5z))
     :modal ((root :modal author)
             (author :full-affirmative s5v)
             (author :full-affirmative s5k)
@@ -242,6 +244,8 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
                     :ARG0-of (s6z / zúčastnit-se-001
                                     :ARG1 (s6v / volit-001
                                                  :wiki "Q372557"
+                                                 :ARG0 s6p7
+                                                 :ARG1 (s6p8 / person)
                                                  :aspect process
                                                  :modal-strength full-affirmative)
                               :aspect performance
@@ -294,10 +298,14 @@ s6n: 0-0
 # document level annotation:
 (s6s0/ sentence
     :temporal((document-creation-time :before s6z)
+              (document-creation-time :before s6v)
+              (document-creation-time :before s6h)
               (s6z :overlap s6v)
-              (s6z :overlap s6h)
-              (s6z :overlap s6p4)
-              (s6z :overlap s6i))
+              (s6v :overlap s6h)
+              (s6h :overlap s6z)
+              (document-creation-time :overlap s6p4)
+              (document-creation-time :overlap s6i)
+              (s6p4 :overlap s6i))
     :modal ((root :modal author)
             (author :full-affirmative s6z)
             (author :full-affirmative s6v)
@@ -372,6 +380,9 @@ s7z: 13-13
 (s7s0/ sentence
     :temporal((document-creation-time :depends-on s7z)
               (document-creation-time :depends-on s7d)
+              (document-creation-time :overlap s7h)
+              (document-creation-time :before s7p2)
+              (document-creation-time :overlap s7i)
               (s7z :overlap s7h)
               (s7d :overlap s7p2)
               (s7z :overlap s7i))

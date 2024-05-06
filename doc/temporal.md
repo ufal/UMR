@@ -8,7 +8,7 @@ In UMR, temporal annotation is done at both the sentence level and the document 
 
 ### Sentence level representation:
   - Any **time expression** (overtly present) should be identified and annotated using the `:temporal` relation.  
-  Comment: we do NOT annotate (for the time being?) temporal relations between events and DCT!
+  **Comment:** We do **NOT** annotate (for the time being?) temporal relations between events and DCT!
   
 
 ### Document level annotation:**
@@ -20,16 +20,18 @@ Note that this HowTo recaps our interpretation of the Guidelines (rather than th
 
 **Second**, create a temporal **superstructure** (= the top levels of the dependency structure) for (at least part of) the document:
 - Create a **"metanode"**, typically corresponding to `DCT` (= document creation time);   
-  (in fact, there are 3 other types of metanodes in the Guidelines: `past/present/  future-reference` -- we will only use them for vague time expressions (as _nowadays_), see below);
+  (in fact, there are 3 other types of metanodes in the Guidelines: `past/present/future-reference` -- we will only use them for vague time expressions (as _nowadays_), see below);
    - any metanode is (by definition) connected directly  to the `root` by the generic `:depends-on` relation (thus, it is not necessary to annotate it); 
 - Add one node for each **locatable temporal expression** (from the text) and relate it to the existing structure: 
+  - **concrete relative** values (as _today_, _two days later_):  to the metanode `DCT` or to another (already annotated) concrete time expression -- here use one of the "normal"  relations: `:after`, `:before`, `:overlap`, `:contained` (see below).;  
   - **concrete absolute** values (as _May 15, 2024_): to the `root` -- in that case, use the `:depends-on` relation;
-  - **concrete relative** values (as _today_, _two days later_):  to the metanode `DCT` or to another (already annotated) concrete time expression -- here use one of the "normal"  relations: `:contained`, `:overlap`, `:after`, `:before` (see below).;  
-  - **vague** values (as _nowadays_): to `past/present/future-reference` --  which relation(s) should be used **???**;
+  - **vague** values (as _nowadays_): to `past/present/future-reference` **!!!** (as the only exception different than `DCT`??);
   - (**unlocatable temporal expression** (as _every month_): they are not represented in the temporal structure (but they influence, e.g., the aspect value)).   
-  **Decision:**  There should be "a generic `:depends-on` relation between all nodes in the temporal superstructure". However, this relation appears only sporadically in the data (typically, "normal" temporal relations are used, see below). Thus, we will its use to concrete absolute time expressions, unless we find contexts where "normal" ones seem to be inadequate.)
+  **Decision:**  There should be "a generic `:depends-on` relation between all nodes in the temporal superstructure". However, this relation appears only sporadically in the data (typically, "normal" temporal relations are used, see below).  
+  Thus, we will its use to concrete absolute time expressions, unless we find contexts where "normal" ones seem to be inadequate.)
 
-**Third**, add all events to the temporal annotation -- each event is annotated as **the child of either a time expression** in the superstructure **or another event** (or both). In other words, each event (child) is related to a time expression (which is already anchored) OR to other already anchored event.    
+**Third**, add all events to the temporal annotation -- each event is annotated as **the child of either a time expression** in the superstructure **or another event** (or both). In other words, each event (child) is related to a time expression (which is already anchored) OR to other already anchored event.   
+Guidelines: As a backup (no time expression, no relevant parent event), it should be added to the appropriate tense metanode.    
 
 Process in the following way: 
 - If necessary, update **the timeline** with all detected time expressions and all events (if possible); this will help you to select the "main" event to which you will relate the other events in the given sentence (not anchored in a time expression). 
@@ -40,7 +42,8 @@ Process in the following way:
    - primarily to the relevant time expression (esp. to those in the same line as the event), or
    - to other event(s)  
       (this parent event must be a process and has the same modal annotation OR `:full-affirmative` relation to the `author`).
-   - Use one of the following relations: `:contained`, `:overlap`, `:after`, `:before` (see below).
+   - Use one of the following relations: `:before`, `:after`, `:overlap`, `:contained` (see below).
+   - In cases when an event overlaps with its referential expression (time or event), its temporal characteristics cannot be inferred. Thus, we should also add its relation to the metanode (typically `DCT`)  to express it explicitly. 
    - The **labels** characterize the relation **from child to parent** !!!
 
 **Fourth**, take care of **special cases**:
