@@ -53,9 +53,13 @@ Process in the following way:
 
 
 **Fifth,** check whether **repeated mentions** of the same event got consistent annotation:
-- the two (or more) mentions must have the same relation to `DCT`;
-- if both of them specify their relation to a third node (or to a third and a fourth node which are coreferential), it must be the same relation;
-- ??? more complex situations (as suggested by Dan):
+- the two (or more) mentions must have the same relation to `DCT`:
+   - check that they do not specify colliding relations to `DCT`;
+   - **Dan's comment:** Perhaps also check that none of them omits the relation?   
+   This could be actually generalized: 
+   Besides conflicts between explicit and inferred relations, we should also check that time expressions and events specify the minimally required relations
+- if both of them specify their relation to a third node (or to a third and a fourth node which are coreferential), it must be the same relation.
+- **More complex situations** (as suggested by Dan):
    - the relations `:before`, `:after`, and `:contained` are transitive 
    - `:before` is the opposite of `:after`
    - if X is contained in Y and Z is `:before/:after` Y, then Z is also `:before/:after X`  
