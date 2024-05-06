@@ -272,7 +272,7 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
                                    :aspect state
                                    :modal-strength full-affirmative))
       :aspect state
-      :modal-strength full-affirmative)
+      :modal-strength full-affirmative))
 
 # alignment:
 s6h: 12-12
