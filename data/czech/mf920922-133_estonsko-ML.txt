@@ -170,6 +170,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
             :quant (s5n1 / nejvíce))
     :ARG2 (s5v / volit-001
                 :wiki "Q372557"
+                :ARG0 (s5p4 / person))
                 :ARG1 (s5p / parlament
                     :wiki "Q217799"
                     :refer-number singular)
@@ -243,6 +244,8 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
                     :ARG0-of (s6z / zúčastnit-se-001
                                     :ARG1 (s6v / volit-001
                                                  :wiki "Q372557"
+                                                 :ARG0 s6p7
+                                                 :ARG1 (s6p8 / person)
                                                  :aspect process
                                                  :modal-strength full-affirmative)
                               :aspect performance
