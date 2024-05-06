@@ -14,6 +14,7 @@ import traceback
 import regex as re
 import unicodedata
 import json
+from functools import cmp_to_key # for custom partial sorting
 # Optionally we can access Wikidata API through the requests library.
 # Install the library with pip3 install requests (or python3 -m pip install requests).
 # If the library is not installed, this script should still work, just skipping any dereferences of Wikidata codes.
@@ -1630,149 +1631,312 @@ def build_temporal_graph(document, node_dict, args):
     """
     # Add identity relations to the temporal graph for coreferential entities and events.
     # (We need entities because of temporal expressions. Other entities will be added but not used.)
-    document['temporal'] = {}
+    document['temporal'] = temporal = Temporal(document, node_dict);
     for c in document['clusters']:
         members = list(document['clusters'][c])
+        #print("\n", 'temporal.add_relation for cluster %s members: ' % c, members)
         for cmi in members:
             for cmj in members:
                 if cmj != cmi:
-                    add_temporal_relation(document, node_dict, cmi, cmj, ':identity', node_dict[cmi]['cluster_line0'], node_dict[cmi]['cluster_reason'])
+                    temporal.add_relation(cmi, ':identity', cmj, node_dict[cmi]['cluster_line0'], node_dict[cmi]['cluster_reason'])
     # Collect and infer temporal relations.
     for s in document['sentences']:
         for r in s[3]['relations']:
             if r['group'] == ':temporal':
                 # Save the current relation in the graph. Report error in case of conflict.
                 reason = "\n  Line %s: %s %s %s" % (r['line0'], debugnode(r['node0'], node_dict), r['relation'], debugnode(r['node1'], node_dict))
-                add_temporal_relation(document, node_dict, r['node0'], r['node1'], r['relation'], r['line0'], reason)
+                temporal.add_relation(r['node0'], r['relation'], r['node1'], r['line0'], reason)
                 # Save the opposite relation in the graph. Then look for transitively inferred relations.
                 if r['relation'] == ':before':
-                    add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':after', r['line0'], reason)
+                    temporal.add_relation(r['node1'], ':after', r['node0'], r['line0'], reason)
                     # Identity and transitive :before between n0, n1, and their neighbors.
                     # (n0 :before n1) and (n1 :before n) => (n0 :before n)
                     # No need for recursion, as shortcuts to distant layers already exist in the graph.
-                    for n in document['temporal']:
+                    for n in temporal.nodes():
                         if n == r['node0'] or n == r['node1']:
                             continue
-                        if is_temporal_relation(document, n, r['node1'], [':after', ':identity']):
+                        if temporal.is_relation(n, r['node1'], [':after', ':identity']):
                             # We already know that n1 is before n0. Now n is before n1 or they are coreferential.
                             # Therefore, n is before n0.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node1']]['reason']
-                            add_temporal_relation(document, node_dict, r['node0'], n, ':before', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node0'], ':after', r['line0'], reason1)
-                        if is_temporal_relation(document, n, r['node0'], [':before', ':identity']):
+                            reason1 = reason + ' and' + temporal.reason(n, r['node1'])
+                            temporal.add_relation(r['node0'], ':before', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':after', r['node0'], r['line0'], reason1)
+                        if temporal.is_relation(n, r['node0'], [':before', ':identity']):
                             # We already know that n0 is after n1. Now n is after n0 or they are coreferential.
                             # Therefore, n is after n1.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
-                            add_temporal_relation(document, node_dict, r['node1'], n, ':after', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node1'], ':before', r['line0'], reason1)
-                        if is_temporal_relation(document, n, r['node0'], [':contains']):
+                            reason1 = reason + ' and' + temporal.reason(n, r['node0'])
+                            temporal.add_relation(r['node1'], ':after', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':before', r['node1'], r['line0'], reason1)
+                        if temporal.is_relation(n, r['node0'], [':contains']):
                             # We already know that n1 is before n0. Now n0 contains n, so n1 is also before n.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
-                            add_temporal_relation(document, node_dict, r['node1'], n, ':after', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node1'], ':before', r['line0'], reason1)
-                        if is_temporal_relation(document, n, r['node1'], [':contains']):
+                            reason1 = reason + ' and' + temporal.reason(n, r['node0'])
+                            temporal.add_relation(r['node1'], ':after', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':before', r['node1'], r['line0'], reason1)
+                        if temporal.is_relation(n, r['node1'], [':contains']):
                             # We already know that n1 is before n0. Now n1 contains n, so n is also before n0.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node1']]['reason']
-                            add_temporal_relation(document, node_dict, r['node0'], n, ':before', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node0'], ':after', r['line0'], reason1)
+                            reason1 = reason + ' and' + temporal.reason(n, r['node1'])
+                            temporal.add_relation(r['node0'], ':before', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':after', r['node0'], r['line0'], reason1)
                 elif r['relation'] == ':after':
-                    add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':before', r['line0'], reason)
+                    temporal.add_relation(r['node1'], ':before', r['node0'], r['line0'], reason)
                     # Identity and transitive :after between n0, n1, and their neighbors.
                     # (n0 :after n1) and (n1 :after n) => (n0 :after n)
                     # No need for recursion, as shortcuts to distant layers already exist in the graph.
-                    for n in document['temporal']:
+                    for n in temporal.nodes():
                         if n == r['node0'] or n == r['node1']:
                             continue
-                        if is_temporal_relation(document, n, r['node1'], [':before', ':identity']):
+                        if temporal.is_relation(n, r['node1'], [':before', ':identity']):
                             # We already know that n1 is after n0. Now n is after n1 or they are coreferential.
                             # Therefore, n is after n0.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node1']]['reason']
-                            add_temporal_relation(document, node_dict, r['node0'], n, ':after', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node0'], ':before', r['line0'], reason1)
-                        if is_temporal_relation(document, n, r['node0'], [':after', ':identity']):
+                            reason1 = reason + ' and' + temporal.reason(n, r['node1'])
+                            temporal.add_relation(r['node0'], ':after', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':before', r['node0'], r['line0'], reason1)
+                        if temporal.is_relation(n, r['node0'], [':after', ':identity']):
                             # We already know that n0 is before n1. Now n is before n0 or they are coreferential.
                             # Therefore, n is before n1.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
-                            add_temporal_relation(document, node_dict, r['node1'], n, ':before', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node1'], ':after', r['line0'], reason1)
-                        if is_temporal_relation(document, n, r['node0'], [':contains']):
+                            reason1 = reason + ' and' + temporal.reason(n, r['node0'])
+                            temporal.add_relation(r['node1'], ':before', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':after', r['node1'], r['line0'], reason1)
+                        if temporal.is_relation(n, r['node0'], [':contains']):
                             # We already know that n1 is after n0. Now n0 contains n, so n1 is also after n.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
-                            add_temporal_relation(document, node_dict, r['node1'], n, ':before', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node1'], ':after', r['line0'], reason1)
-                        if is_temporal_relation(document, n, r['node1'], [':contains']):
+                            reason1 = reason + ' and' + temporal.reason(n, r['node0'])
+                            temporal.add_relation(r['node1'], ':before', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':after', r['node1'], r['line0'], reason1)
+                        if temporal.is_relation(n, r['node1'], [':contains']):
                             # We already know that n1 is after n0. Now n1 contains n, so n is also after n0.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node1']]['reason']
-                            add_temporal_relation(document, node_dict, r['node0'], n, ':after', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node0'], ':before', r['line0'], reason1)
+                            reason1 = reason + ' and' + temporal.reason(n, r['node1'])
+                            temporal.add_relation(r['node0'], ':after', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':before', r['node0'], r['line0'], reason1)
                 elif r['relation'] == ':contained':
                     # The guidelines do not define any inverse relation to ':contained'
                     # but we need it to block the slot and not allow other relations here
                     # (and also to see the relation from both sides).
-                    add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':contains', r['line0'], reason)
+                    temporal.add_relation(r['node1'], ':contains', r['node0'], r['line0'], reason)
                     # Identity and transitive :contained between n0, n1, and their neighbors.
                     # (n0 :contained n1) and (n1 :contained n) => (n0 :contained n)
-                    for n in document['temporal']:
+                    for n in temporal.nodes():
                         if n == r['node0'] or n == r['node1']:
                             continue
-                        if is_temporal_relation(document, n, r['node1'], [':contains', ':identity']):
+                        if temporal.is_relation(n, r['node1'], [':contains', ':identity']):
                             # We already know that n1 is contained in n0. Now n is contained in n1 or they are coreferential.
                             # Therefore, n is contained in n0.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node1']]['reason']
-                            add_temporal_relation(document, node_dict, r['node0'], n, ':contained', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node0'], ':contains', r['line0'], reason1)
-                        if is_temporal_relation(document, n, r['node0'], [':contained', ':identity']):
+                            reason1 = reason + ' and' + temporal.reason(n, r['node1'])
+                            temporal.add_relation(r['node0'], ':contained', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':contains', r['node0'], r['line0'], reason1)
+                        if temporal.is_relation(n, r['node0'], [':contained', ':identity']):
                             # We already know that n0 contains n1. Now n contains n0 or they are coreferential.
                             # Therefore, n contains n1.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
-                            add_temporal_relation(document, node_dict, r['node1'], n, ':contains', r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, n, r['node1'], ':contained', r['line0'], reason1)
-                        if is_temporal_relation(document, n, r['node0'], [':before', ':after']):
+                            reason1 = reason + ' and' + temporal.reason(n, r['node0'])
+                            temporal.add_relation(r['node1'], ':contains', n, r['line0'], reason1)
+                            temporal.add_relation(n, ':contained', r['node1'], r['line0'], reason1)
+                        if temporal.is_relation(n, r['node0'], [':before', ':after']):
                             # We already know that n0 contains n1. Now n0 is before/after n.
                             # Therefore, n1 is also before/after n.
-                            reason1 = reason + ' and' + document['temporal'][n][r['node0']]['reason']
-                            relation_n_n1 = document['temporal'][n][r['node0']]['relation']
+                            reason1 = reason + ' and' + temporal.reason(n, r['node0'])
+                            relation_n_n1 = temporal.relation(n, r['node0'])
                             relation_n1_n = ':before' if relation_n_n1 == ':after' else ':after'
-                            add_temporal_relation(document, node_dict, n, r['node1'], relation_n_n1, r['line0'], reason1)
-                            add_temporal_relation(document, node_dict, r['node1'], n, relation_n1_n, r['line0'], reason1)
+                            temporal.add_relation(n, relation_n_n1, r['node1'], r['line0'], reason1)
+                            temporal.add_relation(r['node1'], relation_n1_n, n, r['line0'], reason1)
                 elif r['relation'] == ':overlap':
-                    add_temporal_relation(document, node_dict, r['node1'], r['node0'], ':overlap', r['line0'], reason)
+                    temporal.add_relation(r['node1'], ':overlap', r['node0'], r['line0'], reason)
                 elif r['relation'] == ':depends-on':
                     testlevel = 3
                     testclass = 'Document'
                     testid = 'temporal-depends-on'
                     testmessage = "The temporal relation ':depends-on' could probably be replaced by more specific ':before', ':after', ':contained' or ':overlap'."
                     warn(testmessage, testclass, testlevel, testid, r['line0'])
+    # We are not interested in nodes that have only identity relations to other nodes.
+    # They are probably neither time expressions nor events; they just got here from the coreference graph.
+    temporal.remove_identity_only_nodes()
+    # We may want to see the time line with the temporal relations.
+    if args.print_temporal:
+        temporal.print_timeline()
 
-def is_temporal_relation(document, n0, n1, relation_list):
-    """
-    Finds out whether there is relation between nodes n0 and n1 of a type in the
-    given list. Assumes that at least document['temporal'] already exists and does
-    not check it.
-    """
-    return n0 in document['temporal'] and n1 in document['temporal'][n0] and document['temporal'][n0][n1]['relation'] in relation_list
+#==============================================================================
+class Temporal:
+    def __init__(self, document, node_dict):
+        self.document = document
+        self.node_dict = node_dict
+        self.graph = {}
 
-def add_temporal_relation(document, node_dict, n0, n1, r, line0, reason):
+    def __str__(self):
+        result = ''
+        for i in self.nodes():
+            result += "%s -->\n" % debugnode(i, self.node_dict)
+            childrelations = []
+            for j in self.children(i):
+                childrelations.append("    %s --> %s\n" % (self.relation(i, j), debugnode(j, self.node_dict)))
+            childrelations.sort()
+            result += ''.join(childrelations)
+        return result
+
+    def nodes(self):
+        return sorted(list(self.graph))
+
+    def children(self, node):
+        if node in self.graph:
+            return sorted(list(self.graph[node]))
+        else:
+            return []
+
+    def add_relation(self, n0, r, n1, line0, reason):
+        """
+        Adds a temporal relation to the graph. Reports an error if there already
+        is a conflicting relation between the same nodes.
+        """
+        if n0 in self.graph and n1 in self.graph[n0]:
+            # If the relation matches, do nothing. Keep the previous line0 of the temporal relation.
+            if self.graph[n0][n1]['relation'] != r:
+                testlevel = 3
+                testclass = 'Document'
+                testid = 'temporal-mismatch'
+                testmessage = "Older temporal relation '%s %s %s' collides with newly inferred '%s'. Reason for older: %s" % (n0, self.graph[n0][n1]['relation'], n1, r, self.graph[n0][n1]['reason'])
+                warn(testmessage, testclass, testlevel, testid, line0)
+        else:
+            if not n0 in self.graph:
+                self.graph[n0] = {}
+            if not n1 in self.graph[n0]:
+                self.graph[n0][n1] = {}
+            self.graph[n0][n1]['relation'] = r
+            self.graph[n0][n1]['reason'] = reason
+
+    def relation(self, n0, n1):
+        if n0 in self.graph and n1 in self.graph[n0]:
+            return self.graph[n0][n1]['relation']
+        else:
+            return None
+
+    def reason(self, n0, n1):
+        if n0 in self.graph and n1 in self.graph[n0]:
+            return self.graph[n0][n1]['reason']
+        else:
+            return None
+
+    def is_relation(self, n0, n1, relation_list):
+        """
+        Finds out whether there is relation between nodes n0 and n1 of a type in
+        the given list.
+        """
+        return n0 in self.graph and n1 in self.graph[n0] and self.graph[n0][n1]['relation'] in relation_list
+
+    def remove_identity_only_nodes(self):
+        """
+        The document's temporal graph may contain nodes that are neither temporal
+        expressions nor events. They are inherited from the coreference graph and
+        they have only :identity relations, nothing else. This function will remove
+        them.
+        """
+        nodes = list(self.graph)
+        ionly = [x for x in nodes if not any([True for y in self.graph[x] if self.graph[x][y]['relation'] != ':identity'])]
+        for node in ionly:
+            del self.graph[node]
+
+    def print_timeline(self):
+        """
+        Partially orders the temporal nodes following their before-after relations.
+        Prints them together with debugging information.
+        """
+        print("Document temporal graph:\n")
+        print(self)
+        print("Document time line:")
+        nodes = sorted(list(self.graph))
+        self.already_printed = []
+        for node in nodes:
+            if not node in self.already_printed:
+                component = self.component(node)
+                if component:
+                    #print("\nNode %s => component" % node, component)
+                    lastcnode = None
+                    while True:
+                        # Find next node to print.
+                        # It must be one of those that have not been printed yet.
+                        # We should also be able to find one that has a relation to one of the already printed nodes.
+                        candidates = [x for x in component if not x in self.already_printed and self.find_relation_to_already_printed(x)]
+                        if not candidates:
+                            candidates = [x for x in component if not x in self.already_printed]
+                            if not candidates:
+                                break
+                        self.print_identity_cluster(candidates[0])
+
+    def component(self, node):
+        """
+        For a given node, gets a component of the temporal graph where nodes are
+        reachable from the initial node via a sequence of 'interesting' relations
+        (before, after, identity, contained, contains). Note that this does not
+        necessarily mean that all have a direct relation to the initial node, as
+        the :contains relation carries over before/after from larger to smaller
+        but not from smaller to larger.
+        """
+        queue = [node]
+        component = {}
+        while queue:
+            x = queue.pop(0)
+            if not x in component:
+                component[x] = True
+                for y in self.children(x):
+                    if not y in component and self.graph[x][y]['relation'] in [':before', ':after', ':identity', ':contained', ':contains']:
+                        queue.append(y)
+        return sorted_temporal(self, list(component))
+
+    def print_identity_cluster(self, node):
+        nodes = sorted([node] + [x for x in self.graph if self.is_relation(node, x, [':identity'])])
+        for node in nodes:
+            self.print_node(node)
+
+    def print_node(self, node):
+        if not node in self.already_printed:
+            relation_parent = self.already_printed[-1] if self.already_printed else None
+            relation = ':norel'
+            rpr = self.find_relation_to_already_printed(node)
+            if rpr:
+                relation_parent = rpr[0]
+                relation = rpr[1]
+            if relation == ':norel':
+                print()
+                rpr = self.find_relation_to_already_printed(node, allow_overlap=True)
+                if rpr:
+                    relation_parent = rpr[0]
+                    relation = rpr[1]
+            print("%s %s %s" % (debugnode(relation_parent, self.node_dict), relation, debugnode(node, self.node_dict)))
+            self.already_printed.append(node)
+
+    def find_relation_to_already_printed(self, node, allow_overlap=False):
+        previous_nodes = self.already_printed.copy()
+        while previous_nodes:
+            pnode = previous_nodes.pop()
+            if pnode and pnode in self.graph and node in self.graph[pnode] and (self.graph[pnode][node]['relation'] != ':overlap' or allow_overlap):
+                relation_parent = pnode
+                relation = self.graph[pnode][node]['relation']
+                return (relation_parent, relation)
+        return None
+
+def sorted_temporal(temporal, nodes):
     """
-    Adds a temporal relation to the graph in document['temporal']. Reports an
-    error if there already is a conflicting relation between the same nodes.
+    Takes the list of nodes from the document's temporal graph and tries to
+    order them according to the temporal relations where they exist.
+    (The output is only partially predictable because relations between some
+    nodes may be missing.)
     """
-    if n0 in document['temporal'] and n1 in document['temporal'][n0]:
-        # If the relation matches, do nothing. Keep the previous line0 of the temporal relation.
-        if document['temporal'][n0][n1]['relation'] != r:
-            testlevel = 3
-            testclass = 'Document'
-            testid = 'temporal-mismatch'
-            testmessage = "Older temporal relation '%s %s %s' collides with newly inferred '%s'. Reason for older: %s" % (n0, document['temporal'][n0][n1]['relation'], n1, r, document['temporal'][n0][n1]['reason'])
-            warn(testmessage, testclass, testlevel, testid, line0)
+    nodes_with_graph = [(x, temporal) for x in nodes]
+    compare_key = cmp_to_key(compare_temporal)
+    return [x[0] for x in sorted(nodes_with_graph, key=compare_key)]
+
+def compare_temporal(node1, node2):
+    temporal = node1[1]
+    if temporal.is_relation(node1[0], node2[0], [':before', ':contains']):
+        # node2 is before node 1
+        # node2 contains node1
+        # node1 > node2
+        return 1
+    elif temporal.is_relation(node1[0], node2[0], [':after', ':contained']):
+        # node2 is after node 1
+        # node2 is contained in node 1
+        # node1 < node2
+        return -1
     else:
-        #print("Adding %s %s %s because %s" % (n0, r, n1, reason))
-        if not n0 in document['temporal']:
-            document['temporal'][n0] = {}
-        if not n1 in document['temporal'][n0]:
-            document['temporal'][n0][n1] = {}
-        document['temporal'][n0][n1]['relation'] = r
-        document['temporal'][n0][n1]['reason'] = reason
+        # It could be identity.
+        # But it could be also incomparable situations: overlap or no relation at all.
+        return 0
 
 
 
@@ -1850,6 +2014,7 @@ if __name__=="__main__":
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
     report_group.add_argument('--print-relations', dest='print_relations', action='store_true', default=False, help='Print detailed info about all nodes and relations.')
     report_group.add_argument('--print-clusters', dest='print_clusters', action='store_true', default=False, help='Print detailed info about coreference clusters (entities).')
+    report_group.add_argument('--print-temporal', dest='print_temporal', action='store_true', default=False, help='Print detailed info about temporal relations.')
 
     args = opt_parser.parse_args() # Parsed command-line arguments
     error_counter={} # Incremented by warn()  {key: error type value: its count}
