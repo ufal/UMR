@@ -6,8 +6,9 @@ s5k / kandidovat-001 (blok Vlast kandidoval Lennarta Meriho)
 s1v / volit-001 (Estonci volili parlament)
 = s3v / volit-001 (Estonci volili parlament)
 = s5v / volit-001 (v nedělních volbách)
-= s6v / volit-001 ... habitual (jde o voliče, nikoli volby) ... ale má temporal, modal annotation? (doplnila ML)
 = s6v2 / volit-001 (se voleb zúčastnili)
+≠ s6v / volit-001 ... habitual (jde o voliče, nikoli volby)
+... s6v je dole uvedeno jako samostatný bod osy; nedá se o něm říct nic jiného, než že se překrývá s document-creation-time
 
 s5d / date-entity (nedělních)
 ... contains volbami (neděle je větší než volby)
