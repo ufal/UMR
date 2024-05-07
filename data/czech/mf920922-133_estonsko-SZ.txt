@@ -139,7 +139,9 @@ s4c: 1-1
 s4n: 0-0
 
 # document level annotation:
-(s4s0 / sentence)
+(s4s0 / sentence
+    :modal ((root :modal author)
+           (author :full-affirmative s3v)))
 
 
 ###########################################################################
@@ -231,9 +233,14 @@ s5p9: 10-10
 (s5s0 / sentence
      :temporal ((document-creation-time :before s5v3)
             (s5v3 :before s5n4)
-            (s5v :contained s5n4)
-            (s5b2 :contained s5v)
-            (s5z :contained s5v))
+            (s5n4 :contained s5v)
+            (s5v3 :before s5b2)
+            (s5v :overlap s5b2)
+            (s5n4 :contained s5z)
+            (s5b2 :overlap s5k)
+            (s5v3 :before s5k)
+            (s5h2 :overlap s5z)
+            (s5h2 :overlap s5v3))
     :modal ((root :modal author)
            (author :full-affirmative s5z))
     :coref ((s5p8 :same-entity s3p3)
@@ -322,10 +329,17 @@ s6n2: 0-0
 
 # document level annotation:
 (s6s0 / sentence
-    :temporal ((document-creation-time :before s6z)
-           (document-creation-time :before s6h))
+    :temporal ((document-creation-time :before s6v3)
+           (document-creation-time :before s6h)
+           (s6v3 :contained s6z)
+           (s6z :overlap s6h)
+           (s6v3 :contained s6h)
+           (s6v2 :overlap s6z)
+           (s6v :overlap s6v2)
+           s6i :overlap s6h))
     :modal ((root :modal author)
-           (author :full-affirmative s6h))
+           (author :full-affirmative s6h)
+           (author :full-affirmative s6i))
     :coref ((s6v3 :same-event s5v)
            (s6b :same-entity s5b)
            (s6p5 :same-entity s5p8)))
@@ -397,7 +411,10 @@ s7q: 9-9
 # document level annotation:
 (s7s0 / sentence
     :modal ((root :modal author)
-           (author :full-affirmative s7h)))
-
-
+           (author :full-affirmative s7h))
+    :temporal ((document-creation-time :overlap s7h)
+                (s7z :overlap s7h)
+                (s7z :overlap document-creation-time)
+                (s7r :contained s7h)))
+                
 ##############################################################################################################
