@@ -220,14 +220,14 @@ s5v3: 9-9
 
 # document level annotation:
 (s5s0 / sentence
-    :temporal ((document-creation-time :before s5z)
-            (document-creation-time :before s5k)
-            (s5z :before s5v)
+    :temporal ((document-creation-time :before s5v3)
+            (s5v3 :before s5d)
             (s5d :contained s5v)
-            (document-creation-time :before s5v3)
-            (document-creation-time :before s5p3)
+            (s5d :contained s5z)
+            (s5v :after s5z)
             (s5v3 :contained s5p3)
-            (s5v :after s5p3))
+            (document-creation-time :before s5k)
+            (s5k :contained s5d))
     :modal ((root :modal author)
             (author :full-affirmative s5z)
             (author :full-affirmative s5v)
@@ -308,17 +308,13 @@ s6n2: 26-26
 
 # document level annotation:
 (s6s0 / sentence
-    :temporal ((document-creation-time :before s6h)
-            (document-creation-time :before s6z)
-            (document-creation-time :before s6v2)
+    :temporal ((document-creation-time :before s6v2)
+            (s6v2 :contained s6z)
+            (s6z :contained s6i)
+            (s6i :contained s6h)
+            (s6v2 :overlap s6v)
             (document-creation-time :overlap s6p4)
-            (s6h :overlap s6z)
-            (s6h :overlap s6v2)
-            (s6z :overlap s6v2)
-            (document-creation-time :before s6v)
-            (s5p3 :after s6p4)
-            (s6v :overlap s6v2)
-            (s6h :overlap s6i))
+            (s5p3 :after s6p4))
     :modal ((root :modal author)
             (author :full-affirmative s6h)
             (author :full-affirmative s6v)
@@ -393,14 +389,16 @@ s7n3: 18-18
 
 # document level annotation:
 (s7s0 / sentence
-    :temporal ((document-creation-time :before s7d)
-            (document-creation-time :overlap s7h)
-            (document-creation-time :before s7p3)
+    :temporal (
+            (document-creation-time :before s7d)
             (document-creation-time :before s7z)
-            (s5p3 :overlap s7h)
+            (s7d :overlap s7z)
+            (s7z :contained s7i)
+            (s7i :contained s7h)
+            (s5p3 :after s7h)
+            (s7d :contained s7p3)
             (s7p3 :contained s6v2)
-            (s7d :contained s6v2)
-            (s7h :overlap s7i))
+            (s7d :contained s6v2))
     :modal ((root :modal author)
             (author :full-affirmative s7h)
             (author :full-affirmative s7p3))
