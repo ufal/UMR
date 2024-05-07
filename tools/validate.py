@@ -1856,7 +1856,7 @@ class Temporal:
                             candidates = [x for x in component if not x in self.already_printed]
                             if not candidates:
                                 break
-                        self.print_identity_cluster(candidates[0])
+                        self.print_identity_cluster(self.minimal_node(candidates))
 
     def component(self, node):
         """
@@ -1877,6 +1877,27 @@ class Temporal:
                     if not y in component and self.graph[x][y]['relation'] in [':before', ':after', ':identity', ':contained', ':contains']:
                         queue.append(y)
         return sorted_temporal(self, list(component))
+
+    def minimal_node(self, nodes):
+        """
+        Takes a list of nodes (a subset of the nodes in the graph).
+        Finds the node that is after as little nodes as possible (in the whole
+        graph, not just in this list; if the list contains all nodes of the
+        graph, we can find at least one node that is not after any other node)
+        and is before as many nodes as possible. For the purpose of ordering,
+        :contained counts as :after and :contains counts as :before.
+        As the nodes are only partially ordered, there may be multiple minimal
+        nodes; in such a case it returns the one whose id is alphabetically
+        minimal.
+        """
+        info = []
+        for node in nodes:
+            naft = len([x for x in self.graph if self.is_relation(x, node, [':after', ':contained'])])
+            nbef = len([x for x in self.graph if self.is_relation(x, node, [':before', ':contains'])])
+            info.append((naft, -nbef, node))
+        info.sort()
+        # The input list should be non-empty. Otherwise an exception will be thrown now.
+        return info[0][2]
 
     def print_identity_cluster(self, node):
         nodes = sorted([node] + [x for x in self.graph if self.is_relation(node, x, [':identity'])])
