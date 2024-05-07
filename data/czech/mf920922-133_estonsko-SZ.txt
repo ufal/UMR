@@ -140,8 +140,7 @@ s4n: 0-0
 
 # document level annotation:
 (s4s0 / sentence
-    :modal ((root :modal author)
-           (author :full-affirmative s3v)))
+    :modal ((root :modal author)))
 
 
 ###########################################################################
@@ -286,7 +285,7 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
 	                              :mod (s6a2 / asi)))))
     :ARG1 (s6b / blok
            :name (s6n2 / name :op1 "Vlast")
-           :wiki "Q1428217"
+           :wiki "Q163347"
            :refer-number singular)
     :aspect performance
     :modal-strength full-affirmative)
@@ -336,7 +335,7 @@ s6n2: 0-0
            (s6v3 :contained s6h)
            (s6v2 :overlap s6z)
            (s6v :overlap s6v2)
-           s6i :overlap s6h))
+           (s6i :overlap s6h))
     :modal ((root :modal author)
            (author :full-affirmative s6h)
            (author :full-affirmative s6i))
@@ -381,11 +380,11 @@ Sentence Gloss (en): The Safe House bloc of the current highest representative o
                  :refer-number plural
                  :quant (s7p2/ percentage-entity
 	                    :value (s7t2 / 13.9)))
-	          :ARG2 (s7m / mandát
+	             :ARG2 (s7m / mandát
 	                :refer-number plural
 	                :quant (s7q / 18))
-              :aspect state
-	          :modal-strength full-affirmative)
+                :aspect state
+	              :modal-strength full-affirmative)
       :aspect state
       :modal-strength full-affirmative)
 
@@ -415,6 +414,7 @@ s7q: 9-9
     :temporal ((document-creation-time :overlap s7h)
                 (s7z :overlap s7h)
                 (s7z :overlap document-creation-time)
-                (s7r :contained s7h)))
-                
-##############################################################################################################
+                (s7r :contained s7h)
+                (s7i :overlap s7h)))
+
+
