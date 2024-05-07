@@ -1,0 +1,135 @@
+Document temporal graph:
+
+document-creation-time -->
+    :before --> s1v (volit-001 'volili')
+    :before --> s3v (volit-001 'volili')
+    :before --> s5d (date-entity 'nedělních')
+    :before --> s5k (kandidovat-001 'kandidátem byl')
+    :before --> s5v (volit-001 'V volbách')
+    :before --> s5v3 (včera 'včerejších')
+    :before --> s5z (získat-001 'získal')
+    :before --> s6h (hlasovat-003 'hlasovalo')
+    :before --> s6v (volit-001 'voleb')
+    :before --> s6z (zúčastnit-se-001 'se zúčastnili')
+    :before --> s7p2 (představovat-003 'představitele')
+    :depends-on --> s7d (dosavadní 'dosavadního')
+    :depends-on --> s7z (zatím 'zatím')
+    :overlap --> s6i (include-91 'UNALIGNED')
+    :overlap --> s6p4 (představovat-003 'představuje')
+    :overlap --> s7h (have-ord-91 'je')
+    :overlap --> s7i (include-91 'UNALIGNED')
+s1v (volit-001 'volili') -->
+    :after --> document-creation-time
+    :after --> s5z (získat-001 'získal')
+    :contains --> s5d (date-entity 'nedělních')
+    :identity --> s3v (volit-001 'volili')
+    :identity --> s5v (volit-001 'V volbách')
+    :identity --> s6v (volit-001 'voleb')
+s3v (volit-001 'volili') -->
+    :after --> document-creation-time
+    :after --> s5z (získat-001 'získal')
+    :contains --> s5d (date-entity 'nedělních')
+    :identity --> s1v (volit-001 'volili')
+    :identity --> s5v (volit-001 'V volbách')
+    :identity --> s6v (volit-001 'voleb')
+s5d (date-entity 'nedělních') -->
+    :after --> document-creation-time
+    :after --> s5v3 (včera 'včerejších')
+    :before --> s5k (kandidovat-001 'kandidátem byl')
+    :contained --> s1v (volit-001 'volili')
+    :contained --> s3v (volit-001 'volili')
+    :contained --> s5v (volit-001 'V volbách')
+    :contained --> s5z (získat-001 'získal')
+    :contained --> s6v (volit-001 'voleb')
+s5k (kandidovat-001 'kandidátem byl') -->
+    :after --> document-creation-time
+    :after --> s5d (date-entity 'nedělních')
+    :after --> s5v (volit-001 'V volbách')
+    :after --> s5v3 (včera 'včerejších')
+    :after --> s5z (získat-001 'získal')
+s5v (volit-001 'V volbách') -->
+    :after --> document-creation-time
+    :after --> s5v3 (včera 'včerejších')
+    :after --> s5z (získat-001 'získal')
+    :before --> s5k (kandidovat-001 'kandidátem byl')
+    :contains --> s5d (date-entity 'nedělních')
+    :identity --> s1v (volit-001 'volili')
+    :identity --> s3v (volit-001 'volili')
+    :identity --> s6v (volit-001 'voleb')
+s5v3 (včera 'včerejších') -->
+    :after --> document-creation-time
+    :before --> s5d (date-entity 'nedělních')
+    :before --> s5k (kandidovat-001 'kandidátem byl')
+    :before --> s5v (volit-001 'V volbách')
+    :before --> s5z (získat-001 'získal')
+s5z (získat-001 'získal') -->
+    :after --> document-creation-time
+    :after --> s5v3 (včera 'včerejších')
+    :before --> s1v (volit-001 'volili')
+    :before --> s3v (volit-001 'volili')
+    :before --> s5k (kandidovat-001 'kandidátem byl')
+    :before --> s5v (volit-001 'V volbách')
+    :before --> s6v (volit-001 'voleb')
+    :contains --> s5d (date-entity 'nedělních')
+s6h (hlasovat-003 'hlasovalo') -->
+    :after --> document-creation-time
+    :overlap --> s6v (volit-001 'voleb')
+    :overlap --> s6z (zúčastnit-se-001 'se zúčastnili')
+s6i (include-91 'UNALIGNED') -->
+    :overlap --> document-creation-time
+    :overlap --> s6p4 (představovat-003 'představuje')
+s6p4 (představovat-003 'představuje') -->
+    :overlap --> document-creation-time
+    :overlap --> s6i (include-91 'UNALIGNED')
+s6v (volit-001 'voleb') -->
+    :after --> document-creation-time
+    :after --> s5z (získat-001 'získal')
+    :contains --> s5d (date-entity 'nedělních')
+    :identity --> s1v (volit-001 'volili')
+    :identity --> s3v (volit-001 'volili')
+    :identity --> s5v (volit-001 'V volbách')
+    :overlap --> s6h (hlasovat-003 'hlasovalo')
+    :overlap --> s6z (zúčastnit-se-001 'se zúčastnili')
+s6z (zúčastnit-se-001 'se zúčastnili') -->
+    :after --> document-creation-time
+    :overlap --> s6h (hlasovat-003 'hlasovalo')
+    :overlap --> s6v (volit-001 'voleb')
+s7d (dosavadní 'dosavadního') -->
+    :overlap --> s7p2 (představovat-003 'představitele')
+s7h (have-ord-91 'je') -->
+    :overlap --> document-creation-time
+    :overlap --> s7z (zatím 'zatím')
+s7i (include-91 'UNALIGNED') -->
+    :overlap --> document-creation-time
+    :overlap --> s7z (zatím 'zatím')
+s7p2 (představovat-003 'představitele') -->
+    :after --> document-creation-time
+    :overlap --> s7d (dosavadní 'dosavadního')
+s7z (zatím 'zatím') -->
+    :overlap --> s7h (have-ord-91 'je')
+    :overlap --> s7i (include-91 'UNALIGNED')
+
+Document time line:
+
+None :norel s5k (kandidovat-001 'kandidátem byl')
+s5k (kandidovat-001 'kandidátem byl') :after s5d (date-entity 'nedělních')
+s5d (date-entity 'nedělních') :contained s1v (volit-001 'volili')
+s1v (volit-001 'volili') :identity s3v (volit-001 'volili')
+s3v (volit-001 'volili') :identity s5v (volit-001 'V volbách')
+s5v (volit-001 'V volbách') :identity s6v (volit-001 'voleb')
+s5v (volit-001 'V volbách') :after s5v3 (včera 'včerejších')
+s5v3 (včera 'včerejších') :before s5z (získat-001 'získal')
+s5z (získat-001 'získal') :after document-creation-time
+document-creation-time :before s6h (hlasovat-003 'hlasovalo')
+document-creation-time :before s6z (zúčastnit-se-001 'se zúčastnili')
+document-creation-time :before s7p2 (představovat-003 'představitele')
+
+document-creation-time :overlap s6i (include-91 'UNALIGNED')
+
+s6i (include-91 'UNALIGNED') :overlap s6p4 (představovat-003 'představuje')
+document-creation-time :depends-on s7d (dosavadní 'dosavadního')
+
+document-creation-time :overlap s7h (have-ord-91 'je')
+
+document-creation-time :overlap s7i (include-91 'UNALIGNED')
+document-creation-time :depends-on s7z (zatím 'zatím')

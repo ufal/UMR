@@ -1,0 +1,85 @@
+Document temporal graph:
+
+document-creation-time -->
+    :before --> s1v (volit-001 'volili')
+    :before --> s3v (volit-001 'volili')
+    :before --> s5n4 (neděle 'UNALIGNED')
+    :before --> s5v (volit-002 'V volbách')
+    :before --> s5v3 (včera 'včerejších')
+    :before --> s6h (hlasovat 'hlasovalo')
+    :before --> s6v3 (volit-001 'voleb')
+    :before --> s6z (zúčastnit-se-001 'se zúčastnili')
+s1v (volit-001 'volili') -->
+    :after --> document-creation-time
+    :contained --> s5n4 (neděle 'UNALIGNED')
+    :contains --> s5b2 (have-mod-91 'byl')
+    :contains --> s5z (získat-001 'získal')
+    :identity --> s3v (volit-001 'volili')
+    :identity --> s5v (volit-002 'V volbách')
+    :identity --> s6v3 (volit-001 'voleb')
+s3v (volit-001 'volili') -->
+    :after --> document-creation-time
+    :contained --> s5n4 (neděle 'UNALIGNED')
+    :contains --> s5b2 (have-mod-91 'byl')
+    :contains --> s5z (získat-001 'získal')
+    :identity --> s1v (volit-001 'volili')
+    :identity --> s5v (volit-002 'V volbách')
+    :identity --> s6v3 (volit-001 'voleb')
+s5b2 (have-mod-91 'byl') -->
+    :contained --> s1v (volit-001 'volili')
+    :contained --> s3v (volit-001 'volili')
+    :contained --> s5n4 (neděle 'UNALIGNED')
+    :contained --> s5v (volit-002 'V volbách')
+    :contained --> s6v3 (volit-001 'voleb')
+s5n4 (neděle 'UNALIGNED') -->
+    :after --> document-creation-time
+    :after --> s5v3 (včera 'včerejších')
+    :contains --> s1v (volit-001 'volili')
+    :contains --> s3v (volit-001 'volili')
+    :contains --> s5b2 (have-mod-91 'byl')
+    :contains --> s5v (volit-002 'V volbách')
+    :contains --> s5z (získat-001 'získal')
+    :contains --> s6v3 (volit-001 'voleb')
+s5v (volit-002 'V volbách') -->
+    :after --> document-creation-time
+    :contained --> s5n4 (neděle 'UNALIGNED')
+    :contains --> s5b2 (have-mod-91 'byl')
+    :contains --> s5z (získat-001 'získal')
+    :identity --> s1v (volit-001 'volili')
+    :identity --> s3v (volit-001 'volili')
+    :identity --> s6v3 (volit-001 'voleb')
+s5v3 (včera 'včerejších') -->
+    :after --> document-creation-time
+    :before --> s5n4 (neděle 'UNALIGNED')
+s5z (získat-001 'získal') -->
+    :contained --> s1v (volit-001 'volili')
+    :contained --> s3v (volit-001 'volili')
+    :contained --> s5n4 (neděle 'UNALIGNED')
+    :contained --> s5v (volit-002 'V volbách')
+    :contained --> s6v3 (volit-001 'voleb')
+s6h (hlasovat 'hlasovalo') -->
+    :after --> document-creation-time
+s6v3 (volit-001 'voleb') -->
+    :after --> document-creation-time
+    :contained --> s5n4 (neděle 'UNALIGNED')
+    :contains --> s5b2 (have-mod-91 'byl')
+    :contains --> s5z (získat-001 'získal')
+    :identity --> s1v (volit-001 'volili')
+    :identity --> s3v (volit-001 'volili')
+    :identity --> s5v (volit-002 'V volbách')
+s6z (zúčastnit-se-001 'se zúčastnili') -->
+    :after --> document-creation-time
+
+Document time line:
+
+None :norel s5b2 (have-mod-91 'byl')
+s5b2 (have-mod-91 'byl') :contained s1v (volit-001 'volili')
+s1v (volit-001 'volili') :identity s3v (volit-001 'volili')
+s3v (volit-001 'volili') :identity s5v (volit-002 'V volbách')
+s5v (volit-002 'V volbách') :identity s6v3 (volit-001 'voleb')
+s6v3 (volit-001 'voleb') :contains s5z (získat-001 'získal')
+s5z (získat-001 'získal') :contained s5n4 (neděle 'UNALIGNED')
+s5n4 (neděle 'UNALIGNED') :after s5v3 (včera 'včerejších')
+s5v3 (včera 'včerejších') :after document-creation-time
+document-creation-time :before s6h (hlasovat 'hlasovalo')
+document-creation-time :before s6z (zúčastnit-se-001 'se zúčastnili')
