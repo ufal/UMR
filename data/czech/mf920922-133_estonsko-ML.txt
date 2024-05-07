@@ -170,17 +170,18 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
             :quant (s5n1 / nejvíce))
     :ARG2 (s5v / volit-001
                 :wiki "Q372557"
-                :ARG0 (s5p4 / person))
+                :ARG0 (s5p5 / person
+                      :mod (s3c / country
+                             :wiki "Q191"
+                             :refer-number singular
+                             :name (s3n / name :op1 "Estonsko")))
                 :ARG1 (s5p / parlament
                     :wiki "Q217799"
                     :refer-number singular)
                 :temporal (s5d / date-entity
                     :weekday (s5n2 / neděle
                     :wiki "Q132"))
-                :place (s5c / country
-                    :wiki "Q191"
-                    :refer-number singular
-                    :name (s5n3 / name :op1 "Estonsko"))
+                :place s5c
                 :aspect activity
                 :modal-strength full-affirmative)
     :manner (s5v2 / výsledek
@@ -197,6 +198,7 @@ s5b: 14-17
 s5n: 0-0
 s5k: 19-20
 s5p4: 18-18
+s5p5: 0-0
 s5p3: 21-22
 s5n4: 0-0
 s5h: 13-13
@@ -276,7 +278,7 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
                                    :aspect state
                                    :modal-strength full-affirmative))
       :aspect state
-      :modal-strength full-affirmative))
+      :modal-strength full-affirmative)
 
 # alignment:
 s6h: 12-12
@@ -294,6 +296,7 @@ s6p6: 25-25, 27-27
 s6n2: 26-26
 s6b: 13-15
 s6n: 0-0
+s6p8: 0-0
 
 # document level annotation:
 (s6s0/ sentence
@@ -345,16 +348,19 @@ Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates
                                :aspect state
                                :modal-strength full-affirmative)))
      :ARG2 (s7d2 / dva)
-     :manner (s7h3 / hlas
-            :refer-number plural
-            :ARG2-of (s7i / include-91
-            :ARG3 (s7p3 / percentage-entity :value 13.9)
-            :aspect state
-            :modal-strength full-affirmative))
-     :manner (s7m3 / mandát
-              :wiki "Q486839"
-              :quant 18
-              :refer-number plural)
+     :manner (s7i / identity-91
+                   :ARG1 (s7h3 / hlas
+                             :refer-number plural
+                             :ARG2-of (s7i / include-91
+                                    :ARG3 (s7p3 / percentage-entity :value 13.9)
+                                    :aspect state
+                                    :modal-strength full-affirmative))
+                   :ARG2 (s7m3 / mandát
+                            :wiki "Q486839"
+                            :quant 18
+                            :refer-number plural)
+                   :aspect state
+                   :modal-strength full-affirmative)
      :temporal (s7z / zatím)
      :aspect state
      :modal-strength full-affirmative)

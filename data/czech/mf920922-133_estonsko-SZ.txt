@@ -130,7 +130,8 @@ Sentence Gloss (en): Tallinn -
 (s4p / publication-91
       :place (s4c / city
          :wiki "Q1770"
-         :name (s4n / name :op1 "Tallin")))
+         :name (s4n / name :op1 "Tallin")
+         :refer-number singular))
 
 # alignment:
 s4p: 0-0
@@ -154,25 +155,22 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
 
 # sentence level graph:
 (s5z / získat-001
-      :aspect performance
-      :modal-strength full-affirmative
       :ARG0 (s5b / blok
          :name (s5n / name :op1 "Vlast")
+         :refer-number singular
          :wiki "Q163347"
-         :mod (s5b2 / have-mod-91
-             :aspect state
-             :modal-strength full-affirmative
-             :ARG0 (s5p / person
-                    :wiki "Q153149"
-                    :name (s5n2 / name :op1 "Lennart" :op2 "Meri"))
-             :ARG1 (s5p2 / person
-                    :mod (s5k / kandidovat-002
-                         :aspect activity
-                         :modal-strength full-affirmative
-                         :ARG0 (s5p3 / person)
-                         :ARG1 (s5p4 / prezident
-                               :wiki "Q30461")
-                    :possessor (s5j / on)))))
+         :possessor-of (s5p2 / person
+                         :ARG0-of (s5k / kandidovat-002
+                                    :aspect state
+                                    :modal-strength full-affirmative
+                                    :ARG1 (s5p4 / prezident
+                                             :wiki "Q30461")
+                                    :ARG2-of (s5b2 / have-mod-91
+                                                 :aspect state
+                                                 :modal-strength full-affirmative
+                                                 :ARG1 (s5p / person
+                                                         :wiki "Q153149"
+                                                         :name (s5n2 / name :op1 "Lennart" :op2 "Meri"))))))
       :ARG1 (s5h / hlas
              :wiki "Q1306135"
              :ARG1-of (s5h2/ have-quant-91
@@ -184,8 +182,9 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
             :ARG0 (s5p5 / person)
             :ARG1 (s5p6 / person)
             :ARG2 (s5p7 / function
-                 :mod (s5p8 / parlament)
-            :wiki "Q40231"
+                 :mod (s5p8 / parlament
+                            :wiki "Q217799"))
+            :wiki "Q372557"
             :aspect performance
             :modal-strength full-affirmative
             :temporal (s5d / date-entity
@@ -193,27 +192,25 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
                               :wiki "Q132"))
             :place (s5c / country
                 :wiki "Q191"
-                :name (s5n5 / name :op1 "Estonsko"
-                          refer-number singular))))
+                :name (s5n5 / name :op1 "Estonsko")
+                :refer-number singular))
       :manner (s5v2 / výsledek
             :refer-number plural
             :temporal (s5v3 / včera)
             :mod (s5p9 / předběžný))
       :aspect performance
-	    :modal-strength full-affirmative)
+	  :modal-strength full-affirmative)
 
 # alignment:
 s5z: 7-7
-s5b: 14-14
-s5n: 15-15
+s5b: 14-17
+s5n: 0-0
 s5b2: 20-20
 s5p: 21-22
 s5n2: 0-0
 s5p2: 19-19
 s5k: 0-0
-s5p3: 0-0
 s5p4: 18-18
-s5j: 17-17
 s5h: 13-13
 s5n3: 12-12
 s5h2: 0-0
@@ -240,9 +237,8 @@ s5p9: 10-10
     :modal ((root :modal author)
            (author :full-affirmative s5z))
     :coref ((s5p8 :same-entity s3p3)
-             (s5v :same-entity s3v)
-             (s5c :same-entity s3c)
-             (s5j :same-entity s5b)))
+             (s5v :same-event s3v)
+             (s5c :same-entity s3c)))
 
 
 ###########################################################################
@@ -265,7 +261,7 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
             :ARG0-of (s6v / volit-001
                        :aspect performance
                        :modal-strength full-affirmative
-                 :part-of (s6p2 / person
+                 :part (s6p2 / person
                       :refer-number plural
                       :ARG0-of (s6v2 / volit-001
                           :aspect performance
@@ -330,7 +326,7 @@ s6n2: 0-0
            (document-creation-time :before s6h))
     :modal ((root :modal author)
            (author :full-affirmative s6h))
-    :coref ((s6v3 :same-entity s5v)
+    :coref ((s6v3 :same-event s5v)
            (s6b :same-entity s5b)
            (s6p5 :same-entity s5p8)))
 
@@ -365,20 +361,17 @@ Sentence Gloss (en): The Safe House bloc of the current highest representative o
                         :wiki "Q194000")))
       :temporal (s7z / zatím)
       :ord (s7o / 2)
-      :cause (s7t / thing
-            :ARG1-of (s7h2 / hlas
-                 :aspect state
-                 :modal-strength full-affirmative
+      :cause (s7i / identity-91
+               :ARG1 (s7h2 / hlas
                  :wiki "Q1306135"
-                 :refer-number singular
+                 :refer-number plural
                  :quant (s7p2/ percentage-entity
 	                    :value (s7t2 / 13.9)))
-	          :ARG0-of (s7i / identity
-	             :aspect state
-	             :modal-strength full-affirmative
-	             :ARG1 (s7m / mandát
-	                :refer-number singular
-	                :quant (s7q / 18))))
+	          :ARG2 (s7m / mandát
+	                :refer-number plural
+	                :quant (s7q / 18))
+              :aspect state
+	          :modal-strength full-affirmative)
       :aspect state
       :modal-strength full-affirmative)
 
@@ -394,11 +387,10 @@ s7d: 17-17
 s7n3: 21-22
 s7z: 13-13
 s7o: 1-3
-s7t: 0-0
 s7h2: 4-4, 7-7
 s7p2: 6-6
 s7t2: 5-5
-s7i: 8-8, 11-11
+s7i: 0-0
 s7m: 10-10
 s7q: 9-9
 
