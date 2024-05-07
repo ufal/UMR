@@ -1498,10 +1498,16 @@ def validate_document_relations(sentence, node_dict, args):
         # convention so that node0 is the one defined before node1 (line-wise).
         # We only cannot extend it to the ':contained' relations because there
         # is no way of inverting them following the guidelines.
-        if r['relation'] != ':contained' and node0_line > node1_line:
-            testid = 'wrong-node-order'
-            testmessage = "Document-level relation should not go from a newer node ('%s' defined on line %d) to an older node ('%s' defined on line %d)." % (r['node0'], node0_line, r['node1'], node1_line)
-            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+        # EDIT 2024-05-06: Markéta says that this rule cannot stand because she
+        # wants to order the relations in the temporal annotation as they were
+        # added. And sometimes we must (according to the guidelines) first add
+        # a node that occurs later in the sentence graph. For example, we must
+        # wait with adding events until all temporal expressions have been
+        # added, even if a temporal expression occurs later in the sentence.
+        #if r['relation'] != ':contained' and node0_line > node1_line:
+        #    testid = 'wrong-node-order'
+        #    testmessage = "Document-level relation should not go from a newer node ('%s' defined on line %d) to an older node ('%s' defined on line %d)." % (r['node0'], node0_line, r['node1'], node1_line)
+        #    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 def collect_coreference_clusters(document, node_dict, args):
     """
