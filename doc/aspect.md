@@ -3,14 +3,14 @@
 #### Quick HowTo for annotating Czech sentences:
 
 1. **event nominals** --> `process` (like _After the **game.process**, she went.performance home._)
-2. events presented as **occurring usually** or **habitually** --> `habitual` (as in  _Pekař **peče,habitual** housky_; maybe also for **agentive nouns?**)
-2. **NOT processes** (no changes) like statives, modals and similar verbs --> `state` (_He **likes.stat** fish and chips, she **prefers.state** cheesburgers._)
-3. **processes, imperfective verbs** (morphologically)  --> `activity` (by default),  
+2. events presented as **occurring usually** or **habitually** --> `habitual` (as in  _Pekař **peče.habitual** housky_; maybe also for **agentive nouns?**)
+3. **NOT processes** (no changes) like statives, modals and similar verbs --> `state` (_He **likes.stat** fish and chips, she **prefers.state** cheesburgers._)
+4. **processes, imperfective verbs** (morphologically)  --> `activity` (by default),  
 or `habitual` (if the denoted event occurs usually/repeatably);  
 also `performance` may be considered (with stressed result)
-4. **processes, perfective verb** (morphologically) --> `performance` (by default);  
+5. **processes, perfective verb** (morphologically) --> `performance` (by default);  
 also `endeavor` may be considered (if it is clear that the process stopped/was interrupted without reaching a result state)
-5. **processes, double aspect verbs** --> `process` (as a back-up) if it is hard/ impossible to distinguish 
+6. **processes, double aspect verbs** --> `process` (as a back-up) if it is hard/ impossible to distinguish 
 
 Typically, we adhere to surface marking - e.g.,  the sentence _Estonci volili parlament._ should get the `activity` aspect value due to the imperfective verb _volit_ (and we do not imply that it means their parliament is renewed).
 
