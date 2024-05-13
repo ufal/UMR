@@ -2,8 +2,9 @@
 
 #### Quick HowTo for annotating Czech sentences:
 
-1. **event nominals** --> `process`, like _After the **game.process**, she went.performance home._
-2. **not processes** (no changes) like statives, modals and similar verbs --> `state` (_He **likes.stat** fish and chips, she **prefers.state** cheesburgers._)
+1. **event nominals** --> `process` (like _After the **game.process**, she went.performance home._)
+2. events presented as **occurring usually** or **habitually** --> `habitual` (as in  _Pekař **peče,habitual** housky_; maybe also for **agentive nouns?**)
+2. **NOT processes** (no changes) like statives, modals and similar verbs --> `state` (_He **likes.stat** fish and chips, she **prefers.state** cheesburgers._)
 3. **processes, imperfective verbs** (morphologically)  --> `activity` (by default),  
 or `habitual` (if the denoted event occurs usually/repeatably);  
 also `performance` may be considered (with stressed result)
