@@ -3,23 +3,26 @@ Time line for the Estonian document
 s5k / kandidovat-001 (blok Vlast kandidoval Lennarta Meriho)
 ... před volbami
 
+s5d / date-entity (nedělních)
+... contains volbami (neděle je větší než volby)
+
 s1v / volit-001 (Estonci volili parlament)
 = s3v / volit-001 (Estonci volili parlament)
 = s5v / volit-001 (v nedělních volbách)
 = s6v2 / volit-001 (se voleb zúčastnili)
 ≠ s6v / volit-001 ... habitual (jde o voliče, nikoli volby)
 ... s6v je dole uvedeno jako samostatný bod osy; nedá se o něm říct nic jiného, než že se překrývá s document-creation-time
-
-s5d / date-entity (nedělních)
-... contains volbami (neděle je větší než volby)
+... contained v neděli
 
 s6h / hlasovat-003 (voličů hlasovalo)
 ... overlap s volbami
 
-s6i / include-91 ... doplnila ML
-
 s6z / zúčastnit-se-001 (kteří se voleb zúčastnili)
 ... overlap s volbami
+
+s6i / include-91 (20.5 procenta z celkového počtu voličů) ... doplnila ML
+... DCT :overlap s6i;
+... s6p4 (což představuje 28 mandátů) :overlap s6i
 
 s5z / získat-001 (blok Vlast získal v nedělních volbách)
 ... buď overlap s volbami, nebo je to po volbách (přesně zřejmě v okamžik ukončení voleb)
@@ -29,9 +32,17 @@ s5p3 / předbíhat-001 (předběžných výsledků)
 
 s5v3 / včera (včerejších předběžných výsledků)
 ... contains předbíhání (včera je větší než předběhnutí)
+... OK události se mají primárně věšet na časová určení, tedy (s5v3 /včera :contained s5p3 / předbíhat)
 
 s6p4 / představovat-003 (což představuje 28 mandátů)
 ... po předběžných výsledcích nebo přinejmenším po volbách?
+
+s7i2 / include-91 (13.9 procenty hlasů) ... doplnila ML
+... DCT: overlap s7i2
+
+s7i / identity-91 (13.9 procenty hlasů = 28 mandátů) ... doplnila ML
+... DCT: overlap s7i
+... s7z (zatím) :overlap s7i
 
 s7h / have-ord-91 (na druhém místě je zatím)
 ... overlap s předběžnými výsledky
@@ -40,11 +51,19 @@ s7p3 / představovat-003 (nejvyššího představitele)
 ... overlap se vším? (Začalo to už před volbami a trvá to dosud, tedy i chvilku po volbách.)
 ... tedy s6v2 (volby) je contained v s7p3
 
+s7z / zatím ... doplnila ML
+... DCT :depends-on /? stejné s7z
+... s7z :overlap s7h (have order)
+... s7z :overlap s7i (include)
+
 document-creation-time
 ... až po všem výše uvedeném
 
 s7d / dosud (dosavadního představitele)
 ... stejné jako document-creation-time
 
+==================
+
 s6v / volit-001 (voličů)
 ... obecná událost bez časového ukotvení! (I když teď zrovna volili ve volbách, které ukotvení mají.)
+--> jako taková se asi vůbec vyhledem k času neanotuje

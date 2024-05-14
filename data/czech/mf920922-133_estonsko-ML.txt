@@ -214,13 +214,16 @@ s5v3: 9-9
 s5p2: 10-10
 
 # document level annotation:
+#              (document-creation-time :before s5v)
+#              (document-creation-time :before s5k)
+#              (document-creation-time :before s5z)
 (s5s0/ sentence
     :temporal((document-creation-time :before s5v3)
               (s5v3 :before s5d)
               (s5d :before s5k)
+              (s5d :contained s5z)
               (s5d :contained s5v)
-              (s5v :after s5z)
-              (s5d :contained s5z))
+              (s5v :after s5z))
     :modal ((root :modal author)
             (author :full-affirmative s5v)
             (author :full-affirmative s5k)
@@ -299,15 +302,15 @@ s6n: 0-0
 s6p8: 0-0
 
 # document level annotation:
+#(document-creation-time :before s6z)
+#(document-creation-time :before s6h)
+#(document-creation-time :overlap s6i)
 (s6s0/ sentence
-    :temporal((document-creation-time :before s6z)
-              (document-creation-time :before s6v)
-              (document-creation-time :before s6h)
+    :temporal((document-creation-time :before s6v)
               (s6z :overlap s6v)
               (s6v :overlap s6h)
               (s6h :overlap s6z)
               (document-creation-time :overlap s6p4)
-              (document-creation-time :overlap s6i)
               (s6p4 :overlap s6i))
     :modal ((root :modal author)
             (author :full-affirmative s6z)
@@ -316,7 +319,7 @@ s6p8: 0-0
             (author :full-affirmative s6p4)
             (author :full-affirmative s6i))
     :coref ((s3p2 :subset-of s6p7)
-            (s3v :same-event s6v)
+            (s5v :same-event s6v)
             (s5b :same-entity s6b)
             (s5p :same-entity s6p6)))
 
@@ -345,7 +348,7 @@ Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates
                                     :refer-number singular)
                                :temporal (s7d / dosavadní)
                                :manner (s7n3 / nejvyšší)
-                               :aspect performance
+                               :aspect habitual
                                :modal-strength full-affirmative)))
      :ARG2 (s7d2 / dva)
      :manner (s7i / identity-91
@@ -384,13 +387,13 @@ s7m3: 9-10
 s7z: 13-13
 
 # document level annotation:
+#(document-creation-time :before s7p2)
+#(document-creation-time :overlap s7i)
+#(document-creation-time :overlap s7i2)
+#(document-creation-time :overlap s7h)
 (s7s0/ sentence
     :temporal((document-creation-time :depends-on s7z)
               (document-creation-time :depends-on s7d)
-              (document-creation-time :overlap s7h)
-              (document-creation-time :before s7p2)
-              (document-creation-time :overlap s7i)
-              (document-creation-time :overlap s7i2)
               (s7z :overlap s7h)
               (s7d :overlap s7p2)
               (s7z :overlap s7i))
