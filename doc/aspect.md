@@ -3,8 +3,8 @@
 #### Quick HowTo for annotating Czech sentences:
 
 1. **event nominals:**  
-1.1 verbal nouns ending with _-ní/tí_  in --> inherit the value of the verb  (like _Milovala **nakupování.activity**_; _Na naše **dotázání (se).performance** neodpověděli._)
-1.2 other nouns --> `process` (like _After the **game.process**, she went.performance home._; _Na náš **dotáz.process** neodpověděli._)  
+1.1 verbal nouns ending with _-ní/tí_  in --> inherit the value of the verb  (like _Milovala **nakupování.activity**_; _Na naše **dotázání (se).performance** neodpověděli._)  
+1.2 other nouns --> `process` (like _After the **game.process**, she went.performance home._; _Na náš **dotáz.process** neodpověděli._)    
 2. events presented as **occurring usually** or **habitually** --> `habitual` (as in  _Pekař **peče.habitual** housky_; maybe also for **agentive nouns?**)  
 3. **NOT processes** (no changes) like statives, modals and similar verbs --> `state` (_He **likes.stat** fish and chips, she **prefers.state** cheesburgers._)
 4. **PROCESSES:**  
