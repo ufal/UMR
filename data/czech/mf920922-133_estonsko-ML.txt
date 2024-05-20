@@ -320,6 +320,8 @@ s6p8: 0-0
             (author :full-affirmative s6i))
     :coref ((s3p2 :subset-of s6p7)
             (s5v :same-event s6v)
+            (s6v :same-event s6z)
+            (s6v :same-event s6h)
             (s5b :same-entity s6b)
             (s5p :same-entity s6p6)))
 
