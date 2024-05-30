@@ -12,9 +12,9 @@ připouštějí, že asi 0,3 % grafů AMR obsahuje legitimní cykly.
 
 ## Koncept (concept) a proměnná (variable)
 
-Podle AMR se vnitřním uzlům grafu říká **proměnné** a listům **koncepty**.
+Podle AMR vnitřní uzly grafu odpovídají **proměnným**, zatímco listy jsou **koncepty**.
 Každý koncept je připojen k nějaké proměnné hranou, která představuje relaci
-**instance**. Říkáme, že koncept X je instancí proměnné Y. V textové
+**instance**. Říkáme, že proměnná X je instancí konceptu Y. V textové
 reprezentaci AMR i UMR se relace instance vyjadřuje lomítkem, před ním je
 proměnná a za ním je koncept:
 
