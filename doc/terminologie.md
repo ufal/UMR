@@ -38,11 +38,10 @@ software by doufejme měl umět načíst obojí, ale formální specifikace chyb
 Podle příkladů se zdá, že platí následující (ale nikde jsem nenašel jasné
 vyjádření, že to musí platit):
 
-* Každá proměnná má právě jednu instanci (koncept).
-* Uzel s konceptem je připojen jako instance k právě jedné proměnné. Pokud
-  je v grafu více proměnných, jejichž instancí je stejný koncept, budou tyto
-  koncepty zobrazeny jako samostatné listy, přestože odpovídají téže položce
-  ve slovníku. Reentrance (více než jedna příchozí hrana) je možná u
+* Každá proměnná má právě jednu instanci (koncept). OPRAVA: Každá proměnná je instancí právě jednoho konceptu (viz AMR příklad s proměnnou w, která ke instancí události `wanting`, viz příklad níž
+* Uzel s konceptem je připojen jako instance k právě jedné proměnné. OPRAVA: Uzel s konceptem je instancí právě jedné proměnné.  
+  Pokud  je v grafu více proměnných, jejichž instancí je stejný koncept OPRAVA: jež  jsou instancí stejného konceptu, budou tyto koncepty zobrazeny jako samostatné listy, přestože odpovídají téže položce  ve slovníku.   
+  Reentrance (více než jedna příchozí hrana) je možná u
   proměnných, ale ne u konceptů.
 * Z toho ovšem plyne, že můžeme zavést zjednodušený graf UMR, kde hrany
   instance neexistují a koncept byl se svou proměnnou stažen do jednoho uzlu.
