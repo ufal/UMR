@@ -365,6 +365,7 @@ Sentence Gloss (en): The Safe House bloc of the current highest representative o
             :aspect state
             :modal-strength full-affirmative)
         :mod (s7m / mandát
+            :refer-number plural
             :quant 18))
     :temporal (s7z / zatím)
     :aspect state
