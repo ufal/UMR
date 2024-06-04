@@ -340,7 +340,7 @@ Sentence Gloss (en): The Safe House bloc of the current highest representative o
 # sentence level graph:
 # Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882
 (s7h / have-ord-91
-    :ARG0 (s7b / blok
+    :ARG1 (s7b / blok
         :wiki "Q31271882"
         :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
         :possessor (s7p2 / person
@@ -356,7 +356,7 @@ Sentence Gloss (en): The Safe House bloc of the current highest representative o
                 :modal-strength full-affirmative)
             :refer-number singular)
         :refer-number singular)
-    :ord (s7o / ordinal-entity :value 2)
+    :ARG2 (s7o / ordinal-entity :value 2)
     :cause (s7p / percentage-entity
         :value 13.9
         :ARG3-of (s7i / include-91
