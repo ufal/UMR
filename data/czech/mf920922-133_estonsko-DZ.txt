@@ -262,7 +262,7 @@ Sentence Gloss (en): Of the total number of 457,319 voters who took part in the 
                         :wiki "Q372557"
                         :aspect process
                         :modal-strength full-affirmative)
-                    :aspect endeavor
+                    :aspect performance
                     :modal-strength full-affirmative))
             :ARG3 (s6p2 / percentage-entity
                 :value (s6a / asi :op1 20.5)
