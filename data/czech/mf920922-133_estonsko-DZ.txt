@@ -168,7 +168,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
                 :ARG1 (s5p5 / prezident
                     :wiki "Q30461"
                     :refer-number singular)
-                :aspect performance
+                :aspect state
                 :modal-strength full-affirmative)))
     :ARG1 (s5h / hlas
         :wiki "Q1306135"
@@ -186,7 +186,7 @@ Sentence Gloss (en): In Sunday's parliamentary elections in Estonia, according t
             :wiki "Q191"
             :name (s5n3 / name :op1 "Estonsko")
             :refer-number singular)
-        :aspect process
+        :aspect activity
         :modal-strength full-affirmative)
     :according-to (s5v2 / výsledek
         :wiki "Q51591359"
