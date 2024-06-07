@@ -348,7 +348,7 @@ Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates
                                :ARG1 (s7r / republika
                                     :wiki "Q191"
                                     :refer-number singular)
-                               :temporal (s7d / dosavadní)
+                               :temporal (s7d / dosud)
                                :manner (s7n3 / nejvyšší)
                                :aspect habitual
                                :modal-strength full-affirmative)))
