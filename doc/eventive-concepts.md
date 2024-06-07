@@ -1,8 +1,18 @@
 # Summary: How to distinguish events and non-events
 
-## 1. "Non-Action" verbs  in references and modification 
+## Consequences of being designated an 'event' in UMR
 
-### 1.A Stative verbs 
+The consequences of being designated an 'event' in UMR are the following (as summarized by Julia Bonn):
+ - **roleset use:**: if rolesets are being used, qualifying as an 'event' means that it is reasonable to represent the expression in question using a roleset.   
+ (But note that it is also possible to use rolesets for expressions that do not qualify as 'events'. For example, in English, the roleset `hunger-01` has been used to cover expressions 'hunger-verb', 'hunger-noun', and 'hungry-adjective'. According to the guidelines, 'hungry' in the sentence _the hungry man_ is a state in modification, and therefore doesn't count as an 'event'. But the roleset for _hunger_ is still semantically relevant -- both in terms of sense disambiguation and in terms of the allowed argument structure. What I've been proposing (and which seems to be agreed to by everyone now) is that we should be allowed to use the `hunger-01` roleset here.) 
+- **:aspect annotation:** 'events' receive aspect annotation. 
+- **:modal-strength annotation:** 'events' receive modal annotation in the sentence and document graphs
+- **:temporal dependency annotation:** 'events' qualify for placement in the document-level temporal dependency. 
+
+
+## 1. Verbs and abstract predicates (in references and modification) 
+
+### 1.A Stative verbs ... in the same way as action verbs (as events)
 We do not want to distinguish between **action and state verbs** (due to an unclear boundary in Czech. 
 
 If stative verbs such as _milovat_ “love” occur as concepts, they will be treated as events regardless whether they are used in predication (_on ji miluje_), modification (_muž, který ji miluje_) or reference (_milovat ji je jeho osud_).
@@ -11,7 +21,7 @@ If stative verbs such as _milovat_ “love” occur as concepts, they will be tr
 What about **stative verbs** in **reference or modification**? One would suppose that they should not be treated as events (they do not denote processes and are not used in predication). Am I right?  
 
  **Feedback from Julia:**   
- This question is one of my own great questions right now.   
+This question is one of my own great questions right now.   
 1. If a state is being used as **modification** of some referent, and it's not given as a predicate, then theoretically it wouldn't be treated as an event.   
 For me, with English, I would still use an applicable roleset if one exists-- I just wouldn't complete :aspect, :modal-strength, or :temporal dependency annotation.
 2. For states in **reference** though, the guidelines specify that they should not be treated as events, but I'm not sure I agree. It seems to me like referring to the abstraction notion of 'kindness' is one thing-- certainly that doesn't seem like it needs :aspect, :modal-strength, or :temporal dependency annotation. But 'his kindness to his mother last week' is much more event-like.   
@@ -24,7 +34,7 @@ I'm not sure where to draw the line. I am hoping to get some clarification on th
 >   further, it qualifies for placement in the document-level `:temporal dependency` annotation. 
 
 
-### 1.B "Abstract predicates" such as have-91, ... identity-91 
+### 1.B "Abstract predicates" such as have-91, identity-91 ... in the same way as action verbs (as events)
 These 9 predicates introduced in 3.1.1.3 are definitely considered events if structured as predication, as, e.g., in _Petr je bohatý_ (with the _have-mod-91_ predicate).
 ~~We tentatively  decided that the abstract predicates (reifications) will in general be treated as stative verbs, i.e., as events, independently of their packaging.~~   
 
@@ -37,22 +47,18 @@ These predicates are used less frequently in modification because then we can us
 > We will use "abstract predicates" only in cases of predication (using their rolesets and including the aspect, modal and temporal dependency annotation).   
 > Otherwise we will stick to the relation they reify.
 
-### 1.C Other abstract rolesets - reification, implicit rolesets 
-Are the following abstract rolesets (1. and 2. below) used in the same way as "abstract predicates" (above)? 
-1. rolesets for reifications and  
-2. rolesets for indicating metadata info (_publication-91_, _hyperlink-91_, _street-address-91_, ...)  
-
+### 1.C Reification ... in the same way as action verbs (as events)
+Are  rolesets for reifications used in the same way as "abstract predicates" (above)? 
 
 **Feedback from Julia:**  
 1. Reification: I think it's much more unusual for a lot of the other **implicit rolesets** to come up in a predicated form, but some of them do occasionally, and that goes for the -91 rolesets used for **reification** as well. (Generally, this is a copular or existential construction in English).   
-2. Metadata info: I can't think of a case with publication-91 offhand-- maybe that one isn't one that occurs in English. **My goal is to try to follow the same predicating/non-predicating guidelines with all of the -91 rolesets.**
+
 
 > **Preliminary conclusion for Czech annotations:**  
-> 1. Reification: The abstract rolesets for reification should be considered as events if they are seem as predicates (i.e., they will be treated in the same way as other -91 predicates (others than those for discourse relations)).
-> 2. Metadata info: These rolesets should be  treated as non-events (i.e., without the aspect, modal and temporal dependency annotation).  
+> Reification: The abstract rolesets for reification should be considered as events if they are seen as predicates (i.e., they will be treated in the same way as other -91 predicates (others than those for discourse relations)).
 
-### 1.D Rolesets have-quant-91 AND have-degree-91
-Rolesets for quantities and rolesets for comparative/superlative constructions (as the special cases of reification / abstract rolesets) should not be considered events? Also other quantity-related abstract predicates like _rate-entity-91_, _range-91_, etc. 
+#### Rolesets have-quant-91 AND have-degree-91
+Rolesets for quantities and rolesets for comparative/superlative constructions (as the special cases of reification  should not be considered events? Also other quantity-related abstract predicates like _rate-entity-91_, _range-91_, etc. 
 
 **Feedback from Julia:**  
 I use these in the same way you mentioned above. For sentences like _He was the tallest boy in the room_ or _there are 10 more blue blocks than red blocks_, I would use _have-degree-91_ or _have-quant-91_ as the top node of the graph and treat it as an event, with :aspect/:modstr/:temporal dependency. 
@@ -62,8 +68,8 @@ But for a sentence like _she ate the biggest banana of the bunch_, I would use _
 > **Preliminary conclusion for Czech annotations:**  
 > Due to an unclear boundary, we will consider all cases annotated with _have-quant-91_ or _have-degree-91_ as predicates (unless it is a clear case of a non-eventive concept), i.e. using their rolesets and including :aspect/:modstr/:temporal dependency.
 
-### 1.E "Discourse relation rolesets/reifications"
-However, abstract predicates that the UMR spreadsheet lists under “discourse relation rolesets/reifications” (10 types (Jan 2024), see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)) will not be treated as events.  
+### 1.D "Discourse relation rolesets" ... as non-events
+However, abstract predicates that the UMR spreadsheet lists under “discourse relation rolesets” (10 types (Jan 2024), see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)) will not be treated as events.  
 discourse. 
 
 **Feedback from Julia:**  
@@ -73,8 +79,24 @@ JB: Yes, this too!
 > **Conclusion for Czech annotations:**  
 > Discourse relations, see the [list](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453), should NOT be considered as events (despite having rolesets)!
 
+### 1.E Implicit rolesets ... it depends :-((
 
-### 1.F Agentive nouns (and other cases of inverse participant roles)
+Implicit rolesets are used for for indicating such things as 
+A. "metadata" (like _publication-91_, _hyperlink-91_, _street-address-91_, ...),   
+B. but also  _resemble-91_, _include-91_ (e.g., for percentage).
+
+
+**Feedback from Julia:**  
+Metadata info: I can't think of a case with publication-91 offhand-- maybe that one isn't one that occurs in English. **My goal is to try to follow the same predicating/non-predicating guidelines with all of the -91 rolesets.**
+
+> **Preliminary conclusion for Czech annotations:**  
+Metadata info: These rolesets should be typically treated as non-events (i.e., without the aspect, modal and temporal dependency annotation).  
+BUT: rolesets as  _resemble-91_, _include-91_ probably more like stative verbs  (thus events)?
+
+
+## 2. Nouns (connected to verbs) 
+
+### 2.A Agentive nouns (and other cases of inverse participant roles)
 
 Inverse participant roles (typically `ARGx-of` roles), see [Part 3-2-1-3](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-2-1-3-inverse-participant-roles) and [the notes on roles here](roles.md), are typically used in nominal modifications (esp. relative clauses like _sweater that ..._, kindship relations like _his father_, etc.) and in references (esp. participant nominalizations like _runner_.).   
 Further, it allows us to annotate agentive nouns using the corresponding verb (with its frame = roleset): e.g., _runner_ is a person who runs or _volič_ is a person who takes part in the elections, i.e., is represented as ARG0-of the verb _volit_:
@@ -95,7 +117,7 @@ volič
 > In these cases, we not only use the verbs' rolesets to annotate agentive nouns but also include aspect annotation (and modstr/?temporal atributes as well).  
 Typically, the `habitual` value serves as default (esp. for imperfective verbs), like for _učitel_ "teacher" (= ten, kdo učí) as _a teacher teaches habitually_, _řidič_ "driver" (= ten, kdo řídí / umí řídit). Depending on semantics of verb,  `performance` can be relevant, e.g., _vrah_ "murderer" (it is enough to commit just one murder to be a murderer).  
 
-### 1.G Nouns denoting processes
+### 2.B Nouns denoting processes
 Based on the [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-1-1-2-processes-in-modification-and-reference), nouns denoting processes like _válka_ "war", _příchod_ "arrival", _bouře_ "storm" should be annotated as eventive concepts.  
 
 Following the guidelines, the ideal solution for Czech is to annotate them as events. 
@@ -107,7 +129,7 @@ See Section 2. Deverbal nouns other than _ní/-tí_ below for more details.
 
 
 
-## 2. Deverbal nouns other than _ní/-tí_:  
+### 2.C Deverbal nouns other than _ní/-tí_:  
 JH: Be conservative (at least for the time being)!  
 Discussion on 31.7.2023, see the 31.7.2023 meeting minutes: “We do not want to add a big number of nouns / adjectives to the lexicon OR represent them as verbs, unless we have a clear case of a deverbal noun (ending with -ní/-tí) or deverbal adjective (see below) … YES – morphological criterion!!!” 
 
@@ -239,15 +261,10 @@ According to Croft, “constructions always involve the information packaging of
 TO READ: William Croft (2021): *Eventive Complex Predicates and Related Constructions* (draft from June 2021, sent by DZ)
 
 
-#### Consequences of being designated an 'event' in UMR
 
-The consequences of being designated an 'event' in UMR are the following (as summarized by Julia Bonn):
- - **roleset use:**: if rolesets are being used, qualifying as an 'event' means that it is reasonable to represent the expression in question using a roleset.   
- (But note that it is also possible to use rolesets for expressions that do not qualify as 'events'. For example, in English, the roleset `hunger-01` has been used to cover expressions 'hunger-verb', 'hunger-noun', and 'hungry-adjective'. According to the guidelines, 'hungry' in the sentence _the hungry man_ is a state in modification, and therefore doesn't count as an 'event'. But the roleset for _hunger_ is still semantically relevant -- both in terms of sense disambiguation and in terms of the allowed argument structure. What I've been proposing (and which seems to be agreed to by everyone now) is that we should be allowed to use the `hunger-01` roleset here.) 
-- **:aspect annotation:** 'events' receive aspect annotation. 
-- **:modal-strength annotation:** 'events' receive modal annotation in the sentence and document graphs
-- **:temporal dependency annotation:** 'events' qualify for placement in the document-level temporal dependency. 
 
+---
+---
 ---
 
 
