@@ -626,5 +626,570 @@ s9a3: 7-7
     :coref ((s9u :subset-of s7a)
             (s9u :subset-of s7c2)
             (s9u :same-entity s9p)))
+            
+
+# sent_id = SlaT-2782
+# :: snt10
+Index: 
+Words: igitur initio reges nam in terris nomen imperi id primum fuit divorsi pars ingenium , alii corpus exercebant
+Sentence: igitur initio reges - nam in terris nomen imperi id primum fuit - divorsi pars ingenium, alii corpus exercebant 
+Sentenge Gloss (en): 
+	
+# sentence level graph:	
+(s10	
+	
+# alignment:	
+	
+# document level graph:	
+(s10s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+	
+	
+# sent_id = SlaT-2783	
+# :: snt11
+Index: 
+Words: etiam tum vita hominum sine cupiditate agitabatur
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s11	
+	
+# alignment:	
+	
+# document level graph:	
+(s11s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+	
+
+# sent_id = SlaT-2784
+# :: snt12	
+Index:
+Words: sua que quoi satis placebant 
+Sentence: 
+Sentence Gloss (en): 
+	
+# sentence level graph:	
+(s12	
+	
+# alignment:	
+	
+# document level graph:	
+(s12s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2785
+# :: snt13
+Index:
+Words: postea vero quam in Asia Cyrus , in Graecia Lacedaemonii et Athenienses coepere urbis atque nationes subigere , lubidinem dominandi causam belli habere , maxumam gloriam in maxumo imperio putare , tum demum periculo atque negotiis compertum est in bello plurumum ingenium posse
+Sentence:
+Sentence Gloss (en):	
+	
+# sentence level graph:	
+(s13	
+	
+# alignment:	
+	
+# document level graph:	
+(s13s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2786
+# :: snt14
+Index:
+Words: quod si regum atque imperatorum animi virtus in pace ita ut in bello valeret , aequabilius atque constantius sese res humanae haberent , que ne aliud alio ferri que ne mutari ac misceri omnia cerneres 
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s14	
+	
+# alignment:	
+	
+# document level graph:	
+(s14s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2787
+# :: snt15
+Index:
+Words: nam imperium facile iis artibus retinetur , quibus initio partum est
+Sentence:
+Sentence Gloss (en):	
+	
+# sentence level graph:	
+(s15	
+	
+# alignment:	
+	
+# document level graph:	
+(s15s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2788
+# :: snt16	
+Index:
+Words: verum ubi pro labore desidia , pro continentia et aequitate lubido atque superbia invasere , fortuna simul cum moribus inmutatur 
+Sentence:
+Sentence Gloss (en):
+
+# sentence level graph:	
+(s16	
+	
+# alignment:	
+	
+# document level graph:	
+(s16s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2789
+# :: snt17
+Index:
+Words: ita imperium semper ad optumum quemque a minus bono transfertur 
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s17	
+	
+# alignment:	
+	
+# document level graph:	
+(s17s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2790
+# :: snt18
+Index:
+Words: Quae homines arant navigant aedificant , virtuti omnia parent
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s18	
+	
+# alignment:	
+	
+# document level graph:	
+(s18s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2791
+# :: snt19
+Index:
+Words: sed multi mortales , dediti ventri atque somno , indocti que inculti vitam sicuti peregrinantes transiere
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s19	
+	
+# alignment:	
+	
+# document level graph:	
+(s19s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2792
+# :: snt20
+Index:
+Words: quibus profecto contra naturam corpus voluptati , anima oneri fuit 
+Sentence:
+Sentence Gloss (en):
+
+# sentence level graph:	
+(s20	
+	
+# alignment:	
+	
+# document level graph:	
+(s20s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+# sent_id = SlaT-2793
+# :: snt21
+Index:
+Words:
+Sentence: eorum ego vitam que mortem iuxta aestumo , quoniam de utraque siletur
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s21	
+	
+# alignment:	
+	
+# document level graph:	
+(s21s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2794
+# :: snt22
+Index:
+Words: verum enim vero is demum mihi vivere atque frui anima videtur , qui aliquo negotio intentus praeclari facinoris aut artis bonae famam quaerit
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s22	
+	
+# alignment:	
+	
+# document level graph:	
+(s22s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2795
+# :: snt23
+Index:
+Words: Sed in magna copia rerum aliud alii natura iter ostendit
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s23	
+	
+# alignment:	
+	
+# document level graph:	
+(s23s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2796
+# :: snt24
+Index:
+Words: pulchrum est bene facere rei publicae , etiam bene dicere haud absurdum est
+Sentence:
+Sentence Gloss (en): 
+	
+# sentence level graph:	
+(s24	
+	
+# alignment:	
+	
+# document level graph:	
+(s24s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+# sent_id = SlaT-2797
+# :: snt25
+Index:
+Words: vel pace vel bello clarum fieri licet
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s25	
+	
+# alignment:	
+	
+# document level graph:	
+(s25s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+# sent_id = SlaT-2798
+# :: snt26
+Index:
+Words: et qui fecere et qui facta aliorum scripsere , multi laudantur
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s26	
+	
+# alignment:	
+	
+# document level graph:	
+(s26s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2799
+# :: snt27
+Index:
+Words: ac mihi quidem , tametsi haudquaquam par gloria sequitur scriptorem et auctorem rerum , tamen in primis arduom videtur res gestas scribere
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s27	
+	
+# alignment:	
+	
+# document level graph:	
+(s27s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2800
+# :: snt28
+Index:
+Words: primum quod facta dictis exaequanda sunt
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s28	
+	
+# alignment:	
+	
+# document level graph:	
+(s28s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+# sent_id = SlaT-2801	
+# :: snt29
+Index:
+Words: dehinc quia que pleri quae delicta reprehenderis malevolentia et invidia dicta putant , ubi de magna virtute atque gloria bonorum memores , quae sibi quisque facilia factu putat , aequo animo accipit , supra ea veluti ficta pro falsis ducit
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s29	
+	
+# alignment:	
+	
+# document level graph:	
+(s29s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+	
+
+# sent_id = SlaT-2802
+# :: snt30
+Index:
+Words: Sed ego adulescentulus initio sicuti que pleri studio ad rem publicam latus sum , que ibi mihi multa advorsa fuere
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s30	
+	
+# alignment:	
+	
+# document level graph:	
+(s30s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2803
+# :: snt31
+Index:
+Words: nam pro pudore , pro abstinentia , pro virtute audacia largitio avaritia vigebant
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s31	
+	
+# alignment:	
+	
+# document level graph:	
+(s31s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2804
+# :: snt32
+Index:
+Words: quae tametsi animus aspernabatur insolens malarum artium , tamen inter tanta vitia imbecilla aetas ambitione corrupta tenebatur
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s32	
+	
+# alignment:	
+	
+# document level graph:	
+(s32s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2805
+# :: snt33
+Index:
+Words: ac me , quom ab reliquorum malis moribus dissentirem , nihilo minus honoris cupido eadem qua ceteros fama atque invidia vexabat
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s33	
+	
+# alignment:	
+	
+# document level graph:	
+(s33s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2806
+# :: snt34
+Index:
+Words: igitur ubi animus ex multis miseriis atque periculis requievit et mihi reliquam aetatem a re publica procul habendam decrevi , non fuit consilium socordia atque desidia bonum otium conterere , que ne vero agrum colundo aut venando , servilibus officiis , intentum aetatem agere
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s34	
+	
+# alignment:	
+	
+# document level graph:	
+(s34s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2807
+# :: snt35
+Index: 
+Words: sed a quo incepto que studio me ambitio mala detinuerat , eodem regressus statui res gestas populi Romani carptim , ut quaeque memoria digna videbantur , perscribere , eo magis quod mihi a spe metu partibus rei publicae animus liber erat
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s35	
+	
+# alignment:	
+	
+# document level graph:	
+(s35s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+# sent_id = SlaT-2808
+# :: snt36
+Index:
+Words: Igitur de Catilinae coniuratione quam verissume potero paucis absolvam
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s36	
+	
+# alignment:	
+	
+# document level graph:	
+(s36s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2809
+# :: snt37
+Index:
+Words: nam id facinus in primis ego memorabile existumo sceleris atque periculi novitate
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s37	
+	
+# alignment:	
+	
+# document level graph:	
+(s37s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2810
+# :: snt38
+Index:
+Words: de quoius hominis moribus pauca prius explananda sunt , quam initium narrandi faciam
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s38	
+	
+# alignment:	
+	
+# document level graph:	
+(s38s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
+
+
+# sent_id = SlaT-2811
+# :: snt39
+Index:
+Words: L . Catilina , nobili genere natus , fuit magna vi et animi et corporis sed ingenio malo que pravo
+Sentence:
+Sentence Gloss (en):
+	
+# sentence level graph:	
+(s39	
+	
+# alignment:	
+	
+# document level graph:	
+(s39s0 / sentence	
+	:coreference (())
+	:temporal (())
+	:modal (()))
 
 
