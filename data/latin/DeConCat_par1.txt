@@ -1256,151 +1256,424 @@ s19p2: 0-0
 
 # sent_id = SlaT-2792
 # :: snt20
-Index:
+Index:    1       2      3       4      5       6     7    8     9    10
 Words: quibus profecto contra naturam corpus voluptati , anima oneri fuit 
-Sentence:
-Sentence Gloss (en):
+Sentence: quibus profecto contra naturam corpus voluptati, anima oneri fuit
+Sentence Gloss (en): to whom, certainly, contrary to the intention of nature, the body was a gratification, and the mind a burden
 
 # sentence level graph:	
-(s20	
+(s20c / constrast-91
+    :ARG1 (s20h / have-role-91
+        :ARG1 (s20c2 / corpus
+                :refer-number singular)
+        :ARG2 (s20p / person
+                :refer-number plural
+                :refer-person 3rd)
+        :ARG3 (s20v / voluptas
+                :refer-number singular)
+        :aspect state
+        :modal-strength full-affirmative)
+    :ARG2 (s20h2 / have-role-91
+        :ARG1 (s20a / anima
+                :refer-number singular)
+        :ARG2 s20p
+        :ARG3 (s20o / onus
+                :refer-number singular)
+        :aspect state
+        :modal-strength full-affirmative)
+    :manner (s20n / natura
+                :refer-number singular
+                :polarity -))
 	
 # alignment:	
-	
+s20c: 7-7
+s20h: 0-0
+s20h2: 10-10
+s20c2: 5-5
+s20v: 6-6
+s20a: 8-8
+s20o: 9-9
+s20n: 3-4
+s20p: 1-1
+
 # document level graph:	
 (s20s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal (()))
+	:temporal ((s19t :overlap s20h)
+	            (s20h :overlap s20h2))
+	:modal ((root :modal author)
+	        (author :full-affirmative s20h)
+	        (author :full-affirmative s20h2)))
 
 # sent_id = SlaT-2793
 # :: snt21
-Index:
-Words:
-Sentence: eorum ego vitam que mortem iuxta aestumo , quoniam de utraque siletur
-Sentence Gloss (en):
-	
+Index:   1    2    3    4     5     6      7    8    9    10    11     12
+Words: eorum ego vitam que mortem iuxta aestumo , quoniam de utraque siletur
+Sentence: eorum ego vitam mortemque iuxta aestumo, quoniam de utraque siletur
+Sentence Gloss (en): of these I hold the life and death in equal estimation, or silence is maintained concerning both
+
+# TODO: siletur impersonal, should I add an ARG0?
 # sentence level graph:	
-(s21	
+(s21a / aestimo-02
+    :ARG0 (s21p / person
+            :refer-number singular
+            :refer-person 1st)
+    :ARG1 (s21a2 / and
+            :op1 (s21v / vita
+                :refer-number singular
+                :poss (s21p2 / person
+                        :refer-number plural
+                        :refer-person 3rd))
+            :op2 (s21m / mors
+                :refer-number singular
+                :poss s21p2))
+    :ARG2 (s21i / iuxta)
+    :reason (s21s / sileo-03
+            :topic (s21u / uterque
+                    :refer-number plural))
+    :aspect process
+    :modal-strength full-affirmative)
 	
-# alignment:	
+# alignment:
+s21a: 7-7
+s21p: 2-2
+s21p2: 1-1
+s21a2: 4-4
+s21v: 3-3
+s21m: 5-5
+s21i: 6-6
+s21s: 9-9, 12-12
+s21u: 10-11
 	
 # document level graph:	
 (s21s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal (()))
+	:temporal ((document-creation-time :overlap s21a)
+	            (s21a :overlap s21s))
+	:modal ((root :modal author)
+	        (author :full-affirmative s21a)
+	        (author :full-affirmative s21s)))
 
 
 # sent_id = SlaT-2794
 # :: snt22
-Index:
+Index:   1    2     3  4   5     6      7     8    9     10     11  12 13   14      15      16        17        18     19   20    21    22     23
 Words: verum enim vero is demum mihi vivere atque frui anima videtur , qui aliquo negotio intentus praeclari facinoris aut artis bonae famam quaerit
-Sentence:
-Sentence Gloss (en):
+Sentence: verum enim vero is demum mihi vivere atque frui anima videtur, qui aliquo negotio intentus praeclari facinoris aut artis bonae famam quaerit
+Sentence Gloss (en): But he only, indeed, seems to me to live, and to enjoy life, who, intent upon some employment, seeks reputation from some ennobling enterprise, or honorable pursuit
 	
 # sentence level graph:	
-(s22	
-	
-# alignment:	
+(s22v / video-10
+    :ARG0 (s22p2 / person
+            :refer-number singular
+            :refer-person 1st)
+    :ARG1 (s22p / person
+            :refer-number singular
+            :refer-person 3rd
+            :ARG0-of (s22q / quaero-15
+                    :ARG1 (s22f / fama
+                        :refer-number singular
+                        :mod (s22o / or
+                                :op1 (s22f2 / facinus
+                                    :refer-number singular
+                                    :mod (s22p3 / praeclarus))
+                                :op2 (s22a3 / ars
+                                    :refer-number singular
+                                    :mod (s22b / bonus))))
+                    :manner (s22i / intendo-06
+                            :ARG0 s22p
+                            :ARG1 (s22n / negotium
+                                    :refer-number
+                                    :mod (s22a4 / aliquus))
+                            :aspect state
+                            :modal-strength full-affirmative)))
+    :ARG2 (s22a / and
+            :op1 (s22v2 / vivo-NEW-02
+                    :ARG0 s22p
+                    :aspect activity
+                    :modal-strength partial-affirmative)
+            :op2 (s22f3 / fruor-04
+                    :ARG0 s22p
+                    :ARG1 (s22a2 / anima :refer-number singular)
+                    :aspect activity
+                    :modal-strength partial-affirmative))
+	:aspect
+	:modal-strength full-affirmative)
+
+# alignment:
+s22v: 11-11
+s22p: 4-4
+s22p2: 6-6
+s22q: 23-23
+s22f: 22-22
+s22o: 19-19
+s22f2: 18-18
+s22p3: 17-17
+s22a3: 20-20
+s22b: 21-21
+s22i: 16-16
+s22n: 15-15
+s22a4: 14-14
+s22a2: 10-10
+s22a: 8-8
+s22v2: 7-7
+s22f3: 9-9
 	
 # document level graph:	
 (s22s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal (()))
+	:temporal ((s21a :overlap s22v)
+	            (s22v :overlap s22v2)
+	            (s22v :overlap s22f3)
+	            (s22v2 :overlap s22i))
+	:modal ((root :modal author)
+	        (author :full-affirmative s22v)
+	        (author :full-affirmative s22i)
+	        (author :partial-affirmative s22v2)
+	        (author :partial-affirmative s22f3)))
 
 
 # sent_id = SlaT-2795
 # :: snt23
-Index:
+Index:  1  2    3     4     5     6    7     8     9      10
 Words: Sed in magna copia rerum aliud alii natura iter ostendit
-Sentence:
-Sentence Gloss (en):
+Sentence: Sed in magna copia rerum aliud alii natura iter ostendit
+Sentence Gloss (en): But in the great abundance of occupations, nature points out different paths to different individuals
 	
 # sentence level graph:	
-(s23	
+(s23o / ostendo-07
+    :ARG0 (s23n / natura :refer-number singular)
+    :ARG1 (s32i / iter
+            :refer-number singular
+            :mod (s23a / alius))
+    :ARG2 (s23p / person
+            :refer-number singular
+            :refer-person 3rd
+            :mod (s23a2 / alius))
+    :place (s23c / copia
+            :refer-number singular
+            :mod (s23m / magnus)
+            :mod (s23r / res
+                :refer-number plural))
+    :aspect activity
+    :modal-strength full-affirmative)
 	
-# alignment:	
+# alignment:
+s23o: 10-10
+s23n: 8-8
+s23i: 9-9
+s23p: 7-7
+s23a2: 0-0
+s23a: 6-6
+s23c: 2-2, 4-4
+s23m: 3-3
+s23r: 5-5
 	
 # document level graph:	
 (s23s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal (()))
+	:temporal ((document-creation-time :overlap s23o))
+	:modal ((root :modal author)
+	        (author :full-affirmative s23o)))
 
 
 # sent_id = SlaT-2796
 # :: snt24
-Index:
+Index:    1      2   3     4     5     6    7   8     9     10    11     12     13
 Words: pulchrum est bene facere rei publicae , etiam bene dicere haud absurdum est
-Sentence:
-Sentence Gloss (en): 
+Sentence: pulchrum est bene facere rei publicae, etiam bene dicere haud absurdum est
+Sentence Gloss (en): to act well for the state is noble, and even to speak well for it is not without merit
 	
 # sentence level graph:	
-(s24	
+(s24a / and + contrast
+    :op1 (s24h / have-mod-91
+        :ARG1 (s24f / facio-01
+                :ARG1 (s24b / bene)
+                :affectee (s24r / res
+                        :refer-mnumber singular:
+                        mod (s24p2 / publicus))
+                :aspect activity
+                :modal-strength full-affirmative)
+        :ARG2 (s24p / pulcher)
+        :aspect state
+        :modal-strength full-affirmative)
+    :op2 (s2h2 / have-mod-91
+        :ARG1 (s24d / dico2-18
+                :manner (s24b2 / bene)
+                :aspect activity
+                :modal-strength)
+        :ARG2 (s24a2 / absurdus
+                :polarity -)
+        :mod (s24e / etiam)
+        :aspect state
+        :modal-strength full-affirmative))
 	
-# alignment:	
+# alignment:
+s24a: 7-7
+s24h: 2-2
+s24h2: 13-13
+s24b: 3-3
+s24f: 4-4
+s24b2: 9-9
+s24r: 5-5
+s24p2: 6-6
+s24p: 1-1
+s24d: 10-10
+s24a2: 12-12
+s24e: 8-8
 	
 # document level graph:	
 (s24s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal (()))
+	:temporal ((document-creation-time :overlap s24h)
+                (document-creation-time :overlap s24h))
+	:modal ((root :modal author)
+	        (author :full-affirmative s24h)
+	        (author :full-affirmative s24h2)))
 
 # sent_id = SlaT-2797
 # :: snt25
-Index:
+Index:  1    2   3    4     5      6     7
 Words: vel pace vel bello clarum fieri licet
-Sentence:
-Sentence Gloss (en):
+Sentence: vel pace vel bello clarum fieri licet
+Sentence Gloss (en): both in peace and in war it is possible to obtain celebrity
 	
 # sentence level graph:	
-(s25	
+(s25f / fio-01
+    :ARG2 (s25c / clarus)
+    :cause (s25a / and
+            :op1 (s25p / pax :refer-number singular)
+            :op2 (s25b / bellum :refer-number))
+    :aspect process
+    :modal-strength neutral-affirmative)
 	
 # alignment:	
 	
 # document level graph:	
-(s25s0 / sentence	
+(s25s0 / sentence
 	:coref (())
-	:temporal (())
-	:modal (()))
+	:temporal ((document-creation-time :overlap s25f))
+	:modal ((root :modal author)
+	        (author :neutral-affirmative s25f)))
 
 # sent_id = SlaT-2798
 # :: snt26
-Index:
+Index: 1   2    3    4   5    6      7      8      9   10     11
 Words: et qui fecere et qui facta aliorum scripsere , multi laudantur
-Sentence:
-Sentence Gloss (en):
+Sentence: et qui fecere et qui facta aliorum scripsere, multi laudantur
+Sentence Gloss (en): many who have acted, and many who have recorded the actions of others, receive their tribute of praise
 	
 # sentence level graph:	
-(s26	
+(s26l / laudo-08
+    :ARG1 (s26p / person
+            :refer-number plural
+            :refer-person 3rd
+            :quant (s26m / multus)
+            :ARG0-of (s26a / and
+                    :op1 (s26f / facio-02)
+                    :op2 (s26s / scribo-14
+                        :ARG1 (s26t / thing
+                                :refer-number plural
+                                :ARG1-of (s26f2 / facio-23
+                                        :ARG0 (s26p2 / person
+                                                :refer-number plural
+                                                :refer-person 3rd
+                                                :mod (s26a / alius)))))))
+    :aspect activity
+    :modal-strength full-affirmative)
 	
 # alignment:	
-	
+s26l: 11-11
+s26p: 10-10
+s26m: 0-0
+s26a: 1-1, 4-4
+s26p2: 7-7
+s26a: 0-0
+s26f2: 0-0
+s26t: 6-6
+s26s: 8-8
+s26f: 3-3
+
 # document level graph:	
 (s26s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal (()))
+	:temporal ((document-creation-time :overlap s26l))
+	:modal ((root :modal author)
+	        (author :full-affirmative s26l)))
 
 
 # sent_id = SlaT-2799
 # :: snt27
-Index:
+Index: 1   2     3    4    5         6      7     8        9         10    11    12     13   14 15   16   17     18     19    20    21     22
 Words: ac mihi quidem , tametsi haudquaquam par gloria sequitur scriptorem et auctorem rerum , tamen in primis arduom videtur res gestas scribere
-Sentence:
-Sentence Gloss (en):
+Sentence: ac mihi quidem, tametsi haudquaquam par gloria sequitur scriptorem et auctorem rerum, tamen in primis arduom videtur res gestas scribere
+Sentence Gloss (en): and to me, assuredly, though by no means equal glory attends the narrator and the performer of illustrious deeds, it yet seems in the highest degree difficult to write the history of great transactions
 	
 # sentence level graph:	
-(s27	
+(s27v / video-10
+    :ARG0 (s27p / person
+            :refer-number singular
+            :refer-person 1st)
+    :ARG1 (s27s / scribo-14
+            :ARG1 (s27r / res
+                    :refer-number-plural
+                    :ARG1-of (s27g / gero-15))
+            :aspect activity
+            modal-strength full-affirmative)
+    :ARG2 (s27h / have-mod-91
+            :ARG1 s27s
+            :ARG2 (s27a / arduus
+                    :degree (s17p / primus))
+            :aspect state
+            :modal-strength partial-affirmative)
+    :concession (s27s2 / sequor-22
+                :ARG0 (s27g2 / gloria
+                        :refer-number singular
+                        :mod (s27p2 / par))
+                :ARG1 (s27a2 / and
+                        :op1 (s27p3 / person
+                            :refer-number singular
+                            :refer-person 3rd
+                            :ARG0-of (s27s3 / scribo-14))
+                        :op2 (s27a3 / auctor-20
+                            :refer-number singular
+                            :ARG1 (s27r2 / res :refer-number plural)))
+                :polarity -
+                :aspect activity
+                :modal-strength full-affirmative)
+    :aspect state
+    :modal-strength full-affirmative)
 	
-# alignment:	
+# alignment:
+s27v: 19-19
+s27p: 2-2
+s27s: 22-22
+s27g: 21-21
+s27r: 20-20
+s27h: 18-18
+s17p: 16-17
+s27a: 0-0
+s27s2: 6-6, 9-9
+s27g2: 8-8
+s27p2: 7-7
+s27a2: 11-11
+s27a3: 12-12
+s27r2: 13-13
+s27p3: 10-10
+s27s3: 0-0
 	
 # document level graph:	
 (s27s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal (()))
+	:temporal ((s26l :overlap s27v)
+	            (s27l :overlap s27s)
+	            (s27v :overlap s27s2)
+	            (s27s2 :overlap s27h))
+	:modal ((root :modal author)
+	        (author :full-affirmative s27v)
+	        (author :full-affirmative s27s)
+	        (author :full-affirmative s27s2)
+	        (author :partial-affirmative s27h)))
 
 
 # sent_id = SlaT-2800
@@ -1419,7 +1692,7 @@ Sentence Gloss (en):
 (s28s0 / sentence	
 	:coref (())
 	:temporal (())
-	:modal (()))
+	:modal ((root :modal author)))
 
 # sent_id = SlaT-2801	
 # :: snt29
@@ -1437,7 +1710,7 @@ Sentence Gloss (en):
 (s29s0 / sentence	
 	:coref (())
 	:temporal (())
-	:modal (()))
+	:modal ((root :modal author)))
 	
 
 # sent_id = SlaT-2802
@@ -1456,7 +1729,7 @@ Sentence Gloss (en):
 (s30s0 / sentence	
 	:coref (())
 	:temporal (())
-	:modal (()))
+	:modal ((root :modal author)))
 
 
 # sent_id = SlaT-2803
@@ -1475,7 +1748,7 @@ Sentence Gloss (en):
 (s31s0 / sentence	
 	:coref (())
 	:temporal (())
-	:modal (()))
+	:modal ((root :modal author)))
 
 
 # sent_id = SlaT-2804
