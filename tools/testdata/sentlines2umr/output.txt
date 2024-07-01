@@ -1,0 +1,181 @@
+# :: snt1
+Index:               1 2         3             4       5 6        7      8     9          10          11       12      13    14   15    16 17    18            19         20  21      22   23
+Words:               V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast ,  jehož prezidentským kandidátem byl Lennart Meri . 
+Word Gloss (en):
+Sentence:            V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast, jehož prezidentským kandidátem byl Lennart Meri.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s1v / V)
+(s1n / nedělních)
+(s1p / parlamentních)
+(s1v2 / volbách)
+(s1v3 / v)
+(s1e / Estonsku)
+(s1z / získal)
+(s1p2 / podle)
+(s1v4 / včerejších)
+(s1p3 / předběžných)
+(s1v5 / výsledků)
+(s1n2 / nejvíce)
+(s1h / hlasů)
+(s1b / blok)
+(s1v6 / Vlast)
+(s1j / jehož)
+(s1p4 / prezidentským)
+(s1k / kandidátem)
+(s1b2 / byl)
+(s1l / Lennart)
+(s1m / Meri)
+
+# alignment:
+s1v: 1-1
+s1n: 2-2
+s1p: 3-3
+s1v2: 4-4
+s1v3: 5-5
+s1e: 6-6
+s1z: 7-7
+s1p2: 8-8
+s1v4: 9-9
+s1p3: 10-10
+s1v5: 11-11
+s1n2: 12-12
+s1h: 13-13
+s1b: 14-14
+s1v6: 15-15
+s1j: 17-17
+s1p4: 18-18
+s1k: 19-19
+s1b2: 20-20
+s1l: 21-21
+s1m: 22-22
+
+# document level annotation:
+(s1s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt2
+Index:               1 2         3     4      5      6 7     8  9     10         11 12        13  14   15    16  17   18       19 20  21          22 23           24      25 26    27         28
+Words:               Z celkového počtu 457319 voličů , kteří se voleb zúčastnili ,  hlasovalo pro blok Vlast asi 20.5 procenta ,  což představuje 28 poslaneckých mandátů v  novém parlamentu . 
+Word Gloss (en):
+Sentence:            Z celkového počtu 457319 voličů, kteří se voleb zúčastnili, hlasovalo pro blok Vlast asi 20.5 procenta, což představuje 28 poslaneckých mandátů v novém parlamentu.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s2z / Z)
+(s2c / celkového)
+(s2p / počtu)
+(s2x / 457319)
+(s2v / voličů)
+(s2k / kteří)
+(s2s / se)
+(s2v2 / voleb)
+(s2z2 / zúčastnili)
+(s2h / hlasovalo)
+(s2p2 / pro)
+(s2b / blok)
+(s2v3 / Vlast)
+(s2a / asi)
+(s2x2 / 20.5)
+(s2p3 / procenta)
+(s2c2 / což)
+(s2p4 / představuje)
+(s2x3 / 28)
+(s2p5 / poslaneckých)
+(s2m / mandátů)
+(s2v4 / v)
+(s2n / novém)
+(s2p6 / parlamentu)
+
+# alignment:
+s2z: 1-1
+s2c: 2-2
+s2p: 3-3
+s2x: 4-4
+s2v: 5-5
+s2k: 7-7
+s2s: 8-8
+s2v2: 9-9
+s2z2: 10-10
+s2h: 12-12
+s2p2: 13-13
+s2b: 14-14
+s2v3: 15-15
+s2a: 16-16
+s2x2: 17-17
+s2p3: 18-18
+s2c2: 20-20
+s2p4: 21-21
+s2x3: 22-22
+s2p5: 23-23
+s2m: 24-24
+s2v4: 25-25
+s2n: 26-26
+s2p6: 27-27
+
+# document level annotation:
+(s2s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt3
+Index:               1  2      3     4 5    6        7     8 9  10      11 12 13    14   15         16  17          18         19            20        21      22      23
+Words:               Na druhém místě s 13.9 procenty hlasů ( 18 mandátů )  je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela . 
+Word Gloss (en):
+Sentence:            Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s3n / Na)
+(s3d / druhém)
+(s3m / místě)
+(s3s / s)
+(s3x / 13.9)
+(s3p / procenty)
+(s3h / hlasů)
+(s3x2 / 18)
+(s3m2 / mandátů)
+(s3j / je)
+(s3z / zatím)
+(s3b / blok)
+(s3s2 / Spolehlivý)
+(s3d2 / dům)
+(s3d3 / dosavadního)
+(s3n2 / nejvyššího)
+(s3p2 / představitele)
+(s3r / republiky)
+(s3a / Arnolda)
+(s3r2 / Rüütela)
+
+# alignment:
+s3n: 1-1
+s3d: 2-2
+s3m: 3-3
+s3s: 4-4
+s3x: 5-5
+s3p: 6-6
+s3h: 7-7
+s3x2: 9-9
+s3m2: 10-10
+s3j: 12-12
+s3z: 13-13
+s3b: 14-14
+s3s2: 15-15
+s3d2: 16-16
+s3d3: 17-17
+s3n2: 18-18
+s3p2: 19-19
+s3r: 20-20
+s3a: 21-21
+s3r2: 22-22
+
+# document level annotation:
+(s3s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
