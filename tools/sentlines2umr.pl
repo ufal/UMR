@@ -23,12 +23,13 @@ sub usage
 my $isnt = 0;
 while(<>)
 {
-    $isnt++;
     s/\r?\n$//;
     my $sentence = $_;
     $sentence =~ s/^\s+//;
     $sentence =~ s/\s+$//;
     my @tokens = split(/\s+/, $sentence);
+    next if(scalar(@tokens)==0);
+    $isnt++;
     my @indices;
     for(my $i = 0; $i <= $#tokens; $i++)
     {
