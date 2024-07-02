@@ -22,7 +22,7 @@ NEs have their internal structure (esp. wiki, name).
 
 5.  **???** what else **???**
 
----
+
 ---
 
 
@@ -32,14 +32,14 @@ NEs have their internal structure (esp. wiki, name).
 
 #### -ní/-tí deverbal nouns
 
-1. Identify the relevant verb lexeme!
-Sources:
-- **PDT-Vallex**, 
-- **MorfFlex**, 
-- **Derinet** 
-- another resource: **SynSemClass** ... Veronika Kolářová should know more about nominalizations
+1. Identify the relevant verb lexeme!  
+Sources:  
+   - **PDT-Vallex**, 
+   - **MorfFlex**, 
+   - **Derinet** 
+   - another resource: **SynSemClass** ... Veronika Kolářová should know more about nominalizations
 
-2. identify the relevant valency frame / list of arguments
+2. identify the relevant valency frame / list of arguments ... **???**
 
 ... see also Sect. I.4 ``Coreference: Inverse roles for nominalizations'' below!!
 
@@ -53,7 +53,6 @@ Sources:
 ### I.2.3 TODO: Adverbs
 
 
----
 ---
 
 
@@ -77,7 +76,7 @@ Sources:
 
 
 ### I.2.2 Non-Core arguments and adjuncts
-- [Deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)
+- [Default table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)
 
 
 ### I.2.3 TODO: Abstract predicates
@@ -87,8 +86,9 @@ https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLw
 
 ### I.3.4 TODO: Implicit rolesets
 
+
 ---
----
+
 
 ## I.4 Structural Changes
 
@@ -103,9 +103,10 @@ https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLw
 
 ### I.4.5  Reification
 
+
 ---
 ---
 ---
----
----
+
+
 # II. PDT to UMR ... document level
