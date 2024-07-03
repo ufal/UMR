@@ -1758,7 +1758,7 @@ Sentence Gloss (en): and next, because most readers consider that whatever error
         :aspect TODO
         :modal-strength full-affirmative
         :ARG1-of (s29b / but-91
-            :ARG2 (s29a2 / accipio-XX
+            :ARG2 (s29a2 / accipio-08+10
                 :ARG0 (s29p5 / person
                         :refer-number singular
                         :refer-person 3rd
@@ -2101,7 +2101,7 @@ Sentence Gloss (en): when, therefore, my mind had rest from its numerous trouble
                         :modal-strength full-affirmative)
                 :op2 (s34d3 / decerno-09
                         :ARG0 s34p
-                        :ARG1 (s23h2 / habeo-NEW-26
+                        :ARG1 (s34h2 / habeo-NEW-26
                                 :ARG0 s34p
                                 :ARG1 (s34a9 / aetas
                                         :refer-number singular
@@ -2156,7 +2156,16 @@ s34p4: 16-16
 # document level graph:	
 (s34s0 / sentence	
 	:coref (())
-	:temporal (())
+	:temporal ((s33v :after s34r)
+	            (s34r :after s34d)
+	            (s34r :overlap s34d3)
+	            (s34d3 :after s34h2)
+	            (s34d :after s34c)
+	            (s34d :after s34a3)
+	            (s34a3 :contained s34i)
+	            (s34i :overlap s34c2)
+	            (s34i :overlap s34v)
+	            (s34d :overlap s34i2))
 	:modal ((root :modal author)
 	        (author :full-affirmative s34d)
 	        (author :full-affirmative s34r)
@@ -2176,37 +2185,170 @@ s34p4: 16-16
 # :: snt35
 Index:  1  2  3     4     5    6    7     8     9       10    11  12       13      14   15   16      17     18      19  20 21   22      23     24       25    26    27      28 29  30     31  32 33 34   35    36     37      38      39    40   41
 Words: sed a quo incepto que studio me ambitio mala detinuerat , eodem regressus statui res gestas populi Romani carptim , ut quaeque memoria digna videbantur , perscribere , eo magis quod mihi a spe metu partibus rei publicae animus liber erat
-Sentence: sed a quo incepto que studio me ambitio mala detinuerat, eodem regressus statui res gestas populi Romani carptim, ut quaeque memoria digna videbantur, perscribere, eo magis quod mihi a spe metu partibus rei publicae animus liber erat
-Sentence Gloss (en):  but, returning to those studies from which, at their commencement, a corrupt ambition had allured me, I determined to write, in detatched portions, the transactions of the Roman people, as any occurrence should seem worthy of mention; an undertaking to which I was the rather inclined, as my mind was uninfluenced by hope, fear, or political partisanship
+Sentence: sed a quo incepto studioque me ambitio mala detinuerat, eodem regressus statui res gestas populi Romani carptim, ut quaeque memoria digna videbantur, perscribere, eo magis quod mihi a spe metu partibus rei publicae animus liber erat
+Sentence Gloss (en):  but, returning to those studies from which, at their commencement, a corrupt ambition had allured me, I determined to write, in detached portions, the transactions of the Roman people, as any occurrence should seem worthy of mention; even more so as my mind was uninfluenced by hope, fear, or political partisanship
 	
 # sentence level graph:	
-(s35	
+(s35s / statuo-04
+    :ARG0 (s35p / person
+            :refer-number singular
+            :refer-person 1st)
+    :ARG1 (s35p2 / perscribo-01
+            :ARG0 s35p
+            :ARG1 (s35r / res
+                    :refer-number plural
+                    :ARG1-of (s35g / gero-15
+                        :ARG0 (s35p3 / populus
+                                :refer-number singular
+                                :mod (s35s4 / state
+                                        :name (s35n / name :op1 "Roma")
+                                        :wiki "Q1747689"))
+                        :aspect performance
+                        :modal-strength full-affirmative))
+            :manner (s35c / carptim)
+            :according-to (s35v / video-10
+                            :ARG0 s35p
+                            :ARG1 (s365h / have-mod-91
+                                    :ARG1 (s35t / thing :refer-number plural)
+                                    :ARG2 (s35d2 / dignus-04
+                                            :ARG2 (s35m2 / memoria :refer-number singular))
+                                    :aspect state
+                                    :modal-strength partial-affirmative)
+                            :aspect state
+                            :modal-strength full-affirmative)
+            :reason (s35h2 / have-mod-91
+                    :ARG1 (s35a3 / animus
+                            :refer-number singular
+                            :poss s35p)
+                    :ARG2 (s35l / liber-06
+                            :ARG1 s35a3
+                            :ARG2 (s35a4 / and
+                                    :op1 (s35s3 / spes :refer-number singular)
+                                    :op2 (s35m3 / metus :refer-number singular)
+                                    :op3 (s35p4 / pars
+                                            :refer-number plural
+                                            :mod (s35r3 / res
+                                                    :refer-number singular
+                                                    :mod (s35p5 / publicus)))))
+                    :aspect state
+                    :modal-strength full-affirmative)
+            :aspect performance
+            :modpred s35s)
+    :temporal (s35r2 / regredior-05
+            :ARG0 s35p
+            :ARG4 (s35a / and
+                    :op1 (s35s2 / studium :refer-number singular)
+                    :op2 (s35i / inceptum :refer-number singular)
+                    :ARG2-of (s35d / detineo-04
+                                :ARG0 (s35a2 / ambitio
+                                    :mod (s35m / malus)
+                                    :refer-number singular)
+                                :ARG1 s53p
+                                :aspect performance
+                                :modal-strength full-affirmative))
+            :aspect performance
+            :modal-strength full-affirmative)
+    :aspect performance
+    :modal-strength full-affirmative)
 	
-# alignment:	
+# alignment:
+s35s: 14-14
+s35p: 7-7
+s35p2: 27-27
+s35r: 15-15
+s35g: 16-16
+s35p3: 17-17
+s35s4: 18-18
+s35n: 0-0
+s35c: 19-19
+s35v: 25-25
+s35h: 0-0
+s35t: 22-22
+s35d2: 24-24
+s35m2: 23-23
+s35h2: 41-41
+s35a3: 39-39
+s35l: 40-40
+s35a4: 0-0
+s35s3: 33-34
+s35m3: 35-35
+s35p4: 36-36
+s35r3: 37-37
+s35p5: 38-38
+s35r2: 13-13
+s35a: 2-3, 5-5, 12-12
+s35s2: 6-6
+s35i: 4-4
+s35d: 10-10
+s35a2: 8-8
+s35m: 9-9
 	
 # document level graph:	
 (s35s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal ((root :modal author)))
+	:temporal ((s34d :overlap s35s)
+	            (s35s :after s35p2)
+	            (s35p2 :before s35g)
+	            (s35p2 :overlap s35v)
+	            (s35v :overlap s35h)
+	            (s35s :before s35h2)
+	            (s35s :before s35r2)
+	            (s35r2 :before s35d))
+	:modal ((root :modal author)
+	        (author :full-affirmative s35s)
+	        (author :unspecified s35p2)
+	        (author :full-affirmative s35g)
+	        (author :full-affirmative s35v)
+	        (author :partial-affirmative s35h)
+	        (author :full-affirmative s35h2)
+	        (author :full-affirmative s35r2)
+	        (author :full-affirmative s35d)))
 
 # sent_id = SlaT-2808
 # :: snt36
 Index:    1   2      3           4       5       6        7     8      9
 Words: Igitur de Catilinae coniuratione quam verissume potero paucis absolvam
 Sentence: Igitur de Catilinae coniuratione quam verissume potero paucis absolvam
-Sentence Gloss (en): I shall accordingly give a brief account, with as much truth as I can, of the Conspiracy of Catiline
+Sentence Gloss (en): thus I shall give an account in few words, with as much truth as I can, of the conspiracy of Catiline
 	
 # sentence level graph:	
-(s36	
+(s36a / absolvo-NEW-08
+    :ARG0 (s36p / person
+            :refer-number singular
+            :refer-person 1st)
+    :ARG1 (s36c / coniuratio-05
+            :ARG0 (s36p2 / person
+                    :wiki "Q75826"
+                    :name (s36n / name :op1 "Catilina")))
+    :instrument (s36p3 / paucus :refer-number plural)
+    :manner (s36v / verus
+            :degree (s36m / most)
+            :ARG1-of (s36p4 / possum-02
+                    :ARG0 s36p
+                    :aspect state
+                    :modal-strength full-affirmative))
+    :aspect performance
+    :modal-strength full-affirmative)
 	
-# alignment:	
+# alignment:
+s36a: 9-9
+s36p: 0-0
+s36c: 2-2, 4-4
+s36p2: 3-3
+s36n: 0-0
+s36p3: 8-8
+s36v: 5-6
+s36m: 0-0
+s36p4: 7-7
 	
 # document level graph:	
 (s36s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal ((root :modal author)))
+	:temporal ((s35s :after s36a)
+	            (s36a :overlap s36p4))
+	:modal ((root :modal author)
+	        (author :full-affirmative s36a)
+	        (author :full-affirmative s36p4)))
 
 
 # sent_id = SlaT-2809
@@ -2214,18 +2356,49 @@ Sentence Gloss (en): I shall accordingly give a brief account, with as much trut
 Index:  1  2     3    4    5     6     7          8         9      10     11       12
 Words: nam id facinus in primis ego memorabile existumo sceleris atque periculi novitate
 Sentence: nam id facinus in primis ego memorabile existumo sceleris atque periculi novitate
-Sentence Gloss (en): for I think it an enterprise eminently deserving of record, from the unusual nature both of its guilt and of its perils
+Sentence Gloss (en): for I think it an enterprise eminently memorable, from the unusual nature of its guilt and of its perils
 	
 # sentence level graph:	
-(s37	
+(s37e / existimo-06
+    :ARG0 (s37p / person
+            :refer-number singular
+            :refer-person 1st)
+    :ARG2 (s37h / have-mod-91
+            :ARG1 (s37f / facinus
+                :refer-number singular
+                :mod (s37i / is))
+            :ARG2 (s37m / memorabilis
+                    :degree intensifier)
+            :aspect state
+            :modal-strength partial-affirmative)
+    : reason (s37n / novitas
+            :refer-number singular
+            :mod (s37a / and
+                    :op2 (s37s / scelus :refer-number singular)
+                    :op2 (s37p2 / periculus :refer-number singular)))
+    :aspect state
+    :modal-strength full-affirmative)
 	
-# alignment:	
+# alignment:
+s37e: 8-8
+s37p: 6-6
+s37h: 0-0
+s37f: 3-3
+s37i: 2-2
+s37m: 4-5, 7-7
+s37n: 12-12
+s37a: 10-10
+s37s: 9-9
+s37p2: 11-11
 	
 # document level graph:	
 (s37s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal ((root :modal author)))
+	:temporal ((s36a :before s37e)
+	            (s37e :overlap s37h))
+	:modal ((root :modal author)
+	        (author: gull-affirmative s37e)
+	        (author :partial-affirmative s37h)))
 
 
 # sent_id = SlaT-2810
@@ -2236,15 +2409,44 @@ Sentence: de quoius hominis moribus pauca prius explananda sunt, quam initium na
 Sentence Gloss (en): before I enter upon my narrative, I must give a short description of the character of the man
 	
 # sentence level graph:	
-(s38	
-	
-# alignment:	
+(s38e / explano-04
+    :ARG0 (s38p / person
+            :refer-number singular
+            :refer-person 1st)
+    :ARG1 (s38p2 / paucus
+            :refer-number plural
+            :topic (s38m / mos
+                    :refer-number plural
+                    :poss (s38h / homo
+                            :refer-number singular)))
+    :temporal (s38b / before
+                :op1 (s38i / incipio-02+06
+                    :ARG0 s38p
+                    :ARG1 (s38n / narro-04
+                            :ARG0 s38p
+                            :aspect activity
+                            :modal-strength full-affirmative)))
+    :aspect performance
+    :modal-strength partial-affirmative)
+
+# alignment:
+s38e: 7-8
+s38p: 0-0
+s38p2: 5-5
+s38m: 1-1, 4-4
+s38h: 2-3
+s38b: 6-6, 10-10
+s38i: 11-11, 13-13
+s38n: 12-12
 	
 # document level graph:	
 (s38s0 / sentence	
 	:coref (())
-	:temporal (())
-	:modal ((root :modal author)))
+	:temporal ((s37e :overlap s38e)
+	            (s38e :after s38n))
+	:modal ((root :modal author)
+	        (author :partial-affirmative s38e)
+	        (author :full-affirmative s38n)))
 
 
 # sent_id = SlaT-2811
@@ -2254,16 +2456,61 @@ Words: L. Catilina , nobili genere natus , fuit magna vi et animi et corporis se
 Sentence: L. Catilina, nobili genere natus, fuit magna vi et animi et corporis sed ingenio malo pravoque
 Sentence Gloss (en): Lucius Catilina was a man of noble birth and of eminent mental and personal endowments, but of a vicious and depraved disposition
 	
-# sentence level graph:	
-(s39	
-	
-# alignment:	
-	
-# document level graph:	
-(s39s0 / sentence	
-	:coref (())
-	:temporal (())
-	:modal ((root :modal author)))
+(s39b / but-91
+  :ARG1 (s39h / have-mod-91
+        :ARG1 (s39p / person
+              :name (s39n/ name :op1 "Lucius" :op2 "Catilina")
+              :wiki "Q75826"
+              :ARG0-of (s39n2 / nascor-05+06
+                        :aspect performance
+                        :modal-strength full-affirmative))
+        :ARG2 (s39v / vis
+                :refer-number singular
+                :poss (s1a / and
+                        :op1 (s39a2 / animus
+                            :mod (s39m / magnus)
+                                :refer-number singular)
+                            :op2 (s39c / corpus
+                                :refer-number singular)))
+        :aspect state
+        :modal-strength full-affirmative)
+  :ARG2 (s39h2 / have-mod-91
+          :ARG1 s39p
+          :ARG2 (s39i / ingenius
+                :refer-number singular
+                :mod (s39a3 / and
+                        :op1 (s39m2 / malus
+                        :op2 (s39p2 / pravus))))
+           :aspect state
+           :modal-strength full-affirmative))
+
+# alignment:
+s39b: 16-16
+s39h: 8-8
+s39p: 1-2
+s39n: 0-0
+s39v: 10-10
+s39a: 11-11, 13-13
+s39a2: 12-12
+s39m: 9-9
+s39c: 14-14
+s39h2: 0-0
+s39i:17-17
+s39a3: 20-20
+s39m2: 18-18
+s39p2: 19-19
+
+# document level annotation:
+(s39s0 / sentence
+    :temporal ((s38e :before s39h)
+                (s39h :overlap s39h2)
+                (s39h :before s39n2))
+    :modal ((root :modal author)
+            (author :full-affirmative s39h)
+            (author :full-affirmative s39h2)
+            (author :full-affirmative s39n2)))
 
 
 # TODO: reconsider missing ARG0s. e.g. impersonal. maybe generic p / person? see released data.
+# TODO: reconsider all aspects.
+# TODO: reconsider videntur + infinitive. modpred or modal-strenght partial/neutral?
