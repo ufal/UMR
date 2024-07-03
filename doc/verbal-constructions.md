@@ -8,6 +8,8 @@ UMR, following AMR, represents some verbal constructions in a different way than
 
 Also the distinction what should be considered a single event and what are two events (annotated as two verbs) differ 
 
+---
+
 ## Autosemantic _být_ (incl. copula verbs)
 
 PDT distinguishes several types of constructions with _být_ "to be":
@@ -25,7 +27,9 @@ All of them are treated as lexical verbs in PDT and they should also be treated 
  * [cs] _Strašidla.ACT na světě nejsou._   
         "There are no ghosts in the world." (PDT manual).  
  
-It should correspond to `být-011` in PDT-Vallex.  
+It should correspond to `být-011` in PDT-Vallex.
+
+See also [existential `be-02` in PropBank](https://verbs.colorado.edu/propbank-development/be.html).  
 
 In UMR,  thetic location `exist-91` or  presentational location `have-place-91` are probably the best fit for the existential _být_.
  * [cs] _V pohádkách jsou různá strašidla.ACT._  ... ?? `exist-91` (thetic location)
@@ -39,8 +43,7 @@ In UMR,  thetic location `exist-91` or  presentational location `have-place-91` 
 - Typically, it is characterized by a valency frame with just `ACT`, possibly complemented with an optional free modification, as:  
        _Jirka je na zahradě.LOC_ "George is in the garden." (= George is located/appears in the garden)  
 
-This type also corresponds to `být-011` in PDT-Vallex (i.e., existential and substitute 
-_být_ is not distinguished in PDT-Vallex).  
+This type should correspond to `být-011` in PDT-Vallex (i.e., existential and substitute _být_ is not distinguished in PDT-Vallex).  
 
 As for UMR, different types of UMR abstract predicates, other -91 substitutes, or even full verb predicates should be used. 
 
@@ -83,18 +86,26 @@ Rarely, valency frames with two (or more) arguments come into play, as in:
 
 Copula verb _být_ corresponds to the `být-007` roleset (with 2 arguments, `ACT` and `PAT`).
 
+See also [copula `be-01` in PropBank](https://verbs.colorado.edu/propbank-development/be.html).  
+
 According to the UD guidelines:
 > The copula verb _být_ "be" is used in equational, attributional, locative, possessive and benefactory nonverbal clauses. Purely existential clauses (without indicating location) use _být_ as well but it is treated as the head of the clause and tagged VERB.
 
-
-4. **phraseological** _být_ is characterized by the `DPHR` functor in its valency frame.
-
-
-5.  **_být_ in constructions with a single constituent** 
-    - impersonal constructions ... `být-017` _je horko_ "It is hot."  -->  `??`     
-    - constructions of experience (with ACTor in dative) ... `být-009` _je mi horko_  -->  `??`    
+The copula _být_ should correspond to `být-007` in PDT-Vallex.
+However, this frame is assigned also to constructions with location meaning (e.g., _Jiřinka je tady, ta s tou tmavší mašlí_ `Jiřinka is here, the one with the darker bow' [= a comment on the photo]). 
 
 
+#### 4. Phraseological _být_ 
+
+These constructions are characterized by the `DPHR` functor in its valency frame.
+
+
+#### 5.  _Být_ in constructions with a single constituent
+ 
+- impersonal constructions ... `být-017` _je horko_ "It is hot."  -->  `??`     
+- constructions of experience (with ACTor in dative) ... `být-009` _je mi horko_  -->  `??`    
+
+---
 
 ## Temporal and modal auxiliaries - a single event
 

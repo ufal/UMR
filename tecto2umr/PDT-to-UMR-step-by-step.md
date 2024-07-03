@@ -64,6 +64,11 @@ Sources:
 #### Verb frames (senses) with mappings via SSC, EngVallex 
 - [Google sheet](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit#gid=1270330829)
 
+
+**BUT:**   
+1. phrasemes with _být_ (i.e., valency frames with the  `DPHR` functor) ... TODO
+2.  _být_ as light verb  (i.e., valency frames with the  `CPHR` functor) ... TODO
+
 #### Default mappings (verb non-specific)
 - [Deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)
   - as for actants, ONLY the following 3 should be converted in this way 
@@ -80,8 +85,7 @@ Sources:
 
 
 ### I.2.3 TODO: Abstract predicates
-tabulka UMR lists, list "Abstract rolesets", skupina "non-prototypical pred rolesets"
-https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453
+**tabulka UMR lists, list "Abstract rolesets"**, [skupina "non-prototypical pred rolesets"](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)
 
 
 ### I.3.4 TODO: Implicit rolesets
