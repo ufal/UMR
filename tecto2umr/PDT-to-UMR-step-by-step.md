@@ -36,7 +36,7 @@ Consequences of being designated an ‘event’ in UMR - see [the summary here](
  events should get:
 - the **aspect annotation** (at the sentence level)
 - the **modal-strength (= epistamic modality) annotation** (originally both at the sentence level AND the documentation level (more detailed), newly removed from the sentence level) 
-- the **temporal annotation**
+- the **temporal annotation** (at the document level)
 
 #### Events
 For Czech, events should be finally anchored in SSC; for the time being, we use the mappings via SSC and EngVallex, as discussed in Sect. I.2.1 below.
@@ -45,7 +45,7 @@ For Czech, events should be finally anchored in SSC; for the time being, we use 
 1. **lexical verbs**:
    - action and stative verbs are treated in the same way --> **events**
 2. **abstract rolesets** from [the UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453):
-   - **events: reification** (rows 3-101 ... we do not care much about it, BUT if they appear in the annotation, they should be treated as events;
+   - **events: reification** (rows 3-101 ... we do not care much about it, BUT if they appear in the annotation, they should be treated as events (see also sect. I.4.2 Reification);
    - NOT events: discourse relations (rows 103-122)
    - **events: 9 abstract predicates** (called ``non-prototypical pred rolesets'' there, as exist-91, belong-91, row 124-148) --> events ... sect. I.2.3 Abstract predicates)
    - implicit rolesets ... ??? unclear boundary ???
@@ -76,9 +76,9 @@ Sources:
 
 #### TODO: Other deverbal nouns
 
-### I.2.2 TODO: Adjectives
+### I.2.2 TODO: Adjectives ... NOT now
 
-### I.2.3 TODO: Adverbs
+### I.2.3 TODO: Adverbs ... NOT now
 
 
 ---
@@ -107,7 +107,9 @@ Sources:
     - `PAT` (--> `ARG1`), and  
     - `ADDR` (--> `ARG2`) 
   - for the rest two, ``non-lexicalized'' roles would rather be used (see the ITAT paper): 
-    - `ORIG` --> `Source`,
+    - `ORIG` --> `Source` ('entity from which the theme detaches', as in _oddělit hlavu od těla_)    
+     ??  the same label for  _získat zprávy od někoho_ ??
+    <!-- `animate entity that initiates the action' -->
     - `EFF` --> `Goal` 
 
 
@@ -153,20 +155,48 @@ In theory, the respective noun with the `CPHR` label should serve as a predicate
 
 ## I.4 Further Structural Changes
 
+### I.4.1  Coreference: 
 
-### I.4.1 Coreference: Re-entrancy of a variable
+#### Identification of coreferential chains in PDT
 
-### I.4.2 Coreference: Inverse roles for relative clauses
+For each sentence, all nodes with a coreferential link indicating a node (or nodes) (within or outside) the sentence must be collected and the respective pairs (corefering node—coreferred node) added to the document-level part of the sentence annotation.
 
-### I.4.3 Coreference: Inverse roles for nominalizations
 
-### I.4.4 TODO: Coreference: Inverse roles for embedded interrogatives
+Further, the proper relation between the pair members must be identified, reflecting  
+1. whether they refer to the same entity or to the same event and   
+2. whether their mutual relation is a relation of the identity (both nodes represent the same referent)
+or it is a relation between a set and its (proper) subset / event and its subevent.
 
-### I.4.5  Reification
+The first **distinction (entity vs. event)** is crucial and as it can help us to correctly identify (or at least check) whether events have been correctly distinguished -- apparently, only concepts of the same type can form coreferential chains.
+
+
+#### Coreference: Re-entrancy of a variable (intra-sentential)
+
+see the ITAT paper, sect. 3.3.1
+
+#### Coreference: Inverse roles for relative clauses (intra-sentential)
+
+see the ITAT paper, sect. 3.3.1.A
+
+#### Coreference: Inverse roles for nominalizations (intra-sentential)
+
+see the ITAT paper, sect. 3.3.1.B
+
+
+#### Coreference: Inverse roles for embedded interrogatives (intra-sentential)
+
+to be done
+
+
+### I.4.2  Reification (intra-sentential)
+
+see the ITAT paper, sect. 3.2.4.:  
+"Given the fact that AMR (and thus also UMR) relies on the data post-processing within which the
+AMR/UMR representations are converted into the reified forms, we give up attempts to identify constructions in the PDT data that call for reification and leave them to be handled in the subsequent phases of the project."
 
 ---
 
-## I.5 named Entities
+## I.5 Named Entities
 
 
 ---
