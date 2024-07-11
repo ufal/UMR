@@ -2730,6 +2730,204 @@ s39p2: 19-19
             (author :full-affirmative s39n2)))
 
 
+# sent_id = SlaT-2812
+# :: snt40
+Index:  1   2       3         4       5        6     7        8         9      10   11  12  13 14     15      16      17
+Words: huic ab adulescentia bella intestina caedes rapinae discordia civilis grata fuere , que ibi iuventutem suam exercuit
+Sentence: huic ab adulescentia bella intestina caedes rapinae discordia civilis grata fuere, ibique iuventutem suam exercuit
+Sentence Gloss (en): his delight, from his youth, had been in civil commotions, bloodshed, robbery, and sedition; and in such scenes he had spent his early years
+
+(s40
+
+# alignment:
+
+# document level annotation:
+(s40s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2813
+# :: snt41
+Index:   1       2       3       4       5       6    7      8         9     10
+Words: corpus patiens inediae algoris vigiliae supra quam quoiquam credibile est
+Sentence: corpus patiens inediae algoris vigiliae supra quam quoiquam credibile est
+Sentence Gloss (en): his constitution could endure hunger, want of sleep, and cold, to a degree surpassing belief
+
+(s41
+
+# alignment:
+
+# document level annotation:
+(s41s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2814
+# :: snt42
+Index:    1     2       3      4    5   6     7    8       9     10     11      12   13      14    15     16    17  18   19      20
+Words: animus audax subdolus varius , quoius rei lubet simulator ac dissimulator , alieni adpetens sui profusus , ardens in cupiditatibus
+Sentence: animus audax subdolus varius, quoius rei lubet simulator ac dissimulator, alieni adpetens sui profusus, ardens in cupiditatibus
+Sentence Gloss (en): his mind was daring, subtle, and versatile, capable of pretending or dissembling whatever he wished
+
+(s42
+
+# alignment:
+
+# document level annotation:
+(s42s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2815
+# :: snt43
+Index:   1         2     3     4        5
+Words: satis eloquentiae , sapientiae parum
+Sentence: satis eloquentiae, sapientiae parum
+Sentence Gloss (en): he had abundance of eloquence, but little wisdom
+
+(s43
+
+# alignment:
+
+# document level annotation:
+(s43s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2816
+# :: snt44
+Index:   1       2       3            4        5     6    7       8
+Words: vastus animus inmoderata incredibilia nimis alta semper cupiebat
+Sentence: vastus animus inmoderata incredibilia nimis alta semper cupiebat
+Sentence Gloss (en): his insatiable ambition was always pursuing objects extravagant, romantic, and unattainable
+
+(s44
+
+# alignment:
+
+# document level annotation:
+(s44s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2817
+# :: snt45
+Index:   1   2    3     4      5 6   7      8      9       10      11   12        13
+Words: hunc post do minationem L . Sullae lubido maxuma invaserat rei publicae capiundae
+Sentence: hunc post do minationem L. Sullae lubido maxuma invaserat rei publicae capiundae
+Sentence Gloss (en): since the time of Sylla's dictatorship, a strong desire of seizing the government possessed him
+
+(s45
+
+# alignment:
+
+# document level annotation:
+(s45s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2818
+# :: snt46
+Index:   1  2  3   4      5         6      7  8   9     10      11  12    13     14      15
+Words: que ne id quibus modis adsequeretur , dum sibi regnum pararet , quicquam pensi habebat
+Sentence: neque id quibus modis adsequeretur, dum sibi regnum pararet, quicquam pensi habebat
+Sentence Gloss (en): or did he at all care, provided that he secured power for himself, by what means he might arrive at it
+
+(s46
+
+# alignment:
+
+# document level annotation:
+(s46s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2819
+# :: snt47
+Index:      1       2    3    4   5   6     7      8     9    10      11     12     13          14   15 16   17     18     19     20   21  22   23     24
+Words: agitabatur magis que magis in dies animus ferox inopia rei familiaris et conscientia scelerum , quae utraque iis artibus auxerat , quas supra memoravi
+Sentence: agitabatur magis magisque in dies animus ferox inopia rei familiaris et conscientia scelerum, quae utraque iis artibus auxerat, quas supra memoravi
+Sentence Gloss (en): his violent spirit was daily more and more hurried on by the diminution of his patrimony, and by his consciousness of guilt; both which evils he had increased by those practices which I have mentioned above
+
+(s47
+
+# alignment:
+
+# document level annotation:
+(s47s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2820
+# :: snt48
+Index:      1          2        3        4       5   6  7      8    9     10     11  12  13 14    15     16     17    18   19
+Words: incitabant praeterea corrupti civitatis mores , quos pessuma ac divorsa inter se mala , luxuria atque avaritia , vexabant
+Sentence: incitabant praeterea corrupti civitatis mores, quos pessuma ac divorsa inter se mala, luxuria atque avaritia, vexabant
+Sentence Gloss (en): the corrupt morals of the state, too, which extravagance and selfishness, pernicious and contending vices, rendered thoroughly depraved, furnished him with additional incentives to action
+
+(s48
+
+# alignment:
+
+# document level annotation:
+(s48s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2821
+# :: snt49
+Index:  1    2     3       4    5    6    7     8         9       10     11   12  13       14   15   16       17       18     19  20   21    22 23  24    25    26       27     28     29      30      31 32    33        34   35      36       37    38      39   40        41         42  43  44   45
+Words: Res ipsa hortari videtur , quoniam de moribus civitatis tempus admonuit , supra repetere ac paucis instituta maiorum domi que militiae , quo modo rem publicam habuerint que quantam reliquerint , ut paulatim inmutata ex pulcherruma atque optuma pessuma ac flagitiosissuma facta sit , disserere
+Sentence: Res ipsa hortari videtur, quoniam de moribus civitatis tempus admonuit, supra repetere ac paucis instituta maiorum domi militiaeque, quo modo rem publicam habuerint quantamque reliquerint, ut paulatim inmutata ex pulcherruma atque optuma pessuma ac flagitiosissuma facta sit, disserere
+Sentence Gloss (en): Since the occasion has thus brought public morals under my notice, the subject itself seems to call upon me to look back, and briefly to describe the conduct of our ancestors in peace and war; how they managed the state, and how powerful they left it; and how, by gradual alteration, it became, from being the most virtuous, the most vicious and depraved
+
+(s49
+
+# alignment:
+
+# document level annotation:
+(s49s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
+# sent_id = SlaT-2822
+# :: snt50
+Index:    1    2   3    4    5    6    7    8        9      10     11      12  13 14   15    16     17      18      19        20    21 22  23   24    25     26  27      28     29   30  31    32   33  34    35   36     37    38    39
+Words: Urbem Romam , sicuti ego accepi , condidere atque habuere initio Troiani , qui Aenea duce profugi sedibus incertis vagabantur , que cum iis Aborigines , genus hominum agreste , sine legibus , sine imperio , liberum atque solutum
+Sentence: Urbem Romam, sicuti ego accepi, condidere atque habuere initio Troiani, qui Aenea duce profugi sedibus incertis vagabantur, cumque iis Aborigines, genus hominum agreste, sine legibus, sine imperio, liberum atque solutum
+Sentence Gloss (en): Of the city of Rome, as I understand, the founders and earliest inhabitants were the Trojans, who, under the conduct of Aeneas, were wandering about as exiles from their country, without any settled abode; and with these were joined the Aborigines, a savage race of men, without laws or government, free, and owning no control
+
+(s50
+
+# alignment:
+
+# document level annotation:
+(s50s0 / sentence
+    :coref ()
+    :temporal ()
+    :modal ((root :modal author)))
+
+
 # TODO: reconsider all aspects.
 # TODO: reconsider videntur + infinitive. modpred or modal-strength partial/neutral?
 # TODO: check that all events have aspect and state
