@@ -2737,15 +2737,65 @@ Words: huic ab adulescentia bella intestina caedes rapinae discordia civilis gra
 Sentence: huic ab adulescentia bella intestina caedes rapinae discordia civilis grata fuere, ibique iuventutem suam exercuit
 Sentence Gloss (en): his delight, from his youth, had been in civil commotions, bloodshed, robbery, and sedition; and in such scenes he had spent his early years
 
-(s40
+# sentence level graph:
+(s40a / and
+    :op1 (s40h / have-mod-91
+        :ARG1 (s40a2 / and
+            :op1 (s40b / bellum
+                :refer-number plural
+                :mod (s40i / intestinus))
+            :op2 (s40c / caedes :refer-number plural)
+            :op3 (s40r / rapina :refer-number plural)
+            :op4 (s40d / discordia
+                :refer-number singular
+                :mod (s40c2 / civilis)))
+        :ARG2 (s40g / gratus)
+        :affectee (s40p / person
+                :refer-number singular
+                :refer-person 3rd)
+        :temporal (s40h2 / have-mod-91
+                :ARG1 s40p
+                :ARG2 (s40a3 / adulescens)
+                :aspect state
+                :modal-strength full-affirmative)
+        :aspect state
+        :modal-strength full-affirmative)
+    :op2 (s40e / exerceo-29
+        :ARG0 s40p
+        :ARG1 (s40i2 / iuventus
+            ;refer-number singular
+            :poss s40p)
+        :place s40a2
+        :aspect state
+        :modal-strength full-affirmative))
 
 # alignment:
+s40a: 13-13
+s40h: 11-11
+s40a2: 0-0
+s40b: 4-4
+s40i: 5-5
+s40c: 6-6
+s40r: 7-7
+s40d: 8-8
+s40c2: 9-9
+s40g: 10-10
+s40p: 1-1
+s40h2: 2-3
+s40a3: 0-0
+s40e: 17-17
+s40i2: 15-15
 
 # document level annotation:
 (s40s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s39p :same-entity s40p))
+    :temporal ((s38e :before s40e)
+               (s40e :overlap s40h2)
+               (s40e :overlap s40h))
+    :modal ((root :modal author)
+            (author :full-affirmative s40h)
+            (author :full-affirmative s40e)
+            (author :full-affirmative s40h2)))
 
 
 # sent_id = SlaT-2813
@@ -2753,17 +2803,45 @@ Sentence Gloss (en): his delight, from his youth, had been in civil commotions, 
 Index:   1       2       3       4       5       6    7      8         9     10
 Words: corpus patiens inediae algoris vigiliae supra quam quoiquam credibile est
 Sentence: corpus patiens inediae algoris vigiliae supra quam quoiquam credibile est
-Sentence Gloss (en): his constitution could endure hunger, want of sleep, and cold, to a degree surpassing belief
+Sentence Gloss (en): his constitution could endure hunger, want of sleep, and cold, more than anyone could believe
 
-(s41
+# sentence level graph:
+(s41p / patior-04
+    :ARG0 (s41c / corpus :refer-number singular)
+    :ARG1 (s41a / and
+            :op1 (s41i / inedia :refer-number singular)
+            :op2 (s41a3 / algor :refer-number singular)
+            :op3 (s41v / vigilia :refer-number singular))
+    :degree (s41m / more-than
+                :op1 (s41c2 / credo-02
+                        :ARG0 (s41p3 / person
+                            :refer-number singular
+                            :refer-person 3rd)
+                        :ARG1 s41p
+                        :aspect state
+                        :modal-strength neutral-affirmative))
+    :aspect state
+    :modal-strength full-affirmative)
 
 # alignment:
+s41p: 2-2
+s41c: 1-1
+s41a: 0-0
+s41i: 3-3
+s41a3: 4-4
+s41v: 5-5
+s41m: 6-7
+s41c2: 9-10
+s41p3: 8-8
 
 # document level annotation:
 (s41s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s40p :subset-of s41c))
+    :temporal ((s39h :overlap s41p)
+                (present-reference :overlap s41c2)
+    :modal ((root :modal author)
+            (author :full-affirmative s41p)
+            (author :neutral-affirmative s41c2)))
 
 
 # sent_id = SlaT-2814
@@ -2771,17 +2849,81 @@ Sentence Gloss (en): his constitution could endure hunger, want of sleep, and co
 Index:    1     2       3      4    5   6     7    8       9     10     11      12   13      14    15     16    17  18   19      20
 Words: animus audax subdolus varius , quoius rei lubet simulator ac dissimulator , alieni adpetens sui profusus , ardens in cupiditatibus
 Sentence: animus audax subdolus varius, quoius rei lubet simulator ac dissimulator, alieni adpetens sui profusus, ardens in cupiditatibus
-Sentence Gloss (en): his mind was daring, subtle, and versatile, capable of pretending or dissembling whatever he wished
+Sentence Gloss (en): his mind was daring, subtle, and versatile, capable of pretending or dissembling whatever (he wished), covetous of other men's property, and prodigal of his own, burning with desires
 
-(s42
+# sentence level graph:
+(s42h / have-mod-91
+    :ARG1 (s42a / animus :refer-number singular)
+    :ARG2 (s42a2 / and
+        :op1 (s42a3 / audax)
+        :op2 (s42s / subdolus)
+        :op3 (s42v / varius)
+        :op4 (s42a4 / and
+            :op1 (s42s2 / simulator-02
+                :ARG1 (s42r / res
+                    :refer-number singular
+                    :mod (s42q / quilibet))
+            :op2 (s42d / dissimulator-01
+                :ARG1 s42r)))
+        :op5 (s42c / contrast-91
+            :ARG1 (s42a6 / appeto-04
+                :ARG0 s42a
+                :ARG1 (s42t / thing
+                    :poss (s42p / person
+                        :refer-number singular
+                        :refer-person 3rd
+                        :mod (s42a7 / alius)))
+                :aspect state
+                :modal-strength full-affirmative)
+            :ARG2 (s42p2 / profundo-06+07+14
+                :ARG0 s42a
+                :ARG1 (s42t2 / thing
+                        :refer-number singular
+                        :poss s42p)
+                :aspect state
+                :modal-strength full-affirmative))
+        :op6 (s42a8 / ardeo-08
+            :ARG0 s42a
+            :reason (s42c2 / cupiditas :refer-number plural)
+            :aspect state
+            :modal-strength full-affirmative))
+    :aspect state
+    :modal-strength full-affirmative)
 
 # alignment:
+s42h: 0-0
+s42a: 1-1
+s42a2: 0-0
+s42a3: 2-2
+s42s: 3-3
+s42v: 4-4
+s42a4: 10-10
+s42s2: 9-9
+s42r: 7-7
+s42q: 6-6, 8-8
+s42d: 11-11
+s42c: 0-0
+s42a6: 14-14
+s42t: 13-13
+s42p: 0-0
+s42a7: 0-0
+s42t2: 15-15
+s42p2: 16-16
+s42a8: 18-18
+s42c2: 19-20
 
 # document level annotation:
 (s42s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s40p :subset-of s42a))
+    :temporal ((s39h :overlap s42h)
+                (s42h :overlap s42a6)
+                (s42h :overlap s42p2)
+                (s42h :overlap s42a8))
+    :modal ((root :modal author)
+            (author :full-affirmative s42h)
+            (author :full-affirmative s42a6)
+            (author :full-affirmative s42p2)
+            (author :full-affirmative s42a8)))
 
 
 # sent_id = SlaT-2815
@@ -2791,15 +2933,34 @@ Words: satis eloquentiae , sapientiae parum
 Sentence: satis eloquentiae, sapientiae parum
 Sentence Gloss (en): he had abundance of eloquence, but little wisdom
 
-(s43
+# sentence level graph:
+(s43h / have-mod-91
+    :ARG1 (s43p / person
+        :refer-number singular
+        :refer-person 3rd)
+    :ARG2 (s43c / contrast-91
+        :ARG1 (s43e / eloquens
+            :degree (s43s / satis))
+        :ARG2 (s43s2 / sapiens
+            :degree (s43p2 / parum)))
+    :aspect state
+    :modal-strength full-affirmative)
 
 # alignment:
+s43h: 0-0
+s43p: 0-0
+s43c: 3-3
+s43e: 2-2
+s43s: 1-1
+s43s2: 4-4
+s43p2: 5-5
 
 # document level annotation:
 (s43s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s40p :same-entity s43p))
+    :temporal ((s39h :overlap s43h))
+    :modal ((root :modal author)
+            (author :full-affirmative s43h)))
 
 
 # sent_id = SlaT-2816
@@ -2807,35 +2968,104 @@ Sentence Gloss (en): he had abundance of eloquence, but little wisdom
 Index:   1       2       3            4        5     6    7       8
 Words: vastus animus inmoderata incredibilia nimis alta semper cupiebat
 Sentence: vastus animus inmoderata incredibilia nimis alta semper cupiebat
-Sentence Gloss (en): his insatiable ambition was always pursuing objects extravagant, romantic, and unattainable
+Sentence Gloss (en): his insatiable ambition was always pursuing extravagant, incredible, unattainable things
 
-(s44
+# sentence level graph:
+(s44c / cupio-03+05
+    :ARG0 (s44a / animus
+        :mod (s44v / vastus)
+        :refer-number singular)
+    :ARG1 (s44t / thing
+        :refer-number plural
+        :mod (s44a2 / and
+            :op1 (s44m / moderatus :polarity -)
+            :op2 (s44c2 / credibilis :polarity -)
+            :op3 (s44a3 / altus
+                :degree (s44n / nimis))))
+    :temporal (s44s / semper)
+    :aspect state
+    :modal-strength full-affirmative)
 
 # alignment:
+s44c: 8-8
+s44a: 2-2
+s44v: 1-1
+s44t: 3-6
+s44a2: 0.0
+s44m: 0-0
+s44a3: 0-0
+s44n: 0-0
+s44c2: 0-0
+s44s: 7-7
 
 # document level annotation:
 (s44s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s42a :same-entity s44a))
+    :temporal ((past-reference :depends-on s44s)
+                (s43h :overlap s44c))
+    :modal ((root :modal author)
+            (author :full-affirmative s44c)))
 
 
 # sent_id = SlaT-2817
 # :: snt45
-Index:   1   2    3     4      5 6   7      8      9       10      11   12        13
-Words: hunc post do minationem L . Sullae lubido maxuma invaserat rei publicae capiundae
-Sentence: hunc post do minationem L. Sullae lubido maxuma invaserat rei publicae capiundae
+Index:   1    2          3    4 5    6      7     8        9     10     11       12
+Words: hunc post dominationem L . Sullae lubido maxuma invaserat rei publicae capiundae
+Sentence: hunc post dominationem L. Sullae lubido maxuma invaserat rei publicae capiundae
 Sentence Gloss (en): since the time of Sylla's dictatorship, a strong desire of seizing the government possessed him
 
-(s45
+# sentence level graph:
+(s45i / invado2-05
+    :ARG0 (s45c / cupio-03+05
+        :manner (s45m / magnus :degree intensifier)
+        :ARG0 s45p
+        :ARG1 (s45c2 / capio-37
+            :ARG0 s45p
+            :ARG1 (s45r / res
+                :mod (s45p3 / publicus)
+                :refer-number singular)
+                :aspect performance
+                :modpred s45c)
+        :aspect state
+        :modal-strength full-affirmative)
+    :ARG1 (s45p / person
+        :refer-number singular
+        :refer-person 3rd)
+    :temporal (s45a / after
+        :op1 (s45d / dominor-03
+            :ARG0 (s45p2 / person
+                    :wiki "Q483783"
+                    :name (s45n / name :op1 "L." :op2 "Sulla"))
+            :aspect
+            :modal-strength full-affirmative))
+    :aspect performance
+    :modal-strength full-affirmative)
 
 # alignment:
+s45i: 9-9
+s45c: 7-7
+s45m: 8-8
+s45p: 1-1
+s45p2:4-6
+s45c2: 12-12
+s45r: 10-10
+s45p3: 11-11
+s45a: 2-2
+s45d: 3-3
+s45n: 0-0
 
 # document level annotation:
 (s45s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref (s40p :same-entity s45p)
+    :temporal ((past-reference :overlap s45d)
+                (s45d :after s45i)
+                (s45d :after s45c)
+                (s45c :after s45c2))
+    :modal ((root :modal author)
+            (author :full-affirmative s45i)
+            (author :full-affirmative s45d)
+            (author :full-affirmative s45c)
+            (s45c :unspecified s45c2)))
 
 
 # sent_id = SlaT-2818
@@ -2845,6 +3075,7 @@ Words: que ne id quibus modis adsequeretur , dum sibi regnum pararet , quicquam 
 Sentence: neque id quibus modis adsequeretur, dum sibi regnum pararet, quicquam pensi habebat
 Sentence Gloss (en): or did he at all care, provided that he secured power for himself, by what means he might arrive at it
 
+# sentence level graph:
 (s46
 
 # alignment:
@@ -2863,6 +3094,7 @@ Words: agitabatur magis que magis in dies animus ferox inopia rei familiaris et 
 Sentence: agitabatur magis magisque in dies animus ferox inopia rei familiaris et conscientia scelerum, quae utraque iis artibus auxerat, quas supra memoravi
 Sentence Gloss (en): his violent spirit was daily more and more hurried on by the diminution of his patrimony, and by his consciousness of guilt; both which evils he had increased by those practices which I have mentioned above
 
+# sentence level graph:
 (s47
 
 # alignment:
@@ -2881,6 +3113,7 @@ Words: incitabant praeterea corrupti civitatis mores , quos pessuma ac divorsa i
 Sentence: incitabant praeterea corrupti civitatis mores, quos pessuma ac divorsa inter se mala, luxuria atque avaritia, vexabant
 Sentence Gloss (en): the corrupt morals of the state, too, which extravagance and selfishness, pernicious and contending vices, rendered thoroughly depraved, furnished him with additional incentives to action
 
+# sentence level graph:
 (s48
 
 # alignment:
@@ -2899,6 +3132,7 @@ Words: Res ipsa hortari videtur , quoniam de moribus civitatis tempus admonuit ,
 Sentence: Res ipsa hortari videtur, quoniam de moribus civitatis tempus admonuit, supra repetere ac paucis instituta maiorum domi militiaeque, quo modo rem publicam habuerint quantamque reliquerint, ut paulatim inmutata ex pulcherruma atque optuma pessuma ac flagitiosissuma facta sit, disserere
 Sentence Gloss (en): Since the occasion has thus brought public morals under my notice, the subject itself seems to call upon me to look back, and briefly to describe the conduct of our ancestors in peace and war; how they managed the state, and how powerful they left it; and how, by gradual alteration, it became, from being the most virtuous, the most vicious and depraved
 
+# sentence level graph:
 (s49
 
 # alignment:
@@ -2917,6 +3151,7 @@ Words: Urbem Romam , sicuti ego accepi , condidere atque habuere initio Troiani 
 Sentence: Urbem Romam, sicuti ego accepi, condidere atque habuere initio Troiani, qui Aenea duce profugi sedibus incertis vagabantur, cumque iis Aborigines, genus hominum agreste, sine legibus, sine imperio, liberum atque solutum
 Sentence Gloss (en): Of the city of Rome, as I understand, the founders and earliest inhabitants were the Trojans, who, under the conduct of Aeneas, were wandering about as exiles from their country, without any settled abode; and with these were joined the Aborigines, a savage race of men, without laws or government, free, and owning no control
 
+# sentence level graph:
 (s50
 
 # alignment:
