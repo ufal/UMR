@@ -2536,7 +2536,7 @@ Sentence Gloss (en): thus I shall give an account in few words, with as much tru
             :ARG0 (s36p2 / person
                     :wiki "Q75826"
                     :name (s36n / name :op1 "Catilina")))
-    :instrument (s36p3 / paucus :refer-number plural)
+    :instrument (s36p3 / pauca :refer-number plural)
     :manner (s36v / verus
             :degree (s36m / most)
             :ARG1-of (s36p4 / possum-02
@@ -3073,18 +3073,51 @@ s45n: 0-0
 Index:   1  2  3   4      5         6      7  8   9     10      11  12    13     14      15
 Words: que ne id quibus modis adsequeretur , dum sibi regnum pararet , quicquam pensi habebat
 Sentence: neque id quibus modis adsequeretur, dum sibi regnum pararet, quicquam pensi habebat
-Sentence Gloss (en): or did he at all care, provided that he secured power for himself, by what means he might arrive at it
+Sentence Gloss (en): and he did not care at all, provided that he secured power for himself, by what means he might arrive at it
 
 # sentence level graph:
-(s46
+(s46p / pendo-05
+    :ARG0 (s46p2 / person
+        :refer-number singular
+        :refer-person 3rd)
+    :ARG1 (s46m / modus
+        :refer-number plural
+        :mod (s46q / qui)
+        :instrument-of (s46a / assequor-08
+                :ARG0 s46p2
+                :ARG1 s46r
+                :aspect performance
+                :modal-strength neutral-affirmative))
+    :condition (s46p3 / paro-09
+        :ARG0 s46p2
+        :ARG1 (s46r / regnum :refer-number singular)
+        :affectee s46p2
+        :aspect performance
+        :modal-strength full-affirmative)
+    :aspect state
+    :modal-strength full-negative)
 
 # alignment:
+s46p: 13-15
+s46p2: 9-9
+s46m: 5-5
+s46q: 4-4
+s46a: 6-6
+s46p3: 11-11
+s46r: 10-10
 
 # document level annotation:
 (s46s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s40p :same-entity s46p2)
+            (s45c2 :same-event s46a)
+            (s46a :same-event s46p3))
+    :temporal ((s45i :after s46p)
+            (s464p :after s46p3)
+            (s464p :after s46a))
+    :modal ((root :modal author)
+            (author :full-negative s46p)
+            (author :full-affirmative s46p3)
+            (author :neutral-affirmative s46a)))
 
 
 # sent_id = SlaT-2819
@@ -3092,18 +3125,77 @@ Sentence Gloss (en): or did he at all care, provided that he secured power for h
 Index:      1       2    3    4   5   6     7      8     9    10      11     12     13          14   15 16   17     18     19     20   21  22   23     24
 Words: agitabatur magis que magis in dies animus ferox inopia rei familiaris et conscientia scelerum , quae utraque iis artibus auxerat , quas supra memoravi
 Sentence: agitabatur magis magisque in dies animus ferox inopia rei familiaris et conscientia scelerum, quae utraque iis artibus auxerat, quas supra memoravi
-Sentence Gloss (en): his violent spirit was daily more and more hurried on by the diminution of his patrimony, and by his consciousness of guilt; both which evils he had increased by those practices which I have mentioned above
+Sentence Gloss (en): his violent spirit was day by day more and more tormented on by the diminution of his patrimony, and by his consciousness of guilt; both which evils he had increased by those practices which I have mentioned above
 
 # sentence level graph:
-(s47
+(s47a / agito-NEW-15
+    :ARG0 (s47a2 / and
+        :op1 (s47i / inopia
+            :refer-number singular
+            :mod (s47r / res
+                :mod (s47f2 / familiaris)
+                :refer-number singular))
+        :op2 (s47c / conscientia-05
+            :ARG1 (s47s / scelus :refer-number plural))
+        :ARG1-of (s47a4 / augeo-08
+            :ARG0 (s47p / person
+                :refer-person 3rd
+                :refer-number singular)
+            :instrument (s47a5 / ars
+                :refer-number plural
+                :ARG1-of (s47m / memoro-05
+                    :ARG0 (s47p2 / person
+                        :refer-number singular
+                        :refer-person 1st)
+                    :place (s47s2 / supra)
+                    :aspect performance
+                    :modal-strength full-affirmative))
+            :aspect performance
+            :modal-strength full-affirmative))
+    :ARG1 (s47a3 / animus
+        :refer-number singular
+        :mod (s47f / ferox))
+    :temporal (s47d / dies :refer-number plural)
+    :extent (s47a6 / and
+        :op1 (s47m2 / magis)
+        :op2 (s47m3 / magis))
+    :aspect activity
+    :modal-strength full-affirmative)
 
 # alignment:
+s47a: 1-1
+s47a2: 12-12
+s47i: 9-9
+s47r: 10-10
+s47f2: 11-11
+s47c: 13-13
+s47s: 14-14
+s47a4: 20-20
+s47p: 0-0
+s47a5: 18-19
+s47m: 24-24
+s47p2: 0-0
+s47s2: 23-23
+s47a3: 7-7
+s47f: 8-8
+s47d: 5-6
+s47a6: 3-3
+s47m2: 2-2
+s47m3: 4-4
 
 # document level annotation:
 (s47s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s40p :same-entity s47p)
+            (s38p :same-entity s47p2)
+            (s47p :subset-of s47a3)
+            (s40a2 :same-entity s475))
+    :temporal ((s46p :overlap s47a)
+            (s47a :before s47a4)
+            (s38e :after s47m))
+    :modal ((root :modal author)
+            (author :full-affirmative s47a)
+            (author :full-affirmative s47m)
+            (author :full-affirmative s47a4))
 
 
 # sent_id = SlaT-2820
@@ -3114,15 +3206,61 @@ Sentence: incitabant praeterea corrupti civitatis mores, quos pessuma ac divorsa
 Sentence Gloss (en): the corrupt morals of the state, too, which extravagance and selfishness, pernicious and contending vices, rendered thoroughly depraved, furnished him with additional incentives to action
 
 # sentence level graph:
-(s48
+(s48i / incito-12
+    :ARG0 (s48m / mos
+        :refer-number plural
+        :mod (s48c / civitas :refer-number singular)
+        :ARG1-of (s48c2 / corrumpo-15
+            :aspect performance
+            :modal-strength full-affirmative)
+        :ARG1-of (s48v / vexo-10
+            :ARG0 (s48a / and
+                :op1 (s48l / luxuria :refer-number singular)
+                :op2 (s48a2 / avaritia :refer-number singular)
+            :ARG1-of (s48h / have-identity-91
+                :ARG2 (s48m2 / malum
+                    :refer-number plural
+                    :mod (s48a3 / and
+                        :op1 (s48m3 / malus :degree intensifier)
+                        :op2 (s48d / differo-13
+                            :ARG1 s48a
+                            :ARG2 s48a)))))
+            :aspect acitivity
+            :modal-strength full-affirmative))
+    :ARG1 (s48p / person
+        :refer-number singular
+        :refer-person 3rd)
+    :aspect activity
+    :modal-strength full-affirmative)
 
 # alignment:
+s48i: 1-1
+s48m: 5-5
+s48c: 4-4
+s48c2: 3-3
+s48v: 19-19
+s48a: 16-16
+s48l: 15-15
+s48a2: 17-17
+s48h: 0-0
+s48m2: 13-13
+s48a3: 9-9
+s48m3: 8-8
+s48d: 10-10
+s48p: 0-0
 
 # document level annotation:
 (s48s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s40p :same-entity s48p))
+    :temporal ((s47a :overlap s48i)
+            (s48i :overlap s48v)
+            (s48v :overlap s48h)
+            (s48v :before s48c2))
+    :modal ((root :modal author)
+            (author :full-affirmative s48i)
+            (author :full-affirmative s48h)
+            (author :full-affirmative s48v)
+            (author :full-affirmative s48c2)))
 
 
 # sent_id = SlaT-2821
@@ -3133,15 +3271,132 @@ Sentence: Res ipsa hortari videtur, quoniam de moribus civitatis tempus admonuit
 Sentence Gloss (en): Since the occasion has thus brought public morals under my notice, the subject itself seems to call upon me to look back, and briefly to describe the conduct of our ancestors in peace and war; how they managed the state, and how powerful they left it; and how, by gradual alteration, it became, from being the most virtuous, the most vicious and depraved
 
 # sentence level graph:
-(s49
+(s49v / video-10
+    :ARG0 (s49p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s49h / hortor-01
+        :ARG0 (s49r / res
+            :refer-number singular
+            :mod (s49i / ipse))
+        :ARG1 s49p
+        :ARG2 (s49a / and
+            :op1 (s49r2 / repeto-04
+                :ARG0 s49p
+                :ARG4 (s49s / supra)
+                :aspect activity
+                :modal-strength partial-affirmative)
+            :op2 (s49d / dissero2-02
+                :ARG0 s49p
+                :ARG1 (s49a2 / and
+                    :op1 (s49i2 / instituo-04
+                        :ARG0 (s49m2 / maior :refer-number plural)
+                        :temporal (s49a5 / and
+                            :op1 (s49d2 / domi)
+                            :op2 (s49m3 / militiae))
+                        :aspect performance
+                        :modal-strength full-affirmative)
+                    :op2 (s49a3 / and
+                        :op1 (s49m4 / manner
+                            :manner-of (s49h2 / habeo-15
+                                :ARG0 s49m2
+                                :ARG1 (s49r3 / res
+                                    :refer-number singular
+                                    :mod (s49p3 / publicus))
+                                :aspect performance
+                                :modal-strength full-affirmative))
+                        :op2 (s49q / quantus
+                            :manner-of (s49r4 / relinquo-04
+                                :ARG0 s49m2
+                                :ARG1 s49r2
+                                :aspect performance
+                                :modal-strength full-affirmative)))
+                    :op3 (s49m5 / manner
+                        :manner-of (s49f / facio-05
+                            :ARG1 s49r2
+                            :ARG2 (s49a6 / and
+                                :op1 (s49m6 / malus :degree intensifier)
+                                :op2 (s49f2 / flagitiosus :degree intensifier))
+                            :ARG3 (s49a7 / and
+                                :op1 (s49p5 / pulcher :degree intensifier)
+                                :op2 (s49b / bonus :degree intensifier))
+                            :manner (s49i3 / immuto-NEW-01
+                                :ARG1 s49r2
+                                :manner (s49p4 / paulatim)
+                                :aspect performance
+                                :modal-strength full-affirmative)
+                            :aspect performance
+                            :modal-strength full-affirmative)))
+                :instrument (s49p2 / pauca :refer-number plural)
+                :aspect activity
+                :modal-strength partial-affirmative))
+        :aspect activity
+        :modal-strength partial-affirmative)
+    :reason (s49a4 / admoneo-01
+        :ARG0 (s49t / tempus :refer-number singular)
+        :ARG2 (s49m / mos
+            :refer-number plural
+            :mod (s49c / civitas :refer-number singular))
+        :aspect performance
+        :modal-strength full-affirmative)
+    :aspect state
+    :modal-strength full-affirmative)
 
 # alignment:
+s49v: 4-4
+s49p: 0-0
+s49h: 3-3
+s49r: 1-1
+s49i: 2-2
+s49a: 15-15
+s49r2: 14-14
+s49s: 13-13
+s49d: 45-45
+s49a2: 20-20
+s49i2: 17-17
+s49m2: 18-18
+s49a5: 20-20
+s49d2: 19-19
+s49m3: 21-21
+s49a3: 28-28
+s49m4: 23-24
+s49h2: 27-27
+s49r3: 25-25
+s49p3: 26-26
+s49q: 29-29
+s49r4: 30-30
+s49m5: 32-32
+s49f: 42-43
+s49a6: 40-40
+s49f2: 41-41
+s49m6: 39-39
+s49a7: 37-37
+s49p5: 35-36
+s49b: 35-35, 38-38
+s49i3: 34-34
+s49p4: 33-33
+s49p2: 16-16
+s49a4: 11-11
+s49t: 10-10
+s49m: 7-8
+s49c: 9-9
 
 # document level annotation:
 (s49s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s40p :same-entity s49p)
+            (s48m :same-entity s49m)
+            (s48c :same-entity s49c))
+    :temporal ((document-creation-time :overlap s49v)
+            (s49v :after s49h)
+            (s49h :after s49r2)
+            (s49h :after s49d)
+            (s49v :before s49a4))
+    :modal ((root :modal author)
+            (author :full-affirmative s49v)
+            (author :partial-affirmative s49h)
+            (author :partial-affirmative s49r2)
+            (author :partial-affirmative s49d)
+            (author :full-affirmative s49a4)))
 
 
 # sent_id = SlaT-2822
@@ -3149,20 +3404,126 @@ Sentence Gloss (en): Since the occasion has thus brought public morals under my 
 Index:    1    2   3    4    5    6    7    8        9      10     11      12  13 14   15    16     17      18      19        20    21 22  23   24    25     26  27      28     29   30  31    32   33  34    35   36     37    38    39
 Words: Urbem Romam , sicuti ego accepi , condidere atque habuere initio Troiani , qui Aenea duce profugi sedibus incertis vagabantur , que cum iis Aborigines , genus hominum agreste , sine legibus , sine imperio , liberum atque solutum
 Sentence: Urbem Romam, sicuti ego accepi, condidere atque habuere initio Troiani, qui Aenea duce profugi sedibus incertis vagabantur, cumque iis Aborigines, genus hominum agreste, sine legibus, sine imperio, liberum atque solutum
-Sentence Gloss (en): Of the city of Rome, as I understand, the founders and earliest inhabitants were the Trojans, who, under the conduct of Aeneas, were wandering about as exiles from their country, without any settled abode; and with these were joined the Aborigines, a savage race of men, without laws or government, free, and owning no control
+Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earliest inhabitants were the Trojans, who, under the conduct of Aeneas, were wandering about as exiles from their country, without any settled abode; and with these were joined the Aborigines, a savage race of men, without laws or government, free, and owning no control
 
 # sentence level graph:
-(s50
+(s50a / and
+    :op1 (s50c / condo-17
+        :ARG0 (s50a2 / and
+            :op1 (s50p / person
+                :refer-number plural
+                :mod (s50c2 / city
+                        :name (s50n / name :op1 "Troia")
+                        :wiki "Q22647")
+                :ARG0-of (s50v / vagor-04
+                    :location (s50s / sedes
+                        :refer-number plural
+                        :mod (s50i / incertus))
+                    :manner (s50p3 / profugus :refer-number plural)
+                    :companion (s50p2 / person
+                        :wiki "Q82732"
+                        :name (s50n2 / name :op1 "Aeneas")
+                        :ARG1-of (s50h2 / have-role-91
+                            :ARG3 (s50d / dux)
+                            :aspect state
+                            :modal-strength full-affirmative))
+                    :aspect performance
+                    :modal-strength full-affirmative))
+            :op2 (s50e / ethnic-group
+                :refer-number plural
+                :wiki "Q322971"
+                :name (s50n4 / name :op1 "Aborigines")
+                :ARG1-of (s50h3 / have-identity-91
+                    :ARG2 (s50g / genus
+                        :refer-number singular
+                        :mod (s50h4 / homo :refer-number plural)
+                        :mod (s50a4 / and
+                            :op1 (s50a3 / agrestis)
+                            :op2 (s50a5 / and
+                                :op1 (s50l / lex
+                                    :refer-number plural
+                                    :polarity -)
+                                :op2 (s50i3 / imperium
+                                    :refer-number singular
+                                    :polarity -))
+                            :op3 (s50a6 / and
+                                :op1 (s50l2 / liber)
+                                :op2 (s50s3 / solutus))))
+                    :aspect state
+                    :modal-strength full-affirmative)))
+        :ARG1 (s50c3 / city
+            :wiki "Q18287233"
+            :name (s50n3 / name :op1 "Roma"))
+        :temporal (s50i / initio)
+        :aspect performance
+        :modal-strength full-affirmative)
+    :op2 (s50h / habeo-15
+        :ARG0 s50p
+        :ARG1 s50c3
+        :aspect performance
+        :modal-strength full-affirmative)
+    :according-to (s50a7 / accipio-08+10
+            :ARG0 (s50p4 / person
+                :refer-number singular
+                :refer-person 1st)
+            :aspect state
+            :modal-strength full-affirmative))
 
 # alignment:
+s50a: 9-9
+s50c: 8-8
+s50a2: 22-24
+s50p: 12-12
+s50c2:
+s50n: 0-0
+s50v: 20-20
+s50s: 18-18
+s50i: 19-19
+s50p3: 17-17
+s50p2: 15-15
+s50n2: 0-0
+s50h2: 16-16
+s50d: 0-0
+s50e: 25-25
+s50n4: 0-0
+s50h3: 0-0
+s50g: 27-27
+s50h4: 28-28
+s50a4: 0-0
+s50a3: 29-29
+s50a5: 0-0
+s50l: 31-32
+s50i3: 34-35
+s50a6: 38-38
+s50l2: 37-37
+s50s3: 39-39
+s50c3: 2-3
+s50n3: 0-0
+s50i: 11-11
+s50h: 10-10
+s50a7: 4-4, 6-6
+s50p4: 5-5
 
 # document level annotation:
 (s50s0 / sentence
-    :coref ()
-    :temporal ()
-    :modal ((root :modal author)))
+    :coref ((s49p :same-entity s50p4))
+    :temporal ((past-reference :depends-on s50i)
+            (s50i :overlap s50c)
+            (s50i :overlap s50h)
+            (s50c :before s50v)
+            (s50v :overlap s50h2)
+            (s50c :overlap s50h3)
+            (document-creation-time :before s50a7))
+    :modal ((root :modal author)
+            (author :full-affirmative s50h2)
+            (author :full-affirmative s50v)
+            (author :full-affirmative s50h3)
+            (author :full-affirmative s50h)
+            (author :full-affirmative s50a7)
+            (author :full-affirmative s50c)))
 
 
 # TODO: reconsider all aspects.
 # TODO: reconsider videntur + infinitive. modpred or modal-strength partial/neutral?
 # TODO: check that all events have aspect and state
+# TODO: check state events used as anchoring for temporal dependencies
