@@ -1,0 +1,25 @@
+context: .*
+node: ${label}
+node: #{blue}${relation}
+
+style: <?
+    my @links = ListV($this->{links});
+    my $coords = join '&', 'n,n,p,p', map {
+        my $parent = $_->{'target.rf'};
+        my $expression = qq([id = $parent]);
+        "n,n,(x$expression+xn)/2,(y$expression+yn)/2.5,x$expression,y$expression"
+    } @links;
+
+    my $arrows  = join '&', 'none', ('last') x @links;
+    my $colours = join '&', 'grey', ('orange') x @links;
+    my $widths  = join '&', ('2'), ('1') x @links;
+    my $smooth  = join '&', ('0'), ('1') x @links;
+    my $hints   = join '&', "", map $_->value, @links;
+    my $deco    = join '&', "", map "shape=text;font=SansSerif 10;fill=magenta;coords=n,n;start=55%;text=".$_->value, @links;
+
+    "#{Line-coords:$coords}#{Line-fill:$colours}#{Line-arrow:$arrows}"
+    . "#{Line-width:$widths}#{Line-smooth:$smooth}#{Line-hint:$hints}"
+    . "#{Line-decoration:$deco}"
+    . '#{Oval-fill:whitesmoke}#{CurrentOval-fill:red}';
+
+?>

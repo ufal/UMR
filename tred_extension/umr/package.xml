@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tred_extension xmlns="http://ufal.mff.cuni.cz/pdt/pml/" install_size="0">
+  <head>
+    <schema href="tred_extension_schema.xml"/>
+  </head>
+  <pkgname>umr</pkgname>
+  <icon>icons/umr.png</icon>
+  <repository href="http://ufal.mff.cuni.cz/tred/extensions/external/"/>
+  <title>TrEd Extension to Work with Uniform Meaning Representation</title>
+  <version>0.01</version>
+  <copyright year="2024">Jan Štěpánek</copyright>
+  <description>Makes it possible to view the UMR files.</description>
+  <require>
+    <tred min_version="2.4936"/>
+    <perl_module name="Treex::PML" min_version="2.28">
+      <other href="https://metacpan.org/dist/Treex-PML"/>
+    </perl_module>
+  </require>
+</tred_extension>

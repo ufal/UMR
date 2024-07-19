@@ -1,0 +1,8 @@
+# -*- cperl -*-
+#ifndef umr
+#define umr
+#binding-context UMR
+
+#include "umr.inc"
+#endif umr
+
