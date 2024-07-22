@@ -15,15 +15,30 @@
 
 2. **Nodes** within a sentence that are connected with a **coreferential link** should **be merged** ... see also Sect. I.4 ``Structural Changes'' below
 
+3. Má-li uzel 2 rodiče (Estonsko), jak se určí, co bude jeho rodič ve stromě a co jen šipka? Jak se pozná typ šipky (tj. relace = typ hrany)?
 
-3. **Named entities** (NE(s)), its type (= the abstract entity, as, e.g.,  `person`)  serves as the concept; it is instantiated using a variable (as for other concepts).   
+4. **Named entities** (NE(s)), its type (= the abstract entity, as, e.g.,  `person`)  serves as the concept; it is instantiated using a variable (as for other concepts).   
 NEs have their internal structure (esp. wiki, name)   
 --> **suggestion: not now** (one of future necessary steps, I.5 below) 
 
-4.  **???** other paratactic structures **???**
+5.  **???** other paratactic structures **???**
 
-5.  **???** what else **???**
 
+6. **pořadí uzlů**:   
+Není mi jasné, jak se určuje pořadí uzlů? (Evidentně ne podle pořadí anotace.)  
+Na Tvém obrázku "výsledek" předchází "volit-001", v textu se ale napřed mluví o volbách a pak teprve o tom, že jde o předběžné výsledky.
+Zobrazovadlo, které dělal Míša, se nějak drželo povrchu (nejlevější alignované slovo?) - aby se to aspoň zhruba dalo porovnat.  
+Šlo by nějak ošetřit?  
+(V PDT má "získat" děti  "volba", "výsledek", "hlas" a "blok" - pokud tomu dobře rozumím, pořadí se mění jen u "NB" uzlů, pokud je to relevantní z hlediska výpovědní dynamičnosti.
+Kopírované uzly se dávají jako nejlevější děti, myslím?)
+
+
+7. Zcela kosmetická záležitost - co kdyby **jména relací (= hrany)** **začínaly vždy dvojtečkou**?   
+Trochu jsme si na to zvykli a věřím, že i ostatní, ostatně guidelines i tabulka UMR lists dvojtečku na začátek dávají.  
+(Ignoruj tenhle návrh, jestli to má nějaké technické problémy.)
+
+
+8.  **???** what else **???**
 
 ---
 
@@ -198,6 +213,33 @@ AMR/UMR representations are converted into the reified forms, we give up attempt
 
 ## I.5 Named Entities
 
+1. Matou mě uzly s **relací (= hranou) "name" (modře) a konceptem "name" (černě)** - chápu, že to je to teď "place holder", který zatím nenaplňuješ.
+
+Ale je otázka, jak by to mělo ve výsledku vypadat.  
+Nemělo by se s ":name" (= hranou, modře) zacházet stejně jako třeba s ":wiki"?  
+UMR lists mluví o "subroles", kde je :name spolu s :wiki, :value, :unit apod.
+https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=235257559#gid=235257559  
+Z obrázku z panelu vlevo je zřejmé, že ":wiki" je atributem uzlu, stejně jako :refer-number (kde je uzavřená množina hodnot).  
+Dávalo by to smysl?
+
+---
+
+## I.6 Abstraktní koncepty a strukturovaný text:
+
+UMR má řadu abstraktních konceptů pro zachycení strukturovaného textu (typu den v týdnu, množství čehosi, adresa apod.)
+https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=0#gid=0
+Je otázka, zda má smysl toto zachycovat jako stromovou strukturu (samostatné uzly na několika úrovních, viz i :name, "wiki" apod výš), nebo jako páry atribut-hodnota patřící jedinému uzlu=konceptu.
+Podle toho jejich seznamu:
+- **concepts** (person, thing apod.):
+    - OK uzly, které nemají lexikální obsazení (nebo jde o zájmena) - jediný uzel (případně s atributy zachycujícími např. číslo či osobu).
+    - ??? uzly s abstraktními koncepty, které tvoří "obálku" pro pojmenovanou entitu, viz výš o :name ... má smysl pokusit s stáhnout do jediného uzlu??? 
+- **entities** (date-entity apod., viz "nedělní") ... asi by se dalo řešit jako "subroles", tedy jako jediný uzel (s atributy)
+- **quantities** (volume-quantity apod.) ... asi by se dalo řešit jako "subroles", tedy jako jediný uzel (s atributy)
+- **others** (date-interval, slash, emoticons apod.) ... ???
+- **maths** (less-than, at-least, su-of apod.) ... ???
+
+**ALE:**
+- **discourse relations** ... koncepty (and, or, but-91 apod.) mají stejnou roli jako PDT uzel pro koordinaci/apozici, pod nimi jako děti by tedy měly být uzly pro koordinované výrazy (podstromy)   
 
 ---
 ---
