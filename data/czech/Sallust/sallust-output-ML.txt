@@ -151,21 +151,23 @@ s3z4: 36-36
                (s3s4 :contained s3b)
                (s3s4 :contained s3s6)
                (s3s4 :contained s3p7))
-    :modal ((root :modal s1p2)))
-
-  s3p = přičinit se (performance (as a subtype of process)) ... mít (=should) -> partial-affirmative
-  s3s = snažit-se-001 (activity (as a subtype of process)) ...  -> full-affirmative
-  s3v2 = vyniknout (process) ... -> partial-affirmative ... under the scope of MODAL
-H s3z = žít-005 = živý (NOT, habitual) ... -> full-affirmative
-  s3p4 = NEG projít (endeavor (as a subtype of process)) ... -> partial-negative (o co se přičiňují)
-H s3z2 = žít-005 = život (NOT, habitual) ... -> full-affirmative
-  s3p5 = NEG povšimnout-si (endeavor (as a subtype of process)) ... -> partial-negative (o co se přičiňují)
-  s3s4 = stvořit (performance (as a subtype of process)) ...  -> full-affirmative
-S s3r = resemble-91 (NOT, state) ... -> full-affirmative
-S s3b = belong-91 = mít tvář (NOT, state) ... -> full-affirmative
-H s3s6 = sklonit-se-002 = skloněnou k zemi (NOT, habitual) ... -> full-affirmative
-H  s3p7 = poslouchat = poslušná žaludku (NOT, habitual) ... -> full-affirmative
-
+    :modal ((root :modal s1p2)   author = GSK
+            (s1p2 :full-affirmative s3p2)  lidé
+            (s3p2 :partial-affirmative s3p) (lidé) mají se přičinit
+            (s3p2 :full-affirmative s3s)    (lidé se snaží)
+            (s3s :Unsp s3v2)          snaží se vyniknout
+            (s1p2 :full-affirmative s3z)  živý tvor
+            (s3p2 :partial-negative s3p4)  aby neprošli
+            (s3p2 :full-affirmative s3z2) jejich/svým životem
+            (???s1p2 :partial-negative s3z2)  nepovšimnuti ??od koho
+            (s1p2 :full-affirmative s3p3) příroda
+            (s3p3 :full-affirmative s3s4) příroda stvořila
+            (s3p2 :full-affirmative s3r) lidé připomínají
+            (s1p2 :full-affirmative s3d)   dobytčata
+            (s3d :full-affirmative s3b) dobytčata mají
+            (s1p2 :full-affirmative s3t2)   tvář
+            (s3t2 :full-affirmative s3s6) tvář se sklonila
+            (s3d :full-affirmative s3p7))) dobytčata poslušná
 
 ###########################################################################
 # :: snt4
