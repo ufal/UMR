@@ -142,32 +142,29 @@ s3z4: 36-36
     :temporal ((document-creation-time :overlap s3p)
                (document-creation-time :overlap s3s)
                (s3s :overlap s3v2)
-               (s3s :overlap s3z)
-               (s3p :after s3p4)
-               (s3s :overlap s3z2)
+               #(s3s :overlap s3z)
+               (s3p :after s3p4)  ?? s3p PA,  s3p4 PN ??
+               #(s3s :overlap s3z2)
                (s3p4 :after s3p5)
                (s3s4 :contained s3r)
                (s3p :before s3s4)
                (s3s4 :contained s3b)
                (s3s4 :contained s3s6)
                (s3s4 :contained s3p7))
-    :modal ((root :modal s1p2)   author = GSK
-            (s1p2 :full-affirmative s3p2)  lidé
-            (s3p2 :partial-affirmative s3p) (lidé) mají se přičinit
-            (s3p2 :full-affirmative s3s)    (lidé se snaží)
+    :modal ((root :modal author)   author = GSK ???
+            (author :partial-affirmative s3p) mají se přičinit
+            (author :full-affirmative s3s)    snaží se
             (s3s :Unsp s3v2)          snaží se vyniknout
-            (s1p2 :full-affirmative s3z)  živý tvor
-            (s3p2 :partial-negative s3p4)  aby neprošli
-            (s3p2 :full-affirmative s3z2) jejich/svým životem
-            (???s1p2 :partial-negative s3z2)  nepovšimnuti ??od koho
-            (s1p2 :full-affirmative s3p3) příroda
-            (s3p3 :full-affirmative s3s4) příroda stvořila
-            (s3p2 :full-affirmative s3r) lidé připomínají
-            (s1p2 :full-affirmative s3d)   dobytčata
-            (s3d :full-affirmative s3b) dobytčata mají
-            (s1p2 :full-affirmative s3t2)   tvář
-            (s3t2 :full-affirmative s3s6) tvář se sklonila
-            (s3d :full-affirmative s3p7))) dobytčata poslušná
+            #(author :full-affirmative s3z)  živý tvor
+            (author :partial-negative s3p4)  aby neprošli
+            #(author :full-affirmative s3z2) životem
+            (author :partial-negative s3z2)  nepovšimnuti
+            (author :full-affirmative s3s4)  stvořila
+            (author :full-affirmative s3r)  připomínají
+            (author :full-affirmative s3b)  mají
+            (author :full-affirmative s3s6) sklonila_se
+            (author :full-affirmative s3p7))  poslušná
+    :coref (()))
 
 ###########################################################################
 # :: snt4
