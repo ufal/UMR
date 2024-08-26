@@ -1818,17 +1818,17 @@ Sentence Gloss (en): and next, because most readers consider that whatever error
                 :refer-number plural
                 :refer-person 3rd
                 :quant (s29p3 / plerique))
-        :ARG1 (s29d2 / delictum
-            :refer-number plural
-            :mod (s29q / quis)
-            :ARG1-of (s29r / reprehendo-05
-                        :ARG0 (s29p4 / person
-                            :refer-number singular
-                            :refer-person 2nd)
-                        :aspect activity
-                        :modal-predicate s29p))
-        :ARG2 (s29d / dico2-18
-            :ARG0 s29p4
+        :ARG1 (s29d / dico2-18
+            :ARG0 (s29p4 / person
+                        :refer-number singular
+                        :refer-person 2nd)
+            :ARG1 (s29d2 / delictum
+                :refer-number plural
+                :mod (s29q / quis)
+                :ARG1-of (s29r / reprehendo-05
+                            :ARG0 s29p4
+                            :aspect activity
+                            :modal-predicate s29p))
             :reason (s29a / and
                     :op1 (s29m / malevolentia :refer-number singular)
                     :op2 (s29i / invidia :refer-number singular))
@@ -3499,3 +3499,5 @@ s50p4: 5-5
 # same-entity (i.e. identity) collides with :overlap?
 # have-substitution-91
 # have-condition-91
+
+# modal-strength in sentence graph: still to remove, because the validator would complain

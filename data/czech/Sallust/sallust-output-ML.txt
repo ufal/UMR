@@ -142,30 +142,29 @@ s3z4: 36-36
     :temporal ((document-creation-time :overlap s3p)
                (document-creation-time :overlap s3s)
                (s3s :overlap s3v2)
-               (s3s :overlap s3z)
-               (s3p :after s3p4)
-               (s3s :overlap s3z2)
+               #(s3s :overlap s3z)
+               (s3p :after s3p4)  ?? s3p PA,  s3p4 PN ??
+               #(s3s :overlap s3z2)
                (s3p4 :after s3p5)
                (s3s4 :contained s3r)
                (s3p :before s3s4)
                (s3s4 :contained s3b)
                (s3s4 :contained s3s6)
                (s3s4 :contained s3p7))
-    :modal ((root :modal s1p2)))
-
-  s3p = přičinit se (performance (as a subtype of process)) ... mít (=should) -> partial-affirmative
-  s3s = snažit-se-001 (activity (as a subtype of process)) ...  -> full-affirmative
-  s3v2 = vyniknout (process) ... -> partial-affirmative ... under the scope of MODAL
-H s3z = žít-005 = živý (NOT, habitual) ... -> full-affirmative
-  s3p4 = NEG projít (endeavor (as a subtype of process)) ... -> partial-negative (o co se přičiňují)
-H s3z2 = žít-005 = život (NOT, habitual) ... -> full-affirmative
-  s3p5 = NEG povšimnout-si (endeavor (as a subtype of process)) ... -> partial-negative (o co se přičiňují)
-  s3s4 = stvořit (performance (as a subtype of process)) ...  -> full-affirmative
-S s3r = resemble-91 (NOT, state) ... -> full-affirmative
-S s3b = belong-91 = mít tvář (NOT, state) ... -> full-affirmative
-H s3s6 = sklonit-se-002 = skloněnou k zemi (NOT, habitual) ... -> full-affirmative
-H  s3p7 = poslouchat = poslušná žaludku (NOT, habitual) ... -> full-affirmative
-
+    :modal ((root :modal author)   author = GSK ???
+            (author :partial-affirmative s3p) mají se přičinit
+            (author :full-affirmative s3s)    snaží se
+            (s3s :Unsp s3v2)          snaží se vyniknout
+            #(author :full-affirmative s3z)  živý tvor
+            (author :partial-negative s3p4)  aby neprošli
+            #(author :full-affirmative s3z2) životem
+            (author :partial-negative s3z2)  nepovšimnuti
+            (author :full-affirmative s3s4)  stvořila
+            (author :full-affirmative s3r)  připomínají
+            (author :full-affirmative s3b)  mají
+            (author :full-affirmative s3s6) sklonila_se
+            (author :full-affirmative s3p7))  poslušná
+    :coref (()))
 
 ###########################################################################
 # :: snt4
