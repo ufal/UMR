@@ -1,51 +1,64 @@
-# I. PDT to UMR ... sentence level
+# PDT to UMR ... sentence level
 
-## I.1 Graph structure
-1. each non-root node 	
-   - retains id = variable (= a particular instance of some concept from the lexicon/ontology)
-   - new node for lexical content = concept, which stands for  
+## 1 Graph structure
+1. **Základní pravidlo ... for each non-root node  (ITAT sect. 3.1)**: 	
+   - retain the node with its id = variable (= a particular instance of some concept from the lexicon/ontology)
+   - create a new node for lexical content = concept, which stands for  
    (based on Banarescu et al. 2013, \cite{amr-for-sembankimg-2013}):
       - **entity** (e.g., _man_)
-      - **event** (e.g., _taste-04_)
+      - **event** (e.g., _taste-04_) ... but also "abstract / non-verbal predicates" (now "non-prototypical pred rolesets" in the [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453))
       - **keyword** for:
           - "entities" (e.g.,  `ordinal-entity` (_for the first time_)),
           - "quantities" (e.g., `temporal-quantity` (_8 months_)),
-          - logical conjunctions (_and_),
+          - logical conjunctions (_and_) ... the same for "discourse rolesets" from the [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453)   
+            other paratactic structures **???**
           - **???** ALSO operators,  e.g., `more-than` 
+   - ??? ZÁDRHELE ???
 
-2. **Nodes** within a sentence that are connected with a **coreferential link** should **be merged** ... see also Sect. I.4 ``Structural Changes'' below
 
-3. Má-li uzel 2 rodiče (Estonsko), jak se určí, co bude jeho rodič ve stromě a co jen šipka? Jak se pozná typ šipky (tj. relace = typ hrany)?
+1. **Pořadí uzlů ... zachovat z PDT / z anotace ve vstupním souboru**   
+Zatím asi má každý rodič má syny v opačném pořadí, než by měl mít :-))  
+Zobrazovadlo, které dělal Míša, se nějak drželo povrchu (nejlevější alignované slovo?) - aby se to aspoň zhruba dalo porovnat.  
+V PDT - pokud tomu dobře rozumím - se pořadí uzlů oproti povrchu mění: 
+   - kvůli projektivitě 
+   - jinak jen u "NB" uzlů, pokud je to relevantní z hlediska výpovědní dynamičnosti.
+   - Kopírované uzly se dávají jako nejlevější děti, myslím?
 
-4. **Named entities** (NE(s)), its type (= the abstract entity, as, e.g.,  `person`)  serves as the concept; it is instantiated using a variable (as for other concepts).   
+
+
+1. **Má-li uzel 2 rodiče, struktura zůstane jako v anotaci / PDT**:  
+ (Když je hodnota jméno proměnné, je to šipka, jinak je to uzel.)  
+~~Jak se pozná typ šipky (tj. relace = typ hrany)?~~
+
+
+1. **Nodes with a coreferential link** within a sentence  should **be merged** ... see also Sect. I.4 ``Further Structural Changes'' below.      
+~~Jak se pozná typ šipky (tj. relace = typ hrany)?~~
+
+
+1. **Abstraktní koncepty a strukturovaný text:**   ... zatím neřešeno!!   
+UMR má řadu abstraktních konceptů pro zachycení strukturovaného textu (typu den v týdnu, množství čehosi, adresa See below, Sect. 6
+
+
+1. **Named entities** (NE(s)), its type (= the abstract entity, as, e.g.,  `person`)  serves as the concept; it is instantiated using a variable (as for other concepts).   
 NEs have their internal structure (esp. wiki, name)   
 --> **suggestion: not now** (one of future necessary steps, I.5 below) 
 
-5.  **???** other paratactic structures **???**
+1. **Named Entities**  ... see below (Sect. 5) 
 
 
-6. **pořadí uzlů**:   
-Není mi jasné, jak se určuje pořadí uzlů? (Evidentně ne podle pořadí anotace.)  
-Na Tvém obrázku "výsledek" předchází "volit-001", v textu se ale napřed mluví o volbách a pak teprve o tom, že jde o předběžné výsledky.
-Zobrazovadlo, které dělal Míša, se nějak drželo povrchu (nejlevější alignované slovo?) - aby se to aspoň zhruba dalo porovnat.  
-Šlo by nějak ošetřit?  
-(V PDT má "získat" děti  "volba", "výsledek", "hlas" a "blok" - pokud tomu dobře rozumím, pořadí se mění jen u "NB" uzlů, pokud je to relevantní z hlediska výpovědní dynamičnosti.
-Kopírované uzly se dávají jako nejlevější děti, myslím?)
-
-
-7. Zcela kosmetická záležitost - co kdyby **jména relací (= hrany)** **začínaly vždy dvojtečkou**?   
+1. **Jména relací (= hrany) mají začínat vždy dvojtečkou**?   
 Trochu jsme si na to zvykli a věřím, že i ostatní, ostatně guidelines i tabulka UMR lists dvojtečku na začátek dávají.  
 (Ignoruj tenhle návrh, jestli to má nějaké technické problémy.)
 
 
-8.  **???** what else **???**
+
 
 ---
 
 
-## I.2 Content words --> Events
+## 2 Content words --> Events
 
-### I.2.0 Events vs. entities
+### 2.0 Events vs. entities
 
 Consequences of being designated an ‘event’ in UMR - see [the summary here](..\doc\eventive-concepts.md):
  events should get:
@@ -54,66 +67,64 @@ Consequences of being designated an ‘event’ in UMR - see [the summary here](
 - the **temporal annotation** (at the document level)
 
 #### Events
-For Czech, events should be finally anchored in SSC; for the time being, we use the mappings via SSC and EngVallex, as discussed in Sect. I.2.1 below.
+For Czech, events should be finally anchored in SSC; for the time being, we use verb-specific mapping via SSC and EngVallex (whenever available) and the default mapping (for other verb senses), as discussed in Sect. I.3 below.
 
 [The summary](..\doc\eventive-concepts.md) mentioned above set tentative rules for distinguishing events (vs. non-events), 
 1. **lexical verbs**:
    - action and stative verbs are treated in the same way --> **events**
-2. **abstract rolesets** from [the UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453):
-   - **events: reification** (rows 3-101 ... we do not care much about it, BUT if they appear in the annotation, they should be treated as events (see also sect. I.4.2 Reification);
-   - NOT events: discourse relations (rows 103-122)
-   - **events: 9 abstract predicates** (called ``non-prototypical pred rolesets'' there, as exist-91, belong-91, row 124-148) --> events ... sect. I.2.3 Abstract predicates)
-   - implicit rolesets ... ??? unclear boundary ???
-    - NOT events: used as metadata (like _publication-91_, _hyperlink-91_, _street-address-91_) 
-    - **events: used instead of predicates** (like _resemble-91_, _include-91_, _have-degree-91_, _have-quant-91_) --> events ... should be listed as special constructions, sect. I.3.5 Implicit rolesets
-
+2. **abstract rolesets** from [the UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453) ... see below (Sect. 3.6 and 3.7)
+ 
 #### Entities
 For Czech, entities should be finally anchored in wikidata whenever possible (the most specific wikidata item should be used in case of several possibilities).
 
 
-### I.2.1 Nouns
+ITAT, Sect. 3.2.3:
+UMR employs a set of **abstract entities identifying entity types**. 
+They serve several purposes:
+1. They stand for **arguments** in case of not overtly present arguments (or arguments present just as pronouns).
+2. They are used for **classification of named entities** (e.g., _Lennart Meri_ is classified as a person), see Sect. 5 below.
+3. They provide an **identification of structured data** as 
+   - special “entities” (as, e.g., date-entity, further structured with attributes like day, month, year, century, etc.) or 
+   - “quantities” (as, e.g., monetary-quantity, temporal-quantity-quantity, both
+with the attributes quant and unit).  
+See Sect. 6 below.
 
-#### -ní/-tí deverbal nouns
+
+### 2.1 Nouns that should be converted to verbal predicates
+
+#### -ní/-tí deverbal nouns ... 1,690 such nouns are identified in PDT-Vallex
 
 **Step 1.** Identify the relevant verb lexeme!  
 Sources:  
    - **PDT-Vallex**, 
    - **MorfFlex**, 
-   - **Derinet** 
-   - another resource: **SynSemClass** ... Veronika Kolářová should know more about nominalizations
+   - **Derinet**   
+--> Only for 15 nouns source verb NOT identified!
+   - another resource: **SynSemClass** ... Eva Fučíková should know more about nominalizations
 
-**Step 2.** Identify the relevant valency frame / list of arguments ... **???**
-
-(See also Sect. I.4 ``Coreference: Inverse roles for nominalizations'' below.]
+**Step 2.** Identify the relevant valency frame / list of arguments ... see below Sect. 1.3  
+(See also Sect. I.4 ``Coreference: Inverse roles for nominalizations'' below.)
 
 
 #### TODO: Agent nouns
 
 #### TODO: Other deverbal nouns
 
-### I.2.2 TODO: Adjectives ... NOT now
+### 2.2 TODO: Adjectives ... NOT now
 
-### I.2.3 TODO: Adverbs ... NOT now
+### 2.3 TODO: Adverbs ... NOT now
 
 
 ---
 
 
-## I.3 Valency frames (actants and free modifications) --> Rolesets (arguments and adjuncts)
+## 3 Valency frames (actants and free modifications) --> Rolesets (arguments and adjuncts)
 
 
-### I.2.1 Core argument structure
+### 3.1 Core argument structure
 
 #### Verb frames (senses) with mappings via SSC, EngVallex 
-- [Google sheet](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit#gid=1270330829)
-
-
-**BUT:**   
-1. **phrasemes** (i.e., valency frames with the  `DPHR` functor) ... see I.2.3 below
-2.  **light verbs**  (i.e., valency frames with the  `CPHR` functor) ... see I.2.3 below
-3. **semi-modal verbs** ... see I.2.4 below
-4. **modal verbs** ...  see I.2.4 below
-5. other **implicit rolesets** ...  see I.2.5 below
+- verb-specific mapping [Google sheet](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit#gid=1270330829)
 
 #### Default mappings (verb non-specific)
 - [Deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)
@@ -128,49 +139,83 @@ Sources:
     - `EFF` --> `Goal` 
 
 
-### I.2.2 Non-Core arguments and adjuncts
+### 3.2 Non-Core arguments and adjuncts
 - [Default table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)
 
 
-### I.2.3 TODO: Abstract predicates
-**tabulka UMR lists, list "Abstract rolesets"**, [skupina "non-prototypical pred rolesets"](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453)
+### 3.3 Light verb constructions (valency frames with `CPHR`)
+In theory, the respective noun with the `CPHR` label should serve as a predicate.    
+It should be either 
+- converted to the relevant verb (with its valency structure), as in _je mu stydno za něco_ --> _stydí se za něco_, _je mu něčeho líto_ --> _lituje něčeho_, OR   
+-  converted to a modal verb construction, as in _je možno přijít_ --> _může přijít_    
 
-#### _být_
-TODO [tentative table](./byt.xlsx) ... a proposed mappings of individual valency frames (incl. those with the `CPHR`, `DPHR` functors)
+
+##### _být_ 
+- [tentative table](./byt.xlsx) ... a proposed mappings of individual valency frames, incl. those with the `CPHR` functor (frames with `DPHR` functor ignored for now)
+
+##### TODO: other verbs with CPHR
+
+### 3.4 TODO: Modal and semi-modal verbs
+
+#### TODO: modal verbs
+ ... ???
+ 
+
+#### TODO: semi-modal verbs
+ ... ???
+ 
+
+### 3.5 TODO: Phasal aspectual meaning
+ 
+
+ 
+### 3.6 Abstract predicates (být, mít a další slovesné rámce)
+
+#### _být_ 
+- [tentative table](./byt.xlsx) ... a proposed mappings of individual valency frames, incl. those with the `CPHR` functor (frames with `DPHR` functor ignored for now)
 
 #### other verbs that should be converted to abstract predicates
-_mít_ ‘have’,  
-_patřit_ ‘belong’,  
-_vlastnit_ ‘own’,  
+_mít_ ‘have’ ... TODO  
+
+_patřit_ ‘belong’:
+  - patřit-001 (v-w3411f6_ZU, which substitutes v-w3411f2, v-w3411f5_ZU ... náležet, přináležet, příslušet, být ve vlastnictví)   
+  --> _belong-91_ ... `ACT` (possessum) --> `ARG1`, `PAT` (possessor) --> `ARG2`
+  - patřit-002 (v-w3411f3) ... frazem, ponechat (_To ti patří!_)
+  - patřit-003 (v-w3411f1 ... náležet, řadit se, přináležet, být součást, spadat)  
+  -->  _include-91_ ... `ACT` (subset) --> `ARG1`, `DIR3` (superset) --> `ARG2`
+  - patřit-004 (v-w3411f4 ... dát, umístit)  
+  --> _have-place-91_ ... `ACT` (entity) --> `ARG1`, `DIR3` (location) --> `ARG2`
+  - patřit-005 (v-w3411f7_ZU) ... patří na+4 (asi význam zírat, nevidím v Teitoku), ponechat   
+
+_vlastnit_ ‘own’: 
+ - vlastnit-001 (v-w7650f1, držet, spravovat)   
+ --> _have-91_ ... `ACT` (possessor) --> `ARG1`, `PAT` (possessum) --> `ARG2`
 etc.
 
-?? special constructions like _Mariina/její taška_, ‘Maria’s/her bag’
-
-#### light verb constructions (valency frames with `CPHR`)
-In theory, the respective noun with the `CPHR` label should serve as a predicate.    
---> it should be either converted to the relevant verb (with its valency structure), as in _je mu stydno za něco_ --> _stydí se za něco_, _je mu něčeho líto_ --> _lituje něčeho_, OR   
- it should be converted to a modal verb construction, as in _je možno přijít_ --> _může přijít_    
-... will be covered in the table linked above  
-
-### I.3.4 TODO: Semi-modal and modal verbs
-
-#### semi-modal verbs
- ... ???
+#### TODO:  special constructions like _Mariina/její taška_, ‘Maria’s/her bag’
  
-#### modal verbs
- ... ???
- 
- 
-### I.3.5 TODO: Implicit rolesets
+### 3.7 TODO: Implicit rolesets (=other abstract predicates)
+**tabulka UMR lists, list "Abstract rolesets"**, [list Abstract rolesets](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) ... see above Sect 2.0 for individual subtypes (which of them should be considered events), excluding 
 
-#### special constructions
+**abstract rolesets** from [the UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453):
+   - **events: reification** (rows 3-101 ... we do not care much about it, BUT if they appear in the annotation, they should be treated as events (see also sect. 4.2 Reification below);
+   - NOT events: discourse relations (rows 103-122) ... paratactic structures
+   - **events: 9 abstract predicates** (called ``non-prototypical pred rolesets'' there, as exist-91, belong-91, row 124-148) ... see also Sect. 3.6 above)
+   - implicit rolesets ... ??? unclear boundary ???
+     - NOT events:  in structured texts, used as metadata (like _publication-91_, _hyperlink-91_, _street-address-91_) 
+     - **events: rolesets for special linguistic constructions ... used instead of predicates** (like _resemble-91_, _include-91_, _have-degree-91_, _have-quant-91_) --> events ... should be listed as special constructions
+    - 
+#### TODO: special constructions
+
+
+### 3.8 TODO: Phrasemes (valency frames with DPHR) ... postponed
 
 ---
 
 
-## I.4 Further Structural Changes
+## 4 Further Structural Changes
 
-### I.4.1  Coreference: 
+### 4.1  Coreference: 
 
 #### Identification of coreferential chains in PDT
 
@@ -185,6 +230,8 @@ or it is a relation between a set and its (proper) subset / event and its subeve
 The first **distinction (entity vs. event)** is crucial and as it can help us to correctly identify (or at least check) whether events have been correctly distinguished -- apparently, only concepts of the same type can form coreferential chains.
 
 
+[PDT: koreference a t_lemmata](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/cz/t-layer/html/ch08s04.html)
+
 #### Coreference: Re-entrancy of a variable (intra-sentential)
 
 see the ITAT paper, sect. 3.3.1
@@ -198,12 +245,12 @@ see the ITAT paper, sect. 3.3.1.A
 see the ITAT paper, sect. 3.3.1.B
 
 
-#### Coreference: Inverse roles for embedded interrogatives (intra-sentential)
+#### TODO: Coreference: Inverse roles for embedded interrogatives (intra-sentential)
 
 to be done
 
 
-### I.4.2  Reification (intra-sentential)
+### 4.2   Reification (intra-sentential)
 
 see the ITAT paper, sect. 3.2.4.:  
 "Given the fact that AMR (and thus also UMR) relies on the data post-processing within which the
@@ -211,20 +258,22 @@ AMR/UMR representations are converted into the reified forms, we give up attempt
 
 ---
 
-## I.5 Named Entities
+## 5 TODO Named Entities
 
-1. Matou mě uzly s **relací (= hranou) "name" (modře) a konceptem "name" (černě)** - chápu, že to je to teď "place holder", který zatím nenaplňuješ.
+- classified using "abstract entities"
 
-Ale je otázka, jak by to mělo ve výsledku vypadat.  
-Nemělo by se s ":name" (= hranou, modře) zacházet stejně jako třeba s ":wiki"?  
-UMR lists mluví o "subroles", kde je :name spolu s :wiki, :value, :unit apod.
-https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=235257559#gid=235257559  
-Z obrázku z panelu vlevo je zřejmé, že ":wiki" je atributem uzlu, stejně jako :refer-number (kde je uzavřená množina hodnot).  
-Dávalo by to smysl?
+ML: TrEd: Matou mě uzly s  **relací (= hranou) "name" (modře) a konceptem "name" (černě)** - chápu, že to je to teď "place holder", který zatím nenaplňuješ.  
+   - Ale je otázka, jak by to mělo ve výsledku vypadat ... nemělo by se s ":name" (= hranou, modře) zacházet stejně jako třeba s ":wiki"?
+     - UMR lists mluví o "subroles", kde je :name spolu s :wiki, :value, :unit apod. ([UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=235257559#gid=235257559))   
+   - Z obrázku z panelu vlevo je zřejmé, že ":wiki" je atributem uzlu, stejně jako :refer-number (kde je uzavřená množina hodnot). Dávalo by to smysl?  
+ŘEŠENÍ: Zatím jsem to udělal jednoduše podle formátu souboru: 
+     - Když je hodnota v závorce, je to uzel, jinak je to řetězec, na názvy hran se při rozhodování vůbec nedívám. 
+     
+
 
 ---
 
-## I.6 Abstraktní koncepty a strukturovaný text:
+## 6 TODO Abstraktní koncepty a strukturovaný text:
 
 UMR má řadu abstraktních konceptů pro zachycení strukturovaného textu (typu den v týdnu, množství čehosi, adresa apod.)
 https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=0#gid=0
@@ -246,4 +295,4 @@ Podle toho jejich seznamu:
 ---
 
 
-# II. PDT to UMR ... document level
+# TODO PDT to UMR ... document level
