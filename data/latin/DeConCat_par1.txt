@@ -2546,8 +2546,12 @@ Sentence Gloss (en): for I think it an enterprise eminently memorable, from the 
     :ARG2 (s37h / have-mod-91
             :ARG1 (s37f / facinus
                 :refer-number singular
-                :mod (s37i / is))
-            :ARG2 (s37m / memorabilis :degree intensifier)
+                :mod (s37i / is)) 
+            :ARG2 (s37m / memoro-01
+                :ARG1 s37f
+                :degree intensifier
+                :aspect state
+                :modal-strength neutral-affirmative)
             :aspect state
             :modal-strength partial-affirmative)
     :reason (s37n / novitas
@@ -2564,7 +2568,7 @@ s37p: 6-6
 s37h: 0-0
 s37f: 3-3
 s37i: 2-2
-s37m: 4-5, 7-7
+s37m: 7-7
 s37n: 12-12
 s37a: 10-10
 s37s: 9-9
@@ -2575,10 +2579,12 @@ s37p2: 11-11
 	:coref ((s36p :same-entity s37p)
 	        (s36c :same-entity s37f))
 	:temporal ((document-creation-time :overlap s37e)
-	            (document-creation-time :overlap s37h))
+	            (document-creation-time :overlap s37h)
+	            (document-creation-time :overlap s37m))
 	:modal ((root :modal author)
 	        (author :full-affirmative s37e)
-	        (author :partial-affirmative s37h)))
+	        (author :partial-affirmative s37h)
+	        (author :neutral-affirmative s37m)))
 
 
 # sent_id = SlaT-2810
@@ -2943,11 +2949,15 @@ Sentence Gloss (en): his insatiable ambition was always pursuing extravagant, in
         :refer-number singular)
     :ARG1 (s44t / thing
         :refer-number plural
-        :mod (s44a2 / and
-            :op1 (s44m / moderatus :polarity -)
-            :op2 (s44c2 / credibilis :polarity -)
-            :op3 (s44a3 / altus
-                :degree (s44n / nimis))))
+        :mod (s44m / moderatus :polarity -)
+        :ARG1-of (s44c2 / credo-02
+                        :ARG0 (s44p / person
+                            :refer-number singular
+                            :refer-person 3rd)
+                        :aspect state
+                        :modal-strength neutral-negative)
+        :mod (s44a2 / altus
+            :degree (s44n / nimis))))
     :temporal (s44s / semper)
     :aspect state
     :modal-strength full-affirmative)
@@ -2957,20 +2967,22 @@ s44c: 8-8
 s44a: 2-2
 s44v: 1-1
 s44t: 3-6
-s44a2: 0-0
 s44m: 0-0
-s44a3: 0-0
+s44a2: 0-0
 s44n: 0-0
 s44c2: 0-0
 s44s: 7-7
+s44p: 0-0
 
 # document level annotation:
 (s44s0 / sentence
     :coref ((s42a :same-entity s44a))
     :temporal ((past-reference :overlap s44s)
-                (s44s :overlap s44c))
+                (s44s :overlap s44c)
+                (present-reference :overlap s44c2))
     :modal ((root :modal author)
-            (author :full-affirmative s44c)))
+            (author :full-affirmative s44c)
+            (author :neutral-negative s44c2)))
 
 
 # sent_id = SlaT-2817
