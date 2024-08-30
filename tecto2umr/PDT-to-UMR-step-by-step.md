@@ -51,6 +51,55 @@ Trochu jsme si na to zvykli a věřím, že i ostatní, ostatně guidelines i ta
 (Ignoruj tenhle návrh, jestli to má nějaké technické problémy.)
 
 
+### Koordinace / apozice
+
+Koordinace jsou v UMR v zásadě stejně jako v PDT - typicky se tam přidá uzel pro spojku a pod něj
+- buď hrany op1, op2, ... (pro konjunkci (and), disjunkci (or) a další vztahy, které jsou považované za symetrické)
+
+
+```
+Pope was convinced last week and sentenced to...
+(a / and
+   :op1 (c / convict ...)
+   :op2 (s / sentence ...)
+)
+```
+
+- nebo ARG1 a ARG2 (pokud jsou asymetrické a je jasné, že třeba něco je příčina a něco následek apod.; ale i but-91)
+
+```
+Peter is diligent, but [contrast] Vanja is lazy.
+(c / contrast-91
+   :ARG1 ("be diligent")
+   :ARG2 ("be lazy")
+)
+```
+
+**ALE1:** Je v tom binec, třeba "but" se někdy přepisuje na contrast-01 (tedy jde o predikaci) a má argumenty, jindy je to diskurzní spojka a má opx.)
+
+**ALE2:** Anotátor si může vybrat, jestli
+- něco chápe např. jako podmínku (a pak je to prostě zanořené do stromu relací :condition)
+- zachytí to pomocí predikátu, např. tedy have-condition-91 (s argumenty ARG1 pro tu událost hlavní věty a ARG2 pro tu podmínku)
+- použije někderý z diskurzních implicitních rolí (aha, to je tedy asi také :condition, takže nevím, jak to rozliším)
+
+**ALE3:** Anotátor může prostě připojit 2 totožné relace k témuž rodiči (tj. zapomenout, že to je asi nějaký koordinační vztah)
+
+```
+Pope who was convinced last week and sentenced to ... is a businessman
+(i / identity-91
+   :ARG1 (p / person ...
+                :ARG1-of (c / convinct ...)
+                :ARG1-of (s / sentence ...)
+   :ARG2 (b / businessman)
+)
+```
+
+
+> **Předběžný závěr:**
+> 1) Mít dvě totožné relace připojené k rodiči možná přichází v úvahu pro apozice - prostě by se zapomněl ten apoziční uzel???
+> 2) Jinak bych trvala na tom, že když je v PDT něco koordinace, tak to převedeme pomocí diskurzní relace (případně pomocí vhodného predikátu) - tedy budeme mít uzel pro spojovací výraz (ať už je to co to je). Aspoň než budeme vědět, že to neumíme udělat kvůli tomu, že máme společné rozvitá apod.
+
+Dává to smysl?
 
 
 ---
@@ -106,6 +155,19 @@ Sources:
 (See also Sect. I.4 ``Coreference: Inverse roles for nominalizations'' below.)
 
 
+**PROBLEM:**
+**Either more than one OR no verbal valency frame as a possible base frame**  
+JŠ: Email from July 15, 2024 ... (without forms)
+- almost 30% without valency frames
+- almost 50% with a single valency frame
+- almost 25% with more frames   
+?? A kdyby se zohlednily formy:
+- nom --> gen, poss, instr, od+2
+- acc --> gen, poss, instr, od+2
+- ostatní formy by měly zůstat beze změny, příp. může nějaká u substantiva chybět či naopak přebývat.
+
+ 
+
 #### TODO: Agent nouns
 
 #### TODO: Other deverbal nouns
@@ -124,10 +186,16 @@ Sources:
 ### 3.1 Core argument structure
 
 #### Verb frames (senses) with mappings via SSC, EngVallex 
-- verb-specific mapping [Google sheet](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit#gid=1270330829)
+- verb/frame-specific mapping [Google sheet](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit#gid=1270330829)
+
+
+**PROBLEM:**   
+**A single valency frame belonging to two (or more) classes with different mappings**    
+JŠ: e-mail from May 9, 2024 ... about 25 valency frames
+
 
 #### Default mappings (verb non-specific)
-- [Deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)
+- [Deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt) for cases without verb/frame-specific mappings
   - as for actants, ONLY the following 3 should be converted in this way 
     - `ACT` (--> `ARG0`), 
     - `PAT` (--> `ARG1`), and  
