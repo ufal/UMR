@@ -320,7 +320,6 @@ s6p8: 0-0
             (author :full-affirmative s6i))
     :coref ((s3p2 :subset-of s6p7)
             (s5v :same-event s6v)
-            (s6v :same-event s6z)
             (s6v :same-event s6h)
             (s5b :same-entity s6b)
             (s5p :same-entity s6p6)))
@@ -335,9 +334,10 @@ Sentence:            Na druhém místě s 13.9 procenty hlasů (18 mandátů) je
 Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates) is the Reliable House block of the current highest representative of the republic, Arnold Rüütel.
 
 # sentence level graph:
+# Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882
 (s7h / have-ord-91
      :ARG1 (s7b / blok
-            :wiki "Q31271882"
+            :wiki "Q31271882" 
             :refer-number singular
             :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
             :possessor (s7p / person
@@ -396,13 +396,15 @@ s7z: 13-13
 (s7s0/ sentence
     :temporal((document-creation-time :depends-on s7z)
               (document-creation-time :depends-on s7d)
+              (document-creation-time :overlap s7i2)
               (s7z :overlap s7h)
               (s7d :overlap s7p2)
               (s7z :overlap s7i))
     :modal ((root :modal author)
             (author :full-affirmative s7h)
             (author :full-affirmative s7i)
-            (author :full-affirmative s7p2))
+            (author :full-affirmative s7p2)
+            (author :full-affirmative s7i2))
     :coref ((s3c :same-entity s7r)))
 
 
