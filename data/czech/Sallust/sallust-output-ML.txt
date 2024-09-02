@@ -1,0 +1,1476 @@
+###########################################################################
+# :: snt1
+Index:               1     2          3
+Words:               Gajus Sallustius Krispus
+Word Gloss (en):     Gajus Sallustius Krispus
+Sentence:            Gajus Sallustius Krispus
+Sentence Gloss (en): Gajus Sallustius Krispus
+
+# sentence level graph:
+(s1p / publication
+       :ARG0 (s1p2 / person
+                  :wiki "Q7170"
+                  :name (s1n / name :op1 "Gajus" :op2 "Sallustius" :op3 "Krispus")
+                  :refer-number singular
+                  :refer-person 3rd))
+
+# alignment:
+s1p: 0-0
+s1p2: 1-3
+s1n: 0-0
+
+# document level annotation:
+(s1s0 / sentence)
+
+
+###########################################################################
+# :: snt2
+Index:               1          2
+Words:               Katilinovo spiknutí
+Word Gloss (en):     Catiline's conspiracy
+Sentence:            Katilinovo spiknutí
+Sentence Gloss (en): The Conspiracy of Catiline
+
+# sentence level graph:
+(s2p / publication
+       :ARG1 (s2b / book
+                 :wiki "Q776615"
+                 :name (s2n / name :op1 "Katilinovo" :op2 "spiknutí")
+                 :refer-number singular
+                 :refer-person 3rd)
+
+# alignment:
+s2p: 0-0
+s2b: 1-2
+s2n: 0-0
+
+# document level annotation:
+(s2s0 / sentence
+        :coref ((s1p :same-entity s2p)))
+
+
+###########################################################################
+# :: snt3
+Index:               1       2      3 4     5    6     7         8     9       10     11        12 13     14   15        16     17       18 19      20          21      22           23   24        25 26   27      28       29   30    31        32 33     34  35       36       37
+Words:               Všichni lidé   , kteří se   snaží vyniknout nad   ostatní živé   tvory     ,  mají   se   největším úsilím přičinit ,  aby     neprošli    životem nepovšimnuti jako dobytčata ,  jež  příroda stvořila s    tváří skloněnou k  zemi   a   poslušná žaludku  .
+Word Gloss (en):     All     people , who   refl try   excel     above other   living creatures ,  should refl best      effort make     ,  so-that not-passeed life    unnoticed    like cattle    ,  that nature  created  with face  bent      to ground and obedient stomachs .
+Sentence:            Všichni lidé, kteří se snaží vyniknout nad ostatní živé tvory, mají se největším úsilím přičinit, aby neprošli životem nepovšimnuti jako dobytčata, jež příroda stvořila s tváří skloněnou k zemi a poslušná žaludku.
+Sentence Gloss (en): All people who try to excel other living creatures should do their best not to pass through life unnoticed like the cattle that nature created with their faces bent to the ground and obedient to their stomachs.
+
+# sentence level graph:
+(s3p / přičinit-se-001
+     :aspect performance
+     :ARG0 (s3p2 / person
+                :quant (s3v / všechen)
+                :refer-number plural
+                :refer-person 3rd
+                :ARG0-of (s3s / snažit-se-001
+                              :aspect activity
+                              :ARG1 (s3v2 / vyniknout-001
+                                          :aspect process
+                                          :modal-predicate s3s
+                                          :ARG0 s3p2
+                                          :ARG1 (s3t / tvor
+                                                     :mod (s3o / ostatní)
+                                                     :ARG0-of (s3z / žít-005
+                                                                   :aspect habitual)))))
+       :ARG1 (s3p4 / projít-003
+                   :aspect endeavor
+                   :polarity -
+                   :ARG0 s3p2
+                   :ARG1 (s3z2 / žít-005
+                               :aspect habitual
+                               :ARG0 s3p2)
+                   :manner (s3u / úsilí
+                                :degree (s3v3 / největší))
+                   :manner (s3p5 / povšimnout-001
+                                 :aspect endeavor
+                                 :polarity -
+                                 :ARG0 (s3p6 / person)
+                                 :ARG1 s3p2)
+                   :manner (s3r / resemble-91
+                                :aspect state
+                                :ARG1 s3p2
+                                :ARG2 (s3d / dobytče
+                                           :refer-number plural
+                                           :ARG1-of (s3s4 / stvořit-001
+                                                          :aspect performance
+                                                          :ARG0 (s3p3 / příroda)
+                                                          :DOPLNEK (s3a2 / a
+                                                                         :op1 (s3b / belong-91
+                                                                                   :aspect state
+                                                                                   :ARG2 s3d
+                                                                                   :ARG1 (s3t2 / tvář
+                                                                                               :refer-number singular
+                                                                                               :ARG1-of (s3s6 / sklonit-se-002
+                                                                                                              :aspect habitual
+                                                                                                              :goal (s3z3 / země))))
+                                                                         :op2 (s3p7 / poslouchat-002
+                                                                                    :aspect habitual
+                                                                                    :ARG1 s3d
+                                                                                    :ARG2 (s3z4 / žaludek))))))))
+
+# alignment:
+s3p: 13-14,17-17
+s3p2: 2-2,4-4
+s3v: 1-1
+s3s: 5-6
+s3v2: 7-7
+s3t: 8-8, 11-11
+s3o: 9-9
+s3z: 10-10
+s3u: 16-16
+s3v3: 15-15
+s3p4: 19-20
+s3z2: 21-21
+s3p5: 22-22
+s3d: 23-24,26-26
+s3p6: 0-0
+s3r: 0-0
+s3s4: 28-28
+s3p3: 27-27
+s3b: 0-0
+s3t2: 29-30
+s3s6: 31-31
+s3z3: 32-33
+s3a2: 34-34
+s3p7: 35-35
+s3z4: 36-36
+
+# document level annotation:
+(s3s0 / sentence
+    :temporal ((document-creation-time :overlap s3p)
+               (document-creation-time :overlap s3s)
+               (s3s :overlap s3v2)
+               #(s3s :overlap s3z)
+               (s3p :after s3p4)  ?? s3p PA,  s3p4 PN ??
+               #(s3s :overlap s3z2)
+               (s3p4 :after s3p5)
+               (s3s4 :contained s3r)
+               (s3p :before s3s4)
+               (s3s4 :contained s3b)
+               (s3s4 :contained s3s6)
+               (s3s4 :contained s3p7))
+    :modal ((root :modal author)   author = GSK ???
+            (author :partial-affirmative s3p) mají se přičinit
+            (author :full-affirmative s3s)    snaží se
+            (s3s :Unsp s3v2)          snaží se vyniknout
+            #(author :full-affirmative s3z)  živý tvor
+            (author :partial-negative s3p4)  aby neprošli
+            #(author :full-affirmative s3z2) životem
+            (author :partial-negative s3z2)  nepovšimnuti
+            (author :full-affirmative s3s4)  stvořila
+            (author :full-affirmative s3r)  připomínají
+            (author :full-affirmative s3b)  mají
+            (author :full-affirmative s3s6) sklonila_se
+            (author :full-affirmative s3p7))  poslušná
+    :coref (()))
+
+###########################################################################
+# :: snt4
+Index:               1     2    3    4    5       6 7     8 9 10   11 12   13     14 15   16 17  18    19     20 21 22 23  24 25   26       27 28  29 30      31
+Words:               Vždyť naše celé bytí spočívá v duchu a v těle :  duch vládne ,  tělo u  nás spíše slouží ,  on je nám s  bohy společný ,  ono se zvířaty .
+Word Gloss (en):
+Sentence:            Vždyť naše celé bytí spočívá v duchu a v těle: duch vládne, tělo u nás spíše slouží, on je nám s bohy společný, ono se zvířaty.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s4v / Vždyť)
+(s4n / naše)
+(s4c / celé)
+(s4b / bytí)
+(s4s / spočívá)
+(s4v2 / v)
+(s4d / duchu)
+(s4a / a)
+(s4v3 / v)
+(s4t / těle)
+(s4d2 / duch)
+(s4v4 / vládne)
+(s4t2 / tělo)
+(s4u / u)
+(s4n2 / nás)
+(s4s2 / spíše)
+(s4s3 / slouží)
+(s4o / on)
+(s4j / je)
+(s4n3 / nám)
+(s4s4 / s)
+(s4b2 / bohy)
+(s4s5 / společný)
+(s4o2 / ono)
+(s4s6 / se)
+(s4z / zvířaty)
+
+# alignment:
+s4v: 1-1
+s4n: 2-2
+s4c: 3-3
+s4b: 4-4
+s4s: 5-5
+s4v2: 6-6
+s4d: 7-7
+s4a: 8-8
+s4v3: 9-9
+s4t: 10-10
+s4d2: 12-12
+s4v4: 13-13
+s4t2: 15-15
+s4u: 16-16
+s4n2: 17-17
+s4s2: 18-18
+s4s3: 19-19
+s4o: 21-21
+s4j: 22-22
+s4n3: 23-23
+s4s4: 24-24
+s4b2: 25-25
+s4s5: 26-26
+s4o2: 28-28
+s4s6: 29-29
+s4z: 30-30
+
+# document level annotation:
+(s4s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt5
+Index:               1     2  3  4   5   6          7        8     9     10         11    12  13      14   15 16 17      18    19  20 21 22    23 24     25 26 27     28 29      30 31  32      33   34     35 36      37
+Words:               Proto se mi zdá být správnější získávat slávu spíše prostředky ducha než tělesné síly ,  a  protože život sám ,  z  něhož se těšíme ,  je krátký ,  dokázat ,  aby památka naše trvala co nejdéle .
+Word Gloss (en):
+Sentence:            Proto se mi zdá být správnější získávat slávu spíše prostředky ducha než tělesné síly, a protože život sám, z něhož se těšíme, je krátký, dokázat, aby památka naše trvala co nejdéle.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s5p / Proto)
+(s5s / se)
+(s5m / mi)
+(s5z / zdá)
+(s5b / být)
+(s5s2 / správnější)
+(s5z2 / získávat)
+(s5s3 / slávu)
+(s5s4 / spíše)
+(s5p2 / prostředky)
+(s5d / ducha)
+(s5n / než)
+(s5t / tělesné)
+(s5s5 / síly)
+(s5a / a)
+(s5p3 / protože)
+(s5z3 / život)
+(s5s6 / sám)
+(s5z4 / z)
+(s5n2 / něhož)
+(s5s7 / se)
+(s5t2 / těšíme)
+(s5j / je)
+(s5k / krátký)
+(s5d2 / dokázat)
+(s5a2 / aby)
+(s5p4 / památka)
+(s5n3 / naše)
+(s5t3 / trvala)
+(s5c / co)
+(s5n4 / nejdéle)
+
+# alignment:
+s5p: 1-1
+s5s: 2-2
+s5m: 3-3
+s5z: 4-4
+s5b: 5-5
+s5s2: 6-6
+s5z2: 7-7
+s5s3: 8-8
+s5s4: 9-9
+s5p2: 10-10
+s5d: 11-11
+s5n: 12-12
+s5t: 13-13
+s5s5: 14-14
+s5a: 16-16
+s5p3: 17-17
+s5z3: 18-18
+s5s6: 19-19
+s5z4: 21-21
+s5n2: 22-22
+s5s7: 23-23
+s5t2: 24-24
+s5j: 26-26
+s5k: 27-27
+s5d2: 29-29
+s5a2: 31-31
+s5p4: 32-32
+s5n3: 33-33
+s5t3: 34-34
+s5c: 35-35
+s5n4: 36-36
+
+# document level annotation:
+(s5s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt6
+Index:               1     2     3         4 5       6     7  8          9 10     11 12     13 14      15       16   17 18       19 20   21      22
+Words:               Neboť sláva bohatství a tělesné krásy je pomíjející a křehká ,  mravní a  duševní zdatnost však je hodnotou po věky slavnou .
+Word Gloss (en):
+Sentence:            Neboť sláva bohatství a tělesné krásy je pomíjející a křehká, mravní a duševní zdatnost však je hodnotou po věky slavnou.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s6n / Neboť)
+(s6s / sláva)
+(s6b / bohatství)
+(s6a / a)
+(s6t / tělesné)
+(s6k / krásy)
+(s6j / je)
+(s6p / pomíjející)
+(s6a2 / a)
+(s6k2 / křehká)
+(s6m / mravní)
+(s6a3 / a)
+(s6d / duševní)
+(s6z / zdatnost)
+(s6v / však)
+(s6j2 / je)
+(s6h / hodnotou)
+(s6p2 / po)
+(s6v2 / věky)
+(s6s2 / slavnou)
+
+# alignment:
+s6n: 1-1
+s6s: 2-2
+s6b: 3-3
+s6a: 4-4
+s6t: 5-5
+s6k: 6-6
+s6j: 7-7
+s6p: 8-8
+s6a2: 9-9
+s6k2: 10-10
+s6m: 12-12
+s6a3: 13-13
+s6d: 14-14
+s6z: 15-15
+s6v: 16-16
+s6j2: 17-17
+s6h: 18-18
+s6p2: 19-19
+s6v2: 20-20
+s6s2: 21-21
+
+# document level annotation:
+(s6s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt7
+Index:               1   2    3     4      5     6    7 8  9 10  11        12       13   14       15    16 17         18    19 20    21   22 23   24        25    26    27 28  29 30 31    32    33       34   35
+Words:               Byl mezi lidmi dlouho velký spor o to , zda vojenství prospívá více tělesnou silou či schopností ducha ,  neboť jako je před započetím nutna úvaha ,  tak je po úvaze třeba rychlého činu .
+Word Gloss (en):
+Sentence:            Byl mezi lidmi dlouho velký spor o to, zda vojenství prospívá více tělesnou silou či schopností ducha, neboť jako je před započetím nutna úvaha, tak je po úvaze třeba rychlého činu.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s7b / Byl)
+(s7m / mezi)
+(s7l / lidmi)
+(s7d / dlouho)
+(s7v / velký)
+(s7s / spor)
+(s7o / o)
+(s7t / to)
+(s7z / zda)
+(s7v2 / vojenství)
+(s7p / prospívá)
+(s7v3 / více)
+(s7t2 / tělesnou)
+(s7s2 / silou)
+(s7c / či)
+(s7s3 / schopností)
+(s7d2 / ducha)
+(s7n / neboť)
+(s7j / jako)
+(s7j2 / je)
+(s7p2 / před)
+(s7z2 / započetím)
+(s7n2 / nutna)
+(s7u / úvaha)
+(s7t3 / tak)
+(s7j3 / je)
+(s7p3 / po)
+(s7u2 / úvaze)
+(s7t4 / třeba)
+(s7r / rychlého)
+(s7c2 / činu)
+
+# alignment:
+s7b: 1-1
+s7m: 2-2
+s7l: 3-3
+s7d: 4-4
+s7v: 5-5
+s7s: 6-6
+s7o: 7-7
+s7t: 8-8
+s7z: 10-10
+s7v2: 11-11
+s7p: 12-12
+s7v3: 13-13
+s7t2: 14-14
+s7s2: 15-15
+s7c: 16-16
+s7s3: 17-17
+s7d2: 18-18
+s7n: 20-20
+s7j: 21-21
+s7j2: 22-22
+s7p2: 23-23
+s7z2: 24-24
+s7n2: 25-25
+s7u: 26-26
+s7t3: 28-28
+s7j3: 29-29
+s7p3: 30-30
+s7u2: 31-31
+s7t4: 32-32
+s7r: 33-33
+s7c2: 34-34
+
+# document level annotation:
+(s7s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt8
+Index:               1  2    3   4    5 6    7            8 9       10 11    12     13      14
+Words:               Je tedy obé samo o sobě nedostatečné a jednomu je třeba pomocí druhého .
+Word Gloss (en):
+Sentence:            Je tedy obé samo o sobě nedostatečné a jednomu je třeba pomocí druhého.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s8j / Je)
+(s8t / tedy)
+(s8o / obé)
+(s8s / samo)
+(s8o2 / o)
+(s8s2 / sobě)
+(s8n / nedostatečné)
+(s8a / a)
+(s8j2 / jednomu)
+(s8j3 / je)
+(s8t2 / třeba)
+(s8p / pomocí)
+(s8d / druhého)
+
+# alignment:
+s8j: 1-1
+s8t: 2-2
+s8o: 3-3
+s8s: 4-4
+s8o2: 5-5
+s8s2: 6-6
+s8n: 7-7
+s8a: 8-8
+s8j2: 9-9
+s8j3: 10-10
+s8t2: 11-11
+s8p: 12-12
+s8d: 13-13
+
+# document level annotation:
+(s8s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt9
+Index:               1     2         3  4       5       6 7  8   9     10    11    12    13 14    15     16 17       18    19    20 21    22       23   24
+Words:               Proto pěstovali na počátku králové - to byl totiž první název vlády ve všech zemích -  rozličně jedni rozum ,  druzí tělesnou sílu .
+Word Gloss (en):
+Sentence:            Proto pěstovali na počátku králové - to byl totiž první název vlády ve všech zemích - rozličně jedni rozum, druzí tělesnou sílu.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s9p / Proto)
+(s9p2 / pěstovali)
+(s9n / na)
+(s9p3 / počátku)
+(s9k / králové)
+(s9t / to)
+(s9b / byl)
+(s9t2 / totiž)
+(s9p4 / první)
+(s9n2 / název)
+(s9v / vlády)
+(s9v2 / ve)
+(s9v3 / všech)
+(s9z / zemích)
+(s9r / rozličně)
+(s9j / jedni)
+(s9r2 / rozum)
+(s9d / druzí)
+(s9t3 / tělesnou)
+(s9s / sílu)
+
+# alignment:
+s9p: 1-1
+s9p2: 2-2
+s9n: 3-3
+s9p3: 4-4
+s9k: 5-5
+s9t: 7-7
+s9b: 8-8
+s9t2: 9-9
+s9p4: 10-10
+s9n2: 11-11
+s9v: 12-12
+s9v2: 13-13
+s9v3: 14-14
+s9z: 15-15
+s9r: 17-17
+s9j: 18-18
+s9r2: 19-19
+s9d: 21-21
+s9t3: 22-22
+s9s: 23-23
+
+# document level annotation:
+(s9s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt10
+Index:               1     2    3        4      5     6   7     8 9     10  11       12 13  14 15 16  17
+Words:               Tehdy také probíhal lidský život bez tužeb a každý byl spokojen s  tím ,  co měl .
+Word Gloss (en):
+Sentence:            Tehdy také probíhal lidský život bez tužeb a každý byl spokojen s tím, co měl.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s10t / Tehdy)
+(s10t2 / také)
+(s10p / probíhal)
+(s10l / lidský)
+(s10z / život)
+(s10b / bez)
+(s10t3 / tužeb)
+(s10a / a)
+(s10k / každý)
+(s10b2 / byl)
+(s10s / spokojen)
+(s10s2 / s)
+(s10t4 / tím)
+(s10c / co)
+(s10m / měl)
+
+# alignment:
+s10t: 1-1
+s10t2: 2-2
+s10p: 3-3
+s10l: 4-4
+s10z: 5-5
+s10b: 6-6
+s10t3: 7-7
+s10a: 8-8
+s10k: 9-9
+s10b2: 10-10
+s10s: 11-11
+s10s2: 12-12
+s10t4: 13-13
+s10c: 15-15
+s10m: 16-16
+
+# document level annotation:
+(s10s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt11
+Index:               1       2    3 4    5 6    7     8 9 10    11            12 13       14 15     16         17    18 19    20 21 22    23 24    25  26    27 28    29 30    31       32    33 34       35   36 37 38     39 40 41          42 43        44 45 46      47 48 49 50    51      52    53   54
+Words:               Později však , když v Asii Cyrus a v Řecku Lacedaemonsti a  Athéňané si začali podrobovat města a  kmeny ,  v  touze po vládě mít důvod k  válce a  vidět největší slávu v  největší moci ,  tu teprve ,  v  nebezpečích a  nesnázích ,  se poznalo ,  že ve válce nejvíce zmůže duch .
+Word Gloss (en):
+Sentence:            Později však, když v Asii Cyrus a v Řecku Lacedaemonsti a Athéňané si začali podrobovat města a kmeny, v touze po vládě mít důvod k válce a vidět největší slávu v největší moci, tu teprve, v nebezpečích a nesnázích, se poznalo, že ve válce nejvíce zmůže duch.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s11p / Později)
+(s11v / však)
+(s11k / když)
+(s11v2 / v)
+(s11a / Asii)
+(s11c / Cyrus)
+(s11a2 / a)
+(s11v3 / v)
+(s11r / Řecku)
+(s11l / Lacedaemonsti)
+(s11a3 / a)
+(s11a4 / Athéňané)
+(s11s / si)
+(s11z / začali)
+(s11p2 / podrobovat)
+(s11m / města)
+(s11a5 / a)
+(s11k2 / kmeny)
+(s11v4 / v)
+(s11t / touze)
+(s11p3 / po)
+(s11v5 / vládě)
+(s11m2 / mít)
+(s11d / důvod)
+(s11k3 / k)
+(s11v6 / válce)
+(s11a6 / a)
+(s11v7 / vidět)
+(s11n / největší)
+(s11s2 / slávu)
+(s11v8 / v)
+(s11n2 / největší)
+(s11m3 / moci)
+(s11t2 / tu)
+(s11t3 / teprve)
+(s11v9 / v)
+(s11n3 / nebezpečích)
+(s11a7 / a)
+(s11n4 / nesnázích)
+(s11s3 / se)
+(s11p4 / poznalo)
+(s11z2 / že)
+(s11v10 / ve)
+(s11v11 / válce)
+(s11n5 / nejvíce)
+(s11z3 / zmůže)
+(s11d2 / duch)
+
+# alignment:
+s11p: 1-1
+s11v: 2-2
+s11k: 4-4
+s11v2: 5-5
+s11a: 6-6
+s11c: 7-7
+s11a2: 8-8
+s11v3: 9-9
+s11r: 10-10
+s11l: 11-11
+s11a3: 12-12
+s11a4: 13-13
+s11s: 14-14
+s11z: 15-15
+s11p2: 16-16
+s11m: 17-17
+s11a5: 18-18
+s11k2: 19-19
+s11v4: 21-21
+s11t: 22-22
+s11p3: 23-23
+s11v5: 24-24
+s11m2: 25-25
+s11d: 26-26
+s11k3: 27-27
+s11v6: 28-28
+s11a6: 29-29
+s11v7: 30-30
+s11n: 31-31
+s11s2: 32-32
+s11v8: 33-33
+s11n2: 34-34
+s11m3: 35-35
+s11t2: 37-37
+s11t3: 38-38
+s11v9: 40-40
+s11n3: 41-41
+s11a7: 42-42
+s11n4: 43-43
+s11s3: 45-45
+s11p4: 46-46
+s11z2: 48-48
+s11v10: 49-49
+s11v11: 50-50
+s11n5: 51-51
+s11z3: 52-52
+s11d2: 53-53
+
+# document level annotation:
+(s11s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt12
+Index:               1     2 3     4  5       6         7     8 9      10          11 12   13  14   15 16    17 18   19 20     21     22           23 24       25 26       27     28 29  30 31 32        33  34 35  36  37 38  39 40      41   42 43   44
+Words:               Proto , kdyby se duševní schopnost králů a vládců uplatňovala v  míru tak jako ve válce ,  byly by lidské poměry vyrovnanější a  stálejší a  neviděli bychom ,  jak to je strhováno sem a  ono tam a  jak se všechno mění a  mate .
+Word Gloss (en):
+Sentence:            Proto, kdyby se duševní schopnost králů a vládců uplatňovala v míru tak jako ve válce, byly by lidské poměry vyrovnanější a stálejší a neviděli bychom, jak to je strhováno sem a ono tam a jak se všechno mění a mate.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s12p / Proto)
+(s12k / kdyby)
+(s12s / se)
+(s12d / duševní)
+(s12s2 / schopnost)
+(s12k2 / králů)
+(s12a / a)
+(s12v / vládců)
+(s12u / uplatňovala)
+(s12v2 / v)
+(s12m / míru)
+(s12t / tak)
+(s12j / jako)
+(s12v3 / ve)
+(s12v4 / válce)
+(s12b / byly)
+(s12b2 / by)
+(s12l / lidské)
+(s12p2 / poměry)
+(s12v5 / vyrovnanější)
+(s12a2 / a)
+(s12s3 / stálejší)
+(s12a3 / a)
+(s12n / neviděli)
+(s12b3 / bychom)
+(s12j2 / jak)
+(s12t2 / to)
+(s12j3 / je)
+(s12s4 / strhováno)
+(s12s5 / sem)
+(s12a4 / a)
+(s12o / ono)
+(s12t3 / tam)
+(s12a5 / a)
+(s12j4 / jak)
+(s12s6 / se)
+(s12v6 / všechno)
+(s12m2 / mění)
+(s12a6 / a)
+(s12m3 / mate)
+
+# alignment:
+s12p: 1-1
+s12k: 3-3
+s12s: 4-4
+s12d: 5-5
+s12s2: 6-6
+s12k2: 7-7
+s12a: 8-8
+s12v: 9-9
+s12u: 10-10
+s12v2: 11-11
+s12m: 12-12
+s12t: 13-13
+s12j: 14-14
+s12v3: 15-15
+s12v4: 16-16
+s12b: 18-18
+s12b2: 19-19
+s12l: 20-20
+s12p2: 21-21
+s12v5: 22-22
+s12a2: 23-23
+s12s3: 24-24
+s12a3: 25-25
+s12n: 26-26
+s12b3: 27-27
+s12j2: 29-29
+s12t2: 30-30
+s12j3: 31-31
+s12s4: 32-32
+s12s5: 33-33
+s12a4: 34-34
+s12o: 35-35
+s12t3: 36-36
+s12a5: 37-37
+s12j4: 38-38
+s12s6: 39-39
+s12v6: 40-40
+s12m2: 41-41
+s12a6: 42-42
+s12m3: 43-43
+
+# document level annotation:
+(s12s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt13
+Index:               1     2   3     4      5      6    7          8 9     10   11      12      13 14      15   16 17    18           19      20 21 22    23    24 25             26       27 28    29 30     31 32    33 34     35     36      37 38    39
+Words:               Vládu lze totiž snadno udržet těmi prostředky , jimiž byla původně získaná ;  jakmile však na místo pracovitosti zahálka ,  na místo kázně a  spravedlivosti chtivost a  pýcha se vloudí ,  změní se vnější poměry zároveň s  mravy .
+Word Gloss (en):
+Sentence:            Vládu lze totiž snadno udržet těmi prostředky, jimiž byla původně získaná; jakmile však na místo pracovitosti zahálka, na místo kázně a spravedlivosti chtivost a pýcha se vloudí, změní se vnější poměry zároveň s mravy.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s13v / Vládu)
+(s13l / lze)
+(s13t / totiž)
+(s13s / snadno)
+(s13u / udržet)
+(s13t2 / těmi)
+(s13p / prostředky)
+(s13j / jimiž)
+(s13b / byla)
+(s13p2 / původně)
+(s13z / získaná)
+(s13j2 / jakmile)
+(s13v2 / však)
+(s13n / na)
+(s13m / místo)
+(s13p3 / pracovitosti)
+(s13z2 / zahálka)
+(s13n2 / na)
+(s13m2 / místo)
+(s13k / kázně)
+(s13a / a)
+(s13s2 / spravedlivosti)
+(s13c / chtivost)
+(s13a2 / a)
+(s13p4 / pýcha)
+(s13s3 / se)
+(s13v3 / vloudí)
+(s13z3 / změní)
+(s13s4 / se)
+(s13v4 / vnější)
+(s13p5 / poměry)
+(s13z4 / zároveň)
+(s13s5 / s)
+(s13m3 / mravy)
+
+# alignment:
+s13v: 1-1
+s13l: 2-2
+s13t: 3-3
+s13s: 4-4
+s13u: 5-5
+s13t2: 6-6
+s13p: 7-7
+s13j: 9-9
+s13b: 10-10
+s13p2: 11-11
+s13z: 12-12
+s13j2: 14-14
+s13v2: 15-15
+s13n: 16-16
+s13m: 17-17
+s13p3: 18-18
+s13z2: 19-19
+s13n2: 21-21
+s13m2: 22-22
+s13k: 23-23
+s13a: 24-24
+s13s2: 25-25
+s13c: 26-26
+s13a2: 27-27
+s13p4: 28-28
+s13s3: 29-29
+s13v3: 30-30
+s13z3: 32-32
+s13s4: 33-33
+s13v4: 34-34
+s13p5: 35-35
+s13z4: 36-36
+s13s5: 37-37
+s13m3: 38-38
+
+# document level annotation:
+(s13s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt14
+Index:               1     2        3     4       5 6    7       8  9    10 11  12 13       14
+Words:               Proto přechází vláda vždycky z méně dobrého na toho ,  kdo je nejlepší .
+Word Gloss (en):
+Sentence:            Proto přechází vláda vždycky z méně dobrého na toho, kdo je nejlepší.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s14p / Proto)
+(s14p2 / přechází)
+(s14v / vláda)
+(s14v2 / vždycky)
+(s14z / z)
+(s14m / méně)
+(s14d / dobrého)
+(s14n / na)
+(s14t / toho)
+(s14k / kdo)
+(s14j / je)
+(s14n2 / nejlepší)
+
+# alignment:
+s14p: 1-1
+s14p2: 2-2
+s14v: 3-3
+s14v2: 4-4
+s14z: 5-5
+s14m: 6-6
+s14d: 7-7
+s14n: 8-8
+s14t: 9-9
+s14k: 11-11
+s14j: 12-12
+s14n2: 13-13
+
+# document level annotation:
+(s14s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt15
+Index:               1  2    3       4 5    6          7    8 9     10 11 12     13 14  15     16 17     18      19        20
+Words:               Co lidé dokážou , když vzdělávají půdu , plaví se a  budují ,  vše závisí na jejich duševní zdatnosti .
+Word Gloss (en):
+Sentence:            Co lidé dokážou, když vzdělávají půdu, plaví se a budují, vše závisí na jejich duševní zdatnosti.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s15c / Co)
+(s15l / lidé)
+(s15d / dokážou)
+(s15k / když)
+(s15v / vzdělávají)
+(s15p / půdu)
+(s15p2 / plaví)
+(s15s / se)
+(s15a / a)
+(s15b / budují)
+(s15v2 / vše)
+(s15z / závisí)
+(s15n / na)
+(s15j / jejich)
+(s15d2 / duševní)
+(s15z2 / zdatnosti)
+
+# alignment:
+s15c: 1-1
+s15l: 2-2
+s15d: 3-3
+s15k: 5-5
+s15v: 6-6
+s15p: 7-7
+s15p2: 9-9
+s15s: 10-10
+s15a: 11-11
+s15b: 12-12
+s15v2: 14-14
+s15z: 15-15
+s15n: 16-16
+s15j: 17-17
+s15d2: 18-18
+s15z2: 19-19
+
+# document level annotation:
+(s15s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt16
+Index:               1   2     3    4 5      6     7 8      9 10         11      12   13        14        15 16  17      18 19       20 21  22      23 24 25    26      27 28   29  30     31 32   33       34
+Words:               Ale mnozí lidé , oddáni jídlu a spánku , procházejí životem jako nepozorní cestující ,  bez poučení a  vzdělání ;  těm opravdu je ,  proti přírodě ,  tělo pro rozkoš a  duše břemenem .
+Word Gloss (en):
+Sentence:            Ale mnozí lidé, oddáni jídlu a spánku, procházejí životem jako nepozorní cestující, bez poučení a vzdělání; těm opravdu je, proti přírodě, tělo pro rozkoš a duše břemenem.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s16a / Ale)
+(s16m / mnozí)
+(s16l / lidé)
+(s16o / oddáni)
+(s16j / jídlu)
+(s16a2 / a)
+(s16s / spánku)
+(s16p / procházejí)
+(s16z / životem)
+(s16j2 / jako)
+(s16n / nepozorní)
+(s16c / cestující)
+(s16b / bez)
+(s16p2 / poučení)
+(s16a3 / a)
+(s16v / vzdělání)
+(s16t / těm)
+(s16o2 / opravdu)
+(s16j3 / je)
+(s16p3 / proti)
+(s16p4 / přírodě)
+(s16t2 / tělo)
+(s16p5 / pro)
+(s16r / rozkoš)
+(s16a4 / a)
+(s16d / duše)
+(s16b2 / břemenem)
+
+# alignment:
+s16a: 1-1
+s16m: 2-2
+s16l: 3-3
+s16o: 5-5
+s16j: 6-6
+s16a2: 7-7
+s16s: 8-8
+s16p: 10-10
+s16z: 11-11
+s16j2: 12-12
+s16n: 13-13
+s16c: 14-14
+s16b: 16-16
+s16p2: 17-17
+s16a3: 18-18
+s16v: 19-19
+s16t: 21-21
+s16o2: 22-22
+s16j3: 23-23
+s16p3: 25-25
+s16p4: 26-26
+s16t2: 28-28
+s16p5: 29-29
+s16r: 30-30
+s16a4: 31-31
+s16d: 32-32
+s16b2: 33-33
+
+# document level annotation:
+(s16s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt17
+Index:               1      2     3 4    5  6 7   8       9    10 11    12 13     14 15   16
+Words:               Jejich život i smrt má u mne stejnou cenu ,  neboť o  obojím se mlčí .
+Word Gloss (en):
+Sentence:            Jejich život i smrt má u mne stejnou cenu, neboť o obojím se mlčí.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s17j / Jejich)
+(s17z / život)
+(s17i / i)
+(s17s / smrt)
+(s17m / má)
+(s17u / u)
+(s17m2 / mne)
+(s17s2 / stejnou)
+(s17c / cenu)
+(s17n / neboť)
+(s17o / o)
+(s17o2 / obojím)
+(s17s3 / se)
+(s17m3 / mlčí)
+
+# alignment:
+s17j: 1-1
+s17z: 2-2
+s17i: 3-3
+s17s: 4-4
+s17m: 5-5
+s17u: 6-6
+s17m2: 7-7
+s17s2: 8-8
+s17c: 9-9
+s17n: 11-11
+s17o: 12-12
+s17o2: 13-13
+s17s3: 14-14
+s17m3: 15-15
+
+# document level annotation:
+(s17s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt18
+Index:               1       2    3 4     5    6      7 8   9      10   11 12 13      14 15     16 17  18 19    20     21      22     23 24 25    26        27          28    29   30          31         32
+Words:               Vskutku však , podle mého mínění , ten teprve žije a  má požitek ze života ,  kdo ,  zcela zabrán nějakým úkolem ,  se hledí proslavit vynikajícím činem nebo ušlechtilou dovedností .
+Word Gloss (en):
+Sentence:            Vskutku však, podle mého mínění, ten teprve žije a má požitek ze života, kdo, zcela zabrán nějakým úkolem, se hledí proslavit vynikajícím činem nebo ušlechtilou dovedností.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s18v / Vskutku)
+(s18v2 / však)
+(s18p / podle)
+(s18m / mého)
+(s18m2 / mínění)
+(s18t / ten)
+(s18t2 / teprve)
+(s18z / žije)
+(s18a / a)
+(s18m3 / má)
+(s18p2 / požitek)
+(s18z2 / ze)
+(s18z3 / života)
+(s18k / kdo)
+(s18z4 / zcela)
+(s18z5 / zabrán)
+(s18n / nějakým)
+(s18u / úkolem)
+(s18s / se)
+(s18h / hledí)
+(s18p3 / proslavit)
+(s18v3 / vynikajícím)
+(s18c / činem)
+(s18n2 / nebo)
+(s18u2 / ušlechtilou)
+(s18d / dovedností)
+
+# alignment:
+s18v: 1-1
+s18v2: 2-2
+s18p: 4-4
+s18m: 5-5
+s18m2: 6-6
+s18t: 8-8
+s18t2: 9-9
+s18z: 10-10
+s18a: 11-11
+s18m3: 12-12
+s18p2: 13-13
+s18z2: 14-14
+s18z3: 15-15
+s18k: 17-17
+s18z4: 19-19
+s18z5: 20-20
+s18n: 21-21
+s18u: 22-22
+s18s: 24-24
+s18h: 25-25
+s18p3: 26-26
+s18v3: 27-27
+s18c: 28-28
+s18n2: 29-29
+s18u2: 30-30
+s18d: 31-31
+
+# document level annotation:
+(s18s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt19
+Index:               1   2   3     4            5      6        7       8       9     10    11
+Words:               Ale při velké rozmanitosti života vykazuje příroda každému jinou dráhu .
+Word Gloss (en):
+Sentence:            Ale při velké rozmanitosti života vykazuje příroda každému jinou dráhu.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s19a / Ale)
+(s19p / při)
+(s19v / velké)
+(s19r / rozmanitosti)
+(s19z / života)
+(s19v2 / vykazuje)
+(s19p2 / příroda)
+(s19k / každému)
+(s19j / jinou)
+(s19d / dráhu)
+
+# alignment:
+s19a: 1-1
+s19p: 2-2
+s19v: 3-3
+s19r: 4-4
+s19z: 5-5
+s19v2: 6-6
+s19p2: 7-7
+s19k: 8-8
+s19j: 9-9
+s19d: 10-10
+
+# document level annotation:
+(s19s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt20
+Index:               1  2      3    4         5     6 7    8          9    10       11 12  13 14   15   16 17    18 19    20   21 22      23
+Words:               Je krásné činy prospívat států , také výmluvnost není nevítaná ;  buď v  míru nebo ve válce je možno stát se slavným .
+Word Gloss (en):
+Sentence:            Je krásné činy prospívat států, také výmluvnost není nevítaná; buď v míru nebo ve válce je možno stát se slavným.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s20j / Je)
+(s20k / krásné)
+(s20c / činy)
+(s20p / prospívat)
+(s20s / států)
+(s20t / také)
+(s20v / výmluvnost)
+(s20n / není)
+(s20n2 / nevítaná)
+(s20b / buď)
+(s20v2 / v)
+(s20m / míru)
+(s20n3 / nebo)
+(s20v3 / ve)
+(s20v4 / válce)
+(s20j2 / je)
+(s20m2 / možno)
+(s20s2 / stát)
+(s20s3 / se)
+(s20s4 / slavným)
+
+# alignment:
+s20j: 1-1
+s20k: 2-2
+s20c: 3-3
+s20p: 4-4
+s20s: 5-5
+s20t: 7-7
+s20v: 8-8
+s20n: 9-9
+s20n2: 10-10
+s20b: 12-12
+s20v2: 13-13
+s20m: 14-14
+s20n3: 15-15
+s20v3: 16-16
+s20v4: 17-17
+s20j2: 18-18
+s20m2: 19-19
+s20s2: 20-20
+s20s3: 21-21
+s20s4: 22-22
+
+# document level annotation:
+(s20s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt21
+Index:               1   2  3 4   5      6        7 8   9  10 11  12   13     14      15 16     17    18       19
+Words:               Jak ti , kdo skutky vykonali , tak ti ,  kdo činy jiných popsali ,  bývají hojně chváleni .
+Word Gloss (en):
+Sentence:            Jak ti, kdo skutky vykonali, tak ti, kdo činy jiných popsali, bývají hojně chváleni.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s21j / Jak)
+(s21t / ti)
+(s21k / kdo)
+(s21s / skutky)
+(s21v / vykonali)
+(s21t2 / tak)
+(s21t3 / ti)
+(s21k2 / kdo)
+(s21c / činy)
+(s21j2 / jiných)
+(s21p / popsali)
+(s21b / bývají)
+(s21h / hojně)
+(s21c2 / chváleni)
+
+# alignment:
+s21j: 1-1
+s21t: 2-2
+s21k: 4-4
+s21s: 5-5
+s21v: 6-6
+s21t2: 8-8
+s21t3: 9-9
+s21k2: 11-11
+s21c: 12-12
+s21j2: 13-13
+s21p: 14-14
+s21b: 16-16
+s21h: 17-17
+s21c2: 18-18
+
+# document level annotation:
+(s21s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
+
+
+# :: snt22
+Index:               1  2    3 4   5  6         7       8      9     10    11 12  13 14     15   16 17 18   19 20  21 22       23 24    25  26         27     28 29      30      31 32 33   34    35 36 37   38    39    40         41 42   43 44 45         46      47    48 49      50 51      52 53     54       55   56      57 58   59  60    61 62      63        64 65 66    67      68     69 70        71    72        73 74 75 76 77 78  79    80 81  82     83      84 85 86   87 88   89 90 91 92 93       94        95
+Words:               Já však , byť se nedostává zdaleka stejné slávy tornu ,  kdo o  činech píše ,  a  tomu ,  kdo je vykonává ,  přece mám popisování skutků za zvláště obtížné :  za prvé proto ,  že činy nutno slovy vystihnout ,  dále ,  že vytkneš-li nějakou chybu ,  většina to pokládá za projev nepřízně nebo závisti ,  když pak píšeš o  velikém hrdinství a  o  slávě dobrých občanů ,  vyslechne každý lhostejně to ,  co by ,  jak soudí ,  sám snadno vykonal ,  co však je více ,  to má za vylhanou smyšlenku .
+Word Gloss (en):
+Sentence:            Já však, byť se nedostává zdaleka stejné slávy tornu, kdo o činech píše, a tomu, kdo je vykonává, přece mám popisování skutků za zvláště obtížné: za prvé proto, že činy nutno slovy vystihnout, dále, že vytkneš-li nějakou chybu, většina to pokládá za projev nepřízně nebo závisti, když pak píšeš o velikém hrdinství a o slávě dobrých občanů, vyslechne každý lhostejně to, co by, jak soudí, sám snadno vykonal, co však je více, to má za vylhanou smyšlenku.
+Sentence Gloss (en):
+
+# sentence level graph:
+(s22j / Já)
+(s22v / však)
+(s22b / byť)
+(s22s / se)
+(s22n / nedostává)
+(s22z / zdaleka)
+(s22s2 / stejné)
+(s22s3 / slávy)
+(s22t / tornu)
+(s22k / kdo)
+(s22o / o)
+(s22c / činech)
+(s22p / píše)
+(s22a / a)
+(s22t2 / tomu)
+(s22k2 / kdo)
+(s22j2 / je)
+(s22v2 / vykonává)
+(s22p2 / přece)
+(s22m / mám)
+(s22p3 / popisování)
+(s22s4 / skutků)
+(s22z2 / za)
+(s22z3 / zvláště)
+(s22o2 / obtížné)
+(s22z4 / za)
+(s22p4 / prvé)
+(s22p5 / proto)
+(s22z5 / že)
+(s22c2 / činy)
+(s22n2 / nutno)
+(s22s5 / slovy)
+(s22v3 / vystihnout)
+(s22d / dále)
+(s22z6 / že)
+(s22v4 / vytkneš-li)
+(s22n3 / nějakou)
+(s22c3 / chybu)
+(s22v5 / většina)
+(s22t3 / to)
+(s22p6 / pokládá)
+(s22z7 / za)
+(s22p7 / projev)
+(s22n4 / nepřízně)
+(s22n5 / nebo)
+(s22z8 / závisti)
+(s22k3 / když)
+(s22p8 / pak)
+(s22p9 / píšeš)
+(s22o3 / o)
+(s22v6 / velikém)
+(s22h / hrdinství)
+(s22a2 / a)
+(s22o4 / o)
+(s22s6 / slávě)
+(s22d2 / dobrých)
+(s22o5 / občanů)
+(s22v7 / vyslechne)
+(s22k4 / každý)
+(s22l / lhostejně)
+(s22t4 / to)
+(s22c4 / co)
+(s22b2 / by)
+(s22j3 / jak)
+(s22s7 / soudí)
+(s22s8 / sám)
+(s22s9 / snadno)
+(s22v8 / vykonal)
+(s22c5 / co)
+(s22v9 / však)
+(s22j4 / je)
+(s22v10 / více)
+(s22t5 / to)
+(s22m2 / má)
+(s22z9 / za)
+(s22v11 / vylhanou)
+(s22s10 / smyšlenku)
+
+# alignment:
+s22j: 1-1
+s22v: 2-2
+s22b: 4-4
+s22s: 5-5
+s22n: 6-6
+s22z: 7-7
+s22s2: 8-8
+s22s3: 9-9
+s22t: 10-10
+s22k: 12-12
+s22o: 13-13
+s22c: 14-14
+s22p: 15-15
+s22a: 17-17
+s22t2: 18-18
+s22k2: 20-20
+s22j2: 21-21
+s22v2: 22-22
+s22p2: 24-24
+s22m: 25-25
+s22p3: 26-26
+s22s4: 27-27
+s22z2: 28-28
+s22z3: 29-29
+s22o2: 30-30
+s22z4: 32-32
+s22p4: 33-33
+s22p5: 34-34
+s22z5: 36-36
+s22c2: 37-37
+s22n2: 38-38
+s22s5: 39-39
+s22v3: 40-40
+s22d: 42-42
+s22z6: 44-44
+s22v4: 45-45
+s22n3: 46-46
+s22c3: 47-47
+s22v5: 49-49
+s22t3: 50-50
+s22p6: 51-51
+s22z7: 52-52
+s22p7: 53-53
+s22n4: 54-54
+s22n5: 55-55
+s22z8: 56-56
+s22k3: 58-58
+s22p8: 59-59
+s22p9: 60-60
+s22o3: 61-61
+s22v6: 62-62
+s22h: 63-63
+s22a2: 64-64
+s22o4: 65-65
+s22s6: 66-66
+s22d2: 67-67
+s22o5: 68-68
+s22v7: 70-70
+s22k4: 71-71
+s22l: 72-72
+s22t4: 73-73
+s22c4: 75-75
+s22b2: 76-76
+s22j3: 78-78
+s22s7: 79-79
+s22s8: 81-81
+s22s9: 82-82
+s22v8: 83-83
+s22c5: 85-85
+s22v9: 86-86
+s22j4: 87-87
+s22v10: 88-88
+s22t5: 90-90
+s22m2: 91-91
+s22z9: 92-92
+s22v11: 93-93
+s22s10: 94-94
+
+# document level annotation:
+(s22s0 / sentence
+    :temporal ((document-creation-time :before xxx))
+    :modal ((root :modal author)))
