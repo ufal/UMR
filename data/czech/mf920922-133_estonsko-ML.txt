@@ -320,7 +320,7 @@ s6p8: 0-0
             (author :full-affirmative s6i))
     :coref ((s3p2 :subset-of s6p7)
             (s5v :same-event s6v)
-            (s6v :same-event s6h)
+            (s6v :subset-of s6h)
             (s5b :same-entity s6b)
             (s5p :same-entity s6p6)))
 
@@ -337,7 +337,7 @@ Sentence Gloss (en): In second place with 13.9 percent of the votes (18 mandates
 # Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882
 (s7h / have-ord-91
      :ARG1 (s7b / blok
-            :wiki "Q31271882" 
+            :wiki "Q31271882"
             :refer-number singular
             :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
             :possessor (s7p / person
