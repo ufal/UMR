@@ -107,6 +107,10 @@ lws_re = re.compile(r"^\s+")
 def remove_leading_whitespace(line):
     return lws_re.sub('', line)
 
+comment_re = re.compile(r"(.)\#.*")
+def remove_inline_comment(line):
+    return remove_trailing_whitespace(comment_re.sub(r"\1", line))
+
 # For some languages (Arapaho, Navajo, Sanapana, Kukama), the initial block
 # contains multiple lines with inter-linear glossing. Each of these lines should
 # start with a header but these headers are different in Arapaho vs. the others.
@@ -190,6 +194,10 @@ def sentences(inp, args):
     A sentence in a UMR file consists of:
     - Comment lines. Their first character is '#'. Some of them may contain
       machine-readable metadata. Others can be ignored.
+      (Note: With the option --allow-inline-comments, comments can occur also
+      on other lines. Everything from the # character to the end of the line
+      will then be ignored, the part before the # character is a line of
+      another type.)
     - Empty lines. An empty line separates two annotation blocks of the same
       sentence (e.g., document level graph from sentence level graph). Two empty
       lines separate sentences. Empty lines must not occur inside annotation
@@ -233,6 +241,8 @@ def sentences(inp, args):
         if not bline0:
             bline0 = curr_line
         line = line.rstrip("\n")
+        if args.inline_comments:
+            line = remove_inline_comment(line)
         if has_trailing_whitespace(line):
             if args.check_trailing_whitespace:
                 testid = 'trailing-whitespace'
@@ -1576,9 +1586,11 @@ def collect_coreference_clusters(document, node_dict, args):
             if wiki != '':
                 if cwiki != '':
                     if wiki != cwiki:
+                        wikilabel = wiki
                         label = get_wikidata_label(wiki)
                         if label:
                             wikilabel = wiki + ' (' + label + ')'
+                        cwikilabel = cwiki
                         label = get_wikidata_label(cwiki)
                         if label:
                             cwikilabel = cwiki + ' (' + label + ')'
@@ -2028,6 +2040,7 @@ if __name__=="__main__":
     list_group.add_argument('--level', action="store", type=int, default=5, dest="level", help="Level 1: Test only the technical format backbone. Level 2: UMR format. Level 3: UMR contents. Level 4: Language-specific labels. Level 5: Language-specific contents.")
 
     strict_group = opt_parser.add_argument_group('Strictness', 'Options for relaxing selected tests.')
+    strict_group.add_argument('--allow-inline-comments', dest='inline_comments', action='store_true', default=False, help='Allow comments anywhere, not just at the beginning of a block. Everything from # to end of line will be ignored. This option also implies --allow-trailing-whitespace.')
     strict_group.add_argument('--allow-trailing-whitespace', dest='check_trailing_whitespace', action='store_false', default=True, help='Do not report trailing whitespace.')
     strict_group.add_argument('--allow-wide-space', dest='check_wide_space', action='store_false', default=True, help='Do not report multiple spaces between tokens, treat them as a single space.')
     strict_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
