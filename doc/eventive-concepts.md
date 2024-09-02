@@ -2,8 +2,9 @@
 
 ## Quick HowTo for annotating Czech sentences:
 
+### Events vs. non-events
 
-1. All verbs (both action verbs and statives) in all their occurrences denote events. 
+1. **All verbs** (both action verbs and statives) in all their occurrences (in predication, modification, and reference) denote **events**. 
 2. Based on [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453), sheet "Abstract Rolesets"
    - **reifications** ... events
    - **discourse relations/reifications** ... events  
@@ -18,7 +19,7 @@ See below for Julia's comments!
 
 
 
-## Consequences of being designated an 'event' in UMR
+### Consequences of being designated an 'event' in UMR
 
 The consequences of being designated an 'event' in UMR are the following (as summarized by Julia Bonn):
  - **roleset use:**: if rolesets are being used, qualifying as an 'event' means that it is reasonable to represent the expression in question using a roleset.   
