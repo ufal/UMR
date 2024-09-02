@@ -1,5 +1,23 @@
 # Summary: How to distinguish events and non-events
 
+## Quick HowTo for annotating Czech sentences:
+
+
+1. All verbs (both action verbs and statives) in all their occurrences denote events. 
+2. Based on [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453), sheet "Abstract Rolesets"
+   - **reifications** ... events
+   - **discourse relations/reifications** ... events  
+     (!!! the only exception is "but-91", similarly as other discourse relations, sheet "Abstract concepts"!!!) 
+   - **non-prototypical pred rolesets** (9 non-verbal predicates) ... events
+   - **implicit rolesets** ... some are events, some not :-((  
+   preliminary classification:
+       - events: corelate-91, have-degree-91, include-91, infer-91, resemble-91, have-experience-91
+       - non-events: everything else
+ 
+See below for Julia's comments!
+
+
+
 ## Consequences of being designated an 'event' in UMR
 
 The consequences of being designated an 'event' in UMR are the following (as summarized by Julia Bonn):
@@ -8,6 +26,8 @@ The consequences of being designated an 'event' in UMR are the following (as sum
 - **:aspect annotation:** 'events' receive aspect annotation. 
 - **:modal-strength annotation:** 'events' receive modal annotation in the sentence and document graphs
 - **:temporal dependency annotation:** 'events' qualify for placement in the document-level temporal dependency. 
+
+
 
 
 ## 1. Verbs and abstract predicates (in references and modification) 
