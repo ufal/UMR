@@ -47,8 +47,10 @@ sub read {
                     'umr.sent.type',
                     $SCHEMA, {
                         words => 'Treex::PML::Factory'->createList([
-                            map 'Treex::PML::Factory'->createContainer($_),
-                            @words]),
+                            map 'Treex::PML::Factory'->createContainer(
+                                [],
+                                {word => $_}),
+                            "", @words]),
                         id => 'umr' . rand,
                         '#name' => 'sent',
                     });
@@ -74,6 +76,14 @@ sub read {
         } elsif ('alignment' eq $mode) {
             if ("" eq $_) {
                 $mode = "";
+
+            } elsif (/^(\w+): ([-0-9, ]+)/) {
+                my ($id, $alignment) = ($1, $2);
+                my @ords = map {
+                               my ($from, $to) = split /-/;
+                               $from .. $to
+                           } split /, */, $alignment;
+                push @{ $root->{words}[$_]{'#content'} }, $id for @ords;
             }
 
         } elsif (/# *document level annotation/) {

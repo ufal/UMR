@@ -53,8 +53,16 @@
     sub get_value_line_hook {
         my ($doc, $tree_no) = @_;
         my $tree = $doc->tree($tree_no);
-        # Use alignment insead of undef!
-        return [ map { [$_->value, undef], [' '] } ListV($tree->{words}) ]
+
+        my $h = [
+            map { my $word = $_;
+                  [$word->{word},
+                   [map { my $id = $_;
+                         grep $id eq $_->{id}, $tree->descendants
+                   } @{ $word->value }]], [' ']
+            } ListV($tree->{words})
+        ];
+        return $h
     }
 
 
