@@ -120,7 +120,11 @@ sub parse_sentence {
             $SCHEMA,
             {label    => $label,
              id       => $var});
-        $node->paste_on($root);
+        if ($root->children) {
+            $node->paste_after(($root->children)[-1]);
+        } else {
+            $node->paste_on($root);
+        }
 
         while ($$buffer =~ s/^:([-\w]+)\s*//g) {
             #use Data::Dumper; warn Dumper $root;
