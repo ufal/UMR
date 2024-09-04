@@ -5,10 +5,8 @@ my %MAPPING = (
     'ACT'   => 'ARG0',
     'PAT'   => 'ARG1',
     'ADDR'  => 'ARG2',
-#    'ORIG' => 'ARG3',
-    'ORIG' => 'source',  #NEW
-#    'EFF'   => 'ARG4',
-    'EFF' => 'goal',     #NEW
+    'ORIG' => 'source',  #NEW, originally 'ORIG' => 'ARG3',
+    'EFF' => 'goal',     #NEW, originally 'EFF'   => 'ARG4',
 ##### TEMPORAL ###########################
     'TWHEN' => 'temporal',
     'TFHL' => 'duration',
@@ -33,37 +31,37 @@ my %MAPPING = (
 ##### MANNER ###########################
     'ACMP'  => 'companion',
 #    'CPR' => 'compared-to',   #TODO, příliš složité
-    'CRIT' => 'according-to',  #temporarily
+    'CRIT' => 'according-to',  #NOT in UMR (newly invented to cover this nuance)
     'DIFF' => 'extent',
     'EXT' => 'extent',
     'MANN'  => 'manner',
     'MEANS' => 'instrument',
-    'NORM' => 'according-to',  #temporarily
+    'NORM' => 'according-to',  #NOT in UMR (newly invented to cover this nuance)
     'REG'  => 'manner',
     'RESL' => 'extent',
     'RESTR' => 'subtraction',
 ##### NEW ###########################
     'BEN'   => 'recipient',
-#    'CONTRD' => '' ,     #TODO (zatímco)
+    'CONTRD' => 'contrast-91' , #NEW event (nikoli relace) #NEW event (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (zatímco), vyjadřuje kontrast/konfrontační pozadí)
     'HER'   => 'source',
-#    'SUBS' => '',        #TODO (jménem někoho)
+    'SUBS' => 'substitution',   #NEW (jménem někoho)
 ##### COMPL ###########################
 #    'COMPL'  => '',      #TODO
 ##### NOMINAL ###########################
     'APP' => 'poss',      #TODO ?? or 'part' ?? BUT unclear direction
     'AUTH' => 'source',
-    'ID' => 'name',      #NEW
-    'MAT' => 'mod',      #NEW
+    'ID' => 'name',       #NEW
+    'MAT' => 'mod',       #NEW, ale je to velmi hrubé
     'RSTR'  => 'mod',
 ##### MULTI-WORD and FOREIGN (.PHR) ###########################
-#    'CPHR'
-#    'DPHR'
-#    'FPHR'
+#    'CPHR' => '',      #TODO
+#    'DPHR' => '',      #TODO
+#    'FPHR' => '',      #TODO
 ##### coap - COORDINATION ###########################
     'ADVS' => 'but-91',         #NEW klíčové slovo (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (ale), je v rozporu s očekáváním plynoucím z obsahu první klauze)
     'CONFR' => 'contrast-91',   #NEW event (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (kdežto, ale), vyjadřuje kontrast)
     'CONJ' => 'and',            #NEW klíčové slovo (nikoli relace), s op1, op2, ...
-#    'CONTRA' => '',     #TODO
+    'CONTRA' => 'contra',       #NEW klíčové slovo (nikoli relace), s op1, op2, ... NOT in UMR (newly invented to cover this nuance)
     'CSQ' => 'consecutive',     #NEW klíčové slovo (nikoli relace), s op1, op2 ... důsledek (proto, tedy, tudíž) ... NEBO 'and'
     'DISJ' => 'exclusive-disjunctive', #NEW klíčové slovo (nikoli relace), s op1, op2 ... NEBO 'or'
     'GRAD' => 'and',            #NEW klíčové slovo (nikoli relace), s op1, op2
@@ -71,13 +69,13 @@ my %MAPPING = (
 ##### coap - APPOSITION ###########################
 #    'APPS' => '',       #TODO
 ##### coap - MAT. OPERATION ###########################
-#    'OPER' => '',       #TODO
+     'OPER' => 'between',       #NEW klíčové slovo (nikoli relace) s op1, op2 ... 5 006x ... asi velmi hrubé
 ##### CONJUNCTION MODIFIER ###########################
-#    'CM' ... nikoli relace
+#    'CM' ... nikoli relace ... POZOR, 194x t_lemma #Neg
 ##### RHEMATIZERS ###########################
-#    'ATT' ... nikoli relace
-#    'INTF' ... nikoli relace
-#    'MOD' ... nikoli relace
-#    'PREC' ... nikoli relace
-#    'RHEM' ... nikoli relace
+#    'ATT' ... nikoli relace, spíš se vztahuje k TFA
+#    'INTF' ... nikoli relace, spíš se vztahuje k TFA
+#    'MOD' ... nikoli relace, spíš se vztahuje k TFA
+#    'PREC' ... nikoli relace, spíš se vztahuje k TFA
+#    'RHEM' ... nikoli relace, spíš se vztahuje k TFA ... POZOR, 27 795x t_lemma #Neg
 )

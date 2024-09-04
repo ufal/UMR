@@ -79,7 +79,7 @@ Peter is diligent, but [contrast] Vanja is lazy.
 >  **Převod struktur s koordinací:**
 > - **uzel pro spojku/spojovací výraz** (typ uzlu coap, s funktorem ze seznamu ADVS, CONFR, CONJ, ... REAS) zůstane zachovaný;
 > - **t_lemma** pro spojku/spoj. výraz je nahrazeno **keyword n. eventem**, a to **podle funktoru**, viz **[deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)** (tedy i keyword funguje jako koncept!!);  
->    POZOR, v [UMR seznamech](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453) tomu říkají ``discourse relation'', ale v grafu keyword fungují stejně jako konkrétní slova, tedy jako koncepty (včetně toho, že mají variable)  
+>    POZOR, v [UMR seznamech](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453) tomu občas říkají ``discourse relation'', ale v grafu keyword fungují stejně jako konkrétní slova, tedy jako koncepty (včetně toho, že mají variable)  
 > - **relace mezi rodičem a spojovacím výrazem** (nově keyword) zdědí **funktor koordinovaných členů** (tedy dětech spoj. uzlu s is_member=1), resp. příslušnou UMR relaci
 > - **koordinované členy** (is_member=1) se připojí, v závislosti na funktoru, následovně  
        - **CONJ|GRAD**  (--> and) ... **`:op1`, `:op2`**  
