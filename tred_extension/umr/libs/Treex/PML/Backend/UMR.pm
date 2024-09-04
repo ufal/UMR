@@ -90,7 +90,22 @@ sub read {
             $mode = 'document';
 
         } elsif ('document' eq $mode) {
-            $mode = "" if "" eq $_;
+            if ("" eq $_) {
+                $mode = "";
+            } elsif (/\( (\w+) \s+ :same-(e(?:ntity|vent)) \s+ (\w+) \)/x) {
+                my ($target_id, $type, $source_id) = ($1, $2, $3);
+                if (my $source = (grep $_->{id} eq $source_id,
+                                  $root->descendants)[0]
+                ) {
+                    add_to_links($source, $target_id, "coref:$type");
+                } elsif (my $target = (grep $_->{id} eq $target_id,
+                                       $root->descendants)[0]
+                ) {
+                    add_to_links($target, $source_id, "coref:$type");
+                } else {
+                    die "Nor $source_id neither $target_id found";
+                }
+            }
         }
         #warn "$mode: $_" if length $mode || length;
     }
@@ -100,8 +115,6 @@ sub read {
 sub write {
     my ($fh, $doc) = @_;
     return 1;
-
-
 
     for my $root ($doc->trees) {
     }
@@ -138,10 +151,7 @@ sub parse_sentence {
             } elsif ($$buffer =~ s/^([^\s)]+)\s*//) {
                 my $value = $1;
                 if ($value =~ /^s[0-9]\w+$/) {
-                    $node->{links} //= 'Treex::PML::Factory'->createList();
-                    $node->{links}->push(
-                        'Treex::PML::Factory'->createContainer(
-                            $relation, {'target.rf' => $value}));
+                    add_to_links($node, $value, "rel:$relation");
                 } else {
                     $node->{features} //= 'Treex::PML::Factory'->createList();
                     $node->{features}->push(
@@ -163,6 +173,14 @@ sub parse_sentence {
     } elsif (length $$buffer) {
         die "Can't parse:\n<<$$buffer>>\n.";
     }
+}
+
+sub add_to_links {
+    my ($node, $target_id, $type) = @_;
+    $node->{links} //= 'Treex::PML::Factory'->createList();
+    $node->{links}->push(
+        'Treex::PML::Factory'->createContainer(
+            $type, {'target.rf' => $target_id}));
 }
 
 __PACKAGE__

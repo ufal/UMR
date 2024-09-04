@@ -3,19 +3,24 @@ node: ${label}
 node: #{blue}${relation}
 
 style: <?
-    my @links = ListV($this->{links});
+    my @links = grep { my $id = $_->{'target.rf'};
+                       grep $_->{id} eq $id, $root->descendants
+                } ListV($this->{links});
     my $coords = join '&', 'n,n,p,p', map {
         my $parent = $_->{'target.rf'};
         my $expression = qq([id = $parent]);
-        "n,n,(x$expression+xn)/2,(y$expression+yn)/2.5,x$expression,y$expression"
+        "n,n,(x$expression+xn)/1.6,(y$expression+yn)/2.5,x$expression,y$expression"
     } @links;
 
     my $arrows  = join '&', 'none', ('last') x @links;
-    my $colours = join '&', 'grey', ('orange') x @links;
+    my $colours = join '&', 'grey', map $_->value =~ /^coref:/ ? 'orange' : 'cyan', @links;
     my $widths  = join '&', ('2'), ('1') x @links;
     my $smooth  = join '&', ('0'), ('1') x @links;
     my $hints   = join '&', "", map $_->value, @links;
-    my $deco    = join '&', "", map "shape=text;font=SansSerif 10;fill=magenta;coords=n,n;start=55%;text=".$_->value, @links;
+    my $deco    = join '&', "", map "shape=text;font=SansSerif 10;fill="
+                                    . ($_->value =~ /^coref:/ ? 'magenta': 'darkcyan')
+                                    . ";coords=n,n;start=55%;text=".($_->value =~ s/.*://r),
+                                    @links;
 
     "#{Line-coords:$coords}#{Line-fill:$colours}#{Line-arrow:$arrows}"
     . "#{Line-width:$widths}#{Line-smooth:$smooth}#{Line-hint:$hints}"
