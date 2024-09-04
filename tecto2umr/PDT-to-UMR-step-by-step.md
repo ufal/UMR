@@ -75,6 +75,24 @@ Peter is diligent, but [contrast] Vanja is lazy.
 )
 ```
 
+
+>  **Převod struktur s koordinací:**
+> - **uzel pro spojku/spojovací výraz** (typ uzlu coap, s funktorem ze seznamu ADVS, CONFR, CONJ, ... REAS) zůstane zachovaný;
+> - **t_lemma** pro spojku/spoj. výraz je nahrazeno **keyword n. eventem**, a to **podle funktoru**, viz **[deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)** (tedy i keyword funguje jako koncept!!);  
+>    POZOR, v [UMR seznamech](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453) tomu říkají ``discourse relation'', ale v grafu keyword fungují stejně jako konkrétní slova, tedy jako koncepty (včetně toho, že mají variable)  
+> - **relace mezi rodičem a spojovacím výrazem** (nově keyword) zdědí **funktor koordinovaných členů** (tedy dětech spoj. uzlu s is_member=1), resp. příslušnou UMR relaci
+> - **koordinované členy** (is_member=1) se připojí, v závislosti na funktoru, následovně  
+       - **CONJ|GRAD**  (--> and) ... **`:op1`, `:op2`**  
+       - **CSQ** (--> consecutive) ... **`:op1`, `:op2`**  ... NEBO 'and'  
+       - **DISJ** (--> exclusive-disjunctive) ... **`:op1`, `:op2`**   
+       - **ADVS** (--> but-91) ...  **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (ale), je v rozporu s očekáváním plynoucím z obsahu první klauze)  
+       - **CONFR** (--> contrast-91) ...  **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (kdežto, ale), vyjadřuje kontrast)  
+       - **REAS** (--> have-cause-91) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (neboť, totiž, vždyť), vyjadřuje příčinu/důvod)   
+       - **CONTRA ???** ... (211x, typ Klaus versus Zieleniec, Sparta - Slávia, 4:2; t_lemma 149x #Dash, 43x versus, 5x kontra, 5x vs. apod.)
+> - **společná rozvití** manuál AMR ani manuál UMR explicite neřeší, tedy navrhuju ponechat jako rozvití keyword   
+Viz příklad 3-1-6 (4b) [UMR manuál](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-1-6-discourse-relations), _You **have to have your hand stamped** and **show** your ticket stub **to get** into the concert._  (vlevo) ... uzel s relací `:purpose` (_to get ..._) je dítětem uzlu _and_ a rozvíjí oba koordinované členy, které jsou jeho sourozenci (zde připojeny jako `:op1` (_have stamped_) i `:op2` (_show_)); TEDA když ignoruju, že zde chybí koncová závorka :-((	  
+
+
 **ALE1:** Je v tom binec, třeba "but" se někdy přepisuje na contrast-01 (tedy jde o predikaci) a má argumenty, jindy je to diskurzní spojka a má opx.)
 
 **ALE2:** Anotátor si může vybrat, jestli
