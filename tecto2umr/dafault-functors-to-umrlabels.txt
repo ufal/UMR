@@ -5,8 +5,8 @@ my %MAPPING = (
     'ACT'   => 'ARG0',
     'PAT'   => 'ARG1',
     'ADDR'  => 'ARG2',
-    'ORIG' => 'source',  #NEW, originally 'ORIG' => 'ARG3',
-    'EFF' => 'goal',     #NEW, originally 'EFF'   => 'ARG4',
+    'ORIG' => 'source',
+    'EFF' => 'effect',     #NOT in UMR
 ##### TEMPORAL ###########################
     'TWHEN' => 'temporal',
     'TFHL' => 'duration',
@@ -30,46 +30,46 @@ my %MAPPING = (
     'INTT' => 'purpose',
 ##### MANNER ###########################
     'ACMP'  => 'companion',
-#    'CPR' => 'compared-to',   #TODO, příliš složité
-    'CRIT' => 'according-to',  #NOT in UMR (newly invented to cover this nuance)
+# 'CPR' => 'compared-to',      #TODO
+    'CRIT' => 'according-to',  #NOT in UMR
     'DIFF' => 'extent',
     'EXT' => 'extent',
     'MANN'  => 'manner',
     'MEANS' => 'instrument',
-    'NORM' => 'according-to',  #NOT in UMR (newly invented to cover this nuance)
+    'NORM' => 'according-to',  #NOT in UMR, not in PDT-C
     'REG'  => 'manner',
-    'RESL' => 'extent',
+    'RESL' => 'result',        #NOT in UMR
     'RESTR' => 'subtraction',
 ##### NEW ###########################
-    'BEN'   => 'recipient',
-    'CONTRD' => 'contrast-91' , #NEW event (nikoli relace) #NEW event (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (zatímco), vyjadřuje kontrast/konfrontační pozadí)
+    'BEN'   => 'affectee',
+    'CONTRD' => 'contrast-91',
     'HER'   => 'source',
-    'SUBS' => 'substitution',   #NEW (jménem někoho)
+    'SUBS' => 'substitute',
 ##### COMPL ###########################
 #    'COMPL'  => '',      #TODO
 ##### NOMINAL ###########################
-    'APP' => 'poss',      #TODO ?? or 'part' ?? BUT unclear direction
+    'APP' => 'poss',
     'AUTH' => 'source',
-    'ID' => 'name',       #NEW
-    'MAT' => 'mod',       #NEW, ale je to velmi hrubé
+    'ID' => 'name',
+    'MAT' => 'mod',       #TODO - je to velmi hrubé
     'RSTR'  => 'mod',
 ##### MULTI-WORD and FOREIGN (.PHR) ###########################
 #    'CPHR' => '',      #TODO
 #    'DPHR' => '',      #TODO
 #    'FPHR' => '',      #TODO
 ##### coap - COORDINATION ###########################
-    'ADVS' => 'but-91',         #NEW klíčové slovo (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (ale), je v rozporu s očekáváním plynoucím z obsahu první klauze)
-    'CONFR' => 'contrast-91',   #NEW event (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (kdežto, ale), vyjadřuje kontrast)
-    'CONJ' => 'and',            #NEW klíčové slovo (nikoli relace), s op1, op2, ...
-    'CONTRA' => 'contra',       #NEW klíčové slovo (nikoli relace), s op1, op2, ... NOT in UMR (newly invented to cover this nuance)
-    'CSQ' => 'consecutive',     #NEW klíčové slovo (nikoli relace), s op1, op2 ... důsledek (proto, tedy, tudíž) ... NEBO 'and'
-    'DISJ' => 'exclusive-disjunctive', #NEW klíčové slovo (nikoli relace), s op1, op2 ... NEBO 'or'
-    'GRAD' => 'and',            #NEW klíčové slovo (nikoli relace), s op1, op2
-    'REAS' => 'have-cause-91',  #NEW event (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (neboť, totiž, vždyť), vyjadřuje příčinu/důvod)
+    'ADVS' => 'but-91',         #klíčové slovo (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (ale), je v rozporu s očekáváním plynoucím z obsahu první klauze)
+    'CONFR' => 'contrast-91',   #event (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (kdežto, ale), vyjadřuje kontrast)
+    'CONJ' => 'and',            #klíčové slovo (nikoli relace), s op1, op2, ...
+    'CONTRA' => 'contra',       #klíčové slovo (nikoli relace), s op1, op2, ... NOT in UMR
+    'CSQ' => 'consecutive',     #klíčové slovo (nikoli relace), s op1, op2 ... důsledek (proto, tedy, tudíž) ... NEBO 'and'
+    'DISJ' => 'exclusive-disjunctive', #klíčové slovo (nikoli relace), s op1, op2 ... NEBO 'or'
+    'GRAD' => 'and',            #klíčové slovo (nikoli relace), s op1, op2
+    'REAS' => 'have-cause-91',  #event (nikoli relace) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (neboť, totiž, vždyť), vyjadřuje příčinu/důvod)
 ##### coap - APPOSITION ###########################
 #    'APPS' => '',       #TODO
 ##### coap - MAT. OPERATION ###########################
-     'OPER' => 'between',       #NEW klíčové slovo (nikoli relace) s op1, op2 ... 5 006x ... asi velmi hrubé
+     'OPER' => 'between',       #klíčové slovo (nikoli relace) s op1, op2 ... 5 006x ... asi velmi hrubé
 ##### CONJUNCTION MODIFIER ###########################
 #    'CM' ... nikoli relace ... POZOR, 194x t_lemma #Neg
 ##### RHEMATIZERS ###########################
