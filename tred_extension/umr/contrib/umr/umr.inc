@@ -4,6 +4,7 @@
     BEGIN { import TredMacro }
 
     use strict;
+    use Scalar::Util qw{ weaken };
 
     unshift @TrEd::Config::open_types, [
         'Uniform Meaning Representation',
@@ -66,8 +67,28 @@
     }
 
 
-    sub get_nodelist_hook {
+    sub GetNodeHash {
+        my $fsfile = $_[0] || $grp->{FSFile};
+        return {} if !ref $fsfile;
+        if (! ref $fsfile->appData('id-hash')) {
+            my %ids;
+            my $trees = $fsfile->treeList();
+            for my $i (0 .. $#{$trees}) {
+                my $node = $trees->[$i];
+                while ($node) {
+                    weaken( $ids{ $node->{id} } = $node );
+                } continue {
+                    $node = $node->following;
+                }
+            }
+            $fsfile->changeAppData('id-hash', \%ids);
+        }
+        return $fsfile->appData('id-hash')
     }
+
+
+    # sub get_nodelist_hook {
+    # }
 
 
     sub node_release_hook {

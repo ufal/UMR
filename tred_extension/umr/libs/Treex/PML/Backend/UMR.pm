@@ -19,6 +19,7 @@ my $SCHEMA = 'Treex::PML::Factory'->createPMLSchema({
 
 sub test {
     my ($filename, $encoding) = @_;
+    die "Invalid encoding $encoding" unless 'UTF-8' eq $encoding;
     my $in = open_backend($filename, 'r', $encoding) or die "$filename: $!";
     while (<$in>) {
         return 1 if /^\#\ *sentence\ level\ graph
