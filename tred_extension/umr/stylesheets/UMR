@@ -16,10 +16,12 @@ style: <?
     my @links = grep { my $id = $_->{'target.rf'};
                        grep $_->{id} eq $id, $root->descendants
                 } ListV($this->{links});
+    my $shift = 0;
     my $coords = join '&', 'n,n,p,p', map {
         my $parent = $_->{'target.rf'};
         my $expression = qq([id = $parent]);
-        "n,n,(x$expression+xn)/1.5,(y$expression+yn)/2.5,x$expression,y$expression"
+        $shift += 0.25;
+        "n,n,(x$expression+xn)/(1.5+$shift),(y$expression+yn)/(2.5-$shift),x$expression,y$expression"
     } @links;
 
     my $arrows  = join '&', 'none', map $_->value =~ /^coref:/ ? 'first' : 'last', @links;
