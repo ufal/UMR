@@ -2957,7 +2957,7 @@ Sentence Gloss (en): his insatiable ambition was always pursuing extravagant, in
                         :aspect state
                         :modal-strength neutral-negative)
         :mod (s44a2 / altus
-            :degree (s44n / nimis))))
+            :degree (s44n / nimis)))
     :temporal (s44s / semper)
     :aspect state
     :modal-strength full-affirmative)
