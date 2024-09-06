@@ -1,0 +1,40 @@
+context: .*
+node: ${label}<?
+          my @links = grep { my $id = $_->{'target.rf'};
+                             ! grep $_->{id} eq $id, $root->descendants
+                      } ListV($this->{links});
+          my $nh = UMR::GetNodeHash();
+          @links
+              ? join '.', "#{darkgreen}",
+                          map $nh->{ $_->{'target.rf'} }->{label},
+                              @links
+              : "";
+      ?>
+node: #{blue}${relation}
+
+style: <?
+    my @links = grep { my $id = $_->{'target.rf'};
+                       grep $_->{id} eq $id, $root->descendants
+                } ListV($this->{links});
+    my $coords = join '&', 'n,n,p,p', map {
+        my $parent = $_->{'target.rf'};
+        my $expression = qq([id = $parent]);
+        "n,n,(x$expression+xn)/1.5,(y$expression+yn)/2.5,x$expression,y$expression"
+    } @links;
+
+    my $arrows  = join '&', 'none', map $_->value =~ /^coref:/ ? 'first' : 'last', @links;
+    my $colours = join '&', 'grey', map $_->value =~ /^coref:/ ? 'red' : 'cyan', @links;
+    my $widths  = join '&', ('2'), ('1') x @links;
+    my $smooth  = join '&', ('0'), ('1') x @links;
+    my $hints   = join '&', "", map $_->value, @links;
+    my $deco    = join '&', "", map "shape=text;font=SansSerif;fill="
+                                    . ($_->value =~ /^coref:/ ? 'magenta': 'darkcyan')
+                                    . ";coords=n,n;start=35%;text=".($_->value =~ s/rel://r =~ s/coref:entity//r),
+                                    @links;
+
+    "#{Line-coords:$coords}#{Line-fill:$colours}#{Line-arrow:$arrows}"
+    . "#{Line-width:$widths}#{Line-smooth:$smooth}#{Line-hint:$hints}"
+    . "#{Line-decoration:$deco}"
+    . '#{Oval-fill:whitesmoke}#{CurrentOval-fill:red}';
+
+?>
