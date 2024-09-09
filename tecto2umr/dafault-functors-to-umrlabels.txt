@@ -42,13 +42,13 @@ my %MAPPING = (
     'RESTR' => 'subtraction',
 ##### NEW ###########################
     'BEN'   => 'affectee',
-    'CONTRD' => 'contrast-91',
+    'CONTRD' => 'contrast-91',  # event ... ARG1 for main clause, ARG2 for contrastive clause (with conjunction)
     'HER'   => 'source',
     'SUBS' => 'substitute',
 ##### COMPL ###########################
 #    'COMPL'  => '',      #TODO
 ##### NOMINAL ###########################
-    'APP' => 'poss',
+    'APP' => 'poss',      #TODO příbuzenské vztahy  -> have-rel-role-91
     'AUTH' => 'source',
     'ID' => 'name',
     'MAT' => 'mod',       #TODO - je to velmi hrubé
@@ -69,7 +69,7 @@ my %MAPPING = (
 ##### coap - APPOSITION ###########################
 #    'APPS' => '',       #TODO
 ##### coap - MAT. OPERATION ###########################
-     'OPER' => 'between',       #klíčové slovo (nikoli relace) s op1, op2 ... 5 006x ... asi velmi hrubé
+     'OPER' => 'interval',       #klíčové slovo (nikoli relace) s op1, op2 ... 5 006x ... hrubé; hyperrole, UMR nemá
 ##### CONJUNCTION MODIFIER ###########################
 #    'CM' ... nikoli relace ... POZOR, 194x t_lemma #Neg
 ##### RHEMATIZERS ###########################

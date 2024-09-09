@@ -88,7 +88,7 @@ Peter is diligent, but [contrast] Vanja is lazy.
        - **ADVS** (--> but-91) ...  **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (ale), je v rozporu s očekáváním plynoucím z obsahu první klauze)  
        - **CONFR** (--> contrast-91) ...  **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (kdežto, ale), vyjadřuje kontrast)  
        - **REAS** (--> have-cause-91) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (neboť, totiž, vždyť), vyjadřuje příčinu/důvod)   
-       - **CONTRA ???** ... (211x, typ Klaus versus Zieleniec, Sparta - Slávia, 4:2; t_lemma 149x #Dash, 43x versus, 5x kontra, 5x vs. apod.)
+       - **CONTRA** (–> contra NEW, not in UMR) ... (211x, typ Klaus versus Zieleniec, Sparta - Slávia, 4:2; t_lemma 149x #Dash, 43x versus, 5x kontra, 5x vs. apod.)
 > - **společná rozvití** manuál AMR ani manuál UMR explicite neřeší, tedy navrhuju ponechat jako rozvití keyword   
 Viz příklad 3-1-6 (4b) [UMR manuál](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-1-6-discourse-relations), _You **have to have your hand stamped** and **show** your ticket stub **to get** into the concert._  (vlevo) ... uzel s relací `:purpose` (_to get ..._) je dítětem uzlu _and_ a rozvíjí oba koordinované členy, které jsou jeho sourozenci (zde připojeny jako `:op1` (_have stamped_) i `:op2` (_show_)); TEDA když ignoruju, že zde chybí koncová závorka :-((	  
 
@@ -117,7 +117,6 @@ Pope who was convinced last week and sentenced to ... is a businessman
 > 1) Mít dvě totožné relace připojené k rodiči možná přichází v úvahu pro apozice - prostě by se zapomněl ten apoziční uzel???
 > 2) Jinak bych trvala na tom, že když je v PDT něco koordinace, tak to převedeme pomocí diskurzní relace (případně pomocí vhodného predikátu) - tedy budeme mít uzel pro spojovací výraz (ať už je to co to je). Aspoň než budeme vědět, že to neumíme udělat kvůli tomu, že máme společné rozvitá apod.
 
-Dává to smysl?
 
 
 ---

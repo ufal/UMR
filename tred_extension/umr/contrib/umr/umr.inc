@@ -91,6 +91,23 @@
     # }
 
 
+    my %ARROW_COLOR = (_OTHER_ => {arrow => 'cyan', text  => 'darkcyan'},
+                       ARG0 => {arrow => 'violet', text => 'violet'},
+                       ARG1 => {arrow => 'pink', text => 'pink'},
+                       ARG2 => {arrow => 'plum', text => 'plum'},
+                       affectee => {arrow => 'orange', text => 'orange'},
+                       mod  => {arrow => 'lightgreen', text => 'lightgreen'},
+    );
+    sub arrow_color {
+        my ($type, $relation) = @_;
+
+        $relation =~ s/.*://;
+        return $ARROW_COLOR{$relation}{$type} if exists $ARROW_COLOR{$relation};
+
+        return $ARROW_COLOR{_OTHER_}{$type}
+    }
+
+
     sub node_release_hook {
         my ($node, $target, $mod) = @_;
         ChangingFile(0);
