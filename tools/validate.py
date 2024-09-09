@@ -1159,6 +1159,18 @@ discourse_concepts = [
 ]
 discourse_concept_re = re.compile(r"^(" + '|'.join(discourse_concepts) + r")$")
 
+# Abstract concepts for things that are neither events nor discourse connectives
+# but they are rolesets and thus resemble events superficially. Most of them
+# are structured data or metadata records. They should not be required to contain
+# annotations that are mandatory for events.
+non_event_rolesets = [
+    'byline-91', 'cite-91', 'course-91', 'distribution-range-91', 'emit-sound-91',
+    'hyperlink-91', 'mean-91', 'proverb-91', 'publication-91', 'range-91', 'rate-entity-91',
+    'reference-illustration-91', 'score-on-scale-91', 'statistical-test-91',
+    'street-address-91', 'weather-91'
+]
+non_event_roleset_re = re.compile(r"^(" + '|'.join(non_event_rolesets) + r")$")
+
 def validate_relations(sentence, node_dict, args):
     """
     Checks every sentence level relation whether we know it.
@@ -1334,8 +1346,8 @@ def detect_events(sentence, node_dict, args):
         # If it is a discourse connective, stop here.
         if re.match(discourse_concept_re, node['concept']):
             continue
-        # If it is 'publication-91' (document metadata), stop here.
-        if node['concept'] == 'publication-91':
+        # If it is document metadata such as publication-91, stop here.
+        if re.match(non_event_roleset_re, node['concept']):
             continue
         if not 'event_reason' in node and re.match(r"^.+-91$", node['concept']):
             node['event_reason'] = "its concept is %s on line %d" % (node['concept'], node['line0'])
@@ -1437,7 +1449,7 @@ def validate_events(sentence, node_dict, args):
                 testmessage = "Missing temporal relation (at least with document-creation-time) for event %s." % event
                 warn(testmessage, 'Document', testlevel, testid, lineno=sentence[3]['line0'])
         # On the other hand, some concepts look like events but they are not events and should not have :aspect and :modal-strength.
-        elif node['concept'] == 'publication-91' or re.match(discourse_concept_re, node['concept']):
+        elif re.match(non_event_roleset_re, node['concept']) or re.match(discourse_concept_re, node['concept']):
             for rtype in [':aspect', ':modal-strength/predicate']:
                 if len(relations[rtype]) > 0:
                     testid = 'unexpected-attribute'
