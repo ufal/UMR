@@ -1769,12 +1769,13 @@ def build_temporal_graph(document, node_dict, args):
                             temporal.add_relation(r['node1'], relation_n1_n, n, r['line0'], reason1)
                 elif r['relation'] == ':overlap':
                     temporal.add_relation(r['node1'], ':overlap', r['node0'], r['line0'], reason)
-                elif r['relation'] == ':depends-on':
-                    testlevel = 3
-                    testclass = 'Document'
-                    testid = 'temporal-depends-on'
-                    testmessage = "The temporal relation ':depends-on' could probably be replaced by more specific ':before', ':after', ':contained' or ':overlap'."
-                    warn(testmessage, testclass, testlevel, testid, r['line0'])
+                # Markéta maintains that the guidelines require :depends-on in certain situations.
+                #elif r['relation'] == ':depends-on':
+                #    testlevel = 3
+                #    testclass = 'Document'
+                #    testid = 'temporal-depends-on'
+                #    testmessage = "The temporal relation ':depends-on' could probably be replaced by more specific ':before', ':after', ':contained' or ':overlap'."
+                #    warn(testmessage, testclass, testlevel, testid, r['line0'])
     # We are not interested in nodes that have only identity relations to other nodes.
     # They are probably neither time expressions nor events; they just got here from the coreference graph.
     temporal.remove_identity_only_nodes()
