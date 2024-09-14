@@ -90,13 +90,14 @@
     # sub get_nodelist_hook {
     # }
 
-
-    my %ARROW_COLOR = (_OTHER_ => {arrow => 'cyan', text  => 'darkcyan'},
-                       ARG0 => {arrow => 'violet', text => 'violet'},
-                       ARG1 => {arrow => 'pink', text => 'pink'},
-                       ARG2 => {arrow => 'plum', text => 'plum'},
-                       affectee => {arrow => 'orange', text => 'orange'},
-                       mod  => {arrow => 'lightgreen', text => 'lightgreen'},
+    my %ARROW_COLOR = (_PREVIOUS_ => {arrow => 'darkgreen'},
+                       _MISSING_  => {arrow => 'red'},
+                       _OTHER_    => {arrow => 'cyan',       text => 'darkcyan'},
+                       ARG0       => {arrow => 'violet',     text => 'violet'},
+                       ARG1       => {arrow => 'pink',       text => 'pink'},
+                       ARG2       => {arrow => 'plum',       text => 'plum'},
+                       affectee   => {arrow => 'orange',     text => 'orange'},
+                       mod        => {arrow => 'lightgreen', text => 'lightgreen'},
     );
     sub arrow_color {
         my ($type, $relation) = @_;

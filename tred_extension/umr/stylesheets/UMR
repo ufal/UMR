@@ -13,25 +13,30 @@ node: ${label}<?
 node: #{blue}${relation}
 
 style: <?
-    my @links = grep { my $id = $_->{'target.rf'};
-                       grep $_->{id} eq $id, $root->descendants
-                } ListV($this->{links});
+    my $nh = UMR::GetNodeHash();
+    my @links = ListV($this->{links});#grep $nh->{ $_->{'target.rf'} }->root == $root,
     my $shift = 0;
     my $coords = join '&', 'n,n,p,p', map {
-        my $parent = $_->{'target.rf'};
-        my $expression = qq([id = $parent]);
-        $shift += 0.25;
-        "n,n,(x$expression+xn)/(1.5+$shift),(y$expression+yn)/(2.5-$shift),x$expression,y$expression"
+        if ($nh->{ $_->{'target.rf'} }->root == $root) {
+            my $parent = $_->{'target.rf'};
+            my $expression = qq([id = $parent]);
+            $shift += 0.25;
+            "n,n,(x$expression+xn)/(1.5+$shift),(y$expression+yn)/(2.5-$shift),x$expression,y$expression"
+        } else {
+             'n-20,n,n-10,n-1,n,n'
+        }
     } @links;
-
     my $arrows  = join '&', 'none', map $_->value =~ /^coref:/ ? 'first' : 'last', @links;
-    my $colours = join '&', 'grey', map $_->value =~ /^coref:/ ? 'red' : UMR::arrow_color(arrow => $_->value), @links;
+    my $colours = join '&', 'grey', map $_->value =~ /^rel:/                        ? UMR::arrow_color(arrow => $_->value)
+                                        : $nh->{ $_->{'target.rf'} }->root == $root ? UMR::arrow_color(arrow => '_MISSING_')
+                                                                                    : UMR::arrow_color(arrow => '_PREVIOUS_'),
+                                    @links;
     my $widths  = join '&', ('2'), ('1') x @links;
     my $smooth  = join '&', ('0'), ('1') x @links;
     my $hints   = join '&', "", map $_->value, @links;
     my $deco    = join '&', "", map "shape=text;font=SansSerif;fill="
                                     . ($_->value =~ /^coref:/ ? 'magenta': UMR::arrow_color(text => $_->value))
-                                    . ";coords=n,n;start=25%;text=".($_->value =~ s/rel://r =~ s/coref:entity//r),
+                                    . ";coords=n,n;start=25%;text=".($_->value =~ s/rel://r =~ s/coref:e(?:vent|ntity)//r),
                                     @links;
 
     "#{Line-coords:$coords}#{Line-fill:$colours}#{Line-arrow:$arrows}"
