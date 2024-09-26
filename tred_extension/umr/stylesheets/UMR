@@ -6,7 +6,7 @@ node: ${label}<?
           my $nh = UMR::GetNodeHash();
           @links
               ? join '.', "#{darkgreen}",
-                          map $nh->{ $_->{'target.rf'} }->{label},
+                          map $nh->{ $_->{'target.rf'} }->{label} // "#{red}???#{darkgreen}",
                               @links
               : "";
       ?>
