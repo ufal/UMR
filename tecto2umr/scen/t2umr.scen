@@ -11,4 +11,5 @@ A2T::CS::SetFormeme
 #A2T::CS::SetGrammatemes
 T2U::BuildUtree csv=/net/work/people/stepanek/umr/data/pdt2pb/240715-pdt2pb.csv vallex=/net/work/people/stepanek/pdt-c/WorkData2.0/dictionaries/pdtvallex-4.0.xml
 T2U::ConvertCoreference
+T2U::AdjustStructure
 Write::UMR
