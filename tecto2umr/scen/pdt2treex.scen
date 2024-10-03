@@ -1,0 +1,4 @@
+# Convert pdt data into treex.
+# Read::PDT schema_dir=/home/stepanek/links/work/umr/data/stepanek language=cs from=/home/stepanek/links/pdtc2a/annotators/tem/done/cmpr9415_022.t
+Read::PDT schema_dir=/home/stepanek/links/work/umr/data/stepanek language=cs from=!/home/stepanek/links/pdtc2a/annotators/???/done/*.t
+Write::Treex
