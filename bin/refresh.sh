@@ -1,6 +1,8 @@
 #! /bin/bash
 set -eu
 
+[[ -d data/stepanek ]]
+
 bin=$(readlink -f "${0%/*}")
 
 tally_treex=0
@@ -16,7 +18,7 @@ for t in ~/links/pdtc2a/annotators/???/done/*.t ; do
 
     if [[ $treex -ot $t || $treex -ot $a || ! -s $treex ]] ; then
         echo Referesh $treex >&2
-        if "$bin"/pdt2treex "$t" ; then
+        if "$bin"/pdt2treex "$t" 2>data/stepanek/"$f".treex.log ; then
             mv "$t"reex.gz data/stepanek/
             ((++tally_treex))
         else
