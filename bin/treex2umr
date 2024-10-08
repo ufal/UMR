@@ -1,9 +1,14 @@
 #!/bin/bash
-file=$1
+set -eu
 
+file=$1
 dir=data/stepanek
 
-xsh <<< "open $dir/$file.treex.gz ; rm //pml:zone[0=count(pml:sentence)]/../..  ; save :b"
+xsh <<< "quiet ;
+         register-namespace pml http://ufal.mff.cuni.cz/pdt/pml/ ;
+         open $dir/$file.treex.gz ;
+         rm //pml:zone[0=count(pml:sentence)]/../..  ;
+         save :b"
 treex github/tecto2umr/scen/t2umr.scen -- \
       "$dir"/"$file".treex.gz \
       > "$dir"/"$file".umr \
