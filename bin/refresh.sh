@@ -1,26 +1,28 @@
 #! /bin/bash
 set -eu
 
+[[ -d data/stepanek ]]
+
 bin=$(readlink -f "${0%/*}")
 
 tally_treex=0
 tally_umr=0
 failed=()
-for t in ~/links/pdtc2a/annotators/???/done/*.t ; do
+for t in "$UFAL_PDTC2A"/annotators/???/done/*.t ; do
     f=${t##*/}
     f=${f%.t}
     a=${t%.t}.a
-    treex=~/links/work/umr/data/stepanek/$f.treex.gz
+    treex="$UFAL_UMR"/data/stepanek/$f.treex.gz
     umr=${treex%.treex.gz}.umr
 
 
     if [[ $treex -ot $t || $treex -ot $a || ! -s $treex ]] ; then
         echo Referesh $treex >&2
-        if "$bin"/pdt2treex "$t" ; then
+        if "$bin"/pdt2treex "$t" 2>data/stepanek/"$f".treex.log ; then
             mv "$t"reex.gz data/stepanek/
             ((++tally_treex))
         else
-            failed+=($treex)
+            failed+=("$treex")
         fi
     fi
     if [[ $umr -ot $treex || ! -s $umr ]] ; then
@@ -28,7 +30,7 @@ for t in ~/links/pdtc2a/annotators/???/done/*.t ; do
         if "$bin"/treex2umr "$f" ; then
             ((++tally_umr))
         else
-            failed+=($umr)
+            failed+=("$umr")
         fi
     fi
 done
