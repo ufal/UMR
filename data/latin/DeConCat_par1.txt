@@ -1,8 +1,8 @@
 # sent_id = SlaT-2773
 # :: snt1
-Index:             1     2     3  4    5           6        7        8        9      10  11   12          13     14             15 16   17     18         19           20    21   22 23    24      25       26     27            28        29
-Words:           Omnis homines , qui sese        student praestare ceteris animalibus , summa ope        niti   decet            , ne  vitam silentio   transeant    veluti pecora , quae natura prona     atque ventri      oboedientia finxit
-Sentence:            Omnis homines, qui sese student praestare ceteris animalibus, summa ope niti decet, ne vitam silentio transeant veluti pecora, quae natura prona atque ventri oboedientia finxit
+Index:   1     2     3  4    5     6        7        8        9      10  11   12  13   14  15 16  17     18       19        20    21   22 23    24      25   26     27       28        29
+Words: Omnis homines , qui sese student praestare ceteris animalibus , summa ope niti decet , ne vitam silentio transeant veluti pecora , quae natura prona atque ventri oboedientia finxit
+Sentence: Omnis homines, qui sese student praestare ceteris animalibus, summa ope niti decet, ne vitam silentio transeant veluti pecora, quae natura prona atque ventri oboedientia finxit
 Sentence Gloss (en): It is suitable that all men, who desire to excel other animals, strive, to the utmost of their power, not to pass through life in obscurity, like the beasts of the field, which nature has formed groveling and subservient to appetite
 
 # sentence level graph:
@@ -13,9 +13,7 @@ Sentence Gloss (en): It is suitable that all men, who desire to excel other anim
                     :quant (s1o / omnis)
                     :ARG0-of (s1s / studeo-NEW-07
                                 :ARG1 (s1p / praesto2-06
-                                        :ARG0 (s1p2 / person
-                                                :refer-person 3rd
-                                                :refer-number plural)
+                                        :ARG0 s1h
                                         :ARG1 (s1a / animal
                                                 :refer-number plural
                                                 :mod (s1c / ceterus))
@@ -35,14 +33,14 @@ Sentence Gloss (en): It is suitable that all men, who desire to excel other anim
                     :polarity -
                     :manner (s1r / resemble-91
                                 :ARG1 s1h
-                                :ARG2 (s1p3 / pecus
+                                :ARG2 (s1p2 / pecus
                                             :refer-number plural
                                             :ARG1-of (s1f / fingo-02
                                                         :ARG0 (s1n2 / natura)
-                                                        :ARG4 (s1a2 / and
-                                                                    :op1 (s1p4 / pronus)
+                                                        :ARG2 (s1a2 / and
+                                                                    :op1 (s1p3 / pronus)
                                                                     :op2 (s1o3 / oboedio-NEW-01
-                                                                                :ARG0 s1p3
+                                                                                :ARG0 s1p2
                                                                                 :ARG1 (s1v2 / venter)
                                                                                 :aspect state
                                                                                 :modal-strength full-affirmative))
@@ -60,11 +58,10 @@ Sentence Gloss (en): It is suitable that all men, who desire to excel other anim
 # alignment:
 s1d: 14-14
 s1n: 13-13
-s1h: 2-2
+s1h: 2-2, 4-5
 s1o: 1-1
 s1s: 6-6
 s1p: 7-7
-s1p2: 5-5
 s1a: 9-9
 s1c: 8-8
 s1o2: 12-12
@@ -72,11 +69,11 @@ s1s2: 11-11
 s1t: 19-19
 s1t2: 18-18
 s1v: 17-17
-s1p3: 21-21
+s1p2: 21-21
 s1r: 20-20
 s1n2: 24-24
 s1f: 29-29
-s1p4: 25-25
+s1p3: 25-25
 s1a2: 26-26
 s1o3: 28-28
 s1v2: 27-27
@@ -95,32 +92,31 @@ s1v2: 27-27
             (author :full-affirmative s1d)
             (author :full-affirmative s1s)
             (author :partial-affirmative s1n)
-            (s1s :partial-affirmative s1p)
-            (s1n :partial-affirmative s1t)
+            (s1s :unspecified s1p)
+            (s1n :partial-negative s1t)
             (author :full-affirmative s1f)
-            (author :full-affirmative s1o3))
-    :coref ((s1h :same-entity s1p2)))
+            (author :full-affirmative s1o3)))
 
 
 # sent_id = SlaT-2774
 # :: snt2
-Index:            1     2      3     4    5   6    7     8      9       10
-Words:           Sed nostra  omnis vis   in animo et  corpore  sita     est
-Sentence:            Sed nostra omnis vis in animo et corpore sita est
+Index:  1     2     3     4  5   6    7    8     9   10
+Words: Sed nostra omnis vis in animo et corpore sita est
+Sentence: Sed nostra omnis vis in animo et corpore sita est
 Sentence Gloss (en): All our power is situated in the mind and in the body
 
 # sentence level graph:
 (s2h / have-place-91
-        :ARG1 (s2v / vis
-                    :possessor (s2p/ person
-                            :refer-person 1st
-                            :refer-number plural)
-                    :mod (s2o / omnis))
-        :ARG2 (s2a / and
-                    :op1 (s2a2 / animus)
-                    :op2 (s2c / corpus))
-        :aspect state
-        :modal-strength full-affirmative)
+    :ARG1 (s2v / vis
+            :possessor (s2p/ person
+                    :refer-person 1st
+                    :refer-number plural)
+            :mod (s2o / omnis))
+    :ARG2 (s2a / and
+            :op1 (s2a2 / animus :refer-number singular)
+            :op2 (s2c / corpus :refer-number singular))
+    :aspect state
+    :modal-strength full-affirmative)
 
 # alignment:
 s2h: 9-10
@@ -141,27 +137,29 @@ s2c: 5-5, 8-8
 
 # sent_id = SlaT-2775
 # :: snt3
-Index:             1        2       3     4        5      6     7
-Words:           animi   imperio    , corporis servitio magis  utimur
-Sentence:            animi imperio, corporis servitio magis utimur
+Index:   1      2    3     4        5      6    7
+Words: animi imperio , corporis servitio magis utimur
+Sentence: animi imperio, corporis servitio magis utimur
 Sentence Gloss (en): of the mind we rather employ the government; of the body, the service
 
 # sentence level graph:
 (s3c / contrast-91
-            :ARG1 (s3u / utor-03
-                    :ARG0 (s3p/ person
-                                :refer-person 1st
-                                :refer-number plural)
-                    :ARG1 (s3i / imperium
-                                :possessor (s3a / animus))
-                    :aspect habitual
-                    :modal-strength full-affirmative)
-            :ARG2 (s3u2 / utor-03
-                    :ARG0 s3p
-                    :ARG1 (s3s / servitium
-                            :possessor (s3c2 / corpus))
-                    :aspect habitual
-                    :modal-strength full-affirmative))
+        :ARG1 (s3u / utor-03
+                :ARG0 (s3p/ person
+                            :refer-person 1st
+                            :refer-number plural)
+                :ARG1 (s3i / imperium
+                            :refer-number singular
+                            :possessor (s3a / animus :refer-number singular))
+                :aspect habitual
+                :modal-strength full-affirmative)
+        :ARG2 (s3u2 / utor-03
+                :ARG0 s3p
+                :ARG1 (s3s / servitium
+                        :refer-number singular
+                        :possessor (s3c2 / corpus :refer-number singular))
+                :aspect habitual
+                :modal-strength full-affirmative))
 
 # alignment:
 s3c: 6-6
@@ -188,28 +186,30 @@ s3c2: 4-4
 
 # sent_id = SlaT-2775
 # :: snt4
-Index:              1      2     3   4   5    6       7     8      9     10
-Words:           alterum nobis cum  dis  , alterum   cum  beluis commune est
-Sentence:            alterum nobis cum dis, alterum cum beluis commune est
+Index:    1      2     3  4  5    6     7    8      9     10
+Words: alterum nobis cum dis , alterum cum beluis commune est
+Sentence: alterum nobis cum dis, alterum cum beluis commune est
 Sentence Gloss (en): the one is common to us with the gods; the other with the beasts
 
 # sentence level graph:
 (s4c / contrast-91
       :ARG1 (s4h / have-mod-91
-                  :ARG1 (s4a / alter)
+                  :ARG1 (s4t / thing
+                        :refer-number singular
+                        :mod (s4a / alter))
                   :ARG2 (s4c2 / communis-13
-                          :ARG2 (s4d / deus
-                                      :refer-number plural))
+                          :ARG2 (s4d / deus :refer-number plural))
                   :affectee (s4p / person
                                   :refer-person 1st
                                   :refer-number plural)
                   :aspect state
                   :modal-strength full-affirmative)
       :ARG2 (s4h2 / have-mod-91
-                  :ARG1 (s4a2 / alter)
+                  :ARG1 (s4t2 / thing
+                        :refer-number singular
+                        :mod (s4a2 / alter))
                   :ARG2 (s4c3 / communis-13
-                               :ARG2 (s4b / belua
-                                            :refer-number plural))
+                               :ARG2 (s4b / belua :refer-number plural))
                   :affectee s4p
                   :aspect state
                   :modal-strength full-affirmative))
@@ -217,12 +217,14 @@ Sentence Gloss (en): the one is common to us with the gods; the other with the b
 # alignment:
 s4c: 0-0
 s4h: 10-10
-s4a: 1-1
+s4t : 1-1
+s4a: 0-0
 s4d: 3-4
 s4c2: 9-9
 s4h2: 10-10
 s4p: 2-2
-s4a2: 6-6
+s4t2: 6-6
+s4a2: 0-0
 s4b: 7-8
 s4c3: 9-9
 
@@ -233,16 +235,16 @@ s4c3: 9-9
     :modal ((root :modal author)
             (author :full-affirmative s4h)
             (author :full-affirmative s4h2))
-    :coref ((s3a :same-entity s4a)
-            (s3c2 :same-entity s4a2)
+    :coref ((s3a :same-entity s4t)
+            (s3c2 :same-entity s4t2)
             (s3p :same-entity s4p)))
 
 
 # sent_id = SlaT-2777
 # :: snt5
-Index:            1         2       3               4         5          6     7               8         9        10    11 12   13    14   15     16      17      18    19 20   21          22    23           24     25      26
-Words:           Quo       mihi  rectius         videtur   ingeni       quam virium          opibus   gloriam quaerere  et  , quoniam vita ipsa   qua   fruimur  brevis est , memoriam    nostri quam        maxume longam efficere
-Sentence:            Quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere et, quoniam vita ipsa qua fruimur brevis est, memoriam nostri quam maxume longam efficere
+Index:  1   2      3       4       5    6     7      8       9        10   11 12   13    14   15   16    17     18    19 20   21       22    23    24     25      26
+Words: Quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere et , quoniam vita ipsa qua fruimur brevis est , memoriam nostri quam maxume longam efficere
+Sentence: Quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere et, quoniam vita ipsa qua fruimur brevis est, memoriam nostri quam maxume longam efficere
 Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glory by means of the intellect than of bodily strength, and, since the life which we enjoy is short, to make the remembrance of us as lasting as possible
 
 # sentence level graph:
@@ -256,7 +258,7 @@ Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glor
                         :instrument (s5o / ops
                                         :refer-number plural
                                         :mod (s5i / ingenium :refer-number singular))
-                        :aspect process
+                        :aspect activity
                         :modal-strength partial-affirmative)
               :op2 (s5e / efficio-02
                         :ARG1 (s5m / memini-02
@@ -265,9 +267,17 @@ Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glor
                                             :refer-number plural)
                                    :aspect imperfective
                                    :modal-strength partial-affirmative)
-                        :ARG4 (s5l / longus)
-                        :extent (s5m2 / magnus
-                                      :degree most)
+                        :ARG2 (s5l / longus
+                                :ARG2-of (s5h3 / have-degree-91
+                                        :ARG1 s5m
+                                        :ARG3 (s5e2 / equal)
+                                        :ARG4 (s5h4 / have-mod-91
+                                            :ARG1 s5m
+                                            :ARG2 (s5l2 / longus)
+                                            :aspect state
+                                            :modal-strength neutral-affirmative)
+                                        :aspect state
+                                        :modal-strength full-affirmative))
                         :cause (s5h2 / have-mod-91
                                     :ARG1 (s5v3 / vita
                                               :refer-number singular
@@ -279,9 +289,9 @@ Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glor
                                     :ARG2 (s5b / brevis)
                                     :aspect state
                                     :modal-strength full-affirmative)
-                        :aspect process
+                        :aspect activity
                         :modal-strength partial-affirmative))
-    :ARG4 (s5h / have-degree-91
+    :ARG2 (s5h / have-degree-91
               :ARG1 s5a
               :ARG2 (s5r / rectus)
               :ARG3 (s5m3 / more)
@@ -290,7 +300,7 @@ Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glor
                         :instrument (s5o2 / ops
                                         :refer-number plural
                                         :mod (s5v2 / vis :refer-number plural))
-                        :aspect process
+                        :aspect activity
                         :modal-strength full-affirmative)
                :aspect state
                :modal-strength partial-affirmative)
@@ -316,8 +326,11 @@ s5e: 26-26
 s5m: 21-21
 s5p2: 22-22
 s5l: 25-25
-s5m2: 23-24
 s5h2: 19-19
+s5h3: 23-24
+s5e2: 0-0
+s5h4: 0-0
+s5l2: 0-0
 s5v3: 14-14
 s5i2: 15-15
 s5f: 17-17
@@ -333,14 +346,18 @@ s5q3: 1-1
              (document-creation-time :overlap s5f)
              (s5e :overlap s5m)
              (document-creation-time :overlap s5h)
-             (s5q :overlap s5q2))
+             (s5q :overlap s5q2)
+             (s5e :overlap s5h3)
+             (s5e :overlap s5h4))
     :modal ((root :modal author)
             (author :full-affirmative s5v)
             (author :partial-affirmative s5q)
             (author :full-affirmative s5q2)
             (author :partial-affirmative s5e)
             (author :full-affirmative s5f)
-            (author :full-affirmative s5m))
+            (author :full-affirmative s5m)
+            (author :full-affirmative s5h3)
+            (author :neutral-affirmative s5h4))
     :coref ((s4p :same-entity s5p2)
             (s4p :subset-of s5p)
             (s1v :same-entity s5v3)))
@@ -348,9 +365,9 @@ s5q3: 1-1
 
 # sent_id = SlaT-2778
 # :: snt6
-Index:            1       2     3      4         5     6        7       8       9  10  11    12           13      14    15
-Words:           Nam divitiarum et  formae    gloria fluxa    atque fragilis   est , virtus clara       aeterna  que habetur
-Sentence:            Nam divitiarum et formae gloria fluxa atque fragilis est, virtus clara aeterna que habetur
+Index:  1       2     3     4      5     6     7       8     9  10  11    12     13     14    15
+Words: Nam divitiarum et formae gloria fluxa atque fragilis est , virtus clara aeterna que habetur
+Sentence: Nam divitiarum et formae gloria fluxa atque fragilis est, virtus clara aeterna que habetur
 Sentence Gloss (en): For the glory of wealth and beauty is fleeting and perishable; that of intellectual power is considered illustrious and immortal
 
 # sentence level graph:
@@ -359,10 +376,8 @@ Sentence Gloss (en): For the glory of wealth and beauty is fleeting and perishab
                 :ARG1 (s6g / gloria
                            :refer-number singular
                            :mod (s6a / and
-                                      :op1 (s6d / divitiae
-                                                :refer-number plural)
-                                      :op2 (s6f / forma
-                                                :refer-number singular)))
+                                      :op1 (s6d / divitiae :refer-number plural)
+                                      :op2 (s6f / forma :refer-number singular)))
                 :ARG2 (s6a2 / and
                             :op1 (s6f2 / fluo-17
                                        :ARG0 s6g
@@ -372,9 +387,8 @@ Sentence Gloss (en): For the glory of wealth and beauty is fleeting and perishab
                 :aspect state
                 :modal-strength full-affirmative)
      :ARG2 (s6h2 / habeo-07
-                 :ARG1 (s6v / virtus
-                            :refer-number singular)
-                 :ARG4 (s6a3 / and
+                 :ARG1 (s6v / virtus :refer-number singular)
+                 :ARG2 (s6a3 / and
                              :op1 (s6c2 / clarus)
                              :op2 (s6a4 / aeternus))
                  :aspect state
@@ -410,42 +424,40 @@ s6a4: 13-13
 
 # sent_id = SlaT-2779
 # :: snt7
-Index:            1   2                 3      4      5          6      7      8 9           10    11    12   13           14     15      16       17      18
-Words:           Sed diu             magnum inter mortalis   certamen fuit     , vi          ne corporis an virtute       animi   res   militaris magis procederet
-Sentence:            Sed diu magnum inter mortalis certamen fuit, vi ne corporis an virtute animi res militaris magis procederet
+Index: 1   2     3      4      5        6      7   8 9  10    11    12   13     14    15    16       17      18
+Words: Sed diu magnum inter mortalis certamen fuit , vi ne corporis an virtute animi res militaris magis procederet
+Sentence: Sed diu magnum inter mortalis certamen fuit, vi ne corporis an virtute animi res militaris magis procederet
 Sentence Gloss (en): Yet for a long time men have discussed the question whether success in arms depends more on strength of body or excellence of mind
 
 # sentence level graph:
 (s7b / but-91
-        :ARG2 (s7c / certo-01
-                     :ARG0 (s7p / person
-                                 :mod (s7m / mortalis)
-                                 :refer-number plural)
-                     :duration (s7d / diu)
-                     :manner (s7m2 / magnus)
-                     :ARG1 (s7o / or
-                              :op1 (s7p2 / procedo-21
-                                      :ARG0 (s7r / res
-                                                :refer-number singular
-                                                :mod (s7m3 / militaris))
-                                      :ARG2 (s7v / vis
-                                                :refer-number singular
-                                                :mod (s7c2 / corpus
-                                                            :refer-number singular))
-                                      :quant (s7m4 / magis)
-                                      :aspect process
-                                      :modal-strength neutral-affirmative)
-                              :op2 (s7p3 / procedo-21
-                                      :ARG0 s7r
-                                      :ARG2 (s7v2 / virtus
-                                                :refer-number singular
-                                                :mod (s7a / animus
-                                                            :refer-number singular))
-                                      :quant s7m4
-                                      :aspect process
-                                      :modal-strength neutral-affirmative))
-                     :aspect performance
-                     :modal-strength full-affirmative))
+    :ARG2 (s7c / certo-01
+             :ARG0 (s7p / person
+                         :mod (s7m / mortalis)
+                         :refer-number plural)
+             :duration (s7d / diu)
+             :manner (s7m2 / magnus)
+             :ARG1 (s7o / or
+                      :op1 (s7p2 / procedo-21
+                              :ARG0 (s7r / res
+                                        :refer-number singular
+                                        :mod (s7m3 / militaris))
+                              :ARG2 (s7v / vis
+                                        :refer-number singular
+                                        :mod (s7c2 / corpus :refer-number singular))
+                              :quant (s7m4 / magis)
+                              :aspect process
+                              :modal-strength neutral-affirmative)
+                      :op2 (s7p3 / procedo-21
+                              :ARG0 s7r
+                              :ARG2 (s7v2 / virtus
+                                        :refer-number singular
+                                        :mod (s7a / animus :refer-number singular))
+                              :quant s7m4
+                              :aspect process
+                              :modal-strength neutral-affirmative))
+             :aspect performance
+             :modal-strength full-affirmative))
 
 # alignment:
 s7b: 1-1
@@ -479,9 +491,9 @@ s7m4: 17-17
 
 # sent_id = SlaT-2780
 # :: snt8
-Index:            1  2     3     4      5         6        7 8   9        10            11      12    13  14
-Words:           Nam et  prius  quam incipias  consulto    , et ubi   consulueris     mature   facto opus est
-Sentence:            Nam et prius quam incipias consulto, et ubi consulueris mature facto opus est
+Index:  1  2    3    4      5        6     7 8   9      10        11    12    13  14
+Words: Nam et prius quam incipias consulto , et ubi consulueris mature facto opus est
+Sentence: Nam et prius quam incipias consulto, et ubi consulueris mature facto opus est
 Sentence Gloss (en): For before you begin, deliberation is necessary, and when you have deliberated, prompt action
 
 # sentence level graph:
@@ -547,39 +559,42 @@ s8a2: 9-9
 
 # sent_id = SlaT-2781
 # :: snt9
-Index:            1       2     3   4        5          6           7            8     9
-Words:           Ita  utrumque per se     indigens   alterum     alterius     auxilio eget
-Sentence:            Ita utrumque per se indigens alterum alterius auxilio eget
+Index:  1      2     3  4     5        6       7        8     9
+Words: Ita utrumque per se indigens alterum alterius auxilio eget
+Sentence: Ita utrumque per se indigens alterum alterius auxilio eget
 Sentence Gloss (en): Thus each of these, being incomplete in itself, requires the other's aid
 
 # sentence level graph:
 (s9e / egeo-01
-    :ARG0 (s9u / uterque
-                :refer-number singular
-                :ARG0-of (s9i / indigeo-03
-                            :manner (s9p / person
-                                        :refer-person 3rd
-                                        :refer-number singular)
-                            :aspect state
-                            :modal-strength full-affirmative))
+    :ARG0 (s9t / thing
+            :refer-number singular
+            :mod (s9u / uterque)
+            :ARG0-of (s9i / indigeo-03
+                        :extent s9t
+                        :aspect state
+                        :modal-strength full-affirmative))
     :ARG1 (s9a / auxilior-03
-                :ARG0 (s9a2 / alter
-                        :refer-number singular)
-                :ARG1 (s9a3 / alter
-                        :refer-number singular)
-                :aspect activity
-                :modal-strength full-affirmative)
+            :ARG0 (s9t2 / thing
+                    :mod (s9a2 / alter)
+                    :refer-number singular)
+            :ARG1 (s9t3 / thing
+                    :mod (s9a3 / alter)
+                    :refer-number singular)
+            :aspect activity
+            :modal-strength full-affirmative)
     :aspect state
     :modal-strength full-affirmative)
 
 # alignment:
 s9e: 9-9
-s9u: 2-2
+s9t: 2-2, 3-4
+s9u: 0-0
 s9i: 5-5
 s9a: 8-8
-s9p:3-4
-s9a2: 6-6
-s9a3: 7-7
+s9t2: 6-6
+s9a2: 0-0
+s9t3: 7-7
+s9a3: 0-0
 
 # document level annotation:
 (s9s0 / sentence
@@ -590,9 +605,8 @@ s9a3: 7-7
             (author :full-affirmative s9e)
             (author :full-affirmative s9a)
             (author :full-affirmative s9i))
-    :coref ((s9u :subset-of s7a)
-            (s9u :subset-of s7c2)
-            (s9u :same-entity s9p)))
+    :coref ((s9t :subset-of s7a)
+            (s9t :subset-of s7c2)))
 
 
 # sent_id = SlaT-2782
@@ -613,12 +627,15 @@ Sentence Gloss (en): in early times, accordingly, kings (for that was the first 
                                    :ARG1-of (s10h / have-role-91
                                             :ARG3 (s10r / rex
                                                 :ARG1-of (s10i3 / identity-91
-                                                            :ARG2 (s10n / nomen
-                                                                    :ord (s10o / ordinal-entity :value 1)
-                                                                    :mod (s10i4 / imperium
-                                                                            :refer-number singular))
-                                                                    :place (s10t / terra :refer-number plural)
-                                                                    :refer-number singular)))
+                                                        :ARG2 (s10n / nomen
+                                                                :refer-number singular
+                                                                :ord (s10o / ordinal-entity :value 1)
+                                                                :mod (s10i4 / imperium :refer-number singular))
+                                                        :place (s10t / terra :refer-number plural)
+                                                        :aspect state    # TODO: se li tengo, vanno aggiunti al doc-level
+                                                        :modal-strength full-affirmative))
+                                            :aspect state    # TODO: se li tengo, vanno aggiunti al doc-level
+                                            :modal-strength full-affirmative)
                             :ARG3 (s10p3 / pars :refer-number singular))))
             :ARG1 (s10i2 / ingenium :refer-number singular)
             :manner (s10d / diuerto-NEW-01
@@ -684,8 +701,8 @@ s10a2: 0-0
 
 # sent_id = SlaT-2783
 # :: snt11
-Index:             1    2          3     4     5           6          7
-Words:           etiam tum       vita hominum sine    cupiditate   agitabatur
+Index:   1    2    3     4     5        6        7
+Words: etiam tum vita hominum sine cupiditate agitabatur
 Sentence: etiam tum vita hominum sine cupiditate agitabatur
 Sentence Gloss (en): back then the life of men was still passed without covetousness
 
@@ -727,11 +744,13 @@ Sentence Gloss (en): every one was satisfied enough with his own
 # sentence level graph:
 (s12p / placeo-04
     :ARG0 (s12t / thing
-                :refer-number plural
-                :ARG1-of (s12b / belong-91
-                            :ARG2 (s12q / quisque :refer-number singular)
-                            :aspect state
-                            :modal-strength full-affirmative))
+            :refer-number plural
+            :ARG1-of (s12b / belong-91
+                        :ARG2 (s12p2 / person
+                                :refer-number singular
+                                :quant (s12q / quisque))
+                        :aspect state
+                        :modal-strength full-affirmative))
     :ARG1 s12q
     :extent (s12s / satis)
     :aspect state
@@ -742,11 +761,12 @@ s12p: 5-5
 s12s: 4-4
 s12t: 1-1
 s12b: 0-0
-s12q: 2-3
+s12p2: 2-3
+s12q: 0-0
 
 # document level annotation:
 (s12s0 / sentence
-	:coref ((s11h :subset-of s12q))
+	:coref ((s11h :subset-of s12p2))
 	:temporal ((s11t :overlap s12p)
 	            (s11t :overlap s12b))
 	:modal ((root :modal author)
@@ -941,7 +961,7 @@ Sentence Gloss (en): and, indeed, if the intellectual ability of kings and magis
                 :op2(s14a7 / and
                     :op1 (s14m3 / misceo-07
                             :ARG1 (s14t2 / thing
-                                :mod (s14o / omnis)
+                                :quant (s14o / omnis)
                                 :refer-number plural)
                             :aspect activity
                             :modal-predicate s14c2)
@@ -1042,13 +1062,12 @@ Sentence Gloss (en): for dominion is easily secured by those qualities by which 
 
 # sentence level graph:
 (s15r / retineo-05
-        :ARG1 (s15i / imperium
-            :refer-number singular)
+        :ARG1 (s15i / imperium :refer-number singular)
             :instrument (s15a / ars
                             :refer-number plural
                             :instrument-of (s15p / pario2-07
                                             :ARG1 s15i
-                                            :temporal (s15i2 / initio)
+                                            :temporal (s15i2 / initium)
                                             :aspect performance
                                             :modal-strength full-affirmative))
         :manner (s15f / facile)
@@ -1091,9 +1110,9 @@ Sentence Gloss (en): but when sloth has introduced itself in the place of indust
                         :ARG1 (s16d / desidia
                                 :refer-number singular
                                 :ARG1-of (s16h / have-substitution-91
-                                  :ARG2 (s16l / labor :refer-number singular)
-                                  :aspect performance
-                                  :modal-strength full-affirmative))
+                                      :ARG2 (s16l / labor :refer-number singular)
+                                      :aspect performance
+                                      :modal-strength full-affirmative))
                         :aspect performance
                         :modal-strength full-affirmative)
                 :op2 (s16i3 / invado2-05
@@ -1151,14 +1170,14 @@ Sentence Gloss (en): and thus authority is always transferred from the less to t
 
 # sentence level graph:
 (s17t / transfero-15
-    :ARG1 (s17i / imperium
-            :refer-number singular)
-    :ARG2 (s17q / quisque
+    :ARG1 (s17i / imperium :refer-number singular)
+    :ARG2 (s17p / person
             :refer-number singular
+            :quant/mod (s17q / quisque)
             :ARG1-of (s17h / have-degree-91
                         :ARG2 (s17b / bonus)
                         :ARG3 (s17i2 / intensifier)))
-    :ARG3 (s17p / person
+    :ARG3 (s17p2 / person
             :refer-number singular
             :ARG1-of (s17h2 / have-degree-91
                         :ARG2 (s17b2 / bonus)
@@ -1169,11 +1188,12 @@ Sentence Gloss (en): and thus authority is always transferred from the less to t
 # alignment:
 s17t: 10-10
 s17i: 2-2
-s17q: 4-4, 6-6
-s17h: 5-5
+s17p: 4-6
+s17q: 0-0
+s17h: 0-0
 s17b: 0-0
 s17i2: 0-0
-s17p: 7-9
+s17p2: 7-9
 s17m: 0-0
 s17b2: 0-0
 s17h2: 0-0
@@ -1196,7 +1216,7 @@ Sentence Gloss (en): all the things that men do in agriculture, navigation, arch
 (s18p / pareo-07
     :ARG0 (s18t / thing
             :refer-number plural
-            :mod (s18o / omnis)
+            :quant (s18o / omnis)
             :ARG1-of (s18a / and
                     :op1 (s18a2 / aro-03
                         :ARG0 (s18h / homo :refer-number plural)
@@ -1271,7 +1291,7 @@ Sentence Gloss (en): yet many human beings, resigned to sensuality and indolence
                     :ARG0-of (s19p2 / peregrinor-01))
             :aspect state
             :modal-strength full-affirmative)
-    :aspect performance
+    :aspect activity
     :modal-strength full-affirmative)
 
 # alignment:
@@ -1376,7 +1396,9 @@ Sentence Gloss (en): of these I hold the life and death in equal estimation, for
                 :possessor s21p2))
     :ARG2 (s21i / iuxta)
     :reason (s21s / sileo-03
-            :topic (s21u / uterque :refer-number plural))
+            :topic (s21t / thing
+                :refer-number plural
+                :quant (s21u / uterque)))
     :aspect state
     :modal-strength full-affirmative)
 
@@ -1389,13 +1411,14 @@ s21v: 3-3
 s21m: 5-5
 s21i: 6-6
 s21s: 9-9, 12-12
-s21u: 10-11
+s21t: 10-11
+s21u: 0-0
 
 # document level annotation:
 (s21s0 / sentence
 	:coref ((s20p :same-entity s21p)
-	        (s21u :subset-of s21v)
-	        (s21u :subset-of s21m))
+	        (s21t :subset-of s21v)
+	        (s21t :subset-of s21m))
 	:temporal ((document-creation-time :overlap s21a)
 	            (document-creation-time :overlap s21s))
 	:modal ((root :modal author)
@@ -2082,17 +2105,17 @@ s31v3: 8-9
 Index:  1      2      3         4           5       6      7    8   9     10   11    12      13       14     15        16      17
 Words: quae tametsi animus aspernabatur insolens malarum artium , tamen inter tanta vitia imbecilla aetas ambitione corrupta tenebatur
 Sentence: quae tametsi animus aspernabatur insolens malarum artium, tamen inter tanta vitia imbecilla aetas ambitione corrupta tenebatur
-Sentence Gloss (en): although my mind, inexperienced in dishonest practices, detested these vices, yet, in the midst of so great corruption, my tender age was insnared and infected by ambition
+Sentence Gloss (en): although my mind, inexperienced in dishonest practices, detested these vices, yet, in the midst of so great corruption, my tender age was kept infected by ambition
 
 # sentence level graph:
 (s32t / teneo-31
-    :ARG0 (s32a2 / ambitio :refer-number singular)
-    :ARG1 (s32c / corrumpo-15
-            :ARG0 s32a2
-            :ARG1 (s32a / aetas
-                :refer-number singular
-                :mod (s32i / imbecillus))
-            :aspect state
+    :ARG1 (s32a / aetas
+            :refer-number singular
+            :mod (s32i / imbecillus))
+    :ARG2 (s32c / corrumpo-15
+            :ARG0 (s32a2 / ambitio :refer-number singular)
+            :ARG1 s23a
+            :aspect performance
             :modal-strength full-affirmative)
     :place (s32v / vitium
             :refer-number plural
@@ -2235,37 +2258,37 @@ Sentence Gloss (en): when, therefore, my mind had rest from its numerous trouble
         :op1 (s34c / contero-06
             :ARG0 s34p
             :ARG1 (s34o / otium
-                    :refer-number singular
-                    :mod (s34b / bonus))
+                :refer-number singular
+                :mod (s34b / bonus))
             :cause (s34a2 / and
-                    :op1 (s34s / socordia :refer-number singular)
-                    :op2 (s34d2 / desidia :refer-number singular))
+                :op1 (s34s / socordia :refer-number singular)
+                :op2 (s34d2 / desidia :refer-number singular))
             :aspect process
             :modal-predicate s34d)
-         :op2 (s34a3 / ago-26
+        :op2 (s34a3 / ago-26
                 :ARG0 s34p
                 :ARG1 (s34a4 / aetas)
                 :manner (s34i / intendo-06
                         :ARG0 s34p
                         :ARG1 (s34o2 / or
-                                :op1 (s34c2 / colo2-06
-                                        :ARG0 s34p
-                                        :ARG1 (s34a5 / ager :refer-number singular)
-                                        :aspect performance
-                                        :modal-strength full-negative)
-                                :op2 (s34v / venor-01
-                                        :ARG0 s34p
-                                        :aspect performance
-                                        :modal-strength full-negative)
-                                :ARG1-of (s34i2 / identity-91
-                                        :ARG2 (s34o3 / officium
-                                                :refer-number plural
-                                                :mod (s34s2 / servilis))
-                                        :aspect state
-                                        :modal-strength full-affirmative)
-                                    :aspect process
-                                    :modal-strength full-negative))
-                :aspect process
+                            :op1 (s34c2 / colo2-06
+                                :ARG0 s34p
+                                :ARG1 (s34a5 / ager :refer-number singular)
+                                :aspect performance
+                                :modal-strength full-negative)
+                            :op2 (s34v / venor-01
+                                :ARG0 s34p
+                                :aspect performance
+                                :modal-strength full-negative)
+                            :ARG1-of (s34i2 / identity-91
+                                    :ARG2 (s34o3 / officium
+                                        :refer-number plural
+                                        :mod (s34s2 / servilis))
+                                    :aspect state
+                                    :modal-strength full-affirmative)
+                                :aspect process
+                                :modal-strength full-negative))
+                :aspect activity
                 :modal-predicate s34d))
     :temporal (s34a6 / and
                 :op1 (s34r / requiesco-01
@@ -2384,7 +2407,7 @@ Sentence Gloss (en):  but, returning to those studies from which, at their comme
                         :aspect performance
                         :modal-strength full-affirmative))
             :manner (s35c / carptim)
-            :according-to (s35v / video-10
+            :according-to (s35v / video-10  # TODO: manner
                             :ARG0 s35p
                             :ARG1 (s35h / have-mod-91
                                     :ARG1 (s35t / thing :refer-number plural)
@@ -2503,7 +2526,7 @@ Sentence Gloss (en): thus I shall give an account in few words, with as much tru
     :instrument (s36p3 / pauca :refer-number plural)
     :manner (s36v / verus
             :degree (s36m / most)
-            :ARG1-of (s36p4 / possum-02
+            :ARG1-of (s36p4 / possum-02  # TODO: cf. quam maxume longam, J?
                     :ARG0 s36p
                     :aspect state
                     :modal-strength full-affirmative))
@@ -2603,16 +2626,17 @@ Sentence Gloss (en): before I enter upon my narrative, I must give a short descr
             :refer-number plural
             :topic (s38m / mos
                     :refer-number plural
-                    :possessor (s38h / homo
-                            :refer-number singular)))
+                    :possessor (s38h / homo :refer-number singular)))
     :temporal (s38b / before
                 :op1 (s38i / incipio-02+06
                     :ARG0 s38p
                     :ARG1 (s38n / narro-04
                             :ARG0 s38p
                             :aspect activity
-                            :modal-strength full-affirmative)))
-    :aspect performance
+                            :modal-strength full-affirmative)
+                    :aspect performance
+                    :modal-strength full-affirmative))
+    :aspect activity
     :modal-strength partial-affirmative)
 
 # alignment:
@@ -2646,30 +2670,30 @@ Sentence Gloss (en): Lucius Catilina was a man of noble birth and of eminent men
 
 # sentence level graph:
 (s39b / but-91
-  :ARG1 (s39h / have-mod-91
+    :ARG1 (s39h / have-mod-91
         :ARG1 (s39p / person
               :name (s39n/ name :op1 "Lucius" :op2 "Catilina")
               :wiki "Q75826"
               :ARG0-of (s39n2 / nascor-05+06
-                        :aspect performance
-                        :modal-strength full-affirmative))
+                    :aspect performance
+                    :modal-strength full-affirmative))
         :ARG2 (s39v / vis
-                :refer-number singular
-                :possessor (s39a / and
-                        :op1 (s39a2 / animus
-                            :mod (s39m / magnus)
-                                :refer-number singular)
-                            :op2 (s39c / corpus
-                                :refer-number singular)))
+            :refer-number singular
+            :mod (s39a / and
+                    :op1 (s39a2 / animus
+                        :mod (s39m / magnus)
+                        :refer-number singular)
+                    :op2 (s39c / corpus
+                        :refer-number singular)))
         :aspect state
         :modal-strength full-affirmative)
-  :ARG2 (s39h2 / have-mod-91
+    :ARG2 (s39h2 / have-mod-91
           :ARG1 s39p
           :ARG2 (s39i / ingenius
                 :refer-number singular
                 :mod (s39a3 / and
-                        :op1 (s39m2 / malus)
-                        :op2 (s39p2 / pravus)))
+                    :op1 (s39m2 / malus)
+                    :op2 (s39p2 / pravus)))
            :aspect state
            :modal-strength full-affirmative))
 
@@ -2995,7 +3019,7 @@ Sentence Gloss (en): since the time of Sylla's dictatorship, a strong desire of 
 # sentence level graph:
 (s45i / invado2-05
     :ARG0 (s45c / cupio-03+05
-        :manner (s45m / magnus :degree intensifier)
+            :manner (s45m / magnus :degree intensifier)
         :ARG0 (s45p / person
             :refer-number singular
             :refer-person 3rd)
@@ -3261,7 +3285,7 @@ Sentence Gloss (en): Since the occasion has thus brought public morals under my 
         :ARG2 (s49a / and
             :op1 (s49r2 / repeto-04
                 :ARG0 s49p
-                :ARG4 (s49s / supra)
+                :ARG1 (s49s / supra)
                 :aspect activity
                 :modal-strength partial-affirmative)
             :op2 (s49d / dissero2-02
@@ -3437,7 +3461,7 @@ Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earl
         :ARG1 (s50c3 / city
             :wiki "Q18287233"
             :name (s50n3 / name :op1 "Roma"))
-        :temporal (s50i2 / initio)
+        :temporal (s50i2 / initium)
         :aspect performance
         :modal-strength full-affirmative)
     :op2 (s50h / habeo-15
