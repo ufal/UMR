@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tred_extension xmlns="http://ufal.mff.cuni.cz/pdt/pml/" install_size="348525">
+<tred_extension xmlns="http://ufal.mff.cuni.cz/pdt/pml/" install_size="348531">
   <head>
     <schema href="tred_extension_schema.xml"/>
   </head>
@@ -7,7 +7,7 @@
   <icon>icons/umr.png</icon>
   <repository href="http://ufal.mff.cuni.cz/tred/extensions/external/"/>
   <title>TrEd Extension to Work with Uniform Meaning Representation</title>
-  <version>0.04</version>
+  <version>0.05</version>
   <copyright year="2024">Jan Štěpánek</copyright>
   <description>Makes it possible to view the UMR files.</description>
   <require>

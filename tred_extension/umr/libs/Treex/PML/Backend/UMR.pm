@@ -38,7 +38,7 @@ sub read {
     my $buffer = "";
     my $mode = "";
     while (<$fh>) {
-        chomp;
+        s/[\n\r]*//;
         if (/# *sentence level graph/ && "" eq $mode) {
             $mode = 'sentence';
 
