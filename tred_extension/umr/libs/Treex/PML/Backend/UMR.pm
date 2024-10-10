@@ -42,7 +42,9 @@ sub read {
         if (/# *sentence level graph/ && "" eq $mode) {
             $mode = 'sentence';
 
-        } elsif (/^Words:\s*(.*)/) {
+        } elsif (/^(?| Words :? \s* (.*)
+                     | \# \s+ :: \s+ snt[0-9]+ \s+ (.+) )/x
+        ) {
             my @words = split ' ', $1;
             $root = 'Treex::PML::Factory'->createTypedNode(
                     'umr.sent.type',
@@ -81,7 +83,8 @@ sub read {
             } elsif (/^(\w+): ([-0-9, ]+)/) {
                 my ($id, $alignment) = ($1, $2);
                 my @ords = map {
-                               my ($from, $to) = split /-/;
+                               my ($from, $to) = '-1--1' eq $_ ? (0, 0)
+                                                               : split /-/;
                                $from .. $to
                            } split /, */, $alignment;
                 push @{ $root->{words}[$_]{'#content'} }, $id for @ords;
