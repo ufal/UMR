@@ -22,6 +22,7 @@ Sentence Gloss (en): It is suitable that all men, who desire to excel other anim
                                 :aspect state
                                 :modal-strength full-affirmative))
             :manner (s1o2 / ops
+                        :refer-number singular
                         :mod (s1s2 / superus :degree intensifier))
             :ARG1 (s1t / transeo-15
                     :ARG0 s1h
@@ -48,9 +49,9 @@ Sentence Gloss (en): It is suitable that all men, who desire to excel other anim
                                                         :modal-strength full-affirmative))
                                 :aspect state
                                 :modal-strength full-affirmative)
-                    :aspect state
+                    :aspect state  # TODO: activity
                     :modal-strength full-negative)
-            :aspect process
+            :aspect activity
             :modal-strength partial-affirmative)
         :aspect state
         :modal-strength full-affirmative)
@@ -111,7 +112,7 @@ Sentence Gloss (en): All our power is situated in the mind and in the body
             :possessor (s2p/ person
                     :refer-person 1st
                     :refer-number plural)
-            :mod (s2o / omnis))
+            :quant (s2o / omnis))
     :ARG2 (s2a / and
             :op1 (s2a2 / animus :refer-number singular)
             :op2 (s2c / corpus :refer-number singular))
@@ -150,14 +151,14 @@ Sentence Gloss (en): of the mind we rather employ the government; of the body, t
                             :refer-number plural)
                 :ARG1 (s3i / imperium
                             :refer-number singular
-                            :possessor (s3a / animus :refer-number singular))
+                            :mod (s3a / animus :refer-number singular))
                 :aspect habitual
                 :modal-strength full-affirmative)
         :ARG2 (s3u2 / utor-03
                 :ARG0 s3p
                 :ARG1 (s3s / servitium
                         :refer-number singular
-                        :possessor (s3c2 / corpus :refer-number singular))
+                        :mod (s3c2 / corpus :refer-number singular))
                 :aspect habitual
                 :modal-strength full-affirmative))
 
@@ -209,7 +210,7 @@ Sentence Gloss (en): the one is common to us with the gods; the other with the b
                         :refer-number singular
                         :mod (s4a2 / alter))
                   :ARG2 (s4c3 / communis-13
-                               :ARG2 (s4b / belua :refer-number plural))
+                           :ARG2 (s4b / belua :refer-number plural))
                   :affectee s4p
                   :aspect state
                   :modal-strength full-affirmative))
@@ -256,41 +257,41 @@ Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glor
               :op1 (s5q / quaero-15
                         :ARG1 (s5g / gloria :refer-number singular)
                         :instrument (s5o / ops
-                                        :refer-number plural
-                                        :mod (s5i / ingenium :refer-number singular))
+                                    :refer-number plural
+                                    :mod (s5i / ingenium :refer-number singular))
                         :aspect activity
                         :modal-strength partial-affirmative)
               :op2 (s5e / efficio-02
-                        :ARG1 (s5m / memini-02
-                                  :ARG1 (s5p2 / person
-                                            :refer-person 1st
-                                            :refer-number plural)
-                                   :aspect imperfective
-                                   :modal-strength partial-affirmative)
-                        :ARG2 (s5l / longus
-                                :ARG2-of (s5h3 / have-degree-91
+                    :ARG1 (s5m / memini-02
+                          :ARG1 (s5p2 / person
+                                :refer-person 1st
+                                :refer-number plural)
+                           :aspect imperfective
+                           :modal-strength partial-affirmative)
+                    :ARG2 (s5l / longus
+                            :ARG2-of (s5h3 / have-degree-91
+                                    :ARG1 s5m
+                                    :ARG3 (s5e2 / equal)
+                                    :ARG4 (s5h4 / have-mod-91
                                         :ARG1 s5m
-                                        :ARG3 (s5e2 / equal)
-                                        :ARG4 (s5h4 / have-mod-91
-                                            :ARG1 s5m
-                                            :ARG2 (s5l2 / longus)
-                                            :aspect state
-                                            :modal-strength neutral-affirmative)
+                                        :ARG2 (s5l2 / longus)
                                         :aspect state
-                                        :modal-strength full-affirmative))
-                        :cause (s5h2 / have-mod-91
-                                    :ARG1 (s5v3 / vita
-                                              :refer-number singular
-                                              :mod (s5i2 / ipse)
-                                              :ARG1-of (s5f / fruor-04
-                                                            :ARG0 s5p2
-                                                            :aspect habitual
-                                                            :modal-strength full-affirmative))
-                                    :ARG2 (s5b / brevis)
+                                        :modal-strength neutral-affirmative)
                                     :aspect state
-                                    :modal-strength full-affirmative)
-                        :aspect activity
-                        :modal-strength partial-affirmative))
+                                    :modal-strength full-affirmative))
+                    :cause (s5h2 / have-mod-91
+                                :ARG1 (s5v3 / vita
+                                          :refer-number singular
+                                          :mod (s5i2 / ipse)
+                                          :ARG1-of (s5f / fruor-04
+                                                        :ARG0 s5p2
+                                                        :aspect habitual
+                                                        :modal-strength full-affirmative))
+                                :ARG2 (s5b / brevis)
+                                :aspect state
+                                :modal-strength full-affirmative)
+                    :aspect activity
+                    :modal-strength partial-affirmative))
     :ARG2 (s5h / have-degree-91
               :ARG1 s5a
               :ARG2 (s5r / rectus)
@@ -374,23 +375,23 @@ Sentence Gloss (en): For the glory of wealth and beauty is fleeting and perishab
 (s6c / contrast-91
      :ARG1 (s6h / have-mod-91
                 :ARG1 (s6g / gloria
-                           :refer-number singular
-                           :mod (s6a / and
-                                      :op1 (s6d / divitiae :refer-number plural)
-                                      :op2 (s6f / forma :refer-number singular)))
+                       :refer-number singular
+                       :mod (s6a / and
+                                  :op1 (s6d / divitiae :refer-number plural)
+                                  :op2 (s6f / forma :refer-number singular)))
                 :ARG2 (s6a2 / and
-                            :op1 (s6f2 / fluo-17
-                                       :ARG0 s6g
-                                       :aspect activity
-                                       :modal-strength full-affirmative)
-                            :op2 (s6f3 / fragilis))
+                        :op1 (s6f2 / fluo-17
+                                   :ARG0 s6g
+                                   :aspect activity
+                                   :modal-strength full-affirmative)
+                        :op2 (s6f3 / fragilis))
                 :aspect state
                 :modal-strength full-affirmative)
      :ARG2 (s6h2 / habeo-07
                  :ARG1 (s6v / virtus :refer-number singular)
                  :ARG2 (s6a3 / and
-                             :op1 (s6c2 / clarus)
-                             :op2 (s6a4 / aeternus))
+                         :op1 (s6c2 / clarus)
+                         :op2 (s6a4 / aeternus))
                  :aspect state
                  :modal-strength full-affirmative))
 
@@ -433,8 +434,8 @@ Sentence Gloss (en): Yet for a long time men have discussed the question whether
 (s7b / but-91
     :ARG2 (s7c / certo-01
              :ARG0 (s7p / person
-                         :mod (s7m / mortalis)
-                         :refer-number plural)
+                    :refer-number plural
+                    :mod (s7m / mortalis))
              :duration (s7d / diu)
              :manner (s7m2 / magnus)
              :ARG1 (s7o / or
@@ -498,35 +499,35 @@ Sentence Gloss (en): For before you begin, deliberation is necessary, and when y
 
 # sentence level graph:
 (s8a / and
-        :op1 (s8o / opus-est-01
-                :ARG0 (s8p / person
-                        :refer-person 2nd
-                        :refer-number singular)
-                :ARG1 (s8c / consulo-04
+    :op1 (s8o / opus-est-01
+            :ARG0 (s8p / person
+                    :refer-person 2nd
+                    :refer-number singular)
+            :ARG1 (s8c / consulo-04
+                        :ARG0 s8p
+                        :aspect performance
+                        :modal-predicate s8o)
+            :temporal (s8b / before
+                        :op1 (s8i / incipio-06
                             :ARG0 s8p
                             :aspect performance
-                            :modal-predicate s8o)
-                :temporal (s8b / before
-                            :op1 (s8i / incipio-06
-                                :ARG0 s8p
-                                :aspect performance
-                                :modal-strength full-affirmative))
-                :aspect state
-                :modal-strength full-affirmative)
-        :op2 (s8o2 / opus-est-01
-                :ARG0 s8p
-                :ARG1 (s8f / facio-02
+                            :modal-strength full-affirmative))
+            :aspect state
+            :modal-strength full-affirmative)
+    :op2 (s8o2 / opus-est-01
+            :ARG0 s8p
+            :ARG1 (s8f / facio-02
+                    :ARG0 s8p
+                    :manner (s8m / mature)
+                    :aspect performance
+                    :modal-predicate s8o2)
+            :temporal (s8a2 / after
+                        :op1 (s8c2 / consulo-04
                             :ARG0 s8p
-                            :manner (s8m / mature)
                             :aspect performance
-                            :modal-predicate s8o2)
-                :temporal (s8a2 / after
-                            :op1 (s8c2 / consulo-04
-                                    :ARG0 s8p
-                                    :aspect performance
-                                    :modal-strength full-affirmative))
-                :aspect state
-                :modal-strength full-affirmative))
+                            :modal-strength full-affirmative))
+            :aspect state
+            :modal-strength full-affirmative))
 
 # alignment:
 s8a: 2-2, 8-8
@@ -575,11 +576,11 @@ Sentence Gloss (en): Thus each of these, being incomplete in itself, requires th
                         :modal-strength full-affirmative))
     :ARG1 (s9a / auxilior-03
             :ARG0 (s9t2 / thing
-                    :mod (s9a2 / alter)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s9a2 / alter))
             :ARG1 (s9t3 / thing
-                    :mod (s9a3 / alter)
-                    :refer-number singular)
+                    :refer-number singular
+                    :mod (s9a3 / alter))
             :aspect activity
             :modal-strength full-affirmative)
     :aspect state
@@ -715,7 +716,7 @@ Sentence Gloss (en): back then the life of men was still passed without covetous
                     :refer-number singular)
         :temporal (s11t / tum)
         :mod (s11e / etiam)
-        :aspect state
+        :aspect activity
         :modal-strength full-affirmative)
 
 # alignment:
@@ -804,13 +805,13 @@ Sentence Gloss (en): but after Cyrus in Asia and the Lacedaemonians and Athenian
                             :op1 (s13p3 / person
                                 :refer-number plural
                                 :mod (s13c2 / city
-                                         :wiki "Q5690"
-                                         :name (s13n2 / name :op1 "Sparta")))
+                                     :wiki "Q5690"
+                                     :name (s13n2 / name :op1 "Sparta")))
                             :op2 (s13p4 / person
                                  :refer-number plural
                                  :mod (s13c3 / city
-                                         :wiki "Q844930"
-                                         :name (s13n3 / name :op1 "Athens")))))
+                                     :wiki "Q844930"
+                                     :name (s13n3 / name :op1 "Athens")))))
                     :ARG1 (s13a3 / and
                             :op1 (s13s / subigo-12
                                     :ARG0 s13a6
@@ -1063,13 +1064,13 @@ Sentence Gloss (en): for dominion is easily secured by those qualities by which 
 # sentence level graph:
 (s15r / retineo-05
         :ARG1 (s15i / imperium :refer-number singular)
-            :instrument (s15a / ars
-                            :refer-number plural
-                            :instrument-of (s15p / pario2-07
-                                            :ARG1 s15i
-                                            :temporal (s15i2 / initium)
-                                            :aspect performance
-                                            :modal-strength full-affirmative))
+        :instrument (s15a / ars
+                    :refer-number plural
+                    :instrument-of (s15p / pario2-07
+                                    :ARG1 s15i
+                                    :temporal (s15i2 / initium)
+                                    :aspect performance
+                                    :modal-strength full-affirmative))
         :manner (s15f / facile)
         :aspect activity
         :modal-strength full-affirmative)
@@ -1106,8 +1107,8 @@ Sentence Gloss (en): but when sloth has introduced itself in the place of indust
         :op2 (s16m / mos :refer-number plural))
     :temporal (s16u / ubi
             :op1 (s16a / and
-                :op1 (s16i2 / invado2-05
-                        :ARG1 (s16d / desidia
+                :op1 (s16i2 / invado2-06
+                        :ARG0 (s16d / desidia
                                 :refer-number singular
                                 :ARG1-of (s16h / have-substitution-91
                                       :ARG2 (s16l / labor :refer-number singular)
@@ -1115,8 +1116,8 @@ Sentence Gloss (en): but when sloth has introduced itself in the place of indust
                                       :modal-strength full-affirmative))
                         :aspect performance
                         :modal-strength full-affirmative)
-                :op2 (s16i3 / invado2-05
-                        :ARG1 (s16a2 / and
+                :op2 (s16i3 / invado2-06
+                        :ARG0 (s16a2 / and
                                 :op1 (s16l2 / libido :refer-number singular)
                                 :op2 (s16s / superbia :refer-number singular)
                                 :ARG1-of (s16h2 / have-substitution-91
@@ -1226,7 +1227,7 @@ Sentence Gloss (en): all the things that men do in agriculture, navigation, arch
                         :ARG0 s18h
                         :aspect habitual
                         :modal-strength full-affirmative)
-                    :op3 (s18a3 /aedifico-03
+                    :op3 (s18a3 / aedifico-03
                         :ARG0 s18h
                         :aspect habitual
                         :modal-strength full-affirmative))
@@ -1267,8 +1268,9 @@ Sentence Gloss (en): yet many human beings, resigned to sensuality and indolence
 
 # sentence level graph:
 (s19t / transeo-15
-    :ARG0 (s19m / mortalis
+    :ARG0 (s19p3 / person
             :refer-number plural
+            :mod (s19m / mortalis)
             :quant (s19m2 / multus)
             :ARG0-of (s19d / dedo-02
                         :ARG1 s19m
@@ -1296,7 +1298,8 @@ Sentence Gloss (en): yet many human beings, resigned to sensuality and indolence
 
 # alignment:
 s19t: 16-16
-s19m: 3-3
+s19p3: 3-3
+s19m: 0-0
 s19m2: 2-2
 s19d: 5-5
 s19a: 7-7
@@ -1334,18 +1337,18 @@ Sentence Gloss (en): to whom, certainly, contrary to the intention of nature, th
 
 # sentence level graph:
 (s20c / contrast-91
-    :ARG1 (s20h / have-role-91
+    :ARG1 (s20i / identity-91
         :ARG1 (s20c2 / corpus :refer-number singular)
-        :ARG2 (s20p / person
+        :ARG2 (s20v / voluptas :refer-number singular)
+        :affectee (s20p / person
                 :refer-number plural
                 :refer-person 3rd)
-        :ARG3 (s20v / voluptas :refer-number singular)
         :aspect state
         :modal-strength full-affirmative)
-    :ARG2 (s20h2 / have-role-91
+    :ARG2 (s20i2 / identity-91
         :ARG1 (s20a / anima :refer-number singular)
-        :ARG2 s20p
         :ARG3 (s20o / onus :refer-number singular)
+        :affectee s20p
         :aspect state
         :modal-strength full-affirmative)
     :manner (s20n / natura
@@ -1354,8 +1357,8 @@ Sentence Gloss (en): to whom, certainly, contrary to the intention of nature, th
 
 # alignment:
 s20c: 7-7
-s20h: 0-0
-s20h2: 10-10
+s20i: 0-0
+s20i2: 10-10
 s20c2: 5-5
 s20v: 6-6
 s20a: 8-8
@@ -1395,8 +1398,8 @@ Sentence Gloss (en): of these I hold the life and death in equal estimation, for
                 :refer-number singular
                 :possessor s21p2))
     :ARG2 (s21i / iuxta)
-    :reason (s21s / sileo-03
-            :topic (s21t / thing
+    :reason (s21s / sileo-NEW-05
+            :ARG1 (s21t / thing
                 :refer-number plural
                 :quant (s21u / uterque)))
     :aspect state
@@ -1616,7 +1619,7 @@ Sentence Gloss (en): both in peace and in war it is possible to obtain celebrity
 
 # sentence level graph:
 (s25f / fio-01
-    :ARG2 (s25c / clarus)
+    :ARG1 (s25c / clarus)
     :temporal (s25o / or
             :op1 (s25p / pax :refer-number singular)
             :op2 (s25b / bellum :refer-number singular))
@@ -1800,7 +1803,6 @@ Sentence Gloss (en): first, because one must equate words with deeds
                             :aspect performance
                             :modal-strength full-affirmative))
         :aspect process
-        :mode imperative
         :modal-strength partial-affirmative)
     :aspect state
     :modal-strength full-affirmative)
@@ -1871,7 +1873,7 @@ Sentence Gloss (en): and next, because most readers consider that whatever error
                     :aspect activity
                     :modal-strength full-affirmative)
             :ARG2 (s29c / contrast-91
-                :ARG1  (s29a2 / accipio-08+10
+                :ARG1 (s29a2 / accipio-08+10
                     :ARG0 (s29p5 / person
                             :refer-number singular
                             :refer-person 3rd
@@ -2407,12 +2409,13 @@ Sentence Gloss (en):  but, returning to those studies from which, at their comme
                         :aspect performance
                         :modal-strength full-affirmative))
             :manner (s35c / carptim)
-            :according-to (s35v / video-10  # TODO: manner
+            :according-to (s35v / video-10  # TODO: manner?
                             :ARG0 s35p
                             :ARG1 (s35h / have-mod-91
                                     :ARG1 (s35t / thing :refer-number plural)
                                     :ARG2 (s35d2 / dignus-04
-                                            :ARG2 (s35m2 / memoria :refer-number singular))
+                                            :ARG2 (s35m2 / memini-04
+                                                        :ARG1 s35t))
                                     :aspect state
                                     :modal-strength partial-affirmative)
                             :aspect state
@@ -2433,7 +2436,7 @@ Sentence Gloss (en):  but, returning to those studies from which, at their comme
                                                     :mod (s35p5 / publicus)))))
                     :aspect state
                     :modal-strength full-affirmative)
-            :aspect performance
+            :aspect activity
             :modal-predicate s35s)
     :temporal (s35r2 / regredior-05
             :ARG0 s35p
@@ -2495,7 +2498,8 @@ s35m: 9-9
 	            (s35p2 :overlap s35h)
 	            (s35s :before s35h2)
 	            (s35s :before s35r2)
-	            (s35r2 :before s35d))
+	            (s35r2 :before s35d)
+	            (s35v :after s35m2))
 	:modal ((root :modal author)
 	        (author :full-affirmative s35s)
 	        (s35s :unspecified s35p2)
@@ -2504,7 +2508,8 @@ s35m: 9-9
 	        (author :partial-affirmative s35h)
 	        (author :full-affirmative s35h2)
 	        (author :full-affirmative s35r2)
-	        (author :full-affirmative s35d)))
+	        (author :full-affirmative s35d)
+	        (s35v :partial-affirmative s35m2)))
 
 
 # sent_id = SlaT-2808
@@ -2566,7 +2571,7 @@ Sentence Gloss (en): for I think it an enterprise eminently memorable, from the 
     :ARG0 (s37p / person
             :refer-number singular
             :refer-person 1st)
-    :ARG2 (s37h / have-mod-91
+    :ARG1 (s37h / have-mod-91
             :ARG1 (s37f / facinus
                 :refer-number singular
                 :mod (s37i / is)) 
@@ -2683,8 +2688,7 @@ Sentence Gloss (en): Lucius Catilina was a man of noble birth and of eminent men
                     :op1 (s39a2 / animus
                         :mod (s39m / magnus)
                         :refer-number singular)
-                    :op2 (s39c / corpus
-                        :refer-number singular)))
+                    :op2 (s39c / corpus :refer-number singular)))
         :aspect state
         :modal-strength full-affirmative)
     :ARG2 (s39h2 / have-mod-91
@@ -3426,7 +3430,11 @@ Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earl
                     :place (s50s / sedes
                         :refer-number plural
                         :mod (s50i / incertus))
-                    :manner (s50p3 / profugus :refer-number plural)
+                    :manner (s50h5 / have-mod-91
+                            :ARG1 s50p
+                            :ARG2 (s50p3 / profugus)
+                            :aspect state
+                            :modal-strength affirmative)
                     :companion (s50p2 / person
                         :wiki "Q82732"
                         :name (s50n2 / name :op1 "Aeneas")
@@ -3486,7 +3494,8 @@ s50n: 0-0
 s50v: 20-20
 s50s: 18-18
 s50i: 19-19
-s50p3: 17-17
+s50h5: 17-17
+s50p3: 0-0
 s50p2: 15-15
 s50n2: 0-0
 s50h2: 16-16
@@ -3520,14 +3529,16 @@ s50p4: 5-5
             (s50c :before s50v)
             (s50v :overlap s50h2)
             (s50c :overlap s50h3)
-            (document-creation-time :before s50a7))
+            (document-creation-time :before s50a7)
+            (s50v :overlap s50h5))
     :modal ((root :modal author)
             (author :full-affirmative s50h2)
             (author :full-affirmative s50v)
             (author :full-affirmative s50h3)
             (author :full-affirmative s50h)
             (author :full-affirmative s50a7)
-            (author :full-affirmative s50c)))
+            (author :full-affirmative s50c)
+            (author :full-affirmative s50h5)))
 
 
 # TODO / QUESTIONS (see validator's output)
