@@ -39,6 +39,7 @@ sub read {
     my $mode = "";
     while (<$fh>) {
         s/[\n\r]*//;
+        s/#\s*TODO.*//;
         if (/# *sentence level graph/ && "" eq $mode) {
             $mode = 'sentence';
 
