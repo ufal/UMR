@@ -19,8 +19,7 @@ Sentence Gloss (en): It is suitable that all men, who desire to excel other anim
                         :mod (s1c / ceterus))
                     :aspect state
                     :modal-predicate s1s)
-                :aspect state
-                :modal-strength full-affirmative))
+                :aspect state))
             :manner (s1o2 / ops
                 :refer-number singular
                 :mod (s1s2 / superus :degree intensifier))
@@ -29,8 +28,7 @@ Sentence Gloss (en): It is suitable that all men, who desire to excel other anim
                 :ARG1 (s1v / vita)
                 :manner (s1t2 / taceo-NEW-05
                     :ARG0 s1h
-                    :aspect state
-                    :modal-strength full-affirmative)
+                    :aspect state)
                 :manner (s1r / resemble-91
                     :ARG1 s1h
                     :ARG2 (s1p2 / pecus
@@ -42,18 +40,12 @@ Sentence Gloss (en): It is suitable that all men, who desire to excel other anim
                                 :op2 (s1o3 / oboedio-NEW-01
                                     :ARG0 s1p2
                                     :ARG1 (s1v2 / venter)
-                                    :aspect state
-                                    :modal-strength full-affirmative))
-                            :aspect performance
-                            :modal-strength full-affirmative))
-                    :aspect state
-                    :modal-strength full-affirmative)
-                :aspect activity
-                :modal-strength full-negative)
-            :aspect activity
-            :modal-strength partial-affirmative)
-        :aspect state
-        :modal-strength full-affirmative)
+                                    :aspect state))
+                            :aspect performance))
+                    :aspect state)
+                :aspect activity)
+            :aspect activity)
+        :aspect state)
 
 # alignment:
 s1d: 14-14
@@ -95,6 +87,7 @@ s1v2: 27-27
             (author :partial-affirmative s1n)
             (s1s :unspecified s1p)
             (s1n :partial-negative s1t)
+            (author :full-affirmative s1t2)
             (author :full-affirmative s1f)
             (author :full-affirmative s1r)
             (author :full-affirmative s1o3)))
@@ -117,8 +110,7 @@ Sentence Gloss (en): All our power is situated in the mind and in the body
     :ARG2 (s2a / and
         :op1 (s2a2 / animus :refer-number singular)
         :op2 (s2c / corpus :refer-number singular))
-    :aspect state
-    :modal-strength full-affirmative)
+    :aspect state)
 
 # alignment:
 s2h: 9-10
@@ -153,15 +145,13 @@ Sentence Gloss (en): of the mind we rather employ the government; of the body, t
         :ARG1 (s3i / imperium
             :refer-number singular
             :mod (s3a / animus :refer-number singular))
-        :aspect habitual
-        :modal-strength full-affirmative)
+        :aspect habitual)
     :ARG2 (s3u2 / utor-03
         :ARG0 s3p
         :ARG1 (s3s / servitium
             :refer-number singular
             :mod (s3c2 / corpus :refer-number singular))
-        :aspect habitual
-        :modal-strength full-affirmative))
+        :aspect habitual))
 
 # alignment:
 s3c: 6-6
@@ -204,8 +194,7 @@ Sentence Gloss (en): the one is common to us with the gods; the other with the b
         :affectee (s4p / person
             :refer-person 1st
             :refer-number plural)
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
     :ARG2 (s4h2 / have-mod-91
         :ARG1 (s4t2 / thing
             :refer-number singular
@@ -213,8 +202,7 @@ Sentence Gloss (en): the one is common to us with the gods; the other with the b
         :ARG2 (s4c3 / communis-13
             :ARG2 (s4b / belua :refer-number plural))
         :affectee s4p
-        :aspect state
-        :modal-strength full-affirmative))
+        :aspect state))
 
 # alignment:
 s4c: 0-0
@@ -260,15 +248,13 @@ Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glor
             :instrument (s5o / ops
                 :refer-number plural
                 :mod (s5i / ingenium :refer-number singular))
-            :aspect activity
-            :modal-strength partial-affirmative)
+            :aspect activity)
         :op2 (s5e / efficio-02
             :ARG1 (s5m / memini-02+03
                 :ARG1 (s5p2 / person
                     :refer-person 1st
                     :refer-number plural)
-                    :aspect imperfective
-                    :modal-strength partial-affirmative)
+                    :aspect imperfective)
             :ARG2 (s5l / longus
                     :ARG2-of (s5h3 / have-degree-91
                         :ARG1 s5m
@@ -276,23 +262,18 @@ Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glor
                         :ARG4 (s5h4 / have-mod-91
                             :ARG1 s5m
                             :ARG2 (s5l2 / longus)
-                            :aspect state
-                            :modal-strength neutral-affirmative)
-                        :aspect state
-                        :modal-strength full-affirmative))
+                            :aspect state)
+                        :aspect state))
             :reason (s5h2 / have-mod-91
                 :ARG1 (s5v3 / vita
                     :refer-number singular
                     :mod (s5i2 / ipse)
                     :ARG1-of (s5f / fruor-04
                         :ARG0 s5p2
-                        :aspect habitual
-                        :modal-strength full-affirmative))
+                        :aspect habitual))
                 :ARG2 (s5b / brevis)
-                :aspect state
-                :modal-strength full-affirmative)
-            :aspect activity
-            :modal-strength partial-affirmative))
+                :aspect state)
+            :aspect activity))
     :ARG2 (s5h / have-degree-91
         :ARG1 s5a
         :ARG2 (s5r / rectus)
@@ -302,13 +283,10 @@ Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glor
             :instrument (s5o2 / ops
                 :refer-number plural
                 :mod (s5v2 / vis :refer-number plural))
-            :aspect activity
-            :modal-strength full-affirmative)
-        :aspect state
-        :modal-strength partial-affirmative)
+            :aspect activity)
+        :aspect state)
     :cause (s5q3 / quo)
-    :aspect state
-    :modal-strength full-affirmative)
+    :aspect state)
 
 # alignment:
 s5v: 4-4
@@ -353,11 +331,13 @@ s5q3: 1-1
             (s5e :overlap s5h4))
     :modal ((root :modal author)
             (author :full-affirmative s5v)
+            (author :partial-affirmative s5h)
+            (author :full-affirmative s5h2)
             (author :partial-affirmative s5q)
             (author :full-affirmative s5q2)
             (author :partial-affirmative s5e)
             (author :full-affirmative s5f)
-            (author :full-affirmative s5m)
+            (author :partial-affirmative s5m)
             (author :full-affirmative s5h3)
             (author :neutral-affirmative s5h4))
     :coref ((s4p :same-entity s5p2)
@@ -383,18 +363,15 @@ Sentence Gloss (en): For the glory of wealth and beauty is fleeting and perishab
         :ARG2 (s6a2 / and
             :op1 (s6f2 / fluo-17
                 :ARG0 s6g
-                :aspect activity
-                :modal-strength full-affirmative)
+                :aspect activity)
             :op2 (s6f3 / fragilis))
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
         :ARG2 (s6h2 / habeo-07
             :ARG1 (s6v / virtus :refer-number singular)
             :ARG2 (s6a3 / and
                 :op1 (s6c2 / clarus)
                 :op2 (s6a4 / aeternus))
-            :aspect state
-            :modal-strength full-affirmative))
+            :aspect state))
 
 # alignment:
 s6c: 0-0
@@ -449,18 +426,15 @@ Sentence Gloss (en): Yet for a long time men have discussed the question whether
                     :refer-number singular
                     :mod (s7c2 / corpus :refer-number singular))
                 :quant (s7m4 / magis)
-                :aspect process
-                :modal-strength neutral-affirmative)
+                :aspect process)
             :op2 (s7p3 / procedo-21
                 :ARG0 s7r
                 :ARG2 (s7v2 / virtus
                     :refer-number singular
                     :mod (s7a / animus :refer-number singular))
                 :quant s7m4
-                :aspect process
-                :modal-strength neutral-affirmative))
-        :aspect performance
-        :modal-strength full-affirmative))
+                :aspect process))
+        :aspect performance))
 
 # alignment:
 s7e: 0-0
@@ -488,6 +462,7 @@ s7m4: 17-17
             (s7c :overlap s7p3))
     :modal ((root :modal author)
             (author :full-affirmative s7c)
+            (s7p :neutral-affirmative s7p2)
             (s7p :neutral-affirmative s7p2))
     :coref ((s3c2 :same-entity s7c2)
             (s3a :same-entity s7a)
@@ -514,10 +489,8 @@ Sentence Gloss (en): For before you begin, deliberation is necessary, and when y
         :temporal (s8b / before
             :op1 (s8i / incipio-06
                 :ARG0 s8p
-                :aspect performance
-                :modal-strength full-affirmative))
-        :aspect state
-        :modal-strength full-affirmative)
+                :aspect performance))
+        :aspect state)
     :op2 (s8o2 / opus-est-01
         :ARG0 s8p
         :ARG1 (s8f / facio-02
@@ -528,10 +501,8 @@ Sentence Gloss (en): For before you begin, deliberation is necessary, and when y
         :temporal (s8a2 / after
             :op1 (s8c2 / consulo-04
                 :ARG0 s8p
-                :aspect performance
-                :modal-strength full-affirmative))
-        :aspect state
-        :modal-strength full-affirmative))
+                :aspect performance))
+        :aspect state))
 
 # alignment:
 s8a: 2-2, 8-8
@@ -555,6 +526,8 @@ s8a2: 9-9
             (s8c :after s8i)
             (s8f :before s8c2))
     :modal ((root :modal author)
+            (author :full-affirmative s8o)
+            (author :full-affirmative s8o2)
             (author :full-affirmative s8i)
             (s8o :unspecified s8c)
             (author :full-affirmative s8c2)
@@ -576,8 +549,7 @@ Sentence Gloss (en): Thus each of these, being incomplete in itself, requires th
         :quant (s9u / uterque)
         :ARG0-of (s9i / indigeo-03
             :extent s9t
-            :aspect state
-            :modal-strength full-affirmative))
+            :aspect state))
     :ARG1 (s9a / auxilior-03
         :ARG0 (s9t2 / thing
             :refer-number singular
@@ -585,10 +557,8 @@ Sentence Gloss (en): Thus each of these, being incomplete in itself, requires th
         :ARG1 (s9t3 / thing
             :refer-number singular
             :mod (s9a3 / alter))
-        :aspect activity
-        :modal-strength full-affirmative)
-    :aspect state
-    :modal-strength full-affirmative)
+        :aspect activity)
+    :aspect state)
 
 # alignment:
 s9e: 9-9
@@ -637,35 +607,27 @@ Sentence Gloss (en): in early times, accordingly, kings (for that was the first 
                                     :ord (s10o / ordinal-entity :value 1)
                                     :mod (s10i4 / imperium :refer-number singular))
                                 :place (s10t / terra :refer-number plural)
-                                :aspect state
-                                :modal-strength full-affirmative))
-                        :aspect state
-                        :modal-strength full-affirmative))
+                                :aspect state))
+                        :aspect state))
                 :ARG3 (s10p3 / pars :refer-number singular)
-            :aspect state
-            :modal-strength full-affirmative))
+            :aspect state))
         :ARG1 (s10i2 / ingenium :refer-number singular)
         :manner (s10d / diuerto-NEW-01
             :ARG0 s10p2
-            :aspect state
-            :modal-strength full-affirmative)
-        :aspect habitual
-        :modal-strength full-affirmative)
+            :aspect state)
+        :aspect habitual)
     :ARG2 (s10e2 / exerceo-13
             :ARG0 (s10p4 / person
                 :refer-number plural
                 :ARG1-of (s10i6 / include-91
                     :ARG2 s10p
                     :mod (s10a2 / alius)
-                    :aspect state
-                    :modal-strength full-affirmative))
+                    :aspect state))
             :ARG1 (s10c2 / corpus :refer-number singular)
             :manner (s10d2 / diuerto-NEW-01
                 :ARG0 s10p4
-                :aspect state
-                :modal-strength full-affirmative)
-            :aspect habitual
-            :modal-strength full-affirmative)
+                :aspect state)
+            :aspect habitual)
     :temporal (s10i / initium))
 
 # alignment:
@@ -694,17 +656,15 @@ s10a2: 0-0
 
 # document level annotation:
 (s10s0 / sentence
-	:coref ((s10p :subset-of s10p2)
-	        (s10p :subset-of s10p4))
 	:temporal ((past-reference :overlap s10i)
-	            (s10i :overlap s10d)
-	            (s10i :overlap s10d2)
-	            (s10i :overlap s10e)
-	            (s10i :overlap s10e2)
-	            (s10i :overlap s10h)
-	            (s10i :overlap s10i3)
-	            (s10i :overlap s10i5)
-	            (s10i :overlap s10i6))
+            (s10i :overlap s10d)
+            (s10i :overlap s10d2)
+            (s10i :overlap s10e)
+            (s10i :overlap s10e2)
+            (s10i :overlap s10h)
+            (s10i :overlap s10i3)
+            (s10i :overlap s10i5)
+            (s10i :overlap s10i6))
 	:modal ((root :modal author)
             (author :full-affirmative s10d)
             (author :full-affirmative s10d2)
@@ -713,7 +673,9 @@ s10a2: 0-0
             (author :full-affirmative s10h)
             (author :full-affirmative s10i3)
             (author :full-affirmative s10i5)
-            (author :full-affirmative s10i6)))
+            (author :full-affirmative s10i6))
+    :coref ((s10p :subset-of s10p2)
+	        (s10p :subset-of s10p4)))
 
 
 # sent_id = SlaT-2783
@@ -732,8 +694,7 @@ Sentence Gloss (en): back then the life of men was still passed without covetous
         :refer-number singular)
     :temporal (s11t / tum)
     :mod (s11e / etiam)
-    :aspect activity
-    :modal-strength full-affirmative)
+    :aspect activity)
 
 # alignment:
 s11a: 7-7
@@ -766,12 +727,10 @@ Sentence Gloss (en): every one was satisfied enough with his own
             :ARG2 (s12p2 / person
                 :refer-number singular
                 :quant (s12q / quisque))
-            :aspect state
-            :modal-strength full-affirmative))
+            :aspect state))
     :ARG1 s12q
     :extent (s12s / satis)
-    :aspect state
-    :modal-strength full-affirmative)
+    :aspect state)
 
 # alignment:
 s12p: 5-5
@@ -783,11 +742,12 @@ s12q: 0-0
 
 # document level annotation:
 (s12s0 / sentence
-	:coref ((s11h :subset-of s12p2))
 	:temporal ((s11t :overlap s12p)
 	        (s11t :overlap s12b))
 	:modal ((root :modal author)
-	        (author :full-affirmative s12p)))
+	        (author :full-affirmative s12p)
+            (author :full-affirmative s12b))
+    :coref ((s11h :subset-of s12p2)))
 
 
 # sent_id = SlaT-2785
@@ -803,8 +763,7 @@ Sentence Gloss (en): but after Cyrus in Asia and the Lacedaemonians and Athenian
         :ARG0 (s13i / ingenium :refer-number singular)
         :temporal (s13b / bellum :refer-number singular)
         :extent (s13m / multus :degree intensifier)
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
     :temporal (s13t / tum)
     :temporal (s13d / demum)
     :cause (s13a / and
@@ -834,8 +793,7 @@ Sentence Gloss (en): but after Cyrus in Asia and the Lacedaemonians and Athenian
                     :ARG1 (s13a5 / and
                         :op1 (s13u / urbs :refer-number plural)
                         :op2 (s13n7 / natio :refer-number plural))
-                    :aspect activity
-                    :modal-strength full-affirmative)
+                    :aspect activity)
                 :op2 (s13h / habeo-07
                     :ARG0 s13a4
                     :ARG1 (s13c6 / cupio-05
@@ -845,13 +803,11 @@ Sentence Gloss (en): but after Cyrus in Asia and the Lacedaemonians and Athenian
                             :modal-predicate s13c6)
                         :aspect state
                         :modal-predicate s13h)
-                :ARG2 (s13c5 / causa-17
-                    :ARG1 (s13b2 / bello-02
-                        :ARG0 s13a6
-                        :aspect activity
-                        :modal-strength full-affirmative))
-                    :aspect state
-                    :modal-strength full-affirmative)
+                    :ARG2 (s13c5 / causa-17
+                        :ARG1 (s13b2 / bello-02
+                            :ARG0 s13a6
+                            :aspect activity))
+                    :aspect state)
                 :op3 (s13p5 / puto-09
                     :ARG0 s13a4
                     :ARG1 (s13h2 / have-place-91
@@ -863,18 +819,15 @@ Sentence Gloss (en): but after Cyrus in Asia and the Lacedaemonians and Athenian
                             :refer-number singular)
                         :aspect state
                         :modal-predicate s13p5)
-                    :aspect state
-                    :modal-strength full-affirmative)
+                    :aspect state)
                 :place (s13a7 / and
                     :op1 (s13r2 / region
                         :wiki "Q48"
                         :name (s13n5 / name :op1 "Asia"))
                     :op2 (s13r3 / region
                         :name (s13n6 / name :op1 "Graecia"))))
-            :aspect performance
-            :modal-strength full-affirmative))
-    :aspect performance
-    :modal-strength full-affirmative)
+            :aspect performance))
+    :aspect performance)
 
 # alignment:
 s13c: 37-38
@@ -940,7 +893,8 @@ s13r3: 8-9
             (author :full-affirmative s13s)
             (author :full-affirmative s13h)
             (author :full-affirmative s13p5)
-            (author :full-affirmative s13c6)
+            (author :full-affirmative s13b2)
+            (s13h :unspecified s13c6)
             (s13p5 :unspecified s13h2)
             (s13c6 :unspecified s13d)))
 
@@ -962,8 +916,7 @@ Sentence Gloss (en): and, indeed, if the intellectual ability of kings and magis
         :ARG2 (s14a2 / and
             :op1 (s14a3 / aequabiliter :degree intensifier)
             :op2 (s14c / constanter :degree intensifier))
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
     :op2 (s14c2 / cerno-11
         :ARG0 (s14p / person
             :refer-number singular
@@ -987,8 +940,7 @@ Sentence Gloss (en): and, indeed, if the intellectual ability of kings and magis
                         :ARG1 s14t2
                         :aspect activity
                         :modal-predicate s14c2)))
-        :aspect process
-        :modal-strength full-negative)
+        :aspect process)
     :condition (s14v / valeo-07
         :ARG0 (s14v2 / virtus
             :refer-number singular
@@ -998,25 +950,20 @@ Sentence Gloss (en): and, indeed, if the intellectual ability of kings and magis
                     :refer-number plural
                     :ARG1-of (s14h3 / have-role-91
                         :ARG3 (s14r2 / rex)
-                        :aspect state
-                        :modal-strength full-affirmative))
+                        :aspect state))
                 :op2 (s14p3 / person
                     :refer-number plural
                     :ARG1-of (s14h4 / have-role-91
                         :ARG3 (s14i / imperator)
-                        :aspect state
-                        :modal-strength full-affirmative))))
+                        :aspect state))))
         :temporal (s14p4 / pax :refer-number singular)
         :ARG1-of (s14r3 / resemble-91
             :ARG2 (s14v3 / valeo-07
                 :ARG0 s14v2
                 :temporal (s14b / bellum :refer-number singular)
-                :aspect state
-                :modal-strength full-affirmative)
-            :aspect state
-            :modal-strength full-affirmative)
-        :aspect state
-        :modal-strength full-affirmative))
+                :aspect state)
+            :aspect state)
+        :aspect state))
 
 # alignment:
 s14a: 24-25
@@ -1094,11 +1041,9 @@ Sentence Gloss (en): for dominion is easily secured by those qualities by which 
         :instrument-of (s15p / pario2-07
             :ARG1 s15i
             :temporal (s15i2 / initium)
-            :aspect performance
-            :modal-strength full-affirmative))
+            :aspect performance))
     :manner (s15f / facile)
-    :aspect activity
-    :modal-strength full-affirmative)
+    :aspect activity)
 
 # alignment:
 s15r: 6-6
@@ -1136,8 +1081,7 @@ Sentence Gloss (en): but when sloth has introduced itself in the place of indust
                 :ARG0 (s16d / desidia
                     :refer-number singular)
                 :substitute (s16l / labor :refer-number singular)
-                :aspect performance
-                :modal-strength full-affirmative)
+                :aspect performance)
             :op2 (s16i3 / invado2-06
                 :ARG0 (s16a2 / and
                     :op1 (s16l2 / libido :refer-number singular)
@@ -1145,10 +1089,8 @@ Sentence Gloss (en): but when sloth has introduced itself in the place of indust
                 :substitute (s16a3 / and
                     :op1 (s16c / continentia :refer-number singular)
                     :op2 (s16a4 / aequitas :refer-number singular))
-                :aspect performance
-                :modal-strength full-affirmative)))
-    :aspect performance
-    :modal-strength full-affirmative)
+                :aspect performance)))
+    :aspect performance)
 
 # alignment:
 s16i: 20-20
@@ -1195,18 +1137,15 @@ Sentence Gloss (en): and thus authority is always transferred from the less to t
         :ARG1-of (s17h / have-degree-91
             :ARG2 (s17b / bonus)
             :ARG3 (s17i2 / intensifier)
-            :aspect state
-            :modal-strength full-affirmative))
+            :aspect state))
     :ARG3 (s17p2 / person
         :refer-number singular
         :ARG1-of (s17h2 / have-degree-91
             :ARG2 (s17b2 / bonus)
             :ARG3 (s17m / minus)
-            :aspect state
-            :modal-strength full-affirmative))
+            :aspect state))
     :temporal (s17s / semper)
-    :aspect habitual
-    :modal-strength full-affirmative)
+    :aspect habitual)
 
 # alignment:
 s17t: 10-10
@@ -1249,19 +1188,15 @@ Sentence Gloss (en): all the things that men do in agriculture, navigation, arch
         :ARG1-of (s18a / and
             :op1 (s18a2 / aro-03
                 :ARG0 (s18h / homo :refer-number plural)
-                :aspect habitual
-                :modal-strength full-affirmative)
+                :aspect habitual)
             :op2 (s18n / navigo-03
                 :ARG0 s18h
-                :aspect habitual
-                :modal-strength full-affirmative)
+                :aspect habitual)
             :op3 (s18a3 / aedifico-03
                 :ARG0 s18h
-                :aspect habitual
-                :modal-strength full-affirmative)))
+                :aspect habitual)))
     :ARG1 (s18v / virtus :refer-number singular)
-    :aspect state
-    :modal-strength full-affirmative)
+    :aspect state)
 
 # alignment:
 s18p: 9-9
@@ -1305,27 +1240,21 @@ Sentence Gloss (en): yet many human beings, resigned to sensuality and indolence
             :ARG2 (s19a / and
                 :op1 (s19v / venter :refer-number singular)
                 :op2 (s19s / somnus :refer-number singular))
-            :aspect habitual
-            :modal-strength full-affirmative)
+            :aspect habitual)
         :ARG1-of (s19a2 / and
             :op1 (s19d2 / doceo
-                :aspect performance
-                :modal-strength full-negative)
+                :aspect performance)
             :op2 (s19c / colo
-                :aspect performance
-                :modal-strength full-negative)))
+                :aspect performance)))
     :ARG1 (s19v2 / vita :refer-number singular)
     :manner (s19r / resemble-91
         :ARG1 s19m
         :ARG2 (s19p / person
             :refer-number plural
             :ARG0-of (s19p2 / peregrinor-01
-                :aspect activity
-                :modal-strength full-affirmative))
-        :aspect state
-        :modal-strength full-affirmative)
-    :aspect activity
-    :modal-strength full-affirmative)
+                :aspect activity))
+        :aspect state)
+    :aspect activity)
 
 # alignment:
 s19t: 16-16
@@ -1346,7 +1275,6 @@ s19p2: 0-0
 
 # document level annotation:
 (s19s0 / sentence
-	:coref ((s18h :same-entity s19m))
 	:temporal ((document-creation-time :before s19t)
             (s19t :contained s19d)
             (s19t :overlap s19r)
@@ -1359,7 +1287,8 @@ s19p2: 0-0
 	        (author :full-affirmative s19r)
 	        (author :full-negative s19d2)
 	        (author :full-negative s19c)
-	        (author :full-affirmative s19p2)))
+	        (author :full-affirmative s19p2))
+	:coref ((s18h :same-entity s19m)))
 
 
 # sent_id = SlaT-2792
@@ -1377,14 +1306,12 @@ Sentence Gloss (en): to whom, certainly, contrary to the intention of nature, th
         :affectee (s20p / person
             :refer-number plural
             :refer-person 3rd)
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
     :ARG2 (s20i2 / identity-91
         :ARG1 (s20a / anima :refer-number singular)
         :ARG3 (s20o / onus :refer-number singular)
         :affectee s20p
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
     :manner (s20n / natura
         :refer-number singular
         :polarity -))
@@ -1402,12 +1329,12 @@ s20p: 1-1
 
 # document level annotation:
 (s20s0 / sentence
-	:coref ((s19m :same-entity s20p))
 	:temporal ((s19t :overlap s20i)
 	          (s19t :overlap s20i2))
 	:modal ((root :modal author)
 	        (author :full-affirmative s20i)
-	        (author :full-affirmative s20i2)))
+	        (author :full-affirmative s20i2))
+    :coref ((s19m :same-entity s20p)))
 
 
 # sent_id = SlaT-2793
@@ -1436,10 +1363,8 @@ Sentence Gloss (en): of these I hold the life and death in equal estimation, for
         :ARG1 (s21t / thing
             :refer-number plural
             :quant (s21u / uterque))
-        :aspect activity
-        :modal-strength full-affirmative)
-    :aspect state
-    :modal-strength full-affirmative)
+        :aspect activity)
+    :aspect state)
 
 # alignment:
 s21a: 7-7
@@ -1455,14 +1380,14 @@ s21u: 0-0
 
 # document level annotation:
 (s21s0 / sentence
-	:coref ((s20p :same-entity s21p)
-	        (s21t :subset-of s21v)
-	        (s21t :subset-of s21m))
 	:temporal ((document-creation-time :overlap s21a)
             (document-creation-time :overlap s21s))
 	:modal ((root :modal author)
 	        (author :full-affirmative s21a)
-	        (author :full-affirmative s21s)))
+	        (author :full-affirmative s21s))
+	:coref ((s20p :same-entity s21p)
+	        (s21t :subset-of s21v)
+	        (s21t :subset-of s21m)))
 
 
 # sent_id = SlaT-2794
@@ -1495,22 +1420,17 @@ Sentence Gloss (en): but he only, indeed, seems to me to live, and to enjoy life
                     :ARG1 (s22n / negotium
                         :refer-number singular
                         :mod (s22a4 / aliquus))
-                    :aspect state
-                    :modal-strength full-affirmative)
-                :aspect activity
-                :modal-strength full-affirmative))
+                    :aspect state)
+                :aspect activity))
     :ARG2 (s22a / and
         :op1 (s22v2 / vivo-NEW-02
             :ARG0 s22p
-            :aspect activity
-            :modal-strength partial-affirmative)
+            :aspect activity)
         :op2 (s22f3 / fruor-04
             :ARG0 s22p
             :ARG1 (s22a2 / anima :refer-number singular)
-            :aspect activity
-            :modal-strength partial-affirmative))
-	:aspect state
-	:modal-strength full-affirmative)
+            :aspect activity))
+	:aspect state)
 
 # alignment:
 s22v: 11-11
@@ -1567,8 +1487,7 @@ Sentence Gloss (en): but in the great abundance of occupations, nature points ou
         :refer-number singular
         :mod (s23m / magnus)
         :mod (s23r / res :refer-number plural))
-    :aspect activity
-    :modal-strength full-affirmative)
+    :aspect activity)
 
 # alignment:
 s23o: 10-10
@@ -1583,10 +1502,10 @@ s23r: 5-5
 
 # document level annotation:
 (s23s0 / sentence
-	:coref ((s23p :subset-of s22p2))
 	:temporal ((document-creation-time :overlap s23o))
 	:modal ((root :modal author)
-	        (author :full-affirmative s23o)))
+	        (author :full-affirmative s23o))
+ 	:coref ((s23p :subset-of s22p2)))
 
 
 # sent_id = SlaT-2796
@@ -1604,20 +1523,16 @@ Sentence Gloss (en): to act well for the state is noble, and even to speak well 
             :affectee (s24r / res
                 :refer-number singular
                 :mod (s24p2 / publicus))
-            :aspect activity
-            :modal-strength full-affirmative)
+            :aspect activity)
         :ARG2 (s24p / pulcher)
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
     :op2 (s24h2 / have-mod-91
         :ARG1 (s24d / dico2-18
             :manner (s24b2 / bene)
-            :aspect activity
-            :modal-strength full-affirmative)
+            :aspect activity)
         :ARG2 (s24a2 / absurdus)
         :mod (s24e / etiam)
-        :aspect state
-        :modal-strength full-negative)
+        :aspect state)
 
 # alignment:
 s24a: 7-7
@@ -1635,15 +1550,17 @@ s24e: 8-8
 
 # document level annotation:
 (s24s0 / sentence
-	:coref ((s23i :subset-of s24f)
-	        (s23i :subset-of s24d))
 	:temporal ((document-creation-time :overlap s24h)
             (document-creation-time :overlap s24h2)
             (document-creation-time :overlap s24d)
             (document-creation-time :overlap s24f))
 	:modal ((root :modal author)
 	        (author :full-affirmative s24h)
-	        (author :full-negative s24h2)))
+	        (author :full-negative s24h2)
+	        (author :full-affirmative s24h)
+	        (author :full-affirmative s24d))
+	:coref ((s23i :subset-of s24f)
+	        (s23i :subset-of s24d)))
 
 
 # sent_id = SlaT-2797
@@ -1659,8 +1576,7 @@ Sentence Gloss (en): both in peace and in war it is possible to obtain celebrity
     :temporal (s25o / or
         :op1 (s25p / pax :refer-number singular)
         :op2 (s25b / bellum :refer-number singular))
-    :aspect process
-    :modal-strength neutral-affirmative)
+    :aspect process)
 
 # alignment:
 s25f: 6-7
@@ -1691,8 +1607,7 @@ Sentence Gloss (en): many who have acted, and many who have recorded the actions
             :refer-person 3rd
             :quant (s26m / multus)
             :ARG0-of (s26f / facio-02
-                :aspect performance
-                :modal-strength full-affirmative))
+                :aspect performance))
         :op2 (s26p3 / person
             :refer-number plural
             :refer-person 3rd
@@ -1705,12 +1620,9 @@ Sentence Gloss (en): many who have acted, and many who have recorded the actions
                             :refer-number plural
                             :refer-person 3rd
                             :mod (s26a2 / alius))
-                        :aspect performance
-                        :modal-strength full-affirmative))
-                :aspect performance
-                :modal-strength full-affirmative)))
-    :aspect activity
-    :modal-strength full-affirmative)
+                        :aspect performance))
+                :aspect performance)))
+    :aspect activity)
 
 # alignment:
 s26l: 11-11
@@ -1727,7 +1639,6 @@ s26f: 3-3
 
 # document level annotation:
 (s26s0 / sentence
-	:coref ((s24f :same-event s26f))
 	:temporal ((document-creation-time :overlap s26l)
             (s26l :before s26f)
             (s26l :before s26s)
@@ -1736,7 +1647,8 @@ s26f: 3-3
 	        (author :full-affirmative s26l)
 	        (author :full-affirmative s26f)
 	        (author :full-affirmative s26f2)
-	        (author :full-affirmative s26s)))
+	        (author :full-affirmative s26s))
+	:coref ((s24f :same-event s26f)))
 
 
 # sent_id = SlaT-2799
@@ -1755,16 +1667,13 @@ Sentence Gloss (en): and to me, assuredly, though by no means equal glory attend
         :ARG1 (s27r / res
             :refer-number plural
             :ARG1-of (s27g / gero-15
-                :aspect performance
-                :modal-strength full-affirmative))
-        :aspect activity
-        :modal-strength full-affirmative)
+                :aspect performance))
+        :aspect activity)
     :ARG2 (s27h / have-mod-91
         :ARG1 s27s
         :ARG2 (s27a / arduus
             :degree (s27p4 / primus))
-        :aspect state
-        :modal-strength partial-affirmative)
+        :aspect state)
     :concession (s27s2 / sequor-22
         :ARG0 (s27g2 / gloria
             :refer-number singular
@@ -1776,10 +1685,8 @@ Sentence Gloss (en): and to me, assuredly, though by no means equal glory attend
             :op2 (s27a3 / auctor-20
                 :refer-number singular
                 :ARG1 s27r2))
-        :aspect activity
-        :modal-strength full-negative)
-    :aspect state
-    :modal-strength full-affirmative)
+        :aspect activity)
+    :aspect state)
 
 # alignment:
 s27v: 19-19
@@ -1800,8 +1707,6 @@ s27s3: 10-10
 
 # document level annotation:
 (s27s0 / sentence
-	:coref ((s26p :same-entity s27a3)
-	        (s26f2 :same-event s27g))
 	:temporal ((s26l :overlap s27v)
             (s26l :overlap s27s)
             (s26l :overlap s27s2)
@@ -1810,8 +1715,11 @@ s27s3: 10-10
 	:modal ((root :modal author)
 	        (author :full-affirmative s27v)
 	        (author :full-affirmative s27s)
+	        (author :full-affirmative s27g)
 	        (author :full-negative s27s2)
-	        (author :partial-affirmative s27h)))
+	        (author :partial-affirmative s27h))
+	:coref ((s26p :same-entity s27a3)
+	        (s26f2 :same-event s27g)))
 
 
 # sent_id = SlaT-2800
@@ -1823,27 +1731,23 @@ Sentence Gloss (en): first, because one must equate words with deeds
 
 # sentence level graph:
 (s28h / have-reason-91
-    :ARG1 (s28e2 / event)
-    :ARG2 (s28e / exaequo-01
+    :ARG1 (s28e / event)
+    :ARG2 (s28e2 / exaequo-01
         :ARG1 (s28t / thing
             :refer-number plural
             :ARG1-of (s28f / facio-23
-                :aspect performance
-                :modal-strength full-affirmative))
+                :aspect performance))
         :ARG2 (s28t2 / thing
             :refer-number plural
             :ARG1-of (s28d / dico2-18
-                :aspect performance
-                :modal-strength full-affirmative))
-        :aspect process
-        :modal-strength partial-affirmative)
-    :aspect state
-    :modal-strength full-affirmative)
+                :aspect performance))
+        :aspect process)
+    :aspect state)
 
 # alignment:
-s28e2: 0-0
+s28e: 0-0
 s28h: 2-2
-s28e: 5-6
+s28e2: 5-6
 s28t: 3-3
 s28t2: 4-4
 s28f: 0-0
@@ -1851,17 +1755,17 @@ s28d: 0-0
 
 # document level annotation:
 (s28s0 / sentence
-	:coref ((s27g :same-event s28f)
-	        (s27v :same-event s28e2))
 	:temporal ((s26l :overlap s28h)
-            (s26l :overlap s28e)
+            (s26l :overlap s28e2)
             (s28e :before s28f)
             (s28e :before s28d))
 	:modal ((root :modal author)
 	        (author :full-affirmative s28h)
-	        (author :full-affirmative s28e)
+	        (author :partial-affirmative s28e2)
 	        (author :full-affirmative s28f)
-	        (author :full-affirmative s28d)))
+	        (author :full-affirmative s28d))
+	:coref ((s27g :same-event s28f)
+	        (s27v :same-event s28e2)))
 
 
 # sent_id = SlaT-2801
@@ -1893,8 +1797,7 @@ Sentence Gloss (en): and next, because most readers consider that whatever error
             :reason (s29a / and
                 :op1 (s29m / malevolentia :refer-number singular)
                 :op2 (s29i / invidia :refer-number singular))
-            :aspect performance
-            :modal-strength full-affirmative)
+            :aspect performance)
         :ARG1-of (s29b / but-91
             :temporal (s29m2 / memoro-03
                     :ARG0 s29p4
@@ -1906,8 +1809,7 @@ Sentence Gloss (en): and next, because most readers consider that whatever error
                         :possessor (s29p7 / person
                             :refer-number plural
                             :mod (s29b2 / bonus)))
-                    :aspect activity
-                    :modal-strength full-affirmative)
+                    :aspect activity)
             :ARG2 (s29c / contrast-91
                 :ARG1 (s29a2 / accipio-08+10
                     :ARG0 (s29p5 / person
@@ -1923,13 +1825,11 @@ Sentence Gloss (en): and next, because most readers consider that whatever error
                                 :manner (s29f4 / facile)
                                 :aspect performance
                                 :modal-predicate s29p6)
-                            :aspect state
-                            :modal-strength full-affirmative))
+                            :aspect state))
                     :manner (s29a3 / animus
                         :refer-number singular
                         :mod (s29a4 / aequus))
-                    :aspect state
-                    :modal-strength full-affirmative)
+                    :aspect state)
                 :ARG2 (s29d3 / duco-09
                     :ARG0 s29p5
                     :ARG1 (s29t2 / thing
@@ -1940,16 +1840,11 @@ Sentence Gloss (en): and next, because most readers consider that whatever error
                         :ARG2 (s29t3 / thing
                             :refer-number plural
                             :ARG1-of (s29f2 / fingo-12+15
-                                :aspect performance
-                                :modal-strength full-affirmative))
-                        :aspect state
-                        :modal-strength full-affirmative)
-                    :aspect state
-                    :modal-strength full-affirmative)))
-        :aspect state
-        :modal-strength full-affirmative)
-    :aspect state
-    :modal-strength full-affirmative)
+                                :aspect performance))
+                        :aspect state)
+                    :aspect state)))
+        :aspect state)
+    :aspect state)
 
 # alignment:
 s29e: 0-0
@@ -1993,8 +1888,6 @@ s29b2: 0-0
 
 # document level annotation:
 (s29s0 / sentence
-	:coref ((s29p5 :subset-of s29p2)
-	        (s27v :same-event s29e))
 	:temporal ((s26l :overlap s29h)
             (s26l :overlap s29p)
             (s26l :before s29r)
@@ -2019,7 +1912,9 @@ s29b2: 0-0
 	        (s29p6 :unspecified s29f3)
 	        (author :full-affirmative s29d3)
 	        (author :full-affirmative s29f2)
-	        (author :full-affirmative s29r2)))
+	        (author :full-affirmative s29r2))
+	:coref ((s29p5 :subset-of s29p2)
+	        (s27v :same-event s29e)))
 
 
 # sent_id = SlaT-2802
@@ -2040,8 +1935,7 @@ Sentence Gloss (en): myself, however, as a young man was at first led by inclina
                     :refer-number plural
                     :refer-person 3rd
                     :quant (s30p3 / plerique))
-                :aspect state
-                :modal-strength full-affirmative))
+                :aspect state))
         :ARG2 (s30r2 / res
             :refer-number singular
             :mod (s30p4 / publicus))
@@ -2049,11 +1943,9 @@ Sentence Gloss (en): myself, however, as a young man was at first led by inclina
         :temporal (s30i / identity-91
             :ARG1 s30p
             :ARG2 (s30a2 / adulescentulus)
-            :aspect state
-            :modal-strength full-affirmative)
+            :aspect state)
         :temporal (s30i2 / initium)
-        :aspect performance
-        :modal-strength full-affirmative)
+        :aspect performance)
     :op2 (s30h / have-mod-91
         :ARG1 (s30t / thing
             :refer-number plural
@@ -2061,8 +1953,7 @@ Sentence Gloss (en): myself, however, as a young man was at first led by inclina
         :ARG2 (s30a3 / adversus)
         :affectee s30p
         :place (s30i3 / ibi)
-        :aspect state
-        :modal-strength full-affirmative))
+        :aspect state))
 
 # alignment:
 s30a: 15-15
@@ -2115,10 +2006,8 @@ Sentence Gloss (en): for, instead of modesty, temperance, and integrity, there p
             :op1 (s31p / pudor :refer-number singular)
             :op2 (s31a5 / abstinentia :refer-number singular)
             :op3 (s31v3 / virtus :refer-number singular))
-        :aspect imperfective
-        :modal-strength full-negative)
-    :aspect imperfective
-    :modal-strength full-affirmative)
+        :aspect imperfective)
+    :aspect imperfective)
 
 # alignment:
 s31v: 13-13
@@ -2157,8 +2046,7 @@ Sentence Gloss (en): although my mind, inexperienced in dishonest practices, det
     :ARG2 (s32c / corrumpo-15
         :ARG0 (s32a2 / ambitio :refer-number singular)
         :ARG1 s32a
-        :aspect performance
-        :modal-strength full-affirmative)
+        :aspect performance)
     :place (s32v / vitium
         :refer-number plural
         :mod (s32t2 / tantus))
@@ -2170,12 +2058,9 @@ Sentence Gloss (en): although my mind, inexperienced in dishonest practices, det
             :ARG1 (s32a5 / ars
                 :refer-number plural
                 :mod (s32m / malus))
-            :aspect activity
-            :modal-strength full-affirmative)
-        :aspect activity
-        :modal-strength full-affirmative)
-    :aspect activity
-    :modal-strength full-affirmative)
+            :aspect activity)
+        :aspect activity)
+    :aspect activity)
 
 # alignment:
 s32t: 17-17
@@ -2194,10 +2079,6 @@ s32m: 6-6
 
 # document level annotation:
 (s32s0 / sentence
-	:coref ((s30p :subset-of s32a4)
-	        (s32v :subset-of s31a2)
-	        (s32v :subset-of s31l)
-	        (s32v :subset-of s31a3))
 	:temporal ((s31v :overlap s32t)
             (s32t :overlap s32a3)
             (s32a3 :overlap s32i2)
@@ -2206,7 +2087,11 @@ s32m: 6-6
 	        (author :full-affirmative s32t)
 	        (author :full-affirmative s32i2)
 	        (author :full-affirmative s32c)
-	        (author :full-affirmative s32a3)))
+	        (author :full-affirmative s32a3))
+	:coref ((s30p :subset-of s32a4)
+	        (s32v :subset-of s31a2)
+	        (s32v :subset-of s31l)
+	        (s32v :subset-of s31a3)))
 
 
 # sent_id = SlaT-2805
@@ -2225,14 +2110,12 @@ Sentence Gloss (en): and, though I shrunk from the vicious principles of those a
         :ARG1 (s33h / honor :refer-number singular)
         :manner (s33i / idem)
         :aspect endeavor
-        :modal-strength full-affirmative
         :ARG0-of (s33v2 / vexo-10
             :ARG1 (s33p2 / person
                 :refer-number plural
                 :refer-person 3rd
                 :mod (s33c2 / ceterus))
-            :aspect activity
-            :modal-strength full-affirmative))
+            :aspect activity))
     :ARG1 s33p
     :instrument (s33a / and
         :op1 (s33f / fama :refer-number singular)
@@ -2246,10 +2129,8 @@ Sentence Gloss (en): and, though I shrunk from the vicious principles of those a
                 :refer-number plural
                 :refer-person 3rd
                 :mod (s33r / reliquus)))
-            :aspect activity
-            :modal-strength full-affirmative)
-    :aspect endeavor
-    :modal-strength full-affirmative)
+            :aspect activity)
+    :aspect endeavor)
 
 # alignment:
 s33v: 21-21
@@ -2271,8 +2152,6 @@ s33r: 0-0
 
 # document level annotation:
 (s33s0 / sentence
-	:coref ((s30p :same-entity s33p)
-	        (s33p3 :same-entity s33p2))
 	:temporal ((s32t :overlap s33v)
             (s33v :overlap s33v2)
             (s33v :overlap s33d)
@@ -2281,7 +2160,9 @@ s33r: 0-0
 	        (author :full-affirmative s33v)
 	        (author :full-affirmative s33v2)
 	        (author :full-affirmative s33c)
-	        (author :full-affirmative s33d)))
+	        (author :full-affirmative s33d))
+	:coref ((s30p :same-entity s33p)
+	        (s33p3 :same-entity s33p2)))
 
 
 # sent_id = SlaT-2806
@@ -2307,8 +2188,7 @@ Sentence Gloss (en): when, therefore, my mind had rest from its numerous trouble
                 :ARG2 (s34a2 / and
                     :op1 (s34s / socors)
                     :op2 (s34d2 / deses))
-                :aspect state
-                :modal-strength full-affirmative)
+                :aspect state)
             :aspect process
             :modal-predicate s34d)
         :op2 (s34a3 / ago-26
@@ -2320,20 +2200,16 @@ Sentence Gloss (en): when, therefore, my mind had rest from its numerous trouble
                     :op1 (s34c2 / colo2-06
                         :ARG0 s34p
                         :ARG1 (s34a5 / ager :refer-number singular)
-                        :aspect performance
-                        :modal-strength full-affirmative)
+                        :aspect performance)
                     :op2 (s34v / venor-01
                         :ARG0 s34p
-                        :aspect performance
-                        :modal-strength full-affirmative)
+                        :aspect performance)
                     :ARG1-of (s34i2 / identity-91
                         :ARG2 (s34o3 / officium
                             :refer-number plural
                             :mod (s34s2 / servilis))
-                        :aspect state
-                        :modal-strength full-affirmative))
-                        :aspect process
-                        :modal-strength full-affirmative)
+                        :aspect state))
+                :aspect process)
                 :aspect activity
                 :modal-predicate s34d))
     :temporal (s34a6 / and
@@ -2344,8 +2220,7 @@ Sentence Gloss (en): when, therefore, my mind had rest from its numerous trouble
                     :quant (s34m2 / multus)
                     :refer-number plural)
                 :op2 (s34p2 / periculus :refer-number plural))
-            :aspect performance
-            :modal-strength full-affirmative)
+            :aspect performance)
         :op2 (s34d3 / decerno-09
             :ARG0 s34p
             :ARG1 (s34h2 / habeo-NEW-26
@@ -2360,10 +2235,8 @@ Sentence Gloss (en): when, therefore, my mind had rest from its numerous trouble
                         :mod (s34p4 / publicus)))
                 :aspect process
                 :modal-predicate s34d3)
-            :aspect performance
-            :modal-strength full-affirmative))
-    :aspect performance
-    :modal-strength full-negative)
+            :aspect performance))
+    :aspect performance)
 
 # alignment:
 s34d: 21-23
@@ -2403,9 +2276,6 @@ s34p4: 16-16
 
 # document level annotation:
 (s34s0 / sentence
-	:coref ((s33p :same-entity s34p)
-	        (s32a4 :same-entity s34a7)
-	        (s30r2 :same-entity s34r2))
 	:temporal ((s33v :after s34r)
             (s34r :after s34d)
             (s34c :contained s34h)
@@ -2418,7 +2288,7 @@ s34p4: 16-16
             (s34i :overlap s34v)
             (s34d :overlap s34i2))
 	:modal ((root :modal author)
-	        (author :full-affirmative s34d)
+	        (author :full-negative s34d)
 	        (author :full-affirmative s34r)
 	        (author :full-affirmative s34d3)
 	        (s34d3 :unspecified s34h2)
@@ -2429,6 +2299,9 @@ s34p4: 16-16
 	        (author :full-affirmative s34v)
 	        (author :full-affirmative s34h)
 	        (author :full-affirmative s34i2))
+	:coref ((s33p :same-entity s34p)
+	        (s32a4 :same-entity s34a7)
+	        (s30r2 :same-entity s34r2)))
 
 
 # sent_id = SlaT-2807
@@ -2453,22 +2326,19 @@ Sentence Gloss (en):  but, returning to those studies from which, at their comme
                     :mod (s35s4 / state
                         :name (s35n / name :op1 "Roma")
                         :wiki "Q1747689"))
-                :aspect performance
-                :modal-strength full-affirmative))
+                :aspect performance))
         :manner (s35c / carptim)
         :manner (s35v / video-10
             :ARG0 s35p
             :ARG1 (s35h / have-mod-91
                 :ARG1 (s35t / thing :refer-number plural)
                 :ARG2 (s35d2 / dignus-04
-                    :ARG2 (s35m2 / memini-04
+                    :ARG1 (s35m2 / memini-04
                         :ARG1 s35t
                         :aspect performance
-                        :modal-strength partial-affirmative))
-                :aspect state
-                :modal-strength partial-affirmative)
-            :aspect state
-            :modal-strength full-affirmative)
+                        :modal-predicate s35h))
+                :aspect state)
+            :aspect state)
         :reason (s35h2 / have-mod-91
                 :ARG1 (s35a3 / animus
                     :refer-number singular
@@ -2483,8 +2353,7 @@ Sentence Gloss (en):  but, returning to those studies from which, at their comme
                             :mod (s35r3 / res
                                 :refer-number singular
                                 :mod (s35p5 / publicus)))))
-                :aspect state
-                :modal-strength full-affirmative)
+                :aspect state)
         :aspect activity
         :modal-predicate s35s)
     :temporal (s35r2 / regredior-05
@@ -2497,12 +2366,9 @@ Sentence Gloss (en):  but, returning to those studies from which, at their comme
                     :mod (s35m / malus)
                     :refer-number singular)
                 :ARG1 s35p
-                :aspect performance
-                :modal-strength full-affirmative))
-        :aspect performance
-        :modal-strength full-affirmative)
-    :aspect performance
-    :modal-strength full-affirmative)
+                :aspect performance))
+        :aspect performance)
+    :aspect performance)
 
 # alignment:
 s35s: 14-14
@@ -2538,8 +2404,6 @@ s35m: 9-9
 
 # document level annotation:
 (s35s0 / sentence
-	:coref ((s30s :same-entity s35s2)
-	        (s34p :same-entity s35p))
 	:temporal ((s34d :overlap s35s)
             (s35s :after s35p2)
             (s35p2 :before s35g)
@@ -2558,7 +2422,9 @@ s35m: 9-9
 	        (author :full-affirmative s35h2)
 	        (author :full-affirmative s35r2)
 	        (author :full-affirmative s35d)
-	        (s35v :partial-affirmative s35m2)))
+	        (s35h :unspecified s35m2))
+	:coref ((s30s :same-entity s35s2)
+	        (s34p :same-entity s35p)))
 
 
 # sent_id = SlaT-2808
@@ -2577,17 +2443,14 @@ Sentence Gloss (en): thus I shall give an account in few words, as truthfully as
         :ARG0 (s36p2 / person
             :wiki "Q75826"
             :name (s36n / name :op1 "Catilina"))
-        :aspect performance
-        :modal-strength full-affirmative)
+        :aspect performance)
     :instrument (s36p3 / pauca :refer-number plural)
     :manner (s36v / verus
         :ARG2-of (s36h / have-degree-91
             :ARG3 (s36m / most)
             :ARG5 (s36v2 / verus)
-            :aspect state
-            :modal-strength neutral-affirmative))
-    :aspect performance
-    :modal-strength full-affirmative)
+            :aspect state))
+    :aspect performance)
 
 # alignment:
 s36a: 9-9
@@ -2603,14 +2466,14 @@ s36v2: 0-0
 
 # document level annotation:
 (s36s0 / sentence
-	:coref ((s35p :same-entity s36p))
 	:temporal ((s35s :after s36a)
             (s36a :before s36c)
             (s36a :overlap s36h))
 	:modal ((root :modal author)
 	        (author :full-affirmative s36a)
 	        (author :full-affirmative s36c)
-	        (author :neutral-affirmative s36h)))
+	        (author :neutral-affirmative s36h))
+	:coref ((s35p :same-entity s36p)))
 
 
 # sent_id = SlaT-2809
@@ -2632,17 +2495,15 @@ Sentence Gloss (en): for I think it an enterprise eminently memorable, from the 
         :ARG2 (s37m / memoro-01
             :ARG1 s37f
             :degree intensifier
-            :aspect state
-            :modal-strength neutral-affirmative)
+            :aspect state)
         :aspect state
-        :modal-strength partial-affirmative)
+        :modal-predicate s37e)
     :reason (s37n / novitas
         :refer-number singular
         :mod (s37a / and
             :op1 (s37s / scelus :refer-number singular)
             :op2 (s37p2 / periculus :refer-number singular)))
-    :aspect state
-    :modal-strength full-affirmative)
+    :aspect state)
 
 # alignment:
 s37e: 8-8
@@ -2658,14 +2519,14 @@ s37p2: 11-11
 
 # document level annotation:
 (s37s0 / sentence
-	:coref ((s36p :same-entity s37p))
 	:temporal ((document-creation-time :overlap s37e)
             (document-creation-time :overlap s37h)
             (document-creation-time :overlap s37m))
 	:modal ((root :modal author)
 	        (author :full-affirmative s37e)
-	        (author :partial-affirmative s37h)
-	        (author :neutral-affirmative s37m)))
+	        (s37e :unspecified s37h)
+	        (author :neutral-affirmative s37m))
+	:coref ((s36p :same-entity s37p)))
 
 
 # sent_id = SlaT-2810
@@ -2690,12 +2551,9 @@ Sentence Gloss (en): before I enter upon my narrative, I must give a short descr
             :ARG0 s38p
             :ARG1 (s38n / narro-04
                 :ARG0 s38p
-                :aspect activity
-                :modal-strength full-affirmative)
-            :aspect performance
-            :modal-strength full-affirmative))
-    :aspect activity
-    :modal-strength partial-affirmative)
+                :aspect activity)
+            :aspect performance))
+    :aspect activity)
 
 # alignment:
 s38e: 7-8
@@ -2709,14 +2567,15 @@ s38n: 12-12
 
 # document level annotation:
 (s38s0 / sentence
-	:coref ((s37p :same-entity s38p)
-	        (s36p2 :same-entity s38h))
 	:temporal ((s37e :overlap s38e)
 	            (s38e :after s38n)
 	            (s38e :after s38i))
 	:modal ((root :modal author)
 	        (author :partial-affirmative s38e)
-	        (author :full-affirmative s38n)))
+	        (author :full-affirmative s38i)
+	        (author :full-affirmative s38n))
+	:coref ((s37p :same-entity s38p)
+	        (s36p2 :same-entity s38h)))
 
 
 # sent_id = SlaT-2811
@@ -2736,8 +2595,7 @@ Sentence Gloss (en): Lucius Catilina was a man of noble birth and of eminent men
                 :mod (s39g / genus
                     :refer-number singular
                     :mod (s39n3 / nobilis))
-                :aspect performance
-                :modal-strength full-affirmative))
+                :aspect performance))
         :ARG2 (s39v / vis
             :refer-number singular
             :mod (s39a / and
@@ -2745,8 +2603,7 @@ Sentence Gloss (en): Lucius Catilina was a man of noble birth and of eminent men
                     :mod (s39m / magnus)
                     :refer-number singular)
                 :op2 (s39c / corpus :refer-number singular)))
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
     :ARG2 (s39h2 / have-mod-91
         :ARG1 s39p
         :ARG2 (s39i / ingenius
@@ -2754,8 +2611,7 @@ Sentence Gloss (en): Lucius Catilina was a man of noble birth and of eminent men
                 :mod (s39a3 / and
                     :op1 (s39m2 / malus)
                     :op2 (s39p2 / pravus)))
-        :aspect state
-        :modal-strength full-affirmative))
+        :aspect state))
 
 # alignment:
 s39b: 15-15
@@ -2778,14 +2634,14 @@ s39p2: 19-19
 
 # document level annotation:
 (s39s0 / sentence
-    :coref ((s38h :same-entity s39p))
     :temporal ((document-creation-time :before s39n2)
             (s39n2 :after s39h)
             (s39n2 :after s39h2))
     :modal ((root :modal author)
             (author :full-affirmative s39h)
             (author :full-affirmative s39h2)
-            (author :full-affirmative s39n2)))
+            (author :full-affirmative s39n2))
+    :coref ((s38h :same-entity s39p)))
 
 
 # sent_id = SlaT-2812
@@ -2814,18 +2670,15 @@ Sentence Gloss (en): his delight, from his youth, had been in civil commotions, 
         :temporal (s40h2 / have-mod-91
             :ARG1 s40p
             :ARG2 (s40a3 / adulescens)
-            :aspect state
-            :modal-strength full-affirmative)
-        :aspect state
-        :modal-strength full-affirmative)
+            :aspect state)
+        :aspect state)
     :op2 (s40e / exerceo-29
         :ARG0 s40p
         :ARG1 (s40i2 / iuventus
             :refer-number singular
             :possessor s40p)
         :place s40a2
-        :aspect state
-        :modal-strength full-affirmative))
+        :aspect state))
 
 # alignment:
 s40a: 13-13
@@ -2846,14 +2699,14 @@ s40i2: 15-16
 
 # document level annotation:
 (s40s0 / sentence
-    :coref ((s39p :same-entity s40p))
     :temporal ((s39n2 :after s40e)
             (s39n2 :after s40h2)
             (s39n2 :after s40h))
     :modal ((root :modal author)
             (author :full-affirmative s40h)
             (author :full-affirmative s40e)
-            (author :full-affirmative s40h2)))
+            (author :full-affirmative s40h2))
+    :coref ((s39p :same-entity s40p)))
 
 
 # sent_id = SlaT-2813
@@ -2876,10 +2729,8 @@ Sentence Gloss (en): his constitution could endure hunger, want of sleep, and co
                 :refer-number singular
                 :refer-person 3rd)
             :ARG1 s41p
-            :aspect state
-            :modal-strength neutral-affirmative))
-    :aspect state
-    :modal-strength full-affirmative)
+            :aspect state))
+    :aspect state)
 
 # alignment:
 s41p: 2-2
@@ -2894,12 +2745,12 @@ s41p3: 8-8
 
 # document level annotation:
 (s41s0 / sentence
-    :coref ((s40p :subset-of s41c))
     :temporal ((s39n2 :after s41p)
             (present-reference :overlap s41c2))
     :modal ((root :modal author)
             (author :full-affirmative s41p)
-            (author :neutral-affirmative s41c2)))
+            (author :neutral-affirmative s41c2))
+    :coref ((s40p :subset-of s41c)))
 
 
 # sent_id = SlaT-2814
@@ -2931,22 +2782,18 @@ Sentence Gloss (en): his mind was daring, subtle, and versatile, capable of pret
                         :refer-number singular
                         :refer-person 3rd
                         :mod (s42a7 / alius)))
-                :aspect state
-                :modal-strength full-affirmative)
+                :aspect state)
             :ARG2 (s42p2 / profundo-06+07+14
                 :ARG0 s42a
                 :ARG1 (s42t2 / thing
                     :refer-number singular
                     :possessor s42p)
-                :aspect state
-                :modal-strength full-affirmative))
+                :aspect state))
         :op6 (s42a8 / ardeo-08
             :ARG0 s42a
             :reason (s42c2 / cupiditas :refer-number plural)
-            :aspect state
-            :modal-strength full-affirmative))
-    :aspect state
-    :modal-strength full-affirmative)
+            :aspect state))
+    :aspect state)
 
 # alignment:
 s42h: 0-0
@@ -2972,7 +2819,6 @@ s42c2: 19-20
 
 # document level annotation:
 (s42s0 / sentence
-    :coref ((s40p :subset-of s42a))
     :temporal ((s39n2 :after s42h)
             (s39n2 :after s42a6)
             (s39n2 :after s42p2)
@@ -2981,7 +2827,8 @@ s42c2: 19-20
             (author :full-affirmative s42h)
             (author :full-affirmative s42a6)
             (author :full-affirmative s42p2)
-            (author :full-affirmative s42a8)))
+            (author :full-affirmative s42a8))
+    :coref ((s40p :subset-of s42a)))
 
 
 # sent_id = SlaT-2815
@@ -3001,8 +2848,7 @@ Sentence Gloss (en): he had abundance of eloquence, but little wisdom
             :degree (s43s / satis))
         :ARG2 (s43s2 / sapiens
             :degree (s43p2 / parum)))
-    :aspect state
-    :modal-strength full-affirmative)
+    :aspect state)
 
 # alignment:
 s43h: 0-0
@@ -3015,10 +2861,10 @@ s43p2: 5-5
 
 # document level annotation:
 (s43s0 / sentence
-    :coref ((s40p :same-entity s43p))
     :temporal ((s39n2 :after s43h))
     :modal ((root :modal author)
-            (author :full-affirmative s43h)))
+            (author :full-affirmative s43h))
+    :coref ((s40p :same-entity s43p)))
 
 
 # sent_id = SlaT-2816
@@ -3040,13 +2886,11 @@ Sentence Gloss (en): his insatiable ambition was always pursuing extravagant, in
             :ARG0 (s44p / person
                 :refer-number singular
                 :refer-person 3rd)
-            :aspect state
-            :modal-strength neutral-negative)
+            :aspect state)
         :mod (s44a2 / altus
             :degree (s44n / nimis)))
     :temporal (s44s / semper)
-    :aspect state
-    :modal-strength full-affirmative)
+    :aspect state)
 
 # alignment:
 s44c: 8-8
@@ -3062,13 +2906,13 @@ s44p: 0-0
 
 # document level annotation:
 (s44s0 / sentence
-    :coref ((s42a :same-entity s44a))
     :temporal ((past-reference :overlap s44s)
             (s44s :overlap s44c)
             (present-reference :overlap s44c2))
     :modal ((root :modal author)
             (author :full-affirmative s44c)
-            (author :neutral-negative s44c2)))
+            (author :neutral-negative s44c2))
+    :coref ((s42a :same-entity s44a)))
 
 
 # sent_id = SlaT-2817
@@ -3092,18 +2936,15 @@ Sentence Gloss (en): since the time of Sylla's dictatorship, a strong desire of 
                 :refer-number singular)
                 :aspect performance
                 :modal-predicate s45c)
-        :aspect state
-        :modal-strength full-affirmative)
+        :aspect state)
     :ARG1 s45p
     :temporal (s45a / after
         :op1 (s45d / dominor-03
             :ARG0 (s45p2 / person
                 :wiki "Q483783"
                 :name (s45n / name :op1 "L." :op2 "Sulla"))
-            :aspect performance
-            :modal-strength full-affirmative))
-    :aspect performance
-    :modal-strength full-affirmative)
+            :aspect performance))
+    :aspect performance)
 
 # alignment:
 s45i: 9-9
@@ -3120,7 +2961,6 @@ s45n: 0-0
 
 # document level annotation:
 (s45s0 / sentence
-    :coref ((s40p :same-entity s45p))
     :temporal ((past-reference :overlap s45d)
             (s45d :after s45i)
             (s45d :after s45c)
@@ -3129,7 +2969,8 @@ s45n: 0-0
             (author :full-affirmative s45i)
             (author :full-affirmative s45d)
             (author :full-affirmative s45c)
-            (s45c :unspecified s45c2)))
+            (s45c :unspecified s45c2))
+    :coref ((s40p :same-entity s45p)))
 
 
 # sent_id = SlaT-2818
@@ -3156,10 +2997,8 @@ Sentence Gloss (en): and he did not care at all, provided that he secured power 
         :ARG0 s46p2
         :ARG1 s46r
         :affectee s46p2
-        :aspect performance
-        :modal-strength full-affirmative)
-    :aspect state
-    :modal-strength full-negative)
+        :aspect performance)
+    :aspect state)
 
 # alignment:
 s46p: 2-2, 13-15
@@ -3172,15 +3011,15 @@ s46r: 10-10
 
 # document level annotation:
 (s46s0 / sentence
-    :coref ((s40p :same-entity s46p2)
-            (s46p3 :same-event s46a))
     :temporal ((s45i :after s46p)
             (s45i :after s46p3))
     :modal ((root :modal author)
             (author :neutral-affirmative have-condition-91)
             (have-condition-91 :full-negative s46p)
             (have-condition-91 :full-affirmative s46p3)
-            (s46p :unspecified s46a)))
+            (s46p :unspecified s46a))
+    :coref ((s40p :same-entity s46p2)
+            (s46p3 :same-event s46a)))
 
 
 # sent_id = SlaT-2819
@@ -3211,10 +3050,8 @@ Sentence Gloss (en): his violent spirit was day by day more and more tormented o
                         :refer-number singular
                         :refer-person 1st)
                     :place (s47s2 / supra)
-                    :aspect performance
-                    :modal-strength full-affirmative))
-            :aspect performance
-            :modal-strength full-affirmative))
+                    :aspect performance))
+            :aspect performance))
     :ARG1 (s47a3 / animus
         :refer-number singular
         :mod (s47f / ferox))
@@ -3222,8 +3059,7 @@ Sentence Gloss (en): his violent spirit was day by day more and more tormented o
     :extent (s47a6 / and
         :op1 (s47m2 / magis)
         :op2 (s47m3 / magis))
-    :aspect activity
-    :modal-strength full-affirmative)
+    :aspect activity)
 
 # alignment:
 s47a: 1-1
@@ -3248,10 +3084,6 @@ s47m3: 4-4
 
 # document level annotation:
 (s47s0 / sentence
-    :coref ((s40p :same-entity s47p)
-            (s38p :same-entity s47p2)
-            (s47p :subset-of s47a3)
-            (s40a2 :same-entity s47a5))
     :temporal ((s45i :after s47a)
             (s47a :before s47a4)
             (document-creation-time :before s47m))
@@ -3259,6 +3091,10 @@ s47m3: 4-4
             (author :full-affirmative s47a)
             (author :full-affirmative s47m)
             (author :full-affirmative s47a4))
+    :coref ((s40p :same-entity s47p)
+            (s38p :same-entity s47p2)
+            (s47p :subset-of s47a3)
+            (s40a2 :same-entity s47a5)))
 
 
 # sent_id = SlaT-2820
@@ -3274,8 +3110,7 @@ Sentence Gloss (en): the corrupt morals of the state, too, which extravagance an
         :refer-number plural
         :mod (s48c / civitas :refer-number singular)
         :ARG1-of (s48c2 / corrumpo-15
-            :aspect performance
-            :modal-strength full-affirmative)
+            :aspect performance)
         :ARG1-of (s48v / vexo-10
             :ARG0 (s48a / and
                 :op1 (s48l / luxuria :refer-number singular)
@@ -3288,17 +3123,13 @@ Sentence Gloss (en): the corrupt morals of the state, too, which extravagance an
                         :op2 (s48d / differo-13
                             :ARG1 s48a
                             :ARG2 s48a
-                            :aspect state
-                            :modal-strength full-affirmative)))
-                :aspect state
-                :modal-strength full-affirmative))
-            :aspect activity
-            :modal-strength full-affirmative))
+                            :aspect state)))
+                :aspect state))
+            :aspect activity))
     :ARG1 (s48p / person
         :refer-number singular
         :refer-person 3rd)
-    :aspect activity
-    :modal-strength full-affirmative)
+    :aspect activity)
 
 # alignment:
 s48i: 1-1
@@ -3318,7 +3149,6 @@ s48p: 0-0
 
 # document level annotation:
 (s48s0 / sentence
-    :coref ((s40p :same-entity s48p))
     :temporal ((s47a :overlap s48i)
             (s48i :overlap s48v)
             (s48v :overlap s48h)
@@ -3329,7 +3159,8 @@ s48p: 0-0
             (author :full-affirmative s48h)
             (author :full-affirmative s48v)
             (author :full-affirmative s48d)
-            (author :full-affirmative s48c2)))
+            (author :full-affirmative s48c2))
+    :coref ((s40p :same-entity s48p)))
 
 
 # sent_id = SlaT-2821
@@ -3353,8 +3184,7 @@ Sentence Gloss (en): Since the occasion has thus brought public morals under my 
             :op1 (s49r2 / repeto-04
                 :ARG0 s49p
                 :ARG1 (s49s / supra)
-                :aspect activity
-                :modal-strength partial-affirmative)
+                :aspect activity)
             :op2 (s49d / dissero2-02
                 :ARG0 s49p
                 :ARG1 (s49a2 / and
@@ -3363,8 +3193,7 @@ Sentence Gloss (en): Since the occasion has thus brought public morals under my 
                         :temporal (s49a5 / and
                             :op1 (s49d2 / domi)
                             :op2 (s49m3 / militiae))
-                        :aspect performance
-                        :modal-strength full-affirmative)
+                        :aspect performance)
                     :op2 (s49a3 / and
                         :op1 (s49m4 / manner
                             :manner-of (s49h2 / habeo-15
@@ -3372,14 +3201,12 @@ Sentence Gloss (en): Since the occasion has thus brought public morals under my 
                                 :ARG1 (s49r3 / res
                                     :refer-number singular
                                     :mod (s49p3 / publicus))
-                                :aspect performance
-                                :modal-strength full-affirmative))
+                                :aspect performance))
                         :op2 (s49q / quantus
                             :manner-of (s49r4 / relinquo-04
                                 :ARG0 s49m2
                                 :ARG1 s49r2
-                                :aspect performance
-                                :modal-strength full-affirmative)))
+                                :aspect performance)))
                     :op3 (s49m5 / manner
                         :manner-of (s49f / facio-05
                             :ARG1 s49r2
@@ -3392,24 +3219,18 @@ Sentence Gloss (en): Since the occasion has thus brought public morals under my 
                             :manner (s49i3 / immuto-NEW-01
                                 :ARG1 s49r2
                                 :manner (s49p4 / paulatim)
-                                :aspect performance
-                                :modal-strength full-affirmative)
-                            :aspect performance
-                            :modal-strength full-affirmative)))
+                                :aspect performance)
+                            :aspect performance)))
                 :instrument (s49p2 / pauca :refer-number plural)
-                :aspect activity
-                :modal-strength partial-affirmative))
-        :aspect activity
-        :modal-strength partial-affirmative)
+                :aspect activity))
+        :aspect activity)
     :reason (s49a4 / admoneo-01
         :ARG0 (s49t / tempus :refer-number singular)
         :ARG2 (s49m / mos
             :refer-number plural
             :mod (s49c / civitas :refer-number singular))
-        :aspect performance
-        :modal-strength full-affirmative)
-    :aspect state
-    :modal-strength full-affirmative)
+        :aspect performance)
+    :aspect state)
 
 # alignment:
 s49v: 4-4
@@ -3452,9 +3273,6 @@ s49c: 9-9
 
 # document level annotation:
 (s49s0 / sentence
-    :coref ((s40p :same-entity s49p)
-            (s48m :same-entity s49m)
-            (s48c :same-entity s49c))
     :temporal ((document-creation-time :overlap s49v)
             (document-creation-time :after s49h)
             (s49h :after s49r2)
@@ -3470,7 +3288,15 @@ s49c: 9-9
             (author :partial-affirmative s49h)
             (author :partial-affirmative s49r2)
             (author :partial-affirmative s49d)
-            (author :full-affirmative s49a4)))
+            (author :full-affirmative s49a4)
+            (author :full-affirmative s49i2)
+            (author :full-affirmative s49h2)
+            (author :full-affirmative s49r4)
+            (author :full-affirmative s49i3)
+            (author :full-affirmative s49f))
+    :coref ((s40p :same-entity s49p)
+            (s48m :same-entity s49m)
+            (s48c :same-entity s49c)))
 
 
 # sent_id = SlaT-2822
@@ -3496,17 +3322,14 @@ Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earl
                     :manner (s50h5 / have-mod-91
                         :ARG1 s50p
                         :ARG2 (s50p3 / profugus)
-                        :aspect state
-                        :modal-strength full-affirmative)
+                        :aspect state)
                     :companion (s50p2 / person
                         :wiki "Q82732"
                         :name (s50n2 / name :op1 "Aeneas")
                         :ARG1-of (s50h2 / have-role-91
                             :ARG3 (s50d / dux)
-                            :aspect state
-                            :modal-strength full-affirmative))
-                    :aspect performance
-                    :modal-strength full-affirmative))
+                            :aspect state))
+                    :aspect performance))
             :op2 (s50e / ethnic-group
                 :refer-number plural
                 :wiki "Q322971"
@@ -3527,19 +3350,16 @@ Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earl
                             :op3 (s50a6 / and
                                 :op1 (s50l2 / liber)
                                 :op2 (s50s3 / solutus))))
-                    :aspect state
-                    :modal-strength full-affirmative)))
+                    :aspect state)))
         :ARG1 (s50c3 / city
             :wiki "Q18287233"
             :name (s50n3 / name :op1 "Roma"))
         :temporal (s50i2 / initium)
-        :aspect performance
-        :modal-strength partial-affirmative)
+        :aspect performance)
     :op2 (s50h / habeo-15
         :ARG0 s50p
         :ARG1 s50c3
-        :aspect performance
-        :modal-strength partial-affirmative))
+        :aspect performance))
 
 # alignment:
 s50a: 9-9
