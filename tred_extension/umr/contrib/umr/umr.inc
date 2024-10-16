@@ -103,6 +103,9 @@
         goal       => {arrow => 'lightblue3', text => 'lightblue3'},
         place      => {arrow => 'lightblue4', text => 'lightblue4'},
         mod        => {arrow => 'lightgreen', text => 'lightgreen'},
+        'ARG0-of'  => {arrow => 'cyan2',     text => 'violet'},
+        'ARG1-of'  => {arrow => 'cyan2',       text => 'pink'},
+        'ARG2-of'  => {arrow => 'cyan2',       text => 'plum'},
     );
     sub arrow_color {
         my ($type, $relation) = @_;
