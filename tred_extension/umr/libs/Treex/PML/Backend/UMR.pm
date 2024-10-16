@@ -108,7 +108,7 @@ sub read {
                 ) {
                     add_to_links($target, $source_id, "coref:$type");
                 } else {
-                    die "Nor $source_id neither $target_id found";
+                    die "Neither $source_id nor $target_id found";
                 }
             }
         }
