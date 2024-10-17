@@ -1,15 +1,24 @@
 #!/bin/bash
 set -eu
 
-file=$1
-dir=data/stepanek
+main () {
+    local dir=data/stepanek
+    local error=0
 
-xsh <<< "quiet ;
-         register-namespace pml http://ufal.mff.cuni.cz/pdt/pml/ ;
-         open $dir/$file.treex.gz ;
-         rm //pml:zone[0=count(pml:sentence)]/../..  ;
-         save :b"
-treex -e DEBUG github/tecto2umr/scen/t2umr.scen -- \
-      "$dir"/"$file".treex.gz \
-      > "$dir"/"$file".umr \
-      2> "$dir"/"$file".log
+    local file
+    for file in "$@" ; do
+
+        xsh <<< "quiet ;
+                 register-namespace pml http://ufal.mff.cuni.cz/pdt/pml/ ;
+                 open $dir/$file.treex.gz ;
+                 rm //pml:zone[0=count(pml:sentence)]/../..  ;
+                 save :b"
+        treex -e DEBUG github/tecto2umr/scen/t2umr.scen -- \
+              "$dir"/"$file".treex.gz \
+              > "$dir"/"$file".umr \
+              2> "$dir"/"$file".log || error=1
+    done
+    return $error
+}
+
+main "$@"
