@@ -18,6 +18,27 @@ also `endeavor` may be considered (if it is clear that the process stopped/was i
 Typically, we adhere to surface marking - e.g.,  the sentence _Estonci volili parlament._ should get the `activity` aspect value due to the imperfective verb _volit_ (and we do not imply that it means their parliament is renewed).
 
 ---
+---
+---
+
+#### Automaticky z PDT-C:
+- **non-processes --> state** (by default)  
+   - modální (pokud mají vlastní uzel) ... muset/musit, mít, chtít, hodlat, moci/moct, dát se, smět, dovést, umět, lze, nelze ...
+   - další slovesa (podle nějakého anglického seznamu):
+   - emoce ... milovat, nenávidět, preferovat, přát si, ...
+   - kognitivní/mentální ... myslet/myslit, znát, vědět, souhlasit, věřit, pochybovat, hádat,    představovat si, znamenat, pamatovat si, podezřívat, rozum2t, porozum2t
+   - smyslové vnímání ... vonět, zdát se, vidět, slyšet, znít
+   - vlastnictví ... vlastnit, patřit, mít
+
+- **processes, iterative imperfective verbs** (morphologically = lemma _^(*4it) ) **--> habitual** (by default);
+- **processes, imperfective verbs** (morphologically) **--> activity** (by default);
+- **processes, perfective verb** (morphologically) **--> performance** (by default);
+- **processes, double aspect verbs** (morphologically) **--> process** (by default);
+
+---
+---
+---
+
 ## Aspect in UMR
 
 The aspect attribute should be annotated for any eventive concept. The UMR Guidelines provide quite a rich aspect [lattice](https://github.com/umr4nlp/umr-guidelines/blob/master/Guidelines_figures/Aspect%20Lattice_2022.png) without any useful description (like `state` = unspecified type of state).
