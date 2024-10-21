@@ -7,43 +7,38 @@
    (based on Banarescu et al. 2013, \cite{amr-for-sembankimg-2013}):
       - **entity** (e.g., _man_)
       - **event** (e.g., _taste-04_) ... but also "abstract / non-verbal predicates" (now "non-prototypical pred rolesets" in the [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453))
-      - **keyword** for:
+      - **keyword** (subsumed under abstract concepts in the UMR lists) for:
           - "entities" (e.g.,  `ordinal-entity` (_for the first time_)),
           - "quantities" (e.g., `temporal-quantity` (_8 months_)),
           - logical conjunctions (_and_) ... the same for "discourse rolesets" from the [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453)   
             other paratactic structures **???**
           - **???** ALSO operators,  e.g., `more-than` 
-   - ??? ZÁDRHELE ???
 
 
 1. **Pořadí uzlů ... zachovat z PDT / z anotace ve vstupním souboru**   
 Zatím asi má každý rodič má syny v opačném pořadí, než by měl mít :-))  
-Zobrazovadlo, které dělal Míša, se nějak drželo povrchu (nejlevější alignované slovo?) - aby se to aspoň zhruba dalo porovnat.  
+  <!-- Zobrazovadlo, které dělal Míša, se nějak drželo povrchu (nejlevější alignované slovo?) - aby se to aspoň zhruba dalo porovnat.  
 V PDT - pokud tomu dobře rozumím - se pořadí uzlů oproti povrchu mění: 
    - kvůli projektivitě 
    - jinak jen u "NB" uzlů, pokud je to relevantní z hlediska výpovědní dynamičnosti.
-   - Kopírované uzly se dávají jako nejlevější děti, myslím?
+   - Kopírované uzly se dávají jako nejlevější děti, myslím? -->
 
-
-
-1. **Má-li uzel 2 rodiče, struktura zůstane jako v anotaci / PDT**:  
+3. **Má-li uzel 2 rodiče, struktura zůstane jako v anotaci / PDT**:  
  (Když je hodnota jméno proměnné, je to šipka, jinak je to uzel.)  
-~~Jak se pozná typ šipky (tj. relace = typ hrany)?~~
 
 
-1. **Nodes with a coreferential link** within a sentence  should **be merged** ... see also Sect. I.4 ``Further Structural Changes'' below.      
-~~Jak se pozná typ šipky (tj. relace = typ hrany)?~~
+4. **Nodes with a coreferential link** within a sentence  should **be merged** ... see also Sect. I.4 ``Further Structural Changes'' below.      
 
+#### TODO: ####
 
 1. **Abstraktní koncepty a strukturovaný text:**   ... zatím neřešeno!!   
 UMR má řadu abstraktních konceptů pro zachycení strukturovaného textu (typu den v týdnu, množství čehosi, adresa See below, Sect. 6
 
+<!-- 1. **Named entities** (NE(s)), its type (= the abstract entity, as, e.g.,  `person`)  serves as the concept; it is instantiated using a variable (as for other concepts).   
+NEs have their internal structure (esp. wiki, name)-->   
+<!-- **suggestion: not now** (one of future necessary steps, I.5 below)-->
 
-1. **Named entities** (NE(s)), its type (= the abstract entity, as, e.g.,  `person`)  serves as the concept; it is instantiated using a variable (as for other concepts).   
-NEs have their internal structure (esp. wiki, name)   
---> **suggestion: not now** (one of future necessary steps, I.5 below) 
-
-1. **Named Entities**  ... see below (Sect. 5) 
+2. **Named Entities**  ... see below (Sect. 5) 
 
 
 1. **Jména relací (= hrany) mají začínat vždy dvojtečkou**?   
@@ -78,18 +73,11 @@ Peter is diligent, but [contrast] Vanja is lazy.
 
 >  **Převod struktur s koordinací:**
 > - **uzel pro spojku/spojovací výraz** (typ uzlu coap, s funktorem ze seznamu ADVS, CONFR, CONJ, ... REAS) zůstane zachovaný;
-> - **t_lemma** pro spojku/spoj. výraz je nahrazeno **keyword n. eventem**, a to **podle funktoru**, viz **[deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)** (tedy i keyword funguje jako koncept!!);  
+> - **t_lemma** pro spojku/spoj. výraz je nahrazeno **konceptem ( keyword n. eventem)**, a to **podle funktoru**, viz **[default table](https://github.com/ufal/UMR/blob/main/tecto2umr/pdt-c-functors-to-args.xlsx)**;  
 >    POZOR, v [UMR seznamech](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453) tomu občas říkají ``discourse relation'', ale v grafu keyword fungují stejně jako konkrétní slova, tedy jako koncepty (včetně toho, že mají variable)  
-> - **relace mezi rodičem a spojovacím výrazem** (nově keyword) zdědí **funktor koordinovaných členů** (tedy dětech spoj. uzlu s is_member=1), resp. příslušnou UMR relaci
-> - **koordinované členy** (is_member=1) se připojí, v závislosti na funktoru, následovně  
-       - **CONJ|GRAD**  (--> and) ... **`:op1`, `:op2`**  
-       - **CSQ** (--> consecutive) ... **`:op1`, `:op2`**  ... NEBO 'and'  
-       - **DISJ** (--> exclusive-disjunctive) ... **`:op1`, `:op2`**   
-       - **ADVS** (--> but-91) ...  **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (ale), je v rozporu s očekáváním plynoucím z obsahu první klauze)  
-       - **CONFR** (--> contrast-91) ...  **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (kdežto, ale), vyjadřuje kontrast)  
-       - **REAS** (--> have-cause-91) ... **ARG1** (1. klauze), **ARG2** (2. klauze, se spoj. výrazem (neboť, totiž, vždyť), vyjadřuje příčinu/důvod)   
-       - **CONTRA** (–> contra NEW, not in UMR) ... (211x, typ Klaus versus Zieleniec, Sparta - Slávia, 4:2; t_lemma 149x #Dash, 43x versus, 5x kontra, 5x vs. apod.)
-> - **společná rozvití** manuál AMR ani manuál UMR explicite neřeší, tedy navrhuju ponechat jako rozvití keyword   
+> - **funktor koordinovaných členů** (tedy dětech spoj. uzlu s is_member=1)  se promítne do **relace mezi rodičem a spojovacím výrazem** (nově keyword) zdědí  resp. příslušnou UMR relaci
+> - **koordinované členy** (is_member=1) se připojí, v závislosti na funktoru, jako ops nebo ARGs, viz  "deault table" výš
+> - **společná rozvití** manuál AMR ani manuál UMR explicite neřeší, převádíme jako re-entrance   
 Viz příklad 3-1-6 (4b) [UMR manuál](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-1-6-discourse-relations), _You **have to have your hand stamped** and **show** your ticket stub **to get** into the concert._  (vlevo) ... uzel s relací `:purpose` (_to get ..._) je dítětem uzlu _and_ a rozvíjí oba koordinované členy, které jsou jeho sourozenci (zde připojeny jako `:op1` (_have stamped_) i `:op2` (_show_)); TEDA když ignoruju, že zde chybí koncová závorka :-((	  
 
 
@@ -135,10 +123,10 @@ Consequences of being designated an ‘event’ in UMR - see [the summary here](
 #### Events
 For Czech, events should be finally anchored in SSC; for the time being, we use verb-specific mapping via SSC and EngVallex (whenever available) and the default mapping (for other verb senses), as discussed in Sect. I.3 below.
 
-[The summary](..\doc\eventive-concepts.md) mentioned above set tentative rules for distinguishing events (vs. non-events), 
+**[The summary](..\doc\eventive-concepts.md) mentioned above set tentative rules for distinguishing events (vs. non-events)**
 1. **lexical verbs**:
    - action and stative verbs are treated in the same way --> **events**
-2. **abstract rolesets** from [the UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453) ... see below (Sect. 3.6 and 3.7)
+2. **abstract rolesets** from [the UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453) ... most of them are events, see the summary link above. 
  
 #### Entities
 For Czech, entities should be finally anchored in wikidata whenever possible (the most specific wikidata item should be used in case of several possibilities).
@@ -212,20 +200,21 @@ JŠ: e-mail from May 9, 2024 ... about 25 valency frames
 
 
 #### Default mappings (verb non-specific)
-- [Deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt) for cases without verb/frame-specific mappings
+- [Deault table](https://github.com/ufal/UMR/blob/main/tecto2umr/pdt-c-functors-to-args.xlsx) for cases without verb/frame-specific mappings
   - as for actants, ONLY the following 3 should be converted in this way 
     - `ACT` (--> `ARG0`), 
     - `PAT` (--> `ARG1`), and  
     - `ADDR` (--> `ARG2`) 
   - for the rest two, ``non-lexicalized'' roles would rather be used (see the ITAT paper): 
-    - `ORIG` --> `Source` ('entity from which the theme detaches', as in _oddělit hlavu od těla_)    
-     ??  the same label for  _získat zprávy od někoho_ ??
+    - `ORIG` --> `source` ('entity from which the theme detaches', as in _oddělit hlavu od těla_)    
+     ??  the same label for  _získat zprávy od někoho_ ??  
+     ?? TODO: distinguish `material` ??
     <!-- `animate entity that initiates the action' -->
     - `EFF` --> `Goal` 
 
 
 ### 3.2 Non-Core arguments and adjuncts
-- [Default table](https://github.com/ufal/UMR/blob/main/tecto2umr/dafault-functors-to-umrlabels.txt)
+- [Default table](https://github.com/ufal/UMR/blob/main/tecto2umr/pdt-c-functors-to-args.xlsx)
 
 
 ### 3.3 Light verb constructions (valency frames with `CPHR`)
