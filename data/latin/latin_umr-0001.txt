@@ -1532,7 +1532,7 @@ Sentence Gloss (en): to act well for the state is noble, and even to speak well 
             :aspect activity)
         :ARG2 (s24a2 / absurdus)
         :mod (s24e / etiam)
-        :aspect state)
+        :aspect state))
 
 # alignment:
 s24a: 7-7
