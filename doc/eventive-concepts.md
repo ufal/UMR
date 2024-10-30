@@ -7,9 +7,7 @@
 1. Tentatively, **all verbs** (both action verbs and statives) in all their occurrences (in predication, modification, and reference) **are annotated as events**. 
 2. Based on [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453), sheet "Abstract Rolesets"
    - **reifications** ... events
-   - **discourse relations/reifications** ... events  
-     !!! exception: "but-91" and "unexpected-co-occurrence-91" !!!   
-     !!! the discourse relations from the "Abstract concepts" sheet are also non-events!!! 
+   - **discourse relations/reifications** ... NOT events  
    - **non-prototypical pred rolesets** (9 non-verbal predicates) ... events
    - **implicit rolesets** ... some are events, some not :-((  
    preliminary classification:
