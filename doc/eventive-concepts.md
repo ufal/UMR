@@ -5,14 +5,12 @@
 ### Events vs. non-events
 
 1. Tentatively, **all verbs** (both action verbs and statives) in all their occurrences (in predication, modification, and reference) **are annotated as events**. 
-2. Based on [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453), sheet "Abstract Rolesets"
+2. Based on the [UMR lists](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1927108453#gid=1927108453), sheet "Abstract Rolesets", we have identified the (preliminary) list of abstract eventive concepts (-91 concepts), as described [**here (sheet "events")**](https://github.com/ufal/UMR/blob/main/tecto2umr/pdt-c-functors-to-args.xlsx). To summarize,
    - **reifications** ... events
    - **discourse relations/reifications** ... NOT events  
    - **non-prototypical pred rolesets** (9 non-verbal predicates) ... events
    - **implicit rolesets** ... some are events, some not :-((  
-   preliminary classification:
-       - events: corelate-91, have-degree-91, include-91, infer-91, resemble-91, have-experience-91, say-91
-       - non-events: everything else
+   see the list above. 
  
 See below for Julia's comments!
 
