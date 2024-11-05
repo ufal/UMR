@@ -1,5 +1,11 @@
 context: .*
-node: ${label}<?
+node: <?
+          if (grep 'polarity' eq $_->{type}, ListV($this->{features})) {
+              '#{brown}'
+          } else {
+              '#{black}'
+          }
+?>${label}<?
           my @links = grep { my $id = $_->{'target.rf'};
                              ! grep $_->{id} eq $id, $root->descendants
                       } ListV($this->{links});
