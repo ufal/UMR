@@ -144,7 +144,7 @@ sub parse_sentence {
             $node->paste_on($root);
         }
 
-        while ($$buffer =~ s/^:([-\w]+)\s*//g) {
+        while ($$buffer =~ s/^:((?:!!)?[-\w]+)\s*//g) {
             #use Data::Dumper; warn Dumper $root;
             my $relation = $1;
             if ($$buffer =~ /^\(/) {
