@@ -1,0 +1,2 @@
+/net/work/people/stepanek/umr/data/stepanek
+tam je převedené PDT-C do UMR
