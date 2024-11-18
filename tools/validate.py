@@ -1452,8 +1452,6 @@ def validate_document_relations(sentence, node_dict, args):
     """
     testlevel = 3
     testclass = 'Document'
-    # Sort the nodes by their first line so that the validation report is stable and can be diffed.
-    nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
     for r in sentence[3]['relations']:
         if r['group'] == ':temporal':
             if not r['relation'] in [':contained', ':before', ':after', ':overlap', ':depends-on']:
@@ -1867,7 +1865,6 @@ class Temporal:
                 component = self.component(node)
                 if component:
                     #print("\nNode %s => component" % node, component)
-                    lastcnode = None
                     while True:
                         # Find next node to print.
                         # It must be one of those that have not been printed yet.
