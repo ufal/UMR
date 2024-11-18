@@ -2109,7 +2109,7 @@ Sentence Gloss (en): and, though I shrunk from the vicious principles of those a
             :refer-person 1st)
         :ARG1 (s33h / honor :refer-number singular)
         :manner (s33i / idem)
-        :aspect endeavor
+        :aspect activity
         :ARG0-of (s33v2 / vexo-10
             :ARG1 (s33p2 / person
                 :refer-number plural
@@ -2130,7 +2130,7 @@ Sentence Gloss (en): and, though I shrunk from the vicious principles of those a
                 :refer-person 3rd
                 :mod (s33r / reliquus)))
             :aspect activity)
-    :aspect endeavor)
+    :aspect activity)
 
 # alignment:
 s33v: 21-21
