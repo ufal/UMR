@@ -1,11 +1,9 @@
 #! /usr/bin/env python3
 # Copyright © 2023, 2024 Dan Zeman <zeman@ufal.mff.cuni.cz>
-import fileinput
 import sys
 import io
 import os.path
 import argparse
-import logging
 import traceback
 # According to https://stackoverflow.com/questions/1832893/python-regex-matching-unicode-properties,
 # the regex module has the same API as re but it can check Unicode character properties using \p{}
@@ -13,7 +11,6 @@ import traceback
 #import re
 import regex as re
 import unicodedata
-import json
 from functools import cmp_to_key # for custom partial sorting
 # Optionally we can access Wikidata API through the requests library.
 # Install the library with pip3 install requests (or python3 -m pip install requests).
@@ -334,25 +331,18 @@ def validate_unicode_normalization(text):
     if text != normalized_text:
         # Find the first unmatched character and include it in the report.
         firsti = -1
-        firstj = -1
         inpfirst = ''
         nfcfirst = ''
-        tcols = text.split("\t")
-        ncols = normalized_text.split("\t")
-        for i in range(len(tcols)):
-            for j in range(len(tcols[i])):
-                if tcols[i][j] != ncols[i][j]:
-                    firsti = i
-                    firstj = j
-                    inpfirst = unicodedata.name(tcols[i][j])
-                    nfcfirst = unicodedata.name(ncols[i][j])
-                    break
-            if firsti >= 0:
+        for i in range(len(text)):
+            if text[i] != normalized_text[i]:
+                firsti = i
+                inpfirst = unicodedata.name(text[i])
+                nfcfirst = unicodedata.name(normalized_text[i])
                 break
         testlevel = 1
         testclass = 'Unicode'
         testid = 'unicode-normalization'
-        testmessage = "Unicode not normalized: %s.character[%d] is %s, should be %s." % (COLNAMES[firsti], firstj, inpfirst, nfcfirst)
+        testmessage = "Unicode not normalized: character[%d] is %s, should be %s." % (firsti, inpfirst, nfcfirst)
         warn(testmessage, testclass, testlevel, testid)
 
 def validate_newlines(inp):
