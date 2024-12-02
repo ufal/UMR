@@ -1561,7 +1561,7 @@ def collect_coreference_clusters(document, node_dict, args):
                     if node_dict[n0]['cluster'] != cid:
                         oldcid = node_dict[n0]['cluster']
                         # The cluster set must be copied for iteration if we intend to change it inside.
-                        oldcluster = document['clusters'][oldcid]
+                        oldcluster = document['clusters'][oldcid].copy()
                         for cm in oldcluster:
                             document['clusters'][oldcid].remove(cm)
                             document['clusters'][cid].add(cm)
@@ -1573,7 +1573,7 @@ def collect_coreference_clusters(document, node_dict, args):
                     if node_dict[n1]['cluster'] != cid:
                         oldcid = node_dict[n1]['cluster']
                         # The cluster set must be copied for iteration if we intend to change it inside.
-                        oldcluster = document['clusters'][oldcid]
+                        oldcluster = document['clusters'][oldcid].copy()
                         for cm in oldcluster:
                             document['clusters'][oldcid].remove(cm)
                             document['clusters'][cid].add(cm)
