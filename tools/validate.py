@@ -1138,7 +1138,15 @@ known_relations = {
     ':part-of-phraseme': {'type': 'modifier', 'repeat': False},
     ':predicative-noun': {'type': 'modifier', 'repeat': False},
     ':regard': {'type': 'modifier', 'repeat': True},
-    ':result': {'type': 'modifier', 'repeat': True}
+    ':result': {'type': 'modifier', 'repeat': True},
+    ':COMPL': {'type': 'modifier', 'repeat': True},
+    ':DENOM': {'type': 'modifier', 'repeat': True},
+    ':FPHR': {'type': 'modifier', 'repeat': True},
+    ':INTF': {'type': 'modifier', 'repeat': True},
+    ':PAR': {'type': 'modifier', 'repeat': True},
+    ':PARTL': {'type': 'modifier', 'repeat': True},
+    ':PRED': {'type': 'modifier', 'repeat': True},
+    ':VOCAT': {'type': 'modifier', 'repeat': True}
 }
 op_re = re.compile(r"^:op([1-9][0-9]*)$")
 
