@@ -1133,8 +1133,12 @@ known_relations = {
     # We added the following relations that are not in the guidelines:
     ':according-to': {'type': 'modifier', 'repeat': False}, # child node is the source of the information
     ':clausal-marker': {'type': 'modifier', 'repeat': True},
+    ':comparison': {'type': 'modifier', 'repeat': False},
     ':effect': {'type': 'modifier', 'repeat': True},
-    ':regard': {'type': 'modifier', 'repeat': True}
+    ':part-of-phraseme': {'type': 'modifier', 'repeat': False},
+    ':predicative-noun': {'type': 'modifier', 'repeat': False},
+    ':regard': {'type': 'modifier', 'repeat': True},
+    ':result': {'type': 'modifier', 'repeat': True}
 }
 op_re = re.compile(r"^:op([1-9][0-9]*)$")
 
