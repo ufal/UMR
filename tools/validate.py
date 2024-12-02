@@ -1131,7 +1131,10 @@ known_relations = {
     ':year': {'type': 'attribute', 'repeat': False},
     ':year2': {'type': 'attribute', 'repeat': False},
     # We added the following relations that are not in the guidelines:
-    ':according-to': {'type': 'modifier', 'repeat': False} # child node is the source of the information
+    ':according-to': {'type': 'modifier', 'repeat': False}, # child node is the source of the information
+    ':clausal-marker': {'type': 'modifier', 'repeat': True},
+    ':effect': {'type': 'modifier', 'repeat': True},
+    ':regard': {'type': 'modifier', 'repeat': True}
 }
 op_re = re.compile(r"^:op([1-9][0-9]*)$")
 
