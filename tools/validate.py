@@ -255,8 +255,8 @@ def sentences(inp, args):
                 bline0 = None
                 comments = []
                 lines = []
-                ###!!! Sentences typically have 4 annotation blocks: 1. intro; 2. sentence level; 3. alignment; 4. document level.
-                ###!!! If we see more blocks, maybe someone forgot to add a second empty line between sentences.
+                # Sentences typically have 4 annotation blocks: 1. intro; 2. sentence level; 3. alignment; 4. document level.
+                # If we see more blocks, maybe someone forgot to add a second empty line between sentences.
                 if len(blocks) > 4:
                     testid = 'too-many-blocks'
                     testmessage = 'Too many annotation blocks within one sentence. There should be two empty lines after each sentence.'
@@ -1138,7 +1138,7 @@ op_re = re.compile(r"^:op([1-9][0-9]*)$")
 # Abstract concepts for discourse relations. Some of them have just :opN
 # children. Others have :ARGN children and thus look like events, but they
 # should not be considered events. They should not be required to contain
-# :aspect and :modal-strength.
+# :aspect.
 discourse_concepts = [
     # These have :opN children:
     'multi-sentence', 'and', 'or', 'inclusive-disjunction', 'exclusive-disjunction', 'and-but', 'consecutive', 'additive', 'and-unexpected', 'and-contrast',
@@ -1322,7 +1322,7 @@ def detect_events(sentence, node_dict, args):
     * If it is one of the predefined *-91 concepts, it is an event.
     * If it has an ":ARG?" child, it is an event.
     * If it has an ":ARG?-of" parent, it is an event.
-    * If it has ":modal-strength" or ":aspect", it is an event (perhaps these two should be obligatory for all events).
+    * If it has ":modal-strength" or ":aspect", it is an event (perhaps :aspect should be obligatory for all events; but :modal-strength should be at document level preferably).
     * If in document annotation it participates in a relation from the ":temporal" or ":modal" group, it is likely an event,
       however, this condition is not sufficient. Entities such as persons can participate in modal relations ("Rob thinks that...")
       and temporal entities ("yesterday", "December 21") participate in temporal relations.
@@ -1413,16 +1413,25 @@ def validate_events(sentence, node_dict, args):
             # :ARG relations imply that it is an event but they are not required.
             # On the other hand, :aspect and :modal-strength seem to be required according to the guidelines.
             # :modal-strength can be replaced by :modal-predicate. Only one of them is expected (guidelines 4-3-1-2).
-            for rtype in [':aspect', ':modal-strength/predicate']:
-                if len(relations[rtype]) < 1:
-                    testid = 'missing-attribute'
-                    testmessage = "Missing attribute %s. Node %s is an event because %s." % (rtype, nid, node['event_reason'])
-                    warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
+            ###!!! New information (Federica from the 2024 summer school, personal communication):
+            ###!!! In the sentence-level graph, :modal-strength should not be used. The guidelines
+            ###!!! need to be updated on that point. The exception would be data that do not have
+            ###!!! document-level graphs. Otherwise, modal annotation occurs at document level and
+            ###!!! should not be duplicated in sentence-level graphs. (This note probably should not
+            ###!!! apply to :modal-predicate.)
+            if len(relations[':aspect']) < 1:
+                testid = 'missing-attribute'
+                testmessage = "Missing attribute %s. Node %s is an event because %s." % (':aspect', nid, node['event_reason'])
+                warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
+            if len(relations[':modal-strength/predicate']) > 0 and relations[':modal-strength/predicate'][0]['relation'] == ':modal-strength':
+                testid = 'sentence-level-modal-strength'
+                testmessage = "The attribute :modal-strength is deprecated. Modal annotation should go to the document level."
+                warn(testmessage, 'Warning', testlevel, testid, lineno=relations[':modal-strength/predicate'][0]['line0'])
                 # :modal-strength must be atom but :modal-predicate is a node.
-                elif relations[rtype][0]['relation'] == ':modal-strength' and relations[rtype][0]['type'] != 'atom':
+                if relations[':modal-strength/predicate'][0]['type'] != 'atom':
                     testid = 'invalid-attribute'
-                    testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (':modal-strength', relations[rtype][0]['type'], relations[rtype][0]['value'])
-                    warn(testmessage, testclass, testlevel, testid, lineno=relations[rtype][0]['line0'])
+                    testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (':modal-strength', relations[':modal-strength/predicate'][0]['type'], relations[':modal-strength/predicate'][0]['value'])
+                    warn(testmessage, testclass, testlevel, testid, lineno=relations[':modal-strength/predicate'][0]['line0'])
             # Check also document level relations. Every event must have at least
             # :temporal against document-creation-time.
             found = False
