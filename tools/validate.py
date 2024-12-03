@@ -1238,7 +1238,7 @@ def validate_relations(sentence, node_dict, args):
             # Now relations will hold just the names, not the full records.
             relations = sorted(list(relcount), key=lambda x: rellast[x])
             for r in relations:
-                if relcount[r] > 1 and r in known_relations and not known_relations[r]['repeat']:
+                if relcount[r] > 1 and r in known_relations and not known_relations[r]['repeat'] and (args.check_duplicate_roles or known_relations[r]['type'] == 'attribute'):
                     testid = 'repeated-relation'
                     testmessage = "Node '%s' is not supposed to have more than one relation '%s' but it has %d: first on line %d." % (nid, r, relcount[r], relfirst[r])
                     warn(testmessage, testclass, testlevel, testid, lineno=rellast[r])
@@ -2081,6 +2081,7 @@ if __name__=="__main__":
     strict_group.add_argument('--warn-overlapping-alignment', dest='check_overlapping_alignment', action='store_true', default=False, help='Report words that are aligned to more than one node. This is a warning only, and it is turned off by default.')
     strict_group.add_argument('--no-warn-unaligned-token', dest='check_unaligned_token', action='store_false', default=True, help='Report words that are not aligned to any node. This is a warning only, and it is turned on by default.')
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
+    strict_group.add_argument('--allow-duplicate-roles', dest='check_duplicate_roles', action='store_false', default=True, help='Any role can occur multiple times under the same parent. Normally, this is allowed for some relations and attributes but not for others. This option relaxes the test for relations (roles) but not for attributes.')
 
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
     report_group.add_argument('--print-relations', dest='print_relations', action='store_true', default=False, help='Print detailed info about all nodes and relations.')
