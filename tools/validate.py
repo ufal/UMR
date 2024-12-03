@@ -1365,9 +1365,9 @@ def detect_events(sentence, node_dict, args):
                 print("  Relation %s %s, type=%s, value=%s, line=%d" % (r['dir'], r['relation'], r['type'], r['value'], r['line0']))
             if not 'event_reason' in node:
                 if r['dir'] == 'out' and re.match(r"^:(ARG[0-6]|aspect|modstr)$", r['relation']):
-                    node['event_reason'] = "it has outgoing relation %s on line %d" % (r['relation'], r['line0'])
+                    node['event_reason'] = "it has outgoing relation %s on line %d (and it is not a known exception)" % (r['relation'], r['line0'])
                 elif r['dir'] == 'in' and re.match(r"^:ARG[0-6]-of$", r['relation']):
-                    node['event_reason'] = "it has incoming relation %s on line %d" % (r['relation'], r['line0'])
+                    node['event_reason'] = "it has incoming relation %s on line %d (and it is not a known exception)" % (r['relation'], r['line0'])
         if args.print_relations:
             if 'event_reason' in node:
                 print("  This node is an event because %s." % node['event_reason'])
