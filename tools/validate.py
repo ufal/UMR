@@ -773,6 +773,9 @@ def validate_alignment(sentence, node_dict, args):
     testclass = 'Alignment'
     global tokrng_re
     global tokrngs_re
+    # UMR 1.0 occasionally has -1--1 instead of 0-0 and we can accept it on demand.
+    # Nevertheless, by default it is considered an error. See also
+    # https://github.com/ufal/UMR/issues/14
     if not args.check_nonnegative_alignment:
         tokrng_re = tokrng_neg_re
         tokrngs_re = tokrngs_neg_re
