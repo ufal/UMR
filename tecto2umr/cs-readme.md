@@ -18,7 +18,7 @@ https://ufal.mff.cuni.cz/uniform-meaning-representation-czech
 <pre>
 === Machine-readable metadata (DO NOT REMOVE!) ================================
 License: CC BY-NC-SA 4.0       XXXXX toto je licence PDT-C 1.0 XXXXX
-Contributors: XXXXXXXXXXXX
+Contributors: Jan Štěpánek, Markéta Lopatková, Eva Fučíková, Jan Hajič, Daniel Zeman, Šárka Zikánová        XXXXX Mišo - totaz na JŠ
 Contact: lopatkova@ufal.mff.cuni.cz
 ===============================================================================
 </pre>
