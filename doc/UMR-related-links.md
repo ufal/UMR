@@ -1,5 +1,7 @@
 # UMR-related links
 
+[Czech UMR](https://ufal.mff.cuni.cz/uniform-meaning-representation-czech)
+
 ## Guidelines
 [UMR Guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md)
 
