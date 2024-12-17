@@ -845,9 +845,14 @@ def validate_alignment(sentence, node_dict, args):
                         # The variable should be in node_dict. If it is not there,
                         # it has been already reported as error; but we must survive it here.
                         if variable in node_dict:
+                            # If the variable is in node_dict, it also must be a variable defined in the current sentence.
+                            if variable not in sentence[1]['nodes']:
+                                testid = 'cross-sentence-alignment'
+                                testmessage = "Alignment cannot contain nodes from other sentences: '%s' was defined on line %d." % (variable, node_dict[variable]['line0'])
+                                warn(testmessage, testclass, testlevel, testid, lineno=iline)
                             # There must not be multiple lines aligning the same node.
                             # However, there may be multiple alignment segments on one alignment line of the node.
-                            if 'alignment' in node_dict[variable]:
+                            elif 'alignment' in node_dict[variable]:
                                 if node_dict[variable]['alignment']['line0'] != iline:
                                     testid = 'duplicate-alignment'
                                     testmessage = "Repeated alignment of node '%s'. It was already specified as %s on line %d." % (variable, str(node_dict[variable]['alignment']['tokids']), node_dict[variable]['alignment']['line0'])
@@ -885,7 +890,7 @@ def validate_alignment(sentence, node_dict, args):
                 testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
                 warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
             # We will later want to access the alignment, so set the default, i.e., unaligned.
-            node_dict[n]['alignment'] = {'tokids': [0], 'tokstr': ''}
+            node_dict[n]['alignment'] = {'tokids': [0], 'tokstr': '', 'line0': 0}
         elif node_dict[n]['alignment']['tokids'] != [0]:
             # Check that two nodes are not aligned to the same surface token.
             # It is not clear that this should be required but it seems to be
