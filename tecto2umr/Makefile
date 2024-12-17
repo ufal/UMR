@@ -21,7 +21,7 @@ noexcl:
 # Copy data from Honza to Dan, remove the exclamation marks from pseudo-roles on the fly.
 .PHONY: copy
 copy:
-	rm $(DZMODIFDATA)/*.umr
+	rm -f $(DZMODIFDATA)/*.umr
 	cd $(JSCZECHDATA) ; for i in *.umr ; do echo $$i ; cat $$i | perl -pe 's/:!!/:/g' > $(DZMODIFDATA)/$$i ; done
 
 # Validate the modified data.
