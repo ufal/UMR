@@ -29,3 +29,11 @@ copy:
 validate:
 	if [ "$(whoami)" == "zeman" ]; then pushd $(UFALUMRDIR) ; git pull --no-edit ; popd ; fi
 	cd $(DZMODIFDATA) ; ( for i in *.umr ; do echo $$i ; $(VALIDATE) $$i --no-warn-unaligned-token --allow-forward-references --optional-aspect-modstr ; done ) 2>&1 | tee validation.log
+
+# Honza: Celé se to (konverze z PDT-C do UMR) dá pustit skriptem
+# /net/work/people/stepanek/umr/pdt-c2umr.sh ( all | trx2u | vrf )
+# Skript by si měl postěžovat, kdyby bylo něco špatně. Je nutné mít nastavené tyto dvě proměnné:
+# $UFAL_PDTC2A - cesta k SVN repozitáři s daty PDT-C;
+# $UFAL_UMR    - cesta k UMR (ale ne checkout githubu, ale o patro výš jako mám
+#                já v /net/work/people/stepanek/umr.
+# V současné době není algoritmus úplně deterministický, některé stromy se vygenerují špatně a selže jejich verifikace. Dělám na tom.
