@@ -1143,6 +1143,8 @@ known_relations = {
     ':clausal-marker': {'type': 'modifier', 'repeat': True},
     ':comparison': {'type': 'modifier', 'repeat': False},
     ':effect': {'type': 'modifier', 'repeat': True},
+    ':interjection': {'type': 'modifier', 'repeat': True},
+    ':parenthesis': {'type': 'modifier', 'repeat': True},
     ':part-of-phraseme': {'type': 'modifier', 'repeat': False},
     ':predicative-noun': {'type': 'modifier', 'repeat': False},
     ':regard': {'type': 'modifier', 'repeat': True},
