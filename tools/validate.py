@@ -372,6 +372,10 @@ relation_re = re.compile(r"^:[-A-Za-z0-9]+")
 string_re = re.compile(r'^"([^"\s]+)"')
 number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
 atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
+# Atoms do not contain uppercase letters. We still need a regular expression for
+# such erroneous atoms so that we can recognize them and do not issue misleading
+# error messages.
+ucatom_re = re.compile(r"^([-+a-z0-9A-Z_]+)(\s|\)|$)")
 
 tokrng_re = re.compile(r"^0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
 tokrngs_re = re.compile(r"^(?:0-0|([1-9][0-9]*)-([1-9][0-9]*)(,\s*[1-9][0-9]*-[1-9][0-9]*)*)$")
@@ -701,6 +705,18 @@ def validate_sentence_graph(sentence, node_dict, args):
                     parent['relations'][-1]['type'] = 'atom'
                     parent['relations'][-1]['value'] = number
                     pline = remove_leading_whitespace(match.group(2)+number_re.sub('', pline, 1))
+                # Uppercase atoms are an error but we should recognize and report them now,
+                # otherwise there would be 'missing-node-deifnition' later, which would be
+                # a misleading message.
+                elif ucatom_re.match(pline):
+                    match = ucatom_re.match(pline)
+                    atom = match.group(1)
+                    parent['relations'][-1]['type'] = 'atom'
+                    parent['relations'][-1]['value'] = atom
+                    pline = remove_leading_whitespace(match.group(2)+ucatom_re.sub('', pline, 1))
+                    testid = 'value-wrong-chars'
+                    testmessage = "Atomic attribute value must contain neither uppercase letters nor underscores: '%s'." % (atom)
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     parent['relations'][-1]['type'] = 'node'
                     expecting_node_definition = True
@@ -845,9 +861,14 @@ def validate_alignment(sentence, node_dict, args):
                         # The variable should be in node_dict. If it is not there,
                         # it has been already reported as error; but we must survive it here.
                         if variable in node_dict:
+                            # If the variable is in node_dict, it also must be a variable defined in the current sentence.
+                            if variable not in sentence[1]['nodes']:
+                                testid = 'cross-sentence-alignment'
+                                testmessage = "Alignment cannot contain nodes from other sentences: '%s' was defined on line %d." % (variable, node_dict[variable]['line0'])
+                                warn(testmessage, testclass, testlevel, testid, lineno=iline)
                             # There must not be multiple lines aligning the same node.
                             # However, there may be multiple alignment segments on one alignment line of the node.
-                            if 'alignment' in node_dict[variable]:
+                            elif 'alignment' in node_dict[variable]:
                                 if node_dict[variable]['alignment']['line0'] != iline:
                                     testid = 'duplicate-alignment'
                                     testmessage = "Repeated alignment of node '%s'. It was already specified as %s on line %d." % (variable, str(node_dict[variable]['alignment']['tokids']), node_dict[variable]['alignment']['line0'])
@@ -885,7 +906,7 @@ def validate_alignment(sentence, node_dict, args):
                 testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
                 warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
             # We will later want to access the alignment, so set the default, i.e., unaligned.
-            node_dict[n]['alignment'] = {'tokids': [0], 'tokstr': ''}
+            node_dict[n]['alignment'] = {'tokids': [0], 'tokstr': '', 'line0': 0}
         elif node_dict[n]['alignment']['tokids'] != [0]:
             # Check that two nodes are not aligned to the same surface token.
             # It is not clear that this should be required but it seems to be
@@ -1138,6 +1159,8 @@ known_relations = {
     ':clausal-marker': {'type': 'modifier', 'repeat': True},
     ':comparison': {'type': 'modifier', 'repeat': False},
     ':effect': {'type': 'modifier', 'repeat': True},
+    ':interjection': {'type': 'modifier', 'repeat': True},
+    ':parenthesis': {'type': 'modifier', 'repeat': True},
     ':part-of-phraseme': {'type': 'modifier', 'repeat': False},
     ':predicative-noun': {'type': 'modifier', 'repeat': False},
     ':regard': {'type': 'modifier', 'repeat': True},
@@ -1373,45 +1396,46 @@ def detect_events(sentence, node_dict, args):
                 print("  This node is an event because %s." % node['event_reason'])
             print('')
     # Check document-level annotation.
-    testlevel = 3
-    testclass = 'Document'
-    testid = 'coref-entity-event-mismatch'
-    for r in sentence[3]['relations']:
-        if r['group'] == ':coref':
-            # Same event coreference means that both nodes are events.
-            if r['relation'] == ':same-event':
-                if r['node0'] in node_dict:
-                    node = node_dict[r['node0']]
-                    if 'entity_reason' in node:
-                        testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                    if not 'event_reason' in node:
-                        node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
-                if r['node1'] in node_dict:
-                    node = node_dict[r['node1']]
-                    if 'entity_reason' in node:
-                        testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                    if not 'event_reason' in node:
-                        node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
-            # Same entity coreference means that none of the nodes is event;
-            # remember it so that we can later report errors if it is included
-            # in event coreference.
-            elif r['relation'] == ':same-entity':
-                if r['node0'] in node_dict:
-                    node = node_dict[r['node0']]
-                    if 'event_reason' in node:
-                        testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node0'], node['event_reason'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                    if not 'entity_reason' in node:
-                        node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
-                if r['node1'] in node_dict:
-                    node = node_dict[r['node1']]
-                    if 'event_reason' in node:
-                        testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node1'], node['event_reason'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                    if not 'entity_reason' in node:
-                        node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
+    if args.check_coref_entity_event_mismatch:
+        testlevel = 3
+        testclass = 'Document'
+        testid = 'coref-entity-event-mismatch'
+        for r in sentence[3]['relations']:
+            if r['group'] == ':coref':
+                # Same event coreference means that both nodes are events.
+                if r['relation'] == ':same-event':
+                    if r['node0'] in node_dict:
+                        node = node_dict[r['node0']]
+                        if 'entity_reason' in node:
+                            testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        if not 'event_reason' in node:
+                            node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
+                    if r['node1'] in node_dict:
+                        node = node_dict[r['node1']]
+                        if 'entity_reason' in node:
+                            testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        if not 'event_reason' in node:
+                            node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
+                # Same entity coreference means that none of the nodes is event;
+                # remember it so that we can later report errors if it is included
+                # in event coreference.
+                elif r['relation'] == ':same-entity':
+                    if r['node0'] in node_dict:
+                        node = node_dict[r['node0']]
+                        if 'event_reason' in node:
+                            testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node0'], node['event_reason'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        if not 'entity_reason' in node:
+                            node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
+                    if r['node1'] in node_dict:
+                        node = node_dict[r['node1']]
+                        if 'event_reason' in node:
+                            testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node1'], node['event_reason'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        if not 'entity_reason' in node:
+                            node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
 
 def validate_events(sentence, node_dict, args):
     """
@@ -2082,6 +2106,7 @@ if __name__=="__main__":
     strict_group.add_argument('--no-warn-unaligned-token', dest='check_unaligned_token', action='store_false', default=True, help='Report words that are not aligned to any node. This is a warning only, and it is turned on by default.')
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
     strict_group.add_argument('--allow-duplicate-roles', dest='check_duplicate_roles', action='store_false', default=True, help='Any role can occur multiple times under the same parent. Normally, this is allowed for some relations and attributes but not for others. This option relaxes the test for relations (roles) but not for attributes.')
+    strict_group.add_argument('--allow-coref-entity-event-mismatch', dest='check_coref_entity_event_mismatch', action='store_false', default=True, help='If we know that a concept is entity, coreference cannot point to it via :same-event, and vice versa, an event cannot participate in :same-entity relations. This option relaxes the test on such mismatches.')
 
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
     report_group.add_argument('--print-relations', dest='print_relations', action='store_true', default=False, help='Print detailed info about all nodes and relations.')
