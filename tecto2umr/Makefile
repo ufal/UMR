@@ -28,7 +28,7 @@ copy:
 .PHONY: validate
 validate:
 	if [ "$(whoami)" == "zeman" ]; then pushd $(UFALUMRDIR) ; git pull --no-edit ; popd ; fi
-	cd $(DZMODIFDATA) ; ( for i in *.umr ; do echo $$i ; $(VALIDATE) $$i --no-warn-unaligned-token --allow-forward-references --optional-aspect-modstr --allow-duplicate-roles ; done ) 2>&1 | tee validation.log
+	cd $(DZMODIFDATA) ; ( for i in *.umr ; do echo $$i ; $(VALIDATE) $$i --no-warn-unaligned-token --allow-forward-references --optional-aspect-modstr --allow-duplicate-roles --allow-coref-entity-event-mismatch ; done ) 2>&1 | tee validation.log
 
 # Honza: Celé se to (konverze z PDT-C do UMR) dá pustit skriptem
 # /net/work/people/stepanek/umr/pdt-c2umr.sh ( all | trx2u | vrf )

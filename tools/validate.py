@@ -1378,45 +1378,46 @@ def detect_events(sentence, node_dict, args):
                 print("  This node is an event because %s." % node['event_reason'])
             print('')
     # Check document-level annotation.
-    testlevel = 3
-    testclass = 'Document'
-    testid = 'coref-entity-event-mismatch'
-    for r in sentence[3]['relations']:
-        if r['group'] == ':coref':
-            # Same event coreference means that both nodes are events.
-            if r['relation'] == ':same-event':
-                if r['node0'] in node_dict:
-                    node = node_dict[r['node0']]
-                    if 'entity_reason' in node:
-                        testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                    if not 'event_reason' in node:
-                        node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
-                if r['node1'] in node_dict:
-                    node = node_dict[r['node1']]
-                    if 'entity_reason' in node:
-                        testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                    if not 'event_reason' in node:
-                        node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
-            # Same entity coreference means that none of the nodes is event;
-            # remember it so that we can later report errors if it is included
-            # in event coreference.
-            elif r['relation'] == ':same-entity':
-                if r['node0'] in node_dict:
-                    node = node_dict[r['node0']]
-                    if 'event_reason' in node:
-                        testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node0'], node['event_reason'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                    if not 'entity_reason' in node:
-                        node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
-                if r['node1'] in node_dict:
-                    node = node_dict[r['node1']]
-                    if 'event_reason' in node:
-                        testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node1'], node['event_reason'])
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-                    if not 'entity_reason' in node:
-                        node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
+    if args.check_coref_entity_event_mismatch:
+        testlevel = 3
+        testclass = 'Document'
+        testid = 'coref-entity-event-mismatch'
+        for r in sentence[3]['relations']:
+            if r['group'] == ':coref':
+                # Same event coreference means that both nodes are events.
+                if r['relation'] == ':same-event':
+                    if r['node0'] in node_dict:
+                        node = node_dict[r['node0']]
+                        if 'entity_reason' in node:
+                            testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        if not 'event_reason' in node:
+                            node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
+                    if r['node1'] in node_dict:
+                        node = node_dict[r['node1']]
+                        if 'entity_reason' in node:
+                            testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        if not 'event_reason' in node:
+                            node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
+                # Same entity coreference means that none of the nodes is event;
+                # remember it so that we can later report errors if it is included
+                # in event coreference.
+                elif r['relation'] == ':same-entity':
+                    if r['node0'] in node_dict:
+                        node = node_dict[r['node0']]
+                        if 'event_reason' in node:
+                            testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node0'], node['event_reason'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        if not 'entity_reason' in node:
+                            node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
+                    if r['node1'] in node_dict:
+                        node = node_dict[r['node1']]
+                        if 'event_reason' in node:
+                            testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node1'], node['event_reason'])
+                            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        if not 'entity_reason' in node:
+                            node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
 
 def validate_events(sentence, node_dict, args):
     """
@@ -2087,6 +2088,7 @@ if __name__=="__main__":
     strict_group.add_argument('--no-warn-unaligned-token', dest='check_unaligned_token', action='store_false', default=True, help='Report words that are not aligned to any node. This is a warning only, and it is turned on by default.')
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
     strict_group.add_argument('--allow-duplicate-roles', dest='check_duplicate_roles', action='store_false', default=True, help='Any role can occur multiple times under the same parent. Normally, this is allowed for some relations and attributes but not for others. This option relaxes the test for relations (roles) but not for attributes.')
+    strict_group.add_argument('--allow-coref-entity-event-mismatch', dest='check_coref_entity_event_mismatch', action='store_false', default=True, help='If we know that a concept is entity, coreference cannot point to it via :same-event, and vice versa, an event cannot participate in :same-entity relations. This option relaxes the test on such mismatches.')
 
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
     report_group.add_argument('--print-relations', dest='print_relations', action='store_true', default=False, help='Print detailed info about all nodes and relations.')
