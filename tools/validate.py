@@ -372,6 +372,10 @@ relation_re = re.compile(r"^:[-A-Za-z0-9]+")
 string_re = re.compile(r'^"([^"\s]+)"')
 number_re = re.compile(r"^([0-9]+(?:\.[0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it
 atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
+# Atoms do not contain uppercase letters. We still need a regular expression for
+# such erroneous atoms so that we can recognize them and do not issue misleading
+# error messages.
+ucatom_re = re.compile(r"^([-+a-z0-9A-Z_]+)(\s|\)|$)")
 
 tokrng_re = re.compile(r"^0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
 tokrngs_re = re.compile(r"^(?:0-0|([1-9][0-9]*)-([1-9][0-9]*)(,\s*[1-9][0-9]*-[1-9][0-9]*)*)$")
@@ -701,6 +705,18 @@ def validate_sentence_graph(sentence, node_dict, args):
                     parent['relations'][-1]['type'] = 'atom'
                     parent['relations'][-1]['value'] = number
                     pline = remove_leading_whitespace(match.group(2)+number_re.sub('', pline, 1))
+                # Uppercase atoms are an error but we should recognize and report them now,
+                # otherwise there would be 'missing-node-deifnition' later, which would be
+                # a misleading message.
+                elif ucatom_re.match(pline):
+                    match = ucatom_re.match(pline)
+                    atom = match.group(1)
+                    parent['relations'][-1]['type'] = 'atom'
+                    parent['relations'][-1]['value'] = atom
+                    pline = remove_leading_whitespace(match.group(2)+ucatom_re.sub('', pline, 1))
+                    testid = 'value-wrong-chars'
+                    testmessage = "Atomic attribute value must contain neither uppercase letters nor underscores: '%s'." % (atom)
+                    warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     parent['relations'][-1]['type'] = 'node'
                     expecting_node_definition = True
