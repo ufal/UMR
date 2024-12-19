@@ -1,0 +1,21 @@
+#!btred -NTe different_members()
+# -*- mode: cperl -*-
+
+# Find all coordination t-nodes that coordinate more than 1 functor.
+
+use warnings;
+use strict;
+
+sub different_members {
+    return if $this == $root;
+
+    if ('coap' eq $this->{nodetype}) {
+        my %func;
+        ++$func{ $_->{functor} } for PML_T::ExpandCoord($this);
+        if (1 < keys %func) {
+            writeln(join(' ', sort keys %func),
+                    "\t",
+                    ThisAddress());
+        }
+    }
+}

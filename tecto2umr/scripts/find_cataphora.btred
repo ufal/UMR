@@ -1,0 +1,27 @@
+#!btred -NTe find_cataphora()
+# -*- mode: cperl -*-
+
+# Find all grammatical and textual coreference pointing to a following
+# sentence.
+
+use warnings;
+use strict;
+
+my %seen;
+sub find_cataphora {
+    if ($root == $this) {
+        @seen{ map $_->{id}, $root->descendants } = ();
+        return
+    }
+
+    if (my @rfs = ListV($this->{'coref_gram.rf'})) {
+        for my $ref (@rfs) {
+            FPosition() unless exists $seen{$ref};
+        }
+    }
+    if (my @rfs = ListV($this->{coref_text})) {
+        for my $ref (map $_->{'target_node.rf'}, @rfs) {
+            FPosition() unless exists $seen{$ref};
+        }
+    }
+}
