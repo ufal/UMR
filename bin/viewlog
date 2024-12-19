@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+
+my $file = shift;
+
+my %id;
+open my $in, '<', $file;
+while (<$in>) {
+    $id{$1} = $2 if /^ID translation: (\S+) (\S+)$/;
+}
+
+seek $in, 0, 0;
+my $match = join '|', sort { length($b) <=> length($a) } keys %id;
+
+while (<$in>) {
+    next if /^ID translation:/;
+
+    s/($match)/$id{$1}/g;
+    print
+}
+
+=head1 NAME
+
+ viewlog - Replace treex ids in treex logs by UMR ids
+
+=head1 DESCRIPTION
+
+Treex uses ids like C<u_tree-cs-s11-n489>, but they don't survive to the final
+UMR data, where ids like C<s11x2> are used instead. Treex log contains a
+translation table; this tool reads the table from the log and translates the
+log for easier debugging.
+
+=cut
