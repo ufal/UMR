@@ -1,0 +1,77 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+use experimental qw( signatures );
+use feature qw{ say };
+
+=head1 NAME
+
+ tred-ut - Open the same sentence in PDT and UMR.
+
+=head1 SYNOPSIS
+
+ tred-ut filelist
+ tred-ut < filelist
+
+=cut
+
+sub spawn ($cmd, @args) {
+    pipe my($rp, $wp) or die "pipe failed: $!";
+
+    my $pid = fork;
+    die "fork: $!" unless defined $pid;
+
+    if ($pid) {
+        close $rp;
+        return $wp, $pid
+
+    } else {
+        close $wp;
+        open STDIN, '<&', $rp;
+        exec $cmd, @args or die "exec: $!";
+    }
+}
+
+die '$UFAL_UMR not set or not found'    unless -d $ENV{UFAL_UMR};
+die '$UFAL_PDTC2A not set or not found' unless -d $ENV{UFAL_PDTC2A};
+
+my ($tu, $pid_u) = spawn(qw( tred -t UMR -l- ));
+my ($tt, $pid_t) = spawn(qw( tred -t PML_Cz_T_Anot -l- ));
+
+while (<>) {
+    chomp;
+    my ($path, $basename, $addr) = m{(.*)/([^#]+)(#.*)$}
+        or warn "Can't parse $_";
+
+    if ($basename =~ /\.t$/) {
+        my $umr = $ENV{UFAL_UMR} . $basename =~ s/\.t$/.umr/r . $addr;
+        say {$tu} $umr;
+        say {$tt} $_;
+
+    } elsif ($basename =~ /\.umr$/) {
+        my ($glob) = glob join "", $ENV{UFAL_PDTC2A},
+                                   '/annotators/???/done/',
+                                   $basename =~ s/\.umr$/.t/r;
+        my $pdtc =  $glob . $addr;
+        say {$tt} $pdtc;
+        say {$tu} $_;
+
+    } else {
+        warn "Can't process $basename: nor t neither umr.";
+    }
+}
+
+close $tu;
+close $tt;
+
+while (1) {
+    my $pid = wait;
+    say "PID = $pid";
+
+    print $pid == $pid_u ? 'UMR'
+        : $pid == $pid_t ? 'T'
+        : $pid == -1     ? 'All'
+                         : 'Unknown';
+    say ' done.';
+    last if -1 == $pid;
+}
