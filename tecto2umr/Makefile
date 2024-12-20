@@ -39,7 +39,7 @@ validate:
 .PHONY: release_valid
 release_valid:
 	cd $(DZMODIFDATA) ; $(UFALUMRDIR)/tools/release_valid_files.pl validation.log
-	cd $(DZMODIFDATA) ; zip -r czech-umr.zip czech
+	cd $(DZMODIFDATA) ; rm -f czech-umr.zip ; zip -r czech-umr.zip czech
 	cd $(DZMODIFDATA) ; /home/zeman/bin/publish czech-umr.zip
 
 # Honza: Celé se to (konverze z PDT-C do UMR) dá pustit skriptem
