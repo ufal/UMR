@@ -23,7 +23,7 @@ noexcl:
 copy:
 	rm -f $(DZMODIFDATA)/*.umr
 	cd $(JSCZECHDATA) ; for i in *.umr ; do echo $$i ; cat $$i | \
-	    perl -pe 's/:!!/:/g; s/:refer-(person|number) inher//ig; s/:(\)+)$$/colon$$1/; s/\((\)+)$$/lbr$$1/' \
+	    perl -pe 's/:!!/:/g; s/:refer-(person|number) inher//ig; s/\((s[0-9]+x[0-9]+ \/) :\)/($$1 colon)/; s/\((s[0-9]+x[0-9]+ \/) \(\)/($$1 %lpar;)/' \
 	    > $(DZMODIFDATA)/$$i ; \
 	done
 
@@ -32,6 +32,15 @@ copy:
 validate:
 	if [ "$(whoami)" == "zeman" ]; then pushd $(UFALUMRDIR) ; git pull --no-edit ; popd ; fi
 	cd $(DZMODIFDATA) ; ( for i in *.umr ; do echo $$i ; $(VALIDATE) $$i --no-warn-unaligned-token --allow-forward-references --optional-aspect-modstr --allow-duplicate-roles --allow-coref-entity-event-mismatch ; done ) 2>&1 | tee validation.log
+
+# If we are unable to make all files valid, we can take only the valid ones and release them.
+# The script assumes that all files lie in the same folder as validation.log, and the release
+# is prepered as a subfolder there.
+.PHONY: release_valid
+release_valid:
+	cd $(DZMODIFDATA) ; $(UFALUMRDIR)/tools/release_valid_files.pl validation.log
+	cd $(DZMODIFDATA) ; zip -r czech-umr.zip czech
+	cd $(DZMODIFDATA) ; /home/zeman/bin/publish czech-umr.zip
 
 # Honza: Celé se to (konverze z PDT-C do UMR) dá pustit skriptem
 # /net/work/people/stepanek/umr/pdt-c2umr.sh ( all | trx2u | vrf )
