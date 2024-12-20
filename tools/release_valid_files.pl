@@ -37,11 +37,15 @@ while(<>)
         if($result eq 'PASSED')
         {
             system("cp $filename czech/czech_$filename");
+            $n_valid++;
         }
         else
         {
             system("cp $filename invalid");
+            $n_invalid++;
         }
         $filename = undef;
     }
 }
+my $n = $n_valid+$n_invalid;
+print STDERR ("Total $n files, out of them $n_valid valid and $n_invalid invalid.\n");
