@@ -23,7 +23,7 @@ noexcl:
 copy:
 	rm -f $(DZMODIFDATA)/*.umr
 	cd $(JSCZECHDATA) ; for i in *.umr ; do echo $$i ; cat $$i | \
-	    perl -pe 's/:!!/:/g; s/:refer-(person|number) inher//ig; s/:(\)+)$$/colon$$1/; s/\((\)+)$$/lbr$$1/' \
+	    perl -pe 's/:!!/:/g; s/:refer-(person|number) inher//ig; s/\((s[0-9]+x[0-9]+ \/) :\)/($$1 colon)/' \
 	    > $(DZMODIFDATA)/$$i ; \
 	done
 
