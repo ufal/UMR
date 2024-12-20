@@ -22,7 +22,11 @@ noexcl:
 .PHONY: copy
 copy:
 	rm -f $(DZMODIFDATA)/*.umr
-	cd $(JSCZECHDATA) ; for i in *.umr ; do echo $$i ; cat $$i | perl -pe 's/:!!/:/g' > $(DZMODIFDATA)/$$i ; done
+	cd $(JSCZECHDATA) ; for i in *.umr ; do echo $$i ; cat $$i | \
+	    perl -pe 's/:!!/:/g; s/:refer-(person|number) inher//ig' | \
+	    perl -e 'while(<>) { chomp; if (s/^\s*\)/\)/) { $$lines[-1] .= $_ } elsif (!m/^\s*$$/) { push(@lines) } } print(join("\n", @lines), "\n")' \
+	    > $(DZMODIFDATA)/$$i ; \
+	done
 
 # Validate the modified data.
 .PHONY: validate
