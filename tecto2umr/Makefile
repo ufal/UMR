@@ -1,14 +1,9 @@
 SHELL=/bin/bash
 
-# Variables defined with := in GNU make are expanded when they are defined rather than when they are used.
-
 UFALUMRDIR = /net/work/people/zeman/umr/ufal-umr-repo
 VALIDATE = $(UFALUMRDIR)/tools/validate.py
 JSCZECHDATA = /net/work/people/stepanek/umr/data/stepanek
 DZMODIFDATA = /net/work/people/zeman/umr/data-pdt-upravena
-
-# If a command ends with ane error, delete its target file because it may be corrupt.
-.DELETE_ON_ERROR:
 
 .PHONY: all
 all: copy
