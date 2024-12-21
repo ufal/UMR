@@ -3,7 +3,7 @@
 The creators of the Czech UMRs wish to express their gratitude to
 Federica Gamba, Zdeňka Urešová and the SynSemClass team, and Marie Mikulová and the PDT-C team.
 
-The Czech UMRs are automatically converted from the Prague Dependency Treebank – Consolidated ([PDT-C](https://ufal.mff.cuni.cz/pdt-c)), version 1.9. (December 20, 2024).
+The Czech UMRs are automatically converted from the Prague Dependency Treebank – Consolidated ([PDT-C](https://ufal.mff.cuni.cz/pdt-c)), version 2.0 (http://hdl.handle.net/11234/1-5813, available publicly from early 2025). (converted on December 21, 2024).
 
 The conversion covers selected phenomena pertaining to the sentence level annotation (esp. structure of the graph, nodes and relations labeling, and PropBank-like argument structure for verbs). Further, coreference relations are identified, both intra- and inter-sentential. More detailed release notes are on [the project webpage](https://ufal.mff.cuni.cz/uniform-meaning-representation-czech).
 
