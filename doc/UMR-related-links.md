@@ -2,6 +2,8 @@
 
 [Czech UMR](https://ufal.mff.cuni.cz/uniform-meaning-representation-czech)
 
+[Google Drive](https://drive.google.com/drive/folders/1HbDbVAwPUTVbgzL-WoB74Y6G3pkw4Qni?ths=true)
+
 ## Guidelines
 [UMR Guidelines](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md)
 
