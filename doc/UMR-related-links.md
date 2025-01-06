@@ -9,6 +9,8 @@
 
 [AMR Guidelines](https://github.com/amrisi/amr-guidelines/blob/master/amr.md)
 
+[Issues in UMR Guidelines](https://docs.google.com/document/d/1oCQO_lSQ3kA1k-mpvFZ1akf_KkFBnv4nqKAN7M47j4Y/edit?tab=t.0)
+
 
 ## UMR lists/mappings/...
 [**!!! UMR lists !!!**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) - the document provides lists of:
