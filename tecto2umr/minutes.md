@@ -1,5 +1,21 @@
 # UMR meeting minutes
 
+## Monday, Jan 13, 2025
+
+(Dan, Federika, Hanka, Honza, Markéta)
+
+- Honza: From PDT to UMR, [slides](https://ufallab.ms.mff.cuni.cz/~stepanek/2501-umr/)
+
+#### TODO for next Monday
+- for Markéta: complete the release notes 
+- for Markéta: collect information from JH 
+  - next release date
+  - available funds for manual UMR annotation (if yes, when and how many?)
+- for Honza: suitable evaluation data for manual annotation?
+
+#### NEXT meeting
+- Monday, Jan 20, S519
+
 ## Monday, Jan 6, 2025
 
 (Dan, Federika, Hanka, Honza, Markéta)
@@ -16,5 +32,5 @@
 - for Honza: suitable evaluation data for manual annotation?
 - for Markéta: collect information from JH 
   - next release date
-  - available funds for manual UMR annotation (if yes, when and how many<)
+  - available funds for manual UMR annotation (if yes, when and how many?)
  
