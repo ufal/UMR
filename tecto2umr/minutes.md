@@ -1,5 +1,32 @@
 # UMR meeting minutes
 
+
+## Monday, Jan 27, 2025
+
+(Honza, Markéta, Šárka)
+
+#### TODO
+- for Markéta: 
+   - complete the release notes 
+   - prepare an overview what has been done (based on Honza's [slides](https://ufallab.ms.mff.cuni.cz/~stepanek/2501-umr/) and with his support) 
+   - collect information from JH 
+     - next release date
+     - available funds for manual UMR annotation (if yes, when and how many?)
+- for Honza: 
+   - conversion of Latin data (preparation) 
+   - suitable evaluation data for manual annotation
+     - which phenomena should be covered? how many sentences?  
+       (coordination, copied nodes, CNCS, COMPL, coreference (both types), relative clauses, ...)  
+     - data for overall evaluation plus additional data for individual phenomena (and their combinations)?  
+     - discuss the selection with Federica (evaluation of the UD conversion)
+- ??? searchable PDT-C 2.0 in the Lindat repository
+
+
+#### NEXT meeting
+- Monday, Feb 3, S510
+
+---
+
 ## Monday, Jan 13, 2025
 
 (Dan, Federika, Hanka, Honza, Markéta)
@@ -15,6 +42,8 @@
 
 #### NEXT meeting
 - Monday, Jan 20, S519
+
+---
 
 ## Monday, Jan 6, 2025
 
