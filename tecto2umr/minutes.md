@@ -1,11 +1,14 @@
 # UMR meeting minutes
 
 
-## Monday, Jan 27, 2025
+## Monday, Feb 3, 2025
 
-(Honza, Markéta, Šárka)
+(Dan, Markéta)
 
 #### TODO
+- for Dan, Hanka, Markéta:
+   -  feedback on Czech UD conversion (Federica's email from Jan 21)
+   -  UMR annotation task (Federica's email from Jan 23)
 - for Markéta: 
    - complete the release notes 
    - prepare an overview what has been done (based on Honza's [slides](https://ufallab.ms.mff.cuni.cz/~stepanek/2501-umr/) and with his support) 
@@ -21,6 +24,17 @@
      - discuss the selection with Federica (evaluation of the UD conversion)
 - ??? searchable PDT-C 2.0 in the Lindat repository
 
+
+#### NEXT meeting
+- Monday, Feb 17, S510 (reseration needed)
+ 
+---
+
+## Monday, Jan 27, 2025
+
+(Honza, Markéta, Šárka)
+
+See above.
 
 #### NEXT meeting
 - Monday, Feb 3, S510
