@@ -26,7 +26,7 @@
 
 
 #### NEXT meeting
-- Monday, Feb 17, S510 (reseration needed)
+- Monday, Feb 17, S510 (reservation needed)
  
 ---
 
