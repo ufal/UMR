@@ -1,0 +1,60 @@
+#!btred -e propose_evaldata()
+# -*- mode: cperl; encoding: utf-8; -*-
+use warnings;
+use strict;
+use utf8;
+
+sub propose_evaldata {
+    return unless $root;
+
+    my %stats = (func => {},
+                 map +($_ => 0),
+                 qw( generated apos coord node sentence COMPL cncs_like
+                     common coref_gram coref_text neg CM relative ));
+    do {{
+        while ($this) {
+            next unless $this->{functor};
+
+            ++$stats{func}{ $this->{functor} };
+
+            ++$stats{COMPL}      if 'COMPL' eq $this->{functor};
+            ++$stats{CM}         if 'CM' eq $this->{functor};
+            ++$stats{apos}       if 'APPS' eq $this->{functor};
+            ++$stats{neg}        if '#Neg' eq $this->{t_lemma};
+            ++$stats{coord}      if PML_T::IsCoord($this);
+            ++$stats{generated}  if $this->{is_generated};
+            ++$stats{cncs_like}  if $this->{functor} =~ /^C(NCS|ONTRD)$/;
+            ++$stats{coref_gram} if $this->{'coref_gram.rf'};
+            ++$stats{coref_text} if $this->{coref_text};
+
+            my @ep = PML_T::GetEParents($this);
+            ++$stats{common} if @ep > 1;
+
+            if ($this->{t_lemma} =~ /^(?:který|kd[ye]|odkud|kudy|kam
+                                         |jenž|jaký|co)$/x
+                && grep 'RSTR' eq ($_->{functor} // ""), @ep
+            ) {
+                ++$stats{relative};
+            }
+
+        } continue {
+            ++$stats{node};
+            $this = $this->following;
+        }
+
+        ++$stats{sentence};
+    }} while TredMacro::NextTree();
+
+    $stats{func} = scalar keys %{ delete $stats{func} };
+
+    writeln(join ',', CurrentFile()->filename =~ s{.*/}{}r,
+                      map sprintf("%s:%d", $_, $stats{$_}), sort keys %stats);
+}
+
+=head1 NAME
+
+propose_evaldata - Collect statistics about data to propose good
+evaluation data to cover all the interesting phenomena while still
+being reasonably short.
+
+=cut
