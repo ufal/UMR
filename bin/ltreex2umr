@@ -1,0 +1,29 @@
+#!/bin/bash
+set -eu
+
+main () {
+    local dir=../../data/latin
+    local error=0
+
+    local file
+    for file in "$@" ; do
+
+        file=${file%.t}
+        xsh <<< "quiet ;
+                 register-namespace pml http://ufal.mff.cuni.cz/pdt/pml/ ;
+                 open '$dir/$file.treex.gz' ;
+                 rm //pml:zone[0=count(pml:sentence)]/../..  ;
+                 save :b"
+
+        scen=/tmp/treex-scen$$.$RANDOM.scen
+        file=$file.treex.gz perl -pe 's/%file/$ENV{file} =~ s= =?=gr/e' \
+                   ../../github/tecto2umr/scen/lt2umr.scen > "$scen"
+        treex -e DEBUG "$scen" \
+              > "$dir"/"$file".umr \
+              2> "$dir"/"$file".log || error=1
+        rm "$scen"
+    done
+    return $error
+}
+
+main "$@"

@@ -1,0 +1,29 @@
+SHELL := /bin/bash
+
+.PHONY: data
+data:
+	unzip LDT_PML_tectogrammatical_130317.zip
+	rm -rf LDT_PML_tectogrammatical_130317/LDT_Sallust/LDT_Sallust_books
+	find LDT_PML_tectogrammatical_130317/ -name '*.?' -exec ../../github/bin/fixids.pl {} +
+	find LDT_PML_tectogrammatical_130317/ -name '*.?' -exec xsh -al ../../github/bin/remove-othermeta.xsh {} \;
+	sed -i~ 's/aa-3385W23/a#a-3385W23/' LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri52-61.afun.normalized.t
+	sed -i~ 's/aàa-361W9/a#a-361W9/' LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.t
+	sed -i~ '/<coref/,\=</coref=s/<LM>a#.*//' LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri52-61.afun.normalized.t
+	find LDT_PML_tectogrammatical_130317/ -name '*.t' -exec sed -i~ 's=<LM/>==' {} +
+	find LDT_PML_tectogrammatical_130317/ -name '*.t'  -exec btred -Z resources -t PML_Cz_T_Anot -e1 {} +
+
+merge:
+	xsh 'open LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.w ; delete //pml:w[@id="w-3299W14"]/following::pml:w ; save'
+	../../github/bin/merge LDT_PML_tectogrammatical_130317
+
+.PHONY: treex
+treex:
+	find LDT_PML_tectogrammatical_130317 -name '*.t' -exec ../../github/bin/latin2treex {} \;
+
+.PHONY: umr
+umr:
+	find LDT_PML_tectogrammatical_130317 -name '*.t' -exec ../../github/bin/ltreex2umr {} +
+
+.PHONY: clean
+clean:
+	rm -rf LDT_PML_tectogrammatical_130317/
