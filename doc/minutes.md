@@ -1,6 +1,57 @@
 # UMR meeting minutes
 
 
+## Monday, Feb 24, 2025
+
+(Dan, Federica, Hanka, Jan H., Markéta, Jan Š., Šárka, ??)
+
+#### Expected outcomes (Jan H.)
+
+**US UMR project (= infrastructure project):** 
+- multilingual DATA as main outcome (no research) --> **Czech UMR data** (see below);
+- foster the cooperation;
+- [6th DMR workshop](https://dmr2025.github.io/index), Prague,  August 4-5 2025.
+
+**Czech [UMR-related projects](https://ufal.mff.cuni.cz/uniform-meaning-representation-czech):**
+- publications (will be specified);
+- Czech data:
+   - **goal: approx. 10 000 manually annotated sentences (~ 5% of PDT-C)**   
+   10 minutes per sentence (in average) ... **??? > 200 manday ???** 
+     - start of (massive) manual annotation - end of 2025;
+       - either selected phenomena OR all phenomena on a smaller sample; 
+     - some data for IAA;
+     - annotation with SSC in mid 2025 (SSC still under construction)
+   - **automatic transfer**: 
+     - choice of phenomena and their granularity: up to us;
+     - internal deadline for new version: mid June, 2025   
+     (2 internal data releases each year) 
+     
+
+**Suitable evaluation data:** 
+- set of phenomena that should be covered (Honza: implemented)
+- data for overall evaluation plus additional data for individual phenomena (and their combinations)? 
+
+
+#### TODO:
+- for Dan, Hanka, Markéta:
+   -  feedback on Czech UD conversion (Federica's email from Jan 21);
+   -  UMR annotation task (Federica's email from Jan 23);
+- for Markéta, Honza: 
+   - complete [the release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit); 
+   - prepare an overview what has been done (based on Honza's [slides](https://ufallab.ms.mff.cuni.cz/~stepanek/2501-umr/) and with his support), see above the release notes;
+- for Honza: 
+   - conversion of Latin data
+- ??? searchable PDT-C 2.0 in the Lindat repository
+
+
+#### NEXT meetings
+- Monday, March 3, **!! S519 !!**
+- Monday, March 10, S510
+- Monday, March 17, S510
+- Monday, March 24, S510
+- Monday, March 31, S510
+
+
 ## Monday, Feb 3, 2025
 
 (Dan, Markéta)
