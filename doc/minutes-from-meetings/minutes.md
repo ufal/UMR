@@ -35,8 +35,8 @@
           7 / R / UMR parser by Xyz team at UMR Shared Task
           8-12 / R / UMR parser ... (podle počtu účastníků, 5-8 výsledků typu
             software, pouze od úspěšných účastníků)
-      3rd period:
-          1 / J / Combined Language models in selected NLP tasks /
+  -     3rd period:
+  -       1 / J / Combined Language models in selected NLP tasks /
             Transaction of ACL / IF 3,0 (Q1)
           2 / J / Extended multilingual UMR specification / Computational
             Linguistics / IF 2,5 (Q1)
