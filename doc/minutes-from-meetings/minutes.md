@@ -21,7 +21,7 @@
   -   2nd period: 2 journal papers (WoS), 3 conference papers, 7 parsers (by participants in a shared task organized by us & the US UMR team), 1 dataset (CZ UMR)
   -   3rd period: 2 journal papers, 2 conference papers, 2 SW: (better parser and neurosymbolic LLM)
   -   total for 2+3 periods: 4 journal papers, 5 conf. papers, 9 SW results
-  -   Copy from the project contract (but does not have to folowed by the letter...) below:
+  -   Copy from the project contract (but does not have to folowed to the letter...) below:
   -     2nd period:
   -       1 / J / UMR specification for multilingual annotation / Transactions of the
             ACL / IF 3,0, Q1 (předběžně)
