@@ -15,7 +15,41 @@
 **Czech [UMR-related projects](https://ufal.mff.cuni.cz/uniform-meaning-representation-czech):**
 - publications (will be specified, including the required acknowledgement);
   - publications can be also on UMR for other languages than Czech, e.g., Latin or Persian (the project report will explain that it was important to gain a multi-lingual perspective)
-- Czech data:
+  - Publication committment:
+  - 1st period (until Dec. 2024): 3 conference papers (done),
+  - 2nd and 3rd periods (2025-Sep. 2027, end of project, will be reported as one report in 2027/8):
+  -   2nd period: 2 journal papers (WoS), 3 conference papers, 7 parsers (by participants in a shared task organized by us & the US UMR team), 1 dataset (CZ UMR)
+  -   3rd period: 2 journal papers, 2 conference papers, 2 SW: (better parser and neurosymbolic LLM)
+  -   total for 2+3 periods: 4 journal papers, 5 conf. papers, 9 SW results
+  -   Copy from the project contract (but does not have to folowed by the letter...) below:
+  -     2nd period:
+  -       1 / J / UMR specification for multilingual annotation / Transactions of the
+            ACL / IF 3,0, Q1 (předběžně)
+          2 / J nebo Jsc / UMR and Slavic languages: use case of Czech / Künstliche
+            Intelligenz nebo Slovo a Slovesnost / IF cca 1,0 resp. 0,8
+          3 / D / UMR Shared Task overview / CoNLL conference (Shared Task volume)
+          4 / D / Multilingual Annotation in the UMR framework / ACL nebo Coling nebo EACL nebo NAACL
+            nebo EMNLP konference
+          5 / D / Multilingual UMR dataset / LREC conference 2026
+          6 / R / UMR parser by Abc team at UMR Shared Task
+          7 / R / UMR parser by Xyz team at UMR Shared Task
+          8-12 / R / UMR parser ... (podle počtu účastníků, 5-8 výsledků typu
+            software, pouze od úspěšných účastníků)
+      3rd period:
+          1 / J / Combined Language models in selected NLP tasks /
+            Transaction of ACL / IF 3,0 (Q1)
+          2 / J / Extended multilingual UMR specification / Computational
+            Linguistics / IF 2,5 (Q1)
+          3 / D / Probing LLMs and its relation to symbolic knowledge
+            representation / jedna z konferencí endorsovaných ACL v roce 2026/2027
+          4 / D / Comparison of UMR and LUSyD knowledge
+            representations for multiple languages / jedna z konferencí
+            endorsovaných ACL v roce 2026/2027
+          5 / R / Enhanced UMR parser and generator for Czech /
+            Open Source, LINDAT/CLARIAH-CZ repository
+          6 / R / UMR LLM [cs] / open source model pro češtinu (nebo
+            vícejazyčný), LINDAT/CLARIAH-CZ repository
+      - Czech data:
    - **goal: approx. 10,000 manually annotated sentences (~ 5% of PDT-C)**
      10 minutes per sentence (on average) ... **??? > 200 person-days ???**
      - start of (massive) manual annotation – end of 2025;
