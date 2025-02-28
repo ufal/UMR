@@ -104,6 +104,11 @@ lws_re = re.compile(r"^\s+")
 def remove_leading_whitespace(line):
     return lws_re.sub('', line)
 
+#punct_re = re.compile(r"^[-.,;:\?\!\(\)]$")
+punct_re = re.compile(r"^\pP+$")
+def is_punctuation(x):
+    return punct_re.match(x)
+
 comment_re = re.compile(r"(.)\#.*")
 def remove_inline_comment(line):
     return remove_trailing_whitespace(comment_re.sub(r"\1", line))
@@ -924,7 +929,7 @@ def validate_alignment(sentence, node_dict, args):
     # not required but let's tentatively report it to see the deviations.
     if args.check_unaligned_token:
         for i in range(len(sentence[0]['tokens'])):
-            if not tokal[i] and not re.match(r"^[-.,;:\?\!\(\)]$", sentence[0]['tokens'][i]):
+            if not tokal[i] and not is_punctuation(sentence[0]['tokens'][i]):
                 testid = 'unaligned-token'
                 testmessage = "Non-punctuation token %d ('%s') is not aligned to any node in the sentence level graph." % (i+1, sentence[0]['tokens'][i])
                 warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
