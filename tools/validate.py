@@ -299,9 +299,9 @@ def sentences(inp, args):
             lines.append(line)
         elif is_ilg(line):
             lines.append(line)
-        else: # A line which is neither a comment nor a token/word, nor empty. That's bad!
+        else:
             testid = 'invalid-line'
-            testmessage = "Spurious line: '%s'. All non-empty lines should start with the '#' character, opening bracket, colon, or node variable id. Leading whitespace is permitted." % (line)
+            testmessage = "Spurious line: '%s'. All non-empty lines should start with the '#' character, opening bracket, colon, node variable id, or one of the interlinear glossing keywords. Leading whitespace is permitted." % (line)
             warn(testmessage, testclass, testlevel, testid)
             corrupt = True
     else: # end of file
