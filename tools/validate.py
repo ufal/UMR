@@ -1470,7 +1470,7 @@ def validate_events(sentence, node_dict, args):
                 testid = 'missing-attribute'
                 testmessage = "Missing attribute %s. Node %s is an event because %s." % (':aspect', nid, node['event_reason'])
                 warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
-            if len(relations[':modal-strength/predicate']) > 0 and relations[':modal-strength/predicate'][0]['relation'] == ':modal-strength':
+            if args.required_document_level and len(relations[':modal-strength/predicate']) > 0 and relations[':modal-strength/predicate'][0]['relation'] == ':modal-strength':
                 testid = 'sentence-level-modal-strength'
                 testmessage = "The attribute :modal-strength is deprecated. Modal annotation should go to the document level."
                 warn(testmessage, 'Warning', testlevel, testid, lineno=relations[':modal-strength/predicate'][0]['line0'])
@@ -1481,19 +1481,20 @@ def validate_events(sentence, node_dict, args):
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[':modal-strength/predicate'][0]['line0'])
             # Check also document level relations. Every event must have at least
             # :temporal against document-creation-time.
-            found = False
-            for r in sentence[3]['relations']:
-                if r['group'] == ':temporal':
-                    if r['node0'] == nid or r['node1'] == nid:
-                        found = True
-                        break
-            if not found:
-                event = "%s / %s" % (nid, node['concept'])
-                if node['alignment']['tokstr'] != '':
-                    event += " '%s'" % node['alignment']['tokstr']
-                testid = 'missing-temporal'
-                testmessage = "Missing temporal relation (at least with document-creation-time) for event %s." % event
-                warn(testmessage, 'Document', testlevel, testid, lineno=sentence[3]['line0'])
+            if args.require_document_level:
+                found = False
+                for r in sentence[3]['relations']:
+                    if r['group'] == ':temporal':
+                        if r['node0'] == nid or r['node1'] == nid:
+                            found = True
+                            break
+                if not found:
+                    event = "%s / %s" % (nid, node['concept'])
+                    if node['alignment']['tokstr'] != '':
+                        event += " '%s'" % node['alignment']['tokstr']
+                    testid = 'missing-temporal'
+                    testmessage = "Missing temporal relation (at least with document-creation-time) for event %s." % event
+                    warn(testmessage, 'Document', testlevel, testid, lineno=sentence[3]['line0'])
         # On the other hand, some concepts look like events but they are not events and should not have :aspect and :modal-strength.
         elif re.match(non_event_roleset_re, node['concept']) or re.match(discourse_concept_re, node['concept']):
             for rtype in [':aspect', ':modal-strength/predicate']:
@@ -2112,6 +2113,7 @@ if __name__=="__main__":
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
     strict_group.add_argument('--allow-duplicate-roles', dest='check_duplicate_roles', action='store_false', default=True, help='Any role can occur multiple times under the same parent. Normally, this is allowed for some relations and attributes but not for others. This option relaxes the test for relations (roles) but not for attributes.')
     strict_group.add_argument('--allow-coref-entity-event-mismatch', dest='check_coref_entity_event_mismatch', action='store_false', default=True, help='If we know that a concept is entity, coreference cannot point to it via :same-event, and vice versa, an event cannot participate in :same-entity relations. This option relaxes the test on such mismatches.')
+    strict_group.add_argument('--optional-document-level', dest='require_document_level', action='store_false', default=True, help='Do not require that every sentence has complete document-level annotation. In particular, do not report missing temporal relations for events. Another consequence is that modal strength is now expected in the sentence-level, rather than document-level graph.')
 
     report_group = opt_parser.add_argument_group('Reports', 'Options for printing additional reports about the data.')
     report_group.add_argument('--print-relations', dest='print_relations', action='store_true', default=False, help='Print detailed info about all nodes and relations.')
