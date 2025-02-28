@@ -371,7 +371,7 @@ def validate_newlines(inp):
 # for concept-relation or attribute-value compatibility.
 #==============================================================================
 
-variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*")
+variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*") # one could allow non-English letters here but the US team avoids them, so let's assume they are not allowed
 concept_re = re.compile(r"^[^\s\(\):]+")
 relation_re = re.compile(r"^:[-A-Za-z0-9]+")
 string_re = re.compile(r'^"([^"\s]+)"')
