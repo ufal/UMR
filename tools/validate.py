@@ -1088,7 +1088,7 @@ known_relations = {
     ':calendar': {'type': 'modifier', 'repeat': False},
     ':cause': {'type': 'modifier', 'repeat': True},
     ':causer': {'type': 'participant', 'repeat': False},
-    ':century': {'type': 'modifier', 'repeat': False},
+    ':century': {'type': 'attribute', 'repeat': False},
     ':companion': {'type': 'participant', 'repeat': False},
     ':concession': {'type': 'modifier', 'repeat': True},
     ':condition': {'type': 'modifier', 'repeat': True},
