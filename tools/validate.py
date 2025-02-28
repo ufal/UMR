@@ -1239,6 +1239,9 @@ def validate_relations(sentence, node_dict, args):
                     if r['relation'] == ':ARG2' and node['concept'] == 'have-polarity-91':
                         type = 'attribute'
                         values = ['+', '-']
+                    # :ARG1 of rate-entity-91 has numeric value
+                    if r['relation'] == ':ARG1' and node['concept'] == 'rate-entity-91':
+                        type = 'attribute'
                     if type != 'attribute':
                         if r['type'] != 'node':
                             testid = 'unexpected-value'
