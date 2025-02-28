@@ -1470,7 +1470,7 @@ def validate_events(sentence, node_dict, args):
                 testid = 'missing-attribute'
                 testmessage = "Missing attribute %s. Node %s is an event because %s." % (':aspect', nid, node['event_reason'])
                 warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
-            if args.required_document_level and len(relations[':modal-strength/predicate']) > 0 and relations[':modal-strength/predicate'][0]['relation'] == ':modal-strength':
+            if args.require_document_level and len(relations[':modal-strength/predicate']) > 0 and relations[':modal-strength/predicate'][0]['relation'] == ':modal-strength':
                 testid = 'sentence-level-modal-strength'
                 testmessage = "The attribute :modal-strength is deprecated. Modal annotation should go to the document level."
                 warn(testmessage, 'Warning', testlevel, testid, lineno=relations[':modal-strength/predicate'][0]['line0'])
