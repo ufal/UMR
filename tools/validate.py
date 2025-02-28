@@ -1130,6 +1130,7 @@ known_relations = {
     ':polarity': {'type': 'attribute', 'repeat': False},
     ':polite': {'type': 'attribute', 'repeat': False},
     ':possessor': {'type': 'modifier', 'repeat': True}, # Note: The guidelines originally defined ':poss' but it was changed to ':possessor' (the dependent node is the possessor of the parent). See also the spreadsheet.
+    ':pure-addition': {'type': 'modifier', 'repeat': True},
     ':purpose': {'type': 'modifier', 'repeat': True},
     ':quant': {'type': 'attribute', 'repeat': False},
     ':quarter': {'type': 'modifier', 'repeat': False},
