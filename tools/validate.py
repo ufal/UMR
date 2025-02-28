@@ -1126,7 +1126,7 @@ known_relations = {
     ':other-role': {'type': 'modifier', 'repeat': True},
     ':part': {'type': 'modifier', 'repeat': True},
     ':path': {'type': 'modifier', 'repeat': True},
-    ':place': {'type': 'participant', 'repeat': False},
+    ':place': {'type': 'participant', 'repeat': True}, # Even though the guidelines list :place among participant roles, it is often used as a simple adverbial modifier, and there may be multiple place modifiers for the same event.
     ':polarity': {'type': 'attribute', 'repeat': False},
     ':polite': {'type': 'attribute', 'repeat': False},
     ':possessor': {'type': 'modifier', 'repeat': True}, # Note: The guidelines originally defined ':poss' but it was changed to ':possessor' (the dependent node is the possessor of the parent). See also the spreadsheet.
