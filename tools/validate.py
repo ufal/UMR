@@ -1306,7 +1306,14 @@ def validate_name(sentence, node_dict, args):
         if node['concept'] == 'name':
             # Normally, a name concept has a :name incoming relation and one or more :opX attributes.
             # However, instead of :name incoming from a named entity node, there can be :ARG2 from
-            # the have-name-91 reification.
+            # the have-name-91 reification. Furthermore, the name concept may occur as a named entity
+            # type. The Google spreadsheet (https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit?gid=1255922856#gid=1255922856)
+            # now lists 'name' as a possible named entity type. It would probably apply when the
+            # sentence speaks about the name itself rather than the entity it identifies, as in Italian:
+            # Nel XIII secolo il nome Apulia fu utilizzato da alcuni autori per indicare la parte meridionale della penisola italiana.
+            # During the thirteenth century, the name Apulia was used by some authors to signify the southern part of the Italian peninsula.
+            # Such cases are probably marginal but we cannot distinguish them from real errors,
+            # so we have to convert error messages in this function to warnings.
             relations = sorted(node['relations'], key=lambda x: x['line0'])
             in_name_found = False
             out_op1_found = False
@@ -1320,7 +1327,7 @@ def validate_name(sentence, node_dict, args):
                     else:
                         testid = 'wrong-incoming-name'
                         testmessage = "Incoming relation to a 'name' concept should not be '%s'." % r['relation']
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        warn(testmessage, 'Warning', testlevel, testid, lineno=r['line0'])
                 else:
                     if op_re.match(r['relation']):
                         if r['relation'] == ':op1':
@@ -1334,12 +1341,13 @@ def validate_name(sentence, node_dict, args):
                     else:
                         testid = 'wrong-outgoing-name'
                         testmessage = "Outgoing relation from a 'name' concept should not be '%s'." % r['relation']
-                        warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+                        warn(testmessage, 'Warning', testlevel, testid, lineno=r['line0'])
             if not in_name_found:
                 testid = 'missing-incoming-name'
                 testmessage = "Missing incoming ':name' relation to the 'name' concept %s." % (node['variable'])
-                warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
+                warn(testmessage, 'Warning', testlevel, testid, lineno=node['line0'])
             if not out_op1_found:
+                # This one is still an error rather than warning. Even as a named entity type, name needs :op1.
                 testid = 'missing-outgoing-name'
                 testmessage = "Missing outgoing ':op1' relation from the 'name' concept %s." % (node['variable'])
                 warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
