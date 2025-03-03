@@ -854,15 +854,18 @@ def validate_alignment(sentence, node_dict, args):
                                 testid = 'invalid-token-range'
                                 testmessage = "Index of the first token '%d' is greater than the index of the second token '%d'." % (t0, t1)
                                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                                t1 = t0
                             tmax = len(sentence[0]['tokens'])
                             if t0 > tmax:
                                 testid = 'invalid-token-index'
                                 testmessage = "Index of the first token '%d' is out of range: there are %d tokens." % (t0, tmax)
                                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                                t0 = tmax
                             if t1 > tmax:
                                 testid = 'invalid-token-index'
                                 testmessage = "Index of the second token '%d' is out of range: there are %d tokens." % (t1, tmax)
                                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                                t1 = tmax
                         # The variable should be in node_dict. If it is not there,
                         # it has been already reported as error; but we must survive it here.
                         if variable in node_dict:
@@ -1301,6 +1304,9 @@ def validate_name(sentence, node_dict, args):
     nodes = sorted([node_dict[nid] for nid in sentence[1]['nodes']], key=lambda x: x['line0'])
     for node in nodes:
         if node['concept'] == 'name':
+            # Normally, a name concept has a :name incoming relation and one or more :opX attributes.
+            # However, instead of :name incoming from a named entity node, there can be :ARG2 from
+            # the have-name-91 reification.
             relations = sorted(node['relations'], key=lambda x: x['line0'])
             in_name_found = False
             out_op1_found = False
@@ -1308,6 +1314,11 @@ def validate_name(sentence, node_dict, args):
                 if r['dir'] == 'in':
                     if r['relation'] == ':name':
                         in_name_found = True
+                    elif r['relation'] == ':ARG2':
+                        ###!!! We should also check that the parent is have-name-91.
+                        in_name_found = True
+                        ###!!! DEBUGGING
+                        warn('A name concept has an incoming relation :ARG2.', 'Warning', 3, 'name-arg2', lineno=r['line0'])
                     else:
                         testid = 'wrong-incoming-name'
                         testmessage = "Incoming relation to a 'name' concept should not be '%s'." % r['relation']
