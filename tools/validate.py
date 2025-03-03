@@ -1096,7 +1096,7 @@ known_relations = {
     ':consist-of': {'type': 'modifier', 'repeat': False},
     ':day': {'type': 'attribute', 'repeat': False},
     ':dayperiod': {'type': 'attribute', 'repeat': False},
-    ':decade': {'type': 'modifier', 'repeat': False},
+    ':decade': {'type': 'attribute', 'repeat': False},
     ':degree': {'type': 'attribute', 'repeat': False},
     ':destination': {'type': 'modifier', 'repeat': True},
     ':direction': {'type': 'modifier', 'repeat': True},
