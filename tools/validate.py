@@ -1143,6 +1143,7 @@ known_relations = {
     ':refer-person': {'type': 'attribute', 'repeat': False, 'values': ['1st', '2nd', '3rd', '4th']}, # Note: The guidelines and the spreadsheet originally defined ':ref-person' but it was changed to ':refer-person' in UMR 1.0 to make the annotation more human-readable.
     ':result': {'type': 'modifier', 'repeat': True},
     ':scale': {'type': 'modifier', 'repeat': False},
+    ':season': {'type': 'modifier', 'repeat': False},
     ':source': {'type': 'participant', 'repeat': False},
     ':start': {'type': 'participant', 'repeat': False},
     ':stimulus': {'type': 'participant', 'repeat': False},
