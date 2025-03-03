@@ -1083,7 +1083,7 @@ known_relations = {
     ':ARG4': {'type': 'participant', 'repeat': False},
     ':ARG5': {'type': 'participant', 'repeat': False},
     ':ARG6': {'type': 'participant', 'repeat': False},
-    ':aspect': {'type': 'attribute', 'repeat': False, 'values': ['habitual', 'imperfective', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement']},
+    ':aspect': {'type': 'attribute', 'repeat': False, 'values': ['habitual', 'generic', 'imperfective', 'inceptive', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement']},
     ':beneficiary': {'type': 'participant', 'repeat': False},
     ':calendar': {'type': 'modifier', 'repeat': False},
     ':cause': {'type': 'modifier', 'repeat': True},
