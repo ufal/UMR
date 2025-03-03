@@ -1089,6 +1089,7 @@ known_relations = {
     ':cause': {'type': 'modifier', 'repeat': True},
     ':causer': {'type': 'participant', 'repeat': False},
     ':century': {'type': 'attribute', 'repeat': False},
+    ':co-actor': {'type': 'participant', 'repeat': False},
     ':companion': {'type': 'participant', 'repeat': False},
     ':concession': {'type': 'modifier', 'repeat': True},
     ':condition': {'type': 'modifier', 'repeat': True},
@@ -1140,6 +1141,7 @@ known_relations = {
     ':recipient': {'type': 'participant', 'repeat': False},
     ':refer-number': {'type': 'attribute', 'repeat': False, 'values': ['singular', 'dual', 'paucal', 'plural']}, # Note: The guidelines and the spreadsheet originally defined ':ref-number' but it was changed to ':refer-number' in UMR 1.0 to make the annotation more human-readable.
     ':refer-person': {'type': 'attribute', 'repeat': False, 'values': ['1st', '2nd', '3rd', '4th']}, # Note: The guidelines and the spreadsheet originally defined ':ref-person' but it was changed to ':refer-person' in UMR 1.0 to make the annotation more human-readable.
+    ':result': {'type': 'modifier', 'repeat': True},
     ':scale': {'type': 'modifier', 'repeat': False},
     ':source': {'type': 'participant', 'repeat': False},
     ':start': {'type': 'participant', 'repeat': False},
@@ -1170,7 +1172,6 @@ known_relations = {
     ':part-of-phraseme': {'type': 'modifier', 'repeat': False},
     ':predicative-noun': {'type': 'modifier', 'repeat': False},
     ':regard': {'type': 'modifier', 'repeat': True},
-    ':result': {'type': 'modifier', 'repeat': True},
     ':COMPL': {'type': 'modifier', 'repeat': True},
     ':DENOM': {'type': 'modifier', 'repeat': True},
     ':FPHR': {'type': 'modifier', 'repeat': True},
