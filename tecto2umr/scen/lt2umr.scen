@@ -1,6 +1,6 @@
 Read::Treex from='!%file'
-T2U::BuildUtree mapping=/net/work/people/stepanek/umr/data/latin/Vallex4UMR.txt
-T2U::ConvertCoreference
-T2U::AdjustStructure
+T2U::LA::BuildUtree mapping=/net/work/people/stepanek/umr/data/latin/Vallex4UMR.txt
+T2U::LA::ConvertCoreference
+T2U::LA::AdjustStructure
 # Write::Treex compress=0
 Write::UMR
