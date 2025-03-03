@@ -1317,8 +1317,6 @@ def validate_name(sentence, node_dict, args):
                     elif r['relation'] == ':ARG2':
                         ###!!! We should also check that the parent is have-name-91.
                         in_name_found = True
-                        ###!!! DEBUGGING
-                        warn('A name concept has an incoming relation :ARG2.', 'Warning', 3, 'name-arg2', lineno=r['line0'])
                     else:
                         testid = 'wrong-incoming-name'
                         testmessage = "Incoming relation to a 'name' concept should not be '%s'." % r['relation']
