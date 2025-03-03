@@ -1,6 +1,29 @@
 # UMR meeting minutes
 
 
+## Monday, March 3, 2025
+
+(Dan, Federica, Hanka, Jan Š., Markéta)
+
+
+#### TODO:
+- for Dan, Hanka, Markéta:
+   -  if not completed yet, complete the UMR annotation task (Federica's email from Jan 23);
+   -  data validation 
+- for Markéta, Honza (and others):
+   - complete [the release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit) (publish as a technical report?) 
+   - prepare an overview what has been done (based on Honza's [slides](https://ufallab.ms.mff.cuni.cz/~stepanek/2501-umr/) and with his support), see above the release notes;
+- for Honza:
+   - conversion of Latin data (almost done, missing list of statives)
+- ??? searchable PDT-C 2.0 in [PML-TQ](https://lindat.mff.cuni.cz/services/pmltq/) (Lindat)
+
+
+#### NEXT meetings
+- Monday, March 10, S510
+- Monday, March 17, S510
+- Monday, March 24, S510
+- Monday, March 31, S510
+
 ## Monday, Feb 24, 2025
 
 (Dan, Federica, Hanka, Jan H., Markéta, Jan Š., Šárka, Minoo)
