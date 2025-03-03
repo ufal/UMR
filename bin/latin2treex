@@ -1,0 +1,20 @@
+#!/bin/bash
+set -eu
+
+file=$1
+scen=$(mktemp treex-XXXXXXXX.scen)
+
+function cleanup() {
+    rm -rf "$scen"
+}
+trap cleanup EXIT
+
+dir=$(readlink -f ${0%/*})
+
+cat <<EOF > "$scen"
+# Temporary scenario to convert $file from PDT to Treex.
+Read::PDT schema_dir=$UFAL_UMR/data/latin/resources language=la from="!${file// /?}"
+Write::Treex
+EOF
+
+treex "$scen"

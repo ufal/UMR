@@ -1,0 +1,54 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+use experimental qw( signatures );
+
+use Path::Tiny qw{ path };
+use XML::XSH2;
+
+my $XSH_TEMPLATE = << '__XSH__';
+    register-namespace pml http://ufal.mff.cuni.cz/pdt/pml/ ;
+    my $f1 := open '<FIRST>' ;
+    my $f2 := open '<FILE>' ;
+    <ACTION> ;
+    save :b $f1 ;
+__XSH__
+
+my %MERGE = (
+    w => 'xcp $f2/pml:wdata/pml:doc/pml:para append $f1/pml:wdata/pml:doc',
+    m => 'xcp $f2/pml:mdata/pml:s append $f1/pml:mdata',
+    a => 'xcp $f2/pml:adata/pml:trees/* append $f1/pml:adata/pml:trees',
+    t => 'xcp $f2/pml:tdata/pml:trees/* append $f1/pml:tdata/pml:trees',
+);
+
+sub main($dir) {
+    for my $subdir (path($dir)->children) {
+        next if $subdir->children(qr/\.t$/) >= 1;
+
+        for my $subsubdir (grep $_->is_dir, $subdir->children) {
+            my $iter = $subsubdir->iterator({recurse => 1});
+            my %files;
+            while (my $found = $iter->()) {
+                push @{ $files{$1} }, "$found" if $found =~ /\.([wmat])$/;
+            }
+
+            for my $layer (qw( w m a t )) {
+                my @files = map $_->[0],
+                            sort { $a->[1] <=> $b->[1] }
+                            map [$_, /.*(?<!\d)(\d+)/],
+                            @{ $files{$layer} };
+                my $first = shift @files;
+                for my $file (@files) {
+                    my $xsh = $XSH_TEMPLATE;
+                    $xsh =~ s/<FIRST>/$first/;
+                    $xsh =~ s/<FILE>/$file/;
+                    $xsh =~ s/<ACTION>/$MERGE{$layer}/;
+                    xsh($xsh);
+                    unlink $file;
+                }
+            }
+        }
+    }
+}
+
+main(@ARGV);
