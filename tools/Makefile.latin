@@ -12,6 +12,7 @@ data:
 	find LDT_PML_tectogrammatical_130317/ -name '*.t' -exec sed -i~ 's=<LM/>==' {} +
 	find LDT_PML_tectogrammatical_130317/ -name '*.t'  -exec btred -Z resources -t PML_Cz_T_Anot -e1 {} +
 
+.PHONY: merge
 merge:
 	xsh 'open LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.w ; delete //pml:w[@id="w-3299W14"]/following::pml:w ; save'
 	../../github/bin/merge LDT_PML_tectogrammatical_130317

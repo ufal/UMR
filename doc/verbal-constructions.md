@@ -2,11 +2,15 @@
 
 UMR, following AMR, represents some verbal constructions in a different way than we are used to in PDT-like annotations. 
 
-- PDT distinguish lexical verbs (= autosemantic verbs as  action verbs like _jít, dělat, snídat, měnit_ but also phase verbs like _začít, skončit_ combined with infinite verbs (_Začal pracovat._) and copula _být_ (_Petr je doktor / chytrý._, _Jan bývá často nemocný._)) represented as t-nodes and auxiliary verbs (= synsemantic units, esp. auxiliary _být_, but also modal verbs like _muset, chtít_) represented as  attributes of respective t-nodes. 
+- PDT distinguish 
+  - lexical verbs (= autosemantic verbs as  action verbs like _jít, dělat, snídat, měnit_ but also phase verbs like _začít, skončit_ combined with infinite verbs (_Začal pracovat._) and copula _být_ (_Petr je doktor / chytrý._, _Jan bývá často nemocný._)) represented as t-nodes and 
+  - auxiliary verbs (= synsemantic units, esp. auxiliary _být_, but also modal verbs like _muset, chtít_) represented as  attributes of respective t-nodes. 
 
-- In UMR, there are also two types of "predicates" in UMR -- those headed by "lexical" predicates (corresponding to particular verbs and their rolesets, as defined in PropBank) and those referred to as "abstract rolesets" of different types, which are meant to annotate the crosslinguistically stable meanings. 
+- In UMR, there are also two types of "predicates" in UMR: 
+  - those headed by "lexical" predicates (corresponding to particular verbs and their rolesets, as defined in PropBank) and 
+  - sthose referred to as "abstract rolesets" of different types, which are meant to annotate the crosslinguistically stable meanings. 
 
-Also the distinction what should be considered a single event and what are two events (annotated as two verbs) differ 
+However, they differ in distinction what should be considered a single event and what are two events (annotated as two verbs).
 
 ---
 
