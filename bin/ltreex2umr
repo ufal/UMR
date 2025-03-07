@@ -8,7 +8,7 @@ main () {
     local file
     for file in "$@" ; do
 
-        file=${file%.t}
+        file=${file%.treex.gz}
         xsh <<< "quiet ;
                  register-namespace pml http://ufal.mff.cuni.cz/pdt/pml/ ;
                  open '$dir/$file.treex.gz' ;

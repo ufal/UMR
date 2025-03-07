@@ -1,29 +1,33 @@
 SHELL := /bin/bash
 
-.PHONY: data
-data:
+LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.umr LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.umr LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.umr: LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.treex.gz LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.treex.gz LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.treex.gz
+	find LDT_PML_tectogrammatical_130317 -name '*.treex.gz' -exec ../../github/bin/ltreex2umr {} +
+
+LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri1-10.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri1-10.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri1-10.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri1-10.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri11-20.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri11-20.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri11-20.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri11-20.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri21-30.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri21-30.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri21-30.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri21-30.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri31-40.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri31-40.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri31-40.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri31-40.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri52-61.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri52-61.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri52-61.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri52-61.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.t: LDT_PML_tectogrammatical_130317.zip
 	unzip LDT_PML_tectogrammatical_130317.zip
+# Remove duplicate files
 	rm -rf LDT_PML_tectogrammatical_130317/LDT_Sallust/LDT_Sallust_books
 	find LDT_PML_tectogrammatical_130317/ -name '*.?' -exec ../../github/bin/fixids.pl {} +
 	find LDT_PML_tectogrammatical_130317/ -name '*.?' -exec xsh -al ../../github/bin/remove-othermeta.xsh {} \;
+# Fix annotation errors
 	sed -i~ 's/aa-3385W23/a#a-3385W23/' LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri52-61.afun.normalized.t
 	sed -i~ 's/aàa-361W9/a#a-361W9/' LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.t
 	sed -i~ '/<coref/,\=</coref=s/<LM>a#.*//' LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri52-61.afun.normalized.t
 	find LDT_PML_tectogrammatical_130317/ -name '*.t' -exec sed -i~ 's=<LM/>==' {} +
-	find LDT_PML_tectogrammatical_130317/ -name '*.t'  -exec btred -Z resources -t PML_Cz_T_Anot -e1 {} +
+	xsh 'open LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.t ; delete //*[@id="SlaT-697-n2"]/pml:is_member ; save :b'
 
-.PHONY: merge
-merge:
+LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.t: LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.t
 	xsh 'open LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri41-51.afun.normalized.w ; delete //pml:w[@id="w-3299W14"]/following::pml:w ; save'
 	../../github/bin/merge LDT_PML_tectogrammatical_130317
+	sed -i~ 's/-libri[0-9]*-[0-9]*//g' LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri*.afun.normalized.[wmat]
+	for f in LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust-libri*.afun.normalized.[wmat] ; do mv "$$f" "$${f/-libri*.afun/.afun}" ; done
 
-.PHONY: treex
-treex:
+LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.treex.gz LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.treex.gz LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.treex.gz: LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Caesar/Caesar.afun.normalized.t LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.w LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.m LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.a LDT_PML_tectogrammatical_130317/LDT_Cicero/cicero.afun.normalized.t
 	find LDT_PML_tectogrammatical_130317 -name '*.t' -exec ../../github/bin/latin2treex {} \;
 
-.PHONY: umr
-umr:
-	find LDT_PML_tectogrammatical_130317 -name '*.t' -exec ../../github/bin/ltreex2umr {} +
+.PHONY: test
+test:
+	find LDT_PML_tectogrammatical_130317/ -name '*.umr'  -exec btred -Z resources -t PML_Cz_T_Anot -e1 {} +
 
 .PHONY: clean
 clean:
