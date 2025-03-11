@@ -24,15 +24,17 @@
 
 - **PDT evaluation data** - 6 documents (not from Faust)  
   - Dan: will hopefully pre-generate ids   
-  - split between Markéta and Hanka:  
-     - ML: PDT: mf930713_054.t (11 s.), 
-       PCEDT-CZ: wsj0676.cz.t (21 s.),  
-    PDTSC: pdtsc_106_3.03.t (50 s.);
-    - HH: PDT: ln94205_132.t (9 s.), 
-  PCEDT-CZ: wsj1251.cz.t (8 s.), 
-  PDTSC: pdtsc_093_3.02.t (50 s.)
+  - split between Markéta and Hanka (dtest data):  
+     - **ML:** ln94210_111.t (14s.), pdtsc_093_3.02.t (50s.), wsj0013.cz.t (18s.)
+     - **HH:** ln95046_093.t (11s.), pdtsc_146_2.05.t (50s.), wsj0072.cz.t (19s.)
+     - ~~ML: PDT: mf930713_054.t (11 s.),~~   
+       ~~PCEDT-CZ: wsj0676.cz.t (21 s.),~~  
+       ~~PDTSC: pdtsc_106_3.03.t (50 s.);~~
+    - ~~HH: PDT: ln94205_132.t (9 s.),~~  
+      ~~PCEDT-CZ: wsj1251.cz.t (8 s.),~~   
+      ~~PDTSC: pdtsc_093_3.02.t (50 s.)~~  
 
-- ??? searchable PDT-C 2.0 in [PML-TQ](https://lindat.mff.cuni.cz/services/pmltq/) (Lindat)
+- ???Jirka Mírovský: searchable PDT-C 2.0 in [PML-TQ](https://lindat.mff.cuni.cz/services/pmltq/) (Lindat)
 
 #### NEXT meetings
 - Monday, March 17, S510
