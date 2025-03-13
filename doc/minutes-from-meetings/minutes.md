@@ -1,6 +1,46 @@
 # UMR meeting minutes
 
 
+## Monday, March 10, 2025
+
+(Dan, Federica, Hanka, Jan Š., Markéta)
+
+#### Updates:
+- Federica works on UD --> UMR conversion:  
+  How to align graphs?  
+  How to identify abstract predicates?   
+  Checking inverse roles? 
+
+- Honza:   
+  Latin data can be converted in the same way as Czech data;  
+  The problem with COMPL fixed.
+
+
+#### TODO:
+- DMR workshop: We are supposed to submit at least 1 paper, deadline: April 21
+  - Czech conversion - error analysis ... for (small number of) selected phenomena? 
+
+- Complete [the release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit) (publish as a technical report?) 
+
+- **PDT evaluation data** - 6 documents (not from Faust)  
+  - Dan: will hopefully pre-generate ids   
+  - split between Markéta and Hanka (dtest data):  
+     - **ML:** ln94210_111.t (14s.), pdtsc_093_3.02.t (50s.), wsj0013.cz.t (18s.)
+     - **HH:** ln95046_093.t (11s.), pdtsc_146_2.05.t (50s.), wsj0072.cz.t (19s.)
+     - ~~ML: PDT: mf930713_054.t (11 s.),~~   
+       ~~PCEDT-CZ: wsj0676.cz.t (21 s.),~~  
+       ~~PDTSC: pdtsc_106_3.03.t (50 s.);~~
+    - ~~HH: PDT: ln94205_132.t (9 s.),~~  
+      ~~PCEDT-CZ: wsj1251.cz.t (8 s.),~~   
+      ~~PDTSC: pdtsc_093_3.02.t (50 s.)~~  
+
+- ???Jirka Mírovský: searchable PDT-C 2.0 in [PML-TQ](https://lindat.mff.cuni.cz/services/pmltq/) (Lindat)
+
+#### NEXT meetings
+- Monday, March 17, S510
+- Monday, March 24, S510
+- Monday, March 31, S510
+
 ## Monday, March 3, 2025
 
 (Dan, Federica, Hanka, Jan Š., Markéta)
