@@ -1,5 +1,42 @@
 # UMR meeting minutes
 
+## Monday, March 31, 2025
+
+(Dan, Federica, Hanka, Jan Š., Markéta)
+
+#### Updates:
+- Federica works on UD --> UMR conversion (she plans to submit a paper to LAW)  
+
+- Honza: Problems with PRED, INTF (and some other functors) fixed, 
+  better conversion of CNCS, CSQ;   
+  problems with the sempos grammateme --> problems with the refer attribute
+  
+- Markéta + Hanka: small progress in data preparation (10 parallel sentences + cca 30 sentences with a single annotation ready)
+
+
+#### TODO:
+- **DMR workshop**: We are supposed to submit at least 1 paper, deadline: April 21
+  - Czech conversion - error analysis ... for (small number of) selected phenomena? 
+
+- final check of [the release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit) (Appendix: still missing examples); then publish as a technical report 
+
+- **PDT evaluation data** - 6 documents (not from Faust), 162 sentences   
+  - current goal: at least 25 sentences written (PDT), 50 sentences spoken (PDTSC), ?? sentences business news (WSJ) --> at least 75 sentences
+  - then the rest (PDTSC 50 sentences, WSJ < 37 sentences) --> up to 162 sentences in total
+ 
+-  **data comparison ... TrEd ??**
+   - Ask Zdenka who compared the AMR annotations for (Urešová at al, 2014)!
+ 
+- **How difficult it would be to make it possible to annotate/re-arrange UMRs in TrEd?** This would significantly speed up the annotation!
+ 
+- ???Jirka Mírovský: searchable PDT-C 2.0 in [PML-TQ](https://lindat.mff.cuni.cz/services/pmltq/) (Lindat)
+
+#### NEXT meetings
+- Monday, April 7, S510
+- Monday, April 14, S510
+- Monday, April 28, S510
+
+============================
 
 ## Monday, March 10, 2025
 
@@ -22,7 +59,7 @@
 
 - Complete [the release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit) (publish as a technical report?) 
 
-- **PDT evaluation data** - 6 documents (not from Faust)  
+- **PDT evaluation data** - 6 documents (not from Faust), 162 sentences  
   - Dan: will hopefully pre-generate ids   
   - split between Markéta and Hanka (dtest data):  
      - **ML:** ln94210_111.t (14s.), pdtsc_093_3.02.t (50s.), wsj0013.cz.t (18s.)
