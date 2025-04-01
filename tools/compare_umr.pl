@@ -192,30 +192,98 @@ sub compare_files
     # Loop over sentence numbers, look at the same-numbered sentence in each file.
     for(my $i = 0; $i < $n_sentences; $i++)
     {
-        my @toktable;
+        print("-------------------------------------------------------------------------------\n");
+        printf("Comparing sentence %d:\n", $i+1);
         foreach my $file (@files)
         {
             parse_sentence_tokens($file, $i);
             parse_sentence_graph($file, $i);
             parse_sentence_alignments($file, $i);
+        }
+        # Check that the sentence has the same tokens in all files.
+        my $sentence_text;
+        foreach my $file (@files)
+        {
+            my $sentence = $file->{sentences}[$i];
+            if(!defined($sentence_text))
+            {
+                $sentence_text = join(' ', @{$sentence->{tokens}});
+            }
+            else
+            {
+                my $current_sentence_text = join(' ', @{$sentence->{tokens}});
+                if($current_sentence_text ne $sentence_text)
+                {
+                    printf STDERR ("Tokens %s: %s\n", $files[0]{label}, $sentence_text);
+                    printf STDERR ("Tokens %s: %s\n", $file->{label}, $current_sentence_text);
+                    confess(sprintf("Mismatch in tokens of sentence %d in file %s (lines %d–%d)", $i+1, $file->{label}, $sentence->{line0}, $sentence->{line1}));
+                }
+            }
+        }
+        print(join(' ', @{$files[0]{sentences}[$i]{tokens}}), "\n");
+        my %unaligned; # indexed by file label, values are array references, the arrays contain node variables
+        my @toktable; # array of hash references
+        foreach my $file (@files)
+        {
             my $sentence = $file->{sentences}[$i];
             my $nodes = $sentence->{nodes};
-            my @unaligned = map {"$nodes->{$_}{variable}/$nodes->{$_}{concept}"} (grep {!defined($nodes->{$_}{alignment})} (sort(keys(%{$nodes}))));
-            my $n_unaligned = scalar(@unaligned);
-            print("File $file->{label}: $n_unaligned nodes unaligned: ", join(", ", @unaligned), ".\n");
+            my @unaligned = grep {!defined($nodes->{$_}{alignment})} (sort(keys(%{$nodes})));
+            $unaligned{$file->{label}} = \@unaligned;
+            printf("File %s: %d nodes unaligned: %s.\n", $file->{label}, scalar(@unaligned), join(', ', map {"$_/$nodes->{$_}{concept}"} (@unaligned)));
             for(my $j = 0; $j <= $#{$sentence->{tokens}}; $j++)
             {
                 $toktable[$j]{$file->{label}}{token} = $sentence->{tokens}[$j];
-                $toktable[$j]{$file->{label}}{variables} = join(', ', map {$nodes->{$_}{variable}} (grep {defined($nodes->{$_}{alignment}) && $nodes->{$_}{alignment}[$j]} (sort(keys(%{$nodes})))));
+                my @variables = map {$nodes->{$_}{variable}} (grep {defined($nodes->{$_}{alignment}) && $nodes->{$_}{alignment}[$j]} (sort(keys(%{$nodes}))));
+                $toktable[$j]{$file->{label}}{variables} = \@variables;
             }
         }
         print("Tokens\t\t", join("\t", map {$_->{label}} @files), "\n");
         for(my $j = 0; $j <= $#toktable; $j++)
         {
             printf("  %d\t%s\t", $j+1, $toktable[$j]{$files[0]{label}}{token});
-            print(join("\t", map {$toktable[$j]{$_->{label}}{variables}} @files));
+            print(join("\t", map {join(', ', @{$toktable[$j]{$_->{label}}{variables}})} @files));
             print("\n");
         }
+        print("\n");
+        # Try to map nodes from different files to each other.
+        # Each node should have pointers to all other files.
+        # In each foreign file it would link to those nodes whose alignment has at least one token in common with the alignment of the source node. These relations are symmetric.
+        # (But if a node in file A corresponds to multiple nodes in file B, we will have hard time with scoring them.)
+        for(my $j = 0; $j <= $#toktable; $j++)
+        {
+            foreach my $file1 (@files)
+            {
+                foreach my $f1var (@{$toktable[$j]{$file1->{label}}{variables}})
+                {
+                    foreach my $file2 (@files)
+                    {
+                        unless($file2 == $file1)
+                        {
+                            foreach my $f2var (@{$toktable[$j]{$file2->{label}}{variables}})
+                            {
+                                $file1->{sentences}[$i]{nodes}{$f1var}{crossfile}{$file2->{label}}{$f2var}++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        my $label0 = $files[0]{label};
+        my $label1 = $files[1]{label};
+        my $n_aligned = 0;
+        my $n_total = 0;
+        foreach my $f0var (sort(keys(%{$files[0]{sentences}[$i]{nodes}})))
+        {
+            my $n0 = $files[0]{sentences}[$i]{nodes}{$f0var};
+            my $t0 = $n0->{aligned_text} || $n0->{concept};
+            my @cf1 = sort(keys(%{$n0->{crossfile}{$label1}}));
+            my $aligned = scalar(@cf1) > 0;
+            my $cf1 = join(', ', @cf1) || '???';
+            print("Correspondence $label0 $f0var ($t0) = $label1 $cf1\n");
+            $n_aligned++ if($aligned);
+            $n_total++;
+        }
+        printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned, $n_total, $label0, $n_total > 0 ? $n_aligned/$n_total*100+0.5 : 0);
         print("\n");
     }
 }
@@ -441,6 +509,8 @@ sub parse_sentence_alignments
                     }
                 }
                 $node->{alignment} = \@mask;
+                my @aligned_tokens = grep {defined($_)} (map {$mask[$_] ? $sentence->{tokens}[$_] : undef} (0..$#mask));
+                $node->{aligned_text} = join(' ', @aligned_tokens);
             }
         }
         else
