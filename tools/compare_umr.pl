@@ -502,6 +502,38 @@ sub compare_sentence
     ###!!! We take any number of file hashes but right now we can only compare the first two.
     my @files = @_;
     confess("Not enough files to compare") if(scalar(@files) < 2);
+    # Print the sentence graphs side-by-side.
+    my @table;
+    my @labels = map {$_->{label}} (@files);
+    push(@table, \@labels);
+    for(my $j = 0; ; $j++)
+    {
+        my @row;
+        my $something = 0;
+        foreach my $file (@files)
+        {
+            if($j <= $#{$file->{sentences}[$i_sentence]{blocks}[1]{lines}})
+            {
+                push(@row, $file->{sentences}[$i_sentence]{blocks}[1]{lines}[$j]);
+                $something = 1;
+            }
+            else
+            {
+                push(@row, '');
+            }
+        }
+        if($something)
+        {
+            push(@table, \@row);
+        }
+        else
+        {
+            last;
+        }
+    }
+    print("\n");
+    print_table(@table);
+    print("\n");
     # Assume it has been checked that the sentence has the same tokens in all files.
     my $tokens = $files[0]{sentences}[$i_sentence]{tokens};
     my %unaligned; # indexed by file label, values are array references, the arrays contain node variables
@@ -521,7 +553,8 @@ sub compare_sentence
             $toktable[$j]{$label}{variables} = \@variables;
         }
     }
-    my @table;
+    # Print the tokens and nodes aligned to them in each file.
+    @table = ();
     push(@table, ['', '', map {$_->{label}} (@files)]);
     for(my $j = 0; $j <= $#toktable; $j++)
     {
