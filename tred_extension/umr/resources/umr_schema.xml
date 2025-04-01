@@ -41,7 +41,8 @@
 
   <type name="umr.word.type">
     <container>
-      <cdata format="any"/>
+      <attribute name="word"><cdata format="any"/></attribute>
+      <list><cdata format="any"/></list>
     </container>
   </type>
 

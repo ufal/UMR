@@ -52,7 +52,7 @@ sub read {
                     $SCHEMA, {
                         words => 'Treex::PML::Factory'->createList([
                             map 'Treex::PML::Factory'->createContainer(
-                                [],
+                                'Treex::PML::Factory'->createList,
                                 {word => $_}),
                             "", @words]),
                         id => 'umr' . rand,
@@ -88,7 +88,9 @@ sub read {
                                                                : split /-/;
                                $from .. $to
                            } split /, */, $alignment;
-                push @{ $root->{words}[$_]{'#content'} }, $id for @ords;
+                $root->{words}[$_]->set_value(PML::List(
+                    PML::ListV($root->{words}[$_]->value), $id
+                )) for @ords;
             }
 
         } elsif (/# *document level annotation/) {
