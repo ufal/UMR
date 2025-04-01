@@ -2,6 +2,8 @@ context: .*
 node: <?
           if (grep 'polarity' eq $_->{type}, ListV($this->{features})) {
               '#{brown}'
+          } elsif ($this->{_diff}{label}) {
+               '#{red}'
           } else {
               '#{black}'
           }
@@ -16,7 +18,7 @@ node: <?
                               @links
               : "";
       ?>
-node: #{blue}${relation}
+node: <? ($this->{_diff}{relation} ? '#{red}' : '#{blue}') . '${relation}' ?>
 
 style: <?
     my $nh = UMR::GetNodeHash();
@@ -45,9 +47,19 @@ style: <?
                                     . ";coords=n,n;start=25%;text=".($_->value =~ s/rel://r =~ s/coref:e(?:vent|ntity)//r),
                                     @links;
 
+    my $oval = '#{Oval-fill:whitesmoke}';
+    if ($this->{_diff}) {
+        if ($this->{_diff}{unmapped}) {
+            $oval = '#{Oval-fill:orange}#{Oval-outline:red}';
+        }
+        if ($this->{_diff}{parent}) {
+            $colours =~ s/^grey/red/;
+        }
+    }
+
     "#{Line-coords:$coords}#{Line-fill:$colours}#{Line-arrow:$arrows}"
     . "#{Line-width:$widths}#{Line-smooth:$smooth}#{Line-hint:$hints}"
     . "#{Line-decoration:$deco}"
-    . '#{Oval-fill:whitesmoke}#{CurrentOval-fill:red}';
+    . $oval . '#{CurrentOval-fill:red}';
 
 ?>

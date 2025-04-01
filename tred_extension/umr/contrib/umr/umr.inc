@@ -1,4 +1,7 @@
 # -*- cperl -*-
+
+#bind compare_trees to = menu Compare Trees
+
 {   package UMR;
 
     BEGIN { import TredMacro }
@@ -92,7 +95,7 @@
 
     my %ARROW_COLOR = (
         _PREVIOUS_ => {arrow => 'darkgreen'},
-        _MISSING_  => {arrow => 'red'},
+        _MISSING_  => {arrow => 'brown'},
         _OTHER_    => {arrow => 'cyan3',      text => 'cyan3'},
         ARG0       => {arrow => 'violet',     text => 'violet'},
         ARG1       => {arrow => 'pink',       text => 'pink'},
@@ -122,5 +125,71 @@
         ChangingFile(0);
         return unless $target;
         return 'stop'
+    }
+
+    sub _get_alignment {
+        my (@windows) = @_;
+        my %alignment;
+        for my $window_index (0, 1) {
+            my $root = $windows[$window_index]->{currentNode}->root;
+            for my $i (0 .. $root->{words}->count - 1) {
+                my $word = $root->{words}->[$i];
+                if ($word->value->count) {
+                    do {
+                        undef $alignment{w2n}[$window_index]{$i}{$_};
+                        undef $alignment{n2w}[$window_index]{$_}{$i};
+                    } for ListV($word->value);
+                } else {
+                    undef $alignment{w2n}[$window_index]{$i};
+                }
+            }
+        }
+        return \%alignment
+    }
+
+    sub compare_trees {
+        ChangingFile(0);
+        my @windows = sort { $b->is_focused <=> $a->is_focused }
+                      @{ $grp->{framegroup}{treeWindows} };
+        die '2 windows expected' unless 2 == @windows;
+
+        my $alignment = _get_alignment(@windows);
+        die 'Different number of words'
+            if keys %{ $alignment->{w2n}[0] } != keys %{ $alignment->{w2n}[1] };
+
+        my %mapping;
+        for my $word_index (keys %{ $alignment->{w2n}[0] }) {
+            my @nodes0 = keys %{ $alignment->{w2n}[0]{$word_index} };
+            if (1 == @nodes0) {
+                my @nodes1 = keys %{ $alignment->{w2n}[1]{$word_index} };
+                if (1 == @nodes1) {
+                    undef $mapping{'01'}{ $nodes0[0] }{ $nodes1[0] };
+                    undef $mapping{'10'}{ $nodes1[0] }{ $nodes0[0] };
+                }
+            }
+        }
+        my $root0 = $windows[0]->{currentNode}->root;
+        my $root1 = $windows[1]->{currentNode}->root;
+        undef $mapping{'01'}{ $root0->{id} }{ $root1->{id} };
+        undef $mapping{'10'}{ $root1->{id} }{ $root0->{id} };
+        for my $node ($root0->descendants) {
+            if (exists $mapping{'01'}{ $node->{id} }) {
+                my @nodes1 = keys %{ $mapping{'01'}{ $node->{id} } };
+                if (1 == @nodes1) {
+                    my $parent_id = $node->parent->{id};
+                    my ($mapped_parent) = keys %{ $mapping{'01'}{$parent_id} };
+                    my ($node1) = grep $_->{id} eq $nodes1[0],
+                                  $root1->descendants;
+                    $node->{_diff}{parent} = 1
+                        unless $node1->parent->{id} eq $mapped_parent;
+                    $node->{_diff}{relation} = 1
+                        unless $node->{relation} eq $node1->{relation};
+                    $node->{_diff}{label} = 1
+                        unless $node->{label} eq $node1->{label};
+                }
+            } else {
+                $node->{_diff}{unmapped} = 1;
+            }
+        }
     }
 }
