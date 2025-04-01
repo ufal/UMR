@@ -10,19 +10,41 @@ binmode(STDOUT, ':utf8');
 binmode(STDERR, ':utf8');
 use Carp;
 
-
-
-confess("At least two arguments expected") if(scalar(@ARGV) < 2);
-my @files;
-foreach my $argument (@ARGV)
+sub usage
 {
+    print STDERR ("Usage: $0 label1 file1 label2 file2 [...]\n");
+    print STDERR ("    The labels are used to refer to the files in the output.\n");
+    print STDERR ("    They can be e.g. initials of the annotators, or 'GOLD' and 'SYSTEM'.\n");
+    print STDERR ("Example:\n");
+    print STDERR ("    perl tools\\compare_umr.pl DZ data\\czech\\mf920922-133_estonsko-DZ.txt ML data\\czech\\mf920922-133_estonsko-ML.txt\n");
+}
+
+
+
+if(scalar(@ARGV) < 4)
+{
+    usage();
+    confess("At least four arguments (two labels and two files) expected");
+}
+if(scalar(@ARGV) % 2)
+{
+    usage();
+    confess("Even number of arguments expected");
+}
+my @files;
+while(1)
+{
+    my $label = shift(@ARGV);
+    my $path = shift(@ARGV);
+    last if(!defined($label));
     my %file =
     (
-        'path' => $argument,
-        'sentences' => read_umr_file($argument)
+        'label' => $label,
+        'path' => $path,
+        'sentences' => read_umr_file($path)
     );
     my $n = scalar(@{$file{sentences}});
-    print("Found $n sentences in $argument:\n");
+    print("Found $n sentences in $label:\n");
     print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
 }
 
