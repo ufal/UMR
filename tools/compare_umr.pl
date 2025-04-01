@@ -223,6 +223,21 @@ sub compare_files
         print(join(' ', @{$files[0]{sentences}[$i]{tokens}}), "\n");
         compare_sentence($i, @files);
     }
+    print("-------------------------------------------------------------------------------\n");
+    print("SUMMARY:\n");
+    print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
+    print("File-to-file node mapping:\n");
+    foreach my $file1 (@files)
+    {
+        my $label1 = $file1->{label};
+        foreach my $label2 (sort(keys(%{$file1->{stats}{crossfile}})))
+        {
+            my $n1_total = $file1->{stats}{n_nodes};
+            my $n1_mapped = $file1->{stats}{crossfile}{$label2};
+            my $recall = $n1_total > 0 ? $n1_mapped/$n1_total : 0;
+            printf("Out of %d total %s nodes, %d mapped to %s, which is %d%%.\n", $n1_total, $label1, $n1_mapped, $label2, $recall*100+0.5);
+        }
+    }
 }
 
 
@@ -501,13 +516,13 @@ sub compare_sentence
             $toktable[$j]{$label}{variables} = \@variables;
         }
     }
-    print("Tokens\t\t", join("\t", map {$_->{label}} @files), "\n");
+    my @table;
+    push(@table, ['', '', map {$_->{label}} (@files)]);
     for(my $j = 0; $j <= $#toktable; $j++)
     {
-        printf("  %d\t%s\t", $j+1, $tokens->[$j]);
-        print(join("\t", map {join(', ', @{$toktable[$j]{$_->{label}}{variables}})} @files));
-        print("\n");
+        push(@table, [$j+1, $tokens->[$j], map {join(', ', @{$toktable[$j]{$_->{label}}{variables}})} (@files)]);
     }
+    print_table(@table);
     print("\n");
     # Try to map nodes from different files to each other.
     # Each node should have pointers to all other files.
@@ -569,22 +584,80 @@ sub compare_sentence
                 }
             }
         }
+        $file1->{stats}{n_nodes} += scalar(keys(%{$sentence1->{nodes}}));
     }
-    my $label0 = $files[0]{label};
-    my $label1 = $files[1]{label};
+    ###!!! From here on, we consider only the first two files.
+    compare_node_correspondences($files[0], $files[1], $i_sentence);
+    compare_node_correspondences($files[1], $files[0], $i_sentence);
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes two file hashes and a sentence number. Examines node-to-node cross-
+# references from the first file to the second file and prints a summary.
+#------------------------------------------------------------------------------
+sub compare_node_correspondences
+{
+    my $file0 = shift;
+    my $file1 = shift;
+    my $i_sentence = shift;
+    my $label0 = $file0->{label};
+    my $label1 = $file1->{label};
+    my $sentence0 = $file0->{sentences}[$i_sentence];
     my $n_aligned = 0;
     my $n_total = 0;
-    foreach my $f0var (sort(keys(%{$files[0]{sentences}[$i_sentence]{nodes}})))
+    @table = ();
+    foreach my $f0var (sort(keys(%{$sentence0->{nodes}})))
     {
-        my $n0 = $files[0]{sentences}[$i_sentence]{nodes}{$f0var};
+        my $n0 = $sentence0->{nodes}{$f0var};
         my $t0 = $n0->{aligned_text} || $n0->{concept};
         my @cf1 = sort(keys(%{$n0->{crossfile}{$label1}}));
         my $aligned = scalar(@cf1) > 0;
-        my $cf1 = join(', ', @cf1) || '???';
-        print("Correspondence $label0 $f0var ($t0) = $label1 $cf1\n");
+        my $cf1 = join(', ', @cf1) || ''; # we could put '???' here but it does not catch the eye
+        push(@table, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1"]);
         $n_aligned++ if($aligned);
         $n_total++;
     }
+    print_table(@table);
+    print("\n");
     printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned, $n_total, $label0, $n_total > 0 ? $n_aligned/$n_total*100+0.5 : 0);
     print("\n");
+    $file0->{stats}{crossfile}{$label1} += $n_aligned;
+}
+
+
+
+#------------------------------------------------------------------------------
+# Prints a table in text mode, padding columns by spaces.
+#------------------------------------------------------------------------------
+sub print_table
+{
+    my @table = @_;
+    my @max_length;
+    # Figure out the required width of each column.
+    foreach my $row (@table)
+    {
+        for(my $i = 0; $i <= $#{$row}; $i++)
+        {
+            my $l = length($row->[$i]);
+            if($l > $max_length[$i])
+            {
+                $max_length[$i] = $l;
+            }
+        }
+    }
+    # Print the table.
+    foreach my $row (@table)
+    {
+        for(my $i = 0; $i <= $#{$row}; $i++)
+        {
+            # Space between columns.
+            print(' ') if($i > 0);
+            print($row->[$i]);
+            # Padding to the column width.
+            print(' ' x ($max_length[$i]-length($row->[$i])));
+        }
+        print("\n");
+    }
 }
