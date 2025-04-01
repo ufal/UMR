@@ -229,7 +229,7 @@ sub compare_files
             my $nodes = $sentence->{nodes};
             my @unaligned = grep {!defined($nodes->{$_}{alignment})} (sort(keys(%{$nodes})));
             $unaligned{$file->{label}} = \@unaligned;
-            printf("File %s: %d nodes unaligned: %s.\n", $file->{label}, scalar(@unaligned), join(', ', map {"$_/$nodes->{$_}{concept}"} (@unaligned)));
+            printf("File %s: %d nodes unaligned: %s.\n", $file->{label}, scalar(@unaligned), join(', ', map {"$_/$nodes->{$_}{econcept}"} (@unaligned)));
             for(my $j = 0; $j <= $#{$sentence->{tokens}}; $j++)
             {
                 $toktable[$j]{$file->{label}}{token} = $sentence->{tokens}[$j];
@@ -263,6 +263,38 @@ sub compare_files
                             {
                                 $file1->{sentences}[$i]{nodes}{$f1var}{crossfile}{$file2->{label}}{$f2var}++;
                             }
+                        }
+                    }
+                }
+            }
+        }
+        # Try to map unaligned nodes based on other criteria, such as concept equivalence.
+        foreach my $file1 (@files)
+        {
+            my $sentence1 = $file1->{sentences}[$i];
+            foreach my $f1var (@{$unaligned{$file1->{label}}})
+            {
+                my $node1 = $sentence1->{nodes}{$f1var};
+                my $concept1 = $node1->{econcept};
+                foreach my $file2 (@files)
+                {
+                    unless($file2 == $file1)
+                    {
+                        my $sentence2 = $file2->{sentences}[$i];
+                        # Consider links between nodes that are unaligned in both files
+                        # but do not consider links between unaligned and aligned nodes.
+                        # Are there nodes in $file2 that have the same concept as $f1var?
+                        my %concepts2;
+                        foreach my $f2var (@{$unaligned{$file2->{label}}})
+                        {
+                            my $node2 = $sentence2->{nodes}{$f2var};
+                            my $concept2 = $node2->{econcept};
+                            $concepts2{$f2var} = $concept2;
+                        }
+                        my @same_concept_nodes = grep {$concepts2{$_} eq $concept1} (@{$unaligned{$file2->{label}}});
+                        if(scalar(@same_concept_nodes) == 1)
+                        {
+                            $file1->{sentences}[$i]{nodes}{$f1var}{crossfile}{$file2->{label}}{$same_concept_nodes[0]}++;
                         }
                     }
                 }
@@ -435,6 +467,20 @@ sub parse_sentence_graph
         my $n = scalar(@stack);
         print STDERR ("Topmost node on stack: $stack[-1]{variable} / $stack[-1]{concept}\n");
         confess("Missing closing bracket at line $iline of file $file->{label}: $n node(s) not closed");
+    }
+    # Extended concepts should better identify nodes for debugging and, possibly, alignment.
+    # Currently we define one extension: a 'name' concept will be extended by the values of its :opX attributes.
+    foreach my $variable (sort(keys(%nodes)))
+    {
+        my $node = $nodes{$variable};
+        my $econcept = $node->{concept};
+        if($econcept eq 'name')
+        {
+            my @opnames = grep {m/^:op[0-9]+$/} (sort(keys(%{$node->{relations}})));
+            my $name = join(' ', map {$node->{relations}{$_}} (@opnames));
+            $econcept .= '['.$name.']';
+        }
+        $node->{econcept} = $econcept;
     }
 }
 
