@@ -46,7 +46,11 @@ while(1)
     my $n = scalar(@{$file{sentences}});
     print("Found $n sentences in $label:\n");
     print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
+    push(@files, \%file);
 }
+print("\n");
+###!!! Initially we support only comparing the first two files, although we can send the function all of them.
+compare_files(@files);
 
 
 
@@ -147,4 +151,301 @@ sub add_sentence
     push(@{$sentences}, \%sentence);
     @{$blocks} = ();
     return 1;
+}
+
+
+
+#------------------------------------------------------------------------------
+# Compares two UMR files that have been read to memory (takes the hashes with
+# their contents, prints the comparison to STDOUT).
+#------------------------------------------------------------------------------
+sub compare_files
+{
+    ###!!! We take any number of file hashes but right now we can only compare the first two.
+    my @files = @_;
+    confess("Not enough files to compare") if(scalar(@files) < 2);
+    # All the files should have the same number of sentences. If they do not,
+    # print a warning and compare as many initial sentences as there are in all
+    # the files.
+    my $n_sentences = scalar(@{$files[0]{sentences}});
+    my $mismatch = 0;
+    for(my $i = 1; $i <= $#files; $i++)
+    {
+        my $current_n_sentences = scalar(@{$files[$i]{sentences}});
+        if($current_n_sentences != $n_sentences)
+        {
+            $mismatch++;
+            if($current_n_sentences < $n_sentences)
+            {
+                $n_sentences = $current_n_sentences;
+            }
+        }
+    }
+    if($n_sentences == 0)
+    {
+        confess("FATAL: At least one of the files has 0 sentences");
+    }
+    if($mismatch)
+    {
+        print STDERR ("WARNING: The files have varying numbers of sentences. Only the first $n_sentences sentences from each file will be compared.\n");
+    }
+    # Loop over sentence numbers, look at the same-numbered sentence in each file.
+    for(my $i = 0; $i < $n_sentences; $i++)
+    {
+        my @toktable;
+        foreach my $file (@files)
+        {
+            parse_sentence_tokens($file, $i);
+            parse_sentence_graph($file, $i);
+            parse_sentence_alignments($file, $i);
+            my $sentence = $file->{sentences}[$i];
+            my $nodes = $sentence->{nodes};
+            my @unaligned = map {"$nodes->{$_}{variable}/$nodes->{$_}{concept}"} (grep {!defined($nodes->{$_}{alignment})} (sort(keys(%{$nodes}))));
+            my $n_unaligned = scalar(@unaligned);
+            print("File $file->{label}: $n_unaligned nodes unaligned: ", join(", ", @unaligned), ".\n");
+            for(my $j = 0; $j <= $#{$sentence->{tokens}}; $j++)
+            {
+                $toktable[$j]{$file->{label}}{token} = $sentence->{tokens}[$j];
+                $toktable[$j]{$file->{label}}{variables} = join(', ', map {$nodes->{$_}{variable}} (grep {defined($nodes->{$_}{alignment}) && $nodes->{$_}{alignment}[$j]} (sort(keys(%{$nodes})))));
+            }
+        }
+        print("Tokens\t\t", join("\t", map {$_->{label}} @files), "\n");
+        for(my $j = 0; $j <= $#toktable; $j++)
+        {
+            printf("  %d\t%s\t", $j+1, $toktable[$j]{$files[0]{label}}{token});
+            print(join("\t", map {$toktable[$j]{$_->{label}}{variables}} @files));
+            print("\n");
+        }
+        print("\n");
+    }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes a file hash and a sentence number. Parses the lines of the sentence
+# tokens block in the given sentence and saves the resulting structure in the
+# sentence hash. (The only reason why we need reference to the whole file is
+# the label that we may need in error messages.)
+#------------------------------------------------------------------------------
+sub parse_sentence_tokens
+{
+    my $file = shift; # hash reference
+    my $i_sentence = shift; # index of the sentence whose graph should be parsed
+    my $sentence = $file->{sentences}[$i_sentence];
+    my $token_block = $sentence->{blocks}[0];
+    if(!defined($token_block))
+    {
+        printf STDERR ("Missing the token block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
+        confess("Too few blocks");
+    }
+    my @tokens;
+    foreach my $line (@{$token_block->{lines}})
+    {
+        if($line =~ m/^Words:\s*(.+)$/)
+        {
+            @tokens = split(/\s+/, $1);
+            last;
+        }
+    }
+    if(scalar(@tokens) == 0)
+    {
+        confess(sprintf STDERR ("No tokens found the token block (lines %d–%d) in sentence %d of file %s.\n", $token_block->{line0}, $token_block->{line1}, $i_sentence+1, $file->{label}));
+    }
+    $sentence->{tokens} = \@tokens;
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes a file hash and a sentence number. Parses the lines of the sentence
+# graph block in the given sentence and saves the resulting structure in the
+# sentence hash. (The only reason why we need reference to the whole file is
+# the label that we may need in error messages.)
+#------------------------------------------------------------------------------
+sub parse_sentence_graph
+{
+    my $file = shift; # hash reference
+    my $i_sentence = shift; # index of the sentence whose graph should be parsed
+    my $sentence = $file->{sentences}[$i_sentence];
+    my $sgraph_block = $sentence->{blocks}[1];
+    if(!defined($sgraph_block))
+    {
+        printf STDERR ("Missing the sentence graph block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
+        confess("Too few blocks");
+    }
+    my %nodes; # hash indexed by variables
+    $sentence->{nodes} = \%nodes;
+    my $iline = $sgraph_block->{line0}-1;
+    my @stack;
+    my $current_relation = 'START';
+    foreach my $line (@{$sgraph_block->{lines}})
+    {
+        $iline++;
+        # Make a copy of the line that we can eat without modifying the original.
+        my $cline = $line;
+        # Remove comments, leading and trailing spaces.
+        $cline =~ s/\#.*//;
+        $cline =~ s/^\s+//;
+        $cline =~ s/\s+$//;
+        next if($cline eq '');
+        while($cline)
+        {
+            if($cline =~ s:^\(\s*([\pL\pN]+)\s*/\s*([^\s\)]+)::)
+            {
+                # New node.
+                my $variable = $1;
+                my $concept = $2;
+                my %node =
+                (
+                    'variable' => $variable,
+                    'concept' => $concept,
+                    'relations' => {}
+                );
+                #print STDERR ("variable $variable concept $concept\n");
+                if(!defined($current_relation))
+                {
+                    confess("Not expecting new node (this is not START and there was no relation name) at line $iline of file $file->{label}");
+                }
+                unless($current_relation eq 'START')
+                {
+                    $stack[-1]{relations}{$current_relation} = $variable;
+                }
+                $nodes{$variable} = \%node;
+                push(@stack, \%node);
+                $current_relation = undef;
+            }
+            elsif($cline =~ s/^(:[-\pL\pN]+)\s*//)
+            {
+                # New relation or attribute.
+                #print STDERR ("attribute $1\n");
+                $current_relation = $1;
+            }
+            elsif($cline =~ s/^([^\s\)]+)//)
+            {
+                # New value of attribute or node reference for reentrant relation.
+                my $value = $1;
+                #print STDERR ("value $value\n");
+                if(scalar(@stack) == 0)
+                {
+                    confess("Nodes closed prematurely; extra attribute value $1 at line $iline of file $file->{label}");
+                }
+                if(!defined($current_relation))
+                {
+                    confess("Missing relation for value $1 at line $iline of file $file->{label}");
+                }
+                $stack[-1]{relations}{$current_relation} = $value;
+                $current_relation = undef;
+            } # (
+            elsif($cline =~ s/^\)//)
+            {
+                # Closing bracket of a node.
+                if(defined($current_relation))
+                {
+                    confess("Missing value for relation $current_relation at line $iline of file $file->{label}");
+                }
+                if(scalar(@stack) == 0)
+                {
+                    confess("Extra closing bracket at line $iline of file $file->{label}");
+                }
+                #print STDERR ("Closing stack node: $stack[-1]{variable} / $stack[-1]{concept}\n");
+                pop(@stack);
+            }
+            elsif($cline =~ s/^\s+//)
+            {
+                # Skip leading spaces.
+            }
+            else
+            {
+                # We should not be here.
+                confess("Internal error");
+            }
+        }
+    }
+    if(scalar(@stack) > 0)
+    {
+        my $n = scalar(@stack);
+        print STDERR ("Topmost node on stack: $stack[-1]{variable} / $stack[-1]{concept}\n");
+        confess("Missing closing bracket at line $iline of file $file->{label}: $n node(s) not closed");
+    }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes a file hash and a sentence number. Parses the lines of the alignment
+# block in the given sentence and saves the resulting structure in the sentence
+# hash. (The only reason why we need reference to the whole file is the label
+# that we may need in error messages.)
+#------------------------------------------------------------------------------
+sub parse_sentence_alignments
+{
+    my $file = shift; # hash reference
+    my $i_sentence = shift; # index of the sentence whose graph should be parsed
+    my $sentence = $file->{sentences}[$i_sentence];
+    my $alignment_block = $sentence->{blocks}[2];
+    if(!defined($alignment_block))
+    {
+        printf STDERR ("Missing the alignment block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
+        confess("Too few blocks");
+    }
+    my $iline = $alignment_block->{line0}-1;
+    foreach my $line (@{$alignment_block->{lines}})
+    {
+        $iline++;
+        # Make a copy of the line that we can eat without modifying the original.
+        my $cline = $line;
+        # Remove comments, leading and trailing spaces.
+        $cline =~ s/\#.*//;
+        $cline =~ s/^\s+//;
+        $cline =~ s/\s+$//;
+        next if($cline eq '');
+        if($cline =~ m/^([\pL\pN]+):\s*([0-9]+-[0-9]+(\s*,\s*[0-9]+-[0-9]+)*)$/)
+        {
+            my $variable = $1;
+            my $alignment = $2;
+            # Assuming that the sentence graph has been parsed previously, the variable must be known.
+            if(!exists($sentence->{nodes}{$variable}))
+            {
+                confess(sprintf("Variable %s not known in the current sentence at line %d of file %s", $variable, $iline, $file->{label}));
+            }
+            my $node = $sentence->{nodes}{$variable};
+            # Convert the alignment to a boolean array (mask for the token array).
+            # If the alignment is 0-0, convert it to undef.
+            if($alignment eq '0-0')
+            {
+                $node->{alignment} = undef;
+            }
+            else
+            {
+                my @alignments = split(/\s*,\s*/, $alignment);
+                my @mask;
+                foreach my $a (@alignments)
+                {
+                    if($a =~ m/^([0-9]+)-([0-9]+)$/)
+                    {
+                        my $x = $1;
+                        my $y = $2;
+                        if($x == 0 || $y == 0 || $x > $y)
+                        {
+                            confess(sprintf("Bad alignment interval %s at line %d of file %s", $a, $iline, $file->{label}));
+                        }
+                        for(my $i = $x; $i <= $y; $i++)
+                        {
+                            $mask[$i-1]++;
+                        }
+                    }
+                    else
+                    {
+                        confess("Internal error");
+                    }
+                }
+                $node->{alignment} = \@mask;
+            }
+        }
+        else
+        {
+            confess(sprintf("Cannot parse the alignment line %d of file %s", $iline, $file->{label}));
+        }
+    }
 }
