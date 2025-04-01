@@ -238,6 +238,11 @@ sub compare_files
             printf("Out of %d total %s nodes, %d mapped to %s, which is %d%%.\n", $n1_total, $label1, $n1_mapped, $label2, $recall*100+0.5);
         }
     }
+    print("Concept and relation comparisons for the mapped nodes:\n");
+    my $cr_total = $files[0]->{stats}{cr_total};
+    my $cr_correct = $files[0]->{stats}{cr_correct};
+    my $accuracy = $cr_total > 0 ? $cr_correct/$cr_total : 0;
+    printf("Out of %d total comparisons, %d had matching values, which is %d%%.\n", $cr_total, $cr_correct, $accuracy*100+0.5);
 }
 
 
@@ -589,6 +594,7 @@ sub compare_sentence
     ###!!! From here on, we consider only the first two files.
     compare_node_correspondences($files[0], $files[1], $i_sentence);
     compare_node_correspondences($files[1], $files[0], $i_sentence);
+    compare_node_attributes($files[0], $files[1], $i_sentence);
 }
 
 
@@ -607,11 +613,11 @@ sub compare_node_correspondences
     my $sentence0 = $file0->{sentences}[$i_sentence];
     my $n_aligned = 0;
     my $n_total = 0;
-    @table = ();
+    my @table = ();
     foreach my $f0var (sort(keys(%{$sentence0->{nodes}})))
     {
         my $n0 = $sentence0->{nodes}{$f0var};
-        my $t0 = $n0->{aligned_text} || $n0->{concept};
+        my $t0 = $n0->{aligned_text} || $n0->{econcept};
         my @cf1 = sort(keys(%{$n0->{crossfile}{$label1}}));
         my $aligned = scalar(@cf1) > 0;
         my $cf1 = join(', ', @cf1) || ''; # we could put '???' here but it does not catch the eye
@@ -624,6 +630,102 @@ sub compare_node_correspondences
     printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned, $n_total, $label0, $n_total > 0 ? $n_aligned/$n_total*100+0.5 : 0);
     print("\n");
     $file0->{stats}{crossfile}{$label1} += $n_aligned;
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes two file hashes and a sentence number, compares the nodes of the given
+# sentence in the two files. ###!!! CURRENTLY NOT SYMMETRIC!
+# For each node of the left file, considers the corresponding nodes in the
+# right file.
+# - If there are 0 counterparts: do nothing.
+# - If there is 1 counterpart: compare their attributes/relations.
+# - If there are multiple counterparts: ###!!! FOR NOR TAKE THE FIRST ONE.
+#------------------------------------------------------------------------------
+sub compare_node_attributes
+{
+    my $file0 = shift;
+    my $file1 = shift;
+    my $i_sentence = shift;
+    my $label0 = $file0->{label};
+    my $label1 = $file1->{label};
+    my $sentence0 = $file0->{sentences}[$i_sentence];
+    my $sentence1 = $file1->{sentences}[$i_sentence];
+    print("Comparing attributes of $label0 nodes with their $label1 counterparts.\n");
+    my $n_total;
+    my $n_mismatch;
+    my @table;
+    foreach my $f0var (sort(keys(%{$sentence0->{nodes}})))
+    {
+        my $node0 = $sentence0->{nodes}{$f0var};
+        my $text0 = $node0->{aligned_text} ? " ($node0->{aligned_text})" : '';
+        my @cf1 = sort(keys(%{$node0->{crossfile}{$label1}}));
+        my $ncf1 = scalar(@cf1);
+        if($ncf1 == 0)
+        {
+            print("Skipping $label0 node $f0var$text0 because it is not mapped to $label1.\n");
+            next;
+        }
+        if($ncf1 > 1)
+        {
+            print("Warning: $label0 node $f0var$text0 has multiple $label1 mappings, considering only the first one.\n");
+        }
+        my $node1 = $sentence1->{nodes}{$cf1[0]};
+        my $concept0 = $node0->{concept};
+        my $concept1 = $node1->{concept};
+        $n_total++; # count concept comparison
+        if($concept0 ne $concept1)
+        {
+            $n_mismatch++;
+            push(@table, ["Node $label0 $f0var / $concept0$text0", "mismatch in concept:", "$label0 = $concept0", "$label1 = $concept1"]);
+        }
+        my @relations0 = keys(%{$node0->{relations}});
+        my @relations1 = keys(%{$node1->{relations}});
+        my %relations;
+        map {$relations{$_}++} (@relations0);
+        map {$relations{$_}++} (@relations1);
+        my @relations = sort(keys(%relations));
+        foreach my $relation (@relations)
+        {
+            my $value0 = $node0->{relations}{$relation};
+            my $value1 = $node1->{relations}{$relation};
+            # If one of the values is the variable of another node, we must project it to the other file!
+            my $modified_value0 = $value0;
+            my $explained_value0 = $value0;
+            if(exists($sentence0->{nodes}{$value0}))
+            {
+                my $child0 = $sentence0->{nodes}{$value0};
+                my @ccf1 = sort(keys(%{$child0->{crossfile}{$label1}}));
+                my $nccf1 = scalar(@ccf1);
+                if($nccf1 == 0)
+                {
+                    $explained_value0 .= ' unmapped';
+                }
+                else
+                {
+                    if($nccf1 > 1)
+                    {
+                        print("Warning: $label0 child node $value0 has multiple $label1 mappings, considering only the first one.\n");
+                    }
+                    $modified_value0 = $ccf1[0];
+                    $explained_value0 .= " mapped to $label1 $modified_value0";
+                }
+            }
+            $n_total++; # count relation comparison
+            if($modified_value0 ne $value1)
+            {
+                $n_mismatch++;
+                push(@table, ["Node $label0 $f0var / $concept0$text0", "mismatch in $relation:", "$label0 = $explained_value0", "$label1 = $value1"]);
+            }
+        }
+    }
+    print_table(@table);
+    print("\n");
+    printf("Correct %d out of %d concept or relation comparisons, that is %d%%.\n", $n_total-$n_mismatch, $n_total, $n_total > 0 ? ($n_total-$n_mismatch)/$n_total*100+0.5 : 0);
+    print("\n");
+    $file0->{stats}{cr_correct} += $n_total-$n_mismatch;
+    $file0->{stats}{cr_total} += $n_total;
 }
 
 
