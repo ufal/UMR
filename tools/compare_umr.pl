@@ -536,29 +536,23 @@ sub compare_sentence
     print("\n");
     # Assume it has been checked that the sentence has the same tokens in all files.
     my $tokens = $files[0]{sentences}[$i_sentence]{tokens};
-    my %unaligned; # indexed by file label, values are array references, the arrays contain node variables
-    my @toktable; # array of hash references
+    # Get the mapping between tokens of the sentence and nodes in each file.
+    my @toktable = map_node_alignments($i_sentence, @files);
+    my $unaligned = shift(@toktable);
+    # Print the unaligned nodes.
     foreach my $file (@files)
     {
         my $label = $file->{label};
-        my $sentence = $file->{sentences}[$i_sentence];
-        my $nodes = $sentence->{nodes};
-        my @unaligned = grep {!defined($nodes->{$_}{alignment})} (sort(keys(%{$nodes})));
-        $unaligned{$label} = \@unaligned;
+        my $nodes = $file->{sentences}[$i_sentence]{nodes};
+        my @unaligned = @{$unaligned->{$label}};
         printf("File %s: %d nodes unaligned: %s.\n", $label, scalar(@unaligned), join(', ', map {"$_/$nodes->{$_}{econcept}"} (@unaligned)));
-        for(my $j = 0; $j <= $#{$tokens}; $j++)
-        {
-            $toktable[$j]{$label}{token} = $tokens->[$j];
-            my @variables = map {$nodes->{$_}{variable}} (grep {defined($nodes->{$_}{alignment}) && $nodes->{$_}{alignment}[$j]} (sort(keys(%{$nodes}))));
-            $toktable[$j]{$label}{variables} = \@variables;
-        }
     }
     # Print the tokens and nodes aligned to them in each file.
     @table = ();
     push(@table, ['', '', map {$_->{label}} (@files)]);
     for(my $j = 0; $j <= $#toktable; $j++)
     {
-        push(@table, [$j+1, $tokens->[$j], map {join(', ', @{$toktable[$j]{$_->{label}}{variables}})} (@files)]);
+        push(@table, [$j+1, $tokens->[$j], map {join(', ', @{$toktable[$j]{$_->{label}}})} (@files)]);
     }
     print_table(@table);
     print("\n");
@@ -572,7 +566,7 @@ sub compare_sentence
         {
             my $label1 = $file1->{label};
             my $sentence1 = $file1->{sentences}[$i_sentence];
-            foreach my $f1var (@{$toktable[$j]{$label1}{variables}})
+            foreach my $f1var (@{$toktable[$j]{$label1}})
             {
                 my $node1 = $sentence1->{nodes}{$f1var};
                 foreach my $file2 (@files)
@@ -580,7 +574,7 @@ sub compare_sentence
                     unless($file2 == $file1)
                     {
                         my $label2 = $file2->{label};
-                        foreach my $f2var (@{$toktable[$j]{$label2}{variables}})
+                        foreach my $f2var (@{$toktable[$j]{$label2}})
                         {
                             $node1->{crossfile}{$label2}{$f2var}++;
                         }
@@ -594,7 +588,7 @@ sub compare_sentence
     {
         my $label1 = $file1->{label};
         my $sentence1 = $file1->{sentences}[$i_sentence];
-        foreach my $f1var (@{$unaligned{$label1}})
+        foreach my $f1var (@{$unaligned->{$label1}})
         {
             my $node1 = $sentence1->{nodes}{$f1var};
             my $concept1 = $node1->{econcept};
@@ -608,13 +602,13 @@ sub compare_sentence
                     # but do not consider links between unaligned and aligned nodes.
                     # Are there nodes in $file2 that have the same concept as $f1var?
                     my %concepts2;
-                    foreach my $f2var (@{$unaligned{$label2}})
+                    foreach my $f2var (@{$unaligned->{$label2}})
                     {
                         my $node2 = $sentence2->{nodes}{$f2var};
                         my $concept2 = $node2->{econcept};
                         $concepts2{$f2var} = $concept2;
                     }
-                    my @same_concept_nodes = grep {$concepts2{$_} eq $concept1} (@{$unaligned{$label2}});
+                    my @same_concept_nodes = grep {$concepts2{$_} eq $concept1} (@{$unaligned->{$label2}});
                     if(scalar(@same_concept_nodes) == 1)
                     {
                         $node1->{crossfile}{$label2}{$same_concept_nodes[0]}++;
@@ -628,6 +622,42 @@ sub compare_sentence
     compare_node_correspondences($files[0], $files[1], $i_sentence);
     compare_node_correspondences($files[1], $files[0], $i_sentence);
     compare_node_attributes($files[0], $files[1], $i_sentence);
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes a sentence number and a list of file hashes. In each file, examines the
+# node-token alignments in the given sentence. Returns a list of hashes indexed
+# by file labels, where the first hash contains the unaligned nodes in each
+# file, the subsequent hashes correspond to tokens and give the nodes aligned
+# to that token in each file (the same node can be aligned to multiple tokens,
+# and one token can be aligned to multiple nodes in the same file). In each of
+# the file-indexed hashes, the value is a list of variables (i.e., node ids,
+# not directly the node objects).
+#------------------------------------------------------------------------------
+sub map_node_alignments
+{
+    my $i_sentence = shift;
+    my @files = @_;
+    # Assume it has been checked that the sentence has the same tokens in all files.
+    my $tokens = $files[0]{sentences}[$i_sentence]{tokens};
+    my %unaligned; # indexed by file label, values are array references, the arrays contain node variables
+    my @toktable; # array of hash references
+    foreach my $file (@files)
+    {
+        my $label = $file->{label};
+        my $sentence = $file->{sentences}[$i_sentence];
+        my $nodes = $sentence->{nodes};
+        my @unaligned = grep {!defined($nodes->{$_}{alignment})} (sort(keys(%{$nodes})));
+        $unaligned{$label} = \@unaligned;
+        for(my $j = 0; $j <= $#{$tokens}; $j++)
+        {
+            my @variables = map {$nodes->{$_}{variable}} (grep {defined($nodes->{$_}{alignment}) && $nodes->{$_}{alignment}[$j]} (sort(keys(%{$nodes}))));
+            $toktable[$j]{$label} = \@variables;
+        }
+    }
+    return (\%unaligned, @toktable);
 }
 
 
