@@ -254,11 +254,20 @@ sub compare_files
             printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
         }
     }
-    print("Concept and relation comparisons for the mapped nodes:\n");
-    my $cr_total = $files[0]->{stats}{cr_total};
-    my $cr_correct = $files[0]->{stats}{cr_correct};
+    print("Concept and relation comparisons for the mapped nodes (unmapped nodes are ignored):\n");
+    my $cr_total = $files[0]{stats}{cr_total};
+    my $cr_correct = $files[0]{stats}{cr_correct};
+    my $cr_total_me = $files[0]{stats}{cr_total_me};
+    my $cr_total_other = $files[0]{stats}{cr_total_other};
     my $accuracy = $cr_total > 0 ? $cr_correct/$cr_total : 0;
+    my $recall = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
+    my $precision = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
+    my $f = 2*$precision*$recall/($precision+$recall);
     printf("Out of %d total comparisons, %d had matching values, which is %d%%.\n", $cr_total, $cr_correct, $accuracy*100+0.5);
+    ###!!! Here we rely on the fact that 'other' is only one file, and it is always $files[1]. It needs to be refined for the general case.
+    printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $files[0]{label}, $cr_correct, $files[1]{label}, $recall*100+0.5);
+    printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $files[1]{label}, $cr_correct, $files[0]{label}, $precision*100+0.5);
+    printf(" => F₁($files[0]{label},$files[1]{label}) = %d%%.\n", $f*100+0.5);
 }
 
 
@@ -797,7 +806,7 @@ sub compare_node_correspondences
 # right file.
 # - If there are 0 counterparts: do nothing.
 # - If there is 1 counterpart: compare their attributes/relations.
-# - If there are multiple counterparts: ###!!! FOR NOR TAKE THE FIRST ONE.
+# - If there are multiple counterparts: ###!!! FOR NOW TAKE THE FIRST ONE.
 #------------------------------------------------------------------------------
 sub compare_node_attributes
 {
@@ -810,6 +819,8 @@ sub compare_node_attributes
     my $sentence1 = $file1->{sentences}[$i_sentence];
     print("Comparing attributes of $label0 nodes with their $label1 counterparts.\n");
     my $n_total;
+    my $n_total_0;
+    my $n_total_1;
     my $n_mismatch;
     my @table;
     foreach my $f0var (sort(keys(%{$sentence0->{nodes}})))
@@ -869,6 +880,8 @@ sub compare_node_attributes
                 }
             }
             $n_total++; # count relation comparison
+            $n_total_0++ unless($value0 eq '');
+            $n_total_1++ unless($value1 eq '');
             if($modified_value0 ne $value1)
             {
                 $n_mismatch++;
@@ -879,9 +892,13 @@ sub compare_node_attributes
     print_table(@table);
     print("\n");
     printf("Correct %d out of %d concept or relation comparisons, that is %d%%.\n", $n_total-$n_mismatch, $n_total, $n_total > 0 ? ($n_total-$n_mismatch)/$n_total*100+0.5 : 0);
+    printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_total-$n_mismatch, $n_total_0, $label0, $n_total_0 > 0 ? ($n_total-$n_mismatch)/$n_total_0*100+0.5 : 0);
+    printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_total-$n_mismatch, $n_total_1, $label1, $n_total_1 > 0 ? ($n_total-$n_mismatch)/$n_total_1*100+0.5 : 0);
     print("\n");
     $file0->{stats}{cr_correct} += $n_total-$n_mismatch;
     $file0->{stats}{cr_total} += $n_total;
+    $file0->{stats}{cr_total_me} += $n_total_0;
+    $file0->{stats}{cr_total_other} += $n_total_1;
 }
 
 
