@@ -442,7 +442,6 @@ Aligned 16 out of 16 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
 Skipping DZ node s6a because it is not mapped to ML.
-Warning: DZ node s6p2 (asi 20.5 procenta , což) has multiple ML mappings, considering only the first one.
 Skipping DZ node s6p7 because it is not mapped to ML.
 Skipping DZ node s6v because it is not mapped to ML.
 Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :ARG0:   DZ = s6p7 unmapped     ML =          

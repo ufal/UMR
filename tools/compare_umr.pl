@@ -835,17 +835,29 @@ sub compare_node_attributes
             print("Skipping $label0 node $f0var$text0 because it is not mapped to $label1.\n");
             next;
         }
-        if($ncf1 > 1)
+        # If there are multiple counterparts, compare $node0 with all of them and
+        # select the best match (i.e., highest number of correct comparisons).
+        # (Alternatively, we could do some averaging, but the idea is that $node0
+        # really maps only to one of those nodes, we just are not sure which one.)
+        my @results;
+        my $max_i;
+        my $max_correct;
+        foreach my $cf1 (@cf1)
         {
-            print("Warning: $label0 node $f0var$text0 has multiple $label1 mappings, considering only the first one.\n");
+            my $node1 = $sentence1->{nodes}{$cf1};
+            my $result = compare_two_nodes($node0, $sentence0->{nodes}, $node1, $sentence1->{nodes}, $label1);
+            push(@results, $result);
+            if(!defined($max_correct) || $result->{correct} > $max_correct)
+            {
+                $max_correct = $result->{correct};
+                $max_i = $#results;
+            }
         }
-        my $node1 = $sentence1->{nodes}{$cf1[0]};
-        my ($m_total, $m_total_0, $m_total_1, $m_correct, $mismatches) = compare_two_nodes($node0, $sentence0->{nodes}, $node1, $sentence1->{nodes}, $label1);
-        $n_total += $m_total;
-        $n_total_0 += $m_total_0;
-        $n_total_1 += $m_total_1;
-        $n_correct += $m_correct;
-        foreach my $mismatch (@{$mismatches})
+        $n_total += $results[$max_i]{total};
+        $n_total_0 += $results[$max_i]{total0};
+        $n_total_1 += $results[$max_i]{total1};
+        $n_correct += $results[$max_i]{correct};
+        foreach my $mismatch (@{$results[$max_i]{mismatches}})
         {
             push(@table, ["Node $label0 $f0var / $concept0$text0", "mismatch in $mismatch->[0]:", "$label0 = $mismatch->[1]", "$label1 = $mismatch->[2]"]);
         }
@@ -945,7 +957,7 @@ sub compare_two_nodes
             push(@mismatches, [$relation, $explained_value0, $value1]);
         }
     }
-    return ($n_total, $n_total_0, $n_total_1, $n_correct, \@mismatches);
+    return {'total' => $n_total, 'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct, 'mismatches' => \@mismatches};
 }
 
 
