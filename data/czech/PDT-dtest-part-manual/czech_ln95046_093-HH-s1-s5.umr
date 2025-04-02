@@ -1,0 +1,306 @@
+################################################################################
+# sent_id = u_tree-cs-s1-root
+# :: snt1
+Index: 1           2           3        4              5    6
+Words: Parlamentní vyšetřování činnosti kontrarozvědky bude pokračovat
+
+# sentence level graph:
+(s1p3 / publication-91
+	:ARG3 (s1t1 / thing)
+	:ARG1 (s1p1 / pokračovat-004
+		:aspect activity
+		:modal-strength full-affirmative
+        	:ARG1 (s1v1 / vyšetřovat-001
+        		:aspect activity
+        		:modal-strength full-affirmative
+            		:ARG0 (s1o1 / organization
+            			:name (s1n1 / name
+            				:op1 "parlament")
+            			:refer-number singular)
+            		:ARG1 (s1c1 / činit-006
+                		:ARG0 (s1k1 / kontrarozvědka
+                    			:refer-number singular)
+                		:aspect activity
+                		:modal-strength full-affirmative))))
+
+# alignment:
+s1p1: 5-6
+s1v1: 2-2
+s1c1: 3-3
+s1k1: 4-4
+s1o1: 1-1
+s1n1: 0-0
+s1p3: 0-0
+s1t1: 0-0
+
+# document level annotation:
+(s1s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s2-root
+# :: snt2
+Index: 1     2
+Words: Praha -
+
+# sentence level graph:
+(s2p1 / publication-91
+	:ARG3 (s2t2 / thing)
+	:place (s2h1 / human-settlement
+		:name (s2n1 / name
+			:op1 "Praha")
+        	:refer-number singular))
+
+# alignment:
+s2p1: 0-0
+s2t2: 0-0
+s2h1: 1-1
+s2n1: 0-0
+
+# document level annotation:
+(s2s0 / sentence
+    :coref ((s1t1 :same-entity s2t2)
+            (s1p3 :same-entity s2p1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s3-root
+# :: snt3
+Index: 1      2           3     4   5        6            7          8      9    10     11      12          13      14  15   16             17 18          19 20 21  22         23    24 25      26 27    28        29  30
+Words: Ačkoli parlamentní orgán pro kontrolu Bezpečnostní informační služby před týdnem ukončil vyšetřování podnětů ODA vůči kontrarozvědce a  konstatoval ,  že BIS neporušila zákon ,  šetření de facto pokračuje dál .
+
+# sentence level graph:
+(s3p4 / pokračovat-004
+	:aspect activity
+	:modal-strength full-affirmative
+	:mod (s3d1 / de_facto)
+        :ARG1 (s3s2 / šetřit-003
+            :modal-strength full-affirmative
+            :aspect activity
+            :mod (s3d2 / dále)
+            :ARG1 s3o3
+            :ARG0 (s3o1 / organization
+            	:part (s3o2 / organization
+            		:name (s3n1 / name
+            			:op1 "parlament"))
+            	:purpose (s3k1 / kontrolovat-001
+            		:aspect activity
+            		:modal-strength full-affirmative
+                    	:ARG0 s3o1
+                        :ARG1 (s3o3 / organization
+                        	:name (s3n3 / name
+                			:op1 "Bezpečnostní"
+                        		:op2 "informační"
+                        		:op3 "služba")
+                		:refer-number singular))))
+        :concession (s3a1 / and
+            :op1 (s3u1 / ukončit-001
+            	:aspect performance
+            	:modal-strength full-affirmative
+            	:temporal (s3b4 / before
+                	:op1 (s3t2 / týden))
+		:ARG0 s3o1
+                :ARG1 (s3v1 / vyšetřovat-001
+                    :aspect activity
+                    :modal strength full-affirmative
+                    :ARG0 s31o1
+                    :ARG1 (s3p2 / podnět
+                        :ARG0 (s3p5 / political-organization
+                        	:name (s3n2 / name
+                        		:op1 "ODA")
+                        	:refer-number singular)
+                        :ARG1 (s3k2 / kontrarozvědka
+                            :refer-number singular)
+                        :refer-number plural)))
+            :op2 (s3k3 / konstatovat-002
+                :ARG0 s3o1
+                :ARG1 (s3p3 / porušit-001
+                    :ARG0 s3o3
+                    :ARG1 (s3z1 / zákon
+                        :refer-number singular)
+                    :aspect performance
+                    :polarity -
+                    :modal-strength full-negative
+                    :quote s3k3)
+                :modal-strength full-affirmative
+                :aspect performance)))
+
+# alignment:
+s3p4: 28-28
+s3d1: 26-27
+s3s2: 25-25
+s3d2: 29-29
+s3o1: 3-3
+s3k1: 4-5
+s3o2: 2-2
+s3o3: 6-8,21-21
+s3a1: 17-17
+s3u1: 1-1,11-11
+s3n1: 0-0
+s3n2: 0-0
+s3n3: 0-0
+s3b4: 9-9
+s3t2: 10-10
+s3v1: 12-12
+s3p2: 13-13
+s3p5: 14-14
+s3k2: 15-16
+s3k3: 18-18
+s3p3: 20-20,22-22
+s3z1: 23-23
+
+# document level annotation:
+(s3s0 / sentence
+    :coref ((s3v1 :same-event s3s2)
+            (s1v1 :same-entity s3v1)
+            (s2t1 :subset-of s3p4)
+            (s1k1 :same-entity s3o3)
+            (s3o3 :same-entity s3k2)
+            (s1o1 :same-entity s3o2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s4-root
+# :: snt4
+Index: 1     2  3         4    5      6        7     8      9  10  11 12  13 14 15     16     17
+Words: Včera to připustil člen komise poslanec Pavel Severa (  KDU -  ČSL )  po schůzi orgánu .
+
+# sentence level graph:
+(s4p1 / připustit-004
+        :temporal (s4v1 / včera)
+        :ARG1 (s4t1 / event)
+        :ARG0 (s4p4 / person
+        	:ARG1-of (s4h1 / have-org-role-91
+    	   		:aspect state
+    	    		:modal-strength full-affirmative
+    	    		:ARG3 (s4p5 / poslanec
+    	    			:refer-number singular)
+    	    		:ARG2  (s4o2 / organization))
+        	:ARG1-of (s4h2 / have-org-role-91
+        		:modal-strength full-affirmative
+        		:aspect state
+        		:ARG2 (s4k1 / komise
+        			:refer-number singular)
+        		:ARG3 (s4c1 / člen
+        			:refer-number singular))
+        	:ARG1-of (s4h1 / have-org-role-91
+    	   		:aspect state
+    	    		:modal-strength full-affirmative
+    	    		:ARG2  (s4p6 / political-organization
+    	    			:refer-number singular
+    	    			:name (s4n1 / name
+    	    				:op1 "KDU-ČSL")))
+        	:name (s4n2 / name
+        		:op1 "Pavel"
+        		:op2 "Severa")
+            	:refer-number singular)
+        :temporal (s4a2 / after
+        	:op1 (s4s1 / sejít-se-001
+        		:aspect performance
+        		:modal-strength full-affirmative
+                	:ARG0 (s4o1 / orgán
+                		:refer-number singular)))
+        :modal-strength full-affirmative
+        :aspect performance)
+
+# alignment:
+s4p1: 3-3
+s4v1: 1-1
+s4t1: 2-2
+s4p4: 7-8
+s4h1: 0-0
+s4p5: 6-6
+s4p6: 10-12
+s4n1: 0-0
+s4h2: 0-0
+s4k1: 5-5
+s4c1: 4-4
+s4n2: 0-0
+s4a2: 14-14
+s4s1: 15-15
+s4o1: 16-16
+s4o2: 0-0
+
+# document level annotation:
+(s4s0 / sentence
+    :coref ((s3p4 :same-event s4t1)
+            (s3o1 :same-entity s4k1)
+            (s4k1 :same-entity s4o1))
+
+
+################################################################################
+# sent_id = u_tree-cs-s5-root
+# :: snt5
+Index: 1      2  3      4  5   6  7  8       9       10 11    12    13        14     15 16   17        18        19     20 21         22 23          24       25  26         27       28
+Words: Komise se shodla na tom ,  že dokončí šetření ,  která ještě provedena nebyla ,  jako například porovnání zprávy o  extremismu s  vysvětlením ředitele BIS Stanislava Devátého .
+
+# sentence level graph:
+(s5s1 / shodnout-se-001
+	:aspect performance
+	:modal-strength full-affirmative
+        :ARG0 (s5k1 / komise
+            :refer-number singular)
+        :ARG2 s5k1
+        :ARG1 (s5d1 / dokončit-001
+            :aspect performance
+            :modal-strength full-affirmative
+            :ARG0 s5k1
+            :ARG1 (s5s2 / šetřit-003
+            	    :aspect activity
+            	    :modal-strength full-affirmative	
+                    :ARG0 s5k1
+                    :ARG1-of (s5p1 / provést-002
+                        :ARG0 s5k1
+                        :mod (s5j1 / ještě)
+                        :aspect performance
+                        :modal-strength full-negative
+                        :polarity -))
+                    :example (s5p2 / porovnat-001
+                            :aspect performance
+                            :modal-strength full-negative
+                            :polarity -
+                            :ARG0 s5k1
+                            :ARG1 (s5z1 / zpráva
+                                :mod (s5e5 / extremismus
+                                    :refer-number singular)
+                                :refer-number singular)
+                            :ARG2 (s5v1 / vysvětlení
+                                :refer-number singular
+                                :ARG0 (s5p3 / person
+                                    :name (s5n1 / name
+                                        :op1 "Stanislav"
+                                        :op2 "Devátý")
+                                        :refer-number singular
+                                        :ARG1-of (s5h1 / have-org-role-91
+                                :aspect state
+                                    :modal-strength full-affirmative
+                                    :ARG3 (s5r1 / ředitel
+                                        :refer-number singular)
+                                    :ARG2  (s5o1 / organization
+                                            :name (s5n2 / name
+                                                :op1 "BIS")
+                                            :refer-number singular)))))))
+
+# alignment:
+s5s1: 2-3
+s5k1: 1-1
+s5d1: 4-5,7-8
+s5s2: 9-9,11-11
+s5p1: 13-14
+s5j1: 12-12
+s5p2: 16-18
+s5z1: 19-19
+s5e5: 20-21
+s5v1: 22-23
+s5p3: 26-27
+s5h1: 0-0
+s5n1: 0-0
+s5r1: 24-24
+s5o1: 25-25
+s5n2: 0-0
+
+# document level annotation:
+(s5s0 / sentence
+    :coref ((s4o1 :same-entity s5k1)
+            (s3o3 :same-entity s5o1)))
+
