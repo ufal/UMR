@@ -291,7 +291,7 @@ sub parse_sentence_tokens
     }
     if(scalar(@tokens) == 0)
     {
-        confess(sprintf STDERR ("No tokens found the token block (lines %d–%d) in sentence %d of file %s.\n", $token_block->{line0}, $token_block->{line1}, $i_sentence+1, $file->{label}));
+        confess(sprintf("No tokens found the token block (lines %d–%d) in sentence %d of file %s.\n", $token_block->{line0}, $token_block->{line1}, $i_sentence+1, $file->{label}));
     }
     $sentence->{tokens} = \@tokens;
 }
