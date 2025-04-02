@@ -236,6 +236,10 @@ sub compare_files
             my $n1_mapped = $file1->{stats}{crossfile}{$label2};
             my $recall = $n1_total > 0 ? $n1_mapped/$n1_total : 0;
             printf("Out of %d total %s nodes, %d mapped to %s, which is %d%%.\n", $n1_total, $label1, $n1_mapped, $label2, $recall*100+0.5);
+            if(exists($file1->{stats}{crossfile2}{$label2}))
+            {
+                printf("... and %d of them have ambiguous mapping (more than one target node in %s).\n", $file1->{stats}{crossfile2}{$label2}, $label2);
+            }
         }
     }
     print("Concept and relation comparisons for the mapped nodes:\n");
@@ -675,6 +679,23 @@ sub compute_crossfile_node_references
             }
         }
     }
+    # Update the statistics about cross-file node mappings.
+    foreach my $file1 (@files)
+    {
+        my $sentence1 = $file1->{sentences}[$i_sentence];
+        my @variables1 = sort(keys(%{$sentence1->{nodes}}));
+        foreach my $variable1 (@variables1)
+        {
+            my $node1 = $sentence1->{nodes}{$variable1};
+            foreach my $file2 (@files)
+            {
+                my $label2 = $file2->{label};
+                my $n_targets = scalar(keys(%{$node1->{crossfile}{$label2}}));
+                $file1->{stats}{crossfile}{$label2}++ if($n_targets > 0);
+                $file1->{stats}{crossfile2}{$label2}++ if($n_targets > 1);
+            }
+        }
+    }
 }
 
 
@@ -709,7 +730,6 @@ sub compare_node_correspondences
     print("\n");
     printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned, $n_total, $label0, $n_total > 0 ? $n_aligned/$n_total*100+0.5 : 0);
     print("\n");
-    $file0->{stats}{crossfile}{$label1} += $n_aligned;
 }
 
 

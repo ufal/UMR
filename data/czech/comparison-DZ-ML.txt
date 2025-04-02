@@ -573,6 +573,7 @@ SUMMARY:
 Number of nodes per file: DZ:69, ML:71
 File-to-file node mapping:
 Out of 69 total DZ nodes, 66 mapped to ML, which is 96%.
+... and 1 of them have ambiguous mapping (more than one target node in ML).
 Out of 71 total ML nodes, 69 mapped to DZ, which is 97%.
 Concept and relation comparisons for the mapped nodes:
 Out of 232 total comparisons, 198 had matching values, which is 85%.
