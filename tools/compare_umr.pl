@@ -226,20 +226,32 @@ sub compare_files
     print("-------------------------------------------------------------------------------\n");
     print("SUMMARY:\n");
     print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
+    # Compare node alignments for each pair of files. Although both files may
+    # come from annotators, imagine that the first file is the gold standard
+    # and the second file is evaluated against it; the numbers are then P, R, F.
     print("File-to-file node mapping:\n");
-    foreach my $file1 (@files)
+    for(my $i = 0; $i <= $#files; $i++)
     {
-        my $label1 = $file1->{label};
-        foreach my $label2 (sort(keys(%{$file1->{stats}{crossfile}})))
+        my $labeli = $files[$i]{label};
+        my $ni_total = $files[$i]{stats}{n_nodes};
+        next if($ni_total == 0);
+        for(my $j = $i+1; $j <= $#files; $j++)
         {
-            my $n1_total = $file1->{stats}{n_nodes};
-            my $n1_mapped = $file1->{stats}{crossfile}{$label2};
-            my $recall = $n1_total > 0 ? $n1_mapped/$n1_total : 0;
-            printf("Out of %d total %s nodes, %d mapped to %s, which is %d%%.\n", $n1_total, $label1, $n1_mapped, $label2, $recall*100+0.5);
-            if(exists($file1->{stats}{crossfile2}{$label2}))
-            {
-                printf("... and %d of them have ambiguous mapping (more than one target node in %s).\n", $file1->{stats}{crossfile2}{$label2}, $label2);
-            }
+            my $labelj = $files[$j]{label};
+            my $nj_total = $files[$j]{stats}{n_nodes};
+            next if($nj_total == 0);
+            my $ni_mapped = $files[$i]{stats}{crossfile}{$labelj};
+            my $nj_mapped = $files[$j]{stats}{crossfile}{$labeli};
+            my $ni_mapped2 = $files[$i]{stats}{crossfile2}{$labelj} // 0;
+            my $nj_mapped2 = $files[$j]{stats}{crossfile2}{$labeli} // 0;
+            # Precision: nodes mapped from j to i / total j nodes (how much of what we found we should have found).
+            # Recall: nodes mapped from i to j / total i nodes (how much of what we should have found we found).
+            my $p = $nj_mapped/$nj_total;
+            my $r = $ni_mapped/$ni_total;
+            my $f = 2*$p*$r/($p+$r);
+            printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => recall    = %d%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, $ni_mapped2, $r*100+0.5);
+            printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $nj_mapped2, $p*100+0.5);
+            printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
         }
     }
     print("Concept and relation comparisons for the mapped nodes:\n");
