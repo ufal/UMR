@@ -51,6 +51,8 @@ Aligned 6 out of 6 ML nodes, that is 100%.
 Comparing attributes of DZ nodes with their ML counterparts.
 
 Correct 19 out of 19 concept or relation comparisons, that is 100%.
+Correct 19 out of 19 non-empty DZ values => recall    100%.
+Correct 19 out of 19 non-empty ML values => precision 100%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 2:
@@ -88,6 +90,8 @@ Aligned 4 out of 4 ML nodes, that is 100%.
 Comparing attributes of DZ nodes with their ML counterparts.
 
 Correct 10 out of 10 concept or relation comparisons, that is 100%.
+Correct 10 out of 10 non-empty DZ values => recall    100%.
+Correct 10 out of 10 non-empty ML values => precision 100%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 3:
@@ -137,6 +141,8 @@ Aligned 6 out of 6 ML nodes, that is 100%.
 Comparing attributes of DZ nodes with their ML counterparts.
 
 Correct 19 out of 19 concept or relation comparisons, that is 100%.
+Correct 19 out of 19 non-empty DZ values => recall    100%.
+Correct 19 out of 19 non-empty ML values => precision 100%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 4:
@@ -174,6 +180,8 @@ Aligned 4 out of 4 ML nodes, that is 100%.
 Comparing attributes of DZ nodes with their ML counterparts.
 
 Correct 10 out of 10 concept or relation comparisons, that is 100%.
+Correct 10 out of 10 non-empty DZ values => recall    100%.
+Correct 10 out of 10 non-empty ML values => precision 100%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -312,6 +320,8 @@ Node DZ s5z / získat-001 (získal)             mismatch in :according-to:   DZ 
 Node DZ s5z / získat-001 (získal)             mismatch in :manner:         DZ =                        ML = s5v2          
 
 Correct 53 out of 68 concept or relation comparisons, that is 78%.
+Correct 53 out of 63 non-empty DZ values => recall    84%.
+Correct 53 out of 62 non-empty ML values => precision 85%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 6:
@@ -432,7 +442,6 @@ Aligned 16 out of 16 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
 Skipping DZ node s6a because it is not mapped to ML.
-Warning: DZ child node s6p2 has multiple ML mappings, considering only the first one.
 Warning: DZ node s6p2 (asi 20.5 procenta , což) has multiple ML mappings, considering only the first one.
 Skipping DZ node s6p7 because it is not mapped to ML.
 Skipping DZ node s6v because it is not mapped to ML.
@@ -446,6 +455,8 @@ Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG0:   
 Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG1:   DZ =                   ML = s6p8     
 
 Correct 44 out of 52 concept or relation comparisons, that is 85%.
+Correct 44 out of 47 non-empty DZ values => recall    94%.
+Correct 44 out of 50 non-empty ML values => precision 88%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 7:
@@ -567,6 +578,8 @@ Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :ARG3-of: DZ = s7i m
 Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :mod:     DZ = s7m mapped to ML s7m3  ML =          
 
 Correct 43 out of 54 concept or relation comparisons, that is 80%.
+Correct 43 out of 50 non-empty DZ values => recall    86%.
+Correct 43 out of 49 non-empty ML values => precision 88%.
 
 -------------------------------------------------------------------------------
 SUMMARY:
@@ -575,5 +588,8 @@ File-to-file node mapping:
 Out of 69 total DZ nodes, 66 mapped to ML (1 ambiguously) => recall    = 96%.
 Out of 71 total ML nodes, 69 mapped to DZ (0 ambiguously) => precision = 97%.
  => F₁(DZ,ML) = 96%.
-Concept and relation comparisons for the mapped nodes:
+Concept and relation comparisons for the mapped nodes (unmapped nodes are ignored):
 Out of 232 total comparisons, 198 had matching values, which is 85%.
+Out of 218 non-empty DZ values, 198 found in ML => recall    91%.
+Out of 219 non-empty ML values, 198 found in DZ => precision 90%.
+ => F₁(DZ,ML) = 91%.

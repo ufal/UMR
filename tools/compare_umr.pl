@@ -821,11 +821,12 @@ sub compare_node_attributes
     my $n_total;
     my $n_total_0;
     my $n_total_1;
-    my $n_mismatch;
+    my $n_correct;
     my @table;
     foreach my $f0var (sort(keys(%{$sentence0->{nodes}})))
     {
         my $node0 = $sentence0->{nodes}{$f0var};
+        my $concept0 = $node0->{concept};
         my $text0 = $node0->{aligned_text} ? " ($node0->{aligned_text})" : '';
         my @cf1 = sort(keys(%{$node0->{crossfile}{$label1}}));
         my $ncf1 = scalar(@cf1);
@@ -839,66 +840,112 @@ sub compare_node_attributes
             print("Warning: $label0 node $f0var$text0 has multiple $label1 mappings, considering only the first one.\n");
         }
         my $node1 = $sentence1->{nodes}{$cf1[0]};
-        my $concept0 = $node0->{concept};
-        my $concept1 = $node1->{concept};
-        $n_total++; # count concept comparison
-        if($concept0 ne $concept1)
+        my ($m_total, $m_total_0, $m_total_1, $m_correct, $mismatches) = compare_two_nodes($node0, $sentence0->{nodes}, $node1, $sentence1->{nodes}, $label1);
+        $n_total += $m_total;
+        $n_total_0 += $m_total_0;
+        $n_total_1 += $m_total_1;
+        $n_correct += $m_correct;
+        foreach my $mismatch (@{$mismatches})
         {
-            $n_mismatch++;
-            push(@table, ["Node $label0 $f0var / $concept0$text0", "mismatch in concept:", "$label0 = $concept0", "$label1 = $concept1"]);
-        }
-        my @relations0 = keys(%{$node0->{relations}});
-        my @relations1 = keys(%{$node1->{relations}});
-        my %relations;
-        map {$relations{$_}++} (@relations0);
-        map {$relations{$_}++} (@relations1);
-        my @relations = sort(keys(%relations));
-        foreach my $relation (@relations)
-        {
-            my $value0 = $node0->{relations}{$relation};
-            my $value1 = $node1->{relations}{$relation};
-            # If one of the values is the variable of another node, we must project it to the other file!
-            my $modified_value0 = $value0;
-            my $explained_value0 = $value0;
-            if(exists($sentence0->{nodes}{$value0}))
-            {
-                my $child0 = $sentence0->{nodes}{$value0};
-                my @ccf1 = sort(keys(%{$child0->{crossfile}{$label1}}));
-                my $nccf1 = scalar(@ccf1);
-                if($nccf1 == 0)
-                {
-                    $explained_value0 .= ' unmapped';
-                }
-                else
-                {
-                    if($nccf1 > 1)
-                    {
-                        print("Warning: $label0 child node $value0 has multiple $label1 mappings, considering only the first one.\n");
-                    }
-                    $modified_value0 = $ccf1[0];
-                    $explained_value0 .= " mapped to $label1 $modified_value0";
-                }
-            }
-            $n_total++; # count relation comparison
-            $n_total_0++ unless($value0 eq '');
-            $n_total_1++ unless($value1 eq '');
-            if($modified_value0 ne $value1)
-            {
-                $n_mismatch++;
-                push(@table, ["Node $label0 $f0var / $concept0$text0", "mismatch in $relation:", "$label0 = $explained_value0", "$label1 = $value1"]);
-            }
+            push(@table, ["Node $label0 $f0var / $concept0$text0", "mismatch in $mismatch->[0]:", "$label0 = $mismatch->[1]", "$label1 = $mismatch->[2]"]);
         }
     }
     print_table(@table);
     print("\n");
-    printf("Correct %d out of %d concept or relation comparisons, that is %d%%.\n", $n_total-$n_mismatch, $n_total, $n_total > 0 ? ($n_total-$n_mismatch)/$n_total*100+0.5 : 0);
-    printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_total-$n_mismatch, $n_total_0, $label0, $n_total_0 > 0 ? ($n_total-$n_mismatch)/$n_total_0*100+0.5 : 0);
-    printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_total-$n_mismatch, $n_total_1, $label1, $n_total_1 > 0 ? ($n_total-$n_mismatch)/$n_total_1*100+0.5 : 0);
+    printf("Correct %d out of %d concept or relation comparisons, that is %d%%.\n", $n_correct, $n_total, $n_total > 0 ? $n_correct/$n_total*100+0.5 : 0);
+    printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
+    printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
     print("\n");
-    $file0->{stats}{cr_correct} += $n_total-$n_mismatch;
+    $file0->{stats}{cr_correct} += $n_correct;
     $file0->{stats}{cr_total} += $n_total;
     $file0->{stats}{cr_total_me} += $n_total_0;
     $file0->{stats}{cr_total_other} += $n_total_1;
+}
+
+
+
+#------------------------------------------------------------------------------
+# Compares concepts and relations of two corresponding nodes. If a node has two
+# or more ambiguous counterparts, this function can be called for all pairs and
+# then the values must be aggregated somehow. Besides the nodes to be compared,
+# the function also needs access to the other nodes in their respective
+# sentences because if the value of a relation is a child node, the function
+# must be able to access the child node's mapping to the other file.
+#------------------------------------------------------------------------------
+sub compare_two_nodes
+{
+    my $node0 = shift; # hash reference (node object)
+    my $nodes0 = shift; # hash reference, indexed by variables
+    my $node1 = shift; # hash reference (node object)
+    my $nodes1 = shift; # hash reference, indexed by variables
+    my $label1 = shift; # label of the file of $node1
+    my $n_total = 0;
+    my $n_total_0 = 0;
+    my $n_total_1 = 0;
+    my $n_correct = 0;
+    my @mismatches;
+    my $concept0 = $node0->{concept};
+    my $concept1 = $node1->{concept};
+    $n_total++; # count concept comparison
+    $n_total_0++; # every node should have a non-empty concept
+    $n_total_1++; # every node should have a non-empty concept
+    if($concept0 eq $concept1)
+    {
+        $n_correct++;
+    }
+    else
+    {
+        push(@mismatches, ['concept', $concept0, $concept1]);
+    }
+    my @relations0 = keys(%{$node0->{relations}});
+    my @relations1 = keys(%{$node1->{relations}});
+    my %relations;
+    map {$relations{$_}++} (@relations0);
+    map {$relations{$_}++} (@relations1);
+    my @relations = sort(keys(%relations));
+    foreach my $relation (@relations)
+    {
+        my $value0 = $node0->{relations}{$relation};
+        my $value1 = $node1->{relations}{$relation};
+        $n_total++; # count relation comparison
+        $n_total_0++ unless($value0 eq '');
+        $n_total_1++ unless($value1 eq '');
+        my $correct = 0;
+        # If one of the values is the variable of another node, we must project it to the other file!
+        my $explained_value0 = $value0;
+        if(exists($nodes0->{$value0}))
+        {
+            my $child0 = $nodes0->{$value0};
+            my @ccf1 = sort(keys(%{$child0->{crossfile}{$label1}}));
+            my $nccf1 = scalar(@ccf1);
+            if($nccf1 == 0)
+            {
+                # Unmapped node reference cannot be correct.
+                $explained_value0 .= ' unmapped';
+            }
+            else
+            {
+                # If there is just one counterpart, we can simply check its variable matches $value1.
+                # If there are two or more, score a point if any of them matches $value1.
+                # (Alternatively, we could score a fraction of a point, depending on the number of counterparts.)
+                $correct = scalar(grep {$_ eq $value1} (@ccf1));
+                $explained_value0 .= " mapped to $label1 ".join(', ', @ccf1);
+            }
+        }
+        else
+        {
+            $correct = $value0 eq $value1;
+        }
+        if($correct)
+        {
+            $n_correct++;
+        }
+        else
+        {
+            push(@mismatches, [$relation, $explained_value0, $value1]);
+        }
+    }
+    return ($n_total, $n_total_0, $n_total_1, $n_correct, \@mismatches);
 }
 
 
