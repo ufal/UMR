@@ -680,39 +680,43 @@ sub compute_crossfile_node_references
         }
     }
     # Try to symmetrize the node-node alignments: Use intersection if possible.
-    foreach my $file1 (@files)
+    ###!!! Can this ever change anything? Or is it guaranteed that we already have symmetric mapping? (It does not mean it must be 1-1.)
+    if(0) ###!!! turn off
     {
-        my $label1 = $file1->{label};
-        my $sentence1 = $file1->{sentences}[$i_sentence];
-        my @variables1 = sort(keys(%{$sentence1->{nodes}}));
-        foreach my $variable1 (@variables1)
+        foreach my $file1 (@files)
         {
-            my $node1 = $sentence1->{nodes}{$variable1};
-            foreach my $file2 (@files)
+            my $label1 = $file1->{label};
+            my $sentence1 = $file1->{sentences}[$i_sentence];
+            my @variables1 = sort(keys(%{$sentence1->{nodes}}));
+            foreach my $variable1 (@variables1)
             {
-                my $label2 = $file2->{label};
-                my $sentence2 = $file2->{sentences}[$i_sentence];
-                my @cf2 = sort(keys(%{$node1->{crossfile}{$label2}}));
-                if(scalar(@cf2) > 1)
+                my $node1 = $sentence1->{nodes}{$variable1};
+                foreach my $file2 (@files)
                 {
-                    # Ambiguous crossref found. Try to filter it, look for back-references.
-                    my @filtered_cf2;
-                    foreach my $variable2 (@cf2)
+                    my $label2 = $file2->{label};
+                    my $sentence2 = $file2->{sentences}[$i_sentence];
+                    my @cf2 = sort(keys(%{$node1->{crossfile}{$label2}}));
+                    if(scalar(@cf2) > 1)
                     {
-                        my $node2 = $sentence2->{nodes}{$variable2};
-                        if(exists($node2->{crossfile}{$label1}{$variable1}))
+                        # Ambiguous crossref found. Try to filter it, look for back-references.
+                        my @filtered_cf2;
+                        foreach my $variable2 (@cf2)
                         {
-                            push(@filtered_cf2, $variable2);
+                            my $node2 = $sentence2->{nodes}{$variable2};
+                            if(exists($node2->{crossfile}{$label1}{$variable1}))
+                            {
+                                push(@filtered_cf2, $variable2);
+                            }
                         }
-                    }
-                    # If we now have fewer but still non-zero references, use them instead of the original ones.
-                    my $n_filtered = scalar(@filtered_cf2);
-                    if($n_filtered > 0 && $n_filtered < scalar(@cf2))
-                    {
-                        delete($node1->{crossfile}{$label2});
-                        foreach my $variable2 (@filtered_cf2)
+                        # If we now have fewer but still non-zero references, use them instead of the original ones.
+                        my $n_filtered = scalar(@filtered_cf2);
+                        if($n_filtered > 0 && $n_filtered < scalar(@cf2))
                         {
-                            $node1->{crossfile}{$label2}{$variable2}++;
+                            delete($node1->{crossfile}{$label2});
+                            foreach my $variable2 (@filtered_cf2)
+                            {
+                                $node1->{crossfile}{$label2}{$variable2}++;
+                            }
                         }
                     }
                 }
