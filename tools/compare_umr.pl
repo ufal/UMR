@@ -598,6 +598,7 @@ sub map_node_alignments
             my @aligned = map {$nodes->{$_}{variable}} (grep {defined($nodes->{$_}{alignment}) && $nodes->{$_}{alignment}[$j]} (@variables));
             $sentence->{aligned_nodes_by_token}[$j] = \@aligned;
         }
+        $file->{stats}{n_nodes} += scalar(@variables);
     }
 }
 
@@ -673,7 +674,6 @@ sub compute_crossfile_node_references
                 }
             }
         }
-        $file1->{stats}{n_nodes} += scalar(keys(%{$sentence1->{nodes}}));
     }
 }
 
