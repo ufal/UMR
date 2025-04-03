@@ -251,7 +251,7 @@ sub compare_files
             printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => recall    = %d%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, $ni_mapped2, $r*100+0.5);
             printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $nj_mapped2, $p*100+0.5);
             printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
-            print("Concept and relation comparisons for the mapped nodes (unmapped nodes are ignored):\n");
+            print("Concept and relation comparisons (for unmapped nodes all counted as incorrect):\n");
             my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
             my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
             my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
@@ -260,7 +260,7 @@ sub compare_files
             $f = 2*$p*$r/($p+$r);
             printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, $r*100+0.5);
             printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
-            printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
+            printf(" => juːmæʧ ($labeli, $labelj) = F₁ = %d%%.\n", $f*100+0.5); # místo "t͡ʃ" lze případně použít "ʧ"
         }
     }
 }
@@ -838,18 +838,18 @@ sub compare_node_attributes
         my $text0 = $node0->{aligned_text} ? " ($node0->{aligned_text})" : '';
         my @cf1 = sort(keys(%{$node0->{crossfile}{$label1}}));
         my $ncf1 = scalar(@cf1);
+        my @results;
+        my $max_i;
+        my $max_correct;
         if($ncf1 == 0)
         {
-            print("Skipping $label0 node $f0var$text0 because it is not mapped to $label1.\n");
-            next;
+            $results[0] = compare_two_nodes($node0, $sentence0->{nodes}, undef);
+            $max_i = 0;
         }
         # If there are multiple counterparts, compare $node0 with all of them and
         # select the best match (i.e., highest number of correct comparisons).
         # (Alternatively, we could do some averaging, but the idea is that $node0
         # really maps only to one of those nodes, we just are not sure which one.)
-        my @results;
-        my $max_i;
-        my $max_correct;
         foreach my $cf1 (@cf1)
         {
             my $node1 = $sentence1->{nodes}{$cf1};
@@ -867,6 +867,24 @@ sub compare_node_attributes
         foreach my $mismatch (@{$results[$max_i]{mismatches}})
         {
             push(@table, ["Node $label0 $f0var / $concept0$text0", "mismatch in $mismatch->[0]:", "$label0 = $mismatch->[1]", "$label1 = $mismatch->[2]"]);
+        }
+    }
+    # Also count unaligned nodes of $file1 (aligned ones were already reached through alignments from $file0).
+    foreach my $f1var (sort(keys(%{$sentence1->{nodes}})))
+    {
+        my $node1 = $sentence1->{nodes}{$f1var};
+        my $concept1 = $node1->{concept};
+        my $text1 = $node1->{aligned_text} ? " ($node1->{aligned_text})" : '';
+        my @cf0 = sort(keys(%{$node1->{crossfile}{$label0}}));
+        my $ncf0 = scalar(@cf0);
+        if($ncf0 == 0)
+        {
+            my $result = compare_two_nodes($node1, $sentence1->{nodes}, undef);
+            $n_total_1 += $result->{total0};
+            foreach my $mismatch (@{$result->{mismatches}})
+            {
+                push(@table, ["Node $label1 $f1var / $concept1$text1", "mismatch in $mismatch->[0]:", "$label1 = $mismatch->[1]", "$label0 = $mismatch->[2]"]);
+            }
         }
     }
     print_table(@table);
@@ -888,6 +906,9 @@ sub compare_node_attributes
 # the function also needs access to the other nodes in their respective
 # sentences because if the value of a relation is a child node, the function
 # must be able to access the child node's mapping to the other file.
+# The function can be called with $node1 undefined if we did not find any
+# mapping for $node0. Then it will merely collect the attributes of $node0 and
+# consider them all incorrect.
 #------------------------------------------------------------------------------
 sub compare_two_nodes
 {
@@ -896,14 +917,22 @@ sub compare_two_nodes
     my $node1 = shift; # hash reference (node object)
     my $nodes1 = shift; # hash reference, indexed by variables
     my $label1 = shift; # label of the file of $node1
+    my $n_correct = 0;
+    my @mismatches;
     # Collect attribute-value-modified value triples from both nodes.
     # Modified value applies to node variables, which have to be translated to the other file.
     my @pairs0 = get_node_attributes_mapped($node0, $nodes0, $label1);
-    my @pairs1 = get_node_attributes_mapped($node1, $nodes1, undef);
     my $n_total_0 = scalar(@pairs0);
+    if(!defined($node1))
+    {
+        foreach my $p0 (@pairs0)
+        {
+            push(@mismatches, [$p0->[0], $p0->[1], 'UNMAPPED']);
+        }
+        return {'total0' => $n_total_0, 'total1' => 0, 'correct' => $n_correct, 'mismatches' => \@mismatches};
+    }
+    my @pairs1 = get_node_attributes_mapped($node1, $nodes1, undef);
     my $n_total_1 = scalar(@pairs1);
-    my $n_correct = 0;
-    my @mismatches;
     # How many pairs are found in both nodes?
     foreach my $p0 (@pairs0)
     {
