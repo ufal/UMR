@@ -252,15 +252,12 @@ sub compare_files
             printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $nj_mapped2, $p*100+0.5);
             printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
             print("Concept and relation comparisons for the mapped nodes (unmapped nodes are ignored):\n");
-            my $cr_total = $files[$i]{stats}{cr}{$labelj}{total};
             my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
             my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
             my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
-            my $accuracy = $cr_total > 0 ? $cr_correct/$cr_total : 0;
             $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
             $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
             $f = 2*$p*$r/($p+$r);
-            printf("Out of %d total comparisons, %d had matching values, which is %d%%.\n", $cr_total, $cr_correct, $accuracy*100+0.5);
             printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, $r*100+0.5);
             printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
             printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
@@ -830,7 +827,6 @@ sub compare_node_attributes
     my $sentence0 = $file0->{sentences}[$i_sentence];
     my $sentence1 = $file1->{sentences}[$i_sentence];
     print("Comparing attributes of $label0 nodes with their $label1 counterparts.\n");
-    my $n_total;
     my $n_total_0;
     my $n_total_1;
     my $n_correct;
@@ -865,7 +861,6 @@ sub compare_node_attributes
                 $max_i = $#results;
             }
         }
-        $n_total += $results[$max_i]{total};
         $n_total_0 += $results[$max_i]{total0};
         $n_total_1 += $results[$max_i]{total1};
         $n_correct += $results[$max_i]{correct};
@@ -876,12 +871,10 @@ sub compare_node_attributes
     }
     print_table(@table);
     print("\n");
-    printf("Correct %d out of %d concept or relation comparisons, that is %d%%.\n", $n_correct, $n_total, $n_total > 0 ? $n_correct/$n_total*100+0.5 : 0);
     printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
     printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
     print("\n");
     $file0->{stats}{cr}{$label1}{correct} += $n_correct;
-    $file0->{stats}{cr}{$label1}{total} += $n_total;
     $file0->{stats}{cr}{$label1}{total_me} += $n_total_0;
     $file0->{stats}{cr}{$label1}{total_other} += $n_total_1;
 }
@@ -903,73 +896,115 @@ sub compare_two_nodes
     my $node1 = shift; # hash reference (node object)
     my $nodes1 = shift; # hash reference, indexed by variables
     my $label1 = shift; # label of the file of $node1
-    my $n_total = 0;
-    my $n_total_0 = 0;
-    my $n_total_1 = 0;
+    # Collect attribute-value-modified value triples from both nodes.
+    # Modified value applies to node variables, which have to be translated to the other file.
+    my @pairs0 = get_node_attributes_mapped($node0, $nodes0, $label1);
+    my @pairs1 = get_node_attributes_mapped($node1, $nodes1, undef);
+    my $n_total_0 = scalar(@pairs0);
+    my $n_total_1 = scalar(@pairs1);
     my $n_correct = 0;
     my @mismatches;
-    my $concept0 = $node0->{concept};
-    my $concept1 = $node1->{concept};
-    $n_total++; # count concept comparison
-    $n_total_0++; # every node should have a non-empty concept
-    $n_total_1++; # every node should have a non-empty concept
-    if($concept0 eq $concept1)
+    # How many pairs are found in both nodes?
+    foreach my $p0 (@pairs0)
     {
-        $n_correct++;
-    }
-    else
-    {
-        push(@mismatches, ['concept', $concept0, $concept1]);
-    }
-    my @relations0 = keys(%{$node0->{relations}});
-    my @relations1 = keys(%{$node1->{relations}});
-    my %relations;
-    map {$relations{$_}++} (@relations0);
-    map {$relations{$_}++} (@relations1);
-    my @relations = sort(keys(%relations));
-    foreach my $relation (@relations)
-    {
-        my $value0 = $node0->{relations}{$relation};
-        my $value1 = $node1->{relations}{$relation};
-        $n_total++; # count relation comparison
-        $n_total_0++ unless($value0 eq '');
-        $n_total_1++ unless($value1 eq '');
-        my $correct = 0;
-        # If one of the values is the variable of another node, we must project it to the other file!
-        my $explained_value0 = $value0;
-        if(exists($nodes0->{$value0}))
-        {
-            my $child0 = $nodes0->{$value0};
-            my @ccf1 = sort(keys(%{$child0->{crossfile}{$label1}}));
-            my $nccf1 = scalar(@ccf1);
-            if($nccf1 == 0)
-            {
-                # Unmapped node reference cannot be correct.
-                $explained_value0 .= ' unmapped';
-            }
-            else
-            {
-                # If there is just one counterpart, we can simply check its variable matches $value1.
-                # If there are two or more, score a point if any of them matches $value1.
-                # (Alternatively, we could score a fraction of a point, depending on the number of counterparts.)
-                $correct = scalar(grep {$_ eq $value1} (@ccf1));
-                $explained_value0 .= " mapped to $label1 ".join(', ', @ccf1);
-            }
-        }
-        else
-        {
-            $correct = $value0 eq $value1;
-        }
-        if($correct)
+        # Compare modified value (->[2]) from $p0 with unmodified value (->[1]) from $p1.
+        my $found = scalar(grep {$_->[0] eq $p0->[0] && $_->[1] eq $p0->[2]} (@pairs1));
+        if($found)
         {
             $n_correct++;
         }
         else
         {
-            push(@mismatches, [$relation, $explained_value0, $value1]);
+            # If the other node does not have this attribute with any value, show a single-way mismatch here.
+            # If the other node has exactly one such attribute but with a different value, show a merged mismatch on one line.
+            # If the other node has multiple such attributes, all with unmatching values, show a single-way mismatch here and leave the opposite ways for later.
+            my @same_attribute0 = grep {$_->[0] eq $p0->[0]} (@pairs0);
+            my @same_attribute1 = grep {$_->[0] eq $p0->[0]} (@pairs1);
+            if(scalar(@same_attribute0) == 1 && scalar(@same_attribute1) == 1)
+            {
+                push(@mismatches, [$p0->[0], $p0->[1], $same_attribute1[0][1]]);
+            }
+            else
+            {
+                push(@mismatches, [$p0->[0], $p0->[1], '']);
+            }
         }
     }
-    return {'total' => $n_total, 'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct, 'mismatches' => \@mismatches};
+    # We already know the counts needed for precision and recall but we have not
+    # collected the remaining mismatches from the other node.
+    foreach my $p1 (@pairs1)
+    {
+        # Compare modified value (->[2]) from $p0 with unmodified value (->[1]) from $p1.
+        my $found = scalar(grep {$_->[0] eq $p1->[0] && $_->[2] eq $p1->[1]} (@pairs0));
+        if(!$found)
+        {
+            # Skip the merged mismatches that have been already reported. Report the rest.
+            my @same_attribute0 = grep {$_->[0] eq $p1->[0]} (@pairs0);
+            my @same_attribute1 = grep {$_->[0] eq $p1->[0]} (@pairs1);
+            if(scalar(@same_attribute0) != 1 || scalar(@same_attribute1) != 1)
+            {
+                push(@mismatches, [$p1->[0], '', $p1->[1]]);
+            }
+        }
+    }
+    return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct, 'mismatches' => \@mismatches};
+}
+
+
+
+#------------------------------------------------------------------------------
+# For a node, collects all attribute-value pairs (concept, edges, attributes).
+# In fact it collect triples rather than pairs, because the value is returned
+# twice and in some cases the second value is modified. This happens when the
+# value is a variable identifying another node: The modified value is the
+# corresponding variable in another file.
+#------------------------------------------------------------------------------
+sub get_node_attributes_mapped
+{
+    my $node = shift; # the node object we want to examine
+    my $nodes = shift; # reference to hash of nodes in the current file/sentence
+    my $other_label = shift; # label of the other file to which we want to map variables; undef if we do not want to map variables (if compairing two nodes we must map one and keep the other intact)
+    my @pairs;
+    my $concept = $node->{concept};
+    push(@pairs, ['concept', $concept, $concept]);
+    my @relations = sort(keys(%{$node->{relations}}));
+    foreach my $relation (@relations)
+    {
+        my $value = $node->{relations}{$relation};
+        # We should not encounter any empty value but just in case...
+        next if(!defined($value) || $value eq '');
+        # If the value is the variable of another node, we must project it to the other file.
+        if(defined($other_label) && exists($nodes->{$value}))
+        {
+            my $child = $nodes->{$value};
+            my @ccf = sort(keys(%{$child->{crossfile}{$other_label}}));
+            # If the child is mapped to multiple nodes in the other file, we will add it as multiple children with the same relation.
+            # It is very unlikely that all the relations will find their counterparts in the other file; probably at most one.
+            # Alternatively, we could count each of them as 1/N of an occurrence of a triple, or ideally pick one of them and
+            # throw away the others. But we cannot know which one we should pick. (Unless we look at the node to which we will
+            # compare the current one, and check whether one of the relations has its counterpart there.)
+            my $nccf = scalar(@ccf);
+            if($nccf == 0)
+            {
+                # The child node has no counterpart. Replace it with a non-variable UNMAPPED. We do not want the variable to match anything accidentally.
+                push(@pairs, [$relation, "$value unmapped", 'UNMAPPED']);
+            }
+            else
+            {
+                my $ccf = join(', ', @ccf);
+                foreach my $other_variable (@ccf)
+                {
+                    push(@pairs, [$relation, "$value mapped to $other_label $ccf", $other_variable]);
+                }
+            }
+        }
+        else
+        {
+            # This is an ordinary attribute rather than a relation.
+            push(@pairs, [$relation, $value, $value]);
+        }
+    }
+    return @pairs;
 }
 
 

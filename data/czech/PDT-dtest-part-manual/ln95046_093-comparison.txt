@@ -64,11 +64,10 @@ Aligned 8 out of 8 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
 Node ML s1c1 / činit-005 (činnosti)       mismatch in concept:       ML = činit-005  HH = činit-006
-Node ML s1p2 / organization (Parlamentní) mismatch in :refer-number: ML =            HH = singular 
 Node ML s1p2 / organization (Parlamentní) mismatch in :wiki:         ML = "Q2347172" HH =          
+Node ML s1p2 / organization (Parlamentní) mismatch in :refer-number: ML =            HH = singular 
 Node ML s1t0 / thing                      mismatch in :refer-number: ML = singular   HH =          
 
-Correct 22 out of 26 concept or relation comparisons, that is 85%.
 Correct 22 out of 25 non-empty ML values => recall    88%.
 Correct 22 out of 24 non-empty HH values => precision 92%.
 
@@ -78,7 +77,6 @@ Node HH s1o1 / organization (Parlamentní) mismatch in :refer-number: HH = singu
 Node HH s1o1 / organization (Parlamentní) mismatch in :wiki:         HH =           ML = "Q2347172"
 Node HH s1t1 / thing                      mismatch in :refer-number: HH =           ML = singular  
 
-Correct 22 out of 26 concept or relation comparisons, that is 85%.
 Correct 22 out of 24 non-empty HH values => recall    92%.
 Correct 22 out of 25 non-empty ML values => precision 88%.
 
@@ -119,11 +117,10 @@ Correspondence HH s2t2 (thing)          = ML s2t0
 Aligned 4 out of 4 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s2p1 / human-settlement (Praha) mismatch in :refer-number: ML =          HH = singular
 Node ML s2p1 / human-settlement (Praha) mismatch in :wiki:         ML = "Q1085"  HH =         
+Node ML s2p1 / human-settlement (Praha) mismatch in :refer-number: ML =          HH = singular
 Node ML s2t0 / thing                    mismatch in :refer-number: ML = singular HH =         
 
-Correct 8 out of 11 concept or relation comparisons, that is 73%.
 Correct 8 out of 10 non-empty ML values => recall    80%.
 Correct 8 out of 9 non-empty HH values => precision 89%.
 
@@ -132,7 +129,6 @@ Node HH s2h1 / human-settlement (Praha) mismatch in :refer-number: HH = singular
 Node HH s2h1 / human-settlement (Praha) mismatch in :wiki:         HH =          ML = "Q1085" 
 Node HH s2t2 / thing                    mismatch in :refer-number: HH =          ML = singular
 
-Correct 8 out of 11 concept or relation comparisons, that is 73%.
 Correct 8 out of 9 non-empty HH values => recall    89%.
 Correct 8 out of 10 non-empty ML values => precision 80%.
 
@@ -288,10 +284,10 @@ Comparing attributes of ML nodes with their HH counterparts.
 Node ML s3o1 / orgán (orgán)                                     mismatch in concept:         ML = orgán                  HH = organization          
 Node ML s3o1 / orgán (orgán)                                     mismatch in :refer-number:   ML = singular               HH =                       
 Node ML s3o2 / organization (ODA)                                mismatch in concept:         ML = organization           HH = political-organization
-Node ML s3o2 / organization (ODA)                                mismatch in :refer-number:   ML =                        HH = singular              
 Node ML s3o2 / organization (ODA)                                mismatch in :wiki:           ML = "Q1807830"             HH =                       
-Node ML s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :refer-number:   ML =                        HH = singular              
+Node ML s3o2 / organization (ODA)                                mismatch in :refer-number:   ML =                        HH = singular              
 Node ML s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :wiki:           ML = "Q854461"              HH =                       
+Node ML s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :refer-number:   ML =                        HH = singular              
 Node ML s3p1 / pokračovat-004 (pokračuje)                        mismatch in :clausal-marker: ML = s3d1 mapped to HH s3d1 HH =                       
 Node ML s3p1 / pokračovat-004 (pokračuje)                        mismatch in :duration:       ML = s3d2 mapped to HH s3d2 HH =                       
 Node ML s3p1 / pokračovat-004 (pokračuje)                        mismatch in :mod:            ML =                        HH = s3d1                  
@@ -304,7 +300,6 @@ Node ML s3s2 / šetřit-003 (šetření)                              mismatch i
 Node ML s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:       ML =                        HH = s3b4                  
 Node ML s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :temporal:       ML = s3b1 mapped to HH s3b4 HH =                       
 
-Correct 66 out of 84 concept or relation comparisons, that is 79%.
 Correct 66 out of 77 non-empty ML values => recall    86%.
 Correct 66 out of 75 non-empty HH values => precision 88%.
 
@@ -314,13 +309,13 @@ Node HH s3o1 / organization (orgán)                              mismatch in :r
 Node HH s3o2 / organization (parlamentní)                        mismatch in :wiki:           HH =                        ML = "Q2347172"  
 Node HH s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :refer-number:   HH = singular               ML =             
 Node HH s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :wiki:           HH =                        ML = "Q854461"   
-Node HH s3p2 / podnět (podnětů)                                  mismatch in :ARG0:           HH =                        ML = s3o2        
-Node HH s3p2 / podnět (podnětů)                                  mismatch in :ARG1:           HH =                        ML = s3k2        
 Node HH s3p2 / podnět (podnětů)                                  mismatch in :regard:         HH = s3k2 mapped to ML s3k2 ML =             
 Node HH s3p2 / podnět (podnětů)                                  mismatch in :source:         HH = s3p5 mapped to ML s3o2 ML =             
+Node HH s3p2 / podnět (podnětů)                                  mismatch in :ARG0:           HH =                        ML = s3o2        
+Node HH s3p2 / podnět (podnětů)                                  mismatch in :ARG1:           HH =                        ML = s3k2        
+Node HH s3p4 / pokračovat-004 (pokračuje)                        mismatch in :mod:            HH = s3d1 mapped to ML s3d1 ML =             
 Node HH s3p4 / pokračovat-004 (pokračuje)                        mismatch in :clausal-marker: HH =                        ML = s3d1        
 Node HH s3p4 / pokračovat-004 (pokračuje)                        mismatch in :duration:       HH =                        ML = s3d2        
-Node HH s3p4 / pokračovat-004 (pokračuje)                        mismatch in :mod:            HH = s3d1 mapped to ML s3d1 ML =             
 Node HH s3p5 / political-organization (ODA)                      mismatch in concept:         HH = political-organization ML = organization
 Node HH s3p5 / political-organization (ODA)                      mismatch in :refer-number:   HH = singular               ML =             
 Node HH s3p5 / political-organization (ODA)                      mismatch in :wiki:           HH =                        ML = "Q1807830"  
@@ -328,7 +323,6 @@ Node HH s3s2 / šetřit-003 (šetření)                              mismatch i
 Node HH s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:       HH = s3b4 mapped to ML s3b1 ML =             
 Node HH s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :temporal:       HH =                        ML = s3b1        
 
-Correct 66 out of 84 concept or relation comparisons, that is 79%.
 Correct 66 out of 75 non-empty HH values => recall    88%.
 Correct 66 out of 77 non-empty ML values => precision 86%.
 
@@ -448,17 +442,17 @@ Skipping ML node s4h2 because it is not mapped to HH.
 Skipping ML node s4h3 because it is not mapped to HH.
 Skipping ML node s4n4 because it is not mapped to HH.
 Skipping ML node s4s2 because it is not mapped to HH.
-Node ML s4a / after (po schůzi)                   mismatch in :op1:            ML = s4s2 unmapped HH = s4s1            
-Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =               HH = singular        
-Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"    HH =                 
-Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML = s4h3 unmapped HH = s4h3            
-Node ML s4p4 / organization                       mismatch in :name:           ML = s4n4 unmapped HH =                 
-Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"    HH =                 
-Node ML s4t1 / event (to)                         mismatch in :aspect:         ML =               HH = activity        
-Node ML s4t1 / event (to)                         mismatch in :modal-strength: ML =               HH = full-affirmative
+Node ML s4a / after (po schůzi)                   mismatch in :op1:            ML = s4s2 unmapped               HH = s4s1            
+Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"                  HH =                 
+Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =                             HH = singular        
+Node ML s4p1 / připustit-004 (připustil)          mismatch in :temporal:       ML = s4a mapped to HH s4a2, s4s1 HH =                 
+Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML = s4h3 unmapped               HH = s4h3            
+Node ML s4p4 / organization                       mismatch in :name:           ML = s4n4 unmapped               HH =                 
+Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"                  HH =                 
+Node ML s4t1 / event (to)                         mismatch in :aspect:         ML =                             HH = activity        
+Node ML s4t1 / event (to)                         mismatch in :modal-strength: ML =                             HH = full-affirmative
 
-Correct 28 out of 36 concept or relation comparisons, that is 78%.
-Correct 28 out of 33 non-empty ML values => recall    85%.
+Correct 28 out of 34 non-empty ML values => recall    82%.
 Correct 28 out of 33 non-empty HH values => precision 85%.
 
 Comparing attributes of HH nodes with their ML counterparts.
@@ -479,7 +473,6 @@ Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :op1:           
 Node HH s4t1 / event (to)                         mismatch in :aspect:         HH = activity               ML =           
 Node HH s4t1 / event (to)                         mismatch in :modal-strength: HH = full-affirmative       ML =           
 
-Correct 28 out of 41 concept or relation comparisons, that is 68%.
 Correct 28 out of 37 non-empty HH values => recall    76%.
 Correct 28 out of 35 non-empty ML values => precision 80%.
 
@@ -610,15 +603,14 @@ Correspondence HH s5z1 (zprávy)                     = ML s5z1
 Aligned 16 out of 16 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s5d1 / dokončit-001 (na tom že dokončí) mismatch in :example:        ML =                        HH = s5p2            
 Node ML s5d1 / dokončit-001 (na tom že dokončí) mismatch in :modal-strength: ML = partial-affirmative    HH = full-affirmative
-Node ML s5o1 / organization (BIS)               mismatch in :refer-number:   ML =                        HH = singular        
+Node ML s5d1 / dokončit-001 (na tom že dokončí) mismatch in :example:        ML =                        HH = s5p2            
 Node ML s5o1 / organization (BIS)               mismatch in :wiki:           ML = "Q854461"              HH =                 
+Node ML s5o1 / organization (BIS)               mismatch in :refer-number:   ML =                        HH = singular        
 Node ML s5p3 / person (Stanislava Devátého)     mismatch in :refer-number:   ML =                        HH = singular        
 Node ML s5r1 / ředitel (ředitele)               mismatch in :refer-number:   ML =                        HH = singular        
 Node ML s5s2 / šetřit-003 (šetření která)       mismatch in :example:        ML = s5p2 mapped to HH s5p2 HH =                 
 
-Correct 56 out of 63 concept or relation comparisons, that is 89%.
 Correct 56 out of 59 non-empty ML values => recall    95%.
 Correct 56 out of 61 non-empty HH values => precision 92%.
 
@@ -631,7 +623,6 @@ Node HH s5p3 / person (Stanislava Devátého)     mismatch in :refer-number:   H
 Node HH s5r1 / ředitel (ředitele)               mismatch in :refer-number:   HH = singular               ML =                    
 Node HH s5s2 / šetřit-003 (šetření která)       mismatch in :example:        HH =                        ML = s5p2               
 
-Correct 56 out of 63 concept or relation comparisons, that is 89%.
 Correct 56 out of 61 non-empty HH values => recall    92%.
 Correct 56 out of 59 non-empty ML values => precision 95%.
 
@@ -643,7 +634,6 @@ Out of 68 total ML nodes, 63 mapped to HH (1 ambiguously) => recall    = 93%.
 Out of 67 total HH nodes, 64 mapped to ML (0 ambiguously) => precision = 96%.
  => F₁(ML,HH) = 94%.
 Concept and relation comparisons for the mapped nodes (unmapped nodes are ignored):
-Out of 220 total comparisons, 180 had matching values, which is 82%.
-Out of 204 non-empty ML values, 180 found in HH => recall    88%.
+Out of 205 non-empty ML values, 180 found in HH => recall    88%.
 Out of 202 non-empty HH values, 180 found in ML => precision 89%.
- => F₁(ML,HH) = 89%.
+ => F₁(ML,HH) = 88%.

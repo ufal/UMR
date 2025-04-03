@@ -23,12 +23,15 @@ DZ                                                   ML
         :aspect activity                                      :aspect activity                            
         :modal-strength full-affirmative))                    :modal-strength full-affirmative))          
 
+Node-token alignments:
 File DZ: 3 nodes unaligned: s1c/country, s1n2/name["Estonsko"], s1p3/publication-91.
 File ML: 3 nodes unaligned: s1c/country, s1n/name["Estonsko"], s1p/publication-91.
             DZ   ML  
 1 Estonci   s1p  s1p2
 2 volili    s1v  s1v 
 3 parlament s1p2 s1p3
+
+Node-node correspondences:
 
 Correspondence DZ s1c  (country)          = ML s1c 
 Correspondence DZ s1n2 (name["Estonsko"]) = ML s1n 
@@ -50,13 +53,11 @@ Aligned 6 out of 6 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
 
-Correct 19 out of 19 concept or relation comparisons, that is 100%.
 Correct 19 out of 19 non-empty DZ values => recall    100%.
 Correct 19 out of 19 non-empty ML values => precision 100%.
 
 Comparing attributes of ML nodes with their DZ counterparts.
 
-Correct 19 out of 19 concept or relation comparisons, that is 100%.
 Correct 19 out of 19 non-empty ML values => recall    100%.
 Correct 19 out of 19 non-empty DZ values => precision 100%.
 
@@ -73,11 +74,14 @@ DZ                                         ML
         :name (s2n / name :op1 "Estonsko")         :name (s2n / name :op1 "Estonsko")
         :refer-number singular))                   :refer-number singular))          
 
+Node-token alignments:
 File DZ: 3 nodes unaligned: s2n/name["Estonsko"], s2p/publication-91, s2t/thing.
 File ML: 3 nodes unaligned: s2n/name["Estonsko"], s2p/publication-91, s2t/thing.
            DZ  ML 
 1 ESTONSKO s2c s2c
 2 :               
+
+Node-node correspondences:
 
 Correspondence DZ s2c (ESTONSKO)         = ML s2c
 Correspondence DZ s2n (name["Estonsko"]) = ML s2n
@@ -95,13 +99,11 @@ Aligned 4 out of 4 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
 
-Correct 10 out of 10 concept or relation comparisons, that is 100%.
 Correct 10 out of 10 non-empty DZ values => recall    100%.
 Correct 10 out of 10 non-empty ML values => precision 100%.
 
 Comparing attributes of ML nodes with their DZ counterparts.
 
-Correct 10 out of 10 concept or relation comparisons, that is 100%.
 Correct 10 out of 10 non-empty ML values => recall    100%.
 Correct 10 out of 10 non-empty DZ values => precision 100%.
 
@@ -125,12 +127,15 @@ DZ                                                   ML
         :aspect activity                                      :aspect activity                            
         :modal-strength full-affirmative))                    :modal-strength full-affirmative))          
 
+Node-token alignments:
 File DZ: 3 nodes unaligned: s3c/country, s3n2/name["Estonsko"], s3p3/publication-91.
 File ML: 3 nodes unaligned: s3c/country, s3n/name["Estonsko"], s3p/publication-91.
             DZ   ML  
 1 Estonci   s3p  s3p2
 2 volili    s3v  s3v 
 3 parlament s3p2 s3p3
+
+Node-node correspondences:
 
 Correspondence DZ s3c  (country)          = ML s3c 
 Correspondence DZ s3n2 (name["Estonsko"]) = ML s3n 
@@ -152,13 +157,11 @@ Aligned 6 out of 6 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
 
-Correct 19 out of 19 concept or relation comparisons, that is 100%.
 Correct 19 out of 19 non-empty DZ values => recall    100%.
 Correct 19 out of 19 non-empty ML values => precision 100%.
 
 Comparing attributes of ML nodes with their DZ counterparts.
 
-Correct 19 out of 19 concept or relation comparisons, that is 100%.
 Correct 19 out of 19 non-empty ML values => recall    100%.
 Correct 19 out of 19 non-empty DZ values => precision 100%.
 
@@ -175,11 +178,14 @@ DZ                                       ML
         :name (s4n / name :op1 "Tallin")         :name (s4n / name :op1 "Tallin")
         :refer-number singular))                 :refer-number singular))        
 
+Node-token alignments:
 File DZ: 3 nodes unaligned: s4n/name["Tallin"], s4p/publication-91, s4t/thing.
 File ML: 3 nodes unaligned: s4n/name["Tallin"], s4p/publication-91, s4t/thing.
          DZ  ML 
 1 Tallin s4c s4c
 2 -             
+
+Node-node correspondences:
 
 Correspondence DZ s4c (Tallin)         = ML s4c
 Correspondence DZ s4n (name["Tallin"]) = ML s4n
@@ -197,13 +203,11 @@ Aligned 4 out of 4 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
 
-Correct 10 out of 10 concept or relation comparisons, that is 100%.
 Correct 10 out of 10 non-empty DZ values => recall    100%.
 Correct 10 out of 10 non-empty ML values => precision 100%.
 
 Comparing attributes of ML nodes with their DZ counterparts.
 
-Correct 10 out of 10 concept or relation comparisons, that is 100%.
 Correct 10 out of 10 non-empty ML values => recall    100%.
 Correct 10 out of 10 non-empty DZ values => precision 100%.
 
@@ -256,6 +260,7 @@ DZ                                                         ML
     :aspect performance                                        :aspect performance                                                          
     :modal-strength full-affirmative)                          :modal-strength full-affirmative)                                            
 
+Node-token alignments:
 File DZ: 4 nodes unaligned: s5n/name["Vlast"], s5n3/name["Estonsko"], s5n4/neděle, s5n5/name["Lennart" "Meri"].
 File ML: 5 nodes unaligned: s5n/name["Vlast"], s5n2/neděle, s5n3/name["Estonsko"], s5n4/name["Lennart" "Meri"], s5p5/person.
                  DZ   ML  
@@ -282,6 +287,8 @@ File ML: 5 nodes unaligned: s5n/name["Vlast"], s5n2/neděle, s5n3/name["Estonsko
 21 Lennart       s5p4 s5p3
 22 Meri          s5p4 s5p3
 23 .                      
+
+Node-node correspondences:
 
 Correspondence DZ s5b  (blok Vlast jehož)       = ML s5b 
 Correspondence DZ s5c  (v Estonsku)             = ML s5c 
@@ -327,12 +334,12 @@ Correspondence ML s5z  (získal)                 = DZ s5z
 Aligned 18 out of 19 ML nodes, that is 95%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
-Node DZ s5b / blok (blok Vlast jehož)         mismatch in :ARG0-of:        DZ =                        ML = s5k           
 Node DZ s5b / blok (blok Vlast jehož)         mismatch in :possessor-of:   DZ = s5p4 mapped to ML s5p3 ML =               
+Node DZ s5b / blok (blok Vlast jehož)         mismatch in :ARG0-of:        DZ =                        ML = s5k           
 Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in concept:         DZ = kandidovat-002         ML = kandidovat-001
 Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :ARG1:           DZ = s5p5 mapped to ML s5p4 ML = s5p3          
-Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :ARG2:           DZ =                        ML = s5p4          
 Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :aspect:         DZ = state                  ML = performance   
+Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :ARG2:           DZ =                        ML = s5p4          
 Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in concept:         DZ = předbíhat-001          ML = předběžný     
 Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in :aspect:         DZ = state                  ML =               
 Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in :modal-strength: DZ = full-affirmative       ML =               
@@ -343,7 +350,6 @@ Node DZ s5v2 / výsledek (podle výsledků)      mismatch in :mod:            DZ
 Node DZ s5z / získat-001 (získal)             mismatch in :according-to:   DZ = s5v2 mapped to ML s5v2 ML =               
 Node DZ s5z / získat-001 (získal)             mismatch in :manner:         DZ =                        ML = s5v2          
 
-Correct 53 out of 68 concept or relation comparisons, that is 78%.
 Correct 53 out of 63 non-empty DZ values => recall    84%.
 Correct 53 out of 62 non-empty ML values => precision 85%.
 
@@ -360,12 +366,11 @@ Node ML s5p2 / předběžný (předběžných)        mismatch in :aspect:      
 Node ML s5p2 / předběžný (předběžných)        mismatch in :modal-strength: ML =                        DZ = full-affirmative
 Node ML s5p3 / person (Lennart Meri)          mismatch in :ARG0-of:        ML =                        DZ = s5k             
 Node ML s5v / volit-001 (V volbách)           mismatch in :ARG0:           ML = s5p5 unmapped          DZ =                 
-Node ML s5v2 / výsledek (podle výsledků)      mismatch in :ARG0-of:        ML =                        DZ = s5p3            
 Node ML s5v2 / výsledek (podle výsledků)      mismatch in :mod:            ML = s5p2 mapped to DZ s5p3 DZ =                 
-Node ML s5z / získat-001 (získal)             mismatch in :according-to:   ML =                        DZ = s5v2            
+Node ML s5v2 / výsledek (podle výsledků)      mismatch in :ARG0-of:        ML =                        DZ = s5p3            
 Node ML s5z / získat-001 (získal)             mismatch in :manner:         ML = s5v2 mapped to DZ s5v2 DZ =                 
+Node ML s5z / získat-001 (získal)             mismatch in :according-to:   ML =                        DZ = s5v2            
 
-Correct 53 out of 68 concept or relation comparisons, that is 78%.
 Correct 53 out of 62 non-empty ML values => recall    85%.
 Correct 53 out of 63 non-empty DZ values => precision 84%.
 
@@ -416,6 +421,7 @@ DZ                                                        ML
     :modal-strength full-affirmative)                           :aspect state                                                                    
                                                                 :modal-strength full-affirmative)                                                
 
+Node-token alignments:
 File DZ: 5 nodes unaligned: s6a/asi, s6i/include-91, s6n/name["Vlast"], s6p7/person, s6v/volit-001.
 File ML: 4 nodes unaligned: s6i/include-91, s6n/name["Vlast"], s6p/person, s6p8/person.
                 DZ   ML  
@@ -447,6 +453,8 @@ File ML: 4 nodes unaligned: s6i/include-91, s6n/name["Vlast"], s6p/person, s6p8/
 26 novém        s6n2 s6n2
 27 parlamentu   s6p6 s6p6
 28 .                     
+
+Node-node correspondences:
 
 Correspondence DZ s6a  (asi)                                     = ML          
 Correspondence DZ s6b  (pro blok Vlast)                          = ML s6b      
@@ -490,36 +498,35 @@ Comparing attributes of DZ nodes with their ML counterparts.
 Skipping DZ node s6a because it is not mapped to ML.
 Skipping DZ node s6p7 because it is not mapped to ML.
 Skipping DZ node s6v because it is not mapped to ML.
-Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :ARG0:   DZ = s6p7 unmapped     ML =          
-Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :wiki:   DZ =                   ML = "Q189760"
-Node DZ s6i / include-91                                   mismatch in :ARG1:   DZ =                   ML = s6p      
-Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in concept: DZ = percentage-entity ML = asi      
-Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in :op1:    DZ =                   ML = s6p2     
-Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in :value:  DZ = s6a unmapped      ML =          
-Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG0:   DZ =                   ML = s6p7     
-Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG1:   DZ =                   ML = s6p8     
+Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :ARG0:   DZ = s6p7 unmapped               ML =          
+Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :wiki:   DZ =                             ML = "Q189760"
+Node DZ s6i / include-91                                   mismatch in :ARG3:   DZ = s6p2 mapped to ML s6a, s6p2 ML =          
+Node DZ s6i / include-91                                   mismatch in :ARG1:   DZ =                             ML = s6p      
+Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in concept: DZ = percentage-entity           ML = asi      
+Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in :value:  DZ = s6a unmapped                ML =          
+Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in :op1:    DZ =                             ML = s6p2     
+Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG0:   DZ =                             ML = s6p7     
+Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG1:   DZ =                             ML = s6p8     
 
-Correct 44 out of 52 concept or relation comparisons, that is 85%.
-Correct 44 out of 47 non-empty DZ values => recall    94%.
+Correct 44 out of 48 non-empty DZ values => recall    92%.
 Correct 44 out of 50 non-empty ML values => precision 88%.
 
 Comparing attributes of ML nodes with their DZ counterparts.
 Node ML s6a / asi (asi)                              mismatch in concept:       ML = asi                    DZ = percentage-entity
 Node ML s6a / asi (asi)                              mismatch in :op1:          ML = s6p2 mapped to DZ s6p2 DZ =                  
 Node ML s6a / asi (asi)                              mismatch in :value:        ML =                        DZ = s6a              
-Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :ARG0:         ML =                        DZ = s6p7             
 Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :wiki:         ML = "Q189760"              DZ =                  
+Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :ARG0:         ML =                        DZ = s6p7             
 Node ML s6i / include-91                             mismatch in :ARG1:         ML = s6p mapped to DZ s6p7  DZ =                  
 Node ML s6p / person                                 mismatch in :ARG0-of:      ML = s6h mapped to DZ s6h   DZ =                  
 Node ML s6p / person                                 mismatch in :ARG1-of:      ML =                        DZ = s6i              
-Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :ARG0-of:      ML =                        DZ = s6p4             
 Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :value:        ML = 20.5                   DZ = s6a              
+Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :ARG0-of:      ML =                        DZ = s6p4             
 Node ML s6p8 / person                                mismatch in :ARG1-of:      ML =                        DZ = s6i              
 Node ML s6p8 / person                                mismatch in :refer-number: ML =                        DZ = plural           
 Node ML s6v / volit-001 (voleb)                      mismatch in :ARG0:         ML = s6p7 mapped to DZ s6p  DZ =                  
 Node ML s6v / volit-001 (voleb)                      mismatch in :ARG1:         ML = s6p8 mapped to DZ s6p7 DZ =                  
 
-Correct 48 out of 62 concept or relation comparisons, that is 77%.
 Correct 48 out of 56 non-empty ML values => recall    86%.
 Correct 48 out of 56 non-empty DZ values => precision 86%.
 
@@ -565,6 +572,7 @@ DZ                                                                 ML
                                                                         :aspect state                                                              
                                                                         :modal-strength full-affirmative)                                          
 
+Node-token alignments:
 File DZ: 3 nodes unaligned: s7i/include-91, s7n/name["Spolehlivý" "dům"], s7n2/name["Arnold" "Rüütel"].
 File ML: 4 nodes unaligned: s7i/identity-91, s7i2/include-91, s7n/name["Spolehlivý" "dům"], s7n2/name["Arnold" "Rüütel"].
                  DZ   ML  
@@ -591,6 +599,8 @@ File ML: 4 nodes unaligned: s7i/identity-91, s7i2/include-91, s7n/name["Spolehli
 21 Arnolda       s7p2 s7p 
 22 Rüütela       s7p2 s7p 
 23 .                      
+
+Node-node correspondences:
 
 Correspondence DZ s7b  (blok Spolehlivý dům)      = ML s7b 
 Correspondence DZ s7d  (dosavadního)              = ML s7d 
@@ -642,7 +652,6 @@ Node DZ s7o / ordinal-entity (Na druhém místě)  mismatch in :value:   DZ = 2 
 Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :ARG3-of: DZ = s7i mapped to ML s7i2  ML =          
 Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :mod:     DZ = s7m mapped to ML s7m3  ML =          
 
-Correct 43 out of 54 concept or relation comparisons, that is 80%.
 Correct 43 out of 50 non-empty DZ values => recall    86%.
 Correct 43 out of 49 non-empty ML values => precision 88%.
 
@@ -650,17 +659,16 @@ Comparing attributes of ML nodes with their DZ counterparts.
 Skipping ML node s7i because it is not mapped to DZ.
 Node ML s7d2 / dva (Na druhém místě)             mismatch in concept:  ML = dva                   DZ = ordinal-entity
 Node ML s7d2 / dva (Na druhém místě)             mismatch in :value:   ML =                       DZ = 2             
-Node ML s7h / have-ord-91 (je)                   mismatch in :cause:   ML =                       DZ = s7p           
 Node ML s7h / have-ord-91 (je)                   mismatch in :manner:  ML = s7i unmapped          DZ =               
+Node ML s7h / have-ord-91 (je)                   mismatch in :cause:   ML =                       DZ = s7p           
 Node ML s7h3 / hlas (s hlasů)                    mismatch in :ARG2-of: ML = s7i2 mapped to DZ s7i DZ =               
-Node ML s7i2 / include-91                        mismatch in :ARG1:    ML =                       DZ = s7h2          
 Node ML s7i2 / include-91                        mismatch in :ARG3:    ML = s7p3 mapped to DZ s7p DZ =               
+Node ML s7i2 / include-91                        mismatch in :ARG1:    ML =                       DZ = s7h2          
 Node ML s7m3 / mandát (18 mandátů)               mismatch in :wiki:    ML = "Q486839"             DZ =               
 Node ML s7n3 / nejvyšší (nejvyššího)             mismatch in concept:  ML = nejvyšší              DZ = nejvýše       
 Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :ARG3-of: ML =                       DZ = s7i           
 Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :mod:     ML =                       DZ = s7m           
 
-Correct 43 out of 54 concept or relation comparisons, that is 80%.
 Correct 43 out of 49 non-empty ML values => recall    88%.
 Correct 43 out of 50 non-empty DZ values => precision 86%.
 
@@ -672,7 +680,6 @@ Out of 69 total DZ nodes, 66 mapped to ML (1 ambiguously) => recall    = 96%.
 Out of 71 total ML nodes, 69 mapped to DZ (0 ambiguously) => precision = 97%.
  => F₁(DZ,ML) = 96%.
 Concept and relation comparisons for the mapped nodes (unmapped nodes are ignored):
-Out of 232 total comparisons, 198 had matching values, which is 85%.
-Out of 218 non-empty DZ values, 198 found in ML => recall    91%.
+Out of 219 non-empty DZ values, 198 found in ML => recall    90%.
 Out of 219 non-empty ML values, 198 found in DZ => precision 90%.
- => F₁(DZ,ML) = 91%.
+ => F₁(DZ,ML) = 90%.
