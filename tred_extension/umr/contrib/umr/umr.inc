@@ -1,6 +1,7 @@
 # -*- cperl -*-
 
 #bind compare_trees to = menu Compare Trees
+#bind show_diff to ? menu Show Diff
 
 {   package UMR;
 
@@ -209,12 +210,12 @@
                     for my $parent (get_dag_parents($node)) {
                         my $parent_id = $parent->{id};
                         my @mapped_parents
-                            = sort grep defined,
-                              @{ $alignment->{n2w}[0][$root_index] }
+                            = map keys %$_, grep defined,
+                              @{ $alignment->{n2w}[1][$root_index] }
                               { keys %{ $mapping{'01'}{$parent_id} } };
                         my @parents1
-                            = sort grep defined,
-                              @{ $alignment->{nw2}[1][$root_index] }
+                            = map keys %$_, grep defined,
+                              @{ $alignment->{n2w}[1][$root_index] }
                               { map $_->{id}, get_dag_parents($node1) };
                         $node->{_diff}{parent}{$_} = 1
                             for grep {
@@ -230,4 +231,11 @@
             }
         }
     }
+
+    sub show_diff {
+        ChangingFile(0);
+        use Data::Dumper;
+        print Dumper $this->{_diff};
+    }
 }
+
