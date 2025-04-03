@@ -54,6 +54,12 @@ Correct 19 out of 19 concept or relation comparisons, that is 100%.
 Correct 19 out of 19 non-empty DZ values => recall    100%.
 Correct 19 out of 19 non-empty ML values => precision 100%.
 
+Comparing attributes of ML nodes with their DZ counterparts.
+
+Correct 19 out of 19 concept or relation comparisons, that is 100%.
+Correct 19 out of 19 non-empty ML values => recall    100%.
+Correct 19 out of 19 non-empty DZ values => precision 100%.
+
 -------------------------------------------------------------------------------
 Comparing sentence 2:
 ESTONSKO :
@@ -92,6 +98,12 @@ Comparing attributes of DZ nodes with their ML counterparts.
 Correct 10 out of 10 concept or relation comparisons, that is 100%.
 Correct 10 out of 10 non-empty DZ values => recall    100%.
 Correct 10 out of 10 non-empty ML values => precision 100%.
+
+Comparing attributes of ML nodes with their DZ counterparts.
+
+Correct 10 out of 10 concept or relation comparisons, that is 100%.
+Correct 10 out of 10 non-empty ML values => recall    100%.
+Correct 10 out of 10 non-empty DZ values => precision 100%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 3:
@@ -144,6 +156,12 @@ Correct 19 out of 19 concept or relation comparisons, that is 100%.
 Correct 19 out of 19 non-empty DZ values => recall    100%.
 Correct 19 out of 19 non-empty ML values => precision 100%.
 
+Comparing attributes of ML nodes with their DZ counterparts.
+
+Correct 19 out of 19 concept or relation comparisons, that is 100%.
+Correct 19 out of 19 non-empty ML values => recall    100%.
+Correct 19 out of 19 non-empty DZ values => precision 100%.
+
 -------------------------------------------------------------------------------
 Comparing sentence 4:
 Tallin -
@@ -182,6 +200,12 @@ Comparing attributes of DZ nodes with their ML counterparts.
 Correct 10 out of 10 concept or relation comparisons, that is 100%.
 Correct 10 out of 10 non-empty DZ values => recall    100%.
 Correct 10 out of 10 non-empty ML values => precision 100%.
+
+Comparing attributes of ML nodes with their DZ counterparts.
+
+Correct 10 out of 10 concept or relation comparisons, that is 100%.
+Correct 10 out of 10 non-empty ML values => recall    100%.
+Correct 10 out of 10 non-empty DZ values => precision 100%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -323,6 +347,28 @@ Correct 53 out of 68 concept or relation comparisons, that is 78%.
 Correct 53 out of 63 non-empty DZ values => recall    84%.
 Correct 53 out of 62 non-empty ML values => precision 85%.
 
+Comparing attributes of ML nodes with their DZ counterparts.
+Skipping ML node s5p5 because it is not mapped to DZ.
+Node ML s5b / blok (blok Vlast , jehož)       mismatch in :ARG0-of:        ML = s5k mapped to DZ s5k   DZ =                 
+Node ML s5b / blok (blok Vlast , jehož)       mismatch in :possessor-of:   ML =                        DZ = s5p4            
+Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in concept:         ML = kandidovat-001         DZ = kandidovat-002  
+Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :ARG1:           ML = s5p3 mapped to DZ s5p4 DZ = s5p5            
+Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :ARG2:           ML = s5p4 mapped to DZ s5p5 DZ =                 
+Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :aspect:         ML = performance            DZ = state           
+Node ML s5p2 / předběžný (předběžných)        mismatch in concept:         ML = předběžný              DZ = předbíhat-001   
+Node ML s5p2 / předběžný (předběžných)        mismatch in :aspect:         ML =                        DZ = state           
+Node ML s5p2 / předběžný (předběžných)        mismatch in :modal-strength: ML =                        DZ = full-affirmative
+Node ML s5p3 / person (Lennart Meri)          mismatch in :ARG0-of:        ML =                        DZ = s5k             
+Node ML s5v / volit-001 (V volbách)           mismatch in :ARG0:           ML = s5p5 unmapped          DZ =                 
+Node ML s5v2 / výsledek (podle výsledků)      mismatch in :ARG0-of:        ML =                        DZ = s5p3            
+Node ML s5v2 / výsledek (podle výsledků)      mismatch in :mod:            ML = s5p2 mapped to DZ s5p3 DZ =                 
+Node ML s5z / získat-001 (získal)             mismatch in :according-to:   ML =                        DZ = s5v2            
+Node ML s5z / získat-001 (získal)             mismatch in :manner:         ML = s5v2 mapped to DZ s5v2 DZ =                 
+
+Correct 53 out of 68 concept or relation comparisons, that is 78%.
+Correct 53 out of 62 non-empty ML values => recall    85%.
+Correct 53 out of 63 non-empty DZ values => precision 84%.
+
 -------------------------------------------------------------------------------
 Comparing sentence 6:
 Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
@@ -457,6 +503,26 @@ Correct 44 out of 52 concept or relation comparisons, that is 85%.
 Correct 44 out of 47 non-empty DZ values => recall    94%.
 Correct 44 out of 50 non-empty ML values => precision 88%.
 
+Comparing attributes of ML nodes with their DZ counterparts.
+Node ML s6a / asi (asi)                              mismatch in concept:       ML = asi                    DZ = percentage-entity
+Node ML s6a / asi (asi)                              mismatch in :op1:          ML = s6p2 mapped to DZ s6p2 DZ =                  
+Node ML s6a / asi (asi)                              mismatch in :value:        ML =                        DZ = s6a              
+Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :ARG0:         ML =                        DZ = s6p7             
+Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :wiki:         ML = "Q189760"              DZ =                  
+Node ML s6i / include-91                             mismatch in :ARG1:         ML = s6p mapped to DZ s6p7  DZ =                  
+Node ML s6p / person                                 mismatch in :ARG0-of:      ML = s6h mapped to DZ s6h   DZ =                  
+Node ML s6p / person                                 mismatch in :ARG1-of:      ML =                        DZ = s6i              
+Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :ARG0-of:      ML =                        DZ = s6p4             
+Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :value:        ML = 20.5                   DZ = s6a              
+Node ML s6p8 / person                                mismatch in :ARG1-of:      ML =                        DZ = s6i              
+Node ML s6p8 / person                                mismatch in :refer-number: ML =                        DZ = plural           
+Node ML s6v / volit-001 (voleb)                      mismatch in :ARG0:         ML = s6p7 mapped to DZ s6p  DZ =                  
+Node ML s6v / volit-001 (voleb)                      mismatch in :ARG1:         ML = s6p8 mapped to DZ s6p7 DZ =                  
+
+Correct 48 out of 62 concept or relation comparisons, that is 77%.
+Correct 48 out of 56 non-empty ML values => recall    86%.
+Correct 48 out of 56 non-empty DZ values => precision 86%.
+
 -------------------------------------------------------------------------------
 Comparing sentence 7:
 Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela .
@@ -579,6 +645,24 @@ Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :mod:     DZ = s7m m
 Correct 43 out of 54 concept or relation comparisons, that is 80%.
 Correct 43 out of 50 non-empty DZ values => recall    86%.
 Correct 43 out of 49 non-empty ML values => precision 88%.
+
+Comparing attributes of ML nodes with their DZ counterparts.
+Skipping ML node s7i because it is not mapped to DZ.
+Node ML s7d2 / dva (Na druhém místě)             mismatch in concept:  ML = dva                   DZ = ordinal-entity
+Node ML s7d2 / dva (Na druhém místě)             mismatch in :value:   ML =                       DZ = 2             
+Node ML s7h / have-ord-91 (je)                   mismatch in :cause:   ML =                       DZ = s7p           
+Node ML s7h / have-ord-91 (je)                   mismatch in :manner:  ML = s7i unmapped          DZ =               
+Node ML s7h3 / hlas (s hlasů)                    mismatch in :ARG2-of: ML = s7i2 mapped to DZ s7i DZ =               
+Node ML s7i2 / include-91                        mismatch in :ARG1:    ML =                       DZ = s7h2          
+Node ML s7i2 / include-91                        mismatch in :ARG3:    ML = s7p3 mapped to DZ s7p DZ =               
+Node ML s7m3 / mandát (18 mandátů)               mismatch in :wiki:    ML = "Q486839"             DZ =               
+Node ML s7n3 / nejvyšší (nejvyššího)             mismatch in concept:  ML = nejvyšší              DZ = nejvýše       
+Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :ARG3-of: ML =                       DZ = s7i           
+Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :mod:     ML =                       DZ = s7m           
+
+Correct 43 out of 54 concept or relation comparisons, that is 80%.
+Correct 43 out of 49 non-empty ML values => recall    88%.
+Correct 43 out of 50 non-empty DZ values => precision 86%.
 
 -------------------------------------------------------------------------------
 SUMMARY:

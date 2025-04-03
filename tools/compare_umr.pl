@@ -161,7 +161,6 @@ sub add_sentence
 #------------------------------------------------------------------------------
 sub compare_files
 {
-    ###!!! We take any number of file hashes but right now we can only compare the first two.
     my @files = @_;
     confess("Not enough files to compare") if(scalar(@files) < 2);
     # All the files should have the same number of sentences. If they do not,
@@ -252,22 +251,21 @@ sub compare_files
             printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => recall    = %d%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, $ni_mapped2, $r*100+0.5);
             printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $nj_mapped2, $p*100+0.5);
             printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
+            print("Concept and relation comparisons for the mapped nodes (unmapped nodes are ignored):\n");
+            my $cr_total = $files[$i]{stats}{cr}{$labelj}{total};
+            my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
+            my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
+            my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
+            my $accuracy = $cr_total > 0 ? $cr_correct/$cr_total : 0;
+            $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
+            $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
+            $f = 2*$p*$r/($p+$r);
+            printf("Out of %d total comparisons, %d had matching values, which is %d%%.\n", $cr_total, $cr_correct, $accuracy*100+0.5);
+            printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, $r*100+0.5);
+            printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
+            printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
         }
     }
-    print("Concept and relation comparisons for the mapped nodes (unmapped nodes are ignored):\n");
-    my $cr_total = $files[0]{stats}{cr_total};
-    my $cr_correct = $files[0]{stats}{cr_correct};
-    my $cr_total_me = $files[0]{stats}{cr_total_me};
-    my $cr_total_other = $files[0]{stats}{cr_total_other};
-    my $accuracy = $cr_total > 0 ? $cr_correct/$cr_total : 0;
-    my $recall = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
-    my $precision = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
-    my $f = 2*$precision*$recall/($precision+$recall);
-    printf("Out of %d total comparisons, %d had matching values, which is %d%%.\n", $cr_total, $cr_correct, $accuracy*100+0.5);
-    ###!!! Here we rely on the fact that 'other' is only one file, and it is always $files[1]. It needs to be refined for the general case.
-    printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $files[0]{label}, $cr_correct, $files[1]{label}, $recall*100+0.5);
-    printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $files[1]{label}, $cr_correct, $files[0]{label}, $precision*100+0.5);
-    printf(" => F₁($files[0]{label},$files[1]{label}) = %d%%.\n", $f*100+0.5);
 }
 
 
@@ -524,7 +522,6 @@ sub parse_sentence_alignments
 sub compare_sentence
 {
     my $i_sentence = shift;
-    ###!!! We take any number of file hashes but right now we can only compare the first two.
     my @files = @_;
     confess("Not enough files to compare") if(scalar(@files) < 2);
     # Print the sentence graphs side-by-side.
@@ -581,10 +578,23 @@ sub compare_sentence
     }
     print_table(@table);
     print("\n");
-    ###!!! From here on, we consider only the first two files.
-    compare_node_correspondences($files[0], $files[1], $i_sentence);
-    compare_node_correspondences($files[1], $files[0], $i_sentence);
-    compare_node_attributes($files[0], $files[1], $i_sentence);
+    # Perform node-to-node comparisons.
+    for(my $i = 0; $i <= $#files; $i++)
+    {
+        for(my $j = $i+1; $j <= $#files; $j++)
+        {
+            unless($j == $i)
+            {
+                # So far the results are not completely symmetric, although
+                # usually they are. But if we want to see where they are not,
+                # we must run the comparison in both directions.
+                compare_node_correspondences($files[$i], $files[$j], $i_sentence);
+                compare_node_correspondences($files[$j], $files[$i], $i_sentence);
+                compare_node_attributes($files[$i], $files[$j], $i_sentence);
+                compare_node_attributes($files[$j], $files[$i], $i_sentence);
+            }
+        }
+    }
 }
 
 
@@ -868,10 +878,10 @@ sub compare_node_attributes
     printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
     printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
     print("\n");
-    $file0->{stats}{cr_correct} += $n_correct;
-    $file0->{stats}{cr_total} += $n_total;
-    $file0->{stats}{cr_total_me} += $n_total_0;
-    $file0->{stats}{cr_total_other} += $n_total_1;
+    $file0->{stats}{cr}{$label1}{correct} += $n_correct;
+    $file0->{stats}{cr}{$label1}{total} += $n_total;
+    $file0->{stats}{cr}{$label1}{total_me} += $n_total_0;
+    $file0->{stats}{cr}{$label1}{total_other} += $n_total_1;
 }
 
 
