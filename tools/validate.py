@@ -749,6 +749,13 @@ def validate_sentence_graph(sentence, node_dict, args):
                     testmessage = "Expecting colon or closing bracket, found '%s'." % pline
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
+    # The stack should be empty now. If not, then there were missing closing brackets!
+    if stack:
+        n = len(stack)
+        stacknodes = str(stack)
+        testid = 'missing-closing-bracket'
+        testmessage = "Sentence graph ended without closing %d nodes: %s." % (n, stacknodes)
+        warn(testmessage, testclass, testlevel, testid, lineno=iline)
     # If checking forward references is on, we know that all node references
     # either lead to defined nodes or have been reported as errors. But if it is
     # off, we must check for undefined nodes now.

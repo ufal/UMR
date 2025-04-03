@@ -250,7 +250,7 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
                 :temporal (s4d5 / date-entity
                 	:weekday (s4s4 / sobota
                 			:refer-number singular))
-          	:temporal s4d1
+          	:temporal s4d1))
 
 # alignment:
 s4a1: 17-17
