@@ -47,10 +47,12 @@ style: <?
                                     . ";coords=n,n;start=25%;text=".($_->value =~ s/rel://r =~ s/coref:e(?:vent|ntity)//r),
                                     @links;
 
-    my $oval = '#{Oval-fill:whitesmoke}';
+    my $oval = '#{Oval-fill:whitesmoke}#{CurrentOval-fill:red}';
     if ($this->{_diff}) {
         if ($this->{_diff}{unmapped}) {
-            $oval = '#{Oval-fill:orange}#{Oval-outline:red}';
+            $oval = '#{Oval-fill:orange}#{Oval-outline:red}#{CurrentOval-fill:magenta}#{CurrentOval-outline:orange}';
+        } elsif ($this->{_diff}{m2n}) {
+            $oval = '#{Oval-fill:darkcyan}#{Oval-outline:green}#{CurrentOval-fill:cyan}#{CurrentOval-outline:yellow}';
         }
         if ($this->{_diff}{parent}) {
             $colours =~ s/^grey/red/;
@@ -60,6 +62,6 @@ style: <?
     "#{Line-coords:$coords}#{Line-fill:$colours}#{Line-arrow:$arrows}"
     . "#{Line-width:$widths}#{Line-smooth:$smooth}#{Line-hint:$hints}"
     . "#{Line-decoration:$deco}"
-    . $oval . '#{CurrentOval-fill:red}';
+    . $oval;
 
 ?>

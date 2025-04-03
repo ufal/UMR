@@ -1,6 +1,7 @@
 # -*- cperl -*-
 
 #bind compare_trees to = menu Compare Trees
+#bind show_diff to ? menu Show Diff
 
 {   package UMR;
 
@@ -131,20 +132,37 @@
         my (@windows) = @_;
         my %alignment;
         for my $window_index (0, 1) {
-            my $root = $windows[$window_index]->{currentNode}->root;
-            for my $i (0 .. $root->{words}->count - 1) {
-                my $word = $root->{words}->[$i];
-                if ($word->value->count) {
-                    do {
-                        undef $alignment{w2n}[$window_index]{$i}{$_};
-                        undef $alignment{n2w}[$window_index]{$_}{$i};
-                    } for ListV($word->value);
-                } else {
-                    undef $alignment{w2n}[$window_index]{$i};
+            my @roots = ListV($windows[$window_index]->{FSFile}->treeList);
+            for my $root_index (0 .. $#roots) {
+                my $root = $roots[$root_index];
+                for my $i (0 .. $root->{words}->count - 1) {
+                    my $word = $root->{words}->[$i];
+                    if ($word->value->count) {
+                        do {
+                            undef $alignment{w2n}[$window_index][$root_index]
+                                {$i}{$_};
+                            undef $alignment{n2w}[$window_index][$root_index]
+                                {$_}{$i};
+                        } for ListV($word->value);
+                    } else {
+                        undef $alignment{w2n}[$window_index][$root_index]{$i};
+                    }
                 }
             }
         }
         return \%alignment
+    }
+
+    sub get_dag_parents {
+        my ($node) = @_;
+        my @parents = $node->parent;
+
+        for my $p ($node->root->descendants) {
+            push @parents, $p if grep $_->{'target.rf'} eq $node->{id}
+                                      && 0 == index($_->value, 'rel:'),
+                                 ListV($p->{links});
+        }
+        return @parents
     }
 
     sub compare_trees {
@@ -154,14 +172,18 @@
         die '2 windows expected' unless 2 == @windows;
 
         my $alignment = _get_alignment(@windows);
+        my $root_index = CurrentTreeNumber();
         die 'Different number of words'
-            if keys %{ $alignment->{w2n}[0] } != keys %{ $alignment->{w2n}[1] };
+            if keys %{ $alignment->{w2n}[0][$root_index] }
+            != keys %{ $alignment->{w2n}[1][$root_index] };
 
         my %mapping;
-        for my $word_index (keys %{ $alignment->{w2n}[0] }) {
-            my @nodes0 = keys %{ $alignment->{w2n}[0]{$word_index} };
+        for my $word_index (keys %{ $alignment->{w2n}[0][$root_index] }) {
+            my @nodes0 = keys
+                %{ $alignment->{w2n}[0][$root_index]{$word_index} };
             if (1 == @nodes0) {
-                my @nodes1 = keys %{ $alignment->{w2n}[1]{$word_index} };
+                my @nodes1 = keys
+                    %{ $alignment->{w2n}[1][$root_index]{$word_index} };
                 if (1 == @nodes1) {
                     undef $mapping{'01'}{ $nodes0[0] }{ $nodes1[0] };
                     undef $mapping{'10'}{ $nodes1[0] }{ $nodes0[0] };
@@ -169,6 +191,7 @@
             }
         }
         my $root0 = $windows[0]->{currentNode}->root;
+        delete $_->{_diff} for $root0->descendants;
         my $root1 = $windows[1]->{currentNode}->root;
         undef $mapping{'01'}{ $root0->{id} }{ $root1->{id} };
         undef $mapping{'10'}{ $root1->{id} }{ $root0->{id} };
@@ -176,20 +199,43 @@
             if (exists $mapping{'01'}{ $node->{id} }) {
                 my @nodes1 = keys %{ $mapping{'01'}{ $node->{id} } };
                 if (1 == @nodes1) {
-                    my $parent_id = $node->parent->{id};
-                    my ($mapped_parent) = keys %{ $mapping{'01'}{$parent_id} };
                     my ($node1) = grep $_->{id} eq $nodes1[0],
                                   $root1->descendants;
-                    $node->{_diff}{parent} = 1
-                        unless $node1->parent->{id} eq $mapped_parent;
                     $node->{_diff}{relation} = 1
-                        unless $node->{relation} eq $node1->{relation};
+                        if ($node->{relation} // "")
+                           ne ($node1->{relation} // "");
                     $node->{_diff}{label} = 1
                         unless $node->{label} eq $node1->{label};
+
+                    for my $parent (get_dag_parents($node)) {
+                        my $parent_id = $parent->{id};
+                        my @mapped_parents
+                            = map keys %$_, grep defined,
+                              @{ $alignment->{n2w}[1][$root_index] }
+                              { keys %{ $mapping{'01'}{$parent_id} } };
+                        my @parents1
+                            = map keys %$_, grep defined,
+                              @{ $alignment->{n2w}[1][$root_index] }
+                              { map $_->{id}, get_dag_parents($node1) };
+                        $node->{_diff}{parent}{$_} = 1
+                            for grep {
+                                my $p = $_;
+                                ! grep $p eq $_, @parents1
+                            } @mapped_parents;
+                    }
+                } else {
+                    $node->{_diff}{m2n} = 1;
                 }
             } else {
                 $node->{_diff}{unmapped} = 1;
             }
         }
     }
+
+    sub show_diff {
+        ChangingFile(0);
+        use Data::Dumper;
+        print Dumper $this->{_diff};
+    }
 }
+
