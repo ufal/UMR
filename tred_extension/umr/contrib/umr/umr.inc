@@ -152,6 +152,18 @@
         return \%alignment
     }
 
+    sub get_dag_parents {
+        my ($node) = @_;
+        my @parents = $node->parent;
+
+        for my $p ($node->root->descendants) {
+            push @parents, $p if grep $_->{'target.rf'} eq $node->{id}
+                                      && 0 == index($_->value, 'rel:'),
+                                 ListV($p->{links});
+        }
+        return @parents
+    }
+
     sub compare_trees {
         ChangingFile(0);
         my @windows = sort { $b->is_focused <=> $a->is_focused }
@@ -186,16 +198,32 @@
             if (exists $mapping{'01'}{ $node->{id} }) {
                 my @nodes1 = keys %{ $mapping{'01'}{ $node->{id} } };
                 if (1 == @nodes1) {
-                    my $parent_id = $node->parent->{id};
-                    my ($mapped_parent) = keys %{ $mapping{'01'}{$parent_id} };
                     my ($node1) = grep $_->{id} eq $nodes1[0],
                                   $root1->descendants;
-                    $node->{_diff}{parent} = 1
-                        unless $node1->parent->{id} eq $mapped_parent;
                     $node->{_diff}{relation} = 1
-                        unless $node->{relation} eq $node1->{relation};
+                        if ($node->{relation} // "")
+                           ne ($node1->{relation} // "");
                     $node->{_diff}{label} = 1
                         unless $node->{label} eq $node1->{label};
+
+                    for my $parent (get_dag_parents($node)) {
+                        my $parent_id = $parent->{id};
+                        my @mapped_parents
+                            = sort grep defined,
+                              @{ $alignment->{n2w}[0][$root_index] }
+                              { keys %{ $mapping{'01'}{$parent_id} } };
+                        my @parents1
+                            = sort grep defined,
+                              @{ $alignment->{nw2}[1][$root_index] }
+                              { map $_->{id}, get_dag_parents($node1) };
+                        $node->{_diff}{parent}{$_} = 1
+                            for grep {
+                                my $p = $_;
+                                ! grep $p eq $_, @parents1
+                            } @mapped_parents;
+                    }
+                } else {
+                    $node->{_diff}{m2n} = 1;
                 }
             } else {
                 $node->{_diff}{unmapped} = 1;

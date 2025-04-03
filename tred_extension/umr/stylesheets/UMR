@@ -51,6 +51,8 @@ style: <?
     if ($this->{_diff}) {
         if ($this->{_diff}{unmapped}) {
             $oval = '#{Oval-fill:orange}#{Oval-outline:red}#{CurrentOval-fill:magenta}#{CurrentOval-outline:orange}';
+        } elsif ($this->{_diff}{m2n}) {
+            $oval = '#{Oval-fill:darkcyan}#{Oval-outline:green}#{CurrentOval-fill:cyan}#{CurrentOval-outline:yellow}';
         }
         if ($this->{_diff}{parent}) {
             $colours =~ s/^grey/red/;
