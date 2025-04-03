@@ -561,6 +561,7 @@ sub compare_sentence
     # Get the mapping between tokens of the sentence and nodes in each file.
     map_node_alignments($i_sentence, @files);
     compute_crossfile_node_references($i_sentence, @files);
+    print("Node-token alignments:\n");
     # Print the unaligned nodes.
     foreach my $file (@files)
     {
@@ -579,6 +580,7 @@ sub compare_sentence
     print_table(@table);
     print("\n");
     # Perform node-to-node comparisons.
+    print("Node-node correspondences:\n\n");
     for(my $i = 0; $i <= $#files; $i++)
     {
         for(my $j = $i+1; $j <= $#files; $j++)
