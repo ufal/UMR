@@ -929,7 +929,7 @@ Sentence Gloss (en): and, indeed, if the intellectual ability of kings and magis
                     :ARG3 (s14a6 / alio)
                     :aspect activity
                     :modal-predicate s14c2)
-                :op2(s14a7 / and
+                :op2 (s14a7 / and
                     :op1 (s14m3 / misceo-07
                         :ARG1 (s14t2 / thing
                             :quant (s14o / omnis)
