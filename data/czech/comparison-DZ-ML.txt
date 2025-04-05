@@ -459,92 +459,102 @@ File ML: 4 nodes unaligned: s6i/include-91, s6n/name["Vlast"], s6p/person, s6p8/
 
 Node-node correspondences:
 
-Correspondence DZ s6a  (asi)                                     = ML          
-Correspondence DZ s6b  (pro blok Vlast)                          = ML s6b      
-Correspondence DZ s6h  (hlasovalo)                               = ML s6h      
-Correspondence DZ s6i  (include-91)                              = ML s6i      
-Correspondence DZ s6m  (28 mandátů)                              = ML s6m      
-Correspondence DZ s6n  (name["Vlast"])                           = ML s6n      
-Correspondence DZ s6n2 (novém)                                   = ML s6n2     
-Correspondence DZ s6p  (Z celkového počtu 457319 voličů , kteří) = ML s6p7     
-Correspondence DZ s6p2 (asi 20.5 procenta , což)                 = ML s6a, s6p2
-Correspondence DZ s6p4 (představuje)                             = ML s6p4     
-Correspondence DZ s6p5 (poslaneckých)                            = ML s6p5     
-Correspondence DZ s6p6 (v parlamentu)                            = ML s6p6     
-Correspondence DZ s6p7 (person)                                  = ML          
-Correspondence DZ s6v  (volit-001)                               = ML          
-Correspondence DZ s6v2 (voleb)                                   = ML s6v      
-Correspondence DZ s6z  (se zúčastnili)                           = ML s6z      
+Ambiguous projection of DZ node s6p2 (asi 20.5 procenta , což) to 2 ML nodes [s6a (asi), s6p2 (20.5 procenta což)]
+  The winner is DZ node s6p2 (asi 20.5 procenta , což) <--> ML node s6p2 (20.5 procenta což): econcepts=percentage-entity/percentage-entity, match=1.
+
+Correspondence DZ s6a  (asi)                                     = ML     
+Correspondence DZ s6b  (pro blok Vlast)                          = ML s6b 
+Correspondence DZ s6h  (hlasovalo)                               = ML s6h 
+Correspondence DZ s6i  (include-91)                              = ML s6i 
+Correspondence DZ s6m  (28 mandátů)                              = ML s6m 
+Correspondence DZ s6n  (name["Vlast"])                           = ML s6n 
+Correspondence DZ s6n2 (novém)                                   = ML s6n2
+Correspondence DZ s6p  (Z celkového počtu 457319 voličů , kteří) = ML s6p7
+Correspondence DZ s6p2 (asi 20.5 procenta , což)                 = ML s6p2
+Correspondence DZ s6p4 (představuje)                             = ML s6p4
+Correspondence DZ s6p5 (poslaneckých)                            = ML s6p5
+Correspondence DZ s6p6 (v parlamentu)                            = ML s6p6
+Correspondence DZ s6p7 (person)                                  = ML     
+Correspondence DZ s6v  (volit-001)                               = ML     
+Correspondence DZ s6v2 (voleb)                                   = ML s6v 
+Correspondence DZ s6z  (se zúčastnili)                           = ML s6z 
 
 Aligned 13 out of 16 DZ nodes, that is 81%.
 
-Correspondence ML s6a  (asi)                                   = DZ s6p2
+Correspondence ML s6a  (asi)                                   = DZ     
 Correspondence ML s6b  (pro blok Vlast)                        = DZ s6b 
 Correspondence ML s6h  (hlasovalo)                             = DZ s6h 
 Correspondence ML s6i  (include-91)                            = DZ s6i 
 Correspondence ML s6m  (28 mandátů)                            = DZ s6m 
 Correspondence ML s6n  (name["Vlast"])                         = DZ s6n 
 Correspondence ML s6n2 (novém)                                 = DZ s6n2
-Correspondence ML s6p  (person)                                = DZ s6p7
+Correspondence ML s6p  (person)                                = DZ     
 Correspondence ML s6p2 (20.5 procenta což)                     = DZ s6p2
 Correspondence ML s6p4 (představuje)                           = DZ s6p4
 Correspondence ML s6p5 (poslaneckých)                          = DZ s6p5
 Correspondence ML s6p6 (v parlamentu)                          = DZ s6p6
 Correspondence ML s6p7 (Z celkového počtu 457319 voličů kteří) = DZ s6p 
-Correspondence ML s6p8 (person)                                = DZ s6p7
+Correspondence ML s6p8 (person)                                = DZ     
 Correspondence ML s6v  (voleb)                                 = DZ s6v2
 Correspondence ML s6z  (se zúčastnili)                         = DZ s6z 
 
-Aligned 16 out of 16 ML nodes, that is 100%.
+Aligned 13 out of 16 ML nodes, that is 81%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
-Node DZ s6a / asi                                          mismatch in concept:         DZ = asi                         ML = UNMAPPED 
-Node DZ s6a / asi                                          mismatch in :op1:            DZ = 20.5                        ML = UNMAPPED 
-Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :ARG0:           DZ = s6p7 unmapped               ML =          
-Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :wiki:           DZ =                             ML = "Q189760"
-Node DZ s6i / include-91                                   mismatch in :ARG3:           DZ = s6p2 mapped to ML s6a, s6p2 ML =          
-Node DZ s6i / include-91                                   mismatch in :ARG1:           DZ =                             ML = s6p      
-Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in concept:         DZ = percentage-entity           ML = asi      
-Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in :value:          DZ = s6a unmapped                ML =          
-Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in :op1:            DZ =                             ML = s6p2     
-Node DZ s6p7 / person                                      mismatch in concept:         DZ = person                      ML = UNMAPPED 
-Node DZ s6p7 / person                                      mismatch in :ARG1-of:        DZ = s6i                         ML = UNMAPPED 
-Node DZ s6p7 / person                                      mismatch in :refer-number:   DZ = plural                      ML = UNMAPPED 
-Node DZ s6v / volit-001                                    mismatch in concept:         DZ = volit-001                   ML = UNMAPPED 
-Node DZ s6v / volit-001                                    mismatch in :aspect:         DZ = habitual                    ML = UNMAPPED 
-Node DZ s6v / volit-001                                    mismatch in :modal-strength: DZ = full-affirmative            ML = UNMAPPED 
-Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG0:           DZ =                             ML = s6p7     
-Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG1:           DZ =                             ML = s6p8     
+Node DZ s6a / asi                                          mismatch in concept:         DZ = asi                    ML = UNMAPPED 
+Node DZ s6a / asi                                          mismatch in :op1:            DZ = 20.5                   ML = UNMAPPED 
+Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :ARG0:           DZ = s6p7 unmapped          ML =          
+Node DZ s6h / hlasovat-003 (hlasovalo)                     mismatch in :wiki:           DZ =                        ML = "Q189760"
+Node DZ s6i / include-91                                   mismatch in :ARG3:           DZ = s6p2 mapped to ML s6p2 ML = s6a      
+Node DZ s6i / include-91                                   mismatch in :ARG1:           DZ =                        ML = s6p      
+Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in :ARG0-of:        DZ = s6p4 mapped to ML s6p4 ML =          
+Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což) mismatch in :value:          DZ = s6a unmapped           ML = 20.5     
+Node DZ s6p7 / person                                      mismatch in concept:         DZ = person                 ML = UNMAPPED 
+Node DZ s6p7 / person                                      mismatch in :ARG1-of:        DZ = s6i                    ML = UNMAPPED 
+Node DZ s6p7 / person                                      mismatch in :refer-number:   DZ = plural                 ML = UNMAPPED 
+Node DZ s6v / volit-001                                    mismatch in concept:         DZ = volit-001              ML = UNMAPPED 
+Node DZ s6v / volit-001                                    mismatch in :aspect:         DZ = habitual               ML = UNMAPPED 
+Node DZ s6v / volit-001                                    mismatch in :modal-strength: DZ = full-affirmative       ML = UNMAPPED 
+Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG0:           DZ =                        ML = s6p7     
+Node DZ s6v2 / volit-001 (voleb)                           mismatch in :ARG1:           DZ =                        ML = s6p8     
+Node ML s6a / asi (asi)                                    mismatch in concept:         ML = asi                    DZ = UNMAPPED 
+Node ML s6a / asi (asi)                                    mismatch in :ARG0-of:        ML = s6p4                   DZ = UNMAPPED 
+Node ML s6a / asi (asi)                                    mismatch in :op1:            ML = s6p2                   DZ = UNMAPPED 
+Node ML s6p / person                                       mismatch in concept:         ML = person                 DZ = UNMAPPED 
+Node ML s6p / person                                       mismatch in :ARG0-of:        ML = s6h                    DZ = UNMAPPED 
+Node ML s6p / person                                       mismatch in :refer-number:   ML = plural                 DZ = UNMAPPED 
+Node ML s6p8 / person                                      mismatch in concept:         ML = person                 DZ = UNMAPPED 
 
-Correct 44 out of 56 non-empty DZ values => recall    79%.
-Correct 44 out of 50 non-empty ML values => precision 88%.
+Correct 43 out of 55 non-empty DZ values => recall    78%.
+Correct 43 out of 56 non-empty ML values => precision 77%.
 
 Comparing attributes of ML nodes with their DZ counterparts.
-Node ML s6a / asi (asi)                              mismatch in concept:         ML = asi                    DZ = percentage-entity
-Node ML s6a / asi (asi)                              mismatch in :op1:            ML = s6p2 mapped to DZ s6p2 DZ =                  
-Node ML s6a / asi (asi)                              mismatch in :value:          ML =                        DZ = s6a              
-Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :wiki:           ML = "Q189760"              DZ =                  
-Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :ARG0:           ML =                        DZ = s6p7             
-Node ML s6i / include-91                             mismatch in :ARG1:           ML = s6p mapped to DZ s6p7  DZ =                  
-Node ML s6p / person                                 mismatch in :ARG0-of:        ML = s6h mapped to DZ s6h   DZ =                  
-Node ML s6p / person                                 mismatch in :ARG1-of:        ML =                        DZ = s6i              
-Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :value:          ML = 20.5                   DZ = s6a              
-Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :ARG0-of:        ML =                        DZ = s6p4             
-Node ML s6p8 / person                                mismatch in :ARG1-of:        ML =                        DZ = s6i              
-Node ML s6p8 / person                                mismatch in :refer-number:   ML =                        DZ = plural           
-Node ML s6v / volit-001 (voleb)                      mismatch in :ARG0:           ML = s6p7 mapped to DZ s6p  DZ =                  
-Node ML s6v / volit-001 (voleb)                      mismatch in :ARG1:           ML = s6p8 mapped to DZ s6p7 DZ =                  
-Node DZ s6a / asi                                    mismatch in concept:         DZ = asi                    ML = UNMAPPED         
-Node DZ s6a / asi                                    mismatch in :op1:            DZ = 20.5                   ML = UNMAPPED         
-Node DZ s6p7 / person                                mismatch in concept:         DZ = person                 ML = UNMAPPED         
-Node DZ s6p7 / person                                mismatch in :ARG1-of:        DZ = s6i                    ML = UNMAPPED         
-Node DZ s6p7 / person                                mismatch in :refer-number:   DZ = plural                 ML = UNMAPPED         
-Node DZ s6v / volit-001                              mismatch in concept:         DZ = volit-001              ML = UNMAPPED         
-Node DZ s6v / volit-001                              mismatch in :aspect:         DZ = habitual               ML = UNMAPPED         
-Node DZ s6v / volit-001                              mismatch in :modal-strength: DZ = full-affirmative       ML = UNMAPPED         
+Node ML s6a / asi (asi)                              mismatch in concept:         ML = asi                   DZ = UNMAPPED
+Node ML s6a / asi (asi)                              mismatch in :ARG0-of:        ML = s6p4                  DZ = UNMAPPED
+Node ML s6a / asi (asi)                              mismatch in :op1:            ML = s6p2                  DZ = UNMAPPED
+Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :wiki:           ML = "Q189760"             DZ =         
+Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :ARG0:           ML =                       DZ = s6p7    
+Node ML s6i / include-91                             mismatch in :ARG1:           ML = s6p unmapped          DZ =         
+Node ML s6i / include-91                             mismatch in :ARG3:           ML = s6a unmapped          DZ = s6p2    
+Node ML s6p / person                                 mismatch in concept:         ML = person                DZ = UNMAPPED
+Node ML s6p / person                                 mismatch in :ARG0-of:        ML = s6h                   DZ = UNMAPPED
+Node ML s6p / person                                 mismatch in :refer-number:   ML = plural                DZ = UNMAPPED
+Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :value:          ML = 20.5                  DZ = s6a     
+Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :ARG0-of:        ML =                       DZ = s6p4    
+Node ML s6p8 / person                                mismatch in concept:         ML = person                DZ = UNMAPPED
+Node ML s6v / volit-001 (voleb)                      mismatch in :ARG0:           ML = s6p7 mapped to DZ s6p DZ =         
+Node ML s6v / volit-001 (voleb)                      mismatch in :ARG1:           ML = s6p8 unmapped         DZ =         
+Node DZ s6a / asi                                    mismatch in concept:         DZ = asi                   ML = UNMAPPED
+Node DZ s6a / asi                                    mismatch in :op1:            DZ = 20.5                  ML = UNMAPPED
+Node DZ s6p7 / person                                mismatch in concept:         DZ = person                ML = UNMAPPED
+Node DZ s6p7 / person                                mismatch in :ARG1-of:        DZ = s6i                   ML = UNMAPPED
+Node DZ s6p7 / person                                mismatch in :refer-number:   DZ = plural                ML = UNMAPPED
+Node DZ s6v / volit-001                              mismatch in concept:         DZ = volit-001             ML = UNMAPPED
+Node DZ s6v / volit-001                              mismatch in :aspect:         DZ = habitual              ML = UNMAPPED
+Node DZ s6v / volit-001                              mismatch in :modal-strength: DZ = full-affirmative      ML = UNMAPPED
 
-Correct 48 out of 56 non-empty ML values => recall    86%.
-Correct 48 out of 64 non-empty DZ values => precision 75%.
+Correct 43 out of 56 non-empty ML values => recall    77%.
+Correct 43 out of 55 non-empty DZ values => precision 78%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 7:
@@ -701,10 +711,10 @@ Correct 43 out of 50 non-empty DZ values => precision 86%.
 SUMMARY:
 Number of nodes per file: DZ:69, ML:71
 File-to-file node mapping:
-Out of 69 total DZ nodes, 66 mapped to ML (1 ambiguously) => recall    = 96%.
-Out of 71 total ML nodes, 69 mapped to DZ (0 ambiguously) => precision = 97%.
- => F₁(DZ,ML) = 96%.
+Out of 69 total DZ nodes, 66 mapped to ML (0 ambiguously) => recall    = 96%.
+Out of 71 total ML nodes, 66 mapped to DZ (0 ambiguously) => precision = 93%.
+ => F₁(DZ,ML) = 94%.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 227 non-empty DZ values, 198 found in ML => recall    87%.
-Out of 226 non-empty ML values, 198 found in DZ => precision 88%.
- => juːmæʧ (DZ, ML) = F₁ = 87%.
+Out of 226 non-empty DZ values, 197 found in ML => recall    87%.
+Out of 232 non-empty ML values, 197 found in DZ => precision 85%.
+ => juːmæʧ (DZ, ML) = F₁ = 86%.

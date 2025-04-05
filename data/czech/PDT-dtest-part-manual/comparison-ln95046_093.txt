@@ -395,24 +395,27 @@ File HH: 6 nodes unaligned: s4h1/have-org-role-91, s4h2/have-org-role-91, s4h3/h
 
 Node-node correspondences:
 
-Correspondence ML s4a  (po schůzi)              = HH s4a2, s4s1
-Correspondence ML s4c1 (člen)                   = HH s4c1      
-Correspondence ML s4h1 (have-org-role-91)       = HH           
-Correspondence ML s4h2 (have-org-role-91)       = HH           
-Correspondence ML s4h3 (have-org-role-91)       = HH           
-Correspondence ML s4k1 (komise)                 = HH s4k1      
-Correspondence ML s4n1 (name["Pavel" "Severa"]) = HH s4n2      
-Correspondence ML s4n4 (name["parlament"])      = HH           
-Correspondence ML s4n5 (name["KDU-ČSL"])        = HH s4n1      
-Correspondence ML s4o1 (orgánu)                 = HH s4o1      
-Correspondence ML s4o2 (KDU - ČSL)              = HH s4p6      
-Correspondence ML s4p1 (připustil)              = HH s4p1      
-Correspondence ML s4p2 (Pavel Severa)           = HH s4p4      
-Correspondence ML s4p3 (poslanec)               = HH s4p5      
-Correspondence ML s4p4 (organization)           = HH s4o2      
-Correspondence ML s4s2 (schůze)                 = HH           
-Correspondence ML s4t1 (to)                     = HH s4t1      
-Correspondence ML s4v1 (Včera)                  = HH s4v1      
+Ambiguous projection of ML node s4a (po schůzi) to 2 HH nodes [s4a2 (po), s4s1 (schůzi)]
+  The winner is ML node s4a (po schůzi) <--> HH node s4a2 (po): econcepts=after/after, match=1.
+
+Correspondence ML s4a  (po schůzi)              = HH s4a2
+Correspondence ML s4c1 (člen)                   = HH s4c1
+Correspondence ML s4h1 (have-org-role-91)       = HH     
+Correspondence ML s4h2 (have-org-role-91)       = HH     
+Correspondence ML s4h3 (have-org-role-91)       = HH     
+Correspondence ML s4k1 (komise)                 = HH s4k1
+Correspondence ML s4n1 (name["Pavel" "Severa"]) = HH s4n2
+Correspondence ML s4n4 (name["parlament"])      = HH     
+Correspondence ML s4n5 (name["KDU-ČSL"])        = HH s4n1
+Correspondence ML s4o1 (orgánu)                 = HH s4o1
+Correspondence ML s4o2 (KDU - ČSL)              = HH s4p6
+Correspondence ML s4p1 (připustil)              = HH s4p1
+Correspondence ML s4p2 (Pavel Severa)           = HH s4p4
+Correspondence ML s4p3 (poslanec)               = HH s4p5
+Correspondence ML s4p4 (organization)           = HH s4o2
+Correspondence ML s4s2 (schůze)                 = HH     
+Correspondence ML s4t1 (to)                     = HH s4t1
+Correspondence ML s4v1 (Včera)                  = HH s4v1
 
 Aligned 13 out of 18 ML nodes, that is 72%.
 
@@ -430,109 +433,111 @@ Correspondence HH s4p1 (připustil)              = ML s4p1
 Correspondence HH s4p4 (Pavel Severa)           = ML s4p2
 Correspondence HH s4p5 (poslanec)               = ML s4p3
 Correspondence HH s4p6 (KDU - ČSL)              = ML s4o2
-Correspondence HH s4s1 (schůzi)                 = ML s4a 
+Correspondence HH s4s1 (schůzi)                 = ML     
 Correspondence HH s4t1 (to)                     = ML s4t1
 Correspondence HH s4v1 (Včera)                  = ML s4v1
 
-Aligned 14 out of 17 HH nodes, that is 82%.
+Aligned 13 out of 17 HH nodes, that is 76%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s4a / after (po schůzi)                   mismatch in :op1:            ML = s4s2 unmapped               HH = s4s1            
-Node ML s4h1 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91            HH = UNMAPPED        
-Node ML s4h1 / have-org-role-91                   mismatch in :ARG2:           ML = s4k1                        HH = UNMAPPED        
-Node ML s4h1 / have-org-role-91                   mismatch in :ARG3:           ML = s4c1                        HH = UNMAPPED        
-Node ML s4h1 / have-org-role-91                   mismatch in :aspect:         ML = state                       HH = UNMAPPED        
-Node ML s4h1 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative            HH = UNMAPPED        
-Node ML s4h2 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91            HH = UNMAPPED        
-Node ML s4h2 / have-org-role-91                   mismatch in :ARG2:           ML = s4p4                        HH = UNMAPPED        
-Node ML s4h2 / have-org-role-91                   mismatch in :ARG3:           ML = s4p3                        HH = UNMAPPED        
-Node ML s4h2 / have-org-role-91                   mismatch in :aspect:         ML = state                       HH = UNMAPPED        
-Node ML s4h2 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative            HH = UNMAPPED        
-Node ML s4h3 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91            HH = UNMAPPED        
-Node ML s4h3 / have-org-role-91                   mismatch in :ARG2:           ML = s4o2                        HH = UNMAPPED        
-Node ML s4h3 / have-org-role-91                   mismatch in :aspect:         ML = state                       HH = UNMAPPED        
-Node ML s4h3 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative            HH = UNMAPPED        
-Node ML s4n4 / name                               mismatch in concept:         ML = name                        HH = UNMAPPED        
-Node ML s4n4 / name                               mismatch in :op1:            ML = "parlament"                 HH = UNMAPPED        
-Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"                  HH =                 
-Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =                             HH = singular        
-Node ML s4p1 / připustit-004 (připustil)          mismatch in :temporal:       ML = s4a mapped to HH s4a2, s4s1 HH =                 
-Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML = s4h3 unmapped               HH = s4h3            
-Node ML s4p4 / organization                       mismatch in :name:           ML = s4n4 unmapped               HH =                 
-Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"                  HH =                 
-Node ML s4s2 / schůze                             mismatch in concept:         ML = schůze                      HH = UNMAPPED        
-Node ML s4s2 / schůze                             mismatch in :mod:            ML = s4o1                        HH = UNMAPPED        
-Node ML s4s2 / schůze                             mismatch in :refer-number:   ML = singular                    HH = UNMAPPED        
-Node ML s4t1 / event (to)                         mismatch in :aspect:         ML =                             HH = activity        
-Node ML s4t1 / event (to)                         mismatch in :modal-strength: ML =                             HH = full-affirmative
-Node HH s4h1 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91            ML = UNMAPPED        
-Node HH s4h1 / have-org-role-91                   mismatch in :ARG2:           HH = s4o2                        ML = UNMAPPED        
-Node HH s4h1 / have-org-role-91                   mismatch in :ARG3:           HH = s4p5                        ML = UNMAPPED        
-Node HH s4h1 / have-org-role-91                   mismatch in :aspect:         HH = state                       ML = UNMAPPED        
-Node HH s4h1 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative            ML = UNMAPPED        
-Node HH s4h2 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91            ML = UNMAPPED        
-Node HH s4h2 / have-org-role-91                   mismatch in :ARG2:           HH = s4k1                        ML = UNMAPPED        
-Node HH s4h2 / have-org-role-91                   mismatch in :ARG3:           HH = s4c1                        ML = UNMAPPED        
-Node HH s4h2 / have-org-role-91                   mismatch in :aspect:         HH = state                       ML = UNMAPPED        
-Node HH s4h2 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative            ML = UNMAPPED        
-Node HH s4h3 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91            ML = UNMAPPED        
-Node HH s4h3 / have-org-role-91                   mismatch in :ARG2:           HH = s4p6                        ML = UNMAPPED        
-Node HH s4h3 / have-org-role-91                   mismatch in :aspect:         HH = state                       ML = UNMAPPED        
-Node HH s4h3 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative            ML = UNMAPPED        
+Node ML s4a / after (po schůzi)                   mismatch in :op1:            ML = s4s2 unmapped    HH = s4s1            
+Node ML s4h1 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91 HH = UNMAPPED        
+Node ML s4h1 / have-org-role-91                   mismatch in :ARG2:           ML = s4k1             HH = UNMAPPED        
+Node ML s4h1 / have-org-role-91                   mismatch in :ARG3:           ML = s4c1             HH = UNMAPPED        
+Node ML s4h1 / have-org-role-91                   mismatch in :aspect:         ML = state            HH = UNMAPPED        
+Node ML s4h1 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative HH = UNMAPPED        
+Node ML s4h2 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91 HH = UNMAPPED        
+Node ML s4h2 / have-org-role-91                   mismatch in :ARG2:           ML = s4p4             HH = UNMAPPED        
+Node ML s4h2 / have-org-role-91                   mismatch in :ARG3:           ML = s4p3             HH = UNMAPPED        
+Node ML s4h2 / have-org-role-91                   mismatch in :aspect:         ML = state            HH = UNMAPPED        
+Node ML s4h2 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative HH = UNMAPPED        
+Node ML s4h3 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91 HH = UNMAPPED        
+Node ML s4h3 / have-org-role-91                   mismatch in :ARG2:           ML = s4o2             HH = UNMAPPED        
+Node ML s4h3 / have-org-role-91                   mismatch in :aspect:         ML = state            HH = UNMAPPED        
+Node ML s4h3 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative HH = UNMAPPED        
+Node ML s4n4 / name                               mismatch in concept:         ML = name             HH = UNMAPPED        
+Node ML s4n4 / name                               mismatch in :op1:            ML = "parlament"      HH = UNMAPPED        
+Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"       HH =                 
+Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =                  HH = singular        
+Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML = s4h3 unmapped    HH = s4h3            
+Node ML s4p4 / organization                       mismatch in :name:           ML = s4n4 unmapped    HH =                 
+Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"       HH =                 
+Node ML s4s2 / schůze                             mismatch in concept:         ML = schůze           HH = UNMAPPED        
+Node ML s4s2 / schůze                             mismatch in :mod:            ML = s4o1             HH = UNMAPPED        
+Node ML s4s2 / schůze                             mismatch in :refer-number:   ML = singular         HH = UNMAPPED        
+Node ML s4t1 / event (to)                         mismatch in :aspect:         ML =                  HH = activity        
+Node ML s4t1 / event (to)                         mismatch in :modal-strength: ML =                  HH = full-affirmative
+Node HH s4h1 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91 ML = UNMAPPED        
+Node HH s4h1 / have-org-role-91                   mismatch in :ARG2:           HH = s4o2             ML = UNMAPPED        
+Node HH s4h1 / have-org-role-91                   mismatch in :ARG3:           HH = s4p5             ML = UNMAPPED        
+Node HH s4h1 / have-org-role-91                   mismatch in :aspect:         HH = state            ML = UNMAPPED        
+Node HH s4h1 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED        
+Node HH s4h2 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91 ML = UNMAPPED        
+Node HH s4h2 / have-org-role-91                   mismatch in :ARG2:           HH = s4k1             ML = UNMAPPED        
+Node HH s4h2 / have-org-role-91                   mismatch in :ARG3:           HH = s4c1             ML = UNMAPPED        
+Node HH s4h2 / have-org-role-91                   mismatch in :aspect:         HH = state            ML = UNMAPPED        
+Node HH s4h2 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED        
+Node HH s4h3 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91 ML = UNMAPPED        
+Node HH s4h3 / have-org-role-91                   mismatch in :ARG2:           HH = s4p6             ML = UNMAPPED        
+Node HH s4h3 / have-org-role-91                   mismatch in :aspect:         HH = state            ML = UNMAPPED        
+Node HH s4h3 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED        
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001     ML = UNMAPPED        
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:           HH = s4o1             ML = UNMAPPED        
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance      ML = UNMAPPED        
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED        
 
-Correct 28 out of 53 non-empty ML values => recall    53%.
-Correct 28 out of 47 non-empty HH values => precision 60%.
+Correct 28 out of 52 non-empty ML values => recall    54%.
+Correct 28 out of 51 non-empty HH values => precision 55%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s4a2 / after (po)                         mismatch in :op1:            HH = s4s1 mapped to ML s4a  ML = s4s2      
-Node HH s4h1 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91       ML = UNMAPPED  
-Node HH s4h1 / have-org-role-91                   mismatch in :ARG2:           HH = s4o2                   ML = UNMAPPED  
-Node HH s4h1 / have-org-role-91                   mismatch in :ARG3:           HH = s4p5                   ML = UNMAPPED  
-Node HH s4h1 / have-org-role-91                   mismatch in :aspect:         HH = state                  ML = UNMAPPED  
-Node HH s4h1 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative       ML = UNMAPPED  
-Node HH s4h2 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91       ML = UNMAPPED  
-Node HH s4h2 / have-org-role-91                   mismatch in :ARG2:           HH = s4k1                   ML = UNMAPPED  
-Node HH s4h2 / have-org-role-91                   mismatch in :ARG3:           HH = s4c1                   ML = UNMAPPED  
-Node HH s4h2 / have-org-role-91                   mismatch in :aspect:         HH = state                  ML = UNMAPPED  
-Node HH s4h2 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative       ML = UNMAPPED  
-Node HH s4h3 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91       ML = UNMAPPED  
-Node HH s4h3 / have-org-role-91                   mismatch in :ARG2:           HH = s4p6                   ML = UNMAPPED  
-Node HH s4h3 / have-org-role-91                   mismatch in :aspect:         HH = state                  ML = UNMAPPED  
-Node HH s4h3 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative       ML = UNMAPPED  
-Node HH s4o2 / organization                       mismatch in :name:           HH =                        ML = s4n4      
-Node HH s4o2 / organization                       mismatch in :wiki:           HH =                        ML = "Q2347172"
-Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH = s4h3 unmapped          ML = s4h3      
-Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :refer-number:   HH = singular               ML =           
-Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :wiki:           HH =                        ML = "Q1142687"
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001           ML = after     
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:           HH = s4o1 mapped to ML s4o1 ML =           
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance            ML =           
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative       ML =           
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :op1:            HH =                        ML = s4s2      
-Node HH s4t1 / event (to)                         mismatch in :aspect:         HH = activity               ML =           
-Node HH s4t1 / event (to)                         mismatch in :modal-strength: HH = full-affirmative       ML =           
-Node ML s4h1 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91       HH = UNMAPPED  
-Node ML s4h1 / have-org-role-91                   mismatch in :ARG2:           ML = s4k1                   HH = UNMAPPED  
-Node ML s4h1 / have-org-role-91                   mismatch in :ARG3:           ML = s4c1                   HH = UNMAPPED  
-Node ML s4h1 / have-org-role-91                   mismatch in :aspect:         ML = state                  HH = UNMAPPED  
-Node ML s4h1 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative       HH = UNMAPPED  
-Node ML s4h2 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91       HH = UNMAPPED  
-Node ML s4h2 / have-org-role-91                   mismatch in :ARG2:           ML = s4p4                   HH = UNMAPPED  
-Node ML s4h2 / have-org-role-91                   mismatch in :ARG3:           ML = s4p3                   HH = UNMAPPED  
-Node ML s4h2 / have-org-role-91                   mismatch in :aspect:         ML = state                  HH = UNMAPPED  
-Node ML s4h2 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative       HH = UNMAPPED  
-Node ML s4h3 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91       HH = UNMAPPED  
-Node ML s4h3 / have-org-role-91                   mismatch in :ARG2:           ML = s4o2                   HH = UNMAPPED  
-Node ML s4h3 / have-org-role-91                   mismatch in :aspect:         ML = state                  HH = UNMAPPED  
-Node ML s4h3 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative       HH = UNMAPPED  
-Node ML s4n4 / name                               mismatch in concept:         ML = name                   HH = UNMAPPED  
-Node ML s4n4 / name                               mismatch in :op1:            ML = "parlament"            HH = UNMAPPED  
-Node ML s4s2 / schůze                             mismatch in concept:         ML = schůze                 HH = UNMAPPED  
-Node ML s4s2 / schůze                             mismatch in :mod:            ML = s4o1                   HH = UNMAPPED  
-Node ML s4s2 / schůze                             mismatch in :refer-number:   ML = singular               HH = UNMAPPED  
+Node HH s4a2 / after (po)                         mismatch in :op1:            HH = s4s1 unmapped    ML = s4s2      
+Node HH s4h1 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91 ML = UNMAPPED  
+Node HH s4h1 / have-org-role-91                   mismatch in :ARG2:           HH = s4o2             ML = UNMAPPED  
+Node HH s4h1 / have-org-role-91                   mismatch in :ARG3:           HH = s4p5             ML = UNMAPPED  
+Node HH s4h1 / have-org-role-91                   mismatch in :aspect:         HH = state            ML = UNMAPPED  
+Node HH s4h1 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED  
+Node HH s4h2 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91 ML = UNMAPPED  
+Node HH s4h2 / have-org-role-91                   mismatch in :ARG2:           HH = s4k1             ML = UNMAPPED  
+Node HH s4h2 / have-org-role-91                   mismatch in :ARG3:           HH = s4c1             ML = UNMAPPED  
+Node HH s4h2 / have-org-role-91                   mismatch in :aspect:         HH = state            ML = UNMAPPED  
+Node HH s4h2 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED  
+Node HH s4h3 / have-org-role-91                   mismatch in concept:         HH = have-org-role-91 ML = UNMAPPED  
+Node HH s4h3 / have-org-role-91                   mismatch in :ARG2:           HH = s4p6             ML = UNMAPPED  
+Node HH s4h3 / have-org-role-91                   mismatch in :aspect:         HH = state            ML = UNMAPPED  
+Node HH s4h3 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED  
+Node HH s4o2 / organization                       mismatch in :name:           HH =                  ML = s4n4      
+Node HH s4o2 / organization                       mismatch in :wiki:           HH =                  ML = "Q2347172"
+Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH = s4h3 unmapped    ML = s4h3      
+Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :refer-number:   HH = singular         ML =           
+Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :wiki:           HH =                  ML = "Q1142687"
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001     ML = UNMAPPED  
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:           HH = s4o1             ML = UNMAPPED  
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance      ML = UNMAPPED  
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED  
+Node HH s4t1 / event (to)                         mismatch in :aspect:         HH = activity         ML =           
+Node HH s4t1 / event (to)                         mismatch in :modal-strength: HH = full-affirmative ML =           
+Node ML s4h1 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91 HH = UNMAPPED  
+Node ML s4h1 / have-org-role-91                   mismatch in :ARG2:           ML = s4k1             HH = UNMAPPED  
+Node ML s4h1 / have-org-role-91                   mismatch in :ARG3:           ML = s4c1             HH = UNMAPPED  
+Node ML s4h1 / have-org-role-91                   mismatch in :aspect:         ML = state            HH = UNMAPPED  
+Node ML s4h1 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative HH = UNMAPPED  
+Node ML s4h2 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91 HH = UNMAPPED  
+Node ML s4h2 / have-org-role-91                   mismatch in :ARG2:           ML = s4p4             HH = UNMAPPED  
+Node ML s4h2 / have-org-role-91                   mismatch in :ARG3:           ML = s4p3             HH = UNMAPPED  
+Node ML s4h2 / have-org-role-91                   mismatch in :aspect:         ML = state            HH = UNMAPPED  
+Node ML s4h2 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative HH = UNMAPPED  
+Node ML s4h3 / have-org-role-91                   mismatch in concept:         ML = have-org-role-91 HH = UNMAPPED  
+Node ML s4h3 / have-org-role-91                   mismatch in :ARG2:           ML = s4o2             HH = UNMAPPED  
+Node ML s4h3 / have-org-role-91                   mismatch in :aspect:         ML = state            HH = UNMAPPED  
+Node ML s4h3 / have-org-role-91                   mismatch in :modal-strength: ML = full-affirmative HH = UNMAPPED  
+Node ML s4n4 / name                               mismatch in concept:         ML = name             HH = UNMAPPED  
+Node ML s4n4 / name                               mismatch in :op1:            ML = "parlament"      HH = UNMAPPED  
+Node ML s4s2 / schůze                             mismatch in concept:         ML = schůze           HH = UNMAPPED  
+Node ML s4s2 / schůze                             mismatch in :mod:            ML = s4o1             HH = UNMAPPED  
+Node ML s4s2 / schůze                             mismatch in :refer-number:   ML = singular         HH = UNMAPPED  
 
 Correct 28 out of 51 non-empty HH values => recall    55%.
-Correct 28 out of 54 non-empty ML values => precision 52%.
+Correct 28 out of 52 non-empty ML values => precision 54%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -688,10 +693,10 @@ Correct 56 out of 59 non-empty ML values => precision 95%.
 SUMMARY:
 Number of nodes per file: ML:68, HH:67
 File-to-file node mapping:
-Out of 68 total ML nodes, 63 mapped to HH (1 ambiguously) => recall    = 93%.
-Out of 67 total HH nodes, 64 mapped to ML (0 ambiguously) => precision = 96%.
- => F₁(ML,HH) = 94%.
+Out of 68 total ML nodes, 63 mapped to HH (0 ambiguously) => recall    = 93%.
+Out of 67 total HH nodes, 63 mapped to ML (0 ambiguously) => precision = 94%.
+ => F₁(ML,HH) = 93%.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 224 non-empty ML values, 180 found in HH => recall    80%.
-Out of 216 non-empty HH values, 180 found in ML => precision 83%.
- => juːmæʧ (ML, HH) = F₁ = 82%.
+Out of 223 non-empty ML values, 180 found in HH => recall    81%.
+Out of 220 non-empty HH values, 180 found in ML => precision 82%.
+ => juːmæʧ (ML, HH) = F₁ = 81%.
