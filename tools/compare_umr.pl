@@ -46,10 +46,15 @@ while(1)
     my $n = scalar(@{$file{sentences}});
     print("Found $n sentences in $label:\n");
     print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
+    for(my $i = 0; $i < $n; $i++)
+    {
+        parse_sentence_tokens(\%file, $i);
+        parse_sentence_graph(\%file, $i);
+        parse_sentence_alignments(\%file, $i);
+    }
     push(@files, \%file);
 }
 print("\n");
-###!!! Initially we support only comparing the first two files, although we can send the function all of them.
 compare_files(@files);
 
 
@@ -156,118 +161,6 @@ sub add_sentence
 
 
 #------------------------------------------------------------------------------
-# Compares two UMR files that have been read to memory (takes the hashes with
-# their contents, prints the comparison to STDOUT).
-#------------------------------------------------------------------------------
-sub compare_files
-{
-    my @files = @_;
-    confess("Not enough files to compare") if(scalar(@files) < 2);
-    # All the files should have the same number of sentences. If they do not,
-    # print a warning and compare as many initial sentences as there are in all
-    # the files.
-    my $n_sentences = scalar(@{$files[0]{sentences}});
-    my $mismatch = 0;
-    for(my $i = 1; $i <= $#files; $i++)
-    {
-        my $current_n_sentences = scalar(@{$files[$i]{sentences}});
-        if($current_n_sentences != $n_sentences)
-        {
-            $mismatch++;
-            if($current_n_sentences < $n_sentences)
-            {
-                $n_sentences = $current_n_sentences;
-            }
-        }
-    }
-    if($n_sentences == 0)
-    {
-        confess("FATAL: At least one of the files has 0 sentences");
-    }
-    if($mismatch)
-    {
-        print STDERR ("WARNING: The files have varying numbers of sentences. Only the first $n_sentences sentences from each file will be compared.\n");
-    }
-    # Loop over sentence numbers, look at the same-numbered sentence in each file.
-    for(my $i = 0; $i < $n_sentences; $i++)
-    {
-        print("-------------------------------------------------------------------------------\n");
-        printf("Comparing sentence %d:\n", $i+1);
-        foreach my $file (@files)
-        {
-            parse_sentence_tokens($file, $i);
-            parse_sentence_graph($file, $i);
-            parse_sentence_alignments($file, $i);
-        }
-        # Check that the sentence has the same tokens in all files.
-        my $sentence_text;
-        foreach my $file (@files)
-        {
-            my $sentence = $file->{sentences}[$i];
-            if(!defined($sentence_text))
-            {
-                $sentence_text = join(' ', @{$sentence->{tokens}});
-            }
-            else
-            {
-                my $current_sentence_text = join(' ', @{$sentence->{tokens}});
-                if($current_sentence_text ne $sentence_text)
-                {
-                    printf STDERR ("Tokens %s: %s\n", $files[0]{label}, $sentence_text);
-                    printf STDERR ("Tokens %s: %s\n", $file->{label}, $current_sentence_text);
-                    confess(sprintf("Mismatch in tokens of sentence %d in file %s (lines %d–%d)", $i+1, $file->{label}, $sentence->{line0}, $sentence->{line1}));
-                }
-            }
-        }
-        print(join(' ', @{$files[0]{sentences}[$i]{tokens}}), "\n");
-        compare_sentence($i, @files);
-    }
-    print("-------------------------------------------------------------------------------\n");
-    print("SUMMARY:\n");
-    print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
-    # Compare node alignments for each pair of files. Although both files may
-    # come from annotators, imagine that the first file is the gold standard
-    # and the second file is evaluated against it; the numbers are then P, R, F.
-    print("File-to-file node mapping:\n");
-    for(my $i = 0; $i <= $#files; $i++)
-    {
-        my $labeli = $files[$i]{label};
-        my $ni_total = $files[$i]{stats}{n_nodes};
-        next if($ni_total == 0);
-        for(my $j = $i+1; $j <= $#files; $j++)
-        {
-            my $labelj = $files[$j]{label};
-            my $nj_total = $files[$j]{stats}{n_nodes};
-            next if($nj_total == 0);
-            my $ni_mapped = $files[$i]{stats}{crossfile}{$labelj};
-            my $nj_mapped = $files[$j]{stats}{crossfile}{$labeli};
-            my $ni_mapped2 = $files[$i]{stats}{crossfile2}{$labelj} // 0;
-            my $nj_mapped2 = $files[$j]{stats}{crossfile2}{$labeli} // 0;
-            # Precision: nodes mapped from j to i / total j nodes (how much of what we found we should have found).
-            # Recall: nodes mapped from i to j / total i nodes (how much of what we should have found we found).
-            my $p = $nj_mapped/$nj_total;
-            my $r = $ni_mapped/$ni_total;
-            my $f = 2*$p*$r/($p+$r);
-            printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => recall    = %d%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, $ni_mapped2, $r*100+0.5);
-            printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $nj_mapped2, $p*100+0.5);
-            printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
-            print("Concept and relation comparisons (for unmapped nodes all counted as incorrect):\n");
-            my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
-            my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
-            my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
-            $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
-            $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
-            $f = 2*$p*$r/($p+$r);
-            printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, $r*100+0.5);
-            printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
-            printf(" => juːmæʧ ($labeli, $labelj) = F₁ = %d%%.\n", $f*100+0.5); # místo "t͡ʃ" lze případně použít "ʧ"
-        }
-    }
-}
-
-
-
-#------------------------------------------------------------------------------
 # Takes a file hash and a sentence number. Parses the lines of the sentence
 # tokens block in the given sentence and saves the resulting structure in the
 # sentence hash. (The only reason why we need reference to the whole file is
@@ -281,8 +174,7 @@ sub parse_sentence_tokens
     my $token_block = $sentence->{blocks}[0];
     if(!defined($token_block))
     {
-        printf STDERR ("Missing the token block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
-        confess("Too few blocks");
+        printf STDERR ("WARNING: Missing the token block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
     }
     my @tokens;
     foreach my $line (@{$token_block->{lines}})
@@ -295,7 +187,7 @@ sub parse_sentence_tokens
     }
     if(scalar(@tokens) == 0)
     {
-        confess(sprintf("No tokens found the token block (lines %d–%d) in sentence %d of file %s.\n", $token_block->{line0}, $token_block->{line1}, $i_sentence+1, $file->{label}));
+        printf STDERR ("WARNING: No tokens found the token block (lines %d–%d) in sentence %d of file %s.\n", $token_block->{line0}, $token_block->{line1}, $i_sentence+1, $file->{label});
     }
     $sentence->{tokens} = \@tokens;
 }
@@ -316,8 +208,7 @@ sub parse_sentence_graph
     my $sgraph_block = $sentence->{blocks}[1];
     if(!defined($sgraph_block))
     {
-        printf STDERR ("Missing the sentence graph block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
-        confess("Too few blocks");
+        printf STDERR ("WARNING: Missing the sentence graph block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
     }
     my %nodes; # hash indexed by variables
     $sentence->{nodes} = \%nodes;
@@ -445,8 +336,7 @@ sub parse_sentence_alignments
     my $alignment_block = $sentence->{blocks}[2];
     if(!defined($alignment_block))
     {
-        printf STDERR ("Missing the alignment block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
-        confess("Too few blocks");
+        printf STDERR ("WARNING: Missing the alignment block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
     }
     my $iline = $alignment_block->{line0}-1;
     foreach my $line (@{$alignment_block->{lines}})
@@ -507,6 +397,112 @@ sub parse_sentence_alignments
         else
         {
             confess(sprintf("Cannot parse the alignment line %d of file %s", $iline, $file->{label}));
+        }
+    }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Compares two UMR files that have been read to memory (takes the hashes with
+# their contents, prints the comparison to STDOUT).
+#------------------------------------------------------------------------------
+sub compare_files
+{
+    my @files = @_;
+    confess("Not enough files to compare") if(scalar(@files) < 2);
+    # All the files should have the same number of sentences. If they do not,
+    # print a warning and compare as many initial sentences as there are in all
+    # the files.
+    my $n_sentences = scalar(@{$files[0]{sentences}});
+    my $mismatch = 0;
+    for(my $i = 1; $i <= $#files; $i++)
+    {
+        my $current_n_sentences = scalar(@{$files[$i]{sentences}});
+        if($current_n_sentences != $n_sentences)
+        {
+            $mismatch++;
+            if($current_n_sentences < $n_sentences)
+            {
+                $n_sentences = $current_n_sentences;
+            }
+        }
+    }
+    if($n_sentences == 0)
+    {
+        confess("FATAL: At least one of the files has 0 sentences");
+    }
+    if($mismatch)
+    {
+        print STDERR ("WARNING: The files have varying numbers of sentences. Only the first $n_sentences sentences from each file will be compared.\n");
+    }
+    # Loop over sentence numbers, look at the same-numbered sentence in each file.
+    for(my $i = 0; $i < $n_sentences; $i++)
+    {
+        print("-------------------------------------------------------------------------------\n");
+        printf("Comparing sentence %d:\n", $i+1);
+        # Check that the sentence has the same tokens in all files.
+        my $sentence_text;
+        foreach my $file (@files)
+        {
+            my $sentence = $file->{sentences}[$i];
+            if(!defined($sentence_text))
+            {
+                $sentence_text = join(' ', @{$sentence->{tokens}});
+            }
+            else
+            {
+                my $current_sentence_text = join(' ', @{$sentence->{tokens}});
+                if($current_sentence_text ne $sentence_text)
+                {
+                    printf STDERR ("Tokens %s: %s\n", $files[0]{label}, $sentence_text);
+                    printf STDERR ("Tokens %s: %s\n", $file->{label}, $current_sentence_text);
+                    confess(sprintf("Mismatch in tokens of sentence %d in file %s (lines %d–%d)", $i+1, $file->{label}, $sentence->{line0}, $sentence->{line1}));
+                }
+            }
+        }
+        print(join(' ', @{$files[0]{sentences}[$i]{tokens}}), "\n");
+        compare_sentence($i, @files);
+    }
+    print("-------------------------------------------------------------------------------\n");
+    print("SUMMARY:\n");
+    print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
+    # Compare node alignments for each pair of files. Although both files may
+    # come from annotators, imagine that the first file is the gold standard
+    # and the second file is evaluated against it; the numbers are then P, R, F.
+    print("File-to-file node mapping:\n");
+    for(my $i = 0; $i <= $#files; $i++)
+    {
+        my $labeli = $files[$i]{label};
+        my $ni_total = $files[$i]{stats}{n_nodes};
+        next if($ni_total == 0);
+        for(my $j = $i+1; $j <= $#files; $j++)
+        {
+            my $labelj = $files[$j]{label};
+            my $nj_total = $files[$j]{stats}{n_nodes};
+            next if($nj_total == 0);
+            my $ni_mapped = $files[$i]{stats}{crossfile}{$labelj};
+            my $nj_mapped = $files[$j]{stats}{crossfile}{$labeli};
+            my $ni_mapped2 = $files[$i]{stats}{crossfile2}{$labelj} // 0;
+            my $nj_mapped2 = $files[$j]{stats}{crossfile2}{$labeli} // 0;
+            # Precision: nodes mapped from j to i / total j nodes (how much of what we found we should have found).
+            # Recall: nodes mapped from i to j / total i nodes (how much of what we should have found we found).
+            my $p = $nj_mapped/$nj_total;
+            my $r = $ni_mapped/$ni_total;
+            my $f = 2*$p*$r/($p+$r);
+            printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => recall    = %d%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, $ni_mapped2, $r*100+0.5);
+            printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $nj_mapped2, $p*100+0.5);
+            printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
+            print("Concept and relation comparisons (for unmapped nodes all counted as incorrect):\n");
+            my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
+            my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
+            my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
+            $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
+            $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
+            $f = 2*$p*$r/($p+$r);
+            printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, $r*100+0.5);
+            printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
+            printf(" => juːmæʧ ($labeli, $labelj) = F₁ = %d%%.\n", $f*100+0.5); # místo "t͡ʃ" lze případně použít "ʧ"
         }
     }
 }
