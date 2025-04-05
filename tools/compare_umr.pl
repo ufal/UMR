@@ -710,7 +710,7 @@ sub compute_crossfile_node_references
     {
         for(my $j = $i+1; $j <= $#files; $j++)
         {
-            symmetrize_node_projection($file[$i], $file[$j], $i_sentence);
+            symmetrize_node_projection($files[$i], $files[$j], $i_sentence);
         }
     }
     # Update the statistics about cross-file node mappings.
@@ -749,30 +749,143 @@ sub symmetrize_node_projection
     my $label1 = $file1->{label};
     my $sentence0 = $file0->{sentences}[$i_sentence];
     my $sentence1 = $file1->{sentences}[$i_sentence];
-    my @nodes0 = sort(keys(%{$sentence0->{nodes}}));
-    my @nodes1 = sort(keys(%{$sentence1->{nodes}}));
-    foreach my $n (@nodes0)
+    my @variables0 = sort(keys(%{$sentence0->{nodes}}));
+    my @variables1 = sort(keys(%{$sentence1->{nodes}}));
+    my $first_round = 1;
+    while(1)
     {
-        my @cf = sort(keys(%{$n->{crossfile}{$label1}}));
-        my $ncf = scalar(@cf);
-        if($ncf > 1)
+        my @to_resolve = ();
+        foreach my $variable (@variables0)
         {
-            my $node_text = node_as_string($label0, $n);
-            my $cf = join(', ', @cf);
-            print STDERR ("Ambiguous projection of $node_text to $ncf $label1 nodes: $cf\n");
+            my $n = $sentence0->{nodes}{$variable};
+            my @cf = sort(keys(%{$n->{crossfile}{$label1}}));
+            # Purge the links. Remove those whose symmetric link is no longer available.
+            # Initially all links are symmetric but this could be result of selecting
+            # the winner of an ambiguity.
+            for(my $i = 0; $i <= $#cf; $i++)
+            {
+                if(!exists($sentence1->{nodes}{$cf[$i]}{crossfile}{$label0}{$variable}))
+                {
+                    delete($n->{crossfile}{$label1}{$cf[$i]});
+                    splice(@cf, $i, 1);
+                    $i--;
+                }
+            }
+            my $ncf = scalar(@cf);
+            if($ncf > 1)
+            {
+                my $node_text = node_as_string($label0, $n);
+                my $cf_text = list_of_node_variables_as_string($label1, $sentence1, @cf);
+                print("Ambiguous projection of $node_text to $ncf $cf_text\n") if($first_round);
+                foreach my $cf (@cf)
+                {
+                    my $comparison = compare_two_nodes($n, $sentence0->{nodes}, $sentence1->{nodes}{$cf}, $sentence1->{nodes}, $label1);
+                    push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'attribute_match' => $comparison->{correct}});
+                }
+            }
+        }
+        foreach my $variable (@variables1)
+        {
+            my $n = $sentence1->{nodes}{$variable};
+            my @cf = sort(keys(%{$n->{crossfile}{$label0}}));
+            # Purge the links. Remove those whose symmetric link is no longer available.
+            # Initially all links are symmetric but this could be result of selecting
+            # the winner of an ambiguity.
+            for(my $i = 0; $i <= $#cf; $i++)
+            {
+                if(!exists($sentence0->{nodes}{$cf[$i]}{crossfile}{$label1}{$variable}))
+                {
+                    delete($n->{crossfile}{$label0}{$cf[$i]});
+                    splice(@cf, $i, 1);
+                    $i--;
+                }
+            }
+            my $ncf = scalar(@cf);
+            if($ncf > 1)
+            {
+                my $node_text = node_as_string($label1, $n);
+                my $cf_text = list_of_node_variables_as_string($label0, $sentence0, @cf);
+                my $cf = join(', ', @cf);
+                print("Ambiguous projection of $node_text to $ncf $cf_text\n") if($first_round);
+                foreach my $cf (@cf)
+                {
+                    my $comparison = compare_two_nodes($n, $sentence1->{nodes}, $sentence0->{nodes}{$cf}, $sentence0->{nodes}, $label0);
+                    push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence0->{nodes}{$cf}, 'srclabel' => $label1, 'tgtlabel' => $label0, 'attribute_match' => $comparison->{correct}});
+                }
+            }
+        }
+        my $n_to_resolve = scalar(@to_resolve);
+        last if($n_to_resolve == 0);
+        # Sort the links to resolve by importance.
+        @to_resolve = sort {compare_ambiguous_links($a, $b)} (@to_resolve);
+        # The first pair is now guaranteed to survive. Remove its competitors.
+        my $winner = shift(@to_resolve);
+        #if(scalar(@to_resolve) > 0)
+        #{
+        #    my $comparison = compare_ambiguous_links($winner, $to_resolve[0]);
+        #    if(abs($comparison)<=1)
+        #    {
+        #        # The winner is not really significantly better than the second in the line.
+        #        print("  The winner had to be selected based on uninteresting criteria.\n");
+        #        print("  The second in the line is ", ambiguous_link_as_string($to_resolve[0]), ".\n");
+        #    }
+        #}
+        print("  The winner is ", ambiguous_link_as_string($winner), ".\n");
+        $winner->{srcnode}{crossfile}{$winner->{tgtlabel}} = {$winner->{tgtnode}{variable} => 1};
+        $winner->{tgtnode}{crossfile}{$winner->{srclabel}} = {$winner->{srcnode}{variable} => 1};
+        # Now we have to recompute @to_resolve because we may have kicked out many links.
+        $first_round = 0;
+    }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Provides a textual description of an ambiguous link for diagnostic purposes.
+#------------------------------------------------------------------------------
+sub ambiguous_link_as_string
+{
+    my $al = shift; # hash reference
+    return node_as_string($al->{srclabel}, $al->{srcnode}).' <--> '.node_as_string($al->{tgtlabel}, $al->{tgtnode}).": econcepts=$al->{srcnode}{econcept}/$al->{tgtnode}{econcept}, match=$al->{attribute_match}";
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes two hashes describing ambiguous crossfile node-node links. Compares
+# them and decides which one is more important and should survive. Returns
+# a negative value if the first link is better, a positive value if the second
+# link is better, and 0 if they are equally good. The absolute value of the
+# result indicates the criterion that decided.
+#------------------------------------------------------------------------------
+sub compare_ambiguous_links
+{
+    my $a = shift; # hash reference
+    my $b = shift; # hash reference
+    my $r;
+    if($a->{srcnode}{econcept} eq $a->{tgtnode}{econcept} && $b->{srcnode}{econcept} ne $b->{tgtnode}{econcept})
+    {
+        $r = -10;
+    }
+    elsif($a->{srcnode}{econcept} ne $a->{tgtnode}{econcept} && $b->{srcnode}{econcept} eq $b->{tgtnode}{econcept})
+    {
+        $r = 10;
+    }
+    else
+    {
+        $r = 3*($b->{attribute_match} <=> $a->{attribute_match});
+        unless($r)
+        {
+            # Alignment to longer words is better (try to avoid aligning to function words).
+            $r = 2*(length($b->{srcnode}{aligned_text})+length($b->{tgtnode}{aligned_text}) <=> length($a->{srcnode}{aligned_text})+length($a->{tgtnode}{aligned_text}));
+            ###!!! This is the last resort and there should be better sorting criteria before.
+            unless($r)
+            {
+                $r = $a->{srcnode}{variable}.$a->{tgtnode}{variable} cmp $b->{srcnode}{variable}.$b->{tgtnode}{variable};
+            }
         }
     }
-    foreach my $n (@nodes1)
-    {
-        my @cf = sort(keys(%{$n->{crossfile}{$label0}}));
-        my $ncf = scalar(@cf);
-        if($ncf > 1)
-        {
-            my $node_text = node_as_string($label1, $n);
-            my $cf = join(', ', @cf);
-            print STDERR ("Ambiguous projection of $node_text to $ncf $label0 nodes: $cf\n");
-        }
-    }
+    return $r;
 }
 
 
@@ -787,6 +900,28 @@ sub node_as_string
     my $variable = $node->{variable};
     my $text = $node->{aligned_text} || $node->{econcept};
     return "$file_label node $variable ($text)";
+}
+
+
+
+#------------------------------------------------------------------------------
+# Provides a textual description of list of nodes for diagnostic purposes.
+#------------------------------------------------------------------------------
+sub list_of_node_variables_as_string
+{
+    my $file_label = shift;
+    my $sentence = shift;
+    my @variables = @_;
+    my $result = "$file_label nodes [";
+    my @resultlist;
+    foreach my $variable (@variables)
+    {
+        my $node = $sentence->{nodes}{$variable};
+        my $text = $node->{aligned_text} || $node->{econcept};
+        push(@resultlist, "$variable ($text)");
+    }
+    $result .= join(', ', @resultlist)."]";
+    return $result;
 }
 
 
