@@ -693,9 +693,11 @@ Correct 56 out of 59 non-empty ML values => precision 95%.
 SUMMARY:
 Number of nodes per file: ML:68, HH:67
 File-to-file node mapping:
-Out of 68 total ML nodes, 63 mapped to HH (0 ambiguously) => recall    = 93%.
-Out of 67 total HH nodes, 63 mapped to ML (0 ambiguously) => precision = 94%.
+Out of 68 total ML nodes, 63 mapped to HH => recall    = 93%.
+Out of 67 total HH nodes, 63 mapped to ML => precision = 94%.
  => F₁(ML,HH) = 93%.
+Before symmetrization, 1 ML nodes were projected ambiguously to 2 HH nodes.
+Before symmetrization, 0 HH nodes were projected ambiguously to 0 ML nodes.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
 Out of 223 non-empty ML values, 180 found in HH => recall    81%.
 Out of 220 non-empty HH values, 180 found in ML => precision 82%.

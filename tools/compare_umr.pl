@@ -478,21 +478,28 @@ sub compare_files
         next if($ni_total == 0);
         for(my $j = $i+1; $j <= $#files; $j++)
         {
+            # Summarize node projections and correspondences.
             my $labelj = $files[$j]{label};
             my $nj_total = $files[$j]{stats}{n_nodes};
             next if($nj_total == 0);
             my $ni_mapped = $files[$i]{stats}{crossfile}{$labelj};
             my $nj_mapped = $files[$j]{stats}{crossfile}{$labeli};
-            my $ni_mapped2 = $files[$i]{stats}{crossfile2}{$labelj} // 0;
-            my $nj_mapped2 = $files[$j]{stats}{crossfile2}{$labeli} // 0;
             # Precision: nodes mapped from j to i / total j nodes (how much of what we found we should have found).
             # Recall: nodes mapped from i to j / total i nodes (how much of what we should have found we found).
             my $p = $nj_mapped/$nj_total;
             my $r = $ni_mapped/$ni_total;
             my $f = 2*$p*$r/($p+$r);
-            printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => recall    = %d%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, $ni_mapped2, $r*100+0.5);
-            printf("Out of %d total %s nodes, %d mapped to %s (%d ambiguously) => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $nj_mapped2, $p*100+0.5);
+            printf("Out of %d total %s nodes, %d mapped to %s => recall    = %d%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, $r*100+0.5);
+            printf("Out of %d total %s nodes, %d mapped to %s => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $p*100+0.5);
             printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
+            # Summarize projections that were originally ambiguous (before we symmetrized them).
+            my $ni_ambiguous_src = $files[$i]{stats}{cr}{$labelj}{nodes_with_originally_ambiguous_projection};
+            my $nj_ambiguous_src = $files[$j]{stats}{cr}{$labeli}{nodes_with_originally_ambiguous_projection};
+            my $ni_ambiguous_tgt = $files[$i]{stats}{cr}{$labelj}{nodes_in_originally_ambiguous_projections};
+            my $nj_ambiguous_tgt = $files[$j]{stats}{cr}{$labeli}{nodes_in_originally_ambiguous_projections};
+            printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $ni_ambiguous_src, $labeli, $ni_ambiguous_tgt, $labelj);
+            printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $nj_ambiguous_src, $labelj, $nj_ambiguous_tgt, $labeli);
+            # Summarize comparison of concepts and relations.
             print("Concept and relation comparisons (for unmapped nodes all counted as incorrect):\n");
             my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
             my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
@@ -726,7 +733,6 @@ sub compute_crossfile_node_references
                 my $label2 = $file2->{label};
                 my $n_targets = scalar(keys(%{$node1->{crossfile}{$label2}}));
                 $file1->{stats}{crossfile}{$label2}++ if($n_targets > 0);
-                $file1->{stats}{crossfile2}{$label2}++ if($n_targets > 1);
             }
         }
     }
@@ -882,11 +888,44 @@ sub compare_node_correspondences
     my $label1 = $file1->{label};
     my $sentence0 = $file0->{sentences}[$i_sentence];
     my $sentence1 = $file1->{sentences}[$i_sentence];
+    my @variables0 = sort(keys(%{$sentence0->{nodes}}));
     my $n_aligned = 0;
     my $n_total = 0;
     my @table = ();
-    my $ambiguous = 0;
-    foreach my $f0var (sort(keys(%{$sentence0->{nodes}})))
+    # Before we print the correspondences, report on what we did with ambiguous
+    # cross-file node projections.
+    my $n_nodes_with_ambiguous_projection = 0;
+    my $n_nodes_in_ambiguous_projections = 0;
+    foreach my $f0var (@variables0)
+    {
+        my $n0 = $sentence0->{nodes}{$f0var};
+        if(exists($n0->{original_ambiguous_cf}{$label1}))
+        {
+            $n_nodes_with_ambiguous_projection++;
+            my @ocf1 = @{$n0->{original_ambiguous_cf}{$label1}};
+            my $ncf1 = scalar(@ocf1);
+            $n_nodes_in_ambiguous_projections += $ncf1;
+            my $node_text = node_as_string($label0, $n0);
+            my $ocf1_text = list_of_node_variables_as_string($label1, $sentence1, @ocf1);
+            print("Ambiguous projection of $node_text to $ncf1 $ocf1_text\n");
+        }
+    }
+    if($n_nodes_with_ambiguous_projection > 0)
+    {
+        foreach my $f0var (@variables0)
+        {
+            my $n0 = $sentence0->{nodes}{$f0var};
+            if(exists($n0->{winning_cf}{$label1}))
+            {
+                print("  The winner is ", ambiguous_link_as_string($n0->{winning_cf}{$label1}), ".\n");
+            }
+        }
+        print("\n");
+        $file0->{stats}{cr}{$label1}{nodes_with_originally_ambiguous_projection} += $n_nodes_with_ambiguous_projection;
+        $file0->{stats}{cr}{$label1}{nodes_in_originally_ambiguous_projections} += $n_nodes_in_ambiguous_projections;
+    }
+    # Print the correspondences.
+    foreach my $f0var (@variables0)
     {
         my $n0 = $sentence0->{nodes}{$f0var};
         my $t0 = $n0->{aligned_text} || $n0->{econcept};
@@ -896,28 +935,6 @@ sub compare_node_correspondences
         push(@table, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1"]);
         $n_aligned++ if($aligned);
         $n_total++;
-        # Report on what we did with ambiguous cross-file links.
-        if(exists($n0->{original_ambiguous_cf}{$label1}))
-        {
-            $ambiguous = 1;
-            my @ocf1 = @{$n0->{original_ambiguous_cf}{$label1}};
-            my $ncf1 = scalar(@ocf1);
-            my $node_text = node_as_string($label0, $n0);
-            my $ocf1_text = list_of_node_variables_as_string($label1, $sentence1, @ocf1);
-            print("Ambiguous projection of $node_text to $ncf1 $ocf1_text\n");
-        }
-    }
-    if($ambiguous)
-    {
-        foreach my $f0var (sort(keys(%{$sentence0->{nodes}})))
-        {
-            my $n0 = $sentence0->{nodes}{$f0var};
-            if(exists($n0->{winning_cf}{$label1}))
-            {
-                print("  The winner is ", ambiguous_link_as_string($n0->{winning_cf}{$label1}), ".\n");
-            }
-        }
-        print("\n");
     }
     print_table(@table);
     print("\n");
@@ -929,12 +946,14 @@ sub compare_node_correspondences
 
 #------------------------------------------------------------------------------
 # Takes two file hashes and a sentence number, compares the nodes of the given
-# sentence in the two files. ###!!! CURRENTLY NOT SYMMETRIC!
-# For each node of the left file, considers the corresponding nodes in the
-# right file.
-# - If there are 0 counterparts: do nothing.
+# sentence in the two files. For each node of the left file, considers the
+# corresponding nodes in the right file.
+# - If there are 0 counterparts: compare attributes/relations with an empty node.
 # - If there is 1 counterpart: compare their attributes/relations.
-# - If there are multiple counterparts: ###!!! FOR NOW TAKE THE FIRST ONE.
+# - There cannot be multiple counterparts if we have run symmetrization.
+#   (But if we have not run it and there are multiple counterparts, we look for
+#   the one with the best score. However, then compare(X,Y) may result in
+#   different score than compare(Y,X).)
 #------------------------------------------------------------------------------
 sub compare_node_attributes
 {

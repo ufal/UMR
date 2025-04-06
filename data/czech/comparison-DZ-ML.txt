@@ -711,9 +711,11 @@ Correct 43 out of 50 non-empty DZ values => precision 86%.
 SUMMARY:
 Number of nodes per file: DZ:69, ML:71
 File-to-file node mapping:
-Out of 69 total DZ nodes, 66 mapped to ML (0 ambiguously) => recall    = 96%.
-Out of 71 total ML nodes, 66 mapped to DZ (0 ambiguously) => precision = 93%.
+Out of 69 total DZ nodes, 66 mapped to ML => recall    = 96%.
+Out of 71 total ML nodes, 66 mapped to DZ => precision = 93%.
  => F₁(DZ,ML) = 94%.
+Before symmetrization, 1 DZ nodes were projected ambiguously to 2 ML nodes.
+Before symmetrization, 0 ML nodes were projected ambiguously to 0 DZ nodes.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
 Out of 226 non-empty DZ values, 197 found in ML => recall    87%.
 Out of 232 non-empty ML values, 197 found in DZ => precision 85%.
