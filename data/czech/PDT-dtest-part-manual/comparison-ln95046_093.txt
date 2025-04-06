@@ -459,7 +459,12 @@ Node ML s4n4 / name                               mismatch in concept:         M
 Node ML s4n4 / name                               mismatch in :op1:            ML = "parlament"      HH = UNMAPPED        
 Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"       HH =                 
 Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =                  HH = singular        
-Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML = s4h3 unmapped    HH = s4h3            
+Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML = s4h1 unmapped    HH =                 
+Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML = s4h2 unmapped    HH =                 
+Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML = s4h3 unmapped    HH =                 
+Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML =                  HH = s4h1            
+Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML =                  HH = s4h2            
+Node ML s4p2 / person (Pavel Severa)              mismatch in :ARG1-of:        ML =                  HH = s4h3            
 Node ML s4p4 / organization                       mismatch in :name:           ML = s4n4 unmapped    HH =                 
 Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"       HH =                 
 Node ML s4s2 / schůze                             mismatch in concept:         ML = schůze           HH = UNMAPPED        
@@ -486,8 +491,8 @@ Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:          
 Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance      ML = UNMAPPED        
 Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED        
 
-Correct 28 out of 52 non-empty ML values => recall    54%.
-Correct 28 out of 51 non-empty HH values => precision 55%.
+Correct 29 out of 55 non-empty ML values => recall    53%.
+Correct 29 out of 54 non-empty HH values => precision 54%.
 
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s4a2 / after (po)                         mismatch in :op1:            HH = s4s1 unmapped    ML = s4s2      
@@ -507,7 +512,12 @@ Node HH s4h3 / have-org-role-91                   mismatch in :aspect:         H
 Node HH s4h3 / have-org-role-91                   mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED  
 Node HH s4o2 / organization                       mismatch in :name:           HH =                  ML = s4n4      
 Node HH s4o2 / organization                       mismatch in :wiki:           HH =                  ML = "Q2347172"
-Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH = s4h3 unmapped    ML = s4h3      
+Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH = s4h1 unmapped    ML =           
+Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH = s4h2 unmapped    ML =           
+Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH = s4h3 unmapped    ML =           
+Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH =                  ML = s4h1      
+Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH =                  ML = s4h2      
+Node HH s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        HH =                  ML = s4h3      
 Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :refer-number:   HH = singular         ML =           
 Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :wiki:           HH =                  ML = "Q1142687"
 Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001     ML = UNMAPPED  
@@ -536,8 +546,8 @@ Node ML s4s2 / schůze                             mismatch in concept:         
 Node ML s4s2 / schůze                             mismatch in :mod:            ML = s4o1             HH = UNMAPPED  
 Node ML s4s2 / schůze                             mismatch in :refer-number:   ML = singular         HH = UNMAPPED  
 
-Correct 28 out of 51 non-empty HH values => recall    55%.
-Correct 28 out of 52 non-empty ML values => precision 54%.
+Correct 29 out of 54 non-empty HH values => recall    54%.
+Correct 29 out of 55 non-empty ML values => precision 53%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -699,6 +709,6 @@ Out of 67 total HH nodes, 63 mapped to ML => precision = 94%.
 Before symmetrization, 1 ML nodes were projected ambiguously to 2 HH nodes.
 Before symmetrization, 0 HH nodes were projected ambiguously to 0 ML nodes.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 223 non-empty ML values, 180 found in HH => recall    81%.
-Out of 220 non-empty HH values, 180 found in ML => precision 82%.
+Out of 226 non-empty ML values, 181 found in HH => recall    80%.
+Out of 223 non-empty HH values, 181 found in ML => precision 81%.
  => juːmæʧ (ML, HH) = F₁ = 81%.

@@ -316,7 +316,7 @@ Correspondence ML s2z3 (v souvislosti se zařazením) = HH s2z3 (v souvislosti s
 Aligned 14 out of 16 ML nodes, that is 88%.
 
 Ambiguous projection of HH node s2m1 (magazínu Duha) to 2 ML nodes [s2m1 (magazínu), s2n1 (Duha)]
-  The winner is HH node s2m1 (magazínu Duha) <--> ML node s2m1 (magazínu): econcepts=magazine/magazín, match=2.
+  The winner is HH node s2m1 (magazínu Duha) <--> ML node s2m1 (magazínu): econcepts=magazine/magazín, match=3.
 
 Correspondence HH s2b1 (barevného)                  = ML s2b1 (barevného)                 
 Correspondence HH s2c1 (Celý)                       = ML s2c1 (Celý)                      
@@ -384,8 +384,8 @@ Node HH s2t2 / temporal-quantity                        mismatch in :extent:    
 Node HH s2t2 / temporal-quantity                        mismatch in :refer-number:   HH = singular               ML = UNMAPPED     
 Node HH s2t2 / temporal-quantity                        mismatch in :unit:           HH = s2r1                   ML = UNMAPPED     
 
-Correct 35 out of 56 non-empty ML values => recall    63%.
-Correct 35 out of 65 non-empty HH values => precision 54%.
+Correct 36 out of 57 non-empty ML values => recall    63%.
+Correct 36 out of 66 non-empty HH values => precision 55%.
 
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s2h1 / have-role-91                             mismatch in concept:         HH = have-role-91           ML = UNMAPPED  
@@ -431,8 +431,8 @@ Node ML s2p0 / person                                   mismatch in concept:    
 Node ML s2p0 / person                                   mismatch in :refer-number:   ML = plural                 HH = UNMAPPED  
 Node ML s2p0 / person                                   mismatch in :refer-person:   ML = 1st                    HH = UNMAPPED  
 
-Correct 35 out of 65 non-empty HH values => recall    54%.
-Correct 35 out of 56 non-empty ML values => precision 63%.
+Correct 36 out of 66 non-empty HH values => recall    55%.
+Correct 36 out of 57 non-empty ML values => precision 63%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 3:
@@ -671,7 +671,8 @@ Node ML s4p2 / pondělí                                    mismatch in concept:
 Node ML s4r2 / date-interval                              mismatch in :op1:            ML = s4d1 mapped to HH s4p4 HH = s4d3    
 Node ML s4r2 / date-interval                              mismatch in :op2:            ML = s4d2 mapped to HH s4c2 HH = s4d4    
 Node ML s4s2 / stát-014                                   mismatch in :clausal-marker: ML = s4p1 mapped to HH s4p3 HH =         
-Node ML s4s2 / stát-014                                   mismatch in :temporal:       ML = s4d3 mapped to HH s4s4 HH = s4d1    
+Node ML s4s2 / stát-014                                   mismatch in :temporal:       ML = s4d3 mapped to HH s4s4 HH =         
+Node ML s4s2 / stát-014                                   mismatch in :temporal:       ML =                        HH = s4d5    
 Node ML s4s3 / sobota                                     mismatch in concept:         ML = sobota                 HH = UNMAPPED
 Node HH s4d3 / date-entity                                mismatch in concept:         HH = date-entity            ML = UNMAPPED
 Node HH s4d3 / date-entity                                mismatch in :weekday:        HH = s4p4                   ML = UNMAPPED
@@ -682,43 +683,44 @@ Node HH s4d5 / date-entity                                mismatch in :weekday: 
 Node HH s4k1 / koruna (korun korun)                       mismatch in concept:         HH = koruna                 ML = UNMAPPED
 Node HH s4p1 / poslední (posledního)                      mismatch in concept:         HH = poslední               ML = UNMAPPED
 
-Correct 29 out of 46 non-empty ML values => recall    63%.
-Correct 29 out of 51 non-empty HH values => precision 57%.
+Correct 31 out of 48 non-empty ML values => recall    65%.
+Correct 31 out of 53 non-empty HH values => precision 58%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s4c2 / čtvrtek (do čtvrtka)       mismatch in concept:         HH = čtvrtek                ML = date-entity
-Node HH s4c2 / čtvrtek (do čtvrtka)       mismatch in :refer-number:   HH = singular               ML =            
-Node HH s4c2 / čtvrtek (do čtvrtka)       mismatch in :weekday:        HH =                        ML = s4c2       
-Node HH s4d1 / date-entity (Od čtvrtletí) mismatch in :quarter:        HH = s4p1 unmapped          ML = 4          
-Node HH s4d1 / date-entity (Od čtvrtletí) mismatch in :refer-number:   HH = singular               ML =            
-Node HH s4d2 / date-interval              mismatch in :op1:            HH = s4d3 unmapped          ML = s4d1       
-Node HH s4d2 / date-interval              mismatch in :op2:            HH = s4d4 unmapped          ML = s4d2       
-Node HH s4d3 / date-entity                mismatch in concept:         HH = date-entity            ML = UNMAPPED   
-Node HH s4d3 / date-entity                mismatch in :weekday:        HH = s4p4                   ML = UNMAPPED   
-Node HH s4d4 / date-entity                mismatch in concept:         HH = date-entity            ML = UNMAPPED   
-Node HH s4d4 / date-entity                mismatch in :weekday:        HH = s4c2                   ML = UNMAPPED   
-Node HH s4d5 / date-entity                mismatch in concept:         HH = date-entity            ML = UNMAPPED   
-Node HH s4d5 / date-entity                mismatch in :weekday:        HH = s4s4                   ML = UNMAPPED   
-Node HH s4k1 / koruna (korun korun)       mismatch in concept:         HH = koruna                 ML = UNMAPPED   
-Node HH s4m1 / monetary-quantity (pět)    mismatch in :unit:           HH = s4k1 unmapped          ML = s4k2       
-Node HH s4m2 / monetary-quantity (šest)   mismatch in :unit:           HH = s4k1 unmapped          ML = s4k2       
-Node HH s4n1 / news-media (Lidové noviny) mismatch in :refer-number:   HH = plural                 ML =            
-Node HH s4p1 / poslední (posledního)      mismatch in concept:         HH = poslední               ML = UNMAPPED   
-Node HH s4p4 / pondělek (od pondělka)     mismatch in concept:         HH = pondělek               ML = date-entity
-Node HH s4p4 / pondělek (od pondělka)     mismatch in :refer-number:   HH = singular               ML =            
-Node HH s4p4 / pondělek (od pondělka)     mismatch in :weekday:        HH =                        ML = s4p2       
-Node HH s4s2 / stát-014                   mismatch in :temporal:       HH = s4d1 mapped to ML s4c1 ML = s4d3       
-Node HH s4s2 / stát-014                   mismatch in :clausal-marker: HH =                        ML = s4p1       
-Node HH s4s4 / sobota (v sobotu)          mismatch in concept:         HH = sobota                 ML = date-entity
-Node HH s4s4 / sobota (v sobotu)          mismatch in :refer-number:   HH = singular               ML =            
-Node HH s4s4 / sobota (v sobotu)          mismatch in :weekday:        HH =                        ML = s4s3       
-Node ML s4c2 / čtvrtek                    mismatch in concept:         ML = čtvrtek                HH = UNMAPPED   
-Node ML s4k2 / CZK                        mismatch in concept:         ML = CZK                    HH = UNMAPPED   
-Node ML s4p2 / pondělí                    mismatch in concept:         ML = pondělí                HH = UNMAPPED   
-Node ML s4s3 / sobota                     mismatch in concept:         ML = sobota                 HH = UNMAPPED   
+Node HH s4c2 / čtvrtek (do čtvrtka)       mismatch in concept:         HH = čtvrtek       ML = date-entity
+Node HH s4c2 / čtvrtek (do čtvrtka)       mismatch in :refer-number:   HH = singular      ML =            
+Node HH s4c2 / čtvrtek (do čtvrtka)       mismatch in :weekday:        HH =               ML = s4c2       
+Node HH s4d1 / date-entity (Od čtvrtletí) mismatch in :quarter:        HH = s4p1 unmapped ML = 4          
+Node HH s4d1 / date-entity (Od čtvrtletí) mismatch in :refer-number:   HH = singular      ML =            
+Node HH s4d2 / date-interval              mismatch in :op1:            HH = s4d3 unmapped ML = s4d1       
+Node HH s4d2 / date-interval              mismatch in :op2:            HH = s4d4 unmapped ML = s4d2       
+Node HH s4d3 / date-entity                mismatch in concept:         HH = date-entity   ML = UNMAPPED   
+Node HH s4d3 / date-entity                mismatch in :weekday:        HH = s4p4          ML = UNMAPPED   
+Node HH s4d4 / date-entity                mismatch in concept:         HH = date-entity   ML = UNMAPPED   
+Node HH s4d4 / date-entity                mismatch in :weekday:        HH = s4c2          ML = UNMAPPED   
+Node HH s4d5 / date-entity                mismatch in concept:         HH = date-entity   ML = UNMAPPED   
+Node HH s4d5 / date-entity                mismatch in :weekday:        HH = s4s4          ML = UNMAPPED   
+Node HH s4k1 / koruna (korun korun)       mismatch in concept:         HH = koruna        ML = UNMAPPED   
+Node HH s4m1 / monetary-quantity (pět)    mismatch in :unit:           HH = s4k1 unmapped ML = s4k2       
+Node HH s4m2 / monetary-quantity (šest)   mismatch in :unit:           HH = s4k1 unmapped ML = s4k2       
+Node HH s4n1 / news-media (Lidové noviny) mismatch in :refer-number:   HH = plural        ML =            
+Node HH s4p1 / poslední (posledního)      mismatch in concept:         HH = poslední      ML = UNMAPPED   
+Node HH s4p4 / pondělek (od pondělka)     mismatch in concept:         HH = pondělek      ML = date-entity
+Node HH s4p4 / pondělek (od pondělka)     mismatch in :refer-number:   HH = singular      ML =            
+Node HH s4p4 / pondělek (od pondělka)     mismatch in :weekday:        HH =               ML = s4p2       
+Node HH s4s2 / stát-014                   mismatch in :temporal:       HH = s4d5 unmapped ML =            
+Node HH s4s2 / stát-014                   mismatch in :clausal-marker: HH =               ML = s4p1       
+Node HH s4s2 / stát-014                   mismatch in :temporal:       HH =               ML = s4d3       
+Node HH s4s4 / sobota (v sobotu)          mismatch in concept:         HH = sobota        ML = date-entity
+Node HH s4s4 / sobota (v sobotu)          mismatch in :refer-number:   HH = singular      ML =            
+Node HH s4s4 / sobota (v sobotu)          mismatch in :weekday:        HH =               ML = s4s3       
+Node ML s4c2 / čtvrtek                    mismatch in concept:         ML = čtvrtek       HH = UNMAPPED   
+Node ML s4k2 / CZK                        mismatch in concept:         ML = CZK           HH = UNMAPPED   
+Node ML s4p2 / pondělí                    mismatch in concept:         ML = pondělí       HH = UNMAPPED   
+Node ML s4s3 / sobota                     mismatch in concept:         ML = sobota        HH = UNMAPPED   
 
-Correct 29 out of 51 non-empty HH values => recall    57%.
-Correct 29 out of 46 non-empty ML values => precision 63%.
+Correct 31 out of 53 non-empty HH values => recall    58%.
+Correct 31 out of 48 non-empty ML values => precision 65%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -787,14 +789,14 @@ Node ML s5n1 / noviny                   mismatch in :refer-number: ML = singular
 Node ML s5p1 / date-entity (pátečního)  mismatch in concept:       ML = date-entity            HH = páteční 
 Node ML s5p1 / date-entity (pátečního)  mismatch in :weekday:      ML = s5p2 unmapped          HH =         
 Node ML s5p2 / pátek                    mismatch in concept:       ML = pátek                  HH = UNMAPPED
-Node ML s5v1 / vydání (vydání)          mismatch in :mod:          ML = s5n1 unmapped          HH = s5p1    
+Node ML s5v1 / vydání (vydání)          mismatch in :mod:          ML = s5n1 unmapped          HH =         
 Node ML s5x1 / monetary-quantity (6.50) mismatch in :quant:        ML = 6.5                    HH = 6.50    
 Node ML s5x1 / monetary-quantity (6.50) mismatch in :unit:         ML = s5k2 unmapped          HH =         
 Node ML s5z1 / zůstávat-004 (zůstává)   mismatch in :ARG1:         ML = s5c1 mapped to HH s5c1 HH =         
 Node ML s5z1 / zůstávat-004 (zůstává)   mismatch in :ARG0:         ML =                        HH = s5c1    
 
-Correct 13 out of 23 non-empty ML values => recall    57%.
-Correct 13 out of 18 non-empty HH values => precision 72%.
+Correct 14 out of 24 non-empty ML values => recall    58%.
+Correct 14 out of 18 non-empty HH values => precision 78%.
 
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s5i1 / identity-91              mismatch in :refer-number: HH = singular               ML =            
@@ -802,7 +804,7 @@ Node HH s5m1 / monetary-quantity (6.50) mismatch in :quant:        HH = 6.50    
 Node HH s5m1 / monetary-quantity (6.50) mismatch in :unit:         HH =                        ML = s5k2       
 Node HH s5p1 / páteční (pátečního)      mismatch in concept:       HH = páteční                ML = date-entity
 Node HH s5p1 / páteční (pátečního)      mismatch in :weekday:      HH =                        ML = s5p2       
-Node HH s5v1 / vydání (vydání)          mismatch in :mod:          HH = s5p1 mapped to ML s5p1 ML = s5n1       
+Node HH s5v1 / vydání (vydání)          mismatch in :mod:          HH =                        ML = s5n1       
 Node HH s5z1 / zůstávat-004 (zůstává)   mismatch in :ARG0:         HH = s5c1 mapped to ML s5c1 ML =            
 Node HH s5z1 / zůstávat-004 (zůstává)   mismatch in :ARG1:         HH =                        ML = s5c1       
 Node ML s5k2 / CZK                      mismatch in concept:       ML = CZK                    HH = UNMAPPED   
@@ -810,8 +812,8 @@ Node ML s5n1 / noviny                   mismatch in concept:       ML = noviny  
 Node ML s5n1 / noviny                   mismatch in :refer-number: ML = singular               HH = UNMAPPED   
 Node ML s5p2 / pátek                    mismatch in concept:       ML = pátek                  HH = UNMAPPED   
 
-Correct 13 out of 18 non-empty HH values => recall    72%.
-Correct 13 out of 23 non-empty ML values => precision 57%.
+Correct 14 out of 18 non-empty HH values => recall    78%.
+Correct 14 out of 24 non-empty ML values => precision 58%.
 
 -------------------------------------------------------------------------------
 SUMMARY:
@@ -823,6 +825,6 @@ Out of 71 total HH nodes, 59 mapped to ML => precision = 83%.
 Before symmetrization, 4 ML nodes were projected ambiguously to 9 HH nodes.
 Before symmetrization, 5 HH nodes were projected ambiguously to 10 ML nodes.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 213 non-empty ML values, 147 found in HH => recall    69%.
-Out of 226 non-empty HH values, 147 found in ML => precision 65%.
- => juːmæʧ (ML, HH) = F₁ = 67%.
+Out of 217 non-empty ML values, 151 found in HH => recall    70%.
+Out of 229 non-empty HH values, 151 found in ML => precision 66%.
+ => juːmæʧ (ML, HH) = F₁ = 68%.

@@ -236,7 +236,7 @@ sub parse_sentence_graph
                 (
                     'variable' => $variable,
                     'concept' => $concept,
-                    'relations' => {}
+                    'relations' => []
                 );
                 #print STDERR ("variable $variable concept $concept\n");
                 if(!defined($current_relation))
@@ -245,7 +245,8 @@ sub parse_sentence_graph
                 }
                 unless($current_relation eq 'START')
                 {
-                    $stack[-1]{relations}{$current_relation} = $variable;
+                    # A parent node may have several same-named outgoing relations to different children.
+                    push(@{$stack[-1]{relations}}, {'name' => $current_relation, 'value' => $variable});
                 }
                 $nodes{$variable} = \%node;
                 push(@stack, \%node);
@@ -270,7 +271,7 @@ sub parse_sentence_graph
                 {
                     confess("Missing relation for value $1 at line $iline of file $file->{label}");
                 }
-                $stack[-1]{relations}{$current_relation} = $value;
+                push(@{$stack[-1]{relations}}, {'name' => $current_relation, 'value' => $value});
                 $current_relation = undef;
             } # (
             elsif($cline =~ s/^\)//)
@@ -312,8 +313,7 @@ sub parse_sentence_graph
         my $econcept = $node->{concept};
         if($econcept eq 'name')
         {
-            my @opnames = grep {m/^:op[0-9]+$/} (sort(keys(%{$node->{relations}})));
-            my $name = join(' ', map {$node->{relations}{$_}} (@opnames));
+            my $name = join(' ', map {$_->{value}} (grep {$_->{name} =~ m/^:op[0-9]+$/} (sort {lc($a->{name}) cmp lc($b->{name})} (@{$node->{relations}}))));
             $econcept .= '['.$name.']';
         }
         $node->{econcept} = $econcept;
@@ -890,8 +890,9 @@ sub get_ambiguous_links_from_node
         }
         foreach my $cf (@cf)
         {
+            my $same_concept = $n->{econcept} eq $sentence1->{nodes}{$cf}{econcept};
             my $comparison = compare_two_nodes($n, $sentence0->{nodes}, $sentence1->{nodes}{$cf}, $sentence1->{nodes}, $label1);
-            push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'attribute_match' => $comparison->{correct}});
+            push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'same_concept' => $same_concept, 'attribute_match' => $comparison->{correct}});
         }
     }
     return @to_resolve;
@@ -911,11 +912,11 @@ sub compare_ambiguous_links
     my $a = shift; # hash reference
     my $b = shift; # hash reference
     my $r;
-    if($a->{srcnode}{econcept} eq $a->{tgtnode}{econcept} && $b->{srcnode}{econcept} ne $b->{tgtnode}{econcept})
+    if($a->{same_concept} && !$b->{same_concept})
     {
         $r = -10;
     }
-    elsif($a->{srcnode}{econcept} ne $a->{tgtnode}{econcept} && $b->{srcnode}{econcept} eq $b->{tgtnode}{econcept})
+    elsif(!$a->{same_concept} && $b->{same_concept})
     {
         $r = 10;
     }
@@ -1129,6 +1130,7 @@ sub compare_two_nodes
     my $node1 = shift; # hash reference (node object)
     my $nodes1 = shift; # hash reference, indexed by variables
     my $label1 = shift; # label of the file of $node1
+    my $weak = shift; # compare only names of relations (if strong, compare also mapped values and the concept)
     my $n_correct = 0;
     my @mismatches;
     # Collect attribute-value-modified value triples from both nodes.
@@ -1208,10 +1210,11 @@ sub get_node_attributes_mapped
     my @pairs;
     my $concept = $node->{concept};
     push(@pairs, ['concept', $concept, $concept]);
-    my @relations = sort(keys(%{$node->{relations}}));
+    my @relations = sort {lc($a->{name}) cmp lc($b->{name})} (@{$node->{relations}});
     foreach my $relation (@relations)
     {
-        my $value = $node->{relations}{$relation};
+        my $rname = $relation->{name};
+        my $value = $relation->{value};
         # We should not encounter any empty value but just in case...
         next if(!defined($value) || $value eq '');
         # If the value is the variable of another node, we must project it to the other file.
@@ -1228,21 +1231,21 @@ sub get_node_attributes_mapped
             if($nccf == 0)
             {
                 # The child node has no counterpart. Replace it with a non-variable UNMAPPED. We do not want the variable to match anything accidentally.
-                push(@pairs, [$relation, "$value unmapped", 'UNMAPPED']);
+                push(@pairs, [$rname, "$value unmapped", 'UNMAPPED']);
             }
             else
             {
                 my $ccf = join(', ', @ccf);
                 foreach my $other_variable (@ccf)
                 {
-                    push(@pairs, [$relation, "$value mapped to $other_label $ccf", $other_variable]);
+                    push(@pairs, [$rname, "$value mapped to $other_label $ccf", $other_variable]);
                 }
             }
         }
         else
         {
             # This is an ordinary attribute rather than a relation.
-            push(@pairs, [$relation, $value, $value]);
+            push(@pairs, [$rname, $value, $value]);
         }
     }
     return @pairs;
