@@ -680,6 +680,8 @@ sub compute_crossfile_node_references
         }
     }
     # Try to map unaligned nodes based on other criteria, such as concept equivalence.
+    # The way we do it may also introduce ambiguous projections, so symmetrization
+    # must be run afterwards.
     foreach my $file1 (@files)
     {
         my $sentence1 = $file1->{sentences}[$i_sentence];
@@ -720,6 +722,55 @@ sub compute_crossfile_node_references
             symmetrize_node_projection($files[$i], $files[$j], $i_sentence);
         }
     }
+    # There may be nodes that have no correspondence in the other file.
+    # Either they were unaligned to text and we did not manage to find them
+    # a counterpart in the block where we were looking at unaligned nodes, or
+    # they were aligned ambiguously and kicked out during symmetrization.
+    # We could either leave them unmapped (which might be for many of them the
+    # most reasonable thing to do) or we could try to map as many of them as
+    # possible, by using the symmetrization criteria again.
+    for(my $i = 0; $i <= $#files; $i++)
+    {
+        my $labeli = $files[$i]{label};
+        my $sentencei = $files[$i]{sentences}[$i_sentence];
+        my @nodesi = map {$sentencei->{nodes}{$_}} (sort(keys(%{$sentencei->{nodes}})));
+        for(my $j = $i+1; $j <= $#files; $j++)
+        {
+            my $labelj = $files[$j]{label};
+            my $sentencej = $files[$j]{sentences}[$i_sentence];
+            my @nodesj = map {$sentencej->{nodes}{$_}} (sort(keys(%{$sentencej->{nodes}})));
+            my @unmapped_i_to_j;
+            my @unmapped_j_to_i;
+            foreach my $nodei (@nodesi)
+            {
+                if(scalar(keys(%{$nodei->{crossfile}{$labelj}})) == 0)
+                {
+                    push(@unmapped_i_to_j, $nodei);
+                }
+            }
+            foreach my $nodej (@nodesj)
+            {
+                if(scalar(keys(%{$nodej->{crossfile}{$labeli}})) == 0)
+                {
+                    push(@unmapped_j_to_i, $nodej);
+                }
+            }
+            if(scalar(@unmapped_i_to_j) > 0 && scalar(@unmapped_j_to_i) > 0)
+            {
+                #printf("   $labeli to $labelj unmapped %d\n", scalar(@unmapped_i_to_j));
+                #printf("   $labelj to $labeli unmapped %d\n", scalar(@unmapped_j_to_i));
+                foreach my $uij (@unmapped_i_to_j)
+                {
+                    foreach my $uji (@unmapped_j_to_i)
+                    {
+                        #$uij->{crossfile}{$labelj}{$uji->{variable}}++;
+                        #$uji->{crossfile}{$labeli}{$uij->{variable}}++;
+                    }
+                }
+                symmetrize_node_projection($files[$i], $files[$j], $i_sentence, 1);
+            }
+        }
+    }
     # Update the statistics about cross-file node mappings.
     foreach my $file1 (@files)
     {
@@ -751,6 +802,7 @@ sub symmetrize_node_projection
     my $file0 = shift;
     my $file1 = shift;
     my $i_sentence = shift;
+    my $do_not_record_ambiguity = shift; # turn recording off if using this function to project the remainder
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
     my $sentence0 = $file0->{sentences}[$i_sentence];
@@ -762,12 +814,12 @@ sub symmetrize_node_projection
         my @to_resolve = ();
         foreach my $variable (@variables0)
         {
-            my @new_to_resolve = get_ambiguous_links_from_node($label0, $sentence0, $variable, $label1, $sentence1);
+            my @new_to_resolve = get_ambiguous_links_from_node($label0, $sentence0, $variable, $label1, $sentence1, $do_not_record_ambiguity);
             push(@to_resolve, @new_to_resolve) if(scalar(@new_to_resolve));
         }
         foreach my $variable (@variables1)
         {
-            my @new_to_resolve = get_ambiguous_links_from_node($label1, $sentence1, $variable, $label0, $sentence0);
+            my @new_to_resolve = get_ambiguous_links_from_node($label1, $sentence1, $variable, $label0, $sentence0, $do_not_record_ambiguity);
             push(@to_resolve, @new_to_resolve) if(scalar(@new_to_resolve));
         }
         my $n_to_resolve = scalar(@to_resolve);
@@ -781,7 +833,7 @@ sub symmetrize_node_projection
         # For diagnostic purposes, record the winning link including its scores
         # at the source node. (We could compute the score again when printing,
         # but why not remember it if we already have it.)
-        $winner->{srcnode}{winning_cf}{$winner->{tgtlabel}} = $winner;
+        $winner->{srcnode}{winning_cf}{$winner->{tgtlabel}} = $winner unless($do_not_record_ambiguity);
         # Now we have to recompute @to_resolve because we may have kicked out many links.
     }
 }
@@ -800,6 +852,7 @@ sub get_ambiguous_links_from_node
     my $variable = shift;
     my $label1 = shift;
     my $sentence1 = shift;
+    my $do_not_record_ambiguity = shift; # turn recording off if using this function to project the remainder
     my $n = $sentence0->{nodes}{$variable};
     my @cf = sort(keys(%{$n->{crossfile}{$label1}}));
     # Purge the links. Remove those whose symmetric link is no longer available.
@@ -821,7 +874,7 @@ sub get_ambiguous_links_from_node
         # If this is the first round of removing ambiguous links of a node,
         # remember the links before they are removed, so we can later report
         # on them.
-        if(!exists($n->{original_ambiguous_cf}{$label1}))
+        if(!$do_not_record_ambiguity && !exists($n->{original_ambiguous_cf}{$label1}))
         {
             $n->{original_ambiguous_cf}{$label1} = \@cf;
         }
@@ -930,10 +983,21 @@ sub compare_node_correspondences
         my $n0 = $sentence0->{nodes}{$f0var};
         my $t0 = $n0->{aligned_text} || $n0->{econcept};
         my @cf1 = sort(keys(%{$n0->{crossfile}{$label1}}));
-        my $aligned = scalar(@cf1) > 0;
-        my $cf1 = join(', ', @cf1) || ''; # we could put '???' here but it does not catch the eye
-        push(@table, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1"]);
-        $n_aligned++ if($aligned);
+        my $ncf1 = scalar(@cf1);
+        # Since we symmetrize projections, $ncf1 should be either 1 or 0.
+        # But let's keep this function prepared for ambiguous projections, too.
+        if($ncf1 == 1)
+        {
+            my $n1 = $sentence1->{nodes}{$cf1[0]};
+            my $t1 = $n1->{aligned_text} || $n1->{econcept};
+            push(@table, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1[0]", "($t1)"]);
+        }
+        else
+        {
+            my $cf1 = join(', ', @cf1) || ''; # we could put '???' here but it does not catch the eye
+            push(@table, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1"]);
+        }
+        $n_aligned++ if($ncf1 > 0);
         $n_total++;
     }
     print_table(@table);
