@@ -1136,62 +1136,84 @@ sub compare_two_nodes
     my $nodes1 = shift; # hash reference, indexed by variables
     my $label1 = shift; # label of the file of $node1
     my $weak = shift; # compare only names of relations (if strong, compare also mapped values and the concept)
+    my $n_total_0 = 0;
+    my $n_total_1 = 0;
     my $n_correct = 0;
     my @mismatches;
-    # Collect attribute-value-modified value triples from both nodes.
-    # Modified value applies to node variables, which have to be translated to the other file.
-    my @pairs0 = $weak ? map {[$_->{name}, '', '']} (sort {lc($a->{name}) cmp lc($b->{name})} (@{$node0->{relations}})) : get_node_attributes_mapped($node0, $nodes0, $label1);
-    my $n_total_0 = scalar(@pairs0);
-    if(!defined($node1))
+    if($weak)
     {
+        my @rnames0 = map {$_->{name}} (@{$node0->{relations}});
+        my @rnames1 = map {$_->{name}} (@{$node1->{relations}});
+        $n_total_0 = scalar(@rnames0);
+        $n_total_1 = scalar(@rnames1);
+        my %rnames1;
+        map {$rnames1{$_}++} (@rnames1);
+        foreach my $rn0 (@rnames0)
+        {
+            if($rnames1{$rn0} > 0)
+            {
+                $n_correct++;
+                $rnames1{$rn0}--;
+            }
+        }
+    }
+    else # strong, i.e., compare both names and values
+    {
+        # Collect attribute-value-modified value triples from both nodes.
+        # Modified value applies to node variables, which have to be translated to the other file.
+        my @pairs0 = get_node_attributes_mapped($node0, $nodes0, $label1);
+        $n_total_0 = scalar(@pairs0);
+        if(!defined($node1))
+        {
+            foreach my $p0 (@pairs0)
+            {
+                push(@mismatches, [$p0->[0], $p0->[1], 'UNMAPPED']);
+            }
+            return {'total0' => $n_total_0, 'total1' => 0, 'correct' => $n_correct, 'mismatches' => \@mismatches};
+        }
+        my @pairs1 = get_node_attributes_mapped($node1, $nodes1, undef);
+        $n_total_1 = scalar(@pairs1);
+        # How many pairs are found in both nodes?
         foreach my $p0 (@pairs0)
         {
-            push(@mismatches, [$p0->[0], $p0->[1], 'UNMAPPED']);
-        }
-        return {'total0' => $n_total_0, 'total1' => 0, 'correct' => $n_correct, 'mismatches' => \@mismatches};
-    }
-    my @pairs1 = $weak ? map {[$_->{name}, '', '']} (sort {lc($a->{name}) cmp lc($b->{name})} (@{$node1->{relations}})) : get_node_attributes_mapped($node1, $nodes1, undef);
-    my $n_total_1 = scalar(@pairs1);
-    # How many pairs are found in both nodes?
-    foreach my $p0 (@pairs0)
-    {
-        # Compare modified value (->[2]) from $p0 with unmodified value (->[1]) from $p1.
-        my $found = scalar(grep {$_->[0] eq $p0->[0] && $_->[1] eq $p0->[2]} (@pairs1));
-        if($found)
-        {
-            $n_correct++;
-        }
-        else
-        {
-            # If the other node does not have this attribute with any value, show a single-way mismatch here.
-            # If the other node has exactly one such attribute but with a different value, show a merged mismatch on one line.
-            # If the other node has multiple such attributes, all with unmatching values, show a single-way mismatch here and leave the opposite ways for later.
-            my @same_attribute0 = grep {$_->[0] eq $p0->[0]} (@pairs0);
-            my @same_attribute1 = grep {$_->[0] eq $p0->[0]} (@pairs1);
-            if(scalar(@same_attribute0) == 1 && scalar(@same_attribute1) == 1)
+            # Compare modified value (->[2]) from $p0 with unmodified value (->[1]) from $p1.
+            my $found = scalar(grep {$_->[0] eq $p0->[0] && $_->[1] eq $p0->[2]} (@pairs1));
+            if($found)
             {
-                push(@mismatches, [$p0->[0], $p0->[1], $same_attribute1[0][1]]);
+                $n_correct++;
             }
             else
             {
-                push(@mismatches, [$p0->[0], $p0->[1], '']);
+                # If the other node does not have this attribute with any value, show a single-way mismatch here.
+                # If the other node has exactly one such attribute but with a different value, show a merged mismatch on one line.
+                # If the other node has multiple such attributes, all with unmatching values, show a single-way mismatch here and leave the opposite ways for later.
+                my @same_attribute0 = grep {$_->[0] eq $p0->[0]} (@pairs0);
+                my @same_attribute1 = grep {$_->[0] eq $p0->[0]} (@pairs1);
+                if(scalar(@same_attribute0) == 1 && scalar(@same_attribute1) == 1)
+                {
+                    push(@mismatches, [$p0->[0], $p0->[1], $same_attribute1[0][1]]);
+                }
+                else
+                {
+                    push(@mismatches, [$p0->[0], $p0->[1], '']);
+                }
             }
         }
-    }
-    # We already know the counts needed for precision and recall but we have not
-    # collected the remaining mismatches from the other node.
-    foreach my $p1 (@pairs1)
-    {
-        # Compare modified value (->[2]) from $p0 with unmodified value (->[1]) from $p1.
-        my $found = scalar(grep {$_->[0] eq $p1->[0] && $_->[2] eq $p1->[1]} (@pairs0));
-        if(!$found)
+        # We already know the counts needed for precision and recall but we have not
+        # collected the remaining mismatches from the other node.
+        foreach my $p1 (@pairs1)
         {
-            # Skip the merged mismatches that have been already reported. Report the rest.
-            my @same_attribute0 = grep {$_->[0] eq $p1->[0]} (@pairs0);
-            my @same_attribute1 = grep {$_->[0] eq $p1->[0]} (@pairs1);
-            if(scalar(@same_attribute0) != 1 || scalar(@same_attribute1) != 1)
+            # Compare modified value (->[2]) from $p0 with unmodified value (->[1]) from $p1.
+            my $found = scalar(grep {$_->[0] eq $p1->[0] && $_->[2] eq $p1->[1]} (@pairs0));
+            if(!$found)
             {
-                push(@mismatches, [$p1->[0], '', $p1->[1]]);
+                # Skip the merged mismatches that have been already reported. Report the rest.
+                my @same_attribute0 = grep {$_->[0] eq $p1->[0]} (@pairs0);
+                my @same_attribute1 = grep {$_->[0] eq $p1->[0]} (@pairs1);
+                if(scalar(@same_attribute0) != 1 || scalar(@same_attribute1) != 1)
+                {
+                    push(@mismatches, [$p1->[0], '', $p1->[1]]);
+                }
             }
         }
     }
