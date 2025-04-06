@@ -1139,11 +1139,12 @@ sub compare_two_nodes
     my $n_total_0 = 0;
     my $n_total_1 = 0;
     my $n_correct = 0;
+    my @matches;
     my @mismatches;
     if($weak)
     {
         my @rnames0 = map {$_->{name}} (@{$node0->{relations}});
-        my @rnames1 = map {$_->{name}} (@{$node1->{relations}});
+        my @rnames1 = map {$_->{name}} (@{$node1->{relations}}); # will be empty if !defined($node1)
         $n_total_0 = scalar(@rnames0);
         $n_total_1 = scalar(@rnames1);
         my %rnames1;
@@ -1154,6 +1155,11 @@ sub compare_two_nodes
             {
                 $n_correct++;
                 $rnames1{$rn0}--;
+                push(@matches, [$rn0, 'WEAK', 'WEAK']);
+            }
+            else
+            {
+                push(@mismatches, [$rn0, 'WEAK', 'WEAK']);
             }
         }
     }
@@ -1181,6 +1187,15 @@ sub compare_two_nodes
             if($found)
             {
                 $n_correct++;
+                for(my $i = 0; $i <= $#pairs1; $i++)
+                {
+                    if($pairs1[$i][0] eq $p0->[0] && $pairs1[$i][1] eq $p0->[2])
+                    {
+                        splice(@pairs1, $i, 1);
+                        last;
+                    }
+                }
+                push(@matches, $p0);
             }
             else
             {

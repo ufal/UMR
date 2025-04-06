@@ -804,7 +804,6 @@ Node HH s5m1 / monetary-quantity (6.50) mismatch in :quant:        HH = 6.50    
 Node HH s5m1 / monetary-quantity (6.50) mismatch in :unit:         HH =                        ML = s5k2       
 Node HH s5p1 / páteční (pátečního)      mismatch in concept:       HH = páteční                ML = date-entity
 Node HH s5p1 / páteční (pátečního)      mismatch in :weekday:      HH =                        ML = s5p2       
-Node HH s5v1 / vydání (vydání)          mismatch in :mod:          HH =                        ML = s5n1       
 Node HH s5z1 / zůstávat-004 (zůstává)   mismatch in :ARG0:         HH = s5c1 mapped to ML s5c1 ML =            
 Node HH s5z1 / zůstávat-004 (zůstává)   mismatch in :ARG1:         HH =                        ML = s5c1       
 Node ML s5k2 / CZK                      mismatch in concept:       ML = CZK                    HH = UNMAPPED   
