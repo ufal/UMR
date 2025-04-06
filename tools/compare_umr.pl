@@ -892,7 +892,8 @@ sub get_ambiguous_links_from_node
         {
             my $same_concept = $n->{econcept} eq $sentence1->{nodes}{$cf}{econcept};
             my $comparison = compare_two_nodes($n, $sentence0->{nodes}, $sentence1->{nodes}{$cf}, $sentence1->{nodes}, $label1);
-            push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'same_concept' => $same_concept, 'attribute_match' => $comparison->{correct}});
+            my $weak_comparison = compare_two_nodes($n, $sentence0->{nodes}, $sentence1->{nodes}{$cf}, $sentence1->{nodes}, $label1, 1);
+            push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'same_concept' => $same_concept, 'attribute_match' => $comparison->{correct}, 'weak_attribute_match' => $weak_comparison->{correct}});
         }
     }
     return @to_resolve;
@@ -922,15 +923,19 @@ sub compare_ambiguous_links
     }
     else
     {
-        $r = 3*($b->{attribute_match} <=> $a->{attribute_match});
+        $r = 4*($b->{attribute_match} <=> $a->{attribute_match});
         unless($r)
         {
-            # Alignment to longer words is better (try to avoid aligning to function words).
-            $r = 2*(length($b->{srcnode}{aligned_text})+length($b->{tgtnode}{aligned_text}) <=> length($a->{srcnode}{aligned_text})+length($a->{tgtnode}{aligned_text}));
-            ###!!! This is the last resort and there should be better sorting criteria before.
+            $r = 3*($b->{weak_attribute_match} <=> $a->{weak_attribute_match});
             unless($r)
             {
-                $r = $a->{srcnode}{variable}.$a->{tgtnode}{variable} cmp $b->{srcnode}{variable}.$b->{tgtnode}{variable};
+                # Alignment to longer words is better (try to avoid aligning to function words).
+                $r = 2*(length($b->{srcnode}{aligned_text})+length($b->{tgtnode}{aligned_text}) <=> length($a->{srcnode}{aligned_text})+length($a->{tgtnode}{aligned_text}));
+                ###!!! This is the last resort and there should be better sorting criteria before.
+                unless($r)
+                {
+                    $r = $a->{srcnode}{variable}.$a->{tgtnode}{variable} cmp $b->{srcnode}{variable}.$b->{tgtnode}{variable};
+                }
             }
         }
     }
@@ -1135,7 +1140,7 @@ sub compare_two_nodes
     my @mismatches;
     # Collect attribute-value-modified value triples from both nodes.
     # Modified value applies to node variables, which have to be translated to the other file.
-    my @pairs0 = get_node_attributes_mapped($node0, $nodes0, $label1);
+    my @pairs0 = $weak ? map {[$_->{name}, '', '']} (sort {lc($a->{name}) cmp lc($b->{name})} (@{$node0->{relations}})) : get_node_attributes_mapped($node0, $nodes0, $label1);
     my $n_total_0 = scalar(@pairs0);
     if(!defined($node1))
     {
@@ -1145,7 +1150,7 @@ sub compare_two_nodes
         }
         return {'total0' => $n_total_0, 'total1' => 0, 'correct' => $n_correct, 'mismatches' => \@mismatches};
     }
-    my @pairs1 = get_node_attributes_mapped($node1, $nodes1, undef);
+    my @pairs1 = $weak ? map {[$_->{name}, '', '']} (sort {lc($a->{name}) cmp lc($b->{name})} (@{$node1->{relations}})) : get_node_attributes_mapped($node1, $nodes1, undef);
     my $n_total_1 = scalar(@pairs1);
     # How many pairs are found in both nodes?
     foreach my $p0 (@pairs0)
@@ -1259,7 +1264,7 @@ sub get_node_attributes_mapped
 sub ambiguous_link_as_string
 {
     my $al = shift; # hash reference
-    return node_as_string($al->{srclabel}, $al->{srcnode}).' <--> '.node_as_string($al->{tgtlabel}, $al->{tgtnode}).": econcepts=$al->{srcnode}{econcept}/$al->{tgtnode}{econcept}, match=$al->{attribute_match}";
+    return node_as_string($al->{srclabel}, $al->{srcnode}).' <--> '.node_as_string($al->{tgtlabel}, $al->{tgtnode}).": econcepts=$al->{srcnode}{econcept}/$al->{tgtnode}{econcept}, match=$al->{attribute_match}, weak match=$al->{weak_attribute_match}";
 }
 
 

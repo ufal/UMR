@@ -460,7 +460,7 @@ File ML: 4 nodes unaligned: s6i/include-91, s6n/name["Vlast"], s6p/person, s6p8/
 Node-node correspondences:
 
 Ambiguous projection of DZ node s6p2 (asi 20.5 procenta , což) to 2 ML nodes [s6a (asi), s6p2 (20.5 procenta což)]
-  The winner is DZ node s6p2 (asi 20.5 procenta , což) <--> ML node s6p2 (20.5 procenta což): econcepts=percentage-entity/percentage-entity, match=1.
+  The winner is DZ node s6p2 (asi 20.5 procenta , což) <--> ML node s6p2 (20.5 procenta což): econcepts=percentage-entity/percentage-entity, match=1, weak match=1.
 
 Correspondence DZ s6a  (asi)                                     = ML     
 Correspondence DZ s6b  (pro blok Vlast)                          = ML s6b  (pro blok Vlast)                       
