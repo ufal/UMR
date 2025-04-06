@@ -85,7 +85,7 @@ File HH: 5 nodes unaligned: s1c1/číst-002, s1i2/identity-91, s1p1/publication-
 Node-node correspondences:
 
 Ambiguous projection of ML node s1o1 (tomu jsme oznamovali) to 2 HH nodes [s1h1 (je tomu), s1o1 (jsme oznamovali)]
-  The winner is ML node s1o1 (tomu jsme oznamovali) <--> HH node s1o1 (jsme oznamovali): econcepts=oznamovat-002/oznamovat-002, match=5, weak match=5.
+  The winner is ML node s1o1 (tomu jsme oznamovali) <--> HH node s1o1 (jsme oznamovali): econcepts=oznamovat-002/oznamovat-002, match=5 (concept=oznamovat-002,:ARG0=s1p1 mapped to HH s1p4,:ARG1=s1i1 mapped to HH s1i1,:aspect=performance,:modal-strength=full-affirmative), weak match=6 (concept,:aspect,:modal-strength,:ARG0,:ARG1,:ARG2).
 
 Correspondence ML s1a  (and)                  = HH     
 Correspondence ML s1c1 (číst-002)             = HH s1c1 (číst-002)       
@@ -110,7 +110,7 @@ Aligned 15 out of 18 ML nodes, that is 83%.
 
 Ambiguous projection of HH node s1h1 (je tomu) to 2 ML nodes [s1h1 (je), s1o1 (tomu jsme oznamovali)]
 Ambiguous projection of HH node s1p5 (čtenáři vám) to 2 ML nodes [s1p2 (čtenáři), s1p3 (vám)]
-  The winner is HH node s1p5 (čtenáři vám) <--> ML node s1p2 (čtenáři): econcepts=person/person, match=3, weak match=2.
+  The winner is HH node s1p5 (čtenáři vám) <--> ML node s1p2 (čtenáři): econcepts=person/person, match=3 (concept=person,:ARG0-of=s1c1 mapped to ML s1c1,:refer-number=plural), weak match=3 (concept,:ARG0-of,:refer-number).
 
 Correspondence HH s1c1 (číst-002)          = ML s1c1 (číst-002)            
 Correspondence HH s1c2 (cena)              = ML s1c2 (cena)                
@@ -316,7 +316,7 @@ Correspondence ML s2z3 (v souvislosti se zařazením) = HH s2z3 (v souvislosti s
 Aligned 14 out of 16 ML nodes, that is 88%.
 
 Ambiguous projection of HH node s2m1 (magazínu Duha) to 2 ML nodes [s2m1 (magazínu), s2n1 (Duha)]
-  The winner is HH node s2m1 (magazínu Duha) <--> ML node s2m1 (magazínu): econcepts=magazine/magazín, match=3, weak match=4.
+  The winner is HH node s2m1 (magazínu Duha) <--> ML node s2m1 (magazínu): econcepts=magazine/magazín, match=3 (:mod=s2t1 mapped to ML s2t1,:mod=s2b1 mapped to ML s2b1,:refer-number=singular), weak match=5 (concept,:name,:mod,:mod,:refer-number).
 
 Correspondence HH s2b1 (barevného)                  = ML s2b1 (barevného)                 
 Correspondence HH s2c1 (Celý)                       = ML s2c1 (Celý)                      
@@ -600,9 +600,9 @@ Node-node correspondences:
 Ambiguous projection of ML node s4c1 (Od posledního čtvrtletí roku) to 3 HH nodes [s4d1 (Od čtvrtletí), s4l1 (letošního roku), s4p1 (posledního)]
 Ambiguous projection of ML node s4k1 (pět korun) to 2 HH nodes [s4k1 (korun korun), s4m1 (pět)]
 Ambiguous projection of ML node s4k3 (šest korun) to 2 HH nodes [s4k1 (korun korun), s4m2 (šest)]
-  The winner is ML node s4c1 (Od posledního čtvrtletí roku) <--> HH node s4d1 (Od čtvrtletí): econcepts=date-entity/date-entity, match=2, weak match=2.
-  The winner is ML node s4k1 (pět korun) <--> HH node s4m1 (pět): econcepts=monetary-quantity/monetary-quantity, match=2, weak match=2.
-  The winner is ML node s4k3 (šest korun) <--> HH node s4m2 (šest): econcepts=monetary-quantity/monetary-quantity, match=2, weak match=2.
+  The winner is ML node s4c1 (Od posledního čtvrtletí roku) <--> HH node s4d1 (Od čtvrtletí): econcepts=date-entity/date-entity, match=2 (concept=date-entity,:year=s4l1 mapped to HH s4l1), weak match=3 (concept,:quarter,:year).
+  The winner is ML node s4k1 (pět korun) <--> HH node s4m1 (pět): econcepts=monetary-quantity/monetary-quantity, match=2 (concept=monetary-quantity,:quant=5), weak match=3 (concept,:quant,:unit).
+  The winner is ML node s4k3 (šest korun) <--> HH node s4m2 (šest): econcepts=monetary-quantity/monetary-quantity, match=2 (concept=monetary-quantity,:quant=6), weak match=3 (concept,:quant,:unit).
 
 Correspondence ML s4a1 (a)                            = HH s4a1 (a)                      
 Correspondence ML s4c1 (Od posledního čtvrtletí roku) = HH s4d1 (Od čtvrtletí)           

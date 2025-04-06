@@ -893,7 +893,9 @@ sub get_ambiguous_links_from_node
             my $same_concept = $n->{econcept} eq $sentence1->{nodes}{$cf}{econcept};
             my $comparison = compare_two_nodes($n, $sentence0->{nodes}, $sentence1->{nodes}{$cf}, $sentence1->{nodes}, $label1);
             my $weak_comparison = compare_two_nodes($n, $sentence0->{nodes}, $sentence1->{nodes}{$cf}, $sentence1->{nodes}, $label1, 1);
-            push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'same_concept' => $same_concept, 'attribute_match' => $comparison->{correct}, 'weak_attribute_match' => $weak_comparison->{correct}});
+            my $strong_match = join(',', map {"$_->[0]=$_->[1]"} (@{$comparison->{matches}}));
+            my $weak_match = join(',', map {$_->[0]} (@{$weak_comparison->{matches}}));
+            push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'same_concept' => $same_concept, 'attribute_match' => $comparison->{correct}." ($strong_match)", 'weak_attribute_match' => $weak_comparison->{correct}." ($weak_match)"});
         }
     }
     return @to_resolve;
@@ -1143,8 +1145,8 @@ sub compare_two_nodes
     my @mismatches;
     if($weak)
     {
-        my @rnames0 = map {$_->{name}} (@{$node0->{relations}});
-        my @rnames1 = map {$_->{name}} (@{$node1->{relations}}); # will be empty if !defined($node1)
+        my @rnames0 = ('concept', map {$_->{name}} (@{$node0->{relations}}));
+        my @rnames1 = defined($node1) ? ('concept', map {$_->{name}} (@{$node1->{relations}})) : ();
         $n_total_0 = scalar(@rnames0);
         $n_total_1 = scalar(@rnames1);
         my %rnames1;
@@ -1175,7 +1177,7 @@ sub compare_two_nodes
             {
                 push(@mismatches, [$p0->[0], $p0->[1], 'UNMAPPED']);
             }
-            return {'total0' => $n_total_0, 'total1' => 0, 'correct' => $n_correct, 'mismatches' => \@mismatches};
+            return {'total0' => $n_total_0, 'total1' => 0, 'correct' => $n_correct, 'mismatches' => \@mismatches, 'matches' => \@matches};
         }
         my @pairs1 = get_node_attributes_mapped($node1, $nodes1, undef);
         $n_total_1 = scalar(@pairs1);
@@ -1232,7 +1234,7 @@ sub compare_two_nodes
             }
         }
     }
-    return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct, 'mismatches' => \@mismatches};
+    return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct, 'mismatches' => \@mismatches, 'matches' => \@matches};
 }
 
 

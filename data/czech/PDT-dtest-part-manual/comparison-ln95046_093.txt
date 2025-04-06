@@ -396,7 +396,7 @@ File HH: 6 nodes unaligned: s4h1/have-org-role-91, s4h2/have-org-role-91, s4h3/h
 Node-node correspondences:
 
 Ambiguous projection of ML node s4a (po schůzi) to 2 HH nodes [s4a2 (po), s4s1 (schůzi)]
-  The winner is ML node s4a (po schůzi) <--> HH node s4a2 (po): econcepts=after/after, match=1, weak match=1.
+  The winner is ML node s4a (po schůzi) <--> HH node s4a2 (po): econcepts=after/after, match=1 (concept=after), weak match=2 (concept,:op1).
 
 Correspondence ML s4a  (po schůzi)              = HH s4a2 (po)                    
 Correspondence ML s4c1 (člen)                   = HH s4c1 (člen)                  
