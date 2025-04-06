@@ -722,52 +722,62 @@ sub compute_crossfile_node_references
             symmetrize_node_projection($files[$i], $files[$j], $i_sentence);
         }
     }
-    # There may be nodes that have no correspondence in the other file.
-    # Either they were unaligned to text and we did not manage to find them
-    # a counterpart in the block where we were looking at unaligned nodes, or
-    # they were aligned ambiguously and kicked out during symmetrization.
-    # We could either leave them unmapped (which might be for many of them the
-    # most reasonable thing to do) or we could try to map as many of them as
-    # possible, by using the symmetrization criteria again.
-    for(my $i = 0; $i <= $#files; $i++)
+    ###!!! Turning the following block off. It would bring the score closer to
+    ###!!! smatch in mapping as many nodes as possible. Occasionally it would
+    ###!!! even pick up mapping that really makes sense (I saw one example with
+    ###!!! node meaning "asi" in the DZ-ML comparison of the Estonian file.)
+    ###!!! But most often it would pair nodes that have nothing to do with each
+    ###!!! other; if they share a relation, it is just a coincidence. And the
+    ###!!! node-by-node differences of attributes would be much less useful.
+    if(0)
     {
-        my $labeli = $files[$i]{label};
-        my $sentencei = $files[$i]{sentences}[$i_sentence];
-        my @nodesi = map {$sentencei->{nodes}{$_}} (sort(keys(%{$sentencei->{nodes}})));
-        for(my $j = $i+1; $j <= $#files; $j++)
+        # There may be nodes that have no correspondence in the other file.
+        # Either they were unaligned to text and we did not manage to find them
+        # a counterpart in the block where we were looking at unaligned nodes, or
+        # they were aligned ambiguously and kicked out during symmetrization.
+        # We could either leave them unmapped (which might be for many of them the
+        # most reasonable thing to do) or we could try to map as many of them as
+        # possible, by using the symmetrization criteria again.
+        for(my $i = 0; $i <= $#files; $i++)
         {
-            my $labelj = $files[$j]{label};
-            my $sentencej = $files[$j]{sentences}[$i_sentence];
-            my @nodesj = map {$sentencej->{nodes}{$_}} (sort(keys(%{$sentencej->{nodes}})));
-            my @unmapped_i_to_j;
-            my @unmapped_j_to_i;
-            foreach my $nodei (@nodesi)
+            my $labeli = $files[$i]{label};
+            my $sentencei = $files[$i]{sentences}[$i_sentence];
+            my @nodesi = map {$sentencei->{nodes}{$_}} (sort(keys(%{$sentencei->{nodes}})));
+            for(my $j = $i+1; $j <= $#files; $j++)
             {
-                if(scalar(keys(%{$nodei->{crossfile}{$labelj}})) == 0)
+                my $labelj = $files[$j]{label};
+                my $sentencej = $files[$j]{sentences}[$i_sentence];
+                my @nodesj = map {$sentencej->{nodes}{$_}} (sort(keys(%{$sentencej->{nodes}})));
+                my @unmapped_i_to_j;
+                my @unmapped_j_to_i;
+                foreach my $nodei (@nodesi)
                 {
-                    push(@unmapped_i_to_j, $nodei);
-                }
-            }
-            foreach my $nodej (@nodesj)
-            {
-                if(scalar(keys(%{$nodej->{crossfile}{$labeli}})) == 0)
-                {
-                    push(@unmapped_j_to_i, $nodej);
-                }
-            }
-            if(scalar(@unmapped_i_to_j) > 0 && scalar(@unmapped_j_to_i) > 0)
-            {
-                #printf("   $labeli to $labelj unmapped %d\n", scalar(@unmapped_i_to_j));
-                #printf("   $labelj to $labeli unmapped %d\n", scalar(@unmapped_j_to_i));
-                foreach my $uij (@unmapped_i_to_j)
-                {
-                    foreach my $uji (@unmapped_j_to_i)
+                    if(scalar(keys(%{$nodei->{crossfile}{$labelj}})) == 0)
                     {
-                        #$uij->{crossfile}{$labelj}{$uji->{variable}}++;
-                        #$uji->{crossfile}{$labeli}{$uij->{variable}}++;
+                        push(@unmapped_i_to_j, $nodei);
                     }
                 }
-                symmetrize_node_projection($files[$i], $files[$j], $i_sentence, 1);
+                foreach my $nodej (@nodesj)
+                {
+                    if(scalar(keys(%{$nodej->{crossfile}{$labeli}})) == 0)
+                    {
+                        push(@unmapped_j_to_i, $nodej);
+                    }
+                }
+                if(scalar(@unmapped_i_to_j) > 0 && scalar(@unmapped_j_to_i) > 0)
+                {
+                    #printf("   $labeli to $labelj unmapped %d\n", scalar(@unmapped_i_to_j));
+                    #printf("   $labelj to $labeli unmapped %d\n", scalar(@unmapped_j_to_i));
+                    foreach my $uij (@unmapped_i_to_j)
+                    {
+                        foreach my $uji (@unmapped_j_to_i)
+                        {
+                            $uij->{crossfile}{$labelj}{$uji->{variable}}++;
+                            $uji->{crossfile}{$labeli}{$uij->{variable}}++;
+                        }
+                    }
+                    symmetrize_node_projection($files[$i], $files[$j], $i_sentence, 1);
+                }
             }
         }
     }
