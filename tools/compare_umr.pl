@@ -594,16 +594,8 @@ sub compare_sentences
     {
         for(my $j = $i+1; $j <= $#sentences; $j++)
         {
-            unless($j == $i)
-            {
-                # So far the results are not completely symmetric, although
-                # usually they are. But if we want to see where they are not,
-                # we must run the comparison in both directions.
-                compare_node_correspondences($sentences[$i], $sentences[$j]);
-                compare_node_correspondences($sentences[$j], $sentences[$i]);
-                compare_node_attributes($sentences[$i], $sentences[$j]);
-                compare_node_attributes($sentences[$j], $sentences[$i]);
-            }
+            # Perform symmetric comparison of the two sentences.
+            compare_two_sentences($sentences[$i], $sentences[$j]);
         }
     }
 }
@@ -717,65 +709,11 @@ sub compute_crossfile_node_references
             symmetrize_node_projection($sentences[$i], $sentences[$j]);
         }
     }
-    ###!!! Turning the following block off. It would bring the score closer to
-    ###!!! smatch in mapping as many nodes as possible. Occasionally it would
-    ###!!! even pick up mapping that really makes sense (I saw one example with
-    ###!!! node meaning "asi" in the DZ-ML comparison of the Estonian file.)
-    ###!!! But most often it would pair nodes that have nothing to do with each
-    ###!!! other; if they share a relation, it is just a coincidence. And the
-    ###!!! node-by-node differences of attributes would be much less useful.
-    if(0)
-    {
-        # There may be nodes that have no correspondence in the other file.
-        # Either they were unaligned to text and we did not manage to find them
-        # a counterpart in the block where we were looking at unaligned nodes, or
-        # they were aligned ambiguously and kicked out during symmetrization.
-        # We could either leave them unmapped (which might be for many of them the
-        # most reasonable thing to do) or we could try to map as many of them as
-        # possible, by using the symmetrization criteria again.
-        for(my $i = 0; $i <= $#sentences; $i++)
-        {
-            my $labeli = $sentences[$i]{file}{label};
-            my $sentencei = $sentences[$i];
-            my @nodesi = map {$sentencei->{nodes}{$_}} (sort(keys(%{$sentencei->{nodes}})));
-            for(my $j = $i+1; $j <= $#sentences; $j++)
-            {
-                my $labelj = $sentences[$j]{file}{label};
-                my $sentencej = $sentences[$j];
-                my @nodesj = map {$sentencej->{nodes}{$_}} (sort(keys(%{$sentencej->{nodes}})));
-                my @unmapped_i_to_j;
-                my @unmapped_j_to_i;
-                foreach my $nodei (@nodesi)
-                {
-                    if(scalar(keys(%{$nodei->{crossfile}{$labelj}})) == 0)
-                    {
-                        push(@unmapped_i_to_j, $nodei);
-                    }
-                }
-                foreach my $nodej (@nodesj)
-                {
-                    if(scalar(keys(%{$nodej->{crossfile}{$labeli}})) == 0)
-                    {
-                        push(@unmapped_j_to_i, $nodej);
-                    }
-                }
-                if(scalar(@unmapped_i_to_j) > 0 && scalar(@unmapped_j_to_i) > 0)
-                {
-                    #printf("   $labeli to $labelj unmapped %d\n", scalar(@unmapped_i_to_j));
-                    #printf("   $labelj to $labeli unmapped %d\n", scalar(@unmapped_j_to_i));
-                    foreach my $uij (@unmapped_i_to_j)
-                    {
-                        foreach my $uji (@unmapped_j_to_i)
-                        {
-                            $uij->{crossfile}{$labelj}{$uji->{variable}}++;
-                            $uji->{crossfile}{$labeli}{$uij->{variable}}++;
-                        }
-                    }
-                    symmetrize_node_projection($sentences[$i], $sentences[$j], 1);
-                }
-            }
-        }
-    }
+    # Similarly to smatch, we could try to find mappings for as many remaining
+    # nodes as possible (i.e., there will be unmapped nodes only if one file
+    # has more nodes than the other). But it could create nonsensical mappings,
+    # so it is now turned off.
+    # find_correspondences_for_remaining_nodes(@sentences);
     # Update the statistics about cross-file node mappings.
     foreach my $sentence1 (@sentences)
     {
@@ -815,12 +753,12 @@ sub symmetrize_node_projection
         my @to_resolve = ();
         foreach my $variable (@variables0)
         {
-            my @new_to_resolve = get_ambiguous_links_from_node($label0, $sentence0, $variable, $label1, $sentence1, $do_not_record_ambiguity);
+            my @new_to_resolve = get_ambiguous_links_from_node($sentence0, $variable, $sentence1, $do_not_record_ambiguity);
             push(@to_resolve, @new_to_resolve) if(scalar(@new_to_resolve));
         }
         foreach my $variable (@variables1)
         {
-            my @new_to_resolve = get_ambiguous_links_from_node($label1, $sentence1, $variable, $label0, $sentence0, $do_not_record_ambiguity);
+            my @new_to_resolve = get_ambiguous_links_from_node($sentence1, $variable, $sentence0, $do_not_record_ambiguity);
             push(@to_resolve, @new_to_resolve) if(scalar(@new_to_resolve));
         }
         my $n_to_resolve = scalar(@to_resolve);
@@ -848,12 +786,12 @@ sub symmetrize_node_projection
 #------------------------------------------------------------------------------
 sub get_ambiguous_links_from_node
 {
-    my $label0 = shift;
     my $sentence0 = shift;
     my $variable = shift;
-    my $label1 = shift;
     my $sentence1 = shift;
     my $do_not_record_ambiguity = shift; # turn recording off if using this function to project the remainder
+    my $label0 = $sentence0->{file}{label};
+    my $label1 = $sentence1->{file}{label};
     my $n = $sentence0->{nodes}{$variable};
     my @cf = sort(keys(%{$n->{crossfile}{$label1}}));
     # Purge the links. Remove those whose symmetric link is no longer available.
@@ -937,9 +875,98 @@ sub compare_ambiguous_links
 
 
 
+#------------------------------------------------------------------------------
+# There may be nodes that have no correspondence in the other file.
+# Either they were unaligned to text and we did not manage to find them
+# a counterpart in the block where we were looking at unaligned nodes, or
+# they were aligned ambiguously and kicked out during symmetrization.
+# We could either leave them unmapped (which might be for many of them the
+# most reasonable thing to do) or we could try to map as many of them as
+# possible, by using the symmetrization criteria again. That is what this
+# function tries to do.
+#
+# Note: This will bring the final score closer to smatch in mapping as many
+# nodes as possible. Occasionally it may even pick up mapping that really makes
+# sense (I saw one example with a node meaning "asi" in the DZ-ML comparison of
+# the "Estonian" file). But most often it will pair nodes that have nothing to
+# do with each other; if they share a relation, it is a pure coincidence. And
+# the node-by-node differences of attributes will be much less informative.
+#------------------------------------------------------------------------------
+sub find_correspondences_for_remaining_nodes
+{
+    my @sentences = @_;
+    for(my $i = 0; $i <= $#sentences; $i++)
+    {
+        my $labeli = $sentences[$i]{file}{label};
+        my $sentencei = $sentences[$i];
+        my @nodesi = map {$sentencei->{nodes}{$_}} (sort(keys(%{$sentencei->{nodes}})));
+        for(my $j = $i+1; $j <= $#sentences; $j++)
+        {
+            my $labelj = $sentences[$j]{file}{label};
+            my $sentencej = $sentences[$j];
+            my @nodesj = map {$sentencej->{nodes}{$_}} (sort(keys(%{$sentencej->{nodes}})));
+            my @unmapped_i_to_j;
+            my @unmapped_j_to_i;
+            foreach my $nodei (@nodesi)
+            {
+                if(scalar(keys(%{$nodei->{crossfile}{$labelj}})) == 0)
+                {
+                    push(@unmapped_i_to_j, $nodei);
+                }
+            }
+            foreach my $nodej (@nodesj)
+            {
+                if(scalar(keys(%{$nodej->{crossfile}{$labeli}})) == 0)
+                {
+                    push(@unmapped_j_to_i, $nodej);
+                }
+            }
+            if(scalar(@unmapped_i_to_j) > 0 && scalar(@unmapped_j_to_i) > 0)
+            {
+                #printf("   $labeli to $labelj unmapped %d\n", scalar(@unmapped_i_to_j));
+                #printf("   $labelj to $labeli unmapped %d\n", scalar(@unmapped_j_to_i));
+                foreach my $uij (@unmapped_i_to_j)
+                {
+                    foreach my $uji (@unmapped_j_to_i)
+                    {
+                        $uij->{crossfile}{$labelj}{$uji->{variable}}++;
+                        $uji->{crossfile}{$labeli}{$uij->{variable}}++;
+                    }
+                }
+                # The last parameter (1) says that we do not want to record
+                # ambiguities in the file because this time they are artificial
+                # ambiguities that we created.
+                symmetrize_node_projection($sentences[$i], $sentences[$j], 1);
+            }
+        }
+    }
+}
+
+
+
 #==============================================================================
 # Two-file comparison functions
 #==============================================================================
+
+
+
+#------------------------------------------------------------------------------
+# Takes two sentence hashes, holding corresponding sentences from different
+# files. Performs symmetric comparison of the nodes in the sentences, prints
+# the differences and stores the statistics in the respective files.
+#------------------------------------------------------------------------------
+sub compare_two_sentences
+{
+    my $sentence0 = shift;
+    my $sentence1 = shift;
+    # So far the results are not completely symmetric, although
+    # usually they are. But if we want to see where they are not,
+    # we must run the comparison in both directions.
+    compare_node_correspondences($sentence0, $sentence1);
+    compare_node_correspondences($sentence1, $sentence0);
+    compare_node_attributes($sentence0, $sentence1);
+    compare_node_attributes($sentence1, $sentence0);
+}
 
 
 
