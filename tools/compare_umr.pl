@@ -41,16 +41,16 @@ while(1)
     (
         'label' => $label,
         'path' => $path,
-        'sentences' => read_umr_file($path)
     );
+    $file{sentences} = read_umr_file($path, \%file);
     my $n = scalar(@{$file{sentences}});
     print("Found $n sentences in $label:\n");
     print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
-    for(my $i = 0; $i < $n; $i++)
+    foreach my $sentence (@{$file{sentences}})
     {
-        parse_sentence_tokens(\%file, $i);
-        parse_sentence_graph(\%file, $i);
-        parse_sentence_alignments(\%file, $i);
+        parse_sentence_tokens($sentence);
+        parse_sentence_graph($sentence);
+        parse_sentence_alignments($sentence);
     }
     push(@files, \%file);
 }
@@ -66,6 +66,7 @@ compare_files(@files);
 sub read_umr_file
 {
     my $path = shift;
+    my $file = shift; # hash ref; the sentences will get it as a back reference to their file
     my @sentences;
     my @blocks;
     my @lines;
@@ -81,11 +82,11 @@ sub read_umr_file
         {
             if($last_line_empty)
             {
-                add_sentence(\@sentences, \@blocks);
+                add_sentence(\@sentences, \@blocks, $file);
             }
             else # last line was not empty, we are just adding a new block
             {
-                add_block(\@blocks, \@lines, $iline);
+                add_block(\@blocks, \@lines, $iline, $file);
             }
             $last_line_empty = 1;
         }
@@ -98,8 +99,8 @@ sub read_umr_file
     # If the file does not end with an empty line, collect the last sentence.
     # (Such a file is invalid but this script is not a validator.)
     $iline++;
-    add_block(\@blocks, \@lines, $iline);
-    add_sentence(\@sentences, \@blocks);
+    add_block(\@blocks, \@lines, $iline, $file);
+    add_sentence(\@sentences, \@blocks, $file);
     close($fh);
     return \@sentences;
 }
@@ -116,6 +117,7 @@ sub add_block
     my $blocks = shift; # array ref (array of blocks)
     my $lines = shift; # array ref (array of non-empty lines collected so far)
     my $iline = shift; # current line number, 1-based (current line is the first empty line after the block, or it is the last line in the file + 1, if the file does not end with an empty line)
+    my $file = shift; # hash ref; the sentences will get it as a back reference to their file
     my $n = scalar(@{$lines});
     return 0 if($n == 0);
     # Get the first and the last line of the block.
@@ -124,6 +126,7 @@ sub add_block
     my @block_lines = @{$lines};
     my %block =
     (
+        'file'  => $file,
         'line0' => $line0,
         'line1' => $line1,
         'lines' => \@block_lines
@@ -144,11 +147,13 @@ sub add_sentence
 {
     my $sentences = shift; # array ref
     my $blocks = shift; # array ref
+    my $file = shift; # hash ref; the sentences will get it as a back reference to their file
     my $n = scalar(@{$blocks});
     return 0 if($n == 0);
     my @sentence_blocks = @{$blocks};
     my %sentence =
     (
+        'file'  => $file,
         'line0' => $blocks->[0]{line0},
         'line1' => $blocks->[-1]{line1},
         'blocks' => \@sentence_blocks
@@ -168,9 +173,8 @@ sub add_sentence
 #------------------------------------------------------------------------------
 sub parse_sentence_tokens
 {
-    my $file = shift; # hash reference
-    my $i_sentence = shift; # index of the sentence whose graph should be parsed
-    my $sentence = $file->{sentences}[$i_sentence];
+    my $sentence = shift; # hash reference
+    my $file = $sentence->{file};
     my $token_block = $sentence->{blocks}[0];
     if(!defined($token_block))
     {
@@ -202,9 +206,8 @@ sub parse_sentence_tokens
 #------------------------------------------------------------------------------
 sub parse_sentence_graph
 {
-    my $file = shift; # hash reference
-    my $i_sentence = shift; # index of the sentence whose graph should be parsed
-    my $sentence = $file->{sentences}[$i_sentence];
+    my $sentence = shift; # hash reference
+    my $file = $sentence->{file};
     my $sgraph_block = $sentence->{blocks}[1];
     if(!defined($sgraph_block))
     {
@@ -330,9 +333,8 @@ sub parse_sentence_graph
 #------------------------------------------------------------------------------
 sub parse_sentence_alignments
 {
-    my $file = shift; # hash reference
-    my $i_sentence = shift; # index of the sentence whose graph should be parsed
-    my $sentence = $file->{sentences}[$i_sentence];
+    my $sentence = shift; # hash reference
+    my $file = $sentence->{file};
     my $alignment_block = $sentence->{blocks}[2];
     if(!defined($alignment_block))
     {
@@ -403,6 +405,12 @@ sub parse_sentence_alignments
 
 
 
+#==============================================================================
+# Multi-file comparison functions
+#==============================================================================
+
+
+
 #------------------------------------------------------------------------------
 # Compares two UMR files that have been read to memory (takes the hashes with
 # their contents, prints the comparison to STDOUT).
@@ -443,6 +451,7 @@ sub compare_files
         printf("Comparing sentence %d:\n", $i+1);
         # Check that the sentence has the same tokens in all files.
         my $sentence_text;
+        my @sentences;
         foreach my $file (@files)
         {
             my $sentence = $file->{sentences}[$i];
@@ -457,12 +466,13 @@ sub compare_files
                 {
                     printf STDERR ("Tokens %s: %s\n", $files[0]{label}, $sentence_text);
                     printf STDERR ("Tokens %s: %s\n", $file->{label}, $current_sentence_text);
-                    confess(sprintf("Mismatch in tokens of sentence %d in file %s (lines %d–%d)", $i+1, $file->{label}, $sentence->{line0}, $sentence->{line1}));
+                    printf("WARNING: Mismatch in tokens of sentence %d in file %s (lines %d–%d)", $i+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
                 }
             }
+            push(@sentences, $sentence);
         }
-        print(join(' ', @{$files[0]{sentences}[$i]{tokens}}), "\n");
-        compare_sentence($i, @files);
+        print("$sentence_text\n");
+        compare_sentences(@sentences);
     }
     print("-------------------------------------------------------------------------------\n");
     print("SUMMARY:\n");
@@ -517,13 +527,12 @@ sub compare_files
 
 
 #------------------------------------------------------------------------------
-# Compares one sentence in two or more files.
+# Compares corresponding sentences in two or more files.
 #------------------------------------------------------------------------------
-sub compare_sentence
+sub compare_sentences
 {
-    my $i_sentence = shift;
-    my @files = @_;
-    confess("Not enough files to compare") if(scalar(@files) < 2);
+    my @sentences = @_;
+    confess("Not enough sentences to compare") if(scalar(@sentences) < 2);
     # Print the sentence graphs side-by-side.
     my @table;
     my @labels = map {$_->{label}} (@files);
@@ -532,11 +541,11 @@ sub compare_sentence
     {
         my @row;
         my $something = 0;
-        foreach my $file (@files)
+        foreach my $sentence (@sentences)
         {
-            if($j <= $#{$file->{sentences}[$i_sentence]{blocks}[1]{lines}})
+            if($j <= $#{$sentence->{blocks}[1]{lines}})
             {
-                push(@row, $file->{sentences}[$i_sentence]{blocks}[1]{lines}[$j]);
+                push(@row, $sentence->{blocks}[1]{lines}[$j]);
                 $something = 1;
             }
             else
@@ -557,43 +566,43 @@ sub compare_sentence
     print_table(@table);
     print("\n");
     # Assume it has been checked that the sentence has the same tokens in all files.
-    my $tokens = $files[0]{sentences}[$i_sentence]{tokens};
+    my $tokens = $sentences[0]{tokens};
     # Get the mapping between tokens of the sentence and nodes in each file.
-    map_node_alignments($i_sentence, @files);
-    compute_crossfile_node_references($i_sentence, @files);
+    map_node_alignments(@sentences);
+    compute_crossfile_node_references(@sentences);
     print("Node-token alignments:\n");
     # Print the unaligned nodes.
-    foreach my $file (@files)
+    foreach my $sentence (@sentences)
     {
-        my $label = $file->{label};
-        my $nodes = $file->{sentences}[$i_sentence]{nodes};
-        my @unaligned = @{$file->{sentences}[$i_sentence]{unaligned_nodes}};
+        my $label = $sentence->{file}{label};
+        my $nodes = $sentence->{nodes};
+        my @unaligned = @{$sentence->{unaligned_nodes}};
         printf("File %s: %d nodes unaligned: %s.\n", $label, scalar(@unaligned), join(', ', map {"$_/$nodes->{$_}{econcept}"} (@unaligned)));
     }
     # Print the tokens and nodes aligned to them in each file.
     @table = ();
-    push(@table, ['', '', map {$_->{label}} (@files)]);
+    push(@table, ['', '', map {$_->{file}{label}} (@sentences)]);
     for(my $j = 0; $j <= $#{$tokens}; $j++)
     {
-        push(@table, [$j+1, $tokens->[$j], map {join(', ', @{$_->{sentences}[$i_sentence]{aligned_nodes_by_token}[$j]})} (@files)]);
+        push(@table, [$j+1, $tokens->[$j], map {join(', ', @{$_->{aligned_nodes_by_token}[$j]})} (@sentences)]);
     }
     print_table(@table);
     print("\n");
     # Perform node-to-node comparisons.
     print("Node-node correspondences:\n\n");
-    for(my $i = 0; $i <= $#files; $i++)
+    for(my $i = 0; $i <= $#sentences; $i++)
     {
-        for(my $j = $i+1; $j <= $#files; $j++)
+        for(my $j = $i+1; $j <= $#sentences; $j++)
         {
             unless($j == $i)
             {
                 # So far the results are not completely symmetric, although
                 # usually they are. But if we want to see where they are not,
                 # we must run the comparison in both directions.
-                compare_node_correspondences($files[$i], $files[$j], $i_sentence);
-                compare_node_correspondences($files[$j], $files[$i], $i_sentence);
-                compare_node_attributes($files[$i], $files[$j], $i_sentence);
-                compare_node_attributes($files[$j], $files[$i], $i_sentence);
+                compare_node_correspondences($sentences[$i], $sentences[$j]);
+                compare_node_correspondences($sentences[$j], $sentences[$i]);
+                compare_node_attributes($sentences[$i], $sentences[$j]);
+                compare_node_attributes($sentences[$j], $sentences[$i]);
             }
         }
     }
@@ -602,29 +611,20 @@ sub compare_sentence
 
 
 #------------------------------------------------------------------------------
-# Takes a sentence number and a list of file hashes. In each file, examines the
-# node-token alignments in the given sentence. Returns a list of hashes indexed
-# by file labels, where the first hash contains the unaligned nodes in each
-# file, the subsequent hashes correspond to tokens and give the nodes aligned
-# to that token in each file (the same node can be aligned to multiple tokens,
-# and one token can be aligned to multiple nodes in the same file). In each of
-# the file-indexed hashes, the value is a list of variables (i.e., node ids,
-# not directly the node objects).
-#
-# New:
-# The node lists are saved directly in the respective file/sentence hashes.
-# Each file has a list of unaligned nodes, and then for each token a list of
-# nodes aligned to that token.
+# Takes a list of sentence hashes, holding corresponding sentences in different
+# files. In each file, examines the node-token alignments in the given sentence.
+# Saves two new lists of nodes in each sentence hash. The first list contains
+# unaligned nodes. The second list is organized by sentence tokens, each token
+# has a list of nodes aligned to it. In both cases, the lists contain variables
+# that identify the nodes, not directly the node hashes.
 #------------------------------------------------------------------------------
 sub map_node_alignments
 {
-    my $i_sentence = shift;
-    my @files = @_;
+    my @sentences = @_;
     # Assume it has been checked that the sentence has the same tokens in all files.
-    my $tokens = $files[0]{sentences}[$i_sentence]{tokens};
-    foreach my $file (@files)
+    my $tokens = $sentences[0]{tokens};
+    foreach my $sentence (@sentences)
     {
-        my $sentence = $file->{sentences}[$i_sentence];
         my $nodes = $sentence->{nodes};
         my @variables = sort(keys(%{$nodes}));
         my @unaligned = grep {!defined($nodes->{$_}{alignment})} (@variables);
@@ -635,41 +635,38 @@ sub map_node_alignments
             my @aligned = map {$nodes->{$_}{variable}} (grep {defined($nodes->{$_}{alignment}) && $nodes->{$_}{alignment}[$j]} (@variables));
             $sentence->{aligned_nodes_by_token}[$j] = \@aligned;
         }
-        $file->{stats}{n_nodes} += scalar(@variables);
+        $sentence->{file}{stats}{n_nodes} += scalar(@variables);
     }
 }
 
 
 
 #------------------------------------------------------------------------------
-# Takes a sentence number and a list of file hashes, assumes that
-# map_node_alignments() has been called already. Computes the cross-references
-# between nodes of each pair of files for the given sentence.
+# Takes a list of sentence hashes, holding corresponding sentences in different
+# files. Assumes that map_node_alignments() has been called already. Computes
+# the cross-references between nodes of each pair of sentences.
 #------------------------------------------------------------------------------
 sub compute_crossfile_node_references
 {
-    my $i_sentence = shift;
-    my @files = @_;
+    my @sentences = @_;
     # Assume it has been checked that the sentence has the same tokens in all files.
-    my $tokens = $files[0]{sentences}[$i_sentence]{tokens};
+    my $tokens = $sentences[0]{tokens};
     # Try to map nodes from different files to each other.
     # Each node should have pointers to all other files.
     # In each foreign file it would link to those nodes whose alignment has at least one token in common with the alignment of the source node. These relations are symmetric.
     # (But if a node in file A corresponds to multiple nodes in file B, we will have hard time with scoring them.)
     for(my $j = 0; $j <= $#{$tokens}; $j++)
     {
-        foreach my $file1 (@files)
+        foreach my $sentence1 (@sentences)
         {
-            my $sentence1 = $file1->{sentences}[$i_sentence];
             foreach my $f1var (@{$sentence1->{aligned_nodes_by_token}[$j]})
             {
                 my $node1 = $sentence1->{nodes}{$f1var};
-                foreach my $file2 (@files)
+                foreach my $sentence2 (@sentences)
                 {
-                    unless($file2 == $file1)
+                    unless($sentence2 == $sentence1)
                     {
-                        my $label2 = $file2->{label};
-                        my $sentence2 = $file2->{sentences}[$i_sentence];
+                        my $label2 = $sentence2->{file}{label};
                         foreach my $f2var (@{$sentence2->{aligned_nodes_by_token}[$j]})
                         {
                             $node1->{crossfile}{$label2}{$f2var}++;
@@ -682,19 +679,17 @@ sub compute_crossfile_node_references
     # Try to map unaligned nodes based on other criteria, such as concept equivalence.
     # The way we do it may also introduce ambiguous projections, so symmetrization
     # must be run afterwards.
-    foreach my $file1 (@files)
+    foreach my $sentence1 (@sentences)
     {
-        my $sentence1 = $file1->{sentences}[$i_sentence];
         foreach my $f1var (@{$sentence1->{unaligned_nodes}})
         {
             my $node1 = $sentence1->{nodes}{$f1var};
             my $concept1 = $node1->{econcept};
-            foreach my $file2 (@files)
+            foreach my $sentence2 (@sentences)
             {
-                unless($file2 == $file1)
+                unless($sentence2 == $sentence1)
                 {
-                    my $label2 = $file2->{label};
-                    my $sentence2 = $file2->{sentences}[$i_sentence];
+                    my $label2 = $sentence2->{file}{label};
                     # Consider links between nodes that are unaligned in both files
                     # but do not consider links between unaligned and aligned nodes.
                     # Are there nodes in $file2 that have the same concept as $f1var?
@@ -715,11 +710,11 @@ sub compute_crossfile_node_references
         }
     }
     # Try to symmetrize the node-node alignments.
-    for(my $i = 0; $i <= $#files; $i++)
+    for(my $i = 0; $i <= $#sentences; $i++)
     {
-        for(my $j = $i+1; $j <= $#files; $j++)
+        for(my $j = $i+1; $j <= $#sentences; $j++)
         {
-            symmetrize_node_projection($files[$i], $files[$j], $i_sentence);
+            symmetrize_node_projection($sentences[$i], $sentences[$j]);
         }
     }
     ###!!! Turning the following block off. It would bring the score closer to
@@ -738,15 +733,15 @@ sub compute_crossfile_node_references
         # We could either leave them unmapped (which might be for many of them the
         # most reasonable thing to do) or we could try to map as many of them as
         # possible, by using the symmetrization criteria again.
-        for(my $i = 0; $i <= $#files; $i++)
+        for(my $i = 0; $i <= $#sentences; $i++)
         {
-            my $labeli = $files[$i]{label};
-            my $sentencei = $files[$i]{sentences}[$i_sentence];
+            my $labeli = $sentences[$i]{file}{label};
+            my $sentencei = $sentences[$i];
             my @nodesi = map {$sentencei->{nodes}{$_}} (sort(keys(%{$sentencei->{nodes}})));
-            for(my $j = $i+1; $j <= $#files; $j++)
+            for(my $j = $i+1; $j <= $#sentences; $j++)
             {
-                my $labelj = $files[$j]{label};
-                my $sentencej = $files[$j]{sentences}[$i_sentence];
+                my $labelj = $sentences[$j]{file}{label};
+                my $sentencej = $sentences[$j];
                 my @nodesj = map {$sentencej->{nodes}{$_}} (sort(keys(%{$sentencej->{nodes}})));
                 my @unmapped_i_to_j;
                 my @unmapped_j_to_i;
@@ -776,24 +771,23 @@ sub compute_crossfile_node_references
                             $uji->{crossfile}{$labeli}{$uij->{variable}}++;
                         }
                     }
-                    symmetrize_node_projection($files[$i], $files[$j], $i_sentence, 1);
+                    symmetrize_node_projection($sentences[$i], $sentences[$j], 1);
                 }
             }
         }
     }
     # Update the statistics about cross-file node mappings.
-    foreach my $file1 (@files)
+    foreach my $sentence1 (@sentences)
     {
-        my $sentence1 = $file1->{sentences}[$i_sentence];
         my @variables1 = sort(keys(%{$sentence1->{nodes}}));
         foreach my $variable1 (@variables1)
         {
             my $node1 = $sentence1->{nodes}{$variable1};
-            foreach my $file2 (@files)
+            foreach my $sentence2 (@sentences)
             {
-                my $label2 = $file2->{label};
+                my $label2 = $sentence2->{file}{label};
                 my $n_targets = scalar(keys(%{$node1->{crossfile}{$label2}}));
-                $file1->{stats}{crossfile}{$label2}++ if($n_targets > 0);
+                $sentence1->{file}{stats}{crossfile}{$label2}++ if($n_targets > 0);
             }
         }
     }
@@ -809,14 +803,13 @@ sub compute_crossfile_node_references
 #------------------------------------------------------------------------------
 sub symmetrize_node_projection
 {
-    my $file0 = shift;
-    my $file1 = shift;
-    my $i_sentence = shift;
+    my $sentence0 = shift;
+    my $sentence1 = shift;
     my $do_not_record_ambiguity = shift; # turn recording off if using this function to project the remainder
+    my $file0 = $sentence0->{file};
+    my $file1 = $sentence1->{file};
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
-    my $sentence0 = $file0->{sentences}[$i_sentence];
-    my $sentence1 = $file1->{sentences}[$i_sentence];
     my @variables0 = sort(keys(%{$sentence0->{nodes}}));
     my @variables1 = sort(keys(%{$sentence1->{nodes}}));
     while(1)
@@ -946,19 +939,25 @@ sub compare_ambiguous_links
 
 
 
+#==============================================================================
+# Two-file comparison functions
+#==============================================================================
+
+
+
 #------------------------------------------------------------------------------
-# Takes two file hashes and a sentence number. Examines node-to-node cross-
-# references from the first file to the second file and prints a summary.
+# Takes two sentence hashes, holding corresponding sentences from different
+# files. Examines node-to-node cross-references from the first file to the
+# second file and prints a summary.
 #------------------------------------------------------------------------------
 sub compare_node_correspondences
 {
-    my $file0 = shift;
-    my $file1 = shift;
-    my $i_sentence = shift;
+    my $sentence0 = shift;
+    my $sentence1 = shift;
+    my $file0 = $sentence0->{file};
+    my $file1 = $sentence1->{file};
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
-    my $sentence0 = $file0->{sentences}[$i_sentence];
-    my $sentence1 = $file1->{sentences}[$i_sentence];
     my @variables0 = sort(keys(%{$sentence0->{nodes}}));
     my $n_aligned = 0;
     my $n_total = 0;
@@ -1027,9 +1026,9 @@ sub compare_node_correspondences
 
 
 #------------------------------------------------------------------------------
-# Takes two file hashes and a sentence number, compares the nodes of the given
-# sentence in the two files. For each node of the left file, considers the
-# corresponding nodes in the right file.
+# Takes two sentence hashes, holding corresponding sentences from different
+# files. Compares the nodes in the two files. For each node of the left file,
+# considers the corresponding nodes in the right file.
 # - If there are 0 counterparts: compare attributes/relations with an empty node.
 # - If there is 1 counterpart: compare their attributes/relations.
 # - There cannot be multiple counterparts if we have run symmetrization.
@@ -1039,13 +1038,12 @@ sub compare_node_correspondences
 #------------------------------------------------------------------------------
 sub compare_node_attributes
 {
-    my $file0 = shift;
-    my $file1 = shift;
-    my $i_sentence = shift;
+    my $sentence0 = shift;
+    my $sentence1 = shift;
+    my $file0 = $sentence0->{file};
+    my $file1 = $sentence1->{file};
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
-    my $sentence0 = $file0->{sentences}[$i_sentence];
-    my $sentence1 = $file1->{sentences}[$i_sentence];
     print("Comparing attributes of $label0 nodes with their $label1 counterparts.\n");
     my $n_total_0;
     my $n_total_1;
@@ -1294,6 +1292,12 @@ sub get_node_attributes_mapped
     }
     return @pairs;
 }
+
+
+
+#==============================================================================
+# Formatting and printing functions
+#==============================================================================
 
 
 
