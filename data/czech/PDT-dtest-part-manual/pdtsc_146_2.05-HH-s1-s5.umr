@@ -18,9 +18,7 @@ Words: Vždycky ale byla velká legrace .
         	:clausal-marker (s1a1 / ale)
         	:ARG0 (s1l1 / legrace
             		:mod (s1v2 / velký
-                	:refer-number singular)
-        	:aspect habitual
-        	:modal-strength full-affirmative)
+                	:refer-number singular))))
 
 # alignment:
 s1e1: 3-3
