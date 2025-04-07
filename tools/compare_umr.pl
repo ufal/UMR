@@ -962,6 +962,8 @@ sub compare_two_sentences
     # So far the results are not completely symmetric, although
     # usually they are. But if we want to see where they are not,
     # we must run the comparison in both directions.
+    print_symmetrization_report($sentence0, $sentence1);
+    print_symmetrization_report($sentence1, $sentence0);
     compare_node_correspondences($sentence0, $sentence1);
     compare_node_correspondences($sentence1, $sentence0);
     compare_node_attributes($sentence0, $sentence1);
@@ -972,10 +974,10 @@ sub compare_two_sentences
 
 #------------------------------------------------------------------------------
 # Takes two sentence hashes, holding corresponding sentences from different
-# files. Examines node-to-node cross-references from the first file to the
-# second file and prints a summary.
+# files. Prints a report on what we did with ambiguous cross-file node
+# projections during symmetrization.
 #------------------------------------------------------------------------------
-sub compare_node_correspondences
+sub print_symmetrization_report
 {
     my $sentence0 = shift;
     my $sentence1 = shift;
@@ -983,14 +985,9 @@ sub compare_node_correspondences
     my $file1 = $sentence1->{file};
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
-    my @variables0 = sort(keys(%{$sentence0->{nodes}}));
-    my $n_aligned = 0;
-    my $n_total = 0;
-    my @table = ();
-    # Before we print the correspondences, report on what we did with ambiguous
-    # cross-file node projections.
     my $n_nodes_with_ambiguous_projection = 0;
     my $n_nodes_in_ambiguous_projections = 0;
+    my @variables0 = sort(keys(%{$sentence0->{nodes}}));
     foreach my $f0var (@variables0)
     {
         my $n0 = $sentence0->{nodes}{$f0var};
@@ -1019,6 +1016,27 @@ sub compare_node_correspondences
         $file0->{stats}{cr}{$label1}{nodes_with_originally_ambiguous_projection} += $n_nodes_with_ambiguous_projection;
         $file0->{stats}{cr}{$label1}{nodes_in_originally_ambiguous_projections} += $n_nodes_in_ambiguous_projections;
     }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes two sentence hashes, holding corresponding sentences from different
+# files. Examines node-to-node cross-references from the first file to the
+# second file and prints a summary.
+#------------------------------------------------------------------------------
+sub compare_node_correspondences
+{
+    my $sentence0 = shift;
+    my $sentence1 = shift;
+    my $file0 = $sentence0->{file};
+    my $file1 = $sentence1->{file};
+    my $label0 = $file0->{label};
+    my $label1 = $file1->{label};
+    my @variables0 = sort(keys(%{$sentence0->{nodes}}));
+    my $n_aligned = 0;
+    my $n_total = 0;
+    my @table = ();
     # Print the correspondences.
     foreach my $f0var (@variables0)
     {
