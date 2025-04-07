@@ -50,16 +50,6 @@ Correspondence ML s1t0 (thing)             = HH s1t1 (thing)
 Correspondence ML s1v1 (vyšetřování)       = HH s1v1 (vyšetřování)      
 
 Aligned 8 out of 8 ML nodes, that is 100%.
-
-Correspondence HH s1c1 (činnosti)          = ML s1c1 (činnosti)         
-Correspondence HH s1k1 (kontrarozvědky)    = ML s1k1 (kontrarozvědky)   
-Correspondence HH s1n1 (name["parlament"]) = ML s1n1 (name["parlament"])
-Correspondence HH s1o1 (Parlamentní)       = ML s1p2 (Parlamentní)      
-Correspondence HH s1p1 (bude pokračovat)   = ML s1p1 (bude pokračovat)  
-Correspondence HH s1p3 (publication-91)    = ML s1p0 (publication-91)   
-Correspondence HH s1t1 (thing)             = ML s1t0 (thing)            
-Correspondence HH s1v1 (vyšetřování)       = ML s1v1 (vyšetřování)      
-
 Aligned 8 out of 8 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
@@ -108,12 +98,6 @@ Correspondence ML s2p1 (Praha)          = HH s2h1 (Praha)
 Correspondence ML s2t0 (thing)          = HH s2t2 (thing)         
 
 Aligned 4 out of 4 ML nodes, that is 100%.
-
-Correspondence HH s2h1 (Praha)          = ML s2p1 (Praha)         
-Correspondence HH s2n1 (name["Praha"])  = ML s2n1 (name["Praha"]) 
-Correspondence HH s2p1 (publication-91) = ML s2p0 (publication-91)
-Correspondence HH s2t2 (thing)          = ML s2t0 (thing)         
-
 Aligned 4 out of 4 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
@@ -254,30 +238,6 @@ Correspondence ML s3v1 (vyšetřování)                                = HH s3v
 Correspondence ML s3z1 (zákon)                                      = HH s3z1 (zákon)                                     
 
 Aligned 22 out of 22 ML nodes, that is 100%.
-
-Correspondence HH s3a1 (a)                                          = ML s3a1 (a)                                         
-Correspondence HH s3b4 (před)                                       = ML s3b1 (před)                                      
-Correspondence HH s3d1 (de facto)                                   = ML s3d1 (de facto)                                  
-Correspondence HH s3d2 (dál)                                        = ML s3d2 (dál)                                       
-Correspondence HH s3k1 (pro kontrolu)                               = ML s3k1 (pro kontrolu)                              
-Correspondence HH s3k2 (vůči kontrarozvědce)                        = ML s3k2 (vůči kontrarozvědce)                       
-Correspondence HH s3k3 (konstatoval)                                = ML s3k3 (konstatoval)                               
-Correspondence HH s3n1 (name["parlament"])                          = ML s3n1 (name["parlament"])                         
-Correspondence HH s3n2 (name["ODA"])                                = ML s3n3 (name["ODA"])                               
-Correspondence HH s3n3 (name["Bezpečnostní" "informační" "služba"]) = ML s3n2 (name["Bezpečnostní" "informační" "služba"])
-Correspondence HH s3o1 (orgán)                                      = ML s3o1 (orgán)                                     
-Correspondence HH s3o2 (parlamentní)                                = ML s3p2 (parlamentní)                               
-Correspondence HH s3o3 (Bezpečnostní informační služby BIS)         = ML s3o3 (Bezpečnostní informační služby BIS)        
-Correspondence HH s3p2 (podnětů)                                    = ML s3p3 (podnětů)                                   
-Correspondence HH s3p3 (že neporušila)                              = ML s3p4 (že neporušila)                             
-Correspondence HH s3p4 (pokračuje)                                  = ML s3p1 (pokračuje)                                 
-Correspondence HH s3p5 (ODA)                                        = ML s3o2 (ODA)                                       
-Correspondence HH s3s2 (šetření)                                    = ML s3s2 (šetření)                                   
-Correspondence HH s3t2 (týdnem)                                     = ML s3t1 (týdnem)                                    
-Correspondence HH s3u1 (Ačkoli ukončil)                             = ML s3u1 (Ačkoli ukončil)                            
-Correspondence HH s3v1 (vyšetřování)                                = ML s3v1 (vyšetřování)                               
-Correspondence HH s3z1 (zákon)                                      = ML s3z1 (zákon)                                     
-
 Aligned 22 out of 22 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
@@ -400,12 +360,8 @@ Ambiguous projection of ML node s4a (po schůzi) to 2 HH nodes [s4a2 (po), s4s1 
 
 Correspondence ML s4a  (po schůzi)              = HH s4a2 (po)                    
 Correspondence ML s4c1 (člen)                   = HH s4c1 (člen)                  
-Correspondence ML s4h1 (have-org-role-91)       = HH     
-Correspondence ML s4h2 (have-org-role-91)       = HH     
-Correspondence ML s4h3 (have-org-role-91)       = HH     
 Correspondence ML s4k1 (komise)                 = HH s4k1 (komise)                
 Correspondence ML s4n1 (name["Pavel" "Severa"]) = HH s4n2 (name["Pavel" "Severa"])
-Correspondence ML s4n4 (name["parlament"])      = HH     
 Correspondence ML s4n5 (name["KDU-ČSL"])        = HH s4n1 (name["KDU-ČSL"])       
 Correspondence ML s4o1 (orgánu)                 = HH s4o1 (orgánu)                
 Correspondence ML s4o2 (KDU - ČSL)              = HH s4p6 (KDU - ČSL)             
@@ -413,30 +369,19 @@ Correspondence ML s4p1 (připustil)              = HH s4p1 (připustil)
 Correspondence ML s4p2 (Pavel Severa)           = HH s4p4 (Pavel Severa)          
 Correspondence ML s4p3 (poslanec)               = HH s4p5 (poslanec)              
 Correspondence ML s4p4 (organization)           = HH s4o2 (organization)          
-Correspondence ML s4s2 (schůze)                 = HH     
 Correspondence ML s4t1 (to)                     = HH s4t1 (to)                    
 Correspondence ML s4v1 (Včera)                  = HH s4v1 (Včera)                 
-
-Aligned 13 out of 18 ML nodes, that is 72%.
-
-Correspondence HH s4a2 (po)                     = ML s4a  (po schůzi)             
-Correspondence HH s4c1 (člen)                   = ML s4c1 (člen)                  
+Correspondence ML s4h1 (have-org-role-91)       = HH     
+Correspondence ML s4h2 (have-org-role-91)       = HH     
+Correspondence ML s4h3 (have-org-role-91)       = HH     
+Correspondence ML s4n4 (name["parlament"])      = HH     
+Correspondence ML s4s2 (schůze)                 = HH     
 Correspondence HH s4h1 (have-org-role-91)       = ML     
 Correspondence HH s4h2 (have-org-role-91)       = ML     
 Correspondence HH s4h3 (have-org-role-91)       = ML     
-Correspondence HH s4k1 (komise)                 = ML s4k1 (komise)                
-Correspondence HH s4n1 (name["KDU-ČSL"])        = ML s4n5 (name["KDU-ČSL"])       
-Correspondence HH s4n2 (name["Pavel" "Severa"]) = ML s4n1 (name["Pavel" "Severa"])
-Correspondence HH s4o1 (orgánu)                 = ML s4o1 (orgánu)                
-Correspondence HH s4o2 (organization)           = ML s4p4 (organization)          
-Correspondence HH s4p1 (připustil)              = ML s4p1 (připustil)             
-Correspondence HH s4p4 (Pavel Severa)           = ML s4p2 (Pavel Severa)          
-Correspondence HH s4p5 (poslanec)               = ML s4p3 (poslanec)              
-Correspondence HH s4p6 (KDU - ČSL)              = ML s4o2 (KDU - ČSL)             
 Correspondence HH s4s1 (schůzi)                 = ML     
-Correspondence HH s4t1 (to)                     = ML s4t1 (to)                    
-Correspondence HH s4v1 (Včera)                  = ML s4v1 (Včera)                 
 
+Aligned 13 out of 18 ML nodes, that is 72%.
 Aligned 13 out of 17 HH nodes, that is 76%.
 
 Comparing attributes of ML nodes with their HH counterparts.
@@ -655,24 +600,6 @@ Correspondence ML s5v1 (s vysvětlením)              = HH s5v1 (s vysvětlením
 Correspondence ML s5z1 (zprávy)                     = HH s5z1 (zprávy)                    
 
 Aligned 16 out of 16 ML nodes, that is 100%.
-
-Correspondence HH s5d1 (na tom že dokončí)          = ML s5d1 (na tom že dokončí)         
-Correspondence HH s5e5 (o extremismu)               = ML s5e5 (o extremismu)              
-Correspondence HH s5h1 (have-org-role-91)           = ML s5h1 (have-org-role-91)          
-Correspondence HH s5j1 (ještě)                      = ML s5j1 (ještě)                     
-Correspondence HH s5k1 (Komise)                     = ML s5k1 (Komise)                    
-Correspondence HH s5n1 (name["Stanislav" "Devátý"]) = ML s5n1 (name["Stanislav" "Devátý"])
-Correspondence HH s5n2 (name["BIS"])                = ML s5n2 (name["BIS"])               
-Correspondence HH s5o1 (BIS)                        = ML s5o1 (BIS)                       
-Correspondence HH s5p1 (provedena nebyla)           = ML s5p1 (provedena nebyla)          
-Correspondence HH s5p2 (jako například porovnání)   = ML s5p2 (jako například porovnání)  
-Correspondence HH s5p3 (Stanislava Devátého)        = ML s5p3 (Stanislava Devátého)       
-Correspondence HH s5r1 (ředitele)                   = ML s5r1 (ředitele)                  
-Correspondence HH s5s1 (se shodla)                  = ML s5s1 (se shodla)                 
-Correspondence HH s5s2 (šetření která)              = ML s5s2 (šetření která)             
-Correspondence HH s5v1 (s vysvětlením)              = ML s5v1 (s vysvětlením)             
-Correspondence HH s5z1 (zprávy)                     = ML s5z1 (zprávy)                    
-
 Aligned 16 out of 16 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.

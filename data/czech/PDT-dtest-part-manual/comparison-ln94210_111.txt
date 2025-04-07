@@ -91,7 +91,6 @@ Ambiguous projection of HH node s1h1 (je tomu) to 2 ML nodes [s1h1 (je), s1o1 (t
 Ambiguous projection of HH node s1p5 (čtenáři vám) to 2 ML nodes [s1p2 (čtenáři), s1p3 (vám)]
   The winner is HH node s1p5 (čtenáři vám) <--> ML node s1p2 (čtenáři): econcepts=person/person, match=3 (concept=person,:ARG0-of=s1c1 mapped to ML s1c1,:refer-number=plural), weak match=3 (concept,:ARG0-of,:refer-number).
 
-Correspondence ML s1a  (and)                  = HH     
 Correspondence ML s1c1 (číst-002)             = HH s1c1 (číst-002)       
 Correspondence ML s1c2 (cena)                 = HH s1c2 (cena)           
 Correspondence ML s1h1 (je)                   = HH s1h1 (je tomu)        
@@ -102,34 +101,18 @@ Correspondence ML s1o1 (tomu jsme oznamovali) = HH s1o1 (jsme oznamovali)
 Correspondence ML s1p0 (publication-91)       = HH s1p1 (publication-91) 
 Correspondence ML s1p1 (našich)               = HH s1p4 (našich)         
 Correspondence ML s1p2 (čtenáři)              = HH s1p5 (čtenáři vám)    
-Correspondence ML s1p3 (vám)                  = HH     
 Correspondence ML s1p4 (právě)                = HH s1p3 (právě)          
 Correspondence ML s1p5 (nepopulární)          = HH s1p2 (nepopulární)    
 Correspondence ML s1r1 (rok kdy)              = HH s1r1 (rok kdy)        
-Correspondence ML s1t1 (event)                = HH     
 Correspondence ML s1v1 (Vážení)               = HH s1v1 (Vážení)         
 Correspondence ML s1z1 (že se zvyšuje)        = HH s1z1 (že se zvyšuje)  
+Correspondence ML s1a  (and)                  = HH     
+Correspondence ML s1p3 (vám)                  = HH     
+Correspondence ML s1t1 (event)                = HH     
+Correspondence HH s1s1 (say-91)               = ML     
+Correspondence HH s1t1 (temporal-quantity)    = ML     
 
 Aligned 15 out of 18 ML nodes, that is 83%.
-
-Correspondence HH s1c1 (číst-002)          = ML s1c1 (číst-002)            
-Correspondence HH s1c2 (cena)              = ML s1c2 (cena)                
-Correspondence HH s1h1 (je tomu)           = ML s1h1 (je)                  
-Correspondence HH s1i1 (informaci)         = ML s1i1 (informaci)           
-Correspondence HH s1i2 (identity-91)       = ML s1i2 (identity-91)         
-Correspondence HH s1n1 (novin)             = ML s1n1 (novin)               
-Correspondence HH s1o1 (jsme oznamovali)   = ML s1o1 (tomu jsme oznamovali)
-Correspondence HH s1p1 (publication-91)    = ML s1p0 (publication-91)      
-Correspondence HH s1p2 (nepopulární)       = ML s1p5 (nepopulární)         
-Correspondence HH s1p3 (právě)             = ML s1p4 (právě)               
-Correspondence HH s1p4 (našich)            = ML s1p1 (našich)              
-Correspondence HH s1p5 (čtenáři vám)       = ML s1p2 (čtenáři)             
-Correspondence HH s1r1 (rok kdy)           = ML s1r1 (rok kdy)             
-Correspondence HH s1s1 (say-91)            = ML     
-Correspondence HH s1t1 (temporal-quantity) = ML     
-Correspondence HH s1v1 (Vážení)            = ML s1v1 (Vážení)              
-Correspondence HH s1z1 (že se zvyšuje)     = ML s1z1 (že se zvyšuje)       
-
 Aligned 15 out of 17 HH nodes, that is 88%.
 
 Comparing attributes of ML nodes with their HH counterparts.
@@ -303,10 +286,8 @@ Correspondence ML s2b1 (barevného)                  = HH s2b1 (barevného)
 Correspondence ML s2c1 (Celý)                       = HH s2c1 (Celý)                      
 Correspondence ML s2c2 (ceny)                       = HH s2c2 (ceny)                      
 Correspondence ML s2m1 (magazínu)                   = HH s2m1 (magazínu Duha)             
-Correspondence ML s2n1 (Duha)                       = HH     
 Correspondence ML s2n2 (LN)                         = HH s2n2 (LN)                        
 Correspondence ML s2n3 (name["LN"])                 = HH s2n3 (name["LN"])                
-Correspondence ML s2p0 (person)                     = HH     
 Correspondence ML s2p1 (jsme přečkali)              = HH s2p1 (jsme přečkali)             
 Correspondence ML s2p2 (nepočítáme li)              = HH s2p2 (nepočítáme - li)           
 Correspondence ML s2p3 (jako přílohy)               = HH s2p3 (jako přílohy)              
@@ -315,29 +296,15 @@ Correspondence ML s2t1 (televizního)                = HH s2t1 (televizního)
 Correspondence ML s2z1 (bez změny)                  = HH s2z1 (bez změny)                 
 Correspondence ML s2z2 (zvýšení)                    = HH s2z2 (zvýšení)                   
 Correspondence ML s2z3 (v souvislosti se zařazením) = HH s2z3 (v souvislosti se zařazením)
-
-Aligned 14 out of 16 ML nodes, that is 88%.
-
-Correspondence HH s2b1 (barevného)                  = ML s2b1 (barevného)                 
-Correspondence HH s2c1 (Celý)                       = ML s2c1 (Celý)                      
-Correspondence HH s2c2 (ceny)                       = ML s2c2 (ceny)                      
+Correspondence ML s2n1 (Duha)                       = HH     
+Correspondence ML s2p0 (person)                     = HH     
 Correspondence HH s2h1 (have-role-91)               = ML     
-Correspondence HH s2m1 (magazínu Duha)              = ML s2m1 (magazínu)                  
 Correspondence HH s2n1 (name["Duha"])               = ML     
-Correspondence HH s2n2 (LN)                         = ML s2n2 (LN)                        
-Correspondence HH s2n3 (name["LN"])                 = ML s2n3 (name["LN"])                
-Correspondence HH s2p1 (jsme přečkali)              = ML s2p1 (jsme přečkali)             
-Correspondence HH s2p2 (nepočítáme - li)            = ML s2p2 (nepočítáme li)             
-Correspondence HH s2p3 (jako přílohy)               = ML s2p3 (jako přílohy)              
 Correspondence HH s2p4 (person)                     = ML     
 Correspondence HH s2p5 (person)                     = ML     
-Correspondence HH s2r1 (rok)                        = ML s2r1 (rok)                       
-Correspondence HH s2t1 (televizního)                = ML s2t1 (televizního)               
 Correspondence HH s2t2 (temporal-quantity)          = ML     
-Correspondence HH s2z1 (bez změny)                  = ML s2z1 (bez změny)                 
-Correspondence HH s2z2 (zvýšení)                    = ML s2z2 (zvýšení)                   
-Correspondence HH s2z3 (v souvislosti se zařazením) = ML s2z3 (v souvislosti se zařazením)
 
+Aligned 14 out of 16 ML nodes, that is 88%.
 Aligned 14 out of 19 HH nodes, that is 74%.
 
 Comparing attributes of ML nodes with their HH counterparts.
@@ -498,18 +465,6 @@ Correspondence ML s3v1 (však)              = HH s3v1 (však)
 Correspondence ML s3z1 (zvýšení které)     = HH s3z1 (zvýšení které)    
 
 Aligned 10 out of 10 ML nodes, that is 100%.
-
-Correspondence HH s3c1 (do ceny)           = ML s3c1 (do ceny)          
-Correspondence HH s3d1 (deníku)            = ML s3d1 (deníku)           
-Correspondence HH s3n1 (Nyní)              = ML s3n1 (Nyní)             
-Correspondence HH s3n2 (nákladů)           = ML s3n2 (nákladů)          
-Correspondence HH s3n3 (nastalo)           = ML s3n3 (nastalo)          
-Correspondence HH s3p1 (musíme promítnout) = ML s3p1 (musíme promítnout)
-Correspondence HH s3p2 (person)            = ML s3p  (person)           
-Correspondence HH s3r1 (v průběhu roku)    = ML s3r1 (v průběhu roku)   
-Correspondence HH s3v1 (však)              = ML s3v1 (však)             
-Correspondence HH s3z1 (zvýšení které)     = ML s3z1 (zvýšení které)    
-
 Aligned 10 out of 10 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
@@ -609,45 +564,29 @@ Ambiguous projection of HH node s4l1 (letošního roku) to 2 ML nodes [s4c1 (Od 
 
 Correspondence ML s4a1 (a)                            = HH s4a1 (a)                      
 Correspondence ML s4c1 (Od posledního čtvrtletí roku) = HH s4d1 (Od čtvrtletí)           
-Correspondence ML s4c2 (čtvrtek)                      = HH     
 Correspondence ML s4d1 (od pondělka)                  = HH s4p4 (od pondělka)            
 Correspondence ML s4d2 (do čtvrtka)                   = HH s4c2 (do čtvrtka)             
 Correspondence ML s4d3 (v sobotu)                     = HH s4s4 (v sobotu)               
 Correspondence ML s4k1 (pět korun)                    = HH s4m1 (pět)                    
-Correspondence ML s4k2 (CZK)                          = HH     
 Correspondence ML s4k3 (šest korun)                   = HH s4m2 (šest)                   
 Correspondence ML s4l1 (letošního)                    = HH s4l1 (letošního roku)         
 Correspondence ML s4n1 (Lidové noviny)                = HH s4n1 (Lidové noviny)          
 Correspondence ML s4n2 (name["Lidové" "noviny"])      = HH s4n2 (name["Lidové" "noviny"])
 Correspondence ML s4p1 (proto)                        = HH s4p3 (proto)                  
-Correspondence ML s4p2 (pondělí)                      = HH     
 Correspondence ML s4r2 (date-interval)                = HH s4d2 (date-interval)          
 Correspondence ML s4s1 (budou stát)                   = HH s4s1 (budou stát)             
 Correspondence ML s4s2 (stát-014)                     = HH s4s2 (stát-014)               
+Correspondence ML s4c2 (čtvrtek)                      = HH     
+Correspondence ML s4k2 (CZK)                          = HH     
+Correspondence ML s4p2 (pondělí)                      = HH     
 Correspondence ML s4s3 (sobota)                       = HH     
+Correspondence HH s4d3 (date-entity)                  = ML     
+Correspondence HH s4d4 (date-entity)                  = ML     
+Correspondence HH s4d5 (date-entity)                  = ML     
+Correspondence HH s4k1 (korun korun)                  = ML     
+Correspondence HH s4p1 (posledního)                   = ML     
 
 Aligned 14 out of 18 ML nodes, that is 78%.
-
-Correspondence HH s4a1 (a)                       = ML s4a1 (a)                           
-Correspondence HH s4c2 (do čtvrtka)              = ML s4d2 (do čtvrtka)                  
-Correspondence HH s4d1 (Od čtvrtletí)            = ML s4c1 (Od posledního čtvrtletí roku)
-Correspondence HH s4d2 (date-interval)           = ML s4r2 (date-interval)               
-Correspondence HH s4d3 (date-entity)             = ML     
-Correspondence HH s4d4 (date-entity)             = ML     
-Correspondence HH s4d5 (date-entity)             = ML     
-Correspondence HH s4k1 (korun korun)             = ML     
-Correspondence HH s4l1 (letošního roku)          = ML s4l1 (letošního)                   
-Correspondence HH s4m1 (pět)                     = ML s4k1 (pět korun)                   
-Correspondence HH s4m2 (šest)                    = ML s4k3 (šest korun)                  
-Correspondence HH s4n1 (Lidové noviny)           = ML s4n1 (Lidové noviny)               
-Correspondence HH s4n2 (name["Lidové" "noviny"]) = ML s4n2 (name["Lidové" "noviny"])     
-Correspondence HH s4p1 (posledního)              = ML     
-Correspondence HH s4p3 (proto)                   = ML s4p1 (proto)                       
-Correspondence HH s4p4 (od pondělka)             = ML s4d1 (od pondělka)                 
-Correspondence HH s4s1 (budou stát)              = ML s4s1 (budou stát)                  
-Correspondence HH s4s2 (stát-014)                = ML s4s2 (stát-014)                    
-Correspondence HH s4s4 (v sobotu)                = ML s4d3 (v sobotu)                    
-
 Aligned 14 out of 19 HH nodes, that is 74%.
 
 Comparing attributes of ML nodes with their HH counterparts.
@@ -762,23 +701,15 @@ Node-node correspondences:
 
 Correspondence ML s5c1 (Cena)        = HH s5c1 (Cena)       
 Correspondence ML s5i1 (identity-91) = HH s5i1 (identity-91)
-Correspondence ML s5k2 (CZK)         = HH     
-Correspondence ML s5n1 (noviny)      = HH     
 Correspondence ML s5p1 (pátečního)   = HH s5p1 (pátečního)  
-Correspondence ML s5p2 (pátek)       = HH     
 Correspondence ML s5v1 (vydání)      = HH s5v1 (vydání)     
 Correspondence ML s5x1 (6.50)        = HH s5m1 (6.50)       
 Correspondence ML s5z1 (zůstává)     = HH s5z1 (zůstává)    
+Correspondence ML s5k2 (CZK)         = HH     
+Correspondence ML s5n1 (noviny)      = HH     
+Correspondence ML s5p2 (pátek)       = HH     
 
 Aligned 6 out of 9 ML nodes, that is 67%.
-
-Correspondence HH s5c1 (Cena)        = ML s5c1 (Cena)       
-Correspondence HH s5i1 (identity-91) = ML s5i1 (identity-91)
-Correspondence HH s5m1 (6.50)        = ML s5x1 (6.50)       
-Correspondence HH s5p1 (pátečního)   = ML s5p1 (pátečního)  
-Correspondence HH s5v1 (vydání)      = ML s5v1 (vydání)     
-Correspondence HH s5z1 (zůstává)     = ML s5z1 (zůstává)    
-
 Aligned 6 out of 6 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.

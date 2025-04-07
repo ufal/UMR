@@ -41,14 +41,6 @@ Correspondence DZ s1p3 (publication-91)   = ML s1p  (publication-91)
 Correspondence DZ s1v  (volili)           = ML s1v  (volili)          
 
 Aligned 6 out of 6 DZ nodes, that is 100%.
-
-Correspondence ML s1c  (country)          = DZ s1c  (country)         
-Correspondence ML s1n  (name["Estonsko"]) = DZ s1n2 (name["Estonsko"])
-Correspondence ML s1p  (publication-91)   = DZ s1p3 (publication-91)  
-Correspondence ML s1p2 (Estonci)          = DZ s1p  (Estonci)         
-Correspondence ML s1p3 (parlament)        = DZ s1p2 (parlament)       
-Correspondence ML s1v  (volili)           = DZ s1v  (volili)          
-
 Aligned 6 out of 6 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
@@ -89,12 +81,6 @@ Correspondence DZ s2p (publication-91)   = ML s2p (publication-91)
 Correspondence DZ s2t (thing)            = ML s2t (thing)           
 
 Aligned 4 out of 4 DZ nodes, that is 100%.
-
-Correspondence ML s2c (ESTONSKO)         = DZ s2c (ESTONSKO)        
-Correspondence ML s2n (name["Estonsko"]) = DZ s2n (name["Estonsko"])
-Correspondence ML s2p (publication-91)   = DZ s2p (publication-91)  
-Correspondence ML s2t (thing)            = DZ s2t (thing)           
-
 Aligned 4 out of 4 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
@@ -145,14 +131,6 @@ Correspondence DZ s3p3 (publication-91)   = ML s3p  (publication-91)
 Correspondence DZ s3v  (volili)           = ML s3v  (volili)          
 
 Aligned 6 out of 6 DZ nodes, that is 100%.
-
-Correspondence ML s3c  (country)          = DZ s3c  (country)         
-Correspondence ML s3n  (name["Estonsko"]) = DZ s3n2 (name["Estonsko"])
-Correspondence ML s3p  (publication-91)   = DZ s3p3 (publication-91)  
-Correspondence ML s3p2 (Estonci)          = DZ s3p  (Estonci)         
-Correspondence ML s3p3 (parlament)        = DZ s3p2 (parlament)       
-Correspondence ML s3v  (volili)           = DZ s3v  (volili)          
-
 Aligned 6 out of 6 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
@@ -193,12 +171,6 @@ Correspondence DZ s4p (publication-91) = ML s4p (publication-91)
 Correspondence DZ s4t (thing)          = ML s4t (thing)         
 
 Aligned 4 out of 4 DZ nodes, that is 100%.
-
-Correspondence ML s4c (Tallin)         = DZ s4c (Tallin)        
-Correspondence ML s4n (name["Tallin"]) = DZ s4n (name["Tallin"])
-Correspondence ML s4p (publication-91) = DZ s4p (publication-91)
-Correspondence ML s4t (thing)          = DZ s4t (thing)         
-
 Aligned 4 out of 4 ML nodes, that is 100%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
@@ -308,29 +280,9 @@ Correspondence DZ s5v  (V volbách)              = ML s5v  (V volbách)
 Correspondence DZ s5v2 (podle výsledků)         = ML s5v2 (podle výsledků)        
 Correspondence DZ s5v3 (včerejších)             = ML s5v3 (včerejších)            
 Correspondence DZ s5z  (získal)                 = ML s5z  (získal)                
+Correspondence ML s5p5 (person)                 = DZ     
 
 Aligned 18 out of 18 DZ nodes, that is 100%.
-
-Correspondence ML s5b  (blok Vlast , jehož)     = DZ s5b  (blok Vlast jehož)      
-Correspondence ML s5c  (v Estonsku)             = DZ s5c  (v Estonsku)            
-Correspondence ML s5d  (nedělních)              = DZ s5d  (nedělních)             
-Correspondence ML s5h  (hlasů)                  = DZ s5h  (hlasů)                 
-Correspondence ML s5k  (kandidátem byl)         = DZ s5k  (kandidátem byl)        
-Correspondence ML s5n  (name["Vlast"])          = DZ s5n  (name["Vlast"])         
-Correspondence ML s5n1 (nejvíce)                = DZ s5n2 (nejvíce)               
-Correspondence ML s5n2 (neděle)                 = DZ s5n4 (neděle)                
-Correspondence ML s5n3 (name["Estonsko"])       = DZ s5n3 (name["Estonsko"])      
-Correspondence ML s5n4 (name["Lennart" "Meri"]) = DZ s5n5 (name["Lennart" "Meri"])
-Correspondence ML s5p  (parlamentních)          = DZ s5p  (parlamentních)         
-Correspondence ML s5p2 (předběžných)            = DZ s5p3 (předběžných)           
-Correspondence ML s5p3 (Lennart Meri)           = DZ s5p4 (Lennart Meri)          
-Correspondence ML s5p4 (prezidentským)          = DZ s5p5 (prezidentským)         
-Correspondence ML s5p5 (person)                 = DZ     
-Correspondence ML s5v  (V volbách)              = DZ s5v  (V volbách)             
-Correspondence ML s5v2 (podle výsledků)         = DZ s5v2 (podle výsledků)        
-Correspondence ML s5v3 (včerejších)             = DZ s5v3 (včerejších)            
-Correspondence ML s5z  (získal)                 = DZ s5z  (získal)                
-
 Aligned 18 out of 19 ML nodes, that is 95%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
@@ -462,7 +414,6 @@ Node-node correspondences:
 Ambiguous projection of DZ node s6p2 (asi 20.5 procenta , což) to 2 ML nodes [s6a (asi), s6p2 (20.5 procenta což)]
   The winner is DZ node s6p2 (asi 20.5 procenta , což) <--> ML node s6p2 (20.5 procenta což): econcepts=percentage-entity/percentage-entity, match=1 (concept=percentage-entity), weak match=2 (concept,:value).
 
-Correspondence DZ s6a  (asi)                                     = ML     
 Correspondence DZ s6b  (pro blok Vlast)                          = ML s6b  (pro blok Vlast)                       
 Correspondence DZ s6h  (hlasovalo)                               = ML s6h  (hlasovalo)                            
 Correspondence DZ s6i  (include-91)                              = ML s6i  (include-91)                           
@@ -474,30 +425,16 @@ Correspondence DZ s6p2 (asi 20.5 procenta , což)                 = ML s6p2 (20.
 Correspondence DZ s6p4 (představuje)                             = ML s6p4 (představuje)                          
 Correspondence DZ s6p5 (poslaneckých)                            = ML s6p5 (poslaneckých)                         
 Correspondence DZ s6p6 (v parlamentu)                            = ML s6p6 (v parlamentu)                         
-Correspondence DZ s6p7 (person)                                  = ML     
-Correspondence DZ s6v  (volit-001)                               = ML     
 Correspondence DZ s6v2 (voleb)                                   = ML s6v  (voleb)                                
 Correspondence DZ s6z  (se zúčastnili)                           = ML s6z  (se zúčastnili)                        
+Correspondence DZ s6a  (asi)                                     = ML     
+Correspondence DZ s6p7 (person)                                  = ML     
+Correspondence DZ s6v  (volit-001)                               = ML     
+Correspondence ML s6a  (asi)                                     = DZ     
+Correspondence ML s6p  (person)                                  = DZ     
+Correspondence ML s6p8 (person)                                  = DZ     
 
 Aligned 13 out of 16 DZ nodes, that is 81%.
-
-Correspondence ML s6a  (asi)                                   = DZ     
-Correspondence ML s6b  (pro blok Vlast)                        = DZ s6b  (pro blok Vlast)                         
-Correspondence ML s6h  (hlasovalo)                             = DZ s6h  (hlasovalo)                              
-Correspondence ML s6i  (include-91)                            = DZ s6i  (include-91)                             
-Correspondence ML s6m  (28 mandátů)                            = DZ s6m  (28 mandátů)                             
-Correspondence ML s6n  (name["Vlast"])                         = DZ s6n  (name["Vlast"])                          
-Correspondence ML s6n2 (novém)                                 = DZ s6n2 (novém)                                  
-Correspondence ML s6p  (person)                                = DZ     
-Correspondence ML s6p2 (20.5 procenta což)                     = DZ s6p2 (asi 20.5 procenta , což)                
-Correspondence ML s6p4 (představuje)                           = DZ s6p4 (představuje)                            
-Correspondence ML s6p5 (poslaneckých)                          = DZ s6p5 (poslaneckých)                           
-Correspondence ML s6p6 (v parlamentu)                          = DZ s6p6 (v parlamentu)                           
-Correspondence ML s6p7 (Z celkového počtu 457319 voličů kteří) = DZ s6p  (Z celkového počtu 457319 voličů , kteří)
-Correspondence ML s6p8 (person)                                = DZ     
-Correspondence ML s6v  (voleb)                                 = DZ s6v2 (voleb)                                  
-Correspondence ML s6z  (se zúčastnili)                         = DZ s6z  (se zúčastnili)                          
-
 Aligned 13 out of 16 ML nodes, that is 81%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
@@ -644,26 +581,9 @@ Correspondence DZ s7p2 (Arnolda Rüütela)          = ML s7p  (Arnolda Rüütela
 Correspondence DZ s7p3 (představitele)            = ML s7p2 (představitele)           
 Correspondence DZ s7r  (republiky)                = ML s7r  (republiky)               
 Correspondence DZ s7z  (zatím)                    = ML s7z  (zatím)                   
+Correspondence ML s7i  (identity-91)              = DZ     
 
 Aligned 15 out of 15 DZ nodes, that is 100%.
-
-Correspondence ML s7b  (blok Spolehlivý dům)      = DZ s7b  (blok Spolehlivý dům)     
-Correspondence ML s7d  (dosavadního)              = DZ s7d  (dosavadního)             
-Correspondence ML s7d2 (Na druhém místě)          = DZ s7o  (Na druhém místě)         
-Correspondence ML s7h  (je)                       = DZ s7h  (je)                      
-Correspondence ML s7h3 (s hlasů)                  = DZ s7h2 (s hlasů)                 
-Correspondence ML s7i  (identity-91)              = DZ     
-Correspondence ML s7i2 (include-91)               = DZ s7i  (include-91)              
-Correspondence ML s7m3 (18 mandátů)               = DZ s7m  (18 mandátů)              
-Correspondence ML s7n  (name["Spolehlivý" "dům"]) = DZ s7n  (name["Spolehlivý" "dům"])
-Correspondence ML s7n2 (name["Arnold" "Rüütel"])  = DZ s7n2 (name["Arnold" "Rüütel"]) 
-Correspondence ML s7n3 (nejvyššího)               = DZ s7n3 (nejvyššího)              
-Correspondence ML s7p  (Arnolda Rüütela)          = DZ s7p2 (Arnolda Rüütela)         
-Correspondence ML s7p2 (představitele)            = DZ s7p3 (představitele)           
-Correspondence ML s7p3 (13.9 procenty)            = DZ s7p  (13.9 procenty)           
-Correspondence ML s7r  (republiky)                = DZ s7r  (republiky)               
-Correspondence ML s7z  (zatím)                    = DZ s7z  (zatím)                   
-
 Aligned 15 out of 16 ML nodes, that is 94%.
 
 Comparing attributes of DZ nodes with their ML counterparts.

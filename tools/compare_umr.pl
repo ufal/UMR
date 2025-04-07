@@ -959,13 +959,9 @@ sub compare_two_sentences
 {
     my $sentence0 = shift;
     my $sentence1 = shift;
-    # So far the results are not completely symmetric, although
-    # usually they are. But if we want to see where they are not,
-    # we must run the comparison in both directions.
     print_symmetrization_report($sentence0, $sentence1);
     print_symmetrization_report($sentence1, $sentence0);
     compare_node_correspondences($sentence0, $sentence1);
-    compare_node_correspondences($sentence1, $sentence0);
     compare_node_attributes($sentence0, $sentence1);
     compare_node_attributes($sentence1, $sentence0);
 }
@@ -1022,8 +1018,9 @@ sub print_symmetrization_report
 
 #------------------------------------------------------------------------------
 # Takes two sentence hashes, holding corresponding sentences from different
-# files. Examines node-to-node cross-references from the first file to the
-# second file and prints a summary.
+# files. Examines node-to-node cross-references between the files and prints
+# a summary. The symmetric correspondences are printed only once, then the
+# rest; if we ran symmetrization, then the rest consists of unmapped nodes.
 #------------------------------------------------------------------------------
 sub compare_node_correspondences
 {
@@ -1034,9 +1031,14 @@ sub compare_node_correspondences
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
     my @variables0 = sort(keys(%{$sentence0->{nodes}}));
-    my $n_aligned = 0;
-    my $n_total = 0;
-    my @table = ();
+    my @variables1 = sort(keys(%{$sentence1->{nodes}}));
+    my $n_aligned_0 = 0;
+    my $n_total_0 = 0;
+    my $n_aligned_1 = 0;
+    my $n_total_1 = 0;
+    my @table_symmetric = ();
+    my @table_from_0 = ();
+    my @table_from_1 = ();
     # Print the correspondences.
     foreach my $f0var (@variables0)
     {
@@ -1050,19 +1052,61 @@ sub compare_node_correspondences
         {
             my $n1 = $sentence1->{nodes}{$cf1[0]};
             my $t1 = $n1->{aligned_text} || $n1->{econcept};
-            push(@table, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1[0]", "($t1)"]);
+            if(exists($n1->{crossfile}{$label0}{$f0var}))
+            {
+                push(@table_symmetric, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1[0]", "($t1)"]);
+                $n_aligned_0++;
+                $n_total_0++;
+                $n_aligned_1++;
+                $n_total_1++;
+            }
+            else
+            {
+                push(@table_from_0, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1[0]", "($t1)"]);
+                $n_aligned_0++;
+                $n_total_0++;
+            }
         }
         else
         {
             my $cf1 = join(', ', @cf1) || ''; # we could put '???' here but it does not catch the eye
-            push(@table, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1"]);
+            push(@table_from_0, ["Correspondence $label0 $f0var", "($t0)", "= $label1 $cf1"]);
+            $n_aligned_0++ if($ncf1 > 0);
+            $n_total_0++;
         }
-        $n_aligned++ if($ncf1 > 0);
-        $n_total++;
     }
-    print_table(@table);
+    foreach my $f1var (@variables1)
+    {
+        my $n1 = $sentence1->{nodes}{$f1var};
+        my $t1 = $n1->{aligned_text} || $n1->{econcept};
+        my @cf0 = sort(keys(%{$n1->{crossfile}{$label0}}));
+        my $ncf0 = scalar(@cf0);
+        # Since we symmetrize projections, $ncf1 should be either 1 or 0.
+        # But let's keep this function prepared for ambiguous projections, too.
+        if($ncf0 == 1)
+        {
+            my $n0 = $sentence0->{nodes}{$cf0[0]};
+            my $t0 = $n0->{aligned_text} || $n0->{econcept};
+            # If it is symmetric, it has been printed already above.
+            if(!exists($n0->{crossfile}{$label1}{$f1var}))
+            {
+                push(@table_from_1, ["Correspondence $label1 $f1var", "($t1)", "= $label0 $cf0[0]", "($t0)"]);
+                $n_aligned_1++;
+                $n_total_1++;
+            }
+        }
+        else
+        {
+            my $cf0 = join(', ', @cf0) || ''; # we could put '???' here but it does not catch the eye
+            push(@table_from_1, ["Correspondence $label1 $f1var", "($t1)", "= $label0 $cf0"]);
+            $n_aligned_1++ if($ncf0 > 0);
+            $n_total_1++;
+        }
+    }
+    print_table(@table_symmetric, @table_from_0, @table_from_1);
     print("\n");
-    printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned, $n_total, $label0, $n_total > 0 ? $n_aligned/$n_total*100+0.5 : 0);
+    printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned_0, $n_total_0, $label0, $n_total_0 > 0 ? $n_aligned_0/$n_total_0*100+0.5 : 0);
+    printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned_1, $n_total_1, $label1, $n_total_1 > 0 ? $n_aligned_1/$n_total_1*100+0.5 : 0);
     print("\n");
 }
 
