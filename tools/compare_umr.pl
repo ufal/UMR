@@ -806,10 +806,8 @@ sub symmetrize_node_projection
     my $sentence0 = shift;
     my $sentence1 = shift;
     my $do_not_record_ambiguity = shift; # turn recording off if using this function to project the remainder
-    my $file0 = $sentence0->{file};
-    my $file1 = $sentence1->{file};
-    my $label0 = $file0->{label};
-    my $label1 = $file1->{label};
+    my $label0 = $sentence0->{file}{label};
+    my $label1 = $sentence1->{file}{label};
     my @variables0 = sort(keys(%{$sentence0->{nodes}}));
     my @variables1 = sort(keys(%{$sentence1->{nodes}}));
     while(1)
