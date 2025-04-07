@@ -9,14 +9,60 @@ binmode(STDIN, ':utf8');
 binmode(STDOUT, ':utf8');
 binmode(STDERR, ':utf8');
 use Carp;
+use Getopt::Long;
 
 sub usage
 {
-    print STDERR ("Usage: $0 label1 file1 label2 file2 [...]\n");
+    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2]\n");
     print STDERR ("    The labels are used to refer to the files in the output.\n");
     print STDERR ("    They can be e.g. initials of the annotators, or 'GOLD' and 'SYSTEM'.\n");
     print STDERR ("Example:\n");
     print STDERR ("    perl tools\\compare_umr.pl DZ data\\czech\\mf920922-133_estonsko-DZ.txt ML data\\czech\\mf920922-133_estonsko-ML.txt\n");
+}
+
+my $only_relations;
+my $except_relations;
+GetOptions
+(
+    'only=s'   => \$only_relations,
+    'except=s' => \$except_relations
+);
+my %config =
+(
+    'only_relations'   => {},
+    'except_relations' => {}
+);
+if(defined($only_relations))
+{
+    map {s/^://; $config{only_relations}{$_}++} (split(',', $only_relations));
+}
+if(defined($except_relations))
+{
+    map {s/^://; $config{except_relations}{$_}++} (split(',', $except_relations));
+}
+# It does not make sense to use both --only and --except but if it happens,
+# remove the "except" relations from the "only" relations.
+my $n_only = scalar(keys(%{$config{only_relations}}));
+my $n_except = scalar(keys(%{$config{except_relations}}));
+if($n_only && $n_except)
+{
+    foreach my $e (keys(%{$config{except_relations}}))
+    {
+        delete($config{only_relations}{$e});
+    }
+    $config{except_relations} = {};
+    $n_except = 0;
+    $n_only = scalar(keys(%{$config{only_relations}}));
+    confess("--except relations canceled all --only relations") if($n_only == 0);
+    $config{use_only} = 1;
+}
+elsif($n_only)
+{
+    $config{use_only} = 1;
+}
+elsif($n_except)
+{
+    $config{use_except} = 1;
 }
 
 
@@ -1338,11 +1384,13 @@ sub get_node_attributes_mapped
     my $other_label = shift; # label of the other file to which we want to map variables; undef if we do not want to map variables (if compairing two nodes we must map one and keep the other intact)
     my @pairs;
     my $concept = $node->{concept};
-    push(@pairs, ['concept', $concept, $concept]);
+    push(@pairs, ['concept', $concept, $concept]) unless(is_relation_ignored('concept'));
     my @relations = sort {lc($a->{name}) cmp lc($b->{name})} (@{$node->{relations}});
     foreach my $relation (@relations)
     {
         my $rname = $relation->{name};
+        # The user may have asked us to ignore certain relations.
+        next if(is_relation_ignored($rname));
         my $value = $relation->{value};
         # We should not encounter any empty value but just in case...
         next if(!defined($value) || $value eq '');
@@ -1378,6 +1426,30 @@ sub get_node_attributes_mapped
         }
     }
     return @pairs;
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes a relation name, looks into the global configuration hash, and says
+# whether the relation should be ignored in the current evaluation.
+#------------------------------------------------------------------------------
+sub is_relation_ignored
+{
+    my $relation = shift;
+    $relation =~ s/^://;
+    if($config{use_only})
+    {
+        return !exists($config{only_relations}{$relation});
+    }
+    elsif($config{use_except})
+    {
+        return exists($config{except_relations}{$relation});
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 
