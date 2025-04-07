@@ -815,12 +815,12 @@ sub symmetrize_node_projection
         my @to_resolve = ();
         foreach my $variable (@variables0)
         {
-            my @new_to_resolve = get_ambiguous_links_from_node($label0, $sentence0, $variable, $label1, $sentence1, $do_not_record_ambiguity);
+            my @new_to_resolve = get_ambiguous_links_from_node($sentence0, $variable, $sentence1, $do_not_record_ambiguity);
             push(@to_resolve, @new_to_resolve) if(scalar(@new_to_resolve));
         }
         foreach my $variable (@variables1)
         {
-            my @new_to_resolve = get_ambiguous_links_from_node($label1, $sentence1, $variable, $label0, $sentence0, $do_not_record_ambiguity);
+            my @new_to_resolve = get_ambiguous_links_from_node($sentence1, $variable, $sentence0, $do_not_record_ambiguity);
             push(@to_resolve, @new_to_resolve) if(scalar(@new_to_resolve));
         }
         my $n_to_resolve = scalar(@to_resolve);
@@ -848,12 +848,12 @@ sub symmetrize_node_projection
 #------------------------------------------------------------------------------
 sub get_ambiguous_links_from_node
 {
-    my $label0 = shift;
     my $sentence0 = shift;
     my $variable = shift;
-    my $label1 = shift;
     my $sentence1 = shift;
     my $do_not_record_ambiguity = shift; # turn recording off if using this function to project the remainder
+    my $label0 = $sentence0->{file}{label};
+    my $label1 = $sentence1->{file}{label};
     my $n = $sentence0->{nodes}{$variable};
     my @cf = sort(keys(%{$n->{crossfile}{$label1}}));
     # Purge the links. Remove those whose symmetric link is no longer available.
