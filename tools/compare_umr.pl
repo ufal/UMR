@@ -594,16 +594,8 @@ sub compare_sentences
     {
         for(my $j = $i+1; $j <= $#sentences; $j++)
         {
-            unless($j == $i)
-            {
-                # So far the results are not completely symmetric, although
-                # usually they are. But if we want to see where they are not,
-                # we must run the comparison in both directions.
-                compare_node_correspondences($sentences[$i], $sentences[$j]);
-                compare_node_correspondences($sentences[$j], $sentences[$i]);
-                compare_node_attributes($sentences[$i], $sentences[$j]);
-                compare_node_attributes($sentences[$j], $sentences[$i]);
-            }
+            # Perform symmetric comparison of the two sentences.
+            compare_two_sentences($sentences[$i], $sentences[$j]);
         }
     }
 }
@@ -955,6 +947,26 @@ sub find_correspondences_for_remaining_nodes
 #==============================================================================
 # Two-file comparison functions
 #==============================================================================
+
+
+
+#------------------------------------------------------------------------------
+# Takes two sentence hashes, holding corresponding sentences from different
+# files. Performs symmetric comparison of the nodes in the sentences, prints
+# the differences and stores the statistics in the respective files.
+#------------------------------------------------------------------------------
+sub compare_two_sentences
+{
+    my $sentence0 = shift;
+    my $sentence1 = shift;
+    # So far the results are not completely symmetric, although
+    # usually they are. But if we want to see where they are not,
+    # we must run the comparison in both directions.
+    compare_node_correspondences($sentence0, $sentence1);
+    compare_node_correspondences($sentence1, $sentence0);
+    compare_node_attributes($sentence0, $sentence1);
+    compare_node_attributes($sentence1, $sentence0);
+}
 
 
 
