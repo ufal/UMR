@@ -17,7 +17,7 @@ Words: Parlamentní vyšetřování činnosti kontrarozvědky bude pokračovat
             			:name (s1n1 / name
             				:op1 "parlament")
             			:refer-number singular)
-            		:ARG1 (s1c1 / činit-006
+            		:ARG1 (s1c1 / činit-005
                 		:ARG0 (s1k1 / kontrarozvědka
                     			:refer-number singular)
                 		:aspect activity
@@ -73,18 +73,19 @@ Words: Ačkoli parlamentní orgán pro kontrolu Bezpečnostní informační slu�
 (s3p4 / pokračovat-004
 	:aspect activity
 	:modal-strength full-affirmative
-	:mod (s3d1 / de_facto)
+	:clausal-marker (s3d1 / de_facto)
+	:duration (s3d2 / dále)
         :ARG1 (s3s2 / šetřit-003
             :modal-strength full-affirmative
             :aspect activity
-            :mod (s3d2 / dále)
             :ARG1 (s3o3 / organization
             	:name (s3n3 / name
             		:op1 "Bezpečnostní"
             		:op2 "informační"
             		:op3 "služba")
             	:refer-number singular)
-            :ARG0 (s3o1 / organization
+            :ARG0 (s3o1 / orgán
+            	:refer-number singular
             	:part (s3o2 / organization
             		:name (s3n1 / name
             			:op1 "parlament"))
@@ -168,16 +169,16 @@ Words: Včera to připustil člen komise poslanec Pavel Severa (  KDU -  ČSL ) 
 # sentence level graph:
 (s4p1 / připustit-004
         :temporal (s4v1 / včera)
-        :ARG1 (s4t1 / event
-        	:aspect activity
-		:modal-strength full-affirmative)
+        :ARG1 (s4t1 / event)
         :ARG0 (s4p4 / person
         	:ARG1-of (s4h1 / have-org-role-91
     	   		:aspect state
     	    		:modal-strength full-affirmative
     	    		:ARG3 (s4p5 / poslanec
     	    			:refer-number singular)
-    	    		:ARG2  (s4o2 / organization))
+    	    		:ARG2  (s4o2 / organization
+    	    			:name (s4n3 / name
+    	    				:op1 "parlament")))
         	:ARG1-of (s4h2 / have-org-role-91
         		:modal-strength full-affirmative
         		:aspect state
@@ -223,6 +224,7 @@ s4a2: 14-14
 s4s1: 15-15
 s4o1: 16-16
 s4o2: 0-0
+s4n3: 0-0
 
 # document level annotation:
 (s4s0 / sentence
