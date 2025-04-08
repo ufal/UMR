@@ -7,38 +7,38 @@ Found 8 sentences in ML:
 Comparing sentence 1:
 Estonci volili parlament
 
-DZ                                                   ML                                                   
-# sentence level graph:                              # sentence level graph:                              
-(s1p3 / publication-91                               (s1p / publication-91                                
-    :ARG1 (s1v / volit-001                               :ARG1 (s1v / volit-001                           
-        :wiki "Q372557"                                       :wiki "Q372557"                             
-        :ARG0 (s1p / person                                   :ARG0 (s1p2 / person                        
-            :mod (s1c / country                                  :mod (s1c / country                      
-                :wiki "Q191"                                           :wiki "Q191"                       
+DZ                                                   ML
+# sentence level graph:                              # sentence level graph:
+(s1p3 / publication-91                               (s1p / publication-91
+    :ARG1 (s1v / volit-001                               :ARG1 (s1v / volit-001
+        :wiki "Q372557"                                       :wiki "Q372557"
+        :ARG0 (s1p / person                                   :ARG0 (s1p2 / person
+            :mod (s1c / country                                  :mod (s1c / country
+                :wiki "Q191"                                           :wiki "Q191"
                 :name (s1n2 / name :op1 "Estonsko"))                   :name (s1n / name :op1 "Estonsko"))
-            :refer-number plural)                                :refer-number plural)                    
-        :ARG1 (s1p2 / parlament                               :ARG1 (s1p3 / parlament                     
-            :wiki "Q217799"                                          :wiki "Q217799"                      
-            :refer-number singular)                                  :refer-number singular)              
-        :aspect activity                                      :aspect activity                            
-        :modal-strength full-affirmative))                    :modal-strength full-affirmative))          
+            :refer-number plural)                                :refer-number plural)
+        :ARG1 (s1p2 / parlament                               :ARG1 (s1p3 / parlament
+            :wiki "Q217799"                                          :wiki "Q217799"
+            :refer-number singular)                                  :refer-number singular)
+        :aspect activity                                      :aspect activity
+        :modal-strength full-affirmative))                    :modal-strength full-affirmative))
 
 Node-token alignments:
 File DZ: 3 nodes unaligned: s1c/country, s1n2/name["Estonsko"], s1p3/publication-91.
 File ML: 3 nodes unaligned: s1c/country, s1n/name["Estonsko"], s1p/publication-91.
-            DZ   ML  
+            DZ   ML
 1 Estonci   s1p  s1p2
-2 volili    s1v  s1v 
+2 volili    s1v  s1v
 3 parlament s1p2 s1p3
 
 Node-node correspondences:
 
-Correspondence DZ s1c  (country)          = ML s1c  (country)         
+Correspondence DZ s1c  (country)          = ML s1c  (country)
 Correspondence DZ s1n2 (name["Estonsko"]) = ML s1n  (name["Estonsko"])
-Correspondence DZ s1p  (Estonci)          = ML s1p2 (Estonci)         
-Correspondence DZ s1p2 (parlament)        = ML s1p3 (parlament)       
-Correspondence DZ s1p3 (publication-91)   = ML s1p  (publication-91)  
-Correspondence DZ s1v  (volili)           = ML s1v  (volili)          
+Correspondence DZ s1p  (Estonci)          = ML s1p2 (Estonci)
+Correspondence DZ s1p2 (parlament)        = ML s1p3 (parlament)
+Correspondence DZ s1p3 (publication-91)   = ML s1p  (publication-91)
+Correspondence DZ s1v  (volili)           = ML s1v  (volili)
 
 Aligned 6 out of 6 DZ nodes, that is 100%.
 Aligned 6 out of 6 ML nodes, that is 100%.
@@ -57,28 +57,28 @@ Correct 19 out of 19 non-empty DZ values => precision 100%.
 Comparing sentence 2:
 ESTONSKO :
 
-DZ                                         ML                                        
-# sentence level graph:                    # sentence level graph:                   
-(s2p / publication-91                      (s2p / publication-91                     
-    :ARG3 (s2t / thing)                        :ARG3 (s2t / thing)                   
-    :place (s2c / country                      :place (s2c / country                 
-        :wiki "Q191"                               :wiki "Q191"                      
+DZ                                         ML
+# sentence level graph:                    # sentence level graph:
+(s2p / publication-91                      (s2p / publication-91
+    :ARG3 (s2t / thing)                        :ARG3 (s2t / thing)
+    :place (s2c / country                      :place (s2c / country
+        :wiki "Q191"                               :wiki "Q191"
         :name (s2n / name :op1 "Estonsko")         :name (s2n / name :op1 "Estonsko")
-        :refer-number singular))                   :refer-number singular))          
+        :refer-number singular))                   :refer-number singular))
 
 Node-token alignments:
 File DZ: 3 nodes unaligned: s2n/name["Estonsko"], s2p/publication-91, s2t/thing.
 File ML: 3 nodes unaligned: s2n/name["Estonsko"], s2p/publication-91, s2t/thing.
-           DZ  ML 
+           DZ  ML
 1 ESTONSKO s2c s2c
-2 :               
+2 :            
 
 Node-node correspondences:
 
-Correspondence DZ s2c (ESTONSKO)         = ML s2c (ESTONSKO)        
+Correspondence DZ s2c (ESTONSKO)         = ML s2c (ESTONSKO)
 Correspondence DZ s2n (name["Estonsko"]) = ML s2n (name["Estonsko"])
-Correspondence DZ s2p (publication-91)   = ML s2p (publication-91)  
-Correspondence DZ s2t (thing)            = ML s2t (thing)           
+Correspondence DZ s2p (publication-91)   = ML s2p (publication-91)
+Correspondence DZ s2t (thing)            = ML s2t (thing)
 
 Aligned 4 out of 4 DZ nodes, that is 100%.
 Aligned 4 out of 4 ML nodes, that is 100%.
@@ -97,38 +97,38 @@ Correct 10 out of 10 non-empty DZ values => precision 100%.
 Comparing sentence 3:
 Estonci volili parlament
 
-DZ                                                   ML                                                   
-# sentence level graph:                              # sentence level graph:                              
-(s3p3 / publication-91                               (s3p / publication-91                                
-    :ARG1 (s3v / volit-001                               :ARG1 (s3v / volit-001                           
-        :wiki "Q372557"                                       :wiki "Q372557"                             
-        :ARG0 (s3p / person                                   :ARG0 (s3p2 / person                        
-            :mod (s3c / country                                  :mod (s3c / country                      
-                :wiki "Q191"                                           :wiki "Q191"                       
+DZ                                                   ML
+# sentence level graph:                              # sentence level graph:
+(s3p3 / publication-91                               (s3p / publication-91
+    :ARG1 (s3v / volit-001                               :ARG1 (s3v / volit-001
+        :wiki "Q372557"                                       :wiki "Q372557"
+        :ARG0 (s3p / person                                   :ARG0 (s3p2 / person
+            :mod (s3c / country                                  :mod (s3c / country
+                :wiki "Q191"                                           :wiki "Q191"
                 :name (s3n2 / name :op1 "Estonsko"))                   :name (s3n / name :op1 "Estonsko"))
-            :refer-number plural)                                :refer-number plural)                    
-        :ARG1 (s3p2 / parlament                               :ARG1 (s3p3 / parlament                     
-            :wiki "Q217799"                                          :wiki "Q217799"                      
-            :refer-number singular)                                  :refer-number singular)              
-        :aspect activity                                      :aspect activity                            
-        :modal-strength full-affirmative))                    :modal-strength full-affirmative))          
+            :refer-number plural)                                :refer-number plural)
+        :ARG1 (s3p2 / parlament                               :ARG1 (s3p3 / parlament
+            :wiki "Q217799"                                          :wiki "Q217799"
+            :refer-number singular)                                  :refer-number singular)
+        :aspect activity                                      :aspect activity
+        :modal-strength full-affirmative))                    :modal-strength full-affirmative))
 
 Node-token alignments:
 File DZ: 3 nodes unaligned: s3c/country, s3n2/name["Estonsko"], s3p3/publication-91.
 File ML: 3 nodes unaligned: s3c/country, s3n/name["Estonsko"], s3p/publication-91.
-            DZ   ML  
+            DZ   ML
 1 Estonci   s3p  s3p2
-2 volili    s3v  s3v 
+2 volili    s3v  s3v
 3 parlament s3p2 s3p3
 
 Node-node correspondences:
 
-Correspondence DZ s3c  (country)          = ML s3c  (country)         
+Correspondence DZ s3c  (country)          = ML s3c  (country)
 Correspondence DZ s3n2 (name["Estonsko"]) = ML s3n  (name["Estonsko"])
-Correspondence DZ s3p  (Estonci)          = ML s3p2 (Estonci)         
-Correspondence DZ s3p2 (parlament)        = ML s3p3 (parlament)       
-Correspondence DZ s3p3 (publication-91)   = ML s3p  (publication-91)  
-Correspondence DZ s3v  (volili)           = ML s3v  (volili)          
+Correspondence DZ s3p  (Estonci)          = ML s3p2 (Estonci)
+Correspondence DZ s3p2 (parlament)        = ML s3p3 (parlament)
+Correspondence DZ s3p3 (publication-91)   = ML s3p  (publication-91)
+Correspondence DZ s3v  (volili)           = ML s3v  (volili)
 
 Aligned 6 out of 6 DZ nodes, that is 100%.
 Aligned 6 out of 6 ML nodes, that is 100%.
@@ -147,28 +147,28 @@ Correct 19 out of 19 non-empty DZ values => precision 100%.
 Comparing sentence 4:
 Tallin -
 
-DZ                                       ML                                      
-# sentence level graph:                  # sentence level graph:                 
-(s4p / publication-91                    (s4p / publication-91                   
-    :ARG3 (s4t / thing)                      :ARG3 (s4t / thing)                 
-    :place (s4c / city                       :place (s4c / city                  
-        :wiki "Q1770"                            :wiki "Q1770"                   
+DZ                                       ML
+# sentence level graph:                  # sentence level graph:
+(s4p / publication-91                    (s4p / publication-91
+    :ARG3 (s4t / thing)                      :ARG3 (s4t / thing)
+    :place (s4c / city                       :place (s4c / city
+        :wiki "Q1770"                            :wiki "Q1770"
         :name (s4n / name :op1 "Tallin")         :name (s4n / name :op1 "Tallin")
-        :refer-number singular))                 :refer-number singular))        
+        :refer-number singular))                 :refer-number singular))
 
 Node-token alignments:
 File DZ: 3 nodes unaligned: s4n/name["Tallin"], s4p/publication-91, s4t/thing.
 File ML: 3 nodes unaligned: s4n/name["Tallin"], s4p/publication-91, s4t/thing.
-         DZ  ML 
+         DZ  ML
 1 Tallin s4c s4c
-2 -             
+2 -          
 
 Node-node correspondences:
 
-Correspondence DZ s4c (Tallin)         = ML s4c (Tallin)        
+Correspondence DZ s4c (Tallin)         = ML s4c (Tallin)
 Correspondence DZ s4n (name["Tallin"]) = ML s4n (name["Tallin"])
 Correspondence DZ s4p (publication-91) = ML s4p (publication-91)
-Correspondence DZ s4t (thing)          = ML s4t (thing)         
+Correspondence DZ s4t (thing)          = ML s4t (thing)
 
 Aligned 4 out of 4 DZ nodes, that is 100%.
 Aligned 4 out of 4 ML nodes, that is 100%.
@@ -187,144 +187,144 @@ Correct 10 out of 10 non-empty DZ values => precision 100%.
 Comparing sentence 5:
 V nedělních parlamentních volbách v Estonsku získal podle včerejších předběžných výsledků nejvíce hlasů blok Vlast , jehož prezidentským kandidátem byl Lennart Meri .
 
-DZ                                                         ML                                                                               
-# sentence level graph:                                    # sentence level graph:                                                          
-(s5z / získat-001                                          (s5z / získat-001                                                                
-    :ARG0 (s5b / blok                                          :ARG0 (s5b / blok                                                            
-        :wiki "Q163347"                                                :refer-number singular                                               
-        :name (s5n / name :op1 "Vlast")                                :wiki "Q163347"                                                      
-        :refer-number singular                                         :name (s5n / name :op1 "Vlast")                                      
-        :possessor-of (s5p4 / person                                   :ARG0-of (s5k / kandidovat-001                                       
-            :wiki "Q153149"                                                           :ARG1 (s5p3 / person                                  
-            :name (s5n5 / name :op1 "Lennart" :op2 "Meri")                                    :wiki "Q153149"                               
+DZ                                                         ML
+# sentence level graph:                                    # sentence level graph:
+(s5z / získat-001                                          (s5z / získat-001
+    :ARG0 (s5b / blok                                          :ARG0 (s5b / blok
+        :wiki "Q163347"                                                :refer-number singular
+        :name (s5n / name :op1 "Vlast")                                :wiki "Q163347"
+        :refer-number singular                                         :name (s5n / name :op1 "Vlast")
+        :possessor-of (s5p4 / person                                   :ARG0-of (s5k / kandidovat-001
+            :wiki "Q153149"                                                           :ARG1 (s5p3 / person
+            :name (s5n5 / name :op1 "Lennart" :op2 "Meri")                                    :wiki "Q153149"
             :refer-number singular                                                            :name (s5n4 / name :op1 "Lennart" :op2 "Meri")
-            :ARG0-of (s5k / kandidovat-002                                                    :refer-number singular)                       
-                :ARG1 (s5p5 / prezident                                               :ARG2 (s5p4 / prezident                               
-                    :wiki "Q30461"                                                               :wiki "Q30461"                             
-                    :refer-number singular)                                                      :refer-number singular)                    
-                :aspect state                                                         :aspect performance                                   
-                :modal-strength full-affirmative)))                                   :modal-strength full-affirmative))                    
-    :ARG1 (s5h / hlas                                          :ARG1 (s5h / hlas                                                            
-        :wiki "Q1306135"                                               :wiki "Q1306135"                                                     
-        :quant (s5n2 / nejvíce)                                        :refer-number plural                                                 
-        :refer-number plural)                                          :quant (s5n1 / nejvíce))                                             
-    :ARG2 (s5v / volit-001                                     :ARG2 (s5v / volit-001                                                       
-        :wiki "Q372557"                                                    :wiki "Q372557"                                                  
-        :ARG1 (s5p / parlament                                             :ARG0 (s5p5 / person                                             
-            :wiki "Q217799"                                                      :mod (s5c / country                                        
-            :refer-number singular)                                                     :wiki "Q191"                                        
-        :temporal (s5d / date-entity                                                    :refer-number singular                              
-                :weekday (s5n4 / neděle                                                 :name (s5n3 / name :op1 "Estonsko")))               
-                    :wiki "Q132"))                                         :ARG1 (s5p / parlament                                           
-        :place (s5c / country                                                  :wiki "Q217799"                                              
-            :wiki "Q191"                                                       :refer-number singular)                                      
-            :name (s5n3 / name :op1 "Estonsko")                            :temporal (s5d / date-entity                                     
-            :refer-number singular)                                            :weekday (s5n2 / neděle                                      
-        :aspect activity                                                       :wiki "Q132"))                                               
-        :modal-strength full-affirmative)                                  :place s5c                                                       
-    :according-to (s5v2 / výsledek                                         :aspect activity                                                 
-        :wiki "Q51591359"                                                  :modal-strength full-affirmative)                                
-        :ARG0-of (s5p3 / předbíhat-001                         :manner (s5v2 / výsledek                                                     
-            :aspect state                                              :wiki "Q51591359"                                                    
-            :modal-strength full-affirmative)                          :refer-number plural                                                 
-        :temporal (s5v3 / včera)                                       :temporal (s5v3 / včera)                                             
-        :refer-number plural)                                          :mod (s5p2 / předběžný))                                             
-    :aspect performance                                        :aspect performance                                                          
-    :modal-strength full-affirmative)                          :modal-strength full-affirmative)                                            
+            :ARG0-of (s5k / kandidovat-002                                                    :refer-number singular)
+                :ARG1 (s5p5 / prezident                                               :ARG2 (s5p4 / prezident
+                    :wiki "Q30461"                                                               :wiki "Q30461"
+                    :refer-number singular)                                                      :refer-number singular)
+                :aspect state                                                         :aspect performance
+                :modal-strength full-affirmative)))                                   :modal-strength full-affirmative))
+    :ARG1 (s5h / hlas                                          :ARG1 (s5h / hlas
+        :wiki "Q1306135"                                               :wiki "Q1306135"
+        :quant (s5n2 / nejvíce)                                        :refer-number plural
+        :refer-number plural)                                          :quant (s5n1 / nejvíce))
+    :ARG2 (s5v / volit-001                                     :ARG2 (s5v / volit-001
+        :wiki "Q372557"                                                    :wiki "Q372557"
+        :ARG1 (s5p / parlament                                             :ARG0 (s5p5 / person
+            :wiki "Q217799"                                                      :mod (s5c / country
+            :refer-number singular)                                                     :wiki "Q191"
+        :temporal (s5d / date-entity                                                    :refer-number singular
+                :weekday (s5n4 / neděle                                                 :name (s5n3 / name :op1 "Estonsko")))
+                    :wiki "Q132"))                                         :ARG1 (s5p / parlament
+        :place (s5c / country                                                  :wiki "Q217799"
+            :wiki "Q191"                                                       :refer-number singular)
+            :name (s5n3 / name :op1 "Estonsko")                            :temporal (s5d / date-entity
+            :refer-number singular)                                            :weekday (s5n2 / neděle
+        :aspect activity                                                       :wiki "Q132"))
+        :modal-strength full-affirmative)                                  :place s5c
+    :according-to (s5v2 / výsledek                                         :aspect activity
+        :wiki "Q51591359"                                                  :modal-strength full-affirmative)
+        :ARG0-of (s5p3 / předbíhat-001                         :manner (s5v2 / výsledek
+            :aspect state                                              :wiki "Q51591359"
+            :modal-strength full-affirmative)                          :refer-number plural
+        :temporal (s5v3 / včera)                                       :temporal (s5v3 / včera)
+        :refer-number plural)                                          :mod (s5p2 / předběžný))
+    :aspect performance                                        :aspect performance
+    :modal-strength full-affirmative)                          :modal-strength full-affirmative)
 
 Node-token alignments:
 File DZ: 4 nodes unaligned: s5n/name["Vlast"], s5n3/name["Estonsko"], s5n4/neděle, s5n5/name["Lennart" "Meri"].
 File ML: 5 nodes unaligned: s5n/name["Vlast"], s5n2/neděle, s5n3/name["Estonsko"], s5n4/name["Lennart" "Meri"], s5p5/person.
-                 DZ   ML  
-1  V             s5v  s5v 
-2  nedělních     s5d  s5d 
-3  parlamentních s5p  s5p 
-4  volbách       s5v  s5v 
-5  v             s5c  s5c 
-6  Estonsku      s5c  s5c 
-7  získal        s5z  s5z 
+                 DZ   ML
+1  V             s5v  s5v
+2  nedělních     s5d  s5d
+3  parlamentních s5p  s5p
+4  volbách       s5v  s5v
+5  v             s5c  s5c
+6  Estonsku      s5c  s5c
+7  získal        s5z  s5z
 8  podle         s5v2 s5v2
 9  včerejších    s5v3 s5v3
 10 předběžných   s5p3 s5p2
 11 výsledků      s5v2 s5v2
 12 nejvíce       s5n2 s5n1
-13 hlasů         s5h  s5h 
-14 blok          s5b  s5b 
-15 Vlast         s5b  s5b 
-16 ,                  s5b 
-17 jehož         s5b  s5b 
+13 hlasů         s5h  s5h
+14 blok          s5b  s5b
+15 Vlast         s5b  s5b
+16 ,                  s5b
+17 jehož         s5b  s5b
 18 prezidentským s5p5 s5p4
-19 kandidátem    s5k  s5k 
-20 byl           s5k  s5k 
+19 kandidátem    s5k  s5k
+20 byl           s5k  s5k
 21 Lennart       s5p4 s5p3
 22 Meri          s5p4 s5p3
-23 .                      
+23 .                  
 
 Node-node correspondences:
 
-Correspondence DZ s5b  (blok Vlast jehož)       = ML s5b  (blok Vlast , jehož)    
-Correspondence DZ s5c  (v Estonsku)             = ML s5c  (v Estonsku)            
-Correspondence DZ s5d  (nedělních)              = ML s5d  (nedělních)             
-Correspondence DZ s5h  (hlasů)                  = ML s5h  (hlasů)                 
-Correspondence DZ s5k  (kandidátem byl)         = ML s5k  (kandidátem byl)        
-Correspondence DZ s5n  (name["Vlast"])          = ML s5n  (name["Vlast"])         
-Correspondence DZ s5n2 (nejvíce)                = ML s5n1 (nejvíce)               
-Correspondence DZ s5n3 (name["Estonsko"])       = ML s5n3 (name["Estonsko"])      
-Correspondence DZ s5n4 (neděle)                 = ML s5n2 (neděle)                
+Correspondence DZ s5b  (blok Vlast jehož)       = ML s5b  (blok Vlast , jehož)
+Correspondence DZ s5c  (v Estonsku)             = ML s5c  (v Estonsku)
+Correspondence DZ s5d  (nedělních)              = ML s5d  (nedělních)
+Correspondence DZ s5h  (hlasů)                  = ML s5h  (hlasů)
+Correspondence DZ s5k  (kandidátem byl)         = ML s5k  (kandidátem byl)
+Correspondence DZ s5n  (name["Vlast"])          = ML s5n  (name["Vlast"])
+Correspondence DZ s5n2 (nejvíce)                = ML s5n1 (nejvíce)
+Correspondence DZ s5n3 (name["Estonsko"])       = ML s5n3 (name["Estonsko"])
+Correspondence DZ s5n4 (neděle)                 = ML s5n2 (neděle)
 Correspondence DZ s5n5 (name["Lennart" "Meri"]) = ML s5n4 (name["Lennart" "Meri"])
-Correspondence DZ s5p  (parlamentních)          = ML s5p  (parlamentních)         
-Correspondence DZ s5p3 (předběžných)            = ML s5p2 (předběžných)           
-Correspondence DZ s5p4 (Lennart Meri)           = ML s5p3 (Lennart Meri)          
-Correspondence DZ s5p5 (prezidentským)          = ML s5p4 (prezidentským)         
-Correspondence DZ s5v  (V volbách)              = ML s5v  (V volbách)             
-Correspondence DZ s5v2 (podle výsledků)         = ML s5v2 (podle výsledků)        
-Correspondence DZ s5v3 (včerejších)             = ML s5v3 (včerejších)            
-Correspondence DZ s5z  (získal)                 = ML s5z  (získal)                
-Correspondence ML s5p5 (person)                 = DZ     
+Correspondence DZ s5p  (parlamentních)          = ML s5p  (parlamentních)
+Correspondence DZ s5p3 (předběžných)            = ML s5p2 (předběžných)
+Correspondence DZ s5p4 (Lennart Meri)           = ML s5p3 (Lennart Meri)
+Correspondence DZ s5p5 (prezidentským)          = ML s5p4 (prezidentským)
+Correspondence DZ s5v  (V volbách)              = ML s5v  (V volbách)
+Correspondence DZ s5v2 (podle výsledků)         = ML s5v2 (podle výsledků)
+Correspondence DZ s5v3 (včerejších)             = ML s5v3 (včerejších)
+Correspondence DZ s5z  (získal)                 = ML s5z  (získal)
+Correspondence DZ                               = ML s5p5 (person)
 
 Aligned 18 out of 18 DZ nodes, that is 100%.
 Aligned 18 out of 19 ML nodes, that is 95%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
-Node DZ s5b / blok (blok Vlast jehož)         mismatch in :possessor-of:   DZ = s5p4 mapped to ML s5p3 ML =               
-Node DZ s5b / blok (blok Vlast jehož)         mismatch in :ARG0-of:        DZ =                        ML = s5k           
+Node DZ s5b / blok (blok Vlast jehož)         mismatch in :possessor-of:   DZ = s5p4 mapped to ML s5p3 ML = 
+Node DZ s5b / blok (blok Vlast jehož)         mismatch in :ARG0-of:        DZ =                        ML = s5k
 Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in concept:         DZ = kandidovat-002         ML = kandidovat-001
-Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :ARG1:           DZ = s5p5 mapped to ML s5p4 ML = s5p3          
-Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :aspect:         DZ = state                  ML = performance   
-Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :ARG2:           DZ =                        ML = s5p4          
-Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in concept:         DZ = předbíhat-001          ML = předběžný     
-Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in :aspect:         DZ = state                  ML =               
-Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in :modal-strength: DZ = full-affirmative       ML =               
-Node DZ s5p4 / person (Lennart Meri)          mismatch in :ARG0-of:        DZ = s5k mapped to ML s5k   ML =               
-Node DZ s5v / volit-001 (V volbách)           mismatch in :ARG0:           DZ =                        ML = s5p5          
-Node DZ s5v2 / výsledek (podle výsledků)      mismatch in :ARG0-of:        DZ = s5p3 mapped to ML s5p2 ML =               
-Node DZ s5v2 / výsledek (podle výsledků)      mismatch in :mod:            DZ =                        ML = s5p2          
-Node DZ s5z / získat-001 (získal)             mismatch in :according-to:   DZ = s5v2 mapped to ML s5v2 ML =               
-Node DZ s5z / získat-001 (získal)             mismatch in :manner:         DZ =                        ML = s5v2          
-Node ML s5p5 / person                         mismatch in concept:         ML = person                 DZ = UNMAPPED      
-Node ML s5p5 / person                         mismatch in :mod:            ML = s5c                    DZ = UNMAPPED      
+Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :ARG1:           DZ = s5p5 mapped to ML s5p4 ML = s5p3
+Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :aspect:         DZ = state                  ML = performance
+Node DZ s5k / kandidovat-002 (kandidátem byl) mismatch in :ARG2:           DZ =                        ML = s5p4
+Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in concept:         DZ = předbíhat-001          ML = předběžný
+Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in :aspect:         DZ = state                  ML = 
+Node DZ s5p3 / předbíhat-001 (předběžných)    mismatch in :modal-strength: DZ = full-affirmative       ML = 
+Node DZ s5p4 / person (Lennart Meri)          mismatch in :ARG0-of:        DZ = s5k mapped to ML s5k   ML = 
+Node DZ s5v / volit-001 (V volbách)           mismatch in :ARG0:           DZ =                        ML = s5p5
+Node DZ s5v2 / výsledek (podle výsledků)      mismatch in :ARG0-of:        DZ = s5p3 mapped to ML s5p2 ML = 
+Node DZ s5v2 / výsledek (podle výsledků)      mismatch in :mod:            DZ =                        ML = s5p2
+Node DZ s5z / získat-001 (získal)             mismatch in :according-to:   DZ = s5v2 mapped to ML s5v2 ML = 
+Node DZ s5z / získat-001 (získal)             mismatch in :manner:         DZ =                        ML = s5v2
+Node ML s5p5 / person                         mismatch in concept:         ML = person                 DZ = UNMAPPED
+Node ML s5p5 / person                         mismatch in :mod:            ML = s5c                    DZ = UNMAPPED
 
 Correct 53 out of 63 non-empty DZ values => recall    84%.
 Correct 53 out of 64 non-empty ML values => precision 83%.
 
 Comparing attributes of ML nodes with their DZ counterparts.
-Node ML s5b / blok (blok Vlast , jehož)       mismatch in :ARG0-of:        ML = s5k mapped to DZ s5k   DZ =                 
-Node ML s5b / blok (blok Vlast , jehož)       mismatch in :possessor-of:   ML =                        DZ = s5p4            
-Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in concept:         ML = kandidovat-001         DZ = kandidovat-002  
-Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :ARG1:           ML = s5p3 mapped to DZ s5p4 DZ = s5p5            
-Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :ARG2:           ML = s5p4 mapped to DZ s5p5 DZ =                 
-Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :aspect:         ML = performance            DZ = state           
-Node ML s5p2 / předběžný (předběžných)        mismatch in concept:         ML = předběžný              DZ = předbíhat-001   
-Node ML s5p2 / předběžný (předběžných)        mismatch in :aspect:         ML =                        DZ = state           
+Node ML s5b / blok (blok Vlast , jehož)       mismatch in :ARG0-of:        ML = s5k mapped to DZ s5k   DZ = 
+Node ML s5b / blok (blok Vlast , jehož)       mismatch in :possessor-of:   ML =                        DZ = s5p4
+Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in concept:         ML = kandidovat-001         DZ = kandidovat-002
+Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :ARG1:           ML = s5p3 mapped to DZ s5p4 DZ = s5p5
+Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :ARG2:           ML = s5p4 mapped to DZ s5p5 DZ = 
+Node ML s5k / kandidovat-001 (kandidátem byl) mismatch in :aspect:         ML = performance            DZ = state
+Node ML s5p2 / předběžný (předběžných)        mismatch in concept:         ML = předběžný              DZ = předbíhat-001
+Node ML s5p2 / předběžný (předběžných)        mismatch in :aspect:         ML =                        DZ = state
 Node ML s5p2 / předběžný (předběžných)        mismatch in :modal-strength: ML =                        DZ = full-affirmative
-Node ML s5p3 / person (Lennart Meri)          mismatch in :ARG0-of:        ML =                        DZ = s5k             
-Node ML s5p5 / person                         mismatch in concept:         ML = person                 DZ = UNMAPPED        
-Node ML s5p5 / person                         mismatch in :mod:            ML = s5c                    DZ = UNMAPPED        
-Node ML s5v / volit-001 (V volbách)           mismatch in :ARG0:           ML = s5p5 unmapped          DZ =                 
-Node ML s5v2 / výsledek (podle výsledků)      mismatch in :mod:            ML = s5p2 mapped to DZ s5p3 DZ =                 
-Node ML s5v2 / výsledek (podle výsledků)      mismatch in :ARG0-of:        ML =                        DZ = s5p3            
-Node ML s5z / získat-001 (získal)             mismatch in :manner:         ML = s5v2 mapped to DZ s5v2 DZ =                 
-Node ML s5z / získat-001 (získal)             mismatch in :according-to:   ML =                        DZ = s5v2            
+Node ML s5p3 / person (Lennart Meri)          mismatch in :ARG0-of:        ML =                        DZ = s5k
+Node ML s5p5 / person                         mismatch in concept:         ML = person                 DZ = UNMAPPED
+Node ML s5p5 / person                         mismatch in :mod:            ML = s5c                    DZ = UNMAPPED
+Node ML s5v / volit-001 (V volbách)           mismatch in :ARG0:           ML = s5p5 unmapped          DZ = 
+Node ML s5v2 / výsledek (podle výsledků)      mismatch in :mod:            ML = s5p2 mapped to DZ s5p3 DZ = 
+Node ML s5v2 / výsledek (podle výsledků)      mismatch in :ARG0-of:        ML =                        DZ = s5p3
+Node ML s5z / získat-001 (získal)             mismatch in :manner:         ML = s5v2 mapped to DZ s5v2 DZ = 
+Node ML s5z / získat-001 (získal)             mismatch in :according-to:   ML =                        DZ = s5v2
 
 Correct 53 out of 64 non-empty ML values => recall    83%.
 Correct 53 out of 63 non-empty DZ values => precision 84%.
@@ -333,135 +333,135 @@ Correct 53 out of 63 non-empty DZ values => precision 84%.
 Comparing sentence 6:
 Z celkového počtu 457319 voličů , kteří se voleb zúčastnili , hlasovalo pro blok Vlast asi 20.5 procenta , což představuje 28 poslaneckých mandátů v novém parlamentu .
 
-DZ                                                        ML                                                                                     
-# sentence level graph:                                   # sentence level graph:                                                                
-(s6h / hlasovat-003                                       (s6i / include-91                                                                      
-    :ARG0 (s6p7 / person                                         :ARG2 (s6p7 / person                                                            
-        :ARG1-of (s6i / include-91                                            :quant 457319                                                      
-            :ARG2 (s6p / person                                               :refer-number plural                                               
-                :ARG0-of (s6v / volit-001                                     :ARG0-of (s6z / zúčastnit-se-001                                   
-                    :aspect habitual                                                          :ARG1 (s6v / volit-001                             
-                    :modal-strength full-affirmative)                                                      :wiki "Q372557"                       
-                :refer-number plural                                                                       :ARG0 s6p7                            
-                :quant 457319                                                                              :ARG1 (s6p8 / person)                 
-                :ARG0-of (s6z / zúčastnit-se-001                                                           :aspect process                       
-                    :ARG1 (s6v2 / volit-001                                                                :modal-strength full-affirmative)     
-                        :wiki "Q372557"                                                 :aspect performance                                      
-                        :aspect process                                                 :modal-strength full-affirmative))                       
-                        :modal-strength full-affirmative)       :ARG1(s6p / person                                                               
-                    :aspect performance                                    :refer-number plural                                                  
-                    :modal-strength full-affirmative))                     :ARG0-of (s6h / hlasovat-003                                          
-            :ARG3 (s6p2 / percentage-entity                                               :wiki "Q189760"                                        
-                :value (s6a / asi :op1 20.5)                                              :ARG1 (s6b / blok                                      
-                :ARG0-of (s6p4 / představovat-003                                                      :wiki "Q163347"                           
-                    :ARG1 (s6m / mandát                                                                :refer-number singular                    
-                        :wiki "Q486839"                                                                :name (s6n / name :op1 "Vlast"))          
-                        :mod (s6p5 / poslanec)                                            :aspect activity                                       
-                        :place (s6p6 / parlament                                          :modal-strength full-affirmative))                     
-                            :wiki "Q217799"                     :ARG3 (s6a / asi                                                                 
-                            :refer-number singular                           :op1 (s6p2 / percentage-entity                                      
-                            :mod (s6n2 / nový))                                           :value  20.5)                                          
-                        :quant 28                                            :ARG0-of(s6p4 / představovat-003                                    
-                        :refer-number plural)                                                :ARG1 (s6m / mandát                                 
-                    :aspect state                                                                         :wiki "Q486839"                        
-                    :modal-strength full-affirmative))                                                    :quant 28                              
-            :aspect state                                                                                 :refer-number plural                   
-            :modal-strength full-affirmative)                                                             :mod (s6p5 / poslanec)                 
-        :refer-number plural)                                                                             :place (s6p6 / parlament               
-    :ARG1 (s6b / blok                                                                                                    :wiki "Q217799"         
-        :wiki "Q163347"                                                                                                  :mod (s6n2 / nový)      
+DZ                                                        ML
+# sentence level graph:                                   # sentence level graph:
+(s6h / hlasovat-003                                       (s6i / include-91
+    :ARG0 (s6p7 / person                                         :ARG2 (s6p7 / person
+        :ARG1-of (s6i / include-91                                            :quant 457319
+            :ARG2 (s6p / person                                               :refer-number plural
+                :ARG0-of (s6v / volit-001                                     :ARG0-of (s6z / zúčastnit-se-001
+                    :aspect habitual                                                          :ARG1 (s6v / volit-001
+                    :modal-strength full-affirmative)                                                      :wiki "Q372557"
+                :refer-number plural                                                                       :ARG0 s6p7
+                :quant 457319                                                                              :ARG1 (s6p8 / person)
+                :ARG0-of (s6z / zúčastnit-se-001                                                           :aspect process
+                    :ARG1 (s6v2 / volit-001                                                                :modal-strength full-affirmative)
+                        :wiki "Q372557"                                                 :aspect performance
+                        :aspect process                                                 :modal-strength full-affirmative))
+                        :modal-strength full-affirmative)       :ARG1(s6p / person
+                    :aspect performance                                    :refer-number plural
+                    :modal-strength full-affirmative))                     :ARG0-of (s6h / hlasovat-003
+            :ARG3 (s6p2 / percentage-entity                                               :wiki "Q189760"
+                :value (s6a / asi :op1 20.5)                                              :ARG1 (s6b / blok
+                :ARG0-of (s6p4 / představovat-003                                                      :wiki "Q163347"
+                    :ARG1 (s6m / mandát                                                                :refer-number singular
+                        :wiki "Q486839"                                                                :name (s6n / name :op1 "Vlast"))
+                        :mod (s6p5 / poslanec)                                            :aspect activity
+                        :place (s6p6 / parlament                                          :modal-strength full-affirmative))
+                            :wiki "Q217799"                     :ARG3 (s6a / asi
+                            :refer-number singular                           :op1 (s6p2 / percentage-entity
+                            :mod (s6n2 / nový))                                           :value  20.5)
+                        :quant 28                                            :ARG0-of(s6p4 / představovat-003
+                        :refer-number plural)                                                :ARG1 (s6m / mandát
+                    :aspect state                                                                         :wiki "Q486839"
+                    :modal-strength full-affirmative))                                                    :quant 28
+            :aspect state                                                                                 :refer-number plural
+            :modal-strength full-affirmative)                                                             :mod (s6p5 / poslanec)
+        :refer-number plural)                                                                             :place (s6p6 / parlament
+    :ARG1 (s6b / blok                                                                                                    :wiki "Q217799"
+        :wiki "Q163347"                                                                                                  :mod (s6n2 / nový)
         :name (s6n / name :op1 "Vlast")                                                                                  :refer-number singular))
-        :refer-number singular)                                                              :aspect state                                       
-    :aspect activity                                                                         :modal-strength full-affirmative))                  
-    :modal-strength full-affirmative)                           :aspect state                                                                    
-                                                                :modal-strength full-affirmative)                                                
+        :refer-number singular)                                                              :aspect state
+    :aspect activity                                                                         :modal-strength full-affirmative))
+    :modal-strength full-affirmative)                           :aspect state
+                                                                :modal-strength full-affirmative)
 
 Node-token alignments:
 File DZ: 5 nodes unaligned: s6a/asi, s6i/include-91, s6n/name["Vlast"], s6p7/person, s6v/volit-001.
 File ML: 4 nodes unaligned: s6i/include-91, s6n/name["Vlast"], s6p/person, s6p8/person.
-                DZ   ML  
+                DZ   ML
 1  Z            s6p  s6p7
 2  celkového    s6p  s6p7
 3  počtu        s6p  s6p7
 4  457319       s6p  s6p7
 5  voličů       s6p  s6p7
-6  ,            s6p      
+6  ,            s6p  
 7  kteří        s6p  s6p7
-8  se           s6z  s6z 
-9  voleb        s6v2 s6v 
-10 zúčastnili   s6z  s6z 
-11 ,                     
-12 hlasovalo    s6h  s6h 
-13 pro          s6b  s6b 
-14 blok         s6b  s6b 
-15 Vlast        s6b  s6b 
-16 asi          s6p2 s6a 
+8  se           s6z  s6z
+9  voleb        s6v2 s6v
+10 zúčastnili   s6z  s6z
+11 ,                 
+12 hlasovalo    s6h  s6h
+13 pro          s6b  s6b
+14 blok         s6b  s6b
+15 Vlast        s6b  s6b
+16 asi          s6p2 s6a
 17 20.5         s6p2 s6p2
 18 procenta     s6p2 s6p2
-19 ,            s6p2     
+19 ,            s6p2 
 20 což          s6p2 s6p2
 21 představuje  s6p4 s6p4
-22 28           s6m  s6m 
+22 28           s6m  s6m
 23 poslaneckých s6p5 s6p5
-24 mandátů      s6m  s6m 
+24 mandátů      s6m  s6m
 25 v            s6p6 s6p6
 26 novém        s6n2 s6n2
 27 parlamentu   s6p6 s6p6
-28 .                     
+28 .                 
 
 Node-node correspondences:
 
 Ambiguous projection of DZ node s6p2 (asi 20.5 procenta , což) to 2 ML nodes [s6a (asi), s6p2 (20.5 procenta což)]
   The winner is DZ node s6p2 (asi 20.5 procenta , což) <--> ML node s6p2 (20.5 procenta což): econcepts=percentage-entity/percentage-entity, match=1 (concept=percentage-entity), weak match=2 (concept,:value).
 
-Correspondence DZ s6b  (pro blok Vlast)                          = ML s6b  (pro blok Vlast)                       
-Correspondence DZ s6h  (hlasovalo)                               = ML s6h  (hlasovalo)                            
-Correspondence DZ s6i  (include-91)                              = ML s6i  (include-91)                           
-Correspondence DZ s6m  (28 mandátů)                              = ML s6m  (28 mandátů)                           
-Correspondence DZ s6n  (name["Vlast"])                           = ML s6n  (name["Vlast"])                        
-Correspondence DZ s6n2 (novém)                                   = ML s6n2 (novém)                                
+Correspondence DZ s6b  (pro blok Vlast)                          = ML s6b  (pro blok Vlast)
+Correspondence DZ s6h  (hlasovalo)                               = ML s6h  (hlasovalo)
+Correspondence DZ s6i  (include-91)                              = ML s6i  (include-91)
+Correspondence DZ s6m  (28 mandátů)                              = ML s6m  (28 mandátů)
+Correspondence DZ s6n  (name["Vlast"])                           = ML s6n  (name["Vlast"])
+Correspondence DZ s6n2 (novém)                                   = ML s6n2 (novém)
 Correspondence DZ s6p  (Z celkového počtu 457319 voličů , kteří) = ML s6p7 (Z celkového počtu 457319 voličů kteří)
-Correspondence DZ s6p2 (asi 20.5 procenta , což)                 = ML s6p2 (20.5 procenta což)                    
-Correspondence DZ s6p4 (představuje)                             = ML s6p4 (představuje)                          
-Correspondence DZ s6p5 (poslaneckých)                            = ML s6p5 (poslaneckých)                         
-Correspondence DZ s6p6 (v parlamentu)                            = ML s6p6 (v parlamentu)                         
-Correspondence DZ s6v2 (voleb)                                   = ML s6v  (voleb)                                
-Correspondence DZ s6z  (se zúčastnili)                           = ML s6z  (se zúčastnili)                        
-Correspondence DZ s6a  (asi)                                     = ML     
-Correspondence DZ s6p7 (person)                                  = ML     
-Correspondence DZ s6v  (volit-001)                               = ML     
-Correspondence ML s6a  (asi)                                     = DZ     
-Correspondence ML s6p  (person)                                  = DZ     
-Correspondence ML s6p8 (person)                                  = DZ     
+Correspondence DZ s6p2 (asi 20.5 procenta , což)                 = ML s6p2 (20.5 procenta což)
+Correspondence DZ s6p4 (představuje)                             = ML s6p4 (představuje)
+Correspondence DZ s6p5 (poslaneckých)                            = ML s6p5 (poslaneckých)
+Correspondence DZ s6p6 (v parlamentu)                            = ML s6p6 (v parlamentu)
+Correspondence DZ s6v2 (voleb)                                   = ML s6v  (voleb)
+Correspondence DZ s6z  (se zúčastnili)                           = ML s6z  (se zúčastnili)
+Correspondence DZ s6a  (asi)                                     = ML 
+Correspondence DZ s6p7 (person)                                  = ML 
+Correspondence DZ s6v  (volit-001)                               = ML 
+Correspondence DZ                                                = ML s6a  (asi)
+Correspondence DZ                                                = ML s6p  (person)
+Correspondence DZ                                                = ML s6p8 (person)
 
 Aligned 13 out of 16 DZ nodes, that is 81%.
 Aligned 13 out of 16 ML nodes, that is 81%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
-Node DZ s6a / asi                                              mismatch in concept:         DZ = asi                    ML = UNMAPPED 
-Node DZ s6a / asi                                              mismatch in :op1:            DZ = 20.5                   ML = UNMAPPED 
-Node DZ s6h / hlasovat-003 (hlasovalo)                         mismatch in :ARG0:           DZ = s6p7 unmapped          ML =          
+Node DZ s6a / asi                                              mismatch in concept:         DZ = asi                    ML = UNMAPPED
+Node DZ s6a / asi                                              mismatch in :op1:            DZ = 20.5                   ML = UNMAPPED
+Node DZ s6h / hlasovat-003 (hlasovalo)                         mismatch in :ARG0:           DZ = s6p7 unmapped          ML = 
 Node DZ s6h / hlasovat-003 (hlasovalo)                         mismatch in :wiki:           DZ =                        ML = "Q189760"
-Node DZ s6i / include-91                                       mismatch in :ARG3:           DZ = s6p2 mapped to ML s6p2 ML = s6a      
-Node DZ s6i / include-91                                       mismatch in :ARG1:           DZ =                        ML = s6p      
-Node DZ s6p / person (Z celkového počtu 457319 voličů , kteří) mismatch in :ARG0-of:        DZ = s6v unmapped           ML =          
-Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což)     mismatch in :ARG0-of:        DZ = s6p4 mapped to ML s6p4 ML =          
-Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což)     mismatch in :value:          DZ = s6a unmapped           ML = 20.5     
-Node DZ s6p7 / person                                          mismatch in concept:         DZ = person                 ML = UNMAPPED 
-Node DZ s6p7 / person                                          mismatch in :ARG1-of:        DZ = s6i                    ML = UNMAPPED 
-Node DZ s6p7 / person                                          mismatch in :refer-number:   DZ = plural                 ML = UNMAPPED 
-Node DZ s6v / volit-001                                        mismatch in concept:         DZ = volit-001              ML = UNMAPPED 
-Node DZ s6v / volit-001                                        mismatch in :aspect:         DZ = habitual               ML = UNMAPPED 
-Node DZ s6v / volit-001                                        mismatch in :modal-strength: DZ = full-affirmative       ML = UNMAPPED 
-Node DZ s6v2 / volit-001 (voleb)                               mismatch in :ARG0:           DZ =                        ML = s6p7     
-Node DZ s6v2 / volit-001 (voleb)                               mismatch in :ARG1:           DZ =                        ML = s6p8     
-Node ML s6a / asi (asi)                                        mismatch in concept:         ML = asi                    DZ = UNMAPPED 
-Node ML s6a / asi (asi)                                        mismatch in :ARG0-of:        ML = s6p4                   DZ = UNMAPPED 
-Node ML s6a / asi (asi)                                        mismatch in :op1:            ML = s6p2                   DZ = UNMAPPED 
-Node ML s6p / person                                           mismatch in concept:         ML = person                 DZ = UNMAPPED 
-Node ML s6p / person                                           mismatch in :ARG0-of:        ML = s6h                    DZ = UNMAPPED 
-Node ML s6p / person                                           mismatch in :refer-number:   ML = plural                 DZ = UNMAPPED 
-Node ML s6p8 / person                                          mismatch in concept:         ML = person                 DZ = UNMAPPED 
+Node DZ s6i / include-91                                       mismatch in :ARG3:           DZ = s6p2 mapped to ML s6p2 ML = s6a
+Node DZ s6i / include-91                                       mismatch in :ARG1:           DZ =                        ML = s6p
+Node DZ s6p / person (Z celkového počtu 457319 voličů , kteří) mismatch in :ARG0-of:        DZ = s6v unmapped           ML = 
+Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což)     mismatch in :ARG0-of:        DZ = s6p4 mapped to ML s6p4 ML = 
+Node DZ s6p2 / percentage-entity (asi 20.5 procenta , což)     mismatch in :value:          DZ = s6a unmapped           ML = 20.5
+Node DZ s6p7 / person                                          mismatch in concept:         DZ = person                 ML = UNMAPPED
+Node DZ s6p7 / person                                          mismatch in :ARG1-of:        DZ = s6i                    ML = UNMAPPED
+Node DZ s6p7 / person                                          mismatch in :refer-number:   DZ = plural                 ML = UNMAPPED
+Node DZ s6v / volit-001                                        mismatch in concept:         DZ = volit-001              ML = UNMAPPED
+Node DZ s6v / volit-001                                        mismatch in :aspect:         DZ = habitual               ML = UNMAPPED
+Node DZ s6v / volit-001                                        mismatch in :modal-strength: DZ = full-affirmative       ML = UNMAPPED
+Node DZ s6v2 / volit-001 (voleb)                               mismatch in :ARG0:           DZ =                        ML = s6p7
+Node DZ s6v2 / volit-001 (voleb)                               mismatch in :ARG1:           DZ =                        ML = s6p8
+Node ML s6a / asi (asi)                                        mismatch in concept:         ML = asi                    DZ = UNMAPPED
+Node ML s6a / asi (asi)                                        mismatch in :ARG0-of:        ML = s6p4                   DZ = UNMAPPED
+Node ML s6a / asi (asi)                                        mismatch in :op1:            ML = s6p2                   DZ = UNMAPPED
+Node ML s6p / person                                           mismatch in concept:         ML = person                 DZ = UNMAPPED
+Node ML s6p / person                                           mismatch in :ARG0-of:        ML = s6h                    DZ = UNMAPPED
+Node ML s6p / person                                           mismatch in :refer-number:   ML = plural                 DZ = UNMAPPED
+Node ML s6p8 / person                                          mismatch in concept:         ML = person                 DZ = UNMAPPED
 
 Correct 43 out of 56 non-empty DZ values => recall    77%.
 Correct 43 out of 56 non-empty ML values => precision 77%.
@@ -470,18 +470,18 @@ Comparing attributes of ML nodes with their DZ counterparts.
 Node ML s6a / asi (asi)                              mismatch in concept:         ML = asi                   DZ = UNMAPPED
 Node ML s6a / asi (asi)                              mismatch in :ARG0-of:        ML = s6p4                  DZ = UNMAPPED
 Node ML s6a / asi (asi)                              mismatch in :op1:            ML = s6p2                  DZ = UNMAPPED
-Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :wiki:           ML = "Q189760"             DZ =         
-Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :ARG0:           ML =                       DZ = s6p7    
-Node ML s6i / include-91                             mismatch in :ARG1:           ML = s6p unmapped          DZ =         
-Node ML s6i / include-91                             mismatch in :ARG3:           ML = s6a unmapped          DZ = s6p2    
+Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :wiki:           ML = "Q189760"             DZ = 
+Node ML s6h / hlasovat-003 (hlasovalo)               mismatch in :ARG0:           ML =                       DZ = s6p7
+Node ML s6i / include-91                             mismatch in :ARG1:           ML = s6p unmapped          DZ = 
+Node ML s6i / include-91                             mismatch in :ARG3:           ML = s6a unmapped          DZ = s6p2
 Node ML s6p / person                                 mismatch in concept:         ML = person                DZ = UNMAPPED
 Node ML s6p / person                                 mismatch in :ARG0-of:        ML = s6h                   DZ = UNMAPPED
 Node ML s6p / person                                 mismatch in :refer-number:   ML = plural                DZ = UNMAPPED
-Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :value:          ML = 20.5                  DZ = s6a     
-Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :ARG0-of:        ML =                       DZ = s6p4    
+Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :value:          ML = 20.5                  DZ = s6a
+Node ML s6p2 / percentage-entity (20.5 procenta což) mismatch in :ARG0-of:        ML =                       DZ = s6p4
 Node ML s6p8 / person                                mismatch in concept:         ML = person                DZ = UNMAPPED
-Node ML s6v / volit-001 (voleb)                      mismatch in :ARG0:           ML = s6p7 mapped to DZ s6p DZ =         
-Node ML s6v / volit-001 (voleb)                      mismatch in :ARG1:           ML = s6p8 unmapped         DZ =         
+Node ML s6v / volit-001 (voleb)                      mismatch in :ARG0:           ML = s6p7 mapped to DZ s6p DZ = 
+Node ML s6v / volit-001 (voleb)                      mismatch in :ARG1:           ML = s6p8 unmapped         DZ = 
 Node DZ s6a / asi                                    mismatch in concept:         DZ = asi                   ML = UNMAPPED
 Node DZ s6a / asi                                    mismatch in :op1:            DZ = 20.5                  ML = UNMAPPED
 Node DZ s6p7 / person                                mismatch in concept:         DZ = person                ML = UNMAPPED
@@ -498,48 +498,48 @@ Correct 43 out of 56 non-empty DZ values => precision 77%.
 Comparing sentence 7:
 Na druhém místě s 13.9 procenty hlasů ( 18 mandátů ) je zatím blok Spolehlivý dům dosavadního nejvyššího představitele republiky Arnolda Rüütela .
 
-DZ                                                                 ML                                                                              
-# sentence level graph:                                            # sentence level graph:                                                         
-# Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882 # Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882              
-(s7h / have-ord-91                                                 (s7h / have-ord-91                                                              
-    :ARG1 (s7b / blok                                                   :ARG1 (s7b / blok                                                          
-        :wiki "Q31271882"                                                      :wiki "Q31271882"                                                   
-        :name (s7n / name :op1 "Spolehlivý" :op2 "dům")                        :refer-number singular                                              
-        :possessor (s7p2 / person                                              :name (s7n / name :op1 "Spolehlivý" :op2 "dům")                     
-            :wiki "Q194000"                                                    :possessor (s7p / person                                            
-            :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")                            :wiki "Q194000"                                             
-            :ARG0-of (s7p3 / představovat-003                                          :refer-number singular                                      
-                :ARG1 (s7r / republika                                                 :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")             
-                    :wiki "Q191"                                                       :ARG0-of (s7p2 / představovat-003                           
-                    :refer-number singular)                                                       :ARG1 (s7r / republika                           
-                :temporal (s7d / dosud)                                                                :wiki "Q191"                                
-                :manner (s7n3 / nejvýše)                                                               :refer-number singular)                     
-                :aspect habitual                                                                  :temporal (s7d / dosud)                          
-                :modal-strength full-affirmative)                                                 :manner (s7n3 / nejvyšší)                        
-            :refer-number singular)                                                               :aspect habitual                                 
-        :refer-number singular)                                                                   :modal-strength full-affirmative)))              
-    :ARG2 (s7o / ordinal-entity :value 2)                               :ARG2 (s7d2 / dva)                                                         
-    :cause (s7p / percentage-entity                                     :manner (s7i / identity-91                                                 
-        :value 13.9                                                                   :ARG1 (s7h3 / hlas                                           
-        :ARG3-of (s7i / include-91                                                              :refer-number plural                               
-            :ARG1 (s7h2 / hlas                                                                  :ARG2-of (s7i2 / include-91                        
+DZ                                                                 ML
+# sentence level graph:                                            # sentence level graph:
+# Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882 # Spolehlivý dům = Kindel kodu (Valimisliit Kindel Kodu) Q31271882
+(s7h / have-ord-91                                                 (s7h / have-ord-91
+    :ARG1 (s7b / blok                                                   :ARG1 (s7b / blok
+        :wiki "Q31271882"                                                      :wiki "Q31271882"
+        :name (s7n / name :op1 "Spolehlivý" :op2 "dům")                        :refer-number singular
+        :possessor (s7p2 / person                                              :name (s7n / name :op1 "Spolehlivý" :op2 "dům")
+            :wiki "Q194000"                                                    :possessor (s7p / person
+            :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")                            :wiki "Q194000"
+            :ARG0-of (s7p3 / představovat-003                                          :refer-number singular
+                :ARG1 (s7r / republika                                                 :name (s7n2 / name :op1 "Arnold" :op2 "Rüütel")
+                    :wiki "Q191"                                                       :ARG0-of (s7p2 / představovat-003
+                    :refer-number singular)                                                       :ARG1 (s7r / republika
+                :temporal (s7d / dosud)                                                                :wiki "Q191"
+                :manner (s7n3 / nejvýše)                                                               :refer-number singular)
+                :aspect habitual                                                                  :temporal (s7d / dosud)
+                :modal-strength full-affirmative)                                                 :manner (s7n3 / nejvyšší)
+            :refer-number singular)                                                               :aspect habitual
+        :refer-number singular)                                                                   :modal-strength full-affirmative)))
+    :ARG2 (s7o / ordinal-entity :value 2)                               :ARG2 (s7d2 / dva)
+    :cause (s7p / percentage-entity                                     :manner (s7i / identity-91
+        :value 13.9                                                                   :ARG1 (s7h3 / hlas
+        :ARG3-of (s7i / include-91                                                              :refer-number plural
+            :ARG1 (s7h2 / hlas                                                                  :ARG2-of (s7i2 / include-91
                 :refer-number plural)                                                                  :ARG3 (s7p3 / percentage-entity :value 13.9)
-            :aspect state                                                                              :aspect state                               
-            :modal-strength full-affirmative)                                                          :modal-strength full-affirmative))          
-        :mod (s7m / mandát                                                            :ARG2 (s7m3 / mandát                                         
-            :refer-number plural                                                               :wiki "Q486839"                                     
-            :quant 18))                                                                        :quant 18                                           
-    :temporal (s7z / zatím)                                                                    :refer-number plural)                               
-    :aspect state                                                                     :aspect state                                                
-    :modal-strength full-affirmative)                                                 :modal-strength full-affirmative)                            
-                                                                        :temporal (s7z / zatím)                                                    
-                                                                        :aspect state                                                              
-                                                                        :modal-strength full-affirmative)                                          
+            :aspect state                                                                              :aspect state
+            :modal-strength full-affirmative)                                                          :modal-strength full-affirmative))
+        :mod (s7m / mandát                                                            :ARG2 (s7m3 / mandát
+            :refer-number plural                                                               :wiki "Q486839"
+            :quant 18))                                                                        :quant 18
+    :temporal (s7z / zatím)                                                                    :refer-number plural)
+    :aspect state                                                                     :aspect state
+    :modal-strength full-affirmative)                                                 :modal-strength full-affirmative)
+                                                                        :temporal (s7z / zatím)
+                                                                        :aspect state
+                                                                        :modal-strength full-affirmative)
 
 Node-token alignments:
 File DZ: 3 nodes unaligned: s7i/include-91, s7n/name["Spolehlivý" "dům"], s7n2/name["Arnold" "Rüütel"].
 File ML: 4 nodes unaligned: s7i/identity-91, s7i2/include-91, s7n/name["Spolehlivý" "dům"], s7n2/name["Arnold" "Rüütel"].
-                 DZ   ML  
+                 DZ   ML
 1  Na            s7o  s7d2
 2  druhém        s7o  s7d2
 3  místě         s7o  s7d2
@@ -547,83 +547,83 @@ File ML: 4 nodes unaligned: s7i/identity-91, s7i2/include-91, s7n/name["Spolehli
 5  13.9          s7p  s7p3
 6  procenty      s7p  s7p3
 7  hlasů         s7h2 s7h3
-8  (                      
+8  (                  
 9  18            s7m  s7m3
 10 mandátů       s7m  s7m3
-11 )                      
-12 je            s7h  s7h 
-13 zatím         s7z  s7z 
-14 blok          s7b  s7b 
-15 Spolehlivý    s7b  s7b 
-16 dům           s7b  s7b 
-17 dosavadního   s7d  s7d 
+11 )                  
+12 je            s7h  s7h
+13 zatím         s7z  s7z
+14 blok          s7b  s7b
+15 Spolehlivý    s7b  s7b
+16 dům           s7b  s7b
+17 dosavadního   s7d  s7d
 18 nejvyššího    s7n3 s7n3
 19 představitele s7p3 s7p2
-20 republiky     s7r  s7r 
-21 Arnolda       s7p2 s7p 
-22 Rüütela       s7p2 s7p 
-23 .                      
+20 republiky     s7r  s7r
+21 Arnolda       s7p2 s7p
+22 Rüütela       s7p2 s7p
+23 .                  
 
 Node-node correspondences:
 
-Correspondence DZ s7b  (blok Spolehlivý dům)      = ML s7b  (blok Spolehlivý dům)     
-Correspondence DZ s7d  (dosavadního)              = ML s7d  (dosavadního)             
-Correspondence DZ s7h  (je)                       = ML s7h  (je)                      
-Correspondence DZ s7h2 (s hlasů)                  = ML s7h3 (s hlasů)                 
-Correspondence DZ s7i  (include-91)               = ML s7i2 (include-91)              
-Correspondence DZ s7m  (18 mandátů)               = ML s7m3 (18 mandátů)              
+Correspondence DZ s7b  (blok Spolehlivý dům)      = ML s7b  (blok Spolehlivý dům)
+Correspondence DZ s7d  (dosavadního)              = ML s7d  (dosavadního)
+Correspondence DZ s7h  (je)                       = ML s7h  (je)
+Correspondence DZ s7h2 (s hlasů)                  = ML s7h3 (s hlasů)
+Correspondence DZ s7i  (include-91)               = ML s7i2 (include-91)
+Correspondence DZ s7m  (18 mandátů)               = ML s7m3 (18 mandátů)
 Correspondence DZ s7n  (name["Spolehlivý" "dům"]) = ML s7n  (name["Spolehlivý" "dům"])
-Correspondence DZ s7n2 (name["Arnold" "Rüütel"])  = ML s7n2 (name["Arnold" "Rüütel"]) 
-Correspondence DZ s7n3 (nejvyššího)               = ML s7n3 (nejvyššího)              
-Correspondence DZ s7o  (Na druhém místě)          = ML s7d2 (Na druhém místě)         
-Correspondence DZ s7p  (13.9 procenty)            = ML s7p3 (13.9 procenty)           
-Correspondence DZ s7p2 (Arnolda Rüütela)          = ML s7p  (Arnolda Rüütela)         
-Correspondence DZ s7p3 (představitele)            = ML s7p2 (představitele)           
-Correspondence DZ s7r  (republiky)                = ML s7r  (republiky)               
-Correspondence DZ s7z  (zatím)                    = ML s7z  (zatím)                   
-Correspondence ML s7i  (identity-91)              = DZ     
+Correspondence DZ s7n2 (name["Arnold" "Rüütel"])  = ML s7n2 (name["Arnold" "Rüütel"])
+Correspondence DZ s7n3 (nejvyššího)               = ML s7n3 (nejvyššího)
+Correspondence DZ s7o  (Na druhém místě)          = ML s7d2 (Na druhém místě)
+Correspondence DZ s7p  (13.9 procenty)            = ML s7p3 (13.9 procenty)
+Correspondence DZ s7p2 (Arnolda Rüütela)          = ML s7p  (Arnolda Rüütela)
+Correspondence DZ s7p3 (představitele)            = ML s7p2 (představitele)
+Correspondence DZ s7r  (republiky)                = ML s7r  (republiky)
+Correspondence DZ s7z  (zatím)                    = ML s7z  (zatím)
+Correspondence DZ                                 = ML s7i  (identity-91)
 
 Aligned 15 out of 15 DZ nodes, that is 100%.
 Aligned 15 out of 16 ML nodes, that is 94%.
 
 Comparing attributes of DZ nodes with their ML counterparts.
-Node DZ s7h / have-ord-91 (je)                  mismatch in :cause:          DZ = s7p mapped to ML s7p3  ML =          
-Node DZ s7h / have-ord-91 (je)                  mismatch in :manner:         DZ =                        ML = s7i      
-Node DZ s7h2 / hlas (s hlasů)                   mismatch in :ARG2-of:        DZ =                        ML = s7i2     
-Node DZ s7i / include-91                        mismatch in :ARG1:           DZ = s7h2 mapped to ML s7h3 ML =          
-Node DZ s7i / include-91                        mismatch in :ARG3:           DZ =                        ML = s7p3     
+Node DZ s7h / have-ord-91 (je)                  mismatch in :cause:          DZ = s7p mapped to ML s7p3  ML = 
+Node DZ s7h / have-ord-91 (je)                  mismatch in :manner:         DZ =                        ML = s7i
+Node DZ s7h2 / hlas (s hlasů)                   mismatch in :ARG2-of:        DZ =                        ML = s7i2
+Node DZ s7i / include-91                        mismatch in :ARG1:           DZ = s7h2 mapped to ML s7h3 ML = 
+Node DZ s7i / include-91                        mismatch in :ARG3:           DZ =                        ML = s7p3
 Node DZ s7m / mandát (18 mandátů)               mismatch in :wiki:           DZ =                        ML = "Q486839"
-Node DZ s7n3 / nejvýše (nejvyššího)             mismatch in concept:         DZ = nejvýše                ML = nejvyšší 
-Node DZ s7o / ordinal-entity (Na druhém místě)  mismatch in concept:         DZ = ordinal-entity         ML = dva      
-Node DZ s7o / ordinal-entity (Na druhém místě)  mismatch in :value:          DZ = 2                      ML =          
-Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :ARG3-of:        DZ = s7i mapped to ML s7i2  ML =          
-Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :mod:            DZ = s7m mapped to ML s7m3  ML =          
-Node ML s7i / identity-91                       mismatch in concept:         ML = identity-91            DZ = UNMAPPED 
-Node ML s7i / identity-91                       mismatch in :ARG1:           ML = s7h3                   DZ = UNMAPPED 
-Node ML s7i / identity-91                       mismatch in :ARG2:           ML = s7m3                   DZ = UNMAPPED 
-Node ML s7i / identity-91                       mismatch in :aspect:         ML = state                  DZ = UNMAPPED 
-Node ML s7i / identity-91                       mismatch in :modal-strength: ML = full-affirmative       DZ = UNMAPPED 
+Node DZ s7n3 / nejvýše (nejvyššího)             mismatch in concept:         DZ = nejvýše                ML = nejvyšší
+Node DZ s7o / ordinal-entity (Na druhém místě)  mismatch in concept:         DZ = ordinal-entity         ML = dva
+Node DZ s7o / ordinal-entity (Na druhém místě)  mismatch in :value:          DZ = 2                      ML = 
+Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :ARG3-of:        DZ = s7i mapped to ML s7i2  ML = 
+Node DZ s7p / percentage-entity (13.9 procenty) mismatch in :mod:            DZ = s7m mapped to ML s7m3  ML = 
+Node ML s7i / identity-91                       mismatch in concept:         ML = identity-91            DZ = UNMAPPED
+Node ML s7i / identity-91                       mismatch in :ARG1:           ML = s7h3                   DZ = UNMAPPED
+Node ML s7i / identity-91                       mismatch in :ARG2:           ML = s7m3                   DZ = UNMAPPED
+Node ML s7i / identity-91                       mismatch in :aspect:         ML = state                  DZ = UNMAPPED
+Node ML s7i / identity-91                       mismatch in :modal-strength: ML = full-affirmative       DZ = UNMAPPED
 
 Correct 43 out of 50 non-empty DZ values => recall    86%.
 Correct 43 out of 54 non-empty ML values => precision 80%.
 
 Comparing attributes of ML nodes with their DZ counterparts.
 Node ML s7d2 / dva (Na druhém místě)             mismatch in concept:         ML = dva                   DZ = ordinal-entity
-Node ML s7d2 / dva (Na druhém místě)             mismatch in :value:          ML =                       DZ = 2             
-Node ML s7h / have-ord-91 (je)                   mismatch in :manner:         ML = s7i unmapped          DZ =               
-Node ML s7h / have-ord-91 (je)                   mismatch in :cause:          ML =                       DZ = s7p           
-Node ML s7h3 / hlas (s hlasů)                    mismatch in :ARG2-of:        ML = s7i2 mapped to DZ s7i DZ =               
-Node ML s7i / identity-91                        mismatch in concept:         ML = identity-91           DZ = UNMAPPED      
-Node ML s7i / identity-91                        mismatch in :ARG1:           ML = s7h3                  DZ = UNMAPPED      
-Node ML s7i / identity-91                        mismatch in :ARG2:           ML = s7m3                  DZ = UNMAPPED      
-Node ML s7i / identity-91                        mismatch in :aspect:         ML = state                 DZ = UNMAPPED      
-Node ML s7i / identity-91                        mismatch in :modal-strength: ML = full-affirmative      DZ = UNMAPPED      
-Node ML s7i2 / include-91                        mismatch in :ARG3:           ML = s7p3 mapped to DZ s7p DZ =               
-Node ML s7i2 / include-91                        mismatch in :ARG1:           ML =                       DZ = s7h2          
-Node ML s7m3 / mandát (18 mandátů)               mismatch in :wiki:           ML = "Q486839"             DZ =               
-Node ML s7n3 / nejvyšší (nejvyššího)             mismatch in concept:         ML = nejvyšší              DZ = nejvýše       
-Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :ARG3-of:        ML =                       DZ = s7i           
-Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :mod:            ML =                       DZ = s7m           
+Node ML s7d2 / dva (Na druhém místě)             mismatch in :value:          ML =                       DZ = 2
+Node ML s7h / have-ord-91 (je)                   mismatch in :manner:         ML = s7i unmapped          DZ = 
+Node ML s7h / have-ord-91 (je)                   mismatch in :cause:          ML =                       DZ = s7p
+Node ML s7h3 / hlas (s hlasů)                    mismatch in :ARG2-of:        ML = s7i2 mapped to DZ s7i DZ = 
+Node ML s7i / identity-91                        mismatch in concept:         ML = identity-91           DZ = UNMAPPED
+Node ML s7i / identity-91                        mismatch in :ARG1:           ML = s7h3                  DZ = UNMAPPED
+Node ML s7i / identity-91                        mismatch in :ARG2:           ML = s7m3                  DZ = UNMAPPED
+Node ML s7i / identity-91                        mismatch in :aspect:         ML = state                 DZ = UNMAPPED
+Node ML s7i / identity-91                        mismatch in :modal-strength: ML = full-affirmative      DZ = UNMAPPED
+Node ML s7i2 / include-91                        mismatch in :ARG3:           ML = s7p3 mapped to DZ s7p DZ = 
+Node ML s7i2 / include-91                        mismatch in :ARG1:           ML =                       DZ = s7h2
+Node ML s7m3 / mandát (18 mandátů)               mismatch in :wiki:           ML = "Q486839"             DZ = 
+Node ML s7n3 / nejvyšší (nejvyššího)             mismatch in concept:         ML = nejvyšší              DZ = nejvýše
+Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :ARG3-of:        ML =                       DZ = s7i
+Node ML s7p3 / percentage-entity (13.9 procenty) mismatch in :mod:            ML =                       DZ = s7m
 
 Correct 43 out of 54 non-empty ML values => recall    80%.
 Correct 43 out of 50 non-empty DZ values => precision 86%.

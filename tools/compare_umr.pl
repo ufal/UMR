@@ -1136,7 +1136,7 @@ sub compare_node_correspondences
             # If it is symmetric, it has been printed already above.
             if(!exists($n0->{crossfile}{$label1}{$f1var}))
             {
-                push(@table_from_1, ["Correspondence $label1 $f1var", "($t1)", "= $label0 $cf0[0]", "($t0)"]);
+                push(@table_from_1, ["Correspondence $label0 $cf0[0]", "($t0)", "= $label1 $f1var", "($t1)"]);
                 $n_aligned_1++;
                 $n_total_1++;
             }
@@ -1144,7 +1144,7 @@ sub compare_node_correspondences
         else
         {
             my $cf0 = join(', ', @cf0) || ''; # we could put '???' here but it does not catch the eye
-            push(@table_from_1, ["Correspondence $label1 $f1var", "($t1)", "= $label0 $cf0"]);
+            push(@table_from_1, ["Correspondence $label0 $cf0", '', "= $label1 $f1var", "($t1)"]);
             $n_aligned_1++ if($ncf0 > 0);
             $n_total_1++;
         }
@@ -1535,7 +1535,7 @@ sub print_table
             print(' ') if($i > 0);
             print($row->[$i]);
             # Padding to the column width.
-            print(' ' x ($max_length[$i]-length($row->[$i])));
+            print(' ' x ($max_length[$i]-length($row->[$i]))) unless($i == $#{$row});
         }
         print("\n");
     }
