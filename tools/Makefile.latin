@@ -29,6 +29,10 @@ LDT_PML_tectogrammatical_130317/LDT_Sallust/Sallust_all_files/sallust.afun.norma
 test:
 	find LDT_PML_tectogrammatical_130317/ -name '*.umr'  -exec btred -Z resources -t PML_Cz_T_Anot -e1 {} +
 
+.PHONY: diff
+diff:
+	find LDT_PML_tectogrammatical_130317 -name '*.umr' | while read f ; do diff $$(ls output/"$${f##*/}"* | sort -t. -k5n | tail -n1) "$$f" ; done ; :
+
 .PHONY: clean
 clean:
 	rm -rf LDT_PML_tectogrammatical_130317/
