@@ -18,6 +18,7 @@ Words: Kdo vám to dělal ?
 (s6d1 / dělat-010
         :aspect activity
         :modal-strength full-affirmative
+        :quote s6s1
         :mode interoggative
         :ARG0 (s6k1 / umr-unknown)
         :affectee s6e2
@@ -33,8 +34,8 @@ s6t1: 3-3
 
 # document level annotation:
 (s6s0 / sentence
-    :coref ((s3e2 :same-entity s6e1)
-            (s3e1 :same-entity s6e2)
+    :coref ((s5e2 :same-entity s6e1)
+            (s5e1 :same-entity s6e2)
             (s3n2 :same-event s6t1)))
 
 
@@ -58,6 +59,7 @@ Words: To dělali kamarádi ve Škodovce .
 (s7d1 / dělat-010
         :aspect activity
         :modal-strength full-affirmative
+        :quote s7s1
         :ARG1 (s7t1 / event)
         :ARG0 (s7k1 / kamarád
             :refer-number plural)
@@ -105,6 +107,7 @@ Words: Byla to vaše první motorka ?
         :modal-strength neutral-affirmative
         :polarity umr-unknown
         :mode interoggative
+        :quote s8s1
         :ARG1 (s8m1 / motorka
                      :refer-number singular)
         :ARG2 (s8p1 / ordinal-entity :value 1)))
@@ -141,24 +144,21 @@ Words: První .
 :ARG2 (s9e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1 (s9a1 / and
-   :op1 (s9b1 / have-ord-91
+:ARG1 (s9b1 / have-ord-91
         :aspect state
         :modal-strength full-affirmative
+        :quote s9s1
         :ARG1 (s9m1 / motorka
                      :refer-number singular)
-        :ARG2 (s9p1 / ordinal-entity :value 1))
-   :op2 (s9e3 / event)))
+        :ARG2 (s9p1 / ordinal-entity :value 1)))
 
 # alignment:
 s9s1: 0-0
 s9e1: 0-0
 s9e2: 0-0
-s9a1: 0-0
 s9b1: 1-1
 s9m1: 0-0
 s9p1: 1-1
-s9e3: 0-0
 
 # document level annotation:
 (s9s0 / sentence
@@ -174,27 +174,38 @@ Index: 1    2    3  4  5     6
 Words: Taky jsem si jí vážil .
 
 # sentence level graph:
-(s10v1 / vážit-si-001
+(s10s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s10e2 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s10e1 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s10v1 / vážit-si-001
         :clausal-marker (s10t1 / taky)
         :aspect state
         :modal-strength full-affirmative
-        :ARG0 (s10e2 / person
-            :refer-number plural
-            :refer-person 1st)
-        :ARG1 (s10e1 / thing
-            :refer-number singular))
+        :quote s10s1
+        :ARG0 s10e2
+        :ARG1 (s10e3 / thing
+            :refer-number singular)))
 
 # alignment:
+s10s1: 0-0
 s10v1: 2-3,5-5
 s10t1: 1-1
-s10e1: 4-4
+s10e3: 4-4
 s10e2: 0-0
+s10e1: 0-0
 
 # document level annotation:
 (s10s0 / sentence
-    :coref ((s9e3 :subset-of s10v1)
+    :coref ((s9s1 :same-event s10s1)
             (s9e1 :same-entity s10e2)
-            (s9m1 :same-entity s10e1)))
+            (s9e2 :same-entity s10e1)
+            (s9m1 :same-entity s10e3)))
 
 
 ################################################################################
@@ -213,33 +224,30 @@ Words: Podíváme se na další fotku .
 :ARG2 (s11e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1 (s11a1 / and
-:op1 (s11p1 / podívat-se-001
+:ARG1 (s11p1 / podívat-se-001
         :aspect performance
         :modal-strength full-affirmative
+        :quote s11s1
         :ARG0 (s11e3 / person
                        :refer-number plural
                        :refer-person 1st)
         :ARG1 (s11f1 / fotka
                        :refer-number singular
-                       :mod (s11d1 / další)))
-:op2 (s11e4 / event)))
+                       :mod (s11d1 / další))))
 
 # alignment:
 s11s1: 0-0
 s11e1: 0-0
 s11e2: 0-0
-s11a1: 0-0
 s11p1: 1-2
 s11e3: 0-0
 s11f1: 3-3,5-5
 s11d1: 4-4
-s11e4: 0-0
 
 # document level annotation:
 (s11s0 / sentence
-    :coref ((s9e2 :same-entity s11e1)
-            (s10e2 :same-entity s11e2)
+    :coref ((s10e2 :same-entity s11e1)
+            (s10e1 :same-entity s11e2)
             (s11e3 :subset-of s11e1)
             (s11e3 :subset-of s11e2)))
 
@@ -251,23 +259,37 @@ Index: 1  2  3     4   5
 Words: Co je tohle zač ?
 
 # sentence level graph:
-(s12b1 / identity-91
+(s12s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s12e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s12e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s12b1 / identity-91
          :aspect state
          :mode interoggative
          :modal-strength full-affirmative
+         :quote s12s1
          :ARG1 (s12t1 / thing
                         :refer-number singular)
-         :ARG2 (s12c1 / thing
-                        :refer-number singular))
+         :ARG2 (s12c1 / umr-unknown)))
 
 # alignment:
+s12s1: 0-0
+s12e1: 0-0
+s12e2: 0-0
 s12b1: 2-2
 s12t1: 3-3
 s12c1: 1-1, 4-4
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s11e4 :same-event s12b1)))
+    :coref ((s11s1 :same-event s12s1)
+            (s11e1 :same-entity s12e1)
+            (s11e2 :same-entity s12e2)))
 
 
 ################################################################################
@@ -290,6 +312,7 @@ Words: Tohleto je junácký tábor ve Vrbicích u  Stříbra v  roce 1970 ,  kde
 (s13b1 / identity-91
          :aspect state
          :modal-strength full-affirmative
+         :quote s13s1
          :ARG1 (s13t1 / thing
                         :refer-number singular)
          :ARG2 (s13t2 / tábor
@@ -331,8 +354,8 @@ s13o1: 17-17
 
 # document level annotation:
 (s13s0 / sentence
-    :coref ((s11e2 :same-entity s13e1)
-            (s11e1 :same-entity s13e2)
+    :coref ((s12e2 :same-entity s13e1)
+            (s12e1 :same-entity s13e2)
             (s12t1 :same-entity s13t1)
             (s12c1 :same-entity s13t2)))
 
@@ -358,6 +381,7 @@ Words: Kdo je na té fotce vidět ?
         :aspect state
         :modal-strength full-affirmative
         :mode interrogative
+        :quote s14s1
         :ARG0 (s14e3 / person
                        :refer-number plural
                        :refer-person 1st)
@@ -404,6 +428,7 @@ Words: Zleva je Vlásek ,  to je vedoucí celého skautu ,  pak je tam sestra a 
         :op1 (s15b1 / have-place-91
                       :aspect state
                       :modal-strength full-affirmative
+                      :quote s15s1
                       :ARG1 (s15v1 / person
                                      :refer-number singular
                                      :name (s15n1 / name :op1 "Vlásek"))
@@ -418,6 +443,7 @@ Words: Zleva je Vlásek ,  to je vedoucí celého skautu ,  pak je tam sestra a 
         :op2 (s15b3 / have-place-91
                       :aspect state
                       :modal-strength full-affirmative
+                      :quote s15s1
                       :clausal-marker (s15p1 / pak)
                       :ARG2 (s15t2 / place)
                       :ARG1 (s15a2 / and
@@ -484,6 +510,7 @@ Words: Jak se jmenovala ?
          :aspect state
          :modal-strength full-affirmative
          :mode interrogative
+         :quote s16s1
          :ARG2 (s16j2 / umr-unknown)
          :ARG1 (s16e3 / person
                         :refer-number singular
@@ -524,6 +551,7 @@ Words: Už zemřela .
 (s17z1 / zemřít-001
         :aspect state
         :modal-strength full-affirmative
+        :quote s17s1
         :temporal (s17u1 / už)
         :ARG1 (s17e3 / person)))
 
@@ -562,6 +590,7 @@ Words: To mě mrzí .
 (s18m1 / mrzet-001
          :aspect state
          :modal-strength full-affirmative
+         :quote s18s1
          :ARG0 s18e1
          :ARG1 (s18t1 / event)))
 
@@ -595,26 +624,23 @@ Words: Pepík je tam .
 :ARG2 (s19e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1 (s19a1 / and
-:op1 (s19b1 / have-place-91
+:ARG1 (s19b1 / have-place-91
               :aspect state
               :modal-strength full-affirmative
+              :quote s19s1
               :ARG1 (s19p1 / person
                              :refer-number singular
                              :name (s19n2 / name :op1 "Pepík"))
-              :ARG2 (s19t1 / place))
-:op2 (s19e3 / event)))
+              :ARG2 (s19t1 / place)))
 
 # alignment:
 s19s1: 0-0
 s19e1: 0-0
 s19e2: 0-0
-s19a1: 0-0
 s19b1: 2-2
 s19p1: 1-1
 s19n2: 0-0
 s19t1: 3-3
-s19e3: 0-0
 
 # document level annotation:
 (s19s0 / sentence
@@ -631,11 +657,21 @@ Index: 1           2    3      4 5   6       7          8
 Words: Nejmenovali jsme jménem , ale vždycky přezdívkou .
 
 # sentence level graph:
-(s20b1 / but-91
+(s20s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s20e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s20e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s20b1 / but-91
         :ARG1 (s20j1 / jmenovat-004
                        :aspect habitual
                        :modal-strength full-negative
                        :polarity -
+                       :quote s20s1
                        :ARG0 (s20e3 / person
                                       :refer-number plural
                                       :refer-person 1st)
@@ -645,13 +681,17 @@ Words: Nejmenovali jsme jménem , ale vždycky přezdívkou .
         :ARG2 (s20j3 / jmenovat-004
                        :aspect habitual
                        :modal-strength full-affirmative
+                       :quote s20s1
                        :ARG0 s20e3
                        :ARG1 s20e3
                        :ARG2 (s20p1 / přezdívka
                                       :refer-number singular)
-                       :frequency (s20v1 / vždycky)))
+                       :frequency (s20v1 / vždycky))))
 
 # alignment:
+s20s1: 0-0
+s20e1: 0-0
+s20e2: 0-0
 s20b1: 5-5
 s20j1: 1-2
 s20e3: 0-0
@@ -662,8 +702,10 @@ s20v1: 6-6
 
 # document level annotation:
 (s20s0 / sentence
-    :coref ((s19e3 :subset-of s20b1)
-            (s20e3 :subset-of s19e1)))
+    :coref ((s19s1 :same-event s20s1)
+            (s19e1 :same-entity s20e1)
+            (s19e2 :same-entity s20e2)
+            (s20e3 :subset-of s20e1)))
 
 
 ################################################################################
@@ -673,17 +715,30 @@ Index: 1     2   3       4         5
 Words: Každý měl nějakou přezdívku .
 
 # sentence level graph:
-(s21m1 / have-91
+(s21s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s21e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s21e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s21m1 / have-91
         :aspect state
         :modal-strength full-affirmative
+        :quote s21s1
         :ARG0 (s21k1 / person
                        :quant each
                        :refer-person 1st)
         :ARG1 (s21p1 / přezdívka
                        :refer-number singular
-                       :mod (s21n1 / nějaký)))
+                       :mod (s21n1 / nějaký))))
 
 # alignment:
+s21s1: 0-0
+s21e1: 0-0
+s21e2: 0-0
 s21m1: 2-2
 s21k1: 1-1
 s21p1: 4-4
@@ -691,7 +746,9 @@ s21n1: 3-3
 
 # document level annotation:
 (s21s0 / sentence
-    :coref ((s19e3 :subset-of s21m1)
+    :coref ((s21s1 :same-event s20s1)
+            (s21e1 :same-entity s20e1)
+            (s21e2 :same-entity s20e2)
             (s20e3 :subset-of s21k1)))
 
 
@@ -702,9 +759,19 @@ Index: 1   2     3   4      5
 Words: Ten první byl Vlásek .
 
 # sentence level graph:
-(s22b1 / have-mod-91
+(s22s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s22e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s22e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s22b1 / have-mod-91
          :aspect state
          :modal-strength full-affirmative
+         :quote s22s1
          :ARG1 (s22v1 / person
                         :refer-number singular
                         :refer-person 3rd
@@ -712,9 +779,12 @@ Words: Ten první byl Vlásek .
          :ARG2 (s22t1 / person
                         :refer-person 3rd
                         :refer-number singular
-                        :ord (s22p1 / ordinal-entity :value 1)))
+                        :ord (s22p1 / ordinal-entity :value 1))))
 
 # alignment:
+s22s1: 0-0
+s22e1: 0-0
+s22e2: 0-0
 s22b1: 3-3
 s22v1: 4-4
 s22n1: 0-0
@@ -723,7 +793,9 @@ s22p1: 1-2
 
 # document level annotation:
 (s22s0 / sentence
-    :coref ((s19e3 :subset-of s22b1)
+    :coref ((s22s1 :same-event s21s1)
+            (s21e1 :same-entity s22e1)
+            (s21e2 :same-entity s22e2)
             (s15v1 :same-entity s22v1)))
 
 
@@ -734,23 +806,34 @@ Index: 1  2    3   4
 Words: Já jsem byl .
 
 # sentence level graph:
-(s23b1 / identity-91
+(s23s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s23e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s23e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s23b1 / identity-91
          :aspect state
          :modal-strength full-affirmative
-         :ARG1 (s23e1 / person
-                        :refer-number singular
-                        :refer-person 1st)
-        :ARG2 (s23e2 / umr-empty))
+         :quote s23s1
+         :ARG1 s23e1
+         :ARG2 (s23e3 / umr-empty)))
 
 # alignment:
+s23s1: 0-0
+s23e2: 0-0
 s23b1: 2-3
 s23e1: 1-1
-s23e2: 0-0
+s23e3: 0-0
 
 # document level annotation:
 (s23s0 / sentence
-    :coref ((s19e3 :subset-of s23b1)
-            (s19e1 :same-entity s23e1)))
+    :coref ((s22s1 :same-event s23s1)
+            (s22e1 :same-entity s23e1)
+            (s22e2 :same-entity s23e2)))
 
 
 ################################################################################
@@ -760,9 +843,19 @@ Index: 1     2   3     4  5  6    7        8    9     10
 Words: Pepík byl Pírko ,  i  když nevypadá jako pírko .
 
 # sentence level graph:
-(s24b1 / identity-91
+(s24s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s24e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s24e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s24b1 / identity-91
          :aspect state
          :modal-strength full-affirmative
+         :quote s24s1
          :ARG1 (s24p1 / person
                         :refer-number singular
                         :refer-person 3rd)
@@ -778,9 +871,12 @@ Words: Pepík byl Pírko ,  i  když nevypadá jako pírko .
                                                    :aspect state
                                                    :modal-strength full-affirmative
                                                    :ARG0 (s24p3 / pírko
-                                                                 :refer-number singular))))
+                                                                 :refer-number singular)))))
 
 # alignment:
+s24s1: 0-0
+s24e1: 0-0
+s24e2: 0-0
 s24b1: 2-2
 s24p1: 1-1
 s24p2: 3-3
@@ -791,7 +887,9 @@ s24p3: 8-9
 
 # document level annotation:
 (s24s0 / sentence
-    :coref ((s19e3 :subset-of s24b1)
+    :coref ((s24s1 :same-event s23s1)
+            (s24e1 :same-entity s23e1)
+            (s24e2 :same-entity s23e2)
             (s19p1 :same-entity s24p1)))
 
 
@@ -802,11 +900,20 @@ Index: 1  2  3      4  5     6  7         8  9  10      11
 Words: A  ta sestra ,  Jitka se jmenovala ,  ta zemřela .
 
 # sentence level graph:
-(s25z1 / zemřít-001
+(s25s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s25e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s25e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s25z1 / zemřít-001
          :aspect performance
          :modal-strength full-affirmative
          :clausal-marker (s25a1 / a)
-         :ARG1 (s25s1 / person
+         :ARG1 (s25s2 / person
                         :refer-number singular
                         :ARG2-of (s25h1 / have-rel-role-92
                                           :aspect state
@@ -814,29 +921,34 @@ Words: A  ta sestra ,  Jitka se jmenovala ,  ta zemřela .
                                           :ARG1 (s25p1 / person
                                                          :refer-number singular
                                                          :refer-person 1st)
-                                          :ARG4 (s25s2 / sestra))
+                                          :ARG4 (s25s3 / sestra))
                         :mod (s25t1 / ten)
                         :parenthesis (s25j1 / jmenovat-se-001
                                               :aspect state
                                               :modal-strength full-affirmative
                                               :ARG2 (s25j2 / Jitka)
-                                              :ARG1 s25s1)))
+                                              :ARG1 s25s1))))
 
 # alignment:
+s25s1: 0-0
+s25e1: 0-0
+s25e2: 0-0
 s25z1: 10-10
 s25a1: 1-1
-s25s1: 3-3, 9-9
+s25s2: 3-3, 9-9
+s25s3: 0-0
 s25h1: 0-0
 s25p1: 0-0
-s25s2: 0-0
 s25t1: 2-2
 s25j1: 6-7
 s25j2: 5-5
 
 # document level annotation:
 (s25s0 / sentence
-    :coref ((s19e3 :subset-of s25z1)
-            (s15s3 :same-entity s25s1)
+    :coref ((s24s1 :same-event s25s1)
+            (s24e1 :same-entity s25e1)
+            (s24e2 :same-entity s25e2)
+            (s15s3 :same-entity s25s2)
             (s23e1 :same-entity s25p1)))
 
 
