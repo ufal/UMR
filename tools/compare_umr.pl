@@ -717,32 +717,27 @@ sub compute_crossfile_node_references
     # Try to map unaligned nodes based on other criteria, such as concept equivalence.
     # The way we do it may also introduce ambiguous projections, so symmetrization
     # must be run afterwards.
-    foreach my $sentence1 (@sentences)
+    for(my $i = 0; $i <= $#sentences; $i++)
     {
-        foreach my $f1var (@{$sentence1->{unaligned_nodes}})
+        $labeli = $sentences[$i]{file}{label};
+        for(my $j = $i+1; $j <= $#sentences; $j++)
         {
-            my $node1 = $sentence1->{nodes}{$f1var};
-            my $concept1 = $node1->{econcept};
-            foreach my $sentence2 (@sentences)
+            my $labelj = $sentences[$j]{file}{label};
+            foreach my $variablei (@{$sentences[$i]{unaligned_nodes}})
             {
-                unless($sentence2 == $sentence1)
+                my $nodei = $sentences[$i]{nodes}{$variablei};
+                my $concepti = $nodei->{econcept};
+                # Consider links between nodes that are unaligned in both files
+                # but do not consider links between unaligned and aligned nodes.
+                # Are there nodes in $sentences[$j] that have the same concept
+                # as $nodei? If there are multiple such nodes, link them all;
+                # the symmetrization that we run next will select one.
+                my @same_concept_nodes = grep {$sentences[$j]{nodes}{$_}{econcept} eq $concepti} (@{$sentences[$j]{unaligned_nodes}});
+                foreach my $variablej (@same_concept_nodes)
                 {
-                    my $label2 = $sentence2->{file}{label};
-                    # Consider links between nodes that are unaligned in both files
-                    # but do not consider links between unaligned and aligned nodes.
-                    # Are there nodes in $file2 that have the same concept as $f1var?
-                    my %concepts2;
-                    foreach my $f2var (@{$sentence2->{unaligned_nodes}})
-                    {
-                        my $node2 = $sentence2->{nodes}{$f2var};
-                        my $concept2 = $node2->{econcept};
-                        $concepts2{$f2var} = $concept2;
-                    }
-                    my @same_concept_nodes = grep {$concepts2{$_} eq $concept1} (@{$sentence2->{unaligned_nodes}});
-                    if(scalar(@same_concept_nodes) == 1)
-                    {
-                        $node1->{crossfile}{$label2}{$same_concept_nodes[0]}++;
-                    }
+                    $nodej = $sentences[$j]{nodes}{$variablej};
+                    $nodei->{crossfile}{$labelj}{$variablej}++;
+                    $nodej->{crossfile}{$labeli}{$variablei}++;
                 }
             }
         }

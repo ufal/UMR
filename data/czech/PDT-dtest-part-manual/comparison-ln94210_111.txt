@@ -279,6 +279,9 @@ File HH: 6 nodes unaligned: s2h1/have-role-91, s2n1/name["Duha"], s2n3/name["LN"
 
 Node-node correspondences:
 
+Ambiguous projection of ML node s2p0 (person) to 2 HH nodes [s2p4 (person), s2p5 (person)]
+  The winner is ML node s2p0 (person) <--> HH node s2p4 (person): econcepts=person/person, match=3 (concept=person,:refer-number=plural,:refer-person=1st), weak match=3 (concept,:refer-number,:refer-person).
+
 Ambiguous projection of HH node s2m1 (magazínu Duha) to 2 ML nodes [s2m1 (magazínu), s2n1 (Duha)]
   The winner is HH node s2m1 (magazínu Duha) <--> ML node s2m1 (magazínu): econcepts=magazine/magazín, match=3 (:mod=s2t1 mapped to ML s2t1,:mod=s2b1 mapped to ML s2b1,:refer-number=singular), weak match=5 (concept,:name,:mod,:mod,:refer-number).
 
@@ -288,6 +291,7 @@ Correspondence ML s2c2 (ceny)                       = HH s2c2 (ceny)
 Correspondence ML s2m1 (magazínu)                   = HH s2m1 (magazínu Duha)
 Correspondence ML s2n2 (LN)                         = HH s2n2 (LN)
 Correspondence ML s2n3 (name["LN"])                 = HH s2n3 (name["LN"])
+Correspondence ML s2p0 (person)                     = HH s2p4 (person)
 Correspondence ML s2p1 (jsme přečkali)              = HH s2p1 (jsme přečkali)
 Correspondence ML s2p2 (nepočítáme li)              = HH s2p2 (nepočítáme - li)
 Correspondence ML s2p3 (jako přílohy)               = HH s2p3 (jako přílohy)
@@ -297,15 +301,13 @@ Correspondence ML s2z1 (bez změny)                  = HH s2z1 (bez změny)
 Correspondence ML s2z2 (zvýšení)                    = HH s2z2 (zvýšení)
 Correspondence ML s2z3 (v souvislosti se zařazením) = HH s2z3 (v souvislosti se zařazením)
 Correspondence ML s2n1 (Duha)                       = HH 
-Correspondence ML s2p0 (person)                     = HH 
 Correspondence ML                                   = HH s2h1 (have-role-91)
 Correspondence ML                                   = HH s2n1 (name["Duha"])
-Correspondence ML                                   = HH s2p4 (person)
 Correspondence ML                                   = HH s2p5 (person)
 Correspondence ML                                   = HH s2t2 (temporal-quantity)
 
-Aligned 14 out of 16 ML nodes, that is 88%.
-Aligned 14 out of 19 HH nodes, that is 74%.
+Aligned 15 out of 16 ML nodes, that is 94%.
+Aligned 15 out of 19 HH nodes, that is 79%.
 
 Comparing attributes of ML nodes with their HH counterparts.
 Node ML s2m1 / magazín (magazínu)                       mismatch in concept:         ML = magazín                HH = magazine
@@ -313,25 +315,20 @@ Node ML s2m1 / magazín (magazínu)                       mismatch in :name:    
 Node ML s2n1 / name (Duha)                              mismatch in concept:         ML = name                   HH = UNMAPPED
 Node ML s2n1 / name (Duha)                              mismatch in :op1:            ML = "Duha"                 HH = UNMAPPED
 Node ML s2n2 / news-media (LN)                          mismatch in :refer-number:   ML =                        HH = plural
-Node ML s2p0 / person                                   mismatch in concept:         ML = person                 HH = UNMAPPED
-Node ML s2p0 / person                                   mismatch in :refer-number:   ML = plural                 HH = UNMAPPED
-Node ML s2p0 / person                                   mismatch in :refer-person:   ML = 1st                    HH = UNMAPPED
-Node ML s2p1 / přečkat-001 (jsme přečkali)              mismatch in :ARG0:           ML = s2p0 unmapped          HH = s2p4
 Node ML s2p1 / přečkat-001 (jsme přečkali)              mismatch in :ARG1:           ML = s2r1 mapped to HH s2r1 HH = s2t2
-Node ML s2p2 / počítat-006 (nepočítáme li)              mismatch in :ARG0:           ML = s2p0 unmapped          HH = s2p5
+Node ML s2p2 / počítat-006 (nepočítáme li)              mismatch in :ARG0:           ML = s2p0 mapped to HH s2p4 HH = s2p5
 Node ML s2p3 / příloha (jako přílohy)                   mismatch in :mod-of:         ML = s2m1 mapped to HH s2m1 HH = 
 Node ML s2p3 / příloha (jako přílohy)                   mismatch in :part:           ML = s2n2 mapped to HH s2n2 HH = 
 Node ML s2p3 / příloha (jako přílohy)                   mismatch in :refer-number:   ML =                        HH = singular
 Node ML s2r1 / rok (rok)                                mismatch in :mod:            ML = s2c1 mapped to HH s2c1 HH = 
 Node ML s2r1 / rok (rok)                                mismatch in :refer-number:   ML = singular               HH = 
 Node ML s2z1 / změnit-001 (bez změny)                   mismatch in concept:         ML = změnit-001             HH = změnit-se-001
-Node ML s2z1 / změnit-001 (bez změny)                   mismatch in :ARG0:           ML = s2p0 unmapped          HH = s2c2
+Node ML s2z1 / změnit-001 (bez změny)                   mismatch in :ARG0:           ML = s2p0 mapped to HH s2p4 HH = s2c2
 Node ML s2z1 / změnit-001 (bez změny)                   mismatch in :ARG1:           ML = s2c2 mapped to HH s2c2 HH = 
 Node ML s2z2 / zvýšit-001 (zvýšení)                     mismatch in concept:         ML = zvýšit-001             HH = zvýšit-se-001
-Node ML s2z2 / zvýšit-001 (zvýšení)                     mismatch in :ARG0:           ML = s2p0 unmapped          HH = 
+Node ML s2z2 / zvýšit-001 (zvýšení)                     mismatch in :ARG0:           ML = s2p0 mapped to HH s2p4 HH = 
 Node ML s2z2 / zvýšit-001 (zvýšení)                     mismatch in :stimulus:       ML = s2z3 mapped to HH s2z3 HH = 
 Node ML s2z2 / zvýšit-001 (zvýšení)                     mismatch in :cause:          ML =                        HH = s2z3
-Node ML s2z3 / zařadit-001 (v souvislosti se zařazením) mismatch in :ARG0:           ML = s2p0 unmapped          HH = s2p4
 Node ML s2z3 / zařadit-001 (v souvislosti se zařazením) mismatch in :ARG1-of:        ML =                        HH = s2h1
 Node HH s2h1 / have-role-91                             mismatch in concept:         HH = have-role-91           ML = UNMAPPED
 Node HH s2h1 / have-role-91                             mismatch in :ARG2:           HH = s2n2                   ML = UNMAPPED
@@ -340,9 +337,6 @@ Node HH s2h1 / have-role-91                             mismatch in :aspect:    
 Node HH s2h1 / have-role-91                             mismatch in :modal-strength: HH = full-affirmative       ML = UNMAPPED
 Node HH s2n1 / name                                     mismatch in concept:         HH = name                   ML = UNMAPPED
 Node HH s2n1 / name                                     mismatch in :op1:            HH = "Duha"                 ML = UNMAPPED
-Node HH s2p4 / person                                   mismatch in concept:         HH = person                 ML = UNMAPPED
-Node HH s2p4 / person                                   mismatch in :refer-number:   HH = plural                 ML = UNMAPPED
-Node HH s2p4 / person                                   mismatch in :refer-person:   HH = 1st                    ML = UNMAPPED
 Node HH s2p5 / person                                   mismatch in concept:         HH = person                 ML = UNMAPPED
 Node HH s2p5 / person                                   mismatch in :refer-number:   HH = plural                 ML = UNMAPPED
 Node HH s2p5 / person                                   mismatch in :refer-person:   HH = 1st                    ML = UNMAPPED
@@ -351,8 +345,8 @@ Node HH s2t2 / temporal-quantity                        mismatch in :extent:    
 Node HH s2t2 / temporal-quantity                        mismatch in :refer-number:   HH = singular               ML = UNMAPPED
 Node HH s2t2 / temporal-quantity                        mismatch in :unit:           HH = s2r1                   ML = UNMAPPED
 
-Correct 36 out of 57 non-empty ML values => recall    63%.
-Correct 36 out of 66 non-empty HH values => precision 55%.
+Correct 41 out of 57 non-empty ML values => recall    72%.
+Correct 41 out of 66 non-empty HH values => precision 62%.
 
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s2h1 / have-role-91                             mismatch in concept:         HH = have-role-91           ML = UNMAPPED
@@ -365,15 +359,11 @@ Node HH s2m1 / magazine (magazínu Duha)                 mismatch in :name:     
 Node HH s2n1 / name                                     mismatch in concept:         HH = name                   ML = UNMAPPED
 Node HH s2n1 / name                                     mismatch in :op1:            HH = "Duha"                 ML = UNMAPPED
 Node HH s2n2 / news-media (LN)                          mismatch in :refer-number:   HH = plural                 ML = 
-Node HH s2p1 / přečkat-001 (jsme přečkali)              mismatch in :ARG0:           HH = s2p4 unmapped          ML = s2p0
 Node HH s2p1 / přečkat-001 (jsme přečkali)              mismatch in :ARG1:           HH = s2t2 unmapped          ML = s2r1
 Node HH s2p2 / počítat-006 (nepočítáme - li)            mismatch in :ARG0:           HH = s2p5 unmapped          ML = s2p0
 Node HH s2p3 / příloha (jako přílohy)                   mismatch in :refer-number:   HH = singular               ML = 
 Node HH s2p3 / příloha (jako přílohy)                   mismatch in :mod-of:         HH =                        ML = s2m1
 Node HH s2p3 / příloha (jako přílohy)                   mismatch in :part:           HH =                        ML = s2n2
-Node HH s2p4 / person                                   mismatch in concept:         HH = person                 ML = UNMAPPED
-Node HH s2p4 / person                                   mismatch in :refer-number:   HH = plural                 ML = UNMAPPED
-Node HH s2p4 / person                                   mismatch in :refer-person:   HH = 1st                    ML = UNMAPPED
 Node HH s2p5 / person                                   mismatch in concept:         HH = person                 ML = UNMAPPED
 Node HH s2p5 / person                                   mismatch in :refer-number:   HH = plural                 ML = UNMAPPED
 Node HH s2p5 / person                                   mismatch in :refer-person:   HH = 1st                    ML = UNMAPPED
@@ -390,16 +380,12 @@ Node HH s2z2 / zvýšit-se-001 (zvýšení)                  mismatch in concept
 Node HH s2z2 / zvýšit-se-001 (zvýšení)                  mismatch in :cause:          HH = s2z3 mapped to ML s2z3 ML = 
 Node HH s2z2 / zvýšit-se-001 (zvýšení)                  mismatch in :ARG0:           HH =                        ML = s2p0
 Node HH s2z2 / zvýšit-se-001 (zvýšení)                  mismatch in :stimulus:       HH =                        ML = s2z3
-Node HH s2z3 / zařadit-001 (v souvislosti se zařazením) mismatch in :ARG0:           HH = s2p4 unmapped          ML = s2p0
 Node HH s2z3 / zařadit-001 (v souvislosti se zařazením) mismatch in :ARG1-of:        HH = s2h1 unmapped          ML = 
 Node ML s2n1 / name (Duha)                              mismatch in concept:         ML = name                   HH = UNMAPPED
 Node ML s2n1 / name (Duha)                              mismatch in :op1:            ML = "Duha"                 HH = UNMAPPED
-Node ML s2p0 / person                                   mismatch in concept:         ML = person                 HH = UNMAPPED
-Node ML s2p0 / person                                   mismatch in :refer-number:   ML = plural                 HH = UNMAPPED
-Node ML s2p0 / person                                   mismatch in :refer-person:   ML = 1st                    HH = UNMAPPED
 
-Correct 36 out of 66 non-empty HH values => recall    55%.
-Correct 36 out of 57 non-empty ML values => precision 63%.
+Correct 41 out of 66 non-empty HH values => recall    62%.
+Correct 41 out of 57 non-empty ML values => precision 72%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 3:
@@ -749,12 +735,12 @@ Correct 14 out of 24 non-empty ML values => precision 58%.
 SUMMARY:
 Number of nodes per file: ML:71, HH:71
 File-to-file node mapping:
-Out of 71 total ML nodes, 59 mapped to HH => recall    = 83%.
-Out of 71 total HH nodes, 59 mapped to ML => precision = 83%.
- => F₁(ML,HH) = 83%.
-Before symmetrization, 4 ML nodes were projected ambiguously to 9 HH nodes.
+Out of 71 total ML nodes, 60 mapped to HH => recall    = 85%.
+Out of 71 total HH nodes, 60 mapped to ML => precision = 85%.
+ => F₁(ML,HH) = 85%.
+Before symmetrization, 5 ML nodes were projected ambiguously to 11 HH nodes.
 Before symmetrization, 5 HH nodes were projected ambiguously to 10 ML nodes.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 217 non-empty ML values, 151 found in HH => recall    70%.
-Out of 229 non-empty HH values, 151 found in ML => precision 66%.
- => juːmæʧ (ML, HH) = F₁ = 68%.
+Out of 217 non-empty ML values, 156 found in HH => recall    72%.
+Out of 229 non-empty HH values, 156 found in ML => precision 68%.
+ => juːmæʧ (ML, HH) = F₁ = 70%.
