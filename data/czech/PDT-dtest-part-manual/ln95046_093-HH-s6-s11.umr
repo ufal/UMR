@@ -130,7 +130,7 @@ Words: Pozván bude i  bývalý pracovník BIS Michal Čelechovský ,  který o 
         	:modal-strength full-affirmative
                 :manner (s8s1 / sám
                     :refer-number singular)
-                :ARG0 s8p4)
+                :ARG0 s8p4)))
 
 # alignment:
 s8p1: 1-2,11-12

@@ -56,7 +56,7 @@ Words: Hlavně večery a tak dále byly prima .
                 		:refer-number plural)
             		:op2 (s2t1 / thing
             			:refer-number plural)
-            	:ARG2 (s2p3 / prima))
+            	:ARG2 (s2p3 / prima))))
 
 # alignment:
 s2h2: 6-6
@@ -131,7 +131,7 @@ Words: Z té fotky .
             		:mod (s4t1 / ten)
             		:refer-number singular)
         	:modal-strength full-affirmative
-        	:aspect state)
+        	:aspect state))
 
 # alignment:
 s4h1: 0-0

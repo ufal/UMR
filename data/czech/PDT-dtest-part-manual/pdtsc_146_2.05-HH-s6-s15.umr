@@ -36,8 +36,8 @@ s6p3: 0-0
     :coref ((s6p1 :subset-of s6p3)
     	    (s5p1 :same-entity s6p1)
     	    (s5p2 :same-entity s6p2)))
-    	    
-    	    
+
+
 ################################################################################
 # sent_id = u_tree-cs-s7-root
 # :: snt7

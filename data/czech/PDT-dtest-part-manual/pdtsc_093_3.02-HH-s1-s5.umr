@@ -58,7 +58,7 @@ Words: Ještě něco mi k té fotce povíte ?
         	:aspect performance
         	:mode interrogative
         	:polarity umr-unknown
-        	:modal-strength neutral-affirmative)
+        	:modal-strength neutral-affirmative))
 
 # alignment:
 s2j1: 1-1
@@ -112,7 +112,7 @@ Words: Nechal jsem si nachromovat ,  jak vidíte ,  lampu ,  roury ,  teleskopy 
             		:aspect state)
         	:modal-strength full-affirmative
         	:aspect performance
-        	:quote s3s1)
+        	:quote s3s1))
 
 # alignment:
 s3n1: 1-2
@@ -151,7 +151,7 @@ Words: Všechno bylo v chromu .
             		:refer-number singular)
         	:aspect state
         	:modal-strength full-affirmative
-        	:quote s4s1)
+        	:quote s4s1))
 
 # alignment:
 s4h1: 2-2
@@ -189,7 +189,7 @@ Words: Byla to dobrá motorka .
                 	:refer-number singular)
             	:refer-number singular)
         	:aspect state
-        	:quote s5s1)
+        	:quote s5s1))
 
 # alignment:
 s5i1: 1-1

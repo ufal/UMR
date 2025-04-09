@@ -239,7 +239,7 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
                 	:quant 6)
                 :temporal (s4d5 / date-entity
                 	:weekday (s4s4 / sobota))
-          	:temporal s4d1
+          	:temporal s4d1))
 
 # alignment:
 s4a1: 17-17
