@@ -7,7 +7,7 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
 # sentence level graph:
 (s1p1 / publication-91
 	:ARG3 (s1s1 / say-91
-        	:aspect state
+        	:aspect activity
         	:modal-strength full-affirmative
         	:ARG0 (s1p4 / person
                 	:refer-number plural
@@ -25,14 +25,13 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
             		:aspect state
             		:modal-strength full-affirmative
             		:quote s1s1
-            		:ARG2 (s1t1 / temporal-quantity
-                		:unit (s1r1 / rok)
-                		:quant 1
+            		:vocative s1c1
+            		:ARG2 (s1r1 / rok
+                		:refer-number singular
                 		:mod (s1p3 / právě))
             		:ARG1 (s1o1 / oznamovat-002
             			:aspect performance
             			:modal-strength full-affirmative
-                		:vocative s1c1
                 		:quote s1s1
                 		:ARG0 s1p4
                 		:ARG2 s1c1
@@ -47,6 +46,7 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
                                 			:aspect activity
                                 			:modal-strength full-affirmative
                                 			:quote s1s1
+                                			:ARG0 s1p4
                                 			:ARG1 (s1c2 / cena
                                         			:part s1n1
                                         			:refer-number singular))))))))
@@ -66,7 +66,6 @@ s1i2: 0-0
 s1z1: 16-17,21-21
 s1n1: 20-20
 s1c2: 18-18
-s1t1: 0-0
 s1r1: 7-7,9-9
 s1p1: 0-0
 
@@ -84,15 +83,15 @@ Words: Celý rok jsme přečkali bez změny ceny ,  nepočítáme -  li zvýšen
 (s2p1 / přečkat-001
 	:modal-strength full-affirmative
         :aspect performance
-        :ARG1 (s2t2 / temporal-quantity
-            :unit (s2r1 / rok)
+        :ARG1 (s2r1 / rok
             :refer-number singular
             :extent (s2c1 / celý))
         :ARG0 (s2p4 / person
             :refer-number plural
             :refer-person 1st)
-        :manner (s2z1 / změnit-se-001
-            :ARG0 (s2c2 / cena
+        :manner (s2z1 / změnit-001
+            :ARG0 s2p4
+            :ARG1 (s2c2 / cena
                 :refer-number singular)
             :polarity -
             :aspect performance
@@ -101,34 +100,30 @@ Words: Celý rok jsme přečkali bez změny ceny ,  nepočítáme -  li zvýšen
             :aspect activity
             :polarity -
             :modal-strength full-negative
-            :ARG0 (s2p5 / person
-                :refer-number plural
-                :refer-person 1st)
-            :ARG1 (s2z2 / zvýšit-se-001
+            :ARG0 s2p4
+            :ARG1 (s2z2 / zvýšit-001
                 :ARG1 s2c2
+                :ARG0 s2p4
                 :aspect performance
                 :modal-strength full-affirmative
                 :cause (s2z3 / zařadit-001
                     :aspect performance
                     :modal-strength full-affirmative
                     :ARG0 s2p4
-                    :ARG1 (s2m1 / magazine
+                    :ARG1 (s2m1 / magazín
                         :name (s2n1 / name
                             :op1 "Duha")
                         :mod (s2t1 / televizní)
                         :mod (s2b1 / barevný)
                         :refer-number singular)
-                    :manner (s2p3 / příloha
-                            	:refer-number singular)
                     :ARG2 (s2n2 / news-media
                         :name (s2n3 / name
                         	:op1 "LN")
                         :refer-number plural)
-                        :ARG1-of (s2h1 / have-role-91
-                        	:aspect state
-                        	:modal-strength full-affirmative
-                        	:ARG2 s2n2
-                    		:ARG3 s2p3)))))
+                    :manner (s2p3 / příloha
+                            	:refer-number singular
+                            	:part s2n2
+                            	:mod-of s2m1)))))
 
 # alignment:
 s2p1: 3-4
@@ -137,16 +132,13 @@ s2p4: 0-0
 s2z1: 5-6
 s2c2: 7-7
 s2p2: 9-11
-s2p5: 0-0
 s2z2:12-12
 s2z3: 13-16
 s2b1: 17-17
 s2t1: 18-18
 s2m1: 19-20
 s2n1: 0-0
-s2h1: 0-0
 s2p3: 21-22
-s2t2: 0-0
 s2r1: 2-2
 s2n2: 23-23
 s2n3: 0-0
@@ -172,7 +164,7 @@ Words: Nyní však musíme do ceny deníku promítnout zvýšení nákladů ,  k
             :refer-number plural
             :refer-person 1st)
         :ARG2 (s3c1 / cena
-            :possessor (s3d1 / deník
+            :part (s3d1 / deník
                 :refer-number singular)
             :refer-number singular)
         :temporal (s3n1 / nyní)
@@ -230,27 +222,24 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
         		:unit (s4k1 / koruna)
                 	:quant 5)
                 :temporal (s4d1 / date-entity
-			:quarter (s4p1 / poslední)
-			:year (s4l1 / letošní)
-                	:refer-number singular)
+			:quarter 4
+			:year (s4l1 / letošní))
             	:temporal (s4d2 / date-interval
             		:op1 (s4d3 / date-entity
-            			:weekday (s4p4 / pondělek
-                			:refer-number singular))
+            			:weekday (s4p4 / pondělí))
                 	:op2 (s4d4 / date-entity
-            			:weekday (s4c2 / čtvrtek
-                			:refer-number singular))))
+            			:weekday (s4c2 / čtvrtek))))
           :op2 (s4s2 / stát-014
           	:aspect state
 		:modal-strength full-affirmative
+		:clausal-marker s4p3
           	:ARG1 s4n1
           	:ARG2 (s4m2 / monetary-quantity
         		:unit s4k1
                 	:quant 6)
                 :temporal (s4d5 / date-entity
-                	:weekday (s4s4 / sobota
-                			:refer-number singular))
-          	:temporal s4d1))
+                	:weekday (s4s4 / sobota))
+          	:temporal s4d1
 
 # alignment:
 s4a1: 17-17
@@ -271,7 +260,6 @@ s4p3: 7-7
 s4d1: 1-1,3-3
 s4d4: 0-0
 s4k1: 16-16,21-21
-s4p1: 2-2
 
 # document level annotation:
 (s4s0 / sentence
@@ -286,16 +274,18 @@ Words: Cena pátečního vydání ( 6.50 ) zůstává .
 
 # sentence level graph:
 (s5z1 / zůstávat-004
-        :ARG0 (s5c1 / cena
+        :ARG1 (s5c1 / cena
+        	:refer-number singular
             :part (s5v1 / vydání
-                :mod (s5p1 / páteční)
+                :mod (s5d1 / date-entity
+                	:weekday (s5p1 / pátek))
                 :refer-number singular)
             :ARG1-of (s5i1 / identity-91
             	:aspect state
             	:modal-strength full-affirmative
             	:ARG2 (s5m1 / monetary-quantity
-                	:quant 6.50)
-            :refer-number singular))
+                	:quant 6.5
+                	:unit CZK)))
         :aspect state
         :modal-strength full-affirmative)
 
@@ -306,6 +296,7 @@ s5v1: 3-3
 s5p1: 2-2
 s5i1: 0-0
 s5m1: 5-5
+s5d1: 0-0
 
 # document level annotation:
 (s5s0 / sentence
