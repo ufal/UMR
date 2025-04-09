@@ -351,8 +351,8 @@ sub parse_sentence_graph
     if(scalar(@stack) > 0)
     {
         my $n = scalar(@stack);
-        print STDERR ("Topmost node on stack: $stack[-1]{variable} / $stack[-1]{concept}\n");
-        confess("Missing closing bracket at line $iline of file $file->{label}: $n node(s) not closed");
+        print STDERR ("WARNING: Topmost node on stack: $stack[-1]{variable} / $stack[-1]{concept}\n");
+        print STDERR ("WARNING: Missing closing bracket at line $iline of file $file->{label}: $n node(s) not closed.\n");
     }
     # Extended concepts should better identify nodes for debugging and, possibly, alignment.
     # Currently we define one extension: a 'name' concept will be extended by the values of its :opX attributes.
