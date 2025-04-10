@@ -6,16 +6,21 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
 
 # sentence level graph:
 (s1p0 / publication-91
-:ARG3 (s1a / and
-             :op1 (s1h1 / have-temporal-91
+:ARG3 (s1s1 / say-91
+              :aspect activity
+        	  :modal-strength full-affirmative
+              :ARG0 (s1p1 / person
+                	:refer-number plural
+                	:refer-person 1st)
+              :ARG2 (s1p3 / person
+                            :refer-number plural)
+              :ARG1 (s1h1 / have-temporal-91
                          :aspect state
                          :modal-strength full-affirmative
                          :ARG1 (s1o1 / oznamovat-002
                                       :aspect performance
                                       :modal-strength full-affirmative
-                                      :ARG0 (s1p1 / person
-                                                   :refer-number plural
-                                                   :refer-person 1st)
+                                      :ARG0 s1p1
                                       :ARG1 (s1i1 / informace
                                                     :refer-number singular
                                                     :mod (s1p5 / populární
@@ -31,8 +36,7 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
                                                                                                  :mod (s1n1 / noviny
                                                                                                               :refer-number singular
                                                                                                               :possessor s1p1)))))
-                                      :ARG2 (s1p3 / person
-                                                    :refer-number plural))
+                                      :ARG2 s1p3)
                          :ARG2 (s1r1 / rok
                                        :refer-number singular
                                        :mod (s1p4 / právě))
@@ -43,12 +47,11 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
                                                             :aspect habitual
                                                             :modal-strength full-affirmative
                                                             :ARG1 s1n1
-                                           :mod (s1v1 / vážený))))
-        :op2 (s1t1 / event)))
+                                           :mod (s1v1 / vážený))))))
 
 # alignment:
 s1p0: 0-0
-s1a: 0-0
+s1s1: 0-0
 s1p1: 19-19
 s1p2: 2-2
 s1p3: 11-11
@@ -64,7 +67,6 @@ s1i2: 0-0
 s1z1: 16-17, 21-21
 s1c2: 18-18
 s1n1: 20-20
-s1t1: 0-0
 
 # document level annotation:
 (s1s0 / sentence
@@ -139,8 +141,7 @@ s2n3: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-    :coref ((s1t1 :subset-of s2p1)
-            (s1p1 :same-entity s2p0)
+    :coref ((s1p1 :same-entity s2p0)
             (s1c2 :same-entity s2c2)
             (s1r1 :same-entity s2r1)
             (s1n1 :same-entity s2n2))
@@ -190,8 +191,7 @@ s3r1: 12-14
 
 # document level annotation:
 (s3s0 / sentence
-    :coref ((s1t1 :subset-of s3p1)
-            (s2p0 :same-entity s3p)
+    :coref ((s2p0 :same-entity s3p)
             (s2r1 :same-entity s3r1)
             (s2n2 :same-entity s3d1)
             (s2c2 :same-entity s3c1)))
@@ -253,8 +253,7 @@ s4s3: 0-0
 
 # document level annotation:
 (s4s0 / sentence
-    :coref ((s1t1 :subset-of s4a1)
-            (s3r1 :subset-of s4c1)
+    :coref ((s3r1 :subset-of s4c1)
             (s3d1 :same-entity s4n1)))
 
 
@@ -295,8 +294,7 @@ s5n1: 0-0
 
 # document level annotation:
 (s5s0 / sentence
-    :coref ((s1t1 :subset-of s5z1)
-            (s3c1 :same-entity s5c1)
+    :coref ((s3c1 :same-entity s5c1)
             (s4n1 :same-entity s5n1)))
 
 
@@ -367,8 +365,7 @@ s6s8: 0-0
 
 # document level annotation:
 (s6s0 / sentence
-    :coref ((s1t1 :subset-of s6a1)
-            (s5n1 :same-entity s6l1)))
+    :coref ((s5n1 :same-entity s6l1)))
 
 
 ################################################################################
@@ -449,8 +446,7 @@ s7d2: 30-30
 
 # document level annotation:
 (s7s0 / sentence
-    :coref ((s1t1 :subset-of s7c)
-            (s3p :same-entity s7p)
+    :coref ((s3p :same-entity s7p)
             (s5c1 :subset-of  s7c1)
             (s5c1 :subset-of  s7c2)
             (s5c1 :subset-of  s7c3)))
@@ -572,8 +568,7 @@ s8n2: 37-37
 
 # document level annotation:
 (s8s0 / sentence
-    :coref ((s1t1 :subset-of s8v1)
-            (s7p :same-entity s8e3)
+    :coref ((s7p :same-entity s8e3)
             (s7z1 :same-event s8z2)
             (s7c1 :same-entity s8c0)
             (s1p2 :same-entity s8e2)
@@ -628,8 +623,7 @@ s9v1: 6-6
 
 # document level annotation:
 (s9s0 / sentence
-    :coref ((s1t1 :subset-of s9n1)
-            (s8e3 :same-entity s9e1)
+    :coref ((s8e3 :same-entity s9e1)
             (s8c1 :same-entity s9c1)
             (s8n2 :same-entity s9n2)))
 
@@ -675,8 +669,7 @@ s10n3: 0-0
 
 # document level annotation:
 (s10s0 / sentence
-    :coref ((s1t1 :subset-of s10n1)
-            (s9e1 :same-entity s10e1)
+    :coref ((s9e1 :same-entity s10e1)
             (s9n1 :same-event s10n1)
             (s10p2 :subset-of s9c1)))
 
@@ -737,8 +730,7 @@ s11p2: 19-19
 
 # document level annotation:
 (s11s0 / sentence
-    :coref ((s1t1 :subset-of s11v1)
-            (s8e2 :same-entity s11p1)
+    :coref ((s8e2 :same-entity s11p1)
             (s10n3 :same-entity s11n1)
             (s10e1 :same-entity s11e1)))
 
@@ -811,8 +803,7 @@ s12n4: 0-0
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s1t1 :subset-of s12p1)
-            (s11e1 :same-entity s12e1)
+    :coref ((s11e1 :same-entity s12e1)
             (s11n1 :same-entity s12n1)
             (s12d1 :same-entity s12l3)))
 
@@ -877,8 +868,7 @@ s13v2: 17-17
 
 # document level annotation:
 (s13s0 / sentence
-    :coref ((s1t1 :subset-of s13v1)
-            (s12e1 :same-entity s13e1)
+    :coref ((s12e1 :same-entity s13e1)
             (s11p1 :same-entity s13e2)
             (s8c0 :same-entity s13c1)
             (s8z2 :same-event s13z1)))
