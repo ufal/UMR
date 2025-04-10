@@ -290,7 +290,7 @@ Words: Společnost United Illuminating sídlí v  New Haven ve státě Connectic
                           :name (s4n2 / name :op1 "Northeast" ))
             :ARGM-LOC (s4h2 / humen-settlement
                               :refer-number singular
-                              :name (s4x3 / name :op1 "Hartford")                          
+                              :name (s4x3 / name :op1 "Hartford")
                               :place (s4s6 / stát
                                             :refer-number singular
                                             :name (s4c2 / name :op1 "Connecticut")))))
@@ -314,7 +314,7 @@ s4c2: 0-0
 
 # document level annotation:
 (s4s0 / sentence
-    :coref ((s4s2 :same-entity s3s4
+    :coref ((s4s2 :same-entity s3s4)
             (s4s5 :same-entity s3s5)
             (s4s6 :same-entity s4s3)))
 
@@ -344,8 +344,8 @@ Words: Společnost PS of New Hampshire se sídlem v  Manchesteru v  New Hampshir
                       :refer-number singular
                       :mod s5s1
                       :mod (s5i1 / interní)
-                      :ARG1-of ((s5r1 s2r1 / reorganizace
-                                      :refer-number singular)))
+                      :ARG1-of (s5r1 / reorganizace
+                                      :refer-number singular))
         :ARG2 (s5m2 / monetary-quantity
                       :quant (s5a1 / asi :op1 2200000000)
                       :unit (s5d1 / dolar)))
@@ -370,6 +370,6 @@ s5a1: 18-18
 (s5s0 / sentence
     :coref ((s5s1 :same-entity s3s3)
             (s5p2 :same-entity s2p3)
-            (s5r1 :same-entity s2r1)))
+            (s5r1 :same-event s2r1)))
 
 
