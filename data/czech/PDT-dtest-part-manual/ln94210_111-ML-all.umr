@@ -17,6 +17,7 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
               :ARG1 (s1h1 / have-temporal-91
                          :aspect state
                          :modal-strength full-affirmative
+                         :quote s1s1
                          :ARG1 (s1o1 / oznamovat-002
                                       :aspect performance
                                       :modal-strength full-affirmative
