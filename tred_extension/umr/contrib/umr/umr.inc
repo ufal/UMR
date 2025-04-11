@@ -165,6 +165,26 @@
         return @parents
     }
 
+    sub get_dag_children {
+        my ($node) = @_;
+        my @children = $node->children;
+        my %ch_ids;
+        @ch_ids{ map $_->{'target.rf'},
+                 grep 0 == index($_->{value}, 'rel:'),
+                 ListV($node->{links}) } = ();
+        push @children, grep exists $ch_ids{ $_->{id} },
+                        $node->root->descendants;
+        return @children
+    }
+
+    sub label_with_name_expanded {
+        my ($node) = @_;
+        return $node->{label} if ($node->{relation} // "") ne 'name';
+
+        my @words = map $_->value =~ s/^"|"$//gr, ListV($node->{features});
+        return '"' . join('_', @words) . '"'
+    }
+
     sub compare_trees {
         ChangingFile(0);
         my @windows = sort { $b->is_focused <=> $a->is_focused }
@@ -184,52 +204,134 @@
             if (1 == @nodes0) {
                 my @nodes1 = keys
                     %{ $alignment->{w2n}[1][$root_index]{$word_index} };
-                if (1 == @nodes1) {
+                if (1 == @nodes1
+                    && 1 == keys
+                        %{ $alignment->{n2w}[1][$root_index]{ $nodes1[0] } }
+                ) {
                     undef $mapping{'01'}{ $nodes0[0] }{ $nodes1[0] };
                     undef $mapping{'10'}{ $nodes1[0] }{ $nodes0[0] };
                 }
             }
         }
-        my $root0 = $windows[0]->{currentNode}->root;
-        delete $_->{_diff} for $root0->descendants;
-        my $root1 = $windows[1]->{currentNode}->root;
-        undef $mapping{'01'}{ $root0->{id} }{ $root1->{id} };
-        undef $mapping{'10'}{ $root1->{id} }{ $root0->{id} };
-        for my $node ($root0->descendants) {
-            if (exists $mapping{'01'}{ $node->{id} }) {
-                my @nodes1 = keys %{ $mapping{'01'}{ $node->{id} } };
-                if (1 == @nodes1) {
-                    my ($node1) = grep $_->{id} eq $nodes1[0],
-                                  $root1->descendants;
-                    $node->{_diff}{relation} = 1
-                        if ($node->{relation} // "")
-                           ne ($node1->{relation} // "");
-                    $node->{_diff}{label} = 1
-                        unless $node->{label} eq $node1->{label};
 
-                    for my $parent (get_dag_parents($node)) {
-                        my $parent_id = $parent->{id};
-                        my @mapped_parents
-                            = map keys %$_, grep defined,
-                              @{ $alignment->{n2w}[1][$root_index] }
-                              { keys %{ $mapping{'01'}{$parent_id} } };
-                        my @parents1
-                            = map keys %$_, grep defined,
-                              @{ $alignment->{n2w}[1][$root_index] }
-                              { map $_->{id}, get_dag_parents($node1) };
-                        $node->{_diff}{parent}{$_} = 1
-                            for grep {
-                                my $p = $_;
-                                ! grep $p eq $_, @parents1
-                            } @mapped_parents;
-                    }
-                } else {
-                    $node->{_diff}{m2n} = 1;
-                }
-            } else {
-                $node->{_diff}{unmapped} = 1;
+        my $root0 = $windows[0]->{currentNode}->root;
+        my $root1 = $windows[1]->{currentNode}->root;
+        my @expanded_labels;
+        for my $idx (0, 1) {
+            for my $node (($root0, $root1)[$idx]->descendants) {
+                $expanded_labels[$idx]{ $node->{id} }
+                    = label_with_name_expanded($node);
             }
         }
+
+        my $change = 1;
+        while ($change) {
+            undef $change;
+
+            # use Data::Dumper;
+            # warn Dumper map $_->[$root_index],
+            #             map @$_, @$alignment{qw{ w2n n2w }};
+            # warn Dumper \%mapping;
+
+            for my $node (grep ! keys %{ $mapping{'01'}{ $_->{id} } // {} },
+                               $root0->descendants
+            ) {
+                warn "NODE: $node->{id}";
+                my @children = get_dag_children($node);
+
+                warn join ' ', map $_->{id}, grep keys %{ $mapping{'01'}{ $_->{id} } // {} },
+                    @children;
+
+                if (grep keys %{ $mapping{'01'}{ $_->{id} } // {} },
+                    @children
+                ) {
+                    my @children1 = map keys %{ $mapping{'01'}{ $_->{id} } },
+                                    @children;
+                    my @parents1 = uniq(map $_->{id},
+                                        map get_dag_parents($_), grep {
+                                            my $n1 = $_;
+                                            grep $n1->{id} eq $_, @children1
+                                        } $root1->descendants);
+                    use Data::Dumper; warn Dumper $node->{id}, [map $_->{id}, @children], \@children1, \@parents1;
+                    if (1 == @parents1
+                        && ! exists $mapping{'10'}{ $parents1[0] }
+                    ) {
+                        undef $mapping{'01'}{ $node->{id} }{ $parents1[0] };
+                        undef $mapping{'10'}{ $parents1[0] }{ $node->{id} };
+                        warn "Mapped by children: $node->{id}";
+                        $change = 1;
+                    }
+
+                } elsif (! @children) {
+                    warn "Trying label";
+                    my $exp = $expanded_labels[0]{ $node->{id} };
+                    if (1 == grep $exp eq $_, values %{ $expanded_labels[0] }) {
+                        my @matches = grep $expanded_labels[1]{$_} eq $exp,
+                                      keys %{ $expanded_labels[1] };
+                        if (1 == @matches) {
+                            undef $mapping{'01'}{ $node->{id} }{ $matches[0] };
+                            undef $mapping{'10'}{ $matches[0] }{ $node->{id} };
+                            warn "Mapped by label: $node->{id}";
+                            $change = 1;
+                        }
+                    }
+                }
+            }
+            for my $n0 (keys %{ $mapping{'01'} }) {
+                writeln("$n0: ", join ', ', sort keys %{ $mapping{'01'}{$n0} });
+            }
+        }
+
+        delete $_->{_diff} for $root0->descendants;
+        undef $mapping{'01'}{ $root0->{id} }{ $root1->{id} };
+        undef $mapping{'10'}{ $root1->{id} }{ $root0->{id} };
+        for my $root_index (0, 1) {
+            my $other_index = 1 - $root_index;
+            my $root = ($root0, $root1)[$root_index];
+            my $other_root = ($root0, $root1)[$other_index];
+            my $direction = qw( 01 10 )[$root_index];
+            my $n2w = $alignment->{n2w}[$other_index][$root_index];
+            for my $node ($root->descendants) {
+                if (exists $mapping{$direction}{ $node->{id} }) {
+                    my @nodes1 = keys %{ $mapping{$direction}{ $node->{id} } };
+                    if (1 == @nodes1) {
+                        my ($node1) = grep $_->{id} eq $nodes1[0],
+                                      $other_root->descendants;
+                        $node->{_diff}{relation} = 1
+                            if ($node->{relation} // "")
+                               ne ($node1->{relation} // "");
+                        $node->{_diff}{label} = 1
+                            unless $node->{label} eq $node1->{label};
+
+                        for my $parent (get_dag_parents($node)) {
+                            my $parent_id = $parent->{id};
+                            my @mapped_parents
+                                = map keys %$_,
+                                  grep defined,
+                                  @$n2w{
+                                      keys %{ $mapping{$direction}{$parent_id} }
+                            };
+                            my @parents1
+                                = map keys %$_,
+                                  grep defined,
+                                  @$n2w{
+                                      map $_->{id}, get_dag_parents($node1)
+                                  };
+                            $node->{_diff}{parent}{$_} = 1
+                                for grep {
+                                    my $p = $_;
+                                    ! grep $p eq $_, @parents1
+                                } @mapped_parents;
+                        }
+                    } else {
+                        $node->{_diff}{m2n} = 1;
+                    }
+                } else {
+                    $node->{_diff}{unmapped} = 1;
+                }
+            }
+        }
+        Redraw_All();
     }
 
     sub show_diff {
@@ -238,4 +340,3 @@
         print Dumper $this->{_diff};
     }
 }
-

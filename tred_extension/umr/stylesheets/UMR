@@ -7,7 +7,7 @@ node: <?
           } else {
               '#{black}'
           }
-?>${label}<?
+?><? UMR::label_with_name_expanded($this) . do {
           my @links = grep { my $id = $_->{'target.rf'};
                              ! grep $_->{id} eq $id, $root->descendants
                       } ListV($this->{links});
@@ -16,8 +16,8 @@ node: <?
               ? join '.', "#{darkgreen}",
                           map $nh->{ $_->{'target.rf'} }->{label} // "#{red}???#{darkgreen}",
                               @links
-              : "";
-      ?>
+              : ""
+      } ?>
 node: <? ($this->{_diff}{relation} ? '#{red}' : '#{blue}') . '${relation}' ?>
 
 style: <?
