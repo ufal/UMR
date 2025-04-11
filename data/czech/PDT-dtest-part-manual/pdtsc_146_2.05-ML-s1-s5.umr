@@ -195,13 +195,12 @@ Words: To je pravda .
         :ARG2 (s5e2 / person
                       :refer-number singular
                       :refer-person 2nd)
-:ARG1
-(s5b1 / have-mod-91
-        :aspect state
-        :modal-strength full-affirmative
-        :quote s5s1
-        :ARG1 (s5t1 / event)
-        :ARG2 (s5p1 / pravda)))
+        :ARG1 (s5b1 / have-mod-91
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s5s1
+                      :ARG1 (s5t1 / event)
+                      :ARG2 (s5p1 / pravda)))
 
 # alignment:
 s5s1: 0-0
