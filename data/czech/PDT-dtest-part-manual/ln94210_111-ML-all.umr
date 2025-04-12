@@ -12,12 +12,21 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
               :ARG0 (s1p1 / person
                 	:refer-number plural
                 	:refer-person 1st)
-              :ARG2 (s1p3 / person
-                            :refer-number plural)
+              :ARG2 (s1p2 / person
+                            :refer-number plural
+                            :refer-person 2nd
+                            :ARG0-of (s1c1 / číst-002
+                                             :aspect habitual
+                                             :modal-strength full-affirmative
+                                             :ARG1 (s1n1 / noviny
+                                                           :refer-number singular
+                                                           :possessor s1p1)
+                                :mod (s1v1 / vážený)))
               :ARG1 (s1h1 / have-temporal-91
                          :aspect state
                          :modal-strength full-affirmative
                          :quote s1s1
+                         :vocative s1p2
                          :ARG1 (s1o1 / oznamovat-002
                                       :aspect performance
                                       :modal-strength full-affirmative
@@ -34,28 +43,17 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
                                                                                    :modal-strength full-affirmative
                                                                                    :ARG0 s1p1
                                                                                    :ARG1 (s1c2 / cena
-                                                                                                 :mod (s1n1 / noviny
-                                                                                                              :refer-number singular
-                                                                                                              :possessor s1p1)))))
-                                      :ARG2 s1p3)
+                                                                                                 :mod s1n1))))
+                                      :ARG2 s1p2)
                          :ARG2 (s1r1 / rok
                                        :refer-number singular
-                                       :mod (s1p4 / právě))
-                         :vocative (s1p2 / person
-                                           :refer-number plural
-                                           :refer-person 2nd
-                                           :ARG0-of (s1c1 / číst-002
-                                                            :aspect habitual
-                                                            :modal-strength full-affirmative
-                                                            :ARG1 s1n1
-                                           :mod (s1v1 / vážený))))))
+                                       :mod (s1p4 / právě)))))
 
 # alignment:
 s1p0: 0-0
 s1s1: 0-0
 s1p1: 19-19
-s1p2: 2-2
-s1p3: 11-11
+s1p2: 2-2, 11-11
 s1c1: 0-0
 s1v1: 1-1
 s1h1: 4-4
@@ -70,8 +68,7 @@ s1c2: 18-18
 s1n1: 20-20
 
 # document level annotation:
-(s1s0 / sentence
-      :coref ((s1p3 :same-entity s1p2)))
+(s1s0 / sentence)
 
 
 ################################################################################
@@ -81,9 +78,13 @@ Index: 1    2   3    4        5   6     7    8  9          10 11 12      13 14  
 Words: Celý rok jsme přečkali bez změny ceny ,  nepočítáme -  li zvýšení v  souvislosti se zařazením barevného televizního magazínu Duha jako přílohy LN .
 
 # sentence level graph:
-(s2p1 / přečkat-001
+(s2s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s2p1 / přečkat-001
         :aspect performance
         :modal-strength full-affirmative
+        :quote s2s1
         :ARG0 (s2p0 / person
                      :refer-number plural
                      :refer-person 1st)
@@ -120,9 +121,10 @@ Words: Celý rok jsme přečkali bez změny ceny ,  nepočítáme -  li zvýšen
                                                                          :name (s2n3 / name :op1 "LN"))
                                                            :manner (s2p3 / příloha
                                                                            :mod-of s2m1
-                                                                           :part s2n2)))))
+                                                                           :part s2n2))))))
 
 # alignment:
+s2s1: 0-0
 s2p0: 0-0
 s2p1: 3-4
 s2r1: 2-2
@@ -142,7 +144,8 @@ s2n3: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-    :coref ((s1p1 :same-entity s2p0)
+    :coref ((s1s1 :same-event s2s1)
+            (s1p1 :same-entity s2p0)
             (s1c2 :same-entity s2c2)
             (s1r1 :same-entity s2r1)
             (s1n1 :same-entity s2n2))
@@ -155,10 +158,14 @@ Index: 1    2    3      4  5    6      7          8       9       10 11    12 13
 Words: Nyní však musíme do ceny deníku promítnout zvýšení nákladů ,  které v  průběhu roku nastalo .
 
 # sentence level graph:
-(s3p1 / promítnout-002
-        :clausal-marker (s3v1 / však)
+(s3s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s3p1 / promítnout-002
         :aspect performance
         :modal-strength full-affirmative
+        :quote s3s1
+        :clausal-marker (s3v1 / však)
         :ARG0 (s3p / person
                      :refer-number plural
                      :refer-person 1st)
@@ -176,9 +183,10 @@ Words: Nyní však musíme do ceny deníku promítnout zvýšení nákladů ,  k
                                        :aspect performance
                                        :modal-strength full-affirmative
                                        :temporal (s3r1 / rok
-                                                         :refer-number singular))))
+                                                         :refer-number singular)))))
 
 # alignment:
+s3s1: 0-0
 s3p: 0-0
 s3n1: 1-1
 s3v1: 2-2
@@ -192,7 +200,8 @@ s3r1: 12-14
 
 # document level annotation:
 (s3s0 / sentence
-    :coref ((s2p0 :same-entity s3p)
+    :coref ((s2s1 :same-event s3s1)
+            (s2p0 :same-entity s3p)
             (s2r1 :same-entity s3r1)
             (s2n2 :same-entity s3d1)
             (s2c2 :same-entity s3c1)))
@@ -205,11 +214,15 @@ Index: 1  2          3         4         5    6     7     8      9      10   11 
 Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny stát od pondělka do čtvrtka pět korun a  v  sobotu šest korun .
 
 # sentence level graph:
-(s4a1 / and
+(s4s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s4a1 / and
             :op1 (s4s1 / stát-014
-                      :clausal-marker (s4p1 / proto)
                       :aspect state
                       :modal-strength full-affirmative
+                      :quote s4s
+                      :clausal-marker (s4p1 / proto)
                       :temporal (s4c1 / date-entity
                                         :quarter 4
                                         :year (s4l1 / letošní))
@@ -224,15 +237,17 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
             :op2 (s4s2 / stát-014
                       :aspect state
                       :modal-strength full-affirmative
+                      :quote s4s
                       :clausal-marker s4p1
                       :temporal s4c1
                       :ARG1 s4n1
                       :ARG2 (s4k3 / monetary-quantity
                                     :quant 6
                                     :unit s4k2)
-                      :temporal (s4d3 / date-entity :weekday (s4s3 / sobota))))
+                      :temporal (s4d3 / date-entity :weekday (s4s3 / sobota)))))
 
 # alignment:
+s4s: 0-0
 s4s1: 6-6,10-10
 s4c1: 1-3,5-5
 s4l1: 4-4
@@ -254,7 +269,8 @@ s4s3: 0-0
 
 # document level annotation:
 (s4s0 / sentence
-    :coref ((s3r1 :subset-of s4c1)
+    :coref ((s3s1 :same-event s4s)
+            (s3r1 :subset-of s4c1)
             (s3d1 :same-entity s4n1)))
 
 
@@ -265,9 +281,13 @@ Index: 1    2         3      4 5    6 7       8
 Words: Cena pátečního vydání ( 6.50 ) zůstává .
 
 # sentence level graph:
-(s5z1 / zůstávat-004
+(s5s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s5z1 / zůstávat-004
         :aspect state
         :modal-strength full-affirmative
+        :quote s5s1
         :ARG1 (s5c1 / cena
                       :part (s5v1 / vydání
                                     :refer-number singular
@@ -280,9 +300,10 @@ Words: Cena pátečního vydání ( 6.50 ) zůstává .
                                                      :modal-strength full-affirmative
                                                            :ARG2 (s5x1 / monetary-quantity
                                                                          :quant 6.5
-                                                                         :unit (s5k2 / CZK)))))
+                                                                         :unit (s5k2 / CZK))))))
 
 # alignment:
+s5s1: 0-0
 s5z1: 7-7
 s5c1: 1-1
 s5v1: 3-3
@@ -295,7 +316,8 @@ s5n1: 0-0
 
 # document level annotation:
 (s5s0 / sentence
-    :coref ((s3c1 :same-entity s5c1)
+    :coref ((s4s :same-event s5s1)
+            (s3c1 :same-entity s5c1)
             (s4n1 :same-entity s5n1)))
 
 
@@ -306,10 +328,14 @@ Index: 1  2  3         4     5  6    7  8       9  10      11   12 13 14 15    1
 Words: (  Na Slovensku budou LN stát od pondělí do čtvrtka 5.50 Sk ,  v  pátek 7.50 Sk a  v  sobotu 6.50 Sk .  )
 
 # sentence level graph:
-(s6a1 / and
+(s6s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s6a1 / and
         :op1 (s6s1 / stát-014
                      :aspect state
                      :modal-strength full-affirmative
+                     :quote s6s
                      :place (s6s2 / country
                                     :name (s6n3 / name :op1 "Slovensko"))
                      :ARG1 (s6l1 / news-media
@@ -323,6 +349,7 @@ Words: (  Na Slovensku budou LN stát od pondělí do čtvrtka 5.50 Sk ,  v  pá
         :op2 (s6s4 / stát-014
                      :aspect state
                      :modal-strength full-affirmative
+                     :quote s6s
                      :place s6s2
                      :ARG1 s6l1
                      :temporal (s6d3 / date-entity :weekday (s6p3 / pátek))
@@ -332,14 +359,16 @@ Words: (  Na Slovensku budou LN stát od pondělí do čtvrtka 5.50 Sk ,  v  pá
         :op3 (s6s6 / stát-014
                       :aspect state
                       :modal-strength full-affirmative
+                      :quote s6s
                       :place s6s2
                       :ARG1 s6l1
                       :temporal (s6d4 / date-entity :weekday (s6s7 / sobota))
                       :ARG2 (s6x3 / monetary-quantity
                                     :quant 6.5
-                                    :unit (s6s8 / Sk))))
+                                    :unit (s6s8 / Sk)))))
 
 # alignment:
+s6s: 0-0
 s6a1: 18-18
 s6s1: 4-4,6-6
 s6s2: 2-3
@@ -366,7 +395,8 @@ s6s8: 0-0
 
 # document level annotation:
 (s6s0 / sentence
-    :coref ((s5n1 :same-entity s6l1)))
+    :coref ((s6s :same-event s5s1)
+            (s5n1 :same-entity s6l1)))
 
 
 ################################################################################
@@ -376,10 +406,14 @@ Index: 1    2  3  4     5       6    7  8           9  10 11  12      13 14 15 1
 Words: Víme ,  že každé zvýšení ceny je nepopulární ,  a  tak doufáme ,  že s  touto cenou vydržíme opět alespoň rok ,  zatímco ceny ostatních novin se budou v  dalších čtvrtletích zvyšovat .
 
 # sentence level graph:
-(s7c / consecutive
+(s7s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s7c / consecutive
         :op1 (s7v1 / vědět-001
                       :aspect state
                       :modal-strength full-affirmative
+                      :quote s7s1
                       :ARG0 (s7p / person
                                   :refer-number plural
                                   :refer-person 1st)
@@ -398,6 +432,7 @@ Words: Víme ,  že každé zvýšení ceny je nepopulární ,  a  tak doufáme 
          :op2 (s7d1 / doufat-001
                        :aspect activity
                        :modal-strength full-affirmative
+                       :quote s7s1
                        :ARG0 s7p
                        :ARG1 (s7v2 / vydržet-002
                                      :aspect state
@@ -419,9 +454,10 @@ Words: Víme ,  že každé zvýšení ceny je nepopulární ,  a  tak doufáme 
                                                                                     :mod (s7o2 / ostatní)))
                                                        :temporal (s7c4 / čtvrtletí
                                                                           :refer-number plural
-                                                                          :mod (s7d2 / další ))))))
+                                                                          :mod (s7d2 / další )))))))
 
 # alignment:
+s7s1: 0-0
 s7p: 0-0
 s7c: 10-10
 s7v1: 1-1
@@ -447,7 +483,8 @@ s7d2: 30-30
 
 # document level annotation:
 (s7s0 / sentence
-    :coref ((s3p :same-entity s7p)
+    :coref ((s6s :same-event s7s1)
+            (s3p :same-entity s7p)
             (s5c1 :subset-of  s7c1)
             (s5c1 :subset-of  s7c2)
             (s5c1 :subset-of  s7c3)))
@@ -460,9 +497,13 @@ Index: 1        2          3       4       5       6   7        8  9     10 11  
 Words: Přestože oznamované zvýšení znamená měsíčně jen průměrně o  21.70 Kč vyšší vydání ,  víme ,  že pro některé čtenáře může být předplatné v  čtvrtletním nebo ročním součtu tak vysoké ,  že mohou zvažovat i  zrušení odběru novin .
 
 # sentence level graph:
-(s8v1 / vědět-001
+(s8s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s8v1 / vědět-001
         :aspect state
         :modal-strength full-affirmative
+        :quote s8s
         :concession (s8z1 / znamenat-001
                             :aspect state
                             :modal-strength full-affirmative
@@ -529,9 +570,10 @@ Words: Přestože oznamované zvýšení znamená měsíčně jen průměrně o 
                                                                                            :modal-strength full-affirmative
                                                                                            :ARG0 s8c1
                                                                                            :ARG1 (s8n2 / noviny
-                                                                                                         :refer-number plural))))))))
+                                                                                                         :refer-number plural)))))))))
 
 # alignment:
+s8s: 0-0
 s8v1: 14-14
 s8e3: 0-0
 s8e2: 0-0
@@ -569,7 +611,8 @@ s8n2: 37-37
 
 # document level annotation:
 (s8s0 / sentence
-    :coref ((s7p :same-entity s8e3)
+    :coref ((s8s :same-event s7s1)
+            (s7p :same-entity s8e3)
             (s7z1 :same-event s8z2)
             (s7c1 :same-entity s8c0)
             (s1p2 :same-entity s8e2)
@@ -584,9 +627,13 @@ Index: 1     2        3        4   5    6     7     8
 Words: Těmto čtenářům nabízíme tak jako vloni pomoc .
 
 # sentence level graph:
-(s9n1 / nabízet-001
+(s9s1 / say-91
         :aspect activity
         :modal-strength full-affirmative
+:ARG1 (s9n1 / nabízet-001
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s9s1
         :ARG0 (s9e1 / person
                       :refer-number plural
                       :refer-person 1st)
@@ -609,9 +656,10 @@ Words: Těmto čtenářům nabízíme tak jako vloni pomoc .
                             :ARG0 s9e1
                             :ARG1 s9p1
                             :ARG2 s9c1
-                            :temporal (s9v1 / vloni)))
+                            :temporal (s9v1 / vloni))))
 
 # alignment:
+s9s1: 0-0
 s9n1: 3-3
 s9e1: 0-0
 s9c1: 2-2
@@ -624,7 +672,8 @@ s9v1: 6-6
 
 # document level annotation:
 (s9s0 / sentence
-    :coref ((s8e3 :same-entity s9e1)
+    :coref ((s8s :same-event s9s1)
+            (s8e3 :same-entity s9e1)
             (s8c1 :same-entity s9c1)
             (s8n2 :same-entity s9n2)))
 
@@ -636,9 +685,13 @@ Index: 1    2              3   4        5     6      7
 Words: Všem předplatitelům pak nabízíme novou soutěž .
 
 # sentence level graph:
-(s10n1 / nabízet-001
+(s10s / say-91
         :aspect activity
         :modal-strength full-affirmative
+:ARG1 (s10n1 / nabízet-001
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s10s
         :clausal-marker (s10p1 / pak)
         :ARG0 (s10e1 / person
                       :refer-number plural
@@ -656,9 +709,10 @@ Words: Všem předplatitelům pak nabízíme novou soutěž .
                        :aspect activity
                        :modal-strength partial-affirmative
                        :ARG0 s10p2
-                       :mod (s10n2 / nový)))
+                       :mod (s10n2 / nový))))
 
 # alignment:
+s10s: 0-0
 s10n1: 4-4
 s10p1: 3-3
 s10e1: 0-0
@@ -670,7 +724,8 @@ s10n3: 0-0
 
 # document level annotation:
 (s10s0 / sentence
-    :coref ((s9e1 :same-entity s10e1)
+    :coref ((s10s :same-event s9s1)
+            (s9e1 :same-entity s10e1)
             (s9n1 :same-event s10n1)
             (s10p2 :subset-of s9c1)))
 
@@ -682,9 +737,13 @@ Index: 1      2       3  4  5      6      7    8  9  10       11     12        1
 Words: Vážení čtenáři ,  z  vašich dopisů víme ,  že většinou kladně hodnotíte změny ,  které v  Lidových novinách probíhají .
 
 # sentence level graph:
-(s11v1 / vědět-001
+(s11s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s11v1 / vědět-001
          :aspect state
          :modal-strength full-affirmative
+         :quote s11s1
          :vocative (s11p1 / person
                             :refer-number plural
                             :refer-person 2nd
@@ -712,9 +771,10 @@ Words: Vážení čtenáři ,  z  vašich dopisů víme ,  že většinou kladn�
                                        :ARG1-of (s11p2 / probíhat-002
                                                          :aspect activity
                                                          :modal-strength full-affirmative
-                                                         :place s11n1))))
+                                                         :place s11n1)))))
 
 # alignment:
+s11s1: 0-0
 s11v1: 7-7
 s11p1: 2-2,5-5
 s11c1: 0-0
@@ -731,7 +791,8 @@ s11p2: 19-19
 
 # document level annotation:
 (s11s0 / sentence
-    :coref ((s8e2 :same-entity s11p1)
+    :coref ((s10s :same-event s11s1)
+            (s8e2 :same-entity s11p1)
             (s10n3 :same-entity s11n1)
             (s10e1 :same-entity s11e1)))
 
@@ -743,9 +804,13 @@ Index: 1    2      3       4      5          6   7    8  9  10 11   12     13   
 Words: Také bývalí čtenáři Lidové demokracie nám píší ,  že i  když litují zániku LD ,  souhlasí s  dalším odběrem Lidových novin .
 
 # sentence level graph:
-(s12p1 / psát-007
+(s12s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s12p1 / psát-007
          :aspect activity
          :modal-strength full-affirmative
+         :quote s12s
          :clausal-marker (s12t1 / také)
          :ARG0 (s12p2 / person
                         :refer-number plural
@@ -781,9 +846,10 @@ Words: Také bývalí čtenáři Lidové demokracie nám píší ,  že i  když
                                                            :modal-strength full-affirmative
                                                            :ARG1 (s12l3 / news-media
                                                                           :wiki "Q12033489"
-                                                                          :name (s12n4 / name :op1 "LD"))))))
+                                                                          :name (s12n4 / name :op1 "LD")))))))
 
 # alignment:
+s12s: 0-0
 s12p1: 7-7
 s12t1: 1-1
 s12p2: 3-3
@@ -804,7 +870,8 @@ s12n4: 0-0
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s11e1 :same-entity s12e1)
+    :coref ((s12s :same-event s11s1)
+            (s11e1 :same-entity s12e1)
             (s11n1 :same-entity s12n1)
             (s12d1 :same-entity s12l3)))
 
@@ -816,9 +883,13 @@ Index: 1      2     3  4  5         6  7  8        9       10   11 12    13 14 1
 Words: Věříme proto ,  že pochopíte ,  že současné zvýšení ceny je nutné a  že nám zůstanete věrni .
 
 # sentence level graph:
-(s13v1 / věřit-001
+(s13s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s13v1 / věřit-001
         :aspect state
         :modal-strength full-affirmative
+        :quote s13s
         :clausal-marker (s13p1 / proto)
         :ARG0 (s13e1 / person
             :refer-number plural
@@ -849,9 +920,10 @@ Words: Věříme proto ,  že pochopíte ,  že současné zvýšení ceny je nu
                                         :aspect state
                                         :modal-strength full-affirmative
                                         :ARG1 s13e2
-                                        :ARG2 (s13v2 / věrný)))))
+                                        :ARG2 (s13v2 / věrný))))))
 
 # alignment:
+s13s: 0-0
 s13v1: 1-1
 s13p1: 2-2
 s13a1: 13-13
@@ -869,7 +941,8 @@ s13v2: 17-17
 
 # document level annotation:
 (s13s0 / sentence
-    :coref ((s12e1 :same-entity s13e1)
+    :coref ((s12s :same-event s13s)
+            (s12e1 :same-entity s13e1)
             (s11p1 :same-entity s13e2)
             (s8c0 :same-entity s13c1)
             (s8z2 :same-event s13z1)))
@@ -905,6 +978,7 @@ s14r1: 4-4
 # document level annotation:
 (s14s0 / sentence
     :coref ((s1p0 :same-entity s14p1)
+            (s1p1 :same-entity s14k1)
             (s12n1 :same-entity s14n5)))
 
 
