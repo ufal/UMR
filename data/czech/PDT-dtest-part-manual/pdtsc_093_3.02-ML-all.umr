@@ -994,7 +994,7 @@ Words: Ten první byl Vlásek .
 :ARG2 (s22e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1 (s22b1 / have-mod-91
+:ARG1 (s22b1 / identity-91
          :aspect state
          :modal-strength full-affirmative
          :quote s22s1
