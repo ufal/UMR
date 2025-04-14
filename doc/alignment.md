@@ -73,64 +73,72 @@ annotation repository](https://github.com/cu-clear/UMR-Annotation/issues/2).
 These are our (ÚFAL) guidelines. They may be inspired by what we saw in UMR
 1.0 but they do not attempt to mimic exactly the approach taken there.
 
-* The easiest alignment is between a content word and the concept node that
+* The easiest alignment is between **a content word** and the concept node that
 represents it: entities to nouns, states to adjectives or verbs, and
 processes to verbs.
 
-* Overtly expressed discourse connectives often have their own nodes, too.
+* Overtly expressed **discourse connectives** often have their own nodes, too.
 
-* Auxiliary verbs are aligned together with the main verb to the same event
+* **Auxiliary verbs** are aligned together with the main verb to the same event
 concept. The same holds for non-referential reflexive markers (_smát se_ “to
 laugh”) and for verbal particles (_come up_).
 
-* Some prepositions may have their own concept nodes. If they do not, then
+* Some **prepositions** may have their own concept nodes. If they do not, then
 they should be aligned to the same node as their noun (they are like case
 markers in other languages). Note that this may lead to discontinuous
 alignment if there is an adjective between the preposition and the noun.
 
-* Subordinating conjunctions are to clauses what prepositions are to
+* **Subordinating** conjunctions are to clauses what prepositions are to
 nominals, so we might treat them accordingly and align them with verbs,
 unless they have their own node. This would be parallel to languages where
 subordination is marked morphologically on the verb.
 
-* Numerical quantities do not have their own concept node because they are
-annotated as numerical `:quant` attributes, e.g. `(s1h / house :quant 10)`.
-Therefore we should align `s1h` to the whole expression _ten houses_. (This
-is different from approximate quantities that have their own node and
-`:quant` is the relation that attaches them, e.g. `(s1h / house :quant (s1s /
-several))` will have `s1h` attached to _houses_ and `s1s` to _several_.)
-
-* Punctuation tokens are normally not aligned with nodes. An exception would
+* **Punctuation tokens** are normally not aligned with nodes. An exception would
 be that a node is aligned to a range of tokens, there is a punctuation symbol
 somewhere in the middle of the range and excluding it from the alignment
 would break the otherwise contiguous alignment into two sub-ranges.
 
-* Reifications (the \*-91 event concepts) are meant as abstract concepts,
+* **Reifications** (the \*-91 event concepts) are meant as abstract concepts,
 meaning that they _typically_ do not have a corresponding token. However, if
 there is a token that is not aligned to anything else and that gave rise to
 the event, we should align it with the \*-91 node. In particular, the copula
 (_být_ “to be”) will often correspond to `have-mod-91`.
 
-* The abstract concepts `person`, `thing` etc. may be aligned to overtly
+* The **abstract concepts** `person`, `thing` etc. may be aligned to overtly
 expressed pronouns. If the concept is only inferred from morphological
 agreement marked on the verb, it will stay unaligned.
 
-* Somewhat schizophrenic situation arises with named entities. Typically
+* For **abstract entities** (as `date-entity`) with their own subroles (as `:weekday`), the child node is aligned with the respective token while the parent node remains unaligned (i.e., gets 0-0).  
+
+* **Numerical quantities** do not have their own concept node because they are
+annotated as numerical `:quant` attributes, e.g. `(s1h / house :quant 10)`.
+Therefore we should align `s1h` to the whole expression _ten houses_. 
+   * This is different from approximate quantities that have their own node and
+   `:quant` is the relation that attaches them, e.g. `(s1h / house :quant (s1s /
+    several))` will have `s1h` attached to _houses_ and `s1s` to _several_.)  
+    ALTERNATIVE suggestion: `s1h` aligned with _house_, _ten_ NOT aligned, see the next item with monetary-quantity (i.e., anything represented as a numerical value may get 0-0 alignment)
+   * If quantities have subroles with their own concept nodes, each of the nodes should be aligned to the respective token, e.g. for `(s1m / monetary-quantity :quant 10 :unit (s1d / dollar)`, the node `s1d` should be aligned with _dollars_ and `s1m` with _10_.   
+   ALTERNNATIVE suggestion:  `s1d` aligned with _dollars_,`s1m` with 0-0 alignment, _10_ NOT aligned (i.e., anything represented as a numerical value may get 0-0 alignment)
+
+* Somewhat schizophrenic situation arises with **named entities**. Typically
 there is an abstract concept (`person`, `organization` etc.) with a `name`
 child node. The abstract parent is aligned to the name tokens in the
-sentence. The `name` child stays unaligned, although it directly points to
+sentence. **The `name` child stays unaligned**, although it directly points to
 the orthographic words of the name via its `:opN` attributes. (This rule is
 inferred from the data relased in UMR 1.0.)
   * Nevertheless, there are situations when a `name` node is aligned to
     the name tokens. If the parent node has other children and they are
     aligned, then the parent node will not be aligned to the name tokens,
     hence the name node will align with them. For example, _the Philippine
-    island of Leyte_ is analyzed as
-    `(s4i2 / island :wiki "Leyte"
-        :name (s4n2 / name :op1 "Leyte")
-        :place (s4c / country  :wiki "Philippines"
-            :name (s4n3 / name :op1 "Philippine")))`
-    where `s4i2` is aligned to _island_, `s4n2` to _Leyte_, `s4c` to
+    island of Leyte_ is analyzed as  
+```    
+(s4i2 / island :wiki "Leyte"  
+        :name (s4n2 / name :op1 "Leyte")  
+        :place (s4c / country  :wiki "Philippines"  
+                    :name (s4n3 / name :op1 "Philippine")))
+```    
+
+  where `s4i2` is aligned to _island_, `s4n2` to _Leyte_, `s4c` to
     _Philippine_, and `s4n3` is unaligned.
 
 * More generally, the approach in UMR 1.0 seems to be:
@@ -146,6 +154,7 @@ inferred from the data relased in UMR 1.0.)
     `(s6t / temporal-quantity :quant (s6s2 / several) :unit (s6d / day) :mod (s6n / next))`;
     here, `s6s2`, `s6d` and `s6n` are aligned to their respective tokens while
     `s6t` is unaligned.
+  * What about a situation when the parent node has one (or more) child node and at the same time also an attribute like `:quant` with just numerical value?
 
 * While the above rules strive to align as many non-punctuation tokens as
 possible, it is not required that all of them are aligned to concepts. There
