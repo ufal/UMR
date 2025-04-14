@@ -11,6 +11,9 @@ Words: Mám dvě auta .
 	:ARG0 (s1p1 / person
 		:refer-number singular
 		:refer-person 1st)
+	:ARG2 (s1p2 / person
+		:refer-number singular
+		:refer-person 2nd)
 	:ARG1 (s1h1 / have-91
 		:quote s1s1
 		:ARG1 s1p1
@@ -24,6 +27,7 @@ s1h1: 1-1
 s1p1: 0-0
 s1a1: 3-3
 s1s1: 0-0
+s1p2: 0-0
 
 # document level annotation:
 (s1s0 / sentence)
@@ -43,9 +47,10 @@ Words: Ještě něco mi k té fotce povíte ?
             :refer-number singular
             :refer-person 1st)
 	:ARG2 (s2p2 / person
-        	:refer-number plural
+        	:refer-number singular
         	:refer-person 2nd)
         :ARG1 (s2p3 / povědět-001
+        	:polite +
         	:quote s2s1
         	:ARG0 s2p2
         	:ARG1 (s2t1 / thing
@@ -72,7 +77,8 @@ s2s1: 0-0
 
 # document level annotation:
 (s2s0 / sentence
-    :coref ((s1p1 :same-entity s2p2)))
+    :coref ((s1p1 :same-entity s2p2)
+    	    (s1p2 :same-entity s2p1)))
 
 
 ################################################################################
@@ -89,7 +95,7 @@ Words: Nechal jsem si nachromovat ,  jak vidíte ,  lampu ,  roury ,  teleskopy 
         	:refer-number singular
         	:refer-person 1st)
 	:ARG2 (s3p3 / person
-                :refer-number plural
+                :refer-number singular
                 :refer-person 2nd)
 	:ARG1 (s3n1 / nechat-009
         	:ARG0 s3p1
@@ -106,13 +112,13 @@ Words: Nechal jsem si nachromovat ,  jak vidíte ,  lampu ,  roury ,  teleskopy 
             		:modal-strength full-affirmative
             		:quote s3s1)
         	:parenthesis (s3v1 / vidět-007
+        		:polite +
             		:ARG0 s3p3
             		:ARG1 s3n1
             		:modal-strength full-affirmative
             		:aspect state)
         	:modal-strength full-affirmative
-        	:aspect performance
-        	:quote s3s1))
+        	:aspect performance))
 
 # alignment:
 s3n1: 1-2
@@ -142,8 +148,12 @@ Words: Všechno bylo v chromu .
 (s4s1 / say-91
 	:aspect state
 	:modal-strength full-affirmative
-	:ARG0 (s4p1 / person)
-	:ARG2 (s4p2 / person)
+	:ARG0 (s4p1 / person
+		:refer-number singular
+        	:refer-person 1st)
+	:ARG2 (s4p2 / person
+		:refer-number singular
+        	:refer-person 2nd)
 	:ARG1 (s4h1 / have-mod-91
         	:ARG1 (s4t1 / thing
         		:quant (s4v1 / všechen))
@@ -179,8 +189,12 @@ Words: Byla to dobrá motorka .
 (s5s1 / say-91
 	:aspect state
 	:modal-strength full-affirmative
-	:ARG0 (s5p1 / person)
-	:ARG2 (s5p2 / person)
+	:ARG0 (s5p1 / person
+		:refer-number singular
+        	:refer-person 1st)
+	:ARG2 (s5p2 / person
+		:refer-number singular
+        	:refer-person 2nd)
 	:ARG1 (s5i1 / identity-91
         	:ARG1 (s5t1 / thing
             		:refer-number singular)

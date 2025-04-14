@@ -248,7 +248,6 @@ Words: "  Jestliže se podíváte na třetí čtvrtletí vykazující zhruba 2.5
                 	:ARG1 (s4z2 / zpomalit-002
                     		:aspect performance
                     		:modal-strength full-affirmative
-                    		:quote s4s1
                     		:manner (s4j1 / jistě)
                     		:ARG1 (s4t1 / thing)
                     		:temporal (s4d1 / date-entity
@@ -256,18 +255,15 @@ Words: "  Jestliže se podíváte na třetí čtvrtletí vykazující zhruba 2.5
                 	:condition (s4p2 / podívat-se-001
                	    		:aspect performance
                     		:modal-strength full-affirmative
-                    		:quote s4s1
                     		:ARG0 s4p5
                     		:ARG1 (s4d2 / date-entity
                     			:quarter 3
                         		:ARG0-of (s4v2 / vykazovat-001
                             			:aspect activity
                             			:modal-strength full-affirmative
-                            			:quote s4s1
                             			:ARG1 (s4r1 / růst-002
                             				:aspect activity
                             				:modal-strength full-affirmative
-                            				:quote s4s1
                             				:ARG1 s4t1
                                 			:extent (s4p6 / percentage-entity
                                 				:value 2.5
@@ -341,8 +337,7 @@ Words: Nicméně Guffey i  Black tvrdí ,  že zpomalení zatím není důvodem 
             :ARG2 (s5d1 / důvod
                 :mod (s5o1 / obávat-se-001
                     :aspect state
-                    :modal-strength full-affirmative
-                    :quote s5t1)
+                    :modal-strength full-affirmative)
                 :refer-number singular)))
 
 # alignment:
@@ -390,7 +385,6 @@ Words: "  Blížíme se dosažení stanoveného cíle zpomalení ekonomiky na bo
             	:refer-number plural
             	:refer-person 1st)
             :ARG1 (s6d1 / dosáhnout-001
-            	:quote s6r1
             	:aspect performance
             	:modal-strength full-affirmative
                 :ARG0 s6p2
@@ -399,16 +393,13 @@ Words: "  Blížíme se dosažení stanoveného cíle zpomalení ekonomiky na bo
                         :ARG1-of (s6s1 / stanovit-001
                         	:aspect performance
                         	:modal-strength full-affirmative
-                        	:quote s6r1
                         	:ARG0 s6p2)
                         :ARG1-of (s6i1 / identity-91
                         	:aspect state
                         	:modal-strength full-affirmative
-                        	:quote s6r1
                         	:ARG2 (s6z1 / zpomalit-002
                 			:aspect performance
                 			:modal-strength full-affirmative
-                			:quote s6r1
                         		:ARG1 (s6e4 / ekonomika
                             			:refer-number singular)
                             		:ARG3 (s6b2 / bod
@@ -416,15 +407,13 @@ Words: "  Blížíme se dosažení stanoveného cíle zpomalení ekonomiky na bo
                             		:temporal-of (s6o1 / objevit-se-002
                             			:aspect performance
                             			:modal-strength partial-affirmative
-                            			:quote s6r1
                                 		:clausal-marker (s6d2 / doufejme)
                                 		:ARG1 (s6t1 / trend
                                 			:refer-number singular
                                 			:mod (s6n1 / nějaký)
                                 			:ARG1-of (s6k1 / klesat-001
                                 				:aspect activity
-                            					:modal-strength partial-affirmative
-                            					:quote s6r1)
+                            					:modal-strength partial-affirmative)
                             				:mod (s6c2 / cena
                                         			:refer-number plural)))))))))
 
@@ -565,13 +554,12 @@ Words: "  Myslím ,  že trh očekával ,  že Federální rezervní banka sní�
             :ARG1 (s8o1 / očekávat-001
             	:aspect performance
             	:modal-strength full-affirmative
-            	:quote s8r1
+            	:quote s8m1
                 :ARG0 (s8t1 / trh
                     :refer-number singular)
                 :ARG1 (s8s1 / snížit-001
                     :aspect performance
             	    :modal-strength full-affirmative
-            	    :quote s8r1
                     :ARG0 (s8o3 / organization
                     	:refer-number singular
                     	:name (s8n3 / name
@@ -586,7 +574,6 @@ Words: "  Myslím ,  že trh očekával ,  že Federální rezervní banka sní�
                     	:op1 (s8u1 / učinit-004
                     		:aspect performance
             			:modal-strength full-affirmative
-            			:quote s8r1
                                 :ARG0 s8o3
                                 :temporal (s8d1 / dosud)
                                 :ARG1 s8s1))))))

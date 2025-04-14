@@ -6,19 +6,23 @@ Words: Vždycky ale byla velká legrace .
 
 # sentence level graph:
 (s1s1 / say-91
-	:aspect state
+	:aspect activity
 	:modal-strength full-affirmative
-	:ARG0 (s1p1 / person)
-	:ARG2 (s1p2 / person)
+	:ARG0 (s1p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s1p2 / person
+		:refer-number singular
+		:refer-person 2nd)
 	:ARG1 (s1e1 / exist-91
-		:aspect state
-		:modal-strength full-affirmative
 		:quote s1s1
         	:frequency (s1v1 / vždycky)
         	:clausal-marker (s1a1 / ale)
-        	:ARG0 (s1l1 / legrace
+        	:ARG1 (s1l1 / legrace
             		:mod (s1v2 / velký
-                	:refer-number singular))))
+                	:refer-number singular))
+        	:aspect state
+        	:modal-strength full-affirmative))
 
 # alignment:
 s1e1: 3-3
@@ -42,10 +46,14 @@ Words: Hlavně večery a tak dále byly prima .
 
 # sentence level graph:
 (s2s1 / say-91
-	:aspect state
+	:aspect activity
 	:modal-strength full-affirmative
-	:ARG0 (s2p1 / person)
-	:ARG2 (s2p2 / person)
+	:ARG0 (s2p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s2p2 / person
+		:refer-number singular
+		:refer-person 2nd)
 	:ARG1 (s2h2 / have-mod-91
 		:quote s2s1
 		:aspect state
@@ -83,17 +91,21 @@ Words: Dobrá nálada je vidět .
 
 # sentence level graph:
 (s3s1 / say-91
-	:ARG0 (s3p1 / person)
-	:ARG2 (s3p2 / person)
+	:ARG0 (s3p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s3p2 / person
+		:refer-number singular
+		:refer-person 2nd)
 	:ARG1 (s3v1 / vidět-007
 	    :quote s3s1
 	    :aspect state
 	    :modal-strength full-affirmative
             :ARG1 (s3n1 / nálada
-            	:mod (s3d1 / dobrý
-            	:refer-number singular))
+            	:mod (s3d1 / dobrý)
+            	:refer-number singular)
             :ARG0 s3p1)
-        :aspect state
+        :aspect activity
         :modal-strength full-affirmative)
 
 # alignment:
@@ -119,14 +131,16 @@ Words: Z té fotky .
 # sentence level graph:
 (s4s1 / say-91
 	:modal-strength full-affirmative
-        :aspect state
-	:ARG0 (s4p1 / person)
-	:ARG2 (s4p2 / person)
+        :aspect activity
+	:ARG0 (s4p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s4p2 / person
+		:refer-number singular
+		:refer-person 2nd)
 	:ARG1 (s4h1 / have-source-91
 		:quote s4s1
-		:ARG1 (s4e1 / event
-			:aspect state
-			:modal-strength full-affirmative)
+		:ARG1 (s4e1 / event)
         	:ARG2 (s4f1 / fotka
             		:mod (s4t1 / ten)
             		:refer-number singular)
@@ -158,13 +172,15 @@ Words: To je pravda .
 # sentence level graph:
 (s5s1 / say-91
 	:modal-strength full-affirmative
-        :aspect state
-	:ARG0 (s5p1 / person)
-	:ARG2 (s5p2 / person)
+        :aspect activity
+	:ARG0 (s5p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s5p2 / person
+		:refer-number singular
+		:refer-person 2nd)
 	:ARG1 (s5h1 / have-mod-91
-		:ARG1 (s5e1 / event
-			:aspect state
-			:modal-strength full-affirmative)
+		:ARG1 (s5e1 / event)
         	:ARG2 (s5p3 / pravda
             		:refer-number singular)
 		:modal-strength full-affirmative
@@ -208,7 +224,6 @@ Words: Hlavně , že jsme si mohli sednout .
 		:quote s6s2
         	:ARG2 (s6h1 / hlavní)
         	:ARG1 (s6s1 / sednout-si-002
-        		:quote s6s2
             		:modal-strength neutral-affirmative
             		:aspect performance
             		:ARG1 (s6p3 / person
@@ -299,7 +314,6 @@ Words: To je prakticky ta třída ,  se kterou se scházím teď každý rok .
             		:mod (s8t3 / ten)
                 	:refer-number singular
             		:ARG1-of (s8s2 / scházet-se-001
-            			:quote s8s1
             			:aspect habitual
             			:modal-strength full-affirmative
                 		:ARG0 s8p1
@@ -423,12 +437,10 @@ Words: To jsou maturanti ,  kteří pravidelně jezdí na ty srazy .
         		:refer-number plural
         		:ARG1-of (s10m1 / maturovat-001
         			:aspect performance
-        			:modal-strength full-affirmative
-        			:quote s10s1)
+        			:modal-strength full-affirmative)
         		 :ARG0-of (s10j1 / jezdit-002
         		 	:aspect habitual
         			:modal-strength full-affirmative
-        			:quote s10s1
                 		:frequency (s10p4 / pravidelně)
                 		:ARG1 (s10s2 / sraz
                     			:mod (s10t2 / ten)
@@ -668,14 +680,12 @@ Words: To byli ,  ten vlevo i  ten v  prostředku vzadu ,  zřejmě nějací les
                     :ARG1-of (s15h1 / have-place-91
                     	:aspect state
 	    		:modal-strength full-affirmative
-	    		:quote s15s1
                     	:ARG2 (s15v1 / vlevo)))
                 :op2 (s15p5 / person
                     :refer-number singular
                     :ARG1-of (s15h2 / have-place-91
                     	:aspect state
 	    		:modal-strength full-affirmative
-	    		:quote s15s1
                     	:ARG2 (s15a2 / and
                     		:op1 (s15p3 / prostředek
                         		:refer-number singular)
@@ -686,7 +696,6 @@ Words: To byli ,  ten vlevo i  ten v  prostředku vzadu ,  zřejmě nějací les
             	:ARG0-of (s15d1 / dirigovat-002
             		:aspect activity
             		:modal-strength full-affirmative
-            		:quote s15s1
                 	:ARG1 (s15p6 / person
                     		:refer-number plural
                     		:refer-person 1st)
@@ -791,7 +800,6 @@ Words: Ti nás učili ,  jak vykopávat díry pro stromečky .
         	:ARG1 (s17v1 / vykopávat-002
         		:aspect habitual
         		:modal-strength full-affirmative
-			:quote s17s1
             		:ARG0 s17p4
             		:ARG1 (s17d1 / díra
                 		:purpose (s17s2 / stromeček
@@ -838,7 +846,6 @@ Words: Na jak dlouho jste jezdili ?
 		:ARG1 (s18j1 / jezdit-002
 			:aspect habitual
 			:modal-strength full-affirmative
-			:quote s18s1
 			:ARG0 (s18p3 / person
 				:refer-number plural
         			:refer-person 2nd)
@@ -890,8 +897,7 @@ Words: Většinou to bylo týden nebo míň .
 		:quote s19s1
 		:ARG1 (s19e1 / event
 			:aspect habitual
-			:modal-strength full-affirmative
-			:quote s19s1)
+			:modal-strength full-affirmative)
 		:frequency (s19v1 / většinou)
         	:ARG2 (s19o1 / or
             		:op1 (s19t3 / temporal-quantity
@@ -942,8 +948,7 @@ Words: Od pondělka asi do pátku nebo do soboty .
 		:quote s20s1
 		:ARG1 (s20e1 / event
 			:aspect habitual
-			:modal-strength full-affirmative
-			:quote s20s1)
+			:modal-strength full-affirmative)
 		:ARG2 (s20d1 / date-interval
 			:op1 (s20d2 / date-entity
 				:weekday (s20p3 / pondělí))
@@ -1002,7 +1007,6 @@ Words: Tenkrát se dělalo i  v  sobotu ,  tak možná i  do soboty .
         	:reason (s21d1 / dělat-019
         		:aspect habitual
         		:modal-strength full-affirmative
-        		:quote s21s1
             		:temporal (s21t1 / tenkrát)
             		:clausal-marker (s21i1 / i)
             		:temporal (s21d2 / date-entity
@@ -1010,8 +1014,7 @@ Words: Tenkrát se dělalo i  v  sobotu ,  tak možná i  do soboty .
             		:clausal-marker (s21i2 / i)))
             	:ARG1 (s21e1 / event
 			:aspect habitual
-			:modal-strength full-affirmative
-			:quote s21s1)
+			:modal-strength full-affirmative)
 		:ARG2 (s21d3 / date-interval
 			:op1 (s21d4 / date-entity)
 			:op2 (s21d5 / date-entity
@@ -1073,20 +1076,17 @@ Words: Na jiné brigády ,  jako byla pomoc při okopávání nebo sklízení br
                     			:op1 (s22p4 / pomáhat-003
                     				:aspect habitual
                     				:modal-strength full-affirmative
-                    				:quote s22s1
                     				:ARG0 s22p3
                     				:ARG1 (s22o1 / or
                             				:op1 (s22o2 / okopávat-001
                             					:aspect habitual
                     						:modal-strength full-affirmative
-                    						:quote s22s1
                     						:ARG0 s22p3
                     						:ARG1 (s22b3 / brambora
                                     					:refer-number plural))
                                     			:op2 (s22s2 / sklízet
                             					:aspect habitual
                     						:modal-strength full-affirmative
-                    						:quote s22s1
                     						:ARG0 s22p3
                     						:ARG1 s22b3)))
                             :op2 (s22t1 / thing)))
