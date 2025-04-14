@@ -118,7 +118,7 @@ Therefore we should align `s1h` to the whole expression _ten houses_.
     several))` will have `s1h` attached to _houses_ and `s1s` to _several_.)
 
 * A bit different rule applies for **abstract quantities that have subroles** with their own concept nodes. Then each of the children nodes should be aligned to the respective token, 
-   * However, if some token remains not-aligned (as it is e.g. numerical `:quant`), the abstract entity may be used to cover the whole expression (which would result in an overlapping alignment. E.g. `(s1m / monetary-quantity :quant 10 :unit (s1d / dollar)`, the node `s1d` should be aligned with _dollars_ and `s1m` with the   whole expression _ten dollars_        
+   * However, if some token remains not-aligned (as it is e.g. numerical `:quant`), the abstract entity may be used to cover the whole expression (which would result in an overlapping alignment. E.g. `(s1m / monetary-quantity :quant 10 :unit (s1d / dollar))`, the node `s1d` should be aligned with _dollars_ and `s1m` with the   whole expression _ten dollars_        
    BUT COMPARE: UMR 1.0, english_umr-0001.txt, snt21 _... more than six metres ..._ `((s21m4 / more-than  
                                     :op1 (s21d2 / distance-quantity 
                                                  :quant 6 :unit (s21m5 / meter))`
