@@ -5755,7 +5755,11 @@ File GOLD: 3 nodes unaligned: s31a/and, s31a4/and, s31v2/vigeo-NEW-03.
 
 Node-node correspondences:
 
+Ambiguous projection of LDT node s31a3 (and) to 2 GOLD nodes [s31a (and), s31a4 (and)]
+  The winner is LDT node s31a3 (and) <--> GOLD node s31a (and): econcepts=and/and, match=4 (concept=and,:op1=s31a4 mapped to GOLD s31a2,:op2=s31l1 mapped to GOLD s31l,:op3=s31a5 mapped to GOLD s31a3), weak match=4 (concept,:op1,:op2,:op3).
+
 Correspondence LDT s31a2 (pro abstinentia) = GOLD s31a5 (pro abstinentia)
+Correspondence LDT s31a3 (and)             = GOLD s31a  (and)
 Correspondence LDT s31a4 (audacia)         = GOLD s31a2 (audacia)
 Correspondence LDT s31a5 (avaritia)        = GOLD s31a3 (avaritia)
 Correspondence LDT s31l1 (largitio)        = GOLD s31l  (largitio)
@@ -5763,14 +5767,12 @@ Correspondence LDT s31p1 (pro pudore)      = GOLD s31p  (pro pudore)
 Correspondence LDT s31u1 (vigebant)        = GOLD s31v  (vigebant)
 Correspondence LDT s31v1 (pro virtute)     = GOLD s31v3 (pro virtute)
 Correspondence LDT s31a1 (, ,)             = GOLD 
-Correspondence LDT s31a3 (and)             = GOLD 
 Correspondence LDT s31n1 (nam)             = GOLD 
-Correspondence LDT                         = GOLD s31a  (and)
 Correspondence LDT                         = GOLD s31a4 (and)
 Correspondence LDT                         = GOLD s31v2 (vigeo-NEW-03)
 
-Aligned 7 out of 10 LDT nodes, that is 70%.
-Aligned 7 out of 10 GOLD nodes, that is 70%.
+Aligned 8 out of 10 LDT nodes, that is 80%.
+Aligned 8 out of 10 GOLD nodes, that is 80%.
 
 Comparing attributes of LDT nodes with their GOLD counterparts.
 Node LDT s31a1 / and (, ,)                     mismatch in concept:         LDT = and            GOLD = UNMAPPED
@@ -5778,23 +5780,14 @@ Node LDT s31a1 / and (, ,)                     mismatch in :op1:            LDT 
 Node LDT s31a1 / and (, ,)                     mismatch in :op2:            LDT = s31a2          GOLD = UNMAPPED
 Node LDT s31a1 / and (, ,)                     mismatch in :op3:            LDT = s31v1          GOLD = UNMAPPED
 Node LDT s31a2 / abstinentia (pro abstinentia) mismatch in :clausal-marker: LDT = s31n1 unmapped GOLD = 
-Node LDT s31a3 / and                           mismatch in concept:         LDT = and            GOLD = UNMAPPED
-Node LDT s31a3 / and                           mismatch in :op1:            LDT = s31a4          GOLD = UNMAPPED
-Node LDT s31a3 / and                           mismatch in :op2:            LDT = s31l1          GOLD = UNMAPPED
-Node LDT s31a3 / and                           mismatch in :op3:            LDT = s31a5          GOLD = UNMAPPED
 Node LDT s31n1 / nam (nam)                     mismatch in concept:         LDT = nam            GOLD = UNMAPPED
 Node LDT s31p1 / pudor (pro pudore)            mismatch in :clausal-marker: LDT = s31n1 unmapped GOLD = 
 Node LDT s31u1 / uigeo-NEW-03 (vigebant)       mismatch in concept:         LDT = uigeo-NEW-03   GOLD = vigeo-NEW-03
-Node LDT s31u1 / uigeo-NEW-03 (vigebant)       mismatch in :ARG0:           LDT = s31a3 unmapped GOLD = s31a
 Node LDT s31u1 / uigeo-NEW-03 (vigebant)       mismatch in :aspect:         LDT = activity       GOLD = imperfective
 Node LDT s31u1 / uigeo-NEW-03 (vigebant)       mismatch in :refer-number:   LDT = plural         GOLD = 
 Node LDT s31u1 / uigeo-NEW-03 (vigebant)       mismatch in :refer-person:   LDT = 3rd            GOLD = 
 Node LDT s31u1 / uigeo-NEW-03 (vigebant)       mismatch in :substitute:     LDT = s31a1 unmapped GOLD = s31v2
 Node LDT s31v1 / virtus (pro virtute)          mismatch in :clausal-marker: LDT = s31n1 unmapped GOLD = 
-Node GOLD s31a / and                           mismatch in concept:         GOLD = and           LDT = UNMAPPED
-Node GOLD s31a / and                           mismatch in :op1:            GOLD = s31a2         LDT = UNMAPPED
-Node GOLD s31a / and                           mismatch in :op2:            GOLD = s31l          LDT = UNMAPPED
-Node GOLD s31a / and                           mismatch in :op3:            GOLD = s31a3         LDT = UNMAPPED
 Node GOLD s31a4 / and                          mismatch in concept:         GOLD = and           LDT = UNMAPPED
 Node GOLD s31a4 / and                          mismatch in :op1:            GOLD = s31p          LDT = UNMAPPED
 Node GOLD s31a4 / and                          mismatch in :op2:            GOLD = s31a5         LDT = UNMAPPED
@@ -5803,14 +5796,10 @@ Node GOLD s31v2 / vigeo-NEW-03                 mismatch in concept:         GOLD
 Node GOLD s31v2 / vigeo-NEW-03                 mismatch in :ARG0:           GOLD = s31a4         LDT = UNMAPPED
 Node GOLD s31v2 / vigeo-NEW-03                 mismatch in :aspect:         GOLD = imperfective  LDT = UNMAPPED
 
-Correct 12 out of 30 non-empty LDT values => recall    40%.
-Correct 12 out of 27 non-empty GOLD values => precision 44%.
+Correct 17 out of 30 non-empty LDT values => recall    57%.
+Correct 17 out of 27 non-empty GOLD values => precision 63%.
 
 Comparing attributes of GOLD nodes with their LDT counterparts.
-Node GOLD s31a / and                            mismatch in concept:         GOLD = and            LDT = UNMAPPED
-Node GOLD s31a / and                            mismatch in :op1:            GOLD = s31a2          LDT = UNMAPPED
-Node GOLD s31a / and                            mismatch in :op2:            GOLD = s31l           LDT = UNMAPPED
-Node GOLD s31a / and                            mismatch in :op3:            GOLD = s31a3          LDT = UNMAPPED
 Node GOLD s31a4 / and                           mismatch in concept:         GOLD = and            LDT = UNMAPPED
 Node GOLD s31a4 / and                           mismatch in :op1:            GOLD = s31p           LDT = UNMAPPED
 Node GOLD s31a4 / and                           mismatch in :op2:            GOLD = s31a5          LDT = UNMAPPED
@@ -5818,7 +5807,6 @@ Node GOLD s31a4 / and                           mismatch in :op3:            GOL
 Node GOLD s31a5 / abstinentia (pro abstinentia) mismatch in :clausal-marker: GOLD =                LDT = s31n1
 Node GOLD s31p / pudor (pro pudore)             mismatch in :clausal-marker: GOLD =                LDT = s31n1
 Node GOLD s31v / vigeo-NEW-03 (vigebant)        mismatch in concept:         GOLD = vigeo-NEW-03   LDT = uigeo-NEW-03
-Node GOLD s31v / vigeo-NEW-03 (vigebant)        mismatch in :ARG0:           GOLD = s31a unmapped  LDT = s31a3
 Node GOLD s31v / vigeo-NEW-03 (vigebant)        mismatch in :aspect:         GOLD = imperfective   LDT = activity
 Node GOLD s31v / vigeo-NEW-03 (vigebant)        mismatch in :substitute:     GOLD = s31v2 unmapped LDT = s31a1
 Node GOLD s31v / vigeo-NEW-03 (vigebant)        mismatch in :refer-number:   GOLD =                LDT = plural
@@ -5831,14 +5819,10 @@ Node LDT s31a1 / and (, ,)                      mismatch in concept:         LDT
 Node LDT s31a1 / and (, ,)                      mismatch in :op1:            LDT = s31p1           GOLD = UNMAPPED
 Node LDT s31a1 / and (, ,)                      mismatch in :op2:            LDT = s31a2           GOLD = UNMAPPED
 Node LDT s31a1 / and (, ,)                      mismatch in :op3:            LDT = s31v1           GOLD = UNMAPPED
-Node LDT s31a3 / and                            mismatch in concept:         LDT = and             GOLD = UNMAPPED
-Node LDT s31a3 / and                            mismatch in :op1:            LDT = s31a4           GOLD = UNMAPPED
-Node LDT s31a3 / and                            mismatch in :op2:            LDT = s31l1           GOLD = UNMAPPED
-Node LDT s31a3 / and                            mismatch in :op3:            LDT = s31a5           GOLD = UNMAPPED
 Node LDT s31n1 / nam (nam)                      mismatch in concept:         LDT = nam             GOLD = UNMAPPED
 
-Correct 12 out of 27 non-empty GOLD values => recall    44%.
-Correct 12 out of 30 non-empty LDT values => precision 40%.
+Correct 17 out of 27 non-empty GOLD values => recall    63%.
+Correct 17 out of 30 non-empty LDT values => precision 57%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 32:
@@ -10279,14 +10263,19 @@ Correct 22 out of 101 non-empty LDT values => precision 22%.
 
 -------------------------------------------------------------------------------
 SUMMARY:
+Number of tokens: 889
 Number of nodes per file: LDT:867, GOLD:773
 File-to-file node mapping:
-Out of 867 total LDT nodes, 615 mapped to GOLD => recall    = 71%.
-Out of 773 total GOLD nodes, 615 mapped to LDT => precision = 80%.
+Out of 867 total LDT nodes, 616 mapped to GOLD => recall    = 71%.
+Out of 773 total GOLD nodes, 616 mapped to LDT => precision = 80%.
  => F₁(LDT,GOLD) = 75%.
-Before symmetrization, 48 LDT nodes were projected ambiguously to 98 GOLD nodes.
+Before symmetrization, 49 LDT nodes were projected ambiguously to 100 GOLD nodes.
 Before symmetrization, 45 GOLD nodes were projected ambiguously to 101 LDT nodes.
+Concept and relation comparisons (only mapped nodes; unmapped are ignored):
+Out of 2188 non-empty LDT values, 1046 found in GOLD => recall    48%.
+Out of 1782 non-empty GOLD values, 1046 found in LDT => precision 59%.
+ => F₁ = 53%.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 2725 non-empty LDT values, 1041 found in GOLD => recall    38%.
-Out of 2186 non-empty GOLD values, 1041 found in LDT => precision 48%.
- => juːmæʧ (LDT, GOLD) = F₁ = 42%.
+Out of 2725 non-empty LDT values, 1046 found in GOLD => recall    38%.
+Out of 2186 non-empty GOLD values, 1046 found in LDT => precision 48%.
+ => juːmæʧ (LDT, GOLD) = F₁ = 43%.
