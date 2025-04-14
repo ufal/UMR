@@ -112,13 +112,18 @@ agreement marked on the verb, it will stay unaligned.
 
 * **Numerical quantities** do not have their own concept node because they are
 annotated as numerical `:quant` attributes, e.g. `(s1h / house :quant 10)`.
-Therefore we should align `s1h` to the whole expression _ten houses_. 
+Therefore we should align `s1h` to the whole expression _ten houses_.   
+ALTERNATIVE suggestion: `s1h` aligned with _house_, _ten_ NOT aligned, see the next item with monetary-quantity (i.e., anything represented as a numerical value  remains NOT aligned)
    * This is different from approximate quantities that have their own node and
    `:quant` is the relation that attaches them, e.g. `(s1h / house :quant (s1s /
-    several))` will have `s1h` attached to _houses_ and `s1s` to _several_.)  
-    ALTERNATIVE suggestion: `s1h` aligned with _house_, _ten_ NOT aligned, see the next item with monetary-quantity (i.e., anything represented as a numerical value may get 0-0 alignment)
-   * If quantities have subroles with their own concept nodes, each of the nodes should be aligned to the respective token, e.g. for `(s1m / monetary-quantity :quant 10 :unit (s1d / dollar)`, the node `s1d` should be aligned with _dollars_ and `s1m` with _10_.   
-   ALTERNNATIVE suggestion:  `s1d` aligned with _dollars_,`s1m` with 0-0 alignment, _10_ NOT aligned (i.e., anything represented as a numerical value may get 0-0 alignment)
+    several))` will have `s1h` attached to _houses_ and `s1s` to _several_.)
+
+* A bit different rule applies for **abstract quantities that have subroles** with their own concept nodes. Then each of the children nodes should be aligned to the respective token, e.g. for `(s1m / monetary-quantity :quant 10 :unit (s1d / dollar)`, the node `s1d` should be aligned with _dollars_ and `s1m` with what,  _10_ **???**   
+   ALTERNNATIVE suggestion :  `s1d` aligned with _dollars_, `s1m` with 0-0 alignment, _10_ with 0-0 alignment (i.e., anything represented as a numerical value remains NOT aligned)   
+   This would be in compliance with UMR 1.0, english_umr-0001.txt, snt21 _... more than six metres ..._ `((s21m4 / more-than  
+                                    :op1 (s21d2 / distance-quantity 
+                                                 :quant 6 :unit (s21m5 / meter))`
+ with _more than_ aligned to the respective tokens in the sentence,  s21d2: 0-0,  s21m5 alligned to the _meters_ token and number six unaligned.
 
 * Somewhat schizophrenic situation arises with **named entities**. Typically
 there is an abstract concept (`person`, `organization` etc.) with a `name`
