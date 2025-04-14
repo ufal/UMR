@@ -276,30 +276,38 @@ sub parse_sentence_graph
         next if($cline eq '');
         while($cline)
         {
-            if($cline =~ s:^\(\s*([\pL\pN]+)\s*/\s*([^\s\)]+)::)
+            if($cline =~ s:^\(\s*([\pL\pN]+)\s*/\s*::) # )
             {
                 # New node.
                 my $variable = $1;
-                my $concept = $2;
-                my %node =
-                (
-                    'variable' => $variable,
-                    'concept' => $concept,
-                    'relations' => []
-                );
-                #print STDERR ("variable $variable concept $concept\n");
-                if(!defined($current_relation))
+                # Now we also expect the concept.
+                if($cline =~ s:([^\s\(\)]+)::)
                 {
-                    confess("Not expecting new node (this is not START and there was no relation name) at line $iline of file $file->{label}");
+                    my $concept = $1;
+                    my %node =
+                    (
+                        'variable' => $variable,
+                        'concept' => $concept,
+                        'relations' => []
+                    );
+                    if(!defined($current_relation))
+                    {
+                        confess("Not expecting new node (this is not START and there was no relation name) at line $iline of file $file->{label}");
+                    }
+                    unless($current_relation eq 'START')
+                    {
+                        # A parent node may have several same-named outgoing relations to different children.
+                        push(@{$stack[-1]{relations}}, {'name' => $current_relation, 'value' => $variable});
+                    }
+                    $nodes{$variable} = \%node;
+                    push(@stack, \%node);
+                    $current_relation = undef;
                 }
-                unless($current_relation eq 'START')
+                else
                 {
-                    # A parent node may have several same-named outgoing relations to different children.
-                    push(@{$stack[-1]{relations}}, {'name' => $current_relation, 'value' => $variable});
+                    # One of the errors was that the converter from PDT generated concepts like '#Rcp' but the '#' character was then interpreted as signalling a comment.
+                    confess("Found what looks like a new node $variable at line $iline of file $file->{label} but could not recognize the concept; the rest of the line is '$cline'");
                 }
-                $nodes{$variable} = \%node;
-                push(@stack, \%node);
-                $current_relation = undef;
             }
             elsif($cline =~ s/^(:[-\pL\pN]+)\s*//)
             {
@@ -314,11 +322,11 @@ sub parse_sentence_graph
                 #print STDERR ("value $value\n");
                 if(scalar(@stack) == 0)
                 {
-                    confess("Nodes closed prematurely; extra attribute value $1 at line $iline of file $file->{label}");
+                    confess("Nodes closed prematurely; extra attribute value $value at line $iline of file $file->{label}");
                 }
                 if(!defined($current_relation))
                 {
-                    confess("Missing relation for value $1 at line $iline of file $file->{label}");
+                    confess("Missing relation for value $value at line $iline of file $file->{label}");
                 }
                 push(@{$stack[-1]{relations}}, {'name' => $current_relation, 'value' => $value});
                 $current_relation = undef;
