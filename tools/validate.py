@@ -372,7 +372,12 @@ def validate_newlines(inp):
 #==============================================================================
 
 variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*") # one could allow non-English letters here but the US team avoids them, so let's assume they are not allowed
-concept_re = re.compile(r"^[^\s\(\):]+") # normally we expect lowercase letters, hyphens and Western digits; but the letters can be non-English
+# Concepts: Normally we expect lowercase letters, hyphens and Western digits;
+# but the letters can be non-English and there can probably be various other
+# markers. On the other hand, we must disallow the parentheses, and we should
+# also disallow '#' so that comment handling is easier (although strictly speaking
+# comments should not occur here).
+concept_re = re.compile(r"^[^\s\(\):\#]+")
 relation_re = re.compile(r"^:[-A-Za-z0-9]+")
 string_re = re.compile(r'^"([^"\s]+)"')
 number_re = re.compile(r"^([0-9]+(?:[\.:][0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it; besides decimal '.', also recognize ':' in time expressions ('23:45')
