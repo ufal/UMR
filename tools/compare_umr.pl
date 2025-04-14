@@ -530,6 +530,7 @@ sub compare_files
     }
     print("-------------------------------------------------------------------------------\n");
     print("SUMMARY:\n");
+    print("Number of tokens: $files[0]{stats}{n_tokens}\n");
     print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
     # Compare node alignments for each pair of files. Although both files may
     # come from annotators, imagine that the first file is the gold standard
@@ -693,6 +694,7 @@ sub map_node_alignments
             $sentence->{aligned_nodes_by_token}[$j] = \@aligned;
         }
         $sentence->{file}{stats}{n_nodes} += scalar(@variables);
+        $sentence->{file}{stats}{n_tokens} += scalar(@{$tokens});
     }
 }
 
