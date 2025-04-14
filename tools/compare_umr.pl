@@ -555,11 +555,22 @@ sub compare_files
             my $nj_ambiguous_tgt = $files[$j]{stats}{cr}{$labeli}{nodes_in_originally_ambiguous_projections};
             printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $ni_ambiguous_src, $labeli, $ni_ambiguous_tgt, $labelj);
             printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $nj_ambiguous_src, $labelj, $nj_ambiguous_tgt, $labeli);
+            # Summarize comparison of concepts and relations (mapped nodes only).
+            print("Concept and relation comparisons (only mapped nodes; unmapped are ignored):\n");
+            my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct_mapped};
+            my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me_mapped};
+            my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other_mapped};
+            $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
+            $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
+            $f = 2*$p*$r/($p+$r);
+            printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, $r*100+0.5);
+            printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
+            printf(" => F₁ = %d%%.\n", $f*100+0.5);
             # Summarize comparison of concepts and relations.
             print("Concept and relation comparisons (for unmapped nodes all counted as incorrect):\n");
-            my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
-            my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
-            my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
+            $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
+            $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
+            $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
             $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
             $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
             $f = 2*$p*$r/($p+$r);
@@ -1176,6 +1187,9 @@ sub compare_node_attributes
     my $n_total_0;
     my $n_total_1;
     my $n_correct;
+    my $n_total_0_mapped;
+    my $n_total_1_mapped;
+    my $n_correct_mapped;
     my @table;
     foreach my $f0var (sort(keys(%{$sentence0->{nodes}})))
     {
@@ -1210,6 +1224,9 @@ sub compare_node_attributes
         $n_total_0 += $results[$max_i]{total0};
         $n_total_1 += $results[$max_i]{total1};
         $n_correct += $results[$max_i]{correct};
+        $n_total_0_mapped += $results[$max_i]{total0_mapped};
+        $n_total_1_mapped += $results[$max_i]{total1_mapped};
+        $n_correct_mapped += $results[$max_i]{correct_mapped};
         foreach my $mismatch (@{$results[$max_i]{mismatches}})
         {
             push(@table, ["Node $label0 $f0var / $concept0$text0", "mismatch in $mismatch->[0]:", "$label0 = $mismatch->[1]", "$label1 = $mismatch->[2]"]);
@@ -1241,6 +1258,9 @@ sub compare_node_attributes
     $file0->{stats}{cr}{$label1}{correct} += $n_correct;
     $file0->{stats}{cr}{$label1}{total_me} += $n_total_0;
     $file0->{stats}{cr}{$label1}{total_other} += $n_total_1;
+    $file0->{stats}{cr}{$label1}{correct_mapped} += $n_correct_mapped;
+    $file0->{stats}{cr}{$label1}{total_me_mapped} += $n_total_0_mapped;
+    $file0->{stats}{cr}{$label1}{total_other_mapped} += $n_total_1_mapped;
 }
 
 
@@ -1360,7 +1380,11 @@ sub compare_two_nodes
             }
         }
     }
-    return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct, 'mismatches' => \@mismatches, 'matches' => \@matches};
+    # If $node1 was undefined, we would have returned from another block above.
+    # If we are here, it means that the counts reflect comparison of mapped nodes
+    # and we can also update the nicer global counts for mapped nodes.
+    return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct, 'mismatches' => \@mismatches, 'matches' => \@matches,
+            'total0_mapped' => $n_total_0, 'total1_mapped' => $n_total_1, 'correct_mapped' => $n_correct};
 }
 
 

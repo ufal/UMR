@@ -1,7 +1,7 @@
-Found 7 sentences in ML:
-1-37, 40-63, 66-155, 158-226, 229-301, 304-348, 351-351
-Found 5 sentences in HH:
-1-37, 40-63, 66-160, 163-233, 236-311
+Found 6 sentences in ML:
+1-37, 40-63, 66-155, 158-226, 229-301, 304-348
+Found 11 sentences in HH:
+1-37, 40-63, 66-160, 163-233, 236-311, 314-358, 361-412, 415-464, 467-536, 539-599, 602-678
 
 -------------------------------------------------------------------------------
 Comparing sentence 1:
@@ -542,15 +542,135 @@ Correct 56 out of 61 non-empty HH values => recall    92%.
 Correct 56 out of 59 non-empty ML values => precision 95%.
 
 -------------------------------------------------------------------------------
+Comparing sentence 6:
+Stále prý jde o to , zda tajná služba veškeré údaje mohla získat z otevřených zdrojů .
+
+ML                                                                 HH
+# sentence level graph:                                            # sentence level graph:
+(s6s / say-91                                                      (s6s3 / say-91
+:ARG1 (s6j1 / jít-035                                              	:aspect state
+              :aspect state                                        	:modal-strength full-affirmative
+              :modal-strength full-affirmative                     	:ARG1 (s6j1 / jít-035
+              :quote s6s                                           		:aspect state
+              :clausal-marker (s6p1 / prý)                         		:modal-strength full-affirmative
+              :mod (s6s1 / stále)                                  		:quote s6s3
+              :ARG2 (s6z1 / získat-001                                     	:mod (s6s1 / stále)
+                            :aspect performance                            	:ARG2 (s6z1 / získat-001
+                            :modal-strength neutral-affirmative            		:aspect performance
+                            :polarity (s6u / UMR-unknown)                  		:modal-strength neutral-affirmative
+                            :ARG0 (s6s2 / služba                           		:polarity (s6u2 / umr-unknown)
+                                          :refer-number singular               		:ARG0 (s6s2 / služba
+                                          :mod (s6t1 / tajný))                     		:mod (s6t1 / tajný
+                            :ARG1 (s6u1 / údaj                                         		:refer-number singular))
+                                         :quant (s6v1 / veškerý))              		:ARG1 (s6u1 / údaj
+                            :ARG2(s6z2 / zdroj                                     		:quant (s6v1 / veškerý)
+                                         :refer-number plural                          		:refer-number plural)
+                                        :mod (s6o1 / otevřený)))))            	 	:source (s6z2 / zdroj
+                                                                                   		:mod (s6o1 / otevřený)
+                                                                                   		:refer-number plural))))
+
+Node-token alignments:
+File ML: 1 nodes unaligned: s6s/say-91.
+File HH: 1 nodes unaligned: s6u2/umr-unknown.
+              ML   HH
+1  Stále      s6s1 s6s1
+2  prý        s6p1 s6s3
+3  jde        s6j1 s6j1
+4  o          s6z1 s6z1
+5  to         s6z1 s6z1
+6  ,               
+7  zda        s6u  s6z1
+8  tajná      s6t1 s6t1, s6z1
+9  služba     s6s2 s6s2
+10 veškeré    s6v1 s6v1
+11 údaje      s6u1 s6u1
+12 mohla      s6z1 s6z1
+13 získat     s6z1 s6z1
+14 z          s6z2 s6z2
+15 otevřených s6o1 s6o1
+16 zdrojů     s6z2 s6z2
+17 .               
+
+Node-node correspondences:
+
+Ambiguous projection of ML node s6t1 (tajná) to 2 HH nodes [s6t1 (tajná), s6z1 (o to zda tajná mohla získat)]
+
+Ambiguous projection of HH node s6z1 (o to zda tajná mohla získat) to 3 ML nodes [s6t1 (tajná), s6u (zda), s6z1 (o to mohla získat)]
+  The winner is HH node s6z1 (o to zda tajná mohla získat) <--> ML node s6z1 (o to mohla získat): econcepts=získat-001/získat-001, match=5 (concept=získat-001,:ARG0=s6s2 mapped to ML s6s2,:ARG1=s6u1 mapped to ML s6u1,:aspect=performance,:modal-strength=neutral-affirmative), weak match=6 (concept,:aspect,:modal-strength,:polarity,:ARG0,:ARG1).
+
+Correspondence ML s6j1 (jde)               = HH s6j1 (jde)
+Correspondence ML s6o1 (otevřených)        = HH s6o1 (otevřených)
+Correspondence ML s6p1 (prý)               = HH s6s3 (prý)
+Correspondence ML s6s1 (Stále)             = HH s6s1 (Stále)
+Correspondence ML s6s2 (služba)            = HH s6s2 (služba)
+Correspondence ML s6t1 (tajná)             = HH s6t1 (tajná)
+Correspondence ML s6u1 (údaje)             = HH s6u1 (údaje)
+Correspondence ML s6v1 (veškeré)           = HH s6v1 (veškeré)
+Correspondence ML s6z1 (o to mohla získat) = HH s6z1 (o to zda tajná mohla získat)
+Correspondence ML s6z2 (z zdrojů)          = HH s6z2 (z zdrojů)
+Correspondence ML s6s  (say-91)            = HH 
+Correspondence ML s6u  (zda)               = HH 
+Correspondence ML                          = HH s6u2 (umr-unknown)
+
+Aligned 10 out of 12 ML nodes, that is 83%.
+Aligned 10 out of 11 HH nodes, that is 91%.
+
+Comparing attributes of ML nodes with their HH counterparts.
+Node ML s6j1 / jít-035 (jde)                  mismatch in :clausal-marker: ML = s6p1 mapped to HH s6s3 HH = 
+Node ML s6j1 / jít-035 (jde)                  mismatch in :quote:          ML = s6s unmapped           HH = s6s3
+Node ML s6p1 / prý (prý)                      mismatch in concept:         ML = prý                    HH = say-91
+Node ML s6p1 / prý (prý)                      mismatch in :ARG1:           ML =                        HH = s6j1
+Node ML s6p1 / prý (prý)                      mismatch in :aspect:         ML =                        HH = state
+Node ML s6p1 / prý (prý)                      mismatch in :modal-strength: ML =                        HH = full-affirmative
+Node ML s6s / say-91                          mismatch in concept:         ML = say-91                 HH = UNMAPPED
+Node ML s6s / say-91                          mismatch in :ARG1:           ML = s6j1                   HH = UNMAPPED
+Node ML s6s2 / služba (služba)                mismatch in :refer-number:   ML = singular               HH = 
+Node ML s6t1 / tajný (tajná)                  mismatch in :refer-number:   ML =                        HH = singular
+Node ML s6u / UMR-unknown (zda)               mismatch in concept:         ML = UMR-unknown            HH = UNMAPPED
+Node ML s6u1 / údaj (údaje)                   mismatch in :refer-number:   ML =                        HH = plural
+Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :ARG2:           ML = s6z2 mapped to HH s6z2 HH = 
+Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :polarity:       ML = s6u unmapped           HH = s6u2
+Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :source:         ML =                        HH = s6z2
+Node HH s6u2 / umr-unknown                    mismatch in concept:         HH = umr-unknown            ML = UNMAPPED
+
+Correct 21 out of 30 non-empty ML values => recall    70%.
+Correct 21 out of 31 non-empty HH values => precision 68%.
+
+Comparing attributes of HH nodes with their ML counterparts.
+Node HH s6j1 / jít-035 (jde)                            mismatch in :quote:          HH = s6s3 mapped to ML s6p1 ML = s6s
+Node HH s6j1 / jít-035 (jde)                            mismatch in :clausal-marker: HH =                        ML = s6p1
+Node HH s6s2 / služba (služba)                          mismatch in :refer-number:   HH =                        ML = singular
+Node HH s6s3 / say-91 (prý)                             mismatch in concept:         HH = say-91                 ML = prý
+Node HH s6s3 / say-91 (prý)                             mismatch in :ARG1:           HH = s6j1 mapped to ML s6j1 ML = 
+Node HH s6s3 / say-91 (prý)                             mismatch in :aspect:         HH = state                  ML = 
+Node HH s6s3 / say-91 (prý)                             mismatch in :modal-strength: HH = full-affirmative       ML = 
+Node HH s6t1 / tajný (tajná)                            mismatch in :refer-number:   HH = singular               ML = 
+Node HH s6u1 / údaj (údaje)                             mismatch in :refer-number:   HH = plural                 ML = 
+Node HH s6u2 / umr-unknown                              mismatch in concept:         HH = umr-unknown            ML = UNMAPPED
+Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :polarity:       HH = s6u2 unmapped          ML = s6u
+Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :source:         HH = s6z2 mapped to ML s6z2 ML = 
+Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :ARG2:           HH =                        ML = s6z2
+Node ML s6s / say-91                                    mismatch in concept:         ML = say-91                 HH = UNMAPPED
+Node ML s6s / say-91                                    mismatch in :ARG1:           ML = s6j1                   HH = UNMAPPED
+Node ML s6u / UMR-unknown (zda)                         mismatch in concept:         ML = UMR-unknown            HH = UNMAPPED
+
+Correct 21 out of 31 non-empty HH values => recall    68%.
+Correct 21 out of 30 non-empty ML values => precision 70%.
+
+-------------------------------------------------------------------------------
 SUMMARY:
-Number of nodes per file: ML:68, HH:68
+Number of nodes per file: ML:80, HH:79
 File-to-file node mapping:
-Out of 68 total ML nodes, 67 mapped to HH => recall    = 99%.
-Out of 68 total HH nodes, 67 mapped to ML => precision = 99%.
- => F₁(ML,HH) = 99%.
-Before symmetrization, 4 ML nodes were projected ambiguously to 11 HH nodes.
-Before symmetrization, 3 HH nodes were projected ambiguously to 9 ML nodes.
+Out of 80 total ML nodes, 77 mapped to HH => recall    = 96%.
+Out of 79 total HH nodes, 77 mapped to ML => precision = 97%.
+ => F₁(ML,HH) = 97%.
+Before symmetrization, 5 ML nodes were projected ambiguously to 13 HH nodes.
+Before symmetrization, 4 HH nodes were projected ambiguously to 12 ML nodes.
+Concept and relation comparisons (only mapped nodes; unmapped are ignored):
+Out of 250 non-empty ML values, 227 found in HH => recall    91%.
+Out of 251 non-empty HH values, 227 found in ML => precision 90%.
+ => F₁ = 91%.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 226 non-empty ML values, 206 found in HH => recall    91%.
-Out of 225 non-empty HH values, 206 found in ML => precision 92%.
- => juːmæʧ (ML, HH) = F₁ = 91%.
+Out of 256 non-empty ML values, 227 found in HH => recall    89%.
+Out of 256 non-empty HH values, 227 found in ML => precision 89%.
+ => juːmæʧ (ML, HH) = F₁ = 89%.

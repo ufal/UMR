@@ -630,6 +630,10 @@ Out of 71 total ML nodes, 67 mapped to DZ => precision = 94%.
  => F₁(DZ,ML) = 96%.
 Before symmetrization, 2 DZ nodes were projected ambiguously to 4 ML nodes.
 Before symmetrization, 0 ML nodes were projected ambiguously to 0 DZ nodes.
+Concept and relation comparisons (only mapped nodes; unmapped are ignored):
+Out of 222 non-empty DZ values, 199 found in ML => recall    90%.
+Out of 221 non-empty ML values, 199 found in DZ => precision 90%.
+ => F₁ = 90%.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
 Out of 227 non-empty DZ values, 199 found in ML => recall    88%.
 Out of 232 non-empty ML values, 199 found in DZ => precision 86%.
