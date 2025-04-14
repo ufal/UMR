@@ -1144,7 +1144,7 @@ known_relations = {
     ':pure-addition': {'type': 'modifier', 'repeat': True},
     ':purpose': {'type': 'modifier', 'repeat': True},
     ':quant': {'type': 'attribute', 'repeat': False},
-    ':quarter': {'type': 'modifier', 'repeat': False},
+    ':quarter': {'type': 'attribute', 'repeat': False}, # (d/ date-entity :year 2011 :quarter 4)
     ':quote': {'type': 'modifier', 'repeat': True}, # Note: The guidelines and the spreadsheet originally defined ':quot' but it was changed to ':quote' in UMR 1.0 to make the annotation more human-readable.
     ':range': {'type': 'modifier', 'repeat': False},
     ':reason': {'type': 'modifier', 'repeat': True},
