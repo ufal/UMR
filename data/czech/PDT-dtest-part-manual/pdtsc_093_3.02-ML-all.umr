@@ -1138,6 +1138,7 @@ Words: A  ta sestra ,  Jitka se jmenovala ,  ta zemřela .
 :ARG1 (s25z1 / zemřít-001
          :aspect performance
          :modal-strength full-affirmative
+         :quote s25s1
          :clausal-marker (s25a1 / a)
          :ARG1 (s25s2 / person
                         :refer-number singular
@@ -1152,6 +1153,7 @@ Words: A  ta sestra ,  Jitka se jmenovala ,  ta zemřela .
                         :parenthesis (s25j1 / jmenovat-se-001
                                               :aspect state
                                               :modal-strength full-affirmative
+                                              :quote s25s1
                                               :ARG2 (s25j2 / Jitka)
                                               :ARG1 s25s1))))
 
