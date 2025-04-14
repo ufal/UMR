@@ -623,6 +623,7 @@ Correct 43 out of 50 non-empty DZ values => precision 86%.
 
 -------------------------------------------------------------------------------
 SUMMARY:
+Number of tokens: 84
 Number of nodes per file: DZ:69, ML:71
 File-to-file node mapping:
 Out of 69 total DZ nodes, 67 mapped to ML => recall    = 97%.

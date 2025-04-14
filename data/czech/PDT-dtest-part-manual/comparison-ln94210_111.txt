@@ -661,6 +661,7 @@ Correct 15 out of 29 non-empty ML values => precision 52%.
 
 -------------------------------------------------------------------------------
 SUMMARY:
+Number of tokens: 92
 Number of nodes per file: ML:73, HH:67
 File-to-file node mapping:
 Out of 73 total ML nodes, 61 mapped to HH => recall    = 84%.
