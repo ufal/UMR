@@ -1112,6 +1112,7 @@ known_relations = {
     ':co-actor': {'type': 'participant', 'repeat': False},
     ':companion': {'type': 'participant', 'repeat': False},
     ':concession': {'type': 'modifier', 'repeat': True},
+    ':concessive-condition': {'type': 'modifier', 'repeat': True},
     ':condition': {'type': 'modifier', 'repeat': True},
     ':consist-of': {'type': 'modifier', 'repeat': False},
     ':day': {'type': 'attribute', 'repeat': False},
@@ -1159,8 +1160,9 @@ known_relations = {
     ':range': {'type': 'modifier', 'repeat': False},
     ':reason': {'type': 'modifier', 'repeat': True},
     ':recipient': {'type': 'participant', 'repeat': False},
-    ':refer-number': {'type': 'attribute', 'repeat': False, 'values': ['singular', 'dual', 'paucal', 'plural']}, # Note: The guidelines and the spreadsheet originally defined ':ref-number' but it was changed to ':refer-number' in UMR 1.0 to make the annotation more human-readable.
-    ':refer-person': {'type': 'attribute', 'repeat': False, 'values': ['1st', '2nd', '3rd', '4th']}, # Note: The guidelines and the spreadsheet originally defined ':ref-person' but it was changed to ':refer-person' in UMR 1.0 to make the annotation more human-readable.
+    ':refer-definiteness': {'type': 'attribute', 'repeat': False, 'values': ['class']}, # new as of November 2024
+    ':refer-number': {'type': 'attribute', 'repeat': False, 'values': ['singular', 'non-singular', 'dual', 'trial', 'paucal', 'plural']}, # Note: The guidelines and the spreadsheet originally defined ':ref-number' but it was changed to ':refer-number' in UMR 1.0 to make the annotation more human-readable.
+    ':refer-person': {'type': 'attribute', 'repeat': False, 'values': ['1st', '2nd', '3rd', '4th', 'non-1st', 'non-3rd']}, # Note: The guidelines and the spreadsheet originally defined ':ref-person' but it was changed to ':refer-person' in UMR 1.0 to make the annotation more human-readable.
     ':result': {'type': 'modifier', 'repeat': True},
     ':scale': {'type': 'modifier', 'repeat': False},
     ':season': {'type': 'modifier', 'repeat': False},
