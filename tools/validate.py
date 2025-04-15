@@ -130,7 +130,13 @@ attr_re = re.compile(r"^:[A-Za-z][-A-Za-z0-9]+")
 def is_attribute(line):
     return attr_re.match(line)
 
-align_re = re.compile(r"^s[0-9]+[a-z0-9]+:")
+# Variables: Although UMR 1.0 data avoids non-English letters in the variables,
+# the Boulder team says they should not be an issue, as UMR is supposed to work
+# for many languages; so we allow them. We require that each variable starts
+# with 's' and number (presumably sentence number), although that is not
+# necessary for UMR to work either.
+variable_re = re.compile(r"^s[0-9]+\p{Ll}+[0-9]*")
+align_re    = re.compile(r"^s[0-9]+\p{Ll}+[0-9]*:")
 def is_alignment(line):
     return align_re.match(line)
 
@@ -371,7 +377,6 @@ def validate_newlines(inp):
 # for concept-relation or attribute-value compatibility.
 #==============================================================================
 
-variable_re = re.compile(r"^s[0-9]+[a-z]+[0-9]*") # one could allow non-English letters here but the US team avoids them, so let's assume they are not allowed
 # Concepts: Normally we expect lowercase letters, hyphens and Western digits;
 # but the letters can be non-English and there can probably be various other
 # markers. On the other hand, we must disallow the parentheses, and we should
