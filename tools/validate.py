@@ -1356,17 +1356,9 @@ def validate_name(sentence, node_dict, args):
                 testmessage = "Missing incoming ':name' relation to the 'name' concept %s." % (node['variable'])
                 warn(testmessage, 'Warning', testlevel, testid, lineno=node['line0'])
             if not out_op1_found:
-                # This one is still an error rather than warning. Even as a named entity type, name needs :op1.
                 testid = 'missing-outgoing-name'
                 testmessage = "Missing outgoing ':op1' relation from the 'name' concept %s." % (node['variable'])
-                warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
-            # The name node is usually unaligned (either 0-0 or -1--1).
-            # The alignment goes to its parent node instead.
-            ###!!! However, there are exceptions, so we cannot require this.
-            #if 'alignment' in node and node['alignment']['tokids'] != [0]:
-            #    testid = 'invalid-name-alignment'
-            #    testmessage = "Name nodes should stay unaligned (unlike their parents), but %s is aligned to %s (%s)." % (node['variable'], str(node['alignment']['tokids']), node['alignment']['tokstr'])
-            #    warn(testmessage, testclass, testlevel, testid, lineno=node['alignment']['line0'])
+                warn(testmessage, 'Warning', testlevel, testid, lineno=node['line0'])
 
 def validate_wiki(sentence, node_dict, args):
     """
