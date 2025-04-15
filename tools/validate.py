@@ -1153,7 +1153,7 @@ known_relations = {
     ':possessor': {'type': 'modifier', 'repeat': True}, # Note: The guidelines originally defined ':poss' but it was changed to ':possessor' (the dependent node is the possessor of the parent). See also the spreadsheet.
     ':pure-addition': {'type': 'modifier', 'repeat': True},
     ':purpose': {'type': 'modifier', 'repeat': True},
-    ':quant': {'type': 'attribute', 'repeat': False},
+    ':quant': {'type': 'attribute', 'repeat': True}, # multiple :quant e.g. in "all 7 districts" (d/district :quant 7 :quant (a/all))
     ':quarter': {'type': 'attribute', 'repeat': False}, # (d/ date-entity :year 2011 :quarter 4)
     ':quote': {'type': 'modifier', 'repeat': True}, # Note: The guidelines and the spreadsheet originally defined ':quot' but it was changed to ':quote' in UMR 1.0 to make the annotation more human-readable.
     ':range': {'type': 'modifier', 'repeat': False},
