@@ -1,0 +1,404 @@
+Found 25 sentences in ML:
+1-33, 36-81, 84-140, 143-182, 185-224, 227-266, 269-312, 315-355, 358-394, 397-435, 438-479, 482-519, 522-587, 590-635, 638-716, 719-758, 761-797, 800-835, 838-877, 880-935, 938-979, 982-1026, 1029-1063, 1066-1120, 1123-1181
+Found 5 sentences in HH:
+1-33, 36-81, 84-138, 141-179, 182-220
+
+-------------------------------------------------------------------------------
+Comparing sentence 1:
+Mám dvě auta .
+
+ML                                                       HH
+# sentence level graph:                                  # sentence level graph:
+(s1s1 / say-91                                           (s1s1 / say-91
+        :aspect activity                                 	:aspect state
+        :modal-strength full-affirmative                 	:modal-strength full-affirmative
+        :ARG0 (s1e1 / person                             	:ARG0 (s1p1 / person
+                      :refer-number singular             		:refer-number singular
+                      :refer-person 1st)                 		:refer-person 1st)
+        :ARG2 (s1e2 / person                             	:ARG2 (s1p2 / person
+                      :refer-number singular             		:refer-number singular
+                      :refer-person 2nd)                 		:refer-person 2nd)
+        :ARG1 (s1m1 / have-91                            	:ARG1 (s1h1 / have-91
+                      :quote s1s1                        		:quote s1s1
+                      :ARG1 s1e1                         		:ARG1 s1p1
+                      :ARG2 (s1a1 / auto                 		:ARG2 (s1a1 / auto
+                                    :quant 2)                        		:quant 2)
+                      :aspect state                              	:aspect state
+                      :modal-strength full-affirmative))         	:modal-strength full-affirmative))
+
+Node-token alignments:
+File ML: 3 nodes unaligned: s1e1/person, s1e2/person, s1s1/say-91.
+File HH: 3 nodes unaligned: s1p1/person, s1p2/person, s1s1/say-91.
+       ML   HH
+1 Mám  s1m1 s1h1
+2 dvě  s1a1 
+3 auta s1a1 s1a1
+4 .         
+
+Node-node correspondences:
+
+Ambiguous projection of ML node s1e1 (person) to 2 HH nodes [s1p1 (person), s1p2 (person)]
+Ambiguous projection of ML node s1e2 (person) to 2 HH nodes [s1p1 (person), s1p2 (person)]
+  The winner is ML node s1e1 (person) <--> HH node s1p1 (person): econcepts=person/person, match=1 (concept=person), weak match=3 (concept,:refer-number,:refer-person).
+
+Ambiguous projection of HH node s1p1 (person) to 2 ML nodes [s1e1 (person), s1e2 (person)]
+Ambiguous projection of HH node s1p2 (person) to 2 ML nodes [s1e1 (person), s1e2 (person)]
+
+Correspondence ML s1a1 (dvě auta) = HH s1a1 (auta)
+Correspondence ML s1e1 (person)   = HH s1p1 (person)
+Correspondence ML s1e2 (person)   = HH s1p2 (person)
+Correspondence ML s1m1 (Mám)      = HH s1h1 (Mám)
+Correspondence ML s1s1 (say-91)   = HH s1s1 (say-91)
+
+Aligned 5 out of 5 ML nodes, that is 100%.
+Aligned 5 out of 5 HH nodes, that is 100%.
+
+Comparing attributes of ML nodes with their HH counterparts.
+
+Correct 11 out of 11 non-empty ML values => recall    100%.
+Correct 11 out of 11 non-empty HH values => precision 100%.
+
+Comparing attributes of HH nodes with their ML counterparts.
+
+Correct 11 out of 11 non-empty HH values => recall    100%.
+Correct 11 out of 11 non-empty ML values => precision 100%.
+
+-------------------------------------------------------------------------------
+Comparing sentence 2:
+Ještě něco mi k té fotce povíte ?
+
+ML                                            HH
+# sentence level graph:                       # sentence level graph:
+(s2s1 / say-91                                (s2s1 / say-91
+        :aspect activity                      	:aspect state
+        :modal-strength full-affirmative      	:modal-strength full-affirmative
+:ARG0 (s2e1 / person                          	:ARG0 (s2p1 / person
+              :refer-number singular                      :refer-number singular
+              :refer-person 1st)                          :refer-person 1st)
+:ARG2 (s2e2 / person                          	:ARG2 (s2p2 / person
+              :refer-number singular                  	:refer-number singular
+              :refer-person 2nd)                      	:refer-person 2nd)
+:ARG1                                                 :ARG1 (s2p3 / povědět-001
+(s2p1 / povědět-001                                   	:polite +
+        :aspect performance                           	:quote s2s1
+        :modal-strength neutral-affirmative           	:ARG0 s2p2
+        :polarity umr-unknown                         	:ARG1 (s2t1 / thing
+        :mode interoggative                               		:refer-number singular
+        :quote s2s1                                       		:mod (s2j1 / ještě))
+        :clausal-marker (s2j1 / ještě)                	:ARG2 s2p1
+        :ARG0 s2e2                                    	:ARG3 (s2f1 / fotka
+        :ARG2 s2e1                                        		:mod (s2t2 / ten)
+        :ARG1 (s2n1 / thing                               		:refer-number singular)
+                      :refer-number singular)         	:aspect performance
+        :ARG3 (s2f1 / fotka                           	:mode interrogative
+                      :refer-number singular          	:polarity umr-unknown
+                      :mod (s2t1 / ten))))            	:modal-strength neutral-affirmative))
+
+Node-token alignments:
+File ML: 2 nodes unaligned: s2e2/person, s2s1/say-91.
+File HH: 2 nodes unaligned: s2p2/person, s2s1/say-91.
+         ML   HH
+1 Ještě  s2j1 s2j1
+2 něco   s2n1 s2t1
+3 mi     s2e1 s2p1
+4 k      s2f1 s2f1
+5 té     s2t1 s2t2
+6 fotce  s2f1 s2f1
+7 povíte s2p1 s2p3
+8 ?           
+
+Node-node correspondences:
+
+Correspondence ML s2e1 (mi)      = HH s2p1 (mi)
+Correspondence ML s2e2 (person)  = HH s2p2 (person)
+Correspondence ML s2f1 (k fotce) = HH s2f1 (k fotce)
+Correspondence ML s2j1 (Ještě)   = HH s2j1 (Ještě)
+Correspondence ML s2n1 (něco)    = HH s2t1 (něco)
+Correspondence ML s2p1 (povíte)  = HH s2p3 (povíte)
+Correspondence ML s2s1 (say-91)  = HH s2s1 (say-91)
+Correspondence ML s2t1 (té)      = HH s2t2 (té)
+
+Aligned 8 out of 8 ML nodes, that is 100%.
+Aligned 8 out of 8 HH nodes, that is 100%.
+
+Comparing attributes of ML nodes with their HH counterparts.
+Node ML s2n1 / thing (něco)         mismatch in :mod:            ML =                        HH = s2j1
+Node ML s2p1 / povědět-001 (povíte) mismatch in :clausal-marker: ML = s2j1 mapped to HH s2j1 HH = 
+
+Correct 16 out of 17 non-empty ML values => recall    94%.
+Correct 16 out of 17 non-empty HH values => precision 94%.
+
+Comparing attributes of HH nodes with their ML counterparts.
+Node HH s2p3 / povědět-001 (povíte) mismatch in :clausal-marker: HH =                        ML = s2j1
+Node HH s2t1 / thing (něco)         mismatch in :mod:            HH = s2j1 mapped to ML s2j1 ML = 
+
+Correct 16 out of 17 non-empty HH values => recall    94%.
+Correct 16 out of 17 non-empty ML values => precision 94%.
+
+-------------------------------------------------------------------------------
+Comparing sentence 3:
+Nechal jsem si nachromovat , jak vidíte , lampu , roury , teleskopy .
+
+ML                                                                          HH
+# sentence level graph:                                                     # sentence level graph:
+(s3s1 / say-91                                                              (s3s1 / say-91
+        :aspect activity                                                    	:aspect state
+        :modal-strength full-affirmative                                    	:modal-strength full-affirmative
+:ARG0 (s3e1 / person                                                        	:ARG0 (s3p1 / person
+              :refer-number singular                                                	:refer-number singular
+              :refer-person 1st)                                                    	:refer-person 1st)
+:ARG2 (s3e2 / person                                                        	:ARG2 (s3p3 / person
+              :refer-number singular                                                        :refer-number singular
+              :refer-person 2nd)                                                            :refer-person 2nd)
+:ARG1 (s3n1 / nechat-009                                                    	:ARG1 (s3n1 / nechat-009
+        :aspect performance                                                         	:ARG0 s3p1
+        :modal-strength full-affirmative                                            	:ARG1 (s3n2 / nachromovat-001
+        :quote s3s1                                                                     		:affectee s3p1
+        :ARG0 s3e1                                                                      		:ARG1 (s3a1 / and
+        :ARG1 (s3n2 / nachromovat-001                                                       		:op1 (s3l1 / lampa
+                      :aspect performance                                                       			:refer-number singular)
+                      :modal-strength full-affirmative                                      		:op2 (s3r1 / roura
+                      :affectee s3e1                                                            			:refer-number plural)
+                      :ARG0 (s3e3 / person                                                  		:op3 (s3t1 / teleskop
+                                    :refer-person 3rd)                                          			:refer-number plural))
+                      :ARG1 (s3a1 / and                                                 		:aspect performance
+                                    :op1 (s3l1 / lampa                                  		:modal-strength full-affirmative
+                                                 :refer-number singular)                		:quote s3s1)
+                                    :op2 (s3r1 / roura                              	:parenthesis (s3v1 / vidět-007
+                                                 :refer-number plural)              		:polite +
+                                    :op3 (s3t1 / teleskop                               		:ARG0 s3p3
+                                                 :refer-number plural))                 		:ARG1 s3n1
+                      :parenthesis (s3v1 / vidět-007                                    		:modal-strength full-affirmative
+                                           :aspect state                                		:aspect state)
+                                           :modal-strength full-affirmative         	:modal-strength full-affirmative
+                                           :ARG0 s3e2                               	:aspect performance))
+                                           :ARG1 s3n2))))                   
+
+Node-token alignments:
+File ML: 4 nodes unaligned: s3a1/and, s3e2/person, s3e3/person, s3s1/say-91.
+File HH: 3 nodes unaligned: s3a1/and, s3p3/person, s3s1/say-91.
+               ML   HH
+1  Nechal      s3n1 s3n1
+2  jsem        s3n1 s3n1
+3  si          s3e1 s3p1
+4  nachromovat s3n2 s3n2
+5  ,                
+6  jak         s3v1 s3v1
+7  vidíte      s3v1 s3v1
+8  ,                
+9  lampu       s3l1 s3l1
+10 ,                
+11 roury       s3r1 s3r1
+12 ,                
+13 teleskopy   s3t1 s3t1
+14 .                
+
+Node-node correspondences:
+
+Ambiguous projection of HH node s3p3 (person) to 2 ML nodes [s3e2 (person), s3e3 (person)]
+  The winner is HH node s3p3 (person) <--> ML node s3e2 (person): econcepts=person/person, match=1 (concept=person), weak match=3 (concept,:refer-number,:refer-person).
+
+Correspondence ML s3a1 (and)         = HH s3a1 (and)
+Correspondence ML s3e1 (si)          = HH s3p1 (si)
+Correspondence ML s3e2 (person)      = HH s3p3 (person)
+Correspondence ML s3l1 (lampu)       = HH s3l1 (lampu)
+Correspondence ML s3n1 (Nechal jsem) = HH s3n1 (Nechal jsem)
+Correspondence ML s3n2 (nachromovat) = HH s3n2 (nachromovat)
+Correspondence ML s3r1 (roury)       = HH s3r1 (roury)
+Correspondence ML s3s1 (say-91)      = HH s3s1 (say-91)
+Correspondence ML s3t1 (teleskopy)   = HH s3t1 (teleskopy)
+Correspondence ML s3v1 (jak vidíte)  = HH s3v1 (jak vidíte)
+Correspondence ML s3e3 (person)      = HH 
+
+Aligned 10 out of 11 ML nodes, that is 91%.
+Aligned 10 out of 10 HH nodes, that is 100%.
+
+Comparing attributes of ML nodes with their HH counterparts.
+Node ML s3e3 / person                        mismatch in concept:      ML = person                 HH = UNMAPPED
+Node ML s3n1 / nechat-009 (Nechal jsem)      mismatch in :parenthesis: ML =                        HH = s3v1
+Node ML s3n2 / nachromovat-001 (nachromovat) mismatch in :ARG0:        ML = s3e3 unmapped          HH = 
+Node ML s3n2 / nachromovat-001 (nachromovat) mismatch in :parenthesis: ML = s3v1 mapped to HH s3v1 HH = 
+Node ML s3v1 / vidět-007 (jak vidíte)        mismatch in :ARG1:        ML = s3n2 mapped to HH s3n2 HH = s3n1
+
+Correct 21 out of 25 non-empty ML values => recall    84%.
+Correct 21 out of 23 non-empty HH values => precision 91%.
+
+Comparing attributes of HH nodes with their ML counterparts.
+Node HH s3n1 / nechat-009 (Nechal jsem)      mismatch in :parenthesis: HH = s3v1 mapped to ML s3v1 ML = 
+Node HH s3n2 / nachromovat-001 (nachromovat) mismatch in :ARG0:        HH =                        ML = s3e3
+Node HH s3n2 / nachromovat-001 (nachromovat) mismatch in :parenthesis: HH =                        ML = s3v1
+Node HH s3v1 / vidět-007 (jak vidíte)        mismatch in :ARG1:        HH = s3n1 mapped to ML s3n1 ML = s3n2
+Node ML s3e3 / person                        mismatch in concept:      ML = person                 HH = UNMAPPED
+
+Correct 21 out of 23 non-empty HH values => recall    91%.
+Correct 21 out of 25 non-empty ML values => precision 84%.
+
+-------------------------------------------------------------------------------
+Comparing sentence 4:
+Všechno bylo v chromu .
+
+ML                                       HH
+# sentence level graph:                  # sentence level graph:
+(s4s1 / say-91                           (s4s1 / say-91
+        :aspect activity                 	:aspect state
+        :modal-strength full-affirmative 	:modal-strength full-affirmative
+:ARG0 (s4e1 / person                     	:ARG0 (s4p1 / person
+              :refer-number singular     		:refer-number singular
+              :refer-person 1st)                 	:refer-person 1st)
+:ARG2 (s4e2 / person                     	:ARG2 (s4p2 / person
+              :refer-number singular     		:refer-number singular
+              :refer-person 2nd)                 	:refer-person 2nd)
+:ARG1 (s4b1 / have-mod-91                	:ARG1 (s4h1 / have-mod-91
+        :aspect state                            	:ARG1 (s4t1 / thing
+        :modal-strength full-affirmative         		:quant (s4v1 / všechen))
+        :quote s4s1                              	:ARG2 (s4c1 / chróm
+        :ARG1 (s4v1 / thing                          		:refer-number singular)
+                      :quant all)                	:aspect state
+        :ARG2 (s4c1 / chróm)))                   	:modal-strength full-affirmative
+                                                 	:quote s4s1))
+
+Node-token alignments:
+File ML: 3 nodes unaligned: s4e1/person, s4e2/person, s4s1/say-91.
+File HH: 4 nodes unaligned: s4p1/person, s4p2/person, s4s1/say-91, s4t1/thing.
+          ML   HH
+1 Všechno s4v1 s4v1
+2 bylo    s4b1 s4h1
+3 v       s4c1 s4c1
+4 chromu  s4c1 s4c1
+5 .            
+
+Node-node correspondences:
+
+Ambiguous projection of ML node s4e1 (person) to 2 HH nodes [s4p1 (person), s4p2 (person)]
+Ambiguous projection of ML node s4e2 (person) to 2 HH nodes [s4p1 (person), s4p2 (person)]
+  The winner is ML node s4e1 (person) <--> HH node s4p1 (person): econcepts=person/person, match=1 (concept=person), weak match=3 (concept,:refer-number,:refer-person).
+
+Ambiguous projection of HH node s4p1 (person) to 2 ML nodes [s4e1 (person), s4e2 (person)]
+Ambiguous projection of HH node s4p2 (person) to 2 ML nodes [s4e1 (person), s4e2 (person)]
+
+Correspondence ML s4b1 (bylo)     = HH s4h1 (bylo)
+Correspondence ML s4c1 (v chromu) = HH s4c1 (v chromu)
+Correspondence ML s4e1 (person)   = HH s4p1 (person)
+Correspondence ML s4e2 (person)   = HH s4p2 (person)
+Correspondence ML s4s1 (say-91)   = HH s4s1 (say-91)
+Correspondence ML s4v1 (Všechno)  = HH s4v1 (Všechno)
+Correspondence ML                 = HH s4t1 (thing)
+
+Aligned 6 out of 6 ML nodes, that is 100%.
+Aligned 6 out of 7 HH nodes, that is 86%.
+
+Comparing attributes of ML nodes with their HH counterparts.
+Node ML s4b1 / have-mod-91 (bylo) mismatch in :ARG1:   ML = s4v1 mapped to HH s4v1 HH = s4t1
+Node ML s4v1 / thing (Všechno)    mismatch in concept: ML = thing                  HH = všechen
+Node ML s4v1 / thing (Všechno)    mismatch in :quant:  ML = all                    HH = 
+Node HH s4t1 / thing              mismatch in concept: HH = thing                  ML = UNMAPPED
+Node HH s4t1 / thing              mismatch in :quant:  HH = s4v1                   ML = UNMAPPED
+
+Correct 9 out of 12 non-empty ML values => recall    75%.
+Correct 9 out of 13 non-empty HH values => precision 69%.
+
+Comparing attributes of HH nodes with their ML counterparts.
+Node HH s4h1 / have-mod-91 (bylo) mismatch in :ARG1:   HH = s4t1 unmapped ML = s4v1
+Node HH s4t1 / thing              mismatch in concept: HH = thing         ML = UNMAPPED
+Node HH s4t1 / thing              mismatch in :quant:  HH = s4v1          ML = UNMAPPED
+Node HH s4v1 / všechen (Všechno)  mismatch in concept: HH = všechen       ML = thing
+Node HH s4v1 / všechen (Všechno)  mismatch in :quant:  HH =               ML = all
+
+Correct 9 out of 13 non-empty HH values => recall    69%.
+Correct 9 out of 12 non-empty ML values => precision 75%.
+
+-------------------------------------------------------------------------------
+Comparing sentence 5:
+Byla to dobrá motorka .
+
+ML                                            HH
+# sentence level graph:                       # sentence level graph:
+(s5s1 / say-91                                (s5s1 / say-91
+        :aspect activity                      	:aspect state
+        :modal-strength full-affirmative      	:modal-strength full-affirmative
+:ARG0 (s5e1 / person                          	:ARG0 (s5p1 / person
+              :refer-number singular          		:refer-number singular
+              :refer-person 1st)                      	:refer-person 1st)
+:ARG2 (s5e2 / person                          	:ARG2 (s5p2 / person
+              :refer-number singular          		:refer-number singular
+              :refer-person 2nd)                      	:refer-person 2nd)
+:ARG1 (s5b1 / have-mod-91                     	:ARG1 (s5i1 / identity-91
+        :aspect state                                 	:ARG1 (s5t1 / thing
+        :modal-strength full-affirmative                  		:refer-number singular)
+        :quote s5s1                                   	:ARG2 (s5m1 / motorka
+        :ARG1 (s5m1 / motorka                             		:mod (s5d1 / dobrý
+                      :refer-number singular)                 	:refer-number singular)
+        :ARG2 (s5d1 / dobrý)))                            	:refer-number singular)
+                                                      	:aspect state
+                                                      	:quote s5s1))
+
+Node-token alignments:
+File ML: 3 nodes unaligned: s5e1/person, s5e2/person, s5s1/say-91.
+File HH: 3 nodes unaligned: s5p1/person, s5p2/person, s5s1/say-91.
+          ML   HH
+1 Byla    s5b1 s5i1
+2 to      s5m1 s5t1
+3 dobrá   s5d1 s5d1
+4 motorka s5m1 s5m1
+5 .            
+
+Node-node correspondences:
+
+Ambiguous projection of ML node s5e1 (person) to 2 HH nodes [s5p1 (person), s5p2 (person)]
+Ambiguous projection of ML node s5e2 (person) to 2 HH nodes [s5p1 (person), s5p2 (person)]
+Ambiguous projection of ML node s5m1 (to motorka) to 2 HH nodes [s5m1 (motorka), s5t1 (to)]
+  The winner is ML node s5e1 (person) <--> HH node s5p1 (person): econcepts=person/person, match=1 (concept=person), weak match=3 (concept,:refer-number,:refer-person).
+  The winner is ML node s5m1 (to motorka) <--> HH node s5m1 (motorka): econcepts=motorka/motorka, match=1 (concept=motorka), weak match=2 (concept,:refer-number).
+
+Ambiguous projection of HH node s5p1 (person) to 2 ML nodes [s5e1 (person), s5e2 (person)]
+Ambiguous projection of HH node s5p2 (person) to 2 ML nodes [s5e1 (person), s5e2 (person)]
+
+Correspondence ML s5b1 (Byla)       = HH s5i1 (Byla)
+Correspondence ML s5d1 (dobrá)      = HH s5d1 (dobrá)
+Correspondence ML s5e1 (person)     = HH s5p1 (person)
+Correspondence ML s5e2 (person)     = HH s5p2 (person)
+Correspondence ML s5m1 (to motorka) = HH s5m1 (motorka)
+Correspondence ML s5s1 (say-91)     = HH s5s1 (say-91)
+Correspondence ML                   = HH s5t1 (to)
+
+Aligned 6 out of 6 ML nodes, that is 100%.
+Aligned 6 out of 7 HH nodes, that is 86%.
+
+Comparing attributes of ML nodes with their HH counterparts.
+Node ML s5b1 / have-mod-91 (Byla)   mismatch in concept: ML = have-mod-91            HH = identity-91
+Node ML s5b1 / have-mod-91 (Byla)   mismatch in :ARG1:   ML = s5m1 mapped to HH s5m1 HH = s5t1
+Node ML s5b1 / have-mod-91 (Byla)   mismatch in :ARG2:   ML = s5d1 mapped to HH s5d1 HH = s5m1
+Node ML s5m1 / motorka (to motorka) mismatch in :mod:    ML =                        HH = s5d1
+Node HH s5t1 / thing (to)           mismatch in concept: HH = thing                  ML = UNMAPPED
+
+Correct 8 out of 11 non-empty ML values => recall    73%.
+Correct 8 out of 13 non-empty HH values => precision 62%.
+
+Comparing attributes of HH nodes with their ML counterparts.
+Node HH s5i1 / identity-91 (Byla) mismatch in concept: HH = identity-91            ML = have-mod-91
+Node HH s5i1 / identity-91 (Byla) mismatch in :ARG1:   HH = s5t1 unmapped          ML = s5m1
+Node HH s5i1 / identity-91 (Byla) mismatch in :ARG2:   HH = s5m1 mapped to ML s5m1 ML = s5d1
+Node HH s5m1 / motorka (motorka)  mismatch in :mod:    HH = s5d1 mapped to ML s5d1 ML = 
+Node HH s5t1 / thing (to)         mismatch in concept: HH = thing                  ML = UNMAPPED
+
+Correct 8 out of 13 non-empty HH values => recall    62%.
+Correct 8 out of 11 non-empty ML values => precision 73%.
+
+-------------------------------------------------------------------------------
+SUMMARY:
+Number of tokens: 36
+Number of nodes per file: ML:36, HH:37
+File-to-file node mapping:
+Out of 36 total ML nodes, 35 mapped to HH => recall    = 97%.
+Out of 37 total HH nodes, 35 mapped to ML => precision = 95%.
+ => F₁(ML,HH) = 96%.
+Before symmetrization, 7 ML nodes were projected ambiguously to 14 HH nodes.
+Before symmetrization, 7 HH nodes were projected ambiguously to 14 ML nodes.
+Concept and relation comparisons (only mapped nodes; unmapped are ignored):
+Out of 75 non-empty ML values, 65 found in HH => recall    87%.
+Out of 74 non-empty HH values, 65 found in ML => precision 88%.
+ => F₁ = 87%.
+Concept and relation comparisons (for unmapped nodes all counted as incorrect):
+Out of 76 non-empty ML values, 65 found in HH => recall    86%.
+Out of 77 non-empty HH values, 65 found in ML => precision 84%.
+ => juːmæʧ (ML, HH) = F₁ = 85%.
