@@ -117,12 +117,18 @@ Therefore we should align `s1h` to the whole expression _ten houses_.
    `:quant` is the relation that attaches them, e.g. `(s1h / house :quant (s1s /
     several))` will have `s1h` attached to _houses_ and `s1s` to _several_.)
 
-* A bit different rule applies for **abstract quantities that have subroles** with their own concept nodes. Then each of the children nodes should be aligned to the respective token, 
-   * However, if some token remains not-aligned (as it is e.g. numerical `:quant`), the abstract entity may be used to cover the whole expression (which would result in an overlapping alignment. E.g. `(s1m / monetary-quantity :quant 10 :unit (s1d / dollar))`, the node `s1d` should be aligned with _dollars_ and `s1m` with the   whole expression _ten dollars_        
-   BUT COMPARE: UMR 1.0, english_umr-0001.txt, snt21 _... more than six metres ..._ `(s21m4 / more-than  
-                                    :op1 (s21d2 / distance-quantity 
-                                                 :quant 6 :unit (s21m5 / meter)))`
- with _more than_ aligned to the respective tokens in the sentence,  s21d2: 0-0,  s21m5 alligned to the _meters_ token and number six unaligned.
+* A bit different rule applies for **abstract quantities with subroles** with their own concept nodes. Then each of the children nodes should be aligned to the respective token (and the abstract entity remains unaligned). 
+   * However, if some token of the numerical expression remains unaligned (as it is represented, e.g., as a numerical `:quant`), the abstract entity may be used to cover the uncovered expression(s).   
+   E.g., _10 dollars_: `(s1m / monetary-quantity :quant 10 :unit (s1d / dollar))`, the node `s1d` should be aligned with _dollars_ and `s1m` with  _ten_.  
+   E.g., _[koupil to] za pět korun_:  `(s1m / monetary-quantity :quant 5 :unit (s1k / koruna))`, with  `s1k` aligned to _koruna_ and `s1m` to _za pět_ .  
+   BUT COMPARE: UMR 1.0, english_umr-0001.txt, snt21 _... more than six metres ..._ with _more than_ aligned to the respective tokens in the sentence,  `s21d2` unaligned (distance-quantity),  `s21m5` alligned to the _meters_ token and number six unaligned.
+```
+(s21m4 / more-than  
+         :op1 (s21d2 / distance-quantity 
+                       :quant 6 
+                       :unit (s21m5 / meter)))
+```
+
 
 * Somewhat schizophrenic situation arises with **named entities**. Typically
 there is an abstract concept (`person`, `organization` etc.) with a `name`
@@ -142,7 +148,7 @@ inferred from the data relased in UMR 1.0.)
                     :name (s4n3 / name :op1 "Philippine")))
 ```    
 
-  where `s4i2` is aligned to _island_, `s4n2` to _Leyte_, `s4c` to
+where `s4i2` is aligned to _island_, `s4n2` to _Leyte_, `s4c` to
     _Philippine_, and `s4n3` is unaligned.
 
 * More generally, the approach in UMR 1.0 seems to be:
@@ -158,8 +164,6 @@ inferred from the data relased in UMR 1.0.)
     `(s6t / temporal-quantity :quant (s6s2 / several) :unit (s6d / day) :mod (s6n / next))`;
     here, `s6s2`, `s6d` and `s6n` are aligned to their respective tokens while
     `s6t` is unaligned.
-  * What about a situation when the parent node has one (or more) child node and at the same time also an attribute like `:quant` with just numerical value?
-
 * While the above rules strive to align as many non-punctuation tokens as
 possible, it is not required that all of them are aligned to concepts. There
 may be words that are not even distantly related to any individual node; such
