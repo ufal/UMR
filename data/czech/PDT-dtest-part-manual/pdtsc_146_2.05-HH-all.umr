@@ -58,9 +58,9 @@ Words: Hlavně večery a tak dále byly prima .
 		:quote s2s1
 		:aspect state
 		:modal-strength full-affirmative
+		:clausal-marker (s2h1 / hlavně)
 		:ARG1 (s2a1 / and
             		:op1 (s2v1 / večer
-            			:mod (s2h1 / hlavně)
                 		:refer-number plural)
             		:op2 (s2t1 / thing
             			:refer-number plural)

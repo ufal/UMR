@@ -25,7 +25,7 @@ Words: Mám dvě auta .
 # alignment:
 s1h1: 1-1
 s1p1: 0-0
-s1a1: 3-3
+s1a1: 2-3
 s1s1: 0-0
 s1p2: 0-0
 
@@ -52,10 +52,10 @@ Words: Ještě něco mi k té fotce povíte ?
         :ARG1 (s2p3 / povědět-001
         	:polite +
         	:quote s2s1
+        	:clausal-marker (s2j1 / ještě)
         	:ARG0 s2p2
         	:ARG1 (s2t1 / thing
-            		:refer-number singular
-            		:mod (s2j1 / ještě))
+            		:refer-number singular)
         	:ARG2 s2p1
         	:ARG3 (s2f1 / fotka
             		:mod (s2t2 / ten)
@@ -156,7 +156,7 @@ Words: Všechno bylo v chromu .
         	:refer-person 2nd)
 	:ARG1 (s4h1 / have-mod-91
         	:ARG1 (s4t1 / thing
-        		:quant (s4v1 / všechen))
+        		:quant all)
         	:ARG2 (s4c1 / chróm
             		:refer-number singular)
         	:aspect state
@@ -165,12 +165,11 @@ Words: Všechno bylo v chromu .
 
 # alignment:
 s4h1: 2-2
-s4v1: 1-1
 s4c1: 3-4
 s4s1: 0-0
 s4p1: 0-0
 s4p2: 0-0
-s4t1: 0-0
+s4t1: 1-1
 
 # document level annotation:
 (s4s0 / sentence
@@ -195,20 +194,17 @@ Words: Byla to dobrá motorka .
 	:ARG2 (s5p2 / person
 		:refer-number singular
         	:refer-person 2nd)
-	:ARG1 (s5i1 / identity-91
-        	:ARG1 (s5t1 / thing
-            		:refer-number singular)
-        	:ARG2 (s5m1 / motorka
-            		:mod (s5d1 / dobrý
+	:ARG1 (s5h1 / have-mod-91
+        	:ARG1 (s5m1 / motorka
                 	:refer-number singular)
-            	:refer-number singular)
+        	:ARG2 (s5d1 / dobrý)
+            	:refer-number singular
         	:aspect state
         	:quote s5s1))
 
 # alignment:
 s5i1: 1-1
-s5t1: 2-2
-s5m1: 4-4
+s5m1: 2-2,4-4
 s5d1: 3-3
 s5s1: 0-0
 s5p1: 0-0
