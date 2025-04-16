@@ -334,8 +334,7 @@ Words: Stále prý jde o  to ,  zda tajná služba veškeré údaje mohla získa
                 		:mod (s6t1 / tajný
                     		:refer-number singular))
             		:ARG1 (s6u1 / údaj
-                		:quant (s6v1 / veškerý)
-                    		:refer-number plural)
+                		:quant all)
            	 	:source (s6z2 / zdroj
                 		:mod (s6o1 / otevřený)
                 		:refer-number plural))))
@@ -348,8 +347,7 @@ s6z1: 4-5,7-8,12-13
 s6u2: 0-0
 s6s2: 9-9
 s6t1: 8-8
-s6u1: 11-11
-s6v1: 10-10
+s6u1: 10-11
 s6z2: 14-14,16-16
 s6o1: 15-15
 
@@ -637,7 +635,7 @@ Words: Poslanec Ivan Mašek (  ODA )  novinářům řekl ,  že trval na všech 
             :ARG1 (s11u1 / úkon
             	:refer-number plural
                 :mod (s11k1 / kontrolní)
-                :quant (s11v1 / všechen)
+                :quant all
                 :ARG1-of (s11n2 / navrhnout-002
                     :aspect performance
                     :modal-strength full-affirmative
@@ -661,9 +659,8 @@ s11h2: 0-0
 s11p6: 5-5
 s11n1: 7-7
 s11t1: 10-11
-s11u1: 12-12,15-15,17-17
+s11u1: 12-13,15-15,17-17
 s11k1: 14-14
-s11v1: 13-13
 s11n2: 18-19
 s11p2: 20-21
 s11p3: 22-22

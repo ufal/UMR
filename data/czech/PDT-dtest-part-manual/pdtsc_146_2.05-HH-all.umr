@@ -335,8 +335,8 @@ s8t3: 4-4
 s8s2: 9-10
 s8t4: 11-11
 s8r1: 13-13
-s8r2: 12-12
-s8t5: 0-0
+s8r2: 0-0
+s8t5: 12-12
 
 # document level annotation:
 (s8s0 / sentence
