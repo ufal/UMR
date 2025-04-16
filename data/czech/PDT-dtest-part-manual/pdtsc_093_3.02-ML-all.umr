@@ -128,7 +128,7 @@ s3e2: 0-0
 s3n1: 1-2
 s3n2: 4-4
 s3e3: 0-0
-s3a1: 12-12
+s3a1: 0-0
 s3l1: 9-9
 s3r1: 11-11
 s3t1: 13-13
@@ -262,7 +262,8 @@ s6t1: 3-3
 (s6s0 / sentence
     :coref ((s5e2 :same-entity s6e1)
             (s5e1 :same-entity s6e2)
-            (s3n2 :same-event s6t1)))
+            (s3n2 :same-event s6t1)
+            (s3e3 :same-entity s6k1)))
 
 
 ################################################################################
