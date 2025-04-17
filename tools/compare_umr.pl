@@ -77,12 +77,16 @@ if(scalar(@ARGV) % 2)
     usage();
     confess("Even number of arguments expected");
 }
+my %labels;
 my @files;
 while(1)
 {
     my $label = shift(@ARGV);
     my $path = shift(@ARGV);
     last if(!defined($label));
+    # The labels of the files must be unique, otherwise the counts will be added up incorrectly.
+    confess("File label '$label' is not unique") if(exists($labels{$label}));
+    $labels{$label}++;
     my %file =
     (
         'label' => $label,
