@@ -1,7 +1,7 @@
 Found 6 sentences in ML:
 1-37, 40-63, 66-155, 158-226, 229-301, 304-348
 Found 11 sentences in HH:
-1-37, 40-63, 66-160, 163-233, 236-311, 314-358, 361-412, 415-464, 467-536, 539-599, 602-678
+1-37, 40-63, 66-160, 163-233, 236-311, 314-356, 359-410, 413-462, 465-534, 537-597, 600-675
 
 -------------------------------------------------------------------------------
 Comparing sentence 1:
@@ -319,7 +319,7 @@ ML                                                                              
                                                                                                    :aspect performance)
 
 Node-token alignments:
-File ML: 8 nodes unaligned: s4h1/have-org-role-91, s4h2/have-org-role-91, s4h3/have-org-role-91, s4n1/name["Pavel" "Severa"], s4n4/name["parlament"], s4n5/name["KDU-ČSL"], s4p4/organization, s4s2/schůze.
+File ML: 7 nodes unaligned: s4h1/have-org-role-91, s4h2/have-org-role-91, s4h3/have-org-role-91, s4n1/name["Pavel" "Severa"], s4n4/name["parlament"], s4n5/name["KDU-ČSL"], s4p4/organization.
 File HH: 7 nodes unaligned: s4h1/have-org-role-91, s4h2/have-org-role-91, s4h3/have-org-role-91, s4n1/name["KDU-ČSL"], s4n2/name["Pavel" "Severa"], s4n3/name["parlament"], s4o2/organization.
              ML   HH
 1  Včera     s4v1 s4v1
@@ -336,17 +336,15 @@ File HH: 7 nodes unaligned: s4h1/have-org-role-91, s4h2/have-org-role-91, s4h3/h
 12 ČSL       s4o2 s4p6
 13 )              
 14 po        s4a  s4a2
-15 schůzi    s4a  s4s1
+15 schůzi    s4s2 s4s1
 16 orgánu    s4o1 s4o1
 17 .              
 
 Node-node correspondences:
 
-Ambiguous projection of ML node s4a (po schůzi) to 2 HH nodes [s4a2 (po), s4s1 (schůzi)]
 Ambiguous projection of ML node s4h1 (have-org-role-91) to 3 HH nodes [s4h1 (have-org-role-91), s4h2 (have-org-role-91), s4h3 (have-org-role-91)]
 Ambiguous projection of ML node s4h2 (have-org-role-91) to 3 HH nodes [s4h1 (have-org-role-91), s4h2 (have-org-role-91), s4h3 (have-org-role-91)]
 Ambiguous projection of ML node s4h3 (have-org-role-91) to 3 HH nodes [s4h1 (have-org-role-91), s4h2 (have-org-role-91), s4h3 (have-org-role-91)]
-  The winner is ML node s4a (po schůzi) <--> HH node s4a2 (po): econcepts=after/after, match=1 (concept=after), weak match=2 (concept,:op1).
   The winner is ML node s4h1 (have-org-role-91) <--> HH node s4h2 (have-org-role-91): econcepts=have-org-role-91/have-org-role-91, match=5 (concept=have-org-role-91,:ARG2=s4k1 mapped to HH s4k1,:ARG3=s4c1 mapped to HH s4c1,:aspect=state,:modal-strength=full-affirmative), weak match=5 (concept,:aspect,:modal-strength,:ARG3,:ARG2).
 
 Ambiguous projection of HH node s4h1 (have-org-role-91) to 3 ML nodes [s4h1 (have-org-role-91), s4h2 (have-org-role-91), s4h3 (have-org-role-91)]
@@ -354,7 +352,7 @@ Ambiguous projection of HH node s4h2 (have-org-role-91) to 3 ML nodes [s4h1 (hav
 Ambiguous projection of HH node s4h3 (have-org-role-91) to 3 ML nodes [s4h1 (have-org-role-91), s4h2 (have-org-role-91), s4h3 (have-org-role-91)]
   The winner is HH node s4h1 (have-org-role-91) <--> ML node s4h2 (have-org-role-91): econcepts=have-org-role-91/have-org-role-91, match=5 (concept=have-org-role-91,:ARG2=s4o2 mapped to ML s4p4,:ARG3=s4p5 mapped to ML s4p3,:aspect=state,:modal-strength=full-affirmative), weak match=5 (concept,:aspect,:modal-strength,:ARG3,:ARG2).
 
-Correspondence ML s4a  (po schůzi)              = HH s4a2 (po)
+Correspondence ML s4a  (po)                     = HH s4a2 (po)
 Correspondence ML s4c1 (člen)                   = HH s4c1 (člen)
 Correspondence ML s4h1 (have-org-role-91)       = HH s4h2 (have-org-role-91)
 Correspondence ML s4h2 (have-org-role-91)       = HH s4h1 (have-org-role-91)
@@ -369,45 +367,40 @@ Correspondence ML s4p1 (připustil)              = HH s4p1 (připustil)
 Correspondence ML s4p2 (Pavel Severa)           = HH s4p4 (Pavel Severa)
 Correspondence ML s4p3 (poslanec)               = HH s4p5 (poslanec)
 Correspondence ML s4p4 (organization)           = HH s4o2 (organization)
+Correspondence ML s4s2 (schůzi)                 = HH s4s1 (schůzi)
 Correspondence ML s4t1 (to)                     = HH s4t1 (to)
 Correspondence ML s4v1 (Včera)                  = HH s4v1 (Včera)
-Correspondence ML s4s2 (schůze)                 = HH 
-Correspondence ML                               = HH s4s1 (schůzi)
 
-Aligned 17 out of 18 ML nodes, that is 94%.
-Aligned 17 out of 18 HH nodes, that is 94%.
+Aligned 18 out of 18 ML nodes, that is 100%.
+Aligned 18 out of 18 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s4a / after (po schůzi)                   mismatch in :op1:            ML = s4s2 unmapped    HH = s4s1
-Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"       HH = 
-Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =                  HH = singular
-Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"       HH = 
-Node ML s4s2 / schůze                             mismatch in concept:         ML = schůze           HH = UNMAPPED
-Node ML s4s2 / schůze                             mismatch in :mod:            ML = s4o1             HH = UNMAPPED
-Node ML s4s2 / schůze                             mismatch in :refer-number:   ML = singular         HH = UNMAPPED
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001     ML = UNMAPPED
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:           HH = s4o1             ML = UNMAPPED
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance      ML = UNMAPPED
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED
+Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"             HH = 
+Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =                        HH = singular
+Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"             HH = 
+Node ML s4s2 / schůze (schůzi)                    mismatch in concept:         ML = schůze                 HH = sejít-se-001
+Node ML s4s2 / schůze (schůzi)                    mismatch in :mod:            ML = s4o1 mapped to HH s4o1 HH = 
+Node ML s4s2 / schůze (schůzi)                    mismatch in :refer-number:   ML = singular               HH = 
+Node ML s4s2 / schůze (schůzi)                    mismatch in :ARG0:           ML =                        HH = s4o1
+Node ML s4s2 / schůze (schůzi)                    mismatch in :aspect:         ML =                        HH = performance
+Node ML s4s2 / schůze (schůzi)                    mismatch in :modal-strength: ML =                        HH = full-affirmative
 
-Correct 49 out of 55 non-empty ML values => recall    89%.
-Correct 49 out of 55 non-empty HH values => precision 89%.
+Correct 50 out of 55 non-empty ML values => recall    91%.
+Correct 50 out of 55 non-empty HH values => precision 91%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s4a2 / after (po)                         mismatch in :op1:            HH = s4s1 unmapped    ML = s4s2
-Node HH s4o2 / organization                       mismatch in :wiki:           HH =                  ML = "Q2347172"
-Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :refer-number:   HH = singular         ML = 
-Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :wiki:           HH =                  ML = "Q1142687"
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001     ML = UNMAPPED
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:           HH = s4o1             ML = UNMAPPED
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance      ML = UNMAPPED
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative ML = UNMAPPED
-Node ML s4s2 / schůze                             mismatch in concept:         ML = schůze           HH = UNMAPPED
-Node ML s4s2 / schůze                             mismatch in :mod:            ML = s4o1             HH = UNMAPPED
-Node ML s4s2 / schůze                             mismatch in :refer-number:   ML = singular         HH = UNMAPPED
+Node HH s4o2 / organization                       mismatch in :wiki:           HH =                        ML = "Q2347172"
+Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :refer-number:   HH = singular               ML = 
+Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :wiki:           HH =                        ML = "Q1142687"
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001           ML = schůze
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:           HH = s4o1 mapped to ML s4o1 ML = 
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance            ML = 
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative       ML = 
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :mod:            HH =                        ML = s4o1
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :refer-number:   HH =                        ML = singular
 
-Correct 49 out of 55 non-empty HH values => recall    89%.
-Correct 49 out of 55 non-empty ML values => precision 89%.
+Correct 50 out of 55 non-empty HH values => recall    91%.
+Correct 50 out of 55 non-empty ML values => precision 91%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -563,10 +556,9 @@ ML                                                                 HH
                                           :mod (s6t1 / tajný))                     		:mod (s6t1 / tajný
                             :ARG1 (s6u1 / údaj                                         		:refer-number singular))
                                          :quant (s6v1 / veškerý))              		:ARG1 (s6u1 / údaj
-                            :ARG2(s6z2 / zdroj                                     		:quant (s6v1 / veškerý)
-                                         :refer-number plural                          		:refer-number plural)
-                                        :mod (s6o1 / otevřený)))))            	 	:source (s6z2 / zdroj
-                                                                                   		:mod (s6o1 / otevřený)
+                            :ARG2(s6z2 / zdroj                                     		:quant all)
+                                         :refer-number plural                 	 	:source (s6z2 / zdroj
+                                        :mod (s6o1 / otevřený)))))                 		:mod (s6o1 / otevřený)
                                                                                    		:refer-number plural))))
 
 Node-token alignments:
@@ -582,7 +574,7 @@ File HH: 1 nodes unaligned: s6u2/umr-unknown.
 7  zda        s6u  s6z1
 8  tajná      s6t1 s6t1, s6z1
 9  služba     s6s2 s6s2
-10 veškeré    s6v1 s6v1
+10 veškeré    s6v1 s6u1
 11 údaje      s6u1 s6u1
 12 mohla      s6z1 s6z1
 13 získat     s6z1 s6z1
@@ -595,8 +587,10 @@ Node-node correspondences:
 
 Ambiguous projection of ML node s6t1 (tajná) to 2 HH nodes [s6t1 (tajná), s6z1 (o to zda tajná mohla získat)]
 
+Ambiguous projection of HH node s6u1 (veškeré údaje) to 2 ML nodes [s6u1 (údaje), s6v1 (veškeré)]
 Ambiguous projection of HH node s6z1 (o to zda tajná mohla získat) to 3 ML nodes [s6t1 (tajná), s6u (zda), s6z1 (o to mohla získat)]
-  The winner is HH node s6z1 (o to zda tajná mohla získat) <--> ML node s6z1 (o to mohla získat): econcepts=získat-001/získat-001, match=5 (concept=získat-001,:ARG0=s6s2 mapped to ML s6s2,:ARG1=s6u1 mapped to ML s6u1,:aspect=performance,:modal-strength=neutral-affirmative), weak match=6 (concept,:aspect,:modal-strength,:polarity,:ARG0,:ARG1).
+  The winner is HH node s6u1 (veškeré údaje) <--> ML node s6u1 (údaje): econcepts=údaj/údaj, match=1 (concept=údaj), weak match=2 (concept,:quant).
+  The winner is HH node s6z1 (o to zda tajná mohla získat) <--> ML node s6z1 (o to mohla získat): econcepts=získat-001/získat-001, match=5 (concept=získat-001,:ARG0=s6s2 mapped to ML s6s2,:ARG1=s6u1 mapped to ML s6u1, s6v1,:aspect=performance,:modal-strength=neutral-affirmative), weak match=6 (concept,:aspect,:modal-strength,:polarity,:ARG0,:ARG1).
 
 Correspondence ML s6j1 (jde)               = HH s6j1 (jde)
 Correspondence ML s6o1 (otevřených)        = HH s6o1 (otevřených)
@@ -604,16 +598,16 @@ Correspondence ML s6p1 (prý)               = HH s6s3 (prý)
 Correspondence ML s6s1 (Stále)             = HH s6s1 (Stále)
 Correspondence ML s6s2 (služba)            = HH s6s2 (služba)
 Correspondence ML s6t1 (tajná)             = HH s6t1 (tajná)
-Correspondence ML s6u1 (údaje)             = HH s6u1 (údaje)
-Correspondence ML s6v1 (veškeré)           = HH s6v1 (veškeré)
+Correspondence ML s6u1 (údaje)             = HH s6u1 (veškeré údaje)
 Correspondence ML s6z1 (o to mohla získat) = HH s6z1 (o to zda tajná mohla získat)
 Correspondence ML s6z2 (z zdrojů)          = HH s6z2 (z zdrojů)
 Correspondence ML s6s  (say-91)            = HH 
 Correspondence ML s6u  (zda)               = HH 
+Correspondence ML s6v1 (veškeré)           = HH 
 Correspondence ML                          = HH s6u2 (umr-unknown)
 
-Aligned 10 out of 12 ML nodes, that is 83%.
-Aligned 10 out of 11 HH nodes, that is 91%.
+Aligned 9 out of 12 ML nodes, that is 75%.
+Aligned 9 out of 10 HH nodes, that is 90%.
 
 Comparing attributes of ML nodes with their HH counterparts.
 Node ML s6j1 / jít-035 (jde)                  mismatch in :clausal-marker: ML = s6p1 mapped to HH s6s3 HH = 
@@ -627,14 +621,15 @@ Node ML s6s / say-91                          mismatch in :ARG1:           ML = 
 Node ML s6s2 / služba (služba)                mismatch in :refer-number:   ML = singular               HH = 
 Node ML s6t1 / tajný (tajná)                  mismatch in :refer-number:   ML =                        HH = singular
 Node ML s6u / UMR-unknown (zda)               mismatch in concept:         ML = UMR-unknown            HH = UNMAPPED
-Node ML s6u1 / údaj (údaje)                   mismatch in :refer-number:   ML =                        HH = plural
+Node ML s6u1 / údaj (údaje)                   mismatch in :quant:          ML = s6v1 unmapped          HH = all
+Node ML s6v1 / veškerý (veškeré)              mismatch in concept:         ML = veškerý                HH = UNMAPPED
 Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :ARG2:           ML = s6z2 mapped to HH s6z2 HH = 
 Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :polarity:       ML = s6u unmapped           HH = s6u2
 Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :source:         ML =                        HH = s6z2
 Node HH s6u2 / umr-unknown                    mismatch in concept:         HH = umr-unknown            ML = UNMAPPED
 
-Correct 21 out of 30 non-empty ML values => recall    70%.
-Correct 21 out of 31 non-empty HH values => precision 68%.
+Correct 19 out of 30 non-empty ML values => recall    63%.
+Correct 19 out of 29 non-empty HH values => precision 66%.
 
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s6j1 / jít-035 (jde)                            mismatch in :quote:          HH = s6s3 mapped to ML s6p1 ML = s6s
@@ -645,7 +640,7 @@ Node HH s6s3 / say-91 (prý)                             mismatch in :ARG1:     
 Node HH s6s3 / say-91 (prý)                             mismatch in :aspect:         HH = state                  ML = 
 Node HH s6s3 / say-91 (prý)                             mismatch in :modal-strength: HH = full-affirmative       ML = 
 Node HH s6t1 / tajný (tajná)                            mismatch in :refer-number:   HH = singular               ML = 
-Node HH s6u1 / údaj (údaje)                             mismatch in :refer-number:   HH = plural                 ML = 
+Node HH s6u1 / údaj (veškeré údaje)                     mismatch in :quant:          HH = all                    ML = s6v1
 Node HH s6u2 / umr-unknown                              mismatch in concept:         HH = umr-unknown            ML = UNMAPPED
 Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :polarity:       HH = s6u2 unmapped          ML = s6u
 Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :source:         HH = s6z2 mapped to ML s6z2 ML = 
@@ -653,25 +648,26 @@ Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :ARG2:   
 Node ML s6s / say-91                                    mismatch in concept:         ML = say-91                 HH = UNMAPPED
 Node ML s6s / say-91                                    mismatch in :ARG1:           ML = s6j1                   HH = UNMAPPED
 Node ML s6u / UMR-unknown (zda)                         mismatch in concept:         ML = UMR-unknown            HH = UNMAPPED
+Node ML s6v1 / veškerý (veškeré)                        mismatch in concept:         ML = veškerý                HH = UNMAPPED
 
-Correct 21 out of 31 non-empty HH values => recall    68%.
-Correct 21 out of 30 non-empty ML values => precision 70%.
+Correct 19 out of 29 non-empty HH values => recall    66%.
+Correct 19 out of 30 non-empty ML values => precision 63%.
 
 -------------------------------------------------------------------------------
 SUMMARY:
 Number of tokens: 100
-Number of nodes per file: ML:80, HH:79
+Number of nodes per file: ML:80, HH:78
 File-to-file node mapping:
 Out of 80 total ML nodes, 77 mapped to HH => recall    = 96%.
-Out of 79 total HH nodes, 77 mapped to ML => precision = 97%.
+Out of 78 total HH nodes, 77 mapped to ML => precision = 99%.
  => F₁(ML,HH) = 97%.
-Before symmetrization, 5 ML nodes were projected ambiguously to 13 HH nodes.
-Before symmetrization, 4 HH nodes were projected ambiguously to 12 ML nodes.
+Before symmetrization, 4 ML nodes were projected ambiguously to 11 HH nodes.
+Before symmetrization, 5 HH nodes were projected ambiguously to 14 ML nodes.
 Concept and relation comparisons (only mapped nodes; unmapped are ignored):
-Out of 250 non-empty ML values, 227 found in HH => recall    91%.
-Out of 251 non-empty HH values, 227 found in ML => precision 90%.
- => F₁ = 91%.
+Out of 252 non-empty ML values, 226 found in HH => recall    90%.
+Out of 253 non-empty HH values, 226 found in ML => precision 89%.
+ => F₁ = 90%.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 256 non-empty ML values, 227 found in HH => recall    89%.
-Out of 256 non-empty HH values, 227 found in ML => precision 89%.
+Out of 256 non-empty ML values, 226 found in HH => recall    88%.
+Out of 254 non-empty HH values, 226 found in ML => precision 89%.
  => juːmæʧ (ML, HH) = F₁ = 89%.
