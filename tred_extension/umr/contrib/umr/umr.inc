@@ -199,6 +199,7 @@
 
         my %mapping;
         for my $word_index (keys %{ $alignment->{w2n}[0][$root_index] }) {
+            next unless $word_index;
             my @nodes0 = keys
                 %{ $alignment->{w2n}[0][$root_index]{$word_index} };
             if (1 == @nodes0) {
@@ -207,15 +208,48 @@
                 if (1 == @nodes1
                     && 1 == keys
                         %{ $alignment->{n2w}[1][$root_index]{ $nodes1[0] } }
+                    && 1 == keys
+                        %{ $alignment->{n2w}[0][$root_index]{ $nodes0[0] } }
                 ) {
                     undef $mapping{'01'}{ $nodes0[0] }{ $nodes1[0] };
                     undef $mapping{'10'}{ $nodes1[0] }{ $nodes0[0] };
+                    warn "Map by node $nodes0[0] $nodes1[0]: ",
+                        join('+', keys
+                             %{ $alignment->{n2w}[1][$root_index]{ $nodes1[0] } }),
+                                 ',',
+                                 join('+', keys
+                                      %{ $alignment->{n2w}[0][$root_index]{ $nodes0[0] } });
                 }
             }
         }
 
         my $root0 = $windows[0]->{currentNode}->root;
         my $root1 = $windows[1]->{currentNode}->root;
+
+        for my $i (0, 1) {
+            my $root = ($root0, $root1)[$i];
+            for my $node ($root->descendants) {
+                next if exists $mapping{ $i . (1 - $i)}{ $node };
+
+                my $words = join ',', sort keys %{
+                    $alignment->{n2w}[$i][$root_index]{ $node->{id} } };
+                next if -1 == index $words, ',';
+
+                undef $alignment->{ws2n}{$words}[$i]{ $node->{id} };
+            }
+        }
+        for my $words (keys %{ $alignment->{ws2n} }) {
+            next if 2 != grep defined, @{ $alignment->{ws2n}{$words} };
+            next if 2 != grep 1 == keys %$_, @{ $alignment->{ws2n}{$words} };
+
+            my $node0 = (keys %{ $alignment->{ws2n}{$words}[0] } )[0];
+            my $node1 = (keys %{ $alignment->{ws2n}{$words}[1] } )[0];
+
+            undef $mapping{'01'}{$node0}{$node1};
+            undef $mapping{'10'}{$node1}{$node0};
+            warn "Map by words: $node0 $node1";
+        }
+
         my @expanded_labels;
         for my $idx (0, 1) {
             for my $node (($root0, $root1)[$idx]->descendants) {
@@ -234,18 +268,19 @@
             # warn Dumper \%mapping;
 
             for my $node (grep ! keys %{ $mapping{'01'}{ $_->{id} } // {} },
-                               $root0->descendants
+                          $root0->descendants
             ) {
-                warn "NODE: $node->{id}";
                 my @children = get_dag_children($node);
 
-                warn join ' ', map $_->{id}, grep keys %{ $mapping{'01'}{ $_->{id} } // {} },
-                    @children;
-
-                if (grep keys %{ $mapping{'01'}{ $_->{id} } // {} },
+                if (grep keys %{
+                    exists $mapping{'01'}{ $_->{id} }
+                        ? $mapping{'01'}{ $_->{id} }
+                        : {} },
                     @children
                 ) {
-                    my @children1 = map keys %{ $mapping{'01'}{ $_->{id} } },
+                    my @children1 = map exists $mapping{'01'}{ $_->{id} }
+                                        ? keys %{ $mapping{'01'}{ $_->{id} } }
+                                        : (),
                                     @children;
                     my @parents1 = uniq(map $_->{id},
                                         map get_dag_parents($_), grep {
@@ -310,7 +345,7 @@
                                   grep defined,
                                   @$n2w{
                                       keys %{ $mapping{$direction}{$parent_id} }
-                            };
+                                  };
                             my @parents1
                                 = map keys %$_,
                                   grep defined,
