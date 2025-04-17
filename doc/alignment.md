@@ -164,6 +164,9 @@ where `s4i2` is aligned to _island_, `s4n2` to _Leyte_, `s4c` to
     `(s6t / temporal-quantity :quant (s6s2 / several) :unit (s6d / day) :mod (s6n / next))`;
     here, `s6s2`, `s6d` and `s6n` are aligned to their respective tokens while
     `s6t` is unaligned.
+  * TENTATIVE RULE: If the parent node has some children nodes that cover only part of the expression, the alignment will be assigned to the children whenever possible; the rest of the tokens will be assigned to the parent node.  
+    The same will be applied to nodes covering several tokens that do not have their own concepts, as e.g.  `(s1h / house :quant 10)` with `s1h` aligned to the whole expression _ten houses_.  
+   (**Goal:** To get as complete coverage as possible; NOT in compliance with UMR examples (but English 1.0 annotation is not consistent where numbers are sometimes aligned (_200 dead ..._), sometimes not (_About 200 people ..._)))
 * While the above rules strive to align as many non-punctuation tokens as
 possible, it is not required that all of them are aligned to concepts. There
 may be words that are not even distantly related to any individual node; such
