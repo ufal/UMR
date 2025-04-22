@@ -336,7 +336,11 @@ Words: Byla to vaše první motorka ?
         :mode interoggative
         :quote s8s1
         :ARG1 (s8m1 / motorka
-                     :refer-number singular)
+                     :refer-number singular
+                     :ARG1-of (s8b2 / belong-91
+                                      :aspect state
+                                      :modal-strength full-affirmative
+                                      :ARG2 s8e1))
         :ARG2 (s8p1 / ordinal-entity :value 1)))
 
 # alignment:
@@ -345,6 +349,7 @@ s8e2: 3-3
 s8e1: 0-0
 s8b1: 1-1
 s8m1: 2-2, 5-5
+s8b2: 0-0
 s8p1: 4-4
 
 # document level annotation:
@@ -376,7 +381,11 @@ Words: První .
         :modal-strength full-affirmative
         :quote s9s1
         :ARG1 (s9m1 / motorka
-                     :refer-number singular)
+                     :refer-number singular
+                     :ARG1-of (s9b2 / belong-91
+                                      :aspect state
+                                      :modal-strength full-affirmative
+                                      :ARG2 s9e1))
         :ARG2 (s9p1 / ordinal-entity :value 1)))
 
 # alignment:
@@ -385,6 +394,7 @@ s9e1: 0-0
 s9e2: 0-0
 s9b1: 0-0
 s9m1: 0-0
+s9b2: 0-0
 s9p1: 1-1
 
 # document level annotation:
