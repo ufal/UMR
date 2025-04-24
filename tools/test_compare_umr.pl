@@ -34,7 +34,12 @@ sysrun("perl $script_path/compare_umr.pl GOLD $conv_path/gold_total_cs_test.txt 
 sysrun("perl $script_path/compare_umr.pl GOLD $conv_path/gold_total_en_test.txt CONV $conv_path/converter-output_total_en_test.txt > $conv_path/comparison-en.txt");
 sysrun("perl $script_path/compare_umr.pl GOLD $conv_path/gold_total_it_test.txt CONV $conv_path/converter-output_total_it_test.txt > $conv_path/comparison-it.txt");
 # Evaluation of Honza's conversion from PDT-C to UMR: All sentences in one file.
-sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/dtest-gold.umr CONV $pdttest_path/dtest-conv.umr > $pdttest_path/evaluation-dtest.txt");
+#sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/dtest-gold.umr CONV $pdttest_path/dtest-conv.umr > $pdttest_path/evaluation-dtest.txt");
+# Markéta suggests to focus on selected attributes:
+# For comparison, my suggestion is to ignored the following attributes/relations:
+# polarity,refer-number,refer-person,mode,polite,modal-strength,quote,wiki
+# (thus the relevant attributes are just aspect, degree, and quant.)
+sysrun("perl $script_path/compare_umr.pl --except polarity,refer-number,refer-person,mode,polite,modal-strength,quote,wiki GOLD $pdttest_path/dtest-gold.umr CONV $pdttest_path/dtest-conv.umr > $pdttest_path/evaluation-dtest.txt");
 
 
 
