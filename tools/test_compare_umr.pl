@@ -42,6 +42,9 @@ sysrun("perl $script_path/compare_umr.pl GOLD $conv_path/gold_total_it_test.txt 
 # (thus the relevant attributes are just aspect, degree, and quant.)
 sysrun("perl $script_path/compare_umr.pl --except polarity,refer-number,refer-person,mode,polite,modal-strength,quote,wiki GOLD $pdttest_path/dtest-gold.umr CONV $pdttest_path/dtest-conv.umr > $pdttest_path/evaluation-dtest.txt");
 #sysrun("python $smatch_path/smatch.py -v -f $pdttest_path/dtest-conv.amr $pdttest_path/dtest-gold.amr");
+sysrun("perl $script_path/compare_umr.pl --except polarity,refer-number,refer-person,mode,polite,modal-strength,quote,wiki GOLD $pdttest_path/pdt-gold.umr CONV $pdttest_path/pdt-conv.umr > $pdttest_path/evaluation-pdt.txt");
+sysrun("perl $script_path/compare_umr.pl --except polarity,refer-number,refer-person,mode,polite,modal-strength,quote,wiki GOLD $pdttest_path/pdtsc-gold.umr CONV $pdttest_path/pdtsc-conv.umr > $pdttest_path/evaluation-pdtsc.txt");
+sysrun("perl $script_path/compare_umr.pl --except polarity,refer-number,refer-person,mode,polite,modal-strength,quote,wiki GOLD $pdttest_path/pcedt-gold.umr CONV $pdttest_path/pcedt-conv.umr > $pdttest_path/evaluation-pcedt.txt");
 
 
 
