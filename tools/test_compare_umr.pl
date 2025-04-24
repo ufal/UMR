@@ -14,6 +14,7 @@ binmode(STDERR, ':utf8');
 
 my $root_path = 'C:/Users/zeman/Documents/lingvistika-projekty';
 my $script_path = "$root_path/umr-ufal/tools";
+my $smatch_path = "$root_path/smatch";
 my $conv_path = "$root_path/umr-from-ud/testset";
 my $czech_path = "$root_path/umr-ufal/data/czech";
 my $pdttest_path = "$czech_path/PDT-C-dtest";
@@ -40,6 +41,7 @@ sysrun("perl $script_path/compare_umr.pl GOLD $conv_path/gold_total_it_test.txt 
 # polarity,refer-number,refer-person,mode,polite,modal-strength,quote,wiki
 # (thus the relevant attributes are just aspect, degree, and quant.)
 sysrun("perl $script_path/compare_umr.pl --except polarity,refer-number,refer-person,mode,polite,modal-strength,quote,wiki GOLD $pdttest_path/dtest-gold.umr CONV $pdttest_path/dtest-conv.umr > $pdttest_path/evaluation-dtest.txt");
+#sysrun("python $smatch_path/smatch.py -v -f $pdttest_path/dtest-conv.amr $pdttest_path/dtest-gold.amr");
 
 
 
