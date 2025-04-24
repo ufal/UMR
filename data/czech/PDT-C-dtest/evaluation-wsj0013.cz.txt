@@ -1,7 +1,7 @@
-Found 7 sentences in GOLD:
-1-68, 71-166, 169-260, 263-312, 315-366, 369-482, 485-485
-Found 7 sentences in CONV:
-1-93, 96-207, 210-332, 335-397, 400-463, 466-591, 594-671
+Found 6 sentences in GOLD:
+1-68, 71-166, 169-260, 263-312, 315-366, 369-482
+Found 6 sentences in CONV:
+1-93, 96-207, 210-332, 335-397, 400-463, 466-591
 
 -------------------------------------------------------------------------------
 Comparing sentence 1:
@@ -1990,234 +1990,13 @@ Correct 44 out of 110 non-empty CONV values => recall    40%.
 Correct 44 out of 108 non-empty GOLD values => precision 41%.
 
 -------------------------------------------------------------------------------
-Comparing sentence 7:
-WARNING: Mismatch in tokens of sentence 7 in file CONV (lines 594–671)
-
-GOLD CONV
-     # sentence level graph:
-     (s7a1 / and
-             :op1 (s7z1 / zdát-se-001
-                 :temporal (s7z2 / zvažovat-002
-                     :ARG0 (s7e1 / entity
-                         :refer-number plural
-                         :refer-person 3rd)
-                     :ARG1 (s7z3 / zvýšení
-                         :ARG0 s7e1
-                         :ARG1 (s7n1 / nabídka
-                             :refer-number singular)
-                         :refer-number singular)
-                     :refer-number plural
-                     :aspect activity)
-                 :ARG1 (s7r1 / riziko
-                     :affectee (s7r2 / rok
-                         :mod (s7p1 / příští
-                             :refer-number plural)
-                         :mod (s7p2 / pět
-                             :refer-number singular)
-                         :refer-number plural)
-                     :refer-number plural)
-                 :ARG0 (s7e2 / entity)
-                 :effect (s7b1 / být-007
-                     :ARG1 s7r1
-                     :ARG1 (s7a2 / and
-                         :op1 (s7z4 / značný
-                             :refer-number plural)
-                         :op2 (s7p3 / přetrvávající
-                             :refer-number plural))
-                     :aspect activity)
-                 :aspect state)
-             :op2 (s7z5 / zdát-se-001
-                 :temporal s7z2
-                 :ARG1 (s7v1 / výnos
-                     :refer-number plural)
-                 :ARG0 (s7e3 / entity)
-                 :effect (s7b2 / být-007
-                     :ARG1 s7v1
-                     :ARG2 (s7v2 / vzdálený
-                         :extent (s7h1 / hodně)
-                         :refer-number plural)
-                     :aspect activity)
-                 :refer-number plural
-                 :aspect state))
-
-Node-token alignments:
-File GOLD: 0 nodes unaligned: .
-File CONV: 3 nodes unaligned: s7e1/entity, s7e2/entity, s7e3/entity.
-  GOLD CONV
-
-Node-node correspondences:
-
-Correspondence GOLD   = CONV s7a1 (a)
-Correspondence GOLD   = CONV s7a2 (a)
-Correspondence GOLD   = CONV s7b1 (být)
-Correspondence GOLD   = CONV s7b2 (být)
-Correspondence GOLD   = CONV s7e1 (entity)
-Correspondence GOLD   = CONV s7e2 (entity)
-Correspondence GOLD   = CONV s7e3 (entity)
-Correspondence GOLD   = CONV s7h1 (hodně)
-Correspondence GOLD   = CONV s7n1 (nabídky)
-Correspondence GOLD   = CONV s7p1 (příštích)
-Correspondence GOLD   = CONV s7p2 (pět)
-Correspondence GOLD   = CONV s7p3 (přetrvávající)
-Correspondence GOLD   = CONV s7r1 (rizika)
-Correspondence GOLD   = CONV s7r2 (pro let)
-Correspondence GOLD   = CONV s7v1 (výnosy)
-Correspondence GOLD   = CONV s7v2 (vzdálené)
-Correspondence GOLD   = CONV s7z1 (se zdála)
-Correspondence GOLD   = CONV s7z2 (Když jsme zvažovali)
-Correspondence GOLD   = CONV s7z3 (zvýšení)
-Correspondence GOLD   = CONV s7z4 (značná)
-Correspondence GOLD   = CONV s7z5 (se zdály)
-
-Aligned 0 out of 0 GOLD nodes, that is 0%.
-Aligned 0 out of 21 CONV nodes, that is 0%.
-
-Comparing attributes of GOLD nodes with their CONV counterparts.
-Node CONV s7a1 / and (a)                            mismatch in concept:       CONV = and           GOLD = UNMAPPED
-Node CONV s7a1 / and (a)                            mismatch in :op1:          CONV = s7z1          GOLD = UNMAPPED
-Node CONV s7a1 / and (a)                            mismatch in :op2:          CONV = s7z5          GOLD = UNMAPPED
-Node CONV s7a2 / and (a)                            mismatch in concept:       CONV = and           GOLD = UNMAPPED
-Node CONV s7a2 / and (a)                            mismatch in :op1:          CONV = s7z4          GOLD = UNMAPPED
-Node CONV s7a2 / and (a)                            mismatch in :op2:          CONV = s7p3          GOLD = UNMAPPED
-Node CONV s7b1 / být-007 (být)                      mismatch in concept:       CONV = být-007       GOLD = UNMAPPED
-Node CONV s7b1 / být-007 (být)                      mismatch in :ARG1:         CONV = s7r1          GOLD = UNMAPPED
-Node CONV s7b1 / být-007 (být)                      mismatch in :ARG1:         CONV = s7a2          GOLD = UNMAPPED
-Node CONV s7b1 / být-007 (být)                      mismatch in :aspect:       CONV = activity      GOLD = UNMAPPED
-Node CONV s7b2 / být-007 (být)                      mismatch in concept:       CONV = být-007       GOLD = UNMAPPED
-Node CONV s7b2 / být-007 (být)                      mismatch in :ARG1:         CONV = s7v1          GOLD = UNMAPPED
-Node CONV s7b2 / být-007 (být)                      mismatch in :ARG2:         CONV = s7v2          GOLD = UNMAPPED
-Node CONV s7b2 / být-007 (být)                      mismatch in :aspect:       CONV = activity      GOLD = UNMAPPED
-Node CONV s7e1 / entity                             mismatch in concept:       CONV = entity        GOLD = UNMAPPED
-Node CONV s7e1 / entity                             mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7e1 / entity                             mismatch in :refer-person: CONV = 3rd           GOLD = UNMAPPED
-Node CONV s7e2 / entity                             mismatch in concept:       CONV = entity        GOLD = UNMAPPED
-Node CONV s7e3 / entity                             mismatch in concept:       CONV = entity        GOLD = UNMAPPED
-Node CONV s7h1 / hodně (hodně)                      mismatch in concept:       CONV = hodně         GOLD = UNMAPPED
-Node CONV s7n1 / nabídka (nabídky)                  mismatch in concept:       CONV = nabídka       GOLD = UNMAPPED
-Node CONV s7n1 / nabídka (nabídky)                  mismatch in :refer-number: CONV = singular      GOLD = UNMAPPED
-Node CONV s7p1 / příští (příštích)                  mismatch in concept:       CONV = příští        GOLD = UNMAPPED
-Node CONV s7p1 / příští (příštích)                  mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7p2 / pět (pět)                          mismatch in concept:       CONV = pět           GOLD = UNMAPPED
-Node CONV s7p2 / pět (pět)                          mismatch in :refer-number: CONV = singular      GOLD = UNMAPPED
-Node CONV s7p3 / přetrvávající (přetrvávající)      mismatch in concept:       CONV = přetrvávající GOLD = UNMAPPED
-Node CONV s7p3 / přetrvávající (přetrvávající)      mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7r1 / riziko (rizika)                    mismatch in concept:       CONV = riziko        GOLD = UNMAPPED
-Node CONV s7r1 / riziko (rizika)                    mismatch in :affectee:     CONV = s7r2          GOLD = UNMAPPED
-Node CONV s7r1 / riziko (rizika)                    mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7r2 / rok (pro let)                      mismatch in concept:       CONV = rok           GOLD = UNMAPPED
-Node CONV s7r2 / rok (pro let)                      mismatch in :mod:          CONV = s7p1          GOLD = UNMAPPED
-Node CONV s7r2 / rok (pro let)                      mismatch in :mod:          CONV = s7p2          GOLD = UNMAPPED
-Node CONV s7r2 / rok (pro let)                      mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7v1 / výnos (výnosy)                     mismatch in concept:       CONV = výnos         GOLD = UNMAPPED
-Node CONV s7v1 / výnos (výnosy)                     mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7v2 / vzdálený (vzdálené)                mismatch in concept:       CONV = vzdálený      GOLD = UNMAPPED
-Node CONV s7v2 / vzdálený (vzdálené)                mismatch in :extent:       CONV = s7h1          GOLD = UNMAPPED
-Node CONV s7v2 / vzdálený (vzdálené)                mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in concept:       CONV = zdát-se-001   GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :ARG0:         CONV = s7e2          GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :ARG1:         CONV = s7r1          GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :aspect:       CONV = state         GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :effect:       CONV = s7b1          GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :temporal:     CONV = s7z2          GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in concept:       CONV = zvažovat-002  GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in :ARG0:         CONV = s7e1          GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in :ARG1:         CONV = s7z3          GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in :aspect:       CONV = activity      GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7z3 / zvýšení (zvýšení)                  mismatch in concept:       CONV = zvýšení       GOLD = UNMAPPED
-Node CONV s7z3 / zvýšení (zvýšení)                  mismatch in :ARG0:         CONV = s7e1          GOLD = UNMAPPED
-Node CONV s7z3 / zvýšení (zvýšení)                  mismatch in :ARG1:         CONV = s7n1          GOLD = UNMAPPED
-Node CONV s7z3 / zvýšení (zvýšení)                  mismatch in :refer-number: CONV = singular      GOLD = UNMAPPED
-Node CONV s7z4 / značný (značná)                    mismatch in concept:       CONV = značný        GOLD = UNMAPPED
-Node CONV s7z4 / značný (značná)                    mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in concept:       CONV = zdát-se-001   GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :ARG0:         CONV = s7e3          GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :ARG1:         CONV = s7v1          GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :aspect:       CONV = state         GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :effect:       CONV = s7b2          GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :temporal:     CONV = s7z2          GOLD = UNMAPPED
-
-Correct 0 out of 0 non-empty GOLD values => recall    0%.
-Correct 0 out of 64 non-empty CONV values => precision 0%.
-
-Comparing attributes of CONV nodes with their GOLD counterparts.
-Node CONV s7a1 / and (a)                            mismatch in concept:       CONV = and           GOLD = UNMAPPED
-Node CONV s7a1 / and (a)                            mismatch in :op1:          CONV = s7z1          GOLD = UNMAPPED
-Node CONV s7a1 / and (a)                            mismatch in :op2:          CONV = s7z5          GOLD = UNMAPPED
-Node CONV s7a2 / and (a)                            mismatch in concept:       CONV = and           GOLD = UNMAPPED
-Node CONV s7a2 / and (a)                            mismatch in :op1:          CONV = s7z4          GOLD = UNMAPPED
-Node CONV s7a2 / and (a)                            mismatch in :op2:          CONV = s7p3          GOLD = UNMAPPED
-Node CONV s7b1 / být-007 (být)                      mismatch in concept:       CONV = být-007       GOLD = UNMAPPED
-Node CONV s7b1 / být-007 (být)                      mismatch in :ARG1:         CONV = s7r1          GOLD = UNMAPPED
-Node CONV s7b1 / být-007 (být)                      mismatch in :ARG1:         CONV = s7a2          GOLD = UNMAPPED
-Node CONV s7b1 / být-007 (být)                      mismatch in :aspect:       CONV = activity      GOLD = UNMAPPED
-Node CONV s7b2 / být-007 (být)                      mismatch in concept:       CONV = být-007       GOLD = UNMAPPED
-Node CONV s7b2 / být-007 (být)                      mismatch in :ARG1:         CONV = s7v1          GOLD = UNMAPPED
-Node CONV s7b2 / být-007 (být)                      mismatch in :ARG2:         CONV = s7v2          GOLD = UNMAPPED
-Node CONV s7b2 / být-007 (být)                      mismatch in :aspect:       CONV = activity      GOLD = UNMAPPED
-Node CONV s7e1 / entity                             mismatch in concept:       CONV = entity        GOLD = UNMAPPED
-Node CONV s7e1 / entity                             mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7e1 / entity                             mismatch in :refer-person: CONV = 3rd           GOLD = UNMAPPED
-Node CONV s7e2 / entity                             mismatch in concept:       CONV = entity        GOLD = UNMAPPED
-Node CONV s7e3 / entity                             mismatch in concept:       CONV = entity        GOLD = UNMAPPED
-Node CONV s7h1 / hodně (hodně)                      mismatch in concept:       CONV = hodně         GOLD = UNMAPPED
-Node CONV s7n1 / nabídka (nabídky)                  mismatch in concept:       CONV = nabídka       GOLD = UNMAPPED
-Node CONV s7n1 / nabídka (nabídky)                  mismatch in :refer-number: CONV = singular      GOLD = UNMAPPED
-Node CONV s7p1 / příští (příštích)                  mismatch in concept:       CONV = příští        GOLD = UNMAPPED
-Node CONV s7p1 / příští (příštích)                  mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7p2 / pět (pět)                          mismatch in concept:       CONV = pět           GOLD = UNMAPPED
-Node CONV s7p2 / pět (pět)                          mismatch in :refer-number: CONV = singular      GOLD = UNMAPPED
-Node CONV s7p3 / přetrvávající (přetrvávající)      mismatch in concept:       CONV = přetrvávající GOLD = UNMAPPED
-Node CONV s7p3 / přetrvávající (přetrvávající)      mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7r1 / riziko (rizika)                    mismatch in concept:       CONV = riziko        GOLD = UNMAPPED
-Node CONV s7r1 / riziko (rizika)                    mismatch in :affectee:     CONV = s7r2          GOLD = UNMAPPED
-Node CONV s7r1 / riziko (rizika)                    mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7r2 / rok (pro let)                      mismatch in concept:       CONV = rok           GOLD = UNMAPPED
-Node CONV s7r2 / rok (pro let)                      mismatch in :mod:          CONV = s7p1          GOLD = UNMAPPED
-Node CONV s7r2 / rok (pro let)                      mismatch in :mod:          CONV = s7p2          GOLD = UNMAPPED
-Node CONV s7r2 / rok (pro let)                      mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7v1 / výnos (výnosy)                     mismatch in concept:       CONV = výnos         GOLD = UNMAPPED
-Node CONV s7v1 / výnos (výnosy)                     mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7v2 / vzdálený (vzdálené)                mismatch in concept:       CONV = vzdálený      GOLD = UNMAPPED
-Node CONV s7v2 / vzdálený (vzdálené)                mismatch in :extent:       CONV = s7h1          GOLD = UNMAPPED
-Node CONV s7v2 / vzdálený (vzdálené)                mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in concept:       CONV = zdát-se-001   GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :ARG0:         CONV = s7e2          GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :ARG1:         CONV = s7r1          GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :aspect:       CONV = state         GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :effect:       CONV = s7b1          GOLD = UNMAPPED
-Node CONV s7z1 / zdát-se-001 (se zdála)             mismatch in :temporal:     CONV = s7z2          GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in concept:       CONV = zvažovat-002  GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in :ARG0:         CONV = s7e1          GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in :ARG1:         CONV = s7z3          GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in :aspect:       CONV = activity      GOLD = UNMAPPED
-Node CONV s7z2 / zvažovat-002 (Když jsme zvažovali) mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7z3 / zvýšení (zvýšení)                  mismatch in concept:       CONV = zvýšení       GOLD = UNMAPPED
-Node CONV s7z3 / zvýšení (zvýšení)                  mismatch in :ARG0:         CONV = s7e1          GOLD = UNMAPPED
-Node CONV s7z3 / zvýšení (zvýšení)                  mismatch in :ARG1:         CONV = s7n1          GOLD = UNMAPPED
-Node CONV s7z3 / zvýšení (zvýšení)                  mismatch in :refer-number: CONV = singular      GOLD = UNMAPPED
-Node CONV s7z4 / značný (značná)                    mismatch in concept:       CONV = značný        GOLD = UNMAPPED
-Node CONV s7z4 / značný (značná)                    mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in concept:       CONV = zdát-se-001   GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :ARG0:         CONV = s7e3          GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :ARG1:         CONV = s7v1          GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :aspect:       CONV = state         GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :effect:       CONV = s7b2          GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :refer-number: CONV = plural        GOLD = UNMAPPED
-Node CONV s7z5 / zdát-se-001 (se zdály)             mismatch in :temporal:     CONV = s7z2          GOLD = UNMAPPED
-
-Correct 0 out of 64 non-empty CONV values => recall    0%.
-Correct 0 out of 0 non-empty GOLD values => precision 0%.
-
--------------------------------------------------------------------------------
 SUMMARY:
 Number of tokens: 225
-Number of nodes per file: GOLD:135, CONV:209
+Number of nodes per file: GOLD:135, CONV:188
 File-to-file node mapping:
 Out of 135 total GOLD nodes, 104 mapped to CONV => recall    = 77%.
-Out of 209 total CONV nodes, 104 mapped to GOLD => precision = 50%.
- => F₁(GOLD,CONV) = 60%.
+Out of 188 total CONV nodes, 104 mapped to GOLD => precision = 55%.
+ => F₁(GOLD,CONV) = 64%.
 Before symmetrization, 30 GOLD nodes were projected ambiguously to 98 CONV nodes.
 Before symmetrization, 8 CONV nodes were projected ambiguously to 16 GOLD nodes.
 Concept and relation comparisons (only mapped nodes; unmapped are ignored):
@@ -2226,5 +2005,5 @@ Out of 326 non-empty CONV values, 183 found in GOLD => precision 56%.
  => F₁ = 56%.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
 Out of 433 non-empty GOLD values, 183 found in CONV => recall    42%.
-Out of 554 non-empty CONV values, 183 found in GOLD => precision 33%.
- => juːmæʧ (GOLD, CONV) = F₁ = 37%.
+Out of 490 non-empty CONV values, 183 found in GOLD => precision 37%.
+ => juːmæʧ (GOLD, CONV) = F₁ = 40%.

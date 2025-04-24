@@ -2652,7 +2652,7 @@ Correct 18 out of 65 non-empty GOLD values => precision 28%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 13:
-WARNING: Mismatch in tokens of sentence 13 in file CONV (lines 769–835)Věříme proto , že pochopíte , že současné zvýšení ceny je nutné a že nám zůstanete věrni .
+Věříme proto , že pochopíte , že současné zvýšení ceny je nutné a že nám zůstanete věrni .
 
 GOLD                                                                                           CONV
 # sentence level graph:                                                                        # sentence level graph:
