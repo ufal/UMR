@@ -186,7 +186,7 @@ Words: Vídáte se ?
 # sentence level graph:
 (s7v1 / vídat-001
         :ARG0 (s7e1 / entity)
-        :ARG1 (s7x1 / #Rcp)
+        :ARG1 (s7x1 / _Rcp)
         :refer-number plural
         :refer-person 2nd
         :aspect activity)

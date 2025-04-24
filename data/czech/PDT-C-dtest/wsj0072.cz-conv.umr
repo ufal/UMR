@@ -229,7 +229,7 @@ Words: "  Jestliže se podíváte na třetí čtvrtletí vykazující zhruba 2.5
                             :refer-number singular)
                         :mod (s4v2 / vykazující
                             :ARG1 (s4r1 / růst
-                                :mod (s4x2 / #Percnt
+                                :mod (s4x2 / _Percnt
                                     :extent (s4z1 / zhruba)
                                     :mod (s4x3 / 2.5))
                                 :refer-number singular)
@@ -555,10 +555,10 @@ Words: "  Myslím ,  že trh očekával ,  že Federální rezervní banka sní�
                         :refer-number plural)
                     :refer-number plural)
                 :start (s8s3 / společnost
-                    :name (s8x4 / #Forn
-                        :!!FPHR (s8b3 / Bankers)
-                        :!!FPHR (s8t4 / Trust)
-                        :!!FPHR (s8c1 / Co))
+                    :name (s8x4 / _Forn
+                        :FPHR (s8b3 / Bankers)
+                        :FPHR (s8t4 / Trust)
+                        :FPHR (s8c1 / Co))
                     :refer-number singular)
                 :refer-number singular))
         :refer-number singular
@@ -629,7 +629,7 @@ Words: Federální rezervní banka snížila úrokové míry hlavních federáln
                 :mod (s9p1 / procentní
                     :refer-number singular)
                 :refer-number singular)
-            :effect (s9x2 / #Percnt
+            :effect (s9x2 / _Percnt
                 :mod (s9x3 / 8.75))
             :temporal (s9p2 / pokles
                 :mod (s9p3 / prudký
@@ -1074,7 +1074,7 @@ Words: Následkem toho se mohou představitelé Federální rezervní banky rozc
                     :refer-number singular)
                 :refer-number singular)
             :refer-number plural)
-        :ARG2 (s16x1 / #Rcp
+        :ARG2 (s16x1 / _Rcp
             :refer-number plural)
         :ARG1 (s16n1 / názor
             :mod (s16z1 / zpřístupnit-001
@@ -1298,7 +1298,7 @@ Words: "  Vždy je tu možnost ,  že přijde recese ,  "  dodal Guffey ,  "  al
                     :ARG1 s19p2
                     :ARG2 (s19m2 / málo
                         :extent (s19d2 / daleko)
-                        :comparison (s19x4 / #Percnt
+                        :comparison (s19x4 / _Percnt
                             :mod (s19x5 / 50)))
                     :refer-number singular
                     :refer-person 3rd

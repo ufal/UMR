@@ -628,7 +628,7 @@ Words: Nejmenovali jsme jménem , ale vždycky přezdívkou .
 (s20b1 / but-91
         :ARG1 (s20j1 / jmenovat-004
             :ARG0 (s20e1 / entity)
-            :ARG1 (s20x1 / #Rcp)
+            :ARG1 (s20x1 / _Rcp)
             :manner (s20e2 / entity)
             :instrument (s20j2 / jméno
                 :refer-number singular)
