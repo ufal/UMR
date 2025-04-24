@@ -63,7 +63,7 @@ for my $u (qw( ln95046_093
                wsj0013.cz
                wsj0072.cz
 )) {
-    my $dir = path($umr, 'github', 'data', 'czech', 'PDT-dtest-part-manual');
+    my $dir = path($umr, 'github', 'data', 'czech', 'PDT-C-dtest');
     my ($f) = $dir->children(qr/\Q$u\E-conv\.umr/);
     my $size = size($u);
     open my $pipe, '-|', qw{ btred -QTe writeln(scalar($this->descendants)) },
