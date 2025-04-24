@@ -37,6 +37,7 @@ sub read {
     my $root;
     my $buffer = "";
     my $mode = "";
+    my $sentence_index = 0;
     while (<$fh>) {
         s/[\n\r]*//;
         s/#\s*TODO.*//;
@@ -55,7 +56,7 @@ sub read {
                                 'Treex::PML::Factory'->createList,
                                 {word => $_}),
                             "", @words]),
-                        id => 'umr' . rand,
+                        id => 'umr' . ++$sentence_index,
                         '#name' => 'sent',
                     });
 
@@ -67,7 +68,8 @@ sub read {
         } elsif (length $buffer && 'sentence' eq $mode) {
             if ("" eq $_) {
                 parse_sentence($root, \$buffer);
-                die "Leftover $buffer" if length $buffer;
+                die "Sentence $sentence_index: Leftover $buffer"
+                    if length $buffer;
                 #use Data::Dumper; warn Dumper PARSED => $root;
 
             } else {
