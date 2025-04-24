@@ -1,0 +1,109 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+use experimental qw( signatures );
+
+use List::Util qw{ sum };
+use Path::Tiny qw{ path };
+use Text::Table;
+use XML::XSH2 qw{ xsh };
+
+sub size($name) {
+    return 25 if $name =~ /pdtsc/;
+    return 10 if $name =~ /wsj0072/;
+    return  6 if $name =~ /wsj0013/;
+    return 50 if $name =~ /sallust/;
+    return 1000
+}
+
+{   package XML::XSH2::Map;
+    # No warnings 'once'.
+    our ($size, $basename, $f);
+}
+
+
+my $pdtc2a = $ENV{UFAL_PDTC2A} or die '$UFAL_PDTC2A not set';
+my $umr    = $ENV{UFAL_UMR}    or die '$UFAL_UMR not set';
+
+for my $m (qw( annotators/ivh/done/ln95046_093.m
+               annotators/kac/done/ln94210_111.m
+               annotators/ivh/done/pdtsc_146_2.05.m
+               annotators/kac/done/pdtsc_093_3.02.m
+               annotators/kac/done/wsj0013.cz.m
+               annotators/toh/done/wsj0072.cz.m )) {
+    my $f = path($pdtc2a, $m);
+    $XML::XSH2::Map::f = $f->stringify;
+    $XML::XSH2::Map::basename = my $basename = $f->basename;
+    my $size = size($basename);
+    $XML::XSH2::Map::size = $size;
+
+    xsh <<~ '__XSH__';
+        quiet ;
+        register-namespace pml http://ufal.mff.cuni.cz/pdt/pml/ ;
+        open $f ;
+        my $c = count(//pml:s[count(preceding::pml:s) < $size]/pml:m) ;
+        perl { $count{ substr $basename, 0, 1 }{m} += $c } ;
+        my $cs = count(//pml:s[count(preceding::pml:s) < $size]) ;
+        perl { $count{ substr $basename, 0, 1 }{s} += $cs } ;
+    __XSH__
+
+    $XML::XSH2::Map::f =~ s/\.m$/.t/;
+
+    xsh <<~ '__XSH__';
+        open $f ;
+        my $c = count(//pml:trees/pml:*[count(preceding-sibling::pml:*) < $size]//pml:functor) ;
+        perl { $count{ substr $basename, 0, 1 }{t} += $c } ;
+    __XSH__
+}
+
+for my $u (qw( ln95046_093
+               ln94210_111
+               pdtsc_146_2.05
+               pdtsc_093_3.02
+               wsj0013.cz
+               wsj0072.cz
+)) {
+    my $dir = path($umr, 'github', 'data', 'czech', 'PDT-dtest-part-manual');
+    my ($f) = $dir->children(qr/\Q$u\E-conv\.umr/);
+    my $size = size($u);
+    open my $pipe, '-|', qw{ btred -QTe writeln(scalar($this->descendants)) },
+        $f or die $!;
+    chomp( my @out = <$pipe> );
+    $XML::XSH2::Map::count{ substr $f->basename, 0, 1 }{uc}
+        += sum(@out[0 .. (@out > $size ? $size - 1 : $#out)]);
+
+    my @files = glob "$dir/$u-*-all.umr $dir/$u-??.umr";
+    for my $f (@files) {
+        next unless -f $f;
+
+        open my $pipe, '-|',
+            qw{ btred -QTe writeln(scalar($this->descendants)) },
+            $f or die $!;
+        chomp( my @out = <$pipe> );
+        $XML::XSH2::Map::count{ substr path($f)->basename, 0, 1 }{um}
+            += sum(@out[0 .. (@out > $size ? $size - 1 : $#out)]);
+
+    }
+}
+
+my %ROW = (PDT   => 'l',
+           PDTSC => 'p',
+           PCEDT => 'w',
+           LDT   => 's');
+
+my @COLS = qw( s m t um uc );
+
+my $tt = 'Text::Table'->new('corpus', 'sentences', 'tokens', 'nodes',
+            'UMR manual', 'UMR converted');
+
+for my $col (@COLS) {
+    $XML::XSH2::Map::count{total}{$col}
+        = sum(map $XML::XSH2::Map::count{ $ROW{$_} }{$col} // 0, keys %ROW);
+}
+
+for my $row (qw( PDT PDTSC PCEDT total LDT )) {
+    $tt->add($row,
+             map $_ // '-',
+             @{ $XML::XSH2::Map::count{ $ROW{$row} // $row } }{@COLS});
+}
+print $tt;
