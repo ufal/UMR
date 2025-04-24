@@ -49,8 +49,7 @@ Words: Ještě něco mi k té fotce povíte ?
 :ARG2 (s2e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s2p1 / povědět-001
+:ARG1 (s2p1 / povědět-001
         :aspect performance
         :modal-strength neutral-affirmative
         :polarity umr-unknown
@@ -240,8 +239,7 @@ Words: Kdo vám to dělal ?
 :ARG2 (s6e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s6d1 / dělat-010
+:ARG1 (s6d1 / dělat-010
         :aspect activity
         :modal-strength full-affirmative
         :quote s6s1
@@ -282,8 +280,7 @@ Words: To dělali kamarádi ve Škodovce .
 :ARG2 (s7e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s7d1 / dělat-010
+:ARG1 (s7d1 / dělat-010
         :aspect activity
         :modal-strength full-affirmative
         :quote s7s1
@@ -328,8 +325,7 @@ Words: Byla to vaše první motorka ?
 :ARG2 (s8e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s8b1 / have-ord-91
+:ARG1 (s8b1 / have-ord-91
         :aspect state
         :modal-strength neutral-affirmative
         :polarity umr-unknown
@@ -545,8 +541,7 @@ Words: Tohleto je junácký tábor ve Vrbicích u  Stříbra v  roce 1970 ,  kde
 :ARG2 (s13e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s13b1 / identity-91
+:ARG1 (s13b1 / identity-91
          :aspect state
          :modal-strength full-affirmative
          :quote s13s1
@@ -613,8 +608,7 @@ Words: Kdo je na té fotce vidět ?
 :ARG2 (s14e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s14v1 / vidět-007
+:ARG1 (s14v1 / vidět-007
         :aspect state
         :modal-strength full-affirmative
         :mode interrogative
@@ -742,8 +736,7 @@ Words: Jak se jmenovala ?
 :ARG2 (s16e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s16j1 / jmenovat-se-002
+:ARG1 (s16j1 / jmenovat-se-002
          :aspect state
          :modal-strength full-affirmative
          :mode interrogative
@@ -784,8 +777,7 @@ Words: Už zemřela .
 :ARG2 (s17e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s17z1 / zemřít-001
+:ARG1 (s17z1 / zemřít-001
         :aspect state
         :modal-strength full-affirmative
         :quote s17s1
@@ -823,8 +815,7 @@ Words: To mě mrzí .
 :ARG2 (s18e2 / person
               :refer-number singular
               :refer-person 2nd)
-:ARG1
-(s18m1 / mrzet-001
+:ARG1 (s18m1 / mrzet-001
          :aspect state
          :modal-strength full-affirmative
          :quote s18s1
@@ -1189,5 +1180,3 @@ s25j2: 5-5
             (s24e2 :same-entity s25e2)
             (s15s3 :same-entity s25s2)
             (s23e1 :same-entity s25p1)))
-
-
