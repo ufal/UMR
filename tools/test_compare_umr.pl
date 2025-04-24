@@ -33,6 +33,8 @@ sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/wsj0072.cz-HH.umr CO
 sysrun("perl $script_path/compare_umr.pl GOLD $conv_path/gold_total_cs_test.txt CONV $conv_path/converter-output_total_cs_test.txt > $conv_path/comparison-cs.txt");
 sysrun("perl $script_path/compare_umr.pl GOLD $conv_path/gold_total_en_test.txt CONV $conv_path/converter-output_total_en_test.txt > $conv_path/comparison-en.txt");
 sysrun("perl $script_path/compare_umr.pl GOLD $conv_path/gold_total_it_test.txt CONV $conv_path/converter-output_total_it_test.txt > $conv_path/comparison-it.txt");
+# Evaluation of Honza's conversion from PDT-C to UMR: All sentences in one file.
+sysrun("perl $script_path/compare_umr.pl GOLD $pdttest_path/dtest-gold.umr CONV $pdttest_path/dtest-conv.umr > $pdttest_path/evaluation-dtest.txt");
 
 
 
