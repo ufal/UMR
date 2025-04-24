@@ -1,0 +1,2804 @@
+# sentence level graph:
+(s1p0 / publication-91
+:ARG3 (s1s1 / say-91
+              :aspect activity
+        	  :modal-strength full-affirmative
+              :ARG0 (s1p1 / person
+                	:refer-number plural
+                	:refer-person 1st)
+              :ARG2 (s1p2 / person
+                            :refer-number plural
+                            :refer-person 2nd
+                            :ARG0-of (s1c1 / číst-002
+                                             :aspect habitual
+                                             :modal-strength full-affirmative
+                                             :ARG1 (s1n1 / noviny
+                                                           :refer-number singular
+                                                           :possessor s1p1))
+                                :mod (s1v1 / vážený))
+              :ARG1 (s1h1 / have-temporal-91
+                         :aspect state
+                         :modal-strength full-affirmative
+                         :quote s1s1
+                         :vocative s1p2
+                         :ARG1 (s1o1 / oznamovat-002
+                                      :aspect performance
+                                      :modal-strength full-affirmative
+                                      :ARG0 s1p1
+                                      :ARG1 (s1i1 / informace
+                                                    :refer-number singular
+                                                    :mod (s1p5 / populární
+                                                                 :polarity -)
+                                                    :ARG1-of (s1i2 / identity-91
+                                                                     :aspect state
+                                                                     :modal-strength full-affirmative
+                                                                     :ARG2 (s1z1 / zvyšovat-001
+                                                                                   :aspect activity
+                                                                                   :modal-strength full-affirmative
+                                                                                   :ARG0 s1p1
+                                                                                   :ARG1 (s1c2 / cena
+                                                                                                 :refer-number singular
+                                                                                                 :part s1n1))))
+                                      :ARG2 s1p2)
+                         :ARG2 (s1r1 / rok
+                                       :refer-number singular
+                                       :mod (s1p4 / právě)))))
+
+# sentence level graph:
+(s2s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s2p1 / přečkat-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :quote s2s1
+        :ARG0 (s2p0 / person
+                     :refer-number plural
+                     :refer-person 1st)
+        :ARG1 (s2r1 / rok
+                      :refer-number singular
+                      :mod (s2c1 / celý))
+        :manner (s2z1 / změnit-001
+                        :aspect performance
+                        :modal-strength full-negative
+                        :polarity -
+                        :ARG0 s2p0
+                        :ARG1 (s2c2 / cena
+                                      :refer-number singular))
+        :condition (s2p2 / počítat-006
+                           :aspect activity
+                           :modal-strength full-negative
+                           :polarity -
+                           :ARG0 s2p0
+                           :ARG1 (s2z2 / zvýšit-001
+                                         :aspect performance
+                                         :modal-strength full-affirmative
+                                         :ARG0 s2p0
+                                         :ARG1 s2c2
+                                         :stimulus (s2z3 / zařadit-001
+                                                           :aspect performance
+                                                           :modal-strength full-affirmative
+                                                           :ARG0 s2p0
+                                                           :ARG1 (s2m1 / magazín
+                                                                         :name (s2n1 / name :op1 "Duha")
+                                                                         :mod (s2t1 / televizní)
+                                                                         :mod (s2b1 / barevný)
+                                                                         :refer-number singular)
+                                                           :ARG2 (s2n2 / news-media
+                                                                         :name (s2n3 / name :op1 "LN"))
+                                                           :manner (s2p3 / příloha
+                                                                           :mod-of s2m1
+                                                                           :part s2n2))))))
+
+# sentence level graph:
+(s3s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s3p1 / promítnout-002
+        :aspect performance
+        :modal-strength full-affirmative
+        :quote s3s1
+        :clausal-marker (s3v1 / však)
+        :ARG0 (s3p / person
+                     :refer-number plural
+                     :refer-person 1st)
+        :ARG2 (s3c1 / cena
+                      :refer-number singular
+                      :part (s3d1 / deník
+                                    :refer-number singular))
+        :temporal (s3n1 / nyní)
+        :ARG1 (s3z1 / zvýšit-se-001
+                      :aspect performance
+                      :modal-strength full-affirmative
+                      :ARG1 (s3n2 / náklad
+                                    :refer-number plural)
+                      :ARG1-of (s3n3 / nastat-001
+                                       :aspect performance
+                                       :modal-strength full-affirmative
+                                       :temporal (s3r1 / rok
+                                                         :refer-number singular)))))
+
+# sentence level graph:
+(s4s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s4a1 / and
+            :op1 (s4s1 / stát-014
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s4s
+                      :clausal-marker (s4p1 / proto)
+                      :temporal (s4c1 / date-entity
+                                        :quarter 4
+                                        :year (s4l1 / letošní))
+                      :ARG1 (s4n1 / news-media
+                                   :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))
+                      :ARG2 (s4k1 / monetary-quantity
+                             :quant 5
+                             :unit (s4k2 / koruna))
+                      :temporal (s4r2 / date-interval
+                                        :op1 (s4d1 / date-entity :weekday (s4p2 / pondělí))
+                                        :op2 (s4d2 / date-entity :weekday (s4c2 / čtvrtek))))
+            :op2 (s4s2 / stát-014
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s4s
+                      :clausal-marker s4p1
+                      :temporal s4c1
+                      :ARG1 s4n1
+                      :ARG2 (s4k3 / monetary-quantity
+                                    :quant 6
+                                    :unit s4k2)
+                      :temporal (s4d3 / date-entity :weekday (s4s3 / sobota)))))
+
+# sentence level graph:
+(s5s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s5z1 / zůstávat-004
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s5s1
+        :ARG1 (s5c1 / cena
+                      :refer-number singular
+                      :part (s5v1 / vydání
+                                    :refer-number singular
+                                    :mod (s5p1 / date-entity
+                                                 :weekday (s5p2 / pátek))
+                                    :mod (s5n1 / noviny
+                                                 :refer-number singular))
+                                    :ARG1-of (s5i1 / identity-91
+                                                     :aspect state
+                                                     :modal-strength full-affirmative
+                                                           :ARG2 (s5x1 / monetary-quantity
+                                                                         :quant 6.5
+                                                                         :unit (s5k2 / koruna))))))
+
+# sentence level graph:
+(s6s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s6a1 / and
+        :op1 (s6s1 / stát-014
+                     :aspect state
+                     :modal-strength full-affirmative
+                     :quote s6s
+                     :place (s6s2 / country
+                                    :name (s6n3 / name :op1 "Slovensko"))
+                     :ARG1 (s6l1 / news-media
+                                   :name (s6n2 / name :op1 "Lidové" :op2 "noviny"))
+                     :temporal (s6r2 / date-interval
+                                       :op1 (s6d1 / date-entity :weekday (s6p1 / pondělí))
+                                       :op2 (s6d2 / date-entity :weekday (s6c2 / čtvrtek)))
+                     :ARG2 (s6x1 / monetary-quantity
+                                   :quant 5.5
+                                   :unit (s6s3 / Sk)))
+        :op2 (s6s4 / stát-014
+                     :aspect state
+                     :modal-strength full-affirmative
+                     :quote s6s
+                     :place s6s2
+                     :ARG1 s6l1
+                     :temporal (s6d3 / date-entity :weekday (s6p3 / pátek))
+                     :ARG2 (s6x2 / monetary-quantity
+                                        :quant 7.5
+                                        :unit s6s3 ))
+        :op3 (s6s6 / stát-014
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s6s
+                      :place s6s2
+                      :ARG1 s6l1
+                      :temporal (s6d4 / date-entity :weekday (s6s7 / sobota))
+                      :ARG2 (s6x3 / monetary-quantity
+                                    :quant 6.5
+                                    :unit s6s3))))
+
+# sentence level graph:
+(s7s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s7c / consecutive
+        :op1 (s7v1 / vědět-001
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s7s1
+                      :ARG0 (s7p / person
+                                  :refer-number plural
+                                  :refer-person 1st)
+                      :ARG1  (s7b1 / have-mod-91
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG1 (s7z1 / zvýšit-001
+                                                        :aspect performance
+                                                        :modal-strength full-affirmative
+                                                        :ARG1 (s7c1 / cena
+                                                                 :refer-number singular)
+                                                                 :quant (s7k1 / každý))
+                                          :ARG2 (s7p1 / populární
+                                                        :polarity -)))
+         :clausal-marker (s7t1 / tak)
+         :op2 (s7d1 / doufat-001
+                       :aspect activity
+                       :modal-strength full-affirmative
+                       :quote s7s1
+                       :ARG0 s7p
+                       :ARG1 (s7v2 / vydržet-002
+                                     :aspect state
+                                     :modal-strength full-affirmative
+                                     :ARG0 s7p
+                                     :ARG1 (s7c2 / cena
+                                                   :refer-number singular
+                                                   :mod (s7t2 / tento))
+                                     :mod (s7o1 / opět)
+                                     :duration (s7r1 / rok
+                                                       :refer-number singular
+                                                       :clausal-marker (s7a1 / alespoň))
+                                                       :condition (s7z2 / zvyšovat-001
+                                                       :aspect activity
+                                                       :modal-strength full-affirmative
+                                                       :ARG1 (s7c3 / cena
+                                                                     :refer-number singular
+                                                                     :part (s7n1 / noviny
+                                                                                    :refer-number singular
+                                                                                    :mod (s7o2 / ostatní)))
+                                                       :temporal (s7c4 / čtvrtletí
+                                                                          :refer-number plural
+                                                                          :mod (s7d2 / další )))))))
+
+# sentence level graph:
+(s8s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s8v1 / vědět-001
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s8s
+        :concession (s8z1 / znamenat-001
+                            :aspect state
+                            :modal-strength full-affirmative
+                            :ARG1 (s8z2 / zvýšit-001
+                                          :aspect performance
+                                          :modal-strength full-affirmative
+                                          :ARG0 (s8e3 / person
+                                                        :refer-number plural
+                                                        :refer-person 1st)
+                                          :ARG1 (s8c0 / cena
+                                                        :refer-number singular)
+                                                        :ARG1-of (s8o1 / oznámit-001
+                                                                         :aspect performance
+                                                                         :modal-strength full-affirmative
+                                                                         :ARG0 s8e3
+                                                                         :ARG2 (s8e2 / person
+                                                                                      :refer-number plural)))
+                            :ARG2 (s8v2 / vydat-10
+                                          :aspect habitual
+                                          :modal-strength neutral-affirmative
+                                          :clausal-marker (s8j1 / jen)
+                                          :frequency (s8m1 / měsíčně)
+                                          :extent (s8p1 / průměrně)
+                                          :ARG0 s8e2
+                                          :ARG1 (s8c3 / částka
+                                                        :refer-number singular
+                                                        :ARG1-of (s8h1 / have-quant-91
+                                                                         :aspect state
+                                                                         :modal-strength full-affirmative
+                                                                         :ARG2 (s8v5 / volume-quantity)
+                                                                         :ARG3 (s8v3 / vysoký
+                                                                         :degree (s8m2 / more)
+                                                                         :extent (s8m3 / monetary-quantity
+                                                                                     :quant 21.70
+                                                                                     :unit (s8k1 / koruna)))))))
+       :ARG0 s8e3
+       :ARG1 (s8b1 / have-mod-91
+                     :aspect state
+                     :modal-strength neutral-affirmative
+                     :affectee (s8c1 / person
+                                       :refer-number plural
+                                       :ARG0-of (s8c4 / číst-002
+                                                        :aspect habitual
+                                                        :modal-strength full-affirmative)
+                                       :mod (s8n1 / některý))
+                     :ARG1 (s8p2 / předplatné
+                                   :quant (s8s1 / součet
+                                                  :mod (s8o2 / or
+                                                               :op1 (s8c2 / čtvrtletní)
+                                                               :op2 (s8r1 / roční))))
+                     :ARG2 (s8v4 / vysoký
+                               :extent (s8t1 / tak
+                                               :result (s8z3 / zvažovat-002
+                                                               :aspect activity
+                                                               :modal-strength neutral-affirmative
+                                                               :clausal-marker (s8i1 / i)
+                                                               :ARG0 s8c1
+                                                               :ARG1 (s8z4 / zrušit-001
+                                                                             :aspect performance
+                                                                             :modal-strength neutral-affirmative
+                                                                             :ARG0 s8c1
+                                                                             :ARG1 (s8o3 / odebírat-003
+                                                                                           :aspect habitual
+                                                                                           :modal-strength full-affirmative
+                                                                                           :ARG0 s8c1
+                                                                                           :ARG1 (s8n2 / noviny
+                                                                                                         :refer-number singular)))))))))
+
+# sentence level graph:
+(s9s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s9n1 / nabízet-001
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s9s1
+        :ARG0 (s9e1 / person
+                      :refer-number plural
+                      :refer-person 1st)
+        :ARG3 (s9c1 / person
+                     :refer-number plural
+                     :ARG0-of (s9c3 / číst-002
+                                      :aspect habitual
+                                      :modal-strength full-affirmative
+                                      :ARG1 (s9n2 / noviny
+                                                    :refer-number singular))
+                     :mod (s9t1 / tento))
+        :ARG1 (s9p1 / pomoci-002
+                      :aspect activity
+                      :modal-strength partial-affirmative
+                      :ARG0 s9e1
+                      :ARG2 s9c1)
+        :comparison (s9n3 / nabízet-001
+                            :aspect activity
+                            :modal-strength full-affirmative
+                            :ARG0 s9e1
+                            :ARG1 s9p1
+                            :ARG2 s9c1
+                            :temporal (s9v1 / vloni))))
+
+# sentence level graph:
+(s10s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s10n1 / nabízet-001
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s10s
+        :clausal-marker (s10p1 / pak)
+        :ARG0 (s10e1 / person
+                      :refer-number plural
+                      :refer-person 1st)
+        :ARG2 (s10p2 / person
+                       :refer-number plural
+                       :refer-person 3rd
+                       :ARG0-of (s10p3 / předplatit-001
+                                         :aspect performance
+                                         :modal-strength full-affirmative
+                                         :ARG1 (s10n3 / noviny
+                                                        :refer-number singular)
+                       :quant all))
+        :ARG1 (s10s1 / soutěžit-001
+                       :aspect activity
+                       :modal-strength partial-affirmative
+                       :ARG0 s10p2
+                       :mod (s10n2 / nový))))
+
+# sentence level graph:
+(s11s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s11v1 / vědět-001
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s11s1
+         :vocative (s11p1 / person
+                            :refer-number plural
+                            :refer-person 2nd
+                            :ARG0-of (s11c1 / číst-002
+                                              :aspect habitual
+                                              :modal-strength full-affirmative
+                                              :ARG1 (s11n1 / news-media
+                                                             :wiki "Q1197747"
+                                                             :name (s11n2 / name :op1 "Lidové" :op2 "noviny")))
+                             :mod (s11v2 / vážený))
+         :ARG0 (s11e1 / person
+                        :refer-number plural
+                        :refer-person 1st)
+         :ARG2 (s11d1 / dopis
+                       :ARG0 s11c1
+                       :refer-number plural)
+         :ARG1 (s11h1 / hodnotit-003
+                        :aspect activity
+                        :modal-strength full-affirmative
+                        :extent (s11v3 / většinou)
+                        :manner (s11k1 / kladně)
+                        :ARG0 s11p1
+                        :ARG1 (s11z1 / změna
+                                       :refer-number plural
+                                       :ARG1-of (s11p2 / probíhat-002
+                                                         :aspect activity
+                                                         :modal-strength full-affirmative
+                                                         :place s11n1)))))
+
+# sentence level graph:
+(s12s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s12p1 / psát-007
+         :aspect activity
+         :modal-strength full-affirmative
+         :quote s12s
+         :clausal-marker (s12t1 / také)
+         :ARG0 (s12p2 / person
+                        :refer-number plural
+                        :ARG0-of (s12c1 / číst-002
+                                          :aspect habitual
+                                          :modal-strength full-affirmative
+                                          :ARG1 (s12d1 / news-media
+                                                         :wiki "Q12033489"
+                                                         :name (s12n2 / name :op1 "Lidová" :op2 "demokracie")))
+                        :mod (s12b1 / bývalý))
+         :ARG2 (s12e1 / person
+                        :refer-number plural
+                        :refer-person 1st)
+         :ARG1 (s12s1 / souhlasit-003
+                       :aspect state
+                       :modal-strength full-affirmative
+                       :quote s12p1
+                       :ARG0 s12c1
+                       :ARG2 (s12o1 / odebírat-003
+                                      :aspect habitual
+                                      :modal-strength full-affirmative
+                                      :ARG0 s12c1
+                                      :ARG1 (s12n1 / news-media
+                                                     :wiki "Q1197747"
+                                                     :name (s12n3 / name :op1 "Lidové" :op2 "noviny"))
+                                      :mod (s12d2 / další))
+                       :concession (s12l2 / litovat-001
+                                            :aspect state
+                                            :modal-strength full-affirmative
+                                            :ARG0 s12c1
+                                            :ARG1 (s12z1 / zaniknout-001
+                                                           :aspect performance
+                                                           :modal-strength full-affirmative
+                                                           :ARG1 (s12l3 / news-media
+                                                                          :wiki "Q12033489"
+                                                                          :name (s12n4 / name :op1 "LD")))))))
+
+# sentence level graph:
+(s13s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s13v1 / věřit-001
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s13s
+        :clausal-marker (s13p1 / proto)
+        :ARG0 (s13e1 / person
+            :refer-number plural
+            :refer-person 1st)
+        :ARG1 (s13a1 / and
+            :op1 (s13p2 / pochopit-001
+                          :aspect state
+                          :modal-strength partial-affirmative
+                          :ARG0 (s13e2 / person
+                                         :refer-number plural
+                                         :refer-person 2nd)
+                          :ARG1 (s13b1 / have-mod-91
+                                         :aspect state
+                                         :modal-strength full-affirmative
+                                         :ARG0 (s13z1 / zvýšit-001
+                                                        :aspect performance
+                                                        :modal-strength full-affirmative
+                                                        :ARG0 s13e1
+                                                        :ARG1 (s13c1 / cena
+                                                                       :refer-number singular)
+                                                        :mod (s13s1 / současný))
+                                         :ARG1 (s13n1 / nutný)))
+            :op2 (s13z2 / zůstat-002
+                         :aspect state
+                         :modal-strength full-affirmative
+                         :ARG1 s13e2
+                         :ARG2 (s13h1 / have-mod-91
+                                        :aspect state
+                                        :modal-strength full-affirmative
+                                        :ARG1 s13e2
+                                        :ARG2 (s13v2 / věrný))))))
+
+# sentence level graph:
+(s14p1 / publication-91
+         :ARG0 (s14k1 / person
+                        :name (s14n1 / name :op1 "Michal" :op2 "Klíma")
+                        :ARG1-of (s14h1 / have-org-role-91
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG2 (s14n5 / news-media
+                                                         :wiki "Q1197747"
+                                                         :name (s14n2 / name :op1 "LN"))
+                                          :ARG3 (s14r1 / ředitel))))
+
+# sentence level graph:
+(s1p3 / publication-91
+	:ARG3 (s1t1 / thing)
+	:ARG1 (s1p1 / pokračovat-004
+		:aspect activity
+		:modal-strength full-affirmative
+        	:ARG1 (s1v1 / vyšetřovat-001
+        		:aspect activity
+        		:modal-strength full-affirmative
+            		:ARG0 (s1o1 / organization
+            			:name (s1n1 / name
+            				:op1 "parlament")
+            			:refer-number singular)
+            		:ARG1 (s1c1 / činit-005
+                		:ARG0 (s1k1 / kontrarozvědka
+                    			:refer-number singular)
+                		:aspect activity
+                		:modal-strength full-affirmative))))
+
+# sentence level graph:
+(s2p1 / publication-91
+	:ARG3 (s2t2 / thing)
+	:place (s2h1 / human-settlement
+		:name (s2n1 / name
+			:op1 "Praha")
+        	:refer-number singular))
+
+# sentence level graph:
+(s3p4 / pokračovat-004
+	:aspect activity
+	:modal-strength full-affirmative
+	:clausal-marker (s3d1 / de_facto)
+	:duration (s3d2 / dále)
+        :ARG1 (s3s2 / šetřit-003
+            :modal-strength full-affirmative
+            :aspect activity
+            :ARG1 (s3o3 / organization
+            	:name (s3n3 / name
+            		:op1 "Bezpečnostní"
+            		:op2 "informační"
+            		:op3 "služba")
+            	:refer-number singular)
+            :ARG0 (s3o1 / orgán
+            	:refer-number singular
+            	:part (s3o2 / organization
+            		:name (s3n1 / name
+            			:op1 "parlament"))
+            	:purpose (s3k1 / kontrolovat-001
+            		:aspect activity
+            		:modal-strength full-affirmative
+                    	:ARG0 s3o1
+                        :ARG1 s3o3)))
+        :concession (s3a1 / and
+            :op1 (s3u1 / ukončit-001
+            	:aspect performance
+            	:modal-strength full-affirmative
+            	:temporal (s3b4 / before
+                	:op1 (s3t2 / týden))
+		:ARG0 s3o1
+                :ARG1 (s3v1 / vyšetřovat-001
+                    :aspect activity
+                    :modal-strength full-affirmative
+                    :ARG0 s3o1
+                    :ARG1 (s3p2 / podnět
+                        :source (s3p5 / political-organization
+                        	:name (s3n2 / name
+                        		:op1 "ODA")
+                        	:refer-number singular)
+                        :regard (s3k2 / kontrarozvědka
+                            :refer-number singular)
+                        :refer-number plural)))
+            :op2 (s3k3 / konstatovat-002
+                :ARG0 s3o1
+                :ARG1 (s3p3 / porušit-001
+                    :ARG0 s3o3
+                    :ARG1 (s3z1 / zákon
+                        :refer-number singular)
+                    :aspect performance
+                    :polarity -
+                    :modal-strength full-negative
+                    :quote s3k3)
+                :modal-strength full-affirmative
+                :aspect performance)))
+
+# sentence level graph:
+(s4p1 / připustit-004
+        :temporal (s4v1 / včera)
+        :ARG1 (s4t1 / event)
+        :ARG0 (s4p4 / person
+        	:ARG1-of (s4h1 / have-org-role-91
+    	   		:aspect state
+    	    		:modal-strength full-affirmative
+    	    		:ARG3 (s4p5 / poslanec
+    	    			:refer-number singular)
+    	    		:ARG2  (s4o2 / organization
+    	    			:name (s4n3 / name
+    	    				:op1 "parlament")))
+        	:ARG1-of (s4h2 / have-org-role-91
+        		:modal-strength full-affirmative
+        		:aspect state
+        		:ARG2 (s4k1 / komise
+        			:refer-number singular)
+        		:ARG3 (s4c1 / člen
+        			:refer-number singular))
+        	:ARG1-of (s4h3 / have-org-role-91
+    	   		:aspect state
+    	    		:modal-strength full-affirmative
+    	    		:ARG2  (s4p6 / political-organization
+    	    			:refer-number singular
+    	    			:name (s4n1 / name
+    	    				:op1 "KDU-ČSL")))
+        	:name (s4n2 / name
+        		:op1 "Pavel"
+        		:op2 "Severa")
+            	:refer-number singular)
+        :temporal (s4a2 / after
+        	:op1 (s4s1 / sejít-se-001
+        		:aspect performance
+        		:modal-strength full-affirmative
+                	:ARG0 (s4o1 / orgán
+                		:refer-number singular)))
+        :modal-strength full-affirmative
+        :aspect performance)
+
+# sentence level graph:
+(s5s1 / shodnout-se-001
+	:aspect performance
+	:modal-strength full-affirmative
+        :ARG0 (s5k1 / komise
+            :refer-number singular)
+        :ARG2 s5k1
+        :ARG1 (s5d1 / dokončit-001
+            :aspect performance
+            :modal-strength full-affirmative
+            :ARG0 s5k1
+            :ARG1 (s5s2 / šetřit-003
+            	    :aspect activity
+            	    :modal-strength full-affirmative
+                    :ARG0 s5k1
+                    :ARG1-of (s5p1 / provést-002
+                        :ARG0 s5k1
+                        :mod (s5j1 / ještě)
+                        :aspect performance
+                        :modal-strength full-negative
+                        :polarity -))
+                    :example (s5p2 / porovnat-001
+                            :aspect performance
+                            :modal-strength full-negative
+                            :polarity -
+                            :ARG0 s5k1
+                            :ARG1 (s5z1 / zpráva
+                                :mod (s5e5 / extremismus
+                                    :refer-number singular)
+                                :refer-number singular)
+                            :ARG2 (s5v1 / vysvětlit-001
+                                :aspect performance
+                                :modal-strength full-affirmative
+                                :ARG0 (s5p3 / person
+                                    :name (s5n1 / name
+                                        :op1 "Stanislav"
+                                        :op2 "Devátý")
+                                        :refer-number singular
+                                        :ARG1-of (s5h1 / have-org-role-91
+                                		:aspect state
+                                    		:modal-strength full-affirmative
+                                    		:ARG3 (s5r1 / ředitel
+                                        		:refer-number singular)
+                                    		:ARG2  (s5o1 / organization
+                                            		:name (s5n2 / name
+                                                		:op1 "BIS")
+                                            		:refer-number singular)))))))
+
+# sentence level graph:
+(s6s3 / say-91
+	:aspect state
+	:modal-strength full-affirmative
+	:ARG1 (s6j1 / jít-035
+		:aspect state
+		:modal-strength full-affirmative
+		:quote s6s3
+        	:mod (s6s1 / stále)
+        	:ARG2 (s6z1 / získat-001
+        		:aspect performance
+        		:modal-strength neutral-affirmative
+        		:polarity (s6u2 / umr-unknown)
+            		:ARG0 (s6s2 / služba
+                		:mod (s6t1 / tajný
+                    		:refer-number singular))
+            		:ARG1 (s6u1 / údaj
+                		:quant all)
+           	 	:source (s6z2 / zdroj
+                		:mod (s6o1 / otevřený)
+                		:refer-number plural))))
+
+# sentence level graph:
+(s7p1 / pozvat-001
+	:aspect performance
+	:modal-strength full-affirmative
+        :goal (s7k1 / komise
+            :refer-number singular)
+        :ARG1 (s7c1 / člověk
+            :refer-number plural
+            :ARG2-of (s7s1 / slyšet-001
+            	:aspect activity
+            	:modal-strength full-affirmative
+            	:ARG1-of (s7n1 / navrhnout-002
+  		    :aspect performance
+            	    :modal-strength full-affirmative
+                    :ARG0 (s7p3 / person
+                    	:refer-number singular
+                    	:name (s7n2 / name
+                    		:op1 "Kalvoda"
+                    		:op2 "Jan"))
+                    	:ARG1-of (s7h1 / have-org-role-91
+        			:modal-strength full-affirmative
+        			:aspect state
+        			:ARG2 (s7p4 / political-organization
+                        		:name (s7n3 / name
+                        			:op1 "ODA")
+        				:refer-number singular)
+        			:ARG3 (s7p2 / předseda
+        				:refer-number singular))))))
+
+# sentence level graph:
+(s8p1 / pozvat-001
+	:aspect performance
+	:modal-strength full-affirmative
+        :clausal-marker (s8i1 / i)
+        :ARG1 (s8p4 / person
+        	:refer-number singular
+        	:name (s8n1 / name
+        		:op1 "Michal"
+        		:op2 "Čelechovský")
+        	:ARG1-of (s8h1 / have-org-role-91
+        		:modal-strength full-affirmative
+        		:aspect state
+        		:ARG2 (s8o1 / organization
+                        	:name (s8n2 / name
+                        		:op1 "BIS")
+                        	:refer-number singular)
+        		:ARG3 (s8p2 / předseda
+        			:mod (s8b2 / bývalý)
+        			:refer-number singular))
+        :ARG1-of (s8p3 / požádat-001
+        	:aspect performance
+        	:modal-strength full-affirmative
+                :manner (s8s1 / sám
+                    :refer-number singular)
+                :ARG0 s8p4)))
+
+# sentence level graph:
+(s9b1 / but-91
+        :ARG1 (s9p1 / předpokládat-001
+            :aspect state
+            :modal-strength full-negative
+            :polarity -
+            :ARG0 (s9p5 / person
+            	:name (s9n2 / name
+            		:op1 "Severa")
+                :refer-number singular)
+            :ARG1 (s9r1 / revokovat-001
+            	:aspect performance
+            	:modal-strength full-affirmative
+                :ARG1 (s9u1 / usnesení
+                	:refer-number plural
+                    	:ARG1-of (s9p6 / přijmout-005
+                    		:aspect performance
+                    		:modal-strength full-affirmative
+                    		:temporal (s9j1 / již)))))
+        :ARG2 (s9o1 / obsahovat-001
+            :modal-strength partial-affirmative
+            :aspect state
+            :ARG1 (s9s3 / skutečnost
+                :mod (s9n1 / nový)
+                :mod (s9p3 / případný)
+                :refer-number plural)
+            :ARG0 (s9z1 / zpráva
+                :ARG1-of (s9p4 / předložit-001
+                    :aspect performance
+                    :modal-strength neutral-affirmative
+                    :ARG0 (s9k1 / komise
+                        :refer-number singular)
+                    :ARG2 (s9s4 / sněmovna
+                        :refer-number singular)
+                    :place (s9s5 / schůze
+                        :temporal (s9d1 / date-entity
+                            :month 3)
+                        :refer-number singular)))))
+
+# sentence level graph:
+(s10a1 / and
+        :op1 (s10r1 / rozdělit-002
+            :modal-strength full-affirmative
+            :aspect performance
+            :ARG0 (s10p2 / person
+            	:refer-number plural
+            	:ARG1-of (s10h1 / have-org-role-91
+    	   		:aspect state
+    	    		:modal-strength full-affirmative
+    	    		:ARG3 (s10c1 / člen
+    	    			:refer-number plural)
+    	    		:ARG2 (s10k1 / komise
+                    		:refer-number singular)))
+            :temporal (s10v1 / včera)
+            :ARG2 s10p2
+            :ARG1 (s10u1 / úkol
+                :temporal (s10d1 / den
+                    :mod (s10p1 / příští)
+                    :refer-number plural)
+                :refer-number plural))
+        :op2 (s10s1 / sejít-se-001
+            :aspect performance
+            :modal-strength full-affirmative
+            :ARG0 s10p2
+            :ARG1 s10p2
+            :purpose (s10j1 / jednat-001
+                :aspect activity
+                :modal-strength full-affirmative
+                :ARG0 s10p2
+                :mod (s10d2 / dále))
+            :temporal (s10d3 / date-entity
+            	:month 3
+            	:day 8)))
+
+# sentence level graph:
+(s11r1 / říci-008
+	:aspect performance
+	:modal-strength full-affirmative
+        :ARG0 (s11p4 / person
+        	:name (s11n3 / name
+        		:op1 "Ivan"
+        		:op2 "Mašek")
+                :refer-number singular
+                :ARG1-of (s11h1 / have-org-role-91
+                	:aspect state
+    	    		:modal-strength full-affirmative
+    	    		:ARG3 (s11p5 / poslanec
+    	    			:refer-number singular)
+    	    		:ARG2  (s11o2 / organization))
+    	    	:ARG1-of (s11h2 / have-org-role-91
+    	   		:aspect state
+    	    		:modal-strength full-affirmative
+    	    		:ARG2  (s11p6 / political-organization
+    	    			:refer-number singular
+    	    			:name (s11n4 / name
+    	    				:op1 "ODA"))))
+        :ARG2 (s11n1 / novinář
+            :refer-number plural)
+        :ARG1 (s11t1 / trvat-002
+            :aspect state
+            :modal-strength full-affirmative
+            :quote s11r1
+            :ARG0 s11p4
+            :ARG1 (s11u1 / úkon
+            	:refer-number plural
+                :mod (s11k1 / kontrolní)
+                :quant all
+                :ARG1-of (s11n2 / navrhnout-002
+                    :aspect performance
+                    :modal-strength full-affirmative
+                    :quote s11r1
+                    :temporal (s11p2 / projednávat-002
+                    	:aspect activity
+                    	:modal-strength full-affirmative
+                    	:quote s11r1
+                        :ARG1 (s11p3 / podnět
+                            :source (s11s1 / strana
+                            	:refer-number singular
+                                :possessor s11p4)))))))
+
+# sentence level graph:
+(s1s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s1e1 / person
+                      :refer-number singular
+                      :refer-person 1st)
+        :ARG2 (s1e2 / person
+                      :refer-number singular
+                      :refer-person 2nd)
+        :ARG1 (s1m1 / have-91
+                      :quote s1s1
+                      :ARG1 s1e1
+                      :ARG2 (s1a1 / auto
+                                    :quant 2)
+                      :aspect state
+                      :modal-strength full-affirmative))
+
+# sentence level graph:
+(s2s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s2e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s2e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s2p1 / povědět-001
+        :aspect performance
+        :modal-strength neutral-affirmative
+        :polarity umr-unknown
+        :mode interoggative
+        :quote s2s1
+        :clausal-marker (s2j1 / ještě)
+        :ARG0 s2e2
+        :ARG2 s2e1
+        :ARG1 (s2n1 / thing
+                      :refer-number singular)
+        :ARG3 (s2f1 / fotka
+                      :refer-number singular
+                      :mod (s2t1 / ten))))
+
+# sentence level graph:
+(s3s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s3e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s3e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s3n1 / nechat-009
+        :aspect performance
+        :modal-strength full-affirmative
+        :quote s3s1
+        :ARG0 s3e1
+        :ARG1 (s3n2 / nachromovat-001
+                      :aspect performance
+                      :modal-strength full-affirmative
+                      :affectee s3e1
+                      :ARG0 (s3e3 / person
+                                    :refer-person 3rd)
+                      :ARG1 (s3a1 / and
+                                    :op1 (s3l1 / lampa
+                                                 :refer-number singular)
+                                    :op2 (s3r1 / roura
+                                                 :refer-number plural)
+                                    :op3 (s3t1 / teleskop
+                                                 :refer-number plural))
+                      :parenthesis (s3v1 / vidět-007
+                                           :aspect state
+                                           :modal-strength full-affirmative
+                                           :ARG0 s3e2
+                                           :ARG1 s3n2))))
+
+# sentence level graph:
+(s4s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s4e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s4e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s4b1 / have-mod-91
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s4s1
+        :ARG1 (s4v1 / thing
+                      :quant all)
+        :ARG2 (s4c1 / chróm)))
+
+# sentence level graph:
+(s5s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s5e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s5e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s5b1 / have-mod-91
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s5s1
+        :ARG1 (s5m1 / motorka
+                      :refer-number singular)
+        :ARG2 (s5d1 / dobrý)))
+
+# sentence level graph:
+(s6s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s6e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s6e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s6d1 / dělat-010
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s6s1
+        :mode interoggative
+        :ARG0 (s6k1 / umr-unknown)
+        :affectee s6e2
+        :ARG1 (s6t1 / event)))
+
+# sentence level graph:
+(s7s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s7e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s7e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s7d1 / dělat-010
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s7s1
+        :ARG1 (s7t1 / event)
+        :ARG0 (s7k1 / kamarád
+            :refer-number plural)
+        :place (s7s2 / company
+                       :wiki "Q29637"
+                       :name (s7n1 / name :op1 "Škodovka"))))
+
+# sentence level graph:
+(s8s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s8e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s8e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s8b1 / have-ord-91
+        :aspect state
+        :modal-strength neutral-affirmative
+        :polarity umr-unknown
+        :mode interoggative
+        :quote s8s1
+        :ARG1 (s8m1 / motorka
+                     :refer-number singular
+                     :ARG1-of (s8b2 / belong-91
+                                      :aspect state
+                                      :modal-strength full-affirmative
+                                      :ARG2 s8e1))
+        :ARG2 (s8p1 / ordinal-entity :value 1)))
+
+# sentence level graph:
+(s9s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s9e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s9e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s9b1 / have-ord-91
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s9s1
+        :ARG1 (s9m1 / motorka
+                     :refer-number singular
+                     :ARG1-of (s9b2 / belong-91
+                                      :aspect state
+                                      :modal-strength full-affirmative
+                                      :ARG2 s9e1))
+        :ARG2 (s9p1 / ordinal-entity :value 1)))
+
+# sentence level graph:
+(s10s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s10e2 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s10e1 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s10v1 / vážit-si-001
+        :clausal-marker (s10t1 / taky)
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s10s1
+        :ARG0 s10e2
+        :ARG1 (s10e3 / thing
+            :refer-number singular)))
+
+# sentence level graph:
+(s11s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s11e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s11e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s11p1 / podívat-se-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :quote s11s1
+        :ARG0 (s11e3 / person
+                       :refer-number plural
+                       :refer-person 1st)
+        :ARG1 (s11f1 / fotka
+                       :refer-number singular
+                       :mod (s11d1 / další))))
+
+# sentence level graph:
+(s12s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s12e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s12e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s12b1 / identity-91
+         :aspect state
+         :mode interoggative
+         :modal-strength full-affirmative
+         :quote s12s1
+         :ARG1 (s12t1 / thing
+                        :refer-number singular)
+         :ARG2 (s12c1 / umr-unknown)))
+
+# sentence level graph:
+(s13s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s13e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s13e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s13b1 / identity-91
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s13s1
+         :ARG1 (s13t1 / thing
+                        :refer-number singular)
+         :ARG2 (s13t2 / tábor
+                       :refer-number singular
+                       :mod (s13j1 / organization
+                                     :wiki "Q6314445"
+                                     :name (s13n3 / name :op1 "Junák"))
+                       :place (s13v1 / human-settlement
+                                       :name (s13n1 / name :op1 "Vrbice")
+                                       :place (s13s2 / human-settlement
+                                                       :name (s13n2 / name :op1 "Stříbro")))
+                       :temporal (s13r1 / date-entity
+                                          :year 1970)
+                       :ARG2-of (s13d1 / have-org-role-91
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG1 s13e1
+                                          :ARG3 (s13v2 / vedoucí
+                                                  :mod (s13o1 / oddíl
+                                                  :refer-number singular))))))
+
+# sentence level graph:
+(s14s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s14e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s14e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s14v1 / vidět-007
+        :aspect state
+        :modal-strength full-affirmative
+        :mode interrogative
+        :quote s14s1
+        :ARG0 (s14e3 / person
+                       :refer-number plural
+                       :refer-person 1st)
+        :ARG1 (s14e4 / umr-unknown)
+        :place (s14f1 / fotka
+                :mod (s14t1 / ten))))
+
+# sentence level graph:
+(s15s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s15e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s15e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s15a1 / and
+        :op1 (s15b1 / have-place-91
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s15s1
+                      :ARG1 (s15v1 / person
+                                     :refer-number singular
+                                     :name (s15n1 / name :op1 "Vlásek"))
+                      :ARG2 (s15z1 / zleva)
+                      :parenthesis (s15b2 / have-org-role-91
+                                            :aspect state
+                                            :modal-strength full-affirmative
+                                            :ARG1 s15v1
+                                            :ARG3 (s15v2 / vedoucí)
+                                            :ARG2 (s15s2 / skaut
+                                                           :mod (s15c1 / celý))))
+        :op2 (s15b3 / have-place-91
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s15s1
+                      :clausal-marker (s15p1 / pak)
+                      :ARG2 (s15t2 / place)
+                      :ARG1 (s15a2 / and
+                                     :op1 (s15s3 / person
+                                                   :refer-number singular
+                                                   :ARG2-of (s15h1 / have-rel-role-92
+                                                                     :aspect state
+                                                                     :modal-strength full-affirmative
+                                                                     :ARG1 s15e1
+                                                                     :ARG4 (s15s4 / sestra)))
+                                      :op2 (s15p2 / person
+                                                    :refer-number singular
+                                                    :name (s15n2 / name :op1 "Pepík"))))))
+
+# sentence level graph:
+(s16s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s16e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s16e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s16j1 / jmenovat-se-002
+         :aspect state
+         :modal-strength full-affirmative
+         :mode interrogative
+         :quote s16s1
+         :ARG2 (s16j2 / umr-unknown)
+         :ARG1 (s16e3 / person
+                        :refer-number singular
+                        :refer-person 3rd)))
+
+# sentence level graph:
+(s17s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s17e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s17e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s17z1 / zemřít-001
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s17s1
+        :temporal (s17u1 / už)
+        :ARG1 (s17e3 / person)))
+
+# sentence level graph:
+(s18s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s18e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s18e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s18m1 / mrzet-001
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s18s1
+         :ARG0 s18e1
+         :ARG1 (s18t1 / event)))
+
+# sentence level graph:
+(s19s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s19e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s19e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s19b1 / have-place-91
+              :aspect state
+              :modal-strength full-affirmative
+              :quote s19s1
+              :ARG1 (s19p1 / person
+                             :refer-number singular
+                             :name (s19n2 / name :op1 "Pepík"))
+              :ARG2 (s19t1 / place)))
+
+# sentence level graph:
+(s20s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s20e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s20e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s20b1 / but-91
+        :ARG1 (s20j1 / jmenovat-004
+                       :aspect habitual
+                       :modal-strength full-negative
+                       :polarity -
+                       :quote s20s1
+                       :ARG0 (s20e3 / person
+                                      :refer-number plural
+                                      :refer-person 1st)
+                       :ARG1 s20e3
+                       :ARG2 (s20j2 / jméno
+                                      :refer-number singular))
+        :ARG2 (s20j3 / jmenovat-004
+                       :aspect habitual
+                       :modal-strength full-affirmative
+                       :quote s20s1
+                       :ARG0 s20e3
+                       :ARG1 s20e3
+                       :ARG2 (s20p1 / přezdívka
+                                      :refer-number singular)
+                       :frequency (s20v1 / vždycky))))
+
+# sentence level graph:
+(s21s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s21e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s21e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s21m1 / have-91
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s21s1
+        :ARG0 (s21k1 / person
+                       :quant each
+                       :refer-person 1st)
+        :ARG1 (s21p1 / přezdívka
+                       :refer-number singular
+                       :mod (s21n1 / nějaký))))
+
+# sentence level graph:
+(s22s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s22e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s22e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s22b1 / identity-91
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s22s1
+         :ARG1 (s22v1 / person
+                        :refer-number singular
+                        :refer-person 3rd
+                        :name (s22n1 /name :op1 "Vlásek"))
+         :ARG2 (s22t1 / person
+                        :refer-person 3rd
+                        :refer-number singular
+                        :ord (s22p1 / ordinal-entity :value 1))))
+
+# sentence level graph:
+(s23s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s23e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s23e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s23b1 / identity-91
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s23s1
+         :ARG1 s23e1
+         :ARG2 (s23e3 / umr-empty)))
+
+# sentence level graph:
+(s24s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s24e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s24e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s24b1 / identity-91
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s24s1
+         :ARG1 (s24p1 / person
+                        :refer-number singular
+                        :refer-person 3rd)
+         :ARG2 (s24p2 / person
+                        :refer-number singular
+                        :name (s24n2 / name :op1 "Pírko"))
+         :concession (s24v1 / vypadat-004
+                              :aspect state
+                              :modal-strength full-negative
+                              :polarity -
+                              :ARG0 s24p1
+                              :comparison (s24v2 / vypadat-004
+                                                   :aspect state
+                                                   :modal-strength full-affirmative
+                                                   :ARG0 (s24p3 / pírko
+                                                                 :refer-number singular)))))
+
+# sentence level graph:
+(s25s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s25e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s25e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s25z1 / zemřít-001
+         :aspect performance
+         :modal-strength full-affirmative
+         :quote s25s1
+         :clausal-marker (s25a1 / a)
+         :ARG1 (s25s2 / person
+                        :refer-number singular
+                        :ARG2-of (s25h1 / have-rel-role-92
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG1 (s25p1 / person
+                                                         :refer-number singular
+                                                         :refer-person 1st)
+                                          :ARG4 (s25s3 / sestra))
+                        :mod (s25t1 / ten)
+                        :parenthesis (s25j1 / jmenovat-se-001
+                                              :aspect state
+                                              :modal-strength full-affirmative
+                                              :quote s25s1
+                                              :ARG2 (s25j2 / Jitka)
+                                              :ARG1 s25s1))))
+
+# sentence level graph:
+(s1s1 / say-91
+	:aspect activity
+	:modal-strength full-affirmative
+	:ARG0 (s1p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s1p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s1e1 / exist-91
+		:quote s1s1
+        	:frequency (s1v1 / vždycky)
+        	:clausal-marker (s1a1 / ale)
+        	:ARG1 (s1l1 / legrace
+            		:mod (s1v2 / velký
+                	:refer-number singular))
+        	:aspect state
+        	:modal-strength full-affirmative))
+
+# sentence level graph:
+(s2s1 / say-91
+	:aspect activity
+	:modal-strength full-affirmative
+	:ARG0 (s2p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s2p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s2h2 / have-mod-91
+		:quote s2s1
+		:aspect state
+		:modal-strength full-affirmative
+		:clausal-marker (s2h1 / hlavně)
+		:ARG1 (s2a1 / and
+            		:op1 (s2v1 / večer
+                		:refer-number plural)
+            		:op2 (s2t1 / thing
+            			:refer-number plural)
+            	:ARG2 (s2p3 / prima))))
+
+# sentence level graph:
+(s3s1 / say-91
+	:ARG0 (s3p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s3p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s3v1 / vidět-007
+	    :quote s3s1
+	    :aspect state
+	    :modal-strength full-affirmative
+            :ARG1 (s3n1 / nálada
+            	:mod (s3d1 / dobrý)
+            	:refer-number singular)
+            :ARG0 s3p1)
+        :aspect activity
+        :modal-strength full-affirmative)
+
+# sentence level graph:
+(s4s1 / say-91
+	:modal-strength full-affirmative
+        :aspect activity
+	:ARG0 (s4p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s4p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s4h1 / have-source-91
+		:quote s4s1
+		:ARG1 (s4e1 / event)
+        	:ARG2 (s4f1 / fotka
+            		:mod (s4t1 / ten)
+            		:refer-number singular)
+        	:modal-strength full-affirmative
+        	:aspect state))
+
+# sentence level graph:
+(s5s1 / say-91
+	:modal-strength full-affirmative
+        :aspect activity
+	:ARG0 (s5p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s5p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s5h1 / have-mod-91
+		:ARG1 (s5e1 / event)
+        	:ARG2 (s5p3 / pravda
+            		:refer-number singular)
+		:modal-strength full-affirmative
+        	:aspect state
+        	:quote s5s1))
+
+# sentence level graph:
+(s6s2 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s6p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s6p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s6h2 / have-mod-91
+		:aspect state
+		:modal-strength full-affirmative
+		:quote s6s2
+        	:ARG2 (s6h1 / hlavní)
+        	:ARG1 (s6s1 / sednout-si-002
+            		:modal-strength neutral-affirmative
+            		:aspect performance
+            		:ARG1 (s6p3 / person
+            			:refer-number plural))))
+
+# sentence level graph:
+(s7s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s7p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s7p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s7v1 / vídat-001
+		:quote s7s1
+		:aspect activity
+		:modal-strength neutral-affirmative
+		:mode interrogative
+      		:polarity umr-unknown
+      		:ARG0 (s7p3 / person
+      			:refer-number plural
+      			:refer-person 2nd)
+		:ARG1 s7p3))
+
+# sentence level graph:
+(s8s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s8p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s8p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s8i1 / identity-91
+		:quote s8s1
+		:aspect state
+		:modal-strength full-affirmative
+		:clausal-marker (s8p3 / prakticky)
+		:ARG1 (s8t1 / ten
+            		:refer-number singular)
+            	:ARG2 (s8t2 / třída
+            		:mod (s8t3 / ten)
+                	:refer-number singular
+            		:ARG1-of (s8s2 / scházet-se-001
+            			:aspect habitual
+            			:modal-strength full-affirmative
+                		:ARG0 s8p1
+                		:temporal (s8t4 / teď)
+                		:frequency (s8r2 / rate-entity-91
+                			:ARG3 (s8t5 / temporal-quantity
+                        			:quant 1
+                        			:unit (s8r1 / rok)))))))
+
+# sentence level graph:
+(s9s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s9p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s9p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s9a1 / and
+        	:op1 (s9h1 / have-frequency-91
+        		:aspect state
+        		:modal-strength full-affirmative
+        		:quote s9s1
+        		:ARG1 (s9e1 / event
+        			:aspect habitual
+            			:modal-strength full-affirmative)
+                	:ARG2 (s9r3 / rate-entity-91
+        			:ARG3 (s9t2 / temporal-quantity
+                        		:quant 2
+                        		:unit (s9r1 / rok)))
+                	:temporal (s9d2 / dřív))
+               	:op2 (s9h2 / have-frequency-91
+        		:aspect state
+        		:modal-strength full-affirmative
+        		:quote s9s1
+        		:ARG1 s9e1
+                	:ARG2 (s9r4 / rate-entity-91
+        			:ARG3 (s9t3 / temporal-quantity
+        				:quant 1
+                        		:unit s9r1))
+                	:temporal (s9t4 / teď))))
+
+# sentence level graph:
+(s10s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s10p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s10p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s10i1 / identity-91
+		:aspect state
+        	:modal-strength full-affirmative
+        	:quote s10s1
+		:ARG1 (s10t1 / ten
+           		:refer-number singular)
+        	:ARG2 (s10p3 /person
+        		:refer-number plural
+        		:ARG1-of (s10m1 / maturovat-001
+        			:aspect performance
+        			:modal-strength full-affirmative)
+        		 :ARG0-of (s10j1 / jezdit-002
+        		 	:aspect habitual
+        			:modal-strength full-affirmative
+                		:frequency (s10p4 / pravidelně)
+                		:ARG1 (s10s2 / sraz
+                    			:mod (s10t2 / ten)
+                        		:refer-number plural)))))
+
+# sentence level graph:
+(s11s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s11p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s11p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s11c1 / chodit-006
+		:aspect habitual
+		:modal-strength full-negative
+		:quote s11s1
+        	:polarity -
+        	:ARG0 (s11p3 / person
+        		:quant 1)))
+
+# sentence level graph:
+(s12s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :clausal-marker (s12z1 / zrovna)
+        :ARG0 (s12p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s12p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s12p3 / person
+		:refer-number singular
+        	:mod (s12t1 / tadyhleten)
+        	:ARG1-of (s12h1 / have-place-91
+        		:aspect state
+        		:modal-strength full-affirmative
+        		:quote s12s1
+        		:ARG2 (s12a1 / and
+        			:op1 (s12v1 / vepředu)
+            			:op2 (s12v2 / vlevo)))
+            	:ARG1-of (s12h2 / have-91
+            		:aspect state
+        		:modal-strength full-affirmative
+        		:quote s12s1
+            		:ARG2 (s12s2 / šátek
+                		:mod (s12t2 / ten)
+                    		:refer-number singular))
+                :ARG1-of (s12e1 / event
+                	:aspect habitual
+			:modal-strength full-negative
+			:polarity -
+                	:quote  s12s1)))
+
+# sentence level graph:
+(s13s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s13p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s13p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s13z1 / zemřít-001
+		:aspect performance
+        	:modal-strength full-affirmative
+        	:quote s13s1
+		:ARG1 (s13p3 / person
+            		:refer-number singular)
+        	:temporal (s13u1 / už)))
+
+# sentence level graph:
+(s14s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s14p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s14p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s14e1 / exist-91
+		:aspect state
+		:modal-strength full-affirmative
+		:quote s14s1
+        	:clausal-marker (s14j1 / ještě)
+        	:ARG1 (s14t1 / tam)
+        	:ARG0 (s14b2 / brigádník
+            		:mod (s14n1 / nějaký)
+                	:refer-number singular
+        		:mod (s14n2 / navíc))))
+
+# sentence level graph:
+(s15s1 / say-91
+	:aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s15p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s15p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s15i1 / identity-91
+	    :aspect state
+	    :modal-strength partial-affirmative
+	    :clausal-marker (s15z1 / zřejmě)
+	    :quote s15s1
+            :ARG1 (s15a1 / and
+                :op1 (s15p4 / person
+                    :refer-number singular
+                    :ARG1-of (s15h1 / have-place-91
+                    	:aspect state
+	    		:modal-strength full-affirmative
+                    	:ARG2 (s15v1 / vlevo)))
+                :op2 (s15p5 / person
+                    :refer-number singular
+                    :ARG1-of (s15h2 / have-place-91
+                    	:aspect state
+	    		:modal-strength full-affirmative
+                    	:ARG2 (s15a2 / and
+                    		:op1 (s15p3 / prostředek
+                        		:refer-number singular)
+                    		:op2 (s15v2 / vzadu)))))
+            :ARG2 (s15l1 / lesák
+            	:mod (s15n1 / nějaký)
+                :refer-number plural
+            	:ARG0-of (s15d1 / dirigovat-002
+            		:aspect activity
+            		:modal-strength full-affirmative
+                	:ARG1 (s15p6 / person
+                    		:refer-number plural
+                    		:refer-person 1st)
+                	:extent (s15t4 / trošku)))))
+
+# sentence level graph:
+(s16s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s16p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s16p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s16z1 / znát-005
+		:aspect state
+		:modal-strength full-negative
+		:quote s16s1
+        	:polarity -
+        	:ARG0 s16p1
+        	:ARG1 (s16p3 / person
+            		:refer-number plural
+            		:refer-person 3rd)))
+
+# sentence level graph:
+(s17s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s17p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s17p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s17u1 / učit-001
+		:aspect activity
+		:modal-strength full-affirmative
+		:quote s17s1
+        	:ARG0 (s17p3 / person
+            		:refer-number plural
+            		:refer-person 3rd)
+        	:ARG2 (s17p4 / person
+            		:refer-number plural
+            		:refer-person 1st)
+        	:ARG1 (s17v1 / vykopávat-002
+        		:aspect habitual
+        		:modal-strength full-affirmative
+            		:ARG0 s17p4
+            		:ARG1 (s17d1 / díra
+                		:purpose (s17s2 / stromeček
+                    			:refer-number plural)
+                		:refer-number plural))))
+
+# sentence level graph:
+(s18s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s18p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s18p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s18h1 / have-duration-91
+		:ARG1 (s18j1 / jezdit-002
+			:aspect habitual
+			:modal-strength full-affirmative
+			:ARG0 (s18p3 / person
+				:refer-number plural
+        			:refer-person 2nd)
+        		:ARG1 (s18t1 / thing))
+        	:ARG2 (s18u1 / umr-unknown)
+        	:aspect state
+        	:modal-strength neutral-affirmative
+		:quote s18s1
+		:mode interrogative))
+
+# sentence level graph:
+(s19s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s19p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s19p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s19h1 / have-duration-91
+		:aspect state
+		:modal-strength full-affirmative
+		:quote s19s1
+		:ARG1 (s19e1 / event
+			:aspect habitual
+			:modal-strength full-affirmative)
+		:frequency (s19v1 / většinou)
+        	:ARG2 (s19o1 / or
+            		:op1 (s19t3 / temporal-quantity
+            			:quant 1
+            			:unit (s19t2 / týden))
+            		:op2 (s19l1 / less-than
+            			:op1 s19t3))))
+
+# sentence level graph:
+(s20s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s20p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s20p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s20h1 / have-duration-91
+		:aspect state
+		:modal-strength full-affirmative
+		:quote s20s1
+		:ARG1 (s20e1 / event
+			:aspect habitual
+			:modal-strength full-affirmative)
+		:ARG2 (s20d1 / date-interval
+			:op1 (s20d2 / date-entity
+				:weekday (s20p3 / pondělí))
+			:op2 (s20o1 / or
+				:mod (s20a1 / asi)
+				:op1 (s20d3 / date-entity
+					:weekday (s20p4 / pátek))
+				:op2 (s20d4 / date-entity
+					:weekday (s20s2 / sobota))))))
+
+# sentence level graph:
+(s21s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s21p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s21p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s21h1 / have-duration-91
+		:aspect state
+		:modal-strength neutral-affirmative
+		:quote s21s1
+		:clausal-marker (s21t2 / tak)
+            	:clausal-marker (s21m1 / možná)
+        	:reason (s21d1 / dělat-019
+        		:aspect habitual
+        		:modal-strength full-affirmative
+            		:temporal (s21t1 / tenkrát)
+            		:clausal-marker (s21i1 / i)
+            		:temporal (s21d2 / date-entity
+            			:weekday (s21s2 / sobota)
+            		:clausal-marker (s21i2 / i)))
+            	:ARG1 (s21e1 / event
+			:aspect habitual
+			:modal-strength full-affirmative)
+		:ARG2 (s21d3 / date-interval
+			:op1 (s21d4 / date-entity)
+			:op2 (s21d5 / date-entity
+				:weekday s21s2))))
+
+# sentence level graph:
+(s22s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s22p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s22p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s22c1 / chodit-006
+		:aspect habitual
+                :modal-strength full-affirmative
+                :quote s22s1
+		:ARG0 (s22p3 / person
+			:refer-number plural
+			:refer-person 1st)
+		:ARG1 (s22b1 / brigáda
+                		:mod (s22j1 / jiný)
+                		:refer-number plural
+                		:example (s22a1 / and
+                    			:op1 (s22p4 / pomáhat-003
+                    				:aspect habitual
+                    				:modal-strength full-affirmative
+                    				:ARG0 s22p3
+                    				:ARG1 (s22o1 / or
+                            				:op1 (s22o2 / okopávat-001
+                            					:aspect habitual
+                    						:modal-strength full-affirmative
+                    						:ARG0 s22p3
+                    						:ARG1 (s22b3 / brambora
+                                    					:refer-number plural))
+                                    			:op2 (s22s2 / sklízet
+                            					:aspect habitual
+                    						:modal-strength full-affirmative
+                    						:ARG0 s22p3
+                    						:ARG1 s22b3)))
+                            :op2 (s22t1 / thing)))
+                :duration (s22t2 / temporal-quantity
+                	:unit (s22d1 / den
+                		:refer-number plural))
+                	:mod (s22j2 / jenom)))
+
+# sentence level graph:
+(s23s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s23p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s23p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s23i1 / identity-91
+		:aspect state
+		:modal-strength full-affirmative
+		:quote s23s1
+        	:ARG0 (s23e1 / event)
+        	:ARG1 (s23b2 / brigáda
+        		:refer-number plural
+            		:duration (s23o1 / or
+                		:op1 (s23t1 / temporal-quantity
+                			:unit (s23d2 / den)
+                			:quant 1)
+                		:op2 (s23t2 / temporal-quantity
+                			:unit s23d2
+                			:quant 2)))))
+
+# sentence level graph:
+(s24s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s24p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s24p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s24j1 / jezdit-002
+		:aspect habitual
+		:modal-strength neutral-affirmative
+		:mode interrogative
+      		:polarity umr-unknown
+      		:ARG0 (s24p3 / person
+      			:refer-number plural
+      			:refer-person 2nd)
+        	:ARG1 (s24d1 / daleko)))
+
+# sentence level graph:
+(s25s1 / say-91
+	:aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s25p1 / person
+        	:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s25p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s25n1 / ne))
+
+# sentence level graph:
+(s1v1 / vycouvat-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s1s1 / společnost
+                      :refer-number singular
+                      :name (s1x1 / name :op1 "New" :op2 "England" :op3 "Electric" :op4 "System"))
+        :ARG1 (s1r1 / řízení
+                      :refer-number singular
+                      :mod (s1n2 / nabídkový)
+                      :ARG1 (s1s3 / společnost
+                                    :refer-number singular
+                                    :name (s1x2 / name :op1 "Public" :op2 "Service" :op3 "Co." :op4 "of" :op5 "New" :op6 "Hampshire")))
+        :cause (s1a1 / and
+                       :op1 (s1b1 / have-mod-91
+                                    :aspect state
+                                    :modal-strength partial-affirmative
+                                    :ARG1 (s1r2 / riziko
+                                                  :refer-number singular)
+                                    :ARG2 (s1v2 / vysoký
+                                                  :refer-number singular
+                                                  :degree (s1p2 / příliš)))
+                       :op2 (s1b2 / have-mod-91
+                                    :aspect state
+                                    :modal-strength partial-affirmative
+                                    :ARG1 (s1v3 / výtěžek
+                                                  :refer-number singular
+                                                  :mod (s1p3 / případný))
+                                    :ARG2 (s1v4 / vzdálený
+                                                  :degree (s1p4 / příliš))
+                                    :regard (s1o2 / ospravedlnit-001
+                                                    :aspect performance
+                                                    :modal-strength partial-affirmative
+                                                    :ARG0 s1v3
+                                                    :ARG1 (s1n4 / nabídka
+                                                                 :refer-number singular
+                                                                 :mod (s1v5 / vysoký))))))
+
+# sentence level graph:
+(s2z1 / zanechávat-001
+        :aspect habitual
+        :modal-strength full-affirmative
+        :ARG0 (s2t1 / táhnout-10
+                      :aspect state
+                      :ARG0 (s2e0 / entity)
+                      :mod (s2t2 / tento)
+                      :mod (s2h1 / hra
+                                   :ARG3 (s2s1 / společnost
+                                                 :name (s2x1 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")
+                                                 :ARG0-of (s2p2 / předložit-001
+                                                                  :aspect performance
+                                                                  :modal-strength full-affirmative
+                                                                  :clausal-marker (s2t3 / také)
+                                                                  :ARG1 (s2p3 / plán
+                                                                                :refer-number singular
+                                                                                :ARG1-of (s2r1 / reorganizace
+                                                                                                 :refer-number singular
+                                                                                                 :mod (s2v1 / vnitřní))
+                                                                                :regard (s2k1 / kapitola
+                                                                                                :refer-number singular
+                                                                                                :ord (s2o1 / ordinal-entity
+		                                                                                                 :value 11)
+                                                                                                :part (s2r2 / řízení
+                                                                                                              :refer-number singular
+                                                                                                              :mod (s2k2 / konkurzní)))
+                                                                                :regard-of (s2z2 / zůstat-002
+                                                                                                   :aspect state
+                                                                                                   :modal-strength neutral-affirmative
+                                                                                                   :ARG1 s2s1
+                                                                                                   :ARG2 (s2s2 / společnost
+                                                                                                                 :refer-number singular
+                                                                                                                 :mod (s2z3 / závislý
+                                                                                                                              :polarity -))))))))
+       :manner (s2z4 / entity
+                       :refer-number plural
+                       :ARG0-of (s2z6 / zajímat-se-001
+                                        :aspect state
+                                        :modal-strength full-affirmative
+                                        :ARG1 (s2s5 / entity
+                                                      :refer-number plural))
+                       :mod (s2z5 / zbývat-001
+                                     :aspect state
+                                     :modal-strength full-affirmative)
+                       :mod (s2e3 / externí))
+        :ARG1 (s2a1 / and
+                      :op1 (s2s3 / společnost
+                                   :name (s2x5 / name :op1 "United" :op2 "Illuminating" :op3 "Co."))
+                      :op2 (s2s4 / společnost
+                                   :name (s2x7 / name :op1 "Northeast" :op2 "Utilities" ))))
+
+# sentence level graph:
+(s3n1 / nabídnout-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s3s1 / společnost
+                      :refer-number singular
+                      :name (s3x1 / name :op1 "New" :op2 "England" :op3 "Electric")
+                      :mod (s3s2 / sídlo
+                                   :refer-number singular
+                                   :place (s3h1 / human-settlement
+                                                  :name (s3x2 / name :op1 "Westborough")
+                                                  :place (s3h2 / human-settlement
+                                                                 :name (s3x3 / name :op1 "Massachusetts")))))
+        :ARG3 (s3a1 / akvizice
+                      :refer-number singular
+                      :ARG1 (s3s3 / společnost
+                                    :refer-number singular
+                                    :name (s3x4 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")))
+        :ARG1 (s3a2 / and
+                      :op1 (s3m2 / monetary-quantity
+                                    :quant 2000000000
+                                    :unit (s3d1 / dolar))
+                      :op2 (s3b1 / have-quant-91
+                                    :aspect state
+                                    :modal-strength full-affirmative
+                                    :ARG2 s3m2
+                                    :ARG3 (s3m3 / málo
+                                                  :degree (s3d2 / daleko))
+                                    :ARG4 (s3a3 / or
+                                           :op1 (s3m4 / monetary-quantity
+                                                 :quant 2290000000
+                                                 :unit s3d1
+                                                 :ARG1-of (s3n4 / nabídnout-001
+                                                                  :aspect performance
+                                                                  :modal-strength full-affirmative
+                                                                  :ARG0 (s3s4 / společnost
+                                                                                :refer-number singular
+                                                                                :name (s3x7 / name :op1 "United" :op2 "Illuminating"))))
+                                           :op2 (s3m5 / monetary-quantity
+                                                 :quant 2250000000
+                                                 :unit s3d1
+                                                 :ARG2-of (s3o2 / ohodnotit-003
+                                                                  :aspect performance
+                                                                  :modal-strength full-affirmative
+                                                                  :ARG1 (s3n5 / nabídka
+                                                                                :refer-number singular
+                                                                                :ARG0 (s3s5 / společnost
+                                                                                             :refer-number singular
+                                                                                             :name (s3n6 / name :op1 "Northeast")))
+                                                                  :ARG0 s3s5))))))
+
+# sentence level graph:
+(s4a1 / and
+        :op1 (s4s1 / sídlit-001
+                     :aspect state
+                     :modal-strength full-affirmative
+            :ARG0 (s4s2 / společnost
+                          :refer-number singular
+                          :name (s4x1 / name :op1 "United" :op2 "Illuminating"))
+            :ARGM-LOC (s4h3 / humen-settlement
+                              :refer-number singular
+                              :name (s4x2 / name :op1 "New" :op2 "Haven")
+                              :place (s4s3 / stát
+                                             :refer-number singular
+                                             :name (s4c1 / name :op1 "Connecticut"))))
+        :op2 (s4s4 / sídlit-001
+                     :aspect state
+                     :modal-strength full-affirmative
+            :ARG0 (s4s5 / společnost
+                          :refer-number singular
+                          :name (s4n2 / name :op1 "Northeast" ))
+            :ARGM-LOC (s4h2 / humen-settlement
+                              :refer-number singular
+                              :name (s4x3 / name :op1 "Hartford")
+                              :place s4s3)))
+
+# sentence level graph:
+(s5o1 / oceňovat-001
+        :aspect state
+        :modal-strength full-affirmative
+        :ARG0 (s5s1 / společnost
+                      :refer-number singular
+                      :name (s5x1 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")
+                      :mod (s5s2 / sídlo
+                                   :refer-number singular
+                                   :place (s5m1 / human-settlement
+                                                  :refer-number singular
+                                                  :name (s5n1 / name :op1 "Manchester")
+                                                  :place (s5h2 / human-settlement
+                                                                 :refer-number singular
+                                                                 :name (s5x2 / name :op1 "New" :op2 "Hampshire")))))
+        :ARG1 (s5p2 / plán
+                      :refer-number singular
+                      :mod s5s1
+                      :mod (s5i1 / interní)
+                      :ARG1-of (s5r1 / reorganizace
+                                      :refer-number singular))
+        :ARG2 (s5m2 / monetary-quantity
+                      :quant (s5a1 / asi :op1 2200000000)
+                      :unit (s5d1 / dolar)))
+
+# sentence level graph:
+(s6r1 / říci-008
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s6i1 / identity-91
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :ARG1 (s6r2 / person
+                                    :refer-number singular
+                                    :name (s6n5 /name :op1 "Rowe" :op2 "John"))
+                      :ARG2 (s6p3 / person
+                                    :refer-number singular
+                                    :ARG1-of (s6h3 / have-org-role-92
+                                                     :aspect state
+                                                     :modal-strength full-affirmative
+                                                     :ARG2 (s6s1 / společnost
+                                                                   :refer-number singular
+                                                                   :name  (s6x1 / name :op1 "New" :op2 "England" :op3 "Electric"))
+                                                     :ARG3 (s6a1 / and
+                                                                   :op1 (s6p1 / prezident
+                                                                                :refer-number singular)
+                                                                   :op2 (s6r3 / ředitel
+                                                                                :refer-number singular
+                                                                                :ARG1 s6s1
+                                                                                :mod (s6g1 / generální))))))
+        :ARG1 (s6u1 / utrpět-001
+                      :aspect performance
+                      :modal-strength neutral-affirmative
+                      :quote s6r1
+                      :ARG0 (s6v1 / výnos
+                                    :refer-number singular
+                                    :possessor s6s1
+                                    :source (s6a2 / akcie
+                                                    :refer-number plural))
+                      :condition (s6a3 / and
+                                         :op1 (s6n2 / nabídnout-001
+                                                      :aspect performance
+                                                      :modal-strength neutral-affirmative
+                                                      :ARG0 s6s1
+                                                      :ARG1 (s6m1 / monetary-quantity
+                                                                    :quant (s6h1 / more-than :op1 (s6m2 / monetary-quantity))))
+                                         :op2 (s6v2 / vyplnit-se-001
+                                                      :aspect performance
+                                                      :modal-strength neutral-negative
+                                                      :polarity -
+                                                      :ARG1 (s6p2 / předpověď
+                                                                    :refer-number singular
+                                                                    :ARG0 s6s1
+                                                                    :ARG0-of (s6t1 / týkat-se-001
+                                                                                     :aspect state
+                                                                                     :modal-strength full-affirmative
+                                                                                     :ARG1 (s6s3 / společnost
+                                                                                                   :refer-number singular
+                                                                                                   :name (s6x5 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")))
+                                                                    :example (s6a4 / and
+                                                                                    :op1 (s6r4 / růst-002
+                                                                                                 :aspect activity
+                                                                                                 :modal-strength neutral-affirmative
+                                                                                                 :ARG1 (s6p4 / poptávka
+                                                                                                               :refer-number singular
+                                                                                                               :ARG1 (s6e6 / elektřina
+                                                                                                                             :refer-number singular)))
+                                                                                    :op2 (s6z1 / zvýšit-001
+                                                                                                 :aspect performance
+                                                                                                 :modal-strength neutral-affirmative
+                                                                                                 :ARG1 (s6e7 / efektivita
+                                                                                                               :refer-number singular
+                                                                                                               :mod (s6p5 / provozní)))))))))
+
+# sentence level graph:
+(s1b1 / but-91
+        :ARG1 (s1s1 / stupňovat-001
+            :aspect activity
+            :modal-strength full-affirmative
+            :ARG0 (s1z1 / známka
+                :mod (s1e1 / ekonomika
+                    :ARG1-of (s1z2 / zpomalovat-002
+                    	:aspect activity
+                    	:modal-strength full-affirmative)
+                    :refer-number singular)
+                :refer-number plural)
+            :ARG1 (s1t1 / tlačit-005
+            	:aspect activity
+                :modal-strength full-affirmative
+                :ARG0 s1z1
+                :ARG1 (s1o1 / organization
+                    :name (s1n1 / name
+                    	:op1 "Federální"
+                        :op2 "rezervní"
+                        :op3 "banka")
+                    :refer-number singular)
+            	:ARG2 (s1s2 / snížit-001
+            	    :aspect activity
+                    :modal-strength full-affirmative
+            	    :ARG0 s1o1
+            	    :ARG1 (s1m1 / míra
+                    	:duration (s1k1 / krátkodobý)
+                    	:mod (s1u1 / úrokový)
+                    :refer-number plural))))
+        :ARG2 (s1h1 / have-mod-91
+            :aspect state
+            :modal-strength full-negative
+            :polarity -
+            :ARG2 (s1j1 / jasný)
+            :ARG1 (s1u2 / udělat-006
+            	:aspect performance
+            	:modal-strength neutral-affirmative
+            	:polarity umr-unknown
+                :ARG1 s1s2
+                :ARG0 (s1o2 / organization
+                    :name (s1n2 / name
+                        :op1 "centrální"
+                        :op2 "banka")
+                    :refer-number singular))))
+
+# sentence level graph:
+(s2u1 / ukazovat-001
+	:aspect activity
+	:modal-strength full-affirmative
+	:ARG0 (s2p2 / prozkoumat-001
+	    :aspect performance
+	    :modal-strength full-affirmative
+	    :ARG0 (s2b1 / banka
+	    	    :refer-number plural
+                    :quant 12
+                    :mod (s2o1 / oblastní)
+                    :part (s2o2 / organization
+                   	:name (s2n1 / name
+                    		:op1 "Federální"
+                        	:op2 "rezervní"
+                        	:op3 "banka")
+                        :refer-number singular)))
+        :ARG1 (s2c1 / contrast-91
+            :ARG1 (s2s1 / stagnovat-001
+            	:aspect activity
+            	:modal-strength full-affirmative
+                :ARG1 (s2r1 / růst-002
+                    :aspect activity
+                    :modal-strength full-affirmative
+                    :ARG1 (s2e1 / ekonomika)
+                :temporal (s2t1 / týden
+                    :mod (s2p1 / poslední)
+                    :refer-number plural)))
+            :ARG2 (s2z1 / zmírnit-se-001
+            	:aspect performance
+                :modal-strength full-affirmative
+                :temporal s2t1
+                    :mod s2p1
+                :ARG1 (s2t2 / tlačit-005
+            		:aspect activity
+                	:modal-strength full-affirmative
+                    	:ARG2 (s2z2 / zvýšit-001
+                    		:aspect performance
+                		:modal-strength full-affirmative
+                    		:ARG1 (s2c2 / cena
+                            		:refer-number plural))))))
+
+# sentence level graph:
+(s3r1 / říkat-007
+	:aspect performance
+	:modal-strength full-affirmative
+        :ARG1 (s3z1 / zpomalovat-002
+            :aspect activity
+	    :modal-strength full-affirmative
+	    :quote s3r1
+            :ARG1 (s3e2 / ekonomika
+                :refer-number singular)
+            :manner (s3j1 / jasně))
+        :ARG0 (s3p2 / person
+            :refer-number singular
+            :name (s3n1 / name
+            	:op1 "Robert"
+            	:op2 "Black")
+            :ARG1-of (s3h1 / have-org-role-91
+            	:aspect state
+		:modal-strength full-affirmative
+            	:ARG3 (s3p1 / prezident
+            		:refer-number singular)
+                :ARG2 (s3o1 / organization
+                    :refer-number singular
+                    :name (s3n2 / name
+                    	:op1 "Federální"
+                    	:op2 "rezervní"
+                    	:op3 "banka")
+                    :place (s3h2 / human-settlement
+                    	:name (s3n3 / name
+                    		:op1 "Richmond"))))))
+
+# sentence level graph:
+(s4s2 / say-91
+	:aspect activity
+	:modal-strength full-affirmative
+	:ARG0 (s4p4 / person
+        	:name (s4n1 / name
+        		:op1 "Roger"
+        		:op2 "Guffey")
+        	:refer-number singular
+        	:ARG1-of (s4h1 / have-org-role-91
+        		:aspect state
+			:modal-strength full-affirmative
+            		:ARG3 (s4p1 / prezident
+            			:refer-number singular)
+                	:ARG2 (s4o1 / organization
+                    		:refer-number singular
+                    		:name (s4n2 / name
+                    			:op1 "Federální"
+                    			:op2 "rezervní"
+                    			:op3 "banka")
+                    		:place (s4h2 / human-settlement
+                    			:name (s4n3 / name
+                    				:op1 "Kansas")))))
+	:ARG2 (s4p5 / person
+		:refer-number plural
+		:refer-person 2nd)
+	:ARG1 (s4s1 / souhlasit-001
+		:aspect performance
+		:modal-strength full-affirmative
+        	:ARG1 (s4e1 / event)
+        	:ARG2 (s4p3 / person)
+        	:ARG0 s4p4
+        	:manner (s4v1 / vidět-007
+        		:aspect state
+        		:modal-strength full-affirmative
+        		:quote s4s1
+        		:ARG0 s4p4
+                	:ARG1 (s4z2 / zpomalit-002
+                    		:aspect performance
+                    		:modal-strength full-affirmative
+                    		:manner (s4j1 / jistě)
+                    		:ARG1 (s4t1 / thing)
+                    		:temporal (s4d1 / date-entity
+                    			:quarter 4))
+                	:condition (s4p2 / podívat-se-001
+               	    		:aspect performance
+                    		:modal-strength full-affirmative
+                    		:ARG0 s4p5
+                    		:ARG1 (s4d2 / date-entity
+                    			:quarter 3
+                        		:ARG0-of (s4v2 / vykazovat-001
+                            			:aspect activity
+                            			:modal-strength full-affirmative
+                            			:ARG1 (s4r1 / růst-002
+                            				:aspect activity
+                            				:modal-strength full-affirmative
+                            				:ARG1 s4t1
+                                			:extent (s4p6 / percentage-entity
+                                				:value 2.5
+                                				:mod (s4z1 / zhruba)))))))))
+
+# sentence level graph:
+(s5t1 / tvrdit-002
+	:aspect activity
+	:modal-strength full-affirmative
+        :clausal-marker (s5n1 / nicméně)
+        :ARG0 (s5a1 / and
+            :op1 (s5p1 / person
+            	:name (s5n2 / name
+            		:op1 "Guffey")
+                :refer-number singular)
+            :op2 (s5p2 / person
+            	:name (s5n3 / name
+            		:op1 "Black")
+                :refer-number singular))
+        :ARG1 (s5i1 / identity-91
+            :aspect state
+            :modal-strength full-negative
+            :polarity -
+            :quote s5t1
+            :ARG1 (s5z1 / zpomalit-002
+                :aspect performance
+                :modal-strength full-affirmative
+                :ARG1 (s5t2 / thing))
+            :temporal (s5z2 / zatím)
+            :ARG2 (s5d1 / důvod
+                :mod (s5o1 / obávat-se-001
+                    :aspect state
+                    :modal-strength full-affirmative)
+                :refer-number singular)))
+
+# sentence level graph:
+(s6r1 / říci-008
+	:aspect performance
+	:modal-strength full-affirmative
+        :ARG0 (s6p1 / person
+            :name (s6n2 / name
+            	:op1 "Guffey")
+            :refer-number singular)
+        :ARG1 (s6b1 / blížit-se-001
+            :aspect activity
+            :modal-strength full-affirmative
+            :quote s6r1
+            :ARG0 (s6p2 / person
+            	:refer-number plural
+            	:refer-person 1st)
+            :ARG1 (s6d1 / dosáhnout-001
+            	:aspect performance
+            	:modal-strength full-affirmative
+                :ARG0 s6p2
+                :ARG1 (s6c1 / cíl
+                        :refer-number singular
+                        :ARG1-of (s6s1 / stanovit-001
+                        	:aspect performance
+                        	:modal-strength full-affirmative
+                        	:ARG0 s6p2)
+                        :ARG1-of (s6i1 / identity-91
+                        	:aspect state
+                        	:modal-strength full-affirmative
+                        	:ARG2 (s6z1 / zpomalit-002
+                			:aspect performance
+                			:modal-strength full-affirmative
+                        		:ARG1 (s6e4 / ekonomika
+                            			:refer-number singular)
+                            		:ARG3 (s6b2 / bod
+                            			:refer-number singular)
+                            		:temporal-of (s6o1 / objevit-se-002
+                            			:aspect performance
+                            			:modal-strength partial-affirmative
+                                		:clausal-marker (s6d2 / doufejme)
+                                		:ARG1 (s6t1 / trend
+                                			:refer-number singular
+                                			:mod (s6n1 / nějaký)
+                                			:ARG1-of (s6k1 / klesat-001
+                                				:aspect activity
+                            					:modal-strength partial-affirmative)
+                            				:mod (s6c2 / cena
+                                        			:refer-number plural)))))))))
+
+# sentence level graph:
+(s7a1 / and
+        :op1 (s7s1 / spoléhat-se-001
+            :aspect activity
+            :modal-strength full-affirmative
+            :ARG0 (s7p4 / person
+            	:refer-number plural
+            	:ARG0-of (s7p1 / představovat-003
+            		:aspect state
+            		:modal-strength full-affirmative
+            		:ARG1 (s7a2 / administrativa
+                    		:possessor (s7p3 / person
+                    			:name (s7n1 / name
+                    				:op1 "Bush")
+                        		:refer-number singular)
+                    		:refer-number singular)))
+            :ARG1 (s7s2 / snížit-001
+            	:aspect performance
+            	:modal-strength full-affirmative
+                :ARG0 (s7o2 / organization
+                    :refer-number singular
+                    :name (s7n2 / name
+                    	:op1 "Federální"
+                    	:op2 "rezervní"
+                    	:op3 "banka"))
+                :ARG1 (s7s3 / sazba
+                    :refer-number plural)))
+        :op2 (s7o1 / očekávat-001
+            :aspect activity
+            :modal-strength partial-affirmative
+            :ARG0 (s7t1 / trh
+                :mod (s7f2 / finanční)
+                :refer-number plural)
+            :clausal-marker (s7t2 / také)
+            :clausal-marker (s7z1 / zřejmě)
+            :ARG1 (s7p2 / přístup
+                :mod (s7s4 / snazší)
+                :goal (s7u1 / úvěr
+                    :refer-number plural)
+                :refer-number singular)))
+
+# sentence level graph:
+(s8r1 / říci-008
+	:aspect performance
+	:modal-strength full-affirmative
+	:ARG0 (s8p1 / person
+		:refer-number singular
+		:name (s8n1 / name
+			:op1 "Robert"
+			:op2 "Johnson")
+		:ARG1-of (s8h2 / have-org-role-91
+			:aspect state
+			:modal-strength full-affirmative
+            		:ARG3 (s8v1 / viceprezident
+            			:refer-number singular)
+                	:ARG2 (s8o2 / organization
+                    		:refer-number singular
+                    		:name (s8n2 / name
+                    			:op1 "Bankers"
+                    			:op2 "Trust"
+                    			:op3 "Co."))
+                    	:ARG4 (s8t3 / trh
+                    		:mod (s8g1 / globální)
+                        	:refer-number plural)))
+        :ARG1 (s8m1 / myslet-003
+            :aspect state
+            :modal-strength full-affirmative
+            :quote s8r1
+            :ARG0 s8p1
+            :ARG1 (s8o1 / očekávat-001
+            	:aspect performance
+            	:modal-strength full-affirmative
+            	:quote s8m1
+                :ARG0 (s8t1 / trh
+                    :refer-number singular)
+                :ARG1 (s8s1 / snížit-001
+                    :aspect performance
+            	    :modal-strength full-affirmative
+                    :ARG0 (s8o3 / organization
+                    	:refer-number singular
+                    	:name (s8n3 / name
+                    		:op1 "Federální"
+                    		:op2 "rezervní"
+                    		:op3 "banka"))
+                    :ARG1 (s8s2 / sazba
+                        :refer-number plural)
+                    :temporal (s8d2 / dřív)
+                    :degree (s8m2 / more-than
+                    	:degree (s8t2 / trochu)
+                    	:op1 (s8u1 / učinit-004
+                    		:aspect performance
+            			:modal-strength full-affirmative
+                                :ARG0 s8o3
+                                :temporal (s8d1 / dosud)
+                                :ARG1 s8s1))))))
+
+# sentence level graph:
+(s9b1 / but-91
+        :ARG1 (s9s1 / snížit-001
+            :aspect performance
+            :modal-strength full-affirmative
+            :ARG0 (s9o1 / organization
+            	:name (s9n2 / name
+            		:op1 "Federální"
+            		:op2 "rezervní"
+                    	:op3 "banka")
+                :refer-number singular)
+            :ARG1 (s9m1 / míra
+                :mod (s9u1 / úrokový)
+                :refer-number plural
+                :part (s9f2 / fond
+                    :mod (s9h1 / hlavní)
+                    :mod (s9f3 / federální)
+                    :refer-number plural))
+            :extent (s9p5 / percentage-entity
+                :value 0.25
+                :mod (s9a1 / asi))
+            :ARG3 (s9p6 / percentage-entity
+                :value 8.75)
+            :temporal (s9p2 / poklesnout-001
+            	:aspect performance
+            	:modal-strength full-affirmative
+                :manner (s9p3 / prudce)
+                :place (s9b4 / burza
+                    :refer-number singular)
+                :temporal (s9d3 / date-entity
+                	:month 10
+                	:day 13)))
+        :ARG2 (s9n1 / naznačit-001
+            :aspect performance
+            :polarity -
+            :modal-strength full-negative
+            :ARG0 s9o1
+            :temporal (s9o2 / od
+            	:op1 (s9d1 / doba
+                	:mod (s9t1 / ten
+                    	:refer-number singular)))
+            :ARG1 (s9p4 / pohnout-001
+            	:aspect performance
+            	:polarity -
+            	:modal-strength full-negative
+            	:ARG0 s9o1
+            	:ARG1 s9m1
+                :mod (s9d2 / dále))))
+
+# sentence level graph:
+(s10z1 / zjistit-002
+	:aspect performance
+	:modal-strength full-affirmative
+        :ARG0 (s10z2 / zpráva
+            :source (s10o1 / organization
+            	:name (s10n2 / name
+            		:op1 "Federální"
+            		:op2 "rezervní"
+                    	:op3 "banka"))
+            :refer-number singular)
+        :ARG1 (s10h1 / have-mod-91
+            :aspect activity
+            :modal-strength full-affirmative
+            :temporal (s10t1 / týden
+                :mod (s10m1 / minulý)
+                :refer-number plural)
+            :ARG2 (s10s1 / slabý)
+            :clausal-marker (s10p1 / především)
+            :ARG1 (s10v1 / vyrábět-001
+                :aspect activity
+                :modal-strength full-affirmative)))
+
