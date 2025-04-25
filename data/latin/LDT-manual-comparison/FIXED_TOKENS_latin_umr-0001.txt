@@ -1,0 +1,3415 @@
+# sent_id = SlaT-2773
+# :: snt1
+Index:   1     2     3  4    5     6        7        8        9      10  11   12  13   14  15 16  17     18       19        20    21   22 23    24      25   26     27       28        29
+Words: Omnis homines , qui sese student praestare ceteris animalibus , summa ope niti decet , ne vitam silentio transeant veluti pecora , quae natura prona atque ventri oboedientia finxit
+Sentence: Omnis homines, qui sese student praestare ceteris animalibus, summa ope niti decet, ne vitam silentio transeant veluti pecora, quae natura prona atque ventri oboedientia finxit
+Sentence Gloss (en): It is suitable that all men, who desire to excel other animals, strive, to the utmost of their power, not to pass through life in obscurity, like the beasts of the field, which nature has formed groveling and subservient to appetite
+
+# sentence level graph:
+(s1d / decet-02
+    :ARG1 (s1n / nitor-06
+        :ARG0 (s1h / homo
+            :refer-number plural
+            :quant (s1o / omnis)
+            :ARG0-of (s1s / studeo-NEW-07
+                :ARG1 (s1p / praesto2-06
+                    :ARG0 s1h
+                    :ARG1 (s1a / animal
+                        :refer-number plural
+                        :mod (s1c / ceterus))
+                    :aspect state
+                    :modal-predicate s1s)
+                :aspect state))
+            :manner (s1o2 / ops
+                :refer-number singular
+                :mod (s1s2 / superus :degree intensifier))
+            :ARG1 (s1t / transeo-15
+                :ARG0 s1h
+                :ARG1 (s1v / vita)
+                :manner (s1t2 / taceo-NEW-05
+                    :ARG0 s1h
+                    :aspect state)
+                :manner (s1r / resemble-91
+                    :ARG1 s1h
+                    :ARG2 (s1p2 / pecus
+                        :refer-number plural
+                        :ARG1-of (s1f / fingo-02
+                            :ARG0 (s1n2 / natura)
+                            :ARG2 (s1a2 / and
+                                :op1 (s1p3 / pronus)
+                                :op2 (s1o3 / oboedio-NEW-01
+                                    :ARG0 s1p2
+                                    :ARG1 (s1v2 / venter)
+                                    :aspect state))
+                            :aspect performance))
+                    :aspect state)
+                :aspect activity)
+            :aspect activity)
+        :aspect state)
+
+# alignment:
+s1d: 14-14
+s1n: 13-13
+s1h: 2-2, 4-5
+s1o: 1-1
+s1s: 6-6
+s1p: 7-7
+s1a: 9-9
+s1c: 8-8
+s1o2: 12-12
+s1s2: 11-11
+s1t: 16-16, 19-19
+s1t2: 18-18
+s1v: 17-17
+s1p2: 21-21, 23-23
+s1r: 20-20
+s1n2: 24-24
+s1f: 29-29
+s1p3: 25-25
+s1a2: 26-26
+s1o3: 28-28
+s1v2: 27-27
+
+# document level annotation:
+(s1s0 / sentence
+    :temporal ((document-creation-time :overlap s1d)
+            (document-creation-time :overlap s1n)
+            (document-creation-time :overlap s1s)
+            (s1n :before s1f)
+            (s1n :after s1t)
+            (s1n :after s1t2)
+            (s1s :after s1p)
+            (s1f :after s1o3)
+            (s1t :contained s1r))
+    :modal ((root :modal author)
+            (author :full-affirmative s1d)
+            (author :full-affirmative s1s)
+            (author :partial-affirmative s1n)
+            (s1s :unspecified s1p)
+            (s1n :partial-negative s1t)
+            (author :full-affirmative s1t2)
+            (author :full-affirmative s1f)
+            (author :full-affirmative s1r)
+            (author :full-affirmative s1o3)))
+
+
+# sent_id = SlaT-2774
+# :: snt2
+Index:  1     2     3     4  5   6    7    8     9   10
+Words: sed nostra omnis vis in animo et corpore sita est
+Sentence: sed nostra omnis vis in animo et corpore sita est
+Sentence Gloss (en): All our power is situated in the mind and in the body
+
+# sentence level graph:
+(s2h / have-place-91
+    :ARG1 (s2v / vis
+        :possessor (s2p / person
+                :refer-person 1st
+                :refer-number plural)
+        :quant (s2o / omnis))
+    :ARG2 (s2a / and
+        :op1 (s2a2 / animus :refer-number singular)
+        :op2 (s2c / corpus :refer-number singular))
+    :aspect state)
+
+# alignment:
+s2h: 9-10
+s2v: 4-4
+s2p: 2-2
+s2o: 3-3
+s2a: 7-7
+s2a2: 5-6
+s2c: 8-8
+
+# document level annotation:
+(s2s0 / sentence
+    :temporal ((document-creation-time :overlap s2h))
+    :modal ((root :modal author)
+            (author :full-affirmative s2h))
+    :coref ((s2p :subset-of s1h)))
+
+
+# sent_id = SlaT-2775
+# :: snt3
+Index:   1      2    3     4        5      6    7
+Words: animi imperio , corporis servitio magis utimur
+Sentence: animi imperio, corporis servitio magis utimur
+Sentence Gloss (en): of the mind we rather employ the government; of the body, the service
+
+# sentence level graph:
+(s3c / contrast-91
+    :ARG1 (s3u / utor-03
+        :ARG0 (s3p / person
+            :refer-person 1st
+            :refer-number plural)
+        :ARG1 (s3i / imperium
+            :refer-number singular
+            :mod (s3a / animus :refer-number singular))
+        :aspect habitual)
+    :ARG2 (s3u2 / utor-03
+        :ARG0 s3p
+        :ARG1 (s3s / servitium
+            :refer-number singular
+            :mod (s3c2 / corpus :refer-number singular))
+        :aspect habitual))
+
+# alignment:
+s3c: 6-6
+s3u: 0-0
+s3p: 0-0
+s3i: 2-2
+s3a: 1-1
+s3u2: 7-7
+s3s: 5-5
+s3c2: 4-4
+
+# document level annotation:
+(s3s0 / sentence
+    :temporal ((s2h :overlap s3u)
+            (s3u :overlap s3u2)
+            (s3u :overlap s3u2))
+    :modal ((root :modal author)
+            (author :full-affirmative s3u)
+            (author :full-affirmative s3u2))
+    :coref ((s2a :same-entity s3a)
+            (s2c :same-entity s3c2)
+            (s2p :same-entity s3p)))
+
+
+# sent_id = SlaT-2775
+# :: snt4
+Index:    1      2     3  4  5    6     7    8      9     10
+Words: alterum nobis cum dis , alterum cum beluis commune est
+Sentence: alterum nobis cum dis, alterum cum beluis commune est
+Sentence Gloss (en): the one is common to us with the gods; the other with the beasts
+
+# sentence level graph:
+(s4c / contrast-91
+    :ARG1 (s4h / have-mod-91
+        :ARG1 (s4t / thing
+            :refer-number singular
+            :mod (s4a / alter))
+        :ARG2 (s4c2 / communis-13
+            :ARG0 (s4d / deus :refer-number plural))
+        :affectee (s4p / person
+            :refer-person 1st
+            :refer-number plural)
+        :aspect state)
+    :ARG2 (s4h2 / have-mod-91
+        :ARG1 (s4t2 / thing
+            :refer-number singular
+            :mod (s4a2 / alter))
+        :ARG2 (s4c3 / communis-13
+            :ARG2 (s4b / belua :refer-number plural))
+        :affectee s4p
+        :aspect state))
+
+# alignment:
+s4c: 0-0
+s4h: 0-0
+s4t: 1-1
+s4a: 0-0
+s4d: 3-4
+s4c2: 0-0
+s4h2: 10-10
+s4p: 2-2
+s4t2: 6-6
+s4a2: 0-0
+s4b: 7-8
+s4c3: 9-9
+
+# document level annotation:
+(s4s0 / sentence
+    :temporal ((s3u :overlap s4h)
+            (s3u :overlap s4h2))
+    :modal ((root :modal author)
+            (author :full-affirmative s4h)
+            (author :full-affirmative s4h2))
+    :coref ((s3a :same-entity s4t)
+            (s3c2 :same-entity s4t2)
+            (s3p :same-entity s4p)))
+
+
+# sent_id = SlaT-2777
+# :: snt5
+Index:  1   2   3       4       5      6    7      8      9       10       11 12 13      14   15   16  17      18     19  20 21       22     23   24     25     26
+Words: quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere ,  et quoniam vita ipsa qua fruimur brevis est ,  memoriam nostri quam maxume longam efficere
+Sentence: quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere, et quoniam vita ipsa qua fruimur brevis est, memoriam nostri quam maxume longam efficere
+Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glory by means of the intellect than of bodily strength, and, since the life which we enjoy is short, to make the remembrance of us as lasting as possible
+
+# sentence level graph:
+(s5v / video-10
+    :ARG0 (s5p / person
+        :refer-person 1st
+        :refer-number singular)
+    :ARG1 (s5a / and
+        :op1 (s5q / quaero-15
+            :ARG1 (s5g / gloria :refer-number singular)
+            :instrument (s5o / ops
+                :refer-number plural
+                :mod (s5i / ingenium :refer-number singular))
+            :aspect activity)
+        :op2 (s5e / efficio-02
+            :ARG1 (s5m / memini-02+03
+                :ARG1 (s5p2 / person
+                    :refer-person 1st
+                    :refer-number plural)
+                    :aspect imperfective)
+            :ARG2 (s5l / longus
+                    :ARG2-of (s5h3 / have-degree-91
+                        :ARG1 s5m
+                        :ARG3 (s5e2 / equal)
+                        :ARG4 (s5h4 / have-mod-91
+                            :ARG1 s5m
+                            :ARG2 (s5l2 / longus)
+                            :aspect state)
+                        :aspect state))
+            :reason (s5h2 / have-mod-91
+                :ARG1 (s5v3 / vita
+                    :refer-number singular
+                    :mod (s5i2 / ipse)
+                    :ARG1-of (s5f / fruor-04
+                        :ARG0 s5p2
+                        :aspect habitual))
+                :ARG2 (s5b / brevis)
+                :aspect state)
+            :aspect activity))
+    :ARG2 (s5h / have-degree-91
+        :ARG1 s5a
+        :ARG2 (s5r / rectus)
+        :ARG3 (s5m3 / more)
+        :ARG4 (s5q2 / quaero-15
+            :ARG1 s5g
+            :instrument (s5o2 / ops
+                :refer-number plural
+                :mod (s5v2 / vis :refer-number plural))
+            :aspect activity)
+        :aspect state)
+    :cause (s5q3 / quo)
+    :aspect state)
+
+# alignment:
+s5v: 4-4
+s5p: 2-2
+s5h: 3-3, 6-6
+s5a: 11-11
+s5r: 0-0
+s5m3: 0-0
+s5q2: 0-0
+s5o2: 0-0
+s5v2: 7-7
+s5q: 10-10
+s5g: 9-9
+s5o: 8-8
+s5i: 5-5
+s5e: 26-26
+s5m: 21-21
+s5p2: 22-22
+s5l: 25-25
+s5h2: 13-13, 19-19
+s5h3: 23-24
+s5e2: 0-0
+s5h4: 0-0
+s5l2: 0-0
+s5v3: 14-14, 16-16
+s5i2: 15-15
+s5f: 17-17
+s5b: 18-18
+s5q3: 1-1
+
+# document level annotation:
+(s5s0 / sentence
+    :temporal ((document-creation-time :overlap s5v)
+            (document-creation-time :overlap s5q)
+            (s5q :overlap s5e)
+            (s5e :overlap s5h2)
+            (document-creation-time :overlap s5f)
+            (s5e :overlap s5m)
+            (document-creation-time :overlap s5h)
+            (s5q :overlap s5q2)
+            (s5e :overlap s5h3)
+            (s5e :overlap s5h4))
+    :modal ((root :modal author)
+            (author :full-affirmative s5v)
+            (author :partial-affirmative s5h)
+            (author :full-affirmative s5h2)
+            (author :partial-affirmative s5q)
+            (author :full-affirmative s5q2)
+            (author :partial-affirmative s5e)
+            (author :full-affirmative s5f)
+            (author :partial-affirmative s5m)
+            (author :full-affirmative s5h3)
+            (author :neutral-affirmative s5h4))
+    :coref ((s4p :same-entity s5p2)
+            (s4p :subset-of s5p)
+            (s1v :same-entity s5v3)))
+
+
+# sent_id = SlaT-2778
+# :: snt6
+Index:  1       2     3     4      5     6     7       8     9  10  11    12   13  14      15
+Words: nam divitiarum et formae gloria fluxa atque fragilis est , virtus clara que aeterna habetur
+Sentence: nam divitiarum et formae gloria fluxa atque fragilis est, virtus clara que aeterna habetur
+Sentence Gloss (en): For the glory of wealth and beauty is fleeting and perishable; that of intellectual power is considered illustrious and immortal
+
+# sentence level graph:
+(s6c / contrast-91
+    :ARG1 (s6h / have-mod-91
+        :ARG1 (s6g / gloria
+            :refer-number singular
+            :mod (s6a / and
+                :op1 (s6d / divitiae :refer-number plural)
+                :op2 (s6f / forma :refer-number singular)))
+        :ARG2 (s6a2 / and
+            :op1 (s6f2 / fluo-17
+                :ARG0 s6g
+                :aspect activity)
+            :op2 (s6f3 / fragilis))
+        :aspect state)
+        :ARG2 (s6h2 / habeo-07
+            :ARG1 (s6v / virtus :refer-number singular)
+            :ARG2 (s6a3 / and
+                :op1 (s6c2 / clarus)
+                :op2 (s6a4 / aeternus))
+            :aspect state))
+
+# alignment:
+s6c: 0-0
+s6h: 9-9
+s6g: 5-5
+s6a: 3-3
+s6d: 2-2
+s6f: 4-4
+s6a2: 7-7
+s6f2: 6-6
+s6f3: 8-8
+s6h2: 15-15
+s6v: 11-11
+s6a3: 14-14
+s6c2: 12-12
+s6a4: 13-13
+
+# document level annotation:
+(s6s0 / sentence
+    :temporal ((document-creation-time :overlap s6h)
+            (document-creation-time :overlap s6f2)
+            (document-creation-time :overlap s6h2))
+    :modal ((root :modal author)
+            (author :full-affirmative s6h)
+            (author :full-affirmative s6f2)
+            (author :full-affirmative s6h2))
+    :coref ((s5g :subset-of s6g)))
+
+
+# sent_id = SlaT-2779
+# :: snt7
+Index: 1   2     3      4      5        6      7   8 9    11       12 13      14    15  16        17    18
+Words: Sed diu magnum inter mortalis certamen fuit , vine corporis an virtute animi res militaris magis procederet
+Sentence: Sed diu magnum inter mortalis certamen fuit, vine corporis an virtute animi res militaris magis procederet
+Sentence Gloss (en): Yet for a long time men have discussed the question whether success in arms depends more on strength of body or excellence of mind
+
+# sentence level graph:
+(s7b / but-91
+    :ARG1 (s7e / event)
+    :ARG2 (s7c / certo-01
+        :ARG0 (s7p / person
+            :refer-number plural
+            :mod (s7m / mortalis))
+        :duration (s7d / diu)
+        :manner (s7m2 / magnus)
+        :ARG1 (s7o / or
+            :op1 (s7p2 / procedo-21
+                :ARG0 (s7r / res
+                        :refer-number singular
+                        :mod (s7m3 / militaris))
+                :ARG2 (s7v / vis
+                    :refer-number singular
+                    :mod (s7c2 / corpus :refer-number singular))
+                :quant (s7m4 / magis)
+                :aspect process)
+            :op2 (s7p3 / procedo-21
+                :ARG0 s7r
+                :ARG2 (s7v2 / virtus
+                    :refer-number singular
+                    :mod (s7a / animus :refer-number singular))
+                :quant s7m4
+                :aspect process))
+        :aspect performance))
+
+# alignment:
+s7e: 0-0
+s7b: 1-1
+s7c: 6-7
+s7p: 0-0
+s7m: 4-5
+s7d: 2-2
+s7m2: 3-3
+s7p2: 18-18
+s7p3: 0-0
+s7r: 15-15
+s7m3: 16-16
+s7o: 10-10, 12-12
+s7v: 9-9
+s7c2: 11-11
+s7v2: 13-13
+s7a: 14-14
+s7m4: 17-17
+
+# document level annotation:
+(s7s0 / sentence
+    :temporal ((document-creation-time :before s7c)
+            (s7c :overlap s7p2)
+            (s7c :overlap s7p3))
+    :modal ((root :modal author)
+            (author :full-affirmative s7c)
+            (s7p :neutral-affirmative s7p2)
+            (s7p :neutral-affirmative s7p2))
+    :coref ((s3c2 :same-entity s7c2)
+            (s3a :same-entity s7a)
+            (s5v :same-event s7e)))
+
+
+# sent_id = SlaT-2780
+# :: snt8
+Index:  1  2    3    4      5        6     7  8   9           10     11    12   13 
+Words: nam et prius quam incipias consulto et ubi consulueris mature facto opus est
+Sentence: nam et prius quam incipias consulto et ubi consulueris mature facto opus est
+Sentence Gloss (en): For before you begin, deliberation is necessary, and when you have deliberated, prompt action
+
+# sentence level graph:
+(s8a / and
+    :op1 (s8o / opus-est-01
+        :ARG0 (s8p / person
+            :refer-person 2nd
+            :refer-number singular)
+        :ARG1 (s8c / consulo-04
+            :ARG0 s8p
+            :aspect performance
+            :modal-predicate s8o)
+        :temporal (s8b / before
+            :op1 (s8i / incipio-06
+                :ARG0 s8p
+                :aspect performance))
+        :aspect state)
+    :op2 (s8o2 / opus-est-01
+        :ARG0 s8p
+        :ARG1 (s8f / facio-02
+            :ARG0 s8p
+            :manner (s8m / mature)
+            :aspect performance
+            :modal-predicate s8o2)
+        :temporal (s8a2 / after
+            :op1 (s8c2 / consulo-04
+                :ARG0 s8p
+                :aspect performance))
+        :aspect state))
+
+# alignment:
+s8a: 2-2, 8-8
+s8o: 0-0
+s8o2: 13-14
+s8p: 0-0
+s8c: 6-6
+s8i: 5-5
+s8c2: 10-10
+s8m: 11-11
+s8f: 12-12
+s8b: 3-4
+s8a2: 9-9
+
+# document level annotation:
+(s8s0 / sentence
+    :temporal ((document-creation-time :overlap s8o)
+            (document-creation-time :overlap s8o2)
+            (document-creation-time :overlap s8c)
+            (document-creation-time :overlap s8f)
+            (s8c :after s8i)
+            (s8f :before s8c2))
+    :modal ((root :modal author)
+            (author :full-affirmative s8o)
+            (author :full-affirmative s8o2)
+            (author :full-affirmative s8i)
+            (s8o :unspecified s8c)
+            (author :full-affirmative s8c2)
+            (s8o2 :unspecified s8f))
+    :coref ((s8c :same-event s8c2)))
+
+
+# sent_id = SlaT-2781
+# :: snt9
+Index:  1  2   3     4   5  6        7       8        9       10
+Words: ita que utrum per se indigens alterum alterius auxilio eget
+Sentence:ita utrumque per se indigens alterum alterius auxilio eget
+Sentence Gloss (en): Thus each of these, being incomplete in itself, requires the other's aid
+
+# sentence level graph:
+(s9e / egeo-01
+    :ARG0 (s9t / thing
+        :refer-number singular
+        :quant (s9u / uterque)
+        :ARG0-of (s9i / indigeo-03
+            :extent s9t
+            :aspect state))
+    :ARG1 (s9a / auxilior-03
+        :ARG0 (s9t2 / thing
+            :refer-number singular
+            :mod (s9a2 / alter))
+        :ARG1 (s9t3 / thing
+            :refer-number singular
+            :mod (s9a3 / alter))
+        :aspect activity)
+    :aspect state)
+
+# alignment:
+s9e: 9-9
+s9t: 2-4
+s9u: 0-0
+s9i: 5-5
+s9a: 8-8
+s9t2: 6-6
+s9a2: 0-0
+s9t3: 7-7
+s9a3: 0-0
+
+# document level annotation:
+(s9s0 / sentence
+    :temporal ((document-creation-time :overlap s9e)
+            (document-creation-time :overlap s9i)
+            (document-creation-time :overlap s9a))
+    :modal ((root :modal author)
+            (author :full-affirmative s9e)
+            (author :full-affirmative s9a)
+            (author :full-affirmative s9i))
+    :coref ((s9t :subset-of s7a)
+            (s9t :subset-of s7c2)))
+
+
+# sent_id = SlaT-2782
+# :: snt10
+Index: 1      2      3     4   5  6      7     8      9  10     11   12      13   14       15 16   17     18  
+Words: igitur initio reges nam in terris nomen imperi id primum fuit divorsi pars ingenium ,  alii corpus exercebant
+Sentence: igitur initio reges nam in terris nomen imperi id primum fuit divorsi pars ingenium, alii corpus exercebant
+Sentence Gloss (en): in early times, accordingly, kings (for that was the first title of sovereignty in the world) applied themselves in different ways; some exercised the mind, others the body
+
+# sentence level graph:
+(s10c / contrast-91
+    :ARG1 (s10e / exerceo-13
+        :ARG0 (s10p2 / person
+            :refer-number plural
+            :ARG1-of (s10i5 / include-91
+                :ARG2 (s10p / person
+                    :refer-number plural
+                    :ARG1-of (s10h / have-role-91
+                        :ARG3 (s10r / rex
+                            :ARG1-of (s10i3 / identity-91
+                                :ARG2 (s10n / nomen
+                                    :refer-number singular
+                                    :ord (s10o / ordinal-entity :value 1)
+                                    :mod (s10i4 / imperium :refer-number singular))
+                                :place (s10t / terra :refer-number plural)
+                                :aspect state))
+                        :aspect state))
+                :ARG3 (s10p3 / pars :refer-number singular)
+            :aspect state))
+        :ARG1 (s10i2 / ingenium :refer-number singular)
+        :manner (s10d / diuerto-NEW-01
+            :ARG0 s10p2
+            :aspect state)
+        :aspect habitual)
+    :ARG2 (s10e2 / exerceo-13
+            :ARG0 (s10p4 / person
+                :refer-number plural
+                :ARG1-of (s10i6 / include-91
+                    :ARG2 s10p
+                    :mod (s10a2 / alius)
+                    :aspect state))
+            :ARG1 (s10c2 / corpus :refer-number singular)
+            :manner (s10d2 / diuerto-NEW-01
+                :ARG0 s10p4
+                :aspect state)
+            :aspect habitual)
+    :temporal (s10i / initium))
+
+# alignment:
+s10c: 0-0
+s10e: 20-20
+s10p: 3-3
+s10h: 0-0
+s10r: 0-0
+s10i2: 16-16
+s10d: 14-14
+s10e2: 0-0
+s10c2: 19-19
+s10i5: 0-0
+s10i6: 0-0
+s10d2: 0-0
+s10i: 2-2
+s10n: 8-8
+s10o: 11-11
+s10i3: 12-12
+s10t: 6-7
+s10i4: 9-9
+s10p2: 15-15
+s10p3: 0-0
+s10p4: 18-18
+s10a2: 0-0
+
+# document level annotation:
+(s10s0 / sentence
+	:temporal ((past-reference :overlap s10i)
+            (s10i :overlap s10d)
+            (s10i :overlap s10d2)
+            (s10i :overlap s10e)
+            (s10i :overlap s10e2)
+            (s10i :overlap s10h)
+            (s10i :overlap s10i3)
+            (s10i :overlap s10i5)
+            (s10i :overlap s10i6))
+	:modal ((root :modal author)
+            (author :full-affirmative s10d)
+            (author :full-affirmative s10d2)
+            (author :full-affirmative s10e)
+            (author :full-affirmative s10e2)
+            (author :full-affirmative s10h)
+            (author :full-affirmative s10i3)
+            (author :full-affirmative s10i5)
+            (author :full-affirmative s10i6))
+    :coref ((s10p :subset-of s10p2)
+	        (s10p :subset-of s10p4)))
+
+
+# sent_id = SlaT-2783
+# :: snt11
+Index:   1    2    3     4     5        6        7
+Words: etiam tum vita hominum sine cupiditate agitabatur
+Sentence: etiam tum vita hominum sine cupiditate agitabatur
+Sentence Gloss (en): back then the life of men was still passed without covetousness
+
+# sentence level graph:
+(s11a / agito-NEW-14
+    :ARG0 (s11h / homo :refer-number plural)
+    :ARG1 (s11v / vita :refer-number singular)
+    :manner (s11c / cupiditas
+        :polarity -
+        :refer-number singular)
+    :temporal (s11t / tum)
+    :mod (s11e / etiam)
+    :aspect activity)
+
+# alignment:
+s11a: 7-7
+s11h: 4-4
+s11v: 3-3
+s11c: 5-6
+s11t: 2-2
+s11e: 1-1
+
+# document level annotation:
+(s11s0 / sentence
+	:temporal ((past-reference :overlap s11t)
+            (s11t :overlap s11a))
+	:modal ((root :modal author)
+	        (author :full-affirmative s11a)))
+
+
+# sent_id = SlaT-2784
+# :: snt12
+Index:  1   2   3     4       5
+Words: sua que quoi satis placebant
+Sentence: sua quoique satis placebant
+Sentence Gloss (en): every one was satisfied enough with his own
+
+# sentence level graph:
+(s12p / placeo-04
+    :ARG0 (s12t / thing
+        :refer-number plural
+        :ARG1-of (s12b / belong-91
+            :ARG2 (s12p2 / person
+                :refer-number singular
+                :quant (s12q / quisque))
+            :aspect state))
+    :ARG1 s12q
+    :extent (s12s / satis)
+    :aspect state)
+
+# alignment:
+s12p: 5-5
+s12s: 4-4
+s12t: 1-1
+s12b: 0-0
+s12p2: 2-3
+s12q: 0-0
+
+# document level annotation:
+(s12s0 / sentence
+	:temporal ((s11t :overlap s12p)
+	        (s11t :overlap s12b))
+	:modal ((root :modal author)
+	        (author :full-affirmative s12p)
+            (author :full-affirmative s12b))
+    :coref ((s11h :subset-of s12p2)))
+
+
+# sent_id = SlaT-2785
+# :: snt13
+Index:    1    2    3   4   5    6    7 8    9       10         11    12        13      14    15   16        17     18   19        20       21    22     23   24  25       26    27   28    29      30   31 32   33      34     35    36        37      38  39  40      41       42     43
+Words: postea vero quam in Asia Cyrus , in Graecia Lacedaemonii et Athenienses coepere urbis atque nationes subigere , lubidinem dominandi causam belli habere , maxumam gloriam in maxumo imperio putare , tum demum periculo atque negotiis compertum est in bello plurumum ingenium posse
+Sentence: postea vero quam in Asia Cyrus, in Graecia Lacedaemonii et Athenienses coepere urbis atque nationes subigere, lubidinem dominandi causam belli habere, maxumam gloriam in maxumo imperio putare, tum demum periculo atque negotiis compertum est in bello plurumum ingenium posse
+Sentence Gloss (en): but after Cyrus in Asia and the Lacedaemonians and Athenians in Greece began to subjugate cities and nations, to deem the lust of dominion a reason for war, and to imagine the greatest glory to be in the most extensive empire, it was then finally discovered, by proof and experience, that mental power has the greatest effect in military operations
+
+# sentence level graph:
+(s13c / comperio-05
+    :ARG1 (s13p2 / possum-NEW-01
+        :ARG0 (s13i / ingenium :refer-number singular)
+        :temporal (s13b / bellum :refer-number singular)
+        :extent (s13m / multus :degree intensifier)
+        :aspect state)
+    :temporal (s13t / tum)
+    :temporal (s13d / demum)
+    :cause (s13a / and
+        :op1 (s13p / periculum :refer-number singular)
+        :op2 (s13n / negotium :refer-number plural))
+    :temporal (s13a2 / after
+        :op1 (s13c4 / coepio-01
+            :ARG0 (s13a6 / and
+                :op1 (s13p6 / person
+                    :refer-number singular
+                    :wiki "Q8423"
+                    :name (s13n4 / name :op1 "Cyrus"))
+                :op2 (s13a4 / and
+                    :op1 (s13p3 / person
+                        :refer-number plural
+                        :mod (s13c2 / city
+                            :wiki "Q5690"
+                            :name (s13n2 / name :op1 "Sparta")))
+                    :op2 (s13p4 / person
+                        :refer-number plural
+                        :mod (s13c3 / city
+                            :wiki "Q844930"
+                            :name (s13n3 / name :op1 "Athens")))))
+            :ARG1 (s13a3 / and
+                :op1 (s13s / subigo-12
+                    :ARG0 s13a6
+                    :ARG1 (s13a5 / and
+                        :op1 (s13u / urbs :refer-number plural)
+                        :op2 (s13n7 / natio :refer-number plural))
+                    :aspect activity)
+                :op2 (s13h / habeo-07
+                    :ARG0 s13a4
+                    :ARG1 (s13c6 / cupio-05
+                        :ARG0 s13a6
+                        :ARG1 (s13d2 / dominor-01
+                            :aspect state
+                            :modal-predicate s13c6)
+                        :aspect state
+                        :modal-predicate s13h)
+                    :ARG2 (s13c5 / causa-17
+                        :ARG1 (s13b2 / bello-02
+                            :ARG0 s13a6
+                            :aspect activity))
+                    :aspect state)
+                :op3 (s13p5 / puto-09
+                    :ARG0 s13a4
+                    :ARG1 (s13h2 / have-place-91
+                        :ARG1 (s13g / gloria
+                            :mod (s13m2 / magnus :degree intensifier)
+                            :refer-number singular)
+                        :ARG2 (s13i2 / imperium
+                            :mod (s13m3 / magnus :degree intensifier)
+                            :refer-number singular)
+                        :aspect state
+                        :modal-predicate s13p5)
+                    :aspect state)
+                :place (s13a7 / and
+                    :op1 (s13r2 / region
+                        :wiki "Q48"
+                        :name (s13n5 / name :op1 "Asia"))
+                    :op2 (s13r3 / region
+                        :name (s13n6 / name :op1 "Graecia"))))
+            :aspect performance))
+    :aspect performance)
+
+# alignment:
+s13c: 37-38
+s13a6: 0-0
+s13p6: 6-6
+s13n4: 0-0
+s13a4: 11-11
+s13p3: 10-10
+s13c2: 0-0
+s13n2: 0-0
+s13p4: 12-12
+s13n3: 0-0
+s13c4: 13-13
+s13p2: 43-43
+s13i: 42-42
+s13b: 39-40
+s13m: 41-41
+s13t: 32-32
+s13d: 33-33
+s13a: 35-35
+s13p: 34-34
+s13n: 36-36
+s13a2: 1-1, 3-3
+s13a3: 0-0
+s13s: 17-17
+s13a5: 15-15
+s13u: 14-14
+s13n7: 16-16
+s13h: 23-23
+s13c3: 0-0
+s13c6: 19-19
+s13d2: 20-20
+s13c5: 21-21
+s13b2: 22-22
+s13p5: 30-30
+s13h2: 0-0
+s13g: 26-26
+s13m2: 25-25
+s13i2: 27-27, 29-29
+s13m3: 28-28
+s13a7: 0-0
+s13n5: 0-0
+s13r2: 4-5
+s13n6: 0-0
+s13r3: 8-9
+
+# document level annotation:
+(s13s0 / sentence
+	:temporal ((s11t :after s13c)
+            (s13c :overlap s13p2)
+            (s13c :before s13c4)
+            (s13c4 :after s13s)
+            (s13s :overlap s13h)
+            (s13s :overlap s13p5)
+            (s13h :overlap s13c6)
+            (s13c6 :after s13d2)
+            (s13p5 :overlap s13h2)
+            (s13s :overlap s13b2))
+	:modal ((root :modal author)
+	        (author :full-affirmative s13c)
+            (author :full-affirmative s13p2)
+            (author :full-affirmative s13c4)
+            (author :full-affirmative s13s)
+            (author :full-affirmative s13h)
+            (author :full-affirmative s13p5)
+            (author :full-affirmative s13b2)
+            (s13h :unspecified s13c6)
+            (s13p5 :unspecified s13h2)
+            (s13c6 :unspecified s13d)))
+
+
+# sent_id = SlaT-2786
+# :: snt14
+Index:  1   2    3    4       5          6    7     8   9    10 11 12  13     14   15   16         17        18      19  20   21       22    23  24 25 26    27   28    29 30    31   32  33      34      35
+Words: quod si regum atque imperatorum animi virtus in pace ita ut in bello valeret , aequabilius atque constantius sese res humanae haberent , que ne aliud alio ferri que ne mutari ac misceri omnia cerneres
+Sentence: quod si regum atque imperatorum animi virtus in pace ita ut in bello valeret, aequabilius atque constantius sese res humanae haberent, neque aliud alio ferri neque mutari ac misceri omnia cerneres
+Sentence Gloss (en): and, indeed, if the intellectual ability of kings and magistrates were exerted to the same degree in peace as in war, human affairs would be more orderly and settled, and you would not see that one thing is carried to another place, and all things are changed and confused
+
+# sentence level graph:
+(s14a / and
+    :op1 (s14h / habeo-17
+        :ARG0 (s14r / res
+            :refer-number plural
+            :mod (s14h2 / humanus))
+        :ARG1 s14r
+        :ARG2 (s14a2 / and
+            :op1 (s14a3 / aequabiliter :degree intensifier)
+            :op2 (s14c / constanter :degree intensifier))
+        :aspect state)
+    :op2 (s14c2 / cerno-11
+        :ARG0 (s14p / person
+            :refer-number singular
+            :refer-person 2nd)
+        :ARG1 (s14a4 / and
+                :op1 (s14f / fero-30
+                    :ARG1 (s14t / thing
+                        :refer-number singular
+                        :mod (s14a5 / alius))
+                    :ARG3 (s14a6 / alio)
+                    :aspect activity
+                    :modal-predicate s14c2)
+                :op2 (s14a7 / and
+                    :op1 (s14m3 / misceo-07
+                        :ARG1 (s14t2 / thing
+                            :quant (s14o / omnis)
+                            :refer-number plural)
+                        :aspect activity
+                        :modal-predicate s14c2)
+                    :op2 (s14m4 / muto-04
+                        :ARG1 s14t2
+                        :aspect activity
+                        :modal-predicate s14c2)))
+        :aspect process)
+    :condition (s14v / valeo-07
+        :ARG0 (s14v2 / virtus
+            :refer-number singular
+            :mod (s14a8 / animus :refer-number singular)
+            :possessor (s14a9 / and
+                :op1 (s14p2 / person
+                    :refer-number plural
+                    :ARG1-of (s14h3 / have-role-91
+                        :ARG3 (s14r2 / rex)
+                        :aspect state))
+                :op2 (s14p3 / person
+                    :refer-number plural
+                    :ARG1-of (s14h4 / have-role-91
+                        :ARG3 (s14i / imperator)
+                        :aspect state))))
+        :temporal (s14p4 / pax :refer-number singular)
+        :ARG1-of (s14r3 / resemble-91
+            :ARG2 (s14v3 / valeo-07
+                :ARG0 s14v2
+                :temporal (s14b / bellum :refer-number singular)
+                :aspect state)
+            :aspect state)
+        :aspect state))
+
+# alignment:
+s14a: 24-25
+s14h: 22-22
+s14r: 19-20
+s14h2: 21-21
+s14a2: 17-17
+s14a3: 16-16
+s14c: 18-18
+s14c2: 35-35
+s14p: 0-0
+s14a4: 29-30
+s14f: 28-28
+s14t: 26-26
+s14a5: 0-0
+s14a6: 27-27
+s14a7: 32-32
+s14m3: 31-31
+s14t2: 34-34
+s14o: 0-0
+s14m4: 33-33
+s14v: 14-14
+s14v2: 7-7
+s14a8: 6-6
+s14a9: 4-4
+s14p2: 3-3
+s14h3: 0-0
+s14r2: 0-0
+s14p3: 5-5
+s14h4: 0-0
+s14i: 0-0
+s14p4: 8-9
+s14r3: 10-11
+s14v3: 0-0
+s14b: 12-13
+
+# document level annotation:
+(s14s0 / sentence
+    :temporal ((s13c :after s14v)
+            (document-creation-time :after s14h)
+            (document-creation-time :after s14c2)
+            (s14c :overlap s14f)
+            (s14c :overlap s14m3)
+            (s14c :overlap s14m4)
+            (s13c :after s14v3)
+            (document-creation-time :overlap s14r3)
+            (s14v :overlap s14h3)
+            (s14v :overlap s14h4))
+	:modal ((root :modal author)
+	        (author :neutral-affirmative have-condition-91)
+            (have-condition-91 :full-affirmative s14h)
+            (have-condition-91 :full-negative s14c2)
+            (have-condition-91 :full-affirmative s14v)
+            (s14c2 :unspecified s14f)
+            (s14c2 :unspecified s14m3)
+            (s14c2 :unspecified s14m4)
+            (author :full-affirmative s14v3)
+            (author :full-affirmative s14r3)
+            (author :full-affirmative s14h3)
+            (author :full-affirmative s14h4)))
+
+
+# sent_id = SlaT-2787
+# :: snt15
+Index:  1     2      3      4    5        6     7     8     9      10   11
+Words: nam imperium facile iis artibus retinetur , quibus initio partum est
+Sentence: nam imperium facile iis artibus retinetur, quibus initio partum est
+Sentence Gloss (en): for dominion is easily secured by those qualities by which it was at first obtained
+
+# sentence level graph:
+(s15r / retineo-05
+    :ARG1 (s15i / imperium :refer-number singular)
+    :instrument (s15a / ars
+        :refer-number plural
+        :instrument-of (s15p / pario2-07
+            :ARG1 s15i
+            :temporal (s15i2 / initium)
+            :aspect performance))
+    :manner (s15f / facile)
+    :aspect activity)
+
+# alignment:
+s15r: 6-6
+s15i: 2-2
+s15a: 4-5, 8-8
+s15p: 10-11
+s15i2: 9-9
+s15f: 3-3
+
+# document level annotation:
+(s15s0 / sentence
+	:temporal ((past-reference :overlap s15i2)
+            (s15i2 :contained s15p)
+            (s15p :after s15r))
+	:modal ((root :modal author)
+	        (author :full-affirmative s15r)
+	        (author :full-affirmative s15p)))
+
+
+# sent_id = SlaT-2788
+# :: snt16
+Index:  1     2   3    4     5     6   7       8     9      10      11     12      13      14    15   16     17   18    19      20
+Words: verum ubi pro labore desidia , pro continentia et aequitate lubido atque superbia invasere , fortuna simul cum moribus inmutatur
+Sentence: verum ubi pro labore desidia, pro continentia et aequitate lubido atque superbia invasere, fortuna simul cum moribus inmutatur
+Sentence Gloss (en): but when sloth has introduced itself in the place of industry, and covetousness and pride in that of moderation and equity, the fortune (of a state) is altered together with its morals
+
+# sentence level graph:
+(s16i / immuto-NEW-01
+    :ARG1 (s16a5 / and
+        :op1 (s16f / fortuna :refer-number singular)
+        :op2 (s16m / mos :refer-number plural))
+    :temporal (s16u / ubi
+        :op1 (s16a / and
+            :op1 (s16i2 / invado2-06
+                :ARG0 (s16d / desidia
+                    :refer-number singular)
+                :substitute (s16l / labor :refer-number singular)
+                :aspect performance)
+            :op2 (s16i3 / invado2-06
+                :ARG0 (s16a2 / and
+                    :op1 (s16l2 / libido :refer-number singular)
+                    :op2 (s16s / superbia :refer-number singular))
+                :substitute (s16a3 / and
+                    :op1 (s16c / continentia :refer-number singular)
+                    :op2 (s16a4 / aequitas :refer-number singular))
+                :aspect performance)))
+    :aspect performance)
+
+# alignment:
+s16i: 20-20
+s16f: 16-16
+s16m: 19-19
+s16u: 2-2
+s16a: 0-0
+s16i2: 0-0
+s16d: 5-5
+s16l: 3-4
+s16i3: 14-14
+s16a2: 12-12
+s16l2: 11-11
+s16s: 13-13
+s16a3: 9-9
+s16c: 7-8
+s16a4: 10-10
+s16a5: 17-18
+
+# document level annotation:
+(s16s0 / sentence
+	:temporal ((past-reference :overlap s16i2)
+            (past-reference :overlap s16i3)
+            (s16i2 :after s16i))
+	:modal ((root :modal author)
+	        (author :full-affirmative s16i)
+	        (author :full-affirmative s16i2)
+	        (author :full-affirmative s16i3))
+
+
+# sent_id = SlaT-2789
+# :: snt17
+Index:  1     2      3     4    5       6     7   8     9      10
+Words: ita imperium semper ad optumum quemque a minus bono transfertur
+Sentence: ita imperium semper ad optumum quemque a minus bono transfertur
+Sentence Gloss (en): and thus authority is always transferred from the less to the more deserving
+
+# sentence level graph:
+(s17t / transfero-15
+    :ARG1 (s17i / imperium :refer-number singular)
+    :ARG2 (s17p / person
+        :refer-number singular
+        :quant (s17q / quisque)
+        :ARG1-of (s17h / have-degree-91
+            :ARG2 (s17b / bonus)
+            :ARG3 (s17i2 / intensifier)
+            :aspect state))
+    :ARG3 (s17p2 / person
+        :refer-number singular
+        :ARG1-of (s17h2 / have-degree-91
+            :ARG2 (s17b2 / bonus)
+            :ARG3 (s17m / minus)
+            :aspect state))
+    :temporal (s17s / semper)
+    :aspect habitual)
+
+# alignment:
+s17t: 10-10
+s17i: 2-2
+s17p: 4-6
+s17q: 0-0
+s17h: 0-0
+s17b: 0-0
+s17i2: 0-0
+s17p2: 7-9
+s17m: 0-0
+s17b2: 0-0
+s17h2: 0-0
+s17s: 3-3
+
+# document level annotation:
+(s17s0 / sentence
+	:temporal ((document-creation-time :overlap s17t)
+	        (document-creation-time :overlap s17s)
+	        (s17t :overlap s17h)
+	        (s17t :overlap s17h2))
+	:modal ((root :modal author)
+	        (author :full-affirmative s17t)
+	        (author :full-affirmative s17h)
+	        (author :full-affirmative s17h2)))
+
+
+# sent_id = SlaT-2790
+# :: snt18
+Index:   1    2      3        4       5      6    7       8     9
+Words: Quae homines arant navigant aedificant , virtuti omnia parent
+Sentence: Quae homines arant navigant aedificant, virtuti omnia parent
+Sentence Gloss (en): all the things that men do in agriculture, navigation, architecture, depend on intellect
+
+# sentence level graph:
+(s18p / pareo-07
+    :ARG0 (s18t / thing
+        :refer-number plural
+        :quant (s18o / omnis)
+        :ARG1-of (s18a / and
+            :op1 (s18a2 / aro-03
+                :ARG0 (s18h / homo :refer-number plural)
+                :aspect habitual)
+            :op2 (s18n / navigo-03
+                :ARG0 s18h
+                :aspect habitual)
+            :op3 (s18a3 / aedifico-03
+                :ARG0 s18h
+                :aspect habitual)))
+    :ARG1 (s18v / virtus :refer-number singular)
+    :aspect state)
+
+# alignment:
+s18p: 9-9
+s18t: 1-1
+s18o: 8-8
+s18a: 0-0
+s18a2: 3-3
+s18n: 4-4
+s18a3: 5-5
+s18h: 2-2
+s18v: 7-7
+
+# document level annotation:
+(s18s0 / sentence
+	:temporal ((document-creation-time :overlap s18p)
+	        (document-creation-time :overlap s18a2)
+        	(document-creation-time :overlap s18n)
+	        (document-creation-time :overlap s18a3))
+	:modal ((root :modal author)
+	        (author :full-affirmative s18p)
+	        (author :full-affirmative s18a2)
+	        (author :full-affirmative s18n)
+	        (author :full-affirmative s18a3)))
+
+
+# sent_id = SlaT-2791
+# :: snt19
+Index:   1   2      3     4   5     6      7      8  9    10    11     12    13     14      15            16
+Words: sed multi mortales , dediti ventri atque somno , indocti que inculti vitam sicuti peregrinantes transiere
+Sentence: sed multi mortales, dediti ventri atque somno, indocti incultique vitam sicuti peregrinantes transiere
+Sentence Gloss (en): yet many human beings, resigned to sensuality and indolence, uninstructed and uneducated, have passed through life like travelers in a strange country
+
+# sentence level graph:
+(s19t / transeo-15
+    :ARG0 (s19p3 / person
+        :refer-number plural
+        :mod (s19m / mortalis)
+        :quant (s19m2 / multus)
+        :ARG0-of (s19d / dedo-02
+            :ARG1 s19m
+            :ARG2 (s19a / and
+                :op1 (s19v / venter :refer-number singular)
+                :op2 (s19s / somnus :refer-number singular))
+            :aspect habitual)
+        :ARG1-of (s19a2 / and
+            :op1 (s19d2 / doceo
+                :aspect performance)
+            :op2 (s19c / colo
+                :aspect performance)))
+    :ARG1 (s19v2 / vita :refer-number singular)
+    :manner (s19r / resemble-91
+        :ARG1 s19m
+        :ARG2 (s19p / person
+            :refer-number plural
+            :ARG0-of (s19p2 / peregrinor-01
+                :aspect activity))
+        :aspect state)
+    :aspect activity)
+
+# alignment:
+s19t: 16-16
+s19p3: 3-3
+s19m: 0-0
+s19m2: 2-2
+s19d: 5-5
+s19a: 7-7
+s19v: 6-6
+s19s: 8-8
+s19a2: 11-11
+s19d2: 10-10
+s19c: 12-12
+s19v2: 13-13
+s19r: 14-14
+s19p: 15-15
+s19p2: 0-0
+
+# document level annotation:
+(s19s0 / sentence
+	:temporal ((document-creation-time :before s19t)
+            (s19t :contained s19d)
+            (s19t :overlap s19r)
+            (s19t :overlap s19p2)
+            (s19t :before s19d2)
+            (s19t :before s19c))
+	:modal ((root :modal author)
+	        (author :full-affirmative s19t)
+	        (author :full-affirmative s19d)
+	        (author :full-affirmative s19r)
+	        (author :full-negative s19d2)
+	        (author :full-negative s19c)
+	        (author :full-affirmative s19p2))
+	:coref ((s18h :same-entity s19m)))
+
+
+# sent_id = SlaT-2792
+# :: snt20
+Index:    1       2      3       4      5       6     7    8     9    10
+Words: quibus profecto contra naturam corpus voluptati , anima oneri fuit
+Sentence: quibus profecto contra naturam corpus voluptati, anima oneri fuit
+Sentence Gloss (en): to whom, certainly, contrary to the intention of nature, the body was a gratification, and the mind a burden
+
+# sentence level graph:
+(s20c / contrast-91
+    :ARG1 (s20i / identity-91
+        :ARG1 (s20c2 / corpus :refer-number singular)
+        :ARG2 (s20v / voluptas :refer-number singular)
+        :affectee (s20p / person
+            :refer-number plural
+            :refer-person 3rd)
+        :aspect state)
+    :ARG2 (s20i2 / identity-91
+        :ARG1 (s20a / anima :refer-number singular)
+        :ARG3 (s20o / onus :refer-number singular)
+        :affectee s20p
+        :aspect state)
+    :manner (s20n / natura
+        :refer-number singular
+        :polarity -))
+
+# alignment:
+s20c: 7-7
+s20i: 0-0
+s20i2: 10-10
+s20c2: 5-5
+s20v: 6-6
+s20a: 8-8
+s20o: 9-9
+s20n: 3-4
+s20p: 1-1
+
+# document level annotation:
+(s20s0 / sentence
+	:temporal ((s19t :overlap s20i)
+	          (s19t :overlap s20i2))
+	:modal ((root :modal author)
+	        (author :full-affirmative s20i)
+	        (author :full-affirmative s20i2))
+    :coref ((s19m :same-entity s20p)))
+
+
+# sent_id = SlaT-2793
+# :: snt21
+Index:   1    2    3    4     5     6      7    8    9    10    11     12
+Words: eorum ego vitam que mortem iuxta aestumo , quoniam de utraque siletur
+Sentence: eorum ego vitam mortemque iuxta aestumo, quoniam de utraque siletur
+Sentence Gloss (en): of these I hold the life and death in equal estimation, for silence is maintained concerning both
+
+# sentence level graph:
+(s21a / aestimo-02
+    :ARG0 (s21p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s21a2 / and
+        :op1 (s21v / vita
+            :refer-number singular
+            :possessor (s21p2 / person
+                :refer-number plural
+                :refer-person 3rd))
+        :op2 (s21m / mors
+            :refer-number singular
+            :possessor s21p2))
+    :ARG2 (s21i / iuxta)
+    :reason (s21s / sileo-NEW-05
+        :ARG1 (s21t / thing
+            :refer-number plural
+            :quant (s21u / uterque))
+        :aspect activity)
+    :aspect state)
+
+# alignment:
+s21a: 7-7
+s21p: 2-2
+s21p2: 1-1
+s21a2: 4-4
+s21v: 3-3
+s21m: 5-5
+s21i: 6-6
+s21s: 12-12
+s21t: 10-11
+s21u: 0-0
+
+# document level annotation:
+(s21s0 / sentence
+	:temporal ((document-creation-time :overlap s21a)
+            (document-creation-time :overlap s21s))
+	:modal ((root :modal author)
+	        (author :full-affirmative s21a)
+	        (author :full-affirmative s21s))
+	:coref ((s20p :same-entity s21p)
+	        (s21t :subset-of s21v)
+	        (s21t :subset-of s21m)))
+
+
+# sent_id = SlaT-2794
+# :: snt22
+Index:   1    2     3  4   5     6      7     8    9     10     11  12 13   14      15      16        17        18     19   20    21    22     23
+Words: verum enim vero is demum mihi vivere atque frui anima videtur , qui aliquo negotio intentus praeclari facinoris aut artis bonae famam quaerit
+Sentence: verum enim vero is demum mihi vivere atque frui anima videtur, qui aliquo negotio intentus praeclari facinoris aut artis bonae famam quaerit
+Sentence Gloss (en): but he only, indeed, seems to me to live, and to enjoy life, who, intent upon some employment, seeks reputation from some ennobling enterprise, or honorable pursuit
+
+# sentence level graph:
+(s22v / video-10
+    :ARG0 (s22p2 / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s22p / person
+        :refer-number singular
+        :refer-person 3rd
+        :ARG0-of (s22q / quaero-15
+            :ARG1 (s22f / fama
+                :refer-number singular
+                :mod (s22o / or
+                    :op1 (s22f2 / facinus
+                        :refer-number singular
+                        :mod (s22p3 / praeclarus))
+                    :op2 (s22a3 / ars
+                        :refer-number singular
+                        :mod (s22b / bonus))))
+                :manner (s22i / intendo-06
+                    :ARG0 s22p
+                    :ARG1 (s22n / negotium
+                        :refer-number singular
+                        :mod (s22a4 / aliquus))
+                    :aspect state)
+                :aspect activity))
+    :ARG2 (s22a / and
+        :op1 (s22v2 / vivo-NEW-02
+            :ARG0 s22p
+            :aspect activity)
+        :op2 (s22f3 / fruor-04
+            :ARG0 s22p
+            :ARG1 (s22a2 / anima :refer-number singular)
+            :aspect activity))
+	:aspect state)
+
+# alignment:
+s22v: 11-11
+s22p: 4-4, 13-13
+s22p2: 6-6
+s22q: 23-23
+s22f: 22-22
+s22o: 19-19
+s22f2: 18-18
+s22p3: 17-17
+s22a3: 20-20
+s22b: 21-21
+s22i: 16-16
+s22n: 15-15
+s22a4: 14-14
+s22a2: 10-10
+s22a: 8-8
+s22v2: 7-7
+s22f3: 9-9
+
+# document level annotation:
+(s22s0 / sentence
+	:temporal ((document-creation-time :overlap s22v)
+            (document-creation-time :overlap s22v2)
+            (s22v2 :overlap s22f3)
+            (s22v2 :overlap s22q)
+            (s22v2 :overlap s22i))
+	:modal ((root :modal author)
+	        (author :full-affirmative s22v)
+	        (author :full-affirmative s22i)
+	        (author :full-affirmative s22q)
+	        (author :partial-affirmative s22v2)
+	        (author :partial-affirmative s22f3)))
+
+
+# sent_id = SlaT-2795
+# :: snt23
+Index:  1  2    3     4     5     6    7     8     9      10
+Words: Sed in magna copia rerum aliud alii natura iter ostendit
+Sentence: Sed in magna copia rerum aliud alii natura iter ostendit
+Sentence Gloss (en): but in the great abundance of occupations, nature points out different paths to different individuals
+
+# sentence level graph:
+(s23o / ostendo-07
+    :ARG0 (s23n / natura :refer-number singular)
+    :ARG1 (s23i / iter
+        :refer-number singular
+        :mod (s23a / alius))
+    :ARG2 (s23p / person
+        :refer-number singular
+        :refer-person 3rd
+        :mod (s23a2 / alius))
+    :place (s23c / copia
+        :refer-number singular
+        :mod (s23m / magnus)
+        :mod (s23r / res :refer-number plural))
+    :aspect activity)
+
+# alignment:
+s23o: 10-10
+s23n: 8-8
+s23i: 9-9
+s23p: 7-7
+s23a2: 0-0
+s23a: 6-6
+s23c: 2-2, 4-4
+s23m: 3-3
+s23r: 5-5
+
+# document level annotation:
+(s23s0 / sentence
+	:temporal ((document-creation-time :overlap s23o))
+	:modal ((root :modal author)
+	        (author :full-affirmative s23o))
+ 	:coref ((s23p :subset-of s22p2)))
+
+
+# sent_id = SlaT-2796
+# :: snt24
+Index:    1      2   3     4     5     6    7   8     9     10    11     12     13
+Words: pulchrum est bene facere rei publicae , etiam bene dicere haud absurdum est
+Sentence: pulchrum est bene facere rei publicae, etiam bene dicere haud absurdum est
+Sentence Gloss (en): to act well for the state is noble, and even to speak well for it is not without merit
+
+# sentence level graph:
+(s24a / and+contrast
+    :op1 (s24h / have-mod-91
+        :ARG1 (s24f / facio-01
+            :ARG1 (s24b / bene)
+            :affectee (s24r / res
+                :refer-number singular
+                :mod (s24p2 / publicus))
+            :aspect activity)
+        :ARG2 (s24p / pulcher)
+        :aspect state)
+    :op2 (s24h2 / have-mod-91
+        :ARG1 (s24d / dico2-18
+            :manner (s24b2 / bene)
+            :aspect activity)
+        :ARG2 (s24a2 / absurdus)
+        :mod (s24e / etiam)
+        :aspect state))
+
+# alignment:
+s24a: 7-7
+s24h: 2-2
+s24h2: 13-13
+s24b: 3-3
+s24f: 4-4
+s24b2: 9-9
+s24r: 5-5
+s24p2: 6-6
+s24p: 1-1
+s24d: 10-10
+s24a2: 11-12
+s24e: 8-8
+
+# document level annotation:
+(s24s0 / sentence
+	:temporal ((document-creation-time :overlap s24h)
+            (document-creation-time :overlap s24h2)
+            (document-creation-time :overlap s24d)
+            (document-creation-time :overlap s24f))
+	:modal ((root :modal author)
+	        (author :full-affirmative s24h)
+	        (author :full-negative s24h2)
+	        (author :full-affirmative s24h)
+	        (author :full-affirmative s24d))
+	:coref ((s23i :subset-of s24f)
+	        (s23i :subset-of s24d)))
+
+
+# sent_id = SlaT-2797
+# :: snt25
+Index:  1    2   3    4     5      6     7
+Words: vel pace vel bello clarum fieri licet
+Sentence: vel pace vel bello clarum fieri licet
+Sentence Gloss (en): both in peace and in war it is possible to obtain celebrity
+
+# sentence level graph:
+(s25f / fio-01
+    :ARG1 (s25c / clarus)
+    :temporal (s25o / or
+        :op1 (s25p / pax :refer-number singular)
+        :op2 (s25b / bellum :refer-number singular))
+    :aspect process)
+
+# alignment:
+s25f: 6-7
+s25c: 5-5
+s25o: 1-1, 3-3
+s25p: 2-2
+s25b: 4-4
+
+# document level annotation:
+(s25s0 / sentence
+	:temporal ((document-creation-time :overlap s25f))
+	:modal ((root :modal author)
+	        (author :neutral-affirmative s25f)))
+
+
+# sent_id = SlaT-2798
+# :: snt26
+Index: 1   2    3    4   5    6      7      8      9   10     11
+Words: et qui fecere et qui facta aliorum scripsere , multi laudantur
+Sentence: et qui fecere et qui facta aliorum scripsere, multi laudantur
+Sentence Gloss (en): many who have acted, and many who have recorded the actions of others, are praised
+
+# sentence level graph:
+(s26l / laudo-08
+    :ARG1 (s26a / and
+        :op1 (s26p / person
+            :refer-number plural
+            :refer-person 3rd
+            :quant (s26m / multus)
+            :ARG0-of (s26f / facio-02
+                :aspect performance))
+        :op2 (s26p3 / person
+            :refer-number plural
+            :refer-person 3rd
+            :quant s26m
+            :ARG0-of (s26s / scribo-14
+                :ARG1 (s26t / thing
+                    :refer-number plural
+                    :ARG1-of (s26f2 / facio-23
+                        :ARG0 (s26p2 / person
+                            :refer-number plural
+                            :refer-person 3rd
+                            :mod (s26a2 / alius))
+                        :aspect performance))
+                :aspect performance)))
+    :aspect activity)
+
+# alignment:
+s26l: 11-11
+s26p: 2-2
+s26p3: 5-5
+s26m: 10-10
+s26a: 1-1, 4-4
+s26p2: 7-7
+s26a2: 0-0
+s26f2: 0-0
+s26t: 6-6
+s26s: 8-8
+s26f: 3-3
+
+# document level annotation:
+(s26s0 / sentence
+	:temporal ((document-creation-time :overlap s26l)
+            (s26l :before s26f)
+            (s26l :before s26s)
+            (s26s :before s26f2))
+	:modal ((root :modal author)
+	        (author :full-affirmative s26l)
+	        (author :full-affirmative s26f)
+	        (author :full-affirmative s26f2)
+	        (author :full-affirmative s26s))
+	:coref ((s24f :same-event s26f)))
+
+
+# sent_id = SlaT-2799
+# :: snt27
+Index: 1   2     3    4    5         6      7     8        9         10    11    12     13   14 15   16   17     18     19    20    21     22
+Words: ac mihi quidem , tametsi haudquaquam par gloria sequitur scriptorem et auctorem rerum , tamen in primis arduom videtur res gestas scribere
+Sentence: ac mihi quidem, tametsi haudquaquam par gloria sequitur scriptorem et auctorem rerum, tamen in primis arduom videtur res gestas scribere
+Sentence Gloss (en): and to me, assuredly, though by no means equal glory attends the narrator and the performer of illustrious deeds, it yet seems in the highest degree difficult to write the history of great transactions
+
+# sentence level graph:
+(s27v / video-10
+    :ARG0 (s27p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s27s / scribo-14
+        :ARG1 (s27r / res
+            :refer-number plural
+            :ARG1-of (s27g / gero-15
+                :aspect performance))
+        :aspect activity)
+    :ARG2 (s27h / have-mod-91
+        :ARG1 s27s
+        :ARG2 (s27a / arduus
+            :degree (s27p4 / primus))
+        :aspect state)
+    :concession (s27s2 / sequor-22
+        :ARG0 (s27g2 / gloria
+            :refer-number singular
+            :mod (s27p2 / par))
+        :ARG1 (s27a2 / and
+            :op1 (s27s3 / scriptor-03
+                :refer-number singular
+                :ARG1 (s27r2 / res :refer-number plural))
+            :op2 (s27a3 / auctor-20
+                :refer-number singular
+                :ARG1 s27r2))
+        :aspect activity)
+    :aspect state)
+
+# alignment:
+s27v: 19-19
+s27p: 2-2
+s27s: 22-22
+s27g: 21-21
+s27r: 20-20
+s27h: 18-18
+s27p4: 16-17
+s27a: 0-0
+s27s2: 6-6, 9-9
+s27g2: 8-8
+s27p2: 7-7
+s27a2: 11-11
+s27a3: 12-12
+s27r2: 13-13
+s27s3: 10-10
+
+# document level annotation:
+(s27s0 / sentence
+	:temporal ((s26l :overlap s27v)
+            (s26l :overlap s27s)
+            (s26l :overlap s27s2)
+            (s27s :before s27g)
+            (s27s2 :overlap s27h))
+	:modal ((root :modal author)
+	        (author :full-affirmative s27v)
+	        (author :full-affirmative s27s)
+	        (author :full-affirmative s27g)
+	        (author :full-negative s27s2)
+	        (author :partial-affirmative s27h))
+	:coref ((s26p :same-entity s27a3)
+	        (s26f2 :same-event s27g)))
+
+
+# sent_id = SlaT-2800
+# :: snt28
+Index:   1     2     3     4       5        6
+Words: primum quod facta dictis exaequanda sunt
+Sentence: primum quod facta dictis exaequanda sunt
+Sentence Gloss (en): first, because one must equate words with deeds
+
+# sentence level graph:
+(s28h / have-reason-91
+    :ARG1 (s28e / event)
+    :ARG2 (s28e2 / exaequo-01
+        :ARG1 (s28t / thing
+            :refer-number plural
+            :ARG1-of (s28f / facio-23
+                :aspect performance))
+        :ARG2 (s28t2 / thing
+            :refer-number plural
+            :ARG1-of (s28d / dico2-18
+                :aspect performance))
+        :aspect process)
+    :aspect state)
+
+# alignment:
+s28e: 0-0
+s28h: 2-2
+s28e2: 5-6
+s28t: 3-3
+s28t2: 4-4
+s28f: 0-0
+s28d: 0-0
+
+# document level annotation:
+(s28s0 / sentence
+	:temporal ((s26l :overlap s28h)
+            (s26l :overlap s28e2)
+            (s28e :before s28f)
+            (s28e :before s28d))
+	:modal ((root :modal author)
+	        (author :full-affirmative s28h)
+	        (author :partial-affirmative s28e2)
+	        (author :full-affirmative s28f)
+	        (author :full-affirmative s28d))
+	:coref ((s27g :same-event s28f)
+	        (s27v :same-event s28e2)))
+
+
+# sent_id = SlaT-2801
+# :: snt29
+Index:    1     2   3    4    5     6           7           8         9    10     11    12  13 14  15  16      17    18     19      20     21   22  23   24     25     26      27   28  29  30    31     32   33  34   35   36    37   38    39    40
+Words: dehinc quia que pleri quae delicta reprehenderis malevolentia et invidia dicta putant , ubi de magna virtute atque gloria bonorum memores , quae sibi quisque facilia factu putat , aequo animo accipit , supra ea veluti ficta pro falsis ducit
+Sentence: dehinc quia plerique quae delicta reprehenderis malevolentia et invidia dicta putant, ubi de magna virtute atque gloria bonorum memores, quae sibi quisque facilia factu putat, aequo animo accipit, supra ea veluti ficta pro falsis ducit
+Sentence Gloss (en): and next, because most readers consider that whatever errors you mention with censure, are mentioned through malevolence and envy; while, when you speak of the great virtue and glory of eminent men, every one hears with acquiescence only that which he himself thinks easy to be performed; all beyond his own conception he regards as fictitious and incredible
+
+# sentence level graph:
+(s29h / have-reason-91
+    :ARG1 (s29e / event)
+    :ARG2 (s29p / puto-09
+        :ARG0 (s29p2 / person
+            :refer-number plural
+            :refer-person 3rd
+            :quant (s29p3 / plerique))
+        :ARG1 (s29d / dico2-18
+            :ARG0 (s29p4 / person
+                :refer-number singular
+                :refer-person 2nd)
+            :ARG1 (s29d2 / delictum
+                :refer-number plural
+                :mod (s29q / quis)
+                :ARG1-of (s29r / reprehendo-05
+                    :ARG0 s29p4
+                    :aspect activity
+                    :modal-predicate s29p))
+            :reason (s29a / and
+                :op1 (s29m / malevolentia :refer-number singular)
+                :op2 (s29i / invidia :refer-number singular))
+            :aspect performance)
+        :ARG1-of (s29b / but-91
+            :temporal (s29m2 / memoro-03
+                    :ARG0 s29p4
+                    :ARG1 (s29a5 / and
+                        :op1 (s29v / virtus
+                            :refer-number singular
+                            :mod (s29m3 / magnus))
+                        :op2 (s29g / gloria :refer-number singular)
+                        :possessor (s29p7 / person
+                            :refer-number plural
+                            :mod (s29b2 / bonus)))
+                    :aspect activity)
+            :ARG2 (s29c / contrast-91
+                :ARG1 (s29a2 / accipio-08+10
+                    :ARG0 (s29p5 / person
+                        :refer-number singular
+                        :refer-person 3rd
+                        :quant (s29q2 / quisque))
+                    :ARG1 (s29t / thing
+                        :refer-number plural
+                        :ARG1-of (s29p6 / puto-09
+                            :ARG0 s29p5
+                            :ARG2 (s29f3 / facio-23
+                                :ARG0 s29p5
+                                :manner (s29f4 / facile)
+                                :aspect performance
+                                :modal-predicate s29p6)
+                            :aspect state))
+                    :manner (s29a3 / animus
+                        :refer-number singular
+                        :mod (s29a4 / aequus))
+                    :aspect state)
+                :ARG2 (s29d3 / duco-09
+                    :ARG0 s29p5
+                    :ARG1 (s29t2 / thing
+                        :refer-number plural
+                        :mod (s29s / supra :op1 s29t))
+                    :ARG2 (s29f / falsus)
+                    :ARG1-of (s29r2 / resemble-91
+                        :ARG2 (s29t3 / thing
+                            :refer-number plural
+                            :ARG1-of (s29f2 / fingo-12+15
+                                :aspect performance))
+                        :aspect state)
+                    :aspect state)))
+        :aspect state)
+    :aspect state)
+
+# alignment:
+s29e: 0-0
+s29h: 2-2
+s29p: 12-12
+s29p2: 3-3
+s29p3: 0-0
+s29d2: 6-6
+s29q: 4-4
+s29r: 7-7
+s29d: 11-11
+s29p4: 0-0
+s29a: 9-9
+s29m: 8-8
+s29i: 10-10
+s29b: 0-0
+s29c: 0-0
+s29a2: 32-32
+s29p5: 25-25
+s29q2: 0-0
+s29t: 23-23
+s29p6: 28-28
+s29f3: 27-27
+s29f4: 26-26
+s29a3: 31-31
+s29a4: 30-30
+s29d3: 40-40
+s29t2: 0-0
+s29s: 34-35
+s29f: 38-39
+s29r2: 36-36
+s29t3: 37-37
+s29f2: 0-0
+s29a5: 18-18
+s29m2: 21-21
+s29m3: 16-16
+s29v: 15-15, 17-17
+s29g: 19-19
+s29p7: 20-20
+s29b2: 0-0
+
+# document level annotation:
+(s29s0 / sentence
+	:temporal ((s26l :overlap s29h)
+            (s26l :overlap s29p)
+            (s26l :before s29r)
+            (s26l :before s29d)
+            (s26l :overlap s29p6)
+            (s29p6 :overlap s29m2)
+            (s29m2 :overlap s29a2)
+            (s29m2 :overlap s29f3)
+            (s29m2 :overlap s29d3)
+            (s29m2 :before s29f2)
+            (s29d3 :overlap s29r2))
+	:modal ((root :modal author)
+	        (author :full-affirmative s29h)
+	        (author :full-affirmative s29p2)
+	        (s29p2 :full-affirmative s29p)
+	        (s29p :unspecified s29r)
+	        (author :full-affirmative s29d)
+	        (author :full-affirmative s29m2)
+	        (author :full-affirmative s29a2)
+            (author :full-affirmative s29p5)
+	        (s29p5 :full-affirmative s29p6)
+	        (s29p6 :unspecified s29f3)
+	        (author :full-affirmative s29d3)
+	        (author :full-affirmative s29f2)
+	        (author :full-affirmative s29r2))
+	:coref ((s29p5 :subset-of s29p2)
+	        (s27v :same-event s29e)))
+
+
+# sent_id = SlaT-2802
+# :: snt30
+Index:  1   2        3          4      5     6    7     8    9   10   11       12  13 14 15  16   17   18     19      20
+Words: Sed ego adulescentulus initio sicuti que pleri studio ad rem publicam latus sum , que ibi mihi multa advorsa fuere
+Sentence: Sed ego adulescentulus initio sicuti plerique studio ad rem publicam latus sum, ibique mihi multa advorsa fuere
+Sentence Gloss (en): myself, however, as a young man was at first led by inclination, like most others, to engage in political affairs, but in that pursuit many circumstances were unfavorable to me
+
+# sentence level graph:
+(s30a / and
+    :op1 (s30f / fero-40
+        :ARG1 (s30p / person
+            :refer-number singular
+            :refer-person 1st
+            :ARG1-of (s30r / resemble-91
+                :ARG2 (s30p2 / person
+                    :refer-number plural
+                    :refer-person 3rd
+                    :quant (s30p3 / plerique))
+                :aspect state))
+        :ARG2 (s30r2 / res
+            :refer-number singular
+            :mod (s30p4 / publicus))
+        :reason (s30s / studium :refer-number singular)
+        :temporal (s30i / identity-91
+            :ARG1 s30p
+            :ARG2 (s30a2 / adulescentulus)
+            :aspect state)
+        :temporal (s30i2 / initium)
+        :aspect performance)
+    :op2 (s30h / have-mod-91
+        :ARG1 (s30t / thing
+            :refer-number plural
+            :quant (s30m / multus))
+        :ARG2 (s30a3 / adversus)
+        :affectee s30p
+        :place (s30i3 / ibi)
+        :aspect state))
+
+# alignment:
+s30a: 15-15
+s30p: 2-2, 17-17
+s30f: 12-13
+s30s: 8-8
+s30r: 5-5
+s30p2: 6-7
+s30p3: 0-0
+s30r2: 9-10
+s30p4: 11-11
+s30i: 3-3
+s30a2: 0-0
+s30i2: 4-4
+s30h: 20-20
+s30a3: 19-19
+s30m: 0-0
+s30i3: 16-16
+s30t: 18-18
+
+# document level annotation:
+(s30s0 / sentence
+	:temporal ((document-creation-time :before s30i2)
+            (s30i2 :overlap s30i)
+            (s30i2 :overlap s30f)
+            (s30f :overlap s30h)
+            (s30f :overlap s30r))
+	:modal ((root :modal author)
+	        (author :full-affirmative s30f)
+	        (author :full-affirmative s30h)
+	        (author :full-affirmative s30r)
+	        (author :full-affirmative s30i)))
+
+
+# sent_id = SlaT-2803
+# :: snt31
+Index:  1   2    3    4  5      6       7  8     9       10      11       12       13
+Words: nam pro pudore , pro abstinentia , pro virtute audacia largitio avaritia vigebant
+Sentence: nam pro pudore, pro abstinentia, pro virtute audacia largitio avaritia vigebant
+Sentence Gloss (en): for, instead of modesty, temperance, and integrity, there prevailed shamelessness, corruption, and rapacity
+
+# sentence level graph:
+(s31v / vigeo-NEW-03
+    :ARG0 (s31a / and
+        :op1 (s31a2 / audacia :refer-number singular)
+        :op2 (s31l / largitio :refer-number singular)
+        :op3 (s31a3 / avaritia :refer-number singular))
+    :substitute (s31v2 / vigeo-NEW-03
+        :ARG0 (s31a4 / and
+            :op1 (s31p / pudor :refer-number singular)
+            :op2 (s31a5 / abstinentia :refer-number singular)
+            :op3 (s31v3 / virtus :refer-number singular))
+        :aspect imperfective)
+    :aspect imperfective)
+
+# alignment:
+s31v: 13-13
+s31a: 0-0
+s31a2: 10-10
+s31l: 11-11
+s31a3: 12-12
+s31v2: 0-0
+s31a4: 0-0
+s31p: 2-3
+s31a5: 5-6
+s31v3: 8-9
+
+# document level annotation:
+(s31s0 / sentence
+	:temporal ((s30i2 :overlap s31v)
+            (s30i2 :overlap s31v)
+            (s31v :overlap s31v2))
+	:modal ((root :modal author)
+	        (author :full-affirmative s31v)
+	        (author :full-negative s31v2)))
+
+
+# sent_id = SlaT-2804
+# :: snt32
+Index:  1      2      3         4           5       6      7    8   9     10   11    12      13       14     15        16      17
+Words: quae tametsi animus aspernabatur insolens malarum artium , tamen inter tanta vitia imbecilla aetas ambitione corrupta tenebatur
+Sentence: quae tametsi animus aspernabatur insolens malarum artium, tamen inter tanta vitia imbecilla aetas ambitione corrupta tenebatur
+Sentence Gloss (en): although my mind, inexperienced in dishonest practices, detested these vices, yet, in the midst of so great corruption, my tender age was kept infected by ambition
+
+# sentence level graph:
+(s32t / teneo-31
+    :ARG1 (s32a / aetas
+        :refer-number singular
+        :mod (s32i / imbecillus))
+    :ARG2 (s32c / corrumpo-15
+        :ARG0 (s32a2 / ambitio :refer-number singular)
+        :ARG1 s32a
+        :aspect performance)
+    :place (s32v / vitium
+        :refer-number plural
+        :mod (s32t2 / tantus))
+    :concession (s32a3 / aspernor-05
+        :ARG0 (s32a4 / animus :refer-number singular)
+        :ARG1 (s32t3 / thing :refer-number plural)
+        :manner (s32i2 / insoleo-NEW-01
+            :ARG0 s32a4
+            :ARG1 (s32a5 / ars
+                :refer-number plural
+                :mod (s32m / malus))
+            :aspect activity)
+        :aspect activity)
+    :aspect activity)
+
+# alignment:
+s32t: 17-17
+s32a: 14-14
+s32i: 13-13
+s32c: 16-16
+s32a2: 15-15
+s32v: 10-10, 12-12
+s32t2: 11-11
+s32a3: 4-4
+s32t3: 1-1
+s32i2: 5-5
+s32a4: 3-3
+s32a5: 7-7
+s32m: 6-6
+
+# document level annotation:
+(s32s0 / sentence
+	:temporal ((s31v :overlap s32t)
+            (s32t :overlap s32a3)
+            (s32a3 :overlap s32i2)
+            (s32t :overlap s32c))
+	:modal ((root :modal author)
+	        (author :full-affirmative s32t)
+	        (author :full-affirmative s32i2)
+	        (author :full-affirmative s32c)
+	        (author :full-affirmative s32a3))
+	:coref ((s30p :subset-of s32a4)
+	        (s32v :subset-of s31a2)
+	        (s32v :subset-of s31l)
+	        (s32v :subset-of s31a3)))
+
+
+# sent_id = SlaT-2805
+# :: snt33
+Index: 1  2  3  4   5       6      7      8        9       10    11   12     13      14     15   16    17    18   19     20      21
+Words: ac me , quom ab reliquorum malis moribus dissentirem , nihilo minus honoris cupido eadem qua ceteros fama atque invidia vexabat
+Sentence: ac me, quom ab reliquorum malis moribus dissentirem, nihilo minus honoris cupido eadem qua ceteros fama atque invidia vexabat
+Sentence Gloss (en): and, though I shrunk from the vicious principles of those around me, yet the same eagerness for honors, which disquieted others, with obloquy and jealousy disquieted myself
+
+# sentence level graph:
+(s33v / vexo-10
+    :ARG0 (s33c / cupio-03+05
+        :ARG0 (s33p / person
+            :refer-number singular
+            :refer-person 1st)
+        :ARG1 (s33h / honor :refer-number singular)
+        :manner (s33i / idem)
+        :aspect activity
+        :ARG0-of (s33v2 / vexo-10
+            :ARG1 (s33p2 / person
+                :refer-number plural
+                :refer-person 3rd
+                :mod (s33c2 / ceterus))
+            :aspect activity))
+    :ARG1 s33p
+    :instrument (s33a / and
+        :op1 (s33f / fama :refer-number singular)
+        :op2 (s33i2 / invidia :refer-number singular))
+    :concession (s33d / dissentio-01
+        :ARG0 s33p
+        :ARG1 (s33m / mos
+            :refer-number plural
+            :mod (s33m2 / malus)
+            :possessor (s33p3 / person
+                :refer-number plural
+                :refer-person 3rd
+                :mod (s33r / reliquus)))
+            :aspect activity)
+    :aspect activity)
+
+# alignment:
+s33v: 21-21
+s33c: 14-14, 16-16
+s33h: 13-13
+s33i: 15-15
+s33v2: 0-0
+s33p: 2-2
+s33p2: 17-17
+s33c2: 0-0
+s33a: 19-19
+s33f: 18-18
+s33i2: 20-20
+s33d: 9-9
+s33m: 5-5, 8-8
+s33m2: 7-7
+s33p3: 6-6
+s33r: 0-0
+
+# document level annotation:
+(s33s0 / sentence
+	:temporal ((s32t :overlap s33v)
+            (s33v :overlap s33v2)
+            (s33v :overlap s33d)
+            (s33v :overlap s33c))
+	:modal ((root :modal author)
+	        (author :full-affirmative s33v)
+	        (author :full-affirmative s33v2)
+	        (author :full-affirmative s33c)
+	        (author :full-affirmative s33d))
+	:coref ((s30p :same-entity s33p)
+	        (s33p3 :same-entity s33p2)))
+
+
+# sent_id = SlaT-2806
+# :: snt34
+Index:    1    2    3    4    5        6     7        8         9     10  11     12      13   14 15   16    17       18     19     20 21   22     23       24      25     26     27    28     29     30 31 32  33    34      35   36      37 38     39         40  41     42       43    44
+Words: igitur ubi animus ex multis miseriis atque periculis requievit et mihi reliquam aetatem a re publica procul habendam decrevi , non fuit consilium socordia atque desidia bonum otium conterere , que ne vero agrum colundo aut venando , servilibus officiis , intentum aetatem agere
+Sentence: igitur ubi animus ex multis miseriis atque periculis requievit et mihi reliquam aetatem a re publica procul habendam decrevi, non fuit consilium socordia atque desidia bonum otium conterere, neque vero agrum colundo aut venando, servilibus officiis, intentum aetatem agere
+Sentence Gloss (en): when, therefore, my mind had rest from its numerous troubles and trials, and I had determined to pass the remainder of my days unconnected with public life, it was not my intention to waste my valuable leisure in indolence and inactivity, and neither to spend my time engaging in agriculture or hunting, servile occupations
+
+# sentence level graph:
+(s34d / decido-02
+    :ARG0 (s34p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s34a / and
+        :op1 (s34c / contero-06
+            :ARG0 s34p
+            :ARG1 (s34o / otium
+                :refer-number singular
+                :mod (s34b / bonus))
+            :manner (s34h / have-mod-91
+                :ARG1 s34p
+                :ARG2 (s34a2 / and
+                    :op1 (s34s / socors)
+                    :op2 (s34d2 / deses))
+                :aspect state)
+            :aspect process
+            :modal-predicate s34d)
+        :op2 (s34a3 / ago-26
+            :ARG0 s34p
+            :ARG1 (s34a4 / aetas)
+            :manner (s34i / intendo-06
+                :ARG0 s34p
+                :ARG1 (s34o2 / or
+                    :op1 (s34c2 / colo2-06
+                        :ARG0 s34p
+                        :ARG1 (s34a5 / ager :refer-number singular)
+                        :aspect performance)
+                    :op2 (s34v / venor-01
+                        :ARG0 s34p
+                        :aspect performance)
+                    :ARG1-of (s34i2 / identity-91
+                        :ARG2 (s34o3 / officium
+                            :refer-number plural
+                            :mod (s34s2 / servilis))
+                        :aspect state))
+                :aspect process)
+                :aspect activity
+                :modal-predicate s34d))
+    :temporal (s34a6 / and
+        :op1 (s34r / requiesco-01
+            :ARG0 (s34a7 / animus :refer-number singular)
+            :ARG1 (s34a8 / and
+                :op1 (s34m / miseria
+                    :quant (s34m2 / multus)
+                    :refer-number plural)
+                :op2 (s34p2 / periculus :refer-number plural))
+            :aspect performance)
+        :op2 (s34d3 / decerno-09
+            :ARG0 s34p
+            :ARG1 (s34h2 / habeo-NEW-26
+                :ARG0 s34p
+                :ARG1 (s34a9 / aetas
+                    :refer-number singular
+                    :mod (s34r3 / reliquus
+                        :affectee s34p))
+                :place (s34p3 / procul
+                    :op1 (s34r2 / res
+                        :refer-number singular
+                        :mod (s34p4 / publicus)))
+                :aspect process
+                :modal-predicate s34d3)
+            :aspect performance))
+    :aspect performance)
+
+# alignment:
+s34d: 21-23
+s34p: 11-11
+s34a: 31-32
+s34c: 29-29
+s34o: 28-28
+s34b: 27-27
+s34a2: 0-0
+s34h: 24-26
+s34s: 0-0
+s34d2: 0-0
+s34a3: 44-44
+s34a4: 43-43
+s34i: 42-42
+s34o2: 36-36
+s34c2: 35-35
+s34a5: 34-34
+s34v: 37-37
+s34i2: 0-0
+s34o3: 40-40
+s34s2: 39-39
+s34a6: 10-10
+s34r: 9-9
+s34a7: 3-3
+s34a8: 7-7
+s34m: 4-4, 6-6
+s34m2: 5-5
+s34p2: 8-8
+s34d3: 19-19
+s34h2: 18-18
+s34a9: 13-13
+s34r3: 12-12
+s34p3: 14-14, 17-17
+s34r2: 15-15
+s34p4: 16-16
+
+# document level annotation:
+(s34s0 / sentence
+	:temporal ((s33v :after s34r)
+            (s34r :after s34d)
+            (s34c :contained s34h)
+            (s34r :overlap s34d3)
+            (s34d3 :after s34h2)
+            (s34d :after s34c)
+            (s34d :after s34a3)
+            (s34a3 :contained s34i)
+            (s34i :overlap s34c2)
+            (s34i :overlap s34v)
+            (s34d :overlap s34i2))
+	:modal ((root :modal author)
+	        (author :full-negative s34d)
+	        (author :full-affirmative s34r)
+	        (author :full-affirmative s34d3)
+	        (s34d3 :unspecified s34h2)
+	        (s34d :unspecified s34c)
+	        (s34d :unspecified s34a3)
+	        (author :full-negative s34i)
+	        (author :full-affirmative s34c2)
+	        (author :full-affirmative s34v)
+	        (author :full-affirmative s34h)
+	        (author :full-affirmative s34i2))
+	:coref ((s33p :same-entity s34p)
+	        (s32a4 :same-entity s34a7)
+	        (s30r2 :same-entity s34r2)))
+
+
+# sent_id = SlaT-2807
+# :: snt35
+Index:  1  2  3     4     5    6    7     8     9       10    11  12       13      14   15   16      17     18      19  20 21   22      23     24       25    26    27      28 29  30     31  32 33 34   35    36     37      38      39    40   41
+Words: sed a quo incepto que studio me ambitio mala detinuerat , eodem regressus statui res gestas populi Romani carptim , ut quaeque memoria digna videbantur , perscribere , eo magis quod mihi a spe metu partibus rei publicae animus liber erat
+Sentence: sed a quo incepto studioque me ambitio mala detinuerat, eodem regressus statui res gestas populi Romani carptim, ut quaeque memoria digna videbantur, perscribere, eo magis quod mihi a spe metu partibus rei publicae animus liber erat
+Sentence Gloss (en):  but, returning to those studies from which, at their commencement, a corrupt ambition had allured me, I determined to write, in detached portions, the transactions of the Roman people, as any occurrence should seem worthy of mention; even more so as my mind was uninfluenced by hope, fear, or political partisanship
+
+# sentence level graph:
+(s35s / statuo-04
+    :ARG0 (s35p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s35p2 / perscribo-01
+        :ARG0 s35p
+        :ARG1 (s35r / res
+            :refer-number plural
+            :ARG1-of (s35g / gero-15
+                :ARG0 (s35p3 / populus
+                    :refer-number singular
+                    :mod (s35s4 / state
+                        :name (s35n / name :op1 "Roma")
+                        :wiki "Q1747689"))
+                :aspect performance))
+        :manner (s35c / carptim)
+        :manner (s35v / video-10
+            :ARG0 s35p
+            :ARG1 (s35h / have-mod-91
+                :ARG1 (s35t / thing :refer-number plural)
+                :ARG2 (s35d2 / dignus-04
+                    :ARG1 (s35m2 / memini-04
+                        :ARG1 s35t
+                        :aspect performance
+                        :modal-predicate s35h))
+                :aspect state)
+            :aspect state)
+        :reason (s35h2 / have-mod-91
+                :ARG1 (s35a3 / animus
+                    :refer-number singular
+                    :possessor s35p)
+                :ARG2 (s35l / liber-06
+                    :ARG1 s35a3
+                    :ARG2 (s35a4 / and
+                        :op1 (s35s3 / spes :refer-number singular)
+                        :op2 (s35m3 / metus :refer-number singular)
+                        :op3 (s35p4 / pars
+                            :refer-number plural
+                            :mod (s35r3 / res
+                                :refer-number singular
+                                :mod (s35p5 / publicus)))))
+                :aspect state)
+        :aspect activity
+        :modal-predicate s35s)
+    :temporal (s35r2 / regredior-05
+        :ARG0 s35p
+        :ARG4 (s35a / and
+            :op1 (s35s2 / studium :refer-number singular)
+            :op2 (s35i / inceptum :refer-number singular)
+            :ARG2-of (s35d / detineo-04
+                :ARG0 (s35a2 / ambitio
+                    :mod (s35m / malus)
+                    :refer-number singular)
+                :ARG1 s35p
+                :aspect performance))
+        :aspect performance)
+    :aspect performance)
+
+# alignment:
+s35s: 14-14
+s35p: 7-7, 32-32
+s35p2: 27-27
+s35r: 15-15
+s35g: 16-16
+s35p3: 17-17
+s35s4: 18-18
+s35n: 0-0
+s35c: 19-19
+s35v: 25-25
+s35h: 0-0
+s35t: 22-22
+s35d2: 24-24
+s35m2: 23-23
+s35h2: 41-41
+s35a3: 39-39
+s35l: 40-40
+s35a4: 0-0
+s35s3: 33-34
+s35m3: 35-35
+s35p4: 36-36
+s35r3: 37-37
+s35p5: 38-38
+s35r2: 13-13
+s35a: 2-3, 5-5, 12-12
+s35s2: 6-6
+s35i: 4-4
+s35d: 10-10
+s35a2: 8-8
+s35m: 9-9
+
+# document level annotation:
+(s35s0 / sentence
+	:temporal ((s34d :overlap s35s)
+            (s35s :after s35p2)
+            (s35p2 :before s35g)
+            (s35p2 :overlap s35v)
+            (s35p2 :overlap s35h)
+            (s35s :before s35h2)
+            (s35s :before s35r2)
+            (s35r2 :before s35d)
+            (s35v :after s35m2))
+	:modal ((root :modal author)
+	        (author :full-affirmative s35s)
+	        (s35s :unspecified s35p2)
+	        (author :full-affirmative s35g)
+	        (author :full-affirmative s35v)
+	        (author :partial-affirmative s35h)
+	        (author :full-affirmative s35h2)
+	        (author :full-affirmative s35r2)
+	        (author :full-affirmative s35d)
+	        (s35h :unspecified s35m2))
+	:coref ((s30s :same-entity s35s2)
+	        (s34p :same-entity s35p)))
+
+
+# sent_id = SlaT-2808
+# :: snt36
+Index:    1   2      3           4       5       6        7     8      9
+Words: Igitur de Catilinae coniuratione quam verissume potero paucis absolvam
+Sentence: Igitur de Catilinae coniuratione quam verissume potero paucis absolvam
+Sentence Gloss (en): thus I shall give an account in few words, as truthfully as I can, of the conspiracy of Catiline
+
+# sentence level graph:
+(s36a / absolvo-NEW-08
+    :ARG0 (s36p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s36c / coniuro-02
+        :ARG0 (s36p2 / person
+            :wiki "Q75826"
+            :name (s36n / name :op1 "Catilina"))
+        :aspect performance)
+    :instrument (s36p3 / pauca :refer-number plural)
+    :manner (s36v / verus
+        :ARG2-of (s36h / have-degree-91
+            :ARG3 (s36m / most)
+            :ARG5 (s36v2 / verus)
+            :aspect state))
+    :aspect performance)
+
+# alignment:
+s36a: 9-9
+s36p: 0-0
+s36c: 2-2, 4-4
+s36p2: 3-3
+s36n: 0-0
+s36p3: 8-8
+s36v: 5-6
+s36h: 0-0
+s36m: 0-0
+s36v2: 0-0
+
+# document level annotation:
+(s36s0 / sentence
+	:temporal ((s35s :after s36a)
+            (s36a :before s36c)
+            (s36a :overlap s36h))
+	:modal ((root :modal author)
+	        (author :full-affirmative s36a)
+	        (author :full-affirmative s36c)
+	        (author :neutral-affirmative s36h))
+	:coref ((s35p :same-entity s36p)))
+
+
+# sent_id = SlaT-2809
+# :: snt37
+Index:  1  2     3    4    5     6     7          8         9      10     11       12
+Words: nam id facinus in primis ego memorabile existumo sceleris atque periculi novitate
+Sentence: nam id facinus in primis ego memorabile existumo sceleris atque periculi novitate
+Sentence Gloss (en): for I think it an enterprise eminently memorable, from the unusual nature of its guilt and of its perils
+
+# sentence level graph:
+(s37e / existimo-06
+    :ARG0 (s37p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s37h / have-mod-91
+        :ARG1 (s37f / facinus
+            :refer-number singular
+            :mod (s37i / is))
+        :ARG2 (s37m / memoro-01
+            :ARG1 s37f
+            :degree intensifier
+            :aspect state)
+        :aspect state
+        :modal-predicate s37e)
+    :reason (s37n / novitas
+        :refer-number singular
+        :mod (s37a / and
+            :op1 (s37s / scelus :refer-number singular)
+            :op2 (s37p2 / periculus :refer-number singular)))
+    :aspect state)
+
+# alignment:
+s37e: 8-8
+s37p: 6-6
+s37h: 0-0
+s37f: 3-3
+s37i: 2-2
+s37m: 7-7
+s37n: 12-12
+s37a: 10-10
+s37s: 9-9
+s37p2: 11-11
+
+# document level annotation:
+(s37s0 / sentence
+	:temporal ((document-creation-time :overlap s37e)
+            (document-creation-time :overlap s37h)
+            (document-creation-time :overlap s37m))
+	:modal ((root :modal author)
+	        (author :full-affirmative s37e)
+	        (s37e :unspecified s37h)
+	        (author :neutral-affirmative s37m))
+	:coref ((s36p :same-entity s37p)))
+
+
+# sent_id = SlaT-2810
+# :: snt38
+Index: 1    2       3       4      5     6        7      8   9  10     11      12      13
+Words: de quoius hominis moribus pauca prius explananda sunt , quam initium narrandi faciam
+Sentence: de quoius hominis moribus pauca prius explananda sunt, quam initium narrandi faciam
+Sentence Gloss (en): before I enter upon my narrative, I must give a short description of the character of the man
+
+# sentence level graph:
+(s38e / explano-04
+    :ARG0 (s38p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s38p2 / paucus
+            :refer-number plural
+            :topic (s38m / mos
+                :refer-number plural
+                :possessor (s38h / homo :refer-number singular)))
+    :temporal (s38b / before
+        :op1 (s38i / incipio-02+06
+            :ARG0 s38p
+            :ARG1 (s38n / narro-04
+                :ARG0 s38p
+                :aspect activity)
+            :aspect performance))
+    :aspect activity)
+
+# alignment:
+s38e: 7-8
+s38p: 0-0
+s38p2: 5-5
+s38m: 1-1, 4-4
+s38h: 2-3
+s38b: 6-6, 10-10
+s38i: 11-11, 13-13
+s38n: 12-12
+
+# document level annotation:
+(s38s0 / sentence
+	:temporal ((s37e :overlap s38e)
+	            (s38e :after s38n)
+	            (s38e :after s38i))
+	:modal ((root :modal author)
+	        (author :partial-affirmative s38e)
+	        (author :full-affirmative s38i)
+	        (author :full-affirmative s38n))
+	:coref ((s37p :same-entity s38p)
+	        (s36p2 :same-entity s38h)))
+
+
+# sent_id = SlaT-2811
+# :: snt39
+Index: 1 2 3        4 5      6      7     8 9   10     11 12 13    14 15       16  17      18   19  20
+Words: L . Catilina , nobili genere natus , fuit magna vi et animi et corporis sed ingenio malo que pravo
+Sentence: L. Catilina, nobili genere natus, fuit magna vi et animi et corporis sed ingenio malo pravoque
+Sentence Gloss (en): Lucius Catilina was a man of noble birth and of eminent mental and personal endowments, but of a vicious and depraved disposition
+
+# sentence level graph:
+(s39b / but-91
+    :ARG1 (s39h / have-mod-91
+        :ARG1 (s39p / person
+            :name (s39n / name :op1 "Lucius" :op2 "Catilina")
+            :wiki "Q75826"
+            :ARG0-of (s39n2 / nascor-05+06
+                :mod (s39g / genus
+                    :refer-number singular
+                    :mod (s39n3 / nobilis))
+                :aspect performance))
+        :ARG2 (s39v / vis
+            :refer-number singular
+            :mod (s39a / and
+                :op1 (s39a2 / animus
+                    :mod (s39m / magnus)
+                    :refer-number singular)
+                :op2 (s39c / corpus :refer-number singular)))
+        :aspect state)
+    :ARG2 (s39h2 / have-mod-91
+        :ARG1 s39p
+        :ARG2 (s39i / ingenius
+            :refer-number singular
+                :mod (s39a3 / and
+                    :op1 (s39m2 / malus)
+                    :op2 (s39p2 / pravus)))
+        :aspect state))
+
+# alignment:
+s39b: 15-15
+s39h: 8-8
+s39p: 1-2
+s39n2: 6-6
+s39g: 5-5
+s39n3: 4-4
+s39n: 0-0
+s39v: 10-10
+s39a: 11-11, 13-13
+s39a2: 12-12
+s39m: 9-9
+s39c: 14-14
+s39h2: 0-0
+s39i: 16-16
+s39a3: 18-18
+s39m2: 17-17
+s39p2: 19-19
+
+# document level annotation:
+(s39s0 / sentence
+    :temporal ((document-creation-time :before s39n2)
+            (s39n2 :after s39h)
+            (s39n2 :after s39h2))
+    :modal ((root :modal author)
+            (author :full-affirmative s39h)
+            (author :full-affirmative s39h2)
+            (author :full-affirmative s39n2))
+    :coref ((s38h :same-entity s39p)))
+
+
+# sent_id = SlaT-2812
+# :: snt40
+Index:  1   2       3         4       5        6     7        8         9      10   11  12  13 14     15      16      17
+Words: huic ab adulescentia bella intestina caedes rapinae discordia civilis grata fuere , que ibi iuventutem suam exercuit
+Sentence: huic ab adulescentia bella intestina caedes rapinae discordia civilis grata fuere, ibique iuventutem suam exercuit
+Sentence Gloss (en): his delight, from his youth, had been in civil commotions, bloodshed, robbery, and sedition; and in such scenes he had spent his early years
+
+# sentence level graph:
+(s40a / and
+    :op1 (s40h / have-mod-91
+        :ARG1 (s40a2 / and
+            :op1 (s40b / bellum
+                :refer-number plural
+                :mod (s40i / intestinus))
+            :op2 (s40c / caedes :refer-number plural)
+            :op3 (s40r / rapina :refer-number plural)
+            :op4 (s40d / discordia
+                :refer-number singular
+                :mod (s40c2 / civilis)))
+        :ARG2 (s40g / gratus)
+        :affectee (s40p / person
+            :refer-number singular
+            :refer-person 3rd)
+        :temporal (s40h2 / have-mod-91
+            :ARG1 s40p
+            :ARG2 (s40a3 / adulescens)
+            :aspect state)
+        :aspect state)
+    :op2 (s40e / exerceo-29
+        :ARG0 s40p
+        :ARG1 (s40i2 / iuventus
+            :refer-number singular
+            :possessor s40p)
+        :place s40a2
+        :aspect state))
+
+# alignment:
+s40a: 13-13
+s40h: 11-11
+s40a2: 0-0
+s40b: 4-4
+s40i: 5-5
+s40c: 6-6
+s40r: 7-7
+s40d: 8-8
+s40c2: 9-9
+s40g: 10-10
+s40p: 1-1
+s40h2: 2-3
+s40a3: 0-0
+s40e: 17-17
+s40i2: 15-16
+
+# document level annotation:
+(s40s0 / sentence
+    :temporal ((s39n2 :after s40e)
+            (s39n2 :after s40h2)
+            (s39n2 :after s40h))
+    :modal ((root :modal author)
+            (author :full-affirmative s40h)
+            (author :full-affirmative s40e)
+            (author :full-affirmative s40h2))
+    :coref ((s39p :same-entity s40p)))
+
+
+# sent_id = SlaT-2813
+# :: snt41
+Index:   1       2       3       4       5       6    7      8         9     10
+Words: corpus patiens inediae algoris vigiliae supra quam quoiquam credibile est
+Sentence: corpus patiens inediae algoris vigiliae supra quam quoiquam credibile est
+Sentence Gloss (en): his constitution could endure hunger, want of sleep, and cold, more than anyone could believe
+
+# sentence level graph:
+(s41p / patior-04
+    :ARG0 (s41c / corpus :refer-number singular)
+    :ARG1 (s41a / and
+        :op1 (s41i / inedia :refer-number singular)
+        :op2 (s41a3 / algor :refer-number singular)
+        :op3 (s41v / vigilia :refer-number singular))
+    :degree (s41m / more-than
+        :op1 (s41c2 / credo-02
+            :ARG0 (s41p3 / person
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG1 s41p
+            :aspect state))
+    :aspect state)
+
+# alignment:
+s41p: 2-2
+s41c: 1-1
+s41a: 0-0
+s41i: 3-3
+s41a3: 4-4
+s41v: 5-5
+s41m: 6-7
+s41c2: 9-10
+s41p3: 8-8
+
+# document level annotation:
+(s41s0 / sentence
+    :temporal ((s39n2 :after s41p)
+            (present-reference :overlap s41c2))
+    :modal ((root :modal author)
+            (author :full-affirmative s41p)
+            (author :neutral-affirmative s41c2))
+    :coref ((s40p :subset-of s41c)))
+
+
+# sent_id = SlaT-2814
+# :: snt42
+Index:    1     2       3      4    5   6     7    8       9     10     11      12   13      14    15     16    17  18   19      20
+Words: animus audax subdolus varius , quoius rei lubet simulator ac dissimulator , alieni adpetens sui profusus , ardens in cupiditatibus
+Sentence: animus audax subdolus varius, quoius rei lubet simulator ac dissimulator, alieni adpetens sui profusus, ardens in cupiditatibus
+Sentence Gloss (en): his mind was daring, subtle, and versatile, capable of pretending or dissembling whatever (he wished), covetous of other men's property, and prodigal of his own, burning with desires
+
+# sentence level graph:
+(s42h / have-mod-91
+    :ARG1 (s42a / animus :refer-number singular)
+    :ARG2 (s42a2 / and
+        :op1 (s42a3 / audax)
+        :op2 (s42s / subdolus)
+        :op3 (s42v / varius)
+        :op4 (s42a4 / and
+            :op1 (s42s2 / simulator-02
+                :ARG1 (s42r / res
+                    :refer-number singular
+                    :mod (s42q / quilibet)))
+            :op2 (s42d / dissimulator-01
+                :ARG1 s42r))
+        :op5 (s42c / contrast-91
+            :ARG1 (s42a6 / appeto-04
+                :ARG0 s42a
+                :ARG1 (s42t / thing
+                    :possessor (s42p / person
+                        :refer-number singular
+                        :refer-person 3rd
+                        :mod (s42a7 / alius)))
+                :aspect state)
+            :ARG2 (s42p2 / profundo-06+07+14
+                :ARG0 s42a
+                :ARG1 (s42t2 / thing
+                    :refer-number singular
+                    :possessor s42p)
+                :aspect state))
+        :op6 (s42a8 / ardeo-08
+            :ARG0 s42a
+            :reason (s42c2 / cupiditas :refer-number plural)
+            :aspect state))
+    :aspect state)
+
+# alignment:
+s42h: 0-0
+s42a: 1-1
+s42a2: 0-0
+s42a3: 2-2
+s42s: 3-3
+s42v: 4-4
+s42a4: 10-10
+s42s2: 9-9
+s42r: 7-7
+s42q: 6-6, 8-8
+s42d: 11-11
+s42c: 0-0
+s42a6: 14-14
+s42t: 13-13
+s42p: 0-0
+s42a7: 0-0
+s42t2: 15-15
+s42p2: 16-16
+s42a8: 18-18
+s42c2: 19-20
+
+# document level annotation:
+(s42s0 / sentence
+    :temporal ((s39n2 :after s42h)
+            (s39n2 :after s42a6)
+            (s39n2 :after s42p2)
+            (s39n2 :after s42a8))
+    :modal ((root :modal author)
+            (author :full-affirmative s42h)
+            (author :full-affirmative s42a6)
+            (author :full-affirmative s42p2)
+            (author :full-affirmative s42a8))
+    :coref ((s40p :subset-of s42a)))
+
+
+# sent_id = SlaT-2815
+# :: snt43
+Index:   1         2     3     4        5
+Words: satis eloquentiae , sapientiae parum
+Sentence: satis eloquentiae, sapientiae parum
+Sentence Gloss (en): he had abundance of eloquence, but little wisdom
+
+# sentence level graph:
+(s43h / have-mod-91
+    :ARG1 (s43p / person
+        :refer-number singular
+        :refer-person 3rd)
+    :ARG2 (s43c / contrast-91
+        :ARG1 (s43e / eloquens
+            :degree (s43s / satis))
+        :ARG2 (s43s2 / sapiens
+            :degree (s43p2 / parum)))
+    :aspect state)
+
+# alignment:
+s43h: 0-0
+s43p: 0-0
+s43c: 3-3
+s43e: 2-2
+s43s: 1-1
+s43s2: 4-4
+s43p2: 5-5
+
+# document level annotation:
+(s43s0 / sentence
+    :temporal ((s39n2 :after s43h))
+    :modal ((root :modal author)
+            (author :full-affirmative s43h))
+    :coref ((s40p :same-entity s43p)))
+
+
+# sent_id = SlaT-2816
+# :: snt44
+Index:   1       2       3            4        5     6    7       8
+Words: vastus animus inmoderata incredibilia nimis alta semper cupiebat
+Sentence: vastus animus inmoderata incredibilia nimis alta semper cupiebat
+Sentence Gloss (en): his insatiable ambition was always pursuing extravagant, incredible, unattainable things
+
+# sentence level graph:
+(s44c / cupio-03+05
+    :ARG0 (s44a / animus
+        :mod (s44v / vastus)
+        :refer-number singular)
+    :ARG1 (s44t / thing
+        :refer-number plural
+        :mod (s44m / moderatus :polarity -)
+        :ARG1-of (s44c2 / credo-02
+            :ARG0 (s44p / person
+                :refer-number singular
+                :refer-person 3rd)
+            :aspect state)
+        :mod (s44a2 / altus
+            :degree (s44n / nimis)))
+    :temporal (s44s / semper)
+    :aspect state)
+
+# alignment:
+s44c: 8-8
+s44a: 2-2
+s44v: 1-1
+s44t: 3-6
+s44m: 0-0
+s44a2: 0-0
+s44n: 0-0
+s44c2: 0-0
+s44s: 7-7
+s44p: 0-0
+
+# document level annotation:
+(s44s0 / sentence
+    :temporal ((past-reference :overlap s44s)
+            (s44s :overlap s44c)
+            (present-reference :overlap s44c2))
+    :modal ((root :modal author)
+            (author :full-affirmative s44c)
+            (author :neutral-negative s44c2))
+    :coref ((s42a :same-entity s44a)))
+
+
+# sent_id = SlaT-2817
+# :: snt45
+Index:   1    2  3  4          5 6 7      8      9      10        11  12       13
+Words: hunc post do minationem L . Sullae lubido maxuma invaserat rei publicae capiundae
+Sentence: hunc post dominationem L. Sullae lubido maxuma invaserat rei publicae capiundae
+Sentence Gloss (en): since the time of Sylla's dictatorship, a strong desire of seizing the government possessed him
+
+# sentence level graph:
+(s45i / invado2-05
+    :ARG0 (s45c / cupio-03+05
+            :manner (s45m / magnus :degree intensifier)
+        :ARG0 (s45p / person
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG1 (s45c2 / capio-37
+            :ARG0 s45p
+            :ARG1 (s45r / res
+                :mod (s45p3 / publicus)
+                :refer-number singular)
+                :aspect performance
+                :modal-predicate s45c)
+        :aspect state)
+    :ARG1 s45p
+    :temporal (s45a / after
+        :op1 (s45d / dominor-03
+            :ARG0 (s45p2 / person
+                :wiki "Q483783"
+                :name (s45n / name :op1 "L." :op2 "Sulla"))
+            :aspect performance))
+    :aspect performance)
+
+# alignment:
+s45i: 9-9
+s45c: 7-7
+s45m: 8-8
+s45p: 1-1
+s45p2:4-6
+s45c2: 12-12
+s45r: 10-10
+s45p3: 11-11
+s45a: 2-2
+s45d: 3-3
+s45n: 0-0
+
+# document level annotation:
+(s45s0 / sentence
+    :temporal ((past-reference :overlap s45d)
+            (s45d :after s45i)
+            (s45d :after s45c)
+            (s45c :after s45c2))
+    :modal ((root :modal author)
+            (author :full-affirmative s45i)
+            (author :full-affirmative s45d)
+            (author :full-affirmative s45c)
+            (s45c :unspecified s45c2))
+    :coref ((s40p :same-entity s45p)))
+
+
+# sent_id = SlaT-2818
+# :: snt46
+Index:   1  2  3   4      5         6      7  8   9     10      11  12    13     14      15
+Words: que ne id quibus modis adsequeretur , dum sibi regnum pararet , quicquam pensi habebat
+Sentence: neque id quibus modis adsequeretur, dum sibi regnum pararet, quicquam pensi habebat
+Sentence Gloss (en): and he did not care at all, provided that he secured power for himself, by what means he might arrive at it
+
+# sentence level graph:
+(s46p / pendo-05
+    :ARG0 (s46p2 / person
+        :refer-number singular
+        :refer-person 3rd)
+    :ARG1 (s46m / modus
+        :refer-number plural
+        :mod (s46q / qui)
+        :instrument-of (s46a / assequor-08
+            :ARG0 s46p2
+            :ARG1 (s46r / regnum :refer-number singular)
+            :aspect performance
+            :modal-predicate s46p))
+    :condition (s46p3 / paro-09
+        :ARG0 s46p2
+        :ARG1 s46r
+        :affectee s46p2
+        :aspect performance)
+    :aspect state)
+
+# alignment:
+s46p: 2-2, 13-15
+s46p2: 9-9
+s46m: 5-5
+s46q: 4-4
+s46a: 6-6
+s46p3: 11-11
+s46r: 10-10
+
+# document level annotation:
+(s46s0 / sentence
+    :temporal ((s45i :after s46p)
+            (s45i :after s46p3))
+    :modal ((root :modal author)
+            (author :neutral-affirmative have-condition-91)
+            (have-condition-91 :full-negative s46p)
+            (have-condition-91 :full-affirmative s46p3)
+            (s46p :unspecified s46a))
+    :coref ((s40p :same-entity s46p2)
+            (s46p3 :same-event s46a)))
+
+
+# sent_id = SlaT-2819
+# :: snt47
+Index:      1       2    3    4   5   6     7      8     9    10      11     12     13          14   15 16   17     18     19     20   21  22   23     24
+Words: agitabatur magis que magis in dies animus ferox inopia rei familiaris et conscientia scelerum , quae utraque iis artibus auxerat , quas supra memoravi
+Sentence: agitabatur magis magisque in dies animus ferox inopia rei familiaris et conscientia scelerum, quae utraque iis artibus auxerat, quas supra memoravi
+Sentence Gloss (en): his violent spirit was day by day more and more tormented on by the diminution of his patrimony, and by his consciousness of guilt; both which evils he had increased by those practices which I have mentioned above
+
+# sentence level graph:
+(s47a / agito-NEW-15
+    :ARG0 (s47a2 / and
+        :op1 (s47i / inopia
+            :refer-number singular
+            :mod (s47r / res
+                :mod (s47f2 / familiaris)
+                :refer-number singular))
+        :op2 (s47c / conscientia-05
+            :ARG1 (s47s / scelus :refer-number plural))
+        :ARG1-of (s47a4 / augeo-08
+            :ARG0 (s47p / person
+                :refer-person 3rd
+                :refer-number singular)
+            :instrument (s47a5 / ars
+                :refer-number plural
+                :ARG1-of (s47m / memoro-05
+                    :ARG0 (s47p2 / person
+                        :refer-number singular
+                        :refer-person 1st)
+                    :place (s47s2 / supra)
+                    :aspect performance))
+            :aspect performance))
+    :ARG1 (s47a3 / animus
+        :refer-number singular
+        :mod (s47f / ferox))
+    :temporal (s47d / dies :refer-number plural)
+    :extent (s47a6 / and
+        :op1 (s47m2 / magis)
+        :op2 (s47m3 / magis))
+    :aspect activity)
+
+# alignment:
+s47a: 1-1
+s47a2: 12-12
+s47i: 9-9
+s47r: 10-10
+s47f2: 11-11
+s47c: 13-13
+s47s: 14-14
+s47a4: 20-20
+s47p: 0-0
+s47a5: 18-19
+s47m: 24-24
+s47p2: 0-0
+s47s2: 23-23
+s47a3: 7-7
+s47f: 8-8
+s47d: 5-6
+s47a6: 3-3
+s47m2: 2-2
+s47m3: 4-4
+
+# document level annotation:
+(s47s0 / sentence
+    :temporal ((s45i :after s47a)
+            (s47a :before s47a4)
+            (document-creation-time :before s47m))
+    :modal ((root :modal author)
+            (author :full-affirmative s47a)
+            (author :full-affirmative s47m)
+            (author :full-affirmative s47a4))
+    :coref ((s40p :same-entity s47p)
+            (s38p :same-entity s47p2)
+            (s47p :subset-of s47a3)
+            (s40a2 :same-entity s47a5)))
+
+
+# sent_id = SlaT-2820
+# :: snt48
+Index:      1          2        3        4       5   6  7      8    9     10     11  12  13 14    15     16     17    18   19
+Words: incitabant praeterea corrupti civitatis mores , quos pessuma ac divorsa inter se mala , luxuria atque avaritia , vexabant
+Sentence: incitabant praeterea corrupti civitatis mores, quos pessuma ac divorsa inter se mala, luxuria atque avaritia, vexabant
+Sentence Gloss (en): the corrupt morals of the state, too, which extravagance and selfishness, pernicious and contending vices, rendered thoroughly depraved, furnished him with additional incentives to action
+
+# sentence level graph:
+(s48i / incito-12
+    :ARG0 (s48m / mos
+        :refer-number plural
+        :mod (s48c / civitas :refer-number singular)
+        :ARG1-of (s48c2 / corrumpo-15
+            :aspect performance)
+        :ARG1-of (s48v / vexo-10
+            :ARG0 (s48a / and
+                :op1 (s48l / luxuria :refer-number singular)
+                :op2 (s48a2 / avaritia :refer-number singular)
+            :ARG1-of (s48h / have-identity-91
+                :ARG2 (s48m2 / malum
+                    :refer-number plural
+                    :mod (s48a3 / and
+                        :op1 (s48m3 / malus :degree intensifier)
+                        :op2 (s48d / differo-13
+                            :ARG1 s48a
+                            :ARG2 s48a
+                            :aspect state)))
+                :aspect state))
+            :aspect activity))
+    :ARG1 (s48p / person
+        :refer-number singular
+        :refer-person 3rd)
+    :aspect activity)
+
+# alignment:
+s48i: 1-1
+s48m: 5-5, 7-7
+s48c: 4-4
+s48c2: 3-3
+s48v: 19-19
+s48a: 16-16
+s48l: 15-15
+s48a2: 17-17
+s48h: 0-0
+s48m2: 13-13
+s48a3: 9-9
+s48m3: 8-8
+s48d: 10-10
+s48p: 0-0
+
+# document level annotation:
+(s48s0 / sentence
+    :temporal ((s47a :overlap s48i)
+            (s48i :overlap s48v)
+            (s48v :overlap s48h)
+            (s48v :before s48c2)
+            (s48v :overlap s48d))
+    :modal ((root :modal author)
+            (author :full-affirmative s48i)
+            (author :full-affirmative s48h)
+            (author :full-affirmative s48v)
+            (author :full-affirmative s48d)
+            (author :full-affirmative s48c2))
+    :coref ((s40p :same-entity s48p)))
+
+
+# sent_id = SlaT-2821
+# :: snt49
+Index:  1    2     3       4    5    6    7     8         9       10     11   12  13       14   15   16       17       18     19  20   21    22 23  24    25    26       27     28     29      30      31 32    33        34   35      36       37    38      39   40        41         42  43  44   45
+Words: Res ipsa hortari videtur , quoniam de moribus civitatis tempus admonuit , supra repetere ac paucis instituta maiorum domi que militiae , quo modo rem publicam habuerint que quantam reliquerint , ut paulatim inmutata ex pulcherruma atque optuma pessuma ac flagitiosissuma facta sit , disserere
+Sentence: Res ipsa hortari videtur, quoniam de moribus civitatis tempus admonuit, supra repetere ac paucis instituta maiorum domi militiaeque, quo modo rem publicam habuerint quantamque reliquerint, ut paulatim inmutata ex pulcherruma atque optuma pessuma ac flagitiosissuma facta sit, disserere
+Sentence Gloss (en): Since the occasion has thus brought public morals under my notice, the subject itself seems to call upon me to look back, and briefly to describe the conduct of our ancestors in peace and war; how they managed the state, and how powerful they left it; and how, by gradual alteration, it became, from being the most virtuous, the most vicious and depraved
+
+# sentence level graph:
+(s49v / video-10
+    :ARG0 (s49p / person
+        :refer-number singular
+        :refer-person 1st)
+    :ARG1 (s49h / hortor-01
+        :ARG0 (s49r / res
+            :refer-number singular
+            :mod (s49i / ipse))
+        :ARG1 s49p
+        :ARG2 (s49a / and
+            :op1 (s49r2 / repeto-04
+                :ARG0 s49p
+                :ARG1 (s49s / supra)
+                :aspect activity)
+            :op2 (s49d / dissero2-02
+                :ARG0 s49p
+                :ARG1 (s49a2 / and
+                    :op1 (s49i2 / instituo-04
+                        :ARG0 (s49m2 / maior :refer-number plural)
+                        :temporal (s49a5 / and
+                            :op1 (s49d2 / domi)
+                            :op2 (s49m3 / militiae))
+                        :aspect performance)
+                    :op2 (s49a3 / and
+                        :op1 (s49m4 / manner
+                            :manner-of (s49h2 / habeo-15
+                                :ARG0 s49m2
+                                :ARG1 (s49r3 / res
+                                    :refer-number singular
+                                    :mod (s49p3 / publicus))
+                                :aspect performance))
+                        :op2 (s49q / quantus
+                            :manner-of (s49r4 / relinquo-04
+                                :ARG0 s49m2
+                                :ARG1 s49r2
+                                :aspect performance)))
+                    :op3 (s49m5 / manner
+                        :manner-of (s49f / facio-05
+                            :ARG1 s49r2
+                            :ARG2 (s49a6 / and
+                                :op1 (s49m6 / malus :degree intensifier)
+                                :op2 (s49f2 / flagitiosus :degree intensifier))
+                            :ARG3 (s49a7 / and
+                                :op1 (s49p5 / pulcher :degree intensifier)
+                                :op2 (s49b / bonus :degree intensifier))
+                            :manner (s49i3 / immuto-NEW-01
+                                :ARG1 s49r2
+                                :manner (s49p4 / paulatim)
+                                :aspect performance)
+                            :aspect performance)))
+                :instrument (s49p2 / pauca :refer-number plural)
+                :aspect activity))
+        :aspect activity)
+    :reason (s49a4 / admoneo-01
+        :ARG0 (s49t / tempus :refer-number singular)
+        :ARG2 (s49m / mos
+            :refer-number plural
+            :mod (s49c / civitas :refer-number singular))
+        :aspect performance)
+    :aspect state)
+
+# alignment:
+s49v: 4-4
+s49p: 0-0
+s49h: 3-3
+s49r: 1-1
+s49i: 2-2
+s49a: 15-15
+s49r2: 14-14
+s49s: 13-13
+s49d: 45-45
+s49a2: 0-0
+s49i2: 17-17
+s49m2: 18-18
+s49a5: 20-20
+s49d2: 19-19
+s49m3: 21-21
+s49a3: 28-28
+s49m4: 23-24
+s49h2: 27-27
+s49r3: 25-25
+s49p3: 26-26
+s49q: 29-29
+s49r4: 30-30
+s49m5: 32-32
+s49f: 42-43
+s49a6: 40-40
+s49f2: 41-41
+s49m6: 39-39
+s49a7: 37-37
+s49p5: 35-36
+s49b: 38-38
+s49i3: 34-34
+s49p4: 33-33
+s49p2: 16-16
+s49a4: 11-11
+s49t: 10-10
+s49m: 7-8
+s49c: 9-9
+
+# document level annotation:
+(s49s0 / sentence
+    :temporal ((document-creation-time :overlap s49v)
+            (document-creation-time :after s49h)
+            (s49h :after s49r2)
+            (s49h :after s49d)
+            (s49h :before s49a4)
+            (s49d :before s49i2)
+            (s49d :before s49r4)
+            (s49d :before s49i3)
+            (s49d :before s49f)
+            (s49d :before s49h2))
+    :modal ((root :modal author)
+            (author :full-affirmative s49v)
+            (author :partial-affirmative s49h)
+            (author :partial-affirmative s49r2)
+            (author :partial-affirmative s49d)
+            (author :full-affirmative s49a4)
+            (author :full-affirmative s49i2)
+            (author :full-affirmative s49h2)
+            (author :full-affirmative s49r4)
+            (author :full-affirmative s49i3)
+            (author :full-affirmative s49f))
+    :coref ((s40p :same-entity s49p)
+            (s48m :same-entity s49m)
+            (s48c :same-entity s49c)))
+
+
+# sent_id = SlaT-2822
+# :: snt50
+Index:    1    2   3    4    5    6    7    8        9      10     11      12  13 14   15    16     17      18      19        20    21 22     2   24         25 26    27      28      29 30   31      32 33   34      35 36      37    38
+Words: Urbem Romam , sicuti ego accepi , condidere atque habuere initio Troiani , qui Aenea duce profugi sedibus incertis vagabantur , cumque iis Aborigines ,  genus hominum agreste ,  sine legibus ,  sine imperio ,  liberum atque solutum
+Sentence: Urbem Romam, sicuti ego accepi, condidere atque habuere initio Troiani, qui Aenea duce profugi sedibus incertis vagabantur, cumque iis Aborigines, genus hominum agreste, sine legibus, sine imperio, liberum atque solutum
+Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earliest inhabitants were the Trojans, who, under the conduct of Aeneas, were wandering about as exiles from their country, without any settled abode; and with these were joined the Aborigines, a savage race of men, without laws or government, free, and owning no control
+
+# sentence level graph:
+(s50a / and
+    :op1 (s50c / condo-17
+        :ARG0 (s50a2 / and
+            :op1 (s50p / person
+                :refer-number plural
+                :mod (s50c2 / city
+                    :name (s50n / name :op1 "Troia")
+                    :wiki "Q22647")
+                :ARG0-of (s50v / vagor-04
+                    :place (s50s / sedes
+                        :refer-number plural
+                        :mod (s50i / incertus))
+                    :manner (s50h5 / have-mod-91
+                        :ARG1 s50p
+                        :ARG2 (s50p3 / profugus)
+                        :aspect state)
+                    :companion (s50p2 / person
+                        :wiki "Q82732"
+                        :name (s50n2 / name :op1 "Aeneas")
+                        :ARG1-of (s50h2 / have-role-91
+                            :ARG3 (s50d / dux)
+                            :aspect state))
+                    :aspect performance))
+            :op2 (s50e / ethnic-group
+                :refer-number plural
+                :wiki "Q322971"
+                :name (s50n4 / name :op1 "Aborigines")
+                :ARG1-of (s50h3 / have-identity-91
+                    :ARG2 (s50g / genus
+                        :refer-number singular
+                        :mod (s50h4 / homo :refer-number plural)
+                        :mod (s50a4 / and
+                            :op1 (s50a3 / agrestis)
+                            :op2 (s50a5 / and
+                                :op1 (s50l / lex
+                                    :refer-number plural
+                                    :polarity -)
+                                :op2 (s50i3 / imperium
+                                    :refer-number singular
+                                    :polarity -))
+                            :op3 (s50a6 / and
+                                :op1 (s50l2 / liber)
+                                :op2 (s50s3 / solutus))))
+                    :aspect state)))
+        :ARG1 (s50c3 / city
+            :wiki "Q18287233"
+            :name (s50n3 / name :op1 "Roma"))
+        :temporal (s50i2 / initium)
+        :aspect performance)
+    :op2 (s50h / habeo-15
+        :ARG0 s50p
+        :ARG1 s50c3
+        :aspect performance))
+
+# alignment:
+s50a: 9-9
+s50c: 8-8
+s50a2: 22-24
+s50p: 12-12, 14-14
+s50c2: 0-0
+s50n: 0-0
+s50v: 20-20
+s50s: 18-18
+s50i: 19-19
+s50h5: 17-17
+s50p3: 0-0
+s50p2: 15-15
+s50n2: 0-0
+s50h2: 16-16
+s50d: 0-0
+s50e: 25-25
+s50n4: 0-0
+s50h3: 0-0
+s50g: 27-27
+s50h4: 28-28
+s50a4: 0-0
+s50a3: 29-29
+s50a5: 0-0
+s50l: 31-32
+s50i3: 34-35
+s50a6: 38-38
+s50l2: 37-37
+s50s3: 39-39
+s50c3: 1-2
+s50n3: 0-0
+s50i2: 11-11
+s50h: 10-10
+
+# document level annotation:
+(s50s0 / sentence
+    :temporal ((past-reference :overlap s50i)
+            (s50i :overlap s50c)
+            (s50i :overlap s50h)
+            (s50c :before s50v)
+            (s50v :overlap s50h2)
+            (s50c :overlap s50h3)
+            (s50v :overlap s50h5))
+    :modal ((root :modal author)
+            (author :full-affirmative s50h2)
+            (author :full-affirmative s50v)
+            (author :full-affirmative s50h3)
+            (author :partial-affirmative s50h)
+            (author :partial-affirmative s50c)
+            (author :full-affirmative s50h5)))
+
+
