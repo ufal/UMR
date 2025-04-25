@@ -143,8 +143,8 @@ Node GOLD s1z1 / zvyšovat-001 (že se zvyšuje)         mismatch in :ARG0:     
 Node CONV s1e2 / entity                               mismatch in concept:      CONV = entity                   GOLD = UNMAPPED
 Node CONV s1t1 / ten (tomu)                           mismatch in concept:      CONV = ten                      GOLD = UNMAPPED
 
-Correct 17 out of 43 non-empty GOLD values => recall    40%.
-Correct 17 out of 32 non-empty CONV values => precision 53%.
+Correct 18 out of 44 non-empty GOLD values => recall    41%.
+Correct 18 out of 33 non-empty CONV values => precision 55%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s1b1 / být-011 (je)                    mismatch in concept:      CONV = být-011                  GOLD = have-temporal-91
@@ -181,8 +181,8 @@ Node GOLD s1s1 / say-91                          mismatch in :ARG1:        GOLD 
 Node GOLD s1s1 / say-91                          mismatch in :ARG2:        GOLD = s1p2                     CONV = UNMAPPED
 Node GOLD s1s1 / say-91                          mismatch in :aspect:      GOLD = activity                 CONV = UNMAPPED
 
-Correct 17 out of 32 non-empty CONV values => recall    53%.
-Correct 17 out of 43 non-empty GOLD values => precision 40%.
+Correct 18 out of 33 non-empty CONV values => recall    55%.
+Correct 18 out of 44 non-empty GOLD values => precision 41%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 2:
@@ -311,6 +311,7 @@ Node GOLD s2s1 / say-91                                   mismatch in :aspect:  
 Node GOLD s2z1 / změnit-001 (bez změny)                   mismatch in concept:    GOLD = změnit-001               CONV = změna
 Node GOLD s2z1 / změnit-001 (bez změny)                   mismatch in :ARG0:      GOLD = s2p0 unmapped            CONV = 
 Node GOLD s2z1 / změnit-001 (bez změny)                   mismatch in :aspect:    GOLD = performance              CONV = 
+Node GOLD s2z1 / změnit-001 (bez změny)                   mismatch in :polarity:  GOLD = -                        CONV = 
 Node GOLD s2z2 / zvýšit-001 (zvýšení)                     mismatch in concept:    GOLD = zvýšit-001               CONV = zvýšení
 Node GOLD s2z2 / zvýšit-001 (zvýšení)                     mismatch in :ARG0:      GOLD = s2p0 unmapped            CONV = s2e3
 Node GOLD s2z2 / zvýšit-001 (zvýšení)                     mismatch in :ARG1:      GOLD = s2c2 mapped to CONV s2c2 CONV = s2e4
@@ -331,8 +332,8 @@ Node CONV s2e4 / entity                                   mismatch in concept:  
 Node CONV s2e5 / entity                                   mismatch in concept:    CONV = entity                   GOLD = UNMAPPED
 Node CONV s2e6 / entity                                   mismatch in concept:    CONV = entity                   GOLD = UNMAPPED
 
-Correct 22 out of 48 non-empty GOLD values => recall    46%.
-Correct 22 out of 42 non-empty CONV values => precision 52%.
+Correct 23 out of 50 non-empty GOLD values => recall    46%.
+Correct 23 out of 43 non-empty CONV values => precision 53%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s2d1 / Duha (Duha)                           mismatch in concept:    CONV = Duha                     GOLD = name
@@ -352,6 +353,7 @@ Node CONV s2p3 / příloha (jako přílohy)                mismatch in :part:   
 Node CONV s2z1 / změna (bez změny)                     mismatch in concept:    CONV = změna                    GOLD = změnit-001
 Node CONV s2z1 / změna (bez změny)                     mismatch in :ARG0:      CONV =                          GOLD = s2p0
 Node CONV s2z1 / změna (bez změny)                     mismatch in :aspect:    CONV =                          GOLD = performance
+Node CONV s2z1 / změna (bez změny)                     mismatch in :polarity:  CONV =                          GOLD = -
 Node CONV s2z2 / zvýšení (zvýšení)                     mismatch in concept:    CONV = zvýšení                  GOLD = zvýšit-001
 Node CONV s2z2 / zvýšení (zvýšení)                     mismatch in :ARG0:      CONV = s2e3 unmapped            GOLD = s2p0
 Node CONV s2z2 / zvýšení (zvýšení)                     mismatch in :ARG1:      CONV = s2e4 unmapped            GOLD = s2c2
@@ -372,8 +374,8 @@ Node GOLD s2s1 / say-91                                mismatch in concept:    G
 Node GOLD s2s1 / say-91                                mismatch in :ARG1:      GOLD = s2p1                     CONV = UNMAPPED
 Node GOLD s2s1 / say-91                                mismatch in :aspect:    GOLD = activity                 CONV = UNMAPPED
 
-Correct 22 out of 42 non-empty CONV values => recall    52%.
-Correct 22 out of 48 non-empty GOLD values => precision 46%.
+Correct 23 out of 43 non-empty CONV values => recall    53%.
+Correct 23 out of 50 non-empty GOLD values => precision 46%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 3:
@@ -1197,8 +1199,8 @@ Node CONV s7e1 / entity                                   mismatch in concept:  
 Node CONV s7e2 / entity                                   mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s7e3 / entity                                   mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 
-Correct 35 out of 54 non-empty GOLD values => recall    65%.
-Correct 35 out of 54 non-empty CONV values => precision 65%.
+Correct 36 out of 55 non-empty GOLD values => recall    65%.
+Correct 36 out of 55 non-empty CONV values => precision 65%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s7b1 / být-007 (že je)                          mismatch in concept:         CONV = být-007                  GOLD = have-mod-91
@@ -1232,8 +1234,8 @@ Node GOLD s7s1 / say-91                                   mismatch in concept:  
 Node GOLD s7s1 / say-91                                   mismatch in :ARG1:           GOLD = s7c                      CONV = UNMAPPED
 Node GOLD s7s1 / say-91                                   mismatch in :aspect:         GOLD = activity                 CONV = UNMAPPED
 
-Correct 35 out of 54 non-empty CONV values => recall    65%.
-Correct 35 out of 54 non-empty GOLD values => precision 65%.
+Correct 36 out of 55 non-empty CONV values => recall    65%.
+Correct 36 out of 55 non-empty GOLD values => precision 65%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 8:
@@ -2749,8 +2751,8 @@ Node CONV s3s1 / služba (služby)                                   mismatch in
 Node CONV s3s1 / služba (služby)                                   mismatch in :mod:      CONV = s3i1                     GOLD = UNMAPPED
 Node CONV s3s1 / služba (služby)                                   mismatch in :mod:      CONV = s3b1                     GOLD = UNMAPPED
 
-Correct 28 out of 61 non-empty GOLD values => recall    46%.
-Correct 28 out of 52 non-empty CONV values => precision 54%.
+Correct 29 out of 62 non-empty GOLD values => recall    47%.
+Correct 29 out of 53 non-empty CONV values => precision 55%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s3b1 / Bezpečnostní (Bezpečnostní)          mismatch in concept:   CONV = Bezpečnostní             GOLD = organization
@@ -2798,8 +2800,8 @@ Node GOLD s3n3 / name                                 mismatch in :op1:      GOL
 Node GOLD s3n3 / name                                 mismatch in :op2:      GOLD = "informační"             CONV = UNMAPPED
 Node GOLD s3n3 / name                                 mismatch in :op3:      GOLD = "služba"                 CONV = UNMAPPED
 
-Correct 28 out of 52 non-empty CONV values => recall    54%.
-Correct 28 out of 61 non-empty GOLD values => precision 46%.
+Correct 29 out of 53 non-empty CONV values => recall    55%.
+Correct 29 out of 62 non-empty GOLD values => precision 47%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 18:
@@ -3149,6 +3151,7 @@ Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in concept
 Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :ARG0:           GOLD = s5k1 mapped to CONV s5k1 CONV = s5e4
 Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :ARG2:           GOLD = s5v1 mapped to CONV s5v1 CONV = 
 Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :aspect:         GOLD = performance              CONV = 
+Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :polarity:       GOLD = -                        CONV = 
 Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :effect:         GOLD =                          CONV = s5v1
 Node GOLD s5p3 / person (Stanislava Devátého)            mismatch in concept:         GOLD = person                   CONV = Stanislav
 Node GOLD s5p3 / person (Stanislava Devátého)            mismatch in :ARG1-of:        GOLD = s5h1 unmapped            CONV = 
@@ -3180,8 +3183,8 @@ Node CONV s5i1 / identity-91 (jako)                      mismatch in :clausal-ma
 Node CONV s5n1 / například (například)                   mismatch in concept:         CONV = například                GOLD = UNMAPPED
 Node CONV s5x1 / _Rcp                                    mismatch in concept:         CONV = _Rcp                     GOLD = UNMAPPED
 
-Correct 15 out of 46 non-empty GOLD values => recall    33%.
-Correct 15 out of 47 non-empty CONV values => precision 32%.
+Correct 16 out of 48 non-empty GOLD values => recall    33%.
+Correct 16 out of 48 non-empty CONV values => precision 33%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s5b1 / BIS (BIS)                        mismatch in concept:         CONV = BIS                      GOLD = organization
@@ -3210,6 +3213,7 @@ Node CONV s5p2 / porovnání (porovnání)            mismatch in :ARG0:        
 Node CONV s5p2 / porovnání (porovnání)            mismatch in :effect:         CONV = s5v1 mapped to GOLD s5v1 GOLD = 
 Node CONV s5p2 / porovnání (porovnání)            mismatch in :ARG2:           CONV =                          GOLD = s5v1
 Node CONV s5p2 / porovnání (porovnání)            mismatch in :aspect:         CONV =                          GOLD = performance
+Node CONV s5p2 / porovnání (porovnání)            mismatch in :polarity:       CONV =                          GOLD = -
 Node CONV s5r1 / ředitel (ředitele)               mismatch in :possessor:      CONV = s5b1 mapped to GOLD s5o1 GOLD = 
 Node CONV s5s1 / shodnout-se-001 (se shodla)      mismatch in :ARG2:           CONV = s5x1 unmapped            GOLD = s5k1
 Node CONV s5s2 / šetření (šetření která)          mismatch in concept:         CONV = šetření                  GOLD = šetřit-003
@@ -3236,8 +3240,8 @@ Node GOLD s5n1 / name                             mismatch in :op2:            G
 Node GOLD s5n2 / name                             mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s5n2 / name                             mismatch in :op1:            GOLD = "BIS"                    CONV = UNMAPPED
 
-Correct 15 out of 47 non-empty CONV values => recall    32%.
-Correct 15 out of 46 non-empty GOLD values => precision 33%.
+Correct 16 out of 48 non-empty CONV values => recall    33%.
+Correct 16 out of 48 non-empty GOLD values => precision 33%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 20:
@@ -3323,11 +3327,12 @@ Node GOLD s6s3 / say-91 (prý)                             mismatch in :aspect: 
 Node GOLD s6u1 / údaj (veškeré údaje)                     mismatch in :quant:          GOLD = all                      CONV = 
 Node GOLD s6u1 / údaj (veškeré údaje)                     mismatch in :mod:            GOLD =                          CONV = s6v1
 Node GOLD s6u2 / umr-unknown                              mismatch in concept:         GOLD = umr-unknown              CONV = UNMAPPED
+Node GOLD s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :polarity:       GOLD = s6u2 unmapped            CONV = 
 Node GOLD s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :source:         GOLD = s6z2 mapped to CONV s6z2 CONV = 
 Node GOLD s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :ARG2:           GOLD =                          CONV = s6z2
 Node CONV s6v1 / veškerý (veškeré)                        mismatch in concept:         CONV = veškerý                  GOLD = UNMAPPED
 
-Correct 14 out of 22 non-empty GOLD values => recall    64%.
+Correct 14 out of 23 non-empty GOLD values => recall    61%.
 Correct 14 out of 21 non-empty CONV values => precision 67%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
@@ -3342,11 +3347,12 @@ Node CONV s6u1 / údaj (údaje)                       mismatch in :mod:         
 Node CONV s6u1 / údaj (údaje)                       mismatch in :quant:          CONV =                          GOLD = all
 Node CONV s6v1 / veškerý (veškeré)                  mismatch in concept:         CONV = veškerý                  GOLD = UNMAPPED
 Node CONV s6z1 / získat-001 (o to zda mohla získat) mismatch in :ARG2:           CONV = s6z2 mapped to GOLD s6z2 GOLD = 
+Node CONV s6z1 / získat-001 (o to zda mohla získat) mismatch in :polarity:       CONV =                          GOLD = s6u2
 Node CONV s6z1 / získat-001 (o to zda mohla získat) mismatch in :source:         CONV =                          GOLD = s6z2
 Node GOLD s6u2 / umr-unknown                        mismatch in concept:         GOLD = umr-unknown              CONV = UNMAPPED
 
 Correct 14 out of 21 non-empty CONV values => recall    67%.
-Correct 14 out of 22 non-empty GOLD values => precision 64%.
+Correct 14 out of 23 non-empty GOLD values => precision 61%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 21:
@@ -3716,7 +3722,7 @@ Node-node correspondences:
 Ambiguous projection of GOLD node s9b1 (sice ale) to 2 CONV nodes [s9b1 (ale), s9s1 (sice)]
 Ambiguous projection of GOLD node s9p1 (sice nepředpokládá) to 2 CONV nodes [s9p1 (nepředpokládá), s9s1 (sice)]
   The winner is GOLD node s9b1 (sice ale) <--> CONV node s9b1 (ale): econcepts=but-91/but-91, match=3 (concept=but-91,:ARG1=s9p1 mapped to CONV s9p1,:ARG2=s9o1 mapped to CONV s9o1), weak match=3 (concept,:ARG1,:ARG2).
-  The winner is GOLD node s9p1 (sice nepředpokládá) <--> CONV node s9p1 (nepředpokládá): econcepts=předpokládat-001/předpokládat-001, match=3 (concept=předpokládat-001,:ARG0=s9p5 mapped to CONV s9s2,:ARG1=s9r1 mapped to CONV s9r1), weak match=5 (concept,:aspect,:polarity,:ARG0,:ARG1).
+  The winner is GOLD node s9p1 (sice nepředpokládá) <--> CONV node s9p1 (nepředpokládá): econcepts=předpokládat-001/předpokládat-001, match=4 (concept=předpokládat-001,:ARG0=s9p5 mapped to CONV s9s2,:ARG1=s9r1 mapped to CONV s9r1,:polarity=-), weak match=5 (concept,:aspect,:polarity,:ARG0,:ARG1).
 
 Ambiguous projection of CONV node s9s1 (sice) to 2 GOLD nodes [s9b1 (sice ale), s9p1 (sice nepředpokládá)]
 
@@ -3765,8 +3771,8 @@ Node GOLD s9u1 / usnesení (usnesení)                   mismatch in :mod:      
 Node GOLD s9u1 / usnesení (usnesení)                   mismatch in :temporal:       GOLD =                          CONV = s9j1
 Node CONV s9s1 / sice (sice)                           mismatch in concept:         CONV = sice                     GOLD = UNMAPPED
 
-Correct 27 out of 42 non-empty GOLD values => recall    64%.
-Correct 27 out of 38 non-empty CONV values => precision 71%.
+Correct 28 out of 43 non-empty GOLD values => recall    65%.
+Correct 28 out of 39 non-empty CONV values => precision 72%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s9b1 / but-91 (ale)                      mismatch in :clausal-marker: CONV = s9s1 unmapped            GOLD = 
@@ -3790,8 +3796,8 @@ Node CONV s9u1 / usnesení (usnesení)               mismatch in :ARG1-of:      
 Node GOLD s9n2 / name                              mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s9n2 / name                              mismatch in :op1:            GOLD = "Severa"                 CONV = UNMAPPED
 
-Correct 27 out of 38 non-empty CONV values => recall    71%.
-Correct 27 out of 42 non-empty GOLD values => precision 64%.
+Correct 28 out of 39 non-empty CONV values => recall    72%.
+Correct 28 out of 43 non-empty GOLD values => precision 65%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 24:
@@ -4166,10 +4172,10 @@ Out of 349 total CONV nodes, 276 mapped to GOLD => precision = 79%.
 Before symmetrization, 30 GOLD nodes were projected ambiguously to 65 CONV nodes.
 Before symmetrization, 8 CONV nodes were projected ambiguously to 16 GOLD nodes.
 Concept and relation comparison (only mapped nodes; unmapped are ignored):
-Out of 725 non-empty GOLD values, 384 found in CONV => recall    53%.
-Out of 662 non-empty CONV values, 384 found in GOLD => precision 58%.
- => F₁ = 55%.
+Out of 734 non-empty GOLD values, 390 found in CONV => recall    53%.
+Out of 668 non-empty CONV values, 390 found in GOLD => precision 58%.
+ => F₁ = 56%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 964 non-empty GOLD values, 384 found in CONV => recall    40%.
-Out of 760 non-empty CONV values, 384 found in GOLD => precision 51%.
+Out of 973 non-empty GOLD values, 390 found in CONV => recall    40%.
+Out of 766 non-empty CONV values, 390 found in GOLD => precision 51%.
  => juːmæʧ (GOLD, CONV) = F₁ = 45%.
