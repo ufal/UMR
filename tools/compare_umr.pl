@@ -524,7 +524,7 @@ sub compare_files
                 {
                     printf STDERR ("Tokens %s: %s\n", $files[0]{label}, $sentence_text);
                     printf STDERR ("Tokens %s: %s\n", $file->{label}, $current_sentence_text);
-                    printf STDERR ("WARNING: Mismatch in tokens of sentence %d in file %s (lines %d–%d)", $i+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
+                    printf STDERR ("WARNING: Mismatch in tokens of sentence %d in file %s (lines %d–%d)\n", $i+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
                 }
             }
             push(@sentences, $sentence);

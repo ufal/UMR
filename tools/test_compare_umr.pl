@@ -52,6 +52,30 @@ sysrun("perl $script_path/compare_umr.pl --except $except GOLD $pdttest_path/pdt
 sysrun("perl $script_path/compare_umr.pl --except $except GOLD $pdttest_path/pdtsc-gold.umr CONV $pdttest_path/pdtsc-conv.umr > $pdttest_path/evaluation-pdtsc.txt");
 sysrun("perl $script_path/compare_umr.pl --except $except GOLD $pdttest_path/pcedt-gold.umr CONV $pdttest_path/pcedt-conv.umr > $pdttest_path/evaluation-pcedt.txt");
 sysrun("perl $script_path/compare_umr.pl --except $except GOLD $ldttest_path/FIXED_TOKENS_latin_umr-0001.txt CONV $ldttest_path/LDT_converted_50.txt > $ldttest_path/evaluation-ldt.txt");
+# Inter-annotator agreement.
+cat("$pdttest_path/ln94210_111-ML.umr", "$pdttest_path/ln95046_093-ML.umr", "$pdttest_path/pdtsc_093_3.02-ML.umr", "$pdttest_path/pdtsc_146_2.05-ML.umr" => "$pdttest_path/pdtc-ML.umr");
+cat("$pdttest_path/ln94210_111-HH.umr", "$pdttest_path/ln95046_093-HH.umr", "$pdttest_path/pdtsc_093_3.02-HH.umr", "$pdttest_path/pdtsc_146_2.05-HH.umr" => "$pdttest_path/pdtc-HH.umr");
+sysrun("perl $script_path/compare_umr.pl --except $except ML $pdttest_path/pdtc-ML.umr HH $pdttest_path/pdtc-HH.umr > $pdttest_path/comparison-ML-HH.txt");
+
+
+
+sub cat
+{
+    my @files = @_;
+    die("Unknown output file") if(scalar(@files)<2);
+    my $outfile = pop(@files);
+    open(OUT, ">$outfile") or die("Cannot write $outfile: $!");
+    foreach my $file (@files)
+    {
+        open(my $in, $file) or die("Cannot read $infile: $!");
+        while(<$in>)
+        {
+            print OUT;
+        }
+        close($in);
+    }
+    close(OUT);
+}
 
 
 
