@@ -1,0 +1,204 @@
+################################################################################
+# sent_id = u_tree-cs-s1-root
+# :: snt1
+Index: 1       2   3    4     5       6
+Words: Vždycky ale byla velká legrace .
+
+# sentence level graph:
+(s1s1 / say-91
+	:aspect activity
+	:modal-strength full-affirmative
+	:ARG0 (s1p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s1p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s1e1 / exist-91
+		:quote s1s1
+        	:frequency (s1v1 / vždycky)
+        	:clausal-marker (s1a1 / ale)
+        	:ARG1 (s1l1 / legrace
+            		:mod (s1v2 / velký
+                	:refer-number singular))
+        	:aspect state
+        	:modal-strength full-affirmative))
+
+# alignment:
+s1e1: 3-3
+s1v1: 1-1
+s1a1: 2-2
+s1l1: 5-5
+s1v2: 4-4
+s1p1: 0-0
+s1p2: 0-0
+s1s1: 0-0
+
+# document level annotation:
+(s1s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s2-root
+# :: snt2
+Index: 1      2      3 4   5    6    7     8
+Words: Hlavně večery a tak dále byly prima .
+
+# sentence level graph:
+(s2s1 / say-91
+	:aspect activity
+	:modal-strength full-affirmative
+	:ARG0 (s2p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s2p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s2h2 / have-mod-91
+		:quote s2s1
+		:aspect state
+		:modal-strength full-affirmative
+		:clausal-marker (s2h1 / hlavně)
+		:ARG1 (s2a1 / and
+            		:op1 (s2v1 / večer
+                		:refer-number plural)
+            		:op2 (s2t1 / thing
+            			:refer-number plural)
+            	:ARG2 (s2p3 / prima))))
+
+# alignment:
+s2h2: 6-6
+s2h1: 1-1
+s2a1: 3-3
+s2v1: 2-2
+s2t1: 4-5
+s2p3: 7-7
+s2p1: 0-0
+s2p2: 0-0
+s2s1: 0-0
+
+# document level annotation:
+(s2s0 / sentence
+    :coref ((s1p1 :same-entity s2p1)
+            (s1p2 :same-entity s2p2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s3-root
+# :: snt3
+Index: 1     2      3  4     5
+Words: Dobrá nálada je vidět .
+
+# sentence level graph:
+(s3s1 / say-91
+	:ARG0 (s3p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s3p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s3v1 / vidět-007
+	    :quote s3s1
+	    :aspect state
+	    :modal-strength full-affirmative
+            :ARG1 (s3n1 / nálada
+            	:mod (s3d1 / dobrý)
+            	:refer-number singular)
+            :ARG0 s3p1)
+        :aspect activity
+        :modal-strength full-affirmative)
+
+# alignment:
+s3s1: 0-0
+s3p1: 0-0
+s3p2: 0-0
+s3n1: 2-2
+s3d1: 1-1
+s3v1: 3-4
+
+# document level annotation:
+(s3s0 / sentence
+    :coref ((s2p2 :same-entity s3p1)
+            (s2p1 :same-entity s3p2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s4-root
+# :: snt4
+Index: 1 2  3     4
+Words: Z té fotky .
+
+# sentence level graph:
+(s4s1 / say-91
+	:modal-strength full-affirmative
+        :aspect activity
+	:ARG0 (s4p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s4p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s4h1 / have-source-91
+		:quote s4s1
+		:ARG1 (s4e1 / event)
+        	:ARG2 (s4f1 / fotka
+            		:mod (s4t1 / ten)
+            		:refer-number singular)
+        	:modal-strength full-affirmative
+        	:aspect state))
+
+# alignment:
+s4h1: 0-0
+s4f1: 1-1,3-3
+s4t1: 2-2
+s4e1: 0-0
+s4s1: 0-0
+s4p1: 0-0
+s4p2: 0-0
+
+# document level annotation:
+(s4s0 / sentence
+    :coref ((s3v1 :same-event s4e1)
+    	    (s3p1 :same-entity s4p1)
+    	    (s3p2 :same-entity s4p2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s5-root
+# :: snt5
+Index: 1  2  3      4
+Words: To je pravda .
+
+# sentence level graph:
+(s5s1 / say-91
+	:modal-strength full-affirmative
+        :aspect activity
+	:ARG0 (s5p1 / person
+		:refer-number singular
+		:refer-person 1st)
+	:ARG2 (s5p2 / person
+		:refer-number singular
+		:refer-person 2nd)
+	:ARG1 (s5h1 / have-mod-91
+		:ARG1 (s5e1 / event)
+        	:ARG2 (s5p3 / pravda
+            		:refer-number singular)
+		:modal-strength full-affirmative
+        	:aspect state
+        	:quote s5s1))
+
+# alignment:
+s5s1: 0-0
+s5p1: 0-0
+s5p2: 0-0
+s5h1: 2-2
+s5e1: 1-1
+s5p3: 3-3
+
+# document level annotation:
+(s5s0 / sentence
+    :coref ((s4e1 :same-event s5e1)
+    	    (s4p2 :same-entity s5p1)
+    	    (s4p1 :same-entity s5p2)))
+
+
