@@ -569,7 +569,7 @@ sub compare_files
             printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $ni_ambiguous_src, $labeli, $ni_ambiguous_tgt, $labelj);
             printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $nj_ambiguous_src, $labelj, $nj_ambiguous_tgt, $labeli);
             # Summarize comparison of concepts and relations (mapped nodes only).
-            print("Concept and relation comparisons (only mapped nodes; unmapped are ignored):\n");
+            print("Concept and relation comparison (only mapped nodes; unmapped are ignored):\n");
             my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct_mapped};
             my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me_mapped};
             my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other_mapped};
@@ -580,7 +580,7 @@ sub compare_files
             printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
             printf(" => F₁ = %d%%.\n", $f*100+0.5);
             # Summarize comparison of concepts and relations.
-            print("Concept and relation comparisons (for unmapped nodes all counted as incorrect):\n");
+            print("Concept and relation comparison (for unmapped nodes all counted as incorrect):\n");
             $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
             $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
             $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
@@ -658,7 +658,7 @@ sub compare_sentences
     }
     print_table(@table);
     print("\n");
-    # Perform node-to-node comparisons.
+    # Perform node-to-node comparison.
     print("Node-node correspondences:\n\n");
     for(my $i = 0; $i <= $#sentences; $i++)
     {

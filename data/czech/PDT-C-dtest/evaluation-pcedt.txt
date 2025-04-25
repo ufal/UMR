@@ -3879,11 +3879,11 @@ Out of 379 total CONV nodes, 244 mapped to GOLD => precision = 64%.
  => F₁(GOLD,CONV) = 71%.
 Before symmetrization, 51 GOLD nodes were projected ambiguously to 151 CONV nodes.
 Before symmetrization, 10 CONV nodes were projected ambiguously to 20 GOLD nodes.
-Concept and relation comparisons (only mapped nodes; unmapped are ignored):
+Concept and relation comparison (only mapped nodes; unmapped are ignored):
 Out of 617 non-empty GOLD values, 323 found in CONV => recall    52%.
 Out of 573 non-empty CONV values, 323 found in GOLD => precision 56%.
  => F₁ = 54%.
-Concept and relation comparisons (for unmapped nodes all counted as incorrect):
+Concept and relation comparison (for unmapped nodes all counted as incorrect):
 Out of 814 non-empty GOLD values, 323 found in CONV => recall    40%.
 Out of 805 non-empty CONV values, 323 found in GOLD => precision 40%.
  => juːmæʧ (GOLD, CONV) = F₁ = 40%.
