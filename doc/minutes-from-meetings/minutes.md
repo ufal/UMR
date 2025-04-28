@@ -1,5 +1,29 @@
 # UMR meeting minutes
 
+## Monday, April 28, 2025
+
+(Dan, Federica, Hanka, Jan Š., Markéta)
+
+#### Updates:
+- **DMR workshop**: submitted
+- Jirka Mírovský: the first version of PDT-C 2.0 searchable through [PML-TQ](https://lindat.mff.cuni.cz/services/pmltq/) available!
+
+#### TODO:
+- **[Release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit)** ... postponed  
+ (Appendix: still missing examples); then publish as a technical report 
+- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
+ (This would significantly speed up the annotation!)
+- Your UMR-related plans for near future?
+
+#### NEXT meetings
+- Monday, May 5, S510
+- Monday, May 12, S519 !!!
+- Monday, May 19, S510 !!!
+- Monday, May 26, S510
+
+
+---
+
 ## Monday, April 7, 2025
 
 (Dan, Federica, Hanka, Jan Š., Markéta)
@@ -11,7 +35,7 @@
   - Federika: see also AnCast [(Haibo Sun and Nianwen Xue, 2024)](https://aclanthology.org/2024.lrec-main.94/)
   - There is also an extension called AnCast++ that creates subscores for new document-level aspects of UMR including coreference, temporal dependencies and modal dependencies. As far as I know, the paper hasn’t been published yet—it was still under review the last time I heard.
 - Honza: comparison in TrEd
-- Markéta, Hanka: info on manualUMRs for PDT-C data 
+- Markéta, Hanka: info on manual UMRs for PDT-C data 
    - completed 25 sentences from PDT (2 documents; 5 s. from each document  with parallel annotation)
    - completed 50 senteces from PDTSC (2 documents, 1/2 of each; 5 s. from each document  with parallel annotation)
    - to be completed: ??10 sentences from PCEDT (from 2 documents) 
@@ -20,9 +44,9 @@
 
 #### TODO:
 - **DMR workshop** ... plan to finish the paper before Easter
-- **[the release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit)** ... postponed  
+- **[release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit)** ... postponed  
  (Appendix: still missing examples); then publish as a technical report 
-- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed
+- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
  This would significantly speed up the annotation!
 - Jirka Mírovský plans to prepare searchable PDT-C 2.0 in [PML-TQ](https://lindat.mff.cuni.cz/services/pmltq/) (Lindat)
 
