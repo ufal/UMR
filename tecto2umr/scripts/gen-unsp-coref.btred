@@ -5,8 +5,10 @@ use strict;
 
 sub coref {
     my %targets;
+    my %position;
     do {{
         while ($this = $this->following) {
+            $position{ $this->{id} } = ThisAddress();
             undef $targets{ $this->{id} }{LEMMA}
                 if $this->{t_lemma} =~ /^#(?:Unsp|Gen)$/;
 
@@ -25,7 +27,7 @@ sub coref {
     }} while TredMacro::NextTree();
 
     for my $id (keys %targets) {
-        writeln(join "\t", $id, sort keys %{ $targets{$id} })
+        writeln(join(' ', sort keys %{ $targets{$id} }), "\t", $position{$id})
             if exists $targets{$id}{LEMMA} && 1 < keys %{ $targets{$id} };
     }
 }
