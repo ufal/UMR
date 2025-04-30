@@ -1,0 +1,36 @@
+#!btred -e coref()
+# -*- mode: cperl -*-
+use warnings;
+use strict;
+
+sub coref {
+    my %targets;
+    my %position;
+    do {{
+        while ($this = $this->following) {
+            $position{ $this->{id} } = ThisAddress();
+            undef $targets{ $this->{id} }{LEMMA}
+                if $this->{t_lemma} =~ /^#(?:Unsp|Gen)$/;
+
+            undef $targets{$_}{COREF_TARGET}{C}
+                for ListV($this->{'compl.rf'});
+            undef $targets{$_}{COREF_TARGET}{G}
+                for ListV($this->{'coref_gram.rf'});
+            undef $targets{ $_->{'target_node.rf'} }{COREF_TARGET}{T}
+                for ListV($this->{coref_text});
+            undef $targets{ $_->{'target_node.rf'} }{COREF_TARGET}{B}
+                for ListV($this->{bridging});
+            undef $targets{ $this->{id} }{COREF_SRC}
+                if grep exists $this->{$_},
+                   qw( compl.rf coref_gram.rf coref_text bridging );
+        }
+    }} while TredMacro::NextTree();
+
+    for my $id (keys %targets) {
+        writeln(join(' ', sort keys %{ $targets{$id} }), "\t", $position{$id})
+            if exists $targets{$id}{LEMMA} && 1 < keys %{ $targets{$id} };
+    }
+}
+
+# List #Unsp and #Gen nodes that participate in coreference of any kind
+# (grammatical, textual, bridging, complement) as either a source or a target.

@@ -561,11 +561,11 @@ Out of 72 total HH nodes, 70 mapped to ML => precision = 97%.
  => F₁(ML,HH) = 97%.
 Before symmetrization, 3 ML nodes were projected ambiguously to 8 HH nodes.
 Before symmetrization, 5 HH nodes were projected ambiguously to 10 ML nodes.
-Concept and relation comparisons (only mapped nodes; unmapped are ignored):
+Concept and relation comparison (only mapped nodes; unmapped are ignored):
 Out of 236 non-empty ML values, 224 found in HH => recall    95%.
 Out of 232 non-empty HH values, 224 found in ML => precision 97%.
  => F₁ = 96%.
-Concept and relation comparisons (for unmapped nodes all counted as incorrect):
+Concept and relation comparison (for unmapped nodes all counted as incorrect):
 Out of 241 non-empty ML values, 224 found in HH => recall    93%.
 Out of 236 non-empty HH values, 224 found in ML => precision 95%.
  => juːmæʧ (ML, HH) = F₁ = 94%.
