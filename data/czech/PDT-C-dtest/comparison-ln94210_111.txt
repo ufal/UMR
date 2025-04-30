@@ -1,5 +1,5 @@
 Found 14 sentences in ML:
-1-72, 75-152, 155-208, 211-275, 278-323, 326-401, 404-493, 496-623, 626-681, 684-733, 736-800, 803-879, 882-951, 954-985
+1-72, 75-152, 155-208, 211-275, 278-324, 327-400, 403-492, 495-623, 626-681, 684-733, 736-800, 803-879, 882-951, 954-985
 Found 5 sentences in HH:
 1-72, 75-155, 158-210, 213-280, 283-323
 
@@ -362,7 +362,7 @@ ML                                                                              
                                    :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))                   	:ARG2 (s4m1 / monetary-quantity
                       :ARG2 (s4k1 / monetary-quantity                                                 		:unit (s4k1 / koruna)
                              :quant 5                                                                         	:quant 5)
-                             :unit (s4k2 / CZK))                                                              :temporal (s4d1 / date-entity
+                             :unit (s4k2 / koruna))                                                           :temporal (s4d1 / date-entity
                       :temporal (s4r2 / date-interval                                         			:quarter 4
                                         :op1 (s4d1 / date-entity :weekday (s4p2 / pondělí))   			:year (s4l1 / letošní))
                                         :op2 (s4d2 / date-entity :weekday (s4c2 / čtvrtek))))             	:temporal (s4d2 / date-interval
@@ -383,102 +383,88 @@ ML                                                                              
                                                                                                         	:temporal s4d1)))
 
 Node-token alignments:
-File ML: 7 nodes unaligned: s4c2/čtvrtek, s4d1/date-entity, s4n2/name["Lidové" "noviny"], s4r2/date-interval, s4s/say-91, s4s2/stát-014, s4s3/sobota.
+File ML: 7 nodes unaligned: s4d1/date-entity, s4d2/date-entity, s4n2/name["Lidové" "noviny"], s4r2/date-interval, s4s/say-91, s4s2/stát-014, s4s3/sobota.
 File HH: 7 nodes unaligned: s4d2/date-interval, s4d3/date-entity, s4d4/date-entity, s4d5/date-entity, s4n2/name["Lidové" "noviny"], s4s2/stát-014, s4s3/say-91.
-              ML         HH
-1  Od         s4c1       s4d1
-2  posledního s4c1       s4d1
-3  čtvrtletí  s4c1       s4d1
-4  letošního  s4c1, s4l1 s4l1
-5  roku       s4c1       s4d1, s4l1
-6  budou      s4s1       s4s1
-7  proto      s4p1       s4p3
-8  Lidové     s4n1       s4n1
-9  noviny     s4n1       s4n1
-10 stát       s4s1       s4s1
-11 od         s4p2       s4p4
-12 pondělka   s4p2       s4p4
-13 do         s4d2       s4c2
-14 čtvrtka    s4d2       s4c2
-15 pět        s4k1       s4m1
-16 korun      s4k1, s4k2 s4k1
-17 a          s4a1       s4a1
-18 v          s4d3       s4s4
-19 sobotu     s4d3       s4s4
-20 šest       s4k3       s4m2
-21 korun      s4k2, s4k3 s4k1
-22 .                     
+              ML   HH
+1  Od         s4c1 s4d1
+2  posledního s4c1 s4d1
+3  čtvrtletí  s4c1 s4d1
+4  letošního  s4l1 s4l1
+5  roku       s4l1 s4d1, s4l1
+6  budou      s4s1 s4s1
+7  proto      s4p1 s4p3
+8  Lidové     s4n1 s4n1
+9  noviny     s4n1 s4n1
+10 stát       s4s1 s4s1
+11 od         s4p2 s4p4
+12 pondělka   s4p2 s4p4
+13 do         s4c2 s4c2
+14 čtvrtka    s4c2 s4c2
+15 pět        s4k1 s4m1
+16 korun      s4k2 s4k1
+17 a          s4a1 s4a1
+18 v          s4d3 s4s4
+19 sobotu     s4d3 s4s4
+20 šest       s4k3 s4m2
+21 korun      s4k2 s4k1
+22 .               
 
 Node-node correspondences:
 
-Ambiguous projection of ML node s4c1 (Od posledního čtvrtletí letošního roku) to 2 HH nodes [s4d1 (Od posledního čtvrtletí roku), s4l1 (letošního roku)]
 Ambiguous projection of ML node s4d1 (date-entity) to 3 HH nodes [s4d3 (date-entity), s4d4 (date-entity), s4d5 (date-entity)]
-Ambiguous projection of ML node s4k1 (pět korun) to 2 HH nodes [s4k1 (korun korun), s4m1 (pět)]
-Ambiguous projection of ML node s4k3 (šest korun) to 2 HH nodes [s4k1 (korun korun), s4m2 (šest)]
-  The winner is ML node s4c1 (Od posledního čtvrtletí letošního roku) <--> HH node s4d1 (Od posledního čtvrtletí roku): econcepts=date-entity/date-entity, match=3 (concept=date-entity,:quarter=4,:year=s4l1 mapped to HH s4l1), weak match=3 (concept,:quarter,:year).
+Ambiguous projection of ML node s4d2 (date-entity) to 3 HH nodes [s4d3 (date-entity), s4d4 (date-entity), s4d5 (date-entity)]
+Ambiguous projection of ML node s4l1 (letošního roku) to 2 HH nodes [s4d1 (Od posledního čtvrtletí roku), s4l1 (letošního roku)]
   The winner is ML node s4d1 (date-entity) <--> HH node s4d3 (date-entity): econcepts=date-entity/date-entity, match=2 (concept=date-entity,:weekday=s4p2 mapped to HH s4p4), weak match=2 (concept,:weekday).
-  The winner is ML node s4k1 (pět korun) <--> HH node s4m1 (pět): econcepts=monetary-quantity/monetary-quantity, match=3 (concept=monetary-quantity,:quant=5,:unit=s4k2 mapped to HH s4k1), weak match=3 (concept,:quant,:unit).
-  The winner is ML node s4k3 (šest korun) <--> HH node s4m2 (šest): econcepts=monetary-quantity/monetary-quantity, match=3 (concept=monetary-quantity,:quant=6,:unit=s4k2 mapped to HH s4k1), weak match=3 (concept,:quant,:unit).
+  The winner is ML node s4d2 (date-entity) <--> HH node s4d4 (date-entity): econcepts=date-entity/date-entity, match=2 (concept=date-entity,:weekday=s4c2 mapped to HH s4c2), weak match=2 (concept,:weekday).
 
-Ambiguous projection of HH node s4k1 (korun korun) to 3 ML nodes [s4k1 (pět korun), s4k2 (korun korun), s4k3 (šest korun)]
-Ambiguous projection of HH node s4l1 (letošního roku) to 2 ML nodes [s4c1 (Od posledního čtvrtletí letošního roku), s4l1 (letošního)]
+Ambiguous projection of HH node s4d1 (Od posledního čtvrtletí roku) to 2 ML nodes [s4c1 (Od posledního čtvrtletí), s4l1 (letošního roku)]
+Ambiguous projection of HH node s4d3 (date-entity) to 2 ML nodes [s4d1 (date-entity), s4d2 (date-entity)]
+Ambiguous projection of HH node s4d4 (date-entity) to 2 ML nodes [s4d1 (date-entity), s4d2 (date-entity)]
+Ambiguous projection of HH node s4d5 (date-entity) to 2 ML nodes [s4d1 (date-entity), s4d2 (date-entity)]
+  The winner is HH node s4d1 (Od posledního čtvrtletí roku) <--> ML node s4c1 (Od posledního čtvrtletí): econcepts=date-entity/date-entity, match=3 (concept=date-entity,:quarter=4,:year=s4l1 mapped to ML s4l1), weak match=3 (concept,:quarter,:year).
 
-Correspondence ML s4a1 (a)                                      = HH s4a1 (a)
-Correspondence ML s4c1 (Od posledního čtvrtletí letošního roku) = HH s4d1 (Od posledního čtvrtletí roku)
-Correspondence ML s4d1 (date-entity)                            = HH s4d3 (date-entity)
-Correspondence ML s4d2 (do čtvrtka)                             = HH s4c2 (do čtvrtka)
-Correspondence ML s4d3 (v sobotu)                               = HH s4s4 (v sobotu)
-Correspondence ML s4k1 (pět korun)                              = HH s4m1 (pět)
-Correspondence ML s4k2 (korun korun)                            = HH s4k1 (korun korun)
-Correspondence ML s4k3 (šest korun)                             = HH s4m2 (šest)
-Correspondence ML s4l1 (letošního)                              = HH s4l1 (letošního roku)
-Correspondence ML s4n1 (Lidové noviny)                          = HH s4n1 (Lidové noviny)
-Correspondence ML s4n2 (name["Lidové" "noviny"])                = HH s4n2 (name["Lidové" "noviny"])
-Correspondence ML s4p1 (proto)                                  = HH s4p3 (proto)
-Correspondence ML s4p2 (od pondělka)                            = HH s4p4 (od pondělka)
-Correspondence ML s4r2 (date-interval)                          = HH s4d2 (date-interval)
-Correspondence ML s4s  (say-91)                                 = HH s4s3 (say-91)
-Correspondence ML s4s1 (budou stát)                             = HH s4s1 (budou stát)
-Correspondence ML s4s2 (stát-014)                               = HH s4s2 (stát-014)
-Correspondence ML s4c2 (čtvrtek)                                = HH 
-Correspondence ML s4s3 (sobota)                                 = HH 
-Correspondence ML                                               = HH s4d4 (date-entity)
-Correspondence ML                                               = HH s4d5 (date-entity)
+Correspondence ML s4a1 (a)                       = HH s4a1 (a)
+Correspondence ML s4c1 (Od posledního čtvrtletí) = HH s4d1 (Od posledního čtvrtletí roku)
+Correspondence ML s4c2 (do čtvrtka)              = HH s4c2 (do čtvrtka)
+Correspondence ML s4d1 (date-entity)             = HH s4d3 (date-entity)
+Correspondence ML s4d2 (date-entity)             = HH s4d4 (date-entity)
+Correspondence ML s4d3 (v sobotu)                = HH s4s4 (v sobotu)
+Correspondence ML s4k1 (pět)                     = HH s4m1 (pět)
+Correspondence ML s4k2 (korun korun)             = HH s4k1 (korun korun)
+Correspondence ML s4k3 (šest)                    = HH s4m2 (šest)
+Correspondence ML s4l1 (letošního roku)          = HH s4l1 (letošního roku)
+Correspondence ML s4n1 (Lidové noviny)           = HH s4n1 (Lidové noviny)
+Correspondence ML s4n2 (name["Lidové" "noviny"]) = HH s4n2 (name["Lidové" "noviny"])
+Correspondence ML s4p1 (proto)                   = HH s4p3 (proto)
+Correspondence ML s4p2 (od pondělka)             = HH s4p4 (od pondělka)
+Correspondence ML s4r2 (date-interval)           = HH s4d2 (date-interval)
+Correspondence ML s4s  (say-91)                  = HH s4s3 (say-91)
+Correspondence ML s4s1 (budou stát)              = HH s4s1 (budou stát)
+Correspondence ML s4s2 (stát-014)                = HH s4s2 (stát-014)
+Correspondence ML s4s3 (sobota)                  = HH 
+Correspondence ML                                = HH s4d5 (date-entity)
 
-Aligned 17 out of 19 ML nodes, that is 89%.
-Aligned 17 out of 19 HH nodes, that is 89%.
+Aligned 18 out of 19 ML nodes, that is 95%.
+Aligned 18 out of 19 HH nodes, that is 95%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s4c2 / čtvrtek                    mismatch in concept:       ML = čtvrtek                HH = UNMAPPED
-Node ML s4d2 / date-entity (do čtvrtka)   mismatch in concept:       ML = date-entity            HH = čtvrtek
-Node ML s4d2 / date-entity (do čtvrtka)   mismatch in :weekday:      ML = s4c2 unmapped          HH = 
 Node ML s4d3 / date-entity (v sobotu)     mismatch in concept:       ML = date-entity            HH = sobota
 Node ML s4d3 / date-entity (v sobotu)     mismatch in :weekday:      ML = s4s3 unmapped          HH = 
-Node ML s4k2 / CZK (korun korun)          mismatch in concept:       ML = CZK                    HH = koruna
 Node ML s4n1 / news-media (Lidové noviny) mismatch in :refer-number: ML =                        HH = singular
-Node ML s4r2 / date-interval              mismatch in :op2:          ML = s4d2 mapped to HH s4c2 HH = s4d4
 Node ML s4s1 / stát-014 (budou stát)      mismatch in :quote:        ML = s4s mapped to HH s4s3  HH = 
 Node ML s4s2 / stát-014                   mismatch in :quote:        ML = s4s mapped to HH s4s3  HH = 
 Node ML s4s2 / stát-014                   mismatch in :temporal:     ML = s4d3 mapped to HH s4s4 HH = 
 Node ML s4s2 / stát-014                   mismatch in :temporal:     ML =                        HH = s4d5
 Node ML s4s3 / sobota                     mismatch in concept:       ML = sobota                 HH = UNMAPPED
-Node HH s4d4 / date-entity                mismatch in concept:       HH = date-entity            ML = UNMAPPED
-Node HH s4d4 / date-entity                mismatch in :weekday:      HH = s4c2                   ML = UNMAPPED
 Node HH s4d5 / date-entity                mismatch in concept:       HH = date-entity            ML = UNMAPPED
 Node HH s4d5 / date-entity                mismatch in :weekday:      HH = s4s4                   ML = UNMAPPED
 
-Correct 43 out of 54 non-empty ML values => recall    80%.
-Correct 43 out of 53 non-empty HH values => precision 81%.
+Correct 48 out of 54 non-empty ML values => recall    89%.
+Correct 48 out of 53 non-empty HH values => precision 91%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s4c2 / čtvrtek (do čtvrtka)       mismatch in concept:       HH = čtvrtek       ML = date-entity
-Node HH s4c2 / čtvrtek (do čtvrtka)       mismatch in :weekday:      HH =               ML = s4c2
-Node HH s4d2 / date-interval              mismatch in :op2:          HH = s4d4 unmapped ML = s4d2
-Node HH s4d4 / date-entity                mismatch in concept:       HH = date-entity   ML = UNMAPPED
-Node HH s4d4 / date-entity                mismatch in :weekday:      HH = s4c2          ML = UNMAPPED
 Node HH s4d5 / date-entity                mismatch in concept:       HH = date-entity   ML = UNMAPPED
 Node HH s4d5 / date-entity                mismatch in :weekday:      HH = s4s4          ML = UNMAPPED
-Node HH s4k1 / koruna (korun korun)       mismatch in concept:       HH = koruna        ML = CZK
 Node HH s4n1 / news-media (Lidové noviny) mismatch in :refer-number: HH = singular      ML = 
 Node HH s4s1 / stát-014 (budou stát)      mismatch in :quote:        HH =               ML = s4s
 Node HH s4s2 / stát-014                   mismatch in :temporal:     HH = s4d5 unmapped ML = 
@@ -486,11 +472,10 @@ Node HH s4s2 / stát-014                   mismatch in :quote:        HH =      
 Node HH s4s2 / stát-014                   mismatch in :temporal:     HH =               ML = s4d3
 Node HH s4s4 / sobota (v sobotu)          mismatch in concept:       HH = sobota        ML = date-entity
 Node HH s4s4 / sobota (v sobotu)          mismatch in :weekday:      HH =               ML = s4s3
-Node ML s4c2 / čtvrtek                    mismatch in concept:       ML = čtvrtek       HH = UNMAPPED
 Node ML s4s3 / sobota                     mismatch in concept:       ML = sobota        HH = UNMAPPED
 
-Correct 43 out of 53 non-empty HH values => recall    81%.
-Correct 43 out of 54 non-empty ML values => precision 80%.
+Correct 48 out of 53 non-empty HH values => recall    91%.
+Correct 48 out of 54 non-empty ML values => precision 89%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -571,16 +556,16 @@ SUMMARY:
 Number of tokens: 92
 Number of nodes per file: ML:73, HH:72
 File-to-file node mapping:
-Out of 73 total ML nodes, 69 mapped to HH => recall    = 95%.
-Out of 72 total HH nodes, 69 mapped to ML => precision = 96%.
- => F₁(ML,HH) = 95%.
-Before symmetrization, 4 ML nodes were projected ambiguously to 9 HH nodes.
-Before symmetrization, 3 HH nodes were projected ambiguously to 7 ML nodes.
+Out of 73 total ML nodes, 70 mapped to HH => recall    = 96%.
+Out of 72 total HH nodes, 70 mapped to ML => precision = 97%.
+ => F₁(ML,HH) = 97%.
+Before symmetrization, 3 ML nodes were projected ambiguously to 8 HH nodes.
+Before symmetrization, 5 HH nodes were projected ambiguously to 10 ML nodes.
 Concept and relation comparisons (only mapped nodes; unmapped are ignored):
-Out of 235 non-empty ML values, 219 found in HH => recall    93%.
-Out of 230 non-empty HH values, 219 found in ML => precision 95%.
- => F₁ = 94%.
+Out of 236 non-empty ML values, 224 found in HH => recall    95%.
+Out of 232 non-empty HH values, 224 found in ML => precision 97%.
+ => F₁ = 96%.
 Concept and relation comparisons (for unmapped nodes all counted as incorrect):
-Out of 241 non-empty ML values, 219 found in HH => recall    91%.
-Out of 236 non-empty HH values, 219 found in ML => precision 93%.
- => juːmæʧ (ML, HH) = F₁ = 92%.
+Out of 241 non-empty ML values, 224 found in HH => recall    93%.
+Out of 236 non-empty HH values, 224 found in ML => precision 95%.
+ => juːmæʧ (ML, HH) = F₁ = 94%.

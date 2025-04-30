@@ -201,7 +201,7 @@ Words: Komise se shodla na tom ,  že dokončí šetření ,  která ještě pro
 (s5s1 / shodnout-se-001
         :ARG0 (s5k1 / komise
             :refer-number singular)
-        :ARG2 (s5x1 / #Rcp
+        :ARG2 (s5x1 / _Rcp
             :refer-number singular)
         :ARG1 (s5d1 / dokončit-001
             :ARG0 s5x1
@@ -500,7 +500,7 @@ Words: Členové komise si včera rozdělili úkoly na příští dny a  k  dal�
                     :refer-number singular)
                 :refer-number plural)
             :temporal (s10v1 / včera)
-            :ARG2 (s10x1 / #Rcp
+            :ARG2 (s10x1 / _Rcp
                 :refer-number plural)
             :ARG1 (s10u1 / úkol
                 :duration (s10d1 / den
@@ -519,7 +519,7 @@ Words: Členové komise si včera rozdělili úkoly na příští dny a  k  dal�
                 :mod (s10d2 / další
                     :refer-number singular)
                 :refer-number singular)
-            :ARG1 (s10x3 / #Rcp
+            :ARG1 (s10x3 / _Rcp
                 :refer-number plural)
             :place (s10b1 / březen
                 :mod (s10x4 / 8)

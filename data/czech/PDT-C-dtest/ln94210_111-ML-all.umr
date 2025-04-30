@@ -882,8 +882,8 @@ s12n4: 0-0
 ################################################################################
 # sent_id = u_tree-cs-s13-root
 # :: snt13
-Index: 1      2     3  4  5         6  7  8        9       10   11 12    13 14 15  16        17    18
-Words: Věříme proto ,  že pochopíte ,  že současné zvýšení ceny je nutné a  že nám zůstanete věrni .
+Index: 1      2     3  4  5         6  7  8        9       10   11 12    13 14 15 16  17        18    19
+Words: Věříme proto ,  že pochopíte ,  že současné zvýšení ceny je nutné ,  a  že nám zůstanete věrni .
 
 # sentence level graph:
 (s13s / say-91
@@ -929,18 +929,18 @@ Words: Věříme proto ,  že pochopíte ,  že současné zvýšení ceny je nu
 s13s: 0-0
 s13v1: 1-1
 s13p1: 2-2
-s13a1: 13-13
+s13a1: 14-14
 s13p2: 4-5
-s13e1: 15-15
+s13e1: 16-16
 s13e2: 0-0
 s13b1: 7-7,11-11
 s13z1: 9-9
 s13s1: 8-8
 s13n1: 12-12
 s13c1: 10-10
-s13z2: 14-14,16-16
+s13z2: 15-15,17-17
 s13h1: 0-0
-s13v2: 17-17
+s13v2: 18-18
 
 # document level annotation:
 (s13s0 / sentence
