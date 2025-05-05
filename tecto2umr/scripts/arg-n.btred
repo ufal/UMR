@@ -1,0 +1,16 @@
+#!btred -NTe arg_n()
+# -*- mode: cperl -*-
+use warnings;
+use strict;
+
+sub arg_n {
+    my $relation = $this->{relation} // 'ROOT';
+    if ($relation =~ /^ARG(?:[3-9]|[0-9]{2,})/) {
+        my $parent = $relation =~ /-of$/
+                     ? $this
+                     : $this->parent;
+        writeln(join "\t", $relation,
+                           $parent->{label} // "ROOT",
+                           ThisAddress());
+    }
+}
