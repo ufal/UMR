@@ -1,5 +1,39 @@
 # UMR meeting minutes
 
+## Monday, May 5, 2025
+
+(Dan, Federica, Hanka, Jan Š., Markéta)
+
+#### Updates:
+- Honza:
+   - conversion of the attributes `refer-number` and `refer-person` improved (not final yet)
+   - inner participants --> arguments conversion, [table](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829)
+      - column E newly considered;
+      - problems with frames with alternations - if there are more children nodes with relevant functor(s), which of the should be considered argument?
+      - the same problem may arise with more obligatory free modifications (LOC, MANN, ...) that are considered arguments in UMR;
+      - the same problem may arise with reifications.
+   - discourse relations `but-91`, `contrast-91`, `identity-91` should have just 2 arguments (labeled `ARG1`, `ARG2`) 
+- Hanka: plans to investigate the possibility to identify eventive nouns and mapped to respective verb frames (NomVallex, Magda's and Hanka's tables)
+- Markéta: 
+   - plans to work on _být_ frames and suggest conversion rules
+   - conversion rules for the attributes `polite`and `mode`  
+
+
+
+#### TODO:
+- **[Release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit)** ... postponed  
+ (Appendix: still missing examples); then publish as a technical report 
+- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
+ (This would significantly speed up the annotation!)
+
+
+#### NEXT meetings
+- Monday, May 12, **S519 !!**
+- Monday, May 19, **S519 !!**
+- Monday, May 26, S510
+
+---
+
 ## Monday, April 28, 2025
 
 (Dan, Federica, Hanka, Jan Š., Markéta)
@@ -18,7 +52,7 @@
 #### NEXT meetings
 - Monday, May 5, S510
 - Monday, May 12, S519 !!!
-- Monday, May 19, S510 !!!
+- Monday, May 19, S519 !!!
 - Monday, May 26, S510
 
 
