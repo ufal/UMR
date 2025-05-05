@@ -12,7 +12,7 @@
       - problems with frames with alternations - if there are more children nodes with relevant functor(s), which of the should be considered argument?
       - the same problem may arise with more obligatory free modifications (LOC, MANN, ...) that are considered arguments in UMR;
       - the same problem may arise with reifications.
-   - discourse relations `but-91`, `contrast-91`, `identity-91` should have just 2 arguments (labeled `ARG1`, `ARG2`) 
+   - discourse relations `but-91`, `contrast-91`, `identity-91`, `have-cause-91` should have just 2 arguments (labeled `ARG1`, `ARG2`) 
 - Hanka: plans to investigate the possibility to identify eventive nouns and mapped to respective verb frames (NomVallex, Magda's and Hanka's tables)
 - Markéta: 
    - plans to work on _být_ frames and suggest conversion rules
