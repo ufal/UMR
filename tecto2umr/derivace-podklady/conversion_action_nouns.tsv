@@ -1,0 +1,256 @@
+action_noun 	 imperfective_verb 	 pdt_valency_frame_ipf 	 number_frames_ipf 	perfective_verb 	 pdt_valency_frame_pf 	 number_frames_pf
+pohled 	 pohlížet 	 v41fwzA, v41fwzB, v41fwzC 	 3 	 pohledět|pohlédnout 	 pohledět: -- ; pohlédnout: v41fwxA, v41fwxB 	 unknown: multiple_verbs_available
+změna 	 změňovat 	 -- 	 0 	 změnit 	 v41rkdA, v41rkdB, v41rkdC, v41rkdD, v41rkdE 	 5
+vývoj 	 vyvíjet|vyvinovat 	 vyvíjet: v41pgpA, v41pgpB; vyvinovat: -- 	 unknown: multiple_verbs_available 	 vyvinout 	 v41pgrA, v41pgrB 	 2
+pohyb 	 pohybovat 	 v41fygA 	 1 	 pohnout|pohýbat 	 pohnout: v41fxcA ; pohýbat: -- 	 unknown: multiple_verbs_available
+výroba 	 vyrábět 	 v41otdA 	 1 	 vyrobit 	 v41otrA 	 1
+přístup 	 přistupovat 	 v41izpA, v41izpB, v41izpC, v41izpD, v41izpE, v41izpF 	 6 	 přistoupit 	 v41izjA, v41izjB, v41izjC, v41izjD, v41izjE, v41izjF 	 6
+provoz 	 provozovat 	 v41hsaA, v41hsaB, v41hsaC 	 3 	 provodit 	 -- 	 0
+průběh 	 probíhat 	 v41haaA, v41haaB, v41haaC, v41haaD 	 4 	 proběhnout 	 v41gzyA, v41gzyB, v41gzyC, v41gzyD 	 4
+boj 	 bojovat 	 v41gsA, v41gsB, v41gsC 	 3 	 -- 	 -- 	 0
+proud 	 proudit 	 v41hqqA 	 1 	 -- 	 -- 	 0
+rozhovor 	 rozhovořovat 	 -- 	 0 	 rozhovořit 	 -- 	 0
+úsměv 	 usmívat 	 -- 	 0 	 usmát 	 -- 	 0
+snaha 	 snažit 	 -- 	 0 	 -- 	 -- 	 0
+vznik 	 vznikat 	 v41pmrA, v41pmrB 	 2 	 vzniknout 	 v41pmsA, v41pmsB, v41pmsC 	 3
+prodej 	 prodávat 	 v41hblA 	 1 	 prodat 	 v41hbiA 	 1
+pokus 	 pokoušet 	 v41gbgA, v41gbgB 	 2 	 pokusit 	 -- 	 0
+útok 	 útočit 	 v41navA 	 1 	 -- 	 -- 	 0
+návrat 	 navracet 	 v41dgpA, v41dgpB 	 2 	 navrátit 	 v41dgsA, v41dgsB 	 2
+trest 	 trestat 	 v41mcaA 	 1 	 -- 	 -- 	 0
+koncert 	 koncertovat 	 v41bphA 	 1 	 -- 	 -- 	 0
+úvaha 	 uvažovat 	 v41ncrA, v41ncrB, v41ncrC, v41ncrD 	 4 	 uvážit 	 v41ncpA 	 1
+spotřeba 	 spotřebovat 	 v41lfdA 	 1 	 -- 	 -- 	 0
+účast 	 účastnit 	 -- 	 0 	 -- 	 -- 	 0
+odpor 	 odporovat 	 v41eggA, v41eggB 	 2 	 -- 	 -- 	 0
+odchod 	 odcházet 	 v41ealA, v41ealB, v41ealC, v41ealD 	 4 	 odejít 	 v41dyrA, v41dyrB, v41dyrC, v41dyrD, v41dyrE, v41dyrF, v41dyrG 	 7
+výchova 	 vychovávat 	 v41ockA, v41ockB 	 2 	 vychovat 	 v41ociA, v41ociB 	 2
+nárok 	 nárokovat 	 -- 	 0 	 -- 	 -- 	 0
+tanec 	 tančit|tancovat 	 tančit: v41lwnA; tancovat: v41lwmA 	 unknown: multiple_verbs_available 	 -- 	 -- 	 0
+výzva 	 vyzývat 	 v41pjzA 	 1 	 vyzvat 	 v41pjqA 	 1
+výměna 	 vyměňovat 	 v41ojzA, v41ojzB 	 2 	 vyměnit 	 v41ojyA, v41ojyB 	 2
+zábava 	 zabavovat 	 v41pojA 	 1 	 zabavit 	 v41pohA, v41pohB 	 2
+oslava 	 oslavovat 	 v41ezsA 	 1 	 oslavit 	 v41ezrA 	 1
+přenos 	 přenášet 	 v41ifbA, v41ifbB, v41ifbC, v41ifbD, v41ifbE 	 5 	 přenést|přenosit 	 přenést: v41ifiA, v41ifiB, v41ifiC, v41ifiD, v41ifiE ; přenosit: -- 	 unknown: multiple_verbs_available
+tok 	 téct 	 -- 	 0 	 -- 	 -- 	 0
+reforma 	 reformovat 	 v41jhaA 	 1 	 -- 	 -- 	 0
+dík 	 děkovat 	 v41rbA 	 1 	 -- 	 -- 	 0
+hovor 	 hovořit 	 v41aybA, v41aybB, v41aybC, v41aybD, v41aybE, v41aybF, v41aybG, v41aybH, v41aybI, v41aybJ, v41aybK 	 11 	 -- 	 -- 	 0
+zákaz 	 zakazovat 	 v41pwnA 	 1 	 zakázat 	 v41pwlA 	 1
+hluk 	 hlučet 	 -- 	 0 	 -- 	 -- 	 0
+nárůst 	 narůstat 	 v41czsA 	 1 	 narůst 	 v41czpA, v41czpB 	 2
+souhlas 	 souhlasit 	 v41kypA, v41kypB, v41kypC 	 3 	 -- 	 -- 	 0
+experiment 	 experimentovat 	 v41aojA 	 1 	 -- 	 -- 	 0
+příkaz 	 přikazovat 	 v41ismA 	 1 	 přikázat 	 v41islA 	 1
+debata 	 debatovat 	 v41qdA 	 1 	 -- 	 -- 	 0
+úvod 	 uvádět 	 v41nccA, v41nccB, v41nccC, v41nccD, v41nccE, v41nccF, v41nccG, v41nccH, v41nccI, v41nccJ, v41nccK 	 11 	 uvést|uvodit 	 uvést: v41ndjA, v41ndjB, v41ndjC, v41ndjD, v41ndjE, v41ndjF, v41ndjG, v41ndjH, v41ndjI, v41ndjJ, v41ndjK, v41ndjL, v41ndjM ; uvodit: -- 	 unknown: multiple_verbs_available
+dohled 	 dohlédat 	 -- 	 0 	 dohlédnout 	 v41xwA, v41xwB 	 2
+kouzlo 	 kouzlit 	 v41bucA 	 1 	 -- 	 -- 	 0
+proměna 	 proměňovat 	 v41hhlA, v41hhlB 	 2 	 proměnit 	 v41hhjA, v41hhjB, v41hhjC 	 3
+dotaz 	 dotazovat 	 -- 	 0 	 dotázat 	 -- 	 0
+útěk 	 utíkat 	 v41mzzA, v41mzzB, v41mzzC 	 3 	 utéct 	 -- 	 0
+obnova 	 obnovovat 	 v41drlA, v41drlB 	 2 	 obnovit 	 v41driA 	 1
+záchrana 	 zachraňovat 	 v41purA 	 1 	 zachránit 	 v41pupA, v41pupB 	 2
+chůze 	 chodit 	 v41bbiA, v41bbiB, v41bbiC, v41bbiD, v41bbiE, v41bbiF, v41bbiG, v41bbiH, v41bbiI, v41bbiJ, v41bbiK, v41bbiL, v41bbiM, v41bbiN, v41bbiO, v41bbiP 	 16 	 jít 	 v41bikA, v41bikB, v41bikC, v41bikD, v41bikE, v41bikF, v41bikG, v41bikH, v41bikI, v41bikJ, v41bikK, v41bikL, v41bikM, v41bikN, v41bikO, v41bikP, v41bikQ, v41bikR, v41bikS, v41bikT, v41bikU, v41bikV, v41bikW, v41bikX, v41bikY, v41bikZ, v41bikAA, v41bikAB, v41bikAC, v41bikAD, v41bikAE, v41bikAF, v41bikAG, v41bikAH, v41bikAI, v41bikAJ, v41bikAK, v41bikAL, v41bikAM, v41bikAN, v41bikAO, v41bikAP, v41bikAQ, v41bikAR, v41bikAS, v41bikAT, v41bikAU, v41bikAV, v41bikAW, v41bikAX, v41bikAY, v41bikAZ, v41bikBA, v41bikBB, v41bikBC, v41bikBD, v41bikBE, v41bikBF, v41bikBG, v41bikBH, v41bikBI, v41bikBJ, v41bikBK, v41bikBL, v41bikBM, v41bikBN, v41bikBO, v41bikBP, v41bikBQ, v41bikBR, v41bikBS, v41bikBT, v41bikBU, v41bikBV, v41bikBW, v41bikBX, v41bikBY, v41bikBZ, v41bikCA, v41bikCB, v41bikCC, v41bikCD, v41bikCE, v41bikCF 	 84
+lež 	 lhát 	 v41cafA, v41cafB 	 2 	 -- 	 -- 	 0
+porod 	 porozovat 	 -- 	 0 	 porodit 	 v41gjbA 	 1
+pohřeb 	 pohřbívat 	 v41fxzA 	 1 	 pohřbít 	 v41fxyA, v41fxyB 	 2
+pláč 	 plakat 	 v41fmgA, v41fmgB 	 2 	 -- 	 -- 	 0
+úder 	 udeřovat 	 -- 	 0 	 udeřit 	 v41mhzA, v41mhzB, v41mhzC, v41mhzD, v41mhzE 	 5
+skok 	 skákat 	 v41kpoA, v41kpoB, v41kpoC, v41kpoD 	 4 	 skočit 	 v41kraA, v41kraB, v41kraC, v41kraD, v41kraE, v41kraF, v41kraG 	 7
+výbuch 	 vybuchovat 	 v41nvcA 	 1 	 vybuchnout|vybouchnout 	 vybuchnout: v41nvbA, v41nvbB, v41nvbC ; vybouchnout: v41nuiA, v41nuiB 	 unknown: multiple_verbs_available
+rozkaz 	 rozkazovat 	 v41jrsA 	 1 	 rozkázat 	 v41jrrA 	 1
+protest 	 protestovat 	 v41hpkA 	 1 	 -- 	 -- 	 0
+rozpor 	 rozporovat 	 -- 	 0 	 -- 	 -- 	 0
+pochod 	 pochodovat 	 v41fynA 	 1 	 -- 	 -- 	 0
+zásluha 	 zasluhovat 	 v41qlfA 	 1 	 zasloužit 	 v41qlbA 	 1
+únik 	 unikat 	 v41mqiA, v41mqiB, v41mqiC, v41mqiD 	 4 	 uniknout 	 v41mqjA, v41mqjB, v41mqjC, v41mqjD, v41mqjE 	 5
+výkřik 	 vykřikovat 	 v41ogzA, v41ogzB 	 2 	 vykřiknout 	 v41ogyA 	 1
+střet 	 střetat 	 -- 	 0 	 střetnout 	 v41lneA, v41lneB 	 2
+záchvat 	 zachvacovat 	 v41puvA 	 1 	 zachvátit 	 v41puwA 	 1
+dosah 	 dosahovat 	 v41afdA, v41afdB, v41afdC, v41afdD 	 4 	 dosáhnout 	 v41afbA, v41afbB, v41afbC, v41afbD, v41afbE, v41afbF 	 6
+box 	 boxovat 	 v41hkA 	 1 	 -- 	 -- 	 0
+lov 	 lovit 	 v41cclA, v41cclB, v41cclC 	 3 	 -- 	 -- 	 0
+zákrok 	 zakročovat|zakračovat 	 zakročovat: v41pynA; zakračovat: -- 	 unknown: multiple_verbs_available 	 zakročit 	 v41pymA 	 1
+podvod 	 podvádět 	 v41fvxA 	 1 	 podvést 	 v41fwbA, v41fwbB 	 2
+křik 	 křičet 	 v41bwcA, v41bwcB 	 2 	 křiknout 	 -- 	 0
+koupě 	 kupovat 	 v41bwvA 	 1 	 koupit 	 v41btrA 	 1
+triumf 	 triumfovat 	 v41mcjA 	 1 	 -- 	 -- 	 0
+rozpad 	 rozpadat 	 -- 	 0 	 rozpadnout 	 -- 	 0
+náraz 	 narážet 	 v41cyzA, v41cyzB, v41cyzC, v41cyzD, v41cyzE 	 5 	 narazit 	 v41cyxA, v41cyxB, v41cyxC, v41cyxD, v41cyxE, v41cyxF 	 6
+přesun 	 přesunovat 	 v41ijzA, v41ijzB 	 2 	 přesunout 	 v41ijxA, v41ijxB, v41ijxC, v41ijxD 	 4
+zánik 	 zanikat 	 v41qdmA, v41qdmB 	 2 	 zaniknout 	 v41qdnA, v41qdnB, v41qdnC 	 3
+odběr 	 odbírat|odebírat 	 odbírat: --; odebírat: v41dydA, v41dydB, v41dydC 	 unknown: multiple_verbs_available 	 odebrat 	 v41dygA, v41dygB, v41dygC, v41dygD 	 4
+úklid 	 uklízet 	 v41mmfA 	 1 	 uklidit 	 v41mlyA, v41mlyB 	 2
+záblesk 	 zablýskávat 	 -- 	 0 	 zablýsknout|zablesknout|zablýskat 	 zablýsknout: -- ; zablesknout: -- ; zablýskat: v41ppjA 	 unknown: multiple_verbs_available
+přeměna 	 přeměňovat 	 v41ieeA 	 1 	 přeměnit 	 v41iecA 	 1
+oběh 	 obíhat 	 v41dpdA 	 1 	 oběhnout|oběhat 	 oběhnout: v41dnpA, v41dnpB ; oběhat: -- 	 unknown: multiple_verbs_available
+pomsta 	 pomstívat 	 -- 	 0 	 pomstít 	 v41geuA 	 1
+poprava 	 popravovat 	 -- 	 0 	 popravit 	 v41ghvA 	 1
+útěcha 	 utěšovat 	 v41mzwA 	 1 	 utěšit 	 v41mzvA 	 1
+dovoz 	 dovážet 	 v41aifA, v41aifB 	 2 	 dovézt 	 v41ailA, v41ailB 	 2
+svit 	 svítit 	 v41lqtA, v41lqtB 	 2 	 svitnout 	 v41lquA, v41lquB 	 2
+zkáza 	 -- 	 -- 	 0 	 zkazit 	 v41rfjA 	 1
+výhrada 	 vyhrazovat 	 -- 	 0 	 vyhradit 	 v41oavA, v41oavB 	 2
+přepočet 	 přepočítat 	 v41igoA, v41igoB 	 2 	 přepočíst 	 v41igmA 	 1
+příliv 	 přilívat|přilévat 	 přilívat: v41ituA; přilévat: v41itpA, v41itpB 	 unknown: multiple_verbs_available 	 přilít 	 v41itrA, v41itrB 	 2
+stisk 	 stiskat 	 -- 	 0 	 stisknout 	 v41lkhA 	 1
+expanze 	 expandovat 	 v41aodA 	 1 	 -- 	 -- 	 0
+příslib 	 přislibovat 	 -- 	 0 	 přislíbit 	 v41iyfA 	 1
+exploze 	 explodovat 	 v41aonA 	 1 	 -- 	 -- 	 0
+žert 	 žertovat 	 v41sehA 	 1 	 -- 	 -- 	 0
+ústup 	 ustupovat 	 v41mypA, v41mypB, v41mypC, v41mypD, v41mypE 	 5 	 ustoupit 	 v41myhA, v41myhB, v41myhC, v41myhD, v41myhE, v41myhF 	 6
+nauka 	 naučit 	 v41dfhA 	 1 	 -- 	 -- 	 0
+kolaps 	 kolabovat 	 -- 	 0 	 -- 	 -- 	 0
+vývoz 	 vyvážet 	 v41pgbA 	 1 	 vyvézt|vyvozit 	 vyvézt: v41pgnA, v41pgnB ; vyvozit: v41phlA 	 unknown: multiple_verbs_available
+přestup 	 přestupovat 	 v41ijvA 	 1 	 přestoupit 	 v41ijpA, v41ijpB, v41ijpC 	 3
+zrod 	 zrozovat 	 -- 	 0 	 zrodit 	 v41rwxA 	 1
+poslech 	 poslouchat 	 v41gmkA, v41gmkB, v41gmkC 	 3 	 poslechnout 	 v41gmiA 	 1
+převrat 	 převracet 	 -- 	 0 	 převrátit 	 v41infA 	 1
+výkyv 	 vykyvovat 	 -- 	 0 	 vykývnout 	 -- 	 0
+chvála 	 chválit 	 v41bcjA 	 1 	 -- 	 -- 	 0
+spěch 	 spěchat 	 v41laxA, v41laxB, v41laxC 	 3 	 -- 	 -- 	 0
+var 	 vařit 	 v41ngvA, v41ngvB, v41ngvC 	 3 	 -- 	 -- 	 0
+nářek 	 naříkat 	 v41daeA 	 1 	 -- 	 -- 	 0
+stah 	 stahovat 	 v41lhoA, v41lhoB, v41lhoC, v41lhoD, v41lhoE, v41lhoF 	 6 	 stáhnout 	 v41lhjA, v41lhjB, v41lhjC, v41lhjD, v41lhjE, v41lhjF, v41lhjG, v41lhjH, v41lhjI 	 9
+masakr 	 masakrovat 	 -- 	 0 	 -- 	 -- 	 0
+pohovor 	 -- 	 -- 	 0 	 pohovořit 	 v41fxnA, v41fxnB 	 2
+povzdech|povzdych 	 povzdychovat|povzdychat 	 povzdychovat: --; povzdychat: -- 	 unknown: multiple_verbs_available 	 povzdechnout|povzdychnout 	 povzdechnout: -- ; povzdychnout: -- 	 unknown: multiple_verbs_available
+pitva 	 pitvat 	 v41flwA, v41flwB 	 2 	 -- 	 -- 	 0
+třes 	 třást 	 -- 	 0 	 -- 	 -- 	 0
+závan 	 zavánět 	 v41qrsA, v41qrsB 	 2 	 zavanout 	 -- 	 0
+nácvik 	 nacvičovat 	 v41cmrA 	 1 	 nacvičit 	 v41cmqA 	 1
+šept 	 šeptat 	 v41lspA, v41lspB, v41lspC 	 3 	 šeptnout 	 -- 	 0
+odboj 	 odbíjet 	 -- 	 0 	 odbít 	 -- 	 0
+výtka 	 vytýkat 	 v41pevA, v41pevB 	 2 	 vytknout 	 v41pdcA, v41pdcB, v41pdcC 	 3
+eroze 	 erodovat 	 v41aneA 	 1 	 -- 	 -- 	 0
+muka 	 mučit 	 v41ckaA 	 1 	 -- 	 -- 	 0
+střeh 	 střežit 	 v41lniA 	 1 	 střehnout 	 -- 	 0
+rozmach 	 rozmachovat 	 -- 	 0 	 rozmáchnout 	 -- 	 0
+obměna 	 obměňovat 	 v41drbA 	 1 	 obměnit 	 -- 	 0
+debut 	 debutovat 	 v41qfA 	 1 	 -- 	 -- 	 0
+selekce 	 selektovat 	 -- 	 0 	 -- 	 -- 	 0
+převoz 	 převážet 	 v41imjA 	 1 	 převézt 	 v41imrA, v41imrB 	 2
+svár 	 svářit 	 -- 	 0 	 -- 	 -- 	 0
+odlet 	 odlétat|odlítat 	 odlétat: v41ecuA; odlítat: -- 	 unknown: multiple_verbs_available 	 odletět|odlétnout|odlítnout 	 odletět: v41ecvA ; odlétnout: -- ; odlítnout: -- 	 unknown: multiple_verbs_available
+přísaha 	 přísahat 	 v41ixxA 	 1 	 -- 	 -- 	 0
+odliv 	 odlívat|odlévat 	 odlívat: --; odlévat: -- 	 unknown: multiple_verbs_available 	 odlít 	 v41edeA, v41edeB 	 2
+hody 	 hodovat 	 v41awsA 	 1 	 -- 	 -- 	 0
+kšeft 	 kšeftovat 	 v41bwkA 	 1 	 -- 	 -- 	 0
+kolize 	 kolidovat 	 v41bnjA 	 1 	 -- 	 -- 	 0
+manévr 	 manévrovat 	 v41cduA 	 1 	 -- 	 -- 	 0
+odmlka 	 odmlčovat 	 -- 	 0 	 odmlčet 	 -- 	 0
+očista 	 očišťovat|očisťovat 	 očišťovat: v41dvmA; očisťovat: -- 	 unknown: multiple_verbs_available 	 očistit 	 v41dvkA, v41dvkB, v41dvkC 	 3
+odsun 	 odsunovat 	 -- 	 0 	 odsunout 	 v41ekwA, v41ekwB, v41ekwC, v41ekwD 	 4
+klam 	 klamat 	 v41bkpA 	 1 	 -- 	 -- 	 0
+dohad 	 dohadovat 	 v41xpA 	 1 	 dohádat 	 -- 	 0
+sprint 	 sprintovat 	 v41lfvA 	 1 	 -- 	 -- 	 0
+výboj 	 vybíjet 	 v41ntvA, v41ntvB 	 2 	 vybít 	 v41ntzA, v41ntzB 	 2
+smyk 	 smykovat 	 -- 	 0 	 -- 	 -- 	 0
+rozjezd 	 rozjíždět 	 v41jrnA 	 1 	 rozjet 	 v41jrkA, v41jrkB 	 2
+šikana 	 šikanovat 	 v41lsyA 	 1 	 -- 	 -- 	 0
+mluva 	 mluvit 	 v41chxA, v41chxB, v41chxC, v41chxD, v41chxE, v41chxF, v41chxG, v41chxH, v41chxI, v41chxJ, v41chxK, v41chxL, v41chxM 	 13 	 -- 	 -- 	 0
+vzdor 	 vzdorovat 	 v41plmA, v41plmB 	 2 	 -- 	 -- 	 0
+adopce 	 adoptovat 	 v41tA 	 1 	 -- 	 -- 	 0
+rozptyl 	 rozptylovat 	 v41jxkA 	 1 	 rozptýlit 	 v41jxiA, v41jxiB 	 2
+brejk 	 brejkovat 	 -- 	 0 	 brejknout 	 -- 	 0
+konverze 	 konvertovat 	 v41brqA 	 1 	 -- 	 -- 	 0
+záchvěv|záchvěj 	 zachvívat 	 -- 	 0 	 zachvět 	 -- 	 0
+předehra 	 předehrávat 	 -- 	 0 	 předehrát 	 v41hvuA 	 1
+atak|ataka 	 atakovat 	 v41cwA 	 1 	 -- 	 -- 	 0
+odplata 	 odplácet 	 -- 	 0 	 odplatit 	 -- 	 0
+vzlyk 	 vzlykat 	 -- 	 0 	 vzlyknout 	 -- 	 0
+průlom 	 prolamovat 	 v41hglA 	 1 	 prolomit 	 v41hhaA, v41hhaB 	 2
+čáry 	 čarovat 	 -- 	 0 	 -- 	 -- 	 0
+poklona 	 poklánět 	 -- 	 0 	 poklonit 	 -- 	 0
+vpád 	 vpadat 	 -- 	 0 	 vpadnout 	 v41npdA, v41npdB 	 2
+výprask 	 vypráskávat 	 -- 	 0 	 vyprásknout|vypráskat 	 vyprásknout: -- ; vypráskat: -- 	 unknown: multiple_verbs_available
+výprodej 	 vyprodávat 	 v41orsA 	 1 	 vyprodat 	 v41orrA 	 1
+posuv 	 posunovat|posouvat 	 posunovat: v41gomA; posouvat: v41gmpA, v41gmpB 	 unknown: multiple_verbs_available 	 posunout 	 v41gokA, v41gokB 	 2
+hmat 	 hmatat 	 -- 	 0 	 hmátnout 	 -- 	 0
+odpis 	 odpisovat|odepisovat 	 odpisovat: --; odepisovat: v41dyvA, v41dyvB, v41dyvC 	 unknown: multiple_verbs_available 	 odepsat 	 v41dyyA, v41dyyB, v41dyyC 	 3
+pokřik 	 pokřikovat 	 v41gbxA 	 1 	 pokřiknout 	 -- 	 0
+vrh 	 vrhat 	 v41nqkA, v41nqkB, v41nqkC, v41nqkD, v41nqkE, v41nqkF 	 6 	 vrhnout 	 v41nqmA, v41nqmB, v41nqmC 	 3
+přílet 	 přilétat|přilítat 	 přilétat: --; přilítat: -- 	 unknown: multiple_verbs_available 	 přiletět|přilítnout|přilétnout 	 přiletět: v41itnA, v41itnB ; přilítnout: v41itsA, v41itsB ; přilétnout: v41itoA 	 unknown: multiple_verbs_available
+zátah 	 zatahovat 	 v41qotA, v41qotB 	 2 	 zatáhnout 	 v41qorA, v41qorB, v41qorC, v41qorD, v41qorE, v41qorF 	 6
+kmit 	 kmitat 	 v41bmdA 	 1 	 kmitnout 	 -- 	 0
+odchov 	 odchovávat 	 v41eaqA 	 1 	 odchovat 	 v41eapA 	 1
+útlak 	 utlačovat 	 v41nakA 	 1 	 utlačit 	 -- 	 0
+svoz 	 svážet 	 v41lpvA 	 1 	 svézt 	 v41lqnA, v41lqnB, v41lqnC 	 3
+povyk 	 povykovat 	 -- 	 0 	 -- 	 -- 	 0
+propočet 	 propočítávat 	 v41hkrA 	 1 	 propočíst|propočítat 	 propočíst: v41hkqA ; propočítat: -- 	 unknown: multiple_verbs_available
+výkup 	 vykupovat 	 v41ohfA 	 1 	 vykoupit 	 v41ogfA, v41ogfB, v41ogfC 	 3
+konzum 	 konzumovat 	 v41brxA, v41brxB 	 2 	 -- 	 -- 	 0
+msta 	 mstít 	 -- 	 0 	 -- 	 -- 	 0
+doslech 	 doslýchat 	 -- 	 0 	 doslechnout 	 -- 	 0
+ponor 	 ponořovat 	 -- 	 0 	 ponořit 	 v41gfrA 	 1
+výsev 	 vysévat|vysívat 	 vysévat: --; vysívat: -- 	 unknown: multiple_verbs_available 	 vysít 	 -- 	 0
+odkup 	 odkupovat 	 v41eckA 	 1 	 odkoupit 	 v41ecdA 	 1
+třpyt 	 třpytit 	 -- 	 0 	 -- 	 -- 	 0
+oddech 	 oddechovat 	 -- 	 0 	 oddechnout 	 -- 	 0
+příklon 	 přiklánět 	 -- 	 0 	 přiklonit 	 -- 	 0
+rozmysl 	 rozmýšlet 	 v41jukA 	 1 	 rozmyslet|rozmyslit 	 rozmyslet: -- ; rozmyslit: -- 	 unknown: multiple_verbs_available
+vzlet 	 vzlétat|vzlítat 	 vzlétat: --; vzlítat: -- 	 unknown: multiple_verbs_available 	 vzletět|vzlétnout 	 vzletět: -- ; vzlétnout: v41pmjA 	 unknown: multiple_verbs_available
+stream 	 streamovat 	 -- 	 0 	 -- 	 -- 	 0
+apel 	 apelovat 	 v41bxA 	 1 	 -- 	 -- 	 0
+bojkot 	 bojkotovat 	 v41grA 	 1 	 -- 	 -- 	 0
+aplaus 	 aplaudovat 	 v41byA 	 1 	 -- 	 -- 	 0
+odpočet 	 odpočítat 	 -- 	 0 	 odpočíst 	 v41efwA, v41efwB 	 2
+veto 	 vetovat 	 v41nkhA 	 1 	 -- 	 -- 	 0
+úschova 	 uschovávat 	 v41muzA 	 1 	 uschovat 	 v41muyA 	 1
+sten|ston 	 sténat 	 v41ljnA 	 1 	 -- 	 -- 	 0
+rozstřel 	 rozstřelovat 	 -- 	 0 	 rozstřelit|rozstřílet 	 rozstřelit: -- ; rozstřílet: v41jymA, v41jymB 	 unknown: multiple_verbs_available
+úhyn 	 -- 	 -- 	 0 	 uhynout 	 v41mjsA 	 1
+klus 	 klusat 	 -- 	 0 	 -- 	 -- 	 0
+přímluva 	 přimlouvat 	 -- 	 0 	 přimluvit 	 -- 	 0
+úplata 	 uplácet 	 v41mrlA 	 1 	 uplatit 	 v41mroA 	 1
+draft 	 draftovat 	 -- 	 0 	 -- 	 -- 	 0
+škleb 	 šklebit|šklíbit 	 šklebit: --; šklíbit: -- 	 unknown: multiple_verbs_available 	 -- 	 -- 	 0
+šerm 	 šermovat 	 v41lsqA 	 1 	 -- 	 -- 	 0
+přehmat 	 přehmatávat 	 -- 	 0 	 přehmátnout|přehmatat 	 přehmátnout: -- ; přehmatat: -- 	 unknown: multiple_verbs_available
+brek 	 brečet 	 v41hzA 	 1 	 -- 	 -- 	 0
+odpal 	 odpalovat 	 v41efhA 	 1 	 odpálit 	 v41efeA, v41efeB, v41efeC 	 3
+seskok 	 seskakovat 	 -- 	 0 	 seskákat|seskočit 	 seskákat: -- ; seskočit: v41kjvA 	 unknown: multiple_verbs_available
+šelest 	 šelestit 	 v41lsoA 	 1 	 -- 	 -- 	 0
+košt 	 koštovat 	 -- 	 0 	 koštnout 	 -- 	 0
+rozlet 	 rozlétat|rozlítat 	 rozlétat: --; rozlítat: -- 	 unknown: multiple_verbs_available 	 rozletět|rozlétnout 	 rozletět: -- ; rozlétnout: -- 	 unknown: multiple_verbs_available
+průlet 	 prolétat 	 -- 	 0 	 prolétnout|prolítnout|proletět 	 prolétnout: v41hgoA ; prolítnout: v41hgwA ; proletět: v41hgmA 	 unknown: multiple_verbs_available
+třas 	 třást 	 -- 	 0 	 -- 	 -- 	 0
+přezkum 	 přezkoumávat 	 v41iodA 	 1 	 přezkoumat 	 v41iocA 	 1
+úskok 	 uskakovat 	 -- 	 0 	 uskočit 	 v41mvkA 	 1
+výskok 	 vyskakovat 	 -- 	 0 	 vyskočit|vyskákat 	 vyskočit: v41owcA, v41owcB, v41owcC ; vyskákat: v41owbA 	 unknown: multiple_verbs_available
+flirt 	 flirtovat 	 v41aqwA, v41aqwB 	 2 	 -- 	 -- 	 0
+odnos 	 odnášet 	 v41eemA, v41eemB, v41eemC, v41eemD 	 4 	 odnést 	 v41eeqA, v41eeqB, v41eeqC, v41eeqD, v41eeqE 	 5
+omak 	 omakávat 	 -- 	 0 	 omakat 	 -- 	 0
+odečet 	 odečítat 	 v41dylA, v41dylB 	 2 	 odečíst 	 v41dyjA 	 1
+cval 	 cválat 	 -- 	 0 	 -- 	 -- 	 0
+rozvoz 	 rozvážet 	 v41kazA 	 1 	 rozvozit|rozvézt 	 rozvozit: -- ; rozvézt: -- 	 unknown: multiple_verbs_available
+převýchova 	 převychovávat 	 v41inmA 	 1 	 převychovat 	 v41inlA 	 1
+kalkul 	 kalkulovat 	 v41biyA, v41biyB 	 2 	 -- 	 -- 	 0
+záškub 	 -- 	 -- 	 0 	 zaškubat|zaškubnout 	 zaškubat: -- ; zaškubnout: -- 	 unknown: multiple_verbs_available
+výtrysk 	 vytryskávat 	 -- 	 0 	 vytrysknout|vytryskat 	 vytrysknout: -- ; vytryskat: -- 	 unknown: multiple_verbs_available
+výkrm 	 vykrmovat 	 v41ogrA 	 1 	 vykrmit 	 v41ogqA 	 1
+odprodej 	 odprodávat 	 v41ehfA 	 1 	 odprodat 	 v41eheA 	 1
+dezerce 	 dezertovat 	 v41tmA 	 1 	 -- 	 -- 	 0
+rozkmit 	 rozkmitávat 	 -- 	 0 	 rozkmitat 	 v41jrxA 	 1
+výpal 	 vypalovat 	 v41onnA, v41onnB, v41onnC 	 3 	 vypálit 	 v41onmA, v41onmB, v41onmC, v41onmD 	 4
+přítlak 	 přitlačovat 	 -- 	 0 	 přitlačit 	 v41jajA 	 1
+útisk 	 utiskovat 	 -- 	 0 	 utisknout 	 -- 	 0
+výsun 	 vysunovat 	 -- 	 0 	 vysunout 	 -- 	 0
+vstřik 	 vstřikovat 	 v41nrwA 	 1 	 vstříknout 	 v41nrvA 	 1
+záklon 	 zaklánět 	 -- 	 0 	 zaklonit 	 -- 	 0
+hles 	 hlesat 	 -- 	 0 	 hlesnout 	 -- 	 0
+spoleh 	 spoléhat|spolíhat 	 spoléhat: v41ldnA; spolíhat: -- 	 unknown: multiple_verbs_available 	 spolehnout 	 -- 	 0
+hlahol 	 hlaholit 	 -- 	 0 	 -- 	 -- 	 0
+tlach 	 tlachat 	 -- 	 0 	 -- 	 -- 	 0
+podpal 	 podpalovat 	 -- 	 0 	 podpálit 	 -- 	 0
+katalýza 	 katalyzovat 	 v41bjxA 	 1 	 -- 	 -- 	 0
+salut 	 salutovat 	 -- 	 0 	 -- 	 -- 	 0
+bluf 	 blufovat 	 -- 	 0 	 -- 	 -- 	 0
+ševel 	 ševelit 	 -- 	 0 	 -- 	 -- 	 0
+štráchy 	 štrachat 	 -- 	 0 	 -- 	 -- 	 0
+kvil 	 kvílet|kvílit 	 kvílet: v41bxkA, v41bxkB; kvílit: -- 	 unknown: multiple_verbs_available 	 -- 	 -- 	 0
+postesk 	 posteskávat|posteskovat 	 posteskávat: --; posteskovat: -- 	 unknown: multiple_verbs_available 	 postesknout 	 -- 	 0
+dozpěv 	 dozpívávat 	 -- 	 0 	 dozpívat 	 -- 	 0
+zátřpyt 	 -- 	 -- 	 0 	 zatřpytit 	 -- 	 0
+výhyn 	 vyhynovat 	 -- 	 0 	 vyhynout 	 v41obyA 	 1

@@ -1,0 +1,35 @@
+list-of-paradigms.tsv = file with conversion pairs
+agent-nouns_GOLD.tsv = file with agent nouns
+
+1) AGENT NOUNS
+- I searched the "agent-nouns_GOLD.tsv" file for agent noun + verb pairs
+- possible for a single verb to have multiple agent nouns
+- these agent nouns are marked as always being animate, i.e. those that can also be inanimate and have a different (usually instrumental) meaning are not considered (e.g., "ukazatel")
+- files:
+	- agent_nouns_single_frame.tsv = list of agent nouns + their base verbs that only have 1 valency frame in PDT-Vallex + the valency frame identifiers (401 verbs)
+
+	- agent_nouns_multiple_frames.tsv = list of agent nouns + their base verbs that have multiple valency frame in PDT-Vallex  + the valency frames identifiers (384 verbs)
+	
+2) ACTION NOUNS IN NOMVALLEX
+- I searched NomVallex for nouns that only have one lexical unit (one entry, one valency frame) in NomVallex and that lexical unit is marked as semantic category = "action"
+- 91 such nouns, all of them of the -ní/-tí variety
+- file:
+	- nomvallex_lexemes_single_frame_action.tsv = action noun + the verb's lexical unit identifier (I am not sure what exactly the identifier used in NomVallex is, i.e. how to link it to a PDT-Vallex identifier, for now I just copied the identifier as it is in NomVallex)
+
+3) ACTION NOUNS FROM CONVERSION PAIRS ("SUFIXLESS" ACTION NOUNS)
+- I searched the "list-of-paradigms.tsv" file for converted action noun + verb pairs (e.g., "koncert - koncertovat", "práce - "pracovat"; they are sufixless nouns that have a verbal counterpart)
+- only selected those nouns that have been marked with semantic label "action" in all of the 50 corpus occurrences that were examined
+- problematic: there is often not a single verb, but an aspectual pair that correspond to the noun (e.g., "výroba - vyrábět/vyrobit"), sometimes even multiple imperfective or perfective verbs (e.g., "přenos - přenést/přenosit / přenášet")
+- I note down both the perfective and imperfective verb(s) separately
+- file: 
+	- conversion_action_nouns.tsv = includes the following columns:
+		- action_noun
+		- imperfective_verb
+		- pdt_valency_frame_ipf = valency frame(s) of the imperfective verb(s) in PDT-Vallex
+		- number_frames_ipf = number of frames that the imperfective verb has in PDT-Vallex (if there are multiple imperfective verbs, it is not counted)
+		- perfective_verb
+		- pdt_valency_frame_pf = valency frame(s) of the perfective verb(s) in PDT-Vallex
+		- number_frames_pf = number of frames that the perfective verb has in PDT-Vallex (if there are multiple imperfective verbs, it is not counted)
+	- there are 50 nouns that only have an imperfective verb and that verb has a single valency frame
+	- there are 15 nouns that only have a perfective verb and that verb has a single valency frame
+	- there are 23 nouns that have both an imperfective verb and a perfective verb and both have a single valency frame	
