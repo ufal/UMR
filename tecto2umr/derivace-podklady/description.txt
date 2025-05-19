@@ -1,5 +1,7 @@
 list-of-paradigms.tsv = file with conversion pairs
 agent-nouns_GOLD.tsv = file with agent nouns
+conversion_action_nouns_annotation.tsv = file with annotation of conversion pairs for matching valency frame of a corresponding verb
+conversion_action_nouns_final.tsv = file with action noun + corresponding verb's frame + if available in PDT-Vallex, mapping of forms onto PropBank-style arguments
 
 1) AGENT NOUNS
 - I searched the "agent-nouns_GOLD.tsv" file for agent noun + verb pairs
@@ -33,3 +35,5 @@ agent-nouns_GOLD.tsv = file with agent nouns
 	- there are 50 nouns that only have an imperfective verb and that verb has a single valency frame
 	- there are 15 nouns that only have a perfective verb and that verb has a single valency frame
 	- there are 23 nouns that have both an imperfective verb and a perfective verb and both have a single valency frame	
+- "conversion_action_nouns_annotation.tsv" = I manually annotated each of the conversion nouns that have only been marked with the "action" semantic label for whether it is possible to say that in all occurrences, they will likely correspond to a 1) single verb, 2) if yes, a single valency frame of that verb -> 137 such nouns where it is possible to identify a single valency frame of a corresponding verb
+- "conversion_action_nouns_final.tsv" - for those 137 nouns, the second columns provides the corresponding verb's valency frame and if the noun was also found in PDT-Vallex, the following columns provide the mapping of forms (i.e., case, preposition etc.) onto PropBank-like arguments based on the PDT-Vallex entries

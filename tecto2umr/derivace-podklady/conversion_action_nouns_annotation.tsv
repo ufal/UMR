@@ -1,0 +1,258 @@
+action_noun 	 imperfective_verb 	 pdt_valency_frame_ipf 	 number_frames_ipf 	perfective_verb 	 pdt_valency_frame_pf 	 number_frames_pf	possible_to_choose_verb_lexeme	chosen_verb_lexeme	possible_to_choose_valency_frame	chosen_valency_frame	note	noun_in_PDT-Vallex
+pohled 	 pohlížet 	 v41fwzA, v41fwzB, v41fwzC 	3	 pohledět|pohlédnout 	 pohledět: -- ; pohlédnout: v41fwxA, v41fwxB 	 unknown: multiple_verbs_available	no	depends on meaning (opinion vs. look)	no		can also mean “postcard”, but seems infrequent in (at least written) texts	yes
+změna 	 změňovat 	 -- 	0	 změnit 	 v41rkdA, v41rkdB, v41rkdC, v41rkdD, v41rkdE 	5	no	změnit/změnit se	no			yes
+vývoj 	 vyvíjet|vyvinovat 	 vyvíjet: v41pgpA, v41pgpB; vyvinovat: -- 	 unknown: multiple_verbs_available 	 vyvinout 	 v41pgrA, v41pgrB 	2	no	vyvíjet/vyvíjet se	no			yes
+pohyb 	 pohybovat 	 v41fygA 	1	 pohnout|pohýbat 	 pohnout: v41fxcA ; pohýbat: -- 	 unknown: multiple_verbs_available	no	pohybovat will probably be more frequent, but not always the case	no			yes
+adopce 	 adoptovat 	 v41tA 	1	 -- 	 -- 	0	yes	adoptovat	yes	 v41tA 		yes
+apel 	 apelovat 	 v41bxA 	1	 -- 	 -- 	0	yes	apelovat	yes	 v41bxA 		yes
+aplaus 	 aplaudovat 	 v41byA 	1	 -- 	 -- 	0	yes	aplaudovat 	yes	 v41byA 		no
+atak	 atakovat 	 v41cwA 	1	 -- 	 -- 	0	yes	atakovat	yes	 v41cwA 		yes
+bluf 	 blufovat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+boj 	 bojovat 	 v41gsA, v41gsB, v41gsC 	3	 -- 	 -- 	0	yes	bojovat	yes	 v41gsA		yes
+bojkot 	 bojkotovat 	 v41grA 	1	 -- 	 -- 	0	yes	bojkotovat	yes	 v41grA 		yes
+box 	 boxovat 	 v41hkA 	1	 -- 	 -- 	0	yes	boxovat 	yes	 v41hkA 		no
+brejk 	 brejkovat 	 -- 	0	 brejknout 	 -- 	0	no		no			no
+brek 	 brečet 	 v41hzA 	1	 -- 	 -- 	0	yes	brečet	yes	 v41hzA 		no
+čáry 	 čarovat 	 -- 	0	 -- 	 -- 	0	no		no			no
+chůze 	 chodit 	 v41bbiA, v41bbiB, v41bbiC, v41bbiD, v41bbiE, v41bbiF, v41bbiG, v41bbiH, v41bbiI, v41bbiJ, v41bbiK, v41bbiL, v41bbiM, v41bbiN, v41bbiO, v41bbiP 	16	 jít 	 v41bikA, v41bikB, v41bikC, v41bikD, v41bikE, v41bikF, v41bikG, v41bikH, v41bikI, v41bikJ, v41bikK, v41bikL, v41bikM, v41bikN, v41bikO, v41bikP, v41bikQ, v41bikR, v41bikS, v41bikT, v41bikU, v41bikV, v41bikW, v41bikX, v41bikY, v41bikZ, v41bikAA, v41bikAB, v41bikAC, v41bikAD, v41bikAE, v41bikAF, v41bikAG, v41bikAH, v41bikAI, v41bikAJ, v41bikAK, v41bikAL, v41bikAM, v41bikAN, v41bikAO, v41bikAP, v41bikAQ, v41bikAR, v41bikAS, v41bikAT, v41bikAU, v41bikAV, v41bikAW, v41bikAX, v41bikAY, v41bikAZ, v41bikBA, v41bikBB, v41bikBC, v41bikBD, v41bikBE, v41bikBF, v41bikBG, v41bikBH, v41bikBI, v41bikBJ, v41bikBK, v41bikBL, v41bikBM, v41bikBN, v41bikBO, v41bikBP, v41bikBQ, v41bikBR, v41bikBS, v41bikBT, v41bikBU, v41bikBV, v41bikBW, v41bikBX, v41bikBY, v41bikBZ, v41bikCA, v41bikCB, v41bikCC, v41bikCD, v41bikCE, v41bikCF 	84	yes	chodit	yes	v41bbiK		no
+chvála 	 chválit 	 v41bcjA 	1	 -- 	 -- 	0	yes	chválit 	yes	 v41bcjA 		yes
+cval 	 cválat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+debata 	 debatovat 	 v41qdA 	1	 -- 	 -- 	0	yes	 debatovat 	yes	 v41qdA 		yes
+debut 	 debutovat 	 v41qfA 	1	 -- 	 -- 	0	yes	debutovat	yes	 v41qfA 		yes
+dezerce 	 dezertovat 	 v41tmA 	1	 -- 	 -- 	0	yes	dezertovat	yes	 v41tmA 		no
+dík 	 děkovat 	 v41rbA 	1	 -- 	 -- 	0	yes	děkovat	yes	 v41rbA 		yes
+dohad 	 dohadovat 	 v41xpA 	1	 dohádat 	 -- 	0	no		no		“dohad” not semantically from “dohadovat se” (it does not mean act of arguing, but an estimation)	yes
+dohled 	 dohlédat 	 -- 	0	 dohlédnout 	 v41xwA, v41xwB 	2	yes	dohlédnout	yes	 v41xwA		yes
+dosah 	 dosahovat 	 v41afdA, v41afdB, v41afdC, v41afdD 	4	 dosáhnout 	 v41afbA, v41afbB, v41afbC, v41afbD, v41afbE, v41afbF 	6	yes	dosahovat	yes	 v41afbB	maybe not an event	yes
+doslech 	 doslýchat 	 -- 	0	 doslechnout 	 -- 	0	yes	doslechnout se	no			no
+dotaz 	 dotazovat 	 -- 	0	 dotázat 	 -- 	0	yes	dotázat se	yes	 v41ahbA		yes
+dovoz 	 dovážet 	 v41aifA, v41aifB 	2	 dovézt 	 v41ailA, v41ailB 	2	yes	dovážet	no	both v41aifA, v41aifB are relevant		yes
+dozpěv 	 dozpívávat 	 -- 	0	 dozpívat 	 -- 	0	no		no		verbs not in PDT-Vallex	no
+draft 	 draftovat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex; not always an event	no
+eroze 	 erodovat 	 v41aneA 	1	 -- 	 -- 	0	yes	erodovat	yes	 v41aneA 		no
+expanze 	 expandovat 	 v41aodA 	1	 -- 	 -- 	0	yes	expandovat 	yes	 v41aodA 		yes
+experiment 	 experimentovat 	 v41aojA 	1	 -- 	 -- 	0	yes	experimentovat	yes	 v41aojA 		yes
+exploze 	 explodovat 	 v41aonA 	1	 -- 	 -- 	0	yes	explodovat 	yes	 v41aonA 		yes
+flirt 	 flirtovat 	 v41aqwA, v41aqwB 	2	 -- 	 -- 	0	yes	flirtovat	yes	 v41aqwA		no
+hlahol 	 hlaholit 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+hles 	 hlesat 	 -- 	0	 hlesnout 	 -- 	0	no		no		verbs not in PDT-Vallex	no
+hluk 	 hlučet 	 -- 	0	 -- 	 -- 	0	no		no			yes
+hmat 	 hmatat 	 -- 	0	 hmátnout 	 -- 	0	no		no		not always event (in the meaning “sense of touch”)	no
+hody 	 hodovat 	 v41awsA 	1	 -- 	 -- 	0	yes	hodovat	yes	 v41awsA 		no
+hovor 	 hovořit 	 v41aybA, v41aybB, v41aybC, v41aybD, v41aybE, v41aybF, v41aybG, v41aybH, v41aybI, v41aybJ, v41aybK 	11	 -- 	 -- 	0	yes	hovořit	yes	 v41aybB		no
+kalkul 	 kalkulovat 	 v41biyA, v41biyB 	2	 -- 	 -- 	0	yes	kalkulovat	no			no
+katalýza 	 katalyzovat 	 v41bjxA 	1	 -- 	 -- 	0	yes	katalyzovat	yes	 v41bjxA 		no
+klam 	 klamat 	 v41bkpA 	1	 -- 	 -- 	0	yes	klamat	yes	 v41bkpA 		yes
+klus 	 klusat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+kmit 	 kmitat 	 v41bmdA 	1	 kmitnout 	 -- 	0	yes	kmitat	yes	 v41bmdA 		no
+kolaps 	 kolabovat 	 -- 	0	 -- 	 -- 	0	no		no		only “zkolabovat”  in PDT-Vallex, but not “kolabovat”	yes
+kolize 	 kolidovat 	 v41bnjA 	1	 -- 	 -- 	0	yes	kolidovat 	yes	 v41bnjA 		yes
+koncert 	 koncertovat 	 v41bphA 	1	 -- 	 -- 	0	yes	koncertovat	yes	 v41bphA 		yes
+konverze 	 konvertovat 	 v41brqA 	1	 -- 	 -- 	0	yes	konvertovat	yes	 v41brqA 		yes
+konzum 	 konzumovat 	 v41brxA, v41brxB 	2	 -- 	 -- 	0	yes	konzumovat	yes	 v41brxA		no
+košt 	 koštovat 	 -- 	0	 koštnout 	 -- 	0	no		no		verbs not in PDT-Vallex	no
+koupě 	 kupovat 	 v41bwvA 	1	 koupit 	 v41btrA 	1	yes	koupit	yes	 v41btrA 		yes
+kouzlo 	 kouzlit 	 v41bucA 	1	 -- 	 -- 	0	yes	kouzlit	yes	 v41bucA 		no
+křik 	 křičet 	 v41bwcA, v41bwcB 	2	 křiknout 	 -- 	0	yes	křičet 	no			yes
+kšeft 	 kšeftovat 	 v41bwkA 	1	 -- 	 -- 	0	yes	kšeftovat	yes	 v41bwkA 		no
+kvil 	 kvílet|kvílit 	 kvílet: v41bxkA, v41bxkB; kvílit: -- 	 unknown: multiple_verbs_available 	 -- 	 -- 	0	yes	kvílet	no			no
+lež 	 lhát 	 v41cafA, v41cafB 	2	 -- 	 -- 	0	yes	lhát	yes	 v41cafA		yes
+lov 	 lovit 	 v41cclA, v41cclB, v41cclC 	3	 -- 	 -- 	0	yes	lovit	yes	 v41cclB		no
+manévr 	 manévrovat 	 v41cduA 	1	 -- 	 -- 	0	yes	manévrovat 	yes	 v41cduA 		no
+masakr 	 masakrovat 	 -- 	0	 -- 	 -- 	0	no		no		“masakrovat” not in PDT-Vallex, only “zmasakrovat”	yes
+mluva 	 mluvit 	 v41chxA, v41chxB, v41chxC, v41chxD, v41chxE, v41chxF, v41chxG, v41chxH, v41chxI, v41chxJ, v41chxK, v41chxL, v41chxM 	13	 -- 	 -- 	0	yes	mluvit	no			no
+msta 	 mstít 	 -- 	0	 -- 	 -- 	0	yes	mstít se	yes	 v41cjyA		no
+muka 	 mučit 	 v41ckaA 	1	 -- 	 -- 	0	yes	mučit	yes	 v41ckaA 		no
+nácvik 	 nacvičovat 	 v41cmrA 	1	 nacvičit 	 v41cmqA 	1	yes	nacvičovat	yes	 v41cmrA 		no
+náraz 	 narážet 	 v41cyzA, v41cyzB, v41cyzC, v41cyzD, v41cyzE 	5	 narazit 	 v41cyxA, v41cyxB, v41cyxC, v41cyxD, v41cyxE, v41cyxF 	6	yes	narazit	yes	 v41cyxF		yes
+nářek 	 naříkat 	 v41daeA 	1	 -- 	 -- 	0	yes	naříkat 	yes	 v41daeA 		yes
+nárok 	 nárokovat 	 -- 	0	 -- 	 -- 	0	yes	nárokovat si	yes	 v41czfA	abstract noun, doubtful whether it should be considered an event	yes
+nárůst 	 narůstat 	 v41czsA 	1	 narůst 	 v41czpA, v41czpB 	2	yes	narůst	yes	 v41czpA	probably also from “narůstat” in cases where the context makes clear that we talk about a continuing, ongoing  process	yes
+nauka 	 naučit 	 v41dfhA 	1	 -- 	 -- 	0	yes	naučit	yes	 v41dfhA 	probably not always an event (in the sense of “scientific area”)	yes
+návrat 	 navracet 	 v41dgpA, v41dgpB 	2	 navrátit 	 v41dgsA, v41dgsB 	2	yes	navrátit se 	no		possibly also from non-reflexive  “navrátit” (act of someone returning something), but this will probably be much less frequent	yes
+oběh 	 obíhat 	 v41dpdA 	1	 oběhnout|oběhat 	 oběhnout: v41dnpA, v41dnpB ; oběhat: -- 	 unknown: multiple_verbs_available	yes	obíhat	yes	 v41dpdA 	not sure if sense like “krevní oběh” is an event, but probably yes	yes
+obměna 	 obměňovat 	 v41drbA 	1	 obměnit 	 -- 	0	no		no			yes
+obnova 	 obnovovat 	 v41drlA, v41drlB 	2	 obnovit 	 v41driA 	1	yes	obnovit	yes	 v41driA 		yes
+očista 	 očišťovat|očisťovat 	 očišťovat: v41dvmA; očisťovat: -- 	 unknown: multiple_verbs_available 	 očistit 	 v41dvkA, v41dvkB, v41dvkC 	3	yes	očistit	no			yes
+odběr 	 odbírat|odebírat 	 odbírat: --; odebírat: v41dydA, v41dydB, v41dydC 	 unknown: multiple_verbs_available 	 odebrat 	 v41dygA, v41dygB, v41dygC, v41dygD 	4	yes	odebrat	no			yes
+odboj 	 odbíjet 	 -- 	0	 odbít 	 -- 	0	no		no		not derived from either verb	no
+odchod 	 odcházet 	 v41ealA, v41ealB, v41ealC, v41ealD 	4	 odejít 	 v41dyrA, v41dyrB, v41dyrC, v41dyrD, v41dyrE, v41dyrF, v41dyrG 	7	yes	odejít	no	but the first frame (v41dyrA) seems to be much more frequent than the others	possibly also from “odcházet” if there is a clear element of repetition/multiple entities, but this will be rare	yes
+odchov 	 odchovávat 	 v41eaqA 	1	 odchovat 	 v41eapA 	1	yes	odchovat	yes	 v41eapA 		no
+oddech 	 oddechovat 	 -- 	0	 oddechnout 	 -- 	0	yes	oddechnout si	no			yes
+odečet 	 odečítat 	 v41dylA, v41dylB 	2	 odečíst 	 v41dyjA 	1	yes	odečíst	no	the corresponding meaning of “odečíst” not in PDT-Vallex		yes
+odkup 	 odkupovat 	 v41eckA 	1	 odkoupit 	 v41ecdA 	1	no		no			yes
+odlet 	 odlétat|odlítat 	 odlétat: v41ecuA; odlítat: -- 	 unknown: multiple_verbs_available 	 odletět|odlétnout|odlítnout 	 odletět: v41ecvA ; odlétnout: -- ; odlítnout: -- 	 unknown: multiple_verbs_available	yes	odletět	yes	 v41ecvA		yes
+odliv 	 odlívat|odlévat 	 odlívat: --; odlévat: -- 	 unknown: multiple_verbs_available 	 odlít 	 v41edeA, v41edeB 	2	no		no		probably not related to either odlévat/odlít	yes
+odmlka 	 odmlčovat 	 -- 	0	 odmlčet 	 -- 	0	yes	odmlčet se	yes	 v41eegA		no
+odnos 	 odnášet 	 v41eemA, v41eemB, v41eemC, v41eemD 	4	 odnést 	 v41eeqA, v41eeqB, v41eeqC, v41eeqD, v41eeqE 	5	yes	odnést	no			no
+odpal 	 odpalovat 	 v41efhA 	1	 odpálit 	 v41efeA, v41efeB, v41efeC 	3	yes	odpálit	no			no
+odpis 	 odpisovat|odepisovat 	 odpisovat: --; odepisovat: v41dyvA, v41dyvB, v41dyvC 	 unknown: multiple_verbs_available 	 odepsat 	 v41dyyA, v41dyyB, v41dyyC 	3	yes	odepsat	yes	 v41dyyB		no
+odplata 	 odplácet 	 -- 	0	 odplatit 	 -- 	0	no		no			yes
+odpočet 	 odpočítat 	 -- 	0	 odpočíst 	 v41efwA, v41efwB 	2	yes	odpočíst	no			yes
+odpor 	 odporovat 	 v41eggA, v41eggB 	2	 -- 	 -- 	0	yes	odporovat	yes	 v41eggA		yes
+odprodej 	 odprodávat 	 v41ehfA 	1	 odprodat 	 v41eheA 	1	yes	odprodat	yes	 v41eheA 		yes
+odsun 	 odsunovat 	 -- 	0	 odsunout 	 v41ekwA, v41ekwB, v41ekwC, v41ekwD 	4	yes	odsunout	no			yes
+omak 	 omakávat 	 -- 	0	 omakat 	 -- 	0	no		no			no
+oslava 	 oslavovat 	 v41ezsA 	1	 oslavit 	 v41ezrA 	1	no		no		perhaps the difference between “oslavit” and “oslavovat” is not so important here and “oslavovat” could always be chosen	yes
+pitva 	 pitvat 	 v41flwA, v41flwB 	2	 -- 	 -- 	0	yes	pitvat	yes	 v41flwA		no
+pláč 	 plakat 	 v41fmgA, v41fmgB 	2	 -- 	 -- 	0	yes	plakat	yes	 v41fmgA		yes
+pochod 	 pochodovat 	 v41fynA 	1	 -- 	 -- 	0	yes	pochodovat 	yes	 v41fynA 		yes
+podpal 	 podpalovat 	 -- 	0	 podpálit 	 -- 	0	no		no		verbs not in PDT-Vallex	no
+podvod 	 podvádět 	 v41fvxA 	1	 podvést 	 v41fwbA, v41fwbB 	2	yes	podvést	no			no
+pohovor 	 -- 	 -- 	0	 pohovořit 	 v41fxnA, v41fxnB 	2	no		no		“pohovot” not synchronically understood as from pohovořit se	yes
+pohřeb 	 pohřbívat 	 v41fxzA 	1	 pohřbít 	 v41fxyA, v41fxyB 	2	yes	pohřbít	yes	 v41fxyA		yes
+poklona 	 poklánět 	 -- 	0	 poklonit 	 -- 	0	yes	poklonit se	no			yes
+pokřik 	 pokřikovat 	 v41gbxA 	1	 pokřiknout 	 -- 	0	yes	pokřikovat	yes	 v41gbxA 		yes
+pokus 	 pokoušet 	 v41gbgA, v41gbgB 	2	 pokusit 	 -- 	0	yes	pokusit se	yes	 v41gcbA		yes
+pomsta 	 pomstívat 	 -- 	0	 pomstít 	 v41geuA 	1	no	pomstít/pomstít se	no		the difference between “pomstít” and “pomstít se” may not be so important	no
+ponor 	 ponořovat 	 -- 	0	 ponořit 	 v41gfrA 	1	no	ponořit/ponořit se	no		probably not always event (“ponor lodi”?)	no
+poprava 	 popravovat 	 -- 	0	 popravit 	 v41ghvA 	1	yes	popravit 	yes	 v41ghvA 		yes
+porod 	 porozovat 	 -- 	0	 porodit 	 v41gjbA 	1	yes	porodit	yes	 v41gjbA 		no
+poslech 	 poslouchat 	 v41gmkA, v41gmkB, v41gmkC 	3	 poslechnout 	 v41gmiA 	1	yes	poslouchat 	yes	 v41gmkC 		yes
+postesk 	 posteskávat|posteskovat 	 posteskávat: --; posteskovat: -- 	 unknown: multiple_verbs_available 	 postesknout 	 -- 	0	yes	postesknout si	yes	 v41gnfA		no
+posuv 	 posunovat|posouvat 	 posunovat: v41gomA; posouvat: v41gmpA, v41gmpB 	 unknown: multiple_verbs_available 	 posunout 	 v41gokA, v41gokB 	2	no	posunout/posunout se	no			no
+povyk 	 povykovat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+povzdech	 -- 	 -- 	0	 povzdechnout	 -- 	0	yes	povzdechnout si	yes	 v41gvkA		yes
+povzdych 	 povzdychovat|povzdychat 	 povzdychovat: --; povzdychat: -- 	 unknown: multiple_verbs_available 	povzdychnout 	 -- 	0	yes	povzdychnout si	no			no
+předehra 	 předehrávat 	 -- 	0	 předehrát 	 v41hvuA 	1	no		no		probably not semanticall from “předehrát” and not always an event (in the sense of “overture”)	yes
+přehmat 	 přehmatávat 	 -- 	0	 přehmátnout|přehmatat 	 přehmátnout: -- ; přehmatat: -- 	 unknown: multiple_verbs_available	no		no			no
+přeměna 	 přeměňovat 	 v41ieeA 	1	 přeměnit 	 v41iecA 	1	no	přeměnit/přeměnit se				yes
+přenos 	 přenášet 	 v41ifbA, v41ifbB, v41ifbC, v41ifbD, v41ifbE 	5	 přenést|přenosit 	 přenést: v41ifiA, v41ifiB, v41ifiC, v41ifiD, v41ifiE ; přenosit: -- 	 unknown: multiple_verbs_available	yes	přenášet	yes	 v41ifbE		yes
+přepočet 	 přepočítat 	 v41igoA, v41igoB 	2	 přepočíst 	 v41igmA 	1	no		no		perhaps the difference between “přepočíst” and “přepočítat” is not so important here	no
+přestup 	 přestupovat 	 v41ijvA 	1	 přestoupit 	 v41ijpA, v41ijpB, v41ijpC 	3	yes	přestoupit	yes	 v41ijpA		yes
+přesun 	 přesunovat 	 v41ijzA, v41ijzB 	2	 přesunout 	 v41ijxA, v41ijxB, v41ijxC, v41ijxD 	4	no	přesunout/přesunout se	no			yes
+převoz 	 převážet 	 v41imjA 	1	 převézt 	 v41imrA, v41imrB 	2	yes	převézt	yes	 v41imrA		yes
+převrat 	 převracet 	 -- 	0	 převrátit 	 v41infA 	1	yes	převrátit 	yes	 v41infA 	probably “převrat” not synchronically understood as from “převrátit”	no
+převýchova 	 převychovávat 	 v41inmA 	1	 převychovat 	 v41inlA 	1	yes	převychovat	yes	 v41inlA 		yes
+přezkum 	 přezkoumávat 	 v41iodA 	1	 přezkoumat 	 v41iocA 	1	yes	přezkoumat	yes	 v41iocA 		no
+příkaz 	 přikazovat 	 v41ismA 	1	 přikázat 	 v41islA 	1	yes	přikázat	yes	 v41islA 		yes
+příklon 	 přiklánět 	 -- 	0	 přiklonit 	 -- 	0	yes	příklonit se	no			yes
+přílet 	 přilétat|přilítat 	 přilétat: --; přilítat: -- 	 unknown: multiple_verbs_available 	 přiletět|přilítnout|přilétnout 	 přiletět: v41itnA, v41itnB ; přilítnout: v41itsA, v41itsB ; přilétnout: v41itoA 	 unknown: multiple_verbs_available	yes	přiletět	yes	 v41itnB		no
+příliv 	 přilívat|přilévat 	 přilívat: v41ituA; přilévat: v41itpA, v41itpB 	 unknown: multiple_verbs_available 	 přilít 	 v41itrA, v41itrB 	2	no		no		probably “příliv” not synchronically understood as from “přilít”/”přilévat”	yes
+přímluva 	 přimlouvat 	 -- 	0	 přimluvit 	 -- 	0	yes	přimluvit se	yes	 v41iuhA		yes
+přísaha 	 přísahat 	 v41ixxA 	1	 -- 	 -- 	0	yes	přísahat	yes	 v41ixxA 	interesting that there are two valency frames for “přísaha” but only one for “přísahat”	yes
+příslib 	 přislibovat 	 -- 	0	 přislíbit 	 v41iyfA 	1	yes	přislíbit 	yes	 v41iyfA 		yes
+přístup 	 přistupovat 	 v41izpA, v41izpB, v41izpC, v41izpD, v41izpE, v41izpF 	6	 přistoupit 	 v41izjA, v41izjB, v41izjC, v41izjD, v41izjE, v41izjF 	6	yes	přistupovat	no	depends on meaning (access vs. approach/attitude)		yes
+přítlak 	 přitlačovat 	 -- 	0	 přitlačit 	 v41jajA 	1	yes	přitlačit	yes	 v41jajA 		no
+prodej 	 prodávat 	 v41hblA 	1	 prodat 	 v41hbiA 	1	yes	prodávat	yes	 v41hblA 	possibly also from “prodat” if it is about one single act of selling, but this will be rare	yes
+proměna 	 proměňovat 	 v41hhlA, v41hhlB 	2	 proměnit 	 v41hhjA, v41hhjB, v41hhjC 	3	no	proměnit/proměnit se	no			yes
+propočet 	 propočítávat 	 v41hkrA 	1	 propočíst|propočítat 	 propočíst: v41hkqA ; propočítat: -- 	 unknown: multiple_verbs_available	yes	propočíst	yes	 v41hkqA		yes
+protest 	 protestovat 	 v41hpkA 	1	 -- 	 -- 	0	yes	protestovat 	yes	 v41hpkA 		yes
+proud 	 proudit 	 v41hqqA 	1	 -- 	 -- 	0	yes	proudit	yes	 v41hqqA 	unclear to me if the sense of “electrical current” / “flow of river” should still be an event, but probably yes	yes
+provoz 	 provozovat 	 v41hsaA, v41hsaB, v41hsaC 	3	 provodit 	 -- 	0	yes	provozovat	yes	 v41hsaB	can also mean “traffic”, which is not captured	yes
+průběh 	 probíhat 	 v41haaA, v41haaB, v41haaC, v41haaD 	4	 proběhnout 	 v41gzyA, v41gzyB, v41gzyC, v41gzyD 	4	yes	probíhat	yes	 v41haaC		yes
+průlet 	 prolétat 	 -- 	0	 prolétnout|prolítnout|proletět 	 prolétnout: v41hgoA ; prolítnout: v41hgwA ; proletět: v41hgmA 	 unknown: multiple_verbs_available	yes	proletět	yes	 v41hgmA		no
+průlom 	 prolamovat 	 v41hglA 	1	 prolomit 	 v41hhaA, v41hhaB 	2	yes	prolomit	no			no
+reforma 	 reformovat 	 v41jhaA 	1	 -- 	 -- 	0	yes	reformovat	yes	 v41jhaA 		yes
+rozhovor 	 rozhovořovat 	 -- 	0	 rozhovořit 	 -- 	0	no		no		mistake, rozhovor not derived from rozhovořit	yes
+rozjezd 	 rozjíždět 	 v41jrnA 	1	 rozjet 	 v41jrkA, v41jrkB 	2	no	rozjet/rozjet se	no			yes
+rozkaz 	 rozkazovat 	 v41jrsA 	1	 rozkázat 	 v41jrrA 	1	yes	rozkázat	yes	 v41jrrA 		yes
+rozkmit 	 rozkmitávat 	 -- 	0	 rozkmitat 	 v41jrxA 	1	yes	rozkmitat 	yes	 v41jrxA 		no
+rozlet 	 rozlétat|rozlítat 	 rozlétat: --; rozlítat: -- 	 unknown: multiple_verbs_available 	 rozletět|rozlétnout 	 rozletět: -- ; rozlétnout: -- 	 unknown: multiple_verbs_available	no		no			no
+rozmach 	 rozmachovat 	 -- 	0	 rozmáchnout 	 -- 	0	no		no		not derived from either verb	yes
+rozmysl 	 rozmýšlet 	 v41jukA 	1	 rozmyslet|rozmyslit 	 rozmyslet: -- ; rozmyslit: -- 	 unknown: multiple_verbs_available	yes	rozmyslet se	yes	 v41juhA		no
+rozpad 	 rozpadat 	 -- 	0	 rozpadnout 	 -- 	0	no	rozpadat se / rozpadnout se	no			yes
+rozpor 	 rozporovat 	 -- 	0	 -- 	 -- 	0	no		no			yes
+rozptyl 	 rozptylovat 	 v41jxkA 	1	 rozptýlit 	 v41jxiA, v41jxiB 	2	no		no		not always event (in the meaning “variance”)	yes
+rozstřel 	 rozstřelovat 	 -- 	0	 rozstřelit|rozstřílet 	 rozstřelit: -- ; rozstřílet: v41jymA, v41jymB 	 unknown: multiple_verbs_available	no		no		not semantically from either verb	no
+rozvoz 	 rozvážet 	 v41kazA 	1	 rozvozit|rozvézt 	 rozvozit: -- ; rozvézt: -- 	 unknown: multiple_verbs_available	yes	rozvážet	yes	 v41kazA 		yes
+salut 	 salutovat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+selekce 	 selektovat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+šelest 	 šelestit 	 v41lsoA 	1	 -- 	 -- 	0	yes	šelestit	yes	 v41lsoA 		no
+šept 	 šeptat 	 v41lspA, v41lspB, v41lspC 	3	 šeptnout 	 -- 	0	yes	šeptat	no			no
+šerm 	 šermovat 	 v41lsqA 	1	 -- 	 -- 	0	yes	šermovat	yes	 v41lsqA 		no
+seskok 	 seskakovat 	 -- 	0	 seskákat|seskočit 	 seskákat: -- ; seskočit: v41kjvA 	 unknown: multiple_verbs_available	yes	seskočit	yes	 v41kjvA		no
+ševel 	 ševelit 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+šikana 	 šikanovat 	 v41lsyA 	1	 -- 	 -- 	0	yes	šikanovat 	yes	 v41lsyA 		no
+škleb 	 šklebit|šklíbit 	 šklebit: --; šklíbit: -- 	 unknown: multiple_verbs_available 	 -- 	 -- 	0	yes	šklebit se	yes	 v41lthA		no
+skok 	 skákat 	 v41kpoA, v41kpoB, v41kpoC, v41kpoD 	4	 skočit 	 v41kraA, v41kraB, v41kraC, v41kraD, v41kraE, v41kraF, v41kraG 	7	no		no			no
+smyk 	 smykovat 	 -- 	0	 -- 	 -- 	0	no		no			no
+snaha 	 snažit 	 -- 	0	 -- 	 -- 	0	yes	snažit se	yes	 v41kwuA		yes
+souhlas 	 souhlasit 	 v41kypA, v41kypB, v41kypC 	3	 -- 	 -- 	0	yes	souhlasit	no	both v41kypA and v41kypC applicable		yes
+spěch 	 spěchat 	 v41laxA, v41laxB, v41laxC 	3	 -- 	 -- 	0	yes	spěchat	no			no
+spoleh 	 spoléhat|spolíhat 	 spoléhat: v41ldnA; spolíhat: -- 	 unknown: multiple_verbs_available 	 spolehnout 	 -- 	0	yes	spolehnout se	yes	 v41ldpA	is it an event? probably yes (“na někoho je spoleh” = můžu se na něj spolehnout)	no
+spotřeba 	 spotřebovat 	 v41lfdA 	1	 -- 	 -- 	0	yes	spotřebovat	yes	 v41lfdA 		yes
+sprint 	 sprintovat 	 v41lfvA 	1	 -- 	 -- 	0	yes	sprintovat	yes	 v41lfvA 		no
+stah 	 stahovat 	 v41lhoA, v41lhoB, v41lhoC, v41lhoD, v41lhoE, v41lhoF 	6	 stáhnout 	 v41lhjA, v41lhjB, v41lhjC, v41lhjD, v41lhjE, v41lhjF, v41lhjG, v41lhjH, v41lhjI 	9	no		no			no
+sten	 sténat 	 v41ljnA 	1	 -- 	 -- 	0	yes	sténat 	yes	 v41ljnA 		no
+stisk 	 stiskat 	 -- 	0	 stisknout 	 v41lkhA 	1	yes	stisknout 	yes	 v41lkhA 		no
+ston	 sténat 	 v41ljnA 	1	 -- 	 -- 	0	yes	sténat 	yes	 v41ljnA 		no
+štráchy 	 štrachat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+stream 	 streamovat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+střeh 	 střežit 	 v41lniA 	1	 střehnout 	 -- 	0	no		no		mostly will not be an event (“být ve střehu” does not mean “střežit”)	no
+střet 	 střetat 	 -- 	0	 střetnout 	 v41lneA, v41lneB 	2	yes	střetnout se	yes	 v41lnfA		yes
+svár 	 svářit 	 -- 	0	 -- 	 -- 	0	no		no		verb “svářit se” not in PDT-Vallex, but the noun is	yes
+svit 	 svítit 	 v41lqtA, v41lqtB 	2	 svitnout 	 v41lquA, v41lquB 	2	yes	svítit	yes	 v41lqtB 		no
+svoz 	 svážet 	 v41lpvA 	1	 svézt 	 v41lqnA, v41lqnB, v41lqnC 	3	yes	svážet	yes	 v41lpvA 		no
+tanec 	 tančit|tancovat 	 tančit: v41lwnA; tancovat: v41lwmA 	 unknown: multiple_verbs_available 	 -- 	 -- 	0	yes	tančit	yes	 v41lwnA 	it probably does not matter whether “tančit” or “tancovat” is chosen, “tančit” = more frequent	yes
+tlach 	 tlachat 	 -- 	0	 -- 	 -- 	0	no		no		verb not in PDT-Vallex	no
+tok 	 téct 	 -- 	0	 -- 	 -- 	0	yes	téci	yes	 v41lxeC	not sure if “flow of a river” should be considered an event, especially in cases like “vodní tok” where it is rather the body of water, not its movement	yes
+třas 	 třást 	 -- 	0	 -- 	 -- 	0	yes	třást se	yes	 v41mdgB		no
+třes 	 třást 	 -- 	0	 -- 	 -- 	0	yes	třást se	yes	 v41mdgB		no
+trest 	 trestat 	 v41mcaA 	1	 -- 	 -- 	0	yes	trestat	yes	 v41mcaA 		yes
+triumf 	 triumfovat 	 v41mcjA 	1	 -- 	 -- 	0	yes	triumfovat 	yes	 v41mcjA 		yes
+třpyt 	 třpytit 	 -- 	0	 -- 	 -- 	0	yes	třpytit se	yes	 v41mdvA		no
+účast 	 účastnit 	 -- 	0	 -- 	 -- 	0	yes	účastnit se	yes	 v41mgrA		yes
+úder 	 udeřovat 	 -- 	0	 udeřit 	 v41mhzA, v41mhzB, v41mhzC, v41mhzD, v41mhzE 	5	yes	udeřit	no			yes
+úhyn 	 -- 	 -- 	0	 uhynout 	 v41mjsA 	1	yes	uhynout 	yes	 v41mjsA 		yes
+úklid 	 uklízet 	 v41mmfA 	1	 uklidit 	 v41mlyA, v41mlyB 	2	no				verb probably depends on whether it is a single finished action or not, but perhaps the difference between “ukllidit” and “uklízet” is not so important here?	no
+únik 	 unikat 	 v41mqiA, v41mqiB, v41mqiC, v41mqiD 	4	 uniknout 	 v41mqjA, v41mqjB, v41mqjC, v41mqjD, v41mqjE 	5	no	stable process like “únik plynu” = “unikat” vs. other cases probably more frequent single action “uniknout”	no			yes
+úplata 	 uplácet 	 v41mrlA 	1	 uplatit 	 v41mroA 	1	no		no		only derived from “uplácet” in one sense of the word	yes
+úschova 	 uschovávat 	 v41muzA 	1	 uschovat 	 v41muyA 	1	yes	uschovat 	yes	 v41muyA 		yes
+úskok 	 uskakovat 	 -- 	0	 uskočit 	 v41mvkA 	1	no		no		not semantically from “uskočit”	no
+úsměv 	 usmívat 	 -- 	0	 usmát 	 -- 	0	no	depends on meaning (“stable” vs. “momentary” facial expression), but probably not always clear which one even in context – maybe difference caould be disregarded and always use “usmívat-se”)	no			no
+ústup 	 ustupovat 	 v41mypA, v41mypB, v41mypC, v41mypD, v41mypE 	5	 ustoupit 	 v41myhA, v41myhB, v41myhC, v41myhD, v41myhE, v41myhF 	6	no		no			yes
+útěcha 	 utěšovat 	 v41mzwA 	1	 utěšit 	 v41mzvA 	1	yes	utěšit	yes	 v41mzvA 	abstract noun, not clear whether it should always be considered an event	yes
+útěk 	 utíkat 	 v41mzzA, v41mzzB, v41mzzC 	3	 utéct 	 -- 	0	no	utéci/utíkat	no		the choice of base verb depends on whether the act is finished or not based on context	yes
+útisk 	 utiskovat 	 -- 	0	 utisknout 	 -- 	0	no		no		verbs not in PDT-Vallex	no
+útlak 	 utlačovat 	 v41nakA 	1	 utlačit 	 -- 	0	yes	utlačovat 	yes	 v41nakA 		no
+útok 	 útočit 	 v41navA 	1	 -- 	 -- 	0	yes	útočit	yes	 v41navA 		yes
+úvaha 	 uvažovat 	 v41ncrA, v41ncrB, v41ncrC, v41ncrD 	4	 uvážit 	 v41ncpA 	1	no	perhaps the difference between choosing “uvážit” vs. “unažovat” is not so important here and could be “uvažovat” in all cases	no			yes
+úvod 	 uvádět 	 v41nccA, v41nccB, v41nccC, v41nccD, v41nccE, v41nccF, v41nccG, v41nccH, v41nccI, v41nccJ, v41nccK 	11	 uvést|uvodit 	 uvést: v41ndjA, v41ndjB, v41ndjC, v41ndjD, v41ndjE, v41ndjF, v41ndjG, v41ndjH, v41ndjI, v41ndjJ, v41ndjK, v41ndjL, v41ndjM ; uvodit: -- 	 unknown: multiple_verbs_available			yes	v41ndjF	not sure if the sense “written introduction” is still an event	yes
+var 	 vařit 	 v41ngvA, v41ngvB, v41ngvC 	3	 -- 	 -- 	0	yes	vařit se	yes	 v41ngwA		no
+veto 	 vetovat 	 v41nkhA 	1	 -- 	 -- 	0	yes	vetovat	yes	 v41nkhA 		yes
+vpád 	 vpadat 	 -- 	0	 vpadnout 	 v41npdA, v41npdB 	2	yes	vpadnout	no			no
+vrh 	 vrhat 	 v41nqkA, v41nqkB, v41nqkC, v41nqkD, v41nqkE, v41nqkF 	6	 vrhnout 	 v41nqmA, v41nqmB, v41nqmC 	3	no		no			no
+vstřik 	 vstřikovat 	 v41nrwA 	1	 vstříknout 	 v41nrvA 	1	yes	vstříknout 	yes	 v41nrvA 		no
+výboj 	 vybíjet 	 v41ntvA, v41ntvB 	2	 vybít 	 v41ntzA, v41ntzB 	2	no		no		not really derived from either verb	no
+výbuch 	 vybuchovat 	 v41nvcA 	1	 vybuchnout|vybouchnout 	 vybuchnout: v41nvbA, v41nvbB, v41nvbC ; vybouchnout: v41nuiA, v41nuiB 	 unknown: multiple_verbs_available	yes	vybuchnout	no			yes
+výchova 	 vychovávat 	 v41ockA, v41ockB 	2	 vychovat 	 v41ociA, v41ociB 	2	no		no			yes
+výhrada 	 vyhrazovat 	 -- 	0	 vyhradit 	 v41oavA, v41oavB 	2	no		no		“výhrada” not synchronically semantically from “vyhradit se”	yes
+výhyn 	 vyhynovat 	 -- 	0	 vyhynout 	 v41obyA 	1	yes	vyhynout	yes	 v41obyA 		no
+výkřik 	 vykřikovat 	 v41ogzA, v41ogzB 	2	 vykřiknout 	 v41ogyA 	1	yes	vykřiknout 	yes	 v41ogyA 		no
+výkrm 	 vykrmovat 	 v41ogrA 	1	 vykrmit 	 v41ogqA 	1	yes	vykrmovat	yes	 v41ogrA 		no
+výkup 	 vykupovat 	 v41ohfA 	1	 vykoupit 	 v41ogfA, v41ogfB, v41ogfC 	3	no		no			yes
+výkyv 	 vykyvovat 	 -- 	0	 vykývnout 	 -- 	0	no		no			no
+výměna 	 vyměňovat 	 v41ojzA, v41ojzB 	2	 vyměnit 	 v41ojyA, v41ojyB 	2	yes	vyměnit	no			yes
+výpal 	 vypalovat 	 v41onnA, v41onnB, v41onnC 	3	 vypálit 	 v41onmA, v41onmB, v41onmC, v41onmD 	4	yes	vypálit	no	the corresponding meaning of “vypálit (keramiku)” not in PDT-Vallex		no
+výprask 	 vypráskávat 	 -- 	0	 vyprásknout|vypráskat 	 vyprásknout: -- ; vypráskat: -- 	 unknown: multiple_verbs_available	no		no			no
+výprodej 	 vyprodávat 	 v41orsA 	1	 vyprodat 	 v41orrA 	1	yes	vyprodávat	yes	 v41orsA 		yes
+výroba 	 vyrábět 	 v41otdA 	1	 vyrobit 	 v41otrA 	1	yes	vyrábět	yes	 v41otrA 		yes
+výsev 	 vysévat|vysívat 	 vysévat: --; vysívat: -- 	 unknown: multiple_verbs_available 	 vysít 	 -- 	0	no		no		verbs not in PDT-Vallex	yes
+výskok 	 vyskakovat 	 -- 	0	 vyskočit|vyskákat 	 vyskočit: v41owcA, v41owcB, v41owcC ; vyskákat: v41owbA 	 unknown: multiple_verbs_available	yes	vyskočit	no			no
+výsun 	 vysunovat 	 -- 	0	 vysunout 	 -- 	0	no		no		verbs not in PDT-Vallex	no
+výtka 	 vytýkat 	 v41pevA, v41pevB 	2	 vytknout 	 v41pdcA, v41pdcB, v41pdcC 	3	yes	vytknout	yes	 v41pdcB	probably could be derived from both “vytknout” and “vytýkat”	yes
+výtrysk 	 vytryskávat 	 -- 	0	 vytrysknout|vytryskat 	 vytrysknout: -- ; vytryskat: -- 	 unknown: multiple_verbs_available	no		no		verbs not in PDT-Vallex	no
+vývoz 	 vyvážet 	 v41pgbA 	1	 vyvézt|vyvozit 	 vyvézt: v41pgnA, v41pgnB ; vyvozit: v41phlA 	 unknown: multiple_verbs_available	yes	vyvážet	yes	 v41pgbA 		yes
+výzva 	 vyzývat 	 v41pjzA 	1	 vyzvat 	 v41pjqA 	1	yes	vyzvat	yes	 v41pjqA 	abstract noun, doubtful whether it should be considered an event in all cases	yes
+vzdor 	 vzdorovat 	 v41plmA, v41plmB 	2	 -- 	 -- 	0	yes	vzdorovat	no			no
+vzlet 	 vzlétat|vzlítat 	 vzlétat: --; vzlítat: -- 	 unknown: multiple_verbs_available 	 vzletět|vzlétnout 	 vzletět: -- ; vzlétnout: v41pmjA 	 unknown: multiple_verbs_available	yes	vzlétnout	yes	 v41pmjA		no
+vzlyk 	 vzlykat 	 -- 	0	 vzlyknout 	 -- 	0	no		no		verb not in PDT-Vallex	no
+vznik 	 vznikat 	 v41pmrA, v41pmrB 	2	 vzniknout 	 v41pmsA, v41pmsB, v41pmsC 	3	yes	vzniknout	yes	 v41pmsB	possibly also from “vznikat” if there is a clear element of repetition/multiple entities, but this will be rare	yes
+zábava 	 zabavovat 	 v41pojA 	1	 zabavit 	 v41pohA, v41pohB 	2	no		no		abstract noun, not clear whether it should be considered an event; if yes, the base verb would probably semantically not be “zabavit”, but maybe “bavit”?	yes
+záblesk 	 zablýskávat 	 -- 	0	 zablýsknout|zablesknout|zablýskat 	 zablýsknout: -- ; zablesknout: -- ; zablýskat: v41ppjA 	 unknown: multiple_verbs_available	no		no			no
+záchrana 	 zachraňovat 	 v41purA 	1	 zachránit 	 v41pupA, v41pupB 	2	yes	zachránit	no	both v41pupA, v41pupB applicable		yes
+záchvat 	 zachvacovat 	 v41puvA 	1	 zachvátit 	 v41puwA 	1	yes	zachvátit	yes	 v41puwA 	not clear whether “záchvat” is synchronically semantically from “zachvátit”, probably already opaque	no
+záchvěv	 zachvívat 	 -- 	0	 zachvět 	 -- 	0	yes	zachvět se	yes	 v41puxA		yes
+zákaz 	 zakazovat 	 v41pwnA 	1	 zakázat 	 v41pwlA 	1	no	perhaps the diffference between “zakazovat” and “zakázat” is not so important and “zakázat” could always be chosen	no		not sure if cases like “zákaz vjezdu” should be considered and event	yes
+záklon 	 zaklánět 	 -- 	0	 zaklonit 	 -- 	0	no		no		verbs not in PDT-Vallex	no
+zákrok 	 zakročovat|zakračovat 	 zakročovat: v41pynA; zakračovat: -- 	 unknown: multiple_verbs_available 	 zakročit 	 v41pymA 	1	yes	zakročit	yes	 v41pymA 		yes
+zánik 	 zanikat 	 v41qdmA, v41qdmB 	2	 zaniknout 	 v41qdnA, v41qdnB, v41qdnC 	3	yes	zaniknout	yes	 v41qdnB		yes
+záškub 	 -- 	 -- 	0	 zaškubat|zaškubnout 	 zaškubat: -- ; zaškubnout: -- 	 unknown: multiple_verbs_available	no		no		verbs not in PDT-Vallex	no
+zásluha 	 zasluhovat 	 v41qlfA 	1	 zasloužit 	 v41qlbA 	1	yes	zasloužit se	yes	 v41qlcA		yes
+zátah 	 zatahovat 	 v41qotA, v41qotB 	2	 zatáhnout 	 v41qorA, v41qorB, v41qorC, v41qorD, v41qorE, v41qorF 	6	no		no		not semantically from either verb	yes
+zátřpyt 	 -- 	 -- 	0	 zatřpytit 	 -- 	0	no		no		verb not in PDT-Vallex	no
+závan 	 zavánět 	 v41qrsA, v41qrsB 	2	 zavanout 	 -- 	0	no		no			no
+žert 	 žertovat 	 v41sehA 	1	 -- 	 -- 	0	yes	žertovat 	yes	 v41sehA 		no
+zkáza 	 -- 	 -- 	0	 zkazit 	 v41rfjA 	1	no	zkazit/zkazit se	no			yes
+zrod 	 zrozovat 	 -- 	0	 zrodit 	 v41rwxA 	1	yes	zrodit se	yes	 v41rwyA		yes

@@ -1,0 +1,138 @@
+action_noun	verb_frame	form-argument_mapping		
+adopce 	 v41tA 	 2, 7 : ARG0	2 : ARG1	
+apel 	 v41bxA 	 2 : ARG0	na+4 : ARG1	
+atak 	 v41cwA 	 2, 7 : ARG0	2 : ARG1	
+boj 	 v41gsA 	 2 : ARG0	o+4, za+4 : ARG2	s+7, proti+3 : ARG1
+bojkot 	 v41grA 	 2, 7 : ARG0	2 : ARG1	
+debata 	 v41qdA 	 2 : ARG0	s+7 : ARG2	o+6, nad+7, zda, zdali, jestli : ARG1
+debut 	 v41qfA 	 2 : ARG0		
+dík 	 v41rbA 	 2 : ARG0	za+4 : ARG2	3 : ARG1
+dohled 	 v41xwA 	 2 : ARG0	na+4, nad+7 : ARG1	
+dosah 	 v41afbB 	 2 : ARG0	na+4 : ARG1	
+dotaz 	 v41ahbA 	 2 : ARG0	na+4, o+6, zda, jestli, jak : ARG1	3, na+4, k+3 : ARG2
+expanze 	 v41aodA 	 2 : ARG1		
+experiment 	 v41aojA 	 2 : ARG0	na+6, s+7 : ARG1	
+exploze 	 v41aonA 	 2 : ARG1		
+chvála 	 v41bcjA 	 2, od+2, 7 : ARG0	za+4 : ARG2	3, 2 : ARG1
+klam 	 v41bkpA 	 2 : ARG0	 o+6, že : ARG2	
+kolize 	 v41bnjA 	 2 : ARG0	s+7 : ARG1	
+koncert 	 v41bphA 	 2 : ARG0		
+konverze 	 v41brqA 	 2, 7 : ARG0	2 : ARG1	
+koupě 	 v41btrA 	 2, 7 : ARG0	2 : ARG1	od+2 : ARG2
+lež 	 v41cafA 	 2 : ARG0	o+6 : ARG1	
+náraz 	 v41cyxF 	 2 : ARG0		
+nárok 	 v41czfA 	 2 : ARG0	na+4 : ARG1	
+nárůst 	 v41czpA 	 2 : ARG1		
+nářek 	 v41daeA 	 2 : ARG0	na+4, nad+7 : ARG1	
+nauka 	 v41dfhA 	 2 : ARG0	o+6 : ARG1	
+oběh 	 v41dpdA 	 2 : ARG1		
+obnova 	 v41driA 	 2, 7 : ARG0	2 : ARG1	
+odlet 	 v41ecvA 	 2 : ARG0	z+2, od+2 : AGR1	
+odpor 	 v41eggA 	 2 : ARG0	3, k+3, proti+3 : ARG1	
+odprodej 	 v41eheA 	 2, 7 : ARG0	2 : ARG1	3 : ARG2
+pláč 	 v41fmgA 	 2 : ARG0		
+pohřeb 	 v41fxyA 	 2 : ARG0	2 : ARG1	
+pochod 	 v41fynA 	 2 : ARG0		
+pokřik 	 v41gbxA 	 2 : ARG0		
+pokus 	 v41gcbA 	 2 : ARG0	o+4, inf : ARG1	
+poprava 	 v41ghvA 	 2, 7 : ARG0	2 : ARG1	
+poslech 	 v41gmkC 	 2, 7 : ARG0	2 : ARG1	
+povzdech 	 v41gvkA 	 2 : ARG0		
+prodej 	 v41hblA 	 2, 7 : ARG0	2 : ARG1	3 : ARG2
+propočet 	 v41hkqA 	 2, 7 : ARG0	2 : ARG1	
+protest 	 v41hpkA 	 2 : ARG0	proti+3 : ARG1	
+proud 	 v41hqqA 	 2 : ARG1		
+provoz 	 v41hsaB 	 7 : ARG0	2 : ARG1	
+průběh 	 v41haaC 	 2 : ARG1		
+přenos 	 v41ifbE 	 2,7 : ARG0	2 : ARG1	
+přestup 	 v41ijpA 	 2 : ARG0		
+převoz 	 v41imrA 	 2, 7 : ARG0	2 : ARG1	
+převýchova 	 v41inlA 	 2, 7 : ARG0	2 : ARG1	
+příkaz 	 v41islA 	 2, od+2 : ARG0	3 : ARG1	k+3, inf : ARG2
+přímluva 	 v41iuhA 	 2 : ARG0	za+4, aby : ARG2	
+přísaha 	 v41ixxA 	 2 : ARG0	2, že : ARG1	na+4 : ARG2
+příslib 	 v41iyfA 	 2, 7 : ARG0	3 : ARG1	2, že, o+6, inf : ARG2
+reforma 	 v41jhaA 	 2 : ARG0	2 : ARG1	
+rozkaz 	 v41jrrA 	 2 : ARG0	3 : ARG1	o+6, inf : ARG2
+rozvoz 	 v41kazA 	 2, 7 : ARG0	2 : ARG1	
+snaha 	 v41kwuA 	 2 : ARG0	o+4, aby, inf, po+6 : ARG1	
+spotřeba 	 v41lfdA 	 2, 7 : ARG0	2 : ARG1	
+střet 	 v41lnfA 	 2 : ARG0	s+7 : ARG1	o+4 : ARG2
+tanec 	 v41lwnA 	 2 : ARG0		
+tok 	 v41lxeC 	 2 : ARG1		
+trest 	 v41mcaA 	 2 : ARG0	3,2 : ARG1	
+triumf 	 v41mcjA 	 2 : ARG0		
+účast 	 v41mgrA 	 2 : ARG0	na+6, v+6 : ARG1	
+úhyn 	 v41mjsA 	 2 : ARG1		
+úschova 	 v41muyA 	 2, 7 : ARG0	2 : ARG1	
+útěcha 	 v41mzvA 	 		
+útok 	 v41navA 	 2 : ARG0	na+4, proti+3 : ARG1	
+úvod 	 v41ndjF 	 		
+veto 	 v41nkhA 	 2, od+2 : ARG0	na+4, 3 : ARG1	
+výprodej 	 v41orsA 	 2, 7 : ARG0	2 : ARG1	
+výroba 	 v41otrA 	 2,7 : ARG0	2 : ARG1	z+2 : ARG2
+výtka 	 v41pdcB 	 2 : ARG0	3, k+3 : ARG1	že : ARG2
+vývoz 	 v41pgbA 	 2,7 : ARG0	2 : ARG1	
+výzva 	 v41pjqA 	 2 : ARG0	2, 3, k+3 : ARG1	k+3, aby : ARG2
+vznik 	 v41pmsB 	 2 : ARG1		
+záchvěv 	 v41puxA 	 2 : ARG1		
+zákrok 	 v41pymA 	 2 : ARG0	proti+3 : ARG1	
+zánik 	 v41qdnB 	 2 : ARG1		
+zásluha 	 v41qlcA 	 2 : ARG0	na+6, o+4 : ARG1	
+zrod 	 v41rwyA 	 2 : ARG1		
+aplaus 	 v41byA			
+box 	 v41hkA			
+brek 	 v41hzA			
+chůze 	 v41bbiK			
+dezerce 	 v41tmA			
+eroze 	 v41aneA			
+flirt 	 v41aqwA			
+hody 	 v41awsA			
+hovor 	 v41aybB			
+katalýza 	 v41bjxA			
+kmit 	 v41bmdA			
+konzum 	 v41brxA			
+kouzlo 	 v41bucA			
+kšeft 	 v41bwkA			
+lov 	 v41cclB			
+manévr 	 v41cduA			
+msta 	 v41cjyA			
+muka 	 v41ckaA			
+nácvik 	 v41cmrA			
+odchov 	 v41eapA			
+odmlka 	 v41eegA			
+odpis 	 v41dyyB			
+pitva 	 v41flwA			
+porod 	 v41gjbA			
+postesk 	 v41gnfA			
+převrat 	 v41infA			
+přezkum 	 v41iocA			
+přílet 	 v41itnB			
+přítlak 	 v41jajA			
+průlet 	 v41hgmA			
+rozkmit 	 v41jrxA			
+rozmysl 	 v41juhA			
+šelest 	 v41lsoA			
+šerm 	 v41lsqA			
+seskok 	 v41kjvA			
+šikana 	 v41lsyA			
+škleb 	 v41lthA			
+spoleh 	 v41ldpA			
+sprint 	 v41lfvA			
+sten 	 v41ljnA			
+stisk 	 v41lkhA			
+ston 	 v41ljnA			
+svit 	 v41lqtB			
+svoz 	 v41lpvA			
+třas 	 v41mdgB			
+třes 	 v41mdgB			
+třpyt 	 v41mdvA			
+útlak 	 v41nakA			
+var 	 v41ngwA			
+vstřik 	 v41nrvA			
+výhyn 	 v41obyA			
+výkřik 	 v41ogyA			
+výkrm 	 v41ogrA			
+vzlet 	 v41pmjA			
+záchvat 	 v41puwA			
+žert 	 v41sehA			
