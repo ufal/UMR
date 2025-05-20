@@ -1,5 +1,29 @@
 # UMR meeting minutes
 
+
+## Monday, May 19, 2025
+
+(Dan, Federica, Hanka, Jan Š., Markéta)
+
+#### Updates:
+- [UMR 2.0](http://hdl.handle.net/11234/1-5902) finally out
+- Honza: conversion of the `refer-number` attribute almost final (ML will check the converted data), some improvements in the `refer-person` attribute (not final yet)
+- Honza: fixed search in TrEd
+- Hana: what to do with action nouns, agent nouns in [noun-to-verbs conversion](https://github.com/ufal/UMR/tree/main/tecto2umr/derivace-podklady), see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+
+#### TODO:
+- **[Release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit)** ... postponed  
+ (Appendix: still missing examples); then publish as a technical report 
+- Markéta, Hanka: conversion of _být_, _mít_ frames 
+- Markéta: polite, mode attribute  (as Github issues)?
+- Hanka: noun-to-verb conversion - next steps for Honza (as Github issues)?
+- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
+ (This would significantly speed up the annotation!)
+
+
+#### NEXT meetings
+- Monday, May 26, S510
+
 ## Monday, May 5, 2025
 
 (Dan, Federica, Hanka, Jan Š., Markéta)
