@@ -10,6 +10,11 @@
 - Honza: conversion of the `refer-number` attribute almost final (ML will check the converted data), some improvements in the `refer-person` attribute (not final yet)
 - Honza: fixed search in TrEd
 - Hana: what to do with action nouns, agent nouns in [noun-to-verbs conversion](https://github.com/ufal/UMR/tree/main/tecto2umr/derivace-podklady), see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+- summary: conversion nouns that denote events (e.g., koncert from koncertovat, běh from běhat) identified based on annotation from previous project with Magda 
+- manually annotated them for whether it is possible to assign them to a single verbs frame (that they would likely have in all occurrences) [annotation_file_conversion](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/conversion_action_nouns_annotation.tsv)
+- 137 converted nouns were mapped to a single PDT-Vallex frame 
+- out of them, those which are available in PDT-Vallex are also annotated for how the form of their valency slots (e.g., case, preposition) maps to PropBank-style arguments (with some, the mapping is unfortunately ambiguous, especially with the genitive form between ARG0 and ARG1)
+- final file for conversion with all the mapping that was possible so far:[final_mapping_file_conversion]( https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/conversion_action_nouns_final.tsv)
 
 #### TODO:
 - **[Release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit)** ... postponed  
@@ -23,6 +28,19 @@
 
 #### NEXT meetings
 - Monday, May 26, S510
+
+## Monday, May 12, 2025
+
+(Dan, Hanka, Jan Š., Markéta)
+- Hanka: indentifying nouns denoting events - progress:
+- conversion nouns that denote events (e.g., koncert from koncertovat, běh from běhat) and agent nouns identified based on annotation from previous project with Magda [conversion_source_file](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/summarisation.xlsx),  [agent_nouns_source_file](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/agent-nouns_GOLD.tsv), 
+- for conversion nouns, we tok all that were annotated in all 50 occurrences as "action", for agent nouns, we took those that were never found to be inanimate (and therefore shouldn't be ambiguous between an agentive and intrumental reading)
+- conversion nouns often have both perfective and imperfective verb available + the verbs often have multiple frames available (only 65 have a single verbal counterpart that has a single valency frame) -> for next time, try whether they could be mapped manually to a single verb frame that would likely apply to all the noun¨s occurrences 
+- for agent nouns, there are 401 that map to a verb with a single valency frame and 384 that map onto a verb with multiple frames [agent_nouns_single_frame_file](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/agent_nouns_single_frame.tsv),  [agent_nouns_multiple_frames_file](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/agent_nouns_multiple_frames.tsv)
+- I also searched NomVallex for nouns that only have one frame and that frame has the semantic category "action" - 91 such nouns, all of the -ní/-tí variety [NomVallex_action_nouns_single_frame_file](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/nomvallex_lexemes_single_frame_action.tsv)
+
+
+
 
 ## Monday, May 5, 2025
 
