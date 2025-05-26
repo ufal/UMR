@@ -10,7 +10,7 @@ conversion_action_nouns_final.tsv = file with action noun + corresponding verb's
 - files:
 	- agent_nouns_single_frame.tsv = list of agent nouns + their base verbs that only have 1 valency frame in PDT-Vallex + the valency frame identifiers (401 verbs)
 
-	- agent_nouns_multiple_frames.tsv = list of agent nouns + their base verbs that have multiple valency frame in PDT-Vallex  + the valency frames identifiers (384 verbs)
+	- agent_nouns_multiple_frames.tsv = list of agent nouns + their base verbs that have multiple valency frame in PDT-Vallex  + the valency frames identifiers (384 verbs) + the chosen valency frame that corresponds to the agent noun in (very likely) all occurrences, if possible (235 such nouns)
 	
 2) ACTION NOUNS IN NOMVALLEX
 - I searched NomVallex for nouns that only have one lexical unit (one entry, one valency frame) in NomVallex and that lexical unit is marked as semantic category = "action"

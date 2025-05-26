@@ -1,384 +1,414 @@
-verb 	 pdt_valency_frame 	 agent_noun
-balit 	 v41dsA, v41dsB, v41dsC, v41dsD, v41dsE 	 balič
-bavit 	 v41eiA, v41eiB 	 bavič
-běžet 	 v41fdA, v41fdB, v41fdC, v41fdD, v41fdE, v41fdF, v41fdG, v41fdH, v41fdI 	 běženec, běžec
-bít 	 v41fkA, v41fkB, v41fkC, v41fkD 	 bijec
-bodovat 	 v41gmA, v41gmB 	 bodovač
-bojovat 	 v41gsA, v41gsB, v41gsC 	 bojovník
-bouřit 	 v41hiA, v41hiB 	 buřič
-brázdit 	 v41hwA, v41hwB 	 brázdič
-bruslit 	 v41iqA, v41iqB 	 bruslař
-budit 	 v41izA, v41izB 	 buditel
-budovat 	 v41jdA, v41jdB 	 budovatel
-cvičit 	 v41mfA, v41mfB, v41mfC 	 cvičitel
-čekat 	 v41mtA, v41mtB, v41mtC, v41mtD, v41mtE, v41mtF 	 čekatel
-čerpat 	 v41naA, v41naB 	 čerpač
-česat 	 v41neA, v41neB, v41neC 	 česač, česáč
-číst 	 v41nuA, v41nuB, v41nuC, v41nuD, v41nuE 	 čtenář
-dělat 	 v41reA, v41reB, v41reC, v41reD, v41reE, v41reF, v41reG, v41reH, v41reI, v41reJ, v41reK, v41reL, v41reM, v41reN, v41reO, v41reP, v41reQ, v41reR, v41reS, v41reT, v41reU, v41reV, v41reW, v41reX, v41reY, v41reZ, v41reAA, v41reAB, v41reAC, v41reAD, v41reAE, v41reAF, v41reAG, v41reAH, v41reAI, v41reAJ, v41reAK, v41reAL, v41reAM, v41reAN, v41reAO, v41reAP, v41reAQ, v41reAR, v41reAS 	 dělník
-dláždit 	 v41vgA, v41vgB 	 dlaždič
-dlužit 	 v41vkA, v41vkB, v41vkC 	 dlužník
-dodat 	 v41wuA, v41wuB, v41wuC, v41wuD, v41wuE 	 dodatel
-dodávat 	 v41wzA, v41wzB, v41wzC, v41wzD 	 dodavatel
-dojit 	 v41zcA, v41zcB 	 dojič
-donášet 	 v41abnA, v41abnB, v41abnC 	 donašeč
-doporučit 	 v41adbA, v41adbB 	 doporučitel
-dopravit 	 v41adnA, v41adnB 	 dopravce
-doprovázet 	 v41advA, v41advB, v41advC, v41advD 	 doprovazeč
-doručit 	 v41aeoA, v41aeoB 	 doručitel
-doručovat 	 v41aeqA, v41aeqB 	 doručovatel
-dorůst 	 v41aesA, v41aesB 	 dorostenec
-dovršit 	 v41ajaA, v41ajaB 	 dovršitel
-držet 	 v41alcA, v41alcB, v41alcC, v41alcD, v41alcE, v41alcF, v41alcG, v41alcH, v41alcI, v41alcJ, v41alcK, v41alcL, v41alcM, v41alcN, v41alcO, v41alcP, v41alcQ, v41alcR, v41alcS, v41alcT, v41alcU, v41alcV, v41alcW, v41alcX, v41alcY, v41alcZ, v41alcAA, v41alcAB, v41alcAC, v41alcAD, v41alcAE, v41alcAF, v41alcAG, v41alcAH 	 držitel
-dusit 	 v41alyA, v41alyB, v41alyC, v41alyD 	 dusitel
-foukat 	 v41arvA, v41arvB, v41arvC 	 fukač, foukač
-házet 	 v41aupA, v41aupB, v41aupC, v41aupD, v41aupE, v41aupF, v41aupG 	 házeč
-hlásat 	 v41avcA, v41avcB, v41avcC 	 hlasatel
-hlásit 	 v41avfA, v41avfB, v41avfC 	 hlásník
-hledat 	 v41avoA, v41avoB, v41avoC 	 hledač
-hodit 	 v41awlA, v41awlB, v41awlC, v41awlD, v41awlE, v41awlF, v41awlG, v41awlH, v41awlI 	 hodař
-hodnotit 	 v41awqA, v41awqB, v41awqC 	 hodnotitel
-honit 	 v41axbA, v41axbB, v41axbC, v41axbD 	 honec, honič, honák
-hraničit 	 v41ayoA, v41ayoB 	 hraničník
-hrát 	 v41aypA, v41aypB, v41aypC, v41aypD, v41aypE, v41aypF, v41aypG, v41aypH, v41aypI, v41aypJ, v41aypK, v41aypL, v41aypM, v41aypN, v41aypO, v41aypP, v41aypQ, v41aypR 	 herec, hráč
-hýbat 	 v41baaA, v41baaB 	 hybatel
-chodit 	 v41bbiA, v41bbiB, v41bbiC, v41bbiD, v41bbiE, v41bbiF, v41bbiG, v41bbiH, v41bbiI, v41bbiJ, v41bbiK, v41bbiL, v41bbiM, v41bbiN, v41bbiO, v41bbiP 	 chodec
-chovat 	 v41bbqA, v41bbqB, v41bbqC, v41bbqD, v41bbqE 	 chovatel
-jednat 	 v41bhrA, v41bhrB, v41bhrC, v41bhrD 	 jednatel
-jmenovat 	 v41biqA, v41biqB, v41biqC, v41biqD 	 jmenovec
-klást 	 v41bkwA, v41bkwB, v41bkwC, v41bkwD, v41bkwE, v41bkwF, v41bkwG, v41bkwH, v41bkwI, v41bkwJ, v41bkwK, v41bkwL 	 kladeč
-konat 	 v41boyA, v41boyB 	 konatel
-kopat 	 v41bsgA, v41bsgB, v41bsgC, v41bsgD 	 kopáč
-kouřit 	 v41bttA, v41bttB 	 kuřák
-krotit 	 v41bvjA, v41bvjB 	 krotitel
-ladit 	 v41bxxA, v41bxxB, v41bxxC 	 ladič
-lámat 	 v41bydA, v41bydB, v41bydC, v41bydD, v41bydE, v41bydF 	 lamač
-léčit 	 v41byqA, v41byqB 	 léčitel, lékař
-letět 	 v41bzxA, v41bzxB, v41bzxC, v41bzxD, v41bzxE, v41bzxF, v41bzxG, v41bzxH 	 letec
-lézt 	 v41cabA, v41cabB, v41cabC, v41cabD, v41cabE 	 lezec
-lhát 	 v41cafA, v41cafB 	 lhář
-líčit 	 v41casA, v41casB 	 líčitel
-lít 	 v41cbnA, v41cbnB, v41cbnC, v41cbnD, v41cbnE 	 litec
-loupit 	 v41cciA, v41cciB 	 lupič
-lovit 	 v41cclA, v41cclB, v41cclC 	 lovec, lovčí
-mazat 	 v41cfaA, v41cfaB 	 mazač, mazák
-míchat 	 v41cgeA, v41cgeB, v41cgeC, v41cgeD, v41cgeE, v41cgeF, v41cgeG 	 míchač
-mířit 	 v41chcA, v41chcB, v41chcC, v41chcD, v41chcE 	 miřič
-mít 	 v41chlA, v41chlB, v41chlC, v41chlD, v41chlE, v41chlF, v41chlG, v41chlH, v41chlI, v41chlJ, v41chlK, v41chlL, v41chlM, v41chlN, v41chlO, v41chlP, v41chlQ, v41chlR, v41chlS, v41chlT, v41chlU, v41chlV, v41chlW, v41chlX, v41chlY, v41chlZ, v41chlAA, v41chlAB, v41chlAC, v41chlAD, v41chlAE, v41chlAF, v41chlAG, v41chlAH, v41chlAI, v41chlAJ, v41chlAK, v41chlAL, v41chlAM, v41chlAN, v41chlAO, v41chlAP, v41chlAQ, v41chlAR, v41chlAS, v41chlAT, v41chlAU, v41chlAV, v41chlAW, v41chlAX, v41chlAY, v41chlAZ, v41chlBA, v41chlBB, v41chlBC, v41chlBD, v41chlBE, v41chlBF, v41chlBG, v41chlBH, v41chlBI, v41chlBJ, v41chlBK, v41chlBL, v41chlBM, v41chlBN, v41chlBO, v41chlBP, v41chlBQ, v41chlBR, v41chlBS, v41chlBT, v41chlBU, v41chlBV, v41chlBW, v41chlBX, v41chlBY, v41chlBZ, v41chlCA, v41chlCB, v41chlCC, v41chlCD, v41chlCE, v41chlCF, v41chlCG, v41chlCH, v41chlCI, v41chlCJ, v41chlCK, v41chlCL, v41chlCM, v41chlCN, v41chlCO, v41chlCP, v41chlCQ, v41chlCR, v41chlCS, v41chlCT, v41chlCU, v41chlCV, v41chlCW, v41chlCX, v41chlCY, v41chlCZ, v41chlDA, v41chlDB, v41chlDC, v41chlDD, v41chlDE, v41chlDF, v41chlDG, v41chlDH, v41chlDI, v41chlDJ, v41chlDK, v41chlDL, v41chlDM, v41chlDN, v41chlDO, v41chlDP, v41chlDQ, v41chlDR, v41chlDS, v41chlDT, v41chlDU, v41chlDV, v41chlDW, v41chlDX, v41chlDY, v41chlDZ, v41chlEA, v41chlEB, v41chlEC, v41chlED, v41chlEE, v41chlEF, v41chlEG, v41chlEH, v41chlEI, v41chlEJ, v41chlEK, v41chlEL, v41chlEM, v41chlEN, v41chlEO, v41chlEP, v41chlEQ, v41chlER, v41chlES, v41chlET, v41chlEU, v41chlEV, v41chlEW, v41chlEX, v41chlEY, v41chlEZ, v41chlFA, v41chlFB, v41chlFC, v41chlFD, v41chlFE, v41chlFF, v41chlFG, v41chlFH, v41chlFI, v41chlFJ, v41chlFK, v41chlFL, v41chlFM, v41chlFN, v41chlFO, v41chlFP, v41chlFQ, v41chlFR, v41chlFS, v41chlFT, v41chlFU, v41chlFV, v41chlFW, v41chlFX, v41chlFY 	 majitel
-mlátit 	 v41chqA, v41chqB, v41chqC, v41chqD, v41chqE 	 mlatec, mlátič
-mlít 	 v41chuA, v41chuB 	 mleč
-mluvit 	 v41chxA, v41chxB, v41chxC, v41chxD, v41chxE, v41chxF, v41chxG, v41chxH, v41chxI, v41chxJ, v41chxK, v41chxL, v41chxM 	 mluvčí
-mydlit 	 v41ckgA, v41ckgB 	 mydlič
-myslit 	 v41cklA, v41cklB, v41cklC, v41cklD, v41cklE, v41cklF 	 myslitel
-nabývat 	 v41cmmA, v41cmmB 	 nabyvatel
-nahazovat 	 v41cpnA, v41cpnB 	 nahazovač
-nahnat 	 v41cpxA, v41cpxB 	 náhončí
-nahradit 	 v41cqbA, v41cqbB, v41cqbC 	 náhradník
-nahrávat 	 v41cqeA, v41cqeB, v41cqeC 	 nahrávač
-nakládat 	 v41crzA, v41crzB, v41crzC, v41crzD, v41crzE 	 nakladatel
-nalézt 	 v41ctyA, v41ctyB, v41ctyC 	 nálezce
-namluvit 	 v41cvkA, v41cvkB, v41cvkC 	 námluvčí
-napadnout 	 v41cwhA, v41cwhB, v41cwhC, v41cwhD 	 nápadník
-naplňovat 	 v41cxcA, v41cxcB 	 naplňovatel
-napomáhat 	 v41cxsA, v41cxsB, v41cxsC 	 napomáhač, napomahač
-narážet 	 v41cyzA, v41cyzB, v41cyzC, v41cyzD, v41cyzE 	 narážeč
-následovat 	 v41dboA, v41dboB, v41dboC 	 následovatel, následovník, následník
-násobit 	 v41dcbA, v41dcbB 	 násobitel
-nastupovat 	 v41ddpA, v41ddpB, v41ddpC, v41ddpD 	 nástupník, nástupce
-navádět 	 v41dfmA, v41dfmB 	 návodce
-navazovat 	 v41dfuA, v41dfuB, v41dfuC, v41dfuD 	 navazovatel
-navrhnout 	 v41dgxA, v41dgxB, v41dgxC, v41dgxD 	 návrhář
-navrhovat 	 v41dhaA, v41dhaB, v41dhaC, v41dhaD 	 navrhovatel
-navštěvovat 	 v41dhjA, v41dhjB 	 návštěvník
-nosit 	 v41dloA, v41dloB, v41dloC, v41dloD, v41dloE 	 nositel
-obětovat 	 v41doeA, v41doeB 	 obětník
-obhájit 	 v41dojA, v41dojB 	 obhájce
-objednat 	 v41dpjA, v41dpjB 	 objednatel
-obnovovat 	 v41drlA, v41drlB 	 obnovovatel
-obsluhovat 	 v41dtfA, v41dtfB 	 obsluhovatel, obsluhovač
-obstarávat 	 v41dthA, v41dthB 	 obstaravatel
-oceňovat 	 v41duvA, v41duvB 	 oceňovatel
-odhadnout 	 v41dzpA, v41dzpB 	 odhadce
-odhalovat 	 v41dzuA, v41dzuB 	 odhalovatel
-odchytit 	 v41eawA, v41eawB 	 odchytář
-odkazovat 	 v41ebjA, v41ebjB, v41ebjC, v41ebjD 	 odkazovník
-odmítat 	 v41eecA, v41eecB, v41eecC, v41eecD 	 odmítač
-odporovat 	 v41eggA, v41eggB 	 odpůrce
-odvolat 	 v41enfA, v41enfB, v41enfC 	 odvolatel
-ohlašovat 	 v41eoqA, v41eoqB 	 ohlašovatel
-omlouvat 	 v41etrA, v41etrB 	 omlouvač
-opatrovat 	 v41eutA, v41eutB 	 opatrovatel, opatrovník
-opravit 	 v41exdA, v41exdB 	 oprávce, opravce, opravář
-opravovat 	 v41exjA, v41exjB, v41exjC 	 opravovatel
-osvětlovat 	 v41fbfA, v41fbfB 	 osvětlovač
-osvobodit 	 v41fblA, v41fblB 	 osvoboditel
-otevírat 	 v41fdbA, v41fdbB, v41fdbC, v41fdbD, v41fdbE, v41fdbF, v41fdbG, v41fdbH 	 otevírač
-ovládat 	 v41feyA, v41feyB, v41feyC 	 ovladatel
-označovat 	 v41fgbA, v41fgbB, v41fgbC 	 označovatel
-oznamovat 	 v41fggA, v41fggB, v41fggC, v41fggD 	 oznamovač
-oživovat 	 v41fhaA, v41fhaB, v41fhaC 	 oživovatel
-pálit 	 v41fhzA, v41fhzB, v41fhzC, v41fhzD, v41fhzE 	 páleník, palič
-pást 	 v41fjkA, v41fjkB 	 pasák
-pěstovat 	 v41fkwA, v41fkwB 	 pěstovatel
-pět 	 v41fkzA, v41fkzB, v41fkzC, v41fkzD, v41fkzE 	 pěvec
-pilovat 	 v41flkA, v41flkB 	 pilař
-pískat 	 v41flqA, v41flqB 	 pískač
-plachtit 	 v41fmfA, v41fmfB 	 plachtař
-platit 	 v41fmtA, v41fmtB, v41fmtC, v41fmtD, v41fmtE, v41fmtF, v41fmtG, v41fmtH, v41fmtI 	 platič, plátce
-plavat 	 v41fmxA, v41fmxB, v41fmxC, v41fmxD 	 plavčík, plavec
-plést 	 v41fnhA, v41fnhB, v41fnhC, v41fnhD 	 pletař
-plnit 	 v41fnsA, v41fnsB 	 plnitel
-plodit 	 v41fnvA, v41fnvB, v41fnvC 	 ploditel
-počítat 	 v41fpzA, v41fpzB, v41fpzC, v41fpzD, v41fpzE, v41fpzF, v41fpzG 	 počtář
-podat 	 v41fqjA, v41fqjB, v41fqjC, v41fqjD, v41fqjE, v41fqjF, v41fqjG, v41fqjH, v41fqjI, v41fqjJ, v41fqjK, v41fqjL 	 podatel
-podávat 	 v41fqoA, v41fqoB, v41fqoC, v41fqoD, v41fqoE, v41fqoF, v41fqoG, v41fqoH, v41fqoI, v41fqoJ, v41fqoK, v41fqoL, v41fqoM 	 podavatel, podavač
-podělit 	 v41frbA, v41frbB 	 podílník
-podněcovat 	 v41fteA, v41fteB 	 podněcovatel, podněcovač
-podnikat 	 v41ftjA, v41ftjB, v41ftjC, v41ftjD 	 podnikatel
-podpisovat 	 v41ftxA, v41ftxB 	 podpisovatel
-podporovat 	 v41fufA, v41fufB, v41fufC 	 podporovatel, podpůrce
-podrazit 	 v41fukA, v41fukB 	 podrazák
-pohánět 	 v41fwnA, v41fwnB 	 poháněč
-pohřbít 	 v41fxyA, v41fxyB 	 pohřebník
-pojmenovat 	 v41gaeA, v41gaeB, v41gaeC 	 pojmenovatel
-pokořit 	 v41gbbA, v41gbbB 	 pokořitel
-pokračovat 	 v41gbkA, v41gbkB, v41gbkC, v41gbkD 	 pokračovatel
-pokročit 	 v41gboA, v41gboB 	 pokrokář
-pokrývat 	 v41gbvA, v41gbvB, v41gbvC, v41gbvD 	 pokrývač
-polykat 	 v41gdvA, v41gdvB 	 polykač
-pomáhat 	 v41gdxA, v41gdxB, v41gdxC 	 pomáhač, pomahač
-porážet 	 v41giyA, v41giyB, v41giyC 	 porážeč
-poručit 	 v41gjsA, v41gjsB 	 poručník, poručík
-porušovat 	 v41gjxA, v41gjxB 	 porušovatel
-pořizovat 	 v41gknA, v41gknB, v41gknC 	 pořizovatel
-poskytovat 	 v41gmaA, v41gmaB 	 poskytovatel
-poslouchat 	 v41gmkA, v41gmkB, v41gmkC 	 posluchač
-postoupit 	 v41gnsA, v41gnsB, v41gnsC, v41gnsD 	 postupník
-potápět 	 v41gqdA, v41gqdB, v41gqdC 	 potápěč
-povzbuzovat 	 v41gviA, v41gviB 	 povzbuzovatel, povzbuzovač
-pozorovat 	 v41gwxA, v41gwxB 	 pozorovatel
-požírat 	 v41gxsA, v41gxsB 	 požírač
-požívat 	 v41gxxA, v41gxxB 	 poživatel, poživač
-pracovat 	 v41gyaA, v41gyaB, v41gyaC, v41gyaD, v41gyaE, v41gyaF 	 pracovník
-prát 	 v41gynA, v41gynB 	 práč
-proměnit 	 v41hhjA, v41hhjB, v41hhjC 	 proměnitel
-pronajímat 	 v41hitA, v41hitB 	 pronajímatel
-pronajmout 	 v41hivA, v41hivB 	 pronájemce
-prorážet 	 v41hlqA, v41hlqB 	 prorážeč
-provádět 	 v41hquA, v41hquB, v41hquC, v41hquD, v41hquE, v41hquF, v41hquG, v41hquH 	 průvodčí
-provozovat 	 v41hsaA, v41hsaB, v41hsaC 	 provozovatel, provozář, provozák
-prozkoumat 	 v41hsgA, v41hsgB 	 průzkumník
-prožívat 	 v41hsuA, v41hsuB 	 proživatel
-předbíhat 	 v41hvmA, v41hvmB 	 předbíhač
-předcházet 	 v41hwnA, v41hwnB, v41hwnC, v41hwnD 	 předchůdce
-přednášet 	 v41hxeA, v41hxeB, v41hxeC, v41hxeD 	 přednašeč
-představit 	 v41hyfA, v41hyfB, v41hyfC, v41hyfD 	 představitel
-překračovat 	 v41iciA, v41iciB, v41iciC, v41iciD 	 překračovatel
-přenášet 	 v41ifbA, v41ifbB, v41ifbC, v41ifbD, v41ifbE 	 přenášeč, přenašeč
-přerušovat 	 v41ihuA, v41ihuB 	 přerušovatel
-přestoupit 	 v41ijpA, v41ijpB, v41ijpC 	 přestupitel
-převádět 	 v41imcA, v41imcB, v41imcC 	 převáděč, převodce
-převézt 	 v41imrA, v41imrB 	 převozník
-přidávat 	 v41ipyA, v41ipyB, v41ipyC 	 přidavač
-přidělit 	 v41iqgA, v41iqgB 	 přídělce
-přihlížet 	 v41iraA, v41iraB 	 přihlížeč
-přijímat 	 v41isfA, v41isfB, v41isfC, v41isfD, v41isfE, v41isfF, v41isfG, v41isfH 	 přijímatel
-přijmout 	 v41isjA, v41isjB, v41isjC, v41isjD, v41isjE, v41isjF, v41isjG, v41isjH, v41isjI 	 příjemce
-přikládat 	 v41isoA, v41isoB 	 přikladač
-přikyvovat 	 v41itgA, v41itgB 	 přikyvovač
-přinášet 	 v41iulA, v41iulB, v41iulC, v41iulD, v41iulE, v41iulF 	 přinašeč
-připravit 	 v41iwwA, v41iwwB, v41iwwC, v41iwwD 	 přípravář
-připravovat 	 v41iwzA, v41iwzB, v41iwzC, v41iwzD 	 připravovatel
-příslušet 	 v41iyjA, v41iyjB, v41iyjC, v41iyjD 	 příslušník
-přispívat 	 v41iywA, v41iywB, v41iywC 	 přispívatel, přispěvatel
-přivézt 	 v41jbjA, v41jbjB 	 přívozník
-psát 	 v41jdcA, v41jdcB, v41jdcC, v41jdcD, v41jdcE, v41jdcF, v41jdcG, v41jdcH 	 pisatel, psanec, písař
-pumpovat 	 v41jdvA, v41jdvB 	 pumpař
-působit 	 v41jebA, v41jebB, v41jebC, v41jebD, v41jebE, v41jebF, v41jebG 	 působitel
-radit 	 v41jevA, v41jevB 	 rádce
-razit 	 v41jfiA, v41jfiB 	 razič
-rodit 	 v41jkzA, v41jkzB 	 roditel, rodič, rodák
-rozdělovat 	 v41jnlA, v41jnlB 	 rozdělovatel
-rozesílat 	 v41joyA, v41joyB 	 rozesílatel
-rozhazovat 	 v41jpzA, v41jpzB, v41jpzC 	 rozhazovač
-rozhodnout 	 v41jqhA, v41jqhB, v41jqhC, v41jqhD 	 rozhodčí, rozhodce
-rozhodovat 	 v41jqlA, v41jqlB, v41jqlC, v41jqlD 	 rozhodovatel
-rozmnožit 	 v41juaA, v41juaB 	 rozmnožitel
-roznášet 	 v41jupA, v41jupB, v41jupC 	 roznašeč
-rozšiřovat 	 v41jzaA, v41jzaB, v41jzaC 	 rozšiřovatel
-rušit 	 v41kcqA, v41kcqB, v41kcqC 	 rušitel
-řešit 	 v41kdxA, v41kdxB 	 řešitel
-řezat 	 v41keaA, v41keaB, v41keaC 	 řezník, řezáč, řezač
-řídit 	 v41kegA, v41kegB, v41kegC 	 řiditel, ředitel, řidič
-sázet 	 v41kfhA, v41kfhB, v41kfhC, v41kfhD, v41kfhE 	 sazeč
-sbírat 	 v41kfqA, v41kfqB, v41kfqC, v41kfqD 	 sběratel
-sdělovat 	 v41kgkA, v41kgkB 	 sdělovatel, sdělovač
-sepisovat 	 v41kiwA, v41kiwB 	 sepisovatel
-sestavit 	 v41kkgA, v41kkgB 	 sestavitel
-sestavovat 	 v41kkjA, v41kkjB 	 sestavovatel
-schovat 	 v41knoA, v41knoB 	 schovatel
-schvalovat 	 v41knzA, v41knzB 	 schvalovatel
-skládat 	 v41kqdA, v41kqdB, v41kqdC, v41kqdD, v41kqdE, v41kqdF, v41kqdG 	 skladatel, skladník, skládač
-sklízet 	 v41kqpA, v41kqpB 	 sklízeč
-slavit 	 v41ksgA, v41ksgB 	 slavitel
-sledovat 	 v41kslA, v41kslB, v41kslC, v41kslD, v41kslE 	 sledovatel
-složit 	 v41ktwA, v41ktwB, v41ktwC, v41ktwD, v41ktwE, v41ktwF, v41ktwG, v41ktwH, v41ktwI, v41ktwJ, v41ktwK, v41ktwL, v41ktwM 	 složitel
-směnit 	 v41kuxA, v41kuxB 	 směnař
-snímat 	 v41kxeA, v41kxeB 	 snímatel
-soudit 	 v41kykA, v41kykB, v41kykC 	 sudič, soudce
-spalovat 	 v41lafA, v41lafB 	 spalovač
-spát 	 v41lalA, v41lalB 	 spáč
-spojit 	 v41lcuA, v41lcuB, v41lcuC, v41lcuD, v41lcuE 	 spojař
-spojovat 	 v41ldaA, v41ldaB, v41ldaC, v41ldaD, v41ldaE 	 spojovatel
-spravit 	 v41lfmA, v41lfmB, v41lfmC 	 správec, správce
-srážet 	 v41lgiA, v41lgiB 	 srážeč
-stáčet 	 v41lhdA, v41lhdB 	 stáčeč
-stahovat 	 v41lhoA, v41lhoB, v41lhoC, v41lhoD, v41lhoE, v41lhoF 	 stahovač
-stavět 	 v41lixA, v41lixB, v41lixC, v41lixD, v41lixE, v41lixF, v41lixG, v41lixH 	 stavěč, stavař
-stavit 	 v41lizA, v41lizB, v41lizC 	 stavitel
-stěhovat 	 v41ljkA, v41ljkB 	 stěhovák
-stíhat 	 v41ljxA, v41ljxB, v41ljxC 	 stíhatel, stíhač, stihač
-stlačit 	 v41lkmA, v41lkmB, v41lkmC 	 stlačitel
-strašit 	 v41llsA, v41llsB, v41llsC 	 strašák
-strhávat 	 v41lmeA, v41lmeB, v41lmeC 	 strhávač
-strojit 	 v41lmnA, v41lmnB 	 strůjce
-střelit 	 v41lnaA, v41lnaB, v41lnaC, v41lnaD, v41lnaE, v41lnaF 	 střelec
-stříkat 	 v41lnpA, v41lnpB, v41lnpC, v41lnpD 	 stříkač
-svést 	 v41lqkA, v41lqkB, v41lqkC, v41lqkD, v41lqkE 	 svůdce
-světit 	 v41lqlA, v41lqlB 	 světitel, světec
-svolávat 	 v41lrcA, v41lrcB 	 svolavatel
-šířit 	 v41ltdA, v41ltdB 	 šiřitel
-šít 	 v41ltfA, v41ltfB 	 švec
-školit 	 v41ltpA, v41ltpB 	 školitel
-škrtit 	 v41ltxA, v41ltxB 	 škrtič
-štípat 	 v41lvhA, v41lvhB, v41lvhC 	 štípač
-štvát 	 v41lvsA, v41lvsB 	 štváč
-tepat 	 v41lxvA, v41lxvB 	 tepač
-těšit 	 v41lygA, v41lygB 	 těšitel
-těžit 	 v41lypA, v41lypB 	 těžař
-tipovat 	 v41lyxA, v41lyxB 	 tipař
-tisknout 	 v41lzaA, v41lzaB 	 tiskař
-tlumočit 	 v41lzpA, v41lzpB 	 tlumočník
-trávit 	 v41mblA, v41mblB 	 travič
-trhat 	 v41mccA, v41mccB, v41mccC 	 trhač
-troubit 	 v41mcpA, v41mcpB, v41mcpC 	 trubač
-trpět 	 v41mctA, v41mctB, v41mctC, v41mctD 	 trpitel
-třídit 	 v41mdqA, v41mdqB 	 tříditel, třídič
-tvořit 	 v41mepA, v41mepB, v41mepC 	 tvořitel, tvůrce
-učinit 	 v41mgwA, v41mgwB, v41mgwC, v41mgwD, v41mgwE, v41mgwF, v41mgwG, v41mgwH, v41mgwI, v41mgwJ, v41mgwK, v41mgwL 	 učinitel
-udávat 	 v41mhpA, v41mhpB, v41mhpC, v41mhpD, v41mhpE, v41mhpF 	 udavač
-udeřit 	 v41mhzA, v41mhzB, v41mhzC, v41mhzD, v41mhzE 	 úderník
-udílet 	 v41micA, v41micB 	 udíleč
-udržet 	 v41milA, v41milB, v41milC, v41milD, v41milE, v41milF, v41milG, v41milH 	 udržitel
-udržovat 	 v41miqA, v41miqB, v41miqC, v41miqD, v41miqE, v41miqF, v41miqG 	 udržovatel
-uchvátit 	 v41mkjA, v41mkjB 	 uchvatitel
-ukazovat 	 v41mlqA, v41mlqB, v41mlqC, v41mlqD, v41mlqE, v41mlqF, v41mlqG 	 ukazovatel
-ukládat 	 v41mlvA, v41mlvB, v41mlvC, v41mlvD, v41mlvE 	 ukládač
-uletět 	 v41mnqA, v41mnqB 	 úleťák
-uložit 	 v41mogA, v41mogB, v41mogC, v41mogD 	 uložitel
-umožňovat 	 v41mppA, v41mppB 	 umožňovatel
-unést 	 v41mqeA, v41mqeB, v41mqeC, v41mqeD, v41mqeE 	 únosce
-upevnit 	 v41mquA, v41mquB, v41mquC, v41mquD 	 upevnitel
-upravit 	 v41mstA, v41mstB, v41mstC 	 úpravce
-upravovat 	 v41msvA, v41msvB 	 upravovatel, upravovač
-určovat 	 v41mttA, v41mttB, v41mttC, v41mttD, v41mttE 	 určovatel
-uskutečnit 	 v41mvpA, v41mvpB 	 uskutečnitel
-ustanovit 	 v41mxvA, v41mxvB, v41mxvC 	 ustanovitel
-utíkat 	 v41mzzA, v41mzzB, v41mzzC 	 utíkač, útěkář
-utrácet 	 v41nbdA, v41nbdB 	 utráceč
-uvádět 	 v41nccA, v41nccB, v41nccC, v41nccD, v41nccE, v41nccF, v41nccG, v41nccH, v41nccI, v41nccJ, v41nccK 	 uváděč, uvaděč
-uzdravovat 	 v41nesA, v41nesB 	 uzdravovatel
-užívat 	 v41nfpA, v41nfpB, v41nfpC, v41nfpD 	 uživatel
-válčit 	 v41ngdA, v41ngdB, v41ngdC 	 válečník
-vázat 	 v41nhcA, v41nhcB, v41nhcC, v41nhcD, v41nhcE, v41nhcF, v41nhcG, v41nhcH 	 vazač
-vážit 	 v41nhhA, v41nhhB, v41nhhC, v41nhhD 	 vážič
-vědět 	 v41nihA, v41nihB, v41nihC, v41nihD, v41nihE, v41nihF 	 vědec
-velet 	 v41niwA, v41niwB 	 velitel
-věřit 	 v41njsA, v41njsB, v41njsC, v41njsD, v41njsE 	 věřitel
-vést 	 v41njvA, v41njvB, v41njvC, v41njvD, v41njvE, v41njvF, v41njvG, v41njvH, v41njvI, v41njvJ, v41njvK, v41njvL, v41njvM, v41njvN, v41njvO, v41njvP, v41njvQ, v41njvR, v41njvS, v41njvT, v41njvU, v41njvV, v41njvW, v41njvX 	 vůdce
-vkládat 	 v41nmdA, v41nmdB 	 vkladatel
-vládnout 	 v41nmnA, v41nmnB, v41nmnC 	 vládce, vladař
-vnímat 	 v41nodA, v41nodB, v41nodC 	 vnímatel
-volit 	 v41novA, v41novB 	 volitel, volič
-vozit 	 v41nozA, v41nozB 	 vozač, vozič
-vrátit 	 v41npzA, v41npzB, v41npzC, v41npzD, v41npzE, v41npzF 	 vratník
-vrtat 	 v41nqxA, v41nqxB, v41nqxC 	 vrtač, vrtař
-vybíjet 	 v41ntvA, v41ntvB 	 vybíječ
-vybírat 	 v41ntyA, v41ntyB, v41ntyC 	 výběrčí, vyběrač
-vydat 	 v41nwvA, v41nwvB, v41nwvC, v41nwvD, v41nwvE, v41nwvF, v41nwvG, v41nwvH, v41nwvI, v41nwvJ, v41nwvK, v41nwvL, v41nwvM, v41nwvN, v41nwvO 	 výdejce
-vydávat 	 v41nwzA, v41nwzB, v41nwzC, v41nwzD, v41nwzE, v41nwzF, v41nwzG, v41nwzH 	 vydavatel, vydavač
-vyhlašovat 	 v41nzhA, v41nzhB 	 vyhlašovatel
-vyhotovit 	 v41oalA, v41oalB 	 vyhotovitel
-vyhrát 	 v41obaA, v41obaB 	 výherce
-vychovat 	 v41ociA, v41ociB 	 vychovatel
-vyjadřovat 	 v41oddA, v41oddB, v41oddC 	 vyjadřovatel
-vyjednávat 	 v41odnA, v41odnB 	 vyjednavatel, vyjednávač, vyjednavač
-vykládat 	 v41oeyA, v41oeyB, v41oeyC, v41oeyD, v41oeyE, v41oeyF, v41oeyG 	 vykladatel
-vykonat 	 v41ofpA, v41ofpB, v41ofpC 	 vykonatel
-vykonávat 	 v41ofsA, v41ofsB, v41ofsC 	 vykonavatel, vykonavač
-vykoupit 	 v41ogfA, v41ogfB, v41ogfC 	 vykupitel, výkupčí, výkupce
-vymetat 	 v41okeA, v41okeB 	 vymetač, vymeták
-vynášet 	 v41omiA, v41omiB, v41omiC, v41omiD, v41omiE 	 vynašeč
-vypisovat 	 v41ooeA, v41ooeB, v41ooeC, v41ooeD 	 vypisovatel
-vypouštět 	 v41oqjA, v41oqjB 	 vypouštěč
-vyprávět 	 v41orhA, v41orhB 	 vyprávěč, vypravěč
-vypravit 	 v41oriA, v41oriB 	 vypravitel, výpravčí
-vypravovat 	 v41orkA, v41orkB, v41orkC 	 vypravovatel
-vyřezávat 	 v41ouxA, v41ouxB 	 vyřezávač
-vyřizovat 	 v41oveA, v41oveB, v41oveC, v41oveD 	 vyřizovač
-vysávat 	 v41ovlA, v41ovlB, v41ovlC 	 vysávač
-vysílat 	 v41ovzA, v41ovzB, v41ovzC, v41ovzD 	 vysílatel, vysilatel
-vystavit 	 v41oxwA, v41oxwB, v41oxwC, v41oxwD 	 vystavitel, výstavce, výstavář
-vystavovat 	 v41oxyA, v41oxyB, v41oxyC 	 vystavovatel
-vyšetřovat 	 v41paoA, v41paoB 	 vyšetřovatel, vyšetřovák
-vytrhnout 	 v41pdrA, v41pdrB 	 výtržník
-vyvádět 	 v41pfoA, v41pfoB, v41pfoC, v41pfoD 	 vyvaděč
-vyvíjet 	 v41pgpA, v41pgpB 	 vyvíječ
-vyvolávat 	 v41phhA, v41phhB, v41phhC, v41phhD, v41phhE 	 vyvolavatel, vyvolávač
-zabezpečovat 	 v41pouA, v41pouB 	 zabezpečovatel
-zadávat 	 v41prpA, v41prpB, v41prpC 	 zadavatel
-zadržovat 	 v41psgA, v41psgB 	 zadržovatel
-zahajovat 	 v41psrA, v41psrB, v41psrC 	 zahajovatel, zahajovač
-zahánět 	 v41psxA, v41psxB, v41psxC 	 zaháněč
-zahubit 	 v41pudA, v41pudB 	 záhubce
-zachovat 	 v41pukA, v41pukB, v41pukC, v41pukD, v41pukE, v41pukF 	 zachovatel
-zachránit 	 v41pupA, v41pupB 	 zachránce, záchranář
-zachycovat 	 v41pvaA, v41pvaB, v41pvaC 	 zachycovatel
-zajímat 	 v41pvtA, v41pvtB 	 zájemce
-zajistit 	 v41pvyA, v41pvyB, v41pvyC, v41pvyD 	 zajistitel
-zajišťovat 	 v41pwcA, v41pwcB, v41pwcC 	 zajišťovatel
-zakládat 	 v41pwsA, v41pwsB, v41pwsC, v41pwsD, v41pwsE 	 zakladatel
-zakopat 	 v41pxrA, v41pxrB, v41pxrC, v41pxrD 	 zákopník
-založit 	 v41qaiA, v41qaiB, v41qaiC, v41qaiD, v41qaiE 	 záložník
-zaměstnat 	 v41qbcA, v41qbcB 	 zaměstnatel
-zaměstnávat 	 v41qbfA, v41qbfB 	 zaměstnavatel
-zanedbat 	 v41qdbA, v41qdbB 	 zanedbatel
-zápasit 	 v41qeiA, v41qeiB 	 zápasník
-zapisovat 	 v41qetA, v41qetB, v41qetC 	 zapisovatel
-zařizovat 	 v41qjsA, v41qjsB 	 zařizovatel
-zasahovat 	 v41qkaA, v41qkaB, v41qkaC, v41qkaD, v41qkaE 	 zasahovatel
-zasazovat 	 v41qkdA, v41qkdB 	 zasazovač
-zaskočit 	 v41qksA, v41qksB, v41qksC, v41qksD 	 záskokář
-zastavovat 	 v41qmiA, v41qmiB, v41qmiC, v41qmiD 	 zastavovatel
-zastoupit 	 v41qmrA, v41qmrB 	 zastupitel
-zasvěcovat 	 v41qnqA, v41qnqB 	 zasvěcovatel
-zasvětit 	 v41qnrA, v41qnrB, v41qnrC 	 zasvětitel
-zavádět 	 v41qrmA, v41qrmB, v41qrmC, v41qrmD, v41qrmE 	 závodčí
-zavézt 	 v41qssA, v41qssB 	 závozník
-zaznamenat 	 v41qurA, v41qurB, v41qurC, v41qurD, v41qurE 	 zaznamenatel
-zaznamenávat 	 v41qutA, v41qutB, v41qutC, v41qutD 	 zaznamenavatel
-zdobit 	 v41qyhA, v41qyhB 	 zdobitel
-zírat 	 v41reeA, v41reeB, v41reeC 	 zíratel
-zkoušet 	 v41rgtA, v41rgtB, v41rgtC, v41rgtD, v41rgtE, v41rgtF 	 zkoušeč
-zlobit 	 v41riwA, v41riwB 	 zlobič
-znásilňovat 	 v41rnaA, v41rnaB 	 znásilňovatel
-znát 	 v41rnfA, v41rnfB, v41rnfC, v41rnfD, v41rnfE, v41rnfF 	 znatel
-zpívat 	 v41rsnA, v41rsnB, v41rsnC, v41rsnD, v41rsnE 	 zpěvák
-zplodit 	 v41rsuA, v41rsuB 	 zploditel
-zpracovat 	 v41rtxA, v41rtxB, v41rtxC, v41rtxD 	 zpracovatel
-zprostředkovat 	 v41rumA, v41rumB 	 zprostředkovatel
-zvedat 	 v41sawA, v41sawB 	 zvedač
-zvonit 	 v41sclA, v41sclB, v41sclC 	 zvoník, zvonař
-žádat 	 v41sdqA, v41sdqB 	 žadatel
-žalovat 	 v41sdwA, v41sdwB, v41sdwC, v41sdwD 	 žalovatel, žalobce
-živit 	 v41seoA, v41seoB 	 živitel
+verb 	 pdt_valency_frame 	 agent_noun	chosen_frame
+balit 	 v41dsA, v41dsB, v41dsC, v41dsD, v41dsE 	 balič	v41dsA
+bavit 	 v41eiA, v41eiB 	 bavič	v41eiA
+běžet 	 v41fdA, v41fdB, v41fdC, v41fdD, v41fdE, v41fdF, v41fdG, v41fdH, v41fdI 	 běžec	v41fdA
+bít 	 v41fkA, v41fkB, v41fkC, v41fkD 	 bijec	
+bodovat 	 v41gmA, v41gmB 	 bodovač	v41gmB
+bojovat 	 v41gsA, v41gsB, v41gsC 	 bojovník	v41gsA
+bouřit se	 v41hiA, v41hiB 	 buřič	v41hjA
+brázdit 	 v41hwA, v41hwB 	 brázdič	v41hwB
+bruslit 	 v41iqA, v41iqB 	 bruslař	v41iqB
+budit 	 v41izA, v41izB 	 buditel	
+budovat 	 v41jdA, v41jdB 	 budovatel	v41jdB
+cvičit 	 v41mfA, v41mfB, v41mfC 	 cvičitel	v41mfB
+čekat 	 v41mtA, v41mtB, v41mtC, v41mtD, v41mtE, v41mtF 	 čekatel	v41mtC
+čerpat 	 v41naA, v41naB 	 čerpač	
+česat 	 v41neA, v41neB, v41neC 	 česač, česáč	v41neB
+číst 	 v41nuA, v41nuB, v41nuC, v41nuD, v41nuE 	 čtenář	v41nuD
+dělat 	 v41reA, v41reB, v41reC, v41reD, v41reE, v41reF, v41reG, v41reH, v41reI, v41reJ, v41reK, v41reL, v41reM, v41reN, v41reO, v41reP, v41reQ, v41reR, v41reS, v41reT, v41reU, v41reV, v41reW, v41reX, v41reY, v41reZ, v41reAA, v41reAB, v41reAC, v41reAD, v41reAE, v41reAF, v41reAG, v41reAH, v41reAI, v41reAJ, v41reAK, v41reAL, v41reAM, v41reAN, v41reAO, v41reAP, v41reAQ, v41reAR, v41reAS 	 dělník	v41reT
+dláždit 	 v41vgA, v41vgB 	 dlaždič	v41vgA
+dlužit 	 v41vkA, v41vkB, v41vkC 	 dlužník	
+dodat 	 v41wuA, v41wuB, v41wuC, v41wuD, v41wuE 	 dodatel	v41wuA
+dodávat 	 v41wzA, v41wzB, v41wzC, v41wzD 	 dodavatel	v41wzA
+dojit 	 v41zcA, v41zcB 	 dojič	v41zcA
+donášet 	 v41abnA, v41abnB, v41abnC 	 donašeč	v41abnA
+doporučit 	 v41adbA, v41adbB 	 doporučitel	v41adbA
+dopravit 	 v41adnA, v41adnB 	 dopravce	v41adnB
+doprovázet 	 v41advA, v41advB, v41advC, v41advD 	 doprovazeč	v41advC
+doručit 	 v41aeoA, v41aeoB 	 doručitel	v41aeoB
+doručovat 	 v41aeqA, v41aeqB 	 doručovatel	v41aeqA
+dorůst 	 v41aesA, v41aesB 	 dorostenec	
+dovršit 	 v41ajaA, v41ajaB 	 dovršitel	v41ajaB
+držet 	 v41alcA, v41alcB, v41alcC, v41alcD, v41alcE, v41alcF, v41alcG, v41alcH, v41alcI, v41alcJ, v41alcK, v41alcL, v41alcM, v41alcN, v41alcO, v41alcP, v41alcQ, v41alcR, v41alcS, v41alcT, v41alcU, v41alcV, v41alcW, v41alcX, v41alcY, v41alcZ, v41alcAA, v41alcAB, v41alcAC, v41alcAD, v41alcAE, v41alcAF, v41alcAG, v41alcAH 	 držitel	v41alcI
+dusit 	 v41alyA, v41alyB, v41alyC, v41alyD 	 dusitel	v41alyD
+foukat 	 v41arvA, v41arvB, v41arvC 	 foukač	v41arvA
+házet 	 v41aupA, v41aupB, v41aupC, v41aupD, v41aupE, v41aupF, v41aupG 	 házeč	v41aupC
+hlásat 	 v41avcA, v41avcB, v41avcC 	 hlasatel	v41avcC
+hlásit 	 v41avfA, v41avfB, v41avfC 	 hlásník	v41avfB
+hledat 	 v41avoA, v41avoB, v41avoC 	 hledač	v41avoB
+hodit 	 v41awlA, v41awlB, v41awlC, v41awlD, v41awlE, v41awlF, v41awlG, v41awlH, v41awlI 	 hodař	
+hodnotit 	 v41awqA, v41awqB, v41awqC 	 hodnotitel	v41awqC
+honit 	 v41axbA, v41axbB, v41axbC, v41axbD 	 honec, honič, honák	v41axbB
+hraničit 	 v41ayoA, v41ayoB 	 hraničník	
+hrát 	 v41aypA, v41aypB, v41aypC, v41aypD, v41aypE, v41aypF, v41aypG, v41aypH, v41aypI, v41aypJ, v41aypK, v41aypL, v41aypM, v41aypN, v41aypO, v41aypP, v41aypQ, v41aypR 	 herec	v41aypD
+hrát 	 v41aypA, v41aypB, v41aypC, v41aypD, v41aypE, v41aypF, v41aypG, v41aypH, v41aypI, v41aypJ, v41aypK, v41aypL, v41aypM, v41aypN, v41aypO, v41aypP, v41aypQ, v41aypR 	 hráč	v41aypA
+hýbat 	 v41baaA, v41baaB 	 hybatel	v41baaA
+chodit 	 v41bbiA, v41bbiB, v41bbiC, v41bbiD, v41bbiE, v41bbiF, v41bbiG, v41bbiH, v41bbiI, v41bbiJ, v41bbiK, v41bbiL, v41bbiM, v41bbiN, v41bbiO, v41bbiP 	 chodec	v41bbiK
+chovat 	 v41bbqA, v41bbqB, v41bbqC, v41bbqD, v41bbqE 	 chovatel	v41bbqB
+jednat 	 v41bhrA, v41bhrB, v41bhrC, v41bhrD 	 jednatel	v41bhrA
+jmenovat se	 v41biqA, v41biqB, v41biqC, v41biqD 	 jmenovec	
+klást 	 v41bkwA, v41bkwB, v41bkwC, v41bkwD, v41bkwE, v41bkwF, v41bkwG, v41bkwH, v41bkwI, v41bkwJ, v41bkwK, v41bkwL 	 kladeč	v41bkwB
+konat 	 v41boyA, v41boyB 	 konatel	v41boyA
+kopat 	 v41bsgA, v41bsgB, v41bsgC, v41bsgD 	 kopáč	v41bsgA
+kouřit 	 v41bttA, v41bttB 	 kuřák	v41bttA
+krotit 	 v41bvjA, v41bvjB 	 krotitel	
+ladit 	 v41bxxA, v41bxxB, v41bxxC 	 ladič	v41bxxA
+lámat 	 v41bydA, v41bydB, v41bydC, v41bydD, v41bydE, v41bydF 	 lamač	
+léčit 	 v41byqA, v41byqB 	 léčitel	
+léčit 	 v41byqA, v41byqB 	 lékař	
+letět 	 v41bzxA, v41bzxB, v41bzxC, v41bzxD, v41bzxE, v41bzxF, v41bzxG, v41bzxH 	 letec	v41bzxA
+lézt 	 v41cabA, v41cabB, v41cabC, v41cabD, v41cabE 	 lezec	v41cabB
+lhát 	 v41cafA, v41cafB 	 lhář	v41cafA
+líčit 	 v41casA, v41casB 	 líčitel	
+lít 	 v41cbnA, v41cbnB, v41cbnC, v41cbnD, v41cbnE 	 litec	
+loupit 	 v41cciA, v41cciB 	 lupič	v41cciB
+lovit 	 v41cclA, v41cclB, v41cclC 	 lovec	v41cclB
+lovit 	 v41cclA, v41cclB, v41cclC 	 lovčí	v41cclB
+mazat 	 v41cfaA, v41cfaB 	 mazač	v41cfaA
+míchat 	 v41cgeA, v41cgeB, v41cgeC, v41cgeD, v41cgeE, v41cgeF, v41cgeG 	 míchač	
+mířit 	 v41chcA, v41chcB, v41chcC, v41chcD, v41chcE 	 miřič	
+mít 	 v41chlA, v41chlB, v41chlC, v41chlD, v41chlE, v41chlF, v41chlG, v41chlH, v41chlI, v41chlJ, v41chlK, v41chlL, v41chlM, v41chlN, v41chlO, v41chlP, v41chlQ, v41chlR, v41chlS, v41chlT, v41chlU, v41chlV, v41chlW, v41chlX, v41chlY, v41chlZ, v41chlAA, v41chlAB, v41chlAC, v41chlAD, v41chlAE, v41chlAF, v41chlAG, v41chlAH, v41chlAI, v41chlAJ, v41chlAK, v41chlAL, v41chlAM, v41chlAN, v41chlAO, v41chlAP, v41chlAQ, v41chlAR, v41chlAS, v41chlAT, v41chlAU, v41chlAV, v41chlAW, v41chlAX, v41chlAY, v41chlAZ, v41chlBA, v41chlBB, v41chlBC, v41chlBD, v41chlBE, v41chlBF, v41chlBG, v41chlBH, v41chlBI, v41chlBJ, v41chlBK, v41chlBL, v41chlBM, v41chlBN, v41chlBO, v41chlBP, v41chlBQ, v41chlBR, v41chlBS, v41chlBT, v41chlBU, v41chlBV, v41chlBW, v41chlBX, v41chlBY, v41chlBZ, v41chlCA, v41chlCB, v41chlCC, v41chlCD, v41chlCE, v41chlCF, v41chlCG, v41chlCH, v41chlCI, v41chlCJ, v41chlCK, v41chlCL, v41chlCM, v41chlCN, v41chlCO, v41chlCP, v41chlCQ, v41chlCR, v41chlCS, v41chlCT, v41chlCU, v41chlCV, v41chlCW, v41chlCX, v41chlCY, v41chlCZ, v41chlDA, v41chlDB, v41chlDC, v41chlDD, v41chlDE, v41chlDF, v41chlDG, v41chlDH, v41chlDI, v41chlDJ, v41chlDK, v41chlDL, v41chlDM, v41chlDN, v41chlDO, v41chlDP, v41chlDQ, v41chlDR, v41chlDS, v41chlDT, v41chlDU, v41chlDV, v41chlDW, v41chlDX, v41chlDY, v41chlDZ, v41chlEA, v41chlEB, v41chlEC, v41chlED, v41chlEE, v41chlEF, v41chlEG, v41chlEH, v41chlEI, v41chlEJ, v41chlEK, v41chlEL, v41chlEM, v41chlEN, v41chlEO, v41chlEP, v41chlEQ, v41chlER, v41chlES, v41chlET, v41chlEU, v41chlEV, v41chlEW, v41chlEX, v41chlEY, v41chlEZ, v41chlFA, v41chlFB, v41chlFC, v41chlFD, v41chlFE, v41chlFF, v41chlFG, v41chlFH, v41chlFI, v41chlFJ, v41chlFK, v41chlFL, v41chlFM, v41chlFN, v41chlFO, v41chlFP, v41chlFQ, v41chlFR, v41chlFS, v41chlFT, v41chlFU, v41chlFV, v41chlFW, v41chlFX, v41chlFY 	 majitel	
+mlátit 	 v41chqA, v41chqB, v41chqC, v41chqD, v41chqE 	 mlatec	v41chqA
+mlátit 	 v41chqA, v41chqB, v41chqC, v41chqD, v41chqE 	 mlátič	v41chqB
+mlít 	 v41chuA, v41chuB 	 mleč	v41chuA
+mluvit 	 v41chxA, v41chxB, v41chxC, v41chxD, v41chxE, v41chxF, v41chxG, v41chxH, v41chxI, v41chxJ, v41chxK, v41chxL, v41chxM 	 mluvčí	v41chxC
+mydlit 	 v41ckgA, v41ckgB 	 mydlič	
+myslet 	 v41cklA, v41cklB, v41cklC, v41cklD, v41cklE, v41cklF 	 myslitel	v41ckjE
+nabývat 	 v41cmmA, v41cmmB 	 nabyvatel	
+nahazovat 	 v41cpnA, v41cpnB 	 nahazovač	v41cpnA
+nahnat 	 v41cpxA, v41cpxB 	 náhončí	v41cpxB
+nahradit 	 v41cqbA, v41cqbB, v41cqbC 	 náhradník	v41cqbC
+nahrávat 	 v41cqeA, v41cqeB, v41cqeC 	 nahrávač	
+nakládat 	 v41crzA, v41crzB, v41crzC, v41crzD, v41crzE 	 nakladatel	
+nalézt 	 v41ctyA, v41ctyB, v41ctyC 	 nálezce	v41ctyA
+namluvit 	 v41cvkA, v41cvkB, v41cvkC 	 námluvčí	v41cvkA
+napadnout 	 v41cwhA, v41cwhB, v41cwhC, v41cwhD 	 nápadník	
+naplňovat 	 v41cxcA, v41cxcB 	 naplňovatel	v41cxcB
+napomáhat 	 v41cxsA, v41cxsB, v41cxsC 	 napomáhač, napomahač	
+narážet 	 v41cyzA, v41cyzB, v41cyzC, v41cyzD, v41cyzE 	 narážeč	
+následovat 	 v41dboA, v41dboB, v41dboC 	 následovatel	v41dboA
+následovat 	 v41dboA, v41dboB, v41dboC 	 následovník	v41dboA
+následovat 	 v41dboA, v41dboB, v41dboC 	 následník	v41dboA
+násobit 	 v41dcbA, v41dcbB 	 násobitel	
+nastupovat 	 v41ddpA, v41ddpB, v41ddpC, v41ddpD 	 nástupník	v41ddpC
+nastupovat 	 v41ddpA, v41ddpB, v41ddpC, v41ddpD 	 nástupce	v41ddpC
+navádět 	 v41dfmA, v41dfmB 	 návodce	v41dfmB
+navazovat 	 v41dfuA, v41dfuB, v41dfuC, v41dfuD 	 navazovatel	v41dfuC
+navrhnout 	 v41dgxA, v41dgxB, v41dgxC, v41dgxD 	 návrhář	v41dgxD
+navrhovat 	 v41dhaA, v41dhaB, v41dhaC, v41dhaD 	 navrhovatel	v41dhaA
+navštěvovat 	 v41dhjA, v41dhjB 	 návštěvník	v41dhjA
+nosit 	 v41dloA, v41dloB, v41dloC, v41dloD, v41dloE 	 nositel	v41dloB
+obětovat 	 v41doeA, v41doeB 	 obětník	v41doeB
+obhajovat	 v41dojA, v41dojB 	 obhájce	v41donA
+objednat 	 v41dpjA, v41dpjB 	 objednatel	v41dpjA
+obnovovat 	 v41drlA, v41drlB 	 obnovovatel	
+obsluhovat 	 v41dtfA, v41dtfB 	 obsluhovatel, obsluhovač	v41dtfA
+obstarávat 	 v41dthA, v41dthB 	 obstaravatel	
+oceňovat 	 v41duvA, v41duvB 	 oceňovatel	v41duvA
+odhadnout 	 v41dzpA, v41dzpB 	 odhadce	v41dzpA
+odhalovat 	 v41dzuA, v41dzuB 	 odhalovatel	v41dzuB
+odchytit 	 v41eawA, v41eawB 	 odchytář	v41eawB
+odkazovat 	 v41ebjA, v41ebjB, v41ebjC, v41ebjD 	 odkazovník	
+odmítat 	 v41eecA, v41eecB, v41eecC, v41eecD 	 odmítač	
+odporovat 	 v41eggA, v41eggB 	 odpůrce	v41eggA
+odvolat 	 v41enfA, v41enfB, v41enfC 	 odvolatel	v41enfC
+ohlašovat 	 v41eoqA, v41eoqB 	 ohlašovatel	
+omlouvat 	 v41etrA, v41etrB 	 omlouvač	v41etrB
+opatrovat 	 v41eutA, v41eutB 	 opatrovatel	
+opatrovat 	 v41eutA, v41eutB 	 opatrovník	v41eutB
+opravit 	 v41exdA, v41exdB 	 oprávce, opravce, opravář	v41exdB
+opravovat 	 v41exjA, v41exjB, v41exjC 	 opravovatel	
+osvětlovat 	 v41fbfA, v41fbfB 	 osvětlovač	
+osvobodit 	 v41fblA, v41fblB 	 osvoboditel	
+otevírat 	 v41fdbA, v41fdbB, v41fdbC, v41fdbD, v41fdbE, v41fdbF, v41fdbG, v41fdbH 	 otevírač	
+ovládat 	 v41feyA, v41feyB, v41feyC 	 ovladatel	v41feyC
+označovat 	 v41fgbA, v41fgbB, v41fgbC 	 označovatel	
+oznamovat 	 v41fggA, v41fggB, v41fggC, v41fggD 	 oznamovač	
+oživovat 	 v41fhaA, v41fhaB, v41fhaC 	 oživovatel	
+pálit 	 v41fhzA, v41fhzB, v41fhzC, v41fhzD, v41fhzE 	 páleník	
+pálit 	 v41fhzA, v41fhzB, v41fhzC, v41fhzD, v41fhzE 	 palič	v41fhzB
+pást 	 v41fjkA, v41fjkB 	 pasák	
+pěstovat 	 v41fkwA, v41fkwB 	 pěstovatel	
+pět 	 v41fkzA, v41fkzB, v41fkzC, v41fkzD, v41fkzE 	 pěvec	v41fkzE
+pilovat 	 v41flkA, v41flkB 	 pilař	v41flkB
+pískat 	 v41flqA, v41flqB 	 pískač	
+plachtit 	 v41fmfA, v41fmfB 	 plachtař	
+platit 	 v41fmtA, v41fmtB, v41fmtC, v41fmtD, v41fmtE, v41fmtF, v41fmtG, v41fmtH, v41fmtI 	 platič, plátce	
+plavat 	 v41fmxA, v41fmxB, v41fmxC, v41fmxD 	 plavčík	
+plavat 	 v41fmxA, v41fmxB, v41fmxC, v41fmxD 	 plavec	v41fmxA
+plést 	 v41fnhA, v41fnhB, v41fnhC, v41fnhD 	 pletař	v41fnhA
+plnit 	 v41fnsA, v41fnsB 	 plnitel	
+plodit 	 v41fnvA, v41fnvB, v41fnvC 	 ploditel	v41fnvB
+počítat 	 v41fpzA, v41fpzB, v41fpzC, v41fpzD, v41fpzE, v41fpzF, v41fpzG 	 počtář	v41fpzB
+podat 	 v41fqjA, v41fqjB, v41fqjC, v41fqjD, v41fqjE, v41fqjF, v41fqjG, v41fqjH, v41fqjI, v41fqjJ, v41fqjK, v41fqjL 	 podatel	
+podávat 	 v41fqoA, v41fqoB, v41fqoC, v41fqoD, v41fqoE, v41fqoF, v41fqoG, v41fqoH, v41fqoI, v41fqoJ, v41fqoK, v41fqoL, v41fqoM 	 podavatel	
+podávat 	 v41fqoA, v41fqoB, v41fqoC, v41fqoD, v41fqoE, v41fqoF, v41fqoG, v41fqoH, v41fqoI, v41fqoJ, v41fqoK, v41fqoL, v41fqoM 	 podavač	
+podělit 	 v41frbA, v41frbB 	 podílník	
+podněcovat 	 v41fteA, v41fteB 	 podněcovatel, podněcovač	
+podnikat 	 v41ftjA, v41ftjB, v41ftjC, v41ftjD 	 podnikatel	v41ftjB
+podpisovat 	 v41ftxA, v41ftxB 	 podpisovatel	v41ftxA
+podporovat 	 v41fufA, v41fufB, v41fufC 	 podporovatel, podpůrce	
+podrazit 	 v41fukA, v41fukB 	 podrazák	
+pohánět 	 v41fwnA, v41fwnB 	 poháněč	
+pohřbít 	 v41fxyA, v41fxyB 	 pohřebník	v41fxyA
+pojmenovat 	 v41gaeA, v41gaeB, v41gaeC 	 pojmenovatel	v41gaeA
+pokořit 	 v41gbbA, v41gbbB 	 pokořitel	v41gbbA
+pokračovat 	 v41gbkA, v41gbkB, v41gbkC, v41gbkD 	 pokračovatel	v41gbkB
+pokročit 	 v41gboA, v41gboB 	 pokrokář	
+pokrývat 	 v41gbvA, v41gbvB, v41gbvC, v41gbvD 	 pokrývač	v41gbvA
+polykat 	 v41gdvA, v41gdvB 	 polykač	
+pomáhat 	 v41gdxA, v41gdxB, v41gdxC 	 pomáhač, pomahač	
+porážet 	 v41giyA, v41giyB, v41giyC 	 porážeč	v41giyC
+poručit 	 v41gjsA, v41gjsB 	 poručník, poručík	
+porušovat 	 v41gjxA, v41gjxB 	 porušovatel	v41gjxA
+pořizovat 	 v41gknA, v41gknB, v41gknC 	 pořizovatel	v41gknA
+poskytovat 	 v41gmaA, v41gmaB 	 poskytovatel	v41gmaA
+poslouchat 	 v41gmkA, v41gmkB, v41gmkC 	 posluchač	v41gmkC
+postoupit 	 v41gnsA, v41gnsB, v41gnsC, v41gnsD 	 postupník	
+potápět se	 v41gqdA, v41gqdB, v41gqdC 	 potápěč	v41gqeA
+povzbuzovat 	 v41gviA, v41gviB 	 povzbuzovatel, povzbuzovač	
+pozorovat 	 v41gwxA, v41gwxB 	 pozorovatel	v41gwxB
+požírat 	 v41gxsA, v41gxsB 	 požírač	v41gxsB
+požívat 	 v41gxxA, v41gxxB 	 poživatel, poživač	
+pracovat 	 v41gyaA, v41gyaB, v41gyaC, v41gyaD, v41gyaE, v41gyaF 	 pracovník	v41gyaE
+prát se	 v41gynA, v41gynB 	 práč	v41gyoA
+proměnit 	 v41hhjA, v41hhjB, v41hhjC 	 proměnitel	
+pronajímat 	 v41hitA, v41hitB 	 pronajímatel	v41hitA
+pronajmout 	 v41hivA, v41hivB 	 pronájemce	v41hivA
+prorážet 	 v41hlqA, v41hlqB 	 prorážeč	
+provádět 	 v41hquA, v41hquB, v41hquC, v41hquD, v41hquE, v41hquF, v41hquG, v41hquH 	 průvodčí	
+provozovat 	 v41hsaA, v41hsaB, v41hsaC 	 provozovatel	v41hsaA
+provozovat 	 v41hsaA, v41hsaB, v41hsaC 	 provozář, provozák	
+prozkoumat 	 v41hsgA, v41hsgB 	 průzkumník	
+prožívat 	 v41hsuA, v41hsuB 	 proživatel	
+předbíhat 	 v41hvmA, v41hvmB 	 předbíhač	v41hvmB
+předcházet 	 v41hwnA, v41hwnB, v41hwnC, v41hwnD 	 předchůdce	v41hwnB
+přednášet 	 v41hxeA, v41hxeB, v41hxeC, v41hxeD 	 přednašeč	
+představovat 	 v41hyfA, v41hyfB, v41hyfC, v41hyfD 	 představitel	v41hylC
+překračovat 	 v41iciA, v41iciB, v41iciC, v41iciD 	 překračovatel	
+přenášet 	 v41ifbA, v41ifbB, v41ifbC, v41ifbD, v41ifbE 	 přenášeč, přenašeč	
+přerušovat 	 v41ihuA, v41ihuB 	 přerušovatel	
+přestoupit 	 v41ijpA, v41ijpB, v41ijpC 	 přestupitel	
+převádět 	 v41imcA, v41imcB, v41imcC 	 převáděč	v41imcC
+převádět 	 v41imcA, v41imcB, v41imcC 	 převodce	v41imcA
+převézt 	 v41imrA, v41imrB 	 převozník	v41imrA
+přidávat 	 v41ipyA, v41ipyB, v41ipyC 	 přidavač	
+přidělit 	 v41iqgA, v41iqgB 	 přídělce	
+přihlížet 	 v41iraA, v41iraB 	 přihlížeč	v41iraA
+přijímat 	 v41isfA, v41isfB, v41isfC, v41isfD, v41isfE, v41isfF, v41isfG, v41isfH 	 přijímatel	v41isfA
+přijmout 	 v41isjA, v41isjB, v41isjC, v41isjD, v41isjE, v41isjF, v41isjG, v41isjH, v41isjI 	 příjemce	v41isfA
+přikládat 	 v41isoA, v41isoB 	 přikladač	
+přikyvovat 	 v41itgA, v41itgB 	 přikyvovač	v41itgA
+přinášet 	 v41iulA, v41iulB, v41iulC, v41iulD, v41iulE, v41iulF 	 přinašeč	
+připravit 	 v41iwwA, v41iwwB, v41iwwC, v41iwwD 	 přípravář	
+připravovat 	 v41iwzA, v41iwzB, v41iwzC, v41iwzD 	 připravovatel	
+příslušet 	 v41iyjA, v41iyjB, v41iyjC, v41iyjD 	 příslušník	
+přispívat 	 v41iywA, v41iywB, v41iywC 	 přispívatel, přispěvatel	
+přivézt 	 v41jbjA, v41jbjB 	 přívozník	
+psát 	 v41jdcA, v41jdcB, v41jdcC, v41jdcD, v41jdcE, v41jdcF, v41jdcG, v41jdcH 	 pisatel, psanec, písař	
+pumpovat 	 v41jdvA, v41jdvB 	 pumpař	
+působit 	 v41jebA, v41jebB, v41jebC, v41jebD, v41jebE, v41jebF, v41jebG 	 působitel	
+radit 	 v41jevA, v41jevB 	 rádce	v41jevA
+razit 	 v41jfiA, v41jfiB 	 razič	
+rodit 	 v41jkzA, v41jkzB 	 roditel, rodič, rodák	
+rozdělovat 	 v41jnlA, v41jnlB 	 rozdělovatel	v41jnlA
+rozesílat 	 v41joyA, v41joyB 	 rozesílatel	
+rozhazovat 	 v41jpzA, v41jpzB, v41jpzC 	 rozhazovač	
+rozhodnout 	 v41jqhA, v41jqhB, v41jqhC, v41jqhD 	 rozhodčí, rozhodce	
+rozhodovat 	 v41jqlA, v41jqlB, v41jqlC, v41jqlD 	 rozhodovatel	
+rozmnožit 	 v41juaA, v41juaB 	 rozmnožitel	v41juaA
+roznášet 	 v41jupA, v41jupB, v41jupC 	 roznašeč	
+rozšiřovat 	 v41jzaA, v41jzaB, v41jzaC 	 rozšiřovatel	
+rušit 	 v41kcqA, v41kcqB, v41kcqC 	 rušitel	v41kcqA
+řešit 	 v41kdxA, v41kdxB 	 řešitel	
+řezat 	 v41keaA, v41keaB, v41keaC 	 řezník	
+řezat 	 v41keaA, v41keaB, v41keaC 	 řezáč, řezač	v41keaA
+řídit 	 v41kegA, v41kegB, v41kegC 	 řiditel, ředitel	v41kegA
+řídit 	 v41kegA, v41kegB, v41kegC 	 řidič	v41kegB
+sázet 	 v41kfhA, v41kfhB, v41kfhC, v41kfhD, v41kfhE 	 sazeč	
+sbírat 	 v41kfqA, v41kfqB, v41kfqC, v41kfqD 	 sběratel	v41kfqC
+sdělovat 	 v41kgkA, v41kgkB 	 sdělovatel, sdělovač	
+sepisovat 	 v41kiwA, v41kiwB 	 sepisovatel	v41kiwA
+sestavit 	 v41kkgA, v41kkgB 	 sestavitel	v41kkgB
+sestavovat 	 v41kkjA, v41kkjB 	 sestavovatel	
+schovat 	 v41knoA, v41knoB 	 schovatel	
+schvalovat 	 v41knzA, v41knzB 	 schvalovatel	v41knzB
+skládat 	 v41kqdA, v41kqdB, v41kqdC, v41kqdD, v41kqdE, v41kqdF, v41kqdG 	 skladatel	v41kqdD
+skládat 	 v41kqdA, v41kqdB, v41kqdC, v41kqdD, v41kqdE, v41kqdF, v41kqdG 	 skladník	v41kqdC
+skládat 	 v41kqdA, v41kqdB, v41kqdC, v41kqdD, v41kqdE, v41kqdF, v41kqdG 	 skládač	
+sklízet 	 v41kqpA, v41kqpB 	 sklízeč	v41kqpA
+slavit 	 v41ksgA, v41ksgB 	 slavitel	v41ksg
+sledovat 	 v41kslA, v41kslB, v41kslC, v41kslD, v41kslE 	 sledovatel	
+složit 	 v41ktwA, v41ktwB, v41ktwC, v41ktwD, v41ktwE, v41ktwF, v41ktwG, v41ktwH, v41ktwI, v41ktwJ, v41ktwK, v41ktwL, v41ktwM 	 složitel	
+směnit 	 v41kuxA, v41kuxB 	 směnař	
+snímat 	 v41kxeA, v41kxeB 	 snímatel	
+soudit 	 v41kykA, v41kykB, v41kykC 	 sudič	v41kylA
+soudit 	 v41kykA, v41kykB, v41kykC 	 soudce	v41kykB
+spalovat 	 v41lafA, v41lafB 	 spalovač	v41lafB
+spát 	 v41lalA, v41lalB 	 spáč	v41lalB
+spojit 	 v41lcuA, v41lcuB, v41lcuC, v41lcuD, v41lcuE 	 spojař	
+spojovat 	 v41ldaA, v41ldaB, v41ldaC, v41ldaD, v41ldaE 	 spojovatel	v41ldaC
+spravovat	 v41lfmA, v41lfmB, v41lfmC 	 správec, správce	v41lfrC
+srážet 	 v41lgiA, v41lgiB 	 srážeč	
+stáčet 	 v41lhdA, v41lhdB 	 stáčeč	
+stahovat 	 v41lhoA, v41lhoB, v41lhoC, v41lhoD, v41lhoE, v41lhoF 	 stahovač	
+stavět 	 v41lixA, v41lixB, v41lixC, v41lixD, v41lixE, v41lixF, v41lixG, v41lixH 	 stavěč	
+stavět 	 v41lixA, v41lixB, v41lixC, v41lixD, v41lixE, v41lixF, v41lixG, v41lixH 	 stavař	v41lixB
+stavit 	 v41lizA, v41lizB, v41lizC 	 stavitel	v41lizB
+stěhovat 	 v41ljkA, v41ljkB 	 stěhovák	v41ljkB
+stíhat 	 v41ljxA, v41ljxB, v41ljxC 	 stíhatel	v41ljxB
+stíhat 	 v41ljxA, v41ljxB, v41ljxC 	 stíhač, stihač	
+stlačit 	 v41lkmA, v41lkmB, v41lkmC 	 stlačitel	
+strašit 	 v41llsA, v41llsB, v41llsC 	 strašák	v41llsA
+strhávat 	 v41lmeA, v41lmeB, v41lmeC 	 strhávač	
+strojit 	 v41lmnA, v41lmnB 	 strůjce	
+střelit 	 v41lnaA, v41lnaB, v41lnaC, v41lnaD, v41lnaE, v41lnaF 	 střelec	
+stříkat 	 v41lnpA, v41lnpB, v41lnpC, v41lnpD 	 stříkač	
+svést 	 v41lqkA, v41lqkB, v41lqkC, v41lqkD, v41lqkE 	 svůdce	v41lqkD
+světit 	 v41lqlA, v41lqlB 	 světitel	v41lqlA
+světit 	 v41lqlA, v41lqlB 	 světec	
+svolávat 	 v41lrcA, v41lrcB 	 svolavatel	
+šířit 	 v41ltdA, v41ltdB 	 šiřitel	
+šít 	 v41ltfA, v41ltfB 	 švec	v41ltfA
+školit 	 v41ltpA, v41ltpB 	 školitel	v41ltpA
+škrtit 	 v41ltxA, v41ltxB 	 škrtič	v41ltxB
+štípat 	 v41lvhA, v41lvhB, v41lvhC 	 štípač	
+štvát 	 v41lvsA, v41lvsB 	 štváč	v41lvsA
+tepat 	 v41lxvA, v41lxvB 	 tepač	v41lxvA
+těšit 	 v41lygA, v41lygB 	 těšitel	v41lygA
+těžit 	 v41lypA, v41lypB 	 těžař	v41lypA
+tipovat 	 v41lyxA, v41lyxB 	 tipař	v41lyxB
+tisknout 	 v41lzaA, v41lzaB 	 tiskař	v41lzaA
+tlumočit 	 v41lzpA, v41lzpB 	 tlumočník	v41lzpA
+trávit 	 v41mblA, v41mblB 	 travič	
+trhat 	 v41mccA, v41mccB, v41mccC 	 trhač	
+troubit 	 v41mcpA, v41mcpB, v41mcpC 	 trubač	v41mcpC
+trpět 	 v41mctA, v41mctB, v41mctC, v41mctD 	 trpitel	
+třídit 	 v41mdqA, v41mdqB 	 tříditel	v41mdqB
+třídit 	 v41mdqA, v41mdqB 	 třídič	
+tvořit 	 v41mepA, v41mepB, v41mepC 	 tvořitel, tvůrce	v41mepA
+učinit 	 v41mgwA, v41mgwB, v41mgwC, v41mgwD, v41mgwE, v41mgwF, v41mgwG, v41mgwH, v41mgwI, v41mgwJ, v41mgwK, v41mgwL 	 učinitel	
+udávat 	 v41mhpA, v41mhpB, v41mhpC, v41mhpD, v41mhpE, v41mhpF 	 udavač	v41mhpA
+udeřit 	 v41mhzA, v41mhzB, v41mhzC, v41mhzD, v41mhzE 	 úderník	
+udílet 	 v41micA, v41micB 	 udíleč	v41micA
+udržet 	 v41milA, v41milB, v41milC, v41milD, v41milE, v41milF, v41milG, v41milH 	 udržitel	
+udržovat 	 v41miqA, v41miqB, v41miqC, v41miqD, v41miqE, v41miqF, v41miqG 	 udržovatel	
+uchvátit 	 v41mkjA, v41mkjB 	 uchvatitel	v41mkjA
+ukazovat 	 v41mlqA, v41mlqB, v41mlqC, v41mlqD, v41mlqE, v41mlqF, v41mlqG 	 ukazovatel	
+ukládat 	 v41mlvA, v41mlvB, v41mlvC, v41mlvD, v41mlvE 	 ukládač	
+uletět 	 v41mnqA, v41mnqB 	 úleťák	
+uložit 	 v41mogA, v41mogB, v41mogC, v41mogD 	 uložitel	
+umožňovat 	 v41mppA, v41mppB 	 umožňovatel	
+unést 	 v41mqeA, v41mqeB, v41mqeC, v41mqeD, v41mqeE 	 únosce	
+upevnit 	 v41mquA, v41mquB, v41mquC, v41mquD 	 upevnitel	v41mquD
+upravit 	 v41mstA, v41mstB, v41mstC 	 úpravce	v41mstA
+upravovat 	 v41msvA, v41msvB 	 upravovatel	v41msvA
+upravovat 	 v41msvA, v41msvB 	 upravovač	
+určovat 	 v41mttA, v41mttB, v41mttC, v41mttD, v41mttE 	 určovatel	v41mttE
+uskutečnit 	 v41mvpA, v41mvpB 	 uskutečnitel	v41mvpA
+ustanovit 	 v41mxvA, v41mxvB, v41mxvC 	 ustanovitel	v41mxvC
+utíkat 	 v41mzzA, v41mzzB, v41mzzC 	 utíkač, útěkář	v41mzzA
+utrácet 	 v41nbdA, v41nbdB 	 utráceč	v41nbdA
+uvádět 	 v41nccA, v41nccB, v41nccC, v41nccD, v41nccE, v41nccF, v41nccG, v41nccH, v41nccI, v41nccJ, v41nccK 	 uváděč, uvaděč	v41nccB
+uzdravovat 	 v41nesA, v41nesB 	 uzdravovatel	
+užívat 	 v41nfpA, v41nfpB, v41nfpC, v41nfpD 	 uživatel	v41nfpA
+válčit 	 v41ngdA, v41ngdB, v41ngdC 	 válečník	
+vázat 	 v41nhcA, v41nhcB, v41nhcC, v41nhcD, v41nhcE, v41nhcF, v41nhcG, v41nhcH 	 vazač	
+vážit 	 v41nhhA, v41nhhB, v41nhhC, v41nhhD 	 vážič	v41nhhB
+vědět 	 v41nihA, v41nihB, v41nihC, v41nihD, v41nihE, v41nihF 	 vědec	
+velet 	 v41niwA, v41niwB 	 velitel	v41niwB
+věřit 	 v41njsA, v41njsB, v41njsC, v41njsD, v41njsE 	 věřitel	
+vést 	 v41njvA, v41njvB, v41njvC, v41njvD, v41njvE, v41njvF, v41njvG, v41njvH, v41njvI, v41njvJ, v41njvK, v41njvL, v41njvM, v41njvN, v41njvO, v41njvP, v41njvQ, v41njvR, v41njvS, v41njvT, v41njvU, v41njvV, v41njvW, v41njvX 	 vůdce	v41njvK
+vkládat 	 v41nmdA, v41nmdB 	 vkladatel	v41nmdA
+vládnout 	 v41nmnA, v41nmnB, v41nmnC 	 vládce, vladař	v41nmnA
+vnímat 	 v41nodA, v41nodB, v41nodC 	 vnímatel	v41nodC
+volit 	 v41novA, v41novB 	 volitel, volič	v41novA
+vozit 	 v41nozA, v41nozB 	 vozač, vozič	v41nozB
+vrátit 	 v41npzA, v41npzB, v41npzC, v41npzD, v41npzE, v41npzF 	 vratník	
+vrtat 	 v41nqxA, v41nqxB, v41nqxC 	 vrtač, vrtař	v41nqxA
+vybíjet 	 v41ntvA, v41ntvB 	 vybíječ	
+vybírat 	 v41ntyA, v41ntyB, v41ntyC 	 výběrčí	v41ntyB
+vybírat 	 v41ntyA, v41ntyB, v41ntyC 	 vyběrač	
+vydávat 	 v41nwvA, v41nwvB, v41nwvC, v41nwvD, v41nwvE, v41nwvF, v41nwvG, v41nwvH, v41nwvI, v41nwvJ, v41nwvK, v41nwvL, v41nwvM, v41nwvN, v41nwvO 	 výdejce	v41nwzA
+vydávat 	 v41nwzA, v41nwzB, v41nwzC, v41nwzD, v41nwzE, v41nwzF, v41nwzG, v41nwzH 	 vydavatel	v41nwzG
+vydávat 	 v41nwzA, v41nwzB, v41nwzC, v41nwzD, v41nwzE, v41nwzF, v41nwzG, v41nwzH 	 vydavač	
+vyhlašovat 	 v41nzhA, v41nzhB 	 vyhlašovatel	v41nzhA
+vyhotovit 	 v41oalA, v41oalB 	 vyhotovitel	v41oalA
+vyhrát 	 v41obaA, v41obaB 	 výherce	v41obaB
+vychovávat 	 v41ociA, v41ociB 	 vychovatel	v41ockB
+vyjadřovat 	 v41oddA, v41oddB, v41oddC 	 vyjadřovatel	v41oddA
+vyjednávat 	 v41odnA, v41odnB 	 vyjednavatel, vyjednávač, vyjednavač	
+vykládat 	 v41oeyA, v41oeyB, v41oeyC, v41oeyD, v41oeyE, v41oeyF, v41oeyG 	 vykladatel	v41oeyD
+vykonat 	 v41ofpA, v41ofpB, v41ofpC 	 vykonatel	v41ofpA
+vykonávat 	 v41ofsA, v41ofsB, v41ofsC 	 vykonavatel, vykonavač	
+vykoupit 	 v41ogfA, v41ogfB, v41ogfC 	 vykupitel	v41ogfB
+vykoupit 	 v41ogfA, v41ogfB, v41ogfC 	 výkupčí, výkupce	v41ogfA
+vymetat 	 v41okeA, v41okeB 	 vymetač, vymeták	
+vynášet 	 v41omiA, v41omiB, v41omiC, v41omiD, v41omiE 	 vynašeč	
+vypisovat 	 v41ooeA, v41ooeB, v41ooeC, v41ooeD 	 vypisovatel	v41ooeD
+vypouštět 	 v41oqjA, v41oqjB 	 vypouštěč	
+vyprávět 	 v41orhA, v41orhB 	 vyprávěč, vypravěč	v41orhB
+vypravit 	 v41oriA, v41oriB 	 výpravčí	v41oriA
+vypravit 	 v41oriA, v41oriB 	 vypravitel	
+vypravovat 	 v41orkA, v41orkB, v41orkC 	 vypravovatel	
+vyřezávat 	 v41ouxA, v41ouxB 	 vyřezávač	
+vyřizovat 	 v41oveA, v41oveB, v41oveC, v41oveD 	 vyřizovač	v41oveC
+vysávat 	 v41ovlA, v41ovlB, v41ovlC 	 vysávač	
+vysílat 	 v41ovzA, v41ovzB, v41ovzC, v41ovzD 	 vysílatel, vysilatel	v41ovzD
+vystavit 	 v41oxwA, v41oxwB, v41oxwC, v41oxwD 	 vystavitel, výstavce	v41oxwC
+vystavit 	 v41oxwA, v41oxwB, v41oxwC, v41oxwD 	 výstavář	v41oxyC
+vystavovat 	 v41oxyA, v41oxyB, v41oxyC 	 vystavovatel	v41oxyC
+vyšetřovat 	 v41paoA, v41paoB 	 vyšetřovatel, vyšetřovák	v41paoB
+vytrhnout 	 v41pdrA, v41pdrB 	 výtržník	
+vyvádět 	 v41pfoA, v41pfoB, v41pfoC, v41pfoD 	 vyvaděč	v41pfoA
+vyvíjet 	 v41pgpA, v41pgpB 	 vyvíječ	
+vyvolávat 	 v41phhA, v41phhB, v41phhC, v41phhD, v41phhE 	 vyvolavatel	
+vyvolávat 	 v41phhA, v41phhB, v41phhC, v41phhD, v41phhE 	 vyvolávač	v41phhA
+zabezpečovat 	 v41pouA, v41pouB 	 zabezpečovatel	
+zadávat 	 v41prpA, v41prpB, v41prpC 	 zadavatel	v41prpA
+zadržovat 	 v41psgA, v41psgB 	 zadržovatel	
+zahajovat 	 v41psrA, v41psrB, v41psrC 	 zahajovatel, zahajovač	v41psrB
+zahánět 	 v41psxA, v41psxB, v41psxC 	 zaháněč	
+zahubit 	 v41pudA, v41pudB 	 záhubce	
+zachovat 	 v41pukA, v41pukB, v41pukC, v41pukD, v41pukE, v41pukF 	 zachovatel	v41pukD
+zachránit 	 v41pupA, v41pupB 	 zachránce, záchranář	v41pupA
+zachycovat 	 v41pvaA, v41pvaB, v41pvaC 	 zachycovatel	
+zajímat se	 v41pvtA, v41pvtB 	 zájemce	v41pvuA
+zajistit 	 v41pvyA, v41pvyB, v41pvyC, v41pvyD 	 zajistitel	v41pvyA
+zajišťovat 	 v41pwcA, v41pwcB, v41pwcC 	 zajišťovatel	v41pwcA
+založit 	 v41pwsA, v41pwsB, v41pwsC, v41pwsD, v41pwsE 	 zakladatel	v41qaiA
+zakopat 	 v41pxrA, v41pxrB, v41pxrC, v41pxrD 	 zákopník	
+založit 	 v41qaiA, v41qaiB, v41qaiC, v41qaiD, v41qaiE 	 záložník	
+zaměstnat 	 v41qbcA, v41qbcB 	 zaměstnatel	v41qbcA
+zaměstnávat 	 v41qbfA, v41qbfB 	 zaměstnavatel	v41qbfA
+zanedbat 	 v41qdbA, v41qdbB 	 zanedbatel	v41qdbA
+zápasit 	 v41qeiA, v41qeiB 	 zápasník	v41qeiA
+zapisovat 	 v41qetA, v41qetB, v41qetC 	 zapisovatel	
+zařizovat 	 v41qjsA, v41qjsB 	 zařizovatel	v41qjsA
+zasahovat 	 v41qkaA, v41qkaB, v41qkaC, v41qkaD, v41qkaE 	 zasahovatel	
+zasazovat 	 v41qkdA, v41qkdB 	 zasazovač	
+zaskočit 	 v41qksA, v41qksB, v41qksC, v41qksD 	 záskokář	v41qksC
+zastavovat 	 v41qmiA, v41qmiB, v41qmiC, v41qmiD 	 zastavovatel	
+zastupovat	 v41qmrA, v41qmrB 	 zastupitel	v41qnmA
+zasvěcovat 	 v41qnqA, v41qnqB 	 zasvěcovatel	
+zasvětit 	 v41qnrA, v41qnrB, v41qnrC 	 zasvětitel	v41qnrC
+zavádět 	 v41qrmA, v41qrmB, v41qrmC, v41qrmD, v41qrmE 	 závodčí	
+zavézt 	 v41qssA, v41qssB 	 závozník	v41qssA
+zaznamenat 	 v41qurA, v41qurB, v41qurC, v41qurD, v41qurE 	 zaznamenatel	
+zaznamenávat 	 v41qutA, v41qutB, v41qutC, v41qutD 	 zaznamenavatel	
+zdobit 	 v41qyhA, v41qyhB 	 zdobitel	v41qyhA
+zírat 	 v41reeA, v41reeB, v41reeC 	 zíratel	
+zkoušet 	 v41rgtA, v41rgtB, v41rgtC, v41rgtD, v41rgtE, v41rgtF 	 zkoušeč	
+zlobit 	 v41riwA, v41riwB 	 zlobič	v41riwA
+znásilňovat 	 v41rnaA, v41rnaB 	 znásilňovatel	v41rnaB
+znát 	 v41rnfA, v41rnfB, v41rnfC, v41rnfD, v41rnfE, v41rnfF 	 znatel	
+zpívat 	 v41rsnA, v41rsnB, v41rsnC, v41rsnD, v41rsnE 	 zpěvák	v41rsnD
+zplodit 	 v41rsuA, v41rsuB 	 zploditel	v41rsuA
+zpracovat 	 v41rtxA, v41rtxB, v41rtxC, v41rtxD 	 zpracovatel	
+zprostředkovat 	 v41rumA, v41rumB 	 zprostředkovatel	
+zvedat 	 v41sawA, v41sawB 	 zvedač	
+zvonit 	 v41sclA, v41sclB, v41sclC 	 zvoník	v41sclA
+zvonit 	 v41sclA, v41sclB, v41sclC 	 zvonař	
+žádat 	 v41sdqA, v41sdqB 	 žadatel	
+žalovat 	 v41sdwA, v41sdwB, v41sdwC, v41sdwD 	 žalovatel, žalobce	
+živit 	 v41seoA, v41seoB 	 živitel	v41seoA
