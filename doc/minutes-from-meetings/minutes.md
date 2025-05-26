@@ -1,6 +1,36 @@
 # UMR meeting minutes
 
 
+## Monday, May 26, 2025
+
+(Dan, Federica, Hanka, Jan Š., Markéta)
+
+
+#### Updates:
+- Honza: `refer-number` conversion, detected error fixed (conversion not final yet)
+- Markéta: conversion for several  *být* frames (copula, existential)
+
+#### TODO:
+- **[Release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit)** ... Appendix: still missing examples; then publish as a technical report
+- Markéta, Hanka: conversion of _být_, _mít_ frames; check AMR to UMR automatic conversion! 
+- conversion: 
+   - **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+   - `FPHR`, Github [issue 21](https://github.com/ufal/UMR/issues/21) and [issue 22](https://github.com/ufal/UMR/issues/22)
+   - nodes for #Gen, #Unsp, [issue 23](https://github.com/ufal/UMR/issues/23)
+   - `polite` attribute (todo)
+   - `mode` attribute (todo)
+   - fix **discourse rolesets with more than 2 ARGS** (as but-91)
+- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
+ (This would significantly speed up the annotation!)
+
+#### NEXT meetings
+- Monday, June 2, S510, 14:00 (not Dan)
+- Monday, June 9, S510, 13:00
+- Monday, June 16, S510, 13:00
+- Monday, June 23, S510, 13:00
+- ??? Monday, June 30 ???
+
+
 ## Monday, May 19, 2025
 
 (Dan, Federica, Hanka, Jan Š., Markéta)
