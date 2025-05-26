@@ -12,7 +12,8 @@
 
 #### TODO:
 - **[Release notes](https://docs.google.com/document/d/1v0ou24nai8gPcJxIFbk1zMMYHgUCLSDD/edit)** ... Appendix: still missing examples; then publish as a technical report
-- Markéta, Hanka: conversion of _být_, _mít_ frames; check AMR to UMR automatic conversion! 
+- Markéta, Hanka: conversion of _být_, _mít_ frames; 
+   - check AMR to UMR automatic conversion [here](https://aclanthology.org/2023.tlt-1.8/)! 
 - conversion: 
    - **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
    - `FPHR`, Github [issue 21](https://github.com/ufal/UMR/issues/21) and [issue 22](https://github.com/ufal/UMR/issues/22)
