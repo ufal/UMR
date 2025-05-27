@@ -574,6 +574,17 @@ def validate_sentence_metadata(sentence, known_ids, args):
                         testmessage = "There is a sentence gloss but the (original) Sentence line is missing."
                         warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
 
+def dominates(var0, var1, node_dict, tried):
+    if var0 in node_dict and 'relations' in node_dict[var0]:
+        children = [r['value'] for r in node_dict[var0]['relations'] if r['type'] == 'node' and r['dir'] == 'out' and r['value'] in node_dict]
+        if var1 in children:
+            return True
+        for c in children:
+            if not c in tried and dominates(c, var1, node_dict, tried):
+                return True
+            tried[c] = True
+    return False
+
 def validate_sentence_graph(sentence, node_dict, args):
     """
     Verifies the second annotation block of a sentence: the sentence level graph.
@@ -706,6 +717,10 @@ def validate_sentence_graph(sentence, node_dict, args):
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     parent['relations'][-1]['type'] = 'node'
                     parent['relations'][-1]['value'] = variable
+                    if dominates(variable, variable, node_dict, {}):
+                        testid = 'cycle'
+                        testmessage = f"The node '{variable}', first defined on line {node_dict[variable]['line0']}, dominates itself. Use inverted relations to prevent cycles."
+                        warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     pline = remove_leading_whitespace(variable_re.sub('', pline, 1))
                 elif atom_re.match(pline):
                     match = atom_re.match(pline)
