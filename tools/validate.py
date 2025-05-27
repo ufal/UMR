@@ -312,7 +312,7 @@ def sentences(inp, args):
             lines.append(line)
         else:
             testid = 'invalid-line'
-            testmessage = "Spurious line: '%s'. All non-empty lines should start with the '#' character, opening bracket, colon, node variable id, or one of the interlinear glossing keywords. Leading whitespace is permitted." % (line)
+            testmessage = f"Spurious line: '{line}'. All non-empty lines should start with the '#' character, opening bracket, colon, node variable id, or one of the interlinear glossing keywords. Leading whitespace is permitted."
             warn(testmessage, testclass, testlevel, testid)
             corrupt = True
     else: # end of file
@@ -353,7 +353,7 @@ def validate_unicode_normalization(text):
         testlevel = 1
         testclass = 'Unicode'
         testid = 'unicode-normalization'
-        testmessage = "Unicode not normalized: character[%d] is %s, should be %s." % (firsti, inpfirst, nfcfirst)
+        testmessage = f"Unicode not normalized: character[{firsti}] is {inpfirst}, should be {nfcfirst}."
         warn(testmessage, testclass, testlevel, testid)
 
 def validate_newlines(inp):
@@ -451,7 +451,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
         sid = matched[0].group(1)
         if sid in known_ids:
             testid = 'non-unique-sent-id'
-            testmessage = "Non-unique sentence id '%s'." % sid
+            testmessage = f"Non-unique sentence id '{sid}'."
             warn(testmessage, testclass, testlevel, testid, lineno=-1)
         known_ids.add(sid)
         # Save the tokens so we can access them later.
@@ -461,7 +461,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
                 empty_tokens = [x for x in tokens if x == '' or ws_re.match(x)]
                 if empty_tokens:
                     testid = 'empty-token'
-                    testmessage = "Empty token (i.e., two consecutive whitespace characters) in '%s'" % matched[0].group(2)
+                    testmessage = f"Empty token (i.e., two consecutive whitespace characters) in '{matched[0].group(2)}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=-1)
             else:
                 tokens = re.split(r"\s+", matched[0].group(2))
@@ -503,7 +503,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
                 items = re.split(r"\s+", match.group(2))
                 if header in ilg:
                     testid = 'duplicate-ilg'
-                    testmessage = "Duplicate interlinear glossing line '%s' (first occurred on line %d)." % (header, ilg[header]['line0'])
+                    testmessage = f"Duplicate interlinear glossing line '{header}' (first occurred on line {ilg[header]['line0']})."
                     warn(testmessage, 'Warning', testlevel, testid, lineno=iline)
                 ilg[header] = {'items': items, 'line0': iline}
                 if header == 'Words':
@@ -511,7 +511,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
             elif match_old:
                 header = match_old.group(1)
                 testid = 'obsolete-ilg'
-                testmessage = "Obsolete interlinear glossing line (obsolete line header '%s'; see https://github.com/ufal/UMR/issues/9)." % header
+                testmessage = f"Obsolete interlinear glossing line (obsolete line header '{header}'; see https://github.com/ufal/UMR/issues/9)."
                 warn(testmessage, 'Warning', testlevel, testid, lineno=iline)
                 if header == 'Words' or header == 'tx':
                     tokens = re.split(r"\s+", match_old.group(2))
@@ -534,20 +534,20 @@ def validate_sentence_metadata(sentence, known_ids, args):
                     n = len(ilg[header]['items'])
                     if n != m:
                         testid = 'word-gloss-mismatch'
-                        testmessage = "Words have %d items while %s have %d items." % (m, header, n)
+                        testmessage = f"Words have {m} items while {header} have {n} items."
                         warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
                     elif header == 'Index':
                         expected_items = str([str(x) for x in range(len(ilg[header]['items'])+1)[1:]])
                         observed_items = str(ilg[header]['items'])
                         if observed_items != expected_items:
                             testid = 'spurious-index'
-                            testmessage = "Incorrect index sequence.\n  Expected: %s\n  Observed: %s" % (expected_items, observed_items)
+                            testmessage = f"Incorrect index sequence.\n  Expected: {expected_items}\n  Observed: {observed_items}"
                             warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
                 elif header == 'Morphemes':
                     n = len(ilg[header]['items'])
                     if n < m:
                         testid = 'morpheme-word-mismatch'
-                        testmessage = "Words have %d items while Morphemes have only %d items." % (m, n)
+                        testmessage = f"Words have {m} items while Morphemes have only {n} items."
                         warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
                 elif re.match(r"^Morpheme Gloss \([a-z]{2,3}\)$", header):
                     n = len(ilg[header]['items'])
@@ -555,7 +555,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
                         o = len(ilg['Morphemes']['items'])
                         if n != o:
                             testid = 'morpheme-gloss-mismatch'
-                            testmessage = "Morphemes have %d items while %s have %d items." % (o, header, n)
+                            testmessage = f"Morphemes have {o} items while {header} have {n} items."
                             warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
                     else:
                         testid = 'missing-morphemes'
@@ -565,7 +565,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
                     n = len(ilg[header]['items'])
                     if n > m:
                         testid = 'sentence-word-mismatch'
-                        testmessage = "Words have only %d items while the (untokenized) Sentence has %d items." % (m, n)
+                        testmessage = f"Words have only {m} items while the (untokenized) Sentence has {n} items."
                         warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
                 elif re.match(r"^Sentence Gloss \([a-z]{2,3}\)$", header):
                     n = len(ilg[header]['items'])
@@ -613,7 +613,7 @@ def validate_sentence_graph(sentence, node_dict, args):
             if pline.startswith('('):
                 if not expecting_node_definition:
                     testid = 'extra-opening-bracket'
-                    testmessage = "Not expecting full node definition (opening bracket), found '%s'." % pline
+                    testmessage = f"Not expecting full node definition (opening bracket), found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = remove_leading_whitespace(pline[1:])
                 # Now expecting variable identifier, e.g., 's15p'.
@@ -631,7 +631,7 @@ def validate_sentence_graph(sentence, node_dict, args):
                     # The variable serves as node id. It must be unique.
                     if variable in node_dict:
                         testid = 'non-unique-node-id'
-                        testmessage = "The node id (variable) '%s' is not unique. It was previously used on line %d." % (variable, node_dict[variable]['line0'])
+                        testmessage = f"The node id (variable) '{variable}' is not unique. It was previously used on line {node_dict[variable]['line0']}."
                         warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     else:
                         # We have read the beginning of a node, including its
@@ -650,21 +650,21 @@ def validate_sentence_graph(sentence, node_dict, args):
                             pline = remove_leading_whitespace(concept_re.sub('', pline, 1))
                         else:
                             testid = 'missing-concept-string'
-                            testmessage = "Expected concept string, found '%s'." % pline
+                            testmessage = f"Expected concept string, found '{pline}'."
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     else:
                         testid = 'missing-slash'
-                        testmessage = "Expected slash and concept string, found '%s'." % pline
+                        testmessage = f"Expected slash and concept string, found '{pline}'."
                         warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     testid = 'missing-variable'
-                    testmessage = "Expected node variable id, found '%s'." % pline
+                    testmessage = f"Expected node variable id, found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 expecting_node_definition = False
             elif relation_re.match(pline):
                 if expecting_node_definition:
                     testid = 'missing-node-definition'
-                    testmessage = "Expecting full node definition (opening bracket), found '%s'." % pline
+                    testmessage = f"Expected full node definition (opening bracket), found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 match = relation_re.match(pline)
                 relation = match.group(0)
@@ -698,11 +698,11 @@ def validate_sentence_graph(sentence, node_dict, args):
                     if args.check_forward_references and not variable in sentence[1]['nodes']:
                         if variable in node_dict:
                             testid = 'cross-sentence-reference'
-                            testmessage = "Sentence level graph cannot contain nodes from other sentences: '%s' was defined on line %d." % (variable, node_dict[variable]['line0'])
+                            testmessage = f"Sentence level graph cannot contain nodes from other sentences: '{variable}' was defined on line {node_dict[variable]['line0']}."
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
                         else:
                             testid = 'unknown-node-id'
-                            testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % variable
+                            testmessage = f"The node id (variable) '{variable}' is unknown. No such node has been defined so far."
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     parent['relations'][-1]['type'] = 'node'
                     parent['relations'][-1]['value'] = variable
@@ -730,7 +730,7 @@ def validate_sentence_graph(sentence, node_dict, args):
                     parent['relations'][-1]['value'] = atom
                     pline = remove_leading_whitespace(match.group(2)+ucatom_re.sub('', pline, 1))
                     testid = 'value-wrong-chars'
-                    testmessage = "Atomic attribute value must contain neither uppercase letters nor underscores: '%s'." % (atom)
+                    testmessage = f"Atomic attribute value must contain neither uppercase letters nor underscores: '{atom}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     parent['relations'][-1]['type'] = 'node'
@@ -738,12 +738,12 @@ def validate_sentence_graph(sentence, node_dict, args):
             elif pline.startswith(')'):
                 if expecting_node_definition:
                     testid = 'missing-node-definition'
-                    testmessage = "Expecting full node definition (opening bracket), found '%s'." % pline
+                    testmessage = f"Expected full node definition (opening bracket), found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 # Check for the matching opening bracket and remove it from the stack.
                 if not stack:
                     testid = 'extra-closing-bracket'
-                    testmessage = "Found closing bracket but there was no matching opening bracket: '%s'." % pline
+                    testmessage = f"Found closing bracket but there was no matching opening bracket: '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     stack.pop()
@@ -752,11 +752,11 @@ def validate_sentence_graph(sentence, node_dict, args):
             else:
                 if expecting_node_definition:
                     testid = 'missing-node-definition'
-                    testmessage = "Expecting full node definition (opening bracket), found '%s'." % pline
+                    testmessage = f"Expected full node definition (opening bracket), found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     testid = 'invalid-sentence-level'
-                    testmessage = "Expecting colon or closing bracket, found '%s'." % pline
+                    testmessage = f"Expected colon or closing bracket, found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
     # The stack should be empty now. If not, then there were missing closing brackets!
@@ -764,7 +764,7 @@ def validate_sentence_graph(sentence, node_dict, args):
         n = len(stack)
         stacknodes = str(stack)
         testid = 'missing-closing-bracket'
-        testmessage = "Sentence graph ended without closing %d nodes: %s." % (n, stacknodes)
+        testmessage = f"Sentence graph ended without closing {n} nodes: {stacknodes}."
         warn(testmessage, testclass, testlevel, testid, lineno=iline)
     # If checking forward references is on, we know that all node references
     # either lead to defined nodes or have been reported as errors. But if it is
@@ -775,11 +775,11 @@ def validate_sentence_graph(sentence, node_dict, args):
             if not r['variable'] in sentence[1]['nodes']:
                 if r['variable'] in node_dict:
                     testid = 'cross-sentence-reference'
-                    testmessage = "Sentence level graph cannot contain nodes from other sentences: '%s' was defined on line %d." % (r['variable'], node_dict[r['variable']]['line0'])
+                    testmessage = f"Sentence level graph cannot contain nodes from other sentences: '{r['variable']}' was defined on line {node_dict[r['variable']]['line0']}."
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                 else:
                     testid = 'unknown-node-id'
-                    testmessage = "The node id (variable) '%s' is unknown. No such node is defined in this sentence." % r['variable']
+                    testmessage = f"The node id (variable) '{r['variable']}' is unknown. No such node is defined in this sentence."
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
     # Make sure that every node has the relation list, even if empty.
     for nid in sentence[1]['nodes']:
@@ -838,7 +838,7 @@ def validate_alignment(sentence, node_dict, args):
             variable = match.group(0)
             if not variable in sentence[1]['nodes']:
                 testid = 'unknown-node-id'
-                testmessage = "The node id (variable) '%s' is unknown. No such node is defined in this sentence." % variable
+                testmessage = f"The node id (variable) '{variable}' is unknown. No such node is defined in this sentence."
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
             pline = remove_leading_whitespace(variable_re.sub('', pline, 1))
             if pline.startswith(':'):
@@ -865,22 +865,22 @@ def validate_alignment(sentence, node_dict, args):
                             t1 = int(match.group(2))
                             if t0 <= old_t1 + 1:
                                 testid = 'invalid-token-range'
-                                testmessage = "Index of the first token of segment '%s' must be at least %d because the previous segment ended at %d." % (s, old_t1+2, old_t1)
+                                testmessage = f"Index of the first token of segment '{s}' must be at least {old_t1+2} because the previous segment ended at {old_t1}."
                                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                             if t1 < t0:
                                 testid = 'invalid-token-range'
-                                testmessage = "Index of the first token '%d' is greater than the index of the second token '%d'." % (t0, t1)
+                                testmessage = f"Index of the first token '{t0}' is greater than the index of the second token '{t1}'."
                                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                                 t1 = t0
                             tmax = len(sentence[0]['tokens'])
                             if t0 > tmax:
                                 testid = 'invalid-token-index'
-                                testmessage = "Index of the first token '%d' is out of range: there are %d tokens." % (t0, tmax)
+                                testmessage = f"Index of the first token '{t0}' is out of range: there are {tmax} tokens."
                                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                                 t0 = tmax
                             if t1 > tmax:
                                 testid = 'invalid-token-index'
-                                testmessage = "Index of the second token '%d' is out of range: there are %d tokens." % (t1, tmax)
+                                testmessage = f"Index of the second token '{t1}' is out of range: there are {tmax} tokens."
                                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                                 t1 = tmax
                         # The variable should be in node_dict. If it is not there,
@@ -889,14 +889,14 @@ def validate_alignment(sentence, node_dict, args):
                             # If the variable is in node_dict, it also must be a variable defined in the current sentence.
                             if variable not in sentence[1]['nodes']:
                                 testid = 'cross-sentence-alignment'
-                                testmessage = "Alignment cannot contain nodes from other sentences: '%s' was defined on line %d." % (variable, node_dict[variable]['line0'])
+                                testmessage = f"Alignment cannot contain nodes from other sentences: '{variable}' was defined on line {node_dict[variable]['line0']}."
                                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                             # There must not be multiple lines aligning the same node.
                             # However, there may be multiple alignment segments on one alignment line of the node.
                             elif 'alignment' in node_dict[variable]:
                                 if node_dict[variable]['alignment']['line0'] != iline:
                                     testid = 'duplicate-alignment'
-                                    testmessage = "Repeated alignment of node '%s'. It was already specified as %s on line %d." % (variable, str(node_dict[variable]['alignment']['tokids']), node_dict[variable]['alignment']['line0'])
+                                    testmessage = f"Repeated alignment of node '{variable}'. It was already specified as {str(node_dict[variable]['alignment']['tokids'])} on line {node_dict[variable]['alignment']['line0']}."
                                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                                 else:
                                     tokids = node_dict[variable]['alignment']['tokids']
@@ -911,15 +911,15 @@ def validate_alignment(sentence, node_dict, args):
                                 node_dict[variable]['alignment'] = {'tokids': tokids, 'tokstr': ' '.join(tokens), 'line0': iline}
                 else:
                     testid = 'invalid-token-range'
-                    testmessage = "Expecting 1-based token index range, or multiple comma-separated ranges, or '0-0', found '%s'." % pline
+                    testmessage = f"Expected 1-based token index range, or multiple comma-separated ranges, or '0-0', found {pline}."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
             else:
                 testid = 'invalid-alignment'
-                testmessage = "Expecting colon, found '%s'." % pline
+                testmessage = f"Expected colon, found '{pline}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
         else:
             testid = 'missing-variable'
-            testmessage = "Expected node variable id, found '%s'." % pline
+            testmessage = f"Expected node variable id, found '{pline}'."
             warn(testmessage, testclass, testlevel, testid, lineno=iline)
     # Check that all nodes in this sentence have an alignment.
     # Even unaligned nodes should have alignment 0-0.
@@ -928,7 +928,7 @@ def validate_alignment(sentence, node_dict, args):
         if not 'alignment' in node_dict[n]:
             if args.check_complete_alignment:
                 testid = 'missing-alignment'
-                testmessage = "Missing alignment of node '%s'. Even unaligned nodes should be explicitly marked with '0-0'." % n
+                testmessage = f"Missing alignment of node '{n}'. Even unaligned nodes should be explicitly marked with '0-0'."
                 warn(testmessage, testclass, testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
             # We will later want to access the alignment, so set the default, i.e., unaligned.
             node_dict[n]['alignment'] = {'tokids': [0], 'tokstr': '', 'line0': 0}
@@ -941,7 +941,7 @@ def validate_alignment(sentence, node_dict, args):
                 if tokal[tokid-1]:
                     if args.check_overlapping_alignment:
                         testid = 'overlapping-alignment'
-                        testmessage = "Multiple nodes aligned to token '%s'." % tokid
+                        testmessage = f"Multiple nodes aligned to token '{tokid}'."
                         warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
                 else:
                     tokal[tokid-1] = True
@@ -951,7 +951,7 @@ def validate_alignment(sentence, node_dict, args):
         for i in range(len(sentence[0]['tokens'])):
             if not tokal[i] and not is_punctuation(sentence[0]['tokens'][i]):
                 testid = 'unaligned-token'
-                testmessage = "Non-punctuation token %d ('%s') is not aligned to any node in the sentence level graph." % (i+1, sentence[0]['tokens'][i])
+                testmessage = f"Non-punctuation token {i+1} ('{sentence[0]['tokens'][i]}') is not aligned to any node in the sentence level graph."
                 warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
 
 def validate_document_level(sentence, node_dict, args):
@@ -998,7 +998,7 @@ def validate_document_level(sentence, node_dict, args):
                     expecting = 'the first node of a relation'
                 else:
                     testid = 'invalid-document-level'
-                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    testmessage = f"Expected {expecting}, found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = remove_leading_whitespace(pline[1:])
             elif svariable_re.match(pline):
@@ -1006,7 +1006,7 @@ def validate_document_level(sentence, node_dict, args):
                 variable = match.group(0)
                 if expecting != 'sentence variable id':
                     testid = 'invalid-document-level'
-                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    testmessage = f"Expected {expecting}, found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     pline = ''
                     break
@@ -1014,7 +1014,7 @@ def validate_document_level(sentence, node_dict, args):
                 # The variable serves as node id. It must be unique.
                 if variable in node_dict:
                     testid = 'non-unique-node-id'
-                    testmessage = "The node id (variable) '%s' is not unique. It was previously used on line %d." % (variable, node_dict[variable]['line0'])
+                    testmessage = f"The node id (variable) '{variable}' is not unique. It was previously used on line {node_dict[variable]['line0']}."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     node_dict[variable] = {'line0': iline}
@@ -1023,7 +1023,7 @@ def validate_document_level(sentence, node_dict, args):
                     pline = remove_leading_whitespace(pline[10:])
                 else:
                     testid = 'missing-sentence-concept'
-                    testmessage = "Expected '/ sentence', found '%s'." % pline
+                    testmessage = f"Expected '/ sentence', found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 expecting = 'relation group or final closing bracket'
             elif dvariable_re.match(pline):
@@ -1038,7 +1038,7 @@ def validate_document_level(sentence, node_dict, args):
                     expecting = 'relation closing bracket'
                 else:
                     testid = 'invalid-document-level'
-                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    testmessage = f"Expected {expecting}, found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     pline = ''
                     break
@@ -1054,7 +1054,7 @@ def validate_document_level(sentence, node_dict, args):
                     expecting = 'the second node of the relation'
                 else:
                     testid = 'invalid-document-level'
-                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    testmessage = f"Expected {expecting}, found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = remove_leading_whitespace(relation_re.sub('', pline, 1))
             elif pline.startswith(')'):
@@ -1066,12 +1066,12 @@ def validate_document_level(sentence, node_dict, args):
                     expecting = 'end of document level annotation'
                 else:
                     testid = 'invalid-document-level'
-                    testmessage = "Expecting %s, found '%s'." % (expecting, pline)
+                    testmessage = f"Expected {expecting}, found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = remove_leading_whitespace(pline[1:])
             else:
                 testid = 'invalid-document-level'
-                testmessage = "Not expecting this: '%s'." % pline
+                testmessage = f"Not expected this: '{pline}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
 
@@ -1245,7 +1245,7 @@ def validate_relations(sentence, node_dict, args):
                     known_relations[relation] = known_relations[':op1']
                 if not relation in known_relations:
                     testid = 'unknown-relation'
-                    testmessage = "Unknown relation '%s'." % r['relation']
+                    testmessage = f"Unknown relation '{r['relation']}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                 else:
                     type = known_relations[relation]['type']
@@ -1261,12 +1261,12 @@ def validate_relations(sentence, node_dict, args):
                     if type != 'attribute':
                         if r['type'] != 'node':
                             testid = 'unexpected-value'
-                            testmessage = "Expected child node because '%s' is relation, not attribute; found %s with value '%s'." % (r['relation'], r['type'], r['value'])
+                            testmessage = f"Expected child node because '{r['relation']}' is relation, not attribute; found {r['type']} with value '{r['value']}'."
                             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                     else: # type == attribute
                         if values and not r['value'] in values:
                             testid = 'unexpected-value'
-                            testmessage = "Unexpected value '%s' of attribute '%s'." % (r['value'], r['relation'])
+                            testmessage = f"Unexpected value '{r['value']}' of attribute '{r['relation']}'."
                             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
             # Check repeated same-name relations. Include incoming inverted relations.
             relations = sorted(node['relations'], key=lambda x: x['line0'])
@@ -1288,7 +1288,7 @@ def validate_relations(sentence, node_dict, args):
             for r in relations:
                 if relcount[r] > 1 and r in known_relations and not known_relations[r]['repeat'] and (args.check_duplicate_roles or known_relations[r]['type'] == 'attribute'):
                     testid = 'repeated-relation'
-                    testmessage = "Node '%s' is not supposed to have more than one relation '%s' but it has %d: first on line %d." % (nid, r, relcount[r], relfirst[r])
+                    testmessage = f"Node '{nid}' is not supposed to have more than one relation '{r}' but it has {relcount[r]}: first on line {relfirst[r]}."
                     warn(testmessage, testclass, testlevel, testid, lineno=rellast[r])
             # For :op1, :op2 etc., check that higher numbers occur only if lower numbers do.
             relations = [r for r in node['relations'] if r['dir'] == 'out' and op_re.match(r['relation'])]
@@ -1301,7 +1301,7 @@ def validate_relations(sentence, node_dict, args):
                     opnumber = relations[i]['opnumber']
                     if opnumber > i + 1:
                         testid = 'skipped-op-relation'
-                        testmessage = "Missing relation ':op%d' while there is relation ':op%d'." % (opnumber-1, opnumber)
+                        testmessage = f"Missing relation ':op{opnumber-1}' while there is relation ':op{opnumber}'."
                         warn(testmessage, testclass, testlevel, testid, lineno=relations[i]['line0'])
                         break
 
@@ -1337,7 +1337,7 @@ def validate_name(sentence, node_dict, args):
                         in_name_found = True
                     else:
                         testid = 'wrong-incoming-name'
-                        testmessage = "Incoming relation to a 'name' concept should not be '%s'." % r['relation']
+                        testmessage = f"Incoming relation to a 'name' concept should not be '{r['relation']}'."
                         warn(testmessage, 'Warning', testlevel, testid, lineno=r['line0'])
                 else:
                     if op_re.match(r['relation']):
@@ -1347,19 +1347,19 @@ def validate_name(sentence, node_dict, args):
                         # However, ':opN' of a 'name' concept should always be strings.
                         if r['type'] != 'string':
                             testid = 'unexpected-value'
-                            testmessage = "Expected string attribute of '%s', found '%s'." % (r['relation'], r['type'])
+                            testmessage = f"Expected string attribute of '{r['relation']}', found '{r['type']}'."
                             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                     else:
                         testid = 'wrong-outgoing-name'
-                        testmessage = "Outgoing relation from a 'name' concept should not be '%s'." % r['relation']
+                        testmessage = f"Outgoing relation from a 'name' concept should not be '{r['relation']}'."
                         warn(testmessage, 'Warning', testlevel, testid, lineno=r['line0'])
             if not in_name_found:
                 testid = 'missing-incoming-name'
-                testmessage = "Missing incoming ':name' relation to the 'name' concept %s." % (node['variable'])
+                testmessage = f"Missing incoming ':name' relation to the 'name' concept {node['variable']}."
                 warn(testmessage, 'Warning', testlevel, testid, lineno=node['line0'])
             if not out_op1_found:
                 testid = 'missing-outgoing-name'
-                testmessage = "Missing outgoing ':op1' relation from the 'name' concept %s." % (node['variable'])
+                testmessage = f"Missing outgoing ':op1' relation from the 'name' concept {node['variable']}."
                 warn(testmessage, 'Warning', testlevel, testid, lineno=node['line0'])
 
 def validate_wiki(sentence, node_dict, args):
@@ -1376,14 +1376,14 @@ def validate_wiki(sentence, node_dict, args):
             if r['relation'] == ':wiki':
                 if r['type'] != 'string':
                     testid = 'unexpected-value'
-                    testmessage = "Expected string attribute of '%s', found '%s'." % (r['relation'], r['type'])
+                    testmessage = f"Expected string attribute of '{r['relation']}', found '{r['type']}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                 else:
                     # At ÚFAL we require the :wiki value to be a Wikidata identifier (from URL after stripping https://wikidata.org/wiki/).
                     # The US UMR team allow article title from English Wikipedia instead, so this test is not universally applicable.
                     if not re.match(r"^Q[1-9][0-9]*$", r['value']):
                         testid = 'unexpected-value'
-                        testmessage = "Expected Wikidata id (Q+number), found '%s'." % (r['value'])
+                        testmessage = f"Expected Wikidata id (Q+number), found '{r['value']}'."
                         warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 def detect_events(sentence, node_dict, args):
@@ -1438,14 +1438,14 @@ def detect_events(sentence, node_dict, args):
                     if r['node0'] in node_dict:
                         node = node_dict[r['node0']]
                         if 'entity_reason' in node:
-                            testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
+                            testmessage = f"Node '{r['node0']}' cannot participate in :same-event relation; it is an entity because {node['entity_reason']}."
                             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                         if not 'event_reason' in node:
                             node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
                     if r['node1'] in node_dict:
                         node = node_dict[r['node1']]
                         if 'entity_reason' in node:
-                            testmessage = "Node '%s' cannot participate in :same-event relation; it is an entity because %s." % (r['node0'], node['entity_reason'])
+                            testmessage = f"Node '{r['node0']}' cannot participate in :same-event relation; it is an entity because {node['entity_reason']}."
                             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                         if not 'event_reason' in node:
                             node['event_reason'] = "it participates in a :same-event relation on line %d" % (r['line0'])
@@ -1456,14 +1456,14 @@ def detect_events(sentence, node_dict, args):
                     if r['node0'] in node_dict:
                         node = node_dict[r['node0']]
                         if 'event_reason' in node:
-                            testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node0'], node['event_reason'])
+                            testmessage = f"Node '{r['node0']}' cannot participate in :same-entity relation; it is an event because {node['event_reason']}."
                             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                         if not 'entity_reason' in node:
                             node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
                     if r['node1'] in node_dict:
                         node = node_dict[r['node1']]
                         if 'event_reason' in node:
-                            testmessage = "Node '%s' cannot participate in :same-entity relation; it is an event because %s." % (r['node1'], node['event_reason'])
+                            testmessage = f"Node '{r['node1']}' cannot participate in :same-entity relation; it is an event because {node['event_reason']}."
                             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
                         if not 'entity_reason' in node:
                             node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
@@ -1494,7 +1494,7 @@ def validate_events(sentence, node_dict, args):
             ###!!! apply to :modal-predicate.)
             if len(relations[':aspect']) < 1:
                 testid = 'missing-attribute'
-                testmessage = "Missing attribute %s. Node %s is an event because %s." % (':aspect', nid, node['event_reason'])
+                testmessage = f"Missing attribute :aspect. Node {nid} is an event because {node['event_reason']}."
                 warn(testmessage, testclass, testlevel, testid, lineno=node['line0'])
             if args.require_document_level and len(relations[':modal-strength/predicate']) > 0 and relations[':modal-strength/predicate'][0]['relation'] == ':modal-strength':
                 testid = 'sentence-level-modal-strength'
@@ -1503,7 +1503,7 @@ def validate_events(sentence, node_dict, args):
                 # :modal-strength must be atom but :modal-predicate is a node.
                 if relations[':modal-strength/predicate'][0]['type'] != 'atom':
                     testid = 'invalid-attribute'
-                    testmessage = "Expected atomic value of attribute %s, found type=%s, value=%s." % (':modal-strength', relations[':modal-strength/predicate'][0]['type'], relations[':modal-strength/predicate'][0]['value'])
+                    testmessage = f"Expected atomic value of attribute :modal-strength, found type={relations[':modal-strength/predicate'][0]['type']}, value={relations[':modal-strength/predicate'][0]['value']}."
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[':modal-strength/predicate'][0]['line0'])
             # Check also document level relations. Every event must have at least
             # :temporal against document-creation-time.
@@ -1519,14 +1519,14 @@ def validate_events(sentence, node_dict, args):
                     if node['alignment']['tokstr'] != '':
                         event += " '%s'" % node['alignment']['tokstr']
                     testid = 'missing-temporal'
-                    testmessage = "Missing temporal relation (at least with document-creation-time) for event %s." % event
+                    testmessage = f"Missing temporal relation (at least with document-creation-time) for event {event}."
                     warn(testmessage, 'Document', testlevel, testid, lineno=sentence[3]['line0'])
         # On the other hand, some concepts look like events but they are not events and should not have :aspect and :modal-strength.
         elif re.match(non_event_roleset_re, node['concept']) or re.match(discourse_concept_re, node['concept']):
             for rtype in [':aspect', ':modal-strength/predicate']:
                 if len(relations[rtype]) > 0:
                     testid = 'unexpected-attribute'
-                    testmessage = "Attribute %s not expected because %s is not an event." % (relations[rtype][0]['relation'], node['concept'])
+                    testmessage = f"Attribute {relations[rtype][0]['relation']} not expected because {node['concept']} is not an event."
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[rtype][0]['line0'])
 
 def validate_document_relations(sentence, node_dict, args):
@@ -1539,35 +1539,35 @@ def validate_document_relations(sentence, node_dict, args):
         if r['group'] == ':temporal':
             if not r['relation'] in [':contained', ':before', ':after', ':overlap', ':depends-on']:
                 testid = 'unknown-document-relation'
-                testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
+                testmessage = f"Unknown document-level {r['group']} relation '{r['relation']}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         elif r['group'] == ':modal':
             # The relation ':modal' is used between 'root' and 'author'.
             # It can be also used between 'root' and a node from the sentence graph, if that node represents an entity (typically a person) who says something.
             if not r['relation'] in [':modal', ':full-affirmative', ':partial-affirmative', ':strong-partial-affirmative', ':weak-partial-affirmative', ':neutral-affirmative', ':strong-neutral-affirmative', ':weak-neutral-affirmative', ':full-negative', ':partial-negative', ':strong-partial-negative', ':weak-partial-negative', ':neutral-negative', ':strong-neutral-negative', ':weak-neutral-negative', ':unspecified']:
                 testid = 'unknown-document-relation'
-                testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
+                testmessage = f"Unknown document-level {r['group']} relation '{r['relation']}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         elif r['group'] == ':coref':
             if not r['relation'] in [':same-entity', ':same-event', ':subset-of']:
                 testid = 'unknown-document-relation'
-                testmessage = "Unknown document-level %s relation '%s'." % (r['group'], r['relation'])
+                testmessage = f"Unknown document-level {r['group']} relation '{r['relation']}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         else:
             testid = 'unknown-document-relation-group'
-            testmessage = "Unknown document-level relation group '%s'." % r['group']
+            testmessage = f"Unknown document-level relation group '{r['group']}'."
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         # Participants in document-level relations must be either known concept nodes
         # or one of the constants: root, author, null-conceiver, document-creation-time.
         if not r['node0'] in node_dict and not r['node0'] in ['root', 'author', 'null-conceiver', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
             testid = 'unknown-node-id'
-            testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % r['node0']
+            testmessage = f"The node id (variable) '{r['node0']}' is unknown. No such node has been defined so far."
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
             # Add the variable to node_dict so that we do not get KeyError later.
             node_dict[r['node0']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
         if not r['node1'] in node_dict and not r['node1'] in ['root', 'author', 'null-conceiver', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
             testid = 'unknown-node-id'
-            testmessage = "The node id (variable) '%s' is unknown. No such node has been defined so far." % r['node1']
+            testmessage = f"The node id (variable) '{r['node1']}' is unknown. No such node has been defined so far."
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
             # Add the variable to node_dict so that we do not get KeyError later.
             node_dict[r['node1']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
@@ -1584,7 +1584,7 @@ def validate_document_relations(sentence, node_dict, args):
         node1_line = node_dict[r['node1']]['line0'] if r['node1'] in node_dict else -1
         if node0_line < current_sentence_line and node1_line < current_sentence_line and not (r['node0'] == 'root' and r['node1'] == 'author'):
             testid = 'misplaced-document-relation'
-            testmessage = "At least one of the nodes must be from the current sentence but neither '%s' nor '%s' is." % (r['node0'], r['node1'])
+            testmessage = f"At least one of the nodes must be from the current sentence but neither '{r['node0']}' nor '{r['node1']}' is."
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         # By convention, node0 of a document-level relation is from the same
         # sentence as node1 or from an earlier one. We could probably extend this
@@ -1599,7 +1599,7 @@ def validate_document_relations(sentence, node_dict, args):
         # added, even if a temporal expression occurs later in the sentence.
         #if r['relation'] != ':contained' and node0_line > node1_line:
         #    testid = 'wrong-node-order'
-        #    testmessage = "Document-level relation should not go from a newer node ('%s' defined on line %d) to an older node ('%s' defined on line %d)." % (r['node0'], node0_line, r['node1'], node1_line)
+        #    testmessage = f"Document-level relation should not go from a newer node ('{r['node0']}' defined on line {node0_line}) to an older node ('{r['node1']}' defined on line {node1_line})."
         #    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 def collect_coreference_clusters(document, node_dict, args):
@@ -1684,7 +1684,7 @@ def collect_coreference_clusters(document, node_dict, args):
                         testlevel = 3
                         testclass = 'Document'
                         testid = 'coref-wiki-mismatch'
-                        testmessage = "The node '%s' has wikidata link %s but it is coreferential with node '%s' whose wikidata is %s." % (cm, wikilabel, cwikinode, cwikilabel)
+                        testmessage = f"The node '{cm}' has wikidata link {wikilabel} but it is coreferential with node '{cwikinode}' whose wikidata is {cwikilabel}."
                         warn(testmessage, testclass, testlevel, testid, lineno=node_dict[cm]['line0'])
                 else:
                     cwiki = wiki
@@ -1896,7 +1896,7 @@ class Temporal:
                 testlevel = 3
                 testclass = 'Document'
                 testid = 'temporal-mismatch'
-                testmessage = "Older temporal relation '%s %s %s' collides with newly inferred '%s'. Reason for older: %s" % (n0, self.graph[n0][n1]['relation'], n1, r, self.graph[n0][n1]['reason'])
+                testmessage = f"Older temporal relation '{n0} {self.graph[n0][n1]['relation']} {n1}' collides with newly inferred '{r}'. Reason for older: {self.graph[n0][n1]['reason']}."
                 warn(testmessage, testclass, testlevel, testid, line0)
         else:
             if not n0 in self.graph:
