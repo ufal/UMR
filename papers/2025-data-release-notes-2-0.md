@@ -96,9 +96,9 @@ The conversion covers selected phenomena pertaining to the sentence-level annota
 
 General characteristics of the two approaches and their brief comparison are introduced by [Lopatková et al. (2024, sect. 2\)](https://ufal.mff.cuni.cz/~lopatkova/2024/docs/2024-ITAT-PDT-to-UMR_camera-ready.pdf).[^1] Basic ideas of the conversion are also sketched there, with stress on the identification of the following phenomena: 
 
-- *phenomena that can be more-or-less directly transferred from the available Czech annotation to the UMR structures,*   
-- *phenomena that require specific treatment and detailed analysis but still can be transferred, and*  
-- *phenomena that are unavailable in PDT-C and thus necessitate new annotations.*
+- *Phenomena that can be more-or-less directly transferred from the available Czech annotation to the UMR structures,*   
+- *Phenomena that require specific treatment and detailed analysis but still can be transferred, and*  
+- *Phenomena that are unavailable in PDT-C and thus necessitate new annotations.*
 
 Both formalisms use (weakly connected) directed graphs \- each sentence is represented as a tree-based structure that can be further enriched:   
 (i) UMR allows for reentrancies: a node variable may repeat in a single graph if there are two parents of the relevant concept, e.g., it serves as an argument for two event nodes),[^2]  
@@ -134,7 +134,7 @@ In addition, PDT employs artificial lemmas (so-called t\_lemma substitutes, as, 
 **Warnings:**
 
 - At this stage, abstract rolesets (as have-91, belong-91, have-mod-91, etc.), required by the UMR specification, are not identified; instead, copula and light verbs are treated as concepts, following the PDT annotation scheme.  
-- Structured data represented in UMR as special "entities" (e.g., date-entity, further structured with attributes like day, month, year, century, etc) or "quantities" (e.g., monetary-quantity or temporal-quantity-quantity, both with the attributes quant and unit) are largely not identified in PDT yet.
+- Structured data represented in UMR as special "entities" (e.g., date-entity, further structured with attributes like day, month, year, century, etc.) or "quantities" (e.g., monetary-quantity or temporal-quantity-quantity, both with the attributes quant and unit) are largely not identified in PDT yet.
 
 ### **I.1.1	Alignment** {#i.1.1-alignment}
 
@@ -164,7 +164,7 @@ PAT     →  **:ARG1**	(accuracy 92.5%);
 ADDR →  **:ARG2**	(accuracy 84.4%).  
 On the other hand, the verb-specific mapping (see above) for the remaining two PDT arguments does not show any prevailing pattern (due to the different linguistic theory adopted in PDT). Thus, we use the most relevant participant role (as suggested by the guidelines for Stage 0 annotation, see the UMR Specification) for the first one and a new label for the second one:  
 ORIG  →  **:source**;  
-EFF     →  **:effect** (new label as no UMR participant role covers this PDT-specific annotation).
+EFF     →  **:effect** ... new label as no UMR participant role covers this PDT-specific annotation.
 
 * **Non-arguments**
 
@@ -184,13 +184,13 @@ Further, 3 PDT labels identifying the inner structure of MWEs were introduced (a
 
 The PDT annotation scheme uses 9 special relation labels to classify paratactic structures. Four of them (ADVS, CONFR, CONJ, DISJ) are translated as discourse relations when converting to UMR (see Appendix A; necessary changes to the graph structure are outlined in sect. I.2.3. and I.3.1). Rather coarse-grained discourse values are chosen from the lattice as the PDT annotation does not specify subtle types of discourse relations.  In addition, one new discourse relation is introduced: 
 
-- **:gradation** … relation for discourse structures in which each follow-up proposition makes a stronger claim than the previous one, as in *Nemůže se pohnout, natož vstát.* 'He can't move, let alone get up' (GRAD in PDT, example from the PDT manual, [Mikuková et al., 2006](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html)).
+- **:gradation** … relation for discourse structures in which each follow-up proposition makes a stronger claim than the previous one, as in *Nemůže se pohnout, natož vstát* 'He can't move, let alone get up' (GRAD in PDT, example from the PDT manual, [Mikulová et al., 2006](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html)).
 
 One PDT label is reserved for appositions (APPS); this label is converted using the identity-91 predicate, see sect. I.2.3 and I.3.2. Two functors (CSQ, REAS) are treated using the reification mechanism, see sect. I.2.3. The last functor is translated as a special entity (see contra-entity in sect. I.2.3 among Other changes).
 
 * **Others**
 
-PDT also uses 3 relation labels to identify parenthetical clauses, interjections, and vocative clauses, i.e. sentence material that is not syntactically related to the rest of the sentence. These are translated as special relations :
+PDT also uses 3 relation labels to identify parenthetical clauses, interjections, and vocative clauses, i.e. sentence material that is not syntactically related to the rest of the sentence. These are translated as special relations:
 
 - **:interjection** (PARTL in PDT)  
 - **:parenthesis** (PAR in PDT)  
@@ -241,10 +241,10 @@ In PDT, a predicative complement is a non-obligatory free modification (adjunct)
 Several minor changes complete the list of structural changes that are based on functors:
 
 - functors converted to new entities:  
-  - **contra-entity**  (with op menu)  
-    A relatively fine-grained PDT relation relating two fighting/opposing entities (CONTRA functor) \- typically expressed by prepositions *kontra* 'contra' and *versus* (as in *akademie věd kontra vysoké školství* 'Academy of Science contra universities') or dash etc.  (as in *utkání Rusko \- Švédsko* 'the Russia \- Sweden match') \- is represented as a new entity in Czech UMR.  
-  - **math-entity**  (with op menu)  
-    Mathematical operations (as addition, multiplication, or proportion/division) and intervals that cannot be analysed using spatial or temporal functors (as, e.g., *trest od tří do pěti let* 'a sentence from three to five years'), are represented with special label (OPER functor) in PDT.  In Czech UMR, a new entity is used.
+  - **contra-entity** (with op menu)  
+    A relatively fine-grained PDT relation relating two fighting/opposing entities (CONTRA functor) \- typically expressed by prepositions *kontra* 'contra' and *versus* (as in *akademie věd kontra vysoké školství* 'Academy of Science contra universities') or dash etc. (as in *utkání Rusko \- Švédsko* 'the Russia \- Sweden match') \- is represented as a new entity in Czech UMR.  
+  - **math-entity** (with op menu)  
+    Mathematical operations (as addition, multiplication, or proportion/division) and intervals that cannot be analyzed using spatial or temporal functors (as, e.g., *trest od tří do pěti let* 'a sentence from three to five years'), are represented with special label (OPER functor) in PDT. In Czech UMRs, a new entity is used.
 
 ## **I.3	Coordination and discourse relations, apposition** {#i.3-coordination-and-discourse-relations,-apposition}
 
@@ -254,18 +254,18 @@ In general, representation of paratactic structures (coordination, discourse rel
 
 * **Coordinating contents with the same relation to the modified concept**
 
-Typically, the paratactic structures combine more contents with the same relation to the modified concept: e.g. in *John met Carl and Sophi*, both *Carl* and *Sophi* serve as ARG1 of the verb *meet*. Thus, the (non-)participant relation can serve as the parent node common to both/all coordinated members and the discourse concept just "multiply" the same role positions, see the (simplified) UMR representation of the example sentence. The only difference is a technicality, as PDT treats the discourse concept as the head of the structure, as in the left picture (simplified PDT graph of the example sentence; this applies to ADVS, CONFR, CONJ and DISJ functors), while UMR subsumes the discourse relation below the one between the modified and modifying concepts (see the right graph).    
+Typically, the paratactic structures combine more contents with the same relation to the modified concept: e.g. in *John met Carl and Sophia*, both *Carl* and *Sophia* serve as ARG1 of the verb *meet*. Thus, the (non-)participant relation can serve as the parent node common to both/all coordinated members and the discourse concept just "multiply" the same role positions, see the (simplified) UMR representation of the example sentence. The only difference is a technicality, as PDT treats the discourse concept as the head of the structure, as in the left picture (simplified PDT graph of the example sentence; this applies to ADVS, CONFR, CONJ and DISJ functors), while UMR subsumes the discourse relation below the one between the modified and modifying concepts (see the right graph).    
 
 PDT							UMR  
 (m/ meet-02						(m/ meet-02   
   :ARG0 (j/ John)					  :ARG0 (j/ John)      
   :CONJ (a/ and					  :ARG1 (a/ and  
           :ARG1 (c/ Carl)				          :op1 (c/ Carl)  
-          :ARG1 (s/ Sophi))) 			          :op2 (s/ Sophi)))    
+          :ARG1 (s/ Sophia))) 			          :op2 (s/ Sophia)))    
 
 * **Participant and non-participant roles shared by coordinated concepts**
 
-In PDT-C, participant and non-participant roles that are shared by coordinated concepts  are represented as children of the discourse relations; see, for example, the left graph below (simplified)[^5] representing the sentence *I read a book and listened to music*. When transforming to the UMR scheme, the shared participant is represented using  a reentrancy (see also sect. I.2.3 and I.4.1); in particular, the shared concept is displayed as a node dependent on (modifying) the first coordinated member; its relation to the other coordinated concept(s) is identified by repeating its variable in the respective position(s), see the right graph below.
+In PDT-C, participant and non-participant roles that are shared by coordinated concepts are represented as children of the discourse relations; see, for example, the left graph below (simplified)[^5] representing the sentence *I read a book and listened to music*. When transforming to the UMR scheme, the shared participant is represented using a reentrancy (see also sect. I.2.3 and I.4.1); in particular, the shared concept is displayed as a node dependent on (modifying) the first coordinated member; its relation to the other coordinated concept(s) is identified by repeating its variable in the respective position(s), see the right graph below.
 
 (a/ and					     (a/ and  
   :ARG0 (p/ person	 			 	:op1 (r/ read-01  
@@ -279,15 +279,15 @@ In PDT-C, participant and non-participant roles that are shared by coordinated c
 
 * **Abstracting from formal language-specific criteria**
 
-Two types of structures interpreted as relations in PDT are restructured as discourse relations (namely contradiction, concession, see sect. I.2.3).  On the other hand, two types of paratactic structures in PDT are represented as reifications (namely consequence and reason (for)/cause (of), see sect. 1.2.3). 
+Two types of structures interpreted as relations in PDT are restructured as discourse relations (namely contradiction, concession, see sect. I.2.3). On the other hand, two types of paratactic structures in PDT are represented as reifications (namely consequence and reason (for)/cause (of), see sect. 1.2.3). 
 
 * **Negation in coordination**
 
-The attribute of polarity (affirmative/negative) needs a special handling in coordinated structures, see sect.  I.5.2.
+The attribute of polarity (affirmative/negative) needs a special handling in coordinated structures, see sect. I.5.2.
 
 **Warning:**
 
-- PDT also allows for cases when two (or even more) different relations are subsumed into a single coordination, as in *Kdy a za jakých podmínek se to stalo?* 'When and under what conditions did it happen?'. In these cases, the most frequent role is tentatively used to represent the whole structure. More adequate processing (which involves splitting the material into two propositions (= *Kdy se to stalo a za jakých podmínek (se to stalo)?* 'When did it happen and under what conditions (did it happen)?') is postponed to later stages of the conversion.   
+- PDT also allows for cases when two (or even more) different relations are subsumed into a single coordination, as in *Kdy a za jakých podmínek se to stalo?* 'When and under what conditions did it happen?' In these cases, the most frequent role is tentatively used to represent the whole structure. More adequate processing (which involves splitting the material into two propositions (= *Kdy se to stalo a za jakých podmínek (se to stalo)?* 'When did it happen and under what conditions (did it happen)?') is postponed to later stages of the conversion.   
 - Coordinated structures that are involved in a coreference relation (either as anaphors or as antecedents) need a more detailed analysis, see sect. I.4.2.
 
 ### **I.3.2	Apposition** {#i.3.2-apposition}
@@ -315,14 +315,14 @@ The UMR specification allows for the so-called reentrancy of a node if the respe
 
 * **Anaphor/cataphor is the personal or possessive pronoun (incl. reflexives)** 
 
-In PDT, separate nodes for an anaphor and its antecedent are interlinked by a coreferential arrow. The information provided by the arrow is transferred as an identical variable for these nodes: while the node for the antecedent and its lexical content is preserved, the node for anaphor/cataphor loses its lexical content, being represented with the same variable as its antecedent/postcedent  (as, e.g., in *Málokdy si dívka dopřeje sklenku vína* 'Very seldom will the girl indulge in a glass of wine', both *dívka* 'girl' and *si* 'self', represented as two nodes with separate concepts (*dívka* and the node for reflexive pronoun interlinked by the coreferential arrow) in PDT,  are represented as two nodes sharing their variable *d2* (and thus referring to the same person).
+In PDT, separate nodes for an anaphor and its antecedent are interlinked by a coreferential arrow. The information provided by the arrow is transferred as an identical variable for these nodes: while the node for the antecedent and its lexical content is preserved, the node for anaphor/cataphor loses its lexical content, being represented with the same variable as its antecedent/postcedent (as, e.g., in *Málokdy si dívka dopřeje sklenku vína* 'Very seldom will the girl indulge in a glass of wine', both *dívka* 'girl' and *si* 'self', represented as two nodes with separate concepts (*dívka* and the node for reflexive pronoun interlinked by the coreferential arrow) in PDT, are represented as two nodes sharing their variable *d2* (and thus referring to the same person).
 
 (d/ dopřát-001   'indulge'			(d/ dopřát-001     
   :ARG0 (d2/ dívka)				  :ARG0 (d2/ dívka)  
   :ARG1 (s/ sklenka)	 			  :ARG1 (s/ sklenka  
   :ARG2 (p/ person)				  :ARG2 d2  
   :frequency (m/ málokdy))			  :frequency (m/ málokdy))  
-coref (d2 :same-entity p)
+:coref (d2 :same-entity p)
 
 Similarly for non-reflexive personal or possessive pronouns, as in *Marie přišla domů a tam na ni čekal Marek* 'Marie came home and there Marek was waiting for her', where *Marie* and the personal pronoun *(na) ni* '(for) her' share the same variable.
 
@@ -332,7 +332,7 @@ Relative pronouns (as *kdo,* *který, jenž* 'who', *co* 'which', *čí* 'whose'
 
 * **Arguments of raising and control verbs**
 
-Nodes for arguments of raising and control verbs (in PDT represented as separate nodes with special labels \#Cor, \#QCor) are treated in the same way (incl. cases without overtly expressed anaphor, type *Martin viděl Petra přicházet \= Martin viděl Petra, jak Petr přichází.* 'Martin saw Peter coming \= Martin saw Peter as Peter is coming.').
+Nodes for arguments of raising and control verbs (in PDT represented as separate nodes with special labels \#Cor, \#QCor) are treated in the same way (incl. cases without overtly expressed anaphor, type *Martin viděl Petra přicházet \= Martin viděl Petra, jak Petr přichází* 'Martin saw Peter coming \= Martin saw Peter as Peter is coming').
 
 In relatively rare cases, separate nodes are kept in UMRs, esp. if an anaphor is further modified, and the coreference relation is indicated in the document-level representation.  
 
@@ -351,19 +351,19 @@ To elucidate this principle, compare the PDT-C like representation (left) and UM
          :ARG1 (v/ housle 'violin')))  
 coref (s :same-entity w)
 
-The same principle is used also for relative pronominal adverbs (as *kde, kudy, kam* 'where', *kdy* 'when'). For example, in *Oblasti, kde se používal krokydolit ,  … .* 'Areas where the crocidolite was used … .', the relative adverb *kde* 'where ' is merged with its antecedent *oblast* 'area'; the whole relative clause is attached using the inverse role (place-of):
+The same principle is used also for relative pronominal adverbs (as *kde, kudy, kam* 'where', *kdy* 'when'). For example, in *Oblasti, kde se používal krokydolit , …* 'Areas where the crocidolite was used …', the relative adverb *kde* 'where ' is merged with its antecedent *oblast* 'area'; the whole relative clause is attached using the inverse role (place-of):
 
 (o/ oblast 'area'					(o/ oblast 'area'  
 :mod (p/ používat-001 'use'			:place-of (p/ používat-001 'use'  
 :place	(k2/kde) 'where'				:ARG1 (k/ krokydolit)))  
 :ARG1 (k/ krokydolit))) 'crocidolite'  
-coref (o :same-entity k2)
+:coref (o :same-entity k2)
 
 **Warnings:** 
 
 - UMR does not recognize cataphoric reference (i.e., reference to an expression that appears later in the text). For all such instances, the relation is changed to the anaphoric one (and left for further analysis).   
 - Coreferential relations between events are only sporadically captured in the PDT-C thus this type is rare (and under-annotated) in the current version of the UMR data.  
-- The coreference relation between coordinated structures (see sect. I.3.1) needs more detailed analysis. For this version, the UMR annotation reproduces the PDT-C annotation, i.e., the coreferential links may interconnect the whole coordinated structures (not individual coordinated members).  For example, in *Marie vzala Vlastu do divadla, kde na ně čekal Marek* 'Marie took Vlasta to the theatre, where Marek was waiting for them', the pronoun *(na) ně* '(for) them' refers both to *Marie* and to *Vlasta* (from the PDT manual, [Mikuková et al., 2006](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html)). However, in many cases, coreference chains include discourse concepts (both in the role of an anaphor/cataphor and antecedent/postcedent). These cases should be analysed and their transfer refined in the future versions.  
+- The coreference relation between coordinated structures (see sect. I.3.1) needs more detailed analysis. For this version, the UMR annotation reproduces the PDT-C annotation, i.e., the coreferential links may interconnect the whole coordinated structures (not individual coordinated members). For example, in *Marie vzala Vlastu do divadla, kde na ně čekal Marek* 'Marie took Vlasta to the theater, where Marek was waiting for them', the pronoun *(na) ně* '(for) them' refers both to *Marie* and to *Vlasta* (from the PDT manual, [Mikulová et al., 2006](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html)). However, in many cases, coreference chains include discourse concepts (both in the role of an anaphor/cataphor and antecedent/postcedent). These cases should be analyzed and their transfer refined in the future versions.  
 - With reciprocal constructions, characterized by a special node label (\#Rcp) and a coreferential relation among two (or more) nodes in PDT, the coreference is indicated in the document-level annotation (despite typically interlinking nodes within a single sentence). The conversion deserves a refinement in future versions.    
 - Though the PDT stores information on the bridging anaphora (as, e.g., part-whole relation), which is relevant for the :subset-of relation, this information is not used at this stage.  
 - Coreferences crossing the sentence boundary are treated within the document-level representation (sect. II.1).
@@ -379,7 +379,7 @@ The UMR annotation scheme distinguishes rather fine-grained values for the aspec
 - Imperfective verbs without such marking get the "activity" value (note that this type of verbs often express habitual events; however, this is not captured in the PDT data and thus cannot be distinguished automatically).  
 - Perfective verbs are marked with the "state" value when they appear in resultative diathesis, otherwise they are identified as "performance".  
 - Double aspect verbs are annotated as "process" (subsuming "activity" and "performance" classes in the aspect lattice).  
-- All abstract concepts identified as events (see sect. III.1 ) get the "state" value.
+- All abstract concepts identified as events (see sect. III.1) get the "state" value.
 
 **Warnings:**
 
@@ -396,8 +396,8 @@ The UMR "polarity" attribute serves for identifying morphosyntactic indicators o
 
 Lexical negation is annotated using so-called grammatemes, i.e., meaning correlates of morphological  categories in PDT. Two grammatemes are relevant here:
 
-- "negation" grammateme for lexical negation with semantic nouns, adjectives and adverbs: these are encoded using (positive) lemmata with the "negation" grammateme set to "neg1", e.g.,  *nezralost dítěte* 'immaturity of a child ', encoded as *zralost* 'maturity' with negation=neg1\] (example from the PDT manual, [Mikulová et al., 2006\)](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html);  
-- "indeftype" grammateme for lexical negation with pronominals, annotated in the "indeftype" grammateme set to "negat",  e.g., *nikdo* 'nobody', or *nikde* 'nowhere' annotated as *kdo* 'who, someone' and *kde* 'where, anywhere' respectively, with indeftype \=negat (example from the PDT manual, [Mikulová et al., 2006\)](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html).  
+- "negation" grammateme for lexical negation with semantic nouns, adjectives and adverbs: these are encoded using (positive) lemmata with the "negation" grammateme set to "neg1", e.g., *nezralost dítěte* 'immaturity of a child ', encoded as *zralost* 'maturity' with negation=neg1\] (example from the PDT manual, [Mikulová et al., 2006\)](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html);  
+- "indeftype" grammateme for lexical negation with pronominals, annotated in the "indeftype" grammateme set to "negat", e.g., *nikdo* 'nobody', or *nikde* 'nowhere' annotated as *kdo* 'who, someone' and *kde* 'where, anywhere' respectively, with indeftype \=negat (example from the PDT manual, [Mikulová et al., 2006\)](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html).  
     
 * **Syntactic negation**
 
@@ -423,7 +423,7 @@ The value of the "refer-number" and "refer-person" UMR attributes serve esp. for
 
 * **Refer-number** 
 
-In the PDT data, the "refer-number" attribute corresponds to the grammateme "number". While this grammateme (i.e., a meaning correlate of the morphological category of number), typically reflects the morphological value, it can abstract from surface forms in some cases. Pluralia tantum can serve as an example \- while their morphological number is always 'plural' (e.g., *kalhoty* 'trousers', with nonexisting *\*kalhota* '\*trouser'),  the "number" grammateme discriminates between singular and plural contexts (*jedny kalhoty* 'one pair of trousers' vs.  *dvoje kalhoty* 'two pairs of trousers').   
+In the PDT data, the "refer-number" attribute corresponds to the grammateme "number". While this grammateme (i.e., a meaning correlate of the morphological category of number), typically reflects the morphological value, it can abstract from surface forms in some cases. Pluralia tantum can serve as an example \- while their morphological number is always 'plural' (e.g., *kalhoty* 'trousers', with non-existing *\*kalhota* '\*trouser'), the "number" grammateme discriminates between singular and plural contexts (*jedny kalhoty* 'one pair of trousers' vs. *dvoje kalhoty* 'two pairs of trousers').   
 However, the annotation of the "number" grammateme is available only in a portion of the PDT-C data (namely the PDT, Faust and partially PDTSC subcorpora). For the portion of the data without the grammateme, the PDT morphological annotation is used for conversion.  
 The Czech UMR data stick to the basic values in the lattice, namely singular and plural. The very rare cases of dual in Czech are not identified so far (similarly as some other cases with unclear PDT strategy).
 
@@ -459,7 +459,7 @@ All nodes with a coreferential link in the PDT data that are not processed using
 
 * **Lexical verbs**
 
-When converting PDT to UMR, all verb predicates (i.e., all lexical verbs, excluding modal and temporal auxiliaries) are treated as events. This means, their "packaging" \- whether they are conveyed as a reference, modification, or predication \- is disregarded.  The reason is simple: there are no clear (formal) criteria for distinguishing, e.g., statives in Czech, no available lists of such verbs.  Thus, though this represents a substantial simplification of the UMR principles, we prefer to treat all lexical verbs in the same manner to keep the converted data as consistent as possible.
+When converting PDT to UMR, all verb predicates (i.e., all lexical verbs, excluding modal and temporal auxiliaries) are treated as events. This means, their "packaging" \- whether they are conveyed as a reference, modification, or predication \- is disregarded. The reason is simple: there are no clear (formal) criteria for distinguishing, e.g., statives in Czech, no available lists of such verbs. Thus, though this represents a substantial simplification of the UMR principles, we prefer to treat all lexical verbs in the same manner to keep the converted data as consistent as possible.
 
 * **Other types of verbs**
 
@@ -574,7 +574,7 @@ The conversion does not identify modality dependency as it must be based on comp
 
 ### **References** {#references}
 
-Bonn Julia, Bonia, Claire, Buchholz Matt, Cheng Hsiao-Jung, Chen Alvin, Chen Ching-wen, Cowell Andrew, Crof, William, Denk Lukas, Elsayed Ahmed, Fučíková Eva, Gamba Federica, Gomez Carlos, Hajič Jan, Hajičová Eva, Havelka Jiří, Havenmeier Loden, Kilgore Ath, Kolářová Veronika, Kučová Lucie, Lai Kenneth, Li Bin, Li Jingyi, Lopatková Markéta, MacGregor Marie, Mikulová Marie, Mírovský Jiří, Nedoluzhko Anna, Myers Skatje, Novák Michal, O’Gorman Tim, Pajas Petr, Palmer Alexis, Palmer Martha, Panevová Jarmila, Post Benét, Pustejovsky James, Sgall Petr, Song Jialin, Song Li, Ševčíková Magda, Štěpánek Jan, Urešová Zdeňka, Sun Haibo, Sun Yao, Vallejos Yopán Rosa, Van Gysel Jens, Vigus Meagan, Wright‑Bettner Kristin, Wu Jiawei, Xue Nianwen, Xing Dan, Xu Keer, Xu Zhixing, Yue Liulu, Zeman Daniel, Zhao Jin, Zikánová Šárka, Žabokrtský, Zdeněk (2025): *Uniform Meaning Representation 2.0*. Data/software, LINDAT/CLARIAH-CZ digital library, Charles University, Prague, Czech Republic,  [http://hdl.handle.net/11234/1-5902](http://hdl.handle.net/11234/1-5902), [https://umr4nlp.github.io/web/index.html](https://umr4nlp.github.io/web/index.html).
+Bonn Julia, Bonia, Claire, Buchholz Matt, Cheng Hsiao-Jung, Chen Alvin, Chen Ching-wen, Cowell Andrew, Crof, William, Denk Lukas, Elsayed Ahmed, Fučíková Eva, Gamba Federica, Gomez Carlos, Hajič Jan, Hajičová Eva, Havelka Jiří, Havenmeier Loden, Kilgore Ath, Kolářová Veronika, Kučová Lucie, Lai Kenneth, Li Bin, Li Jingyi, Lopatková Markéta, MacGregor Marie, Mikulová Marie, Mírovský Jiří, Nedoluzhko Anna, Myers Skatje, Novák Michal, O’Gorman Tim, Pajas Petr, Palmer Alexis, Palmer Martha, Panevová Jarmila, Post Benét, Pustejovsky James, Sgall Petr, Song Jialin, Song Li, Ševčíková Magda, Štěpánek Jan, Urešová Zdeňka, Sun Haibo, Sun Yao, Vallejos Yopán Rosa, Van Gysel Jens, Vigus Meagan, Wright‑Bettner Kristin, Wu Jiawei, Xue Nianwen, Xing Dan, Xu Keer, Xu Zhixing, Yue Liulu, Zeman Daniel, Zhao Jin, Zikánová Šárka, Žabokrtský, Zdeněk (2025): *Uniform Meaning Representation 2.0*. Data/software, LINDAT/CLARIAH-CZ digital library, Charles University, Prague, Czech Republic, [http://hdl.handle.net/11234/1-5902](http://hdl.handle.net/11234/1-5902), [https://umr4nlp.github.io/web/index.html](https://umr4nlp.github.io/web/index.html).
 
 Hajič Jan, Bejček Eduard, Bémová Alevtina, Buráňová Eva, Fučíková Eva, Hajičová Eva, Havelka Jiří, Hlaváčová Jaroslava, Homola Petr, Ircing Pavel, Kárník Jiří, Kettnerová Václava, Klyueva Natalia, Kolářová Veronika, Kučová Lucie, Lopatková Markéta, Mareček David, Mikulová Marie, Mírovský Jiří, Nedoluzhko Anna, Novák Michal, Pajas Petr, Panevová Jarmila, Peterek Nino, Poláková Lucie, Popel Martin, Popelka Jan, Romportl Jan, Rysová Magdaléna, Semecký Jiří, Sgall Petr, Spoustová Johanka, Straka Milan, Straňák Pavel, Synková Pavlína, Ševčíková Magda, Šindlerová Jana, Štěpánek Jan, Štěpánková Barbora, Toman Josef, Urešová Zdeňka, Vidová Hladká Barbora, Zeman Daniel, Zikánová Šárka, Žabokrtský Zdeněk (2024a): *Prague Dependency Treebank \- Consolidated 2.0 (PDT-C 2.0).* Data/software, LINDAT/CLARIAH-CZ digital library, Charles UniversityPrague, Czech Republic, [http://hdl.handle.net/11234/1-5813](http://hdl.handle.net/11234/1-5813), [https://ufal.mff.cuni.cz/pdt-c](https://ufal.mff.cuni.cz/pdt-c).
 
@@ -598,9 +598,9 @@ Uniform Meaning Representation (UMR) 0.9 Specification [https://github.com/ufal/
 | VOCAT | vocative | role | *Milá Jano*.VOCAT*\!*     'Dear Jane\!'  |
 | **Labels for arguments** |  |  |  |
 | ACT | ARG0 | role | *Její manžel*.ACT *tam však pracuje dál.        '*Her husband still works there, though.' *Byl zabit bleskem*.ACT.     'He was killed by lightning.' *Je mi*.ACT *smutno.*   'I am sad.' *Sklo*.ACT *zůstává nalepené na fólii.*      'The glass stays sticked to the foil.' |
-| PAT | ARG1 | role | *Postavili stany*.PAT.   'They pitched the tents.' *Hledal houby*.PAT.     'He was looking for mushrooms.' *Hrál na klavír*.PAT.    'He played the piano.' *Zahrnul sportovce chválou*.PAT.      'He bestowed praise on the sportsmen.' *Dosáhl konce*.PAT*.*     'He reached the end.' *Bojí se, že bude pršet*.PAT.     'He is afraid that it might rain.' *Kniha patří Janovi*.PAT*.*      'The book belongs to Jan.' *Házel kamenem*.PAT*.*   'He was throwing a stone.' *Vyprávěl nám o zájezdu*.PAT *do Tater.*       'He was telling us about his trip to the  Tatras.' |
+| PAT | ARG1 | role | *Postavili stany*.PAT.   'They pitched the tents.' *Hledal houby*.PAT.     'He was looking for mushrooms.' *Hrál na klavír*.PAT.    'He played the piano.' *Zahrnul sportovce chválou*.PAT.      'He bestowed praise on the sportsmen.' *Dosáhl konce*.PAT*.*     'He reached the end.' *Bojí se, že bude pršet*.PAT.     'He is afraid that it might rain.' *Kniha patří Janovi*.PAT*.*      'The book belongs to Jan.' *Házel kamenem*.PAT*.*   'He was throwing a stone.' *Vyprávěl nám o zájezdu*.PAT *do Tater.*       'He was telling us about his trip to the Tatras.' |
 | ADDR | ARG2 | role | *Dal dítěti*.ADDR *hračku.*    'He gave the child a toy.' *Učí děti*.ADDR *angličtinu.*     'He teaches children English.' *Ukradl cizinci*.ADDR *peněženku.*      'He stole a wallet from a foreigner.' *Obrátil se na soud*.ADDR *s problémem.*       'He turned to the court with a problem.' |
-| ORIG | source | role | *Vyráběli nábytek ze dřeva*.ORIG*.*      'They made furniture out of wood.' *Na malých kroužcích*.ORIG *založili novou organizaci.*      'They build a new organization on small groups.' *Získal na dětech*.ORIG *slib.*     'He got a promise from the children.' *Zdražili vstupenky z 500*.ORIG *na 550 Kč.*       'The price of the tickets rose from 500 to 550Kc.' |
+| ORIG | source | role | *Vyráběli nábytek ze dřeva*.ORIG*.*      'They made furniture out of wood.' *Na malých kroužcích*.ORIG *založili novou organizaci.*      'They build a new organization on small groups.' *Získal na dětech*.ORIG *slib.*     'He got a promise from the children.' *Zdražili vstupenky z 500*.ORIG *na 550 Kč.*       'The price of the tickets rose from 500 to 550 CZK.' |
 | EFF | effect\* | role | *Považoval Pavla za odborníka*.EFF*.*      'He considered Pavel a professional.' *Změnila účes z kudrn na rovné vlasy*.EFF*.*      'She changed her hairstyle from curly hair to straight hair.' *Bránili město před Švédy*.EFF*.*      'They defended the town against the Swedes.' *Petr vyprávěl o dovolené zábavné historky*.EFF.      'Petr told us amusing stories about his holiday.' |
 | **Labels for temporal (and similar) modifications** |  |  |  |
 | TWHEN | temporal | role | *Přijde za týden.*TWHEN     'He will come in a week.' *Psal/Napsal to za minulého ředitele.*TWHEN      'He wrote it under the last director.' *Sejdeme se 2\. února.*TWHEN     'We shall meet on February 2nd.' *Najíme se, až vyjdeme.*TWHEN      'We will eat only when we set off.' *Včera*.TWHEN *přeložil schůzi na pátek*.       'Yesterday he postponed the meeting.' |
@@ -609,22 +609,22 @@ Uniform Meaning Representation (UMR) 0.9 Specification [https://github.com/ufal/
 | THL | duration | role | *Četl půl hodiny.*THL     'He was reading for half an hour.' *Přečetl to za půl hodiny.*THL     'He read it in half an hour.' |
 | THO | frequency | role | *Každé čtyři hodiny*.THO *si musím vzít prášek.*      'I have to take a pill every four hours.' |
 | TOWH | temporal | role | *Včera* *přeložil schůzi ze čtvrtka* *na pátek*.TOWH      'Yesterday he postponed the meeting from Thursday to Friday.' |
-| TPAR | temporal | role | *Hraje a přitom*.TPAR *zpívá.*      'He is playing and singing at the same time.' *Zatímco spala*.TPAR *, přemýšlel jsem.*      'While she was sleeping I was thinking about it.' |
+| TPAR | temporal | role | *Hraje a přitom*.TPAR *zpívá.*      'He is playing and singing at the same time.' *Zatímco spala*.TPAR*, přemýšlel jsem.*      'While she was sleeping I was thinking about it.' |
 | TSIN | temporal | role | *Od soboty*.TSIN *nepršelo.*     'It was not raining since Saturday.' *Od toho okamžiku*.TSIN *jsem věděl, že je to on.*      'From that moment I knew that it was him.' |
 | TTILL | temporal | role | *Dodnes*.TTILL *nevím, kde je.*      'Till today I do not know where he is'. |
 | **Labels for spatial modifications** |  |  |  |
 | DIR1 | start | role | *Dovážíme odtud*.DIR1 *potraviny a textil.*      'We import groceries and textile from there. *jeden z chlapců*.DIR1     'one of the boys' |
 | DIR2 | path | role | *Šli podél řeky*.DIR2     'They walked along the river. *Rommel ustupoval (údolím řeky Vardaru).*DIR2      'Rommel retreated through the valley of the Vardar river. |
 | DIR3 | goal | role | *Polož to doprostřed stolu.*DIR3     'Put it in the middle of the table.' *Kam*.DIR3 *jdete?*     'Where are you going?' *Hleděl (tváří v tvář problému)*.DIR3      'He was facing up to a problem.' *Voda mi sahá po kolena*.DIR3     'Water is reaching my knees.' *Dej to, (kam nedostane).*DIR3     'Put it where he cannot reach.' |
-| LOC | place | role | *Jsme vždy blízko*.LOC *vás.*     'We are always close to you.' *Leží směrem k Národnímu divadlu*.LOC*.*      'It is located towards the National Theatre.' *V oblasti*.LOC *vzdělávání máme velké mezery.*      'We have serious loophopes in the educational area.' *Jeho syn bydlí blízko.*LOC     'His son lives nearby.' *Místy*.LOC *ležel v ulicích ještě sníh.*      'There was still snow in the streets.' |
+| LOC | place | role | *Jsme vždy blízko*.LOC *vás.*     'We are always close to you.' *Leží směrem k Národnímu divadlu*.LOC*.*      'It is located towards the National Theater.' *V oblasti*.LOC *vzdělávání máme velké mezery.*      'We have serious loophopes in the educational area.' *Jeho syn bydlí blízko.*LOC     'His son lives nearby.' *Místy*.LOC *ležel v ulicích ještě sníh.*      'There was still snow in the streets.' |
 | **Labels for causal modifications** |  |  |  |
 | AIM | purpose | role | *Jsem tu pro to, abych vám pomohl*.AIM       'I am here to help you.' |
-| CAUS | cause | role | *Nepovím vám to, (protože byste mi stejně nevěřili).*CAUS       'I will not tell you as you would not believe me anyway.' *Díky vaší pomoci*.CAUS *jsme to stihli včas.*       'Thanks to your help we made it on time. |
+| CAUS | cause | role | *Nepovím vám to, (protože byste mi stejně nevěřili).*CAUS       'I will not tell you as you would not believe me anyway.' *Díky vaší pomoci*.CAUS *jsme to stihli včas.*       'Thanks to your help we made it on time.' |
 | CNCS | but-91 | discourse relation\*\* | *(Ač zemřeli).*CNCS*, ještě mluví.*      'Although they are dead, they still speak.' *Přes své dobré vychování se nezachoval nejlépe.*       'Despite his good behaviour*.*CNCS he did not act very well.' |
-| COND | condition | role | *(Jestliže Izák zemře).*COND*, komu otec předá tuto víru?*      'If Isaac dies, who will his father give his faith (to)?' *(V případě, že se nedostaví).*COND*, schůzi rozpustíme.*        'If he does not come we shall cancel the meeting.' *Formulář vydává (na telefonické požádání).*COND *zkušební ústav.      'The conditioning house issues the form on telephonic request.'* |
+| COND | condition | role | *(Jestliže Izák zemře).*COND*, komu otec předá tuto víru?*      'If Isaac dies, who will his father give his faith (to)?' *(V případě, že se nedostaví).*COND*, schůzi rozpustíme.*        'If he does not come we shall cancel the meeting.' *Formulář vydává (na telefonické požádání).*COND *zkušební ústav.*      'The conditioning house issues the form on telephonic request.' |
 | INTT | purpose | role | *Šel nakoupit*.INTT*, aby doplnil zásoby.*      'He went shopping to replenish the stock.'  |
 | **Labels for manner (and similar) modifications** |  |  |  |
-| ACMP | companion | role | *Tatínek s maminkou*.ACMP *šli do divadla.*       'My father with my mother went to the theater.' *Odešel s úsměvem*.ACMP *na tváři.*      'He left with a smile on his face. |
+| ACMP | companion | role | *Tatínek s maminkou*.ACMP *šli do divadla.*       'My father with my mother went to the theater.' *Odešel s úsměvem*.ACMP *na tváři.*      'He left with a smile on his face.' |
 | CPR | comparison\* | role | *Počínal si hazardérsky.*CPR     '*He acted hazardously; i.e. like a daredevil Musíme udělat nepochybně menší a snazší manévr, (než byl ten minulý).*CPR     'We have to do a smaller and easier manoeuvre than was the last one.' |
 | CRIT | regard\* | role | *Byl odsouzen v souhlase s předpisy*.CRIT      'He was sentenced in compliance with the regulations.' *Snaží se žít po vzoru velkých osobností*.CRIT       'He's trying to live following the example of great personalities.' *Podle našich údajů.*CRIT *vítězí strana ODS.*       'According to our information, ODS is winning.' |
 | DIFF | extent | role | *Nabízejí ho o 100 tisíc*.DIFF *levněji.*       'They offer it cheaper by 100 thousand.' *Zdražili ceny paliva o 50 haléřů.*DIFF       'the fuel prizes went up by 50 heller.' |
@@ -635,7 +635,7 @@ Uniform Meaning Representation (UMR) 0.9 Specification [https://github.com/ufal/
 | RESL | result | role | *Obarvil vajíčka na zeleno*.RESL     'He painted the eggs green.' *opálená do hněda.*RESL     'tanned to brown' *Mám ruce zmrzlé (ak, že je nenatáhnu).*RESL       'My hands are so numb with cold that I can't stretch them.' |
 | RESTR | subtraction | role | *Kromě Pavla.*RESTR *nepřišel nikdo.*           'Except for Pavel, nobody came.' (= Pavel came, nobody else) *Kromě Pavla.*RESTR *nepřišel ještě Mirek.*      'Apart from Pavel, also Mirek didn't come' (= both Pavel and       Mirek came, nobody else) |
 | **Labels for other relations** |  |  |  |
-| BEN | affectee | role | *Hraje dětem/pro děti*.BEN *divadlo.*      'He plays theatre to/for children.' *Padá mu.*BEN *hlava na prsa.*     'His head is falling on his breast.' *Ten pán vám.*BEN *měl ale fousy\!*     'The beard the man had\!' *To je další argument (proti existenci mzdové regulace)*.BEN      'That is another argument against the  wage regulation.' |
+| BEN | affectee | role | *Hraje dětem/pro děti*.BEN *divadlo.*      'He plays theater to/for children.' *Padá mu.*BEN *hlava na prsa.*     'His head is falling on his breast.' *Ten pán vám.*BEN *měl ale fousy\!*     'The beard the man had\!' *To je další argument (proti existenci mzdové regulace)*.BEN      'That is another argument against the wage regulation.' |
 | CONTRD | contrast-91 | discourse relation\*\* | Z*atímco loni prý v premiéře proti Samprasovi hrál*.CONTRD *chaoticky, nyní už měl plán.*     'While he was told to play chaotically last year in his premiere against Sampras, now he had a plan.' |
 | HER | source | role | *Pes Blackie zdědil po svém pánovi*.HER *33 tisíc dolarů.*      'The dof Blacky inheritied after his lord 33 thousand dollars.' *Jmenovala se Barbora (podle patronky horníků).*HER       'She was named Barbora after the benefactress of miners.' |
 | OPER | math-entity\* | entity concept | *rozměr 4 krát 5 metrů*     '4 x.OPER 5 meters' *pět minus dva*     'five minus.OPER two' *Výsledek 5 :*.OPER *0 se nám moc zamlouval.*          'We liked the result 5:0.' *věk mezi\_a*.OPER *(15) (a 20 lety)*     'the age between 15 and 20' *V jednom místě nakoupím vše od\_po*.OPER *(zeleniny) (po mléčné výrobky a drogerii).*     'At one spot I can buy everything from vegetables to dairy products and cosmetics' |
@@ -680,7 +680,7 @@ Uniform Meaning Representation (UMR) 0.9 Specification [https://github.com/ufal/
 
 [^1]:  The full UMR specification is available at [the project website](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md). 
 
-[^2]:  When represented graphically,  nodes sharing the same variable are merged; i.e., they are understood as a single node. 
+[^2]:  When represented graphically, nodes sharing the same variable are merged; i.e., they are understood as a single node. 
 
 [^3]:  At the same time, each graph node in PDT must be aligned with at least one lexical word (and with as many function words as relevant).
 
@@ -692,6 +692,6 @@ Uniform Meaning Representation (UMR) 0.9 Specification [https://github.com/ufal/
 
 [^7]:  Reentrancy is also used for capturing dual dependency (sect. I.2.3 above) and for shared (non-)participants in coordination (sect. I.3.1 above).
 
-[^8]:  The mechanism of inverse roles is also used in UMR for embedded interrogative clauses, for nominalization and action nouns, and for some nominal modifications as, e.g.,  kinship (*my father*). The annotation of such structures is not fully transferred from PDT yet. 
+[^8]:  The mechanism of inverse roles is also used in UMR for embedded interrogative clauses, for nominalization and action nouns, and for some nominal modifications as, e.g., kinship (*my father*). The annotation of such structures is not fully transferred from PDT yet. 
 
-[^9]:  It is also possible to negate only one of the verbal modifications/constituents using the negation particle (*ne* 'no'): then, in PDT, the negation particle is placed as the left sister node of the negated expression. Then the annotation is preserved in the UMR data, see,  e.g.,  *…  a kde se sice to nejkrásnější odehrávalo v hledišti, ne na jevišti …* '... and where the most beautiful things took place in the auditorium, not on stage…', with the negation "-" indicated with *jeviště* 'stage'.
+[^9]:  It is also possible to negate only one of the verbal modifications/constituents using the negation particle (*ne* 'no'): then, in PDT, the negation particle is placed as the left sister node of the negated expression. Then the annotation is preserved in the UMR data, see, e.g., *… a kde se sice to nejkrásnější odehrávalo v hledišti, ne na jevišti …* '... and where the most beautiful things took place in the auditorium, not on stage…', with the negation "-" indicated with *jeviště* 'stage'.
