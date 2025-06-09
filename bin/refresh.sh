@@ -8,7 +8,7 @@ bin=$(readlink -f "${0%/*}")
 tally_treex=0
 tally_umr=0
 failed=()
-for t in "$UFAL_PDTC2A"/annotators/???/done/*.t ; do
+while read t ; do
     f=${t##*/}
     f=${f%.t}
     a=${t%.t}.a
@@ -17,7 +17,7 @@ for t in "$UFAL_PDTC2A"/annotators/???/done/*.t ; do
 
 
     if [[ $treex -ot $t || $treex -ot $a || ! -s $treex ]] ; then
-        echo Referesh $treex >&2
+        echo Refresh $treex >&2
         if "$bin"/pdt2treex "$t" 2>data/stepanek/"$f".treex.log ; then
             mv "$t"reex.gz data/stepanek/
             ((++tally_treex))
@@ -33,7 +33,7 @@ for t in "$UFAL_PDTC2A"/annotators/???/done/*.t ; do
             failed+=("$umr")
         fi
     fi
-done
+done < <(find "$UFAL_PDTC30"/data -name '*.t')
 echo Refreshed $tally_treex treex files.
 echo Refreshed $tally_umr umr files
 if (( ${#failed[@]} )) ; then
