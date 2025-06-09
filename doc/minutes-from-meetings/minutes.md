@@ -1,5 +1,51 @@
 # UMR meeting minutes
 
+## Monday, May 26, 2025
+
+(Dan, Hanka, Jan Š., Markéta)
+
+
+#### Updates:
+- Honza: `refer-number` conversion, detected error fixed - conversion hopefully finalized;
+- Markéta: **[Release notes 2.0](https://github.com/ufal/UMR/tree/main/papers)** hopefully finalized and pdf passed to Martin Popel.
+
+#### TODO:
+- [Release notes 2.0](https://github.com/ufal/UMR/tree/main/papers): 
+  - the markup version should be fixed;
+  - check the list of authors!
+- PDT 2.0 documentation - [APP parent-child relation](https://docs.google.com/spreadsheets/d/1_zHAK9LGdLsoPGuQOeyO05t7NmtdW9xJ/edit?gid=994881793#gid=994881793)
+   - more than 30k instances in PDT-C 2.0:  
+     FAUST ... APP 2x  
+     PCEDT ... APP 0x  
+     PDTSC ... APP 46x  
+     PDT ... APP 30034x 
+   - based on the PDT 2.0 manual: 
+     -  (2) _příslušník armády_.APP: příslušnosti osoby k nějakému celku, instituci (člen/part je rodičem -- instituce/celek je dítětem) ... OK, UMR: possessor or whole as the daughter
+     - (3) _tým brankářů_.APP: příslušnosti osoby k nějakému celku, instituci (instituce/celek je rodičem -- člen/part je dítětem) ... UMR: possessor as the daughter
+     - (6)  _střecha domu_.APP: vyjádření vztahu mezi částí a celkem (označení celku) (part je rodičem -- celek je dítětem) ... OK, UMR: possessor or whole as the daughter
+     - ALSO: _můj_.APP _klobouk_ (rodič vlastněné -- dítě vlastník) ... OK, UMR: possessor or whole as the daughter
+     - (ALE: _část Německa_.MAT (part je rodičem -- celek je dítětem) ... OK, UMR: possessor or whole as the daughter)
+ 
+- Markéta, Hanka: conversion of _být_, _mít_ frames; 
+   - check AMR to UMR automatic conversion [here](https://aclanthology.org/2023.tlt-1.8/)! 
+- conversion - further possible steps: 
+   - `FPHR`, Github [issue 21](https://github.com/ufal/UMR/issues/21) and [issue 22](https://github.com/ufal/UMR/issues/22)
+   - nodes for #Gen, #Unsp, [issue 23](https://github.com/ufal/UMR/issues/23)
+   - `polite` attribute (todo)
+   - `mode` attribute (todo)
+   - selected  _být_ frames ... see the [pdt_pb table](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829)
+   - **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+   - fix **discourse rolesets with more than 2 ARGS** (as but-91)
+- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
+ (This would significantly speed up the annotation!)
+
+#### NEXT meetings
+- Monday, June 16, S510, 13:00
+- Monday, June 23 - canceled 
+- Monday, June 30, S510, 13:00
+- July, August - based on availability :-)
+
+---
 
 ## Monday, May 26, 2025
 
@@ -31,6 +77,7 @@
 - Monday, June 23, S510, 13:00
 - ??? Monday, June 30 ???
 
+---
 
 ## Monday, May 19, 2025
 
@@ -60,6 +107,8 @@
 #### NEXT meetings
 - Monday, May 26, S510
 
+---
+
 ## Monday, May 12, 2025
 
 (Dan, Hanka, Jan Š., Markéta)
@@ -71,7 +120,7 @@
 - I also searched NomVallex for nouns that only have one frame and that frame has the semantic category "action" - 91 such nouns, all of the -ní/-tí variety [NomVallex_action_nouns_single_frame_file](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/nomvallex_lexemes_single_frame_action.tsv)
 
 
-
+---
 
 ## Monday, May 5, 2025
 
