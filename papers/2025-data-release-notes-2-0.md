@@ -1,4 +1,4 @@
-# **UMR 2.0 \- Czech: Release Notes ** 
+# UMR 2.0 - Czech: Release Notes
 
 Markéta Lopatková\*, Eva Fučíková, Federika Gamba, Jan Hajič, Hana Hledíková, Marie Mikulová, Michal Novák, Jan Štěpánek, Daniel Zeman, Šárka Zikánová  
 \*[lopatkova@ufal.mff.cuni.cz](mailto:lopatkova@ufal.mff.cuni.cz)
@@ -12,7 +12,7 @@ The Czech UMRs can be downloaded as a part of the [UMR 2.0 data from the LINDAT-
 
 The conversion covers selected phenomena pertaining to the sentence-level annotation (esp. structure of the graph, nodes and relations labeling, and PropBank-like argument structure for verbs). Furthermore, coreference relations are identified, both intra- and inter-sentential ones.
 
-### **Content**
+### Content
 
 [I. Sentence-level representation](#i.-sentence-level-representation)
 
@@ -90,9 +90,9 @@ The conversion covers selected phenomena pertaining to the sentence-level annota
 
 [Appendix A](#appendix-a)
 
-### 
 
-### **Introduction**
+
+### Introduction
 
 General characteristics of the two approaches and their brief comparison are introduced by [Lopatková et al. (2024, sect. 2\)](https://ufal.mff.cuni.cz/~lopatkova/2024/docs/2024-ITAT-PDT-to-UMR_camera-ready.pdf).[^1] Basic ideas of the conversion are also sketched there, with stress on the identification of the following phenomena: 
 
@@ -107,9 +107,9 @@ Further, PDT and UMR differ in the way they represent discourse relations and co
 
 More importantly, the UMR and PDT approaches differ in the level of abstraction—thus, the graph structures represent slightly different phenomena. Here we briefly outline main differences and limitations of the automatic conversion.
 
-# **I.	Sentence-level representation** {#i.-sentence-level-representation}
+# I. Sentence-level representation
 
-## **I.1	Nodes labeling** {#i.1-nodes-labeling}
+## I.1 Nodes labeling
 
 In UMR, nodes represent concepts—entities and events, but also discourse relations and keywords for, e.g., entity or quantity types). In PDT, nodes stand primarily for content words; further, special types of nodes are reserved for representing paratactic structures (esp. for discourse relations), multiword or foreign expressions, and clausal markers.  
 As the first step, all PDT nodes are converted to UMR nodes, using the following rules: 
@@ -136,23 +136,23 @@ In addition, PDT employs artificial lemmas (so-called t\_lemma substitutes, as, 
 - At this stage, abstract rolesets (as have-91, belong-91, have-mod-91, etc.), required by the UMR specification, are not identified; instead, copula and light verbs are treated as concepts, following the PDT annotation scheme.  
 - Structured data represented in UMR as special "entities" (e.g., date-entity, further structured with attributes like day, month, year, century, etc.) or "quantities" (e.g., monetary-quantity or temporal-quantity-quantity, both with the attributes quant and unit) are largely not identified in PDT yet.
 
-### **I.1.1	Alignment** {#i.1.1-alignment}
+### I.1.1 Alignment
 
 In the PDT data, the graph annotation is aligned with overt words; as a rule, each non-punctuation token is aligned with (at least one) graph node. This applies also to function words (as prepositions, auxiliary verbs, etc.), which are attached to the lexical words (concepts) they belong to (e.g., prepositions to (syntactic) nouns, auxiliary verbs to lexical verbs, etc.).[^3]    
 The same principle is kept in the UMR conversion. As a consequence, the format specification allows for discontinuous alignment (as there can be additional content inserted between a function word and the concept); for example, in *Putin mu udělil milost kvůli zdravotním důvodům* 'Putin pardoned him for health reasons' (example inspired by ex. 1(f) from the [UMR Specification](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md)), the preposition *kvůli* 'for' is attached to the *důvod* 'reason' concept \- as a result, this concept is annotated as aligned with token 5 (*kvůli*) and 7 (*důvod*), marked as 5-5, 7-7.
 
-## **I.2	Relations labeling** {#i.2-relations-labeling}
+## I.2 Relations labeling
 
 Both in UMR and PDT, a graph edge represents a relation between a parent node and its child (where UMR allows for two parents of a single node via reentrancy, contrary to PDT, see also sect. I.2.3, I.3.1 and I.4.1 below). Both formalisms use edge labels to determine a type of the relation, UMR uses the term "role" for these labels, PDT calls them "functors".    
 The PDT to UMR conversion proceeds in two steps, first it translates verb-specific arguments labeling and then converts all remaining labels using the default converting table.
 
-### **I.2.1	Verb-specific argument labeling** {#i.2.1-verb-specific-argument-labeling}
+### I.2.1 Verb-specific argument labeling
 
 The UMR approach supposes the use of a PropBank-like lexicon, assigning each predicate with a set of arguments (identified as ARG0, ARG1, …), while PDT makes use of its own predicate-argument labeling scheme, as indicated in the PDT-Vallex lexicon (with labels like ACT for actor/bearer, PAT for patient, ADDR for addressee, etc.). Fortunately, one third of the PDT-Vallex rolesets (32% of rolesets, covering 43% of arguments) has been converted to the PropBank style using existing resources [(Hajič et al, 2024b)](https://ufal.mff.cuni.cz/~lopatkova/2024/docs/2024-DMR-PDT-Vallex-to-PropBank-final.pdf).   
 Thus, for the rolesets with available argument mapping, the PropBank arguments are used in the data.  
 The arguments in the rolesets without (verb-specific) argument mapping are converted using the default table, see below.
 
-### **I.2.2	Labeling with the default converting table** {#i.2.2-labeling-with-the-default-converting-table}
+### I.2.2 Labeling with the default converting table
 
 Arguments in rolesets without (verb-specific) argument mapping as well as all other functors are translated using the default conversion table, as presented in Appendix A. In most cases, it is possible to find reliable mapping between PDT functors and UMR roles.
 
@@ -205,7 +205,7 @@ Finally, PDT annotates rhematizers (RHEM in PDT), different types of sentence li
 - Conversion of some functors is too general and requires further refinement.  
 - As structured data represented in UMR as special "entities" or "quantities" are largely not identified in PDT yet (see sect. I.1 above), they are labeled with roles based on their grammatical structures and/or functions.
 
-### **I.2.3	Structural changes based on functors** {#i.2.3-structural-changes-based-on-functors}
+### I.2.3 Structural changes based on functors
 
 In some cases, the translation of functors requires additional structural changes (not only translation of the label).
 
@@ -246,9 +246,9 @@ Several minor changes complete the list of structural changes that are based on 
   - **math-entity** (with op menu)  
     Mathematical operations (as addition, multiplication, or proportion/division) and intervals that cannot be analyzed using spatial or temporal functors (as, e.g., *trest od tří do pěti let* 'a sentence from three to five years'), are represented with special label (OPER functor) in PDT. In Czech UMRs, a new entity is used.
 
-## **I.3	Coordination and discourse relations, apposition** {#i.3-coordination-and-discourse-relations,-apposition}
+## I.3 Coordination and discourse relations, apposition
 
-### **I.3.1	Coordination / discourse relations** {#i.3.1-coordination-/-discourse-relations}
+### I.3.1 Coordination / discourse relations
 
 In general, representation of paratactic structures (coordination, discourse relations) follows the same principles in PDT-C and UMR: there is a special node in the graph for the whole paratactic structure (assigned with a discourse relation in UMR.) In these cases, the transfer is more-or-less straightforward, dealing mainly with technicalities. Several notes are relevant in this context.
 
@@ -290,7 +290,7 @@ The attribute of polarity (affirmative/negative) needs a special handling in coo
 - PDT also allows for cases when two (or even more) different relations are subsumed into a single coordination, as in *Kdy a za jakých podmínek se to stalo?* 'When and under what conditions did it happen?' In these cases, the most frequent role is tentatively used to represent the whole structure. More adequate processing (which involves splitting the material into two propositions (= *Kdy se to stalo a za jakých podmínek (se to stalo)?* 'When did it happen and under what conditions (did it happen)?') is postponed to later stages of the conversion.   
 - Coordinated structures that are involved in a coreference relation (either as anaphors or as antecedents) need a more detailed analysis, see sect. I.4.2.
 
-### **I.3.2	Apposition** {#i.3.2-apposition}
+### I.3.2 Apposition
 
 Apposition is a grammatical construction in which two or more concepts (especially entities) with the same referent stand in the same syntactic relation to the rest of a sentence: One concept identifies the other in a different way. While PDT treats this construction as a paratactic structure, reserving a special node (with the APPS label) for the whole construction, the UMR specification does not cover this phenomenon.   
 Constructions annotated in PDT as appositions are converted to UMR using the *identity-91* predicate. See, e.g., the PDT-C (left) and UMR (right) structures for the sentence *Charles IV., Holy Roman Emperor resided in Prague* (both graphs are simplified).  
@@ -305,11 +305,11 @@ Constructions annotated in PDT as appositions are converted to UMR using the *id
 
 - Structures with appositions that are involved in a coreference relation (either as anaphors or as antecedents) need a more detailed analysis, see sect. I.4.2.
 
-## **I.4	Processing coreference annotation** {#i.4-processing-coreference-annotation}
+## I.4 Processing coreference annotation
 
 Different representation of different types of the coreference relation in PDT-C and UMR frameworks significantly affects the overall structure of sentence graphs ([Lopatková et al, 2024](https://ufal.mff.cuni.cz/~lopatkova/2024/docs/2024-ITAT-PDT-to-UMR_camera-ready.pdf), Sect. 2 and Sect. 3.3). In PDT, all coreferential expressions are typically represented by separate nodes that are interlinked by a special coreferential relation (coreferential arrows). Designated attributes identify the type of the coreference (grammatical or text coreference[^6]) and the type of reference (e.g., specific or generic). This is applied both to intrasentence and intersentence coreferential relations. On the other hand, UMR introduces several ways to treat phenomena represented by coreferential chains in PDT. For the sentence-level representation, the mechanisms of reentrancy (sect. I.4.1) and inverse roles (sect. I.4.2) are relevant. Coreferences crossing the sentence boundary are treated within the document-level representation (sect. II.1).
 
-### **I.4.1	Reentrancy (within a sentence)** {#i.4.1-reentrancy-(within-a-sentence)}
+### I.4.1 Reentrancy (within a sentence)
 
 The UMR specification allows for the so-called reentrancy of a node if the respective concept has several roles in a single sentence (e.g., a participant in a main clause can serve as a participant in a complement clause). The reentrancy[^7] is employed esp. for conversion of the following cases where coreference is annotated using coreferential arrows in PDT-C:
 
@@ -336,7 +336,7 @@ Nodes for arguments of raising and control verbs (in PDT represented as separate
 
 In relatively rare cases, separate nodes are kept in UMRs, esp. if an anaphor is further modified, and the coreference relation is indicated in the document-level representation.  
 
-### **I.4.2	Inverse roles** {#i.4.2-inverse-roles}
+### I.4.2 Inverse roles
 
 UMR uses the mechanism of inverse roles, among others, for representing relative clauses:[^8]
 
@@ -368,9 +368,9 @@ The same principle is used also for relative pronominal adverbs (as *kde, kudy, 
 - Though the PDT stores information on the bridging anaphora (as, e.g., part-whole relation), which is relevant for the :subset-of relation, this information is not used at this stage.  
 - Coreferences crossing the sentence boundary are treated within the document-level representation (sect. II.1).
 
-## **I.5	UMR attributes** {#i.5-umr-attributes}
+## I.5 UMR attributes
 
-### **I.5.1	Aspect** {#i.5.1-aspect}
+### I.5.1 Aspect
 
 The UMR annotation scheme distinguishes rather fine-grained values for the aspect annotation. However, the specification advises to reflect esp. the aspectual distinctions that are grammaticalized and/or obligatory in the language. Thus, the transfer is limited to events expressed as verbs at this stage (the aspect annotation for events expressed as nouns and adjectives are left for further stages, see also sect. III.1 commenting on the event/entity distinction). Further, we stick to the basic values in the lattice (disregarding the possibility of more subtle annotation). The appropriate aspect value is deduced based on the compiled list of statives in Czech and, for verbs not listed there, from their morphological marking:
 
@@ -388,7 +388,7 @@ The UMR annotation scheme distinguishes rather fine-grained values for the aspec
 - Imperfective verbs can express habitual events. However, as this is not captured in the PDT data, such cases cannot be distinguished automatically. Unfortunately, this ambiguity is not reflected in the UMR aspect lattice and thus all occurrences of imperfective verbs get the "activity" value, albeit inappropriate in these cases.  
 - The list of stative verbs should be refined and further enriched. 
 
-### **I.5.2	Polarity** {#i.5.2-polarity}
+### I.5.2 Polarity
 
 The UMR "polarity" attribute serves for identifying morphosyntactic indicators of negation (which do not necessarily signal semantic negation). PDT recognizes two basic types of negation, so-called lexical negation and syntactic negation.
 
@@ -417,7 +417,7 @@ A special treatment is necessary when negation combines with coordination. In th
 - The current version of the Czech UMR data does not use the "modal-strength" attribute for annotation propositional negation. Instead, the attribute "polarity" is used for propositional negation as well. More appropriate conversion is postponed to later stages of the data processing.  
 - Questions and embedded interrogative clauses (with the UMR polarity value "umr-unknown" and "truth-value") are not processed yet.
 
-### **I.5.3	Refer-number and refer-person** {#i.5.3-refer-number-and-refer-person}
+### I.5.3 Refer-number and refer-person
 
 The value of the "refer-number" and "refer-person" UMR attributes serve esp. for pronominal references, identifying grammatical person information and grammatical number marking, respectively. These attributes can apply to all entity concepts. 
 
@@ -440,9 +440,9 @@ Whenever relevant, the "refer-number" and "refer-person" UMR attributes are prop
 
 - In the current conversion, Czech UMR data displays the "refer-number" and "refer-person" attributes whenever corresponding morphological categories appear in the PDT data. This leads to excessive and non-adequate usage of the attributes in UMR structures and should be refined in future versions.
 
-# **II.	Document-level representation** {#ii.-document-level-representation}
+# II.	 Document-level representation
 
-## **II.1	Coreference** {#ii.1-coreference}
+## II.1 Coreference
 
 All nodes with a coreferential link in the PDT data that are not processed using reentrancy (sect. I.4.1) or inverse roles (sect. I.4.2) are collected and the respective pairs of coreferring nodes are added to the document-level annotation. The relevant relation between individual pairs is identified, reflecting whether they refer to the same entity or to the same event. As a default, the :same-entity /:same-event relation is used. See [Lopatková et al. (2024)](https://ufal.mff.cuni.cz/~lopatkova/2024/docs/2024-ITAT-PDT-to-UMR_camera-ready.pdf) for more examples.
 
@@ -451,11 +451,11 @@ All nodes with a coreferential link in the PDT data that are not processed using
 - Though the PDT stores information on the bridging anaphora (as, e.g., part-whole relation), which is relevant for the :subset-of relation, this information is not used at this stage.  
 - Coreferential relations between events are only sporadically captured in the PDT-C thus this type is rare (and under-annotated) in the current version of the UMR data.
 
-# **III. 	Main phenomena not covered in the data**  {#iii.-main-phenomena-not-covered-in-the-data}
+# III. Main phenomena not covered in the data
 
-## **III.1	Identification of events**  {#iii.1-identification-of-events}
+## III.1 Identification of events
 
-### **III.1.1	Verb predicates** {#iii.1.1-verb-predicates}
+### III.1.1 Verb predicates
 
 * **Lexical verbs**
 
@@ -472,7 +472,7 @@ As the next steps, the following types must be identified:
 
 This classification should be available as a part of the PDT-Lexicon, which serves as a basis for the PropBank-like Czech lexicon.
 
-### **III.1.2	Non-verbal predicates** {#iii.1.2-non-verbal-predicates}
+### III.1.2 Non-verbal predicates
 
 The following types must be identified in PDT:
 
@@ -482,7 +482,7 @@ The following types must be identified in PDT:
 
 Selected types of derivational information are stored in several available lexical resources (as [MorfFlex](https://ufal.mff.cuni.cz/morfflex), [DeriNet](https://ufal.mff.cuni.cz/derinet), [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora), [SynSemClass](https://ufal.mff.cuni.cz/synsemclass)). However, these resources do not cover all information necessary for (semi-)automatic event identification (as exemplified by [Lopatková et al, 2024](https://ufal.mff.cuni.cz/~lopatkova/2024/docs/2024-ITAT-PDT-to-UMR_camera-ready.pdf)). Thus, various heuristics must be applied and their outputs need careful evaluation.  
 
-### **III.1.3	Abstract predicates/rolesets** {#iii.1.3-abstract-predicates/rolesets}
+### III.1.3 Abstract predicates/rolesets
 
 * ***být/bývat/bývávat*** **'to be'**
 
@@ -503,9 +503,9 @@ Similarly as *být/bývat/bývávat* 'to be', also *mít/mívat* 'to have' is a 
 
 In addition, there are other candidate constructions that should be identified, located in the PDT data and converted, as, e.g., *Mariina/její taška*, ‘Maria’s/her bag’
 
-## **III.2	UMR attributes**  {#iii.2-umr-attributes}
+## III.2 UMR attributes
 
-### **III.2.1	Mode**	 {#iii.2.1-mode}
+### III.2.1 Mode
 
 UMR uses the "mode" attribute to distinguish imperative, interrogative and expressive moods. This attribute should be filled in using the PDT "sentmode" attribute.
 
@@ -513,7 +513,7 @@ UMR uses the "mode" attribute to distinguish imperative, interrogative and expre
 
 - The current version of **the Czech UMR data does not cover the "mode" attribute** \- the conversion is postponed to later stages of the data processing.
 
-### **III.2.2	Polite** {#iii.2.2-polite}
+### III.2.2 Polite
 
 UMR adopts the "polite" attribute to indicate utterances marked for "deference with respect to the interlocutor". In PDT, this corresponds to the "politeness" grammateme; however, this grammateme is available only in a portion of the PDT-C data (namely the PDT subcorpus). 
 
@@ -521,7 +521,7 @@ UMR adopts the "polite" attribute to indicate utterances marked for "deference w
 
 - The current version of **the Czech UMR data does not cover the "polite" attribute** \- the conversion is postponed to later stages of the data processing.
 
-### **III.2.3	Degree**  {#iii.2.3-degree}
+### III.2.3 Degree
 
 Correct processing of the UMR "degree" attribute requires a list of intensifiers, downtoners, and equals, which has not been compiled for Czech yet.  
 
@@ -529,7 +529,7 @@ Correct processing of the UMR "degree" attribute requires a list of intensifiers
 
 - The current version of **the Czech UMR data does not cover the "degree" attribute** \- the conversion is postponed to later stages of the data processing.
 
-### **III.2.4	Quant**  {#iii.2.4-quant}
+### III.2.4 Quant
 
 The conversion of the UMR "quant" attribute requires a deeper analysis of the quantitative structures and their representation in the PDT data, which is not available at this stage.
 
@@ -537,7 +537,7 @@ The conversion of the UMR "quant" attribute requires a deeper analysis of the qu
 
 - The current version of **the Czech UMR data does not cover the "quant" attribute** \- the conversion is postponed to later stages of the data processing.
 
-### **III.2.5	Modal-strength**  {#iii.2.5-modal-strength}
+### III.2.5 Modal-strength
 
 The conversion of the UMR "modal-strength" attribute requires a profound analysis of the complex interplay of number of phenomena, such as sentence mode, factual modality (verbal mood), deontic modality (including semimodals), negation, modality expressions), and their treatment in PDT.
 
@@ -545,9 +545,9 @@ The conversion of the UMR "modal-strength" attribute requires a profound analysi
 
 - The current version of **the Czech UMR data does not cover the "modal-strength" attribut**e \- the conversion is postponed to later stages of the data processing.
 
-## **III.3	Named Entities (NEs)** {#iii.3-named-entities-(nes)}
+## III.3 Named Entities (NEs)
 
-### **III.3.1	Identification of NEs** {#iii.3.1-identification-of-nes}
+### III.3.1 Identification of NEs
 
 Annotation of named entities in the PDT data is limited to identification of multiword expressions (MWE) and to their (coarse-grained) classification (e.g., person, institution, time, object, number, location, address, bibliographic entity). On top of it, MWE annotation is available only in one of the four PDT-C subcorpora.
 
@@ -555,24 +555,24 @@ Further, there is the [NameTag 3 tool](https://ufal.mff.cuni.cz/nametag/3) avail
 
 Identification of named entities was postponed to later stages of the conversion.
 
-### **III.3.2	NEs anchoring** {#iii.3.2-nes-anchoring}
+### III.3.2 NEs anchoring
 
 According to the UMR principles, named entities should be anchored in an ontology. While the English UMR data uses English Wikipedia, we lean towards the use of Wikidata, as this represents a language independent resource.   
 However, only very preliminary and small-scale manual annotations using Wikidata for NE anchoring are available so far.
 
-## **III.4	Scope for quantification and negation**  {#iii.4-scope-for-quantification-and-negation}
+## III.4 Scope for quantification and negation
 
 Scope for quantification and negation is not covered in the Czech UMR data as this information is not fully available in the source data. An in-depth analysis of these phenomena is necessary.   
 
-## **III.5	Temporal relations** {#iii.5-temporal-relations}
+## III.5 Temporal relations
 
 Temporal relations are not represented at the document-level annotation so far as only information based on grammatical tense marking is available in PDT. We suppose that the possibility of their automatic conversion is rather limited as it requires understanding of the event temporal structure, which definitely goes beyond the scope of the representation available in PDT.
 
-## **III.6	Modal dependency**  {#iii.6-modal-dependency}
+## III.6 Modal dependency
 
 The conversion does not identify modality dependency as it must be based on complex understanding of the event modal structure, taking into account a number of phenomena annotated at the sentence-level (such as sentence mode, factual modality (verbal mood), deontic modality (including semimodals), negation, modality expressions).
 
-### **References** {#references}
+### References
 
 Bonn Julia, Bonia, Claire, Buchholz Matt, Cheng Hsiao-Jung, Chen Alvin, Chen Ching-wen, Cowell Andrew, Crof, William, Denk Lukas, Elsayed Ahmed, Fučíková Eva, Gamba Federica, Gomez Carlos, Hajič Jan, Hajičová Eva, Havelka Jiří, Havenmeier Loden, Kilgore Ath, Kolářová Veronika, Kučová Lucie, Lai Kenneth, Li Bin, Li Jingyi, Lopatková Markéta, MacGregor Marie, Mikulová Marie, Mírovský Jiří, Nedoluzhko Anna, Myers Skatje, Novák Michal, O’Gorman Tim, Pajas Petr, Palmer Alexis, Palmer Martha, Panevová Jarmila, Post Benét, Pustejovsky James, Sgall Petr, Song Jialin, Song Li, Ševčíková Magda, Štěpánek Jan, Urešová Zdeňka, Sun Haibo, Sun Yao, Vallejos Yopán Rosa, Van Gysel Jens, Vigus Meagan, Wright‑Bettner Kristin, Wu Jiawei, Xue Nianwen, Xing Dan, Xu Keer, Xu Zhixing, Yue Liulu, Zeman Daniel, Zhao Jin, Zikánová Šárka, Žabokrtský, Zdeněk (2025): *Uniform Meaning Representation 2.0*. Data/software, LINDAT/CLARIAH-CZ digital library, Charles University, Prague, Czech Republic, [http://hdl.handle.net/11234/1-5902](http://hdl.handle.net/11234/1-5902), [https://umr4nlp.github.io/web/index.html](https://umr4nlp.github.io/web/index.html).
 
@@ -586,7 +586,7 @@ Mikulová Marie, Bémová Alevtina, Hajič Jan, Hajičová Eva, Havelka Jiří, 
 
 Uniform Meaning Representation (UMR) 0.9 Specification [https://github.com/ufal/umr-guidelines/blob/master/guidelines.md](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md)
 
-## **Appendix A** {#appendix-a}
+## Appendix A
 
 | PDT functor | UMR label  | UMR type | PDT example (from [Mikulová at al., 2006](https://ufal.mff.cuni.cz/pdt2.0/doc/manuals/en/t-layer/html/index.html)) |
 | :---- | :---- | :---- | :---- |
