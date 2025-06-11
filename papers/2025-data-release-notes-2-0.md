@@ -14,7 +14,7 @@ The conversion covers selected phenomena pertaining to the sentence-level annota
 
 ### Content
 
-[I. Sentence-level representation](#i.-sentence-level-representation)
+[I. Sentence level representation](#i.-sentence-level-representation)
 
 [I.1 Nodes labeling](#i.1-nodes-labeling)
 
@@ -22,21 +22,21 @@ The conversion covers selected phenomena pertaining to the sentence-level annota
 
 [I.2 Relations labeling](#i.2-relations-labeling)
 
-[I.2.1 Verb-specific argument labeling](#i.2.1-verb-specific-argument-labeling)
+[I.2.1 Verb specific argument labeling](#i.2.1-verb-specific-argument-labeling)
 
 [I.2.2 Labeling with the default converting table](#i.2.2-labeling-with-the-default-converting-table)
 
 [I.2.3 Structural changes based on functors](#i.2.3-structural-changes-based-on-functors)
 
-[I.3 Coordination and discourse relations, apposition](#i.3-coordination-and-discourse-relations,-apposition)
+[I.3 Coordination and discourse relations and apposition](#i.3-coordination-and-discourse-relations,-apposition)
 
-[I.3.1 Coordination / discourse relations](#i.3.1-coordination-/-discourse-relations)
+[I.3.1 Coordination and discourse relations](#i.3.1-coordination-/-discourse-relations)
 
 [I.3.2 Apposition](#i.3.2-apposition)
 
 [I.4 Processing coreference annotation](#i.4-processing-coreference-annotation)
 
-[I.4.1 Reentrancy (within a sentence)](#i.4.1-reentrancy-\(within-a-sentence\))
+[I.4.1 Reentrancy within a sentence](#i.4.1-reentrancy-\(within-a-sentence\))
 
 [I.4.2 Inverse roles](#i.4.2-inverse-roles)
 
@@ -48,7 +48,7 @@ The conversion covers selected phenomena pertaining to the sentence-level annota
 
 [I.5.3 Refer-number and refer-person](#i.5.3-refer-number-and-refer-person)
 
-[II. Document-level representation](#ii.-document-level-representation)
+[II. Document level representation](#ii.-document-level-representation)
 
 [II.1 Coreference](#ii.1-coreference)
 
@@ -107,7 +107,7 @@ Further, PDT and UMR differ in the way they represent discourse relations and co
 
 More importantly, the UMR and PDT approaches differ in the level of abstraction—thus, the graph structures represent slightly different phenomena. Here we briefly outline main differences and limitations of the automatic conversion.
 
-# I. Sentence-level representation
+# I. Sentence level representation
 
 ## I.1 Nodes labeling
 
@@ -146,7 +146,7 @@ The same principle is kept in the UMR conversion. As a consequence, the format s
 Both in UMR and PDT, a graph edge represents a relation between a parent node and its child (where UMR allows for two parents of a single node via reentrancy, contrary to PDT, see also sect. I.2.3, I.3.1 and I.4.1 below). Both formalisms use edge labels to determine a type of the relation, UMR uses the term "role" for these labels, PDT calls them "functors".    
 The PDT to UMR conversion proceeds in two steps, first it translates verb-specific arguments labeling and then converts all remaining labels using the default converting table.
 
-### I.2.1 Verb-specific argument labeling
+### I.2.1 Verb specific argument labeling
 
 The UMR approach supposes the use of a PropBank-like lexicon, assigning each predicate with a set of arguments (identified as ARG0, ARG1, …), while PDT makes use of its own predicate-argument labeling scheme, as indicated in the PDT-Vallex lexicon (with labels like ACT for actor/bearer, PAT for patient, ADDR for addressee, etc.). Fortunately, one third of the PDT-Vallex rolesets (32% of rolesets, covering 43% of arguments) has been converted to the PropBank style using existing resources [(Hajič et al, 2024b)](https://ufal.mff.cuni.cz/~lopatkova/2024/docs/2024-DMR-PDT-Vallex-to-PropBank-final.pdf).   
 Thus, for the rolesets with available argument mapping, the PropBank arguments are used in the data.  
@@ -246,9 +246,9 @@ Several minor changes complete the list of structural changes that are based on 
   - **math-entity** (with op menu)  
     Mathematical operations (as addition, multiplication, or proportion/division) and intervals that cannot be analyzed using spatial or temporal functors (as, e.g., *trest od tří do pěti let* 'a sentence from three to five years'), are represented with special label (OPER functor) in PDT. In Czech UMRs, a new entity is used.
 
-## I.3 Coordination and discourse relations, apposition
+## I.3 Coordination and discourse relations and apposition
 
-### I.3.1 Coordination / discourse relations
+### I.3.1 Coordination and discourse relations
 
 In general, representation of paratactic structures (coordination, discourse relations) follows the same principles in PDT-C and UMR: there is a special node in the graph for the whole paratactic structure (assigned with a discourse relation in UMR.) In these cases, the transfer is more-or-less straightforward, dealing mainly with technicalities. Several notes are relevant in this context.
 
@@ -309,7 +309,7 @@ Constructions annotated in PDT as appositions are converted to UMR using the *id
 
 Different representation of different types of the coreference relation in PDT-C and UMR frameworks significantly affects the overall structure of sentence graphs ([Lopatková et al, 2024](https://ufal.mff.cuni.cz/~lopatkova/2024/docs/2024-ITAT-PDT-to-UMR_camera-ready.pdf), Sect. 2 and Sect. 3.3). In PDT, all coreferential expressions are typically represented by separate nodes that are interlinked by a special coreferential relation (coreferential arrows). Designated attributes identify the type of the coreference (grammatical or text coreference[^6]) and the type of reference (e.g., specific or generic). This is applied both to intrasentence and intersentence coreferential relations. On the other hand, UMR introduces several ways to treat phenomena represented by coreferential chains in PDT. For the sentence-level representation, the mechanisms of reentrancy (sect. I.4.1) and inverse roles (sect. I.4.2) are relevant. Coreferences crossing the sentence boundary are treated within the document-level representation (sect. II.1).
 
-### I.4.1 Reentrancy (within a sentence)
+### I.4.1 Reentrancy within a sentence
 
 The UMR specification allows for the so-called reentrancy of a node if the respective concept has several roles in a single sentence (e.g., a participant in a main clause can serve as a participant in a complement clause). The reentrancy[^7] is employed esp. for conversion of the following cases where coreference is annotated using coreferential arrows in PDT-C:
 
@@ -440,7 +440,7 @@ Whenever relevant, the "refer-number" and "refer-person" UMR attributes are prop
 
 - In the current conversion, Czech UMR data displays the "refer-number" and "refer-person" attributes whenever corresponding morphological categories appear in the PDT data. This leads to excessive and non-adequate usage of the attributes in UMR structures and should be refined in future versions.
 
-# II.	 Document-level representation
+# II. Document level representation
 
 ## II.1 Coreference
 
