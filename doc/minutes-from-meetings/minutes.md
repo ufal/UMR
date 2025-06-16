@@ -1,6 +1,73 @@
 # UMR meeting minutes
 
-## Monday, May 26, 2025
+## Monday, May 169, 2025
+
+(Dan, Federica, Hanka, Jan Š., Markéta)
+
+
+#### Updates:
+- Federica: short report om the [UMR Summer School](https://umr4nlp.github.io/web/SummerSchool2025.html)
+- Federica: [UMR Schema](https://umr4nlp.github.io/web/UMRSchemaPages/index.html) - lists and lattices with definitions and examples. It contains lists for:
+    - Participant roles, Nonparticipant roles, and Attribute rolest
+    - The `:aspect` Attribute role
+    - Modal attribute roles
+    - Abstract concepts
+    - Named Entity hierarchy
+    - Nonprototypical Predication -91 rolesets
+    - Discourse Relations
+    - Abstract -91 rolesets
+- Federica: [UMR writer](https://umr-tool.cs.brandeis.edu/) works!
+    The tool supports the format described in the UMR Release 2.0 (see the README.md file). It is able to compare two files! 
+
+- Markéta: [UMR 2.0 - Czech: Release Notes](https://github.com/ufal/UMR/blob/main/papers/2025-data-release-notes-2-0.md) as  [ÚFAL TR-2025-74](https://ufal.mff.cuni.cz/techrep/tr74.pdf).   
+**The markup version should be fixed** - internal links do not work!
+  - most frequent _být_ frames prepared for conversion ... see the [pdt_pb table](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829)
+
+- Honza: `refer-number`, `refer-person` conversion finalized (for the time being)
+- Honza:  personal and some demonstrative pronouns converted as `event` (rather than `entity`) if they refer to verbs 
+   -  personal pronouns with 1st and 2nd person should be converted as `person` (rather than `entity`) ?? 
+- Honza:  `FPHR`, Github [issue 21](https://github.com/ufal/UMR/issues/21) (NE introduced with common noun) solved
+
+
+
+
+#### TODO:
+- **Conversion:** 
+   - Markéta, Hanka: continue with _být_ and _mít_ frames; 
+   - check AMR to UMR automatic conversion [here](https://aclanthology.org/2023.tlt-1.8/)! 
+- **Automatic conversion** - further possible steps: 
+   - `FPHR` without #Forn.ID as its head, [issue 22](https://github.com/ufal/UMR/issues/22)  
+   - nodes for #Gen, #Unsp, [issue 23](https://github.com/ufal/UMR/issues/23)
+   - `polite` attribute (todo)
+   - `mode` attribute (todo)
+   -  _být_ frames 
+   - **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+   - fix **discourse rolesets with more than 2 ARGS** (as but-91)
+- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
+ (This would significantly speed up the annotation!)
+
+- PDT 2.0 documentation - [APP parent-child relation](https://docs.google.com/spreadsheets/d/1_zHAK9LGdLsoPGuQOeyO05t7NmtdW9xJ/edit?gid=994881793#gid=994881793)
+   - more than 30k instances in PDT-C 2.0:  
+     FAUST ... APP 2x  
+     PCEDT ... APP 0x  
+     PDTSC ... APP 46x  
+     PDT ... APP 30034x 
+   - based on the PDT 2.0 manual: 
+     -  (2) _příslušník armády_.APP: příslušnosti osoby k nějakému celku, instituci (člen/part je rodičem -- instituce/celek je dítětem) ... OK, UMR: possessor or whole as the daughter
+     - (3) _tým brankářů_.APP: příslušnosti osoby k nějakému celku, instituci (instituce/celek je rodičem -- člen/part je dítětem) ... UMR: possessor as the daughter
+     - (6)  _střecha domu_.APP: vyjádření vztahu mezi částí a celkem (označení celku) (part je rodičem -- celek je dítětem) ... OK, UMR: possessor or whole as the daughter
+     - ALSO: _můj_.APP _klobouk_ (rodič vlastněné -- dítě vlastník) ... OK, UMR: possessor or whole as the daughter
+     - (ALE: _část Německa_.MAT (part je rodičem -- celek je dítětem) ... OK, UMR: possessor or whole as the daughter)
+ 
+
+#### NEXT meetings
+- Monday, June 23 - canceled 
+- Monday, June 30, S510, 13:00
+- July, August - based on availability :-)
+
+---
+
+## Monday, May 9, 2025
 
 (Dan, Hanka, Jan Š., Markéta)
 
