@@ -1,23 +1,22 @@
 # UMR meeting minutes
 
-## Monday, May 169, 2025
+## Monday, June 16, 2025
 
 (Dan, Federica, Hanka, Jan Š., Markéta)
 
-
 #### Updates:
-- Federica: short report om the [UMR Summer School](https://umr4nlp.github.io/web/SummerSchool2025.html)
+- Federica: short report on the [UMR Summer School](https://umr4nlp.github.io/web/SummerSchool2025.html).
 - Federica: [UMR Schema](https://umr4nlp.github.io/web/UMRSchemaPages/index.html) - lists and lattices with definitions and examples. It contains lists for:
-    - Participant roles, Nonparticipant roles, and Attribute rolest
-    - The `:aspect` Attribute role
+    - Participant roles, non-participant roles, and attribute roles
+    - The `:aspect` attribute
     - Modal attribute roles
     - Abstract concepts
     - Named Entity hierarchy
     - Nonprototypical Predication -91 rolesets
     - Discourse Relations
     - Abstract -91 rolesets
-- Federica: [UMR writer](https://umr-tool.cs.brandeis.edu/) works!
-    The tool supports the format described in the UMR Release 2.0 (see the README.md file). It is able to compare two files! 
+- Federica: [UMR Writer 3.0](https://umr-tool.cs.brandeis.edu/) works much better than 2.0.
+    The tool supports the format described in the UMR Release 2.0 (see the README.md file). It can compare two files, compute the AnCast F1 score, and present their differences in a GitHub-style view.
 
 - Markéta: [UMR 2.0 - Czech: Release Notes](https://github.com/ufal/UMR/blob/main/papers/2025-data-release-notes-2-0.md) as  [ÚFAL TR-2025-74](https://ufal.mff.cuni.cz/techrep/tr74.pdf).   
 **The markup version should be fixed** - internal links do not work!
