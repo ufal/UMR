@@ -14,77 +14,77 @@ The conversion covers selected phenomena pertaining to the sentence-level annota
 
 ### Content
 
-[I. Sentence level representation](#i.-sentence-level-representation)
+[I. Sentence level representation](#i-sentence-level-representation)
 
-[I.1 Nodes labeling](#i.1-nodes-labeling)
+[I.1 Nodes labeling](#i1-nodes-labeling)
 
-[I.1.1 Alignment](#i.1.1-alignment)
+[I.1.1 Alignment](#i11-alignment)
 
-[I.2 Relations labeling](#i.2-relations-labeling)
+[I.2 Relations labeling](#i2-relations-labeling)
 
-[I.2.1 Verb specific argument labeling](#i.2.1-verb-specific-argument-labeling)
+[I.2.1 Verb specific argument labeling](#i21-verb-specific-argument-labeling)
 
-[I.2.2 Labeling with the default converting table](#i.2.2-labeling-with-the-default-converting-table)
+[I.2.2 Labeling with the default converting table](#i22-labeling-with-the-default-converting-table)
 
-[I.2.3 Structural changes based on functors](#i.2.3-structural-changes-based-on-functors)
+[I.2.3 Structural changes based on functors](#i23-structural-changes-based-on-functors)
 
-[I.3 Coordination and discourse relations and apposition](#i.3-coordination-and-discourse-relations,-apposition)
+[I.3 Coordination and discourse relations and apposition](#i3-coordination-and-discourse-relations,-apposition)
 
-[I.3.1 Coordination and discourse relations](#i.3.1-coordination-/-discourse-relations)
+[I.3.1 Coordination and discourse relations](#i31-coordination-/-discourse-relations)
 
-[I.3.2 Apposition](#i.3.2-apposition)
+[I.3.2 Apposition](#i32-apposition)
 
-[I.4 Processing coreference annotation](#i.4-processing-coreference-annotation)
+[I.4 Processing coreference annotation](#i4-processing-coreference-annotation)
 
-[I.4.1 Reentrancy within a sentence](#i.4.1-reentrancy-\(within-a-sentence\))
+[I.4.1 Reentrancy within a sentence](#i41-reentrancy-\(within-a-sentence\))
 
-[I.4.2 Inverse roles](#i.4.2-inverse-roles)
+[I.4.2 Inverse roles](#i42-inverse-roles)
 
-[I.5 UMR attributes](#i.5-umr-attributes)
+[I.5 UMR attributes](#i5-umr-attributes)
 
-[I.5.1 Aspect](#i.5.1-aspect)
+[I.5.1 Aspect](#i51-aspect)
 
-[I.5.2 Polarity](#i.5.2-polarity)
+[I.5.2 Polarity](#i52-polarity)
 
-[I.5.3 Refer-number and refer-person](#i.5.3-refer-number-and-refer-person)
+[I.5.3 Refer-number and refer-person](#i53-refer-number-and-refer-person)
 
-[II. Document level representation](#ii.-document-level-representation)
+[II. Document level representation](#ii-document-level-representation)
 
-[II.1 Coreference](#ii.1-coreference)
+[II.1 Coreference](#ii1-coreference)
 
-[III.  Main phenomena not covered in the data](#iii.-main-phenomena-not-covered-in-the-data)
+[III.  Main phenomena not covered in the data](#iii-main-phenomena-not-covered-in-the-data)
 
-[III.1 Identification of events](#iii.1-identification-of-events)
+[III.1 Identification of events](#iii1-identification-of-events)
 
-[III.1.1 Verb predicates](#iii.1.1-verb-predicates)
+[III.1.1 Verb predicates](#iii11-verb-predicates)
 
-[III.1.2 Non-verbal predicates](#iii.1.2-non-verbal-predicates)
+[III.1.2 Non-verbal predicates](#iii12-non-verbal-predicates)
 
-[III.1.3 Abstract predicates/rolesets](#iii.1.3-abstract-predicates/rolesets)
+[III.1.3 Abstract predicates/rolesets](#iii13-abstract-predicates/rolesets)
 
-[III.2 UMR attributes](#iii.2-umr-attributes)
+[III.2 UMR attributes](#iii2-umr-attributes)
 
-[III.2.1 Mode](#iii.2.1-mode)
+[III.2.1 Mode](#iii21-mode)
 
-[III.2.2 Polite](#iii.2.2-polite)
+[III.2.2 Polite](#iii22-polite)
 
-[III.2.3 Degree](#iii.2.3-degree)
+[III.2.3 Degree](#iii23-degree)
 
-[III.2.4 Quant](#iii.2.4-quant)
+[III.2.4 Quant](#iii24-quant)
 
-[III.2.5 Modal-strength](#iii.2.5-modal-strength)
+[III.2.5 Modal-strength](#iii25-modal-strength)
 
-[III.3 Named Entities (NEs)](#iii.3-named-entities-\(nes\))
+[III.3 Named Entities (NEs)](#iii3-named-entities-\(nes\))
 
-[III.3.1 Identification of NEs](#iii.3.1-identification-of-nes)
+[III.3.1 Identification of NEs](#iii31-identification-of-nes)
 
-[III.3.2 NEs anchoring](#iii.3.2-nes-anchoring)
+[III.3.2 NEs anchoring](#iii32-nes-anchoring)
 
-[III.4 Scope for quantification and negation](#iii.4-scope-for-quantification-and-negation)
+[III.4 Scope for quantification and negation](#iii4-scope-for-quantification-and-negation)
 
-[III.5 Temporal relations](#iii.5-temporal-relations)
+[III.5 Temporal relations](#iii5-temporal-relations)
 
-[III.6 Modal dependency](#iii.6-modal-dependency)
+[III.6 Modal dependency](#iii6-modal-dependency)
 
 [References](#references)
 
