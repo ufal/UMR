@@ -13,6 +13,16 @@
 
 
 ## UMR lists/mappings/...
+[UMR Schema](https://umr4nlp.github.io/web/UMRSchemaPages/index.html): UMR schema lists and lattices with definitions and examples. It contains lists for:
+- Participant roles, Nonparticipant roles, and Attribute rolest
+- The :aspect Attribute role
+- Modal attribute roles
+- Abstract concepts
+- Named Entity hierarchy
+- Nonprototypical Predication -91 rolesets
+- Discourse Relations
+- Abstract -91 rolesets
+
 [**!!! UMR lists !!!**](https://docs.google.com/spreadsheets/d/1PVxgXW3ED3OWLieie9scr6iq_xuQ5RAA8YJKwbLwJ2E/edit#gid=1927108453) - the document provides lists of:
 - **abstract concepts**, which subsumes:
   - _basic concepts_ (as person, thing, place, name, event, etc.)
