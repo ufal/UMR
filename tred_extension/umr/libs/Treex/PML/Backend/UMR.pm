@@ -48,18 +48,7 @@ sub read {
                      | \# \s+ :: \s+ snt[0-9]+ \s+ (.+) )/x
         ) {
             my @words = split ' ', $1;
-            $root = 'Treex::PML::Factory'->createTypedNode(
-                    'umr.sent.type',
-                    $SCHEMA, {
-                        words => 'Treex::PML::Factory'->createList([
-                            map 'Treex::PML::Factory'->createContainer(
-                                'Treex::PML::Factory'->createList,
-                                {word => $_}),
-                            "", @words]),
-                        id => 'umr' . ++$sentence_index,
-                        '#name' => 'sent',
-                    });
-
+            $root = new_root(\@words, ++$sentence_index);
             $doc->append_tree($root);
 
         } elsif (/^\(/ && 'sentence' eq $mode) {
@@ -67,6 +56,8 @@ sub read {
 
         } elsif (length $buffer && 'sentence' eq $mode) {
             if ("" eq $_) {
+                $root = new_root([], ++$sentence_index)
+                    unless $root;  # Empty sentence.
                 parse_sentence($root, \$buffer);
                 die "Sentence $sentence_index: Leftover $buffer"
                     if length $buffer;
@@ -130,6 +121,21 @@ sub write {
     return 1
 }
 
+sub new_root {
+    my ($words, $sentence_index) = @_;
+    'Treex::PML::Factory'->createTypedNode(
+        'umr.sent.type',
+        $SCHEMA, {
+            words => 'Treex::PML::Factory'->createList([
+                map 'Treex::PML::Factory'->createContainer(
+                    'Treex::PML::Factory'->createList,
+                    {word => $_}),
+                "", @$words]),
+            id => 'umr' . $sentence_index,
+            '#name' => 'sent',
+    });
+}
+
 sub parse_sentence {
     my ($root, $buffer) = @_;
     #warn "LABEL $root->{label}.";
@@ -157,15 +163,17 @@ sub parse_sentence {
                 $child->{relation} = $relation;
                 push @{ $root->{CHILDREN} }, $child;
 
+            } elsif ($$buffer =~ s/^"([^"]+)"\s*//) {
+                #warn "QQ[$1]";
+                my $value = $1;
+                add_to_features($node, $relation, $value);
+
             } elsif ($$buffer =~ s/^([^\s)]+)\s*//) {
                 my $value = $1;
                 if ($value =~ /^s[0-9]\w+$/) {
                     add_to_links($node, $value, "rel:$relation");
                 } else {
-                    $node->{features} //= 'Treex::PML::Factory'->createList();
-                    $node->{features}->push(
-                        'Treex::PML::Factory'->createContainer(
-                            $value, {type => $relation}));
+                    add_to_features($node, $relation, $value);
                 }
                 #warn "\n\nExtracted '$value', left $$buffer";
 
@@ -190,6 +198,14 @@ sub add_to_links {
     $node->{links}->push(
         'Treex::PML::Factory'->createContainer(
             $type, {'target.rf' => $target_id}));
+}
+
+sub add_to_features {
+    my ($node, $relation, $value) = @_;
+    $node->{features} //= 'Treex::PML::Factory'->createList();
+    $node->{features}->push(
+        'Treex::PML::Factory'->createContainer(
+            $value, {type => $relation}));
 }
 
 __PACKAGE__
