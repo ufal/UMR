@@ -141,7 +141,7 @@ sub parse_sentence {
     #warn "LABEL $root->{label}.";
     #warn "\n\nParsing $$buffer";
     my $node;
-    if ($$buffer =~ s{ ^ \( (\w+) \s* / \s* ([^\s)]+) \s* }{}x) {
+    if ($$buffer =~ s{ ^ \( \s* (\w+) \s* / \s* ([^\s)]+) \s* }{}x) {
         my ($var, $label) = ($1, $2);
         $node = 'Treex::PML::Factory'->createTypedNode(
             'umr.node.type',
