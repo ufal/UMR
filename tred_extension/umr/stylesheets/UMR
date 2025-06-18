@@ -44,7 +44,7 @@ style: <?
     my $hints   = join '&', "", map $_->value, @links;
     my $deco    = join '&', "", map "shape=text;font=SansSerif;fill="
                                     . ($_->value =~ /^coref:/ ? 'magenta': UMR::arrow_color(text => $_->value))
-                                    . ";coords=n,n;start=25%;text=".($_->value =~ s/rel://r =~ s/coref:e(?:vent|ntity)//r),
+                                    . ';coords=n,n;start=' . (10 + rand 90) . '%;text=' . ($_->value =~ s/rel://r =~ s/coref:e(?:vent|ntity)//r),
                                     @links;
 
     my $oval = '#{Oval-fill:whitesmoke}#{CurrentOval-fill:red}';
