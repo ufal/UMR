@@ -1,6 +1,6 @@
 # UMR 2.0 - Czech: Release Notes
 
-Markéta Lopatková\*, Eva Fučíková, Federika Gamba, Jan Hajič, Hana Hledíková, Marie Mikulová, Michal Novák, Jan Štěpánek, Daniel Zeman, Šárka Zikánová  
+Markéta Lopatková\*, Eva Fučíková, Federica Gamba, Jan Hajič, Hana Hledíková, Marie Mikulová, Michal Novák, Jan Štěpánek, Daniel Zeman, Šárka Zikánová  
 \*[lopatkova@ufal.mff.cuni.cz](mailto:lopatkova@ufal.mff.cuni.cz)
 
 Charles University, Faculty of Mathematics and Physics  
