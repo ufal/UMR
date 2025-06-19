@@ -2,17 +2,19 @@
 
 #bind compare_trees to = menu Compare Trees
 #bind show_diff to ? menu Show Diff
+#bind load_original_file to o menu Load Original File
 
 {   package UMR;
 
     BEGIN { import TredMacro }
 
     use strict;
+    use File::Basename qw{ basename };
     use Scalar::Util qw{ weaken };
 
     unshift @TrEd::Config::open_types, [
         'Uniform Meaning Representation',
-        [ '.txt' ],
+        [ '.umr' ],
     ] unless grep $_ eq 'Uniform Meaning Representation',
              @{ $TrEd::Config::open_types[0] };
 
@@ -374,4 +376,63 @@
         use Data::Dumper;
         print Dumper $this->{_diff};
     }
+
+    {   my %map;
+        sub load_original_file {
+            ChangingFile(0);
+            if (! exists $TrEd::Config::userConf->{_umr_umr20_pdtc}
+                && ! exists $TrEd::Config::userConf->{_umr_umr20_treex}
+            ) {
+                ToplevelFrame()->Dialog(
+                    -title => 'UMR not configured',
+                    -bitmap => 'error',
+                    -text => "Neither 'user_UMR_UMR20_PDTC'"
+                             . " nor 'user_UMR_UMR20_Treex'"
+                             . " set in .tredrc",
+                    -buttons => ['OK'],
+                -default_button => 'OK')->Show;
+                return
+            }
+            load_map() unless keys %map;
+            my $f = $map{ basename(FileName()) };
+            for my $opt (qw( _umr_umr20_pdtc _umr_umr20_treex )) {
+                if ($TrEd::Config::userConf->{$opt}) {
+                    $f = 'File::Spec'->catfile(
+                        $TrEd::Config::userConf->{$opt}, $f);
+                    $f .= 'reex.gz' if '_umr_umr20_treex' eq $opt;
+                    last if -f $f;
+                    $f = 'File::Spec'->catfile(
+                        $TrEd::Config::userConf->{$opt}, basename($f));
+                    last if -f $f;
+                }
+            }
+            my $sentence = CurrentTreeNumber() + 1;
+            my $framegroup = $grp->{framegroup};
+            my $win = $framegroup->{focusedWindow};
+            my $new_win = main::splitWindow($framegroup, 'vert');
+            my $file = TrEd::File::open_file($grp, $f);
+            $grp->set_current_file($file);
+            TredMacro::GotoTree($sentence);
+            main::focusNextWindow($framegroup) until $win->is_focused;
+            main::switchContext($win, 'UMR', 1);
+        }
+
+        sub load_map {
+            my $map;
+            my @paths = grep /umr/, ResourcePaths();
+            for my $path (@paths) {
+                $map = 'File::Spec'->catfile($path, 'umr.map');
+                last
+            }
+            return unless -f $map;
+
+            open my $in, '<', $map or die "$map: $!";
+            while (<$in>) {
+                s/[\r\n]+//g;
+                my ($umr, $pdtc) = split /\t/;
+                $map{$umr} = $pdtc;
+            }
+        }
+    }
+
 }
