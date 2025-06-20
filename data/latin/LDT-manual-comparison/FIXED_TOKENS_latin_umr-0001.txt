@@ -3115,7 +3115,7 @@ Sentence Gloss (en): the corrupt morals of the state, too, which extravagance an
             :ARG0 (s48a / and
                 :op1 (s48l / luxuria :refer-number singular)
                 :op2 (s48a2 / avaritia :refer-number singular)
-            :ARG1-of (s48h / have-identity-91
+            :ARG1-of (s48i2 / identity-91
                 :ARG2 (s48m2 / malum
                     :refer-number plural
                     :mod (s48a3 / and
@@ -3140,7 +3140,7 @@ s48v: 19-19
 s48a: 16-16
 s48l: 15-15
 s48a2: 17-17
-s48h: 0-0
+s48i2: 0-0
 s48m2: 13-13
 s48a3: 9-9
 s48m3: 8-8
@@ -3156,7 +3156,7 @@ s48p: 0-0
             (s48v :overlap s48d))
     :modal ((root :modal author)
             (author :full-affirmative s48i)
-            (author :full-affirmative s48h)
+            (author :full-affirmative s48i2)
             (author :full-affirmative s48v)
             (author :full-affirmative s48d)
             (author :full-affirmative s48c2))
@@ -3319,7 +3319,7 @@ Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earl
                     :place (s50s / sedes
                         :refer-number plural
                         :mod (s50i / incertus))
-                    :manner (s50h5 / have-mod-91
+                    :manner (s50h3 / have-mod-91
                         :ARG1 s50p
                         :ARG2 (s50p3 / profugus)
                         :aspect state)
@@ -3334,7 +3334,7 @@ Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earl
                 :refer-number plural
                 :wiki "Q322971"
                 :name (s50n4 / name :op1 "Aborigines")
-                :ARG1-of (s50h3 / have-identity-91
+                :ARG1-of (s50i4 / identity-91
                     :ARG2 (s50g / genus
                         :refer-number singular
                         :mod (s50h4 / homo :refer-number plural)
@@ -3379,7 +3379,7 @@ s50h2: 16-16
 s50d: 0-0
 s50e: 25-25
 s50n4: 0-0
-s50h3: 0-0
+s50i4: 0-0
 s50g: 27-27
 s50h4: 28-28
 s50a4: 0-0
@@ -3402,12 +3402,12 @@ s50h: 10-10
             (s50i :overlap s50h)
             (s50c :before s50v)
             (s50v :overlap s50h2)
-            (s50c :overlap s50h3)
+            (s50c :overlap s50i4)
             (s50v :overlap s50h5))
     :modal ((root :modal author)
             (author :full-affirmative s50h2)
             (author :full-affirmative s50v)
-            (author :full-affirmative s50h3)
+            (author :full-affirmative s50i4)
             (author :partial-affirmative s50h)
             (author :partial-affirmative s50c)
             (author :full-affirmative s50h5)))
