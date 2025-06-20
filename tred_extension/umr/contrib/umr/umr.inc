@@ -181,7 +181,8 @@
 
     sub label_with_name_expanded {
         my ($node) = @_;
-        return $node->{label} if ($node->{relation} // "") ne 'name';
+        return $node->{label} if ($node->{relation} // "") ne 'name'
+            || ! $node->{features};
 
         my @words = map $_->value =~ s/^"|"$//gr, ListV($node->{features});
         return '"' . join('_', @words) . '"'
