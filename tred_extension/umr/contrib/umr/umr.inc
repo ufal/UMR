@@ -394,8 +394,26 @@
                 -default_button => 'OK')->Show;
                 return
             }
-            load_map() unless keys %map;
-            my $f = $map{ basename(FileName()) };
+            my $basename = basename(FileName());
+            load_map()  unless keys %map;
+            my $f;
+            if ($basename =~ /^czech_umr-\d{4}\.umr$/) {
+                $f = $map{$basename};
+            }  elsif (my ($full_path) = do {
+                my $tfile = $basename =~ s/\.umr$/.t/r;
+                grep m{/\Q$tfile\E$}, values %map
+            }) {
+                $f = $full_path;
+            } else {
+                ToplevelFrame()->Dialog(
+                    -title => 'Original file not known',
+                    -bitmap => 'error',
+                    -text => "UMR can't find the original file to $basename",
+                    -buttons => ['OK'],
+                -default_button => 'OK')->Show;
+                return
+            }
+
             for my $opt (qw( _umr_umr20_pdtc _umr_umr20_treex )) {
                 if ($TrEd::Config::userConf->{$opt}) {
                     $f = 'File::Spec'->catfile(
