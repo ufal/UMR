@@ -1,10 +1,11 @@
-# -*- cperl -*-
+# -*- mode: cperl, encoding: utf-8 -*-
 
 #bind compare_trees to = menu Compare Trees
 #bind show_diff to ? menu Show Diff
 #bind load_original_file to o menu Load Original File
 
 {   package UMR;
+    use utf8;
 
     BEGIN { import TredMacro }
 
@@ -181,11 +182,16 @@
 
     sub label_with_name_expanded {
         my ($node) = @_;
-        return $node->{label} if ($node->{relation} // "") ne 'name'
+        return $node->{label}
+            if (($node->{relation} // "") ne 'name'
+                && $node->{label} ne 'foreign-phrase')
             || ! $node->{features};
 
         my @words = map $_->value =~ s/^"|"$//gr, ListV($node->{features});
-        return '"' . join('_', @words) . '"'
+        my ($leftq, $rightq) = $node->{label} eq 'foreign-phrase'
+                             ? ('«', '»')
+                             : ('"', '"');
+        return $leftq . join('_', @words) . $rightq
     }
 
     sub compare_trees {
