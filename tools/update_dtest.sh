@@ -1,5 +1,5 @@
 #!/bin/bash
-set SRC=/net/work/people/stepanek/umr/data/stepanek
+SRC=/net/work/people/stepanek/umr/data/stepanek
 cp $SRC/ln94210_111.umr ./ln94210_111-conv.umr
 cp $SRC/ln95046_093.umr ./ln95046_093-conv.umr
 cat ./ln94210_111-conv.umr ./ln95046_093-conv.umr > ./pdt-conv.umr
