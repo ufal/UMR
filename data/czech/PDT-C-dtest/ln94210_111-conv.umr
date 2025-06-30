@@ -7,15 +7,14 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
 # sentence level graph:
 (s1b1 / být-011
         :vocative (s1c1 / čtenář
-            :mod (s1v1 / vážený
-                :refer-number plural)
+            :mod (s1v1 / vážený)
             :refer-number plural)
         :ARG1 (s1t1 / ten
             :refer-number singular)
         :temporal (s1p1 / právě)
         :duration (s1r1 / rok
             :temporal-of (s1o1 / oznamovat-002
-                :ARG0 (s1e1 / entity
+                :ARG0 (s1p2 / person
                     :refer-number plural
                     :refer-person 1st)
                 :ARG2 s1c1
@@ -23,22 +22,16 @@ Words: Vážení čtenáři ,  je tomu právě rok ,  kdy jsme vám oznamovali n
                     :ARG1 (s1z1 / zvyšovat-001
                         :ARG1 (s1c2 / cena
                             :ARG1 (s1n1 / novina
-                                :possessor s1e1
+                                :possessor s1p2
                                 :refer-number plural)
                             :refer-number singular)
-                        :ARG0 (s1e2 / entity)
-                        :refer-number singular
-                        :refer-person 3rd
+                        :ARG0 (s1e1 / entity)
                         :aspect activity)
-                    :mod (s1p2 / populární
-                        :refer-number singular
+                    :mod (s1p3 / populární
                         :polarity -)
                     :refer-number singular)
-                :refer-number plural
                 :aspect activity)
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # alignment:
@@ -49,13 +42,13 @@ s1t1: 5-5
 s1p1: 6-6
 s1r1: 7-7,9-9
 s1o1: 10-10,12-12
-s1e1: 19-19
+s1p2: 19-19
 s1i1: 14-14
 s1z1: 16-17,21-21
 s1c2: 18-18
 s1n1: 20-20
-s1e2: 0-0
-s1p2: 13-13
+s1e1: 0-0
+s1p3: 13-13
 
 # document level annotation:
 (s1s0 / sentence)
@@ -70,74 +63,68 @@ Words: Celý rok jsme přečkali bez změny ceny ,  nepočítáme -  li zvýšen
 # sentence level graph:
 (s2p1 / přečkat-001
         :ARG1 (s2r1 / rok
-            :mod (s2c1 / celý
-                :refer-number singular)
+            :mod (s2c1 / celý)
             :refer-number singular)
-        :ARG0 (s2e1 / entity
+        :ARG0 (s2p2 / person
             :refer-number plural
             :refer-person 1st)
         :manner (s2z1 / změna
             :ARG1 (s2c2 / cena
                 :refer-number singular)
             :refer-number singular)
-        :condition (s2p2 / počítat-006
-            :ARG0 (s2e2 / entity
+        :condition (s2p3 / počítat-006
+            :ARG0 (s2p4 / person
                 :refer-number plural
                 :refer-person 1st)
             :ARG1 (s2z2 / zvýšení
-                :ARG0 (s2e3 / entity)
-                :ARG1 (s2e4 / entity)
+                :ARG0 (s2e1 / entity)
+                :ARG1 (s2e2 / entity)
                 :companion (s2z3 / zařazení
-                    :ARG0 (s2e5 / entity)
-                    :goal (s2e6 / entity)
+                    :ARG0 (s2e3 / entity)
+                    :goal (s2e4 / entity)
                     :ARG1 (s2m1 / magazín
                         :name (s2d1 / Duha
                             :refer-number singular)
-                        :mod (s2t1 / televizní
-                            :refer-number singular)
-                        :mod (s2b1 / barevný
-                            :refer-number singular)
+                        :mod (s2t1 / televizní)
+                        :mod (s2b1 / barevný)
                         :refer-number singular)
-                    :mod (s2p3 / příloha
+                    :mod (s2p5 / příloha
                         :mod-of s2m1
                         :possessor (s2l1 / LN
                             :refer-number plural)
                         :refer-number singular)
                     :refer-number singular)
                 :refer-number singular)
-            :refer-number plural
-            :refer-person 1st
             :aspect activity
             :polarity -)
-        :refer-number plural
         :aspect performance)
 
 # alignment:
 s2p1: 3-4
 s2r1: 2-2
 s2c1: 1-1
-s2e1: 0-0
+s2p2: 0-0
 s2z1: 5-6
 s2c2: 7-7
-s2p2: 9-9,11-11
-s2e2: 0-0
+s2p3: 9-9,11-11
+s2p4: 0-0
 s2z2: 12-12
+s2e1: 0-0
+s2e2: 0-0
+s2z3: 13-16
 s2e3: 0-0
 s2e4: 0-0
-s2z3: 13-16
-s2e5: 0-0
-s2e6: 0-0
 s2m1: 19-19
 s2d1: 20-20
 s2t1: 18-18
 s2b1: 17-17
-s2p3: 21-22
+s2p5: 21-22
 s2l1: 23-23
 
 # document level annotation:
 (s2s0 / sentence
     :coref ((s2r1 :same-entity s1r1)
-            (s2e1 :same-entity s1e1)
+            (s2p2 :same-entity s1p2)
             (s2c2 :same-entity s1c2)
             (s2l1 :same-entity s1n1)))
 
@@ -151,10 +138,10 @@ Words: Nyní však musíme do ceny deníku promítnout zvýšení nákladů ,  k
 # sentence level graph:
 (s3p1 / promítnout-002
         :clausal-marker (s3v1 / však)
-        :ARG0 (s3e1 / entity
+        :ARG0 (s3p2 / person
             :refer-number plural
             :refer-person 1st)
-        :goal (s3c1 / cena
+        :ARG2 (s3c1 / cena
             :ARG1 (s3d1 / deník
                 :refer-number singular)
             :refer-number singular)
@@ -162,10 +149,9 @@ Words: Nyní však musíme do ceny deníku promítnout zvýšení nákladů ,  k
         :ARG1 (s3z1 / zvýšení
             :ARG0 (s3n2 / náklad
                 :refer-number plural)
-            :ARG0-of (s3n3 / nastat-001
+            :ARG1-of (s3n3 / nastat-001
                 :temporal (s3r1 / rok
                     :refer-number singular)
-                :refer-number singular
                 :aspect performance)
             :refer-number singular)
         :aspect performance)
@@ -173,7 +159,7 @@ Words: Nyní však musíme do ceny deníku promítnout zvýšení nákladů ,  k
 # alignment:
 s3p1: 3-3,7-7
 s3v1: 2-2
-s3e1: 0-0
+s3p2: 0-0
 s3c1: 4-5
 s3d1: 6-6
 s3n1: 1-1
@@ -184,7 +170,7 @@ s3r1: 12-14
 
 # document level annotation:
 (s3s0 / sentence
-    :coref ((s3e1 :same-entity s2e1)
+    :coref ((s3p2 :same-entity s2p2)
             (s3c1 :same-entity s2c2)
             (s3d1 :same-entity s2l1)
             (s3r1 :same-entity s2r1)))
@@ -202,19 +188,15 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
             :clausal-marker (s4p1 / proto)
             :temporal (s4c1 / čtvrtletí
                 :mod (s4r1 / rok
-                    :mod (s4l1 / letošní
-                        :refer-number singular)
+                    :mod (s4l1 / letošní)
                     :refer-number singular)
-                :mod (s4p2 / poslední
-                    :refer-number singular)
+                :mod (s4p2 / poslední)
                 :refer-number singular)
             :ARG1 (s4n1 / noviny
-                :mod (s4l2 / Lidový
-                    :refer-number plural)
+                :mod (s4l2 / Lidový)
                 :refer-number plural)
             :ARG2 (s4k1 / koruna
-                :mod (s4p3 / pět
-                    :refer-number singular)
+                :mod (s4p3 / pět)
                 :refer-number plural)
             :temporal (s4p4 / pondělek
                 :refer-number singular)
@@ -226,8 +208,7 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
             :temporal s4c1
             :ARG1 s4n1
             :ARG2 (s4k2 / koruna
-                :mod (s4s3 / šest
-                    :refer-number singular)
+                :mod (s4s3 / šest)
                 :refer-number plural)
             :temporal (s4s4 / sobota
                 :refer-number singular)
@@ -265,15 +246,12 @@ Words: Cena pátečního vydání ( 6.50 ) zůstává .
 
 # sentence level graph:
 (s5z1 / zůstávat-004
-        :ARG0 (s5c1 / cena
+        :ARG1 (s5c1 / cena
             :ARG1 (s5v1 / vydání
-                :mod (s5p1 / páteční
-                    :refer-number singular)
+                :mod (s5p1 / páteční)
                 :refer-number singular)
             :parenthesis (s5x1 / 6.50)
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect habitual)
 
 # alignment:
@@ -359,35 +337,28 @@ Words: Víme ,  že každé zvýšení ceny je nepopulární ,  a  tak doufáme 
 # sentence level graph:
 (s7c1 / consecutive
         :op1 (s7v1 / vědět-001
-            :ARG0 (s7e1 / entity
+            :ARG0 (s7p1 / person
                 :refer-number plural
                 :refer-person 1st)
             :ARG1 (s7b1 / být-007
                 :ARG1 (s7z1 / zvýšení
                     :ARG1 (s7c2 / cena
                         :refer-number singular)
-                    :ARG0 (s7e2 / entity)
-                    :mod (s7k1 / každý
-                        :refer-number singular)
+                    :ARG0 (s7e1 / entity)
+                    :mod (s7k1 / každý)
                     :refer-number singular)
-                :ARG2 (s7p1 / populární
-                    :refer-number singular
+                :ARG2 (s7p2 / populární
                     :polarity -)
-                :refer-number singular
-                :refer-person 3rd
                 :aspect activity)
-            :refer-number plural
-            :refer-person 1st
             :aspect state)
         :clausal-marker (s7t1 / tak)
         :op2 (s7d1 / doufat-001
-            :ARG0 s7e1
+            :ARG0 s7p1
             :ARG1 (s7v2 / vydržet-002
                 :companion (s7c3 / cena
-                    :mod (s7t2 / tento
-                        :refer-number singular)
+                    :mod (s7t2 / tento)
                     :refer-number singular)
-                :ARG0 s7e1
+                :ARG0 s7p1
                 :temporal (s7o1 / opět)
                 :clausal-marker (s7a1 / alespoň)
                 :duration (s7r1 / rok
@@ -395,33 +366,27 @@ Words: Víme ,  že každé zvýšení ceny je nepopulární ,  a  tak doufáme 
                 :temporal (s7z2 / zvyšovat-001
                     :ARG1 (s7c4 / cena
                         :ARG1 (s7n1 / novina
-                            :mod (s7o2 / ostatní
-                                :refer-number plural)
+                            :mod (s7o2 / ostatní)
                             :refer-number plural)
                         :refer-number plural)
-                    :ARG0 (s7e3 / entity)
+                    :ARG0 (s7e2 / entity)
                     :temporal (s7c5 / čtvrtletí
-                        :mod (s7d2 / další
-                            :refer-number plural)
+                        :mod (s7d2 / další)
                         :refer-number plural)
                     :aspect activity)
-                :refer-number plural
-                :refer-person 1st
                 :aspect performance)
-            :refer-number plural
-            :refer-person 1st
             :aspect activity))
 
 # alignment:
 s7c1: 10-10
 s7v1: 1-1
-s7e1: 0-0
+s7p1: 0-0
 s7b1: 3-3,7-7
 s7z1: 5-5
 s7c2: 6-6
-s7e2: 0-0
+s7e1: 0-0
 s7k1: 4-4
-s7p1: 8-8
+s7p2: 8-8
 s7t1: 11-11
 s7d1: 12-12
 s7v2: 14-14,18-18
@@ -434,13 +399,13 @@ s7z2: 23-23,27-28,32-32
 s7c4: 24-24
 s7n1: 26-26
 s7o2: 25-25
-s7e3: 0-0
+s7e2: 0-0
 s7c5: 29-29,31-31
 s7d2: 30-30
 
 # document level annotation:
 (s7s0 / sentence
-    :coref ((s7e1 :same-entity s3e1)
+    :coref ((s7p1 :same-entity s3p2)
             (s7c3 :same-entity s3c1)))
 
 
@@ -453,44 +418,35 @@ Words: Přestože oznamované zvýšení znamená měsíčně jen průměrně o 
 # sentence level graph:
 (s8v1 / vědět-001
         :concession (s8z1 / znamenat-001
-            :ARG0 (s8z2 / zvýšení
-                :mod (s8o1 / oznamovaný
-                    :refer-number singular)
+            :ARG1 (s8z2 / zvýšení
+                :mod (s8o1 / oznamovaný)
                 :ARG0 (s8e1 / entity)
                 :ARG1 (s8e2 / entity)
                 :refer-number singular)
             :frequency (s8m1 / měsíčně)
             :clausal-marker (s8j1 / jen)
-            :ARG1 (s8v2 / vydání
+            :ARG2 (s8v2 / vydání
                 :mod (s8v3 / vysoký
                     :extent (s8k1 / Kč
                         :mod (s8x1 / 21.70))
-                    :extent (s8p1 / průměrně)
-                    :refer-number singular)
+                    :extent (s8p1 / průměrně))
                 :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
             :aspect state)
-        :ARG0 (s8e3 / entity
+        :ARG0 (s8p2 / person
             :refer-number plural
             :refer-person 1st)
         :ARG1 (s8b1 / být-007
             :affectee (s8c1 / čtenář
-                :mod (s8n1 / některý
-                    :refer-number plural)
+                :mod (s8n1 / některý)
                 :refer-number plural)
             :ARG0 (s8o2 / or
-                :op1 (s8p2 / předplatné
+                :op1 (s8p3 / předplatné
                     :mod (s8s1 / součet
-                        :mod (s8c2 / čtvrtletní
-                            :refer-number singular)
-                        :refer-number singular)
+                        :mod (s8c2 / čtvrtletní))
                     :refer-number singular)
-                :op2 (s8p3 / předplatné
+                :op2 (s8p4 / předplatné
                     :mod (s8s2 / součet
-                        :mod (s8r1 / roční
-                            :refer-number singular)
-                        :refer-number singular)
+                        :mod (s8r1 / roční))
                     :refer-number singular))
             :ARG2 (s8v4 / vysoký
                 :extent (s8t1 / tak
@@ -504,11 +460,8 @@ Words: Přestože oznamované zvýšení znamená měsíčně jen průměrně o 
                                     :refer-number plural)
                                 :refer-number singular)
                             :refer-number singular)
-                        :aspect activity))
-                :refer-number singular)
+                        :aspect activity)))
             :aspect activity)
-        :refer-number plural
-        :refer-person 1st
         :aspect state)
 
 # alignment:
@@ -525,15 +478,15 @@ s8v3: 11-11
 s8k1: 8-8,10-10
 s8x1: 9-9
 s8p1: 7-7
-s8e3: 0-0
+s8p2: 0-0
 s8b1: 16-16,20-21
 s8c1: 17-17,19-19
 s8n1: 18-18
 s8o2: 25-25
-s8p2: 22-22
+s8p3: 22-22
 s8s1: 0-0
 s8c2: 24-24
-s8p3: 0-0
+s8p4: 0-0
 s8s2: 23-23,27-27
 s8r1: 26-26
 s8v4: 29-29
@@ -546,7 +499,7 @@ s8n2: 37-37
 
 # document level annotation:
 (s8s0 / sentence
-    :coref ((s8e3 :same-entity s7e1)
+    :coref ((s8p2 :same-entity s7p1)
             (s8n2 :same-entity s6l1)))
 
 
@@ -558,43 +511,37 @@ Words: Těmto čtenářům nabízíme tak jako vloni pomoc .
 
 # sentence level graph:
 (s9n1 / nabízet-001
-        :ARG2 (s9c1 / čtenář
-            :mod (s9t1 / tento
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd)
-        :ARG0 (s9e1 / entity
+        :ARG3 (s9c1 / čtenář
+            :mod (s9t1 / tento)
+            :refer-number plural)
+        :ARG0 (s9p1 / person
             :refer-number plural
             :refer-person 1st)
         :manner (s9t2 / tak
             :comparison (s9n2 / nabízet-001
-                :ARG0 s9e1
-                :ARG1 s9p1
-                :ARG2 s9c1
+                :ARG0 s9p1
+                :ARG1 s9p2
+                :ARG3 s9c1
                 :temporal (s9v1 / vloni)
-                :refer-number plural
-                :refer-person 1st
                 :aspect activity))
-        :ARG1 (s9p1 / pomoc
+        :ARG1 (s9p2 / pomoc
             :refer-number singular)
-        :refer-number plural
-        :refer-person 1st
         :aspect activity)
 
 # alignment:
 s9n1: 3-3
 s9c1: 2-2
 s9t1: 1-1
-s9e1: 0-0
+s9p1: 0-0
 s9t2: 4-4
 s9n2: 0-0
 s9v1: 6-6
-s9p1: 7-7
+s9p2: 7-7
 
 # document level annotation:
 (s9s0 / sentence
     :coref ((s9c1 :same-entity s8c1)
-            (s9e1 :same-entity s8e3)))
+            (s9p1 :same-entity s8p2)))
 
 
 ################################################################################
@@ -606,19 +553,15 @@ Words: Všem předplatitelům pak nabízíme novou soutěž .
 # sentence level graph:
 (s10n1 / nabízet-001
         :clausal-marker (s10p1 / pak)
-        :ARG2 (s10p2 / předplatitel
-            :mod (s10v1 / všechen
-                :refer-number plural)
+        :ARG3 (s10p2 / předplatitel
+            :mod (s10v1 / všechen)
             :refer-number plural)
-        :ARG0 (s10e1 / entity
+        :ARG0 (s10p3 / person
             :refer-number plural
             :refer-person 1st)
         :ARG1 (s10s1 / soutěž
-            :mod (s10n2 / nový
-                :refer-number singular)
+            :mod (s10n2 / nový)
             :refer-number singular)
-        :refer-number plural
-        :refer-person 1st
         :aspect activity)
 
 # alignment:
@@ -626,13 +569,13 @@ s10n1: 4-4
 s10p1: 3-3
 s10p2: 2-2
 s10v1: 1-1
-s10e1: 0-0
+s10p3: 0-0
 s10s1: 6-6
 s10n2: 5-5
 
 # document level annotation:
 (s10s0 / sentence
-    :coref ((s10e1 :same-entity s9e1)))
+    :coref ((s10p3 :same-entity s9p1)))
 
 
 ################################################################################
@@ -644,11 +587,9 @@ Words: Vážení čtenáři ,  z  vašich dopisů víme ,  že většinou kladn�
 # sentence level graph:
 (s11v1 / vědět-001
         :vocative (s11c1 / čtenář
-            :mod (s11v2 / vážený
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 2nd)
-        :ARG0 (s11e1 / entity
+            :mod (s11v2 / vážený)
+            :refer-number plural)
+        :ARG0 (s11p1 / person
             :refer-number plural
             :refer-person 1st)
         :start (s11d1 / dopis
@@ -659,40 +600,33 @@ Words: Vážení čtenáři ,  z  vašich dopisů víme ,  že většinou kladn�
             :extent (s11v3 / většinou)
             :manner (s11k1 / kladně)
             :ARG1 (s11z1 / změna
-                :ARG1-of (s11p1 / probíhat-002
+                :ARG1-of (s11p2 / probíhat-002
                     :place (s11n1 / noviny
-                        :mod (s11l1 / Lidový
-                            :refer-number plural)
+                        :mod (s11l1 / Lidový)
                         :refer-number plural)
-                    :refer-number plural
-                    :refer-person 3rd
                     :aspect activity)
                 :refer-number plural)
-            :refer-number plural
-            :refer-person 2nd
             :aspect activity)
-        :refer-number plural
-        :refer-person 1st
         :aspect state)
 
 # alignment:
 s11v1: 7-7
 s11c1: 2-2,5-5
 s11v2: 1-1
-s11e1: 0-0
+s11p1: 0-0
 s11d1: 4-4,6-6
 s11h1: 9-9,12-12
 s11v3: 10-10
 s11k1: 11-11
 s11z1: 13-13,15-15
-s11p1: 19-19
+s11p2: 19-19
 s11n1: 16-16,18-18
 s11l1: 17-17
 
 # document level annotation:
 (s11s0 / sentence
     :coref ((s11c1 :same-entity s1c1)
-            (s11e1 :same-entity s10e1)
+            (s11p1 :same-entity s10p3)
             (s11n1 :same-entity s8n2)))
 
 
@@ -707,39 +641,29 @@ Words: Také bývalí čtenáři Lidové demokracie nám píší ,  že i  když
         :clausal-marker (s12t1 / také)
         :ARG0 (s12c1 / čtenář
             :ARG1 (s12d1 / demokracie
-                :mod (s12l1 / Lidový
-                    :refer-number singular)
+                :mod (s12l1 / Lidový)
                 :refer-number singular)
-            :mod (s12b1 / bývalý
-                :refer-number plural)
+            :mod (s12b1 / bývalý)
             :refer-number plural)
-        :ARG2 (s12e1 / entity
+        :ARG2 (s12p2 / person
             :refer-number plural
             :refer-person 1st)
-        :effect (s12s1 / souhlasit-003
+        :ARG1 (s12s1 / souhlasit-003
             :concession (s12l2 / litovat-001
                 :ARG0 s12c1
                 :ARG1 (s12z1 / zánik
                     :ARG0 (s12l3 / LD
                         :refer-number singular)
                     :refer-number singular)
-                :refer-number plural
-                :refer-person 3rd
                 :aspect activity)
             :ARG0 s12c1
             :ARG1 (s12o1 / odběr
                 :ARG1 (s12n1 / noviny
-                    :mod (s12l4 / Lidový
-                        :refer-number plural)
+                    :mod (s12l4 / Lidový)
                     :refer-number plural)
-                :mod (s12d2 / další
-                    :refer-number singular)
+                :mod (s12d2 / další)
                 :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
             :aspect state)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # alignment:
@@ -749,7 +673,7 @@ s12c1: 3-3
 s12d1: 5-5
 s12l1: 4-4
 s12b1: 2-2
-s12e1: 6-6
+s12p2: 6-6
 s12s1: 9-9,16-16
 s12l2: 10-12
 s12z1: 13-13
@@ -761,7 +685,7 @@ s12d2: 18-18
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s12e1 :same-entity s11e1)
+    :coref ((s12p2 :same-entity s11p1)
             (s12l3 :same-entity s12d1)
             (s12n1 :same-entity s11n1)))
 
@@ -775,64 +699,53 @@ Words: Věříme proto ,  že pochopíte ,  že současné zvýšení ceny je nu
 # sentence level graph:
 (s13v1 / věřit-001
         :clausal-marker (s13p1 / proto)
-        :ARG0 (s13e1 / entity
+        :ARG0 (s13p2 / person
             :refer-number plural
             :refer-person 1st)
         :ARG1 (s13a1 / and
-            :op1 (s13p2 / pochopit-001
-                :ARG0 (s13e2 / entity
+            :op1 (s13p3 / pochopit-001
+                :ARG0 (s13p4 / person
                     :refer-number plural
                     :refer-person 2nd)
                 :ARG1 (s13b1 / být-159
                     :ARG0 (s13z1 / zvýšení
-                        :mod (s13s1 / současný
-                            :refer-number singular)
+                        :mod (s13s1 / současný)
                         :ARG1 (s13c1 / cena
                             :refer-number singular)
-                        :ARG0 (s13e3 / entity)
+                        :ARG0 (s13e1 / entity)
                         :refer-number singular)
-                    :ARG1 (s13n1 / nutný
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
+                    :ARG1 (s13n1 / nutný)
                     :aspect activity)
-                :refer-number plural
-                :refer-person 2nd
                 :aspect performance)
             :op2 (s13z2 / zůstat-002
-                :ARG0 s13e2
+                :ARG0 s13p4
                 :ARG2 (s13v2 / věrný
-                    :ARG1 s13e1
-                    :refer-number plural)
-                :refer-number plural
-                :refer-person 2nd
+                    :ARG1 s13p2)
                 :aspect performance))
-        :refer-number plural
-        :refer-person 1st
         :aspect state)
 
 # alignment:
 s13v1: 1-1
 s13p1: 2-2
-s13e1: 16-16
+s13p2: 16-16
 s13a1: 14-14
-s13p2: 4-5
+s13p3: 4-5
 s13b1: 7-7,11-11
 s13z1: 9-9
 s13s1: 8-8
 s13c1: 10-10
-s13e3: 0-0
+s13e1: 0-0
 s13n1: 12-12
-s13e2: 0-0
+s13p4: 0-0
 s13z2: 15-15,17-17
 s13v2: 18-18
 
 # document level annotation:
 (s13s0 / sentence
-    :coref ((s13e1 :same-entity s12e1)
+    :coref ((s13p2 :same-entity s12p2)
             (s13z1 :same-entity s8z2)
             (s13c1 :same-entity s7c3)
-            (s13e2 :same-entity s11c1)))
+            (s13p4 :same-entity s11c1)))
 
 
 ################################################################################
@@ -844,8 +757,7 @@ Words: Michal Klíma , ředitel LN
 # sentence level graph:
 (s14i1 / identity-91
         :ARG1 (s14k1 / Klíma
-            :mod (s14m1 / Michal
-                :refer-number singular)
+            :mod (s14m1 / Michal)
             :refer-number singular)
         :ARG2 (s14r1 / ředitel
             :possessor (s14l1 / LN

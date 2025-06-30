@@ -12,8 +12,7 @@ Words: Parlamentní vyšetřování činnosti kontrarozvědky bude pokračovat
                 :possessor (s1k1 / kontrarozvědka
                     :refer-number singular)
                 :refer-number singular)
-            :mod (s1p2 / parlamentní
-                :refer-number singular)
+            :mod (s1p2 / parlamentní)
             :refer-number singular)
         :aspect activity)
 
@@ -58,14 +57,11 @@ Words: Ačkoli parlamentní orgán pro kontrolu Bezpečnostní informační slu�
         :concession (s3a1 / and
             :op1 (s3u1 / ukončit-001
                 :ARG0 (s3o1 / orgán
-                    :mod (s3p2 / parlamentní
-                        :refer-number singular)
+                    :mod (s3p2 / parlamentní)
                     :purpose (s3k1 / kontrola
                         :ARG1 (s3s1 / služba
-                            :mod (s3i1 / informační
-                                :refer-number singular)
-                            :mod (s3b1 / Bezpečnostní
-                                :refer-number singular)
+                            :mod (s3i1 / informační)
+                            :mod (s3b1 / Bezpečnostní)
                             :refer-number singular)
                         :refer-number singular)
                     :refer-number singular)
@@ -79,26 +75,22 @@ Words: Ačkoli parlamentní orgán pro kontrolu Bezpečnostní informační slu�
                             :refer-number singular)
                         :refer-number plural)
                     :refer-number singular)
-                :refer-number singular
                 :aspect performance)
             :op2 (s3k3 / konstatovat-002
                 :ARG0 s3o1
-                :effect (s3p4 / porušit-001
+                :ARG1 (s3p4 / porušit-001
                     :ARG0 (s3b2 / BIS
                         :refer-number singular)
                     :ARG1 (s3z1 / zákon
                         :refer-number singular)
                     :aspect performance
                     :polarity -)
-                :refer-number singular
                 :aspect process))
         :ARG1 (s3s2 / šetření
             :ARG0 (s3e2 / entity)
             :ARG1 (s3e3 / entity)
             :refer-number singular)
         :duration (s3d2 / dále)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # alignment:
@@ -147,17 +139,13 @@ Words: Včera to připustil člen komise poslanec Pavel Severa (  KDU -  ČSL ) 
 (s4p1 / připustit-004
         :temporal (s4v1 / včera)
         :ARG1 (s4t1 / ten
-            :refer-number singular
-            :refer-person 3rd)
+            :refer-number singular)
         :ARG0 (s4s1 / Severa
-            :mod (s4p2 / Pavel
-                :refer-number singular)
-            :mod (s4p3 / poslanec
-                :refer-number singular)
+            :mod (s4p2 / Pavel)
+            :mod (s4p3 / poslanec)
             :mod (s4c1 / člen
                 :possessor (s4k1 / komise
-                    :refer-number singular)
-                :refer-number singular)
+                    :refer-number singular))
             :parenthesis (s4a1 / and
                 :op1 (s4k2 / KDU)
                 :op2 (s4c2 / ČSL))
@@ -166,7 +154,6 @@ Words: Včera to připustil člen komise poslanec Pavel Severa (  KDU -  ČSL ) 
             :possessor (s4o1 / orgán
                 :refer-number singular)
             :refer-number singular)
-        :refer-number singular
         :aspect performance)
 
 # alignment:
@@ -201,8 +188,7 @@ Words: Komise se shodla na tom ,  že dokončí šetření ,  která ještě pro
 (s5s1 / shodnout-se-001
         :ARG0 (s5k1 / komise
             :refer-number singular)
-        :ARG2 (s5x1 / _Rcp
-            :refer-number singular)
+        :ARG2 (s5x1 / #Rcp)
         :ARG1 (s5d1 / dokončit-001
             :ARG0 s5x1
             :ARG1 (s5i1 / identity-91
@@ -225,16 +211,12 @@ Words: Komise se shodla na tom ,  že dokončí šetření ,  která ještě pro
                     :effect (s5v1 / vysvětlení
                         :ARG1 (s5e6 / entity)
                         :ARG0 (s5d2 / Devátý
-                            :mod (s5s3 / Stanislav
-                                :refer-number singular)
+                            :mod (s5s3 / Stanislav)
                             :mod (s5r1 / ředitel
-                                :possessor (s5b1 / BIS)
-                                :refer-number singular)
+                                :possessor (s5b1 / BIS))
                             :refer-number singular)
                         :refer-number singular)
                     :refer-number singular))
-            :refer-number singular
-            :refer-person 3rd
             :aspect performance)
         :aspect performance)
 
@@ -281,20 +263,15 @@ Words: Stále prý jde o  to ,  zda tajná služba veškeré údaje mohla získa
         :clausal-marker (s6p1 / prý)
         :ARG2 (s6z1 / získat-001
             :ARG0 (s6s2 / služba
-                :mod (s6t1 / tajný
-                    :refer-number singular)
+                :mod (s6t1 / tajný)
                 :refer-number singular)
             :ARG1 (s6u1 / údaj
-                :mod (s6v1 / veškerý
-                    :refer-number plural)
+                :mod (s6v1 / veškerý)
                 :refer-number plural)
             :ARG2 (s6z2 / zdroj
-                :mod (s6o1 / otevřený
-                    :refer-number plural)
+                :mod (s6o1 / otevřený)
                 :refer-number plural)
             :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # alignment:
@@ -323,8 +300,7 @@ Words: Před komisi budou pozváni lidé ,  jejichž slyšení navrhl předseda 
 # sentence level graph:
 (s7p1 / pozvat-001
         :goal (s7k1 / komise
-            :refer-number singular
-            :refer-person 3rd)
+            :refer-number singular)
         :ARG0 (s7e1 / entity)
         :ARG1 (s7c1 / člověk
             :mod (s7n1 / navrhnout-002
@@ -333,16 +309,12 @@ Words: Před komisi budou pozváni lidé ,  jejichž slyšení navrhl předseda 
                     :ARG0 (s7e2 / entity)
                     :refer-number singular)
                 :ARG0 (s7k2 / Kalvoda
-                    :mod (s7j1 / Jan
-                        :refer-number singular)
+                    :mod (s7j1 / Jan)
                     :mod (s7p2 / předseda
-                        :possessor (s7o1 / ODA)
-                        :refer-number singular)
+                        :possessor (s7o1 / ODA))
                     :refer-number singular)
-                :refer-number singular
                 :aspect performance)
             :refer-number plural)
-        :refer-number plural
         :aspect performance)
 
 # alignment:
@@ -375,24 +347,18 @@ Words: Pozván bude i  bývalý pracovník BIS Michal Čelechovský ,  který o 
         :ARG0 (s8e1 / entity)
         :clausal-marker (s8i1 / i)
         :ARG1 (s8c1 / Čelechovský
-            :mod (s8m1 / Michal
-                :refer-number singular)
+            :mod (s8m1 / Michal)
             :mod (s8p2 / pracovník
                 :possessor (s8b1 / BIS
                     :refer-number singular)
-                :mod (s8b2 / bývalý
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s8b2 / bývalý))
             :ARG0-of (s8p3 / požádat-001
                 :ARG1 (s8t1 / ten
                     :refer-number singular)
-                :manner (s8s1 / sám
-                    :refer-number singular)
+                :manner (s8s1 / sám)
                 :ARG2 (s8e2 / entity)
-                :refer-number singular
                 :aspect performance)
             :refer-number singular)
-        :refer-number singular
         :aspect performance)
 
 # alignment:
@@ -430,20 +396,15 @@ Words: Severa sice nepředpokládá revokaci již přijatých usnesení ,  ale p
             :ARG1 (s9r1 / revokace
                 :ARG1 (s9u1 / usnesení
                     :temporal (s9j1 / již)
-                    :mod (s9p2 / přijatý
-                        :refer-number plural)
+                    :mod (s9p2 / přijatý)
                     :refer-number plural)
                 :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity
             :polarity -)
         :ARG2 (s9o1 / obsahovat-001
             :ARG1 (s9s3 / skutečnost
-                :mod (s9n1 / nový
-                    :refer-number plural)
-                :mod (s9p3 / případný
-                    :refer-number plural)
+                :mod (s9n1 / nový)
+                :mod (s9p3 / případný)
                 :refer-number plural)
             :ARG0 (s9z1 / zpráva
                 :ARG1-of (s9p4 / předložit-001
@@ -452,8 +413,7 @@ Words: Severa sice nepředpokládá revokaci již přijatých usnesení ,  ale p
                     :ARG2 (s9s4 / sněmovna
                         :refer-number singular)
                     :place (s9s5 / schůze
-                        :mod (s9b2 / březnový
-                            :refer-number singular)
+                        :mod (s9b2 / březnový)
                         :refer-number singular)
                     :aspect performance)
                 :refer-number singular)
@@ -500,15 +460,12 @@ Words: Členové komise si včera rozdělili úkoly na příští dny a  k  dal�
                     :refer-number singular)
                 :refer-number plural)
             :temporal (s10v1 / včera)
-            :ARG2 (s10x1 / _Rcp
-                :refer-number plural)
+            :ARG2 (s10x1 / #Rcp)
             :ARG1 (s10u1 / úkol
                 :duration (s10d1 / den
-                    :mod (s10p1 / příští
-                        :refer-number plural)
+                    :mod (s10p1 / příští)
                     :refer-number plural)
                 :refer-number plural)
-            :refer-number plural
             :aspect performance)
         :op2 (s10s1 / sejít-se-001
             :ARG0 s10c1
@@ -516,16 +473,12 @@ Words: Členové komise si včera rozdělili úkoly na příští dny a  k  dal�
                 :ARG0 (s10e1 / entity)
                 :ARG1 (s10e2 / entity)
                 :ARG2 (s10e3 / entity)
-                :mod (s10d2 / další
-                    :refer-number singular)
+                :mod (s10d2 / další)
                 :refer-number singular)
-            :ARG1 (s10x3 / _Rcp
-                :refer-number plural)
+            :ARG1 (s10x3 / #Rcp)
             :place (s10b1 / březen
                 :mod (s10x4 / 8)
                 :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
             :aspect performance))
 
 # alignment:
@@ -565,21 +518,17 @@ Words: Poslanec Ivan Mašek (  ODA )  novinářům řekl ,  že trval na všech 
 # sentence level graph:
 (s11r1 / říci-008
         :ARG0 (s11m1 / Mašek
-            :mod (s11i1 / Ivan
-                :refer-number singular)
-            :mod (s11p1 / poslanec
-                :refer-number singular)
+            :mod (s11i1 / Ivan)
+            :mod (s11p1 / poslanec)
             :parenthesis (s11o1 / ODA)
             :refer-number singular)
         :ARG2 (s11n1 / novinář
             :refer-number plural)
-        :effect (s11t1 / trvat-002
+        :ARG1 (s11t1 / trvat-002
             :ARG0 s11m1
             :ARG1 (s11u1 / úkon
-                :mod (s11k1 / kontrolní
-                    :refer-number plural)
-                :mod (s11v1 / všechen
-                    :refer-number plural)
+                :mod (s11k1 / kontrolní)
+                :mod (s11v1 / všechen)
                 :ARG1-of (s11n2 / navrhnout-002
                     :ARG0 (s11e1 / entity)
                     :temporal (s11p2 / projednávání
@@ -590,12 +539,9 @@ Words: Poslanec Ivan Mašek (  ODA )  novinářům řekl ,  že trval na všech 
                                 :refer-number singular)
                             :refer-number singular)
                         :refer-number singular)
-                    :refer-number plural
                     :aspect performance)
                 :refer-number plural)
-            :refer-number singular
             :aspect activity)
-        :refer-number singular
         :aspect performance)
 
 # alignment:
