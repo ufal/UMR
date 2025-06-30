@@ -584,7 +584,7 @@ Words: Nejmenovali jsme jménem , ale vždycky přezdívkou .
 (s20b1 / but-91
         :ARG1 (s20j1 / jmenovat-004
             :ARG0 (s20e1 / entity)
-            :ARG1 (s20x1 / #Rcp)
+            :ARG1 (s20x1 / Rcp)
             :ARG2 (s20e2 / entity)
             :instrument (s20j2 / jméno
                 :refer-number singular)
@@ -1626,7 +1626,7 @@ Words: Vídáte se ?
 # sentence level graph:
 (s7v1 / vídat-001
         :ARG0 (s7e1 / entity)
-        :ARG1 (s7x1 / #Rcp)
+        :ARG1 (s7x1 / Rcp)
         :aspect activity)
 
 # alignment:

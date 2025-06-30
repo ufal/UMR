@@ -178,7 +178,7 @@ Words: "  Jestliže se podíváte na třetí čtvrtletí vykazující zhruba 2.5
                         :mod (s4t1 / třetí)
                         :mod (s4v2 / vykazující
                             :ARG1 (s4r1 / růst
-                                :mod (s4x2 / #Percnt
+                                :mod (s4x2 / Percnt
                                     :extent (s4z1 / zhruba)
                                     :mod (s4x3 / 2.5)))))
                     :aspect performance)
@@ -480,7 +480,7 @@ Words: Federální rezervní banka snížila úrokové míry hlavních federáln
                 :mod (s9x1 / 0.25
                     :extent (s9a1 / asi))
                 :mod (s9p1 / procentní))
-            :ARG3 (s9x2 / #Percnt
+            :ARG3 (s9x2 / Percnt
                 :mod (s9x3 / 8.75))
             :temporal (s9p2 / pokles
                 :mod (s9p3 / prudký)
@@ -834,7 +834,7 @@ Words: Následkem toho se mohou představitelé Federální rezervní banky rozc
             :mod (s16b1 / banka
                 :mod (s16f1 / Federální)
                 :mod (s16r2 / rezervní)))
-        :ARG2 (s16x1 / #Rcp)
+        :ARG2 (s16x1 / Rcp)
         :ARG1 (s16n1 / názor
             :mod (s16z1 / zpřístupnit-001
                 :ARG2 (s16e1 / entity)
@@ -1011,7 +1011,7 @@ Words: "  Vždy je tu možnost ,  že přijde recese ,  "  dodal Guffey ,  "  al
                     :ARG1 s19p2
                     :ARG2 (s19m2 / málo
                         :extent (s19d2 / daleko)
-                        :comparison (s19x4 / #Percnt
+                        :comparison (s19x4 / Percnt
                             :mod (s19x5 / 50)))
                     :aspect activity)
                 :aspect activity))

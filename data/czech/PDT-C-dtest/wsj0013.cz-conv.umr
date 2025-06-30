@@ -771,11 +771,11 @@ Words: Ross tvrdil ,  že skutečnost ,  že společnost New England navrhla pom
                             :ARG0 (s14e2 / entity)
                             :manner (s14p1 / pomalý)
                             :ARG1 (s14s3 / sazba))
-                        :ARG2 (s14x1 / #Percnt
+                        :ARG2 (s14x1 / Percnt
                             :mod (s14x2 / 4.8)
                             :duration (s14r2 / rok
                                 :mod (s14s4 / sedm))
-                            :comparison (s14x3 / #Percnt
+                            :comparison (s14x3 / Percnt
                                 :mod (s14x4 / 5.5
                                     :extent (s14a1 / asi))
                                 :mod (s14n3 / navrhovaný
