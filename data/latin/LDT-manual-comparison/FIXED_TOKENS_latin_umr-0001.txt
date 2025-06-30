@@ -3371,7 +3371,7 @@ s50n: 0-0
 s50v: 20-20
 s50s: 18-18
 s50i: 19-19
-s50h5: 17-17
+s50h3: 17-17
 s50p3: 0-0
 s50p2: 15-15
 s50n2: 0-0
@@ -3403,13 +3403,13 @@ s50h: 10-10
             (s50c :before s50v)
             (s50v :overlap s50h2)
             (s50c :overlap s50i4)
-            (s50v :overlap s50h5))
+            (s50v :overlap s50h3))
     :modal ((root :modal author)
             (author :full-affirmative s50h2)
             (author :full-affirmative s50v)
             (author :full-affirmative s50i4)
             (author :partial-affirmative s50h)
             (author :partial-affirmative s50c)
-            (author :full-affirmative s50h5)))
+            (author :full-affirmative s50h3)))
 
 
