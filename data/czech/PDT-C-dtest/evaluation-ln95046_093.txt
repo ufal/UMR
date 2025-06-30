@@ -1,7 +1,7 @@
 Found 11 sentences in GOLD:
 1-37, 40-63, 66-160, 163-233, 236-311, 314-356, 359-410, 413-462, 465-534, 537-597, 600-675
 Found 11 sentences in CONV:
-1-29, 32-46, 49-137, 140-191, 194-269, 272-314, 317-364, 367-415, 418-486, 489-556, 559-623
+1-28, 31-45, 48-129, 132-178, 181-251, 254-291, 294-336, 339-381, 384-446, 449-509, 512-569
 
 -------------------------------------------------------------------------------
 Comparing sentence 1:
@@ -16,10 +16,10 @@ GOLD                                                   CONV
 		:modal-strength full-affirmative                                     :possessor (s1k1 / kontrarozvědka
         	:ARG1 (s1v1 / vyšetřovat-001                                      :refer-number singular)
         		:aspect activity                                             :refer-number singular)
-        		:modal-strength full-affirmative                         :mod (s1p2 / parlamentní
-            		:ARG0 (s1o1 / organization                               :refer-number singular)
-            			:name (s1n1 / name                                  :refer-number singular)
-            				:op1 "parlament")                              :aspect activity)
+        		:modal-strength full-affirmative                         :mod (s1p2 / parlamentní)
+            		:ARG0 (s1o1 / organization                           :refer-number singular)
+            			:name (s1n1 / name                              :aspect activity)
+            				:op1 "parlament")                      
             			:refer-number singular)                 
             		:ARG1 (s1c1 / činit-005                  
                 		:ARG0 (s1k1 / kontrarozvědka         
@@ -64,6 +64,7 @@ Node GOLD s1n1 / name                             mismatch in concept:         G
 Node GOLD s1n1 / name                             mismatch in :op1:            GOLD = "parlament"              CONV = UNMAPPED
 Node GOLD s1o1 / organization (Parlamentní)       mismatch in concept:         GOLD = organization             CONV = parlamentní
 Node GOLD s1o1 / organization (Parlamentní)       mismatch in :name:           GOLD = s1n1 unmapped            CONV = 
+Node GOLD s1o1 / organization (Parlamentní)       mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node GOLD s1p1 / pokračovat-004 (bude pokračovat) mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s1p3 / publication-91                   mismatch in concept:         GOLD = publication-91           CONV = UNMAPPED
 Node GOLD s1p3 / publication-91                   mismatch in :ARG1:           GOLD = s1p1                     CONV = UNMAPPED
@@ -77,8 +78,8 @@ Node GOLD s1v1 / vyšetřovat-001 (vyšetřování)     mismatch in :mod:       
 Node GOLD s1v1 / vyšetřovat-001 (vyšetřování)     mismatch in :refer-number:   GOLD =                          CONV = singular
 Node CONV s1e1 / entity                           mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 
-Correct 7 out of 24 non-empty GOLD values => recall    29%.
-Correct 7 out of 16 non-empty CONV values => precision 44%.
+Correct 6 out of 24 non-empty GOLD values => recall    25%.
+Correct 6 out of 15 non-empty CONV values => precision 40%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s1c1 / činnost (činnosti)               mismatch in concept:         CONV = činnost                  GOLD = činit-005
@@ -91,6 +92,7 @@ Node CONV s1e1 / entity                           mismatch in concept:         C
 Node CONV s1p1 / pokračovat-004 (bude pokračovat) mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s1p2 / parlamentní (Parlamentní)        mismatch in concept:         CONV = parlamentní              GOLD = organization
 Node CONV s1p2 / parlamentní (Parlamentní)        mismatch in :name:           CONV =                          GOLD = s1n1
+Node CONV s1p2 / parlamentní (Parlamentní)        mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s1v1 / vyšetřování (vyšetřování)        mismatch in concept:         CONV = vyšetřování              GOLD = vyšetřovat-001
 Node CONV s1v1 / vyšetřování (vyšetřování)        mismatch in :ARG0:           CONV = s1e1 unmapped            GOLD = s1o1
 Node CONV s1v1 / vyšetřování (vyšetřování)        mismatch in :mod:            CONV = s1p2 mapped to GOLD s1o1 GOLD = 
@@ -104,8 +106,8 @@ Node GOLD s1p3 / publication-91                   mismatch in :ARG1:           G
 Node GOLD s1p3 / publication-91                   mismatch in :ARG3:           GOLD = s1t1                     CONV = UNMAPPED
 Node GOLD s1t1 / thing                            mismatch in concept:         GOLD = thing                    CONV = UNMAPPED
 
-Correct 7 out of 16 non-empty CONV values => recall    44%.
-Correct 7 out of 24 non-empty GOLD values => precision 29%.
+Correct 6 out of 15 non-empty CONV values => recall    40%.
+Correct 6 out of 24 non-empty GOLD values => precision 25%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 2:
@@ -174,48 +176,48 @@ GOLD                                                           CONV
 	:modal-strength full-affirmative                                      :concession (s3a1 / and
 	:clausal-marker (s3d1 / de_facto)                                         :op1 (s3u1 / ukončit-001
 	:duration (s3d2 / dále)                                                       :ARG0 (s3o1 / orgán
-        :ARG1 (s3s2 / šetřit-003                                                   :mod (s3p2 / parlamentní
-            :modal-strength full-affirmative                                           :refer-number singular)
-            :aspect activity                                                       :purpose (s3k1 / kontrola
-            :ARG1 (s3o3 / organization                                                 :ARG1 (s3s1 / služba
-            	:name (s3n3 / name                                                            :mod (s3i1 / informační
-            		:op1 "Bezpečnostní"                                                              :refer-number singular)
-            		:op2 "informační"                                                            :mod (s3b1 / Bezpečnostní
-            		:op3 "služba")                                                                   :refer-number singular)
-            	:refer-number singular)                                                       :refer-number singular)
-            :ARG0 (s3o1 / orgán                                                        :refer-number singular)
-            	:refer-number singular                                                :refer-number singular)
-            	:part (s3o2 / organization                                        :temporal (s3t1 / týden
-            		:name (s3n1 / name                                                   :refer-number singular)
-            			:op1 "parlament"))                                              :ARG1 (s3v1 / vyšetřování
-            	:purpose (s3k1 / kontrolovat-001                                      :ARG0 (s3e1 / entity)
-            		:aspect activity                                                     :ARG1 (s3p3 / podnět
-            		:modal-strength full-affirmative                                         :ARG0 (s3o2 / ODA)
-                    	:ARG0 s3o1                                                        :regard (s3k2 / kontrarozvědka
-                        :ARG1 s3o3)))                                                      :refer-number singular)
-        :concession (s3a1 / and                                                        :refer-number plural)
-            :op1 (s3u1 / ukončit-001                                               :refer-number singular)
-            	:aspect performance                                               :refer-number singular
-            	:modal-strength full-affirmative                                  :aspect performance)
-            	:temporal (s3b4 / before                                      :op2 (s3k3 / konstatovat-002
-                	:op1 (s3t2 / týden))                                          :ARG0 s3o1
-		:ARG0 s3o1                                                                   :effect (s3p4 / porušit-001
-                :ARG1 (s3v1 / vyšetřovat-001                                       :ARG0 (s3b2 / BIS
-                    :aspect activity                                                   :refer-number singular)
-                    :modal-strength full-affirmative                               :ARG1 (s3z1 / zákon
-                    :ARG0 s3o1                                                         :refer-number singular)
-                    :ARG1 (s3p2 / podnět                                           :aspect performance
-                        :source (s3p5 / political-organization                     :polarity -)
-                        	:name (s3n2 / name                                    :refer-number singular
-                        		:op1 "ODA")                                          :aspect process))
-                        	:refer-number singular)                       :ARG1 (s3s2 / šetření
-                        :regard (s3k2 / kontrarozvědka                     :ARG0 (s3e2 / entity)
-                            :refer-number singular)                        :ARG1 (s3e3 / entity)
-                        :refer-number plural)))                            :refer-number singular)
-            :op2 (s3k3 / konstatovat-002                               :duration (s3d2 / dále)
-                :ARG0 s3o1                                             :refer-number singular
-                :ARG1 (s3p3 / porušit-001                              :refer-person 3rd
-                    :ARG0 s3o3                                         :aspect activity)
+        :ARG1 (s3s2 / šetřit-003                                                   :mod (s3p2 / parlamentní)
+            :modal-strength full-affirmative                                       :purpose (s3k1 / kontrola
+            :aspect activity                                                           :ARG1 (s3s1 / služba
+            :ARG1 (s3o3 / organization                                                     :mod (s3i1 / informační)
+            	:name (s3n3 / name                                                            :mod (s3b1 / Bezpečnostní)
+            		:op1 "Bezpečnostní"                                                          :refer-number singular)
+            		:op2 "informační"                                                        :refer-number singular)
+            		:op3 "služba")                                                       :refer-number singular)
+            	:refer-number singular)                                           :temporal (s3t1 / týden
+            :ARG0 (s3o1 / orgán                                                    :refer-number singular)
+            	:refer-number singular                                            :ARG1 (s3v1 / vyšetřování
+            	:part (s3o2 / organization                                            :ARG0 (s3e1 / entity)
+            		:name (s3n1 / name                                                   :ARG1 (s3p3 / podnět
+            			:op1 "parlament"))                                                      :ARG0 (s3o2 / ODA)
+            	:purpose (s3k1 / kontrolovat-001                                          :regard (s3k2 / kontrarozvědka
+            		:aspect activity                                                             :refer-number singular)
+            		:modal-strength full-affirmative                                         :refer-number plural)
+                    	:ARG0 s3o1                                                    :refer-number singular)
+                        :ARG1 s3o3)))                                          :aspect performance)
+        :concession (s3a1 / and                                            :op2 (s3k3 / konstatovat-002
+            :op1 (s3u1 / ukončit-001                                           :ARG0 s3o1
+            	:aspect performance                                               :ARG1 (s3p4 / porušit-001
+            	:modal-strength full-affirmative                                      :ARG0 (s3b2 / BIS
+            	:temporal (s3b4 / before                                                  :refer-number singular)
+                	:op1 (s3t2 / týden))                                              :ARG1 (s3z1 / zákon
+		:ARG0 s3o1                                                                           :refer-number singular)
+                :ARG1 (s3v1 / vyšetřovat-001                                       :aspect performance
+                    :aspect activity                                               :polarity -)
+                    :modal-strength full-affirmative                           :aspect process))
+                    :ARG0 s3o1                                         :ARG1 (s3s2 / šetření
+                    :ARG1 (s3p2 / podnět                                   :ARG0 (s3e2 / entity)
+                        :source (s3p5 / political-organization             :ARG1 (s3e3 / entity)
+                        	:name (s3n2 / name                                :refer-number singular)
+                        		:op1 "ODA")                                  :duration (s3d2 / dále)
+                        	:refer-number singular)                       :aspect activity)
+                        :regard (s3k2 / kontrarozvědka         
+                            :refer-number singular)            
+                        :refer-number plural)))                
+            :op2 (s3k3 / konstatovat-002                       
+                :ARG0 s3o1                                     
+                :ARG1 (s3p3 / porušit-001                      
+                    :ARG0 s3o3                                 
                     :ARG1 (s3z1 / zákon                        
                         :refer-number singular)                
                     :aspect performance                        
@@ -264,7 +266,7 @@ Node-node correspondences:
 
 Ambiguous projection of GOLD node s3o3 (Bezpečnostní informační služby BIS) to 4 CONV nodes [s3b1 (Bezpečnostní), s3b2 (BIS), s3i1 (informační), s3s1 (služby)]
 Ambiguous projection of GOLD node s3u1 (Ačkoli ukončil) to 2 CONV nodes [s3k3 (Ačkoli konstatoval), s3u1 (Ačkoli ukončil)]
-  The winner is GOLD node s3o3 (Bezpečnostní informační služby BIS) <--> CONV node s3b1 (Bezpečnostní): econcepts=organization/Bezpečnostní, match=1 (:refer-number=singular), weak match=2 (concept,:refer-number).
+  The winner is GOLD node s3o3 (Bezpečnostní informační služby BIS) <--> CONV node s3s1 (služby): econcepts=organization/služba, match=1 (:refer-number=singular), weak match=2 (concept,:refer-number).
   The winner is GOLD node s3u1 (Ačkoli ukončil) <--> CONV node s3u1 (Ačkoli ukončil): econcepts=ukončit-001/ukončit-001, match=5 (concept=ukončit-001,:ARG0=s3o1 mapped to CONV s3o1,:ARG1=s3v1 mapped to CONV s3v1,:aspect=performance,:temporal=s3b4 mapped to CONV s3t1), weak match=5 (concept,:aspect,:temporal,:ARG0,:ARG1).
 
 Ambiguous projection of CONV node s3k3 (Ačkoli konstatoval) to 2 GOLD nodes [s3k3 (konstatoval), s3u1 (Ačkoli ukončil)]
@@ -279,7 +281,7 @@ Correspondence GOLD s3k2 (vůči kontrarozvědce)                        = CONV 
 Correspondence GOLD s3k3 (konstatoval)                                = CONV s3k3 (Ačkoli konstatoval)
 Correspondence GOLD s3o1 (orgán)                                      = CONV s3o1 (orgán)
 Correspondence GOLD s3o2 (parlamentní)                                = CONV s3p2 (parlamentní)
-Correspondence GOLD s3o3 (Bezpečnostní informační služby BIS)         = CONV s3b1 (Bezpečnostní)
+Correspondence GOLD s3o3 (Bezpečnostní informační služby BIS)         = CONV s3s1 (služby)
 Correspondence GOLD s3p2 (podnětů)                                    = CONV s3p3 (podnětů)
 Correspondence GOLD s3p3 (že neporušila)                              = CONV s3p4 (že neporušila)
 Correspondence GOLD s3p4 (pokračuje)                                  = CONV s3p1 (pokračuje)
@@ -293,12 +295,12 @@ Correspondence GOLD s3b4 (před)                                       = CONV
 Correspondence GOLD s3n1 (name["parlament"])                          = CONV 
 Correspondence GOLD s3n2 (name["ODA"])                                = CONV 
 Correspondence GOLD s3n3 (name["Bezpečnostní" "informační" "služba"]) = CONV 
+Correspondence GOLD                                                   = CONV s3b1 (Bezpečnostní)
 Correspondence GOLD                                                   = CONV s3b2 (BIS)
 Correspondence GOLD                                                   = CONV s3e1 (entity)
 Correspondence GOLD                                                   = CONV s3e2 (entity)
 Correspondence GOLD                                                   = CONV s3e3 (entity)
 Correspondence GOLD                                                   = CONV s3i1 (informační)
-Correspondence GOLD                                                   = CONV s3s1 (služby)
 
 Aligned 18 out of 22 GOLD nodes, that is 82%.
 Aligned 18 out of 24 CONV nodes, that is 75%.
@@ -308,15 +310,11 @@ Node GOLD s3b4 / before (před)                                     mismatch in 
 Node GOLD s3b4 / before (před)                                     mismatch in :op1:            GOLD = s3t2                     CONV = UNMAPPED
 Node GOLD s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in concept:         GOLD = kontrolovat-001          CONV = kontrola
 Node GOLD s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :ARG0:           GOLD = s3o1 mapped to CONV s3o1 CONV = 
-Node GOLD s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :ARG1:           GOLD = s3o3 mapped to CONV s3b1 CONV = s3s1
 Node GOLD s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :aspect:         GOLD = activity                 CONV = 
 Node GOLD s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s3k3 / konstatovat-002 (konstatoval)                     mismatch in :ARG1:           GOLD = s3p3 mapped to CONV s3p4 CONV = 
 Node GOLD s3k3 / konstatovat-002 (konstatoval)                     mismatch in :aspect:         GOLD = performance              CONV = process
 Node GOLD s3k3 / konstatovat-002 (konstatoval)                     mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
-Node GOLD s3k3 / konstatovat-002 (konstatoval)                     mismatch in :effect:         GOLD =                          CONV = s3p4
-Node GOLD s3k3 / konstatovat-002 (konstatoval)                     mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s3n1 / name                                              mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s3n1 / name                                              mismatch in :op1:            GOLD = "parlament"              CONV = UNMAPPED
 Node GOLD s3n2 / name                                              mismatch in concept:         GOLD = name                     CONV = UNMAPPED
@@ -329,91 +327,76 @@ Node GOLD s3o1 / orgán (orgán)                                     mismatch in
 Node GOLD s3o1 / orgán (orgán)                                     mismatch in :mod:            GOLD =                          CONV = s3p2
 Node GOLD s3o2 / organization (parlamentní)                        mismatch in concept:         GOLD = organization             CONV = parlamentní
 Node GOLD s3o2 / organization (parlamentní)                        mismatch in :name:           GOLD = s3n1 unmapped            CONV = 
-Node GOLD s3o2 / organization (parlamentní)                        mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in concept:         GOLD = organization             CONV = Bezpečnostní
+Node GOLD s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in concept:         GOLD = organization             CONV = služba
 Node GOLD s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :name:           GOLD = s3n3 unmapped            CONV = 
+Node GOLD s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :mod:            GOLD =                          CONV = s3i1
+Node GOLD s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :mod:            GOLD =                          CONV = s3b1
 Node GOLD s3p2 / podnět (podnětů)                                  mismatch in :source:         GOLD = s3p5 mapped to CONV s3o2 CONV = 
 Node GOLD s3p2 / podnět (podnětů)                                  mismatch in :ARG0:           GOLD =                          CONV = s3o2
-Node GOLD s3p3 / porušit-001 (že neporušila)                       mismatch in :ARG0:           GOLD = s3o3 mapped to CONV s3b1 CONV = s3b2
+Node GOLD s3p3 / porušit-001 (že neporušila)                       mismatch in :ARG0:           GOLD = s3o3 mapped to CONV s3s1 CONV = s3b2
 Node GOLD s3p3 / porušit-001 (že neporušila)                       mismatch in :modal-strength: GOLD = full-negative            CONV = 
 Node GOLD s3p3 / porušit-001 (že neporušila)                       mismatch in :quote:          GOLD = s3k3 mapped to CONV s3k3 CONV = 
 Node GOLD s3p4 / pokračovat-004 (pokračuje)                        mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
-Node GOLD s3p4 / pokračovat-004 (pokračuje)                        mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s3p4 / pokračovat-004 (pokračuje)                        mismatch in :refer-person:   GOLD =                          CONV = 3rd
 Node GOLD s3p5 / political-organization (ODA)                      mismatch in concept:         GOLD = political-organization   CONV = ODA
 Node GOLD s3p5 / political-organization (ODA)                      mismatch in :name:           GOLD = s3n2 unmapped            CONV = 
 Node GOLD s3p5 / political-organization (ODA)                      mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node GOLD s3s2 / šetřit-003 (šetření)                              mismatch in concept:         GOLD = šetřit-003               CONV = šetření
 Node GOLD s3s2 / šetřit-003 (šetření)                              mismatch in :ARG0:           GOLD = s3o1 mapped to CONV s3o1 CONV = s3e2
-Node GOLD s3s2 / šetřit-003 (šetření)                              mismatch in :ARG1:           GOLD = s3o3 mapped to CONV s3b1 CONV = s3e3
+Node GOLD s3s2 / šetřit-003 (šetření)                              mismatch in :ARG1:           GOLD = s3o3 mapped to CONV s3s1 CONV = s3e3
 Node GOLD s3s2 / šetřit-003 (šetření)                              mismatch in :aspect:         GOLD = activity                 CONV = 
 Node GOLD s3s2 / šetřit-003 (šetření)                              mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s3s2 / šetřit-003 (šetření)                              mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s3t2 / týden (týdnem)                                    mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:       GOLD = s3b4 unmapped            CONV = s3t1
-Node GOLD s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in concept:         GOLD = vyšetřovat-001           CONV = vyšetřování
 Node GOLD s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :ARG0:           GOLD = s3o1 mapped to CONV s3o1 CONV = s3e1
 Node GOLD s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :aspect:         GOLD = activity                 CONV = 
 Node GOLD s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :refer-number:   GOLD =                          CONV = singular
+Node CONV s3b1 / Bezpečnostní (Bezpečnostní)                       mismatch in concept:         CONV = Bezpečnostní             GOLD = UNMAPPED
 Node CONV s3b2 / BIS (BIS)                                         mismatch in concept:         CONV = BIS                      GOLD = UNMAPPED
 Node CONV s3b2 / BIS (BIS)                                         mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 Node CONV s3e1 / entity                                            mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s3e2 / entity                                            mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s3e3 / entity                                            mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s3i1 / informační (informační)                           mismatch in concept:         CONV = informační               GOLD = UNMAPPED
-Node CONV s3i1 / informační (informační)                           mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
-Node CONV s3s1 / služba (služby)                                   mismatch in concept:         CONV = služba                   GOLD = UNMAPPED
-Node CONV s3s1 / služba (služby)                                   mismatch in :mod:            CONV = s3i1                     GOLD = UNMAPPED
-Node CONV s3s1 / služba (služby)                                   mismatch in :mod:            CONV = s3b1                     GOLD = UNMAPPED
-Node CONV s3s1 / služba (služby)                                   mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 
-Correct 34 out of 76 non-empty GOLD values => recall    45%.
-Correct 34 out of 70 non-empty CONV values => precision 49%.
+Correct 36 out of 76 non-empty GOLD values => recall    47%.
+Correct 36 out of 63 non-empty CONV values => precision 57%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
-Node CONV s3b1 / Bezpečnostní (Bezpečnostní)          mismatch in concept:         CONV = Bezpečnostní             GOLD = organization
-Node CONV s3b1 / Bezpečnostní (Bezpečnostní)          mismatch in :name:           CONV =                          GOLD = s3n3
+Node CONV s3b1 / Bezpečnostní (Bezpečnostní)          mismatch in concept:         CONV = Bezpečnostní             GOLD = UNMAPPED
 Node CONV s3b2 / BIS (BIS)                            mismatch in concept:         CONV = BIS                      GOLD = UNMAPPED
 Node CONV s3b2 / BIS (BIS)                            mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 Node CONV s3e1 / entity                               mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s3e2 / entity                               mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s3e3 / entity                               mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s3i1 / informační (informační)              mismatch in concept:         CONV = informační               GOLD = UNMAPPED
-Node CONV s3i1 / informační (informační)              mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 Node CONV s3k1 / kontrola (pro kontrolu)              mismatch in concept:         CONV = kontrola                 GOLD = kontrolovat-001
-Node CONV s3k1 / kontrola (pro kontrolu)              mismatch in :ARG1:           CONV = s3s1 unmapped            GOLD = s3o3
 Node CONV s3k1 / kontrola (pro kontrolu)              mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s3k1 / kontrola (pro kontrolu)              mismatch in :ARG0:           CONV =                          GOLD = s3o1
 Node CONV s3k1 / kontrola (pro kontrolu)              mismatch in :aspect:         CONV =                          GOLD = activity
 Node CONV s3k1 / kontrola (pro kontrolu)              mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s3k3 / konstatovat-002 (Ačkoli konstatoval) mismatch in :aspect:         CONV = process                  GOLD = performance
-Node CONV s3k3 / konstatovat-002 (Ačkoli konstatoval) mismatch in :effect:         CONV = s3p4 mapped to GOLD s3p3 GOLD = 
-Node CONV s3k3 / konstatovat-002 (Ačkoli konstatoval) mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s3k3 / konstatovat-002 (Ačkoli konstatoval) mismatch in :ARG1:           CONV =                          GOLD = s3p3
 Node CONV s3k3 / konstatovat-002 (Ačkoli konstatoval) mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s3o1 / orgán (orgán)                        mismatch in :mod:            CONV = s3p2 mapped to GOLD s3o2 GOLD = 
 Node CONV s3o1 / orgán (orgán)                        mismatch in :part:           CONV =                          GOLD = s3o2
 Node CONV s3o2 / ODA (ODA)                            mismatch in concept:         CONV = ODA                      GOLD = political-organization
 Node CONV s3o2 / ODA (ODA)                            mismatch in :name:           CONV =                          GOLD = s3n2
 Node CONV s3o2 / ODA (ODA)                            mismatch in :refer-number:   CONV =                          GOLD = singular
-Node CONV s3p1 / pokračovat-004 (pokračuje)           mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s3p1 / pokračovat-004 (pokračuje)           mismatch in :refer-person:   CONV = 3rd                      GOLD = 
 Node CONV s3p1 / pokračovat-004 (pokračuje)           mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s3p2 / parlamentní (parlamentní)            mismatch in concept:         CONV = parlamentní              GOLD = organization
-Node CONV s3p2 / parlamentní (parlamentní)            mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s3p2 / parlamentní (parlamentní)            mismatch in :name:           CONV =                          GOLD = s3n1
 Node CONV s3p3 / podnět (podnětů)                     mismatch in :ARG0:           CONV = s3o2 mapped to GOLD s3p5 GOLD = 
 Node CONV s3p3 / podnět (podnětů)                     mismatch in :source:         CONV =                          GOLD = s3p5
 Node CONV s3p4 / porušit-001 (že neporušila)          mismatch in :ARG0:           CONV = s3b2 unmapped            GOLD = s3o3
 Node CONV s3p4 / porušit-001 (že neporušila)          mismatch in :modal-strength: CONV =                          GOLD = full-negative
 Node CONV s3p4 / porušit-001 (že neporušila)          mismatch in :quote:          CONV =                          GOLD = s3k3
-Node CONV s3s1 / služba (služby)                      mismatch in concept:         CONV = služba                   GOLD = UNMAPPED
-Node CONV s3s1 / služba (služby)                      mismatch in :mod:            CONV = s3i1                     GOLD = UNMAPPED
-Node CONV s3s1 / služba (služby)                      mismatch in :mod:            CONV = s3b1                     GOLD = UNMAPPED
-Node CONV s3s1 / služba (služby)                      mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
+Node CONV s3s1 / služba (služby)                      mismatch in concept:         CONV = služba                   GOLD = organization
+Node CONV s3s1 / služba (služby)                      mismatch in :mod:            CONV = s3i1 unmapped            GOLD = 
+Node CONV s3s1 / služba (služby)                      mismatch in :mod:            CONV = s3b1 unmapped            GOLD = 
+Node CONV s3s1 / služba (služby)                      mismatch in :name:           CONV =                          GOLD = s3n3
 Node CONV s3s2 / šetření (šetření)                    mismatch in concept:         CONV = šetření                  GOLD = šetřit-003
 Node CONV s3s2 / šetření (šetření)                    mismatch in :ARG0:           CONV = s3e2 unmapped            GOLD = s3o1
 Node CONV s3s2 / šetření (šetření)                    mismatch in :ARG1:           CONV = s3e3 unmapped            GOLD = s3o3
@@ -421,7 +404,6 @@ Node CONV s3s2 / šetření (šetření)                    mismatch in :refer-n
 Node CONV s3s2 / šetření (šetření)                    mismatch in :aspect:         CONV =                          GOLD = activity
 Node CONV s3s2 / šetření (šetření)                    mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s3t1 / týden (před týdnem)                  mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s3u1 / ukončit-001 (Ačkoli ukončil)         mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s3u1 / ukončit-001 (Ačkoli ukončil)         mismatch in :temporal:       CONV = s3t1 mapped to GOLD s3t2 GOLD = s3b4
 Node CONV s3u1 / ukončit-001 (Ačkoli ukončil)         mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s3v1 / vyšetřování (vyšetřování)            mismatch in concept:         CONV = vyšetřování              GOLD = vyšetřovat-001
@@ -440,8 +422,8 @@ Node GOLD s3n3 / name                                 mismatch in :op1:         
 Node GOLD s3n3 / name                                 mismatch in :op2:            GOLD = "informační"             CONV = UNMAPPED
 Node GOLD s3n3 / name                                 mismatch in :op3:            GOLD = "služba"                 CONV = UNMAPPED
 
-Correct 34 out of 70 non-empty CONV values => recall    49%.
-Correct 34 out of 76 non-empty GOLD values => precision 45%.
+Correct 36 out of 63 non-empty CONV values => recall    57%.
+Correct 36 out of 76 non-empty GOLD values => precision 47%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 4:
@@ -452,27 +434,27 @@ GOLD                                             CONV
 (s4p1 / připustit-004                            (s4p1 / připustit-004
         :temporal (s4v1 / včera)                         :temporal (s4v1 / včera)
         :ARG1 (s4t1 / event)                             :ARG1 (s4t1 / ten
-        :ARG0 (s4p4 / person                                 :refer-number singular
-        	:ARG1-of (s4h1 / have-org-role-91                   :refer-person 3rd)
-    	   		:aspect state                                  :ARG0 (s4s1 / Severa
-    	    		:modal-strength full-affirmative                  :mod (s4p2 / Pavel
-    	    		:ARG3 (s4p5 / poslanec                                :refer-number singular)
-    	    			:refer-number singular)                          :mod (s4p3 / poslanec
-    	    		:ARG2  (s4o2 / organization                           :refer-number singular)
-    	    			:name (s4n3 / name                               :mod (s4c1 / člen
-    	    				:op1 "parlament")))                                 :possessor (s4k1 / komise
-        	:ARG1-of (s4h2 / have-org-role-91                           :refer-number singular)
-        		:modal-strength full-affirmative                       :refer-number singular)
-        		:aspect state                                      :parenthesis (s4a1 / and
-        		:ARG2 (s4k1 / komise                                   :op1 (s4k2 / KDU)
-        			:refer-number singular)                               :op2 (s4c2 / ČSL))
+        :ARG0 (s4p4 / person                                 :refer-number singular)
+        	:ARG1-of (s4h1 / have-org-role-91               :ARG0 (s4s1 / Severa
+    	   		:aspect state                                      :mod (s4p2 / Pavel)
+    	    		:modal-strength full-affirmative                  :mod (s4p3 / poslanec)
+    	    		:ARG3 (s4p5 / poslanec                            :mod (s4c1 / člen
+    	    			:refer-number singular)                              :possessor (s4k1 / komise
+    	    		:ARG2  (s4o2 / organization                               :refer-number singular))
+    	    			:name (s4n3 / name                               :parenthesis (s4a1 / and
+    	    				:op1 "parlament")))                                 :op1 (s4k2 / KDU)
+        	:ARG1-of (s4h2 / have-org-role-91                       :op2 (s4c2 / ČSL))
+        		:modal-strength full-affirmative                   :refer-number singular)
+        		:aspect state                                  :temporal (s4s2 / schůze
+        		:ARG2 (s4k1 / komise                               :possessor (s4o1 / orgán
+        			:refer-number singular)                               :refer-number singular)
         		:ARG3 (s4c1 / člen                                 :refer-number singular)
-        			:refer-number singular))                      :temporal (s4s2 / schůze
-        	:ARG1-of (s4h3 / have-org-role-91                   :possessor (s4o1 / orgán
-    	   		:aspect state                                          :refer-number singular)
-    	    		:modal-strength full-affirmative                  :refer-number singular)
-    	    		:ARG2  (s4p6 / political-organization         :refer-number singular
-    	    			:refer-number singular                       :aspect performance)
+        			:refer-number singular))                      :aspect performance)
+        	:ARG1-of (s4h3 / have-org-role-91       
+    	   		:aspect state                          
+    	    		:modal-strength full-affirmative      
+    	    		:ARG2  (s4p6 / political-organization 
+    	    			:refer-number singular               
     	    			:name (s4n1 / name                   
     	    				:op1 "KDU-ČSL")))                   
         	:name (s4n2 / name                      
@@ -548,6 +530,7 @@ Aligned 10 out of 13 CONV nodes, that is 77%.
 Comparing attributes of GOLD nodes with their CONV counterparts.
 Node GOLD s4a2 / after (po)                         mismatch in concept:         GOLD = after                    CONV = UNMAPPED
 Node GOLD s4a2 / after (po)                         mismatch in :op1:            GOLD = s4s1                     CONV = UNMAPPED
+Node GOLD s4c1 / člen (člen)                        mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node GOLD s4c1 / člen (člen)                        mismatch in :possessor:      GOLD =                          CONV = s4k1
 Node GOLD s4h1 / have-org-role-91                   mismatch in concept:         GOLD = have-org-role-91         CONV = UNMAPPED
 Node GOLD s4h1 / have-org-role-91                   mismatch in :ARG2:           GOLD = s4o2                     CONV = UNMAPPED
@@ -574,7 +557,6 @@ Node GOLD s4o2 / organization                       mismatch in concept:        
 Node GOLD s4o2 / organization                       mismatch in :name:           GOLD = s4n3                     CONV = UNMAPPED
 Node GOLD s4p1 / připustit-004 (připustil)          mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s4p1 / připustit-004 (připustil)          mismatch in :temporal:       GOLD = s4a2 unmapped            CONV = 
-Node GOLD s4p1 / připustit-004 (připustil)          mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s4p1 / připustit-004 (připustil)          mismatch in :temporal:       GOLD =                          CONV = s4s2
 Node GOLD s4p4 / person (Pavel Severa)              mismatch in concept:         GOLD = person                   CONV = Severa
 Node GOLD s4p4 / person (Pavel Severa)              mismatch in :ARG1-of:        GOLD = s4h1 unmapped            CONV = 
@@ -585,6 +567,7 @@ Node GOLD s4p4 / person (Pavel Severa)              mismatch in :mod:           
 Node GOLD s4p4 / person (Pavel Severa)              mismatch in :mod:            GOLD =                          CONV = s4p3
 Node GOLD s4p4 / person (Pavel Severa)              mismatch in :mod:            GOLD =                          CONV = s4c1
 Node GOLD s4p4 / person (Pavel Severa)              mismatch in :parenthesis:    GOLD =                          CONV = s4a1
+Node GOLD s4p5 / poslanec (poslanec)                mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node GOLD s4p6 / political-organization (KDU - ČSL) mismatch in concept:         GOLD = political-organization   CONV = ČSL
 Node GOLD s4p6 / political-organization (KDU - ČSL) mismatch in :name:           GOLD = s4n1 unmapped            CONV = 
 Node GOLD s4p6 / political-organization (KDU - ČSL) mismatch in :refer-number:   GOLD = singular                 CONV = 
@@ -596,32 +579,30 @@ Node GOLD s4s1 / sejít-se-001 (schůzi)              mismatch in :possessor:   
 Node GOLD s4s1 / sejít-se-001 (schůzi)              mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s4t1 / event (to)                         mismatch in concept:         GOLD = event                    CONV = ten
 Node GOLD s4t1 / event (to)                         mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s4t1 / event (to)                         mismatch in :refer-person:   GOLD =                          CONV = 3rd
 Node CONV s4a1 / and (-)                            mismatch in concept:         CONV = and                      GOLD = UNMAPPED
 Node CONV s4a1 / and (-)                            mismatch in :op1:            CONV = s4k2                     GOLD = UNMAPPED
 Node CONV s4a1 / and (-)                            mismatch in :op2:            CONV = s4c2                     GOLD = UNMAPPED
 Node CONV s4k2 / KDU (KDU)                          mismatch in concept:         CONV = KDU                      GOLD = UNMAPPED
 Node CONV s4p2 / Pavel (Pavel)                      mismatch in concept:         CONV = Pavel                    GOLD = UNMAPPED
-Node CONV s4p2 / Pavel (Pavel)                      mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 
-Correct 15 out of 55 non-empty GOLD values => recall    27%.
-Correct 15 out of 36 non-empty CONV values => precision 42%.
+Correct 13 out of 55 non-empty GOLD values => recall    24%.
+Correct 13 out of 31 non-empty CONV values => precision 42%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s4a1 / and (-)                   mismatch in concept:         CONV = and                      GOLD = UNMAPPED
 Node CONV s4a1 / and (-)                   mismatch in :op1:            CONV = s4k2                     GOLD = UNMAPPED
 Node CONV s4a1 / and (-)                   mismatch in :op2:            CONV = s4c2                     GOLD = UNMAPPED
 Node CONV s4c1 / člen (člen)               mismatch in :possessor:      CONV = s4k1 mapped to GOLD s4k1 GOLD = 
+Node CONV s4c1 / člen (člen)               mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s4c2 / ČSL (ČSL)                 mismatch in concept:         CONV = ČSL                      GOLD = political-organization
 Node CONV s4c2 / ČSL (ČSL)                 mismatch in :name:           CONV =                          GOLD = s4n1
 Node CONV s4c2 / ČSL (ČSL)                 mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s4k2 / KDU (KDU)                 mismatch in concept:         CONV = KDU                      GOLD = UNMAPPED
-Node CONV s4p1 / připustit-004 (připustil) mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s4p1 / připustit-004 (připustil) mismatch in :temporal:       CONV = s4s2 mapped to GOLD s4s1 GOLD = 
 Node CONV s4p1 / připustit-004 (připustil) mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s4p1 / připustit-004 (připustil) mismatch in :temporal:       CONV =                          GOLD = s4a2
 Node CONV s4p2 / Pavel (Pavel)             mismatch in concept:         CONV = Pavel                    GOLD = UNMAPPED
-Node CONV s4p2 / Pavel (Pavel)             mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
+Node CONV s4p3 / poslanec (poslanec)       mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s4s1 / Severa (Severa)           mismatch in concept:         CONV = Severa                   GOLD = person
 Node CONV s4s1 / Severa (Severa)           mismatch in :mod:            CONV = s4p2 unmapped            GOLD = 
 Node CONV s4s1 / Severa (Severa)           mismatch in :mod:            CONV = s4p3 mapped to GOLD s4p5 GOLD = 
@@ -639,7 +620,6 @@ Node CONV s4s2 / schůze (po schůzi)        mismatch in :aspect:         CONV =
 Node CONV s4s2 / schůze (po schůzi)        mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s4t1 / ten (to)                  mismatch in concept:         CONV = ten                      GOLD = event
 Node CONV s4t1 / ten (to)                  mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s4t1 / ten (to)                  mismatch in :refer-person:   CONV = 3rd                      GOLD = 
 Node GOLD s4a2 / after (po)                mismatch in concept:         GOLD = after                    CONV = UNMAPPED
 Node GOLD s4a2 / after (po)                mismatch in :op1:            GOLD = s4s1                     CONV = UNMAPPED
 Node GOLD s4h1 / have-org-role-91          mismatch in concept:         GOLD = have-org-role-91         CONV = UNMAPPED
@@ -666,8 +646,8 @@ Node GOLD s4n3 / name                      mismatch in :op1:            GOLD = "
 Node GOLD s4o2 / organization              mismatch in concept:         GOLD = organization             CONV = UNMAPPED
 Node GOLD s4o2 / organization              mismatch in :name:           GOLD = s4n3                     CONV = UNMAPPED
 
-Correct 15 out of 36 non-empty CONV values => recall    42%.
-Correct 15 out of 55 non-empty GOLD values => precision 27%.
+Correct 13 out of 31 non-empty CONV values => recall    42%.
+Correct 13 out of 55 non-empty GOLD values => precision 24%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -678,42 +658,42 @@ GOLD                                                                        CONV
 (s5s1 / shodnout-se-001                                                     (s5s1 / shodnout-se-001
 	:aspect performance                                                                :ARG0 (s5k1 / komise
 	:modal-strength full-affirmative                                                       :refer-number singular)
-        :ARG0 (s5k1 / komise                                                        :ARG2 (s5x1 / _Rcp
-            :refer-number singular)                                                     :refer-number singular)
-        :ARG2 s5k1                                                                  :ARG1 (s5d1 / dokončit-001
-        :ARG1 (s5d1 / dokončit-001                                                      :ARG0 s5x1
-            :aspect performance                                                         :ARG1 (s5i1 / identity-91
-            :modal-strength full-affirmative                                                :ARG1 (s5s2 / šetření
-            :ARG0 s5k1                                                                          :ARG0 (s5e1 / entity)
-            :ARG1 (s5s2 / šetřit-003                                                            :ARG1 (s5e2 / entity)
-            	    :aspect activity                                                               :ARG1-of (s5p1 / provést-002
-            	    :modal-strength full-affirmative                                                   :ARG0 (s5e3 / entity)
-                    :ARG0 s5k1                                                                      :duration (s5j1 / ještě)
-                    :ARG1-of (s5p1 / provést-002                                                    :aspect performance
-                        :ARG0 s5k1                                                                  :polarity -)
-                        :mod (s5j1 / ještě)                                                     :refer-number plural)
-                        :aspect performance                                                 :clausal-marker (s5n1 / například)
-                        :modal-strength full-negative                                       :ARG2 (s5p2 / porovnání
-                        :polarity -))                                                           :ARG0 (s5e4 / entity)
-                    :example (s5p2 / porovnat-001                                               :ARG1 (s5z1 / zpráva
-                            :aspect performance                                                     :ARG1 (s5e5 / extremismus
-                            :modal-strength full-negative                                               :refer-number singular)
-                            :polarity -                                                             :refer-number singular)
-                            :ARG0 s5k1                                                          :effect (s5v1 / vysvětlení
-                            :ARG1 (s5z1 / zpráva                                                    :ARG1 (s5e6 / entity)
-                                :mod (s5e5 / extremismus                                            :ARG0 (s5d2 / Devátý
-                                    :refer-number singular)                                             :mod (s5s3 / Stanislav
-                                :refer-number singular)                                                     :refer-number singular)
-                            :ARG2 (s5v1 / vysvětlit-001                                                 :mod (s5r1 / ředitel
-                                :aspect performance                                                         :possessor (s5b1 / BIS)
-                                :modal-strength full-affirmative                                            :refer-number singular)
-                                :ARG0 (s5p3 / person                                                    :refer-number singular)
-                                    :name (s5n1 / name                                              :refer-number singular)
-                                        :op1 "Stanislav"                                        :refer-number singular))
-                                        :op2 "Devátý")                                  :refer-number singular
-                                        :refer-number singular                          :refer-person 3rd
-                                        :ARG1-of (s5h1 / have-org-role-91               :aspect performance)
-                                		:aspect state                                     :aspect performance)
+        :ARG0 (s5k1 / komise                                                        :ARG2 (s5x1 / Rcp)
+            :refer-number singular)                                                 :ARG1 (s5d1 / dokončit-001
+        :ARG2 s5k1                                                                      :ARG0 s5x1
+        :ARG1 (s5d1 / dokončit-001                                                      :ARG1 (s5i1 / identity-91
+            :aspect performance                                                             :ARG1 (s5s2 / šetření
+            :modal-strength full-affirmative                                                    :ARG0 (s5e1 / entity)
+            :ARG0 s5k1                                                                          :ARG1 (s5e2 / entity)
+            :ARG1 (s5s2 / šetřit-003                                                            :ARG1-of (s5p1 / provést-002
+            	    :aspect activity                                                                   :ARG0 (s5e3 / entity)
+            	    :modal-strength full-affirmative                                                   :duration (s5j1 / ještě)
+                    :ARG0 s5k1                                                                      :aspect performance
+                    :ARG1-of (s5p1 / provést-002                                                    :polarity -)
+                        :ARG0 s5k1                                                              :refer-number plural)
+                        :mod (s5j1 / ještě)                                                 :clausal-marker (s5n1 / například)
+                        :aspect performance                                                 :ARG2 (s5p2 / porovnání
+                        :modal-strength full-negative                                           :ARG0 (s5e4 / entity)
+                        :polarity -))                                                           :ARG1 (s5z1 / zpráva
+                    :example (s5p2 / porovnat-001                                                   :ARG1 (s5e5 / extremismus
+                            :aspect performance                                                         :refer-number singular)
+                            :modal-strength full-negative                                           :refer-number singular)
+                            :polarity -                                                         :effect (s5v1 / vysvětlení
+                            :ARG0 s5k1                                                              :ARG1 (s5e6 / entity)
+                            :ARG1 (s5z1 / zpráva                                                    :ARG0 (s5d2 / Devátý
+                                :mod (s5e5 / extremismus                                                :mod (s5s3 / Stanislav)
+                                    :refer-number singular)                                             :mod (s5r1 / ředitel
+                                :refer-number singular)                                                     :possessor (s5b1 / BIS))
+                            :ARG2 (s5v1 / vysvětlit-001                                                 :refer-number singular)
+                                :aspect performance                                                 :refer-number singular)
+                                :modal-strength full-affirmative                                :refer-number singular))
+                                :ARG0 (s5p3 / person                                    :aspect performance)
+                                    :name (s5n1 / name                              :aspect performance)
+                                        :op1 "Stanislav"                    
+                                        :op2 "Devátý")                      
+                                        :refer-number singular              
+                                        :ARG1-of (s5h1 / have-org-role-91   
+                                		:aspect state                             
                                     		:modal-strength full-affirmative      
                                     		:ARG3 (s5r1 / ředitel                 
                                         		:refer-number singular)           
@@ -724,7 +704,7 @@ GOLD                                                                        CONV
 
 Node-token alignments:
 File GOLD: 3 nodes unaligned: s5h1/have-org-role-91, s5n1/name["Stanislav" "Devátý"], s5n2/name["BIS"].
-File CONV: 6 nodes unaligned: s5e1/entity, s5e2/entity, s5e3/entity, s5e4/entity, s5e6/entity, s5x1/_Rcp.
+File CONV: 6 nodes unaligned: s5e1/entity, s5e2/entity, s5e3/entity, s5e4/entity, s5e6/entity, s5x1/Rcp.
                GOLD CONV
 1  Komise      s5k1 s5k1
 2  se          s5s1 s5s1
@@ -760,7 +740,7 @@ Node-node correspondences:
 Ambiguous projection of GOLD node s5p2 (jako například porovnání) to 3 CONV nodes [s5i1 (jako), s5n1 (například), s5p2 (porovnání)]
 Ambiguous projection of GOLD node s5p3 (Stanislava Devátého) to 2 CONV nodes [s5d2 (Devátého), s5s3 (Stanislava)]
   The winner is GOLD node s5p2 (jako například porovnání) <--> CONV node s5p2 (porovnání): econcepts=porovnat-001/porovnání, match=1 (:ARG1=s5z1 mapped to CONV s5z1), weak match=3 (concept,:ARG0,:ARG1).
-  The winner is GOLD node s5p3 (Stanislava Devátého) <--> CONV node s5s3 (Stanislava): econcepts=person/Stanislav, match=1 (:refer-number=singular), weak match=2 (concept,:refer-number).
+  The winner is GOLD node s5p3 (Stanislava Devátého) <--> CONV node s5d2 (Devátého): econcepts=person/Devátý, match=1 (:refer-number=singular), weak match=2 (concept,:refer-number).
 
 Correspondence GOLD s5d1 (na tom že dokončí)          = CONV s5d1 (na tom že dokončí)
 Correspondence GOLD s5e5 (o extremismu)               = CONV s5e5 (o extremismu)
@@ -769,7 +749,7 @@ Correspondence GOLD s5k1 (Komise)                     = CONV s5k1 (Komise)
 Correspondence GOLD s5o1 (BIS)                        = CONV s5b1 (BIS)
 Correspondence GOLD s5p1 (provedena nebyla)           = CONV s5p1 (provedena nebyla)
 Correspondence GOLD s5p2 (jako například porovnání)   = CONV s5p2 (porovnání)
-Correspondence GOLD s5p3 (Stanislava Devátého)        = CONV s5s3 (Stanislava)
+Correspondence GOLD s5p3 (Stanislava Devátého)        = CONV s5d2 (Devátého)
 Correspondence GOLD s5r1 (ředitele)                   = CONV s5r1 (ředitele)
 Correspondence GOLD s5s1 (se shodla)                  = CONV s5s1 (se shodla)
 Correspondence GOLD s5s2 (šetření která)              = CONV s5s2 (šetření která)
@@ -778,7 +758,6 @@ Correspondence GOLD s5z1 (zprávy)                     = CONV s5z1 (zprávy)
 Correspondence GOLD s5h1 (have-org-role-91)           = CONV 
 Correspondence GOLD s5n1 (name["Stanislav" "Devátý"]) = CONV 
 Correspondence GOLD s5n2 (name["BIS"])                = CONV 
-Correspondence GOLD                                   = CONV s5d2 (Devátého)
 Correspondence GOLD                                   = CONV s5e1 (entity)
 Correspondence GOLD                                   = CONV s5e2 (entity)
 Correspondence GOLD                                   = CONV s5e3 (entity)
@@ -786,7 +765,8 @@ Correspondence GOLD                                   = CONV s5e4 (entity)
 Correspondence GOLD                                   = CONV s5e6 (entity)
 Correspondence GOLD                                   = CONV s5i1 (jako)
 Correspondence GOLD                                   = CONV s5n1 (například)
-Correspondence GOLD                                   = CONV s5x1 (_Rcp)
+Correspondence GOLD                                   = CONV s5s3 (Stanislava)
+Correspondence GOLD                                   = CONV s5x1 (Rcp)
 
 Aligned 13 out of 16 GOLD nodes, that is 81%.
 Aligned 13 out of 22 CONV nodes, that is 59%.
@@ -796,8 +776,6 @@ Node GOLD s5d1 / dokončit-001 (na tom že dokončí)        mismatch in :ARG0: 
 Node GOLD s5d1 / dokončit-001 (na tom že dokončí)        mismatch in :ARG1:           GOLD = s5s2 mapped to CONV s5s2 CONV = s5i1
 Node GOLD s5d1 / dokončit-001 (na tom že dokončí)        mismatch in :example:        GOLD = s5p2 mapped to CONV s5p2 CONV = 
 Node GOLD s5d1 / dokončit-001 (na tom že dokončí)        mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
-Node GOLD s5d1 / dokončit-001 (na tom že dokončí)        mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s5d1 / dokončit-001 (na tom že dokončí)        mismatch in :refer-person:   GOLD =                          CONV = 3rd
 Node GOLD s5h1 / have-org-role-91                        mismatch in concept:         GOLD = have-org-role-91         CONV = UNMAPPED
 Node GOLD s5h1 / have-org-role-91                        mismatch in :ARG2:           GOLD = s5o1                     CONV = UNMAPPED
 Node GOLD s5h1 / have-org-role-91                        mismatch in :ARG3:           GOLD = s5r1                     CONV = UNMAPPED
@@ -823,9 +801,12 @@ Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :modal-
 Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :polarity:       GOLD = -                        CONV = 
 Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :effect:         GOLD =                          CONV = s5v1
 Node GOLD s5p2 / porovnat-001 (jako například porovnání) mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s5p3 / person (Stanislava Devátého)            mismatch in concept:         GOLD = person                   CONV = Stanislav
+Node GOLD s5p3 / person (Stanislava Devátého)            mismatch in concept:         GOLD = person                   CONV = Devátý
 Node GOLD s5p3 / person (Stanislava Devátého)            mismatch in :ARG1-of:        GOLD = s5h1 unmapped            CONV = 
 Node GOLD s5p3 / person (Stanislava Devátého)            mismatch in :name:           GOLD = s5n1 unmapped            CONV = 
+Node GOLD s5p3 / person (Stanislava Devátého)            mismatch in :mod:            GOLD =                          CONV = s5s3
+Node GOLD s5p3 / person (Stanislava Devátého)            mismatch in :mod:            GOLD =                          CONV = s5r1
+Node GOLD s5r1 / ředitel (ředitele)                      mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node GOLD s5r1 / ředitel (ředitele)                      mismatch in :possessor:      GOLD =                          CONV = s5b1
 Node GOLD s5s1 / shodnout-se-001 (se shodla)             mismatch in :ARG2:           GOLD = s5k1 mapped to CONV s5k1 CONV = s5x1
 Node GOLD s5s1 / shodnout-se-001 (se shodla)             mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
@@ -836,17 +817,12 @@ Node GOLD s5s2 / šetřit-003 (šetření která)              mismatch in :moda
 Node GOLD s5s2 / šetřit-003 (šetření která)              mismatch in :ARG1:           GOLD =                          CONV = s5e2
 Node GOLD s5s2 / šetřit-003 (šetření která)              mismatch in :refer-number:   GOLD =                          CONV = plural
 Node GOLD s5v1 / vysvětlit-001 (s vysvětlením)           mismatch in concept:         GOLD = vysvětlit-001            CONV = vysvětlení
-Node GOLD s5v1 / vysvětlit-001 (s vysvětlením)           mismatch in :ARG0:           GOLD = s5p3 mapped to CONV s5s3 CONV = s5d2
 Node GOLD s5v1 / vysvětlit-001 (s vysvětlením)           mismatch in :aspect:         GOLD = performance              CONV = 
 Node GOLD s5v1 / vysvětlit-001 (s vysvětlením)           mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s5v1 / vysvětlit-001 (s vysvětlením)           mismatch in :ARG1:           GOLD =                          CONV = s5e6
 Node GOLD s5v1 / vysvětlit-001 (s vysvětlením)           mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s5z1 / zpráva (zprávy)                         mismatch in :mod:            GOLD = s5e5 mapped to CONV s5e5 CONV = 
 Node GOLD s5z1 / zpráva (zprávy)                         mismatch in :ARG1:           GOLD =                          CONV = s5e5
-Node CONV s5d2 / Devátý (Devátého)                       mismatch in concept:         CONV = Devátý                   GOLD = UNMAPPED
-Node CONV s5d2 / Devátý (Devátého)                       mismatch in :mod:            CONV = s5s3                     GOLD = UNMAPPED
-Node CONV s5d2 / Devátý (Devátého)                       mismatch in :mod:            CONV = s5r1                     GOLD = UNMAPPED
-Node CONV s5d2 / Devátý (Devátého)                       mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 Node CONV s5e1 / entity                                  mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s5e2 / entity                                  mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s5e3 / entity                                  mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
@@ -857,11 +833,11 @@ Node CONV s5i1 / identity-91 (jako)                      mismatch in :ARG1:     
 Node CONV s5i1 / identity-91 (jako)                      mismatch in :ARG2:           CONV = s5p2                     GOLD = UNMAPPED
 Node CONV s5i1 / identity-91 (jako)                      mismatch in :clausal-marker: CONV = s5n1                     GOLD = UNMAPPED
 Node CONV s5n1 / například (například)                   mismatch in concept:         CONV = například                GOLD = UNMAPPED
-Node CONV s5x1 / _Rcp                                    mismatch in concept:         CONV = _Rcp                     GOLD = UNMAPPED
-Node CONV s5x1 / _Rcp                                    mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
+Node CONV s5s3 / Stanislav (Stanislava)                  mismatch in concept:         CONV = Stanislav                GOLD = UNMAPPED
+Node CONV s5x1 / Rcp                                     mismatch in concept:         CONV = Rcp                      GOLD = UNMAPPED
 
 Correct 21 out of 61 non-empty GOLD values => recall    34%.
-Correct 21 out of 60 non-empty CONV values => precision 35%.
+Correct 21 out of 55 non-empty CONV values => precision 38%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s5b1 / BIS (BIS)                        mismatch in concept:         CONV = BIS                      GOLD = organization
@@ -869,14 +845,13 @@ Node CONV s5b1 / BIS (BIS)                        mismatch in :name:           C
 Node CONV s5b1 / BIS (BIS)                        mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s5d1 / dokončit-001 (na tom že dokončí) mismatch in :ARG0:           CONV = s5x1 unmapped            GOLD = s5k1
 Node CONV s5d1 / dokončit-001 (na tom že dokončí) mismatch in :ARG1:           CONV = s5i1 unmapped            GOLD = s5s2
-Node CONV s5d1 / dokončit-001 (na tom že dokončí) mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s5d1 / dokončit-001 (na tom že dokončí) mismatch in :refer-person:   CONV = 3rd                      GOLD = 
 Node CONV s5d1 / dokončit-001 (na tom že dokončí) mismatch in :example:        CONV =                          GOLD = s5p2
 Node CONV s5d1 / dokončit-001 (na tom že dokončí) mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
-Node CONV s5d2 / Devátý (Devátého)                mismatch in concept:         CONV = Devátý                   GOLD = UNMAPPED
-Node CONV s5d2 / Devátý (Devátého)                mismatch in :mod:            CONV = s5s3                     GOLD = UNMAPPED
-Node CONV s5d2 / Devátý (Devátého)                mismatch in :mod:            CONV = s5r1                     GOLD = UNMAPPED
-Node CONV s5d2 / Devátý (Devátého)                mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
+Node CONV s5d2 / Devátý (Devátého)                mismatch in concept:         CONV = Devátý                   GOLD = person
+Node CONV s5d2 / Devátý (Devátého)                mismatch in :mod:            CONV = s5s3 unmapped            GOLD = 
+Node CONV s5d2 / Devátý (Devátého)                mismatch in :mod:            CONV = s5r1 mapped to GOLD s5r1 GOLD = 
+Node CONV s5d2 / Devátý (Devátého)                mismatch in :ARG1-of:        CONV =                          GOLD = s5h1
+Node CONV s5d2 / Devátý (Devátého)                mismatch in :name:           CONV =                          GOLD = s5n1
 Node CONV s5e1 / entity                           mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s5e2 / entity                           mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s5e3 / entity                           mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
@@ -900,6 +875,7 @@ Node CONV s5p2 / porovnání (porovnání)            mismatch in :aspect:      
 Node CONV s5p2 / porovnání (porovnání)            mismatch in :modal-strength: CONV =                          GOLD = full-negative
 Node CONV s5p2 / porovnání (porovnání)            mismatch in :polarity:       CONV =                          GOLD = -
 Node CONV s5r1 / ředitel (ředitele)               mismatch in :possessor:      CONV = s5b1 mapped to GOLD s5o1 GOLD = 
+Node CONV s5r1 / ředitel (ředitele)               mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s5s1 / shodnout-se-001 (se shodla)      mismatch in :ARG2:           CONV = s5x1 unmapped            GOLD = s5k1
 Node CONV s5s1 / shodnout-se-001 (se shodla)      mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s5s2 / šetření (šetření která)          mismatch in concept:         CONV = šetření                  GOLD = šetřit-003
@@ -908,17 +884,13 @@ Node CONV s5s2 / šetření (šetření která)          mismatch in :ARG1:     
 Node CONV s5s2 / šetření (šetření která)          mismatch in :refer-number:   CONV = plural                   GOLD = 
 Node CONV s5s2 / šetření (šetření která)          mismatch in :aspect:         CONV =                          GOLD = activity
 Node CONV s5s2 / šetření (šetření která)          mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
-Node CONV s5s3 / Stanislav (Stanislava)           mismatch in concept:         CONV = Stanislav                GOLD = person
-Node CONV s5s3 / Stanislav (Stanislava)           mismatch in :ARG1-of:        CONV =                          GOLD = s5h1
-Node CONV s5s3 / Stanislav (Stanislava)           mismatch in :name:           CONV =                          GOLD = s5n1
+Node CONV s5s3 / Stanislav (Stanislava)           mismatch in concept:         CONV = Stanislav                GOLD = UNMAPPED
 Node CONV s5v1 / vysvětlení (s vysvětlením)       mismatch in concept:         CONV = vysvětlení               GOLD = vysvětlit-001
-Node CONV s5v1 / vysvětlení (s vysvětlením)       mismatch in :ARG0:           CONV = s5d2 unmapped            GOLD = s5p3
 Node CONV s5v1 / vysvětlení (s vysvětlením)       mismatch in :ARG1:           CONV = s5e6 unmapped            GOLD = 
 Node CONV s5v1 / vysvětlení (s vysvětlením)       mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s5v1 / vysvětlení (s vysvětlením)       mismatch in :aspect:         CONV =                          GOLD = performance
 Node CONV s5v1 / vysvětlení (s vysvětlením)       mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
-Node CONV s5x1 / _Rcp                             mismatch in concept:         CONV = _Rcp                     GOLD = UNMAPPED
-Node CONV s5x1 / _Rcp                             mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
+Node CONV s5x1 / Rcp                              mismatch in concept:         CONV = Rcp                      GOLD = UNMAPPED
 Node CONV s5z1 / zpráva (zprávy)                  mismatch in :ARG1:           CONV = s5e5 mapped to GOLD s5e5 GOLD = 
 Node CONV s5z1 / zpráva (zprávy)                  mismatch in :mod:            CONV =                          GOLD = s5e5
 Node GOLD s5h1 / have-org-role-91                 mismatch in concept:         GOLD = have-org-role-91         CONV = UNMAPPED
@@ -932,7 +904,7 @@ Node GOLD s5n1 / name                             mismatch in :op2:            G
 Node GOLD s5n2 / name                             mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s5n2 / name                             mismatch in :op1:            GOLD = "BIS"                    CONV = UNMAPPED
 
-Correct 21 out of 60 non-empty CONV values => recall    35%.
+Correct 21 out of 55 non-empty CONV values => recall    38%.
 Correct 21 out of 61 non-empty GOLD values => precision 34%.
 
 -------------------------------------------------------------------------------
@@ -946,21 +918,21 @@ GOLD                                           CONV
 	:modal-strength full-affirmative                      :clausal-marker (s6p1 / prý)
 	:ARG1 (s6j1 / jít-035                                 :ARG2 (s6z1 / získat-001
 		:aspect state                                            :ARG0 (s6s2 / služba
-		:modal-strength full-affirmative                             :mod (s6t1 / tajný
-		:quote s6s3                                                      :refer-number singular)
-        	:mod (s6s1 / stále)                                   :refer-number singular)
-        	:ARG2 (s6z1 / získat-001                          :ARG1 (s6u1 / údaj
-        		:aspect performance                                  :mod (s6v1 / veškerý
-        		:modal-strength neutral-affirmative                      :refer-number plural)
-        		:polarity (s6u2 / umr-unknown)                       :refer-number plural)
-            		:ARG0 (s6s2 / služba                         :ARG2 (s6z2 / zdroj
-                		:mod (s6t1 / tajný                           :mod (s6o1 / otevřený
-                    		:refer-number singular))                     :refer-number plural)
-            		:ARG1 (s6u1 / údaj                               :refer-number plural)
-                		:quant all)                              :aspect performance)
-           	 	:source (s6z2 / zdroj                    :refer-number singular
-                		:mod (s6o1 / otevřený)               :refer-person 3rd
-                		:refer-number plural))))             :aspect activity)
+		:modal-strength full-affirmative                             :mod (s6t1 / tajný)
+		:quote s6s3                                                  :refer-number singular)
+        	:mod (s6s1 / stále)                               :ARG1 (s6u1 / údaj
+        	:ARG2 (s6z1 / získat-001                              :mod (s6v1 / veškerý)
+        		:aspect performance                                  :refer-number plural)
+        		:modal-strength neutral-affirmative              :ARG2 (s6z2 / zdroj
+        		:polarity (s6u2 / umr-unknown)                       :mod (s6o1 / otevřený)
+            		:ARG0 (s6s2 / služba                             :refer-number plural)
+                		:mod (s6t1 / tajný                       :aspect performance)
+                    		:refer-number singular))         :aspect activity)
+            		:ARG1 (s6u1 / údaj               
+                		:quant all)                  
+           	 	:source (s6z2 / zdroj            
+                		:mod (s6o1 / otevřený)       
+                		:refer-number plural))))     
 
 Node-token alignments:
 File GOLD: 1 nodes unaligned: s6u2/umr-unknown.
@@ -1015,14 +987,12 @@ Node GOLD s6j1 / jít-035 (jde)                            mismatch in :modal-st
 Node GOLD s6j1 / jít-035 (jde)                            mismatch in :quote:          GOLD = s6s3 mapped to CONV s6p1 CONV = 
 Node GOLD s6j1 / jít-035 (jde)                            mismatch in :clausal-marker: GOLD =                          CONV = s6p1
 Node GOLD s6j1 / jít-035 (jde)                            mismatch in :duration:       GOLD =                          CONV = s6s1
-Node GOLD s6j1 / jít-035 (jde)                            mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s6j1 / jít-035 (jde)                            mismatch in :refer-person:   GOLD =                          CONV = 3rd
-Node GOLD s6o1 / otevřený (otevřených)                    mismatch in :refer-number:   GOLD =                          CONV = plural
 Node GOLD s6s2 / služba (služba)                          mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s6s3 / say-91 (prý)                             mismatch in concept:         GOLD = say-91                   CONV = prý
 Node GOLD s6s3 / say-91 (prý)                             mismatch in :ARG1:           GOLD = s6j1 mapped to CONV s6j1 CONV = 
 Node GOLD s6s3 / say-91 (prý)                             mismatch in :aspect:         GOLD = state                    CONV = 
 Node GOLD s6s3 / say-91 (prý)                             mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
+Node GOLD s6t1 / tajný (tajná)                            mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node GOLD s6u1 / údaj (veškeré údaje)                     mismatch in :quant:          GOLD = all                      CONV = 
 Node GOLD s6u1 / údaj (veškeré údaje)                     mismatch in :mod:            GOLD =                          CONV = s6v1
 Node GOLD s6u1 / údaj (veškeré údaje)                     mismatch in :refer-number:   GOLD =                          CONV = plural
@@ -1032,39 +1002,35 @@ Node GOLD s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :polari
 Node GOLD s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :source:         GOLD = s6z2 mapped to CONV s6z2 CONV = 
 Node GOLD s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :ARG2:           GOLD =                          CONV = s6z2
 Node CONV s6v1 / veškerý (veškeré)                        mismatch in concept:         CONV = veškerý                  GOLD = UNMAPPED
-Node CONV s6v1 / veškerý (veškeré)                        mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
 
-Correct 16 out of 29 non-empty GOLD values => recall    55%.
-Correct 16 out of 29 non-empty CONV values => precision 55%.
+Correct 15 out of 29 non-empty GOLD values => recall    52%.
+Correct 15 out of 24 non-empty CONV values => precision 63%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s6j1 / jít-035 (jde)                      mismatch in :aspect:         CONV = activity                 GOLD = state
 Node CONV s6j1 / jít-035 (jde)                      mismatch in :clausal-marker: CONV = s6p1 mapped to GOLD s6s3 GOLD = 
 Node CONV s6j1 / jít-035 (jde)                      mismatch in :duration:       CONV = s6s1 mapped to GOLD s6s1 GOLD = 
-Node CONV s6j1 / jít-035 (jde)                      mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s6j1 / jít-035 (jde)                      mismatch in :refer-person:   CONV = 3rd                      GOLD = 
 Node CONV s6j1 / jít-035 (jde)                      mismatch in :mod:            CONV =                          GOLD = s6s1
 Node CONV s6j1 / jít-035 (jde)                      mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s6j1 / jít-035 (jde)                      mismatch in :quote:          CONV =                          GOLD = s6s3
-Node CONV s6o1 / otevřený (otevřených)              mismatch in :refer-number:   CONV = plural                   GOLD = 
 Node CONV s6p1 / prý (prý)                          mismatch in concept:         CONV = prý                      GOLD = say-91
 Node CONV s6p1 / prý (prý)                          mismatch in :ARG1:           CONV =                          GOLD = s6j1
 Node CONV s6p1 / prý (prý)                          mismatch in :aspect:         CONV =                          GOLD = state
 Node CONV s6p1 / prý (prý)                          mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s6s2 / služba (služba)                    mismatch in :refer-number:   CONV = singular                 GOLD = 
+Node CONV s6t1 / tajný (tajná)                      mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s6u1 / údaj (údaje)                       mismatch in :mod:            CONV = s6v1 unmapped            GOLD = 
 Node CONV s6u1 / údaj (údaje)                       mismatch in :refer-number:   CONV = plural                   GOLD = 
 Node CONV s6u1 / údaj (údaje)                       mismatch in :quant:          CONV =                          GOLD = all
 Node CONV s6v1 / veškerý (veškeré)                  mismatch in concept:         CONV = veškerý                  GOLD = UNMAPPED
-Node CONV s6v1 / veškerý (veškeré)                  mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
 Node CONV s6z1 / získat-001 (o to zda mohla získat) mismatch in :ARG2:           CONV = s6z2 mapped to GOLD s6z2 GOLD = 
 Node CONV s6z1 / získat-001 (o to zda mohla získat) mismatch in :modal-strength: CONV =                          GOLD = neutral-affirmative
 Node CONV s6z1 / získat-001 (o to zda mohla získat) mismatch in :polarity:       CONV =                          GOLD = s6u2
 Node CONV s6z1 / získat-001 (o to zda mohla získat) mismatch in :source:         CONV =                          GOLD = s6z2
 Node GOLD s6u2 / umr-unknown                        mismatch in concept:         GOLD = umr-unknown              CONV = UNMAPPED
 
-Correct 16 out of 29 non-empty CONV values => recall    55%.
-Correct 16 out of 29 non-empty GOLD values => precision 55%.
+Correct 15 out of 24 non-empty CONV values => recall    63%.
+Correct 15 out of 29 non-empty GOLD values => precision 52%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 7:
@@ -1074,27 +1040,27 @@ GOLD                                                   CONV
 # sentence level graph:                                # sentence level graph:
 (s7p1 / pozvat-001                                     (s7p1 / pozvat-001
 	:aspect performance                                           :goal (s7k1 / komise
-	:modal-strength full-affirmative                                  :refer-number singular
-        :goal (s7k1 / komise                                       :refer-person 3rd)
-            :refer-number singular)                            :ARG0 (s7e1 / entity)
-        :ARG1 (s7c1 / člověk                                   :ARG1 (s7c1 / člověk
-            :refer-number plural                                   :mod (s7n1 / navrhnout-002
-            :ARG2-of (s7s1 / slyšet-001                                :ARG1 (s7s1 / slyšení
-            	:aspect activity                                              :ARG1 s7c1
-            	:modal-strength full-affirmative                              :ARG0 (s7e2 / entity)
-            	:ARG1-of (s7n1 / navrhnout-002                                :refer-number singular)
-  		    :aspect performance                                            :ARG0 (s7k2 / Kalvoda
-            	    :modal-strength full-affirmative                          :mod (s7j1 / Jan
-                    :ARG0 (s7p3 / person                                       :refer-number singular)
-                    	:refer-number singular                                :mod (s7p2 / předseda
-                    	:name (s7n2 / name                                        :possessor (s7o1 / ODA)
-                    		:op1 "Kalvoda"                                           :refer-number singular)
-                    		:op2 "Jan"))                                         :refer-number singular)
-                    	:ARG1-of (s7h1 / have-org-role-91                 :refer-number singular
-        			:modal-strength full-affirmative                            :aspect performance)
-        			:aspect state                                           :refer-number plural)
-        			:ARG2 (s7p4 / political-organization                :refer-number plural
-                        		:name (s7n3 / name                   :aspect performance)
+	:modal-strength full-affirmative                                  :refer-number singular)
+        :goal (s7k1 / komise                                   :ARG0 (s7e1 / entity)
+            :refer-number singular)                            :ARG1 (s7c1 / člověk
+        :ARG1 (s7c1 / člověk                                       :mod (s7n1 / navrhnout-002
+            :refer-number plural                                       :ARG1 (s7s1 / slyšení
+            :ARG2-of (s7s1 / slyšet-001                                    :ARG1 s7c1
+            	:aspect activity                                              :ARG0 (s7e2 / entity)
+            	:modal-strength full-affirmative                              :refer-number singular)
+            	:ARG1-of (s7n1 / navrhnout-002                            :ARG0 (s7k2 / Kalvoda
+  		    :aspect performance                                                :mod (s7j1 / Jan)
+            	    :modal-strength full-affirmative                          :mod (s7p2 / předseda
+                    :ARG0 (s7p3 / person                                       :possessor (s7o1 / ODA))
+                    	:refer-number singular                                :refer-number singular)
+                    	:name (s7n2 / name                                :aspect performance)
+                    		:op1 "Kalvoda"                               :refer-number plural)
+                    		:op2 "Jan"))                             :aspect performance)
+                    	:ARG1-of (s7h1 / have-org-role-91 
+        			:modal-strength full-affirmative            
+        			:aspect state                               
+        			:ARG2 (s7p4 / political-organization        
+                        		:name (s7n3 / name           
                         			:op1 "ODA")                 
         				:refer-number singular)                    
         			:ARG3 (s7p2 / předseda                      
@@ -1150,11 +1116,9 @@ Node GOLD s7h1 / have-org-role-91             mismatch in :ARG2:           GOLD 
 Node GOLD s7h1 / have-org-role-91             mismatch in :ARG3:           GOLD = s7p2                     CONV = UNMAPPED
 Node GOLD s7h1 / have-org-role-91             mismatch in :aspect:         GOLD = state                    CONV = UNMAPPED
 Node GOLD s7h1 / have-org-role-91             mismatch in :modal-strength: GOLD = full-affirmative         CONV = UNMAPPED
-Node GOLD s7k1 / komise (Před komisi)         mismatch in :refer-person:   GOLD =                          CONV = 3rd
 Node GOLD s7n1 / navrhnout-002 (navrhl)       mismatch in :ARG1-of:        GOLD = s7h1 unmapped            CONV = 
 Node GOLD s7n1 / navrhnout-002 (navrhl)       mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s7n1 / navrhnout-002 (navrhl)       mismatch in :ARG1:           GOLD =                          CONV = s7s1
-Node GOLD s7n1 / navrhnout-002 (navrhl)       mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s7n2 / name                         mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s7n2 / name                         mismatch in :op1:            GOLD = "Kalvoda"                CONV = UNMAPPED
 Node GOLD s7n2 / name                         mismatch in :op2:            GOLD = "Jan"                    CONV = UNMAPPED
@@ -1162,7 +1126,7 @@ Node GOLD s7n3 / name                         mismatch in concept:         GOLD 
 Node GOLD s7n3 / name                         mismatch in :op1:            GOLD = "ODA"                    CONV = UNMAPPED
 Node GOLD s7p1 / pozvat-001 (budou pozváni)   mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s7p1 / pozvat-001 (budou pozváni)   mismatch in :ARG0:           GOLD =                          CONV = s7e1
-Node GOLD s7p1 / pozvat-001 (budou pozváni)   mismatch in :refer-number:   GOLD =                          CONV = plural
+Node GOLD s7p2 / předseda (předseda)          mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node GOLD s7p2 / předseda (předseda)          mismatch in :possessor:      GOLD =                          CONV = s7o1
 Node GOLD s7p3 / person (Jan Kalvoda)         mismatch in concept:         GOLD = person                   CONV = Kalvoda
 Node GOLD s7p3 / person (Jan Kalvoda)         mismatch in :name:           GOLD = s7n2 unmapped            CONV = 
@@ -1181,10 +1145,9 @@ Node GOLD s7s1 / slyšet-001 (slyšení)         mismatch in :refer-number:   GO
 Node CONV s7e1 / entity                       mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s7e2 / entity                       mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s7j1 / Jan (Jan)                    mismatch in concept:         CONV = Jan                      GOLD = UNMAPPED
-Node CONV s7j1 / Jan (Jan)                    mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 
-Correct 14 out of 37 non-empty GOLD values => recall    38%.
-Correct 14 out of 33 non-empty CONV values => precision 42%.
+Correct 13 out of 37 non-empty GOLD values => recall    35%.
+Correct 13 out of 28 non-empty CONV values => precision 46%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s7c1 / člověk (lidé jejichž)      mismatch in :mod:            CONV = s7n1 mapped to GOLD s7n1 GOLD = 
@@ -1192,23 +1155,20 @@ Node CONV s7c1 / člověk (lidé jejichž)      mismatch in :ARG2-of:        CON
 Node CONV s7e1 / entity                     mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s7e2 / entity                     mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s7j1 / Jan (Jan)                  mismatch in concept:         CONV = Jan                      GOLD = UNMAPPED
-Node CONV s7j1 / Jan (Jan)                  mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
-Node CONV s7k1 / komise (Před komisi)       mismatch in :refer-person:   CONV = 3rd                      GOLD = 
 Node CONV s7k2 / Kalvoda (Kalvoda)          mismatch in concept:         CONV = Kalvoda                  GOLD = person
 Node CONV s7k2 / Kalvoda (Kalvoda)          mismatch in :mod:            CONV = s7j1 unmapped            GOLD = 
 Node CONV s7k2 / Kalvoda (Kalvoda)          mismatch in :mod:            CONV = s7p2 mapped to GOLD s7p2 GOLD = 
 Node CONV s7k2 / Kalvoda (Kalvoda)          mismatch in :name:           CONV =                          GOLD = s7n2
 Node CONV s7n1 / navrhnout-002 (navrhl)     mismatch in :ARG1:           CONV = s7s1 mapped to GOLD s7s1 GOLD = 
-Node CONV s7n1 / navrhnout-002 (navrhl)     mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s7n1 / navrhnout-002 (navrhl)     mismatch in :ARG1-of:        CONV =                          GOLD = s7h1
 Node CONV s7n1 / navrhnout-002 (navrhl)     mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s7o1 / ODA (ODA)                  mismatch in concept:         CONV = ODA                      GOLD = political-organization
 Node CONV s7o1 / ODA (ODA)                  mismatch in :name:           CONV =                          GOLD = s7n3
 Node CONV s7o1 / ODA (ODA)                  mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s7p1 / pozvat-001 (budou pozváni) mismatch in :ARG0:           CONV = s7e1 unmapped            GOLD = 
-Node CONV s7p1 / pozvat-001 (budou pozváni) mismatch in :refer-number:   CONV = plural                   GOLD = 
 Node CONV s7p1 / pozvat-001 (budou pozváni) mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s7p2 / předseda (předseda)        mismatch in :possessor:      CONV = s7o1 mapped to GOLD s7p4 GOLD = 
+Node CONV s7p2 / předseda (předseda)        mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s7s1 / slyšení (slyšení)          mismatch in concept:         CONV = slyšení                  GOLD = slyšet-001
 Node CONV s7s1 / slyšení (slyšení)          mismatch in :ARG0:           CONV = s7e2 unmapped            GOLD = 
 Node CONV s7s1 / slyšení (slyšení)          mismatch in :ARG1:           CONV = s7c1 mapped to GOLD s7c1 GOLD = 
@@ -1227,8 +1187,8 @@ Node GOLD s7n2 / name                       mismatch in :op2:            GOLD = 
 Node GOLD s7n3 / name                       mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s7n3 / name                       mismatch in :op1:            GOLD = "ODA"                    CONV = UNMAPPED
 
-Correct 14 out of 33 non-empty CONV values => recall    42%.
-Correct 14 out of 37 non-empty GOLD values => precision 38%.
+Correct 13 out of 28 non-empty CONV values => recall    46%.
+Correct 13 out of 37 non-empty GOLD values => precision 35%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 8:
@@ -1240,25 +1200,25 @@ GOLD                                             CONV
 	:aspect performance                                     :ARG0 (s8e1 / entity)
 	:modal-strength full-affirmative                        :clausal-marker (s8i1 / i)
         :clausal-marker (s8i1 / i)                       :ARG1 (s8c1 / Čelechovský
-        :ARG1 (s8p4 / person                                 :mod (s8m1 / Michal
-        	:refer-number singular                                  :refer-number singular)
-        	:name (s8n1 / name                                  :mod (s8p2 / pracovník
-        		:op1 "Michal"                                          :possessor (s8b1 / BIS
-        		:op2 "Čelechovský")                                        :refer-number singular)
-        	:ARG1-of (s8h1 / have-org-role-91                       :mod (s8b2 / bývalý
-        		:modal-strength full-affirmative                           :refer-number singular)
-        		:aspect state                                          :refer-number singular)
-        		:ARG2 (s8o1 / organization                         :ARG0-of (s8p3 / požádat-001
-                        	:name (s8n2 / name                      :ARG1 (s8t1 / ten
-                        		:op1 "BIS")                                :refer-number singular)
-                        	:refer-number singular)                 :manner (s8s1 / sám
-        		:ARG3 (s8p2 / předseda                                     :refer-number singular)
-        			:mod (s8b2 / bývalý)                                  :ARG2 (s8e2 / entity)
-        			:refer-number singular))                              :refer-number singular
-        :ARG1-of (s8p3 / požádat-001                             :aspect performance)
-        	:aspect performance                                 :refer-number singular)
-        	:modal-strength full-affirmative                :refer-number singular
-                :manner (s8s1 / sám                      :aspect performance)
+        :ARG1 (s8p4 / person                                 :mod (s8m1 / Michal)
+        	:refer-number singular                              :mod (s8p2 / pracovník
+        	:name (s8n1 / name                                      :possessor (s8b1 / BIS
+        		:op1 "Michal"                                              :refer-number singular)
+        		:op2 "Čelechovský")                                    :mod (s8b2 / bývalý))
+        	:ARG1-of (s8h1 / have-org-role-91                   :ARG0-of (s8p3 / požádat-001
+        		:modal-strength full-affirmative                       :ARG1 (s8t1 / ten
+        		:aspect state                                              :refer-number singular)
+        		:ARG2 (s8o1 / organization                             :manner (s8s1 / sám)
+                        	:name (s8n2 / name                      :ARG2 (s8e2 / entity)
+                        		:op1 "BIS")                            :aspect performance)
+                        	:refer-number singular)             :refer-number singular)
+        		:ARG3 (s8p2 / předseda                         :aspect performance)
+        			:mod (s8b2 / bývalý)                  
+        			:refer-number singular))              
+        :ARG1-of (s8p3 / požádat-001             
+        	:aspect performance                     
+        	:modal-strength full-affirmative        
+                :manner (s8s1 / sám              
                     :refer-number singular)      
                 :ARG0 s8p4)))                    
 
@@ -1309,7 +1269,6 @@ Aligned 8 out of 11 GOLD nodes, that is 73%.
 Aligned 8 out of 12 CONV nodes, that is 67%.
 
 Comparing attributes of GOLD nodes with their CONV counterparts.
-Node GOLD s8b2 / bývalý (bývalý)                   mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s8h1 / have-org-role-91                  mismatch in concept:         GOLD = have-org-role-91         CONV = UNMAPPED
 Node GOLD s8h1 / have-org-role-91                  mismatch in :ARG2:           GOLD = s8o1                     CONV = UNMAPPED
 Node GOLD s8h1 / have-org-role-91                  mismatch in :ARG3:           GOLD = s8p2                     CONV = UNMAPPED
@@ -1324,14 +1283,13 @@ Node GOLD s8o1 / organization (BIS)                mismatch in concept:         
 Node GOLD s8o1 / organization (BIS)                mismatch in :name:           GOLD = s8n2 unmapped            CONV = 
 Node GOLD s8p1 / pozvat-001 (Pozván bude o to)     mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s8p1 / pozvat-001 (Pozván bude o to)     mismatch in :ARG0:           GOLD =                          CONV = s8e1
-Node GOLD s8p1 / pozvat-001 (Pozván bude o to)     mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s8p2 / předseda (pracovník)              mismatch in concept:         GOLD = předseda                 CONV = pracovník
+Node GOLD s8p2 / předseda (pracovník)              mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node GOLD s8p2 / předseda (pracovník)              mismatch in :possessor:      GOLD =                          CONV = s8b1
 Node GOLD s8p3 / požádat-001 (požádal)             mismatch in :ARG0:           GOLD = s8p4 mapped to CONV s8c1 CONV = 
 Node GOLD s8p3 / požádat-001 (požádal)             mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s8p3 / požádat-001 (požádal)             mismatch in :ARG1:           GOLD =                          CONV = s8t1
 Node GOLD s8p3 / požádat-001 (požádal)             mismatch in :ARG2:           GOLD =                          CONV = s8e2
-Node GOLD s8p3 / požádat-001 (požádal)             mismatch in :refer-number:   GOLD =                          CONV = singular
 Node GOLD s8p4 / person (Michal Čelechovský který) mismatch in concept:         GOLD = person                   CONV = Čelechovský
 Node GOLD s8p4 / person (Michal Čelechovský který) mismatch in :ARG1-of:        GOLD = s8h1 unmapped            CONV = 
 Node GOLD s8p4 / person (Michal Čelechovský který) mismatch in :ARG1-of:        GOLD = s8p3 mapped to CONV s8p3 CONV = 
@@ -1339,20 +1297,19 @@ Node GOLD s8p4 / person (Michal Čelechovský který) mismatch in :name:        
 Node GOLD s8p4 / person (Michal Čelechovský který) mismatch in :ARG0-of:        GOLD =                          CONV = s8p3
 Node GOLD s8p4 / person (Michal Čelechovský který) mismatch in :mod:            GOLD =                          CONV = s8m1
 Node GOLD s8p4 / person (Michal Čelechovský který) mismatch in :mod:            GOLD =                          CONV = s8p2
+Node GOLD s8s1 / sám (sám)                         mismatch in :refer-number:   GOLD = singular                 CONV = 
 Node CONV s8e1 / entity                            mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s8e2 / entity                            mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s8m1 / Michal (Michal)                   mismatch in concept:         CONV = Michal                   GOLD = UNMAPPED
-Node CONV s8m1 / Michal (Michal)                   mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 Node CONV s8t1 / ten (o to)                        mismatch in concept:         CONV = ten                      GOLD = UNMAPPED
 Node CONV s8t1 / ten (o to)                        mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 
-Correct 15 out of 35 non-empty GOLD values => recall    43%.
-Correct 15 out of 34 non-empty CONV values => precision 44%.
+Correct 13 out of 35 non-empty GOLD values => recall    37%.
+Correct 13 out of 28 non-empty CONV values => precision 46%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s8b1 / BIS (BIS)                       mismatch in concept:         CONV = BIS                      GOLD = organization
 Node CONV s8b1 / BIS (BIS)                       mismatch in :name:           CONV =                          GOLD = s8n2
-Node CONV s8b2 / bývalý (bývalý)                 mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s8c1 / Čelechovský (Čelechovský který) mismatch in concept:         CONV = Čelechovský              GOLD = person
 Node CONV s8c1 / Čelechovský (Čelechovský který) mismatch in :ARG0-of:        CONV = s8p3 mapped to GOLD s8p3 GOLD = 
 Node CONV s8c1 / Čelechovský (Čelechovský který) mismatch in :mod:            CONV = s8m1 unmapped            GOLD = 
@@ -1363,17 +1320,16 @@ Node CONV s8c1 / Čelechovský (Čelechovský který) mismatch in :name:        
 Node CONV s8e1 / entity                          mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s8e2 / entity                          mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s8m1 / Michal (Michal)                 mismatch in concept:         CONV = Michal                   GOLD = UNMAPPED
-Node CONV s8m1 / Michal (Michal)                 mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 Node CONV s8p1 / pozvat-001 (Pozván bude)        mismatch in :ARG0:           CONV = s8e1 unmapped            GOLD = 
-Node CONV s8p1 / pozvat-001 (Pozván bude)        mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s8p1 / pozvat-001 (Pozván bude)        mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s8p2 / pracovník (pracovník)           mismatch in concept:         CONV = pracovník                GOLD = předseda
 Node CONV s8p2 / pracovník (pracovník)           mismatch in :possessor:      CONV = s8b1 mapped to GOLD s8o1 GOLD = 
+Node CONV s8p2 / pracovník (pracovník)           mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s8p3 / požádat-001 (požádal)           mismatch in :ARG1:           CONV = s8t1 unmapped            GOLD = 
 Node CONV s8p3 / požádat-001 (požádal)           mismatch in :ARG2:           CONV = s8e2 unmapped            GOLD = 
-Node CONV s8p3 / požádat-001 (požádal)           mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s8p3 / požádat-001 (požádal)           mismatch in :ARG0:           CONV =                          GOLD = s8p4
 Node CONV s8p3 / požádat-001 (požádal)           mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
+Node CONV s8s1 / sám (sám)                       mismatch in :refer-number:   CONV =                          GOLD = singular
 Node CONV s8t1 / ten (o to)                      mismatch in concept:         CONV = ten                      GOLD = UNMAPPED
 Node CONV s8t1 / ten (o to)                      mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 Node GOLD s8h1 / have-org-role-91                mismatch in concept:         GOLD = have-org-role-91         CONV = UNMAPPED
@@ -1387,8 +1343,8 @@ Node GOLD s8n1 / name                            mismatch in :op2:            GO
 Node GOLD s8n2 / name                            mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s8n2 / name                            mismatch in :op1:            GOLD = "BIS"                    CONV = UNMAPPED
 
-Correct 15 out of 34 non-empty CONV values => recall    44%.
-Correct 15 out of 35 non-empty GOLD values => precision 43%.
+Correct 13 out of 28 non-empty CONV values => recall    46%.
+Correct 13 out of 35 non-empty GOLD values => precision 37%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 9:
@@ -1404,34 +1360,34 @@ GOLD                                                    CONV
             :ARG0 (s9p5 / person                                    :ARG1 (s9r1 / revokace
             	:name (s9n2 / name                                         :ARG1 (s9u1 / usnesení
             		:op1 "Severa")                                                :temporal (s9j1 / již)
-                :refer-number singular)                                     :mod (s9p2 / přijatý
-            :ARG1 (s9r1 / revokovat-001                                         :refer-number plural)
-            	:aspect performance                                            :refer-number plural)
-            	:modal-strength full-affirmative                           :refer-number singular)
-                :ARG1 (s9u1 / usnesení                              :refer-number singular
-                	:refer-number plural                               :refer-person 3rd
-                    	:ARG1-of (s9p6 / přijmout-005                  :aspect activity
-                    		:aspect performance                           :polarity -)
-                    		:modal-strength full-affirmative          :ARG2 (s9o1 / obsahovat-001
-                    		:temporal (s9j1 / již)))))                    :ARG1 (s9s3 / skutečnost
-        :ARG2 (s9o1 / obsahovat-001                                     :mod (s9n1 / nový
-            :modal-strength partial-affirmative                             :refer-number plural)
-            :aspect state                                               :mod (s9p3 / případný
-            :ARG1 (s9s3 / skutečnost                                        :refer-number plural)
-                :mod (s9n1 / nový)                                      :refer-number plural)
-                :mod (s9p3 / případný)                              :ARG0 (s9z1 / zpráva
-                :refer-number plural)                                   :ARG1-of (s9p4 / předložit-001
-            :ARG0 (s9z1 / zpráva                                            :ARG0 (s9k1 / komise
+                :refer-number singular)                                     :mod (s9p2 / přijatý)
+            :ARG1 (s9r1 / revokovat-001                                     :refer-number plural)
+            	:aspect performance                                        :refer-number singular)
+            	:modal-strength full-affirmative                       :aspect activity
+                :ARG1 (s9u1 / usnesení                              :polarity -)
+                	:refer-number plural                           :ARG2 (s9o1 / obsahovat-001
+                    	:ARG1-of (s9p6 / přijmout-005                  :ARG1 (s9s3 / skutečnost
+                    		:aspect performance                               :mod (s9n1 / nový)
+                    		:modal-strength full-affirmative                  :mod (s9p3 / případný)
+                    		:temporal (s9j1 / již)))))                        :refer-number plural)
+        :ARG2 (s9o1 / obsahovat-001                                 :ARG0 (s9z1 / zpráva
+            :modal-strength partial-affirmative                         :ARG1-of (s9p4 / předložit-001
+            :aspect state                                                   :ARG0 (s9k1 / komise
+            :ARG1 (s9s3 / skutečnost                                            :refer-number singular)
+                :mod (s9n1 / nový)                                          :ARG2 (s9s4 / sněmovna
+                :mod (s9p3 / případný)                                          :refer-number singular)
+                :refer-number plural)                                       :place (s9s5 / schůze
+            :ARG0 (s9z1 / zpráva                                                :mod (s9b2 / březnový)
                 :ARG1-of (s9p4 / předložit-001                                  :refer-number singular)
-                    :aspect performance                                     :ARG2 (s9s4 / sněmovna
-                    :modal-strength neutral-affirmative                         :refer-number singular)
-                    :ARG0 (s9k1 / komise                                    :place (s9s5 / schůze
-                        :refer-number singular)                                 :mod (s9b2 / březnový
-                    :ARG2 (s9s4 / sněmovna                                          :refer-number singular)
-                        :refer-number singular)                                 :refer-number singular)
-                    :place (s9s5 / schůze                                   :aspect performance)
-                        :temporal (s9d1 / date-entity                   :refer-number singular)
-                            :month 3)                               :aspect activity))
+                    :aspect performance                                     :aspect performance)
+                    :modal-strength neutral-affirmative                 :refer-number singular)
+                    :ARG0 (s9k1 / komise                            :aspect activity))
+                        :refer-number singular)         
+                    :ARG2 (s9s4 / sněmovna              
+                        :refer-number singular)         
+                    :place (s9s5 / schůze               
+                        :temporal (s9d1 / date-entity   
+                            :month 3)                   
                         :refer-number singular)))))     
 
 Node-token alignments:
@@ -1501,17 +1457,12 @@ Comparing attributes of GOLD nodes with their CONV counterparts.
 Node GOLD s9b1 / but-91 (sice ale)                     mismatch in :clausal-marker: GOLD =                          CONV = s9s1
 Node GOLD s9d1 / date-entity (březnové)                mismatch in concept:         GOLD = date-entity              CONV = březnový
 Node GOLD s9d1 / date-entity (březnové)                mismatch in :month:          GOLD = 3                        CONV = 
-Node GOLD s9d1 / date-entity (březnové)                mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s9n1 / nový (nové)                           mismatch in :refer-number:   GOLD =                          CONV = plural
 Node GOLD s9n2 / name                                  mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s9n2 / name                                  mismatch in :op1:            GOLD = "Severa"                 CONV = UNMAPPED
 Node GOLD s9o1 / obsahovat-001 (by měla obsahovat)     mismatch in :aspect:         GOLD = state                    CONV = activity
 Node GOLD s9o1 / obsahovat-001 (by měla obsahovat)     mismatch in :modal-strength: GOLD = partial-affirmative      CONV = 
 Node GOLD s9p1 / předpokládat-001 (sice nepředpokládá) mismatch in :aspect:         GOLD = state                    CONV = activity
 Node GOLD s9p1 / předpokládat-001 (sice nepředpokládá) mismatch in :modal-strength: GOLD = full-negative            CONV = 
-Node GOLD s9p1 / předpokládat-001 (sice nepředpokládá) mismatch in :refer-number:   GOLD =                          CONV = singular
-Node GOLD s9p1 / předpokládat-001 (sice nepředpokládá) mismatch in :refer-person:   GOLD =                          CONV = 3rd
-Node GOLD s9p3 / případný (případné)                   mismatch in :refer-number:   GOLD =                          CONV = plural
 Node GOLD s9p4 / předložit-001 (chce předložit)        mismatch in :modal-strength: GOLD = neutral-affirmative      CONV = 
 Node GOLD s9p5 / person (Severa)                       mismatch in concept:         GOLD = person                   CONV = Severa
 Node GOLD s9p5 / person (Severa)                       mismatch in :name:           GOLD = s9n2 unmapped            CONV = 
@@ -1519,7 +1470,6 @@ Node GOLD s9p6 / přijmout-005 (přijatých)              mismatch in concept:  
 Node GOLD s9p6 / přijmout-005 (přijatých)              mismatch in :aspect:         GOLD = performance              CONV = 
 Node GOLD s9p6 / přijmout-005 (přijatých)              mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s9p6 / přijmout-005 (přijatých)              mismatch in :temporal:       GOLD = s9j1 mapped to CONV s9j1 CONV = 
-Node GOLD s9p6 / přijmout-005 (přijatých)              mismatch in :refer-number:   GOLD =                          CONV = plural
 Node GOLD s9r1 / revokovat-001 (revokaci)              mismatch in concept:         GOLD = revokovat-001            CONV = revokace
 Node GOLD s9r1 / revokovat-001 (revokaci)              mismatch in :aspect:         GOLD = performance              CONV = 
 Node GOLD s9r1 / revokovat-001 (revokaci)              mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
@@ -1533,26 +1483,20 @@ Node GOLD s9z1 / zpráva (zpráva kterou)                mismatch in :refer-numb
 Node CONV s9s1 / sice (sice)                           mismatch in concept:         CONV = sice                     GOLD = UNMAPPED
 
 Correct 34 out of 54 non-empty GOLD values => recall    63%.
-Correct 34 out of 53 non-empty CONV values => precision 64%.
+Correct 34 out of 47 non-empty CONV values => precision 72%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s9b1 / but-91 (ale)                      mismatch in :clausal-marker: CONV = s9s1 unmapped            GOLD = 
 Node CONV s9b2 / březnový (březnové)               mismatch in concept:         CONV = březnový                 GOLD = date-entity
-Node CONV s9b2 / březnový (březnové)               mismatch in :refer-number:   CONV = singular                 GOLD = 
 Node CONV s9b2 / březnový (březnové)               mismatch in :month:          CONV =                          GOLD = 3
-Node CONV s9n1 / nový (nové)                       mismatch in :refer-number:   CONV = plural                   GOLD = 
 Node CONV s9o1 / obsahovat-001 (by měla obsahovat) mismatch in :aspect:         CONV = activity                 GOLD = state
 Node CONV s9o1 / obsahovat-001 (by měla obsahovat) mismatch in :modal-strength: CONV =                          GOLD = partial-affirmative
 Node CONV s9p1 / předpokládat-001 (nepředpokládá)  mismatch in :aspect:         CONV = activity                 GOLD = state
-Node CONV s9p1 / předpokládat-001 (nepředpokládá)  mismatch in :refer-number:   CONV = singular                 GOLD = 
-Node CONV s9p1 / předpokládat-001 (nepředpokládá)  mismatch in :refer-person:   CONV = 3rd                      GOLD = 
 Node CONV s9p1 / předpokládat-001 (nepředpokládá)  mismatch in :modal-strength: CONV =                          GOLD = full-negative
 Node CONV s9p2 / přijatý (přijatých)               mismatch in concept:         CONV = přijatý                  GOLD = přijmout-005
-Node CONV s9p2 / přijatý (přijatých)               mismatch in :refer-number:   CONV = plural                   GOLD = 
 Node CONV s9p2 / přijatý (přijatých)               mismatch in :aspect:         CONV =                          GOLD = performance
 Node CONV s9p2 / přijatý (přijatých)               mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s9p2 / přijatý (přijatých)               mismatch in :temporal:       CONV =                          GOLD = s9j1
-Node CONV s9p3 / případný (případné)               mismatch in :refer-number:   CONV = plural                   GOLD = 
 Node CONV s9p4 / předložit-001 (chce předložit)    mismatch in :modal-strength: CONV =                          GOLD = neutral-affirmative
 Node CONV s9r1 / revokace (revokaci)               mismatch in concept:         CONV = revokace                 GOLD = revokovat-001
 Node CONV s9r1 / revokace (revokaci)               mismatch in :refer-number:   CONV = singular                 GOLD = 
@@ -1570,7 +1514,7 @@ Node CONV s9z1 / zpráva (zpráva kterou)            mismatch in :refer-number: 
 Node GOLD s9n2 / name                              mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s9n2 / name                              mismatch in :op1:            GOLD = "Severa"                 CONV = UNMAPPED
 
-Correct 34 out of 53 non-empty CONV values => recall    64%.
+Correct 34 out of 47 non-empty CONV values => recall    72%.
 Correct 34 out of 54 non-empty GOLD values => precision 63%.
 
 -------------------------------------------------------------------------------
@@ -1586,37 +1530,36 @@ GOLD                                             CONV
             :ARG0 (s10p2 / person                                    :refer-number singular)
             	:refer-number plural                                :refer-number plural)
             	:ARG1-of (s10h1 / have-org-role-91              :temporal (s10v1 / včera)
-    	   		:aspect state                                      :ARG2 (s10x1 / _Rcp
-    	    		:modal-strength full-affirmative                      :refer-number plural)
-    	    		:ARG3 (s10c1 / člen                               :ARG1 (s10u1 / úkol
-    	    			:refer-number plural)                                :duration (s10d1 / den
-    	    		:ARG2 (s10k1 / komise                                     :mod (s10p1 / příští
-                    		:refer-number singular)))                          :refer-number plural)
-            :temporal (s10v1 / včera)                                :refer-number plural)
-            :ARG2 s10p2                                          :refer-number plural)
-            :ARG1 (s10u1 / úkol                              :refer-number plural
-                :temporal (s10d1 / den                       :aspect performance)
-                    :mod (s10p1 / příští)                :op2 (s10s1 / sejít-se-001
-                    :refer-number plural)                    :ARG0 s10c1
-                :refer-number plural))                       :purpose (s10j1 / jednání
-        :op2 (s10s1 / sejít-se-001                               :ARG0 (s10e1 / entity)
-            :aspect performance                                  :ARG1 (s10e2 / entity)
-            :modal-strength full-affirmative                     :ARG2 (s10e3 / entity)
-            :ARG0 s10p2                                          :mod (s10d2 / další
-            :ARG1 s10p2                                              :refer-number singular)
+    	   		:aspect state                                      :ARG2 (s10x1 / Rcp)
+    	    		:modal-strength full-affirmative                  :ARG1 (s10u1 / úkol
+    	    		:ARG3 (s10c1 / člen                                   :duration (s10d1 / den
+    	    			:refer-number plural)                                    :mod (s10p1 / příští)
+    	    		:ARG2 (s10k1 / komise                                     :refer-number plural)
+                    		:refer-number singular)))                  :refer-number plural)
+            :temporal (s10v1 / včera)                        :aspect performance)
+            :ARG2 s10p2                                  :op2 (s10s1 / sejít-se-001
+            :ARG1 (s10u1 / úkol                              :ARG0 s10c1
+                :temporal (s10d1 / den                       :purpose (s10j1 / jednání
+                    :mod (s10p1 / příští)                        :ARG0 (s10e1 / entity)
+                    :refer-number plural)                        :ARG1 (s10e2 / entity)
+                :refer-number plural))                           :ARG2 (s10e3 / entity)
+        :op2 (s10s1 / sejít-se-001                               :mod (s10d2 / další)
+            :aspect performance                                  :refer-number singular)
+            :modal-strength full-affirmative                 :ARG1 (s10x3 / Rcp)
+            :ARG0 s10p2                                      :place (s10b1 / březen
+            :ARG1 s10p2                                          :mod (s10x4 / 8)
             :purpose (s10j1 / jednat-001                         :refer-number singular)
-                :aspect activity                             :ARG1 (s10x3 / _Rcp
-                :modal-strength full-affirmative                 :refer-number plural)
-                :ARG0 s10p2                                  :place (s10b1 / březen
-                :mod (s10d2 / dále))                             :mod (s10x4 / 8)
-            :temporal (s10d3 / date-entity                       :refer-number singular)
-            	:month 3                                        :refer-number plural
-            	:day 8)))                                       :refer-person 3rd
-                                                             :aspect performance))
+                :aspect activity                             :aspect performance))
+                :modal-strength full-affirmative 
+                :ARG0 s10p2                      
+                :mod (s10d2 / dále))             
+            :temporal (s10d3 / date-entity       
+            	:month 3                            
+            	:day 8)))                           
 
 Node-token alignments:
 File GOLD: 2 nodes unaligned: s10h1/have-org-role-91, s10p2/person.
-File CONV: 5 nodes unaligned: s10e1/entity, s10e2/entity, s10e3/entity, s10x1/_Rcp, s10x3/_Rcp.
+File CONV: 5 nodes unaligned: s10e1/entity, s10e2/entity, s10e3/entity, s10x1/Rcp, s10x3/Rcp.
              GOLD  CONV
 1  Členové   s10c1 s10c1
 2  komise    s10k1 s10k1
@@ -1660,8 +1603,8 @@ Correspondence GOLD s10p2 (person)           = CONV
 Correspondence GOLD                          = CONV s10e1 (entity)
 Correspondence GOLD                          = CONV s10e2 (entity)
 Correspondence GOLD                          = CONV s10e3 (entity)
-Correspondence GOLD                          = CONV s10x1 (_Rcp)
-Correspondence GOLD                          = CONV s10x3 (_Rcp)
+Correspondence GOLD                          = CONV s10x1 (Rcp)
+Correspondence GOLD                          = CONV s10x3 (Rcp)
 Correspondence GOLD                          = CONV s10x4 (8)
 
 Aligned 12 out of 14 GOLD nodes, that is 86%.
@@ -1670,7 +1613,6 @@ Aligned 12 out of 18 CONV nodes, that is 67%.
 Comparing attributes of GOLD nodes with their CONV counterparts.
 Node GOLD s10c1 / člen (Členové si)        mismatch in :possessor:      GOLD =                            CONV = s10k1
 Node GOLD s10d2 / dále (dalšímu)           mismatch in concept:         GOLD = dále                       CONV = další
-Node GOLD s10d2 / dále (dalšímu)           mismatch in :refer-number:   GOLD =                            CONV = singular
 Node GOLD s10d3 / date-entity (8 . března) mismatch in concept:         GOLD = date-entity                CONV = březen
 Node GOLD s10d3 / date-entity (8 . března) mismatch in :day:            GOLD = 8                          CONV = 
 Node GOLD s10d3 / date-entity (8 . března) mismatch in :month:          GOLD = 3                          CONV = 
@@ -1688,34 +1630,28 @@ Node GOLD s10j1 / jednat-001 (k jednání)   mismatch in :modal-strength: GOLD =
 Node GOLD s10j1 / jednat-001 (k jednání)   mismatch in :ARG1:           GOLD =                            CONV = s10e2
 Node GOLD s10j1 / jednat-001 (k jednání)   mismatch in :ARG2:           GOLD =                            CONV = s10e3
 Node GOLD s10j1 / jednat-001 (k jednání)   mismatch in :refer-number:   GOLD =                            CONV = singular
-Node GOLD s10p1 / příští (příští)          mismatch in :refer-number:   GOLD =                            CONV = plural
 Node GOLD s10p2 / person                   mismatch in concept:         GOLD = person                     CONV = UNMAPPED
 Node GOLD s10p2 / person                   mismatch in :ARG1-of:        GOLD = s10h1                      CONV = UNMAPPED
 Node GOLD s10p2 / person                   mismatch in :refer-number:   GOLD = plural                     CONV = UNMAPPED
 Node GOLD s10r1 / rozdělit-002 (rozdělili) mismatch in :ARG0:           GOLD = s10p2 unmapped             CONV = s10c1
 Node GOLD s10r1 / rozdělit-002 (rozdělili) mismatch in :ARG2:           GOLD = s10p2 unmapped             CONV = s10x1
 Node GOLD s10r1 / rozdělit-002 (rozdělili) mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
-Node GOLD s10r1 / rozdělit-002 (rozdělili) mismatch in :refer-number:   GOLD =                            CONV = plural
 Node GOLD s10s1 / sejít-se-001 (se sejdou) mismatch in :ARG0:           GOLD = s10p2 unmapped             CONV = s10c1
 Node GOLD s10s1 / sejít-se-001 (se sejdou) mismatch in :ARG1:           GOLD = s10p2 unmapped             CONV = s10x3
 Node GOLD s10s1 / sejít-se-001 (se sejdou) mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
 Node GOLD s10s1 / sejít-se-001 (se sejdou) mismatch in :temporal:       GOLD = s10d3 mapped to CONV s10b1 CONV = 
 Node GOLD s10s1 / sejít-se-001 (se sejdou) mismatch in :place:          GOLD =                            CONV = s10b1
-Node GOLD s10s1 / sejít-se-001 (se sejdou) mismatch in :refer-number:   GOLD =                            CONV = plural
-Node GOLD s10s1 / sejít-se-001 (se sejdou) mismatch in :refer-person:   GOLD =                            CONV = 3rd
 Node GOLD s10u1 / úkol (úkoly)             mismatch in :temporal:       GOLD = s10d1 mapped to CONV s10d1 CONV = 
 Node GOLD s10u1 / úkol (úkoly)             mismatch in :duration:       GOLD =                            CONV = s10d1
 Node CONV s10e1 / entity                   mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
 Node CONV s10e2 / entity                   mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
 Node CONV s10e3 / entity                   mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
-Node CONV s10x1 / _Rcp                     mismatch in concept:         CONV = _Rcp                       GOLD = UNMAPPED
-Node CONV s10x1 / _Rcp                     mismatch in :refer-number:   CONV = plural                     GOLD = UNMAPPED
-Node CONV s10x3 / _Rcp                     mismatch in concept:         CONV = _Rcp                       GOLD = UNMAPPED
-Node CONV s10x3 / _Rcp                     mismatch in :refer-number:   CONV = plural                     GOLD = UNMAPPED
+Node CONV s10x1 / Rcp                      mismatch in concept:         CONV = Rcp                        GOLD = UNMAPPED
+Node CONV s10x3 / Rcp                      mismatch in concept:         CONV = Rcp                        GOLD = UNMAPPED
 Node CONV s10x4 / 8 (8)                    mismatch in concept:         CONV = 8                          GOLD = UNMAPPED
 
 Correct 22 out of 46 non-empty GOLD values => recall    48%.
-Correct 22 out of 51 non-empty CONV values => precision 43%.
+Correct 22 out of 44 non-empty CONV values => precision 50%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s10b1 / březen (března)          mismatch in concept:         CONV = březen                     GOLD = date-entity
@@ -1725,7 +1661,6 @@ Node CONV s10b1 / březen (března)          mismatch in :day:            CONV =
 Node CONV s10b1 / březen (března)          mismatch in :month:          CONV =                            GOLD = 3
 Node CONV s10c1 / člen (Členové)           mismatch in :possessor:      CONV = s10k1 mapped to GOLD s10k1 GOLD = 
 Node CONV s10d2 / další (dalšímu)          mismatch in concept:         CONV = další                      GOLD = dále
-Node CONV s10d2 / další (dalšímu)          mismatch in :refer-number:   CONV = singular                   GOLD = 
 Node CONV s10e1 / entity                   mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
 Node CONV s10e2 / entity                   mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
 Node CONV s10e3 / entity                   mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
@@ -1736,24 +1671,18 @@ Node CONV s10j1 / jednání (k jednání)      mismatch in :ARG2:           CONV
 Node CONV s10j1 / jednání (k jednání)      mismatch in :refer-number:   CONV = singular                   GOLD = 
 Node CONV s10j1 / jednání (k jednání)      mismatch in :aspect:         CONV =                            GOLD = activity
 Node CONV s10j1 / jednání (k jednání)      mismatch in :modal-strength: CONV =                            GOLD = full-affirmative
-Node CONV s10p1 / příští (příští)          mismatch in :refer-number:   CONV = plural                     GOLD = 
 Node CONV s10r1 / rozdělit-002 (rozdělili) mismatch in :ARG0:           CONV = s10c1 mapped to GOLD s10c1 GOLD = s10p2
 Node CONV s10r1 / rozdělit-002 (rozdělili) mismatch in :ARG2:           CONV = s10x1 unmapped             GOLD = s10p2
-Node CONV s10r1 / rozdělit-002 (rozdělili) mismatch in :refer-number:   CONV = plural                     GOLD = 
 Node CONV s10r1 / rozdělit-002 (rozdělili) mismatch in :modal-strength: CONV =                            GOLD = full-affirmative
 Node CONV s10s1 / sejít-se-001 (se sejdou) mismatch in :ARG0:           CONV = s10c1 mapped to GOLD s10c1 GOLD = s10p2
 Node CONV s10s1 / sejít-se-001 (se sejdou) mismatch in :ARG1:           CONV = s10x3 unmapped             GOLD = s10p2
 Node CONV s10s1 / sejít-se-001 (se sejdou) mismatch in :place:          CONV = s10b1 mapped to GOLD s10d3 GOLD = 
-Node CONV s10s1 / sejít-se-001 (se sejdou) mismatch in :refer-number:   CONV = plural                     GOLD = 
-Node CONV s10s1 / sejít-se-001 (se sejdou) mismatch in :refer-person:   CONV = 3rd                        GOLD = 
 Node CONV s10s1 / sejít-se-001 (se sejdou) mismatch in :modal-strength: CONV =                            GOLD = full-affirmative
 Node CONV s10s1 / sejít-se-001 (se sejdou) mismatch in :temporal:       CONV =                            GOLD = s10d3
 Node CONV s10u1 / úkol (úkoly)             mismatch in :duration:       CONV = s10d1 mapped to GOLD s10d1 GOLD = 
 Node CONV s10u1 / úkol (úkoly)             mismatch in :temporal:       CONV =                            GOLD = s10d1
-Node CONV s10x1 / _Rcp                     mismatch in concept:         CONV = _Rcp                       GOLD = UNMAPPED
-Node CONV s10x1 / _Rcp                     mismatch in :refer-number:   CONV = plural                     GOLD = UNMAPPED
-Node CONV s10x3 / _Rcp                     mismatch in concept:         CONV = _Rcp                       GOLD = UNMAPPED
-Node CONV s10x3 / _Rcp                     mismatch in :refer-number:   CONV = plural                     GOLD = UNMAPPED
+Node CONV s10x1 / Rcp                      mismatch in concept:         CONV = Rcp                        GOLD = UNMAPPED
+Node CONV s10x3 / Rcp                      mismatch in concept:         CONV = Rcp                        GOLD = UNMAPPED
 Node CONV s10x4 / 8 (8)                    mismatch in concept:         CONV = 8                          GOLD = UNMAPPED
 Node GOLD s10h1 / have-org-role-91         mismatch in concept:         GOLD = have-org-role-91           CONV = UNMAPPED
 Node GOLD s10h1 / have-org-role-91         mismatch in :ARG2:           GOLD = s10k1                      CONV = UNMAPPED
@@ -1764,7 +1693,7 @@ Node GOLD s10p2 / person                   mismatch in concept:         GOLD = p
 Node GOLD s10p2 / person                   mismatch in :ARG1-of:        GOLD = s10h1                      CONV = UNMAPPED
 Node GOLD s10p2 / person                   mismatch in :refer-number:   GOLD = plural                     CONV = UNMAPPED
 
-Correct 22 out of 51 non-empty CONV values => recall    43%.
+Correct 22 out of 44 non-empty CONV values => recall    50%.
 Correct 22 out of 46 non-empty GOLD values => precision 48%.
 
 -------------------------------------------------------------------------------
@@ -1775,38 +1704,38 @@ GOLD                                                    CONV
 # sentence level graph:                                 # sentence level graph:
 (s11r1 / říci-008                                       (s11r1 / říci-008
 	:aspect performance                                            :ARG0 (s11m1 / Mašek
-	:modal-strength full-affirmative                                   :mod (s11i1 / Ivan
-        :ARG0 (s11p4 / person                                           :refer-number singular)
-        	:name (s11n3 / name                                        :mod (s11p1 / poslanec
-        		:op1 "Ivan"                                                   :refer-number singular)
-        		:op2 "Mašek")                                             :parenthesis (s11o1 / ODA)
-                :refer-number singular                              :refer-number singular)
-                :ARG1-of (s11h1 / have-org-role-91              :ARG2 (s11n1 / novinář
-                	:aspect state                                      :refer-number plural)
-    	    		:modal-strength full-affirmative                     :effect (s11t1 / trvat-002
-    	    		:ARG3 (s11p5 / poslanec                                  :ARG0 s11m1
-    	    			:refer-number singular)                                 :ARG1 (s11u1 / úkon
-    	    		:ARG2  (s11o2 / organization))                               :mod (s11k1 / kontrolní
-    	    	:ARG1-of (s11h2 / have-org-role-91                                :refer-number plural)
-    	   		:aspect state                                                 :mod (s11v1 / všechen
-    	    		:modal-strength full-affirmative                                 :refer-number plural)
-    	    		:ARG2  (s11p6 / political-organization                       :ARG1-of (s11n2 / navrhnout-002
-    	    			:refer-number singular                                          :ARG0 (s11e1 / entity)
-    	    			:name (s11n4 / name                                             :temporal (s11p2 / projednávání
-    	    				:op1 "ODA"))))                                                     :ARG0 (s11e2 / entity)
-        :ARG2 (s11n1 / novinář                                                  :ARG1 (s11p3 / podnět
-            :refer-number plural)                                                   :possessor (s11s1 / strana
-        :ARG1 (s11t1 / trvat-002                                                        :possessor s11m1
-            :aspect state                                                               :refer-number singular)
-            :modal-strength full-affirmative                                        :refer-number singular)
-            :quote s11r1                                                        :refer-number singular)
-            :ARG0 s11p4                                                     :refer-number plural
-            :ARG1 (s11u1 / úkon                                             :aspect performance)
-            	:refer-number plural                                       :refer-number plural)
-                :mod (s11k1 / kontrolní)                            :refer-number singular
-                :quant all                                          :aspect activity)
-                :ARG1-of (s11n2 / navrhnout-002                 :refer-number singular
-                    :aspect performance                         :aspect performance)
+	:modal-strength full-affirmative                                   :mod (s11i1 / Ivan)
+        :ARG0 (s11p4 / person                                       :mod (s11p1 / poslanec)
+        	:name (s11n3 / name                                        :parenthesis (s11o1 / ODA)
+        		:op1 "Ivan"                                               :refer-number singular)
+        		:op2 "Mašek")                                         :ARG2 (s11n1 / novinář
+                :refer-number singular                              :refer-number plural)
+                :ARG1-of (s11h1 / have-org-role-91              :ARG1 (s11t1 / trvat-002
+                	:aspect state                                      :ARG0 s11m1
+    	    		:modal-strength full-affirmative                         :ARG1 (s11u1 / úkon
+    	    		:ARG3 (s11p5 / poslanec                                      :mod (s11k1 / kontrolní)
+    	    			:refer-number singular)                                     :mod (s11v1 / všechen)
+    	    		:ARG2  (s11o2 / organization))                               :ARG1-of (s11n2 / navrhnout-002
+    	    	:ARG1-of (s11h2 / have-org-role-91                                :ARG0 (s11e1 / entity)
+    	   		:aspect state                                                     :temporal (s11p2 / projednávání
+    	    		:modal-strength full-affirmative                                     :ARG0 (s11e2 / entity)
+    	    		:ARG2  (s11p6 / political-organization                               :ARG1 (s11p3 / podnět
+    	    			:refer-number singular                                                  :possessor (s11s1 / strana
+    	    			:name (s11n4 / name                                                         :possessor s11m1
+    	    				:op1 "ODA"))))                                                             :refer-number singular)
+        :ARG2 (s11n1 / novinář                                                      :refer-number singular)
+            :refer-number plural)                                               :refer-number singular)
+        :ARG1 (s11t1 / trvat-002                                            :aspect performance)
+            :aspect state                                               :refer-number plural)
+            :modal-strength full-affirmative                        :aspect activity)
+            :quote s11r1                                        :aspect performance)
+            :ARG0 s11p4                                 
+            :ARG1 (s11u1 / úkon                         
+            	:refer-number plural                       
+                :mod (s11k1 / kontrolní)                
+                :quant all                              
+                :ARG1-of (s11n2 / navrhnout-002         
+                    :aspect performance                 
                     :modal-strength full-affirmative    
                     :quote s11r1                        
                     :temporal (s11p2 / projednávat-002  
@@ -1890,11 +1819,9 @@ Node GOLD s11h2 / have-org-role-91                   mismatch in concept:       
 Node GOLD s11h2 / have-org-role-91                   mismatch in :ARG2:           GOLD = s11p6                      CONV = UNMAPPED
 Node GOLD s11h2 / have-org-role-91                   mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s11h2 / have-org-role-91                   mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Node GOLD s11k1 / kontrolní (kontrolních)            mismatch in :refer-number:   GOLD =                            CONV = plural
 Node GOLD s11n2 / navrhnout-002 (byly navrženy)      mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
 Node GOLD s11n2 / navrhnout-002 (byly navrženy)      mismatch in :quote:          GOLD = s11r1 mapped to CONV s11r1 CONV = 
 Node GOLD s11n2 / navrhnout-002 (byly navrženy)      mismatch in :ARG0:           GOLD =                            CONV = s11e1
-Node GOLD s11n2 / navrhnout-002 (byly navrženy)      mismatch in :refer-number:   GOLD =                            CONV = plural
 Node GOLD s11n3 / name                               mismatch in concept:         GOLD = name                       CONV = UNMAPPED
 Node GOLD s11n3 / name                               mismatch in :op1:            GOLD = "Ivan"                     CONV = UNMAPPED
 Node GOLD s11n3 / name                               mismatch in :op2:            GOLD = "Mašek"                    CONV = UNMAPPED
@@ -1917,34 +1844,27 @@ Node GOLD s11p4 / person (Ivan Mašek jeho)           mismatch in :name:        
 Node GOLD s11p4 / person (Ivan Mašek jeho)           mismatch in :mod:            GOLD =                            CONV = s11i1
 Node GOLD s11p4 / person (Ivan Mašek jeho)           mismatch in :mod:            GOLD =                            CONV = s11p1
 Node GOLD s11p4 / person (Ivan Mašek jeho)           mismatch in :parenthesis:    GOLD =                            CONV = s11o1
+Node GOLD s11p5 / poslanec (Poslanec)                mismatch in :refer-number:   GOLD = singular                   CONV = 
 Node GOLD s11p6 / political-organization (ODA)       mismatch in concept:         GOLD = political-organization     CONV = ODA
 Node GOLD s11p6 / political-organization (ODA)       mismatch in :name:           GOLD = s11n4 unmapped             CONV = 
 Node GOLD s11p6 / political-organization (ODA)       mismatch in :refer-number:   GOLD = singular                   CONV = 
-Node GOLD s11r1 / říci-008 (řekl)                    mismatch in :ARG1:           GOLD = s11t1 mapped to CONV s11t1 CONV = 
 Node GOLD s11r1 / říci-008 (řekl)                    mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
-Node GOLD s11r1 / říci-008 (řekl)                    mismatch in :effect:         GOLD =                            CONV = s11t1
-Node GOLD s11r1 / říci-008 (řekl)                    mismatch in :refer-number:   GOLD =                            CONV = singular
 Node GOLD s11t1 / trvat-002 (že trval)               mismatch in :aspect:         GOLD = state                      CONV = activity
 Node GOLD s11t1 / trvat-002 (že trval)               mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
 Node GOLD s11t1 / trvat-002 (že trval)               mismatch in :quote:          GOLD = s11r1 mapped to CONV s11r1 CONV = 
-Node GOLD s11t1 / trvat-002 (že trval)               mismatch in :refer-number:   GOLD =                            CONV = singular
 Node GOLD s11u1 / úkon (na všech úkonech které)      mismatch in :quant:          GOLD = all                        CONV = 
 Node CONV s11e1 / entity                             mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
 Node CONV s11e2 / entity                             mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
 Node CONV s11i1 / Ivan (Ivan)                        mismatch in concept:         CONV = Ivan                       GOLD = UNMAPPED
-Node CONV s11i1 / Ivan (Ivan)                        mismatch in :refer-number:   CONV = singular                   GOLD = UNMAPPED
 Node CONV s11v1 / všechen (všech)                    mismatch in concept:         CONV = všechen                    GOLD = UNMAPPED
-Node CONV s11v1 / všechen (všech)                    mismatch in :refer-number:   CONV = plural                     GOLD = UNMAPPED
 
 Correct 25 out of 60 non-empty GOLD values => recall    42%.
-Correct 25 out of 49 non-empty CONV values => precision 51%.
+Correct 25 out of 42 non-empty CONV values => precision 60%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s11e1 / entity                          mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
 Node CONV s11e2 / entity                          mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
 Node CONV s11i1 / Ivan (Ivan)                     mismatch in concept:         CONV = Ivan                       GOLD = UNMAPPED
-Node CONV s11i1 / Ivan (Ivan)                     mismatch in :refer-number:   CONV = singular                   GOLD = UNMAPPED
-Node CONV s11k1 / kontrolní (kontrolních)         mismatch in :refer-number:   CONV = plural                     GOLD = 
 Node CONV s11m1 / Mašek (Mašek jeho)              mismatch in concept:         CONV = Mašek                      GOLD = person
 Node CONV s11m1 / Mašek (Mašek jeho)              mismatch in :mod:            CONV = s11i1 unmapped             GOLD = 
 Node CONV s11m1 / Mašek (Mašek jeho)              mismatch in :mod:            CONV = s11p1 mapped to GOLD s11p5 GOLD = 
@@ -1953,12 +1873,12 @@ Node CONV s11m1 / Mašek (Mašek jeho)              mismatch in :ARG1-of:       
 Node CONV s11m1 / Mašek (Mašek jeho)              mismatch in :ARG1-of:        CONV =                            GOLD = s11h2
 Node CONV s11m1 / Mašek (Mašek jeho)              mismatch in :name:           CONV =                            GOLD = s11n3
 Node CONV s11n2 / navrhnout-002 (byly navrženy)   mismatch in :ARG0:           CONV = s11e1 unmapped             GOLD = 
-Node CONV s11n2 / navrhnout-002 (byly navrženy)   mismatch in :refer-number:   CONV = plural                     GOLD = 
 Node CONV s11n2 / navrhnout-002 (byly navrženy)   mismatch in :modal-strength: CONV =                            GOLD = full-affirmative
 Node CONV s11n2 / navrhnout-002 (byly navrženy)   mismatch in :quote:          CONV =                            GOLD = s11r1
 Node CONV s11o1 / ODA (ODA)                       mismatch in concept:         CONV = ODA                        GOLD = political-organization
 Node CONV s11o1 / ODA (ODA)                       mismatch in :name:           CONV =                            GOLD = s11n4
 Node CONV s11o1 / ODA (ODA)                       mismatch in :refer-number:   CONV =                            GOLD = singular
+Node CONV s11p1 / poslanec (Poslanec)             mismatch in :refer-number:   CONV =                            GOLD = singular
 Node CONV s11p2 / projednávání (při projednávání) mismatch in concept:         CONV = projednávání               GOLD = projednávat-002
 Node CONV s11p2 / projednávání (při projednávání) mismatch in :ARG0:           CONV = s11e2 unmapped             GOLD = 
 Node CONV s11p2 / projednávání (při projednávání) mismatch in :refer-number:   CONV = singular                   GOLD = 
@@ -1968,18 +1888,13 @@ Node CONV s11p2 / projednávání (při projednávání) mismatch in :quote:    
 Node CONV s11p3 / podnět (podnětu)                mismatch in :possessor:      CONV = s11s1 mapped to GOLD s11s1 GOLD = 
 Node CONV s11p3 / podnět (podnětu)                mismatch in :refer-number:   CONV = singular                   GOLD = 
 Node CONV s11p3 / podnět (podnětu)                mismatch in :source:         CONV =                            GOLD = s11s1
-Node CONV s11r1 / říci-008 (řekl)                 mismatch in :effect:         CONV = s11t1 mapped to GOLD s11t1 GOLD = 
-Node CONV s11r1 / říci-008 (řekl)                 mismatch in :refer-number:   CONV = singular                   GOLD = 
-Node CONV s11r1 / říci-008 (řekl)                 mismatch in :ARG1:           CONV =                            GOLD = s11t1
 Node CONV s11r1 / říci-008 (řekl)                 mismatch in :modal-strength: CONV =                            GOLD = full-affirmative
 Node CONV s11t1 / trvat-002 (že trval)            mismatch in :aspect:         CONV = activity                   GOLD = state
-Node CONV s11t1 / trvat-002 (že trval)            mismatch in :refer-number:   CONV = singular                   GOLD = 
 Node CONV s11t1 / trvat-002 (že trval)            mismatch in :modal-strength: CONV =                            GOLD = full-affirmative
 Node CONV s11t1 / trvat-002 (že trval)            mismatch in :quote:          CONV =                            GOLD = s11r1
 Node CONV s11u1 / úkon (na úkonech které)         mismatch in :mod:            CONV = s11v1 unmapped             GOLD = 
 Node CONV s11u1 / úkon (na úkonech které)         mismatch in :quant:          CONV =                            GOLD = all
 Node CONV s11v1 / všechen (všech)                 mismatch in concept:         CONV = všechen                    GOLD = UNMAPPED
-Node CONV s11v1 / všechen (všech)                 mismatch in :refer-number:   CONV = plural                     GOLD = UNMAPPED
 Node GOLD s11h1 / have-org-role-91                mismatch in concept:         GOLD = have-org-role-91           CONV = UNMAPPED
 Node GOLD s11h1 / have-org-role-91                mismatch in :ARG2:           GOLD = s11o2                      CONV = UNMAPPED
 Node GOLD s11h1 / have-org-role-91                mismatch in :ARG3:           GOLD = s11p5                      CONV = UNMAPPED
@@ -1996,7 +1911,7 @@ Node GOLD s11n4 / name                            mismatch in concept:         G
 Node GOLD s11n4 / name                            mismatch in :op1:            GOLD = "ODA"                      CONV = UNMAPPED
 Node GOLD s11o2 / organization                    mismatch in concept:         GOLD = organization               CONV = UNMAPPED
 
-Correct 25 out of 49 non-empty CONV values => recall    51%.
+Correct 25 out of 42 non-empty CONV values => recall    60%.
 Correct 25 out of 60 non-empty GOLD values => precision 42%.
 
 -------------------------------------------------------------------------------
@@ -2010,10 +1925,10 @@ Out of 151 total CONV nodes, 113 mapped to GOLD => precision = 75%.
 Before symmetrization, 16 GOLD nodes were projected ambiguously to 36 CONV nodes.
 Before symmetrization, 5 CONV nodes were projected ambiguously to 10 GOLD nodes.
 Concept and relation comparison (only mapped nodes; unmapped are ignored):
-Out of 383 non-empty GOLD values, 204 found in CONV => recall    53%.
-Out of 372 non-empty CONV values, 204 found in GOLD => precision 55%.
- => F₁ = 54%.
+Out of 383 non-empty GOLD values, 199 found in CONV => recall    52%.
+Out of 334 non-empty CONV values, 199 found in GOLD => precision 60%.
+ => F₁ = 56%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 486 non-empty GOLD values, 204 found in CONV => recall    42%.
-Out of 433 non-empty CONV values, 204 found in GOLD => precision 47%.
- => juːmæʧ (GOLD, CONV) = F₁ = 44%.
+Out of 486 non-empty GOLD values, 199 found in CONV => recall    41%.
+Out of 379 non-empty CONV values, 199 found in GOLD => precision 53%.
+ => juːmæʧ (GOLD, CONV) = F₁ = 46%.
