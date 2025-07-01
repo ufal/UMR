@@ -184,7 +184,7 @@
         my ($node) = @_;
         return $node->{label}
             if (($node->{relation} // "") ne 'name'
-                && $node->{label} ne 'foreign-phrase')
+                && ($node->{label} // "") ne 'foreign-phrase')
             || ! $node->{features};
 
         my @words = map $_->value =~ s/^"|"$//gr, ListV($node->{features});
