@@ -1,7 +1,7 @@
 # sent_id = SlaT-2773
 # :: snt1
-Index:   1     2     3  4    5     6        7        8        9      10  11   12  13   14  15 16  17     18       19        20    21   22 23    24      25   26     27       28        29
-Words: Omnis homines , qui sese student praestare ceteris animalibus , summa ope niti decet , ne vitam silentio transeant veluti pecora , quae natura prona atque ventri oboedientia finxit
+Index: 1     2       3 4   5    6       7         8       9          10 11    12  13   14    15 16 17    18       19        20     21     22 23   24     25    26    27     28          29
+Words: Omnis homines , qui sese student praestare ceteris animalibus ,  summa ope niti decet ,  ne vitam silentio transeant veluti pecora ,  quae natura prona atque ventri oboedientia finxit
 Sentence: Omnis homines, qui sese student praestare ceteris animalibus, summa ope niti decet, ne vitam silentio transeant veluti pecora, quae natura prona atque ventri oboedientia finxit
 Sentence Gloss (en): It is suitable that all men, who desire to excel other animals, strive, to the utmost of their power, not to pass through life in obscurity, like the beasts of the field, which nature has formed groveling and subservient to appetite
 
@@ -95,7 +95,7 @@ s1v2: 27-27
 
 # sent_id = SlaT-2774
 # :: snt2
-Index:  1     2     3     4  5   6    7    8     9   10
+Index: 1    2     3     4   5  6     7  8       9    10
 Words: sed nostra omnis vis in animo et corpore sita est
 Sentence: sed nostra omnis vis in animo et corpore sita est
 Sentence Gloss (en): All our power is situated in the mind and in the body
@@ -131,7 +131,7 @@ s2c: 8-8
 
 # sent_id = SlaT-2775
 # :: snt3
-Index:   1      2    3     4        5      6    7
+Index: 1     2       3 4        5        6     7
 Words: animi imperio , corporis servitio magis utimur
 Sentence: animi imperio, corporis servitio magis utimur
 Sentence Gloss (en): of the mind we rather employ the government; of the body, the service
@@ -178,7 +178,7 @@ s3c2: 4-4
 
 # sent_id = SlaT-2775
 # :: snt4
-Index:    1      2     3  4  5    6     7    8      9     10
+Index: 1       2     3   4   5 6       7   8      9       10
 Words: alterum nobis cum dis , alterum cum beluis commune est
 Sentence: alterum nobis cum dis, alterum cum beluis commune est
 Sentence Gloss (en): the one is common to us with the gods; the other with the beasts
@@ -232,7 +232,7 @@ s4c3: 9-9
 
 # sent_id = SlaT-2777
 # :: snt5
-Index:  1   2   3       4       5      6    7      8      9       10       11 12 13      14   15   16  17      18     19  20 21       22     23   24     25     26
+Index: 1   2    3       4       5      6    7      8      9       10       11 12 13      14   15   16  17      18     19  20 21       22     23   24     25     26
 Words: quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere ,  et quoniam vita ipsa qua fruimur brevis est ,  memoriam nostri quam maxume longam efficere
 Sentence: quo mihi rectius videtur ingeni quam virium opibus gloriam quaerere, et quoniam vita ipsa qua fruimur brevis est, memoriam nostri quam maxume longam efficere
 Sentence Gloss (en): It appears to me, therefore, more reasonable to pursue glory by means of the intellect than of bodily strength, and, since the life which we enjoy is short, to make the remembrance of us as lasting as possible
@@ -347,8 +347,8 @@ s5q3: 1-1
 
 # sent_id = SlaT-2778
 # :: snt6
-Index:  1       2     3     4      5     6     7       8     9  10  11    12   13  14      15
-Words: nam divitiarum et formae gloria fluxa atque fragilis est , virtus clara que aeterna habetur
+Index: 1   2          3  4      5      6     7     8        9   10 11     12    13  14      15
+Words: nam divitiarum et formae gloria fluxa atque fragilis est ,  virtus clara que aeterna habetur
 Sentence: nam divitiarum et formae gloria fluxa atque fragilis est, virtus clara que aeterna habetur
 Sentence Gloss (en): For the glory of wealth and beauty is fleeting and perishable; that of intellectual power is considered illustrious and immortal
 
@@ -471,7 +471,7 @@ s7m4: 16-16
 
 # sent_id = SlaT-2780
 # :: snt8
-Index:  1  2    3    4      5        6     7  8   9           10     11    12   13 
+Index: 1   2  3     4    5        6        7  8   9           10     11    12   13
 Words: nam et prius quam incipias consulto et ubi consulueris mature facto opus est
 Sentence: nam et prius quam incipias consulto et ubi consulueris mature facto opus est
 Sentence Gloss (en): For before you begin, deliberation is necessary, and when you have deliberated, prompt action
@@ -537,7 +537,7 @@ s8a2: 8-8
 
 # sent_id = SlaT-2781
 # :: snt9
-Index:  1  2   3     4   5  6        7       8        9       10
+Index: 1   2   3     4   5  6        7       8        9       10
 Words: ita que utrum per se indigens alterum alterius auxilio eget
 Sentence:ita utrumque per se indigens alterum alterius auxilio eget
 Sentence Gloss (en): Thus each of these, being incomplete in itself, requires the other's aid
@@ -561,14 +561,14 @@ Sentence Gloss (en): Thus each of these, being incomplete in itself, requires th
     :aspect state)
 
 # alignment:
-s9e: 9-9
-s9t: 2-4
+s9e: 10-10
+s9t: 2-3, 5-5
 s9u: 0-0
-s9i: 5-5
-s9a: 8-8
-s9t2: 6-6
+s9i: 6-6
+s9a: 9-9
+s9t2: 7-7
 s9a2: 0-0
-s9t3: 7-7
+s9t3: 8-8
 s9a3: 0-0
 
 # document level annotation:
@@ -680,7 +680,7 @@ s10a2: 0-0
 
 # sent_id = SlaT-2783
 # :: snt11
-Index:   1    2    3     4     5        6        7
+Index: 1     2   3    4       5    6          7
 Words: etiam tum vita hominum sine cupiditate agitabatur
 Sentence: etiam tum vita hominum sine cupiditate agitabatur
 Sentence Gloss (en): back then the life of men was still passed without covetousness
@@ -714,7 +714,7 @@ s11e: 1-1
 
 # sent_id = SlaT-2784
 # :: snt12
-Index:  1   2   3     4       5
+Index: 1   2   3    4     5
 Words: sua que quoi satis placebant
 Sentence: sua quoique satis placebant
 Sentence Gloss (en): every one was satisfied enough with his own
@@ -752,8 +752,8 @@ s12q: 0-0
 
 # sent_id = SlaT-2785
 # :: snt13
-Index:    1    2    3   4   5    6    7 8    9       10         11    12        13      14    15   16        17     18   19        20       21    22     23   24  25       26    27   28    29      30   31 32   33      34     35    36        37      38  39  40      41       42     43
-Words: postea vero quam in Asia Cyrus , in Graecia Lacedaemonii et Athenienses coepere urbis atque nationes subigere , lubidinem dominandi causam belli habere , maxumam gloriam in maxumo imperio putare , tum demum periculo atque negotiis compertum est in bello plurumum ingenium posse
+Index: 1      2    3    4  5    6     7 8  9       10           11 12          13      14    15    16       17       18 19        20        21     22    23     24 25      26      27  28     29      30     31 32 33     34       35    36       37        38  39 40    41       42       43
+Words: postea vero quam in Asia Cyrus , in Graecia Lacedaemonii et Athenienses coepere urbis atque nationes subigere ,  lubidinem dominandi causam belli habere ,  maxumam gloriam in  maxumo imperio putare ,  tum demum periculo atque negotiis compertum est in bello plurumum ingenium posse
 Sentence: postea vero quam in Asia Cyrus, in Graecia Lacedaemonii et Athenienses coepere urbis atque nationes subigere, lubidinem dominandi causam belli habere, maxumam gloriam in maxumo imperio putare, tum demum periculo atque negotiis compertum est in bello plurumum ingenium posse
 Sentence Gloss (en): but after Cyrus in Asia and the Lacedaemonians and Athenians in Greece began to subjugate cities and nations, to deem the lust of dominion a reason for war, and to imagine the greatest glory to be in the most extensive empire, it was then finally discovered, by proof and experience, that mental power has the greatest effect in military operations
 
@@ -901,8 +901,8 @@ s13r3: 8-9
 
 # sent_id = SlaT-2786
 # :: snt14
-Index:  1   2    3    4       5          6    7     8   9    10 11 12  13     14   15   16         17        18      19  20   21       22    23  24 25 26    27   28    29 30    31   32  33      34      35
-Words: quod si regum atque imperatorum animi virtus in pace ita ut in bello valeret , aequabilius atque constantius sese res humanae haberent , que ne aliud alio ferri que ne mutari ac misceri omnia cerneres
+Index: 1    2  3     4     5           6     7      8  9    10  11 12 13    14      15 16          17    18          19   20  21      22       23 24  25 26    27   28    29  30 31     32 33      34    35
+Words: quod si regum atque imperatorum animi virtus in pace ita ut in bello valeret ,  aequabilius atque constantius sese res humanae haberent ,  que ne aliud alio ferri que ne mutari ac misceri omnia cerneres
 Sentence: quod si regum atque imperatorum animi virtus in pace ita ut in bello valeret, aequabilius atque constantius sese res humanae haberent, neque aliud alio ferri neque mutari ac misceri omnia cerneres
 Sentence Gloss (en): and, indeed, if the intellectual ability of kings and magistrates were exerted to the same degree in peace as in war, human affairs would be more orderly and settled, and you would not see that one thing is carried to another place, and all things are changed and confused
 
@@ -1028,7 +1028,7 @@ s14b: 12-13
 
 # sent_id = SlaT-2787
 # :: snt15
-Index:  1     2      3      4    5        6     7     8     9      10   11
+Index: 1   2        3      4   5       6         7 8      9      10     11
 Words: nam imperium facile iis artibus retinetur , quibus initio partum est
 Sentence: nam imperium facile iis artibus retinetur, quibus initio partum est
 Sentence Gloss (en): for dominion is easily secured by those qualities by which it was at first obtained
@@ -1065,8 +1065,8 @@ s15f: 3-3
 
 # sent_id = SlaT-2788
 # :: snt16
-Index:  1     2   3    4     5     6   7       8     9      10      11     12      13      14    15   16     17   18    19      20
-Words: verum ubi pro labore desidia , pro continentia et aequitate lubido atque superbia invasere , fortuna simul cum moribus inmutatur
+Index: 1     2   3    4     5       6 7   8           9  10        11     12    13       14       15 16      17    18  19      20
+Words: verum ubi pro labore desidia , pro continentia et aequitate lubido atque superbia invasere ,  fortuna simul cum moribus inmutatur
 Sentence: verum ubi pro labore desidia, pro continentia et aequitate lubido atque superbia invasere, fortuna simul cum moribus inmutatur
 Sentence Gloss (en): but when sloth has introduced itself in the place of industry, and covetousness and pride in that of moderation and equity, the fortune (of a state) is altered together with its morals
 
@@ -1123,7 +1123,7 @@ s16a5: 17-18
 
 # sent_id = SlaT-2789
 # :: snt17
-Index:  1     2      3     4    5       6     7   8     9      10
+Index: 1   2        3      4  5       6       7 8     9    10
 Words: ita imperium semper ad optumum quemque a minus bono transfertur
 Sentence: ita imperium semper ad optumum quemque a minus bono transfertur
 Sentence Gloss (en): and thus authority is always transferred from the less to the more deserving
@@ -1175,7 +1175,7 @@ s17s: 3-3
 
 # sent_id = SlaT-2790
 # :: snt18
-Index:   1    2      3        4       5      6    7       8     9
+Index: 1    2       3     4        5          6 7       8     9
 Words: Quae homines arant navigant aedificant , virtuti omnia parent
 Sentence: Quae homines arant navigant aedificant, virtuti omnia parent
 Sentence Gloss (en): all the things that men do in agriculture, navigation, architecture, depend on intellect
@@ -1224,7 +1224,7 @@ s18v: 7-7
 
 # sent_id = SlaT-2791
 # :: snt19
-Index:   1   2      3     4   5     6      7      8  9    10    11     12    13     14      15            16
+Index: 1   2      3       4 5      6      7      8    9 10      11  12      13    14     15            16
 Words: sed multi mortales , dediti ventri atque somno , indocti que inculti vitam sicuti peregrinantes transiere
 Sentence: sed multi mortales, dediti ventri atque somno, indocti incultique vitam sicuti peregrinantes transiere
 Sentence Gloss (en): yet many human beings, resigned to sensuality and indolence, uninstructed and uneducated, have passed through life like travelers in a strange country
@@ -1293,7 +1293,7 @@ s19p2: 0-0
 
 # sent_id = SlaT-2792
 # :: snt20
-Index:    1       2      3       4      5       6     7    8     9    10
+Index: 1      2        3      4       5      6         7 8     9     10
 Words: quibus profecto contra naturam corpus voluptati , anima oneri fuit
 Sentence: quibus profecto contra naturam corpus voluptati, anima oneri fuit
 Sentence Gloss (en): to whom, certainly, contrary to the intention of nature, the body was a gratification, and the mind a burden
@@ -1339,7 +1339,7 @@ s20p: 1-1
 
 # sent_id = SlaT-2793
 # :: snt21
-Index:   1    2    3    4     5     6      7    8    9    10    11     12
+Index: 1     2   3     4   5      6     7       8 9       10 11      12
 Words: eorum ego vitam que mortem iuxta aestumo , quoniam de utraque siletur
 Sentence: eorum ego vitam mortemque iuxta aestumo, quoniam de utraque siletur
 Sentence Gloss (en): of these I hold the life and death in equal estimation, for silence is maintained concerning both
@@ -1392,8 +1392,8 @@ s21u: 0-0
 
 # sent_id = SlaT-2794
 # :: snt22
-Index:   1    2     3  4   5     6      7     8    9     10     11  12 13   14      15      16        17        18     19   20    21    22     23
-Words: verum enim vero is demum mihi vivere atque frui anima videtur , qui aliquo negotio intentus praeclari facinoris aut artis bonae famam quaerit
+Index: 1     2    3    4  5     6    7      8     9    10    11      12 13  14     15      16       17        18        19  20    21    22    23
+Words: verum enim vero is demum mihi vivere atque frui anima videtur ,  qui aliquo negotio intentus praeclari facinoris aut artis bonae famam quaerit
 Sentence: verum enim vero is demum mihi vivere atque frui anima videtur, qui aliquo negotio intentus praeclari facinoris aut artis bonae famam quaerit
 Sentence Gloss (en): but he only, indeed, seems to me to live, and to enjoy life, who, intent upon some employment, seeks reputation from some ennobling enterprise, or honorable pursuit
 
@@ -1468,7 +1468,7 @@ s22f3: 9-9
 
 # sent_id = SlaT-2795
 # :: snt23
-Index:  1  2    3     4     5     6    7     8     9      10
+Index: 1   2  3     4     5     6     7    8      9    10
 Words: Sed in magna copia rerum aliud alii natura iter ostendit
 Sentence: Sed in magna copia rerum aliud alii natura iter ostendit
 Sentence Gloss (en): but in the great abundance of occupations, nature points out different paths to different individuals
@@ -1510,7 +1510,7 @@ s23r: 5-5
 
 # sent_id = SlaT-2796
 # :: snt24
-Index:    1      2   3     4     5     6    7   8     9     10    11     12     13
+Index: 1        2   3    4      5   6        7 8     9    10     11   12       13
 Words: pulchrum est bene facere rei publicae , etiam bene dicere haud absurdum est
 Sentence: pulchrum est bene facere rei publicae, etiam bene dicere haud absurdum est
 Sentence Gloss (en): to act well for the state is noble, and even to speak well for it is not without merit
@@ -1565,7 +1565,7 @@ s24e: 8-8
 
 # sent_id = SlaT-2797
 # :: snt25
-Index:  1    2   3    4     5      6     7
+Index: 1   2    3   4     5      6     7
 Words: vel pace vel bello clarum fieri licet
 Sentence: vel pace vel bello clarum fieri licet
 Sentence Gloss (en): both in peace and in war it is possible to obtain celebrity
@@ -1594,7 +1594,7 @@ s25b: 4-4
 
 # sent_id = SlaT-2798
 # :: snt26
-Index: 1   2    3    4   5    6      7      8      9   10     11
+Index: 1  2   3      4  5   6     7       8         9 10    11
 Words: et qui fecere et qui facta aliorum scripsere , multi laudantur
 Sentence: et qui fecere et qui facta aliorum scripsere, multi laudantur
 Sentence Gloss (en): many who have acted, and many who have recorded the actions of others, are praised
@@ -1653,8 +1653,8 @@ s26f: 3-3
 
 # sent_id = SlaT-2799
 # :: snt27
-Index: 1   2     3    4    5         6      7     8        9         10    11    12     13   14 15   16   17     18     19    20    21     22
-Words: ac mihi quidem , tametsi haudquaquam par gloria sequitur scriptorem et auctorem rerum , tamen in primis arduom videtur res gestas scribere
+Index: 1  2    3      4 5       6           7   8      9        10         11 12       13    14 15    16 17     18     19      20  21     22
+Words: ac mihi quidem , tametsi haudquaquam par gloria sequitur scriptorem et auctorem rerum ,  tamen in primis arduom videtur res gestas scribere
 Sentence: ac mihi quidem, tametsi haudquaquam par gloria sequitur scriptorem et auctorem rerum, tamen in primis arduom videtur res gestas scribere
 Sentence Gloss (en): and to me, assuredly, though by no means equal glory attends the narrator and the performer of illustrious deeds, it yet seems in the highest degree difficult to write the history of great transactions
 
@@ -1724,7 +1724,7 @@ s27s3: 10-10
 
 # sent_id = SlaT-2800
 # :: snt28
-Index:   1     2     3     4       5        6
+Index: 1      2    3     4      5           6
 Words: primum quod facta dictis exaequanda sunt
 Sentence: primum quod facta dictis exaequanda sunt
 Sentence Gloss (en): first, because one must equate words with deeds
@@ -1770,8 +1770,8 @@ s28d: 0-0
 
 # sent_id = SlaT-2801
 # :: snt29
-Index:    1     2   3    4    5     6           7           8         9    10     11    12  13 14  15  16      17    18     19      20     21   22  23   24     25     26      27   28  29  30    31     32   33  34   35   36    37   38    39    40
-Words: dehinc quia que pleri quae delicta reprehenderis malevolentia et invidia dicta putant , ubi de magna virtute atque gloria bonorum memores , quae sibi quisque facilia factu putat , aequo animo accipit , supra ea veluti ficta pro falsis ducit
+Index: 1       2   3   4     5    6       7             8            9  10      11    12     13 14  15 16    17      18    19     20      21      22 23   24   25      26      27    28    29 30    31    32      33 34    35 36     37    38  39     40
+Words: dehinc quia que pleri quae delicta reprehenderis malevolentia et invidia dicta putant ,  ubi de magna virtute atque gloria bonorum memores ,  quae sibi quisque facilia factu putat ,  aequo animo accipit ,  supra ea veluti ficta pro falsis ducit
 Sentence: dehinc quia plerique quae delicta reprehenderis malevolentia et invidia dicta putant, ubi de magna virtute atque gloria bonorum memores, quae sibi quisque facilia factu putat, aequo animo accipit, supra ea veluti ficta pro falsis ducit
 Sentence Gloss (en): and next, because most readers consider that whatever errors you mention with censure, are mentioned through malevolence and envy; while, when you speak of the great virtue and glory of eminent men, every one hears with acquiescence only that which he himself thinks easy to be performed; all beyond his own conception he regards as fictitious and incredible
 
@@ -1919,7 +1919,7 @@ s29b2: 0-0
 
 # sent_id = SlaT-2802
 # :: snt30
-Index:  1   2        3          4      5     6    7     8    9   10   11       12  13 14 15  16   17   18     19      20
+Index: 1   2   3              4      5       6 7       8     9  10  11       12    13 14 15  16  17   18    19      20
 Words: Sed ego adulescentulus initio sicuti que pleri studio ad rem publicam latus sum , que ibi mihi multa advorsa fuere
 Sentence: Sed ego adulescentulus initio sicuti plerique studio ad rem publicam latus sum, ibique mihi multa advorsa fuere
 Sentence Gloss (en): myself, however, as a young man was at first led by inclination, like most others, to engage in political affairs, but in that pursuit many circumstances were unfavorable to me
@@ -1990,7 +1990,7 @@ s30t: 18-18
 
 # sent_id = SlaT-2803
 # :: snt31
-Index:  1   2    3    4  5      6       7  8     9       10      11       12       13
+Index: 1   2   3      4 5   6           7 8   9       10      11       12       13
 Words: nam pro pudore , pro abstinentia , pro virtute audacia largitio avaritia vigebant
 Sentence: nam pro pudore, pro abstinentia, pro virtute audacia largitio avaritia vigebant
 Sentence Gloss (en): for, instead of modesty, temperance, and integrity, there prevailed shamelessness, corruption, and rapacity
@@ -2033,7 +2033,7 @@ s31v3: 8-9
 
 # sent_id = SlaT-2804
 # :: snt32
-Index:  1      2      3         4           5       6      7    8   9     10   11    12      13       14     15        16      17
+Index: 1    2       3      4            5        6       7     8  9     10    11    12    13        14    15        16       17
 Words: quae tametsi animus aspernabatur insolens malarum artium , tamen inter tanta vitia imbecilla aetas ambitione corrupta tenebatur
 Sentence: quae tametsi animus aspernabatur insolens malarum artium, tamen inter tanta vitia imbecilla aetas ambitione corrupta tenebatur
 Sentence Gloss (en): although my mind, inexperienced in dishonest practices, detested these vices, yet, in the midst of so great corruption, my tender age was kept infected by ambition
@@ -2096,8 +2096,8 @@ s32m: 6-6
 
 # sent_id = SlaT-2805
 # :: snt33
-Index: 1  2  3  4   5       6      7      8        9       10    11   12     13      14     15   16    17    18   19     20      21
-Words: ac me , quom ab reliquorum malis moribus dissentirem , nihilo minus honoris cupido eadem qua ceteros fama atque invidia vexabat
+Index: 1  2  3 4    5  6          7     8       9           10 11     12    13      14     15    16  17      18   19    20      21
+Words: ac me , quom ab reliquorum malis moribus dissentirem ,  nihilo minus honoris cupido eadem qua ceteros fama atque invidia vexabat
 Sentence: ac me, quom ab reliquorum malis moribus dissentirem, nihilo minus honoris cupido eadem qua ceteros fama atque invidia vexabat
 Sentence Gloss (en): and, though I shrunk from the vicious principles of those around me, yet the same eagerness for honors, which disquieted others, with obloquy and jealousy disquieted myself
 
@@ -2167,8 +2167,8 @@ s33r: 0-0
 
 # sent_id = SlaT-2806
 # :: snt34
-Index:    1    2    3    4    5        6     7        8         9     10  11     12      13   14 15   16    17       18     19     20 21   22     23       24      25     26     27    28     29     30 31 32  33    34      35   36      37 38     39         40  41     42       43    44
-Words: igitur ubi animus ex multis miseriis atque periculis requievit et mihi reliquam aetatem a re publica procul habendam decrevi , non fuit consilium socordia atque desidia bonum otium conterere , que ne vero agrum colundo aut venando , servilibus officiis , intentum aetatem agere
+Index:  1     2   3      4  5      6        7     8         9         10 11   12       13      14 15 16      17     18       19      20 21  22   23        24       25    26      27    28    29        30 31  32 33   34    35      36  37      38 39         40       41 42       43      44
+Words: igitur ubi animus ex multis miseriis atque periculis requievit et mihi reliquam aetatem a  re publica procul habendam decrevi ,  non fuit consilium socordia atque desidia bonum otium conterere ,  que ne vero agrum colundo aut venando ,  servilibus officiis ,  intentum aetatem agere
 Sentence: igitur ubi animus ex multis miseriis atque periculis requievit et mihi reliquam aetatem a re publica procul habendam decrevi, non fuit consilium socordia atque desidia bonum otium conterere, neque vero agrum colundo aut venando, servilibus officiis, intentum aetatem agere
 Sentence Gloss (en): when, therefore, my mind had rest from its numerous troubles and trials, and I had determined to pass the remainder of my days unconnected with public life, it was not my intention to waste my valuable leisure in indolence and inactivity, and neither to spend my time engaging in agriculture or hunting, servile occupations
 
@@ -2306,8 +2306,8 @@ s34p4: 16-16
 
 # sent_id = SlaT-2807
 # :: snt35
-Index:  1  2  3     4     5    6    7     8     9       10    11  12       13      14   15   16      17     18      19  20 21   22      23     24       25    26    27      28 29  30     31  32 33 34   35    36     37      38      39    40   41
-Words: sed a quo incepto que studio me ambitio mala detinuerat , eodem regressus statui res gestas populi Romani carptim , ut quaeque memoria digna videbantur , perscribere , eo magis quod mihi a spe metu partibus rei publicae animus liber erat
+Index: 1   2 3   4       5   6      7  8       9    10         11 12    13        14     15  16     17     18     19      20 21 22      23      24    25         26 27          28 29 30    31   32   33 34  35   36       37  38       39     40    41
+Words: sed a quo incepto que studio me ambitio mala detinuerat ,  eodem regressus statui res gestas populi Romani carptim ,  ut quaeque memoria digna videbantur ,  perscribere ,  eo magis quod mihi a  spe metu partibus rei publicae animus liber erat
 Sentence: sed a quo incepto studioque me ambitio mala detinuerat, eodem regressus statui res gestas populi Romani carptim, ut quaeque memoria digna videbantur, perscribere, eo magis quod mihi a spe metu partibus rei publicae animus liber erat
 Sentence Gloss (en):  but, returning to those studies from which, at their commencement, a corrupt ambition had allured me, I determined to write, in detached portions, the transactions of the Roman people, as any occurrence should seem worthy of mention; even more so as my mind was uninfluenced by hope, fear, or political partisanship
 
@@ -2429,7 +2429,7 @@ s35m: 9-9
 
 # sent_id = SlaT-2808
 # :: snt36
-Index:    1   2      3           4       5       6        7     8      9
+Index: 1      2  3         4            5    6         7      8      9
 Words: Igitur de Catilinae coniuratione quam verissume potero paucis absolvam
 Sentence: Igitur de Catilinae coniuratione quam verissume potero paucis absolvam
 Sentence Gloss (en): thus I shall give an account in few words, as truthfully as I can, of the conspiracy of Catiline
@@ -2478,7 +2478,7 @@ s36v2: 0-0
 
 # sent_id = SlaT-2809
 # :: snt37
-Index:  1  2     3    4    5     6     7          8         9      10     11       12
+Index: 1   2  3       4  5      6   7          8        9        10    11       12
 Words: nam id facinus in primis ego memorabile existumo sceleris atque periculi novitate
 Sentence: nam id facinus in primis ego memorabile existumo sceleris atque periculi novitate
 Sentence Gloss (en): for I think it an enterprise eminently memorable, from the unusual nature of its guilt and of its perils
@@ -2531,7 +2531,7 @@ s37p2: 11-11
 
 # sent_id = SlaT-2810
 # :: snt38
-Index: 1    2       3       4      5     6        7      8   9  10     11      12      13
+Index: 1  2      3       4       5     6     7          8   9  10   11      12       13
 Words: de quoius hominis moribus pauca prius explananda sunt , quam initium narrandi faciam
 Sentence: de quoius hominis moribus pauca prius explananda sunt, quam initium narrandi faciam
 Sentence Gloss (en): before I enter upon my narrative, I must give a short description of the character of the man
@@ -2614,23 +2614,23 @@ Sentence Gloss (en): Lucius Catilina was a man of noble birth and of eminent men
         :aspect state))
 
 # alignment:
-s39b: 15-15
-s39h: 8-8
-s39p: 1-2
-s39n2: 6-6
-s39g: 5-5
-s39n3: 4-4
+s39b: 16-16
+s39h: 9-9
+s39p: 1-3
+s39n2: 7-7
+s39g: 6-6
+s39n3: 5-5
 s39n: 0-0
-s39v: 10-10
-s39a: 11-11, 13-13
-s39a2: 12-12
-s39m: 9-9
-s39c: 14-14
+s39v: 11-11
+s39a: 12-12, 14-14
+s39a2: 13-13
+s39m: 10-10
+s39c: 15-15
 s39h2: 0-0
-s39i: 16-16
-s39a3: 18-18
-s39m2: 17-17
-s39p2: 19-19
+s39i: 17-17
+s39a3: 19-19
+s39m2: 18-18
+s39p2: 20-20
 
 # document level annotation:
 (s39s0 / sentence
@@ -2646,8 +2646,8 @@ s39p2: 19-19
 
 # sent_id = SlaT-2812
 # :: snt40
-Index:  1   2       3         4       5        6     7        8         9      10   11  12  13 14     15      16      17
-Words: huic ab adulescentia bella intestina caedes rapinae discordia civilis grata fuere , que ibi iuventutem suam exercuit
+Index: 1    2  3            4     5         6      7       8         9       10    11    12 13  14 15         16    17
+Words: huic ab adulescentia bella intestina caedes rapinae discordia civilis grata fuere ,  que ibi iuventutem suam exercuit
 Sentence: huic ab adulescentia bella intestina caedes rapinae discordia civilis grata fuere, ibique iuventutem suam exercuit
 Sentence Gloss (en): his delight, from his youth, had been in civil commotions, bloodshed, robbery, and sedition; and in such scenes he had spent his early years
 
@@ -2711,7 +2711,7 @@ s40i2: 15-16
 
 # sent_id = SlaT-2813
 # :: snt41
-Index:   1       2       3       4       5       6    7      8         9     10
+Index: 1      2       3       4       5        6     7    8        9         10
 Words: corpus patiens inediae algoris vigiliae supra quam quoiquam credibile est
 Sentence: corpus patiens inediae algoris vigiliae supra quam quoiquam credibile est
 Sentence Gloss (en): his constitution could endure hunger, want of sleep, and cold, more than anyone could believe
@@ -2755,8 +2755,8 @@ s41p3: 8-8
 
 # sent_id = SlaT-2814
 # :: snt42
-Index:    1     2       3      4    5   6     7    8       9     10     11      12   13      14    15     16    17  18   19      20
-Words: animus audax subdolus varius , quoius rei lubet simulator ac dissimulator , alieni adpetens sui profusus , ardens in cupiditatibus
+Index: 1      2      3       4      5 6      7   8     9         10 11           12 13     14       15  16       17 18     19 20
+Words: animus audax subdolus varius , quoius rei lubet simulator ac dissimulator ,  alieni adpetens sui profusus ,  ardens in cupiditatibus
 Sentence: animus audax subdolus varius, quoius rei lubet simulator ac dissimulator, alieni adpetens sui profusus, ardens in cupiditatibus
 Sentence Gloss (en): his mind was daring, subtle, and versatile, capable of pretending or dissembling whatever (he wished), covetous of other men's property, and prodigal of his own, burning with desires
 
@@ -2833,7 +2833,7 @@ s42c2: 19-20
 
 # sent_id = SlaT-2815
 # :: snt43
-Index:   1         2     3     4        5
+Index: 1     2           3 4          5
 Words: satis eloquentiae , sapientiae parum
 Sentence: satis eloquentiae, sapientiae parum
 Sentence Gloss (en): he had abundance of eloquence, but little wisdom
@@ -2869,7 +2869,7 @@ s43p2: 5-5
 
 # sent_id = SlaT-2816
 # :: snt44
-Index:   1       2       3            4        5     6    7       8
+Index: 1      2      3          4            5     6    7      8
 Words: vastus animus inmoderata incredibilia nimis alta semper cupiebat
 Sentence: vastus animus inmoderata incredibilia nimis alta semper cupiebat
 Sentence Gloss (en): his insatiable ambition was always pursuing extravagant, incredible, unattainable things
@@ -2917,7 +2917,7 @@ s44p: 0-0
 
 # sent_id = SlaT-2817
 # :: snt45
-Index:   1    2  3  4          5 6 7      8      9      10        11  12       13
+Index: 1    2    3  4          5 6 7      8      9      10        11  12       13
 Words: hunc post do minationem L . Sullae lubido maxuma invaserat rei publicae capiundae
 Sentence: hunc post dominationem L. Sullae lubido maxuma invaserat rei publicae capiundae
 Sentence Gloss (en): since the time of Sylla's dictatorship, a strong desire of seizing the government possessed him
@@ -2947,16 +2947,16 @@ Sentence Gloss (en): since the time of Sylla's dictatorship, a strong desire of 
     :aspect performance)
 
 # alignment:
-s45i: 9-9
-s45c: 7-7
-s45m: 8-8
+s45i: 10-10
+s45c: 8-8
+s45m: 9-9
 s45p: 1-1
-s45p2:4-6
-s45c2: 12-12
-s45r: 10-10
-s45p3: 11-11
+s45p2: 5-7
+s45c2: 13-13
+s45r: 11-11
+s45p3: 12-12
 s45a: 2-2
-s45d: 3-3
+s45d: 3-4
 s45n: 0-0
 
 # document level annotation:
@@ -2975,8 +2975,8 @@ s45n: 0-0
 
 # sent_id = SlaT-2818
 # :: snt46
-Index:   1  2  3   4      5         6      7  8   9     10      11  12    13     14      15
-Words: que ne id quibus modis adsequeretur , dum sibi regnum pararet , quicquam pensi habebat
+Index: 1   2  3  4      5     6            7 8   9    10     11      12 13       14    15
+Words: que ne id quibus modis adsequeretur , dum sibi regnum pararet ,  quicquam pensi habebat
 Sentence: neque id quibus modis adsequeretur, dum sibi regnum pararet, quicquam pensi habebat
 Sentence Gloss (en): and he did not care at all, provided that he secured power for himself, by what means he might arrive at it
 
@@ -3024,8 +3024,8 @@ s46r: 10-10
 
 # sent_id = SlaT-2819
 # :: snt47
-Index:      1       2    3    4   5   6     7      8     9    10      11     12     13          14   15 16   17     18     19     20   21  22   23     24
-Words: agitabatur magis que magis in dies animus ferox inopia rei familiaris et conscientia scelerum , quae utraque iis artibus auxerat , quas supra memoravi
+Index: 1          2     3   4     5  6    7      8     9      10  11         12 13          14       15 16   17      18 19       20      21 22   23    24
+Words: agitabatur magis que magis in dies animus ferox inopia rei familiaris et conscientia scelerum ,  quae utraque iis artibus auxerat ,  quas supra memoravi
 Sentence: agitabatur magis magisque in dies animus ferox inopia rei familiaris et conscientia scelerum, quae utraque iis artibus auxerat, quas supra memoravi
 Sentence Gloss (en): his violent spirit was day by day more and more tormented on by the diminution of his patrimony, and by his consciousness of guilt; both which evils he had increased by those practices which I have mentioned above
 
@@ -3099,8 +3099,8 @@ s47m3: 4-4
 
 # sent_id = SlaT-2820
 # :: snt48
-Index:      1          2        3        4       5   6  7      8    9     10     11  12  13 14    15     16     17    18   19
-Words: incitabant praeterea corrupti civitatis mores , quos pessuma ac divorsa inter se mala , luxuria atque avaritia , vexabant
+Index: 1          2         3        4         5     6 7    8       9  10      11    12 13   14 15     16     17       18 19
+Words: incitabant praeterea corrupti civitatis mores , quos pessuma ac divorsa inter se mala ,  luxuria atque avaritia ,  vexabant
 Sentence: incitabant praeterea corrupti civitatis mores, quos pessuma ac divorsa inter se mala, luxuria atque avaritia, vexabant
 Sentence Gloss (en): the corrupt morals of the state, too, which extravagance and selfishness, pernicious and contending vices, rendered thoroughly depraved, furnished him with additional incentives to action
 
@@ -3165,8 +3165,8 @@ s48p: 0-0
 
 # sent_id = SlaT-2821
 # :: snt49
-Index:  1    2     3       4    5    6    7     8         9       10     11   12  13       14   15   16       17       18     19  20   21    22 23  24    25    26       27     28     29      30      31 32    33        34   35      36       37    38      39   40        41         42  43  44   45
-Words: Res ipsa hortari videtur , quoniam de moribus civitatis tempus admonuit , supra repetere ac paucis instituta maiorum domi que militiae , quo modo rem publicam habuerint que quantam reliquerint , ut paulatim inmutata ex pulcherruma atque optuma pessuma ac flagitiosissuma facta sit , disserere
+Index: 1   2    3       4       5  6      7 8        9         10     11       12 13    14       15 16     17        18      19   20  21       22 23  24   25  26       27        28  29      30          31 32 33       34       35 36          37    38     39      40 41              42    43  44 45
+Words: Res ipsa hortari videtur , quoniam de moribus civitatis tempus admonuit ,  supra repetere ac paucis instituta maiorum domi que militiae ,  quo modo rem publicam habuerint que quantam reliquerint ,  ut paulatim inmutata ex pulcherruma atque optuma pessuma ac flagitiosissuma facta sit ,  disserere
 Sentence: Res ipsa hortari videtur, quoniam de moribus civitatis tempus admonuit, supra repetere ac paucis instituta maiorum domi militiaeque, quo modo rem publicam habuerint quantamque reliquerint, ut paulatim inmutata ex pulcherruma atque optuma pessuma ac flagitiosissuma facta sit, disserere
 Sentence Gloss (en): Since the occasion has thus brought public morals under my notice, the subject itself seems to call upon me to look back, and briefly to describe the conduct of our ancestors in peace and war; how they managed the state, and how powerful they left it; and how, by gradual alteration, it became, from being the most virtuous, the most vicious and depraved
 
@@ -3301,8 +3301,8 @@ s49c: 9-9
 
 # sent_id = SlaT-2822
 # :: snt50
-Index:    1    2   3    4    5    6    7    8        9      10     11      12  13 14   15    16     17      18      19        20    21 22     2   24         25 26    27      28      29 30   31      32 33   34      35 36      37    38
-Words: Urbem Romam , sicuti ego accepi , condidere atque habuere initio Troiani , qui Aenea duce profugi sedibus incertis vagabantur , cumque iis Aborigines ,  genus hominum agreste ,  sine legibus ,  sine imperio ,  liberum atque solutum
+Index: 1     2     3 4      5   6      7 8         9     10      11     12      13 14  15    16   17      18      19       20         21 22     23  24         25 26    27      28      29 30   31      32 33   34      35 36      37    38
+Words: Urbem Romam , sicuti ego accepi , condidere atque habuere initio Troiani ,  qui Aenea duce profugi sedibus incertis vagabantur ,  cumque iis Aborigines ,  genus hominum agreste ,  sine legibus ,  sine imperio ,  liberum atque solutum
 Sentence: Urbem Romam, sicuti ego accepi, condidere atque habuere initio Troiani, qui Aenea duce profugi sedibus incertis vagabantur, cumque iis Aborigines, genus hominum agreste, sine legibus, sine imperio, liberum atque solutum
 Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earliest inhabitants were the Trojans, who, under the conduct of Aeneas, were wandering about as exiles from their country, without any settled abode; and with these were joined the Aborigines, a savage race of men, without laws or government, free, and owning no control
 
@@ -3364,7 +3364,7 @@ Sentence Gloss (en): Of the city of Rome, as I understood, the founders and earl
 # alignment:
 s50a: 9-9
 s50c: 8-8
-s50a2: 22-24
+s50a2: 22-23
 s50p: 12-12, 14-14
 s50c2: 0-0
 s50n: 0-0
@@ -3377,19 +3377,19 @@ s50p2: 15-15
 s50n2: 0-0
 s50h2: 16-16
 s50d: 0-0
-s50e: 25-25
+s50e: 24-24
 s50n4: 0-0
 s50i4: 0-0
-s50g: 27-27
-s50h4: 28-28
+s50g: 26-26
+s50h4: 27-27
 s50a4: 0-0
-s50a3: 29-29
+s50a3: 28-28
 s50a5: 0-0
-s50l: 31-32
-s50i3: 34-35
-s50a6: 38-38
-s50l2: 37-37
-s50s3: 39-39
+s50l: 30-31
+s50i3: 33-34
+s50a6: 37-37
+s50l2: 36-36
+s50s3: 38-38
 s50c3: 1-2
 s50n3: 0-0
 s50i2: 11-11
