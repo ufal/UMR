@@ -505,17 +505,17 @@ Sentence Gloss (en): For before you begin, deliberation is necessary, and when y
         :aspect state))
 
 # alignment:
-s8a: 2-2, 8-8
+s8a: 2-2, 7-7
 s8o: 0-0
-s8o2: 13-14
+s8o2: 12-13
 s8p: 0-0
 s8c: 6-6
 s8i: 5-5
-s8c2: 10-10
-s8m: 11-11
-s8f: 12-12
+s8c2: 9-9
+s8m: 10-10
+s8f: 11-11
 s8b: 3-4
-s8a2: 9-9
+s8a2: 8-8
 
 # document level annotation:
 (s8s0 / sentence
@@ -632,26 +632,26 @@ Sentence Gloss (en): in early times, accordingly, kings (for that was the first 
 
 # alignment:
 s10c: 0-0
-s10e: 20-20
+s10e: 18-18
 s10p: 3-3
 s10h: 0-0
 s10r: 0-0
-s10i2: 16-16
-s10d: 14-14
+s10i2: 14-14
+s10d: 12-12
 s10e2: 0-0
-s10c2: 19-19
+s10c2: 17-17
 s10i5: 0-0
 s10i6: 0-0
 s10d2: 0-0
 s10i: 2-2
-s10n: 8-8
-s10o: 11-11
-s10i3: 12-12
-s10t: 6-7
-s10i4: 9-9
-s10p2: 15-15
+s10n: 7-7
+s10o: 10-10
+s10i3: 11-11
+s10t: 5-6
+s10i4: 8-8
+s10p2: 13-13
 s10p3: 0-0
-s10p4: 18-18
+s10p4: 16-16
 s10a2: 0-0
 
 # document level annotation:
