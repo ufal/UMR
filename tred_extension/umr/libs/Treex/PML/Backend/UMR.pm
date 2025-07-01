@@ -81,9 +81,12 @@ sub read {
                                                                : split /-/;
                                $from .. $to
                            } split /, */, $alignment;
-                $root->{words}[$_]->set_value(PML::List(
-                    PML::ListV($root->{words}[$_]->value), $id
-                )) for @ords;
+
+                for my $ord (@ords) {
+                    die "Invalid alignment $id!" unless $root->{words}[$ord];
+                    $root->{words}[$ord]->set_value(PML::List(
+                        PML::ListV($root->{words}[$ord]->value), $id));
+                }
             }
 
         } elsif (/# *document level annotation/) {
