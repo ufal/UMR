@@ -403,7 +403,7 @@ s6a4: 13-13
 
 # sent_id = SlaT-2779
 # :: snt7
-Index: 1   2     3      4      5        6      7   8 9    11       12 13      14    15  16        17    18
+Index: 1   2   3      4     5        6        7    8 9    10       11 12      13    14  15        16    17
 Words: Sed diu magnum inter mortalis certamen fuit , vine corporis an virtute animi res militaris magis procederet
 Sentence: Sed diu magnum inter mortalis certamen fuit, vine corporis an virtute animi res militaris magis procederet
 Sentence Gloss (en): Yet for a long time men have discussed the question whether success in arms depends more on strength of body or excellence of mind
@@ -444,16 +444,16 @@ s7p: 0-0
 s7m: 4-5
 s7d: 2-2
 s7m2: 3-3
-s7p2: 18-18
+s7p2: 17-17
 s7p3: 0-0
-s7r: 15-15
-s7m3: 16-16
-s7o: 10-10, 12-12
+s7r: 14-14
+s7m3: 15-15
+s7o: 11-11
 s7v: 9-9
-s7c2: 11-11
-s7v2: 13-13
-s7a: 14-14
-s7m4: 17-17
+s7c2: 10-10
+s7v2: 12-12
+s7a: 13-13
+s7m4: 16-16
 
 # document level annotation:
 (s7s0 / sentence
