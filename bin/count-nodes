@@ -12,7 +12,7 @@ sub size($name) {
     return 25 if $name =~ /pdtsc/;
     return 10 if $name =~ /wsj0072/;
     return  6 if $name =~ /wsj0013/;
-    return 50 if $name =~ /sallust/;
+    return 50 if $name =~ /sallust|latin/;
     return 1000
 }
 
@@ -22,16 +22,21 @@ sub size($name) {
 }
 
 
-my $pdtc2a = $ENV{UFAL_PDTC2A} or die '$UFAL_PDTC2A not set';
+my $pdtc2a = $ENV{UFAL_PDTC30} or die '$UFAL_PDTC30 not set';
 my $umr    = $ENV{UFAL_UMR}    or die '$UFAL_UMR not set';
+my $latin  = "$umr/data/latin/LDT_PML_tectogrammatical_130317"
+           . '/LDT_Sallust/Sallust_all_files/';
 
-for my $m (qw( annotators/ivh/done/ln95046_093.m
-               annotators/kac/done/ln94210_111.m
-               annotators/ivh/done/pdtsc_146_2.05.m
-               annotators/kac/done/pdtsc_093_3.02.m
-               annotators/kac/done/wsj0013.cz.m
-               annotators/toh/done/wsj0072.cz.m )) {
+for my $m (qw( data/PDT/pml/tamw/dtest/ln95046_093.m
+               data/PDT/pml/tamw/dtest/ln94210_111.m
+               data/PDTSC/pml/dtest/pdtsc_146_2.05.m
+               data/PDTSC/pml/dtest/pdtsc_093_3.02.m
+               data/PCEDT-cz/pml/dtest/wsj0013.cz.m
+               data/PCEDT-cz/pml/dtest/wsj0072.cz.m
+               sallust.afun.normalized.m
+)) {
     my $f = path($pdtc2a, $m);
+    $f = path($latin, $m) unless -f $f;
     $XML::XSH2::Map::f = $f->stringify;
     $XML::XSH2::Map::basename = my $basename = $f->basename;
     my $size = size($basename);
@@ -62,27 +67,37 @@ for my $u (qw( ln95046_093
                pdtsc_093_3.02
                wsj0013.cz
                wsj0072.cz
+               latin_conv_50_dmr
 )) {
-    my $dir = path($umr, 'github', 'data', 'czech', 'PDT-C-dtest');
-    my ($f) = $dir->children(qr/\Q$u\E-conv\.umr/);
-    my $size = size($u);
-    open my $pipe, '-|', qw{ btred -QTe writeln(scalar($this->descendants)) },
-        $f or die $!;
-    chomp( my @out = <$pipe> );
-    $XML::XSH2::Map::count{ substr $f->basename, 0, 1 }{uc}
-        += sum(@out[0 .. (@out > $size ? $size - 1 : $#out)]);
+    for my $dir (
+        path($umr, 'github', 'data', 'czech', 'PDT-C-dtest'),
+        path($umr, 'github', 'data', 'latin', 'LDT-manual-comparison')
+    ) {
+        my ($f) = $dir->children(qr/^\Q$u.umr\E$|\Q$u\E-conv\.umr/);
+        next unless $f;
 
-    my @files = glob "$dir/$u-*-all.umr $dir/$u-??.umr";
-    for my $f (@files) {
-        next unless -f $f;
+        my $subcorpus = $f =~ /latin/ ? 's' : substr path($f)->basename, 0, 1;
 
-        open my $pipe, '-|',
-            qw{ btred -QTe writeln(scalar($this->descendants)) },
-            $f or die $!;
+        my $size = size($u);
+        open my $pipe,
+            '-|', qw{ btred -QTe writeln(scalar($this->descendants)) }, $f
+            or die $!;
         chomp( my @out = <$pipe> );
-        $XML::XSH2::Map::count{ substr path($f)->basename, 0, 1 }{um}
+        $XML::XSH2::Map::count{$subcorpus}{uc}
             += sum(@out[0 .. (@out > $size ? $size - 1 : $#out)]);
+        my @files = glob "$dir/$u-*-all.umr";
+        @files = glob "$dir/$u-??.umr" unless @files;
+        @files = "$dir/FIXED_TOKENS_latin_umr-0001.txt" unless @files;
+        for my $f (@files) {
+            next unless -f $f;
 
+            open my $pipe, '-|',
+                qw{ btred -QTe writeln(scalar($this->descendants)) },
+                $f or die $!;
+            chomp( my @out = <$pipe> );
+            $XML::XSH2::Map::count{$subcorpus}{um}
+                += sum(@out[0 .. (@out > $size ? $size - 1 : $#out)]);
+        }
     }
 }
 
@@ -98,7 +113,8 @@ my $tt = 'Text::Table'->new('corpus', 'sentences', 'tokens', 'nodes',
 
 for my $col (@COLS) {
     $XML::XSH2::Map::count{total}{$col}
-        = sum(map $XML::XSH2::Map::count{ $ROW{$_} }{$col} // 0, keys %ROW);
+        = sum(map $XML::XSH2::Map::count{ $ROW{$_} }{$col} // 0,
+              grep 'LDT' ne $_, keys %ROW);
 }
 
 for my $row (qw( PDT PDTSC PCEDT total LDT )) {
