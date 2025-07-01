@@ -17,7 +17,7 @@ cat ./wsj0013.cz-conv.umr ./wsj0072.cz-conv.umr > ./pcedt-conv.umr
 cat ./pdt-conv.umr ./pdtsc-conv.umr ./pcedt-conv.umr > ./dtest-conv.umr
 #------------------------------------------------------------------------------
 # Conversions to AMR can be used to compute smatch.
-extract_sentence_graphs.pl < ./pdt-conv.umr > ./pdt-conv.amr
-extract_sentence_graphs.pl < ./pdtsc-conv.umr > ./pdtsc-conv.amr
-extract_sentence_graphs.pl < ./pcedt-conv.umr > ./pcedt-conv.amr
-extract_sentence_graphs.pl < ./dtest-conv.umr > ./dtest-conv.amr
+../../../tools/extract_sentence_graphs.pl ./pdt-conv.umr > ./pdt-conv.amr
+../../../tools/extract_sentence_graphs.pl ./pdtsc-conv.umr > ./pdtsc-conv.amr
+../../../tools/extract_sentence_graphs.pl ./pcedt-conv.umr > ./pcedt-conv.amr
+../../../tools/extract_sentence_graphs.pl ./dtest-conv.umr > ./dtest-conv.amr
