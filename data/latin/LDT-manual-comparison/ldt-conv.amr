@@ -1,0 +1,1652 @@
+# sentence level graph:
+(s1n1 / nitor-06
+        :ARG0 (s1h1 / homo
+            :mod (s1o1 / omnis)
+            :ARG0-of (s1s1 / studeo-NEW-07
+                :ARG1 (s1p1 / praesto2-06
+                    :ARG0 s1h1
+                    :ARG1 (s1a1 / animal
+                        :mod (s1c1 / ceterus)
+                        :refer-number plural)
+                    :aspect activity)
+                :aspect activity)
+            :refer-number plural)
+        :manner (s1o2 / ops
+            :mod (s1s2 / superus)
+            :refer-number singular)
+        :ARG1 (s1t1 / transeo-15
+            :ARG0 s1h1
+            :ARG1 (s1v1 / vita
+                :refer-number singular)
+            :ARG2 (s1s3 / silentium
+                :refer-number singular)
+            :comparison (s1p2 / pecus
+                :ARG1-of (s1f1 / fingo-02
+                    :ARG0 (s1n2 / natura
+                        :refer-number singular)
+                    :effect (s1a2 / and
+                        :op1 (s1p3 / pronus)
+                        :op2 (s1o3 / oboedio-NEW-01
+                            :ARG0 s1p2
+                            :ARG1 (s1v2 / venter
+                                :refer-number singular)
+                            :aspect activity))
+                    :aspect performance)
+                :refer-number plural)
+            :aspect activity)
+        :aspect activity)
+
+# sentence level graph:
+(s2b1 / but-91
+        :ARG1 (s2s1 / sino
+            :ARG1 (s2v1 / vis
+                :possessor (s2p1 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :mod (s2o1 / omnis)
+                :refer-number singular)
+            :ARG0 (s2e1 / entity)
+            :place (s2a1 / and
+                :op1 (s2a2 / animus
+                    :refer-number singular)
+                :op2 (s2c1 / corpus
+                    :refer-number singular))
+            :aspect performance))
+
+# sentence level graph:
+(s3u1 / utor-11
+        :ARG1 (s3a1 / and
+            :op1 (s3i1 / imperium
+                :mod (s3a2 / animus)
+                :refer-number singular)
+            :op2 (s3s1 / servitium
+                :mod (s3c1 / corpus)
+                :refer-number singular))
+        :ARG0 (s3p1 / person
+            :refer-number plural
+            :refer-person 1st)
+        :extent (s3m1 / magis)
+        :aspect activity)
+
+# sentence level graph:
+(s4a1 / and
+        :op1 (s4h1 / have-mod-91
+            :affectee (s4n1 / nos
+                :refer-number plural
+                :refer-person 1st)
+            :ARG1 (s4a2 / alter
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG2 (s4c1 / communis-13
+                :ARG1 (s4d1 / deus
+                    :refer-number plural))
+            :aspect activity)
+        :op2 (s4h2 / have-mod-91
+            :affectee s4n1
+            :ARG1 (s4a3 / alter
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG2 (s4c2 / communis-13
+                :ARG1 (s4b1 / belua
+                    :refer-number plural))
+            :aspect activity))
+
+# sentence level graph:
+(s5u1 / uideo-10
+        :cause (s5q1 / quo)
+        :ARG0 (s5p1 / person
+            :refer-number singular
+            :refer-person 1st)
+        :ARG2 (s5r1 / rectus
+            :comparison (s5u2 / uideo-10
+                :ARG0 (s5p2 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :ARG2 (s5r2 / rectus)
+                :ARG1 (s5q2 / quaero-15
+                    :ARG0 (s5e1 / entity)
+                    :ARG1 (s5g1 / gloria
+                        :refer-number singular)
+                    :instrument (s5o1 / ops
+                        :mod (s5v1 / vis)
+                        :refer-number plural)
+                    :aspect activity)
+                :aspect state))
+        :ARG1 (s5a1 / and
+            :op1 (s5q3 / quaero-15
+                :ARG0 (s5e2 / entity)
+                :instrument (s5o2 / ops
+                    :mod (s5i1 / ingenium)
+                    :refer-number plural)
+                :ARG1 (s5g2 / gloria
+                    :refer-number singular)
+                :aspect activity)
+            :op2 (s5e3 / efficio-02
+                :ARG0 s5e2
+                :cause (s5h1 / have-mod-91
+                    :ARG1 (s5v2 / vita
+                        :mod (s5i2 / ipse)
+                        :ARG1-of (s5f1 / fruor-04
+                            :ARG0 (s5p3 / person
+                                :refer-number plural
+                                :refer-person 1st)
+                            :aspect activity)
+                        :refer-number singular)
+                    :ARG2 (s5b1 / brevis)
+                    :aspect activity)
+                :ARG1 (s5m1 / memoria-06
+                    :ARG0 (s5e4 / entity)
+                    :ARG1 (s5n1 / nos
+                        :refer-number plural
+                        :refer-person 1st)
+                    :refer-number singular)
+                :ARG2 (s5l1 / longus
+                    :extent (s5m2 / magnus))
+                :aspect activity))
+        :aspect state)
+
+# sentence level graph:
+(s6a1 / and
+        :op1 (s6h1 / have-mod-91
+            :clausal-marker (s6n1 / nam)
+            :ARG1 (s6g1 / gloria
+                :mod (s6a2 / and
+                    :op1 (s6d1 / divitiae)
+                    :op2 (s6f1 / forma))
+                :refer-number singular)
+            :ARG1 (s6a3 / and
+                :op1 (s6f2 / fluo-17
+                    :ARG0 (s6e1 / entity)
+                    :ARG1 s6g1
+                    :aspect performance)
+                :op2 (s6f3 / fragilis))
+            :aspect activity)
+        :op2 (s6h2 / habeo-07
+            :clausal-marker s6n1
+            :ARG1 (s6v1 / virtus
+                :refer-number singular)
+            :ARG0 (s6e2 / entity)
+            :effect (s6a4 / and
+                :op1 (s6c1 / clarus)
+                :op2 (s6a5 / aeternus))
+            :aspect state))
+
+# sentence level graph:
+(s7b1 / but-91
+        :ARG1 (s7s1 / sum
+            :duration (s7d1 / diu)
+            :ARG0 (s7c1 / certo-01
+                :mod (s7m1 / magnus)
+                :ARG0 (s7m2 / mortalis)
+                :ARG1 (s7p1 / procedo-21
+                    :instrument (s7o1 / or
+                        :op1 (s7v1 / vis
+                            :mod (s7c2 / corpus)
+                            :refer-number singular)
+                        :op2 (s7v2 / virtus
+                            :mod (s7a1 / animus)
+                            :refer-number singular))
+                    :ARG1 (s7e1 / entity)
+                    :ARG1 (s7e2 / entity)
+                    :ARG0 (s7r1 / res
+                        :mod (s7m3 / militaris)
+                        :refer-number singular)
+                    :extent (s7m4 / magis)
+                    :aspect activity)
+                :refer-number singular)
+            :aspect performance))
+
+# sentence level graph:
+(s8a1 / and
+        :op1 (s8o1 / opus
+            :clausal-marker (s8n1 / nam)
+            :ARG0 (s8e1 / entity)
+            :temporal (s8i1 / incipio-06
+                :clausal-marker (s8e2 / et)
+                :ARG0 (s8p1 / person
+                    :refer-number singular
+                    :refer-person 2nd)
+                :ARG1 (s8e3 / entity)
+                :aspect activity)
+            :ARG1 (s8c1 / consulo-04
+                :ARG0 (s8p2 / person
+                    :refer-number singular
+                    :refer-person 2nd)
+                :ARG1 (s8e4 / entity)
+                :aspect performance))
+        :op2 (s8o2 / opus
+            :clausal-marker s8n1
+            :ARG0 s8e1
+            :temporal (s8c2 / consulo-04
+                :ARG0 (s8p3 / person
+                    :refer-number singular
+                    :refer-person 2nd)
+                :ARG1 (s8e5 / entity)
+                :aspect performance)
+            :ARG1 (s8f1 / facio-23
+                :ARG0 (s8p4 / person
+                    :refer-number singular
+                    :refer-person 2nd)
+                :ARG1 (s8e6 / entity)
+                :manner (s8m1 / maturus)
+                :aspect performance)))
+
+# sentence level graph:
+(s9a1 / and
+        :op1 (s9e1 / egeo-01
+            :clausal-marker (s9i1 / ita)
+            :ARG0 (s9u1 / uter
+                :mod (s9i2 / indigeo-03
+                    :ARG0 s9u1
+                    :instrument s9u1
+                    :ARG1 (s9a2 / alter
+                        :refer-number plural
+                        :refer-person 3rd)
+                    :aspect activity)
+                :refer-number plural
+                :refer-person 3rd)
+            :ARG1 (s9a3 / auxilium-04
+                :ARG1 s9a4
+                :ARG0 (s9a4 / alter
+                    :refer-number plural
+                    :refer-person 3rd)
+                :refer-number singular)
+            :aspect activity))
+
+# sentence level graph:
+(s10a1 / and
+        :op1 (s10e1 / exerceo-13
+            :ARG0 (s10r1 / rex
+                :mod (s10d1 / diuerto-NEW-01
+                    :ARG1 (s10e2 / entity))
+                :refer-number plural)
+            :clausal-marker (s10i1 / igitur)
+            :temporal (s10i2 / initium
+                :refer-number singular)
+            :parenthesis (s10i3 / identity-91
+                :clausal-marker (s10n1 / nam)
+                :place (s10t1 / terra
+                    :refer-number plural)
+                :ARG1 (s10e3 / entity
+                    :refer-number singular
+                    :refer-person 3rd)
+                :ARG2 (s10n2 / nomen
+                    :possessor (s10i4 / imperium
+                        :refer-number singular)
+                    :mod (s10u1 / unus)
+                    :refer-number singular)
+                :aspect performance)
+            :ARG0 (s10p1 / pars
+                :refer-number singular)
+            :ARG1 (s10i5 / ingenium
+                :refer-number singular)
+            :aspect activity)
+        :op2 (s10e4 / exerceo-29
+            :ARG0 s10r1
+            :clausal-marker s10i1
+            :temporal s10i2
+            :parenthesis s10i3
+            :ARG0 (s10a2 / alius
+                :refer-number plural
+                :refer-person 3rd)
+            :ARG1 (s10c1 / corpus
+                :refer-number singular)
+            :aspect activity))
+
+# sentence level graph:
+(s11a1 / agito-NEW-15
+        :clausal-marker (s11e1 / etiam)
+        :temporal (s11t1 / tum)
+        :ARG0 (s11e2 / entity)
+        :ARG1 (s11v1 / vita
+            :possessor (s11h1 / homo
+                :refer-number plural)
+            :refer-number singular)
+        :instrument (s11c1 / cupiditas-01
+            :ARG0 (s11e3 / entity)
+            :ARG1 (s11e4 / entity)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s12p1 / placeo-04
+        :ARG1 s12q1
+        :ARG0 (s12q1 / qui
+            :refer-number singular
+            :refer-person 3rd)
+        :extent (s12s1 / satis)
+        :aspect activity)
+
+# sentence level graph:
+(s13c1 / comperio-05
+        :temporal (s13c2 / coepio-01
+            :ARG0 (s13a1 / and
+                :op1 (s13c3 / cyrus
+                    :place (s13a2 / asia
+                        :refer-number singular)
+                    :ARG0 (s13a3 / and
+                        :op1 (s13l1 / lacedaemonius
+                            :place (s13g1 / graecia
+                                :refer-number singular)
+                            :refer-number plural)
+                        :op2 (s13a4 / atheniensis
+                            :place s13g1
+                            :refer-number plural))
+                    :refer-number singular))
+            :ARG1 (s13a5 / and
+                :ARG0 s13c3
+                :ARG0 s13l1
+                :op1 (s13s1 / subigo-12
+                    :ARG0 s13a4
+                    :ARG1 (s13a6 / and
+                        :op1 (s13u1 / urbs
+                            :refer-number plural)
+                        :op2 (s13n1 / natio
+                            :refer-number plural))
+                    :aspect activity)
+                :op2 (s13h1 / habeo-NEW-28
+                    :ARG0 s13a4
+                    :ARG1 (s13l2 / libido-03
+                        :ARG0 (s13e1 / entity)
+                        :ARG1 (s13d1 / dominor-01
+                            :ARG0 (s13e2 / entity)
+                            :ARG1 (s13e3 / entity)
+                            :aspect activity)
+                        :refer-number singular)
+                    :ARG2 (s13c4 / causa-NEW-21
+                        :ARG1 (s13b1 / bellum
+                            :refer-number singular)
+                        :refer-number singular)
+                    :aspect state)
+                :op3 (s13p1 / puto-09
+                    :ARG0 s13a4
+                    :ARG1 (s13e4 / event
+                        :ARG0 (s13g2 / gloria
+                            :mod (s13m1 / magnus)
+                            :refer-number singular)
+                        :place (s13i1 / imperium
+                            :mod (s13m2 / magnus)
+                            :refer-number singular)
+                        :aspect state)
+                    :aspect state))
+            :aspect performance)
+        :clausal-marker (s13v1 / verus)
+        :temporal (s13t1 / tum)
+        :ARG0 (s13e5 / entity)
+        :clausal-marker (s13d2 / demum)
+        :cause (s13a7 / and
+            :op1 (s13p2 / periculum
+                :refer-number singular)
+            :op2 (s13n2 / negotium
+                :refer-number plural))
+        :ARG1 (s13p3 / possum-NEW-01
+            :place (s13b2 / bellum
+                :refer-number singular)
+            :ARG1 (s13e6 / entity)
+            :extent (s13m3 / multus)
+            :ARG0 (s13i2 / ingenium
+                :refer-number singular)
+            :aspect state)
+        :aspect performance)
+
+# sentence level graph:
+(s14a1 / and
+        :op1 (s14h1 / habeo-17
+            :condition (s14u1 / ualeo-07
+                :ARG0 (s14v1 / virtus
+                    :mod (s14a2 / animus
+                        :possessor (s14a3 / and
+                            :op1 (s14r1 / rex
+                                :refer-number plural)
+                            :op2 (s14i1 / imperator
+                                :refer-number plural)))
+                    :refer-number singular)
+                :place (s14p1 / pax
+                    :refer-number singular)
+                :comparison (s14u2 / ualeo-07
+                    :mod (s14b1 / bellum)
+                    :ARG0 (s14v2 / virtus
+                        :refer-number singular)
+                    :aspect state)
+                :aspect state)
+            :ARG1 s14r2
+            :manner (s14a4 / and
+                :op1 (s14a5 / aequabilis)
+                :op2 (s14c1 / constanter))
+            :ARG0 (s14r2 / res
+                :mod (s14h2 / humanus)
+                :refer-number plural)
+            :aspect state)
+        :op2 (s14c2 / cerno-11
+            :ARG0 (s14p2 / person
+                :refer-number singular
+                :refer-person 2nd
+                :polarity -)
+            :ARG1 (s14a6 / and
+                :op1 (s14f1 / fero-30
+                    :ARG1 (s14a7 / alius
+                        :refer-number singular
+                        :refer-person 3rd)
+                    :ARG0 (s14a8 / alius
+                        :refer-number singular
+                        :refer-person 3rd)
+                    :ARG1 (s14a9 / and
+                        :op1 (s14m1 / muto-04
+                            :ARG0 (s14e1 / entity)
+                            :ARG1 (s14o1 / omnis
+                                :refer-number plural
+                                :refer-person 3rd)
+                            :aspect activity
+                            :polarity -)
+                        :op2 (s14m2 / misceo-07
+                            :ARG0 s14e1
+                            :ARG1 s14o1
+                            :aspect activity))
+                    :aspect activity))
+            :aspect activity))
+
+# sentence level graph:
+(s15r1 / retineo-05
+        :clausal-marker (s15n1 / nam)
+        :ARG0 (s15e1 / entity)
+        :ARG1 (s15i1 / imperium
+            :refer-number singular)
+        :manner (s15f1 / facilis)
+        :instrument (s15a1 / ars
+            :mod (s15i2 / is)
+            :instrument-of (s15p1 / pario2-08
+                :ARG0 (s15e2 / entity)
+                :ARG1 s15i1
+                :temporal (s15i3 / initium
+                    :refer-number singular)
+                :aspect performance)
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s16i1 / immuto-NEW-01
+        :temporal (s16a1 / and
+            :op1 (s16i2 / inuado2-NEW-06
+                :ARG1 (s16e1 / entity)
+                :substitute (s16l1 / labor
+                    :refer-number singular)
+                :ARG0 (s16d1 / desidia
+                    :refer-number singular)
+                :aspect performance)
+            :op2 (s16i3 / inuado2-NEW-06
+                :ARG1 s16e1
+                :substitute (s16a2 / and
+                    :op1 (s16c1 / continentia-02
+                        :ARG0 (s16e2 / entity)
+                        :ARG1 (s16e3 / entity)
+                        :refer-number singular)
+                    :op2 (s16a3 / aequitas
+                        :refer-number singular))
+                :ARG0 (s16a4 / and
+                    :op1 (s16l2 / libido-NEW-08
+                        :ARG0 (s16e4 / entity)
+                        :ARG1 (s16e5 / entity)
+                        :refer-number singular)
+                    :op2 (s16s1 / superbia
+                        :refer-number singular))
+                :aspect performance))
+        :clausal-marker (s16v1 / verus)
+        :ARG0 (s16e6 / entity)
+        :temporal (s16s2 / simul)
+        :ARG1 (s16f1 / fortuna
+            :refer-number singular)
+        :companion (s16m1 / mos
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s17t1 / transfero-15
+        :ARG1 (s17i1 / imperium
+            :refer-number singular)
+        :clausal-marker (s17i2 / ita)
+        :temporal (s17s1 / semper)
+        :ARG0 (s17e1 / entity)
+        :ARG3 (s17q1 / quis
+            :mod (s17b1 / bonus)
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG2 (s17q2 / quis
+            :ARG1 (s17b2 / bonus
+                :extent (s17p1 / parvus))
+            :refer-number singular
+            :refer-person 3rd)
+        :aspect activity)
+
+# sentence level graph:
+(s18p1 / pareo-07
+        :ARG0 (s18o1 / omnis
+            :ARG1-of (s18a1 / and
+                :op1 (s18a2 / aro-03
+                    :ARG0 (s18h1 / homo
+                        :refer-number plural)
+                    :aspect activity)
+                :op2 (s18n1 / nauigo-03
+                    :ARG0 s18h1
+                    :aspect activity)
+                :op3 (s18a3 / aedifico-03
+                    :ARG0 s18h1
+                    :aspect activity))
+            :refer-number plural
+            :refer-person 3rd)
+        :ARG1 (s18v1 / virtus
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s19b1 / but-91
+        :ARG1 (s19t1 / transeo-15
+            :ARG0 (s19m1 / mortalis
+                :mod (s19m2 / multus)
+                :mod (s19a1 / and
+                    :op1 (s19d1 / dedo-02
+                        :ARG0 (s19e1 / entity)
+                        :ARG1 s19m1
+                        :ARG2 (s19a2 / and
+                            :op1 (s19v1 / venter
+                                :refer-number singular)
+                            :op2 (s19s1 / somnus
+                                :refer-number singular))
+                        :aspect performance)
+                    :op2 (s19i1 / indoceo
+                        :ARG0 (s19e2 / entity)
+                        :ARG1 s19m1
+                        :aspect performance)
+                    :op3 (s19i2 / incultus
+                        :polarity -))
+                :refer-number plural)
+            :manner (s19p1 / peregrinor-01
+                :mod-of s19m1
+                :ARG0 s19m1
+                :aspect activity)
+            :ARG1 (s19v2 / vita
+                :refer-number singular)
+            :aspect performance))
+
+# sentence level graph:
+(s20a1 / and
+        :op1 (s20i1 / identity-91
+            :affectee (s20e1 / entity
+                :refer-number plural
+                :refer-person 3rd)
+            :clausal-marker (s20p1 / profecto)
+            :ARG1 (s20c1 / corpus
+                :refer-number singular)
+            :ARG2 (s20v1 / voluptas
+                :refer-number singular)
+            :manner (s20n1 / natura
+                :refer-number singular)
+            :aspect performance)
+        :op2 (s20i2 / identity-91
+            :affectee s20e1
+            :clausal-marker s20p1
+            :manner s20n1
+            :ARG1 (s20a2 / anima
+                :refer-number singular)
+            :ARG2 (s20o1 / onus
+                :refer-number singular)
+            :aspect performance))
+
+# sentence level graph:
+(s21a1 / aestimo-04
+        :ARG0 (s21p1 / person
+            :refer-number singular
+            :refer-person 1st)
+        :ARG1 (s21a2 / and
+            :op1 (s21v1 / vita
+                :possessor (s21e1 / entity
+                    :refer-number plural
+                    :refer-person 3rd)
+                :refer-number singular)
+            :op2 (s21m1 / mors
+                :possessor s21e1
+                :refer-number singular))
+        :clausal-marker (s21j1 / juxta)
+        :cause (s21s1 / sileo-NEW-05
+            :ARG0 (s21e2 / entity)
+            :ARG1 (s21e3 / entity)
+            :ARG1 (s21e4 / entity
+                :refer-number plural
+                :refer-person 3rd)
+            :aspect activity)
+        :aspect activity)
+
+# sentence level graph:
+(s22u1 / uideo-10
+        :ARG1 (s22i1 / is
+            :ARG0-of (s22q1 / quaero-15
+                :manner (s22i2 / intendo-06
+                    :ARG0 (s22e1 / entity)
+                    :ARG1 s22i1
+                    :purpose (s22n1 / negotium
+                        :mod (s22q2 / qui)
+                        :refer-number singular)
+                    :aspect performance)
+                :ARG1 (s22f1 / fama
+                    :mod (s22o1 / or
+                        :op1 (s22f2 / facinus
+                            :mod (s22p1 / praeclarus))
+                        :op2 (s22a1 / ars
+                            :mod (s22b1 / bonus)))
+                    :refer-number singular)
+                :aspect activity)
+            :refer-number singular)
+        :clausal-marker (s22v1 / verus)
+        :clausal-marker (s22e2 / enim)
+        :clausal-marker (s22v2 / verus)
+        :clausal-marker (s22d1 / demum)
+        :ARG0 (s22p2 / person
+            :refer-number singular
+            :refer-person 1st)
+        :effect (s22a2 / and
+            :op1 (s22u2 / uiuo-NEW-02
+                :ARG0 s22i1
+                :aspect activity)
+            :op2 (s22f3 / fruor-04
+                :ARG0 s22i1
+                :ARG1 (s22a3 / anima
+                    :refer-number singular)
+                :aspect activity))
+        :aspect state)
+
+# sentence level graph:
+(s23b1 / but-91
+        :ARG1 (s23o1 / ostendo-07
+            :place (s23c1 / copia
+                :mod (s23m1 / magnus)
+                :mod (s23r1 / res
+                    :refer-number plural)
+                :refer-number singular)
+            :ARG2 (s23a1 / alius
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG0 (s23n1 / natura
+                :refer-number singular)
+            :ARG1 (s23i1 / iter
+                :mod (s23a2 / alius)
+                :refer-number singular)
+            :aspect activity))
+
+# sentence level graph:
+(s24a1 / and
+        :op1 (s24h1 / have-mod-91
+            :ARG2 (s24p1 / pulcher)
+            :ARG1 (s24f1 / facio-01
+                :ARG0 (s24e1 / entity)
+                :ARG1 (s24b1 / bene)
+                :affectee (s24r1 / res
+                    :mod (s24p2 / publicus)
+                    :refer-number singular)
+                :aspect activity)
+            :aspect activity)
+        :op2 (s24h2 / have-mod-91
+            :ARG1 (s24d1 / dico2-12
+                :ARG0 (s24e2 / entity)
+                :ARG1 (s24e3 / entity)
+                :manner (s24b2 / bene)
+                :aspect activity)
+            :clausal-marker (s24e4 / etiam)
+            :ARG2 (s24a2 / absurdus
+                :polarity -)
+            :aspect activity))
+
+# sentence level graph:
+(s25f1 / fio-01
+        :ARG0 (s25e1 / entity)
+        :ARG1 (s25e2 / entity)
+        :cause (s25o1 / or
+            :op1 (s25p1 / pax
+                :refer-number singular)
+            :op2 (s25b1 / bellum
+                :refer-number singular))
+        :effect (s25c1 / clarus)
+        :aspect activity)
+
+# sentence level graph:
+(s26l1 / laudo-08
+        :ARG0 (s26e1 / entity)
+        :ARG1 (s26m1 / multus
+            :mod (s26a1 / and
+                :op1 (s26f1 / facio-23
+                    :ARG0 s26m1
+                    :ARG1 (s26e2 / entity)
+                    :aspect performance)
+                :op2 (s26s1 / scribo-14
+                    :ARG0 s26m1
+                    :ARG1 (s26f2 / facio-23
+                        :ARG1 (s26e3 / entity)
+                        :ARG0 (s26a2 / alius
+                            :refer-number plural
+                            :refer-person 3rd)
+                        :aspect performance)
+                    :aspect performance))
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s27a1 / and
+        :op1 (s27u1 / uideo-10
+            :concession (s27s1 / sequor-22
+                :ARG0 (s27g1 / gloria
+                    :mod (s27p1 / par
+                        :ARG1 (s27e1 / entity))
+                    :refer-number singular)
+                :manner (s27h1 / haudquaquam
+                    :polarity -)
+                :ARG1 (s27a2 / and
+                    :op1 (s27s2 / scriptor-03
+                        :ARG1 (s27r1 / res
+                            :refer-number plural)
+                        :refer-number singular)
+                    :op2 (s27a3 / auctor-20
+                        :ARG1 s27r1
+                        :refer-number singular))
+                :aspect activity)
+            :clausal-marker (s27t1 / tamen)
+            :clausal-marker (s27q1 / quidem)
+            :ARG0 (s27p2 / person
+                :refer-number singular
+                :refer-person 1st)
+            :clausal-marker (s27u2 / unus)
+            :ARG2 (s27a4 / arduus)
+            :ARG1 (s27s3 / scribo-14
+                :ARG0 (s27e2 / entity)
+                :ARG1 (s27r2 / res
+                    :mod (s27g2 / gero-15
+                        :ARG0 (s27e3 / entity)
+                        :ARG1 s27r2
+                        :aspect performance)
+                    :refer-number plural)
+                :aspect activity)
+            :aspect state))
+
+# sentence level graph:
+(s28e1 / exaequo-01
+        :clausal-marker (s28u1 / unus)
+        :ARG1 (s28f1 / facio-23
+            :ARG0 (s28e2 / entity)
+            :ARG1 (s28e3 / entity)
+            :aspect performance)
+        :ARG0 (s28d1 / dico2-12
+            :ARG0 (s28e4 / entity)
+            :ARG1 (s28e5 / entity)
+            :aspect performance)
+        :aspect activity)
+
+# sentence level graph:
+(s29a1 / and
+        :op1 (s29p1 / puto-09
+            :clausal-marker (s29d1 / dehinc)
+            :ARG0 (s29p2 / plerus
+                :refer-number plural
+                :refer-person 3rd)
+            :ARG1 (s29d2 / delictum
+                :mod (s29q1 / quis)
+                :mod (s29r1 / reprehendo-05
+                    :ARG0 (s29p3 / person
+                        :refer-number singular
+                        :refer-person 2nd)
+                    :ARG1 s29d2
+                    :aspect performance)
+                :refer-number plural)
+            :effect (s29d3 / dico
+                :ARG0 (s29e1 / entity)
+                :ARG1 s29d2
+                :manner (s29a2 / and
+                    :op1 (s29m1 / malevolentia
+                        :refer-number singular)
+                    :op2 (s29i1 / invidia
+                        :refer-number singular))
+                :aspect performance)
+            :PRED (s29a3 / and
+                :op1 (s29a4 / accipio-08
+                    :temporal (s29m2 / memoro-03
+                        :ARG0 (s29p4 / person
+                            :refer-number singular
+                            :refer-person 2nd)
+                        :ARG1 (s29e2 / entity)
+                        :regard (s29a5 / and
+                            :op1 (s29v1 / virtus
+                                :mod (s29m3 / magnus)
+                                :possessor (s29b1 / bonus
+                                    :refer-number plural)
+                                :refer-number singular)
+                            :op2 (s29g1 / gloria
+                                :mod s29m3
+                                :possessor s29b1
+                                :refer-number singular))
+                        :aspect activity)
+                    :ARG0 s29q2
+                    :ARG1 (s29e3 / entity
+                        :ARG1 (s29p5 / puto-09
+                            :ARG1 s29e3
+                            :affectee s29q2
+                            :ARG0 (s29q2 / quis
+                                :refer-number singular
+                                :refer-person 3rd)
+                            :effect (s29f1 / facilis
+                                :regard (s29f2 / facio-23
+                                    :ARG0 (s29e4 / entity)
+                                    :ARG1 (s29e5 / entity)
+                                    :aspect state))
+                            :aspect state)
+                        :refer-number singular
+                        :refer-person 3rd)
+                    :manner (s29a6 / animus
+                        :mod (s29a7 / aequus)
+                        :refer-number singular)
+                    :aspect activity)
+                :op2 (s29d4 / duco-09
+                    :temporal s29m2
+                    :ARG0 s29q2
+                    :ARG1 (s29e6 / entity
+                        :place (s29i2 / is
+                            :refer-number plural
+                            :refer-person 3rd))
+                    :ARG2 (s29f3 / fingo-12
+                        :ARG0 (s29e7 / entity)
+                        :ARG1 (s29e8 / entity)
+                        :aspect performance)
+                    :substitute (s29f4 / falsus)
+                    :aspect activity))
+            :aspect state))
+
+# sentence level graph:
+(s30b1 / but-91
+        :ARG1 (s30a1 / and
+            :op1 (s30f1 / fero-40
+                :ARG1 (s30p1 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :temporal (s30a2 / adulescentulus
+                    :refer-number singular)
+                :temporal (s30i1 / initium
+                    :refer-number singular)
+                :ARG0 (s30e1 / entity)
+                :comparison (s30p2 / plerus
+                    :refer-number plural
+                    :refer-person 3rd)
+                :cause (s30s1 / studium-04
+                    :ARG0 (s30e2 / entity)
+                    :ARG1 (s30e3 / entity)
+                    :refer-number singular)
+                :ARG2 (s30r1 / res
+                    :mod (s30p3 / publicus)
+                    :refer-number singular)
+                :PRED (s30h1 / have-mod-91
+                    :place (s30i2 / ibi)
+                    :affectee (s30p4 / person
+                        :refer-number singular
+                        :refer-person 1st)
+                    :ARG1 (s30m1 / multus
+                        :refer-number plural)
+                    :ARG2 (s30a3 / adverto
+                        :ARG0 (s30e4 / entity)
+                        :ARG1 s30m1
+                        :aspect performance)
+                    :aspect performance)
+                :aspect performance)))
+
+# sentence level graph:
+(s31u1 / uigeo-NEW-03
+        :substitute (s31a1 / and
+            :op1 (s31p1 / pudor
+                :clausal-marker (s31n1 / nam)
+                :refer-number singular)
+            :op2 (s31a2 / abstinentia
+                :clausal-marker s31n1
+                :refer-number singular)
+            :op3 (s31v1 / virtus
+                :clausal-marker s31n1
+                :refer-number singular))
+        :ARG0 (s31a3 / and
+            :op1 (s31a4 / audacia
+                :refer-number singular)
+            :op2 (s31l1 / largitio
+                :refer-number singular)
+            :op3 (s31a5 / avaritia
+                :refer-number singular))
+        :aspect activity)
+
+# sentence level graph:
+(s32t1 / teneo-31
+        :concession (s32a1 / aspernor-05
+            :ARG1 (s32e1 / entity
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG0 (s32a2 / animus
+                :mod (s32i1 / insolens-NEW-01
+                    :ARG0 s32a2
+                    :ARG1 (s32a3 / ars
+                        :mod (s32m1 / malus)
+                        :refer-number plural)
+                    :aspect activity)
+                :refer-number singular)
+            :aspect activity)
+        :clausal-marker (s32t2 / tamen)
+        :ARG0 (s32e2 / entity)
+        :place (s32v1 / vitium
+            :mod (s32t3 / tantus)
+            :refer-number plural)
+        :ARG1 (s32a4 / aetas
+            :mod (s32i2 / imbecillus)
+            :refer-number singular)
+        :ARG2 (s32c1 / corrumpo-15
+            :ARG1 s32a4
+            :ARG0 (s32a5 / ambitio
+                :refer-number singular)
+            :aspect performance)
+        :aspect activity)
+
+# sentence level graph:
+(s33a1 / and
+        :op1 (s33u1 / uexo-10
+            :ARG1 (s33p1 / person
+                :refer-number singular
+                :refer-person 1st)
+            :cause (s33d1 / dissentio-01
+                :ARG0 (s33p2 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :ARG1 (s33m1 / mos
+                    :mod (s33m2 / malus)
+                    :mod (s33r1 / reliquus)
+                    :refer-number plural)
+                :aspect activity)
+            :manner (s33n1 / nihilum
+                :extent (s33p3 / parvus))
+            :ARG0 (s33c1 / cupido-NEW-07
+                :ARG0 (s33e1 / entity)
+                :ARG1 (s33h1 / honor
+                    :refer-number singular)
+                :mod (s33i1 / idem
+                    :comparison (s33u2 / uexo-10
+                        :ARG0 (s33c2 / cupido-NEW-07
+                            :ARG0 (s33e2 / entity)
+                            :ARG1 (s33h2 / honor
+                                :refer-number singular)
+                            :refer-number singular)
+                        :ARG1 (s33c3 / ceterus
+                            :refer-number plural
+                            :refer-person 3rd)
+                        :aspect activity))
+                :refer-number singular)
+            :instrument (s33a2 / and
+                :op1 (s33f1 / fama
+                    :refer-number singular)
+                :op2 (s33i2 / invidia
+                    :refer-number singular))
+            :aspect activity))
+
+# sentence level graph:
+(s34i1 / identity-91
+        :temporal (s34a1 / and
+            :op1 (s34r1 / requiesco-01
+                :ARG0 (s34a2 / animus
+                    :refer-number singular)
+                :source (s34a3 / and
+                    :op1 (s34m1 / miseria
+                        :mod (s34m2 / multus)
+                        :refer-number plural)
+                    :op2 (s34p1 / periculum
+                        :mod s34m2
+                        :refer-number plural))
+                :aspect performance)
+            :op2 (s34d1 / decerno-09
+                :ARG0 (s34p2 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :ARG1 (s34h1 / habeo-NEW-28
+                    :ARG0 (s34p3 / person
+                        :refer-number singular
+                        :refer-person 1st)
+                    :ARG1 (s34a4 / aetas
+                        :mod (s34r2 / reliquus
+                            :affectee (s34p4 / person
+                                :refer-number singular
+                                :refer-person 1st))
+                        :refer-number singular)
+                    :place (s34r3 / res
+                        :mod (s34p5 / publicus)
+                        :refer-number singular)
+                    :place (s34p6 / procul)
+                    :aspect state)
+                :aspect performance))
+        :clausal-marker (s34i2 / igitur)
+        :ARG2 (s34d2 / decido-02
+            :ARG0 (s34e1 / entity)
+            :ARG1 (s34e2 / entity)
+            :refer-number singular)
+        :ARG0 (s34a5 / and
+            :op1 (s34c1 / contero-06
+                :ARG0 (s34p7 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :cause (s34a6 / and
+                    :op1 (s34s1 / socordia
+                        :refer-number singular)
+                    :op2 (s34d3 / desidia
+                        :refer-number singular))
+                :ARG1 (s34o1 / otium
+                    :mod (s34b1 / bonus)
+                    :refer-number singular)
+                :aspect activity)
+            :op2 (s34a7 / ago-26
+                :ARG0 s34p7
+                :clausal-marker (s34v1 / verus)
+                :manner (s34i3 / intendo-06
+                    :mod-of s34p7
+                    :ARG0 (s34e3 / entity)
+                    :ARG1 (s34p8 / person
+                        :refer-number singular
+                        :refer-person 1st)
+                    :purpose (s34i4 / identity-91
+                        :ARG1 (s34o2 / or
+                            :op1 (s34c2 / colo2-06
+                                :ARG0 (s34p9 / person
+                                    :refer-number singular
+                                    :refer-person 1st)
+                                :ARG1 (s34a8 / ager
+                                    :refer-number singular)
+                                :aspect activity)
+                            :op2 (s34u1 / uenor-01
+                                :ARG0 s34p9
+                                :ARG1 (s34e4 / entity)
+                                :aspect activity))
+                        :ARG2 (s34o3 / officium
+                            :mod (s34s2 / servilis)
+                            :refer-number plural))
+                    :aspect performance
+                    :polarity -)
+                :ARG1 (s34a9 / aetas
+                    :refer-number singular)
+                :aspect activity))
+        :aspect performance
+        :polarity -)
+
+# sentence level graph:
+(s35b1 / but-91
+        :ARG1 (s35s1 / statuo-04
+            :temporal (s35r1 / regredior-05
+                :ARG0 (s35p1 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :goal (s35a1 / and
+                    :op1 (s35i1 / incipio-06
+                        :ARG0 (s35e1 / entity)
+                        :ARG1 (s35e2 / entity)
+                        :mod (s35i2 / idem)
+                        :mod (s35d1 / detineo-04
+                            :ARG2 s35s2
+                            :ARG2 s35i1
+                            :ARG1 (s35p2 / person
+                                :refer-number singular
+                                :refer-person 1st)
+                            :ARG0 (s35a2 / ambitio
+                                :mod (s35m1 / malus)
+                                :refer-number singular)
+                            :aspect performance)
+                        :aspect performance)
+                    :op2 (s35s2 / studium-04
+                        :ARG0 s35e1
+                        :ARG1 s35e2
+                        :mod s35i2
+                        :mod s35d1
+                        :refer-number singular))
+                :aspect performance)
+            :ARG0 (s35p3 / person
+                :refer-number singular
+                :refer-person 1st)
+            :ARG1 (s35p4 / perscribo-01
+                :ARG0 (s35p5 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :ARG1 (s35r2 / res
+                    :mod (s35g1 / gero-15
+                        :ARG1 s35r2
+                        :ARG0 s35p6
+                        :ARG1 (s35p6 / populus
+                            :mod (s35r3 / romanus)
+                            :refer-number singular)
+                        :aspect performance)
+                    :refer-number plural)
+                :manner (s35c1 / carptim)
+                :regard (s35u1 / uideo-10
+                    :ARG0 (s35p7 / person
+                        :refer-number singular
+                        :refer-person 1st)
+                    :ARG1 (s35e4 / entity
+                        :refer-number plural
+                        :refer-person 3rd)
+                    :ARG2 (s35d2 / dignus
+                        :ARG1 (s35m2 / memoria
+                            :ARG0 (s35e5 / entity)
+                            :ARG1 (s35e6 / entity)
+                            :refer-number singular))
+                    :aspect state)
+                :extent (s35m3 / magis
+                    :clausal-marker (s35e7 / eo)
+                    :cause (s35b2 / belong-91
+                        :ARG2 (s35p8 / person
+                            :refer-number singular
+                            :refer-person 1st)
+                        :ARG1 (s35a3 / animus
+                            :mod (s35l1 / liber^solutus
+                                :ARG1 (s35a4 / and
+                                    :op1 (s35s3 / spes
+                                        :refer-number singular)
+                                    :op2 (s35m4 / metus
+                                        :refer-number singular)
+                                    :op3 (s35p9 / partus
+                                        :mod (s35r4 / res
+                                            :mod (s35p10 / publicus))
+                                        :refer-number plural)))
+                            :refer-number singular)
+                        :aspect activity))
+                :aspect activity)
+            :aspect performance))
+
+# sentence level graph:
+(s36a1 / absoluo-NEW-08
+        :clausal-marker (s36i1 / igitur)
+        :ARG2 (s36c1 / coniuratio-05
+            :ARG0 (s36c2 / catilina
+                :refer-number singular)
+            :refer-number singular)
+        :ARG0 (s36p1 / person
+            :refer-number singular
+            :refer-person 1st)
+        :ARG1 (s36e1 / entity)
+        :extent (s36x1 / AsMuch
+            :result (s36p2 / possum-NEW-02
+                :ARG0 (s36p3 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :ARG1 (s36e2 / entity)
+                :mod (s36v1 / verus)
+                :aspect state))
+        :ARG2 (s36p4 / paucus
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s37e1 / existimo-04
+        :ARG1 (s37f1 / facinus
+            :mod (s37i1 / is)
+            :refer-number singular)
+        :clausal-marker (s37n1 / nam)
+        :clausal-marker (s37u1 / unus)
+        :ARG0 (s37p1 / person
+            :refer-number singular
+            :refer-person 1st)
+        :effect (s37m1 / memorabilis
+            :ARG0 (s37e2 / entity))
+        :cause (s37n2 / novitas
+            :mod (s37a1 / and
+                :op1 (s37s1 / scelus)
+                :op2 (s37p2 / periculum))
+            :refer-number singular)
+        :aspect state)
+
+# sentence level graph:
+(s38e1 / explano-04
+        :ARG1 (s38p1 / paucus
+            :mod (s38m1 / mos
+                :mod (s38h1 / homo
+                    :mod (s38q1 / qui))
+                :refer-number plural)
+            :refer-number plural)
+        :ARG0 (s38e2 / entity)
+        :temporal (s38p2 / prius
+            :mod (s38f1 / facio-25
+                :ARG0 (s38p3 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :ARG1 (s38i1 / initium
+                    :mod (s38n1 / narro-04
+                        :ARG0 (s38e3 / entity)
+                        :ARG1 (s38e4 / entity)
+                        :aspect activity)
+                    :refer-number singular)
+                :aspect activity))
+        :aspect activity)
+
+# sentence level graph:
+(s39s1 / sum
+        :ARG0 (s39c1 / catilina
+            :name (s39l1 / l
+                :refer-number singular)
+            :mod (s39n1 / nascor-05
+                :ARG0 s39c1
+                :source (s39g1 / genus
+                    :mod (s39n2 / nobilis)
+                    :refer-number singular)
+                :aspect performance)
+            :refer-number singular)
+        :ARG1 (s39b1 / but-91
+            :ARG1 (s39v1 / vis
+                :mod (s39m1 / magnus)
+                :regard (s39a1 / and
+                    :op1 (s39a2 / animus
+                        :refer-number singular)
+                    :op2 (s39c2 / corpus
+                        :refer-number singular))
+                :refer-number singular)
+            :ARG2 (s39i1 / ingenium
+                :mod (s39a3 / and
+                    :op1 (s39m2 / malus)
+                    :op2 (s39p1 / pravus))
+                :refer-number singular))
+        :aspect performance)
+
+# sentence level graph:
+(s40a1 / and
+        :op1 (s40h1 / have-mod-91
+            :affectee (s40e1 / entity
+                :refer-number singular
+                :refer-person 3rd)
+            :temporal (s40a2 / adulescentia
+                :refer-number singular)
+            :ARG0 (s40a3 / and
+                :op1 (s40b1 / bellum
+                    :mod (s40i1 / intestinus)
+                    :refer-number plural)
+                :op2 (s40c1 / caedes
+                    :refer-number plural)
+                :op3 (s40r1 / rapina
+                    :refer-number plural)
+                :op4 (s40d1 / discordia
+                    :mod (s40c2 / civilis)
+                    :refer-number singular))
+            :ARG2 (s40g1 / gratus)
+            :aspect performance)
+        :op2 (s40e2 / exerceo-29
+            :place (s40i2 / ibi)
+            :ARG0 s40e1
+            :ARG1 (s40j1 / juventus
+                :possessor s40e1
+                :refer-number singular)
+            :aspect performance))
+
+# sentence level graph:
+(s41e1 / event
+        :regard (s41c1 / corpus
+            :refer-number singular)
+        :ARG0 (s41e2 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG1 (s41p1 / patior-04
+            :ARG0 (s41e3 / entity
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG1 (s41a1 / and
+                :op1 (s41i1 / inedia
+                    :refer-number singular)
+                :op2 (s41a2 / algor
+                    :refer-number singular)
+                :op3 (s41u1 / uigilo-02
+                    :ARG0 (s41e4 / entity)
+                    :refer-number singular))
+            :manner (s41h1 / have-mod-91
+                :ARG1 s41p1
+                :ARG2 (s41c2 / credibilis
+                    :ARG0 (s41q1 / quis
+                        :refer-number singular
+                        :refer-person 3rd))
+                :aspect activity)
+            :aspect activity)
+        :aspect state)
+
+# sentence level graph:
+(s42e1 / event
+        :regard (s42a1 / animus
+            :refer-number singular)
+        :ARG0 (s42e2 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG1 (s42a2 / and
+            :op1 (s42a3 / audax
+                :ARG1 (s42a4 / and
+                    :op1 (s42s1 / simulator-02
+                        :ARG1 (s42r1 / res
+                            :ARG1-of (s42l1 / libet-01
+                                :ARG0 (s42e3 / entity
+                                    :refer-number singular
+                                    :refer-person 3rd)
+                                :aspect activity)
+                            :refer-number singular)
+                        :refer-number singular)
+                    :op2 (s42d1 / dissimulator-01
+                        :ARG1 s42r1
+                        :refer-number singular)))
+            :op2 (s42s2 / subdolus
+                :ARG1 s42a4)
+            :op3 (s42v1 / varius
+                :ARG1 s42a4)
+            :op4 (s42a5 / appeto-04
+                :ARG1 s42a4
+                :ARG0 (s42e4 / entity
+                    :refer-number singular
+                    :refer-person 3rd)
+                :ARG1 (s42a6 / alienus
+                    :refer-number singular)
+                :aspect activity)
+            :op5 (s42p1 / profundo-06
+                :ARG1 s42a4
+                :ARG0 (s42e5 / entity)
+                :ARG1 (s42e6 / entity
+                    :refer-number singular
+                    :refer-person 3rd)
+                :regard s42e6
+                :aspect performance)
+            :op6 (s42a7 / ardeo-08
+                :ARG1 s42a4
+                :ARG0 (s42e7 / entity
+                    :refer-number singular
+                    :refer-person 3rd)
+                :instrument (s42c1 / cupiditas-01
+                    :ARG0 (s42e8 / entity)
+                    :ARG1 (s42e9 / entity)
+                    :refer-number plural)
+                :aspect activity))
+        :aspect state)
+
+# sentence level graph:
+(s43a1 / and
+        :op1 (s43e1 / event
+            :ARG0 (s43e2 / entity
+                :refer-number singular
+                :refer-person 3rd)
+            :extent (s43s1 / satis)
+            :ARG1 (s43e3 / eloquentia
+                :refer-number singular)
+            :aspect state)
+        :op2 (s43e4 / event
+            :ARG0 s43e2
+            :ARG1 (s43s2 / sapientia
+                :refer-number singular)
+            :extent (s43p1 / parus)
+            :aspect state))
+
+# sentence level graph:
+(s44c1 / cupio-03
+        :ARG0 (s44a1 / animus
+            :mod (s44v1 / vastus)
+            :refer-number singular)
+        :temporal (s44s1 / semper)
+        :ARG1 (s44a2 / and
+            :op1 (s44i1 / immoderatus
+                :ARG1 (s44c2 / credo-02
+                    :ARG0 (s44e1 / entity)
+                    :refer-number plural)
+                :ARG1 (s44a3 / altus
+                    :extent (s44n1 / nimis)
+                    :refer-number plural)
+                :refer-number plural))
+        :aspect state)
+
+# sentence level graph:
+(s45i1 / inuado2-NEW-06
+        :ARG1 (s45e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :temporal (s45d1 / dominor-03
+            :ARG1 (s45e2 / entity)
+            :ARG0 (s45s1 / sulla
+                :name (s45l1 / l
+                    :refer-number singular)
+                :refer-number singular)
+            :refer-number singular)
+        :ARG0 (s45l2 / libido-03
+            :ARG0 (s45e3 / entity)
+            :mod (s45m1 / magnus)
+            :ARG1 (s45c1 / capio-37
+                :ARG0 (s45e4 / entity)
+                :ARG1 (s45r1 / res
+                    :mod (s45p1 / publicus)
+                    :refer-number singular)
+                :aspect activity)
+            :refer-number singular)
+        :aspect performance)
+
+# sentence level graph:
+(s46a1 / and
+        :op1 (s46p1 / pendo-05
+            :ARG0 (s46e1 / entity
+                :refer-number singular
+                :refer-person 3rd
+                :polarity -)
+            :instrument (s46m1 / modus
+                :mod (s46q1 / qui)
+                :mod (s46a2 / assequor-08
+                    :instrument s46m1
+                    :ARG0 (s46e2 / entity
+                        :refer-number singular
+                        :refer-person 3rd)
+                    :ARG1 (s46i1 / is
+                        :refer-number singular)
+                    :aspect activity)
+                :refer-number plural)
+            :temporal (s46p2 / paro-09
+                :ARG0 (s46e3 / entity
+                    :refer-number singular
+                    :refer-person 3rd)
+                :affectee s46e3
+                :ARG1 (s46r1 / regnum
+                    :refer-number singular)
+                :aspect activity)
+            :ARG1 (s46q2 / quis
+                :mod (s46p3 / pensum
+                    :refer-number singular)
+                :refer-number singular
+                :refer-person 3rd)
+            :aspect state))
+
+# sentence level graph:
+(s47a1 / agito-NEW-15
+        :temporal (s47d1 / dies
+            :refer-number plural)
+        :ARG0 (s47e1 / entity)
+        :extent (s47a2 / and
+            :op1 (s47m1 / magis)
+            :op2 (s47m2 / magis))
+        :ARG1 (s47a3 / animus
+            :mod (s47f1 / ferox)
+            :refer-number singular)
+        :cause (s47a4 / and
+            :op1 (s47i1 / inopia
+                :mod (s47r1 / res
+                    :mod (s47f2 / familiaris))
+                :mod (s47a5 / augeo-08
+                    :ARG1 (s47e2 / entity
+                        :mod (s47u1 / uter)
+                        :refer-number singular
+                        :refer-person 3rd)
+                    :ARG0 (s47e3 / entity
+                        :refer-number singular
+                        :refer-person 3rd)
+                    :cause (s47a6 / ars
+                        :mod (s47i2 / is)
+                        :ARG1-of (s47m3 / memoro-05
+                            :ARG0 (s47p1 / person
+                                :refer-number singular
+                                :refer-person 1st)
+                            :place (s47s1 / supra)
+                            :aspect performance)
+                        :refer-number plural)
+                    :aspect performance)
+                :refer-number singular)
+            :op2 (s47c1 / conscientia-05
+                :mod s47a5
+                :ARG0 (s47e4 / entity)
+                :ARG1 (s47s2 / scelus
+                    :refer-number plural)
+                :refer-number singular))
+        :aspect activity)
+
+# sentence level graph:
+(s48i1 / incito-12
+        :clausal-marker (s48p1 / praeterea)
+        :ARG1 (s48e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG0 (s48m1 / mos
+            :mod (s48c1 / corrumpo-15
+                :ARG0 (s48e2 / entity)
+                :ARG1 s48m1
+                :aspect performance)
+            :possessor (s48c2 / civitas
+                :refer-number singular)
+            :ARG1-of (s48u1 / uexo-10
+                :ARG0 (s48i2 / identity-91
+                    :ARG1 (s48m2 / malus
+                        :mod (s48a1 / and
+                            :op1 (s48m3 / malus)
+                            :op2 (s48d1 / diversus
+                                :ARG1 s48m2))
+                        :refer-number plural)
+                    :ARG2 (s48a2 / and
+                        :op1 (s48l1 / luxuria
+                            :refer-number singular)
+                        :op2 (s48a3 / avaritia
+                            :refer-number singular)))
+                :aspect activity)
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s49u1 / uideo-10
+        :ARG1 (s49r1 / res
+            :mod (s49i1 / ipse)
+            :refer-number singular)
+        :ARG0 (s49e1 / entity)
+        :ARG2 (s49h1 / hortor-01
+            :cause (s49a1 / admoneo-01
+                :ARG2 (s49m1 / mos
+                    :possessor (s49c1 / civitas
+                        :refer-number singular)
+                    :refer-number plural)
+                :ARG1 (s49e2 / entity)
+                :ARG0 (s49t1 / tempus
+                    :refer-number singular)
+                :aspect performance)
+            :ARG0 s49r1
+            :ARG1 (s49a2 / and
+                :op1 (s49r2 / repeto-04
+                    :ARG0 (s49e3 / entity)
+                    :ARG1 (s49e4 / entity)
+                    :goal (s49s1 / supra)
+                    :aspect activity)
+                :op2 (s49d1 / dissero2-02
+                    :ARG0 s49e3
+                    :instrument (s49p1 / paucus
+                        :refer-number plural)
+                    :ARG1 (s49a3 / and
+                        :op1 (s49i2 / instituo-04
+                            :ARG0 (s49e5 / entity)
+                            :ARG1 (s49e6 / entity)
+                            :possessor (s49m2 / major
+                                :refer-number plural)
+                            :place (s49a4 / and
+                                :op1 (s49d2 / domus
+                                    :refer-number singular)
+                                :op2 (s49m3 / militia
+                                    :refer-number singular))
+                            :aspect performance)
+                        :op2 (s49h2 / habeo-NEW-28
+                            :ARG0 s49m2
+                            :manner (s49m4 / modus
+                                :mod (s49q1 / quis)
+                                :refer-number singular)
+                            :ARG1 (s49r3 / res
+                                :mod (s49p2 / publicus)
+                                :refer-number singular)
+                            :aspect state)
+                        :op3 (s49r4 / relinquo-05
+                            :ARG0 s49m2
+                            :ARG1 s49r3
+                            :purpose (s49f1 / facio-05
+                                :ARG0 (s49e7 / entity)
+                                :ARG1 s49r3
+                                :manner (s49i3 / immuto-NEW-01
+                                    :ARG0 (s49e8 / entity)
+                                    :ARG1 s49r3
+                                    :manner (s49p3 / paulatim)
+                                    :aspect performance)
+                                :source (s49a5 / and
+                                    :op1 (s49p4 / pulcher)
+                                    :op2 (s49b1 / bonus))
+                                :effect (s49a6 / and
+                                    :op1 (s49m5 / malus)
+                                    :op2 (s49f2 / flagitiosus))
+                                :aspect performance)
+                            :aspect performance))
+                    :aspect activity))
+            :aspect activity)
+        :aspect state)
+
+# sentence level graph:
+(s50a1 / and
+        :op1 (s50c1 / condo-17
+            :ARG1 (s50u1 / urbs
+                :name (s50r1 / roma
+                    :refer-number singular)
+                :refer-number singular)
+            :regard (s50a2 / accipio-08
+                :ARG1 s50h1
+                :ARG1 s50c1
+                :ARG0 (s50p1 / person
+                    :refer-person 1st)
+                :aspect performance)
+            :temporal (s50i1 / initium
+                :refer-number singular)
+            :ARG0 (s50t1 / trojanus
+                :ARG0-of (s50u2 / uagor-04
+                    :manner (s50p2 / profugus)
+                    :companion (s50a3 / aeneas
+                        :refer-number singular)
+                    :manner (s50d1 / dux
+                        :mod-of s50a3
+                        :refer-number singular)
+                    :path (s50s1 / sedes
+                        :mod (s50i2 / incertus
+                            :polarity -)
+                        :refer-number plural)
+                    :aspect activity)
+                :refer-number plural)
+            :ARG0 (s50i3 / identity-91
+                :ARG1 (s50a4 / aborigines
+                    :companion (s50e1 / entity
+                        :refer-number plural
+                        :refer-person 3rd)
+                    :refer-number plural)
+                :ARG2 (s50g1 / genus
+                    :companion s50e1
+                    :mod (s50h2 / homo)
+                    :mod (s50a5 / agrestis)
+                    :companion (s50a6 / and
+                        :op1 (s50l1 / lex
+                            :refer-number plural)
+                        :op2 (s50i4 / imperium
+                            :refer-number singular))
+                    :mod (s50a7 / and
+                        :op1 (s50l2 / liber^solutus
+                            :ARG1 (s50e2 / entity))
+                        :op2 (s50s2 / soluo-33
+                            :ARG0 (s50e3 / entity)
+                            :ARG1 s50g1
+                            :aspect performance))
+                    :refer-number singular))
+            :aspect performance)
+        :op2 (s50h1 / habeo-NEW-25
+            :ARG1 s50u1
+            :regard s50a2
+            :temporal s50i1
+            :ARG0 s50t1
+            :ARG0 s50i3
+            :aspect state))
+
