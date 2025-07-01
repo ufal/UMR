@@ -1,0 +1,615 @@
+# sentence level graph:
+(s1m1 / mít-008
+        :ARG0 (s1e1 / entity)
+        :ARG1 (s1a1 / auto
+            :mod (s1d1 / dva)
+            :refer-number plural)
+        :aspect state)
+
+# sentence level graph:
+(s2p1 / povědět-001
+        :clausal-marker (s2j1 / ještě)
+        :ARG1 (s2n1 / něco
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG2 (s2p2 / person
+            :refer-number singular
+            :refer-person 1st)
+        :regard (s2f1 / fotka
+            :mod (s2t1 / ten)
+            :refer-number singular)
+        :ARG0 (s2e1 / entity)
+        :aspect performance)
+
+# sentence level graph:
+(s3n1 / nechat-009
+        :ARG0 (s3e1 / entity)
+        :ARG1 (s3n2 / nachromovat-001
+            :affectee s3e1
+            :ARG0 (s3e2 / entity)
+            :parenthesis (s3v1 / vidět-007
+                :ARG0 (s3p1 / person
+                    :refer-number singular
+                    :refer-person 1st)
+                :ARG1 s3n1
+                :aspect state)
+            :ARG1 (s3a1 / and
+                :op1 (s3l1 / lampa
+                    :refer-number singular)
+                :op2 (s3r1 / roura
+                    :refer-number plural)
+                :op3 (s3t1 / teleskop
+                    :refer-number plural))
+            :aspect performance)
+        :aspect performance)
+
+# sentence level graph:
+(s4b1 / být-011
+        :ARG1 (s4v1 / všechen
+            :refer-number singular
+            :refer-person 3rd)
+        :manner (s4c1 / chróm
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s5b1 / být-007
+        :ARG1 (s5t1 / ten
+            :refer-number singular)
+        :ARG2 (s5m1 / motorka
+            :mod (s5d1 / dobrý)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s6d1 / dělat-010
+        :ARG0 (s6k1 / kdo
+            :refer-number singular
+            :refer-person 3rd)
+        :affectee (s6p1 / person
+            :refer-number plural
+            :refer-person 2nd)
+        :ARG1 (s6t1 / ten
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s7d1 / dělat-010
+        :ARG1 (s7t1 / ten
+            :refer-number singular)
+        :ARG0 (s7k1 / kamarád
+            :refer-number plural)
+        :place (s7s1 / Škodovka
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s8b1 / být-007
+        :ARG1 (s8t1 / ten
+            :refer-number singular)
+        :ARG2 (s8m1 / motorka
+            :mod (s8p1 / person
+                :refer-number plural
+                :refer-person 2nd)
+            :mod (s8p2 / první)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s9m1 / motorka
+        :mod (s9p1 / první))
+
+# sentence level graph:
+(s10v1 / vážit-si-001
+        :clausal-marker (s10t1 / taky)
+        :ARG1 (s10e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG0 (s10p1 / person
+            :refer-number plural
+            :refer-person 2nd)
+        :aspect activity)
+
+# sentence level graph:
+(s11p1 / podívat-se-001
+        :ARG0 (s11e1 / entity)
+        :ARG1 (s11f1 / fotka
+            :mod (s11d1 / další)
+            :refer-number singular)
+        :aspect performance)
+
+# sentence level graph:
+(s12b1 / být-002
+        :ARG1 (s12c1 / co
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG0 (s12t1 / tenhle
+            :refer-number singular)
+        :effect (s12z1 / zač
+            :refer-number singular
+            :refer-person 3rd)
+        :aspect activity)
+
+# sentence level graph:
+(s13b1 / být-007
+        :ARG1 (s13t1 / tenhleten
+            :refer-number singular)
+        :ARG2 (s13t2 / tábor
+            :mod (s13j1 / junácký)
+            :place (s13v1 / Vrbice
+                :place (s13s1 / Stříbro
+                    :refer-number singular)
+                :refer-number plural)
+            :temporal (s13r1 / rok
+                :name (s13x1 / 1970)
+                :refer-number singular)
+            :place-of (s13d1 / dělat-013
+                :ARG0 (s13e1 / entity)
+                :ARG1 (s13v2 / vedoucí
+                    :mod (s13o1 / oddíl)
+                    :refer-number singular)
+                :aspect activity)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s14b1 / být-007
+        :ARG1 (s14k1 / kdo
+            :refer-number singular
+            :refer-person 3rd)
+        :ARG2 (s14v1 / vidět-007
+            :ARG0 (s14e1 / entity)
+            :place (s14f1 / fotka
+                :mod (s14t1 / ten)
+                :refer-number singular)
+            :ARG1 s14k1
+            :aspect state)
+        :aspect activity)
+
+# sentence level graph:
+(s15a1 / and
+        :op1 (s15b1 / být-011
+            :start (s15z1 / zleva)
+            :ARG1 (s15v1 / vlásek
+                :parenthesis (s15b2 / být-007
+                    :ARG1 (s15e1 / entity
+                        :refer-number singular
+                        :refer-person 3rd)
+                    :ARG2 (s15v2 / vedoucí
+                        :mod (s15s1 / skaut
+                            :mod (s15c1 / celý)))
+                    :aspect activity)
+                :refer-number singular)
+            :aspect activity)
+        :op2 (s15b3 / být-011
+            :clausal-marker (s15p1 / pak)
+            :place (s15t1 / tam)
+            :ARG0 (s15a2 / and
+                :op1 (s15s2 / sestra
+                    :refer-number singular)
+                :op2 (s15p2 / Pepík
+                    :refer-number singular))
+            :aspect activity))
+
+# sentence level graph:
+(s16j1 / jmenovat-se-002
+        :ARG2 (s16j2 / jak)
+        :ARG1 (s16e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
+        :aspect process)
+
+# sentence level graph:
+(s17z1 / zemřít-001
+        :temporal (s17u1 / už)
+        :ARG1 (s17e1 / entity)
+        :aspect performance)
+
+# sentence level graph:
+(s18m1 / mrzet-001
+        :ARG1 (s18t1 / ten
+            :refer-number singular)
+        :ARG0 (s18p1 / person
+            :refer-number singular
+            :refer-person 1st)
+        :aspect activity)
+
+# sentence level graph:
+(s19b1 / být-011
+        :ARG1 (s19p1 / Pepík
+            :refer-number singular)
+        :place (s19t1 / tam)
+        :aspect activity)
+
+# sentence level graph:
+(s20b1 / but-91
+        :ARG1 (s20j1 / jmenovat-004
+            :ARG0 (s20e1 / entity)
+            :ARG1 (s20x1 / Rcp)
+            :ARG2 (s20e2 / entity)
+            :instrument (s20j2 / jméno
+                :refer-number singular)
+            :aspect process
+            :polarity -)
+        :ARG2 (s20j3 / jmenovat-004
+            :ARG0 s20e1
+            :ARG1 s20x1
+            :ARG2 s20e2
+            :temporal (s20v1 / vždycky)
+            :instrument (s20p1 / přezdívka
+                :refer-number singular)
+            :aspect process
+            :polarity -))
+
+# sentence level graph:
+(s21m1 / mít-008
+        :ARG0 (s21k1 / každý)
+        :ARG1 (s21p1 / přezdívka
+            :mod (s21n1 / nějaký)
+            :refer-number singular)
+        :aspect state)
+
+# sentence level graph:
+(s22b1 / být-007
+        :ARG1 (s22t1 / ten
+            :mod (s22p1 / první)
+            :refer-number singular)
+        :ARG2 (s22v1 / Vlásek
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s23b1 / být-007
+        :ARG1 (s23p1 / person
+            :refer-number singular
+            :refer-person 1st)
+        :ARG2 (s23e1 / entity)
+        :aspect activity)
+
+# sentence level graph:
+(s24b1 / být-007
+        :ARG1 (s24p1 / Pepík
+            :refer-number singular)
+        :ARG2 (s24p2 / Pírko
+            :refer-number singular)
+        :concession (s24v1 / vypadat-004
+            :ARG0 s24p1
+            :comparison (s24v2 / vypadat-004
+                :manner (s24e1 / entity)
+                :ARG0 (s24p3 / pírko
+                    :refer-number singular)
+                :aspect activity
+                :polarity -)
+            :aspect activity
+            :polarity -)
+        :aspect activity)
+
+# sentence level graph:
+(s25z1 / zemřít-001
+        :clausal-marker (s25a1 / a)
+        :ARG0 (s25i1 / identity-91
+            :ARG1 (s25s1 / sestra
+                :mod (s25t1 / ten)
+                :parenthesis (s25j1 / jmenovat-se-001
+                    :ARG2 (s25j2 / Jitka
+                        :refer-number singular)
+                    :ARG1 (s25e1 / entity)
+                    :aspect process)
+                :refer-number singular)
+            :ARG2 (s25t2 / ten
+                :refer-number singular))
+        :aspect performance)
+
+# sentence level graph:
+(s1b1 / být-011
+        :frequency (s1v1 / vždycky)
+        :clausal-marker (s1a1 / ale)
+        :ARG1 (s1l1 / legrace
+            :mod (s1v2 / velký)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s2b1 / být-007
+        :clausal-marker (s2h1 / hlavně)
+        :ARG0 (s2a1 / and
+            :op1 (s2v1 / večer
+                :refer-number plural)
+            :op2 (s2t1 / tak
+                :part-of-phraseme (s2d1 / dále)))
+        :ARG2 (s2p1 / prima)
+        :aspect activity)
+
+# sentence level graph:
+(s3b1 / být-007
+        :ARG1 (s3n1 / nálada
+            :mod (s3d1 / dobrý)
+            :refer-number singular)
+        :ARG2 (s3v1 / vidět-007
+            :ARG0 (s3e1 / entity)
+            :ARG1 s3n1
+            :aspect state)
+        :aspect activity)
+
+# sentence level graph:
+(s4b1 / být-007
+        :ARG1 (s4e1 / entity)
+        :ARG2 (s4v1 / vidět-007
+            :ARG0 (s4e2 / entity)
+            :ARG1 s4e1
+            :aspect state)
+        :start (s4f1 / fotka
+            :mod (s4t1 / ten)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s5b1 / být-007
+        :ARG1 (s5t1 / ten
+            :refer-number singular)
+        :ARG2 (s5p1 / pravda
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s6e1 / event
+        :clausal-marker (s6h1 / hlavně)
+        :ARG0 (s6s1 / sednout-si-002
+            :ARG1 (s6e2 / entity)
+            :ARG2 (s6e3 / entity)
+            :aspect performance)
+        :aspect state)
+
+# sentence level graph:
+(s7v1 / vídat-001
+        :ARG0 (s7e1 / entity)
+        :ARG1 (s7x1 / Rcp)
+        :aspect activity)
+
+# sentence level graph:
+(s8b1 / být-007
+        :ARG1 (s8t1 / ten
+            :refer-number singular)
+        :clausal-marker (s8p1 / prakticky)
+        :ARG2 (s8t2 / třída
+            :mod (s8t3 / ten)
+            :ARG1-of (s8s1 / scházet-se-001
+                :ARG0 (s8e1 / entity)
+                :temporal (s8t4 / teď)
+                :frequency (s8r1 / rok
+                    :mod (s8k1 / každý)
+                    :refer-number singular)
+                :aspect activity)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s9a1 / and
+        :op1 (s9b1 / být-011
+            :temporal (s9b2 / brzy)
+            :ARG1 (s9t1 / ten
+                :refer-number singular)
+            :frequency (s9j1 / jednou
+                :duration (s9r1 / rok
+                    :mod (s9d1 / dva)
+                    :refer-number plural))
+            :aspect activity)
+        :op2 (s9b3 / být-011
+            :temporal (s9t2 / teď)
+            :ARG1 (s9t3 / ten
+                :refer-number singular)
+            :frequency (s9r2 / rok
+                :mod (s9k1 / každý)
+                :refer-number singular)
+            :aspect activity))
+
+# sentence level graph:
+(s10b1 / být-007
+        :ARG1 (s10t1 / ten
+            :refer-number singular)
+        :ARG2 (s10m1 / maturant
+            :ARG0-of (s10j1 / jezdit-002
+                :frequency (s10p1 / pravidelně)
+                :ARG1 (s10e1 / entity)
+                :purpose (s10s1 / sraz
+                    :mod (s10t2 / ten)
+                    :refer-number plural)
+                :aspect activity)
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s11c1 / chodit-006
+        :ARG1 (s11j1 / jeden)
+        :goal (s11e1 / entity)
+        :aspect activity
+        :polarity -)
+
+# sentence level graph:
+(s12c1 / chodit-006
+        :goal (s12e1 / entity)
+        :clausal-marker (s12z1 / zrovna)
+        :ARG1 (s12t1 / tadyhleten
+            :place (s12v1 / vepředu)
+            :place (s12v2 / vlevo)
+            :companion (s12s1 / šátek
+                :mod (s12t2 / ten)
+                :refer-number singular)
+            :refer-number singular)
+        :aspect activity
+        :polarity -)
+
+# sentence level graph:
+(s13b1 / být-011
+        :ARG1 (s13e1 / entity
+            :refer-number singular)
+        :temporal (s13u1 / už)
+        :place (s13s1 / smrt
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s14b1 / být-011
+        :place (s14t1 / tam)
+        :clausal-marker (s14j1 / ještě)
+        :ARG1 (s14b2 / brigádník
+            :mod (s14n1 / nějaký)
+            :refer-number singular)
+        :extent (s14n2 / navíc)
+        :aspect activity)
+
+# sentence level graph:
+(s15b1 / být-007
+        :ARG0 (s15i1 / identity-91
+            :ARG1 (s15e1 / entity
+                :refer-number singular
+                :refer-person 3rd)
+            :ARG2 (s15a1 / and
+                :op1 (s15t1 / ten
+                    :place (s15v1 / vlevo)
+                    :refer-number singular)
+                :op2 (s15t2 / ten
+                    :place (s15p1 / prostředek
+                        :refer-number singular)
+                    :place (s15v2 / vzadu)
+                    :refer-number singular)))
+        :clausal-marker (s15z1 / zřejmě)
+        :ARG2 (s15l1 / lesák
+            :mod (s15n1 / nějaký)
+            :ARG0-of (s15d1 / dirigovat-002
+                :ARG1 (s15p2 / person
+                    :refer-number plural
+                    :refer-person 1st)
+                :extent (s15t3 / trošku)
+                :aspect activity)
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s16z1 / znát-005
+        :ARG0 (s16e1 / entity)
+        :ARG1 (s16e2 / entity
+            :refer-number plural
+            :refer-person 3rd)
+        :aspect state
+        :polarity -)
+
+# sentence level graph:
+(s17u1 / učit-001
+        :ARG0 (s17t1 / ten
+            :refer-number plural
+            :refer-person 3rd)
+        :ARG2 (s17p1 / person
+            :refer-number plural
+            :refer-person 1st)
+        :ARG1 (s17v1 / vykopávat-002
+            :manner (s17j1 / jak)
+            :ARG0 s17p1
+            :ARG1 (s17d1 / díra
+                :affectee (s17s1 / stromeček
+                    :refer-number plural)
+                :refer-number plural)
+            :aspect habitual)
+        :aspect activity)
+
+# sentence level graph:
+(s18j1 / jezdit-002
+        :duration (s18d1 / dlouho
+            :extent (s18j2 / jak))
+        :ARG0 (s18e1 / entity)
+        :ARG1 (s18e2 / entity)
+        :aspect activity)
+
+# sentence level graph:
+(s19b1 / být-011
+        :frequency (s19v1 / většinou)
+        :ARG1 (s19t1 / ten
+            :refer-number singular)
+        :duration (s19o1 / or
+            :op1 (s19t2 / týden
+                :refer-number singular)
+            :op2 (s19m1 / málo))
+        :aspect activity)
+
+# sentence level graph:
+(s20j1 / jezdit-002
+        :ARG0 (s20e1 / entity)
+        :ARG1 (s20e2 / entity)
+        :temporal (s20p1 / pondělek
+            :refer-number singular)
+        :temporal (s20o1 / or
+            :op1 (s20p2 / pátek
+                :extent (s20a1 / asi)
+                :refer-number singular)
+            :op2 (s20s1 / sobota
+                :extent s20a1
+                :refer-number singular))
+        :aspect activity)
+
+# sentence level graph:
+(s21c1 / consecutive
+        :op1 (s21d1 / dělat-019
+            :temporal (s21t1 / tenkrát)
+            :ARG0 (s21e1 / entity)
+            :clausal-marker (s21i1 / i)
+            :temporal (s21s1 / sobota
+                :refer-number singular)
+            :aspect activity)
+        :clausal-marker (s21t2 / tak)
+        :op2 (s21j1 / jezdit-002
+            :clausal-marker (s21m1 / možná)
+            :ARG0 (s21e2 / entity)
+            :ARG1 (s21e3 / entity)
+            :clausal-marker (s21i2 / i)
+            :duration (s21s2 / sobota
+                :refer-number singular)
+            :aspect activity))
+
+# sentence level graph:
+(s22c1 / chodit-006
+        :purpose (s22i1 / identity-91
+            :ARG1 (s22b1 / brigáda
+                :mod (s22j1 / jiný)
+                :refer-number plural)
+            :ARG2 (s22b2 / být-007
+                :ARG2 s22b1
+                :ARG0 (s22a1 / and
+                    :op1 (s22p1 / pomoc
+                        :mod (s22o1 / or
+                            :op1 (s22o2 / okopávání
+                                :ARG0 (s22e1 / entity)
+                                :ARG1 (s22b3 / brambora
+                                    :refer-number plural))
+                            :op2 (s22s1 / sklízení
+                                :ARG0 s22e1
+                                :ARG1 s22b3))
+                        :refer-number singular)
+                    :op2 (s22t1 / tak))
+                :aspect activity))
+        :ARG1 (s22e2 / entity)
+        :goal (s22e3 / entity)
+        :clausal-marker (s22j2 / jenom)
+        :duration (s22d1 / den
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s23b1 / být-007
+        :ARG1 (s23t1 / ten
+            :refer-number singular)
+        :ARG2 (s23b2 / brigáda
+            :mod (s23o1 / or
+                :op1 (s23j1 / jednodenní)
+                :op2 (s23d1 / dvoudenní))
+            :refer-number plural)
+        :aspect activity)
+
+# sentence level graph:
+(s24j1 / jezdit-002
+        :ARG0 (s24e1 / entity)
+        :ARG1 (s24d1 / daleko)
+        :aspect activity)
+
+# sentence level graph:
+(s25n1 / ne)
+

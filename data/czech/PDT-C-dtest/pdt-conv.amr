@@ -1,0 +1,642 @@
+# sentence level graph:
+(s1b1 / být-011
+        :vocative (s1c1 / čtenář
+            :mod (s1v1 / vážený)
+            :refer-number plural)
+        :ARG1 (s1t1 / ten
+            :refer-number singular)
+        :temporal (s1p1 / právě)
+        :duration (s1r1 / rok
+            :temporal-of (s1o1 / oznamovat-002
+                :ARG0 (s1p2 / person
+                    :refer-number plural
+                    :refer-person 1st)
+                :ARG2 s1c1
+                :ARG1 (s1i1 / informace
+                    :ARG1 (s1z1 / zvyšovat-001
+                        :ARG1 (s1c2 / cena
+                            :ARG1 (s1n1 / novina
+                                :possessor s1p2
+                                :refer-number plural)
+                            :refer-number singular)
+                        :ARG0 (s1e1 / entity)
+                        :aspect activity)
+                    :mod (s1p3 / populární
+                        :polarity -)
+                    :refer-number singular)
+                :aspect activity)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s2p1 / přečkat-001
+        :ARG1 (s2r1 / rok
+            :mod (s2c1 / celý)
+            :refer-number singular)
+        :ARG0 (s2p2 / person
+            :refer-number plural
+            :refer-person 1st)
+        :manner (s2z1 / změna
+            :ARG1 (s2c2 / cena
+                :refer-number singular)
+            :refer-number singular)
+        :condition (s2p3 / počítat-006
+            :ARG0 (s2p4 / person
+                :refer-number plural
+                :refer-person 1st)
+            :ARG1 (s2z2 / zvýšení
+                :ARG0 (s2e1 / entity)
+                :ARG1 (s2e2 / entity)
+                :companion (s2z3 / zařazení
+                    :ARG0 (s2e3 / entity)
+                    :goal (s2e4 / entity)
+                    :ARG1 (s2m1 / magazín
+                        :name (s2d1 / Duha
+                            :refer-number singular)
+                        :mod (s2t1 / televizní)
+                        :mod (s2b1 / barevný)
+                        :refer-number singular)
+                    :mod (s2p5 / příloha
+                        :mod-of s2m1
+                        :possessor (s2l1 / LN
+                            :refer-number plural)
+                        :refer-number singular)
+                    :refer-number singular)
+                :refer-number singular)
+            :aspect activity
+            :polarity -)
+        :aspect performance)
+
+# sentence level graph:
+(s3p1 / promítnout-002
+        :clausal-marker (s3v1 / však)
+        :ARG0 (s3p2 / person
+            :refer-number plural
+            :refer-person 1st)
+        :ARG2 (s3c1 / cena
+            :ARG1 (s3d1 / deník
+                :refer-number singular)
+            :refer-number singular)
+        :temporal (s3n1 / nyní)
+        :ARG1 (s3z1 / zvýšení
+            :ARG0 (s3n2 / náklad
+                :refer-number plural)
+            :ARG1-of (s3n3 / nastat-001
+                :temporal (s3r1 / rok
+                    :refer-number singular)
+                :aspect performance)
+            :refer-number singular)
+        :aspect performance)
+
+# sentence level graph:
+(s4a1 / and
+        :op1 (s4s1 / stát-014
+            :clausal-marker (s4p1 / proto)
+            :temporal (s4c1 / čtvrtletí
+                :mod (s4r1 / rok
+                    :mod (s4l1 / letošní)
+                    :refer-number singular)
+                :mod (s4p2 / poslední)
+                :refer-number singular)
+            :ARG1 (s4n1 / noviny
+                :mod (s4l2 / Lidový)
+                :refer-number plural)
+            :ARG2 (s4k1 / koruna
+                :mod (s4p3 / pět)
+                :refer-number plural)
+            :temporal (s4p4 / pondělek
+                :refer-number singular)
+            :temporal (s4c2 / čtvrtek
+                :refer-number singular)
+            :aspect activity)
+        :op2 (s4s2 / stát-014
+            :clausal-marker s4p1
+            :temporal s4c1
+            :ARG1 s4n1
+            :ARG2 (s4k2 / koruna
+                :mod (s4s3 / šest)
+                :refer-number plural)
+            :temporal (s4s4 / sobota
+                :refer-number singular)
+            :aspect activity))
+
+# sentence level graph:
+(s5z1 / zůstávat-004
+        :ARG1 (s5c1 / cena
+            :ARG1 (s5v1 / vydání
+                :mod (s5p1 / páteční)
+                :refer-number singular)
+            :parenthesis (s5x1 / 6.50)
+            :refer-number singular)
+        :aspect habitual)
+
+# sentence level graph:
+(s6a1 / and
+        :op1 (s6s1 / stát-014
+            :place (s6s2 / Slovensko
+                :refer-number singular)
+            :ARG1 (s6l1 / LN
+                :refer-number plural)
+            :ARG2 (s6s3 / Sk
+                :mod (s6x1 / 5.50))
+            :temporal (s6p1 / pondělí
+                :refer-number singular)
+            :temporal (s6c1 / čtvrtek
+                :refer-number singular)
+            :aspect activity)
+        :op2 (s6s4 / stát-014
+            :place s6s2
+            :ARG1 s6l1
+            :temporal (s6p2 / pátek
+                :refer-number singular)
+            :ARG2 (s6s5 / Sk
+                :mod (s6x4 / 7.50))
+            :aspect activity)
+        :op3 (s6s6 / stát-014
+            :place s6s2
+            :ARG1 s6l1
+            :temporal (s6s7 / sobota
+                :refer-number singular)
+            :ARG2 (s6s8 / Sk
+                :mod (s6x7 / 6.50))
+            :aspect activity))
+
+# sentence level graph:
+(s7c1 / consecutive
+        :op1 (s7v1 / vědět-001
+            :ARG0 (s7p1 / person
+                :refer-number plural
+                :refer-person 1st)
+            :ARG1 (s7b1 / být-007
+                :ARG1 (s7z1 / zvýšení
+                    :ARG1 (s7c2 / cena
+                        :refer-number singular)
+                    :ARG0 (s7e1 / entity)
+                    :mod (s7k1 / každý)
+                    :refer-number singular)
+                :ARG2 (s7p2 / populární
+                    :polarity -)
+                :aspect activity)
+            :aspect state)
+        :clausal-marker (s7t1 / tak)
+        :op2 (s7d1 / doufat-001
+            :ARG0 s7p1
+            :ARG1 (s7v2 / vydržet-002
+                :companion (s7c3 / cena
+                    :mod (s7t2 / tento)
+                    :refer-number singular)
+                :ARG0 s7p1
+                :temporal (s7o1 / opět)
+                :clausal-marker (s7a1 / alespoň)
+                :duration (s7r1 / rok
+                    :refer-number singular)
+                :temporal (s7z2 / zvyšovat-001
+                    :ARG1 (s7c4 / cena
+                        :ARG1 (s7n1 / novina
+                            :mod (s7o2 / ostatní)
+                            :refer-number plural)
+                        :refer-number plural)
+                    :ARG0 (s7e2 / entity)
+                    :temporal (s7c5 / čtvrtletí
+                        :mod (s7d2 / další)
+                        :refer-number plural)
+                    :aspect activity)
+                :aspect performance)
+            :aspect activity))
+
+# sentence level graph:
+(s8v1 / vědět-001
+        :concession (s8z1 / znamenat-001
+            :ARG1 (s8z2 / zvýšení
+                :mod (s8o1 / oznamovaný)
+                :ARG0 (s8e1 / entity)
+                :ARG1 (s8e2 / entity)
+                :refer-number singular)
+            :frequency (s8m1 / měsíčně)
+            :clausal-marker (s8j1 / jen)
+            :ARG2 (s8v2 / vydání
+                :mod (s8v3 / vysoký
+                    :extent (s8k1 / Kč
+                        :mod (s8x1 / 21.70))
+                    :extent (s8p1 / průměrně))
+                :refer-number singular)
+            :aspect state)
+        :ARG0 (s8p2 / person
+            :refer-number plural
+            :refer-person 1st)
+        :ARG1 (s8b1 / být-007
+            :affectee (s8c1 / čtenář
+                :mod (s8n1 / některý)
+                :refer-number plural)
+            :ARG0 (s8o2 / or
+                :op1 (s8p3 / předplatné
+                    :mod (s8s1 / součet
+                        :mod (s8c2 / čtvrtletní))
+                    :refer-number singular)
+                :op2 (s8p4 / předplatné
+                    :mod (s8s2 / součet
+                        :mod (s8r1 / roční))
+                    :refer-number singular))
+            :ARG2 (s8v4 / vysoký
+                :extent (s8t1 / tak
+                    :result (s8z3 / zvažovat-002
+                        :ARG0 s8c1
+                        :clausal-marker (s8i1 / i)
+                        :ARG1 (s8z4 / zrušení
+                            :ARG0 s8c1
+                            :ARG1 (s8o3 / odběr
+                                :ARG1 (s8n2 / noviny
+                                    :refer-number plural)
+                                :refer-number singular)
+                            :refer-number singular)
+                        :aspect activity)))
+            :aspect activity)
+        :aspect state)
+
+# sentence level graph:
+(s9n1 / nabízet-001
+        :ARG3 (s9c1 / čtenář
+            :mod (s9t1 / tento)
+            :refer-number plural)
+        :ARG0 (s9p1 / person
+            :refer-number plural
+            :refer-person 1st)
+        :manner (s9t2 / tak
+            :comparison (s9n2 / nabízet-001
+                :ARG0 s9p1
+                :ARG1 s9p2
+                :ARG3 s9c1
+                :temporal (s9v1 / vloni)
+                :aspect activity))
+        :ARG1 (s9p2 / pomoc
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s10n1 / nabízet-001
+        :clausal-marker (s10p1 / pak)
+        :ARG3 (s10p2 / předplatitel
+            :mod (s10v1 / všechen)
+            :refer-number plural)
+        :ARG0 (s10p3 / person
+            :refer-number plural
+            :refer-person 1st)
+        :ARG1 (s10s1 / soutěž
+            :mod (s10n2 / nový)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s11v1 / vědět-001
+        :vocative (s11c1 / čtenář
+            :mod (s11v2 / vážený)
+            :refer-number plural)
+        :ARG0 (s11p1 / person
+            :refer-number plural
+            :refer-person 1st)
+        :start (s11d1 / dopis
+            :ARG0 s11c1
+            :refer-number plural)
+        :ARG1 (s11h1 / hodnotit-003
+            :ARG0 s11c1
+            :extent (s11v3 / většinou)
+            :manner (s11k1 / kladně)
+            :ARG1 (s11z1 / změna
+                :ARG1-of (s11p2 / probíhat-002
+                    :place (s11n1 / noviny
+                        :mod (s11l1 / Lidový)
+                        :refer-number plural)
+                    :aspect activity)
+                :refer-number plural)
+            :aspect activity)
+        :aspect state)
+
+# sentence level graph:
+(s12p1 / psát-007
+        :clausal-marker (s12t1 / také)
+        :ARG0 (s12c1 / čtenář
+            :ARG1 (s12d1 / demokracie
+                :mod (s12l1 / Lidový)
+                :refer-number singular)
+            :mod (s12b1 / bývalý)
+            :refer-number plural)
+        :ARG2 (s12p2 / person
+            :refer-number plural
+            :refer-person 1st)
+        :ARG1 (s12s1 / souhlasit-003
+            :concession (s12l2 / litovat-001
+                :ARG0 s12c1
+                :ARG1 (s12z1 / zánik
+                    :ARG0 (s12l3 / LD
+                        :refer-number singular)
+                    :refer-number singular)
+                :aspect activity)
+            :ARG0 s12c1
+            :ARG1 (s12o1 / odběr
+                :ARG1 (s12n1 / noviny
+                    :mod (s12l4 / Lidový)
+                    :refer-number plural)
+                :mod (s12d2 / další)
+                :refer-number singular)
+            :aspect state)
+        :aspect activity)
+
+# sentence level graph:
+(s13v1 / věřit-001
+        :clausal-marker (s13p1 / proto)
+        :ARG0 (s13p2 / person
+            :refer-number plural
+            :refer-person 1st)
+        :ARG1 (s13a1 / and
+            :op1 (s13p3 / pochopit-001
+                :ARG0 (s13p4 / person
+                    :refer-number plural
+                    :refer-person 2nd)
+                :ARG1 (s13b1 / být-159
+                    :ARG0 (s13z1 / zvýšení
+                        :mod (s13s1 / současný)
+                        :ARG1 (s13c1 / cena
+                            :refer-number singular)
+                        :ARG0 (s13e1 / entity)
+                        :refer-number singular)
+                    :ARG1 (s13n1 / nutný)
+                    :aspect activity)
+                :aspect performance)
+            :op2 (s13z2 / zůstat-002
+                :ARG0 s13p4
+                :ARG2 (s13v2 / věrný
+                    :ARG1 s13p2)
+                :aspect performance))
+        :aspect state)
+
+# sentence level graph:
+(s14i1 / identity-91
+        :ARG1 (s14k1 / Klíma
+            :mod (s14m1 / Michal)
+            :refer-number singular)
+        :ARG2 (s14r1 / ředitel
+            :possessor (s14l1 / LN
+                :refer-number plural)
+            :refer-number singular))
+
+# sentence level graph:
+(s1p1 / pokračovat-004
+        :ARG1 (s1v1 / vyšetřování
+            :ARG0 (s1e1 / entity)
+            :ARG1 (s1c1 / činnost
+                :possessor (s1k1 / kontrarozvědka
+                    :refer-number singular)
+                :refer-number singular)
+            :mod (s1p2 / parlamentní)
+            :refer-number singular)
+        :aspect activity)
+
+# sentence level graph:
+(s2p1 / Praha
+        :refer-number singular)
+
+# sentence level graph:
+(s3p1 / pokračovat-004
+        :clausal-marker (s3d1 / de_facto)
+        :concession (s3a1 / and
+            :op1 (s3u1 / ukončit-001
+                :ARG0 (s3o1 / orgán
+                    :mod (s3p2 / parlamentní)
+                    :purpose (s3k1 / kontrola
+                        :ARG1 (s3s1 / služba
+                            :mod (s3i1 / informační)
+                            :mod (s3b1 / Bezpečnostní)
+                            :refer-number singular)
+                        :refer-number singular)
+                    :refer-number singular)
+                :temporal (s3t1 / týden
+                    :refer-number singular)
+                :ARG1 (s3v1 / vyšetřování
+                    :ARG0 (s3e1 / entity)
+                    :ARG1 (s3p3 / podnět
+                        :ARG0 (s3o2 / ODA)
+                        :regard (s3k2 / kontrarozvědka
+                            :refer-number singular)
+                        :refer-number plural)
+                    :refer-number singular)
+                :aspect performance)
+            :op2 (s3k3 / konstatovat-002
+                :ARG0 s3o1
+                :ARG1 (s3p4 / porušit-001
+                    :ARG0 (s3b2 / BIS
+                        :refer-number singular)
+                    :ARG1 (s3z1 / zákon
+                        :refer-number singular)
+                    :aspect performance
+                    :polarity -)
+                :aspect process))
+        :ARG1 (s3s2 / šetření
+            :ARG0 (s3e2 / entity)
+            :ARG1 (s3e3 / entity)
+            :refer-number singular)
+        :duration (s3d2 / dále)
+        :aspect activity)
+
+# sentence level graph:
+(s4p1 / připustit-004
+        :temporal (s4v1 / včera)
+        :ARG1 (s4t1 / ten
+            :refer-number singular)
+        :ARG0 (s4s1 / Severa
+            :mod (s4p2 / Pavel)
+            :mod (s4p3 / poslanec)
+            :mod (s4c1 / člen
+                :possessor (s4k1 / komise
+                    :refer-number singular))
+            :parenthesis (s4a1 / and
+                :op1 (s4k2 / KDU)
+                :op2 (s4c2 / ČSL))
+            :refer-number singular)
+        :temporal (s4s2 / schůze
+            :possessor (s4o1 / orgán
+                :refer-number singular)
+            :refer-number singular)
+        :aspect performance)
+
+# sentence level graph:
+(s5s1 / shodnout-se-001
+        :ARG0 (s5k1 / komise
+            :refer-number singular)
+        :ARG2 (s5x1 / Rcp)
+        :ARG1 (s5d1 / dokončit-001
+            :ARG0 s5x1
+            :ARG1 (s5i1 / identity-91
+                :ARG1 (s5s2 / šetření
+                    :ARG0 (s5e1 / entity)
+                    :ARG1 (s5e2 / entity)
+                    :ARG1-of (s5p1 / provést-002
+                        :ARG0 (s5e3 / entity)
+                        :duration (s5j1 / ještě)
+                        :aspect performance
+                        :polarity -)
+                    :refer-number plural)
+                :clausal-marker (s5n1 / například)
+                :ARG2 (s5p2 / porovnání
+                    :ARG0 (s5e4 / entity)
+                    :ARG1 (s5z1 / zpráva
+                        :ARG1 (s5e5 / extremismus
+                            :refer-number singular)
+                        :refer-number singular)
+                    :effect (s5v1 / vysvětlení
+                        :ARG1 (s5e6 / entity)
+                        :ARG0 (s5d2 / Devátý
+                            :mod (s5s3 / Stanislav)
+                            :mod (s5r1 / ředitel
+                                :possessor (s5b1 / BIS))
+                            :refer-number singular)
+                        :refer-number singular)
+                    :refer-number singular))
+            :aspect performance)
+        :aspect performance)
+
+# sentence level graph:
+(s6j1 / jít-035
+        :duration (s6s1 / stále)
+        :clausal-marker (s6p1 / prý)
+        :ARG2 (s6z1 / získat-001
+            :ARG0 (s6s2 / služba
+                :mod (s6t1 / tajný)
+                :refer-number singular)
+            :ARG1 (s6u1 / údaj
+                :mod (s6v1 / veškerý)
+                :refer-number plural)
+            :ARG2 (s6z2 / zdroj
+                :mod (s6o1 / otevřený)
+                :refer-number plural)
+            :aspect performance)
+        :aspect activity)
+
+# sentence level graph:
+(s7p1 / pozvat-001
+        :goal (s7k1 / komise
+            :refer-number singular)
+        :ARG0 (s7e1 / entity)
+        :ARG1 (s7c1 / člověk
+            :mod (s7n1 / navrhnout-002
+                :ARG1 (s7s1 / slyšení
+                    :ARG1 s7c1
+                    :ARG0 (s7e2 / entity)
+                    :refer-number singular)
+                :ARG0 (s7k2 / Kalvoda
+                    :mod (s7j1 / Jan)
+                    :mod (s7p2 / předseda
+                        :possessor (s7o1 / ODA))
+                    :refer-number singular)
+                :aspect performance)
+            :refer-number plural)
+        :aspect performance)
+
+# sentence level graph:
+(s8p1 / pozvat-001
+        :ARG0 (s8e1 / entity)
+        :clausal-marker (s8i1 / i)
+        :ARG1 (s8c1 / Čelechovský
+            :mod (s8m1 / Michal)
+            :mod (s8p2 / pracovník
+                :possessor (s8b1 / BIS
+                    :refer-number singular)
+                :mod (s8b2 / bývalý))
+            :ARG0-of (s8p3 / požádat-001
+                :ARG1 (s8t1 / ten
+                    :refer-number singular)
+                :manner (s8s1 / sám)
+                :ARG2 (s8e2 / entity)
+                :aspect performance)
+            :refer-number singular)
+        :aspect performance)
+
+# sentence level graph:
+(s9b1 / but-91
+        :clausal-marker (s9s1 / sice)
+        :ARG1 (s9p1 / předpokládat-001
+            :ARG0 (s9s2 / Severa
+                :refer-number singular)
+            :ARG1 (s9r1 / revokace
+                :ARG1 (s9u1 / usnesení
+                    :temporal (s9j1 / již)
+                    :mod (s9p2 / přijatý)
+                    :refer-number plural)
+                :refer-number singular)
+            :aspect activity
+            :polarity -)
+        :ARG2 (s9o1 / obsahovat-001
+            :ARG1 (s9s3 / skutečnost
+                :mod (s9n1 / nový)
+                :mod (s9p3 / případný)
+                :refer-number plural)
+            :ARG0 (s9z1 / zpráva
+                :ARG1-of (s9p4 / předložit-001
+                    :ARG0 (s9k1 / komise
+                        :refer-number singular)
+                    :ARG2 (s9s4 / sněmovna
+                        :refer-number singular)
+                    :place (s9s5 / schůze
+                        :mod (s9b2 / březnový)
+                        :refer-number singular)
+                    :aspect performance)
+                :refer-number singular)
+            :aspect activity))
+
+# sentence level graph:
+(s10a1 / and
+        :op1 (s10r1 / rozdělit-002
+            :ARG0 (s10c1 / člen
+                :possessor (s10k1 / komise
+                    :refer-number singular)
+                :refer-number plural)
+            :temporal (s10v1 / včera)
+            :ARG2 (s10x1 / Rcp)
+            :ARG1 (s10u1 / úkol
+                :duration (s10d1 / den
+                    :mod (s10p1 / příští)
+                    :refer-number plural)
+                :refer-number plural)
+            :aspect performance)
+        :op2 (s10s1 / sejít-se-001
+            :ARG0 s10c1
+            :purpose (s10j1 / jednání
+                :ARG0 (s10e1 / entity)
+                :ARG1 (s10e2 / entity)
+                :ARG2 (s10e3 / entity)
+                :mod (s10d2 / další)
+                :refer-number singular)
+            :ARG1 (s10x3 / Rcp)
+            :place (s10b1 / březen
+                :mod (s10x4 / 8)
+                :refer-number singular)
+            :aspect performance))
+
+# sentence level graph:
+(s11r1 / říci-008
+        :ARG0 (s11m1 / Mašek
+            :mod (s11i1 / Ivan)
+            :mod (s11p1 / poslanec)
+            :parenthesis (s11o1 / ODA)
+            :refer-number singular)
+        :ARG2 (s11n1 / novinář
+            :refer-number plural)
+        :ARG1 (s11t1 / trvat-002
+            :ARG0 s11m1
+            :ARG1 (s11u1 / úkon
+                :mod (s11k1 / kontrolní)
+                :mod (s11v1 / všechen)
+                :ARG1-of (s11n2 / navrhnout-002
+                    :ARG0 (s11e1 / entity)
+                    :temporal (s11p2 / projednávání
+                        :ARG0 (s11e2 / entity)
+                        :ARG1 (s11p3 / podnět
+                            :possessor (s11s1 / strana
+                                :possessor s11m1
+                                :refer-number singular)
+                            :refer-number singular)
+                        :refer-number singular)
+                    :aspect performance)
+                :refer-number plural)
+            :aspect activity)
+        :aspect performance)
+

@@ -1,15 +1,14 @@
 # sentence level graph:
 (s1b1 / být-011
         :vocative (s1c1 / čtenář
-            :mod (s1v1 / vážený
-                :refer-number plural)
+            :mod (s1v1 / vážený)
             :refer-number plural)
         :ARG1 (s1t1 / ten
             :refer-number singular)
         :temporal (s1p1 / právě)
         :duration (s1r1 / rok
             :temporal-of (s1o1 / oznamovat-002
-                :ARG0 (s1e1 / entity
+                :ARG0 (s1p2 / person
                     :refer-number plural
                     :refer-person 1st)
                 :ARG2 s1c1
@@ -17,76 +16,64 @@
                     :ARG1 (s1z1 / zvyšovat-001
                         :ARG1 (s1c2 / cena
                             :ARG1 (s1n1 / novina
-                                :possessor s1e1
+                                :possessor s1p2
                                 :refer-number plural)
                             :refer-number singular)
-                        :ARG0 (s1e2 / entity)
-                        :refer-number singular
-                        :refer-person 3rd
+                        :ARG0 (s1e1 / entity)
                         :aspect activity)
-                    :mod (s1p2 / populární
-                        :refer-number singular
+                    :mod (s1p3 / populární
                         :polarity -)
                     :refer-number singular)
-                :refer-number plural
                 :aspect activity)
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s2p1 / přečkat-001
         :ARG1 (s2r1 / rok
-            :mod (s2c1 / celý
-                :refer-number singular)
+            :mod (s2c1 / celý)
             :refer-number singular)
-        :ARG0 (s2e1 / entity
+        :ARG0 (s2p2 / person
             :refer-number plural
             :refer-person 1st)
         :manner (s2z1 / změna
             :ARG1 (s2c2 / cena
                 :refer-number singular)
             :refer-number singular)
-        :condition (s2p2 / počítat-006
-            :ARG0 (s2e2 / entity
+        :condition (s2p3 / počítat-006
+            :ARG0 (s2p4 / person
                 :refer-number plural
                 :refer-person 1st)
             :ARG1 (s2z2 / zvýšení
-                :ARG0 (s2e3 / entity)
-                :ARG1 (s2e4 / entity)
+                :ARG0 (s2e1 / entity)
+                :ARG1 (s2e2 / entity)
                 :companion (s2z3 / zařazení
-                    :ARG0 (s2e5 / entity)
-                    :goal (s2e6 / entity)
+                    :ARG0 (s2e3 / entity)
+                    :goal (s2e4 / entity)
                     :ARG1 (s2m1 / magazín
                         :name (s2d1 / Duha
                             :refer-number singular)
-                        :mod (s2t1 / televizní
-                            :refer-number singular)
-                        :mod (s2b1 / barevný
-                            :refer-number singular)
+                        :mod (s2t1 / televizní)
+                        :mod (s2b1 / barevný)
                         :refer-number singular)
-                    :mod (s2p3 / příloha
+                    :mod (s2p5 / příloha
                         :mod-of s2m1
                         :possessor (s2l1 / LN
                             :refer-number plural)
                         :refer-number singular)
                     :refer-number singular)
                 :refer-number singular)
-            :refer-number plural
-            :refer-person 1st
             :aspect activity
             :polarity -)
-        :refer-number plural
         :aspect performance)
 
 # sentence level graph:
 (s3p1 / promítnout-002
         :clausal-marker (s3v1 / však)
-        :ARG0 (s3e1 / entity
+        :ARG0 (s3p2 / person
             :refer-number plural
             :refer-person 1st)
-        :goal (s3c1 / cena
+        :ARG2 (s3c1 / cena
             :ARG1 (s3d1 / deník
                 :refer-number singular)
             :refer-number singular)
@@ -94,10 +81,9 @@
         :ARG1 (s3z1 / zvýšení
             :ARG0 (s3n2 / náklad
                 :refer-number plural)
-            :ARG0-of (s3n3 / nastat-001
+            :ARG1-of (s3n3 / nastat-001
                 :temporal (s3r1 / rok
                     :refer-number singular)
-                :refer-number singular
                 :aspect performance)
             :refer-number singular)
         :aspect performance)
@@ -108,19 +94,15 @@
             :clausal-marker (s4p1 / proto)
             :temporal (s4c1 / čtvrtletí
                 :mod (s4r1 / rok
-                    :mod (s4l1 / letošní
-                        :refer-number singular)
+                    :mod (s4l1 / letošní)
                     :refer-number singular)
-                :mod (s4p2 / poslední
-                    :refer-number singular)
+                :mod (s4p2 / poslední)
                 :refer-number singular)
             :ARG1 (s4n1 / noviny
-                :mod (s4l2 / Lidový
-                    :refer-number plural)
+                :mod (s4l2 / Lidový)
                 :refer-number plural)
             :ARG2 (s4k1 / koruna
-                :mod (s4p3 / pět
-                    :refer-number singular)
+                :mod (s4p3 / pět)
                 :refer-number plural)
             :temporal (s4p4 / pondělek
                 :refer-number singular)
@@ -132,8 +114,7 @@
             :temporal s4c1
             :ARG1 s4n1
             :ARG2 (s4k2 / koruna
-                :mod (s4s3 / šest
-                    :refer-number singular)
+                :mod (s4s3 / šest)
                 :refer-number plural)
             :temporal (s4s4 / sobota
                 :refer-number singular)
@@ -141,15 +122,12 @@
 
 # sentence level graph:
 (s5z1 / zůstávat-004
-        :ARG0 (s5c1 / cena
+        :ARG1 (s5c1 / cena
             :ARG1 (s5v1 / vydání
-                :mod (s5p1 / páteční
-                    :refer-number singular)
+                :mod (s5p1 / páteční)
                 :refer-number singular)
             :parenthesis (s5x1 / 6.50)
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect habitual)
 
 # sentence level graph:
@@ -186,35 +164,28 @@
 # sentence level graph:
 (s7c1 / consecutive
         :op1 (s7v1 / vědět-001
-            :ARG0 (s7e1 / entity
+            :ARG0 (s7p1 / person
                 :refer-number plural
                 :refer-person 1st)
             :ARG1 (s7b1 / být-007
                 :ARG1 (s7z1 / zvýšení
                     :ARG1 (s7c2 / cena
                         :refer-number singular)
-                    :ARG0 (s7e2 / entity)
-                    :mod (s7k1 / každý
-                        :refer-number singular)
+                    :ARG0 (s7e1 / entity)
+                    :mod (s7k1 / každý)
                     :refer-number singular)
-                :ARG2 (s7p1 / populární
-                    :refer-number singular
+                :ARG2 (s7p2 / populární
                     :polarity -)
-                :refer-number singular
-                :refer-person 3rd
                 :aspect activity)
-            :refer-number plural
-            :refer-person 1st
             :aspect state)
         :clausal-marker (s7t1 / tak)
         :op2 (s7d1 / doufat-001
-            :ARG0 s7e1
+            :ARG0 s7p1
             :ARG1 (s7v2 / vydržet-002
                 :companion (s7c3 / cena
-                    :mod (s7t2 / tento
-                        :refer-number singular)
+                    :mod (s7t2 / tento)
                     :refer-number singular)
-                :ARG0 s7e1
+                :ARG0 s7p1
                 :temporal (s7o1 / opět)
                 :clausal-marker (s7a1 / alespoň)
                 :duration (s7r1 / rok
@@ -222,64 +193,49 @@
                 :temporal (s7z2 / zvyšovat-001
                     :ARG1 (s7c4 / cena
                         :ARG1 (s7n1 / novina
-                            :mod (s7o2 / ostatní
-                                :refer-number plural)
+                            :mod (s7o2 / ostatní)
                             :refer-number plural)
                         :refer-number plural)
-                    :ARG0 (s7e3 / entity)
+                    :ARG0 (s7e2 / entity)
                     :temporal (s7c5 / čtvrtletí
-                        :mod (s7d2 / další
-                            :refer-number plural)
+                        :mod (s7d2 / další)
                         :refer-number plural)
                     :aspect activity)
-                :refer-number plural
-                :refer-person 1st
                 :aspect performance)
-            :refer-number plural
-            :refer-person 1st
             :aspect activity))
 
 # sentence level graph:
 (s8v1 / vědět-001
         :concession (s8z1 / znamenat-001
-            :ARG0 (s8z2 / zvýšení
-                :mod (s8o1 / oznamovaný
-                    :refer-number singular)
+            :ARG1 (s8z2 / zvýšení
+                :mod (s8o1 / oznamovaný)
                 :ARG0 (s8e1 / entity)
                 :ARG1 (s8e2 / entity)
                 :refer-number singular)
             :frequency (s8m1 / měsíčně)
             :clausal-marker (s8j1 / jen)
-            :ARG1 (s8v2 / vydání
+            :ARG2 (s8v2 / vydání
                 :mod (s8v3 / vysoký
                     :extent (s8k1 / Kč
                         :mod (s8x1 / 21.70))
-                    :extent (s8p1 / průměrně)
-                    :refer-number singular)
+                    :extent (s8p1 / průměrně))
                 :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
             :aspect state)
-        :ARG0 (s8e3 / entity
+        :ARG0 (s8p2 / person
             :refer-number plural
             :refer-person 1st)
         :ARG1 (s8b1 / být-007
             :affectee (s8c1 / čtenář
-                :mod (s8n1 / některý
-                    :refer-number plural)
+                :mod (s8n1 / některý)
                 :refer-number plural)
             :ARG0 (s8o2 / or
-                :op1 (s8p2 / předplatné
+                :op1 (s8p3 / předplatné
                     :mod (s8s1 / součet
-                        :mod (s8c2 / čtvrtletní
-                            :refer-number singular)
-                        :refer-number singular)
+                        :mod (s8c2 / čtvrtletní))
                     :refer-number singular)
-                :op2 (s8p3 / předplatné
+                :op2 (s8p4 / předplatné
                     :mod (s8s2 / součet
-                        :mod (s8r1 / roční
-                            :refer-number singular)
-                        :refer-number singular)
+                        :mod (s8r1 / roční))
                     :refer-number singular))
             :ARG2 (s8v4 / vysoký
                 :extent (s8t1 / tak
@@ -293,64 +249,49 @@
                                     :refer-number plural)
                                 :refer-number singular)
                             :refer-number singular)
-                        :aspect activity))
-                :refer-number singular)
+                        :aspect activity)))
             :aspect activity)
-        :refer-number plural
-        :refer-person 1st
         :aspect state)
 
 # sentence level graph:
 (s9n1 / nabízet-001
-        :ARG2 (s9c1 / čtenář
-            :mod (s9t1 / tento
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 3rd)
-        :ARG0 (s9e1 / entity
+        :ARG3 (s9c1 / čtenář
+            :mod (s9t1 / tento)
+            :refer-number plural)
+        :ARG0 (s9p1 / person
             :refer-number plural
             :refer-person 1st)
         :manner (s9t2 / tak
             :comparison (s9n2 / nabízet-001
-                :ARG0 s9e1
-                :ARG1 s9p1
-                :ARG2 s9c1
+                :ARG0 s9p1
+                :ARG1 s9p2
+                :ARG3 s9c1
                 :temporal (s9v1 / vloni)
-                :refer-number plural
-                :refer-person 1st
                 :aspect activity))
-        :ARG1 (s9p1 / pomoc
+        :ARG1 (s9p2 / pomoc
             :refer-number singular)
-        :refer-number plural
-        :refer-person 1st
         :aspect activity)
 
 # sentence level graph:
 (s10n1 / nabízet-001
         :clausal-marker (s10p1 / pak)
-        :ARG2 (s10p2 / předplatitel
-            :mod (s10v1 / všechen
-                :refer-number plural)
+        :ARG3 (s10p2 / předplatitel
+            :mod (s10v1 / všechen)
             :refer-number plural)
-        :ARG0 (s10e1 / entity
+        :ARG0 (s10p3 / person
             :refer-number plural
             :refer-person 1st)
         :ARG1 (s10s1 / soutěž
-            :mod (s10n2 / nový
-                :refer-number singular)
+            :mod (s10n2 / nový)
             :refer-number singular)
-        :refer-number plural
-        :refer-person 1st
         :aspect activity)
 
 # sentence level graph:
 (s11v1 / vědět-001
         :vocative (s11c1 / čtenář
-            :mod (s11v2 / vážený
-                :refer-number plural)
-            :refer-number plural
-            :refer-person 2nd)
-        :ARG0 (s11e1 / entity
+            :mod (s11v2 / vážený)
+            :refer-number plural)
+        :ARG0 (s11p1 / person
             :refer-number plural
             :refer-person 1st)
         :start (s11d1 / dopis
@@ -361,20 +302,13 @@
             :extent (s11v3 / většinou)
             :manner (s11k1 / kladně)
             :ARG1 (s11z1 / změna
-                :ARG1-of (s11p1 / probíhat-002
+                :ARG1-of (s11p2 / probíhat-002
                     :place (s11n1 / noviny
-                        :mod (s11l1 / Lidový
-                            :refer-number plural)
+                        :mod (s11l1 / Lidový)
                         :refer-number plural)
-                    :refer-number plural
-                    :refer-person 3rd
                     :aspect activity)
                 :refer-number plural)
-            :refer-number plural
-            :refer-person 2nd
             :aspect activity)
-        :refer-number plural
-        :refer-person 1st
         :aspect state)
 
 # sentence level graph:
@@ -382,85 +316,63 @@
         :clausal-marker (s12t1 / také)
         :ARG0 (s12c1 / čtenář
             :ARG1 (s12d1 / demokracie
-                :mod (s12l1 / Lidový
-                    :refer-number singular)
+                :mod (s12l1 / Lidový)
                 :refer-number singular)
-            :mod (s12b1 / bývalý
-                :refer-number plural)
+            :mod (s12b1 / bývalý)
             :refer-number plural)
-        :ARG2 (s12e1 / entity
+        :ARG2 (s12p2 / person
             :refer-number plural
             :refer-person 1st)
-        :effect (s12s1 / souhlasit-003
+        :ARG1 (s12s1 / souhlasit-003
             :concession (s12l2 / litovat-001
                 :ARG0 s12c1
                 :ARG1 (s12z1 / zánik
                     :ARG0 (s12l3 / LD
                         :refer-number singular)
                     :refer-number singular)
-                :refer-number plural
-                :refer-person 3rd
                 :aspect activity)
             :ARG0 s12c1
             :ARG1 (s12o1 / odběr
                 :ARG1 (s12n1 / noviny
-                    :mod (s12l4 / Lidový
-                        :refer-number plural)
+                    :mod (s12l4 / Lidový)
                     :refer-number plural)
-                :mod (s12d2 / další
-                    :refer-number singular)
+                :mod (s12d2 / další)
                 :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
             :aspect state)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s13v1 / věřit-001
         :clausal-marker (s13p1 / proto)
-        :ARG0 (s13e1 / entity
+        :ARG0 (s13p2 / person
             :refer-number plural
             :refer-person 1st)
         :ARG1 (s13a1 / and
-            :op1 (s13p2 / pochopit-001
-                :ARG0 (s13e2 / entity
+            :op1 (s13p3 / pochopit-001
+                :ARG0 (s13p4 / person
                     :refer-number plural
                     :refer-person 2nd)
                 :ARG1 (s13b1 / být-159
                     :ARG0 (s13z1 / zvýšení
-                        :mod (s13s1 / současný
-                            :refer-number singular)
+                        :mod (s13s1 / současný)
                         :ARG1 (s13c1 / cena
                             :refer-number singular)
-                        :ARG0 (s13e3 / entity)
+                        :ARG0 (s13e1 / entity)
                         :refer-number singular)
-                    :ARG1 (s13n1 / nutný
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
+                    :ARG1 (s13n1 / nutný)
                     :aspect activity)
-                :refer-number plural
-                :refer-person 2nd
                 :aspect performance)
             :op2 (s13z2 / zůstat-002
-                :ARG0 s13e2
+                :ARG0 s13p4
                 :ARG2 (s13v2 / věrný
-                    :ARG1 s13e1
-                    :refer-number plural)
-                :refer-number plural
-                :refer-person 2nd
+                    :ARG1 s13p2)
                 :aspect performance))
-        :refer-number plural
-        :refer-person 1st
         :aspect state)
 
 # sentence level graph:
 (s14i1 / identity-91
         :ARG1 (s14k1 / Klíma
-            :mod (s14m1 / Michal
-                :refer-number singular)
+            :mod (s14m1 / Michal)
             :refer-number singular)
         :ARG2 (s14r1 / ředitel
             :possessor (s14l1 / LN
@@ -475,8 +387,7 @@
                 :possessor (s1k1 / kontrarozvědka
                     :refer-number singular)
                 :refer-number singular)
-            :mod (s1p2 / parlamentní
-                :refer-number singular)
+            :mod (s1p2 / parlamentní)
             :refer-number singular)
         :aspect activity)
 
@@ -490,14 +401,11 @@
         :concession (s3a1 / and
             :op1 (s3u1 / ukončit-001
                 :ARG0 (s3o1 / orgán
-                    :mod (s3p2 / parlamentní
-                        :refer-number singular)
+                    :mod (s3p2 / parlamentní)
                     :purpose (s3k1 / kontrola
                         :ARG1 (s3s1 / služba
-                            :mod (s3i1 / informační
-                                :refer-number singular)
-                            :mod (s3b1 / Bezpečnostní
-                                :refer-number singular)
+                            :mod (s3i1 / informační)
+                            :mod (s3b1 / Bezpečnostní)
                             :refer-number singular)
                         :refer-number singular)
                     :refer-number singular)
@@ -511,43 +419,35 @@
                             :refer-number singular)
                         :refer-number plural)
                     :refer-number singular)
-                :refer-number singular
                 :aspect performance)
             :op2 (s3k3 / konstatovat-002
                 :ARG0 s3o1
-                :effect (s3p4 / porušit-001
+                :ARG1 (s3p4 / porušit-001
                     :ARG0 (s3b2 / BIS
                         :refer-number singular)
                     :ARG1 (s3z1 / zákon
                         :refer-number singular)
                     :aspect performance
                     :polarity -)
-                :refer-number singular
                 :aspect process))
         :ARG1 (s3s2 / šetření
             :ARG0 (s3e2 / entity)
             :ARG1 (s3e3 / entity)
             :refer-number singular)
         :duration (s3d2 / dále)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s4p1 / připustit-004
         :temporal (s4v1 / včera)
         :ARG1 (s4t1 / ten
-            :refer-number singular
-            :refer-person 3rd)
+            :refer-number singular)
         :ARG0 (s4s1 / Severa
-            :mod (s4p2 / Pavel
-                :refer-number singular)
-            :mod (s4p3 / poslanec
-                :refer-number singular)
+            :mod (s4p2 / Pavel)
+            :mod (s4p3 / poslanec)
             :mod (s4c1 / člen
                 :possessor (s4k1 / komise
-                    :refer-number singular)
-                :refer-number singular)
+                    :refer-number singular))
             :parenthesis (s4a1 / and
                 :op1 (s4k2 / KDU)
                 :op2 (s4c2 / ČSL))
@@ -556,15 +456,13 @@
             :possessor (s4o1 / orgán
                 :refer-number singular)
             :refer-number singular)
-        :refer-number singular
         :aspect performance)
 
 # sentence level graph:
 (s5s1 / shodnout-se-001
         :ARG0 (s5k1 / komise
             :refer-number singular)
-        :ARG2 (s5x1 / _Rcp
-            :refer-number singular)
+        :ARG2 (s5x1 / Rcp)
         :ARG1 (s5d1 / dokončit-001
             :ARG0 s5x1
             :ARG1 (s5i1 / identity-91
@@ -587,16 +485,12 @@
                     :effect (s5v1 / vysvětlení
                         :ARG1 (s5e6 / entity)
                         :ARG0 (s5d2 / Devátý
-                            :mod (s5s3 / Stanislav
-                                :refer-number singular)
+                            :mod (s5s3 / Stanislav)
                             :mod (s5r1 / ředitel
-                                :possessor (s5b1 / BIS)
-                                :refer-number singular)
+                                :possessor (s5b1 / BIS))
                             :refer-number singular)
                         :refer-number singular)
                     :refer-number singular))
-            :refer-number singular
-            :refer-person 3rd
             :aspect performance)
         :aspect performance)
 
@@ -606,27 +500,21 @@
         :clausal-marker (s6p1 / prý)
         :ARG2 (s6z1 / získat-001
             :ARG0 (s6s2 / služba
-                :mod (s6t1 / tajný
-                    :refer-number singular)
+                :mod (s6t1 / tajný)
                 :refer-number singular)
             :ARG1 (s6u1 / údaj
-                :mod (s6v1 / veškerý
-                    :refer-number plural)
+                :mod (s6v1 / veškerý)
                 :refer-number plural)
             :ARG2 (s6z2 / zdroj
-                :mod (s6o1 / otevřený
-                    :refer-number plural)
+                :mod (s6o1 / otevřený)
                 :refer-number plural)
             :aspect performance)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s7p1 / pozvat-001
         :goal (s7k1 / komise
-            :refer-number singular
-            :refer-person 3rd)
+            :refer-number singular)
         :ARG0 (s7e1 / entity)
         :ARG1 (s7c1 / člověk
             :mod (s7n1 / navrhnout-002
@@ -635,16 +523,12 @@
                     :ARG0 (s7e2 / entity)
                     :refer-number singular)
                 :ARG0 (s7k2 / Kalvoda
-                    :mod (s7j1 / Jan
-                        :refer-number singular)
+                    :mod (s7j1 / Jan)
                     :mod (s7p2 / předseda
-                        :possessor (s7o1 / ODA)
-                        :refer-number singular)
+                        :possessor (s7o1 / ODA))
                     :refer-number singular)
-                :refer-number singular
                 :aspect performance)
             :refer-number plural)
-        :refer-number plural
         :aspect performance)
 
 # sentence level graph:
@@ -652,24 +536,18 @@
         :ARG0 (s8e1 / entity)
         :clausal-marker (s8i1 / i)
         :ARG1 (s8c1 / Čelechovský
-            :mod (s8m1 / Michal
-                :refer-number singular)
+            :mod (s8m1 / Michal)
             :mod (s8p2 / pracovník
                 :possessor (s8b1 / BIS
                     :refer-number singular)
-                :mod (s8b2 / bývalý
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s8b2 / bývalý))
             :ARG0-of (s8p3 / požádat-001
                 :ARG1 (s8t1 / ten
                     :refer-number singular)
-                :manner (s8s1 / sám
-                    :refer-number singular)
+                :manner (s8s1 / sám)
                 :ARG2 (s8e2 / entity)
-                :refer-number singular
                 :aspect performance)
             :refer-number singular)
-        :refer-number singular
         :aspect performance)
 
 # sentence level graph:
@@ -681,20 +559,15 @@
             :ARG1 (s9r1 / revokace
                 :ARG1 (s9u1 / usnesení
                     :temporal (s9j1 / již)
-                    :mod (s9p2 / přijatý
-                        :refer-number plural)
+                    :mod (s9p2 / přijatý)
                     :refer-number plural)
                 :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity
             :polarity -)
         :ARG2 (s9o1 / obsahovat-001
             :ARG1 (s9s3 / skutečnost
-                :mod (s9n1 / nový
-                    :refer-number plural)
-                :mod (s9p3 / případný
-                    :refer-number plural)
+                :mod (s9n1 / nový)
+                :mod (s9p3 / případný)
                 :refer-number plural)
             :ARG0 (s9z1 / zpráva
                 :ARG1-of (s9p4 / předložit-001
@@ -703,8 +576,7 @@
                     :ARG2 (s9s4 / sněmovna
                         :refer-number singular)
                     :place (s9s5 / schůze
-                        :mod (s9b2 / březnový
-                            :refer-number singular)
+                        :mod (s9b2 / březnový)
                         :refer-number singular)
                     :aspect performance)
                 :refer-number singular)
@@ -718,15 +590,12 @@
                     :refer-number singular)
                 :refer-number plural)
             :temporal (s10v1 / včera)
-            :ARG2 (s10x1 / _Rcp
-                :refer-number plural)
+            :ARG2 (s10x1 / Rcp)
             :ARG1 (s10u1 / úkol
                 :duration (s10d1 / den
-                    :mod (s10p1 / příští
-                        :refer-number plural)
+                    :mod (s10p1 / příští)
                     :refer-number plural)
                 :refer-number plural)
-            :refer-number plural
             :aspect performance)
         :op2 (s10s1 / sejít-se-001
             :ARG0 s10c1
@@ -734,36 +603,28 @@
                 :ARG0 (s10e1 / entity)
                 :ARG1 (s10e2 / entity)
                 :ARG2 (s10e3 / entity)
-                :mod (s10d2 / další
-                    :refer-number singular)
+                :mod (s10d2 / další)
                 :refer-number singular)
-            :ARG1 (s10x3 / _Rcp
-                :refer-number plural)
+            :ARG1 (s10x3 / Rcp)
             :place (s10b1 / březen
                 :mod (s10x4 / 8)
                 :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
             :aspect performance))
 
 # sentence level graph:
 (s11r1 / říci-008
         :ARG0 (s11m1 / Mašek
-            :mod (s11i1 / Ivan
-                :refer-number singular)
-            :mod (s11p1 / poslanec
-                :refer-number singular)
+            :mod (s11i1 / Ivan)
+            :mod (s11p1 / poslanec)
             :parenthesis (s11o1 / ODA)
             :refer-number singular)
         :ARG2 (s11n1 / novinář
             :refer-number plural)
-        :effect (s11t1 / trvat-002
+        :ARG1 (s11t1 / trvat-002
             :ARG0 s11m1
             :ARG1 (s11u1 / úkon
-                :mod (s11k1 / kontrolní
-                    :refer-number plural)
-                :mod (s11v1 / všechen
-                    :refer-number plural)
+                :mod (s11k1 / kontrolní)
+                :mod (s11v1 / všechen)
                 :ARG1-of (s11n2 / navrhnout-002
                     :ARG0 (s11e1 / entity)
                     :temporal (s11p2 / projednávání
@@ -774,41 +635,32 @@
                                 :refer-number singular)
                             :refer-number singular)
                         :refer-number singular)
-                    :refer-number plural
                     :aspect performance)
                 :refer-number plural)
-            :refer-number singular
             :aspect activity)
-        :refer-number singular
         :aspect performance)
 
 # sentence level graph:
 (s1m1 / mít-008
         :ARG0 (s1e1 / entity)
         :ARG1 (s1a1 / auto
-            :mod (s1d1 / dva
-                :refer-number plural)
+            :mod (s1d1 / dva)
             :refer-number plural)
-        :refer-number singular
-        :refer-person 1st
         :aspect state)
 
 # sentence level graph:
 (s2p1 / povědět-001
         :clausal-marker (s2j1 / ještě)
-        :effect (s2n1 / něco
+        :ARG1 (s2n1 / něco
             :refer-number singular
             :refer-person 3rd)
-        :ARG2 (s2e1 / entity
+        :ARG2 (s2p2 / person
             :refer-number singular
             :refer-person 1st)
         :regard (s2f1 / fotka
-            :mod (s2t1 / ten
-                :refer-number singular)
+            :mod (s2t1 / ten)
             :refer-number singular)
-        :ARG0 (s2e2 / entity)
-        :refer-number plural
-        :refer-person 2nd
+        :ARG0 (s2e1 / entity)
         :aspect performance)
 
 # sentence level graph:
@@ -818,12 +670,10 @@
             :affectee s3e1
             :ARG0 (s3e2 / entity)
             :parenthesis (s3v1 / vidět-007
-                :ARG0 (s3e3 / entity
+                :ARG0 (s3p1 / person
                     :refer-number singular
                     :refer-person 1st)
                 :ARG1 s3n1
-                :refer-number plural
-                :refer-person 2nd
                 :aspect state)
             :ARG1 (s3a1 / and
                 :op1 (s3l1 / lampa
@@ -833,7 +683,6 @@
                 :op3 (s3t1 / teleskop
                     :refer-number plural))
             :aspect performance)
-        :refer-number singular
         :aspect performance)
 
 # sentence level graph:
@@ -843,7 +692,6 @@
             :refer-person 3rd)
         :manner (s4c1 / chróm
             :refer-number singular)
-        :refer-number singular
         :aspect activity)
 
 # sentence level graph:
@@ -851,8 +699,7 @@
         :ARG1 (s5t1 / ten
             :refer-number singular)
         :ARG2 (s5m1 / motorka
-            :mod (s5d1 / dobrý
-                :refer-number singular)
+            :mod (s5d1 / dobrý)
             :refer-number singular)
         :aspect activity)
 
@@ -861,12 +708,11 @@
         :ARG0 (s6k1 / kdo
             :refer-number singular
             :refer-person 3rd)
-        :affectee (s6e1 / entity
+        :affectee (s6p1 / person
             :refer-number plural
             :refer-person 2nd)
         :ARG1 (s6t1 / ten
             :refer-number singular)
-        :refer-number singular
         :aspect activity)
 
 # sentence level graph:
@@ -874,11 +720,9 @@
         :ARG1 (s7t1 / ten
             :refer-number singular)
         :ARG0 (s7k1 / kamarád
-            :refer-number plural
-            :refer-person 3rd)
+            :refer-number plural)
         :place (s7s1 / Škodovka
             :refer-number singular)
-        :refer-number plural
         :aspect activity)
 
 # sentence level graph:
@@ -886,19 +730,16 @@
         :ARG1 (s8t1 / ten
             :refer-number singular)
         :ARG2 (s8m1 / motorka
-            :mod (s8e1 / entity
+            :mod (s8p1 / person
                 :refer-number plural
                 :refer-person 2nd)
-            :mod (s8p1 / první
-                :refer-number singular)
+            :mod (s8p2 / první)
             :refer-number singular)
         :aspect activity)
 
 # sentence level graph:
 (s9m1 / motorka
-        :mod (s9p1 / první
-            :refer-number singular)
-        :refer-number singular)
+        :mod (s9p1 / první))
 
 # sentence level graph:
 (s10v1 / vážit-si-001
@@ -906,21 +747,17 @@
         :ARG1 (s10e1 / entity
             :refer-number singular
             :refer-person 3rd)
-        :ARG0 (s10e2 / entity
+        :ARG0 (s10p1 / person
             :refer-number plural
             :refer-person 2nd)
-        :refer-number singular
         :aspect activity)
 
 # sentence level graph:
 (s11p1 / podívat-se-001
         :ARG0 (s11e1 / entity)
         :ARG1 (s11f1 / fotka
-            :mod (s11d1 / další
-                :refer-number singular)
+            :mod (s11d1 / další)
             :refer-number singular)
-        :refer-number plural
-        :refer-person 1st
         :aspect performance)
 
 # sentence level graph:
@@ -933,8 +770,6 @@
         :effect (s12z1 / zač
             :refer-number singular
             :refer-person 3rd)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
@@ -942,8 +777,7 @@
         :ARG1 (s13t1 / tenhleten
             :refer-number singular)
         :ARG2 (s13t2 / tábor
-            :mod (s13j1 / junácký
-                :refer-number singular)
+            :mod (s13j1 / junácký)
             :place (s13v1 / Vrbice
                 :place (s13s1 / Stříbro
                     :refer-number singular)
@@ -954,15 +788,10 @@
             :place-of (s13d1 / dělat-013
                 :ARG0 (s13e1 / entity)
                 :ARG1 (s13v2 / vedoucí
-                    :mod (s13o1 / oddíl
-                        :refer-number singular)
+                    :mod (s13o1 / oddíl)
                     :refer-number singular)
-                :refer-number singular
                 :aspect activity)
-            :refer-number singular
-            :refer-person 3rd)
-        :refer-number singular
-        :refer-person 3rd
+            :refer-number singular)
         :aspect activity)
 
 # sentence level graph:
@@ -973,13 +802,10 @@
         :ARG2 (s14v1 / vidět-007
             :ARG0 (s14e1 / entity)
             :place (s14f1 / fotka
-                :mod (s14t1 / ten
-                    :refer-number singular)
+                :mod (s14t1 / ten)
                 :refer-number singular)
             :ARG1 s14k1
             :aspect state)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
@@ -988,39 +814,31 @@
             :start (s15z1 / zleva)
             :ARG1 (s15v1 / vlásek
                 :parenthesis (s15b2 / být-007
-                    :ARG1 (s15t1 / ten
-                        :refer-number singular)
+                    :ARG1 (s15e1 / entity
+                        :refer-number singular
+                        :refer-person 3rd)
                     :ARG2 (s15v2 / vedoucí
                         :mod (s15s1 / skaut
-                            :mod (s15c1 / celý
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular
-                    :refer-person 3rd
+                            :mod (s15c1 / celý)))
                     :aspect activity)
                 :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity)
         :op2 (s15b3 / být-011
             :clausal-marker (s15p1 / pak)
-            :place (s15t2 / tam
-                :refer-number singular)
+            :place (s15t1 / tam)
             :ARG0 (s15a2 / and
                 :op1 (s15s2 / sestra
                     :refer-number singular)
                 :op2 (s15p2 / Pepík
                     :refer-number singular))
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity))
 
 # sentence level graph:
 (s16j1 / jmenovat-se-002
-        :manner (s16j2 / jak)
-        :ARG0 (s16e1 / entity
-            :refer-number singular)
+        :ARG2 (s16j2 / jak)
+        :ARG1 (s16e1 / entity
+            :refer-number singular
+            :refer-person 3rd)
         :aspect process)
 
 # sentence level graph:
@@ -1033,11 +851,9 @@
 (s18m1 / mrzet-001
         :ARG1 (s18t1 / ten
             :refer-number singular)
-        :ARG0 (s18e1 / entity
+        :ARG0 (s18p1 / person
             :refer-number singular
             :refer-person 1st)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
@@ -1045,62 +861,51 @@
         :ARG1 (s19p1 / Pepík
             :refer-number singular)
         :place (s19t1 / tam)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s20b1 / but-91
         :ARG1 (s20j1 / jmenovat-004
             :ARG0 (s20e1 / entity)
-            :ARG1 (s20x1 / _Rcp)
-            :manner (s20e2 / entity)
+            :ARG1 (s20x1 / Rcp)
+            :ARG2 (s20e2 / entity)
             :instrument (s20j2 / jméno
                 :refer-number singular)
-            :refer-number plural
             :aspect process
             :polarity -)
         :ARG2 (s20j3 / jmenovat-004
             :ARG0 s20e1
             :ARG1 s20x1
-            :manner s20e2
+            :ARG2 s20e2
             :temporal (s20v1 / vždycky)
             :instrument (s20p1 / přezdívka
                 :refer-number singular)
-            :refer-number plural
             :aspect process
             :polarity -))
 
 # sentence level graph:
 (s21m1 / mít-008
-        :ARG0 (s21k1 / každý
-            :refer-number singular)
+        :ARG0 (s21k1 / každý)
         :ARG1 (s21p1 / přezdívka
-            :mod (s21n1 / nějaký
-                :refer-number singular
-                :refer-person 3rd)
+            :mod (s21n1 / nějaký)
             :refer-number singular)
-        :refer-number singular
         :aspect state)
 
 # sentence level graph:
 (s22b1 / být-007
         :ARG1 (s22t1 / ten
-            :mod (s22p1 / první
-                :refer-number singular)
+            :mod (s22p1 / první)
             :refer-number singular)
         :ARG2 (s22v1 / Vlásek
             :refer-number singular)
-        :refer-number singular
         :aspect activity)
 
 # sentence level graph:
 (s23b1 / být-007
-        :ARG1 (s23e1 / entity
+        :ARG1 (s23p1 / person
             :refer-number singular
             :refer-person 1st)
-        :ARG2 (s23e2 / entity)
-        :refer-number singular
+        :ARG2 (s23e1 / entity)
         :aspect activity)
 
 # sentence level graph:
@@ -1115,15 +920,10 @@
                 :manner (s24e1 / entity)
                 :ARG0 (s24p3 / pírko
                     :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
                 :aspect activity
                 :polarity -)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity
             :polarity -)
-        :refer-number singular
         :aspect activity)
 
 # sentence level graph:
@@ -1131,8 +931,7 @@
         :clausal-marker (s25a1 / a)
         :ARG0 (s25i1 / identity-91
             :ARG1 (s25s1 / sestra
-                :mod (s25t1 / ten
-                    :refer-number singular)
+                :mod (s25t1 / ten)
                 :parenthesis (s25j1 / jmenovat-se-001
                     :ARG2 (s25j2 / Jitka
                         :refer-number singular)
@@ -1148,8 +947,7 @@
         :frequency (s1v1 / vždycky)
         :clausal-marker (s1a1 / ale)
         :ARG1 (s1l1 / legrace
-            :mod (s1v2 / velký
-                :refer-number singular)
+            :mod (s1v2 / velký)
             :refer-number singular)
         :aspect activity)
 
@@ -1162,22 +960,17 @@
             :op2 (s2t1 / tak
                 :part-of-phraseme (s2d1 / dále)))
         :ARG2 (s2p1 / prima)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s3b1 / být-007
         :ARG1 (s3n1 / nálada
-            :mod (s3d1 / dobrý
-                :refer-number singular)
+            :mod (s3d1 / dobrý)
             :refer-number singular)
         :ARG2 (s3v1 / vidět-007
             :ARG0 (s3e1 / entity)
             :ARG1 s3n1
             :aspect state)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
@@ -1188,41 +981,31 @@
             :ARG1 s4e1
             :aspect state)
         :start (s4f1 / fotka
-            :mod (s4t1 / ten
-                :refer-number singular)
+            :mod (s4t1 / ten)
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s5b1 / být-007
         :ARG1 (s5t1 / ten
-            :refer-number singular
-            :refer-person 3rd)
+            :refer-number singular)
         :ARG2 (s5p1 / pravda
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s6e1 / event
         :clausal-marker (s6h1 / hlavně)
         :ARG0 (s6s1 / sednout-si-002
-            :ARG0 (s6e2 / entity)
-            :goal (s6e3 / entity)
-            :refer-number plural
-            :refer-person 1st
+            :ARG1 (s6e2 / entity)
+            :ARG2 (s6e3 / entity)
             :aspect performance)
         :aspect state)
 
 # sentence level graph:
 (s7v1 / vídat-001
         :ARG0 (s7e1 / entity)
-        :ARG1 (s7x1 / _Rcp)
-        :refer-number plural
-        :refer-person 2nd
+        :ARG1 (s7x1 / Rcp)
         :aspect activity)
 
 # sentence level graph:
@@ -1231,21 +1014,15 @@
             :refer-number singular)
         :clausal-marker (s8p1 / prakticky)
         :ARG2 (s8t2 / třída
-            :mod (s8t3 / ten
-                :refer-number singular)
+            :mod (s8t3 / ten)
             :ARG1-of (s8s1 / scházet-se-001
                 :ARG0 (s8e1 / entity)
                 :temporal (s8t4 / teď)
                 :frequency (s8r1 / rok
-                    :mod (s8k1 / každý
-                        :refer-number singular)
+                    :mod (s8k1 / každý)
                     :refer-number singular)
-                :refer-number singular
-                :refer-person 1st
                 :aspect activity)
             :refer-number singular)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
@@ -1253,26 +1030,19 @@
         :op1 (s9b1 / být-011
             :temporal (s9b2 / brzy)
             :ARG1 (s9t1 / ten
-                :refer-number singular
-                :refer-person 1st)
+                :refer-number singular)
             :frequency (s9j1 / jednou
                 :duration (s9r1 / rok
-                    :mod (s9d1 / dva
-                        :refer-number plural)
+                    :mod (s9d1 / dva)
                     :refer-number plural))
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity)
         :op2 (s9b3 / být-011
             :temporal (s9t2 / teď)
             :ARG1 (s9t3 / ten
                 :refer-number singular)
             :frequency (s9r2 / rok
-                :mod (s9k1 / každý
-                    :refer-number singular)
+                :mod (s9k1 / každý)
                 :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity))
 
 # sentence level graph:
@@ -1282,26 +1052,18 @@
         :ARG2 (s10m1 / maturant
             :ARG0-of (s10j1 / jezdit-002
                 :frequency (s10p1 / pravidelně)
-                :goal (s10e1 / entity)
+                :ARG1 (s10e1 / entity)
                 :purpose (s10s1 / sraz
-                    :mod (s10t2 / ten
-                        :refer-number plural)
+                    :mod (s10t2 / ten)
                     :refer-number plural)
-                :refer-number plural
-                :refer-person 3rd
                 :aspect activity)
             :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s11c1 / chodit-006
-        :ARG0 (s11j1 / jeden
-            :refer-number singular)
+        :ARG1 (s11j1 / jeden)
         :goal (s11e1 / entity)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity
         :polarity -)
 
@@ -1309,16 +1071,13 @@
 (s12c1 / chodit-006
         :goal (s12e1 / entity)
         :clausal-marker (s12z1 / zrovna)
-        :ARG0 (s12t1 / tadyhleten
+        :ARG1 (s12t1 / tadyhleten
             :place (s12v1 / vepředu)
             :place (s12v2 / vlevo)
             :companion (s12s1 / šátek
-                :mod (s12t2 / ten
-                    :refer-number singular)
+                :mod (s12t2 / ten)
                 :refer-number singular)
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity
         :polarity -)
 
@@ -1329,55 +1088,43 @@
         :temporal (s13u1 / už)
         :place (s13s1 / smrt
             :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s14b1 / být-011
-        :place (s14t1 / tam
-            :refer-number singular)
+        :place (s14t1 / tam)
         :clausal-marker (s14j1 / ještě)
         :ARG1 (s14b2 / brigádník
-            :mod (s14n1 / nějaký
-                :refer-number singular
-                :refer-person 3rd)
+            :mod (s14n1 / nějaký)
             :refer-number singular)
         :extent (s14n2 / navíc)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s15b1 / být-007
         :ARG0 (s15i1 / identity-91
-            :ARG1 (s15t1 / ten
-                :refer-number singular)
+            :ARG1 (s15e1 / entity
+                :refer-number singular
+                :refer-person 3rd)
             :ARG2 (s15a1 / and
-                :op1 (s15t2 / ten
+                :op1 (s15t1 / ten
                     :place (s15v1 / vlevo)
                     :refer-number singular)
-                :op2 (s15t3 / ten
+                :op2 (s15t2 / ten
                     :place (s15p1 / prostředek
                         :refer-number singular)
                     :place (s15v2 / vzadu)
                     :refer-number singular)))
         :clausal-marker (s15z1 / zřejmě)
         :ARG2 (s15l1 / lesák
-            :mod (s15n1 / nějaký
-                :refer-number plural
-                :refer-person 3rd)
+            :mod (s15n1 / nějaký)
             :ARG0-of (s15d1 / dirigovat-002
-                :ARG1 (s15e1 / entity
+                :ARG1 (s15p2 / person
                     :refer-number plural
                     :refer-person 1st)
-                :extent (s15t4 / trošku)
-                :refer-number plural
-                :refer-person 3rd
+                :extent (s15t3 / trošku)
                 :aspect activity)
             :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
@@ -1386,8 +1133,6 @@
         :ARG1 (s16e2 / entity
             :refer-number plural
             :refer-person 3rd)
-        :refer-number singular
-        :refer-person 1st
         :aspect state
         :polarity -)
 
@@ -1396,19 +1141,17 @@
         :ARG0 (s17t1 / ten
             :refer-number plural
             :refer-person 3rd)
-        :ARG2 (s17e1 / entity
+        :ARG2 (s17p1 / person
             :refer-number plural
             :refer-person 1st)
         :ARG1 (s17v1 / vykopávat-002
             :manner (s17j1 / jak)
-            :ARG0 s17e1
+            :ARG0 s17p1
             :ARG1 (s17d1 / díra
                 :affectee (s17s1 / stromeček
                     :refer-number plural)
                 :refer-number plural)
             :aspect habitual)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
@@ -1416,29 +1159,24 @@
         :duration (s18d1 / dlouho
             :extent (s18j2 / jak))
         :ARG0 (s18e1 / entity)
-        :goal (s18e2 / entity)
-        :refer-number plural
-        :refer-person 2nd
+        :ARG1 (s18e2 / entity)
         :aspect activity)
 
 # sentence level graph:
 (s19b1 / být-011
         :frequency (s19v1 / většinou)
         :ARG1 (s19t1 / ten
-            :refer-number singular
-            :refer-person 2nd)
+            :refer-number singular)
         :duration (s19o1 / or
             :op1 (s19t2 / týden
                 :refer-number singular)
             :op2 (s19m1 / málo))
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s20j1 / jezdit-002
         :ARG0 (s20e1 / entity)
-        :goal (s20e2 / entity)
+        :ARG1 (s20e2 / entity)
         :temporal (s20p1 / pondělek
             :refer-number singular)
         :temporal (s20o1 / or
@@ -1448,7 +1186,6 @@
             :op2 (s20s1 / sobota
                 :extent s20a1
                 :refer-number singular))
-        :refer-number plural
         :aspect activity)
 
 # sentence level graph:
@@ -1459,26 +1196,22 @@
             :clausal-marker (s21i1 / i)
             :temporal (s21s1 / sobota
                 :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity)
         :clausal-marker (s21t2 / tak)
         :op2 (s21j1 / jezdit-002
             :clausal-marker (s21m1 / možná)
             :ARG0 (s21e2 / entity)
-            :goal (s21e3 / entity)
+            :ARG1 (s21e3 / entity)
             :clausal-marker (s21i2 / i)
             :duration (s21s2 / sobota
                 :refer-number singular)
-            :refer-number plural
             :aspect activity))
 
 # sentence level graph:
 (s22c1 / chodit-006
         :purpose (s22i1 / identity-91
             :ARG1 (s22b1 / brigáda
-                :mod (s22j1 / jiný
-                    :refer-number plural)
+                :mod (s22j1 / jiný)
                 :refer-number plural)
             :ARG2 (s22b2 / být-007
                 :ARG2 s22b1
@@ -1488,24 +1221,18 @@
                             :op1 (s22o2 / okopávání
                                 :ARG0 (s22e1 / entity)
                                 :ARG1 (s22b3 / brambora
-                                    :refer-number plural)
-                                :refer-number singular)
+                                    :refer-number plural))
                             :op2 (s22s1 / sklízení
                                 :ARG0 s22e1
-                                :ARG1 s22b3
-                                :refer-number singular))
+                                :ARG1 s22b3))
                         :refer-number singular)
                     :op2 (s22t1 / tak))
-                :refer-number singular
-                :refer-person 3rd
                 :aspect activity))
-        :ARG0 (s22e2 / entity)
+        :ARG1 (s22e2 / entity)
         :goal (s22e3 / entity)
         :clausal-marker (s22j2 / jenom)
         :duration (s22d1 / den
             :refer-number plural)
-        :refer-number plural
-        :refer-person 1st
         :aspect activity)
 
 # sentence level graph:
@@ -1514,21 +1241,15 @@
             :refer-number singular)
         :ARG2 (s23b2 / brigáda
             :mod (s23o1 / or
-                :op1 (s23j1 / jednodenní
-                    :refer-number plural)
-                :op2 (s23d1 / dvoudenní
-                    :refer-number plural))
+                :op1 (s23j1 / jednodenní)
+                :op2 (s23d1 / dvoudenní))
             :refer-number plural)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s24j1 / jezdit-002
         :ARG0 (s24e1 / entity)
-        :goal (s24d1 / daleko)
-        :refer-number plural
-        :refer-person 2nd
+        :ARG1 (s24d1 / daleko)
         :aspect activity)
 
 # sentence level graph:
@@ -1537,182 +1258,110 @@
 # sentence level graph:
 (s1v1 / vycouvat-001
         :ARG0 (s1s1 / společnost
-            :name (s1x1 / _Forn
-                :FPHR (s1n1 / New)
-                :FPHR (s1e1 / England)
-                :FPHR (s1e2 / Electric)
-                :FPHR (s1s2 / System))
-            :refer-number singular)
+            :name (s1n1 / name
+                :op1 "New" :op2 "England" :op3 "Electric" :op4 "System"))
         :ARG1 (s1r1 / řízení
-            :mod (s1n2 / nabídkový
-                :refer-number singular)
-            :mod (s1s3 / společnost
-                :name (s1x2 / _Forn
-                    :FPHR (s1p1 / Public)
-                    :FPHR (s1s4 / Service)
-                    :FPHR (s1c1 / Co)
-                    :FPHR (s1x3 / .)
-                    :FPHR (s1o1 / of)
-                    :FPHR (s1n3 / New)
-                    :FPHR (s1h1 / Hampshire))
-                :refer-number singular)
-            :refer-number singular)
+            :mod (s1n2 / nabídkový)
+            :mod (s1s2 / společnost
+                :name (s1n3 / name
+                    :op1 "Public" :op2 "Service" :op3 "Co." :op4 "of" :op5 "New" :op6 "Hampshire")))
         :companion (s1a1 / and
             :op1 (s1b1 / být-007
-                :ARG1 (s1r2 / riziko
-                    :refer-number singular)
+                :ARG1 (s1r2 / riziko)
                 :ARG2 (s1v2 / vysoký
-                    :extent (s1p2 / příliš)
-                    :refer-number singular)
-                :refer-number singular
+                    :extent (s1p1 / příliš))
                 :aspect activity)
             :op2 (s1b2 / být-007
                 :ARG1 (s1v3 / výtěžek
-                    :mod (s1p3 / případný
-                        :refer-number singular)
-                    :refer-number singular)
+                    :mod (s1p2 / případný))
                 :ARG2 (s1v4 / vzdálený
-                    :extent (s1p4 / příliš)
-                    :regard (s1o2 / ospravedlnit-001
+                    :extent (s1p3 / příliš)
+                    :regard (s1o1 / ospravedlnit-001
                         :ARG0 s1v3
                         :ARG1 (s1n4 / nabídka
-                            :mod (s1v5 / vysoký
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular
-                        :aspect performance)
-                    :refer-number singular)
-                :refer-number singular
+                            :mod (s1v5 / vysoký))
+                        :aspect performance))
                 :aspect activity))
         :aspect performance)
 
 # sentence level graph:
 (s2z1 / zanechávat-001
         :ARG0 (s2t1 / tah
-            :mod (s2t2 / tento
-                :refer-number singular)
+            :mod (s2t2 / tento)
             :place (s2h1 / hra
                 :mod (s2s1 / společnost
-                    :name (s2x1 / _Forn
-                        :FPHR (s2p1 / PS)
-                        :FPHR (s2o1 / of)
-                        :FPHR (s2n1 / New)
-                        :FPHR (s2h2 / Hampshire))
-                    :ARG0-of (s2p2 / předložit-001
+                    :name (s2n1 / name
+                        :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")
+                    :ARG0-of (s2p1 / předložit-001
                         :ARG2 (s2e1 / entity)
                         :clausal-marker (s2t3 / také)
-                        :ARG1 (s2p3 / plán
+                        :ARG1 (s2p2 / plán
                             :mod (s2r1 / reorganizace
-                                :mod (s2v1 / vnitřní
-                                    :refer-number singular)
-                                :refer-number singular)
+                                :mod (s2v1 / vnitřní))
                             :regard (s2k1 / kapitola
-                                :name (s2x2 / 11)
+                                :name (s2x1 / 11)
                                 :mod (s2r2 / řízení
-                                    :mod (s2k2 / konkurzní
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
+                                    :mod (s2k2 / konkurzní)))
                             :regard-of (s2z2 / zůstat-002
                                 :ARG1 s2s1
                                 :ARG2 (s2s2 / společnost
                                     :mod (s2z3 / závislý
-                                        :refer-number singular
-                                        :polarity -)
-                                    :refer-number singular)
-                                :aspect performance)
-                            :refer-number singular)
-                        :aspect performance)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :place (s2e2 / entity)
+                                        :polarity -))
+                                :aspect performance))
+                        :aspect performance))))
+        :ARG2 (s2e2 / entity)
         :manner (s2z4 / zájemce
             :mod-of s2s3
-            :mod (s2z5 / zbývající
-                :refer-number plural)
-            :mod (s2e3 / externí
-                :refer-number plural)
-            :refer-number plural)
+            :mod (s2z5 / zbývající)
+            :mod (s2e3 / externí))
         :ARG1 (s2s3 / společnost
             :name (s2a1 / and
-                :op1 (s2x5 / _Forn
-                    :FPHR (s2u1 / United)
-                    :FPHR (s2i1 / Illuminating)
-                    :FPHR (s2c1 / Co)
-                    :FPHR (s2x6 / .))
-                :op2 (s2x7 / _Forn
-                    :FPHR (s2n2 / Northeast)
-                    :FPHR (s2u2 / Utilities)))
-            :refer-number plural)
-        :refer-number singular
-        :refer-person 3rd
+                :op1 (s2f1 / foreign-phrase
+                    :op1 "United" :op2 "Illuminating" :op3 "Co.")
+                :op2 (s2f2 / foreign-phrase
+                    :op1 "Northeast" :op2 "Utilities")))
         :aspect habitual)
 
 # sentence level graph:
 (s3n1 / nabídnout-001
         :ARG2 (s3e1 / entity)
         :ARG0 (s3s1 / společnost
-            :name (s3x1 / _Forn
-                :FPHR (s3n2 / New)
-                :FPHR (s3e2 / England)
-                :FPHR (s3e3 / Electric))
+            :name (s3n2 / name
+                :op1 "New" :op2 "England" :op3 "Electric")
             :mod (s3s2 / sídlo
-                :place (s3x2 / _Forn
-                    :FPHR (s3w1 / Westborough)
-                    :place (s3x3 / _Forn
-                        :FPHR (s3m1 / Massachusetts)))
-                :refer-number singular)
-            :refer-number singular)
-        :effect (s3a1 / akvizice
+                :place (s3f1 / foreign-phrase
+                    :place (s3f2 / foreign-phrase
+                        :op1 "Massachusetts")
+                    :op1 "Westborough")))
+        :ARG3 (s3a1 / akvizice
             :mod (s3s3 / společnost
-                :name (s3x4 / _Forn
-                    :FPHR (s3p1 / PS)
-                    :FPHR (s3o1 / of)
-                    :FPHR (s3n3 / New)
-                    :FPHR (s3h1 / Hampshire))
-                :refer-number singular)
-            :refer-number singular)
+                :name (s3n3 / name
+                    :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")))
         :ARG1 (s3a2 / and
-            :op1 (s3m2 / miliarda
-                :mod (s3x5 / 2)
-                :mod (s3d1 / dolar
-                    :refer-number plural)
-                :refer-number singular)
+            :op1 (s3m1 / miliarda
+                :mod (s3x1 / 2)
+                :mod (s3d1 / dolar))
             :op2 (s3b1 / být-007
-                :ARG1 (s3c1 / což
-                    :refer-number singular)
-                :ARG2 (s3m3 / málo
+                :ARG1 (s3c1 / což)
+                :ARG2 (s3m2 / málo
                     :extent (s3d2 / daleko)
                     :comparison (s3a3 / and
-                        :op1 (s3m4 / miliarda
-                            :mod (s3x6 / 2.29)
-                            :mod (s3d3 / dolar
-                                :refer-number plural)
+                        :op1 (s3m3 / miliarda
+                            :mod (s3x2 / 2.29)
+                            :mod (s3d3 / dolar)
                             :mod (s3n4 / nabídnutý
                                 :ARG0 (s3s4 / společnost
-                                    :name (s3x7 / _Forn
-                                        :FPHR (s3u1 / United)
-                                        :FPHR (s3i1 / Illuminating))
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :refer-number singular)
-                        :op2 (s3m5 / miliarda
-                            :mod (s3x8 / 2.25)
+                                    :name (s3n5 / name
+                                        :op1 "United" :op2 "Illuminating"))))
+                        :op2 (s3m4 / miliarda
+                            :mod (s3x3 / 2.25)
                             :mod (s3d4 / dolar
-                                :instrument-of (s3o2 / ohodnotit-003
-                                    :ARG1 (s3n5 / nabídka
-                                        :mod s3s5
-                                        :refer-number singular)
+                                :instrument-of (s3o1 / ohodnotit-003
+                                    :ARG1 (s3n6 / nabídka
+                                        :mod s3s5)
                                     :ARG0 (s3s5 / společnost
-                                        :name (s3n6 / Northeast
-                                            :refer-number singular)
-                                        :refer-number singular)
-                                    :aspect performance)
-                                :refer-number plural)
-                            :refer-number singular)))
-                :refer-number singular
-                :refer-person 3rd
+                                        :name (s3n7 / Northeast))
+                                    :aspect performance)))))
                 :aspect activity))
         :aspect performance)
 
@@ -1720,66 +1369,38 @@
 (s4a1 / and
         :op1 (s4s1 / sídlit-001
             :ARG0 (s4s2 / společnost
-                :name (s4x1 / _Forn
-                    :FPHR (s4u1 / United)
-                    :FPHR (s4i1 / Illuminating))
-                :refer-number singular)
-            :place (s4x2 / _Forn
-                :FPHR (s4n1 / New)
-                :FPHR (s4h1 / Haven)
+                :name (s4n1 / name
+                    :op1 "United" :op2 "Illuminating"))
+            :place (s4f1 / foreign-phrase
                 :place (s4s3 / stát
-                    :name (s4c1 / Connecticut
-                        :refer-number singular)
-                    :refer-number singular))
-            :refer-number singular
-            :refer-person 3rd
+                    :name (s4c1 / Connecticut))
+                :op1 "New" :op2 "Haven")
             :aspect activity)
         :op2 (s4s4 / sídlit-001
             :ARG0 (s4s5 / společnost
-                :name (s4n2 / Northeast
-                    :refer-number singular)
-                :refer-number singular)
-            :place (s4h2 / Hartford
+                :name (s4n2 / Northeast))
+            :place (s4h1 / Hartford
                 :place (s4s6 / stát
-                    :name (s4c2 / Connecticut
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
+                    :name (s4c2 / Connecticut)))
             :aspect activity))
 
 # sentence level graph:
 (s5o1 / oceňovat-001
         :ARG0 (s5s1 / společnost
-            :name (s5x1 / _Forn
-                :FPHR (s5p1 / PS)
-                :FPHR (s5o2 / of)
-                :FPHR (s5n1 / New)
-                :FPHR (s5h1 / Hampshire))
+            :name (s5n1 / name
+                :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")
             :mod (s5s2 / sídlo
                 :place (s5m1 / Manchester
-                    :place (s5x2 / _Forn
-                        :FPHR (s5n2 / New)
-                        :FPHR (s5h2 / Hampshire))
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
-        :ARG1 (s5p2 / plán
+                    :place (s5f1 / foreign-phrase
+                        :op1 "New" :op2 "Hampshire"))))
+        :ARG1 (s5p1 / plán
             :mod s5s1
-            :mod (s5i1 / interní
-                :refer-number singular)
-            :mod (s5r1 / reorganizační
-                :refer-number singular)
-            :refer-number singular)
+            :mod (s5i1 / interní)
+            :mod (s5r1 / reorganizační))
         :ARG2 (s5m2 / miliarda
-            :mod (s5x4 / 2.2
+            :mod (s5x2 / 2.2
                 :extent (s5a1 / asi))
-            :mod (s5d1 / dolar
-                :refer-number plural)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
+            :mod (s5d1 / dolar))
         :aspect activity)
 
 # sentence level graph:
@@ -1787,36 +1408,24 @@
         :ARG2 (s6e1 / entity)
         :ARG0 (s6i1 / identity-91
             :ARG1 (s6r2 / Rowe
-                :mod (s6j1 / John
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s6j1 / John))
             :ARG2 (s6a1 / and
                 :op1 (s6p1 / prezident
                     :mod (s6s1 / společnost
-                        :name (s6x1 / _Forn
-                            :FPHR (s6n1 / New)
-                            :FPHR (s6e2 / England)
-                            :FPHR (s6e3 / Electric))
-                        :refer-number singular)
-                    :refer-number singular)
+                        :name (s6n1 / name
+                            :op1 "New" :op2 "England" :op3 "Electric")))
                 :op2 (s6r3 / ředitel
                     :mod s6s1
-                    :mod (s6g1 / generální
-                        :refer-number singular)
-                    :refer-number singular)))
-        :effect (s6u1 / utrpět-001
-            :ARG1 (s6e4 / entity)
+                    :mod (s6g1 / generální))))
+        :ARG1 (s6u1 / utrpět-001
+            :ARG1 (s6e2 / entity)
             :ARG0 (s6v1 / výnos
                 :mod s6s1
-                :start (s6a2 / akcie
-                    :refer-number plural)
-                :refer-number singular)
+                :start (s6a2 / akcie))
             :condition (s6a3 / and
                 :op1 (s6n2 / nabídnout-001
-                    :ARG2 (s6e5 / entity)
-                    :ARG0 (s6s2 / společnost
-                        :refer-number singular
-                        :refer-person 3rd)
+                    :ARG2 (s6e3 / entity)
+                    :ARG0 (s6s2 / společnost)
                     :ARG1 (s6h1 / hodně)
                     :aspect performance)
                 :op2 (s6v2 / vyplnit-se-001
@@ -1825,33 +1434,19 @@
                             :mod s6s2
                             :mod (s6t1 / týkající_se
                                 :ARG1 (s6s3 / společnost
-                                    :name (s6x5 / _Forn
-                                        :FPHR (s6p3 / PS)
-                                        :FPHR (s6o1 / of)
-                                        :FPHR (s6n3 / New)
-                                        :FPHR (s6h2 / Hampshire))
-                                    :refer-number singular)
-                                :refer-number plural)
-                            :refer-number plural)
+                                    :name (s6n3 / name
+                                        :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire"))))
                         :clausal-marker (s6n4 / například)
                         :ARG2 (s6a4 / and
                             :op1 (s6r4 / růst
-                                :mod (s6p4 / poptávka
-                                    :mod (s6e6 / elektřina
-                                        :refer-number singular)
-                                    :refer-number singular)
-                                :refer-number singular)
-                            :op2 (s6e7 / efektivita
-                                :mod (s6z1 / zvýšený
-                                    :refer-number singular)
-                                :mod (s6p5 / provozní
-                                    :refer-number singular)
-                                :refer-number singular)))
-                    :refer-number plural
+                                :mod (s6p3 / poptávka
+                                    :mod (s6e4 / elektřina)))
+                            :op2 (s6e5 / efektivita
+                                :mod (s6z1 / zvýšený)
+                                :mod (s6p4 / provozní))))
                     :aspect performance
                     :polarity -))
             :aspect performance)
-        :refer-number singular
         :aspect performance)
 
 # sentence level graph:
@@ -1859,45 +1454,25 @@
         :ARG1 (s1s1 / stupňovat-001
             :ARG0 (s1z1 / známka
                 :mod (s1e1 / ekonomika
-                    :mod (s1z2 / zpomalující
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
+                    :mod (s1z2 / zpomalující)))
             :ARG1 (s1t1 / tlak
                 :mod (s1b2 / banka
-                    :mod (s1f1 / Federální
-                        :refer-number singular)
-                    :mod (s1r1 / rezervní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
+                    :mod (s1f1 / Federální)
+                    :mod (s1r1 / rezervní)))
             :purpose (s1s2 / snížit-001
                 :ARG0 s1b2
                 :ARG1 (s1m1 / mír
-                    :mod (s1k1 / krátkodobý
-                        :refer-number plural)
-                    :mod (s1u1 / úrokový
-                        :refer-number plural)
-                    :refer-number plural)
+                    :mod (s1k1 / krátkodobý)
+                    :mod (s1u1 / úrokový))
                 :aspect performance)
-            :refer-number plural
-            :refer-person 3rd
             :aspect activity)
         :ARG2 (s1b3 / být-007
-            :ARG2 (s1j1 / jasný
-                :refer-number singular)
+            :ARG2 (s1j1 / jasný)
             :ARG1 (s1u2 / udělat-006
-                :ARG1 (s1t2 / ten
-                    :refer-number singular)
+                :ARG1 (s1t2 / ten)
                 :ARG0 (s1b4 / banka
-                    :mod (s1c1 / centrální
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 3rd
+                    :mod (s1c1 / centrální))
                 :aspect performance)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity
             :polarity -))
 
@@ -1908,70 +1483,40 @@
             :mod (s2p2 / provedený
                 :ARG0 (s2b1 / banka
                     :mod (s2x1 / 12)
-                    :mod (s2o1 / oblastní
-                        :refer-number plural)
+                    :mod (s2o1 / oblastní)
                     :mod (s2b2 / banka
-                        :mod (s2f1 / Federální
-                            :refer-number singular)
-                        :mod (s2r1 / rezervní
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular)
+                        :mod (s2f1 / Federální)
+                        :mod (s2r1 / rezervní)))))
         :ARG1 (s2s1 / stagnovat-001
-            :ARG0 (s2r2 / růst
-                :mod (s2e2 / ekonomický
-                    :refer-number singular)
-                :refer-number singular)
+            :ARG1 (s2r2 / růst
+                :mod (s2e2 / ekonomický))
             :temporal (s2t1 / týden
-                :mod (s2p3 / poslední
-                    :refer-number plural)
-                :refer-number plural)
+                :mod (s2p3 / poslední))
             :contrast-91 (s2z1 / zmírnit-se-001
                 :ARG1 (s2t2 / tlak
                     :mod (s2z2 / zvýšení
                         :ARG0 (s2e3 / entity)
-                        :ARG1 (s2c1 / cena
-                            :refer-number plural)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
+                        :ARG1 (s2c1 / cena)))
                 :aspect performance)
-            :refer-number singular
             :aspect activity)
-        :refer-number singular
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s3r1 / říkat-007
         :ARG2 (s3e1 / entity)
-        :effect (s3z1 / zpomalovat-001
-            :ARG0 (s3e2 / ekonomika
-                :refer-number singular)
+        :ARG1 (s3z1 / zpomalovat-001
+            :ARG0 (s3e2 / ekonomika)
             :manner (s3j1 / jasně)
             :ARG1 (s3e3 / entity)
-            :refer-number singular
-            :refer-person 3rd
             :aspect activity)
         :ARG0 (s3i1 / identity-91
             :ARG1 (s3b1 / Black
-                :mod (s3r2 / Robert
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s3r2 / Robert))
             :ARG2 (s3p1 / prezident
                 :mod (s3b2 / banka
-                    :mod (s3r3 / richmondský
-                        :refer-number singular)
-                    :mod (s3f1 / Federální
-                        :refer-number singular)
-                    :mod (s3r4 / rezervní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
-        :refer-person 3rd
+                    :mod (s3r3 / richmondský)
+                    :mod (s3f1 / Federální)
+                    :mod (s3r4 / rezervní))))
         :aspect activity)
 
 # sentence level graph:
@@ -1983,32 +1528,20 @@
                 :condition (s4p1 / podívat-se-001
                     :ARG0 (s4e3 / entity)
                     :ARG1 (s4c1 / čtvrtletí
-                        :mod (s4t1 / třetí
-                            :refer-number singular)
+                        :mod (s4t1 / třetí)
                         :mod (s4v2 / vykazující
                             :ARG1 (s4r1 / růst
-                                :mod (s4x2 / _Percnt
+                                :mod (s4x2 / Percnt
                                     :extent (s4z1 / zhruba)
-                                    :mod (s4x3 / 2.5))
-                                :refer-number singular)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number plural
-                    :refer-person 2nd
+                                    :mod (s4x3 / 2.5)))))
                     :aspect performance)
                 :ARG0 s4g1
                 :temporal (s4c2 / čtvrtletí
-                    :mod (s4c3 / čtvrtý
-                        :refer-number singular)
-                    :refer-number singular)
+                    :mod (s4c3 / čtvrtý))
                 :ARG1 (s4z2 / zpomalení
-                    :manner (s4j1 / jistý
-                        :refer-number singular)
+                    :manner (s4j1 / jistý)
                     :ARG0 (s4e4 / entity
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular
-                :refer-person 1st
+                        :refer-person 3rd))
                 :aspect state)
             :ARG0 s4g1
             :aspect state)
@@ -2016,85 +1549,49 @@
         :ARG0 (s4g1 / Guffey
             :mod (s4p2 / prezident
                 :mod (s4b1 / banka
-                    :mod (s4k1 / kansaský
-                        :refer-number singular)
-                    :mod (s4f1 / Federální
-                        :refer-number singular)
-                    :mod (s4r2 / rezervní
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :mod (s4r3 / Roger
-                :refer-number singular)
-            :refer-number singular)
-        :refer-number singular
-        :refer-person 3rd
+                    :mod (s4k1 / kansaský)
+                    :mod (s4f1 / Federální)
+                    :mod (s4r2 / rezervní)))
+            :mod (s4r3 / Roger))
         :aspect state)
 
 # sentence level graph:
 (s5t1 / tvrdit-002
         :clausal-marker (s5n1 / nicméně)
         :ARG0 (s5a1 / and
-            :op1 (s5g1 / Guffey
-                :refer-number singular)
-            :op2 (s5b1 / Black
-                :refer-number singular))
-        :effect (s5b2 / být-007
+            :op1 (s5g1 / Guffey)
+            :op2 (s5b1 / Black))
+        :ARG1 (s5b2 / být-007
             :ARG1 (s5z1 / zpomalení
-                :ARG0 (s5e1 / entity)
-                :refer-number singular)
+                :ARG0 (s5e1 / entity))
             :temporal (s5z2 / zatím)
             :ARG2 (s5d1 / důvod
-                :mod (s5o1 / obava
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number singular
-            :refer-person 3rd
+                :mod (s5o1 / obava))
             :aspect activity
             :polarity -)
-        :refer-number plural
-        :refer-person 3rd
         :aspect activity)
 
 # sentence level graph:
 (s6r1 / říci-008
         :ARG2 (s6e1 / entity)
-        :effect (s6b1 / blížit-se-001
+        :ARG1 (s6b1 / blížit-se-001
             :ARG1 (s6e2 / entity)
             :ARG2 (s6d1 / dosažení
                 :ARG0 (s6e3 / entity)
                 :ARG1 (s6c1 / cíl
-                    :mod (s6s1 / stanovený
-                        :refer-number singular)
+                    :mod (s6s1 / stanovený)
                     :mod (s6z1 / zpomalení
-                        :ARG0 (s6e4 / ekonomika
-                            :refer-number singular)
+                        :ARG0 (s6e4 / ekonomika)
                         :ARG1 (s6b2 / bod
                             :temporal-of (s6o1 / objevit-se-002
-                                :clausal-marker (s6d2 / doufejme
-                                    :refer-number plural
-                                    :refer-person 1st)
+                                :clausal-marker (s6d2 / doufejme)
                                 :ARG1 (s6t1 / trend
-                                    :mod (s6n1 / nějaký
-                                        :refer-number singular)
-                                    :mod (s6k1 / klesající
-                                        :refer-number singular)
-                                    :mod (s6c2 / cena
-                                        :refer-number plural)
-                                    :refer-number singular)
-                                :refer-number singular
-                                :refer-person 3rd
-                                :aspect performance)
-                            :refer-number singular)
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 1st
+                                    :mod (s6n1 / nějaký)
+                                    :mod (s6k1 / klesající)
+                                    :mod (s6c2 / cena))
+                                :aspect performance)))))
             :aspect activity)
-        :ARG0 (s6g1 / Guffey
-            :refer-number singular)
-        :refer-number singular
+        :ARG0 (s6g1 / Guffey)
         :aspect performance)
 
 # sentence level graph:
@@ -2102,146 +1599,89 @@
         :op1 (s7s1 / spoléhat-se-001
             :ARG0 (s7p1 / představitel
                 :mod (s7a2 / administrativa
-                    :mod (s7b1 / Bushův
-                        :refer-number singular)
-                    :refer-number singular)
-                :refer-number plural)
+                    :mod (s7b1 / Bushův)))
             :ARG1 (s7s2 / snížit-001
                 :ARG0 (s7b2 / banka
-                    :mod (s7f1 / Federální
-                        :refer-number singular)
-                    :mod (s7r1 / rezervní
-                        :refer-number singular)
-                    :refer-number singular)
-                :ARG1 (s7s3 / sazba
-                    :refer-number plural)
-                :refer-number singular
-                :refer-person 3rd
+                    :mod (s7f1 / Federální)
+                    :mod (s7r1 / rezervní))
+                :ARG1 (s7s3 / sazba)
                 :aspect performance)
-            :refer-number plural
-            :refer-person 3rd
             :aspect activity)
         :op2 (s7o1 / očekávat-001
             :ARG0 (s7t1 / trh
-                :mod (s7f2 / finanční
-                    :refer-number plural)
-                :refer-number plural)
+                :mod (s7f2 / finanční))
             :clausal-marker (s7t2 / také)
             :clausal-marker (s7z1 / zřejmě)
             :ARG1 (s7p2 / přístup
-                :mod (s7s4 / snadný
-                    :refer-number singular)
-                :goal (s7u1 / úvěr
-                    :refer-number plural)
-                :refer-number singular)
-            :refer-number plural
-            :refer-person 3rd
+                :mod (s7s4 / snadný)
+                :goal (s7u1 / úvěr))
             :aspect activity))
 
 # sentence level graph:
 (s8r1 / říci-008
         :ARG2 (s8e1 / entity)
-        :effect (s8m1 / myslet-003
+        :ARG1 (s8m1 / myslet-003
             :ARG0 s8i1
-            :effect (s8o1 / očekávat-001
-                :ARG0 (s8t1 / trh
-                    :refer-number singular)
+            :ARG1 (s8o1 / očekávat-001
+                :ARG0 (s8t1 / trh)
                 :ARG1 (s8s1 / snížit-001
                     :ARG0 (s8b1 / banka
-                        :mod (s8f1 / Federální
-                            :refer-number singular)
-                        :mod (s8r2 / rezervní
-                            :refer-number singular)
-                        :refer-number singular)
-                    :ARG1 (s8s2 / sazba
-                        :refer-number plural)
+                        :mod (s8f1 / Federální)
+                        :mod (s8r2 / rezervní))
+                    :ARG1 (s8s2 / sazba)
                     :extent (s8a1 / and
                         :op1 (s8b2 / brzy)
                         :op2 (s8h1 / hodně
-                            :extent (s8t2 / trochu
-                                :refer-number singular)
+                            :extent (s8t2 / trochu)
                             :comparison (s8u1 / učinit-004
                                 :ARG0 s8b1
                                 :temporal (s8d1 / dosud)
                                 :ARG1 s8s1
                                 :aspect performance)))
-                    :refer-number singular
-                    :refer-person 3rd
                     :aspect performance)
-                :refer-number singular
                 :aspect activity)
-            :refer-number singular
-            :refer-person 1st
             :aspect state)
         :ARG0 (s8i1 / identity-91
             :ARG1 (s8j1 / Johnson
-                :mod (s8r3 / Robert
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s8r3 / Robert))
             :ARG2 (s8v1 / viceprezident
                 :affectee (s8t3 / trh
-                    :mod (s8g1 / globální
-                        :refer-number plural)
-                    :refer-number plural)
+                    :mod (s8g1 / globální))
                 :start (s8s3 / společnost
-                    :name (s8x4 / _Forn
-                        :FPHR (s8b3 / Bankers)
-                        :FPHR (s8t4 / Trust)
-                        :FPHR (s8c1 / Co))
-                    :refer-number singular)
-                :refer-number singular))
-        :refer-number singular
+                    :name (s8n1 / name
+                        :op1 "Bankers" :op2 "Trust" :op3 "Co."))))
         :aspect performance)
 
 # sentence level graph:
 (s9b1 / but-91
         :ARG1 (s9s1 / snížit-001
             :ARG0 (s9b2 / banka
-                :mod (s9f1 / Federální
-                    :refer-number singular)
-                :mod (s9r1 / rezervní
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s9f1 / Federální)
+                :mod (s9r1 / rezervní))
             :ARG1 (s9m1 / míra
-                :mod (s9u1 / úrokový
-                    :refer-number plural)
+                :mod (s9u1 / úrokový)
                 :mod (s9f2 / fond
-                    :mod (s9h1 / hlavní
-                        :refer-number plural)
-                    :mod (s9f3 / federální
-                        :refer-number plural)
-                    :refer-number plural)
-                :refer-number plural)
+                    :mod (s9h1 / hlavní)
+                    :mod (s9f3 / federální)))
             :extent (s9b3 / bod
                 :mod (s9x1 / 0.25
                     :extent (s9a1 / asi))
-                :mod (s9p1 / procentní
-                    :refer-number singular)
-                :refer-number singular)
-            :effect (s9x2 / _Percnt
+                :mod (s9p1 / procentní))
+            :ARG3 (s9x2 / Percnt
                 :mod (s9x3 / 8.75))
             :temporal (s9p2 / pokles
-                :mod (s9p3 / prudký
-                    :refer-number singular)
-                :place (s9b4 / burza
-                    :refer-number singular)
+                :mod (s9p3 / prudký)
+                :place (s9b4 / burza)
                 :temporal (s9r2 / říjen
-                    :mod (s9x4 / 13)
-                    :refer-number singular)
-                :refer-number singular)
+                    :mod (s9x4 / 13)))
             :aspect performance)
         :ARG2 (s9n1 / naznačit-001
             :ARG0 s9b2
             :temporal (s9d1 / doba
-                :mod (s9t1 / ten
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s9t1 / ten))
             :ARG1 (s9p4 / pohyb
-                :mod (s9z1 / žádný
-                    :refer-number singular)
-                :mod (s9d2 / další
-                    :refer-number singular)
-                :refer-number singular)
+                :mod (s9z1 / žádný)
+                :mod (s9d2 / další))
             :aspect performance
             :polarity -))
 
@@ -2249,22 +1689,14 @@
 (s10z1 / zjistit-002
         :ARG0 (s10z2 / zpráva
             :mod (s10b1 / banka
-                :mod (s10f1 / Federální
-                    :refer-number singular)
-                :mod (s10r1 / rezervní
-                    :refer-number singular)
-                :refer-number singular)
-            :refer-number singular)
+                :mod (s10f1 / Federální)
+                :mod (s10r1 / rezervní)))
         :ARG1 (s10b2 / být-007
             :temporal (s10t1 / týden
-                :mod (s10m1 / minulý
-                    :refer-number plural)
-                :refer-number plural)
-            :ARG2 (s10s1 / slabý
-                :refer-number singular)
+                :mod (s10m1 / minulý))
+            :ARG2 (s10s1 / slabý)
             :clausal-marker (s10p1 / především)
-            :ARG1 (s10v1 / výroba
-                :refer-number singular)
+            :ARG1 (s10v1 / výroba)
             :aspect activity)
         :aspect performance)
 

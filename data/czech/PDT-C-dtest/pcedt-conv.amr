@@ -1,0 +1,445 @@
+# sentence level graph:
+(s1v1 / vycouvat-001
+        :ARG0 (s1s1 / společnost
+            :name (s1n1 / name
+                :op1 "New" :op2 "England" :op3 "Electric" :op4 "System"))
+        :ARG1 (s1r1 / řízení
+            :mod (s1n2 / nabídkový)
+            :mod (s1s2 / společnost
+                :name (s1n3 / name
+                    :op1 "Public" :op2 "Service" :op3 "Co." :op4 "of" :op5 "New" :op6 "Hampshire")))
+        :companion (s1a1 / and
+            :op1 (s1b1 / být-007
+                :ARG1 (s1r2 / riziko)
+                :ARG2 (s1v2 / vysoký
+                    :extent (s1p1 / příliš))
+                :aspect activity)
+            :op2 (s1b2 / být-007
+                :ARG1 (s1v3 / výtěžek
+                    :mod (s1p2 / případný))
+                :ARG2 (s1v4 / vzdálený
+                    :extent (s1p3 / příliš)
+                    :regard (s1o1 / ospravedlnit-001
+                        :ARG0 s1v3
+                        :ARG1 (s1n4 / nabídka
+                            :mod (s1v5 / vysoký))
+                        :aspect performance))
+                :aspect activity))
+        :aspect performance)
+
+# sentence level graph:
+(s2z1 / zanechávat-001
+        :ARG0 (s2t1 / tah
+            :mod (s2t2 / tento)
+            :place (s2h1 / hra
+                :mod (s2s1 / společnost
+                    :name (s2n1 / name
+                        :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")
+                    :ARG0-of (s2p1 / předložit-001
+                        :ARG2 (s2e1 / entity)
+                        :clausal-marker (s2t3 / také)
+                        :ARG1 (s2p2 / plán
+                            :mod (s2r1 / reorganizace
+                                :mod (s2v1 / vnitřní))
+                            :regard (s2k1 / kapitola
+                                :name (s2x1 / 11)
+                                :mod (s2r2 / řízení
+                                    :mod (s2k2 / konkurzní)))
+                            :regard-of (s2z2 / zůstat-002
+                                :ARG1 s2s1
+                                :ARG2 (s2s2 / společnost
+                                    :mod (s2z3 / závislý
+                                        :polarity -))
+                                :aspect performance))
+                        :aspect performance))))
+        :ARG2 (s2e2 / entity)
+        :manner (s2z4 / zájemce
+            :mod-of s2s3
+            :mod (s2z5 / zbývající)
+            :mod (s2e3 / externí))
+        :ARG1 (s2s3 / společnost
+            :name (s2a1 / and
+                :op1 (s2f1 / foreign-phrase
+                    :op1 "United" :op2 "Illuminating" :op3 "Co.")
+                :op2 (s2f2 / foreign-phrase
+                    :op1 "Northeast" :op2 "Utilities")))
+        :aspect habitual)
+
+# sentence level graph:
+(s3n1 / nabídnout-001
+        :ARG2 (s3e1 / entity)
+        :ARG0 (s3s1 / společnost
+            :name (s3n2 / name
+                :op1 "New" :op2 "England" :op3 "Electric")
+            :mod (s3s2 / sídlo
+                :place (s3f1 / foreign-phrase
+                    :place (s3f2 / foreign-phrase
+                        :op1 "Massachusetts")
+                    :op1 "Westborough")))
+        :ARG3 (s3a1 / akvizice
+            :mod (s3s3 / společnost
+                :name (s3n3 / name
+                    :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")))
+        :ARG1 (s3a2 / and
+            :op1 (s3m1 / miliarda
+                :mod (s3x1 / 2)
+                :mod (s3d1 / dolar))
+            :op2 (s3b1 / být-007
+                :ARG1 (s3c1 / což)
+                :ARG2 (s3m2 / málo
+                    :extent (s3d2 / daleko)
+                    :comparison (s3a3 / and
+                        :op1 (s3m3 / miliarda
+                            :mod (s3x2 / 2.29)
+                            :mod (s3d3 / dolar)
+                            :mod (s3n4 / nabídnutý
+                                :ARG0 (s3s4 / společnost
+                                    :name (s3n5 / name
+                                        :op1 "United" :op2 "Illuminating"))))
+                        :op2 (s3m4 / miliarda
+                            :mod (s3x3 / 2.25)
+                            :mod (s3d4 / dolar
+                                :instrument-of (s3o1 / ohodnotit-003
+                                    :ARG1 (s3n6 / nabídka
+                                        :mod s3s5)
+                                    :ARG0 (s3s5 / společnost
+                                        :name (s3n7 / Northeast))
+                                    :aspect performance)))))
+                :aspect activity))
+        :aspect performance)
+
+# sentence level graph:
+(s4a1 / and
+        :op1 (s4s1 / sídlit-001
+            :ARG0 (s4s2 / společnost
+                :name (s4n1 / name
+                    :op1 "United" :op2 "Illuminating"))
+            :place (s4f1 / foreign-phrase
+                :place (s4s3 / stát
+                    :name (s4c1 / Connecticut))
+                :op1 "New" :op2 "Haven")
+            :aspect activity)
+        :op2 (s4s4 / sídlit-001
+            :ARG0 (s4s5 / společnost
+                :name (s4n2 / Northeast))
+            :place (s4h1 / Hartford
+                :place (s4s6 / stát
+                    :name (s4c2 / Connecticut)))
+            :aspect activity))
+
+# sentence level graph:
+(s5o1 / oceňovat-001
+        :ARG0 (s5s1 / společnost
+            :name (s5n1 / name
+                :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")
+            :mod (s5s2 / sídlo
+                :place (s5m1 / Manchester
+                    :place (s5f1 / foreign-phrase
+                        :op1 "New" :op2 "Hampshire"))))
+        :ARG1 (s5p1 / plán
+            :mod s5s1
+            :mod (s5i1 / interní)
+            :mod (s5r1 / reorganizační))
+        :ARG2 (s5m2 / miliarda
+            :mod (s5x2 / 2.2
+                :extent (s5a1 / asi))
+            :mod (s5d1 / dolar))
+        :aspect activity)
+
+# sentence level graph:
+(s6r1 / říci-008
+        :ARG2 (s6e1 / entity)
+        :ARG0 (s6i1 / identity-91
+            :ARG1 (s6r2 / Rowe
+                :mod (s6j1 / John))
+            :ARG2 (s6a1 / and
+                :op1 (s6p1 / prezident
+                    :mod (s6s1 / společnost
+                        :name (s6n1 / name
+                            :op1 "New" :op2 "England" :op3 "Electric")))
+                :op2 (s6r3 / ředitel
+                    :mod s6s1
+                    :mod (s6g1 / generální))))
+        :ARG1 (s6u1 / utrpět-001
+            :ARG1 (s6e2 / entity)
+            :ARG0 (s6v1 / výnos
+                :mod s6s1
+                :start (s6a2 / akcie))
+            :condition (s6a3 / and
+                :op1 (s6n2 / nabídnout-001
+                    :ARG2 (s6e3 / entity)
+                    :ARG0 (s6s2 / společnost)
+                    :ARG1 (s6h1 / hodně)
+                    :aspect performance)
+                :op2 (s6v2 / vyplnit-se-001
+                    :ARG0 (s6i2 / identity-91
+                        :ARG1 (s6p2 / předpověď
+                            :mod s6s2
+                            :mod (s6t1 / týkající_se
+                                :ARG1 (s6s3 / společnost
+                                    :name (s6n3 / name
+                                        :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire"))))
+                        :clausal-marker (s6n4 / například)
+                        :ARG2 (s6a4 / and
+                            :op1 (s6r4 / růst
+                                :mod (s6p3 / poptávka
+                                    :mod (s6e4 / elektřina)))
+                            :op2 (s6e5 / efektivita
+                                :mod (s6z1 / zvýšený)
+                                :mod (s6p4 / provozní))))
+                    :aspect performance
+                    :polarity -))
+            :aspect performance)
+        :aspect performance)
+
+# sentence level graph:
+(s1b1 / but-91
+        :ARG1 (s1s1 / stupňovat-001
+            :ARG0 (s1z1 / známka
+                :mod (s1e1 / ekonomika
+                    :mod (s1z2 / zpomalující)))
+            :ARG1 (s1t1 / tlak
+                :mod (s1b2 / banka
+                    :mod (s1f1 / Federální)
+                    :mod (s1r1 / rezervní)))
+            :purpose (s1s2 / snížit-001
+                :ARG0 s1b2
+                :ARG1 (s1m1 / mír
+                    :mod (s1k1 / krátkodobý)
+                    :mod (s1u1 / úrokový))
+                :aspect performance)
+            :aspect activity)
+        :ARG2 (s1b3 / být-007
+            :ARG2 (s1j1 / jasný)
+            :ARG1 (s1u2 / udělat-006
+                :ARG1 (s1t2 / ten)
+                :ARG0 (s1b4 / banka
+                    :mod (s1c1 / centrální))
+                :aspect performance)
+            :aspect activity
+            :polarity -))
+
+# sentence level graph:
+(s2u1 / ukazovat-001
+        :ARG2 (s2e1 / entity)
+        :ARG0 (s2p1 / průzkum
+            :mod (s2p2 / provedený
+                :ARG0 (s2b1 / banka
+                    :mod (s2x1 / 12)
+                    :mod (s2o1 / oblastní)
+                    :mod (s2b2 / banka
+                        :mod (s2f1 / Federální)
+                        :mod (s2r1 / rezervní)))))
+        :ARG1 (s2s1 / stagnovat-001
+            :ARG1 (s2r2 / růst
+                :mod (s2e2 / ekonomický))
+            :temporal (s2t1 / týden
+                :mod (s2p3 / poslední))
+            :contrast-91 (s2z1 / zmírnit-se-001
+                :ARG1 (s2t2 / tlak
+                    :mod (s2z2 / zvýšení
+                        :ARG0 (s2e3 / entity)
+                        :ARG1 (s2c1 / cena)))
+                :aspect performance)
+            :aspect activity)
+        :aspect activity)
+
+# sentence level graph:
+(s3r1 / říkat-007
+        :ARG2 (s3e1 / entity)
+        :ARG1 (s3z1 / zpomalovat-001
+            :ARG0 (s3e2 / ekonomika)
+            :manner (s3j1 / jasně)
+            :ARG1 (s3e3 / entity)
+            :aspect activity)
+        :ARG0 (s3i1 / identity-91
+            :ARG1 (s3b1 / Black
+                :mod (s3r2 / Robert))
+            :ARG2 (s3p1 / prezident
+                :mod (s3b2 / banka
+                    :mod (s3r3 / richmondský)
+                    :mod (s3f1 / Federální)
+                    :mod (s3r4 / rezervní))))
+        :aspect activity)
+
+# sentence level graph:
+(s4s1 / souhlasit-001
+        :ARG1 (s4e1 / entity)
+        :manner (s4e2 / event
+            :mod-of s4g1
+            :effect (s4v1 / vidět-007
+                :condition (s4p1 / podívat-se-001
+                    :ARG0 (s4e3 / entity)
+                    :ARG1 (s4c1 / čtvrtletí
+                        :mod (s4t1 / třetí)
+                        :mod (s4v2 / vykazující
+                            :ARG1 (s4r1 / růst
+                                :mod (s4x2 / Percnt
+                                    :extent (s4z1 / zhruba)
+                                    :mod (s4x3 / 2.5)))))
+                    :aspect performance)
+                :ARG0 s4g1
+                :temporal (s4c2 / čtvrtletí
+                    :mod (s4c3 / čtvrtý))
+                :ARG1 (s4z2 / zpomalení
+                    :manner (s4j1 / jistý)
+                    :ARG0 (s4e4 / entity
+                        :refer-person 3rd))
+                :aspect state)
+            :ARG0 s4g1
+            :aspect state)
+        :ARG2 (s4e5 / entity)
+        :ARG0 (s4g1 / Guffey
+            :mod (s4p2 / prezident
+                :mod (s4b1 / banka
+                    :mod (s4k1 / kansaský)
+                    :mod (s4f1 / Federální)
+                    :mod (s4r2 / rezervní)))
+            :mod (s4r3 / Roger))
+        :aspect state)
+
+# sentence level graph:
+(s5t1 / tvrdit-002
+        :clausal-marker (s5n1 / nicméně)
+        :ARG0 (s5a1 / and
+            :op1 (s5g1 / Guffey)
+            :op2 (s5b1 / Black))
+        :ARG1 (s5b2 / být-007
+            :ARG1 (s5z1 / zpomalení
+                :ARG0 (s5e1 / entity))
+            :temporal (s5z2 / zatím)
+            :ARG2 (s5d1 / důvod
+                :mod (s5o1 / obava))
+            :aspect activity
+            :polarity -)
+        :aspect activity)
+
+# sentence level graph:
+(s6r1 / říci-008
+        :ARG2 (s6e1 / entity)
+        :ARG1 (s6b1 / blížit-se-001
+            :ARG1 (s6e2 / entity)
+            :ARG2 (s6d1 / dosažení
+                :ARG0 (s6e3 / entity)
+                :ARG1 (s6c1 / cíl
+                    :mod (s6s1 / stanovený)
+                    :mod (s6z1 / zpomalení
+                        :ARG0 (s6e4 / ekonomika)
+                        :ARG1 (s6b2 / bod
+                            :temporal-of (s6o1 / objevit-se-002
+                                :clausal-marker (s6d2 / doufejme)
+                                :ARG1 (s6t1 / trend
+                                    :mod (s6n1 / nějaký)
+                                    :mod (s6k1 / klesající)
+                                    :mod (s6c2 / cena))
+                                :aspect performance)))))
+            :aspect activity)
+        :ARG0 (s6g1 / Guffey)
+        :aspect performance)
+
+# sentence level graph:
+(s7a1 / and
+        :op1 (s7s1 / spoléhat-se-001
+            :ARG0 (s7p1 / představitel
+                :mod (s7a2 / administrativa
+                    :mod (s7b1 / Bushův)))
+            :ARG1 (s7s2 / snížit-001
+                :ARG0 (s7b2 / banka
+                    :mod (s7f1 / Federální)
+                    :mod (s7r1 / rezervní))
+                :ARG1 (s7s3 / sazba)
+                :aspect performance)
+            :aspect activity)
+        :op2 (s7o1 / očekávat-001
+            :ARG0 (s7t1 / trh
+                :mod (s7f2 / finanční))
+            :clausal-marker (s7t2 / také)
+            :clausal-marker (s7z1 / zřejmě)
+            :ARG1 (s7p2 / přístup
+                :mod (s7s4 / snadný)
+                :goal (s7u1 / úvěr))
+            :aspect activity))
+
+# sentence level graph:
+(s8r1 / říci-008
+        :ARG2 (s8e1 / entity)
+        :ARG1 (s8m1 / myslet-003
+            :ARG0 s8i1
+            :ARG1 (s8o1 / očekávat-001
+                :ARG0 (s8t1 / trh)
+                :ARG1 (s8s1 / snížit-001
+                    :ARG0 (s8b1 / banka
+                        :mod (s8f1 / Federální)
+                        :mod (s8r2 / rezervní))
+                    :ARG1 (s8s2 / sazba)
+                    :extent (s8a1 / and
+                        :op1 (s8b2 / brzy)
+                        :op2 (s8h1 / hodně
+                            :extent (s8t2 / trochu)
+                            :comparison (s8u1 / učinit-004
+                                :ARG0 s8b1
+                                :temporal (s8d1 / dosud)
+                                :ARG1 s8s1
+                                :aspect performance)))
+                    :aspect performance)
+                :aspect activity)
+            :aspect state)
+        :ARG0 (s8i1 / identity-91
+            :ARG1 (s8j1 / Johnson
+                :mod (s8r3 / Robert))
+            :ARG2 (s8v1 / viceprezident
+                :affectee (s8t3 / trh
+                    :mod (s8g1 / globální))
+                :start (s8s3 / společnost
+                    :name (s8n1 / name
+                        :op1 "Bankers" :op2 "Trust" :op3 "Co."))))
+        :aspect performance)
+
+# sentence level graph:
+(s9b1 / but-91
+        :ARG1 (s9s1 / snížit-001
+            :ARG0 (s9b2 / banka
+                :mod (s9f1 / Federální)
+                :mod (s9r1 / rezervní))
+            :ARG1 (s9m1 / míra
+                :mod (s9u1 / úrokový)
+                :mod (s9f2 / fond
+                    :mod (s9h1 / hlavní)
+                    :mod (s9f3 / federální)))
+            :extent (s9b3 / bod
+                :mod (s9x1 / 0.25
+                    :extent (s9a1 / asi))
+                :mod (s9p1 / procentní))
+            :ARG3 (s9x2 / Percnt
+                :mod (s9x3 / 8.75))
+            :temporal (s9p2 / pokles
+                :mod (s9p3 / prudký)
+                :place (s9b4 / burza)
+                :temporal (s9r2 / říjen
+                    :mod (s9x4 / 13)))
+            :aspect performance)
+        :ARG2 (s9n1 / naznačit-001
+            :ARG0 s9b2
+            :temporal (s9d1 / doba
+                :mod (s9t1 / ten))
+            :ARG1 (s9p4 / pohyb
+                :mod (s9z1 / žádný)
+                :mod (s9d2 / další))
+            :aspect performance
+            :polarity -))
+
+# sentence level graph:
+(s10z1 / zjistit-002
+        :ARG0 (s10z2 / zpráva
+            :mod (s10b1 / banka
+                :mod (s10f1 / Federální)
+                :mod (s10r1 / rezervní)))
+        :ARG1 (s10b2 / být-007
+            :temporal (s10t1 / týden
+                :mod (s10m1 / minulý))
+            :ARG2 (s10s1 / slabý)
+            :clausal-marker (s10p1 / především)
+            :ARG1 (s10v1 / výroba)
+            :aspect activity)
+        :aspect performance)
+
