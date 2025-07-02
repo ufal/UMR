@@ -575,6 +575,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
                         warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
 
 def dominates(var0, var1, node_dict, tried):
+    tried[var0] = True
     if var0 in node_dict and 'relations' in node_dict[var0]:
         children = [r['value'] for r in node_dict[var0]['relations'] if r['type'] == 'node' and r['dir'] == 'out' and r['value'] in node_dict]
         if var1 in children:
@@ -582,7 +583,6 @@ def dominates(var0, var1, node_dict, tried):
         for c in children:
             if not c in tried and dominates(c, var1, node_dict, tried):
                 return True
-            tried[c] = True
     return False
 
 def validate_sentence_graph(sentence, node_dict, args):
