@@ -1,6 +1,7 @@
 #!/bin/bash
 # Run this in a temporary folder where you can create temporary files.
 SRC=/net/work/people/stepanek/dmr25data
+CSANOT=$SRC/cs/parallel_annotation
 CSAUTO=$SRC/cs/converion_evaluation
 LAAUTO=$SRC/la/converion_evaluation
 cat $CSAUTO/ln94210_111-auto.umr $CSAUTO/ln95046_093-auto.umr > pdt-auto.umr
@@ -16,4 +17,8 @@ cp $LAAUTO/sallust-manual.umr ldt-manual.umr
 for i in pdt pdtsc pcedt pdtc ldt ; do
   echo $i
   /net/work/people/zeman/umr/ufal-umr-repo/tools/compare_umr.pl GOLD $i-manual.umr CONV $i-auto.umr 2>&1 | tail -18
+  echo
 done
+echo Czech parallel annotation
+/net/work/people/zeman/umr/ufal-umr-repo/tools/compare_umr.pl A1 $CSANOT/annot1.umr A2 $CSANOT/annot2.umr 2>&1 | tail -18
+
