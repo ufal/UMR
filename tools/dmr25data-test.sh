@@ -15,5 +15,5 @@ cp $LAAUTO/sallust-auto.umr ldt-auto.umr
 cp $LAAUTO/sallust-manual.umr ldt-manual.umr
 for i in pdt pdtsc pcedt pdtc ldt ; do
   echo $i
-  /net/work/people/zeman/umr/ufal-umr-repo/tools/compare_umr.pl GOLD $i-manual.umr CONV $i-auto.umr
+  /net/work/people/zeman/umr/ufal-umr-repo/tools/compare_umr.pl GOLD $i-manual.umr CONV $i-auto.umr 2>&1 | tail -18
 done
