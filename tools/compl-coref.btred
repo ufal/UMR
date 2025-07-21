@@ -1,0 +1,39 @@
+#!btred -e compl_coref
+# -*- mode: cperl -*-
+
+=head1 NAME
+
+compl-coref - Find nodes that are targets fo both a COMPL and coreference
+arrows. Used to select an example to the DMR2025 article.
+
+=cut
+
+sub compl_coref {
+    my %pos;
+    my %target;
+    if ($root) {
+        do {{
+            while ($this) {
+                $pos{ $this->{id} } = ThisAddress($this);
+                if ($this->{'compl.rf'}) {
+                    undef $target{$_}{compl} for ListV($this->{'compl.rf'});
+                }
+                if ($this->{'coref_gram.rf'}) {
+                    undef $target{$_}{gram} for ListV($this->{'coref_gram.rf'});
+                }
+                if ($this->{coref_text}) {
+                    undef $target{$_}{text} for map $_->{'target_node.rf'},
+                                                ListV($this->{coref_text});
+                }
+            } continue {
+                $this = $this->following;
+            }
+        }} while TredMacro::NextTree();
+
+        for my $id (keys %target) {
+            writeln($pos{$id}) if exists $target{$id}{compl}
+                               && (exists $target{$id}{gram}
+                                   || exists $target{$id}{text});
+        }
+    }
+}
