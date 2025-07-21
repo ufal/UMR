@@ -1,5 +1,47 @@
 # UMR meeting minutes
 
+## Monday, July 14, 2025
+
+(Dan, Federica, Jan Š., Markéta)
+
+#### Updates:
+- UMR 2.1 (Czech and Latin): prepared for publication
+- DMR 2025: Honza will prepare a presentation - he will ask for a contribution of other authors
+- ITAT 2025: 
+  - version for reviewers submitted
+  - notification: July 29
+  - camera-ready version: August 20 
+     - Honza available only before August 5 
+     - Dan, Markéta: available August 4-7, August 18-20   
+
+
+#### TODO:
+- Markéta, Hanka: Check [UMR Schema Reference Pages](https://umr4nlp.github.io/web/UMRSchemaPages/index.html), which provide lists and lattices with definitions and examples. 
+- Markéta, Hanka: Do we want to try [UMR Writer 3.0](https://umr-tool.cs.brandeis.edu/)? 
+- **Conversion:** 
+   - Markéta, Hanka: continue with _být_ and _mít_ frames, newly [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479); 
+   - ~~check AMR to UMR automatic conversion [here](https://aclanthology.org/2023.tlt-1.8/)!~~
+- **Automatic conversion** - further possible steps: 
+   - nodes for #Gen, #Unsp, [issue #23](https://github.com/ufal/UMR/issues/23)
+   - personal pronouns with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)
+   - `polite` attribute (todo)
+   - `mode` attribute (todo)
+   - How to describe structural changes in valency frames in a machine-readable format, [issue #27](https://github.com/ufal/UMR/issues/27)?
+   - convert _být_ and _mít_ frames as described [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) 
+   - Reification - which of (possible multiple) children with the specified functor should serve as the predicate, [issue #26](https://github.com/ufal/UMR/issues/26)
+   - **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+   - fix **discourse rolesets with more than 2 ARGS** (as but-91)
+- **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
+ (This would significantly speed up the annotation!)
+
+- PDT 2.0 documentation - [APP parent-child relation](https://docs.google.com/spreadsheets/d/1_zHAK9LGdLsoPGuQOeyO05t7NmtdW9xJ/edit?gid=994881793#gid=994881793) ... see TODO from June 16, 2025
+ 
+
+#### NEXT meetings
+- July, August - based on availability :-)
+
+---
+
 ## Monday, June 16, 2025
 
 (Dan, Federica, Hanka, Jan Š., Markéta)
@@ -53,7 +95,7 @@
      PDT ... APP 30034x 
    - based on the PDT 2.0 manual: 
      -  (2) _příslušník armády_.APP: příslušnosti osoby k nějakému celku, instituci (člen/part je rodičem -- instituce/celek je dítětem) ... OK, UMR: possessor or whole as the daughter
-     - (3) _tým brankářů_.APP: příslušnosti osoby k nějakému celku, instituci (instituce/celek je rodičem -- člen/part je dítětem) ... UMR: possessor as the daughter
+     - (3) _tým brankářů_.APP: příslušnosti osoby k nějakému celku, instituci **instituce/celek je rodičem -- člen/part je dítětem) ... BUT UMR: possessor/whole as the daughter**
      - (6)  _střecha domu_.APP: vyjádření vztahu mezi částí a celkem (označení celku) (part je rodičem -- celek je dítětem) ... OK, UMR: possessor or whole as the daughter
      - ALSO: _můj_.APP _klobouk_ (rodič vlastněné -- dítě vlastník) ... OK, UMR: possessor or whole as the daughter
      - (ALE: _část Německa_.MAT (part je rodičem -- celek je dítětem) ... OK, UMR: possessor or whole as the daughter)
