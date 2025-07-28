@@ -1507,6 +1507,12 @@ def validate_events(sentence, node_dict, args):
             ###!!! document-level graphs. Otherwise, modal annotation occurs at document level and
             ###!!! should not be duplicated in sentence-level graphs. (This note probably should not
             ###!!! apply to :modal-predicate.)
+            # There is also the abstract concept 'event' that can be used as a placeholder
+            # when we know there should be a verb but it was elided and we do not know it.
+            # We cannot know the :aspect and :modal-strength of such events and we should
+            # not require it.
+            if node['concept'] == 'event':
+                continue
             if len(relations[':aspect']) < 1:
                 testid = 'missing-attribute'
                 testmessage = f"Missing attribute :aspect. Node {nid} is an event because {node['event_reason']}."
