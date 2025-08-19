@@ -1,13 +1,18 @@
 # UMR meeting minutes
 
-## Monday, July 14, 2025
+## Monday, July 14, 2025 (and update from August 18)
 
 (Dan, Federica, Jan Š., Markéta)
 
 #### Updates:
+- NEW:  LREC template in [Overleaf](https://www.overleaf.com/project/68a3112a48c6e5855461ef59)
 - UMR 2.1 (Czech and Latin): prepared for publication
+   - UPDATE: published, [http://hdl.handle.net/11234/1-5951](http://hdl.handle.net/11234/1-5951)
 - DMR 2025: Honza will prepare a presentation - he will ask for a contribution of other authors
+  - [slides](https://ufallab.ms.mff.cuni.cz/~stepanek/25dmr-slides)
+  - [ACL Anthology](https://aclanthology.org/2025.dmr-1.1/) 
 - ITAT 2025: 
+  - UPDATE: final version submitted 
   - version for reviewers submitted
   - notification: July 29
   - camera-ready version: August 20 
