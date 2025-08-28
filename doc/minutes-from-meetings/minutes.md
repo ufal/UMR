@@ -1,23 +1,50 @@
 # UMR meeting minutes
 
-## Monday, July 14, 2025 (and update from August 18)
+---
+
+## Monday, ... template
+
+()
+
+#### Updates:
+
+#### TODO:
+
+#### NEXT meetings
+
+---
+---
+
+## Monday, September 1, 2025 
+
+()
+
+#### Updates:
+
+#### TODO:
+
+#### NEXT meetings
+
+---
+
+## Monday, July 14, 2025 (and update from August 18 and 28)
 
 (Dan, Federica, Jan Š., Markéta)
 
 #### Updates:
 - NEW:  LREC template in [Overleaf](https://www.overleaf.com/project/68a3112a48c6e5855461ef59)
-- UMR 2.1 (Czech and Latin): prepared for publication
+- UMR 2.1 (Czech and Latin): ~~prepared for publication~~
    - UPDATE: published, [http://hdl.handle.net/11234/1-5951](http://hdl.handle.net/11234/1-5951)
-- DMR 2025: Honza will prepare a presentation - he will ask for a contribution of other authors
+- DMR 2025: ~~Honza will prepare a presentation - he will ask for a contribution of other authors~~
   - [slides](https://ufallab.ms.mff.cuni.cz/~stepanek/25dmr-slides)
   - [ACL Anthology](https://aclanthology.org/2025.dmr-1.1/) 
 - ITAT 2025: 
   - UPDATE: final version submitted 
-  - version for reviewers submitted
-  - notification: July 29
-  - camera-ready version: August 20 
-     - Honza available only before August 5 
-     - Dan, Markéta: available August 4-7, August 18-20   
+  - ~~version for reviewers submitted~~
+  - ~~notification: July 29~~
+  - ~~camera-ready version: August 20~~ 
+     - ~~Honza available only before August 5~~ 
+     - ~~Dan, Markéta: available August 4-7, August 18-20~~   
 
 
 #### TODO:
@@ -26,18 +53,24 @@
 - **Conversion:** 
    - Markéta, Hanka: continue with _být_ and _mít_ frames, newly [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479); 
    - ~~check AMR to UMR automatic conversion [here](https://aclanthology.org/2023.tlt-1.8/)!~~
+   - Markéta: suggest what to do with the `polite` attribute (todo)
+   - Markéta: suggest what to do with the `mode` attribute (todo)
+   - NEW: Markéta: suggest what to do with questions: `UMR-unknown` (todo)
+      - either as a concept, see ex. 3-1-3-5 (1), [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-5-Light-verb-constructions), 
+      - or as a polarity value, see ex. 3-3-2 (1c) [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-3-2-mode)
+      
+
 - **Automatic conversion** - further possible steps: 
-   - nodes for #Gen, #Unsp, [issue #23](https://github.com/ufal/UMR/issues/23)
-   - personal pronouns with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)
-   - `polite` attribute (todo)
-   - `mode` attribute (todo)
+   - ~~nodes for #Gen, #Unsp, [issue #23](https://github.com/ufal/UMR/issues/23)~~  Not planned any more!
+   - Personal pronouns with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)
    - How to describe structural changes in valency frames in a machine-readable format, [issue #27](https://github.com/ufal/UMR/issues/27)?
-   - convert _být_ and _mít_ frames as described [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) 
    - Reification - which of (possible multiple) children with the specified functor should serve as the predicate, [issue #26](https://github.com/ufal/UMR/issues/26)
-   - **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
-   - fix **discourse rolesets with more than 2 ARGS** (as but-91)
+   - Convert _být_ and _mít_ frames as described [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) 
+   - **Action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+   - Fix **discourse rolesets with more than 2 ARGS** (as but-91)
 - **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
  (This would significantly speed up the annotation!)
+
 
 - PDT 2.0 documentation - [APP parent-child relation](https://docs.google.com/spreadsheets/d/1_zHAK9LGdLsoPGuQOeyO05t7NmtdW9xJ/edit?gid=994881793#gid=994881793) ... see TODO from June 16, 2025
  
