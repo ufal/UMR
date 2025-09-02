@@ -57,9 +57,10 @@
 **PDT-Vallex to ARG roles conversion:** 
  
 - verb-specific conversion
-  - [instructions](../tecto2umr/functors-to-args-mapping-instructions.md)
-  - [conversion table](https://docs.google.com/spreadsheets/d/1AuIASjkdAdKom7bgjDN5BxMKeRUefHlN/)
-- verb-nonspecific [default mapping](../tecto2umr/dafault-functors-to-umrlabels.txt)
+  - [instructions - the mapping table](../tecto2umr/instructions-verb-specific-functors-to-args-mapping.md)
+  - [instructions - how to change valency frame](../tecto2umr/instructions-frame-change.md)
+  - [conversion table](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829)
+- verb-nonspecific [default mapping](../tecto2umr/pdt-c-functors-to-args.xlsx)
 
 **NE classes / types** ... do we have access to the googlesheet with revised EN classes/types **???**
 
@@ -67,11 +68,11 @@
 ## Dictionaries
 [PropBank - development](https://verbs.colorado.edu/propbank-development/)
 
-[PDT-Vallex in Teitok - version 4.0](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex)  (i.e., "all the verbs in the PDT3.5 that have a PDT-Vallex id. Those are mostly verbs, but there are also other word classes in PDT-Vallex. The occurrences are taken from PDT3.5, and the frame information is taken from PDT-Vallex 4.0, released as part of [PDT-C](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3185). If the verb is furthermore present in Vallex 3.0, a link is provided to that as well.")
+~~[PDT-Vallex in Teitok - version 4.0](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex)  (i.e., "all the verbs in the PDT3.5 that have a PDT-Vallex id. Those are mostly verbs, but there are also other word classes in PDT-Vallex. The occurrences are taken from PDT3.5, and the frame information is taken from PDT-Vallex 4.0, released as part of [PDT-C](https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3185). If the verb is furthermore present in Vallex 3.0, a link is provided to that as well.")~~
 
-[PDT-Vallex - version 3.0](https://lindat.mff.cuni.cz/services/PDT-Vallex/) (version from PCEDT 2.0)
+[PDT-Vallex - version 4.5](https://lindat.mff.cuni.cz/services/PDT-Vallex4.5/) (version from PCEDT 2.0)
 
-[PDT-VALLEX to PropBank mapping](https://github.com/ufal/UMR/blob/main/tecto2umr/pdt_pb_mapping_via_czengvallex_ssc-merged.xlsx)
+[PDT-VALLEX to PropBank mapping](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829)
 
 [SynSemClass - Search](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0) - SSC version 5.0
 

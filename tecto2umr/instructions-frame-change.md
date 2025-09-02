@@ -1,4 +1,4 @@
-## Transforming PDT-like frames  onto PropBank-like frames: How to describe necessary changes
+## Transforming PDT-like frames onto PropBank-like frames: How to describe necessary changes
 
 
 For Czech, necessary changes are described in the [pdt_pb_mapping table](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829), column E, Correction (please leave your initials and comments in row F).

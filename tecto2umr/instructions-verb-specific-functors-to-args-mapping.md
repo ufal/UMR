@@ -1,6 +1,6 @@
 ## Mapování PDT valenčních rámců na UMR rámce
 
-UMR předpokládá, že jednotlivé významy sloves jsou popsány pomocí tzv. **Rolesets** ze slovníku [PropBank](https://verbs.colorado.edu/propbank-development/), tedy obdobou valenčních rámců. Pro češtinu chceme pracovat s valenčním slovníkem [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora) (vyhledávání [zde](http://lindat.mff.cuni.cz/services/PDT-Vallex/) nebo v [Teitoku](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex)), 
+UMR předpokládá, že jednotlivé významy sloves jsou popsány pomocí tzv. **Rolesets** ze slovníku [PropBank](https://verbs.colorado.edu/propbank-development/), tedy obdobou valenčních rámců. Pro češtinu chceme pracovat s valenčním slovníkem [PDT-Vallex](https://ufal.mff.cuni.cz/pdt-vallex-valency-lexicon-linked-czech-corpora) (vyhledávání [zde](https://lindat.mff.cuni.cz/services/PDT-Vallex4.5/) ~~nebo v [Teitoku](https://lindat.mff.cuni.cz/services/teitok/pdtc10/index.php?action=vallex))~~, 
 resp. s ontologií [SynSemClass](https://ufal.mff.cuni.cz/synsemclass) 
 (vyhledávání [zde](https://lindat.mff.cuni.cz/services/SynSemClassSearch/?version=synsemclass5.0)). Potřebujeme tedy mapování jednotlivých PDT rámců (a jejich funktorů) na tyto Rolesets v UMR / PropBank (a jejich argumenty).  
 
