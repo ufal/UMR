@@ -102,6 +102,7 @@ Further, it must be specified **what to do with echildren of the deleted node**.
 
 - In case of deleting the original predicate (as in the case of the modality, `být-021` and `být-159`), the node that will serve as the new root gets the `!root` instruction in the functor row.
 
+---
 
 #### Syntactic rules
 
