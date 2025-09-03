@@ -109,7 +109,7 @@ Further, it must be specified **what to do with echildren of the deleted node**.
 #### `!` ... introduce an action for the given row (t_lemma or functor)
 examples:
   -	`!delete` ... delete the node for the given functor and hang its echildren on the frame-evoking verb  
-     (if used in a t_lemma row (as in the case of modality, `být-021` and `být-159`), a new root must be indicated , e.g., `!delete,ACT`)
+     (if used in a t_lemma row (as in the case of modality, `být-021` and `být-159`), a new root must be indicated within the children of the deleted verb, e.g., `!delete,ACT`)
   -	`!polarity(-)` ... add the polarity attribute with the `-` value for the given concpet  
       (may be used both in t_lemma and functor rows)
   -	`!modal-strength(partial-affirmative)` ... set the modal-strength attribute value to `partial-affirmative`  
