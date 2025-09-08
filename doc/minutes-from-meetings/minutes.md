@@ -15,15 +15,29 @@
 ---
 ---
 
-## Monday, September 1, 2025 
+## Monday, September 8, 2025 
 
-()
+(Dan, Federica, Jan Š., Markéta, ??)
 
 #### Updates:
+- Dan, Honza: UMR shared task submitted (San Diego, CA, from July 2-7, 2026)  
+  if accepted, we will need manually annotated testing data (how many sentences??), **end of February, 2026** 
+- Markéta, Honza: 'language' for description of changes in valency frames (esp. for *být*, *mít* frames) [HERE](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md)
 
-#### TODO:
+#### TODO: 
+
+- Honza: _mít_, _být_ ... implement the translation valency frames --> UMR concepts and arguments
+- Markéta, Hanka: complete the translation rules for _mít_, _být_ [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) (instructions [here](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md))
+- ALL: LREC paper in [Overleaf](https://www.overleaf.com/project/68a3112a48c6e5855461ef59)
+- PLUS: see the updated [TODO list from July 14](#todo-july-14)
 
 #### NEXT meetings
+- **Monday, Sept 15 (Vítkovice) - just after the lunch** 
+- Monday, Sept 22 - Kira's defense at 14:00 
+- Monday, Sept 29 - ITAT workshop
+- Monday, Oct 6 
+- Monday, Oct 13 ... LREC deadline: Friday, October  17, 2025 !!
+- Monday, Oct 20 
 
 ---
 
@@ -47,7 +61,7 @@
      - ~~Dan, Markéta: available August 4-7, August 18-20~~   
 
 
-#### TODO:
+#### TODO: {#todo-july-14}
 - Markéta, Hanka: Check [UMR Schema Reference Pages](https://umr4nlp.github.io/web/UMRSchemaPages/index.html), which provide lists and lattices with definitions and examples. 
 - Markéta, Hanka: Do we want to try [UMR Writer 3.0](https://umr-tool.cs.brandeis.edu/)? 
 - **Conversion:** 
