@@ -3,7 +3,7 @@
 
 For Czech, necessary changes are described in the [pdt_pb_mapping table](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829), column E, Correction (please leave your initials and comments in row F).
 
-**For Latin ???**
+For Latin, changes are described directly in the [Vallex4UMR](https://raw.githubusercontent.com/fjambe/Vallex4UMR/refs/heads/main/Vallex4UMR.txt) text file.
 
 
 ### T_lemma row
@@ -151,6 +151,7 @@ Examples:
 Examples:  
   -	`$actant` ... stands actants (i.e. `functor:X`, with `X~'ACT|PAT|ADDR|ORIG|EFF'`)
   -	`$not-BEN` ... stands for any functor other than `BEN`
+  - `$any_functor` ... stands for any functor
   -	`$noun` ... stands for nominals (i.e.,  `gram/sempos:X`, with `X~'^n.*'`)
   -	`$noun,verb` ... stands for nominals and verbs (i.e., `gram/sempos:X`, with `X~'(^n.*|v)'`)
   - `$noun-not-adj` ... identifies nominals and excludes adjectives (i.e.,  `gram/sempos:X`, with  `X~'^n.*' & X!~'adj.*'`)	 
@@ -190,10 +191,21 @@ CPHR !delete if(echild.functor:PAT)(ARG1)
   
   Example: 
 
- ```
+```
 být-00x  if(echild.$not-BEN)(t_lemma(exist-91))  
               else (t_lemma(belong-91),!add(echild.t_lemma(person),functor(manner)))   
 ```
 
-**TODO: Federica, did you meant something like this??
- I suggest to use the PDT-like terminology (t_lemma, functor), instead of the UMR one (concept, role)**
+**TODO: Federica, did you mean something like this? I suggest to use the PDT-like terminology (t_lemma, functor), instead of the UMR one (concept, role)**
+
+FG: Yes, this way it works. I'm just not sure about t_lemma(person), because I would like to keep the t_lemma of the BEN node.
+
+
+
+Another example - deleting a node with a functor that is not in the frame (so there is no row for it):
+
+```
+if(echild.functor:MANN)(!delete)
+```
+
+This would be specified in the row of the functor that governs the echild. So, if a MANN node is found among its children, it is deleted.
