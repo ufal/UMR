@@ -138,7 +138,7 @@ Some nodes originally annotated as dependent on the deleted node (typically `CPH
    as in _Teprve nyní však [my].ACT-->ARG0 **máme příležitost**.CPHR sledovat.PAT-->ARG1 různé jemnosti, …_  
    
 
-##### (iii) Dafault mapping
+##### (iii) Default processing
 
 Other echildren of the deleted node (typically `CPHR` or `DPHR`) are (unless specified differently) transferred **using the default functors mapping**.   
 In case of actants, `!error` should be reported.
