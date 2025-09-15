@@ -44,7 +44,7 @@ In such ceses, the echild node is deleted (as described below) and its echildren
   Example:
    - `být-CPHR-020:`  
      `if(echild.CPHR:třeba,potřeba,zapotřebí)(potřebovat-001)` gives `--> potřebovat-001`  
-     `if(echild.CPHR:škoda)(litovat-001)` gives `--> litovat-001`  
+     `else if(echild.CPHR:škoda)(litovat-001)` gives `--> litovat-001`  
      `else(být-CPHR-020)` gives  `--> být-???-020`  (depending on the t_lemma of the `CPHR` node in individual sentences) 
 
 
@@ -153,17 +153,22 @@ In case of actants, `!error` should be reported.
 
 #### Node identification
 
-By default, **a condition/instruction is applied to the processed node** (i.e., the node in column B for the Czech data). This means:
+**A.** By default, **a condition/instruction is applied to the processed node** (i.e., the node in column B for the Czech data). This means:
   -  a row with a verb lemma describes what to do with this verb node   
      (e.g., change its t_lemma, add an echild node (with some given properties), set an attribute, delete it (and specify the new root), etc.)
   -  a row with a functor describes what to do with this node  
      (e.g., change the functor to an UMR argument, add an echild node (with some given properties), find an echild node with some given properties and do something with this node, set an attribute, delete it (and specify what to do with its echildren)
 
-Otherwise, **specify to which node a condition/instruction should be applied** - so far, we have identified only cases when the affected node is either an echild of the processed verb OR echild of its frame member (which has its own row in the table):  
+**B.** Otherwise, **specify to which node a condition/instruction should be applied** - so far, we have identified only cases when the affected node is either an echild of the processed verb OR echild of its frame member (which has its own row in the table):  
 
-Example: 
+Example:  
  - `if(t_lemma:třeba)` ... the condition is applied to the processed node and checks its t_lemma
  - `if(echild.functor:RSTR)` ... the condition is applied to an echild of the processed node and checks its functor
+ 
+**C. Negative condition:** One might need specify that NONE of a node's echildren meet some condition - in such case, `no-echild` abbreviation should be used.  
+
+Example:  
+- `if(no-echild.functor:BEN)` ... the condition is applied when a given node has NO echild with BEN functor
 
 #### Attribute identification
 
@@ -212,7 +217,6 @@ Examples:
 
 Examples:
   -	`$actant` ... stands actants (i.e. `functor:X`, with `X~'ACT|PAT|ADDR|ORIG|EFF'`)
-  -	`$not-BEN` ... stands for any functor other than `BEN`
   - `$any-functor` ... stands for any functor
   -	`$noun` ... stands for nominals (i.e.,  `gram/sempos:X`, with `X~'^n.*'`)
   -	`$noun,verb` ... stands for nominals and verbs (i.e., `gram/sempos:X`, with `X~'(^n.*|v)'`)
@@ -241,7 +245,7 @@ more conditions are separated by comma.
 
  ```
 CPHR !delete if(echild.functor:PAT)(ARG1)  
-              else (if(echild.functor:RSTR,$n-not-adj)(ARG1))  
+              else if(echild.functor:RSTR,$n-not-adj)(ARG1)  
 ```
 
 - more `if` instructions can be cumulated -- then, they are processed in a "procedural" way, as described by the following example.  
@@ -263,7 +267,7 @@ CPHR !delete if(echild.functor:PAT)(ARG1)
      Otherwise use `pred-possession-91`, find its BEN echild and change its role to `ARG2.`
 
 ```
-esse-0x if(echild.$not-BEN)(t_lemma(exist-91))
+esse-0x if(no-child.functor:BEN)(t_lemma(exist-91))
             else (t_lemma(pred-possession-91), if(echild:BEN)(ARG2))
 ```
 
