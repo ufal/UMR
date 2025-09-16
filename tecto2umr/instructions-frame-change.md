@@ -233,7 +233,7 @@ Examples:
   - `(echild.functor:PAT,$not-adj)` ... indicates an echild of the processed node with the `PAT` functor that is NOT an adjective (gram/sempos, as indicated by the abbreviation) 
 
 - **the second bracket** contains the instruction what to do;   
-if not specified differently, the instruction is performed on the node and attribute defined by the first condition;  
+if not specified differently, the instruction is performed on the node and attribute defined by the row (t_lemma for a verb row, functor for afunctor row;  
 another node may be specified (esp. echild of the processed verb);
 more conditions are separated by comma.  
 
