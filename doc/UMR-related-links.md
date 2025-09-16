@@ -1,6 +1,6 @@
 # UMR-related links
 
-[Czech UMR](https://ufal.mff.cuni.cz/uniform-meaning-representation-czech)
+[Czech UMR](https://ufal.mff.cuni.cz/uniform-meaning-representation-czech), [Latin UMR](https://ufal.mff.cuni.cz/uniform-meaning-representation-latin)
 
 [Google Drive](https://drive.google.com/drive/folders/1HbDbVAwPUTVbgzL-WoB74Y6G3pkw4Qni?ths=true)
 
@@ -79,6 +79,8 @@
 ~~[SynSemClass - Search](https://quest.ms.mff.cuni.cz/SynSemClassSearch/) (under development, SSC version 4.0)~~
 
 [SynSemClass Search - working data](http://ufallab.ms.mff.cuni.cz/~fucikova/public_html/SSC_classmembers/) (SSC 4.0 and updates)
+
+[Latin Vallex4UMR](https://github.com/fjambe/Vallex4UMR) (GitHub repo)
 
 
 
