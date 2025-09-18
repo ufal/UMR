@@ -67,9 +67,9 @@ In such case, **a new root of the subtree must be indicated** - this node will  
 If it is necessary to **add or change an attribute of the processed verb**, please indicate this change AFTER the UMR concept in the same cell.  
 
 Examples:
-  - `být-013 --> exist-91 !polarity(-)`  
+  - `být-013 --> exist-91, !polarity(-)`  
     (for `být-013`, exemplified e.g. with _Když bylo po válce, ..._ (= _válka (už) nebyla_) or _A bylo po srandě_ (= _sranda (už) nebyla_): the verb is changed to `exist-91` AND the polarity attribute is set to `-`)  
-  -	`být-081 !modal-strength(neutral-affirmative)`  
+  -	`být-081, !modal-strength(neutral-affirmative)`  
     (for `být-081`, exemplified e.g. with _Je na Světové bance, aby se přizpůsobila._ (= _Světová banka by měla ..._): the verb remains `být-081` but the modal-strength attribute is changed) 
   
 
