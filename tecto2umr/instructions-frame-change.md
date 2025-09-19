@@ -282,4 +282,50 @@ esse-0x if(no-child.functor:BEN)(t_lemma(exist-91))
 if(echild.functor:MANN)(!delete)
 ```
 
+#### Adding an additional predicate
+
+  Example:
+  - `mít-003` někdo má tanky jako hračky = "somebody has tanks as toys"
+  - PDT: to have=PRED, somebody=ACT, tanks=PAT, as toys=EFF
+  - Ideally in UMR:
+
+```
+have-possession-91
+  :ARG1 somebody
+  :ARG2 tanks
+      :ARG2-of have-role-91
+          :ARG1 toys
+```
+
+  - What needs to be added is a whole new predicate `have-role-91` and state that "tanks" are its ARG2 (via an ARG-of relation) and its ARG1 is "toys".
+  - Sometimes the added predicate is `have-role-91` (má za manžela Fina "she has a Finn for a husband").
+  - So far I did a different solution, because adding a predicate is too complex - i simply labelled "toys" as :manner on the `have-possession-91` predicate, so the
+    implemented (incorrect) solution looks like this:
+
+```
+have-possession-91
+  :ARG1 somebody
+  :ARG2 tanks
+  :manner toys
+```
+
+#### Changing the parent node of an actant
+
+  = Turning an actant (of the predicate) into an attribute/role for a different node
+  - `mít-005` někdo má svíčky zapálené "somebody has the candles lit"
+  - Actually says "somebody's candles are lit" = modification, and somebody is the possessor of the modified entity
+  - PDT: to have=PRED, somebody=ACT, candles=PAT, lit=EFF
+  - Ideally in UMR:
+
+```
+have-mod-91
+  :ARG1 candles
+      :possessor somebody
+  :ARG2 lit
+```
+
+  - This requires turning the original ACT into a :possessor on a different parent node than the original predicate. Namely, it needs to have "candles", the original PAT, as parent.
+  - How do I specify this? Do I do this in the line for ACT, or in the line for PAT?
+  - The same re-structuring applies to `mít-006` ("mít něco v pořádku", "mít školu daleko","mít něco povinně") and may possibly apply to `mít-007` if we consider the main meaning to be `have-place-91`, rahter than `have-possession-91` (mít něco u sebe, mít doma fotky, mít rodinu v zahraničí, mít kolem krku hada)
+
 
