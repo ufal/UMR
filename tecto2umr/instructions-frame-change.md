@@ -293,11 +293,11 @@ if(echild.functor:MANN)(!delete)
 have-possession-91
   :ARG1 somebody
   :ARG2 tanks
-      :ARG2-of have-role-91
-          :ARG1 toys
+      :ARG1-of have-role-91
+          :ARG3 toys
 ```
 
-  - What needs to be added is a whole new predicate `have-role-91` and state that "tanks" are its ARG2 (via an ARG-of relation) and its ARG1 is "toys".
+  - What needs to be added is a whole new predicate `have-role-91` and state that "tanks" are its ARG1 (via an ARG1-of relation) and its ARG3 is "toys".
   - Sometimes the added predicate is `have-role-91` (má za manžela Fina "she has a Finn for a husband").
   - So far I did a different solution, because adding a predicate is too complex - i simply labelled "toys" as :manner on the `have-possession-91` predicate, so the
     implemented (incorrect) solution looks like this:
