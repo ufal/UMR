@@ -208,7 +208,9 @@ Examples:
   -	`!modal-strength(partial-affirmative)` ... set the given modal-strength attribute value to the processed node   
   (can be used both in a t_lemma and a functor row)  
 
-  -	`!error` ... report an error  
+  -	`!ok` ... nothing to do  
+    (esp. `if(cond)(instr) else !ok` ... when no activity is required when the condition is not satisfied; can be used both in a t_lemma and a functor row)
+  - `!error` ... report an error  
       (can be used both in a t_lemma and a functor row)
 
 
@@ -223,7 +225,7 @@ Examples:
   - `$noun-not-adj` ... identifies nominals and excludes adjectives (i.e.,  `gram/sempos:X`, with  `X~'^n.*' & X!~'adj.*'`)	 
 
 
-#### if()() else()  ... conditional instruction
+#### `if()() else ` ... conditional instruction
 - **the first bracket** contains the condition in the form `attribute:value`;   
   by default, the condition is applied to the node specified by the particular row (i.e., to the verb or to the particular functor, column B for Czech);   
   another node may be specified (esp. echild of the processed verb);  
@@ -234,14 +236,15 @@ Examples:
 
 - **the second bracket** contains the instruction what to do;   
 if not specified differently, the instruction is performed on the node and attribute defined by the row (t_lemma for a verb row, functor for afunctor row;  
-another node may be specified (esp. echild of the processed verb);
+another node may be specified (esp. echild of the processed node);
 more conditions are separated by comma.  
 
   Example:
   - `if(functor:RSTR,$not-adj)(ARG1)` ... a node with the `RSTR` functor that  is NOT an adjective gets the `ARG1` role  
    **TODO: What about if more nodes meet the condition - reification ??**
 
-- `else` introduces instruction that is applied when the condition is not met (optional)  
+- `else` introduces instruction that is applied when the condition is not met ~~(optional)~~;  
+  if no action is required, use `!ok` there.
 
  ```
 CPHR !delete if(echild.functor:PAT)(ARG1)  
