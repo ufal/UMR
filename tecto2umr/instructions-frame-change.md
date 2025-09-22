@@ -332,3 +332,19 @@ have-mod-91
   - The same re-structuring applies to `mít-006` ("mít něco v pořádku", "mít školu daleko","mít něco povinně") and may possibly apply to `mít-007` if we consider the main meaning to be `have-place-91`, rahter than `have-possession-91` (mít něco u sebe, mít doma fotky, mít rodinu v zahraničí, mít kolem krku hada)
 
 
+#### Preposition and noun into different nodes
+- for `mít-013` někdo má po svatbě "somebody has after wedding", we would like to split "po" and "svatbě" into two nodes
+- the preposition can be either "po" or "před", which would map to either "before" or "after"
+- the desired UMR representation would be:
+
+```
+have-temporal-91
+    :ARG1 (p / person)
+    :ARG2 (a / after
+        :op1 (s / svatba
+            :ARG0 p))
+```
+
+- I can add ARG2 as after/before with the !add operation, but don't know how to state that the main noun of PAT (svatba) should be :op1 of this ARG2 (this is again the "Changing the parent node of an actant" problem)
+- Another complication is that ACT needs to be both ARG1 of the predicate (have-temporal-91) and ARG0 of the :op1 (svatba), so we have on PDT actant mapping onto two arguments in UMR
+- Solution so far is simply mapping the predicate onto "have-temporal-91", ACT onto ARG1 and PAT onto ARG2
