@@ -201,6 +201,8 @@ Examples:
  
   -	`!root` (in the functor row) ... indicates the functor that will serve as a new root (as in the case of modality, `být-021` and `být-159`).   
  
+  - SUGGESTED:  `!move(node2,relation)` (in the functor row) ... indicates that the processed node (given by the row) should be moved to become an echild of `node2` (the first parameter) useng the relation `relation` (the second parameter) 
+
   - `!add(echild.t_lemma(person),functor(mod))` ... add an echild to the processed node, with the specified attributes  
    (as the second insertion (functor) concerns the same node as the first insertion (t_lemma), the node specification (echild of the processed node) is not repeated)  
     (can be used both in a t_lemma and a functor row)  
@@ -225,6 +227,7 @@ Examples:
   - `$any-functor` ... stands for any functor
   -	`$noun` ... stands for nominals (i.e.,  `gram/sempos:X`, with `X~'^n.*'`)
   -	`$noun,verb` ... stands for nominals and verbs (i.e., `gram/sempos:X`, with `X~'(^n.*|v)'`)
+  -	`$n.denot-v` ... stands for nominals with sempos starting with n.denot and verbs
   - `$noun-not-adj` ... identifies nominals and excludes adjectives (i.e.,  `gram/sempos:X`, with  `X~'^n.*' & X!~'adj.*'`)	 
 
 
@@ -266,7 +269,7 @@ CPHR !delete if(echild.functor:PAT)(ARG1)
               if(echild.$actant)(!error)  
 ```
 
-#### More examples
+### More examples
 
    Example: 
    - Change t_lemma to `exist-91` if there in not `BEN` among its echildren.
@@ -285,8 +288,9 @@ esse-0x if(no-child.functor:BEN)(t_lemma(exist-91))
 if(echild.functor:MANN)(!delete)
 ```
 
-#### Adding an additional predicate
+### New problems:
 
+#### KO: Adding an additional predicate
   Example:
   - `mít-003` někdo má tanky jako hračky = "somebody has tanks as toys"
   - PDT: to have=PRED, somebody=ACT, tanks=PAT, as toys=EFF
@@ -312,7 +316,9 @@ have-possession-91
   :manner toys
 ```
 
-#### Changing the parent node of an actant
+**Proposed solution:** Adding a predicate is too complex so use the solution with `manner`.
+
+#### OK: Changing the parent node of an actant
 
   = Turning an actant (of the predicate) into an attribute/role for a different node
   - `mít-005` někdo má svíčky zapálené "somebody has the candles lit"
@@ -331,8 +337,17 @@ have-mod-91
   - How do I specify this? Do I do this in the line for ACT, or in the line for PAT?
   - The same re-structuring applies to `mít-006` ("mít něco v pořádku", "mít školu daleko","mít něco povinně") and may possibly apply to `mít-007` if we consider the main meaning to be `have-place-91`, rahter than `have-possession-91` (mít něco u sebe, mít doma fotky, mít rodinu v zahraničí, mít kolem krku hada)
 
+**Proposed solution:** Use the newly introduced`!move` instruction, see the example: 
 
-#### Preposition and noun into different nodes
+Example: 
+ - `mít-005` (as in _někdo.ACT má svíčky.PAT zapálené.EFF) --> `have-mod-91`
+   já.`ACT` --> `!move(esibling:ARG1,possessor)`  
+   svíčky.`PAT` --> `ARG1`  
+   zapálené.`EFF` --> `ARG2`  
+   I.e., 
+
+
+#### ??: Preposition and noun into different nodes
 - for `mít-013` někdo má po svatbě "somebody has after wedding", we would like to split "po" and "svatbě" into two nodes
 - the preposition can be either "po" or "před", which would map to either "before" or "after"
 - the desired UMR representation would be:
