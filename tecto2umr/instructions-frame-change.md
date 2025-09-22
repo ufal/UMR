@@ -107,29 +107,30 @@ However, in some cases -- esp. with frames for light verb constructions (`CPHR` 
       the `CPHR` t_lemma _líto_ becomes part of the predicate and so its node is deleted    
   
 
-#### Structural changes - echildren of the deleted node 
+#### Merging 2 nodes: what to do with echildren of the deleted node 
 
 In case of deleting the original predicate (as in the case of the modality, `být-021` and `být-159`), **the node that will serve as the new root** gets the `!root` instruction in the functor row.
 
-Further, it must be specified **what to do with echildren of the deleted node**. 
+In general, it must be specified **what to do with echildren of the deleted node**. 
 Unless specified differently, the following rules are applied. 
 
-##### (i) Nodes corefering with nodes of the frame-evoking verb
+##### (i) Nodes coreferring with nodes of the frame-evoking verb
 
-These nodes are merged (just 1 node), the functor is typically (by default) inherited from the verb.  
+These nodes are merged (just 1 node), the functor is by default inherited from the verb. 
 
-##### TODO: clashes in functors??
- 
-      
  
  Example:
    - `mít-028 --> mít-tušení-028`, as in  
     _[já].ACT mám [moje.ACT] tušení.CPHR, (že ...).PAT_   
     The coreferring #PersPron nodes are merged; as they have the same functor (`ACT`), no problem arises (`ACT` is translated onto `ARG0`).   
     
+   - `mít-055` --> `mít-využití-055`, as in  
+   - _Program.v-ACT má.PRED využití.v-CPHR (při léčbě).n-COND_ (with #Gen.n-ACT #Cor.n-PAT --> program)  
+     _Program.ARG1 má-využití.PRED (při léčbě).n-COND_ (n-PAT corefers with v-ACT, thus it is translated as ARG1)
 
+##### (ii) General actants (#Gen, #Unsp) are deleted
 
-##### (ii) Other actants / frame elements that should be translated as ARGs
+##### (iii) Other actants / frame elements that should be translated as ARGs
 
 Some nodes originally annotated as dependent on the deleted node (typically `CPHR` or `DPHR` node)  should **serve as arguments of the new concept** - it is typically `PAT` modifying the `CPHR` node -- see below how to specify such node (typically using the `if()()` instruction).
  
@@ -137,10 +138,12 @@ Some nodes originally annotated as dependent on the deleted node (typically `CPH
    - ` mít-021 --> mít-CPHR-021` (as in `mít-příležitost-021`),  
    as in _Teprve nyní však [my].ACT-->ARG0 **máme příležitost**.CPHR sledovat.PAT-->ARG1 různé jemnosti, …_  
 
-##### TODO: Whenever two nodes are combined, check that all actants / frame elements are properly processed (i.e., the given rule must treat all actants of both nodes)?  
+##### (iv) Whenever two nodes are combined/merged, check that all actants are properly processed 
+That is: the given rule must treat all actants of both nodes. The only exception concerns actants with t_lemma `#Gen` and `#Unsp` (or obligatory free modifications with  `#Oblfm`). 
+ 
 Otherwise, `!error` should be reported.
 
-##### (iii) Default processing
+##### (v) Default processing
 
 Other echildren of the deleted node (typically `CPHR` or `DPHR`) are (unless specified differently) 
 - hanged on the frame-evoking verb 
