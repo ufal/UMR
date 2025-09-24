@@ -276,7 +276,7 @@ CPHR !delete if(echild.functor:PAT)(ARG1)
      Otherwise use `pred-possession-91`, find its BEN echild and change its role to `ARG2.`
 
 ```
-esse-0x if(no-child.functor:BEN)(t_lemma(exist-91))
+esse-0x if(no-child.functor:BEN)(!t_lemma(exist-91))
             else (!t_lemma(pred-possession-91), if(echild:BEN)(ARG2))
 ```
 
