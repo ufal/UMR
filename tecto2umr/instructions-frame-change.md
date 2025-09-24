@@ -45,7 +45,7 @@ In such ceses, the echild node is deleted (as described below) and its echildren
    - `být-CPHR-020:`  
      `if(echild.CPHR:třeba,potřeba,zapotřebí)(potřebovat-001)` gives `--> potřebovat-001`  
      `else if(echild.CPHR:škoda)(litovat-001)` gives `--> litovat-001`  
-     `else(být-CPHR-020)` gives  `--> být-???-020`  (depending on the t_lemma of the `CPHR` node in individual sentences) 
+     `else (být-CPHR-020)` gives  `--> být-???-020`  (depending on the t_lemma of the `CPHR` node in individual sentences) 
 
 
 ##### 3. Deletion of the verb node
@@ -84,7 +84,7 @@ Then the change is identified:
       `if(CPHR:možný)(!modal-strength(neutral-affirmative))`  
       `if(CPHR:nutný)(!modal-strength(partial-affirmative))`  
      - (alternativelly, it can be indiated in the verb row):  
-       `if(echild.CPHR:možný)(if(echild.functor:ACT)(!modal-strength(neutral-affirmative)))`  
+       `if(echild.CPHR:možný)(if(echild.functor:ACT)(!modal-strength(neutral-affirmative))),`  
        `if(echild.CPHR:nutný)(if(echild.functor:ACT)(!modal-strength(partial-affirmative)))`  
 ---
 
@@ -139,7 +139,7 @@ Some nodes originally annotated as dependent on the deleted node (typically `CPH
    as in _Teprve nyní však [my].ACT-->ARG0 **máme příležitost**.CPHR sledovat.PAT-->ARG1 různé jemnosti, …_  
 
 ##### (iv) Whenever two nodes are combined/merged, check that all actants are properly processed 
-That is: the given rule must treat all actants of both nodes. The only exception concerns actants with t_lemma `#Gen` and `#Unsp` (or obligatory free modifications with  `#Oblfm`). 
+That is: the given rule must treat all actants of both nodes. The only exception concerns actants with t_lemma `#Gen` and `#Unsp` (or obligatory free modifications with  `#Oblfm`) -- these are deleted (just in the case of merging nodes). 
  
 Otherwise, `!error` should be reported.
 
@@ -166,6 +166,8 @@ In case of actants, `!error` should be reported.
 
 Example:  
  - `if(t_lemma:třeba)` ... the condition is applied to the processed node and checks its t_lemma
+ - `if(t_lemma:třeba,potřeba)` ... a list of values may be here
+ - `if(functor:CPHR,t_lemma:třeba,potřeba)` ... conditions on more attributes can be here as well, see below
  - `if(echild.functor:RSTR)` ... the condition is applied to an echild of the processed node and checks its functor
  
 **C. Negative condition:** One might need specify that NONE of a node's echildren meet some condition - in such case, `no-echild` abbreviation should be used.  
@@ -189,19 +191,19 @@ In the case of combined conditions/instructions of the type `if(cond1,cond2)(ins
 - instructions are by default applied to the node and attribute defined in the first condition.  
 
     Example:
-    - `if(echild.functor:RSTR,$n-not-adj)(ARG1)`... both conditions are applied to the echild of the processed node; if they are satisfied, its RSTR functor is changed to ARG1 
+    - `if(echild.functor:RSTR,REG,$n-not-adj)(ARG1)`... both conditions are applied to the echild of the processed node; if they are satisfied, its `RSTR` and/or `REG` functor is changed to `ARG1` 
 
 
 #### `!` ... introduce an action for the given row (t_lemma or functor)  
 
 Examples:
   -	`!delete` (in a functor row) ... delete the node for the given functor and hang its echildren on the frame-evoking verb (unless specified differently)   
-    `!delete` (in a t_lemma row) ... delete the verb node; a new root must be indicated within the children of the deleted verb, e.g., `!delete,ACT`   
+    `!delete,X` (in a t_lemma row) ... delete the verb node; a new root (identified by its functor `X`) must be indicated among the children of the deleted verb, e.g., `!delete,ACT`   
     (as in the case of modality, `být-021` and `být-159`)  
  
   -	`!root` (in the functor row) ... indicates the functor that will serve as a new root (as in the case of modality, `být-021` and `být-159`).   
  
-  - SUGGESTED:  `!move(node2,relation)` (in the functor row) ... indicates that the processed node (given by the row) should be moved to become an echild of `node2` (the first parameter) useng the relation `relation` (the second parameter) 
+  - `!move(node2,relation)` (in the functor row) ... indicates that the processed node (given by the row) should be moved to become an echild of `node2` (the first parameter) useng the relation `relation` (the second parameter) 
 
   - `!add(echild.t_lemma(person),functor(mod))` ... add an echild to the processed node, with the specified attributes  
    (as the second insertion (functor) concerns the same node as the first insertion (t_lemma), the node specification (echild of the processed node) is not repeated)  
@@ -260,13 +262,16 @@ CPHR !delete if(echild.functor:PAT)(ARG1)
 - more `if` instructions can be cumulated -- then, they are processed in a "procedural" way, as described by the following example.  
 
   Example:
-  -   In the folloing example,  the first `if` instruction searches for `ARG1` (`ARG1` is detected when `PAT` or nominal `RSTR` is found among `CPHR` children). Then (be `ARG1` detected or not), any other potential `RSTR` relation is translated to the `manner` relation. If there is any actant among echildren of the deleted node, error is reported  
+  -   In the folloing example,  the first `if` instruction searches for `ARG1` (`ARG1` is detected when `PAT` or nominal `RSTR` is found among `CPHR` children).  
+  Then (be `ARG1` detected or not), any other potential REMAINING `RSTR` relation is translated to the `manner` relation. If there is still any actant among echildren of the deleted node, error is reported  
 
  ```
-CPHR !delete if(echild.functor:PAT)(ARG1)  
-              else if(echild.functor:RSTR,$n-not-adj)(ARG1)  
-              if(echild.functor:RSTR)(manner)  
-              if(echild.$actant)(!error)  
+CPHR !delete,
+      if(echild.functor:PAT)(ARG1)  
+      else if(echild.functor:RSTR,$n-not-adj)(ARG1) 
+           else !ok,  
+      if(echild.functor:RSTR)(manner) else !ok, 
+      if(echild.$actant)(!error) else !ok
 ```
 
 ### More examples
@@ -290,7 +295,7 @@ if(echild.functor:MANN)(!delete)
 
 ### New problems:
 
-#### KO: Adding an additional predicate
+#### NOT: Adding an additional predicate
   Example:
   - `mít-003` někdo má tanky jako hračky = "somebody has tanks as toys"
   - PDT: to have=PRED, somebody=ACT, tanks=PAT, as toys=EFF
