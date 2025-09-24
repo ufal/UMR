@@ -277,8 +277,7 @@ CPHR !delete if(echild.functor:PAT)(ARG1)
 
 ```
 esse-0x if(no-child.functor:BEN)(!t_lemma(exist-91))
-            else (!t_lemma(pred-possession-91)),
-        if(echild:BEN)(ARG2) else !ok
+            else (!t_lemma(pred-possession-91), if(echild:BEN)(ARG2) else !ok)
 ```
 
   Example:   
