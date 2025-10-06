@@ -94,13 +94,28 @@ while(1)
     );
     $file{sentences} = read_umr_file($path, \%file);
     my $n = scalar(@{$file{sentences}});
+    my $n_failed = 0;
     print("Found $n sentences in $label:\n");
     print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
     foreach my $sentence (@{$file{sentences}})
     {
-        parse_sentence_tokens($sentence);
-        parse_sentence_graph($sentence);
-        parse_sentence_alignments($sentence);
+        eval
+        {
+            parse_sentence_tokens($sentence);
+            parse_sentence_graph($sentence);
+            parse_sentence_alignments($sentence);
+            1;
+        }
+        or do
+        {
+            my $error = $@ || 'Unknown failure';
+            $n_failed++;
+        };
+    }
+    if($n_failed > 0)
+    {
+        print("%d out of %d sentences failed.\n", $n_failed, $n);
+        die;
     }
     push(@files, \%file);
 }
