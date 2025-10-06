@@ -79,6 +79,7 @@ if(scalar(@ARGV) % 2)
 }
 my %labels;
 my @files;
+my @failed_sentences; # indexed by sentence number; nonzero value if that sentence failed in at least one of the files
 while(1)
 {
     my $label = shift(@ARGV);
@@ -97,6 +98,7 @@ while(1)
     my $n_failed = 0;
     print("Found $n sentences in $label:\n");
     print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
+    my $i = 0;
     foreach my $sentence (@{$file{sentences}})
     {
         eval
@@ -110,15 +112,31 @@ while(1)
         {
             my $error = $@ || 'Unknown failure';
             print STDERR ("FATAL: $error\n");
+            $failed_sentences[$i]++;
             $n_failed++;
         };
+        $i++;
     }
     if($n_failed > 0)
     {
-        printf STDERR ("%d out of %d sentences failed.\n", $n_failed, $n);
-        die;
+        printf STDERR ("Reading of %d out of %d sentences failed.\n", $n_failed, $n);
+        #die;
     }
     push(@files, \%file);
+}
+# If some sentences failed in at least one of the files (because the format was invalid)
+# and we still want to compare the rest, we should now remove the invalid sentences.
+foreach my $file (@files)
+{
+    my @filtered_sentences;
+    for(my $i = 0; $i <= $#{$file{sentences}}; $i++)
+    {
+        unless($failed_sentences[$i])
+        {
+            push(@filtered_sentences, $file{sentences}[$i]);
+        }
+    }
+    @{$file{sentences}} = @filtered_sentences;
 }
 print("\n");
 compare_files(@files);
