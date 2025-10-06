@@ -114,7 +114,7 @@ while(1)
     }
     if($n_failed > 0)
     {
-        print("%d out of %d sentences failed.\n", $n_failed, $n);
+        printf("%d out of %d sentences failed.\n", $n_failed, $n);
         die;
     }
     push(@files, \%file);
