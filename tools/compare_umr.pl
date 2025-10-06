@@ -109,12 +109,13 @@ while(1)
         or do
         {
             my $error = $@ || 'Unknown failure';
+            print STDERR ("FATAL: $error\n");
             $n_failed++;
         };
     }
     if($n_failed > 0)
     {
-        printf("%d out of %d sentences failed.\n", $n_failed, $n);
+        printf STDERR ("%d out of %d sentences failed.\n", $n_failed, $n);
         die;
     }
     push(@files, \%file);
