@@ -1,0 +1,3487 @@
+# sentence level graph:
+(s1f / fear
+    :undergoer (s1a / and
+        :op1 (s1d / dead
+            :refer-number FILL
+            :quant 200)
+        :op2 (s1x / 1500))
+    :theme (s1m / missing
+        :modal-strength neutral-affirmative
+        :aspect ASP)
+    :OBLIQUE (s1l / landslide
+        :mod (s1n / NE-TYPE
+            :name (s1n2 / name
+                :op1 "Philippines"))
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s2t / sentence)
+
+# sentence level graph:
+(s3s / say
+    :actor (s3n5 / NE-TYPE
+        :mod (s3r / Red)
+        :name (s3n6 / name
+            :op1 "Cross"))
+    :theme (s3a / and
+        :op1 (s3b / believe
+            :modal-strength full-affirmative
+            :aspect ASP
+            :undergoer (s3p / person
+                :refer-number plural
+                :quant 200)
+            :theme (s3k / kill
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s3h / have-mod-91
+            :modal-strength MS-affirmative
+            :aspect state
+            :ARG1 (s3o / other
+                :refer-number plural
+                :quant 1,500)
+            :ARG2 (s3m / missing
+                :OBLIQUE (s3n / NE-TYPE
+                    :mod (s3c / central)
+                    :name (s3n2 / name
+                        :op1 "Philippines"))
+                :OBLIQUE (s3n3 / NE-TYPE
+                    :name (s3n4 / name
+                        :op1 "Friday"))
+                :ADVCL (s3b2 / bury
+                    :actor (s3l / landslide
+                        :refer-number singular)
+                    :undergoer (s3v / village
+                        :mod (s3e / entire)
+                        :refer-number singular)
+                    :manner (s3w / when)
+                    :modal-strength MS-affirmative
+                    :aspect ASP))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s4s / say
+    :actor (s4e / eyewitness
+        :refer-number plural)
+    :theme (s4l / leave
+        :modal-strength full-affirmative
+        :aspect ASP
+        :temporal (s4h2 / hit
+            :actor (s4l2 / landslide
+                :refer-number singular)
+            :undergoer (s4v / village
+                :mod (s4s3 / south
+                    :mod (s4i / island
+                        :mod (s4p / Philippine)
+                        :mod (s4n3 / NE-TYPE
+                            :name (s4n4 / name
+                                :op1 "Leyte"))))
+                :mod (s4n / NE-TYPE
+                    :name (s4n2 / name
+                        :op1 "Guinsaugon"))
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :undergoer (s4h / house
+            :manner (s4o / only)
+            :mod (s4f / few)
+            :refer-number plural)
+        :theme (s4s2 / stand
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s5s / say
+    :actor (s5n / NE-TYPE
+        :name (s5n2 / name
+            :op1 "Richard"
+            :op2 "Gordon"))
+    :theme (s5b / be
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s5a / and
+            :op1 (s5m / missing
+                :refer-number FILL
+                :quant 1,500)
+            :op2 (s5x / 200
+                :mod (s5d / dead))))
+    :OBLIQUE (s5i / interview
+        :mod (s5r / radio
+            :refer-number singular)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s6s / show
+    :actor (s6f2 / footage
+        :mod (s6f / first)
+        :mod (s6v / village
+            :mod (s6d / devastated))
+        :refer-number singular)
+    :undergoer (s6s2 / sea
+        :mod (s6m / mud)
+        :mod (s6c / cover
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s6f4 / FILL)
+            :undergoer (s6f6 / FILL
+                :undergoer-of (s6i / identity-91
+                    :ARG1 (s6f5 / FILL)
+                    :ARG2 (s6f3 / farmland
+                        :mod (s6l / lush)
+                        :mod (s6v2 / valley
+                            :mod (s6g / green)
+                            :refer-number singular)
+                        :refer-number singular)
+                    :modal-strength MS-affirmative
+                    :aspect state)))
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s7s2 / see
+    :undergoer (s7s / sheet
+        :manner (s7o / only)
+        :mod (s7a / and
+            :op1 (s7r / roofing
+                :mod (s7t / tin
+                    :refer-number singular))
+            :op2 (s7t2 / tree
+                :refer-number singular
+                :mod (s7c / coconut
+                    :refer-number singular)
+                :mod (s7o2 / occasional)))
+        :mod (s7f / few)
+        :refer-number plural)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s8s3 / show
+    :undergoer (s8g / group
+        :mod (s8t / tiny)
+        :mod (s8s2 / survivor
+            :mod (s8s / spatter-mud
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :refer-number plural)
+    :manner (s8a / also)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :ADVCL (s8w / walk
+        :OBLIQUE (s8m / muck
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :ADVCL (s8s4 / stunn
+            :actor (s8s5 / scope
+                :mod (s8d / destruction)
+                :refer-number singular)
+            :manner (s8a2 / apparently)
+            :modal-strength MS-affirmative
+            :aspect ASP)))
+
+# sentence level graph:
+(s9s / say
+    :actor (s9n2 / NE-TYPE
+        :name (s9n3 / name
+            :op1 "President"
+            :op2 "Gloria"
+            :op3 "Arroyo"))
+    :theme (s9r2 / rush
+        :OBLIQUE (s9a4 / and
+            :op1 (s9a3 / air
+                :refer-number singular)
+            :op2 (s9l / land
+                :refer-number singular)
+            :op3 (s9s2 / sea
+                :refer-number singular))
+        :OBLIQUE (s9a2 / area
+            :refer-number singular)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :ADVCL (s9c / cope
+            :actor (s9f / FILL)
+            :OBLIQUE (s9c2 / catastrophe
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :actor (s9t2 / team
+            :mod (s9r / rescue
+                :refer-number singular)
+            :refer-number plural))
+    :OBLIQUE (s9a / address
+        :mod (s9n / nation)
+        :mod (s9t / televise
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s10s / say
+    :actor (s10p3 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s10o / order
+        :OBLIQUE (s10a / area
+            :refer-number singular)
+        :OBLIQUE (s10r / region
+            :mod (s10n4 / NE-TYPE
+                :mod (s10c / central)
+                :name (s10n5 / name
+                    :op1 "Philippines"))
+            :refer-number singular)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s10p / person
+            :refer-person 1st
+            :refer-number singular)
+        :undergoer (s10a2 / and
+            :op1 (s10n2 / NE-TYPE
+                :name (s10n3 / name
+                    :op1 "Guard"))
+            :op2 (s10f / force
+                :refer-number singular
+                :MOD-POSS (s10p2 / person
+                    :refer-person 1st
+                    :refer-number plural)
+                :mod (s10n / naval)
+                :mod (s10e / entire))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s11u / use
+    :undergoer (s11s / ship
+        :mod (s11n / naval)
+        :refer-number plural)
+    :OBLIQUE (s11a / and
+        :op1 (s11h / hospital
+            :refer-number plural
+            :mod (s11f / float
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s11f2 / FILL)))
+        :op2 (s11c2 / centre
+            :refer-number plural
+            :mod (s11a2 / and
+                :op1 (s11r / relief)
+                :op2 (s11r2 / rescue
+                    :refer-number singular))
+            :mod (s11c / command
+                :refer-number singular)))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s12s / say
+    :actor (s12n / NE-TYPE
+        :name (s12n2 / name
+            :op1 "Governor"
+            :op2 "Rosette"
+            :op3 "Lerias"))
+    :theme (s12i / indicate
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s12c / census
+            :mod (s12l / late)
+            :refer-number singular)
+        :theme (s12b / be
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s12h / house
+                :mod (s12p / person
+                    :mod (s12l2 / live
+                        :modal-strength MS-affirmative
+                        :aspect ASP
+                        :actor (s12f / FILL)
+                        :OBLIQUE (s12l3 / landslide
+                            :refer-number singular)
+                        :OBLIQUE (s12n3 / NE-TYPE
+                            :name (s12n4 / name
+                                :op1 "Guinsaugon")))
+                    :quant 3,000)
+                :refer-number plural
+                :quant 375)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s13d / describe
+    :actor (s13p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s13v / village
+        :refer-number singular)
+    :OBLIQUE (s13f / flattened
+        :manner (s13t / totally)
+        :refer-number FILL)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s14s2 / say
+    :actor (s14p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s14a / and
+        :op1 (s14c2 / COPULAR-CONSTRUCTION
+            :modal-strength full-affirmative
+            :aspect state
+            :ARG1 (s14t / thing
+                :refer-number singular)
+            :ARG2 (s14m / mud
+                :mod (s14r / run
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s14f / FILL)
+                    :OBLIQUE (s14m2 / mountain
+                        :refer-number singular))
+                :refer-number singular
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s14c / cover
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s14t2 / thing
+                :refer-number singular)
+            :undergoer (s14v / village
+                :refer-number singular)
+            :OBLIQUE (s14s / second
+                :refer-number plural)))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s14q / quote
+        :undergoer (s14s3 / survivor
+            :refer-number plural)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s15b / blame
+    :actor (s15e / expert
+        :refer-number plural)
+    :undergoer (s15d / deforestation
+        :refer-number singular)
+    :OBLIQUE (s15t / tragedy
+        :refer-number singular
+        :actor-of (s15c / come
+            :OBLIQUE (s15d2 / day
+                :mod (s15r / rainfall
+                    :ARG1-of (s15h2 / have-degree-91
+                        :ARG2 (s15h / high)
+                        :ARG3 (s15m / more)
+                        :OBLIQUE (s15t2 / time
+                            :refer-number plural
+                            :quant 5)
+                        :OBLIQUE (s15u / usual
+                            :refer-number FILL)
+                        :modal-strength MS-affirmative
+                        :aspect state))
+                :refer-number plural)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s16s / say
+    :actor (s16n / NE-TYPE
+        :name (s16n2 / name
+            :op1 "Lerias"))
+    :theme (s16e / evacuate
+        :modal-strength full-affirmative
+        :aspect ASP
+        :temporal (s16b / but-91
+            :ARG1 (s16k / kill
+                :OBLIQUE (s16n5 / NE-TYPE
+                    :name (s16n6 / name
+                        :op1 "Leyte"))
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s16l / landslide
+                    :manner (s16e2 / early
+                        :ARG2-of (s16h / have-degree-91
+                            :ARG3 (s16m3 / more)
+                            :modal-strength MS-affirmative
+                            :aspect state)
+                        :OBLIQUE (s16w / week
+                            :refer-number singular))
+                    :refer-number plural)
+                :undergoer (s16p / person
+                    :refer-number plural
+                    :quant 20))
+            :ARG2 (s16r2 / return
+                :OBLIQUE (s16n7 / NE-TYPE
+                    :name (s16n8 / name
+                        :op1 "Friday"))
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :cause (s16a / and
+                    :op1 (s16s2 / stop
+                        :modal-strength MS-affirmative
+                        :aspect ASP
+                        :actor (s16r3 / rain
+                            :refer-number plural))
+                    :op2 (s16c / come
+                        :modal-strength MS-affirmative
+                        :aspect ASP
+                        :actor (s16s3 / sun
+                            :refer-number singular)
+                        :manner (s16o / out.)))
+                :actor (s16m2 / many
+                    :refer-number FILL)))
+        :undergoer (s16r / resident
+            :mod (s16n3 / NE-TYPE
+                :name (s16n4 / name
+                    :op1 "Guinsaugon"))
+            :mod (s16m / many)
+            :refer-number plural))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s17s3 / say
+    :actor (s17n / NE-TYPE
+        :name (s17n2 / name
+            :op1 "Rene"
+            :op2 "Solidum"))
+    :actor (s17e / earthquake
+        :mod (s17m / mild)
+        :mod (s17m2 / magnitude
+            :refer-number singular
+            :quant 2.6)
+        :refer-number singular
+        :actor-of (s17s / strike
+            :OBLIQUE (s17l / landslide
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :theme (s17h / help
+        :manner (s17a / also)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :theme (s17s2 / set-off
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :undergoer (s17w / wall
+                :mod (s17m3 / mud)
+                :refer-number singular
+                :actor-of (s17c / crash-down
+                    :OBLIQUE (s17v / village
+                        :refer-number singular)
+                    :modal-strength MS-affirmative
+                    :aspect ASP))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s18s / say
+    :actor (s18n / NE-TYPE
+        :name (s18n2 / name
+            :op1 "Solidum"))
+    :theme (s18a3 / and
+        :op1 (s18h2 / have-mod-91
+            :modal-strength full-affirmative
+            :aspect state
+            :ARG1 (s18a / area
+                :refer-number singular)
+            :ARG2 (s18r2 / ready
+                :OBLIQUE (s18a2 / amount
+                    :mod (s18r3 / rainfall)
+                    :refer-number singular)
+                :OBLIQUE (s18l / landslide
+                    :refer-number singular)
+                :manner (s18r / really)
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s18h / hasten
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :condition (s18b / be
+                :actor (s18e / earthquake
+                    :mod (s18m / minor)
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :actor (s18t / thing
+                :refer-number singular)
+            :undergoer (s18t2 / thing
+                :refer-number singular)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s19s / say
+    :actor (s19n / NE-TYPE
+        :name (s19n2 / name
+            :op1 "Army"
+            :op2 "Colonel"
+            :op3 "Nestor"
+            :op4 "Sadirin"))
+    :theme (s19a / and
+        :op1 (s19r / recover
+            :modal-strength full-affirmative
+            :aspect ASP
+            :undergoer (s19b / body
+                :mod (s19d / dead)
+                :refer-number plural
+                :quant 16)
+            :manner (s19f / far
+                :manner (s19s2 / so)))
+        :op2 (s19r2 / rescue
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :undergoer (s19p / person
+                :refer-number plural
+                :quant 100)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s20s / say
+    :actor (s20n / NE-TYPE
+        :name (s20n2 / name
+            :op1 "Congressman"
+            :op2 "Roger"
+            :op3 "Mercado"))
+    :theme (s20a / and
+        :op1 (s20h / have
+            :modal-strength full-affirmative
+            :aspect ASP
+            :actor (s20v / village
+                :refer-number singular)
+            :undergoer (s20p / population
+                :mod (s20x / 3000
+                    :mod (s20x2 / 4000))
+                :refer-number singular))
+        :op2 (s20e / express
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s20f2 / FILL
+                :refer-number singular)
+            :undergoer (s20f / fear
+                :refer-number plural
+                :undergoer-of (s20b / bury
+                    :undergoer (s20p2 / person
+                        :mod (s20m / many)
+                        :refer-number plural
+                        :quant 2,000)
+                    :modal-strength MS-affirmative
+                    :aspect ASP))))
+    :OBLIQUE (s20i / interview
+        :mod (s20r / radio
+            :refer-number singular)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s22s2 / say
+    :actor (s22f3 / FILL
+        :refer-number singular)
+    :theme (s22g / go
+        :OBLIQUE (s22a2 / area
+            :refer-number singular)
+        :manner (s22a / also)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s22t / team
+            :mod (s22c2 / company
+                :undergoer-of (s22s / skilled
+                    :ADVCL (s22d / dig
+                        :ADVCL (s22r2 / rescue
+                            :actor (s22f2 / FILL)
+                            :undergoer (s22p / person
+                                :refer-number plural)
+                            :modal-strength MS-affirmative
+                            :aspect ASP)
+                        :actor (s22f / FILL)
+                        :OBLIQUE (s22e / earth
+                            :refer-number singular)
+                        :modal-strength MS-affirmative
+                        :aspect ASP)
+                    :modal-strength MS-affirmative
+                    :aspect ASP)
+                :mod (s22c / country
+                    :refer-number plural)
+                :mod (s22m / mining
+                    :refer-number singular))
+            :mod (s22v / volunteer
+                :refer-number singular)
+            :mod (s22r / rescue
+                :refer-number singular)
+            :refer-number plural))
+    :theme (s22s3 / saiy
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s22n / NE-TYPE
+            :name (s22n2 / name
+                :op1 "President"
+                :op2 "Arroyo")))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s23s / say
+    :actor (s23n / NE-TYPE
+        :name (s23n2 / name
+            :op1 "Gordon"))
+    :theme (s23s2 / say
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s23n3 / NE-TYPE
+            :mod (s23r / Red)
+            :name (s23n4 / name
+                :op1 "Cross"))
+        :theme (s23t / try
+            :modal-strength full-affirmative
+            :aspect ASP
+            :theme (s23d / dispatch
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :ADVCL (s23h / hunt
+                    :actor (s23f / FILL)
+                    :OBLIQUE (s23s4 / survivor
+                        :refer-number plural)
+                    :modal-strength MS-affirmative
+                    :aspect ASP)
+                :undergoer (s23d2 / dog
+                    :mod (s23s3 / sniffer)
+                    :refer-number plural))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s24b / but-91
+    :ARG1 (s24h4 / have-mod-91
+        :ARG2 (s24a / able
+            :theme (s24r / reach
+                :OBLIQUE (s24c / cloud
+                    :mod (s24h2 / heavy)
+                    :refer-number plural)
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :undergoer (s24a2 / area
+                    :refer-number singular)))
+        :modal-strength MS-affirmative
+        :aspect state
+        :ARG1 (s24h / helicopter
+            :mod (s24m / military)
+            :refer-number plural))
+    :ARG2 (s24c2 / cease
+        :OBLIQUE (s24n / nightfall
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :cause (s24h3 / have
+            :actor (s24a3 / aircraft
+                :refer-number singular)
+            :undergoer (s24c3 / capabilities.
+                :mod (s24f2 / fly-night
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s24f3 / FILL))
+                :refer-number plural)
+            :modal-strength MS-negative
+            :aspect ASP)
+        :actor (s24f / flight
+            :refer-number plural)))
+
+# sentence level graph:
+(s25s / say
+    :actor (s25n3 / NE-TYPE
+        :name (s25n4 / name
+            :op1 "Lerias"))
+    :theme (s25b / but-91
+        :ARG1 (s25c / cause
+            :manner (s25l2 / late
+                :ARG2-of (s25h / have-degree-91
+                    :ARG3 (s25m2 / more)
+                    :modal-strength MS-affirmative
+                    :aspect state)
+                :OBLIQUE (s25a / afternoon
+                    :refer-number singular))
+            :modal-strength full-affirmative
+            :aspect ASP
+            :actor (s25l / landslide
+                :mod (s25s2 / small)
+                :refer-number singular)
+            :undergoer (s25d / damage
+                :mod (s25n / no)
+                :refer-number singular))
+        :ARG2 (s25l3 / leave
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s25f / FILL
+                :refer-number singular)
+            :undergoer (s25m / many
+                :OBLIQUE (s25r / rescuer
+                    :refer-number plural)
+                :refer-number FILL)
+            :theme (s25w / worried
+                :OBLIQUE (s25d2 / disaster
+                    :mod (s25n2 / new)
+                    :mod (s25p / possible)
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s26c / call
+    :actor (s26g / group
+        :mod (s26r / relief
+            :refer-number singular)
+        :refer-number plural)
+    :theme (s26b4 / bring
+        :OBLIQUE (s26s / scene
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :OBLIQUE (s26a / and
+        :op1 (s26w / water
+            :refer-number singular
+            :mod (s26d / drink
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s26f2 / FILL)))
+        :op2 (s26f / food
+            :refer-number singular)
+        :op3 (s26b / blanket
+            :refer-number plural)
+        :op4 (s26b3 / bag
+            :refer-number plural
+            :mod (s26b2 / body
+                :refer-number singular)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s27s / say
+    :actor (s27n / NE-TYPE
+        :mod (s27b / board
+            :refer-number singular)
+        :mod (s27p / provincial)
+        :refer-number singular
+        :name (s27n2 / name
+            :op1 "member"
+            :op2 "Eva"))
+    :theme (s27s2 / send
+        :OBLIQUE (s27a3 / area
+            :mod (s27n3 / NE-TYPE
+                :name (s27n4 / name
+                    :op1 "Guinasaugon"))
+            :refer-number singular)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :undergoer (s27e / equipment
+            :mod (s27h / heavy)
+            :refer-number singular
+            :ARG1-of (s27c2 / COPULAR-CONSTRUCTION
+                :ARG2 (s27a2 / area
+                    :manner (s27a / already)
+                    :refer-number singular
+                    :ADVCL (s27c / clear-up
+                        :actor (s27f / FILL)
+                        :undergoer (s27l / landslide
+                            :mod (s27e2 / early)
+                            :refer-number plural)
+                        :modal-strength MS-affirmative
+                        :aspect ASP))
+                :modal-strength MS-affirmative
+                :aspect state)))
+    :OBLIQUE (s27i / interview
+        :mod (s27r / radio
+            :refer-number singular)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s28k / kill
+    :undergoer (s28p / person
+        :refer-number plural
+        :quant 5,000)
+    :OBLIQUE (s28a / and
+        :op1 (s28f / flood
+            :refer-number singular
+            :mod (s28n / NE-TYPE
+                :name (s28n2 / name
+                    :op1 "Leyte"))
+            :mod (s28c / combine
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s28m / mudslide
+            :refer-number singular))
+    :OBLIQUE (s28n3 / NE-TYPE
+        :mod (s28x / 1991.)
+        :name (s28n4 / name
+            :op1 "November"))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s29l / leave
+    :actor (s29n / NE-TYPE
+        :name (s29n2 / name
+            :op1 "Lindsay"))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s29e / eat
+        :actor (s29f / FILL)
+        :undergoer (s29l2 / lunch
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s30w / water
+    :actor (s30n / NE-TYPE
+        :name (s30n2 / name
+            :op1 "Alana"))
+    :undergoer (s30p / plant
+        :refer-number plural)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :condition (s30r / rain
+        :actor (s30t / thing
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s31t / taste
+    :actor (s31n / NE-TYPE
+        :name (s31n2 / name
+            :op1 "Edmund"
+            :op2 "Pope"))
+    :undergoer (s31f / freedom
+        :refer-number singular)
+    :OBLIQUE (s31t2 / today
+        :refer-number singular)
+    :OBLIQUE (s31m / month
+        :refer-number plural
+        :quant 8)
+    :OBLIQUE (s31t3 / time
+        :mod (s31f2 / first)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s32i / identity-91
+    :ARG1 (s32n / NE-TYPE
+        :name (s32n2 / name
+            :op1 "Pope"))
+    :ARG2 (s32b / businessman
+        :mod (s32a / American)
+        :refer-number singular
+        :undergoer-of (s32a2 / and
+            :op1 (s32c / convict
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :OBLIQUE (s32w / week
+                    :mod (s32l / last)
+                    :refer-number singular)
+                :OBLIQUE (s32c2 / charge
+                    :mod (s32s / spying
+                        :refer-number singular)
+                    :refer-number plural))
+            :op2 (s32s2 / sentence
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :OBLIQUE (s32y / year
+                    :mod (s32p / prison
+                        :mod (s32r / Russian))
+                    :refer-number plural
+                    :quant 20))))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s33d / deny
+    :actor (s33p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s33w / wrongdoing
+        :mod (s33a / any)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s34p / pardon
+    :actor (s34n / NE-TYPE
+        :mod (s34r / Russian)
+        :name (s34n2 / name
+            :op1 "President"
+            :op2 "Vladimir"
+            :op3 "Putin"))
+    :undergoer (s34p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s34r2 / reason
+        :mod (s34h / health
+            :refer-number singular)
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s35f / flow
+    :undergoer (s35n / NE-TYPE
+        :name (s35n2 / name
+            :op1 "Pope"))
+    :OBLIQUE (s35b / base
+        :mod (s35m / military)
+        :mod (s35n3 / NE-TYPE
+            :name (s35n4 / name
+                :op1 "U.S."))
+        :mod (s35n5 / NE-TYPE
+            :name (s35n6 / name
+                :op1 "Ramstein")
+            :ARG1-of (s35i / identity-91
+                :ARG2 (s35n7 / NE-TYPE
+                    :name (s35n8 / name
+                        :op1 "Germany"))
+                :modal-strength MS-affirmative
+                :aspect state))
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s36s / spend
+    :actor (s36p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s36d / day
+        :mod (s36n / next)
+        :mod (s36s2 / several)
+        :refer-number plural)
+    :OBLIQUE (s36c / center
+        :mod (s36m / medical)
+        :refer-number singular)
+    :manner (s36t / there)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :temporal (s36r / return
+        :actor (s36p2 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :OBLIQUE (s36w / wife
+            :refer-number singular
+            :MOD-POSS (s36p3 / person
+                :refer-person 3rd
+                :refer-number singular)
+            :ARG1-of (s36i / identity-91
+                :ARG2 (s36n2 / NE-TYPE
+                    :name (s36n3 / name
+                        :op1 "Sherry"))
+                :modal-strength MS-affirmative
+                :aspect state))
+        :manner (s36h / home)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s37c2 / COPULAR-CONSTRUCTION
+    :ARG1 (s37n / NE-TYPE
+        :name (s37n2 / name
+            :op1 "Pope"))
+    :ARG2 (s37r / remission
+        :mod (s37f / form
+            :mod (s37c / cancer
+                :mod (s37b / bone
+                    :refer-number singular))
+            :mod (s37r2 / rare))
+        :refer-number singular
+        :ADVCL (s37a / arrest
+            :undergoer (s37p / person
+                :refer-person 3rd
+                :refer-number singular)
+            :OBLIQUE (s37n3 / NE-TYPE
+                :name (s37n4 / name
+                    :op1 "Russia."))
+            :manner (s37w / when)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s38e / examine
+    :actor (s38d / doctor
+        :refer-number plural)
+    :undergoer (s38p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s38s / sign
+        :refer-number plural
+        :undergoer-of (s38c2 / come
+            :ADVCL (s38a / await
+                :actor (s38p2 / person
+                    :refer-person 3rd
+                    :refer-number singular)
+                :undergoer (s38t / trial
+                    :refer-number singular)
+                :OBLIQUE (s38j / jail.
+                    :mod (s38r / Russian)
+                    :refer-number singular)
+                :manner (s38x / [was])
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :actor (s38c / cancer
+                :refer-number singular)
+            :manner (s38b / back)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s39s2 / say
+    :actor (s39s / spokeswoman
+        :refer-number singular)
+    :theme (s39s3 / suffer
+        :OBLIQUE (s39a / and
+            :op1 (s39m / malnutrition
+                :refer-number singular)
+            :op2 (s39p / pressure
+                :refer-number singular
+                :mod (s39b / blood
+                    :refer-number singular)
+                :mod (s39h / high)))
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s39n / NE-TYPE
+            :name (s39n2 / name
+                :op1 "Pope")))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s40o / okay)
+
+# sentence level graph:
+(s41o / open-up
+    :actor (s41s / scene
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s41s2 / see
+        :actor (s41p / person
+            :refer-person 2nd
+            :refer-number singular)
+        :undergoer (s41t / tree
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s42k / sentence)
+
+# sentence level graph:
+(s43l / ladder
+    :manner (s43t / theres)
+    :mod (s43c / come-out
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s43f / FILL)
+        :OBLIQUE (s43t2 / tree
+            :refer-number singular))
+    :refer-number singular)
+
+# sentence level graph:
+(s44m / man
+    :manner (s44t / there)
+    :mod (s44t2 / top
+        :mod (s44l / ladder))
+    :refer-number singular)
+
+# sentence level graph:
+(s45s / see
+    :actor (s45p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s45p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s45y / yet)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s46s / shift
+    :actor (s46t2 / thing
+        :refer-number singular)
+    :manner (s46t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s47s / see
+    :actor (s47p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s47p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s48p / pluck
+    :undergoer (s48p2 / pear
+        :refer-number singular)
+    :OBLIQUE (s48t / tree
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s49w / watch
+    :actor (s49p3 / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s49p4 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s49p / pluck
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :undergoer (s49p2 / pear
+            :mod (s49f / few)
+            :refer-number plural))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s50d / drop
+    :actor (s50f / FILL)
+    :undergoer (s50p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :OBLIQUE (s50t / thing
+        :refer-number singular
+        :MOD-POSS (s50p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s51w / wear
+    :actor (s51f / FILL
+        :refer-number plural)
+    :OBLIQUE (s51a / apron
+        :mod (s51p / pocket
+            :mod (s51h / huge))
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :UNATTACHED (s51d / don't
+        :actor (s51p2 / person
+            :refer-person 1st
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s52t / think
+    :actor (s52p / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s52s / see
+        :OBLIQUE (s52f / first
+            :refer-number FILL)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s52p2 / person
+            :refer-person 2nd
+            :refer-number singular)
+        :undergoer (s52a / apron
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s53k / know
+    :actor (s53p / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s53o / or
+        :op1 (s53h / have-mod-91
+            :modal-strength MS-affirmative
+            :aspect state
+            :ARG1 (s53f / FILL
+                :refer-number singular)
+            :ARG2 (s53i / important
+                :modal-strength MS-negative
+                :aspect ASP))
+        :op2 (s53n / not))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s54g / get-down
+    :actor (s54p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s54t2 / tree
+        :refer-number singular)
+    :manner (s54t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s55d / dump
+    :actor (s55p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s55p / pear
+        :refer-number plural
+        :MOD-POSS (s55p3 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :quant (s55a / all))
+    :OBLIQUE (s55b / basket
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s56h / have-mod-91
+    :ARG1 (s56b / basket
+        :refer-number plural)
+    :ARG2 (s56f / full)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s57d / drop-down
+    :actor (s57o / one
+        :mod (s57p / pear))
+    :OBLIQUE (s57f / floor
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s58p / pick-up
+    :actor (s58p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s58t / thing
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s59t / take-off
+    :actor (s59p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s59k / kerchief
+        :refer-number singular
+        :MOD-POSS (s59p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s60w / wipe-off
+    :actor (s60p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s60t / thing
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s61p / place-in
+    :actor (s61f2 / FILL
+        :refer-number singular)
+    :undergoer (s61t / thing
+        :refer-number singular)
+    :OBLIQUE (s61b / basket
+        :refer-number singular
+        :ARG1-of (s61h / have-mod-91
+            :ARG2 (s61f / full
+                :manner (s61v / very))
+            :modal-strength MS-affirmative
+            :aspect state))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s62c / COPULAR-CONSTRUCTION
+    :ARG1 (s62f3 / FILL
+        :refer-number singular)
+    :ARG2 (s62w / why
+        :ADVCL (s62f / fall-off
+            :actor (s62t / thing
+                :refer-number singular)
+            :OBLIQUE (s62p / place
+                :mod (s62f2 / first)
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s63c / climb
+    :actor (s63p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s63l / ladder
+        :refer-number singular)
+    :manner (s63b / back)
+    :manner (s63t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s64s / start
+    :actor (s64a2 / and
+        :op1 (s64p3 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :op2 (s64p4 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :theme (s64p / pick
+        :manner (s64a / again)
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :undergoer (s64p2 / pear
+            :refer-number plural))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s65c / COPULAR-CONSTRUCTION
+    :ARG1 (s65f / FILL
+        :refer-number plural)
+    :ARG2 (s65u / up
+        :OBLIQUE (s65l / ladder,
+            :refer-number singular)
+        :manner (s65t / then))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s66s / see
+    :actor (s66t / thing
+        :refer-number singular)
+    :actor (s66l / let
+        :refer-number plural)
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :ADVCL (s66f / FILL
+        :OBLIQUE (s66l2 / ladder
+            :refer-number singular)
+        :manner (s66u / up)
+        :refer-number plural
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :COPULA (s66b / be)
+    :mode imperative)
+
+# sentence level graph:
+(s67b / before)
+
+# sentence level graph:
+(s68u / u—m)
+
+# sentence level graph:
+(s69c / come
+    :actor (s69g / guy
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s69l / lead
+        :undergoer (s69g2 / goat
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s70t / talk
+    :actor (s70g / goat
+        :refer-number plural)
+    :actor (s70p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :OBLIQUE (s70f / FILL)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s71t / think
+    :actor (s71p2 / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s71d / don
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s71p / person
+            :refer-person 3rd
+            :refer-number plural))
+    :theme (s71l / look
+        :OBLIQUE (s71f / FILL)
+        :manner (s71e / even)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s71p3 / person
+            :refer-person 3rd
+            :refer-number plural))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s72w / walk-by
+    :actor (s72f / FILL
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s73w / watch
+    :actor (s73p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s73g / goat
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s74d / disappear
+    :OBLIQUE (s74w / way
+        :refer-number singular
+        :quant (s74a / all))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s75y / sentence)
+
+# sentence level graph:
+(s76h / sentence)
+
+# sentence level graph:
+(s77c / COPULAR-CONSTRUCTION
+    :ARG1 (s77f / FILL
+        :refer-number plural)
+    :ARG2 (s77t2 / there
+        :manner (s77w / when)
+        :manner (s77d / definitely)
+        :manner (s77t / then)
+        :manner (s77u / up))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s78c / come-by
+    :actor (s78k / kid
+        :refer-number singular)
+    :OBLIQUE (s78b / bicycle
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s79d / direction
+    :refer-number singular
+    :manner-of (s79l / leave
+        :actor (s79m / man
+            :mod (s79g / goat
+                :refer-number singular)
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s80o / okay)
+
+# sentence level graph:
+(s81h / have-mod-91
+    :ARG1 (s81b / bicycle
+        :refer-number plural)
+    :ARG2 (s81b2 / big
+        :OBLIQUE (s81k / kid
+            :refer-number singular)
+        :manner (s81t / too)
+        :manner (s81w / way))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s82g / give
+    :undergoer (s82d / detail
+        :mod (s82t / this)
+        :refer-number plural
+        :quant (s82a / all))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s83k / know
+    :actor (s83p / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s83w / want
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s83p2 / person
+            :refer-person 2nd
+            :refer-number singular)
+        :undergoer (s83f / FILL
+            :refer-number plural))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s84h / have-identity-91
+    :actor (s84p2 / person
+        :refer-person 1st
+        :refer-number singular)
+    :undergoer (s84f / FILL
+        :undergoer-of (s84c / COPULAR-CONSTRUCTION
+            :ARG1 (s84p / point
+                :mod (s84m / movie)
+                :refer-number singular)
+            :ARG2 (s84b / be)
+            :modal-strength MS-affirmative
+            :aspect state))
+    :ARG1 (s84r / reason
+        :mod (s84g / give
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s84i / I'm)
+            :undergoer (s84d / detail
+                :refer-number plural))
+        :refer-number singular)
+    :ARG2 (s84k / know
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :ADVCL (s84d2 / don
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s85o / okay?)
+
+# sentence level graph:
+(s86s / see
+    :actor (s86p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s86f / FILL
+        :mod (s86s2 / something)
+        :refer-number singular
+        :actor-of (s86e / ends}
+            :manner (s86x / {laugh)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :theme (s86b / begins}-{laugh
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :manner (s86m / maybe)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s87o / okay?)
+
+# sentence level graph:
+(s88c / come-by
+    :actor (s88k / kid
+        :refer-number singular)
+    :OBLIQUE (s88b / bicycle
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s89s / stop
+    :actor (s89p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s90g / get
+    :actor (s90p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s90b / bike
+        :refer-number singular
+        :MOD-POSS (s90p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s91c2 / COPULAR-CONSTRUCTION
+    :ARG1 (s91m / movie
+        :refer-number singular)
+    :ARG2 (s91c / color
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s92h / have
+    :actor (s92m / movie
+        :refer-number singular)
+    :undergoer (s92t / track
+        :mod (s92s / sound
+            :refer-number singular)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s93h / have-mod-91
+    :ARG1 (s93t / thing
+        :refer-number singular)
+    :ARG2 (s93i / important)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s94s / start
+    :actor (s94m / movie
+        :mod (s94w / whole)
+        :refer-number singular)
+    :OBLIQUE (s94c2 / crowing.
+        :mod (s94c / cock
+            :refer-number singular)
+        :refer-number singular)
+    :manner (s94t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s95s / see
+    :actor (s95p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :manner (s95t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s96a / anyway)
+
+# sentence level graph:
+(s97r / remember
+    :actor (s97p / person
+        :refer-person 1st
+        :refer-number singular)
+    :undergoer (s97f / FILL
+        :refer-number singular)
+    :manner (s97j / just)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s98a / anyway)
+
+# sentence level graph:
+(s99k / kid
+    :mod (s99b / bicycle)
+    :refer-number singular)
+
+# sentence level graph:
+(s100g / get
+    :actor (s100f / FILL
+        :refer-number singular)
+    :OBLIQUE (s100b / bicycle
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s101t / think
+    :actor (s101p3 / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s101p / pick-up
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s101p5 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :actor (s101p4 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :undergoer (s101b / b—asket
+            :mod (s101p2 / pear)
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s102p / put
+    :actor (s102p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s102t / thing
+        :refer-number singular)
+    :OBLIQUE (s102b / bicycle
+        :refer-number singular
+        :MOD-POSS (s102p3 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s103f / front
+    :refer-number singular)
+
+# sentence level graph:
+(s104r / ride-off
+    :actor (s104p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s105s / see
+    :actor (s105p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s105p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s106a / and
+    :op1 (s106r / ride
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :manner (s106o / off))
+    :op2 (s106s2 / see
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s106p / person
+            :refer-person 2nd
+            :refer-number singular)
+        :undergoer (s106p2 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :OBLIQUE (s106s / scene
+            :mod (s106n / next)
+            :refer-number singular)))
+
+# sentence level graph:
+(s107a / sentence)
+
+# sentence level graph:
+(s108s / shot
+    :mod (s108p / pan
+        :refer-number singular)
+    :refer-number singular)
+
+# sentence level graph:
+(s109r / ride
+    :actor (s109p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s109l / lane
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s110a / and
+    :op1 (s110r / ride
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :UNATTACHED (s110k / know
+            :actor (s110p2 / person
+                :refer-person 2nd
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :OBLIQUE (s110b / bicycle
+            :refer-number singular))
+    :op2 (s110c2 / COPULAR-CONSTRUCTION
+        :modal-strength MS-affirmative
+        :aspect state
+        :ARG1 (s110p / person
+            :refer-person 3rd
+            :refer-number plural)
+        :ARG2 (s110c / cro)))
+
+# sentence level graph:
+(s111p / paths.
+    :mod (s111c / cross
+        :refer-number singular)
+    :refer-number plural)
+
+# sentence level graph:
+(s112w / watch
+    :actor (s112p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s112p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s112g / go
+        :manner (s112b / by)
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :manner (s112k / kind-of
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s113w / watch
+    :actor (s113f / FILL
+        :refer-number plural)
+    :undergoer (s113p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s114f / fly-off
+    :actor (s114p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s114t / turn
+        :actor (s114h / hat
+            :refer-number singular
+            :MOD-POSS (s114p3 / person
+                :refer-person 3rd
+                :refer-number singular))
+        :actor (s114p2 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :manner (s114w / when)
+        :manner (s114a / around)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s115o / okay)
+
+# sentence level graph:
+(s116b / bump
+    :actor (s116p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s116r / rock
+        :refer-number singular)
+    :manner (s116t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s117f / fall-down
+    :actor (s117f2 / FILL
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s118s / s--pray
+    :actor (s118p / pear
+        :manner (s118a / all)
+        :refer-number plural)
+    :OBLIQUE (s118p2 / place
+        :manner (s118a2 / all)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s119s / see
+    :actor (s119p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s119p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s119f / fall
+        :manner (s119d / down)
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :manner (s119t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s120g / get-up
+    :actor (s120p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s121b / brush-off
+    :actor (s121f / FILL
+        :refer-number singular)
+    :undergoer (s121p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s122g / go
+    :actor (s122p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :UNATTACHED (s122a2 / and
+        :op1 (s122k / know
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s122p2 / person
+                :refer-person 2nd
+                :refer-number singular)
+            :undergoer (s122g2 / gesture}
+                :mod (s122x / {brush
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s122f / FILL))
+                :refer-number singular))
+        :op2 (s122s / see
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s122p3 / person
+                :refer-person 2nd
+                :refer-number singular)
+            :undergoer (s122b / boy
+                :mod (s122o / other)
+                :mod (s122a / age
+                    :MOD-POSS (s122p4 / person
+                        :refer-person 3rd
+                        :refer-number singular))
+                :refer-number plural
+                :quant 3)
+            :manner (s122t / then))))
+
+# sentence level graph:
+(s123h / sentence)
+
+# sentence level graph:
+(s124o / or
+    :op1 (s124t / ten)
+    :op2 (s124f / FILL
+        :refer-number singular
+        :mod (s124s / something)))
+
+# sentence level graph:
+(s125t / twelve)
+
+# sentence level graph:
+(s126k / know
+    :actor (s126p / person
+        :refer-person 1st
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s127l / look
+    :actor (s127p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :OBLIQUE (s127p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s128s / see
+    :actor (s128p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s128p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s129c / come
+    :actor (s129p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :manner (s129u / up)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s130s / say
+    :undergoer (s130f / FILL
+        :mod (s130a / anything)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s131i / identity-91
+    :ARG1 (s131s / speech
+        :mod (s131m / movie
+            :mod (s131w / whole))
+        :mod (s131n / no)
+        :refer-number singular)
+    :ARG2 (s131f / FILL)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s132s / say
+    :undergoer (s132f / FILL
+        :mod (s132a / anything)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s133h / help
+    :actor (s133p4 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s133p5 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :mode imperative
+    :UNATTACHED (s133p / put
+        :mode imperative
+        :actor (s133p3 / person
+            :refer-person 2nd
+            :refer-number FILL)
+        :undergoer (s133p2 / pear
+            :refer-number plural)
+        :OBLIQUE (s133b2 / basket.
+            :refer-number singular)
+        :manner (s133b / back)
+        :modal-strength partial-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s134w / wipe-off
+    :actor (s134p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s134p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :manner (s134f / first)
+    :manner (s134o / only)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s135p / pick-up
+    :actor (s135p2 / person
+        :refer-person 2nd
+        :refer-number FILL)
+    :undergoer (s135p3 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :manner (s135j / just)
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :mode imperative)
+
+# sentence level graph:
+(s136p / pour-in
+    :actor (s136p2 / person
+        :refer-person 2nd
+        :refer-number FILL)
+    :undergoer (s136p3 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :mode imperative)
+
+# sentence level graph:
+(s137h / help
+    :actor (s137p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s137p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s137g / get
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :undergoer (s137b / bike
+            :refer-number singular
+            :MOD-POSS (s137p3 / person
+                :refer-person 3rd
+                :refer-number singular)))
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :mode imperative)
+
+# sentence level graph:
+(s138a / and
+    :op1 (s138t / take
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s138k / kid
+            :refer-number singular
+            :quant 1)
+        :undergoer (s138r / rock
+            :refer-number singular
+            :OBLIQUE-of (s138t2 / trip
+                :actor (s138p / person
+                    :refer-person 3rd
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP)))
+    :op2 (s138t3 / throw-off
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s138p2 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :undergoer (s138t4 / thing
+            :refer-number singular)
+        :OBLIQUE (s138s / side
+            :mod (s138r2 / roa—d)
+            :refer-number singular)))
+
+# sentence level graph:
+(s139s / set
+    :actor (s139p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s139p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s139u / upright)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :mode interrogative)
+
+# sentence level graph:
+(s140a / and
+    :op1 (s140p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :op2 (s140p3 / person
+        :refer-person 3rd
+        :refer-number singular
+        :UNATTACHED (s140k / know
+            :actor (s140p4 / person
+                :refer-person 2nd
+                :refer-number singular)
+            :undergoer (s140p5 / person
+                :refer-person 3rd
+                :refer-number plural)
+            :theme (s140d / don
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s140p6 / person
+                    :refer-person 1st
+                    :refer-number singular))
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :UNATTACHED (s140s / say
+                :actor (s140p7 / person
+                    :refer-person 3rd
+                    :refer-number plural)
+                :theme (s140t2 / thank
+                    :modal-strength full-affirmative
+                    :aspect ASP
+                    :actor (s140p / person
+                        :refer-person 1st
+                        :refer-number singular)
+                    :undergoer (s140p8 / person
+                        :refer-person 2nd
+                        :refer-number singular))
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :manner (s140t / then)))
+
+# sentence level graph:
+(s141s / split
+    :actor (s141p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s141j / just)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s142w / walk
+    :actor (s142p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :manner (s142t / then)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :UNATTACHED (s142a / and
+        :op1 (s142w2 / walk
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s142b / boy
+                :refer-number plural
+                :quant 3)
+            :OBLIQUE (s142r / road
+                :refer-number singular))
+        :op2 (s142c / COPULAR-CONSTRUCTION
+            :modal-strength MS-affirmative
+            :aspect state
+            :ARG1 (s142p2 / person
+                :refer-person 3rd
+                :refer-number plural)
+            :ARG2 (s142s / see-))
+        :op3 (s142h / hat
+            :refer-number singular
+            :mod (s142k / kid
+                :refer-number plural))))
+
+# sentence level graph:
+(s143w / whistle
+    :actor (s143o / one
+        :mod (s143p / person
+            :refer-person 3rd
+            :refer-number plural))
+    :manner (s143s / so)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s144t / turn
+    :actor (s144k / kid
+        :mod (s144b / bike)
+        :refer-number singular)
+    :manner (s144a / around)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s145b / bring
+    :actor (s145p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s145h / hat
+        :refer-number singular
+        :MOD-POSS (s145p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :OBLIQUE (s145p3 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s145t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s146g3 / give
+    :actor (s146g2 / guy
+        :mod (s146b / bike)
+        :mod (s146g / g
+            :refer-number singular)
+        :refer-number singular)
+    :theme (s146g4 / give
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s146f / FILL
+            :refer-number singular)
+        :undergoer (s146k / kid
+            :refer-number singular
+            :actor-of (s146r / return
+                :undergoer (s146h / hat
+                    :refer-number singular
+                    :MOD-POSS (s146p2 / person
+                        :refer-person 3rd
+                        :refer-number singular))
+                :modal-strength MS-affirmative
+                :aspect ASP)))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :UNATTACHED (s146p / pear
+        :mod (s146s / share
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s146f2 / FILL)
+            :OBLIQUE (s146b2 / buddie.
+                :refer-number plural
+                :MOD-POSS (s146p3 / person
+                    :refer-person 3rd
+                    :refer-number singular)))
+        :refer-number plural
+        :quant 3))
+
+# sentence level graph:
+(s147s / split
+    :actor (s147p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s147t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s148h / hat
+    :refer-number singular
+    :MOD-POSS (s148p / person
+        :refer-person 3rd
+        :refer-number singular))
+
+# sentence level graph:
+(s149p / pear
+    :refer-number plural
+    :MOD-POSS (s149p2 / person
+        :refer-person 3rd
+        :refer-number singular))
+
+# sentence level graph:
+(s150e / sentence)
+
+# sentence level graph:
+(s151r / remember
+    :actor (s151p / person
+        :refer-person 1st
+        :refer-number singular)
+    :undergoer (s151d / detail
+        :mod (s151a / another)
+        :refer-number singular)
+    :manner (s151j / just)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s152m / meet
+    :actor (s152p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s152g / girl
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :mode interrogative)
+
+# sentence level graph:
+(s153o / one
+    :mod (s153p / pear))
+
+# sentence level graph:
+(s154r2 / road
+    :mod (s154r / road
+        :refer-number singular)
+    :mod (s154l / little)
+    :mod (s154b / bumpy)
+    :mod (s154d / dirt
+        :refer-number singular)
+    :refer-number singular
+    :MOD-POSS (s154t / thing
+        :refer-number singular))
+
+# sentence level graph:
+(s155f / fly-out
+    :actor (s155o / one
+        :mod (s155p / pear))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s156w / sentence)
+
+# sentence level graph:
+(s157s / see
+    :actor (s157p2 / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s157k / kid
+        :mod (s157b / bike)
+        :refer-number singular)
+    :OBLIQUE (s157p / pear
+        :refer-number plural)
+    :manner (s157a / anymore)
+    :manner (s157t / then)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s158k / kid
+    :refer-number plural
+    :quant 3
+    :actor-of (s158w / walk
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s159c / call
+    :actor (s159p3 / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s159f / FILL)
+    :undergoer (s159p / paddleball?
+        :mod (s159l / little)
+        :mod (s159t / that)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :ADVCL (s159h / have
+        :actor (s159o / one
+            :mod (s159p2 / person
+                :refer-person 3rd
+                :refer-number plural))
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# sentence level graph:
+(s160k / know
+    :actor (s160p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s161b / ball
+    :mod (s161a / ay)
+    :refer-number singular)
+
+# sentence level graph:
+(s162c / sentence)
+
+# sentence level graph:
+(s163w / walk
+    :actor (s163f / FILL)
+    :manner (s163a / along)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s164b / brush-off
+    :actor (s164p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s164p / pear
+        :refer-number plural
+        :MOD-POSS (s164p3 / person
+            :refer-person 3rd
+            :refer-number plural))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s165s / start
+    :actor (s165p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :theme (s165e / eat
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :undergoer (s165t / thing
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s166w / walk
+    :actor (s166p3 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :OBLIQUE (s166m / man
+        :refer-number singular
+        :actor-of (s166p / pick
+            :undergoer (s166p2 / pear
+                :refer-number plural)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :manner (s166t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s167l / look
+    :actor (s167f / FILL)
+    :OBLIQUE (s167n / NE-TYPE
+        :name (s167n2 / name
+            :op1 "Mexican-american"))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :mode interrogative
+    :condition (s167h / have-mod-91
+        :ARG1 (s167f2 / FILL
+            :refer-number singular)
+        :ARG2 (s167i / important
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :modal-strength MS-affirmative
+        :aspect state))
+
+# sentence level graph:
+(s168h / sentence)
+
+# sentence level graph:
+(s169f / fucking
+    :OBLIQUE (s169l / ladder
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s170a / and
+    :op1 (s170s / see
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s170p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :op2 (s170t / there)
+    :conj (s170c / COPULAR-CONSTRUCTION
+        :ARG1 (s170b / basket
+            :manner (s170t2 / there)
+            :mod (s170p / pear)
+            :mod (s170f / full)
+            :refer-number singular
+            :quant 1)
+        :ARG2 s170t
+        :modal-strength MS-affirmative
+        :aspect state))
+
+# sentence level graph:
+(s171b / basket
+    :mod (s171e / empty)
+    :refer-number singular)
+
+# sentence level graph:
+(s172h / have-mod-91
+    :ARG1 (s172b / basket
+        :mod (s172o / other)
+        :mod (s172f / full)
+        :refer-number singular)
+    :ARG2 (s172g / gone)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s173g / go
+    :actor (s173p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s173g2 / gesture}
+        :mod (s173x / {count
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s173f / FILL))
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s174s / see
+    :actor (s174p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s174k / kid
+        :refer-number plural)
+    :theme (s174a / and
+        :op1 (s174w / walk
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :manner (s174b / by))
+        :op2 (s174e / eat
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :undergoer (s174p / pear
+                :refer-number plural
+                :MOD-POSS (s174p3 / person
+                    :refer-person 3rd
+                    :refer-number plural))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s175l / look
+    :actor (s175a / and
+        :op1 (s175p / person
+            :refer-person 3rd
+            :refer-number singular)
+        :op2 (s175p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :OBLIQUE (s175p3 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s176d / disappear
+    :actor (s176p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s177i / identity-91
+    :ARG1 (s177f / FILL
+        :refer-number singular)
+    :ARG2 (s177e / end
+        :mod (s177m / movie)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s178l / language
+    :manner (s178f / FILL)
+    :mod (s178n / no)
+    :mod (s178n2 / no)
+    :refer-number singular)
+
+# sentence level graph:
+(s179u / use
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s180t / thing.
+    :mod (s180w / whole)
+    :refer-number singular)
+
+# sentence level graph:
+(s181h / hope
+    :actor (s181n5 / NE-TYPE
+        :mod (s181u / Unite
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :name (s181n6 / name
+            :op1 "State"))
+    :theme (s181a2 / and
+        :op1 (s181f / follow
+            :modal-strength neutral-affirmative
+            :aspect ASP
+            :actor (s181n / NE-TYPE
+                :name (s181n2 / name
+                    :op1 "President"
+                    :op2 "Vladimir"
+                    :op3 "Putin"))
+            :undergoer (s181a / advice
+                :mod (s181c / commission
+                    :mod (s181s / special)
+                    :MOD-POSS (s181p2 / person
+                        :refer-person 3rd
+                        :refer-number singular))
+                :refer-number singular))
+        :op2 (s181p / pardon
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s181f2 / FILL)
+            :undergoer (s181n3 / NE-TYPE
+                :name (s181n4 / name
+                    :op1 "Edmund"
+                    :op2 "Pope"))))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s182b2 / begin
+    :actor (s182b / businessman
+        :mod (s182a / American)
+        :refer-number singular)
+    :theme (s182s / serve
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :temporal (s182c / convict
+            :OBLIQUE (s182s3 / spying.
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :undergoer (s182s2 / sentence
+            :mod (s182x / 20-year
+                :refer-number singular)
+            :mod (s182n / NE-TYPE
+                :name (s182n2 / name
+                    :op1 "Moscow"))
+            :mod (s182p / prison
+                :refer-number singular)
+            :refer-number singular))
+    :OBLIQUE (s182w / week
+        :mod (s182t / this)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s183c / charge
+    :actor (s183p / prosecutor
+        :mod (s183r / Russian)
+        :refer-number plural)
+    :theme (s183s2 / steal
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s183n / NE-TYPE
+            :name (s183n2 / name
+                :op1 "Pope"))
+        :undergoer (s183s3 / secret
+            :mod (s183r2 / relate
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s183f / FILL)
+                :OBLIQUE (s183t / torpedo
+                    :mod (s183s4 / speed
+                        :mod (s183h / high)
+                        :refer-number singular)
+                    :mod (s183r3 / Russian)
+                    :refer-number singular))
+            :refer-number plural))
+    :manner (s183s / specifically)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s184a / and
+    :op1 (s184d / deny
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s184n / NE-TYPE
+            :name (s184n2 / name
+                :op1 "Pope"))
+        :undergoer (s184c / charge
+            :refer-number plural))
+    :op2 (s184b / back-up
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s184n3 / NE-TYPE
+            :name (s184n4 / name
+                :op1 "Washington"))
+        :undergoer (s184p / person
+            :refer-person 3rd
+            :refer-number singular)))
+
+# sentence level graph:
+(s185i / identity-91
+    :ARG1 (s185n2 / NE-TYPE
+        :name (s185n3 / name
+            :op1 "Marsha"
+            :op2 "Lipman"))
+    :ARG2 (s185n4 / NE-TYPE
+        :mod (s185m / magazine
+            :ARG1-of (s185i2 / identity-91
+                :ARG2 (s185n6 / NE-TYPE
+                    :name (s185n7 / name
+                        :op1 "Itogi"))
+                :modal-strength MS-affirmative
+                :aspect state)
+            :mod (s185b / base-Moscow
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :mod (s185n / news
+                :refer-number singular))
+        :name (s185n5 / name
+            :op1 "Editor"))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s186g / give
+    :actor (s186n3 / NE-TYPE
+        :name (s186n4 / name
+            :op1 "Commission"))
+    :undergoer (s186r / reason
+        :mod (s186d / decision
+            :MOD-POSS (s186p / person
+                :refer-person 3rd
+                :refer-number plural))
+        :mod (s186a / any)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :mode interrogative
+    :vocative (s186n / NE-TYPE
+        :name (s186n2 / name
+            :op1 "Marsha")))
+
+# sentence level graph:
+(s187g / give
+    :actor (s187t / thing
+        :refer-number singular)
+    :undergoer (s187r / reason
+        :mod (s187s / several)
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s188b / but-91
+    :ARG1 (s188h2 / have-mod-91
+        :ARG1 (s188p / person
+            :refer-person 1st
+            :refer-number singular)
+        :ARG2 (s188s / sure
+            :theme (s188i2 / identity-91
+                :ARG1 (s188f3 / FILL
+                    :refer-number plural)
+                :ARG2 (s188r / reason
+                    :mod (s188f / formal)
+                    :refer-number plural
+                    :modal-strength MS-affirmative
+                    :aspect ASP)
+                :modal-strength MS-affirmative
+                :aspect state))
+        :modal-strength MS-affirmative
+        :aspect state)
+    :ARG2 (s188a3 / and
+        :op1 (s188i / interview
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s188o / outlet
+                :mod (s188v / various)
+                :refer-number plural)
+            :undergoer (s188m / member
+                :mod (s188c / commission)
+                :refer-number plural)
+            :OBLIQUE (s188t / today
+                :refer-number singular))
+        :op2 (s188s2 / say
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s188p2 / person
+                :refer-person 3rd
+                :refer-number plural)
+            :theme (s188a4 / and
+                :op1 (s188h3 / have-mod-91
+                    :modal-strength full-affirmative
+                    :aspect state
+                    :ARG1 (s188p3 / person
+                        :refer-person 3rd
+                        :refer-number plural)
+                    :ARG2 (s188a / afraid
+                        :OBLIQUE (s188m2 / mania
+                            :mod (s188r2 / rise
+                                :modal-strength MS-affirmative
+                                :aspect ASP
+                                :actor (s188f2 / FILL)
+                                :OBLIQUE (s188n3 / NE-TYPE
+                                    :name (s188n4 / name
+                                        :op1 "Russia")))
+                            :mod (s188s3 / spy
+                                :refer-number singular)
+                            :refer-number singular)
+                        :modal-strength MS-affirmative
+                        :aspect ASP))
+                :op2 (s188t2 / think
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s188p4 / person
+                        :refer-person 3rd
+                        :refer-number plural)
+                    :theme (s188h4 / have-mod-91
+                        :ARG1 (s188s5 / sentence
+                            :OBLIQUE (s188t3 / term
+                                :mod (s188m3 / maximum)
+                                :refer-number singular)
+                            :ADVCL (s188h / have
+                                :actor (s188a2 / article
+                                    :mod (s188l / law)
+                                    :refer-number singular)
+                                :undergoer (s188y / year.
+                                    :refer-number plural
+                                    :quant 10)
+                                :modal-strength MS-affirmative
+                                :aspect ASP)
+                            :undergoer (s188n / NE-TYPE
+                                :name (s188n2 / name
+                                    :op1 "Edmund"
+                                    :op2 "Pope")))
+                        :ARG2 (s188s4 / suspicious
+                            :OBLIQUE (s188p5 / person
+                                :refer-person 3rd
+                                :refer-number plural)
+                            :manner (s188r3 / really)
+                            :modal-strength MS-affirmative
+                            :aspect ASP)
+                        :modal-strength full-affirmative
+                        :aspect state))))))
+
+# sentence level graph:
+(s189s / sentence
+    :undergoer (s189p3 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s189x / 20)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :concession (s189c / COPULAR-CONSTRUCTION
+        :ARG1 (s189e2 / evidence
+            :refer-number singular
+            :undergoer-of (s189p / present
+                :actor (s189p2 / prosecution
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :ARG2 (s189f / far
+            :OBLIQUE (s189q / quotient
+                :refer-number singular)
+            :OBLIQUE (s189m / member
+                :mod (s189n / NE-TYPE
+                    :name (s189n2 / name
+                        :op1 "Commission"))
+                :refer-number plural)
+            :manner (s189e / even)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :modal-strength MS-affirmative
+        :aspect state))
+
+# sentence level graph:
+(s190s / say
+    :actor (s190p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :theme (s190g / give
+        :OBLIQUE (s190p / procedure
+            :mod (s190d / defense
+                :refer-number singular)
+            :mod (s190d2 / due)
+            :refer-number singular)
+        :modal-strength full-negative
+        :aspect ASP
+        :actor (s190c / court
+            :mod (s190t / this)
+            :refer-number singular))
+    :manner (s190a / also)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s191l / listen
+    :actor (s191c / court
+        :refer-number singular)
+    :OBLIQUE (s191d / defense
+        :refer-number singular)
+    :manner (s191l2 / less
+        :ARG2-of (s191h / have-degree-91
+            :ARG3 (s191m2 / more)
+            :modal-strength MS-affirmative
+            :aspect state)
+        :ADVCL (s191c2 / COPULAR-CONSTRUCTION
+            :ARG1 (s191t / thing
+                :refer-number singular)
+            :ARG2 (s191d2 / do
+                :OBLIQUE (s191p / prosecution
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :modal-strength MS-affirmative
+            :aspect state)
+        :manner (s191m / much))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s192s / sound
+    :actor (s192m / much
+        :mod (s192f / FILL
+            :refer-number singular)
+        :refer-number FILL)
+    :OBLIQUE (s192a2 / and
+        :op1 (s192p / pardon
+            :refer-number singular
+            :manner (s192l / less
+                :ARG2-of (s192h2 / have-degree-91
+                    :ARG3 (s192m3 / more)
+                    :modal-strength MS-affirmative
+                    :aspect state)))
+        :op2 (s192c / criticism
+            :refer-number singular
+            :manner (s192m2 / more
+                :ARG2-of (s192h3 / have-degree-91
+                    :ARG3 (s192m4 / more)
+                    :modal-strength MS-affirmative
+                    :aspect state))
+            :mod (s192n / number
+                :mod (s192i / institution
+                    :undergoer-of (s192h / have
+                        :actor (s192n2 / NE-TYPE
+                            :name (s192n3 / name
+                                :op1 "Mr."
+                                :op2 "Putin"))
+                        :theme (s192s2 / show
+                            :modal-strength MS-affirmative
+                            :aspect ASP
+                            :undergoer (s192f2 / FILL)
+                            :undergoer (s192s4 / support
+                                :mod (s192s3 / some)
+                                :mod (s192a3 / and
+                                    :op1 (s192s5 / system
+                                        :MOD-POSS (s192p4 / person
+                                            :refer-person 3rd
+                                            :refer-number singular)
+                                        :mod (s192c2 / court
+                                            :refer-number singular))
+                                    :op2 (s192p2 / police
+                                        :refer-number plural
+                                        :MOD-POSS (s192p5 / person
+                                            :refer-person 3rd
+                                            :refer-number singular))
+                                    :op3 (s192p3 / prosecutor
+                                        :refer-number plural
+                                        :MOD-POSS (s192p6 / person
+                                            :refer-person 3rd
+                                            :refer-number singular)))
+                                :refer-number singular))
+                        :manner (s192a / also)
+                        :modal-strength MS-affirmative
+                        :aspect ASP)))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s193g / go
+    :actor (s193p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s193r / respond
+        :OBLIQUE (s193a / and
+            :op1 (s193f / FILL
+                :refer-number singular)
+            :op2 (s193w / when))
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :manner (s193h / how)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :mode interrogative)
+
+# sentence level graph:
+(s194a3 / and
+    :op1 (s194t / think
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s194p / person
+            :refer-person 1st
+            :refer-number singular)
+        :theme (s194k / know
+            :modal-strength full-affirmative
+            :aspect ASP
+            :actor (s194f / FILL
+                :mod (s194a / anybody)
+                :refer-number singular)))
+    :op2 (s194t2 / think
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :temporal (s194r / respond
+            :actor (s194n / NE-TYPE
+                :name (s194n2 / name
+                    :op1 "President"
+                    :op2 "Putin"))
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :actor (s194p2 / person
+            :refer-person 1st
+            :refer-number singular)
+        :theme (s194k2 / know
+            :modal-strength full-affirmative
+            :aspect ASP
+            :actor (s194f2 / FILL
+                :mod (s194a2 / anybody)
+                :refer-number singular))))
+
+# sentence level graph:
+(s195i / identity-91
+    :ARG1 (s195t / thing
+        :refer-number singular)
+    :ARG2 (s195d / decision
+        :refer-number singular
+        :MOD-POSS (s195p / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s196a / and
+    :op1 (s196s / send
+        :modal-strength full-affirmative
+        :aspect ASP
+        :temporal (s196m / make
+            :actor (s196t / thing
+                :refer-number singular)
+            :undergoer (s196d / decision
+                :refer-number singular
+                :MOD-POSS (s196t2 / thing
+                    :refer-number singular))
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :actor (s196n2 / NE-TYPE
+            :name (s196n3 / name
+                :op1 "Commission"))
+        :undergoer (s196t3 / thing
+            :refer-number singular)
+        :OBLIQUE (s196n4 / NE-TYPE
+            :name (s196n5 / name
+                :op1 "President"))
+        :OBLIQUE (s196l / law
+            :mod (s196r / Russian)
+            :refer-number singular))
+    :op2 (s196c / COPULAR-CONSTRUCTION
+        :modal-strength MS-affirmative
+        :aspect state
+        :ARG1 (s196t4 / thing
+            :refer-number singular)
+        :ARG2 (s196u / up
+            :OBLIQUE (s196p / person
+                :refer-person 3rd
+                :refer-number singular)
+            :ADVCL (s196o / or
+                :op1 (s196e / endorse
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s196f / FILL)
+                    :undergoer (s196t5 / thing
+                        :refer-number singular))
+                :op2 (s196s2 / say
+                    :modal-strength MS-negative
+                    :aspect ASP
+                    :actor (s196f2 / FILL)
+                    :undergoer (s196n / no))))))
+
+# sentence level graph:
+(s197q / question
+    :mod (s197l / last)
+    :mod (s197p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :refer-number singular
+    :quant 1
+    :vocative (s197n / NE-TYPE
+        :name (s197n2 / name
+            :op1 "Marsha")))
+
+# sentence level graph:
+(s198h / have
+    :actor (s198p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s198l / lot
+        :mod (s198b / balance
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s198f / FILL))
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :UNATTACHED (s198i / identity-91
+        :ARG1 (s198h2 / he)
+        :ARG2 (s198n / NE-TYPE
+            :name (s198n2 / name
+                :op1 "President"
+                :op2 "Putin"))
+        :modal-strength MS-affirmative
+        :aspect state)
+    :mode interrogative)
+
+# sentence level graph:
+(s199b / but-91
+    :ARG1 (s199i / institution
+        :manner (s199o / only)
+        :refer-number plural)
+    :ARG2 (s199n / need
+        :mod (s199k / keep
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s199f2 / FILL)
+            :undergoer (s199t / thing
+                :refer-number plural)
+            :theme (s199f / free
+                :OBLIQUE (s199t2 / tension
+                    :refer-number singular)
+                :manner (s199s / somehow)
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :refer-number singular))
+
+# sentence level graph:
+(s200h / have-mod-91
+    :ARG1 (s200c / case
+        :mod (s200t / this)
+        :refer-number singular)
+    :ARG2 (s200l / likely
+        :theme (s200s / strain
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :undergoer (s200r2 / relation
+                :mod (s200r / US-Russian)
+                :refer-number plural)))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s201h / have-mod-91
+    :ARG1 (s201p / person
+        :refer-person 2nd
+        :refer-number FILL)
+    :ARG2 (s201a / afraid
+        :theme (s201c / COPULAR-CONSTRUCTION
+            :ARG1 (s201t / thing
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect state))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s202f / fall
+    :actor (s202p / policy
+        :mod (s202r2 / Russian)
+        :mod (s202n / NE-TYPE
+            :name (s202n2 / name
+                :op1 "US"))
+        :refer-number singular)
+    :OBLIQUE (s202l / line
+        :refer-number singular
+        :manner-of (s202t / try
+            :actor (s202n3 / NE-TYPE
+                :name (s202n4 / name
+                    :op1 "Russia"))
+            :theme (s202d / demonstrate
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :undergoer (s202f2 / force
+                    :refer-number singular
+                    :manner-of (s202b / but-91
+                        :ARG1 (s202h / have
+                            :modal-strength MS-affirmative
+                            :aspect ASP
+                            :actor (s202t2 / thing
+                                :refer-number singular))
+                        :ARG2 (s202d2 / do
+                            :manner (s202l2 / long
+                                :ARG2-of (s202h2 / have-degree-91
+                                    :ARG3 (s202m / more)
+                                    :modal-strength MS-affirmative
+                                    :aspect state))))))
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :manner (s202r / recently)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s203w / want
+    :actor (s203t / thing
+        :refer-number singular)
+    :theme (s203p / put
+        :OBLIQUE (s203f / FILL
+            :OBLIQUE-of (s203r / regard
+                :actor (s203g / government
+                    :mod (s203c / current)
+                    :mod (s203r2 / Russian)
+                    :refer-number singular)
+                :OBLIQUE (s203h / humiliation
+                    :mod (s203y / year
+                        :mod (s203p2 / past))
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :modal-strength neutral-affirmative
+        :aspect ASP
+        :undergoer (s203e / end
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s204b / be
+    :actor (s204a / attempt
+        :mod (s204n / numerous)
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :concession (s204a2 / and
+        :op1 (s204i2 / identity-91
+            :modal-strength MS-affirmative
+            :aspect state
+            :ARG1 (s204n4 / NE-TYPE
+                :name (s204n5 / name
+                    :op1 "Russia"))
+            :ARG2 (s204s / source
+                :manner (s204l / long
+                    :ARG2-of (s204h / have-degree-91
+                        :ARG3 (s204m2 / more)
+                        :modal-strength MS-affirmative
+                        :aspect state))
+                :manner (s204e / even)
+                :mod (s204s2 / scare)
+                :mod (s204w / west)
+                :refer-number singular
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s204b2 / be
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s204s4 / several
+                :refer-number FILL)
+            :actor (s204f / fly-over
+                :OBLIQUE (s204p / plane
+                    :mod (s204r2 / Russian)
+                    :mod (s204m / military)
+                    :refer-number plural)
+                :OBLIQUE (s204n2 / NE-TYPE
+                    :name (s204n3 / name
+                        :op1 "Kitty"
+                        :op2 "Hawk"))
+                :manner (s204j / just)
+                :manner (s204r / recently)
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :OBLIQUE (s204i / instance
+                :mod (s204s3 / such)
+                :refer-number plural))))
+
+# sentence level graph:
+(s205b / be
+    :actor (s205s / scandal
+        :refer-number singular
+        :actor-of (s205e / erupt
+            :OBLIQUE (s205d / declaration
+                :mod (s205s2 / sell
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s205t / thing
+                        :refer-number singular)
+                    :undergoer (s205w / weapon
+                        :refer-number plural)
+                    :OBLIQUE (s205n3 / NE-TYPE
+                        :name (s205n4 / name
+                            :op1 "Iran"))
+                    :manner (s205c / contrary
+                        :OBLIQUE (s205a2 / agreement
+                            :mod (s205m / make
+                                :modal-strength MS-affirmative
+                                :aspect ASP
+                                :manner (s205e2 / early
+                                    :ARG2-of (s205h / have-degree-91
+                                        :ARG3 (s205m2 / more)
+                                        :modal-strength MS-affirmative
+                                        :aspect state)))
+                            :refer-number singular)))
+                :mod (s205n / NE-TYPE
+                    :name (s205n2 / name
+                        :op1 "Russia's"))
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :manner (s205a / also)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# sentence level graph:
+(s206h / have-mod-91
+    :ARG1 (s206e / example
+        :mod (s206s / such)
+        :refer-number plural)
+    :ARG2 (s206f / few
+        :manner (s206a / already)
+        :mod (s206q / quite)
+        :UNATTACHED (s206b / but-91
+            :ARG1 (s206c / combine
+                :OBLIQUE (s206p / profit
+                    :mod (s206n2 / NE-TYPE
+                        :name (s206n3 / name
+                            :op1 "Russia"))
+                    :mod (s206m / material)
+                    :refer-number plural)
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :undergoer (s206f2 / FILL
+                    :mod (s206s2 / some)
+                    :mod (s206p2 / person
+                        :refer-person 3rd
+                        :refer-number plural)))
+            :ARG2 (s206n / necessarily)))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s207i / identity-91
+    :ARG1 (s207n2 / NE-TYPE
+        :name (s207n3 / name
+            :op1 "Marsha"
+            :op2 "Lipman"))
+    :ARG2 (s207n4 / NE-TYPE
+        :mod (s207m / magazine
+            :ARG1-of (s207i2 / identity-91
+                :ARG2 (s207n6 / NE-TYPE
+                    :name (s207n7 / name
+                        :op1 "Itogi"))
+                :modal-strength MS-affirmative
+                :aspect state)
+            :mod (s207b / base-Moscow
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :mod (s207n / news
+                :refer-number singular))
+        :name (s207n5 / name
+            :op1 "Editor"))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# sentence level graph:
+(s208t / thank
+    :actor (s208p / person
+        :refer-person 1st
+        :refer-number singular)
+    :undergoer (s208p2 / person
+        :refer-person 2nd
+        :refer-number singular)
+    :manner (s208m / much
+        :manner (s208v / very))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s208s / speak
+        :OBLIQUE (s208p3 / person
+            :refer-person 1st
+            :refer-number plural)
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :vocative (s208n / NE-TYPE
+        :name (s208n2 / name
+            :op1 "Marsha")))
+
+# sentence level graph:
+(s209p / pleasure
+    :refer-number singular)
+
