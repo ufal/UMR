@@ -1,0 +1,7543 @@
+################################################################################
+# sent_id = 1
+# :: snt1
+Index: 1   2    3 4     5      6       7  8           9         10
+Words: 200 dead , 1,500 feared missing in Philippines landslide .
+Sentence: None
+
+# sentence level graph:
+(s1f / fear
+    :undergoer (s1a / and
+        :op1 (s1d / dead
+            :refer-number FILL
+            :quant 200)
+        :op2 (s1x / 1500))
+    :theme (s1m / missing
+        :modal-strength neutral-affirmative
+        :aspect ASP)
+    :OBLIQUE (s1l / landslide
+        :mod (s1n / NE-TYPE
+            :name (s1n2 / name
+                :op1 "Philippines"))
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s1n2: 0-0
+s1d: 2-2
+s1a: 3-3
+s1x: 4-4
+s1f: 5-5
+s1m: 6-6
+s1l: 7-7, 9-9
+s1n: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 2
+# :: snt2
+Index: 1        2 3           4 5   6  7 8    9
+Words: TACLOBAN , Philippines , Feb 17 , 2006 .
+Sentence: None
+
+# sentence level graph:
+(s2t / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 3
+# :: snt3
+Index: 1     2   3      4    5        6      7   8     9      10   11      12 13  14      15          16 17     18   19 20        21     22 23     24      25 26  27  28    29   30
+Words: About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a  landslide buried an entire village ,  the Red Cross said .
+Sentence: None
+
+# sentence level graph:
+(s3s / say
+    :actor (s3n5 / NE-TYPE
+        :mod (s3r / Red)
+        :name (s3n6 / name
+            :op1 "Cross"))
+    :theme (s3a / and
+        :op1 (s3b / believe
+            :modal-strength full-affirmative
+            :aspect ASP
+            :undergoer (s3p / person
+                :refer-number plural
+                :quant 200)
+            :theme (s3k / kill
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s3h / have-mod-91
+            :modal-strength MS-affirmative
+            :aspect state
+            :ARG1 (s3o / other
+                :refer-number plural
+                :quant 1,500)
+            :ARG2 (s3m / missing
+                :OBLIQUE (s3n / NE-TYPE
+                    :mod (s3c / central)
+                    :name (s3n2 / name
+                        :op1 "Philippines"))
+                :OBLIQUE (s3n3 / NE-TYPE
+                    :name (s3n4 / name
+                        :op1 "Friday"))
+                :ADVCL (s3b2 / bury
+                    :actor (s3l / landslide
+                        :refer-number singular)
+                    :undergoer (s3v / village
+                        :mod (s3e / entire)
+                        :refer-number singular)
+                    :manner (s3w / when)
+                    :modal-strength MS-affirmative
+                    :aspect ASP))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s3n4: 0-0
+s3n2: 0-0
+s3n6: 0-0
+s3p: 3-3
+s3b: 4-5
+s3k: 6-6
+s3a: 7-7
+s3o: 9-9
+s3h: 10-10
+s3m: 11-11
+s3n: 12-13, 15-15
+s3c: 14-14
+s3n3: 16-17
+s3w: 18-18
+s3l: 19-20
+s3b2: 21-21
+s3v: 22-22, 24-24
+s3e: 23-23
+s3n5: 26-26, 28-28
+s3r: 27-27
+s3s: 29-29
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 4
+# :: snt4
+Index: 1            2    3    4 5   6      7    8    9        10    11  12        13  14  15      16 17         18 19  20    21 22  23         24     25 26    27
+Words: Eyewitnesses said only a few houses were left standing after the landslide hit the village of Guinsaugon in the south of the Philippine island of Leyte .
+Sentence: None
+
+# sentence level graph:
+(s4s / say
+    :actor (s4e / eyewitness
+        :refer-number plural)
+    :theme (s4l / leave
+        :modal-strength full-affirmative
+        :aspect ASP
+        :temporal (s4h2 / hit
+            :actor (s4l2 / landslide
+                :refer-number singular)
+            :undergoer (s4v / village
+                :mod (s4s3 / south
+                    :mod (s4i / island
+                        :mod (s4p / Philippine)
+                        :mod (s4n3 / NE-TYPE
+                            :name (s4n4 / name
+                                :op1 "Leyte"))))
+                :mod (s4n / NE-TYPE
+                    :name (s4n2 / name
+                        :op1 "Guinsaugon"))
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :undergoer (s4h / house
+            :manner (s4o / only)
+            :mod (s4f / few)
+            :refer-number plural)
+        :theme (s4s2 / stand
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s4n2: 0-0
+s4n4: 0-0
+s4e: 1-1
+s4s: 2-2
+s4o: 3-3
+s4h: 4-4, 6-6
+s4f: 5-5
+s4l: 7-8
+s4s2: 9-9
+s4h2: 10-10, 13-13
+s4l2: 11-12
+s4v: 14-15
+s4n: 16-17
+s4s3: 18-20
+s4i: 21-22, 24-24
+s4p: 23-23
+s4n3: 25-26
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 5
+# :: snt5
+Index: 1 2     3   4     5     6       7 8   9    10 11 12      13     14 15  16   17 18  19         20  21    22 23   24 25 26    27        28
+Words: " There are about 1,500 missing , 200 dead ,  "  Richard Gordon ,  the head of the Philippine Red Cross ,  said in a  radio interview .
+Sentence: None
+
+# sentence level graph:
+(s5s / say
+    :actor (s5n / NE-TYPE
+        :name (s5n2 / name
+            :op1 "Richard"
+            :op2 "Gordon"))
+    :theme (s5b / be
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s5a / and
+            :op1 (s5m / missing
+                :refer-number FILL
+                :quant 1,500)
+            :op2 (s5x / 200
+                :mod (s5d / dead))))
+    :OBLIQUE (s5i / interview
+        :mod (s5r / radio
+            :refer-number singular)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s5n2: 0-0
+s5b: 3-3
+s5m: 6-6
+s5a: 7-7
+s5x: 8-8
+s5d: 9-9
+s5n: 12-12
+s5s: 23-23
+s5i: 24-25, 27-27
+s5r: 26-26
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 6
+# :: snt6
+Index: 1   2     3       4    5   6          7       8      9 10  11 12  13       14   15  16   17   18    19     20       21
+Words: The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland .
+Sentence: None
+
+# sentence level graph:
+(s6s / show
+    :actor (s6f2 / footage
+        :mod (s6f / first)
+        :mod (s6v / village
+            :mod (s6d / devastated))
+        :refer-number singular)
+    :undergoer (s6s2 / sea
+        :mod (s6m / mud)
+        :mod (s6c / cover
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s6f4 / FILL)
+            :undergoer (s6f6 / FILL
+                :undergoer-of (s6i / identity-91
+                    :ARG1 (s6f5 / FILL)
+                    :ARG2 (s6f3 / farmland
+                        :mod (s6l / lush)
+                        :mod (s6v2 / valley
+                            :mod (s6g / green)
+                            :refer-number singular)
+                        :refer-number singular)
+                    :modal-strength MS-affirmative
+                    :aspect state)))
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s6f4: 0-0
+s6f5: 0-0
+s6f2: 1-1, 3-3
+s6f: 2-2
+s6v: 4-5, 7-7
+s6d: 6-6
+s6s: 8-8
+s6s2: 9-10
+s6m: 11-12
+s6c: 13-13
+s6f6: 14-14
+s6f3: 15-15, 20-20
+s6i: 16-16
+s6l: 17-17
+s6g: 18-18
+s6v2: 19-19
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 7
+# :: snt7
+Index: 1    2 3   4      5  6   7       8   9   10         11      12   13    14 15   16
+Words: Only a few sheets of tin roofing and the occasional coconut tree could be seen .
+Sentence: None
+
+# sentence level graph:
+(s7s2 / see
+    :undergoer (s7s / sheet
+        :manner (s7o / only)
+        :mod (s7a / and
+            :op1 (s7r / roofing
+                :mod (s7t / tin
+                    :refer-number singular))
+            :op2 (s7t2 / tree
+                :refer-number singular
+                :mod (s7c / coconut
+                    :refer-number singular)
+                :mod (s7o2 / occasional)))
+        :mod (s7f / few)
+        :refer-number plural)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s7o: 1-1
+s7s: 2-2, 4-4
+s7f: 3-3
+s7r: 5-5, 7-7
+s7t: 6-6
+s7a: 8-8
+s7t2: 9-9, 12-12
+s7o2: 10-10
+s7c: 11-11
+s7s2: 13-15
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 8
+# :: snt8
+Index: 1    2      3  4   5 6         7         8    9    10    11 12      13      14  15   16 17         18      19 20  21    22 23  24          25
+Words: Tiny groups of mud - spattered survivors were also shown ,  walking through the muck ,  apparently stunned by the scope of the destruction .
+Sentence: None
+
+# sentence level graph:
+(s8s3 / show
+    :undergoer (s8g / group
+        :mod (s8t / tiny)
+        :mod (s8s2 / survivor
+            :mod (s8s / spatter-mud
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :refer-number plural)
+    :manner (s8a / also)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :ADVCL (s8w / walk
+        :OBLIQUE (s8m / muck
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :ADVCL (s8s4 / stunn
+            :actor (s8s5 / scope
+                :mod (s8d / destruction)
+                :refer-number singular)
+            :manner (s8a2 / apparently)
+            :modal-strength MS-affirmative
+            :aspect ASP)))
+
+# alignment:
+s8t: 1-1
+s8g: 2-2
+s8s2: 3-3, 7-7
+s8s: 6-6
+s8s3: 8-8, 10-10
+s8a: 9-9
+s8w: 12-12
+s8m: 13-15
+s8a2: 17-17
+s8s4: 18-18
+s8s5: 19-21
+s8d: 22-24
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 9
+# :: snt9
+Index: 1  2 3         4       5  6   7      8 9         10     11     12   13     14    15   16      17 18  19   20   21 22  23 24   25  26  27 28 29   30   31  32          33
+Words: In a televised address to the nation , President Gloria Arroyo said rescue teams were rushing to the area from "  air ,  land and sea "  to cope with the catastrophe .
+Sentence: None
+
+# sentence level graph:
+(s9s / say
+    :actor (s9n2 / NE-TYPE
+        :name (s9n3 / name
+            :op1 "President"
+            :op2 "Gloria"
+            :op3 "Arroyo"))
+    :theme (s9r2 / rush
+        :OBLIQUE (s9a4 / and
+            :op1 (s9a3 / air
+                :refer-number singular)
+            :op2 (s9l / land
+                :refer-number singular)
+            :op3 (s9s2 / sea
+                :refer-number singular))
+        :OBLIQUE (s9a2 / area
+            :refer-number singular)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :ADVCL (s9c / cope
+            :actor (s9f / FILL)
+            :OBLIQUE (s9c2 / catastrophe
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :actor (s9t2 / team
+            :mod (s9r / rescue
+                :refer-number singular)
+            :refer-number plural))
+    :OBLIQUE (s9a / address
+        :mod (s9n / nation)
+        :mod (s9t / televise
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s9f: 0-0
+s9n3: 0-0
+s9a: 1-2, 4-4
+s9t: 3-3
+s9n: 5-7
+s9n2: 9-9
+s9s: 12-12
+s9r: 13-13
+s9t2: 14-14
+s9r2: 15-16
+s9a2: 17-19
+s9a3: 20-20, 22-22
+s9a4: 23-23
+s9l: 24-24
+s9s2: 26-26
+s9c: 29-29
+s9c2: 30-32
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 10
+# :: snt10
+Index: 1 2 3    4       5   6     7     8   9   10     11    12    13 14  15 16      17          18 19     20 21  22   23 24 25  26   27
+Words: " I have ordered the Coast Guard and our entire naval force in the (  central Philippines )  region to the area ,  "  she said .
+Sentence: None
+
+# sentence level graph:
+(s10s / say
+    :actor (s10p3 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s10o / order
+        :OBLIQUE (s10a / area
+            :refer-number singular)
+        :OBLIQUE (s10r / region
+            :mod (s10n4 / NE-TYPE
+                :mod (s10c / central)
+                :name (s10n5 / name
+                    :op1 "Philippines"))
+            :refer-number singular)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s10p / person
+            :refer-person 1st
+            :refer-number singular)
+        :undergoer (s10a2 / and
+            :op1 (s10n2 / NE-TYPE
+                :name (s10n3 / name
+                    :op1 "Guard"))
+            :op2 (s10f / force
+                :refer-number singular
+                :MOD-POSS (s10p2 / person
+                    :refer-person 1st
+                    :refer-number plural)
+                :mod (s10n / naval)
+                :mod (s10e / entire))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s10n3: 0-0
+s10n5: 0-0
+s10p: 2-2
+s10o: 3-4
+s10n2: 5-5, 7-7
+s10a2: 8-8
+s10p2: 9-9
+s10e: 10-10
+s10n: 11-11
+s10f: 12-12
+s10r: 13-14, 19-19
+s10c: 16-16
+s10n4: 17-17
+s10a: 20-22
+s10p3: 25-25
+s10s: 26-26
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 11
+# :: snt11
+Index: 1 2     3     4    5  6    7  8        9         10  11      12      13  14     15  16     17 18
+Words: " Naval ships will be used as floating hospitals and command centres for relief and rescue .  "
+Sentence: None
+
+# sentence level graph:
+(s11u / use
+    :undergoer (s11s / ship
+        :mod (s11n / naval)
+        :refer-number plural)
+    :OBLIQUE (s11a / and
+        :op1 (s11h / hospital
+            :refer-number plural
+            :mod (s11f / float
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s11f2 / FILL)))
+        :op2 (s11c2 / centre
+            :refer-number plural
+            :mod (s11a2 / and
+                :op1 (s11r / relief)
+                :op2 (s11r2 / rescue
+                    :refer-number singular))
+            :mod (s11c / command
+                :refer-number singular)))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s11f2: 0-0
+s11n: 2-2
+s11s: 3-3
+s11u: 4-6
+s11h: 7-7, 9-9
+s11f: 8-8
+s11a: 10-10
+s11c: 11-11
+s11c2: 12-12
+s11r: 13-14
+s11a2: 15-15
+s11r2: 16-16
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 12
+# :: snt12
+Index: 1     2        3       4      5    6   7      8      9         10    11   12  13     14   15    16     17     18 19         20     21  22        23
+Words: Leyte Governor Rosette Lerias said the latest census indicated there were 375 houses with 3,000 people living in Guinsaugon before the landslide .
+Sentence: None
+
+# sentence level graph:
+(s12s / say
+    :actor (s12n / NE-TYPE
+        :name (s12n2 / name
+            :op1 "Governor"
+            :op2 "Rosette"
+            :op3 "Lerias"))
+    :theme (s12i / indicate
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s12c / census
+            :mod (s12l / late)
+            :refer-number singular)
+        :theme (s12b / be
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s12h / house
+                :mod (s12p / person
+                    :mod (s12l2 / live
+                        :modal-strength MS-affirmative
+                        :aspect ASP
+                        :actor (s12f / FILL)
+                        :OBLIQUE (s12l3 / landslide
+                            :refer-number singular)
+                        :OBLIQUE (s12n3 / NE-TYPE
+                            :name (s12n4 / name
+                                :op1 "Guinsaugon")))
+                    :quant 3,000)
+                :refer-number plural
+                :quant 375)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s12n4: 0-0
+s12n2: 0-0
+s12f: 0-0
+s12n: 2-2
+s12s: 5-5
+s12c: 6-6, 8-8
+s12l: 7-7
+s12i: 9-9
+s12b: 11-11
+s12h: 13-13
+s12p: 14-14, 16-16
+s12l2: 17-17
+s12n3: 18-19
+s12l3: 20-22
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 13
+# :: snt13
+Index: 1   2         3   4       5  6       7         8
+Words: She described the village as totally flattened .
+Sentence: None
+
+# sentence level graph:
+(s13d / describe
+    :actor (s13p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s13v / village
+        :refer-number singular)
+    :OBLIQUE (s13f / flattened
+        :manner (s13t / totally)
+        :refer-number FILL)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s13p: 1-1
+s13d: 2-2
+s13v: 3-4
+s13f: 5-5, 7-7
+s13t: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 14
+# :: snt14
+Index: 1 2  3   4    5   6       7    8   9        10  11 12      13  14      15 16      17 18 19  20   21 22      23        24
+Words: " It was like mud running down the mountain and it covered the village in seconds ,  "  she said ,  quoting survivors .
+Sentence: None
+
+# sentence level graph:
+(s14s2 / say
+    :actor (s14p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s14a / and
+        :op1 (s14c2 / COPULAR-CONSTRUCTION
+            :modal-strength full-affirmative
+            :aspect state
+            :ARG1 (s14t / thing
+                :refer-number singular)
+            :ARG2 (s14m / mud
+                :mod (s14r / run
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s14f / FILL)
+                    :OBLIQUE (s14m2 / mountain
+                        :refer-number singular))
+                :refer-number singular
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s14c / cover
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s14t2 / thing
+                :refer-number singular)
+            :undergoer (s14v / village
+                :refer-number singular)
+            :OBLIQUE (s14s / second
+                :refer-number plural)))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s14q / quote
+        :undergoer (s14s3 / survivor
+            :refer-number plural)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s14f: 0-0
+s14t: 2-2
+s14c2: 3-3
+s14m: 4-5
+s14r: 6-6
+s14m2: 7-9
+s14a: 10-10
+s14t2: 11-11
+s14c: 12-12
+s14v: 13-14
+s14s: 15-16
+s14p: 19-19
+s14s2: 20-20
+s14q: 22-22
+s14s3: 23-23
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 15
+# :: snt15
+Index: 1       2      3             4   5   6       7 8     9    10    11   12 13       14   15  16   17    18     19   20    21
+Words: Experts blamed deforestation for the tragedy , which came after days of rainfall that was five times higher than usual .
+Sentence: None
+
+# sentence level graph:
+(s15b / blame
+    :actor (s15e / expert
+        :refer-number plural)
+    :undergoer (s15d / deforestation
+        :refer-number singular)
+    :OBLIQUE (s15t / tragedy
+        :refer-number singular
+        :actor-of (s15c / come
+            :OBLIQUE (s15d2 / day
+                :mod (s15r / rainfall
+                    :ARG1-of (s15h2 / have-degree-91
+                        :ARG2 (s15h / high)
+                        :ARG3 (s15m / more)
+                        :OBLIQUE (s15t2 / time
+                            :refer-number plural
+                            :quant 5)
+                        :OBLIQUE (s15u / usual
+                            :refer-number FILL)
+                        :modal-strength MS-affirmative
+                        :aspect state))
+                :refer-number plural)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s15m: 0-0
+s15e: 1-1
+s15b: 2-2
+s15d: 3-3
+s15t: 4-6
+s15c: 9-9
+s15d2: 10-11
+s15r: 12-13
+s15h2: 15-15
+s15t2: 17-17
+s15h: 18-18
+s15u: 19-20
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 16
+# :: snt16
+Index: 1      2    3    4    5          6         7   8    9         10    11         12      13 14  15   16  17     18   19   20 21     22 23    24 25  26   27   28  29       30     31      32  33    34  35      36  37  38  39  40   41
+Words: Lerias said that many Guinsaugon residents had been evacuated after landslides earlier in the week had killed more than 20 people on Leyte ,  but that many had returned Friday because the rains had stopped and the sun had come out.
+Sentence: None
+
+# sentence level graph:
+(s16s / say
+    :actor (s16n / NE-TYPE
+        :name (s16n2 / name
+            :op1 "Lerias"))
+    :theme (s16e / evacuate
+        :modal-strength full-affirmative
+        :aspect ASP
+        :temporal (s16b / but-91
+            :ARG1 (s16k / kill
+                :OBLIQUE (s16n5 / NE-TYPE
+                    :name (s16n6 / name
+                        :op1 "Leyte"))
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s16l / landslide
+                    :manner (s16e2 / early
+                        :ARG2-of (s16h / have-degree-91
+                            :ARG3 (s16m3 / more)
+                            :modal-strength MS-affirmative
+                            :aspect state)
+                        :OBLIQUE (s16w / week
+                            :refer-number singular))
+                    :refer-number plural)
+                :undergoer (s16p / person
+                    :refer-number plural
+                    :quant 20))
+            :ARG2 (s16r2 / return
+                :OBLIQUE (s16n7 / NE-TYPE
+                    :name (s16n8 / name
+                        :op1 "Friday"))
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :cause (s16a / and
+                    :op1 (s16s2 / stop
+                        :modal-strength MS-affirmative
+                        :aspect ASP
+                        :actor (s16r3 / rain
+                            :refer-number plural))
+                    :op2 (s16c / come
+                        :modal-strength MS-affirmative
+                        :aspect ASP
+                        :actor (s16s3 / sun
+                            :refer-number singular)
+                        :manner (s16o / out.)))
+                :actor (s16m2 / many
+                    :refer-number FILL)))
+        :undergoer (s16r / resident
+            :mod (s16n3 / NE-TYPE
+                :name (s16n4 / name
+                    :op1 "Guinsaugon"))
+            :mod (s16m / many)
+            :refer-number plural))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s16m3: 0-0
+s16h: 0-0
+s16n8: 0-0
+s16n4: 0-0
+s16n2: 0-0
+s16n6: 0-0
+s16n: 1-1
+s16s: 2-2
+s16e: 3-3, 7-9
+s16m: 4-4
+s16n3: 5-5
+s16r: 6-6
+s16k: 10-10, 16-17
+s16l: 11-11
+s16e2: 12-12
+s16w: 13-15
+s16p: 21-21
+s16n5: 22-23
+s16b: 25-25
+s16r2: 26-26, 28-29
+s16m2: 27-27
+s16n7: 30-30
+s16s2: 31-31, 34-35
+s16r3: 32-33
+s16a: 36-36
+s16s3: 37-38
+s16c: 39-40
+s16o: 41-41
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 17
+# :: snt17
+Index: 1 2    3   4 5         6          7     8      9      10  11        12  13   14   15     16  17  18  19   20 21  22   23      24   25 26  27      28 29   30   31      32 33   34 35  36         37          38
+Words: A mild 2.6 - magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village ,  said Rene Solidum ,  head of the government vulcanology office.
+Sentence: None
+
+# sentence level graph:
+(s17s3 / say
+    :actor (s17n / NE-TYPE
+        :name (s17n2 / name
+            :op1 "Rene"
+            :op2 "Solidum"))
+    :actor (s17e / earthquake
+        :mod (s17m / mild)
+        :mod (s17m2 / magnitude
+            :refer-number singular
+            :quant 2.6)
+        :refer-number singular
+        :actor-of (s17s / strike
+            :OBLIQUE (s17l / landslide
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :theme (s17h / help
+        :manner (s17a / also)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :theme (s17s2 / set-off
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :undergoer (s17w / wall
+                :mod (s17m3 / mud)
+                :refer-number singular
+                :actor-of (s17c / crash-down
+                    :OBLIQUE (s17v / village
+                        :refer-number singular)
+                    :modal-strength MS-affirmative
+                    :aspect ASP))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s17n2: 0-0
+s17e: 1-1, 6-6
+s17m: 2-2
+s17m2: 5-5
+s17s: 8-8
+s17l: 9-11
+s17h: 12-12, 14-15
+s17a: 13-13
+s17s2: 16-16
+s17w: 18-19
+s17m3: 20-21
+s17c: 23-23
+s17v: 25-27
+s17s3: 29-29
+s17n: 30-30
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 18
+# :: snt18
+Index: 1 2   3    4     5    6      7    8     9   10 11        12      13 14  15     16 17       18  19 20    21  22 23    24         25 26 27    28   29       30 31 32 33      34   35
+Words: " The area could have really been ready for a  landslide because of the amount of rainfall and if there was a  minor earthquake ,  it might have hastened it ,  "  Solidum said .
+Sentence: None
+
+# sentence level graph:
+(s18s / say
+    :actor (s18n / NE-TYPE
+        :name (s18n2 / name
+            :op1 "Solidum"))
+    :theme (s18a3 / and
+        :op1 (s18h2 / have-mod-91
+            :modal-strength full-affirmative
+            :aspect state
+            :ARG1 (s18a / area
+                :refer-number singular)
+            :ARG2 (s18r2 / ready
+                :OBLIQUE (s18a2 / amount
+                    :mod (s18r3 / rainfall)
+                    :refer-number singular)
+                :OBLIQUE (s18l / landslide
+                    :refer-number singular)
+                :manner (s18r / really)
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s18h / hasten
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :condition (s18b / be
+                :actor (s18e / earthquake
+                    :mod (s18m / minor)
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :actor (s18t / thing
+                :refer-number singular)
+            :undergoer (s18t2 / thing
+                :refer-number singular)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s18n2: 0-0
+s18a: 2-3
+s18r2: 4-5, 8-8
+s18r: 6-6
+s18h2: 7-7
+s18l: 9-11
+s18a2: 12-12, 14-15
+s18r3: 16-17
+s18a3: 18-18
+s18b: 19-19, 21-21
+s18e: 22-22, 24-24
+s18m: 23-23
+s18t: 26-26
+s18h: 27-29
+s18t2: 30-30
+s18n: 33-33
+s18s: 34-34
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 19
+# :: snt19
+Index: 1    2       3      4       5 6    7  8 9      10   11    12 13   14 15   16     17  18   19        20 21  22  23  24     25      26
+Words: Army Colonel Nestor Sadirin , head of a rescue task force ,  said 16 dead bodies had been recovered so far and 100 people rescued .
+Sentence: None
+
+# sentence level graph:
+(s19s / say
+    :actor (s19n / NE-TYPE
+        :name (s19n2 / name
+            :op1 "Army"
+            :op2 "Colonel"
+            :op3 "Nestor"
+            :op4 "Sadirin"))
+    :theme (s19a / and
+        :op1 (s19r / recover
+            :modal-strength full-affirmative
+            :aspect ASP
+            :undergoer (s19b / body
+                :mod (s19d / dead)
+                :refer-number plural
+                :quant 16)
+            :manner (s19f / far
+                :manner (s19s2 / so)))
+        :op2 (s19r2 / rescue
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :undergoer (s19p / person
+                :refer-number plural
+                :quant 100)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s19n2: 0-0
+s19n: 1-1
+s19s: 13-13
+s19d: 15-15
+s19b: 16-16
+s19r: 17-19
+s19s2: 20-20
+s19f: 21-21
+s19a: 22-22
+s19p: 24-24
+s19r2: 25-25
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 20
+# :: snt20
+Index: 1     2           3     4       5    6  7 8     9         10   11  12      13  14 15         16 17    18 19    20  21        22    23   24 25   26 27    28     29  30   31     32
+Words: Leyte Congressman Roger Mercado said in a radio interview that the village had a  population of 3,000 to 4,000 and expressed fears that as many as 2,000 people had been buried .
+Sentence: None
+
+# sentence level graph:
+(s20s / say
+    :actor (s20n / NE-TYPE
+        :name (s20n2 / name
+            :op1 "Congressman"
+            :op2 "Roger"
+            :op3 "Mercado"))
+    :theme (s20a / and
+        :op1 (s20h / have
+            :modal-strength full-affirmative
+            :aspect ASP
+            :actor (s20v / village
+                :refer-number singular)
+            :undergoer (s20p / population
+                :mod (s20x / 3000
+                    :mod (s20x2 / 4000))
+                :refer-number singular))
+        :op2 (s20e / express
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s20f2 / FILL
+                :refer-number singular)
+            :undergoer (s20f / fear
+                :refer-number plural
+                :undergoer-of (s20b / bury
+                    :undergoer (s20p2 / person
+                        :mod (s20m / many)
+                        :refer-number plural
+                        :quant 2,000)
+                    :modal-strength MS-affirmative
+                    :aspect ASP))))
+    :OBLIQUE (s20i / interview
+        :mod (s20r / radio
+            :refer-number singular)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s20n2: 0-0
+s20f2: 0-0
+s20n: 2-2
+s20s: 5-5
+s20i: 6-7, 9-9
+s20r: 8-8
+s20h: 10-10, 13-13
+s20v: 11-12
+s20p: 14-15
+s20x: 16-17
+s20x2: 18-19
+s20a: 20-20
+s20e: 21-21
+s20f: 22-22
+s20b: 23-23, 29-31
+s20m: 25-25
+s20p2: 28-28
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 21
+# :: snt21
+Index: 1      2      3   4    5        6  7    8  9   10   11 12   13   14  15     16 17    18    19     20        21    22  23   24 25  26  27 28    29        30   31  32   33   34  35     36      37   38 39   40
+Words: Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud ,  which officials said was more than six metres (yards) deep in many areas.
+Sentence: None
+
+# sentence level graph:
+(s21c / call
+    :actor (s21n / NE-TYPE
+        :name (s21n2 / name
+            :op1 "Lerias"))
+    :theme (s21c2 / come
+        :OBLIQUE (s21s / site
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :ADVCL (s21h / help
+            :actor (s21f / FILL)
+            :theme (s21l / look
+                :OBLIQUE (s21b / body
+                    :refer-number plural)
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :ADVCL (s21w / work
+                    :actor (s21e / equipment
+                        :mod (s21m2 / moving-earth
+                            :modal-strength MS-affirmative
+                            :aspect ASP
+                            :actor (s21f2 / FILL))
+                        :mod (s21h2 / heavy)
+                        :refer-number singular)
+                    :OBLIQUE (s21m3 / mud
+                        :refer-number singular
+                        :actor-of (s21s2 / say
+                            :actor (s21o / official
+                                :refer-number plural)
+                            :theme (s21h3 / have-mod-91
+                                :ARG1 (s21f3 / FILL)
+                                :ARG2 (s21d / deep
+                                    :OBLIQUE (s21x / (yard)
+                                        :refer-number plural)
+                                    :OBLIQUE (s21a / areas.
+                                        :mod (s21m5 / many)
+                                        :refer-number plural)
+                                    :OBLIQUE (s21m4 / metre
+                                        :refer-number plural
+                                        :quant 6)
+                                    :modal-strength MS-affirmative
+                                    :aspect ASP)
+                                :modal-strength full-affirmative
+                                :aspect state)
+                            :modal-strength MS-affirmative
+                            :aspect ASP))
+                    :modal-strength MS-negative
+                    :aspect ASP))
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :OBLIQUE (s21r / rescuer
+        :mod (s21m / more)
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s21f2: 0-0
+s21n2: 0-0
+s21f: 0-0
+s21n: 1-1
+s21c: 2-2
+s21r: 3-3, 5-5
+s21m: 4-4
+s21c2: 7-7
+s21s: 8-10
+s21h: 12-12
+s21l: 13-13
+s21b: 14-15
+s21w: 16-16, 21-21, 23-23
+s21h2: 17-17
+s21m2: 19-19
+s21e: 20-20
+s21m3: 24-26
+s21f3: 28-28
+s21o: 29-29
+s21s2: 30-30
+s21h3: 31-31
+s21m4: 35-35
+s21x: 36-36
+s21d: 37-37
+s21a: 38-38, 40-40
+s21m5: 39-39
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 22
+# :: snt22
+Index: 1         2      3     4    5   6         7      8         9 10      11 12      13      14  15    16 17     18     19 20   21   22    23 24  25   26 27   28        29     30
+Words: Volunteer rescue teams from the country's mining companies , skilled in digging through the earth to rescue people ,  were also going to the area ,  said President Arroyo said.
+Sentence: None
+
+# sentence level graph:
+(s22s2 / say
+    :actor (s22f3 / FILL
+        :refer-number singular)
+    :theme (s22g / go
+        :OBLIQUE (s22a2 / area
+            :refer-number singular)
+        :manner (s22a / also)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s22t / team
+            :mod (s22c2 / company
+                :undergoer-of (s22s / skilled
+                    :ADVCL (s22d / dig
+                        :ADVCL (s22r2 / rescue
+                            :actor (s22f2 / FILL)
+                            :undergoer (s22p / person
+                                :refer-number plural)
+                            :modal-strength MS-affirmative
+                            :aspect ASP)
+                        :actor (s22f / FILL)
+                        :OBLIQUE (s22e / earth
+                            :refer-number singular)
+                        :modal-strength MS-affirmative
+                        :aspect ASP)
+                    :modal-strength MS-affirmative
+                    :aspect ASP)
+                :mod (s22c / country
+                    :refer-number plural)
+                :mod (s22m / mining
+                    :refer-number singular))
+            :mod (s22v / volunteer
+                :refer-number singular)
+            :mod (s22r / rescue
+                :refer-number singular)
+            :refer-number plural))
+    :theme (s22s3 / saiy
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s22n / NE-TYPE
+            :name (s22n2 / name
+                :op1 "President"
+                :op2 "Arroyo")))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s22n2: 0-0
+s22f: 0-0
+s22f2: 0-0
+s22f3: 0-0
+s22v: 1-1
+s22r: 2-2
+s22t: 3-3
+s22c2: 4-5, 8-8
+s22c: 6-6
+s22m: 7-7
+s22s: 10-10
+s22d: 11-12
+s22e: 13-15
+s22r2: 17-17
+s22p: 18-18
+s22g: 20-20, 22-22
+s22a: 21-21
+s22a2: 23-25
+s22s2: 27-27
+s22n: 28-28
+s22s3: 30-30
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 23
+# :: snt23
+Index: 1      2    3   4   5     6    7   8      9  10       11      12   13 14   15  16        17
+Words: Gordon said the Red Cross said was trying to dispatch sniffer dogs to hunt for survivors .
+Sentence: None
+
+# sentence level graph:
+(s23s / say
+    :actor (s23n / NE-TYPE
+        :name (s23n2 / name
+            :op1 "Gordon"))
+    :theme (s23s2 / say
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s23n3 / NE-TYPE
+            :mod (s23r / Red)
+            :name (s23n4 / name
+                :op1 "Cross"))
+        :theme (s23t / try
+            :modal-strength full-affirmative
+            :aspect ASP
+            :theme (s23d / dispatch
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :ADVCL (s23h / hunt
+                    :actor (s23f / FILL)
+                    :OBLIQUE (s23s4 / survivor
+                        :refer-number plural)
+                    :modal-strength MS-affirmative
+                    :aspect ASP)
+                :undergoer (s23d2 / dog
+                    :mod (s23s3 / sniffer)
+                    :refer-number plural))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s23n4: 0-0
+s23n2: 0-0
+s23f: 0-0
+s23n: 1-1
+s23s: 2-2
+s23n3: 3-3, 5-5
+s23r: 4-4
+s23s2: 6-6
+s23t: 7-8
+s23d: 10-10
+s23s3: 11-11
+s23d2: 12-12
+s23h: 14-14
+s23s4: 15-16
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 24
+# :: snt24
+Index: 1        2           3    4    5  6     7   8    9       10    11     12  13  14      15     16    17        18      19  20       21  22  23   24    25 26     27
+Words: Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night -  flying capabilities.
+Sentence: None
+
+# sentence level graph:
+(s24b / but-91
+    :ARG1 (s24h4 / have-mod-91
+        :ARG2 (s24a / able
+            :theme (s24r / reach
+                :OBLIQUE (s24c / cloud
+                    :mod (s24h2 / heavy)
+                    :refer-number plural)
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :undergoer (s24a2 / area
+                    :refer-number singular)))
+        :modal-strength MS-affirmative
+        :aspect state
+        :ARG1 (s24h / helicopter
+            :mod (s24m / military)
+            :refer-number plural))
+    :ARG2 (s24c2 / cease
+        :OBLIQUE (s24n / nightfall
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :cause (s24h3 / have
+            :actor (s24a3 / aircraft
+                :refer-number singular)
+            :undergoer (s24c3 / capabilities.
+                :mod (s24f2 / fly-night
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s24f3 / FILL))
+                :refer-number plural)
+            :modal-strength MS-negative
+            :aspect ASP)
+        :actor (s24f / flight
+            :refer-number plural)))
+
+# alignment:
+s24f3: 0-0
+s24m: 1-1
+s24h: 2-2
+s24h4: 3-3
+s24a: 4-4
+s24r: 6-6
+s24a2: 7-8
+s24c: 9-9, 11-11
+s24h2: 10-10
+s24b: 12-12
+s24f: 13-14
+s24c2: 15-15
+s24n: 16-17
+s24h3: 18-18, 21-21, 23-23
+s24a3: 19-20
+s24f2: 26-26
+s24c3: 27-27
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 25
+# :: snt25
+Index: 1      2    3 4       5         6     7  8   9         10     11 12     13  14   15   16 17  18       19      20    21 22       23  24       25
+Words: Lerias said a smaller landslide later in the afternoon caused no damage but left many of the rescuers worried about a  possible new disaster .
+Sentence: None
+
+# sentence level graph:
+(s25s / say
+    :actor (s25n3 / NE-TYPE
+        :name (s25n4 / name
+            :op1 "Lerias"))
+    :theme (s25b / but-91
+        :ARG1 (s25c / cause
+            :manner (s25l2 / late
+                :ARG2-of (s25h / have-degree-91
+                    :ARG3 (s25m2 / more)
+                    :modal-strength MS-affirmative
+                    :aspect state)
+                :OBLIQUE (s25a / afternoon
+                    :refer-number singular))
+            :modal-strength full-affirmative
+            :aspect ASP
+            :actor (s25l / landslide
+                :mod (s25s2 / small)
+                :refer-number singular)
+            :undergoer (s25d / damage
+                :mod (s25n / no)
+                :refer-number singular))
+        :ARG2 (s25l3 / leave
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s25f / FILL
+                :refer-number singular)
+            :undergoer (s25m / many
+                :OBLIQUE (s25r / rescuer
+                    :refer-number plural)
+                :refer-number FILL)
+            :theme (s25w / worried
+                :OBLIQUE (s25d2 / disaster
+                    :mod (s25n2 / new)
+                    :mod (s25p / possible)
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s25n4: 0-0
+s25f: 0-0
+s25m2: 0-0
+s25h: 0-0
+s25n3: 1-1
+s25s: 2-2
+s25l: 3-3, 5-5
+s25s2: 4-4
+s25l2: 6-6
+s25a: 7-9
+s25c: 10-10
+s25n: 11-11
+s25d: 12-12
+s25b: 13-13
+s25l3: 14-14
+s25m: 15-15
+s25r: 16-18
+s25w: 19-19
+s25d2: 20-21, 24-24
+s25p: 22-22
+s25n2: 23-23
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 26
+# :: snt26
+Index: 1      2      3      4   5        6     7 8    9 10       11  12   13   14 15 16      17 18  19    20
+Words: Relief groups called for drinking water , food , blankets and body bags to be brought to the scene .
+Sentence: None
+
+# sentence level graph:
+(s26c / call
+    :actor (s26g / group
+        :mod (s26r / relief
+            :refer-number singular)
+        :refer-number plural)
+    :theme (s26b4 / bring
+        :OBLIQUE (s26s / scene
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :OBLIQUE (s26a / and
+        :op1 (s26w / water
+            :refer-number singular
+            :mod (s26d / drink
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s26f2 / FILL)))
+        :op2 (s26f / food
+            :refer-number singular)
+        :op3 (s26b / blanket
+            :refer-number plural)
+        :op4 (s26b3 / bag
+            :refer-number plural
+            :mod (s26b2 / body
+                :refer-number singular)))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s26f2: 0-0
+s26r: 1-1
+s26g: 2-2
+s26c: 3-3
+s26w: 4-4, 6-6
+s26d: 5-5
+s26a: 7-7
+s26f: 8-8
+s26b: 10-10
+s26b2: 12-12
+s26b3: 13-13
+s26b4: 15-16
+s26s: 17-19
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 27
+# :: snt27
+Index: 1          2     3      4   5     6    7  8 9     10        11   12    13        14   15  16      17 18  19   20 21    22 23      24         25  26    27   28 29  30          31   32
+Words: Provincial board member Eva Dumol said in a radio interview that heavy equipment that was already in the area to clear up earlier landslides was being sent to the Guinasaugon area .
+Sentence: None
+
+# sentence level graph:
+(s27s / say
+    :actor (s27n / NE-TYPE
+        :mod (s27b / board
+            :refer-number singular)
+        :mod (s27p / provincial)
+        :refer-number singular
+        :name (s27n2 / name
+            :op1 "member"
+            :op2 "Eva"))
+    :theme (s27s2 / send
+        :OBLIQUE (s27a3 / area
+            :mod (s27n3 / NE-TYPE
+                :name (s27n4 / name
+                    :op1 "Guinasaugon"))
+            :refer-number singular)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :undergoer (s27e / equipment
+            :mod (s27h / heavy)
+            :refer-number singular
+            :ARG1-of (s27c2 / COPULAR-CONSTRUCTION
+                :ARG2 (s27a2 / area
+                    :manner (s27a / already)
+                    :refer-number singular
+                    :ADVCL (s27c / clear-up
+                        :actor (s27f / FILL)
+                        :undergoer (s27l / landslide
+                            :mod (s27e2 / early)
+                            :refer-number plural)
+                        :modal-strength MS-affirmative
+                        :aspect ASP))
+                :modal-strength MS-affirmative
+                :aspect state)))
+    :OBLIQUE (s27i / interview
+        :mod (s27r / radio
+            :refer-number singular)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s27f: 0-0
+s27n2: 0-0
+s27n4: 0-0
+s27p: 1-1
+s27b: 2-2
+s27n: 3-3
+s27s: 6-6
+s27i: 7-8, 10-10
+s27r: 9-9
+s27s2: 11-11, 25-27
+s27h: 12-12
+s27e: 13-13
+s27c2: 15-15
+s27a: 16-16
+s27a2: 17-19
+s27c: 21-21
+s27e2: 23-23
+s27l: 24-24
+s27a3: 28-29, 31-31
+s27n3: 30-30
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 28
+# :: snt28
+Index: 1    2    3     4      5    6      7  8 9        10    11  12       13 14    15 16       17
+Words: More than 5,000 people were killed in a combined flood and mudslide on Leyte in November 1991.
+Sentence: None
+
+# sentence level graph:
+(s28k / kill
+    :undergoer (s28p / person
+        :refer-number plural
+        :quant 5,000)
+    :OBLIQUE (s28a / and
+        :op1 (s28f / flood
+            :refer-number singular
+            :mod (s28n / NE-TYPE
+                :name (s28n2 / name
+                    :op1 "Leyte"))
+            :mod (s28c / combine
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s28m / mudslide
+            :refer-number singular))
+    :OBLIQUE (s28n3 / NE-TYPE
+        :mod (s28x / 1991.)
+        :name (s28n4 / name
+            :op1 "November"))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s28n2: 0-0
+s28n4: 0-0
+s28p: 4-4
+s28k: 5-6
+s28f: 7-8, 10-10
+s28c: 9-9
+s28a: 11-11
+s28m: 12-12
+s28n: 13-14
+s28n3: 15-16
+s28x: 17-17
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 29
+# :: snt29
+Index: 1       2    3  4     5  6   7     8
+Words: Lindsay left in order to eat lunch .
+Sentence: None
+
+# sentence level graph:
+(s29l / leave
+    :actor (s29n / NE-TYPE
+        :name (s29n2 / name
+            :op1 "Lindsay"))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s29e / eat
+        :actor (s29f / FILL)
+        :undergoer (s29l2 / lunch
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s29n2: 0-0
+s29f: 0-0
+s29n: 1-1
+s29l: 2-2
+s29e: 3-3, 6-6
+s29l2: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 30
+# :: snt30
+Index: 1  2  3     4 5     6     7     8   9      10
+Words: If it rains , Alana won't water the plants .
+Sentence: None
+
+# sentence level graph:
+(s30w / water
+    :actor (s30n / NE-TYPE
+        :name (s30n2 / name
+            :op1 "Alana"))
+    :undergoer (s30p / plant
+        :refer-number plural)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :condition (s30r / rain
+        :actor (s30t / thing
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s30n2: 0-0
+s30r: 1-1, 3-3
+s30t: 2-2
+s30n: 5-5
+s30w: 6-7
+s30p: 8-9
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 31
+# :: snt31
+Index: 1      2    3      4       5     6   7   8     9    10 11   12   13    14     15
+Words: Edmund Pope tasted freedom today for the first time in more than eight months .
+Sentence: None
+
+# sentence level graph:
+(s31t / taste
+    :actor (s31n / NE-TYPE
+        :name (s31n2 / name
+            :op1 "Edmund"
+            :op2 "Pope"))
+    :undergoer (s31f / freedom
+        :refer-number singular)
+    :OBLIQUE (s31t2 / today
+        :refer-number singular)
+    :OBLIQUE (s31m / month
+        :refer-number plural
+        :quant 8)
+    :OBLIQUE (s31t3 / time
+        :mod (s31f2 / first)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s31n2: 0-0
+s31n: 1-1
+s31t: 3-3
+s31f: 4-4
+s31t2: 5-5
+s31t3: 6-7, 9-9
+s31f2: 8-8
+s31m: 10-10, 14-14
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 32
+# :: snt32
+Index: 1    2  3   4        5           6   7   8         9    10   11 12     13      14  15        16 17 18    19 20 21      22     23
+Words: Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a  Russian prison .
+Sentence: None
+
+# sentence level graph:
+(s32i / identity-91
+    :ARG1 (s32n / NE-TYPE
+        :name (s32n2 / name
+            :op1 "Pope"))
+    :ARG2 (s32b / businessman
+        :mod (s32a / American)
+        :refer-number singular
+        :undergoer-of (s32a2 / and
+            :op1 (s32c / convict
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :OBLIQUE (s32w / week
+                    :mod (s32l / last)
+                    :refer-number singular)
+                :OBLIQUE (s32c2 / charge
+                    :mod (s32s / spying
+                        :refer-number singular)
+                    :refer-number plural))
+            :op2 (s32s2 / sentence
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :OBLIQUE (s32y / year
+                    :mod (s32p / prison
+                        :mod (s32r / Russian))
+                    :refer-number plural
+                    :quant 20))))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s32n2: 0-0
+s32n: 1-1
+s32i: 2-2
+s32b: 3-3, 5-5
+s32a: 4-4
+s32c: 7-8
+s32l: 9-9
+s32w: 10-10
+s32c2: 11-11, 13-13
+s32s: 12-12
+s32a2: 14-14
+s32s2: 15-15
+s32y: 16-16, 18-18
+s32p: 19-20, 22-22
+s32r: 21-21
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 33
+# :: snt33
+Index: 1  2      3   4          5
+Words: He denied any wrongdoing .
+Sentence: None
+
+# sentence level graph:
+(s33d / deny
+    :actor (s33p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s33w / wrongdoing
+        :mod (s33a / any)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s33p: 1-1
+s33d: 2-2
+s33a: 3-3
+s33w: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 34
+# :: snt34
+Index: 1       2         3        4     5        6   7   8      9       10
+Words: Russian President Vladimir Putin pardoned him for health reasons .
+Sentence: None
+
+# sentence level graph:
+(s34p / pardon
+    :actor (s34n / NE-TYPE
+        :mod (s34r / Russian)
+        :name (s34n2 / name
+            :op1 "President"
+            :op2 "Vladimir"
+            :op3 "Putin"))
+    :undergoer (s34p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s34r2 / reason
+        :mod (s34h / health
+            :refer-number singular)
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s34n2: 0-0
+s34r: 1-1
+s34n: 2-2
+s34p: 5-5
+s34p2: 6-6
+s34r2: 7-7, 9-9
+s34h: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 35
+# :: snt35
+Index: 1    2   3     4  5   6    7        8    9  10       11 12      13
+Words: Pope was flown to the U.S. military base at Ramstein ,  Germany .
+Sentence: None
+
+# sentence level graph:
+(s35f / flow
+    :undergoer (s35n / NE-TYPE
+        :name (s35n2 / name
+            :op1 "Pope"))
+    :OBLIQUE (s35b / base
+        :mod (s35m / military)
+        :mod (s35n3 / NE-TYPE
+            :name (s35n4 / name
+                :op1 "U.S."))
+        :mod (s35n5 / NE-TYPE
+            :name (s35n6 / name
+                :op1 "Ramstein")
+            :ARG1-of (s35i / identity-91
+                :ARG2 (s35n7 / NE-TYPE
+                    :name (s35n8 / name
+                        :op1 "Germany"))
+                :modal-strength MS-affirmative
+                :aspect state))
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s35n4: 0-0
+s35n6: 0-0
+s35n8: 0-0
+s35n2: 0-0
+s35i: 0-0
+s35n: 1-1
+s35f: 2-3
+s35b: 4-5, 8-8
+s35n3: 6-6
+s35m: 7-7
+s35n5: 9-10
+s35n7: 12-12
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 36
+# :: snt36
+Index: 1  2    3     4   5    6       7    8  9   10      11     12    13     14 15      16   17   18  19   20     21
+Words: He will spend the next several days at the medical center there before he returns home with his wife Sherry .
+Sentence: None
+
+# sentence level graph:
+(s36s / spend
+    :actor (s36p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s36d / day
+        :mod (s36n / next)
+        :mod (s36s2 / several)
+        :refer-number plural)
+    :OBLIQUE (s36c / center
+        :mod (s36m / medical)
+        :refer-number singular)
+    :manner (s36t / there)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :temporal (s36r / return
+        :actor (s36p2 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :OBLIQUE (s36w / wife
+            :refer-number singular
+            :MOD-POSS (s36p3 / person
+                :refer-person 3rd
+                :refer-number singular)
+            :ARG1-of (s36i / identity-91
+                :ARG2 (s36n2 / NE-TYPE
+                    :name (s36n3 / name
+                        :op1 "Sherry"))
+                :modal-strength MS-affirmative
+                :aspect state))
+        :manner (s36h / home)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s36i: 0-0
+s36n3: 0-0
+s36p: 1-1
+s36s: 2-3
+s36d: 4-4, 7-7
+s36n: 5-5
+s36s2: 6-6
+s36c: 8-9, 11-11
+s36m: 10-10
+s36t: 12-12
+s36r: 13-13, 15-15
+s36p2: 14-14
+s36h: 16-16
+s36w: 17-17, 19-19
+s36p3: 18-18
+s36n2: 20-20
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 37
+# :: snt37
+Index: 1    2   3  4         5    6 7    8    9  10   11     12   13 14  15       16 17
+Words: Pope was in remission from a rare form of bone cancer when he was arrested in Russia.
+Sentence: None
+
+# sentence level graph:
+(s37c2 / COPULAR-CONSTRUCTION
+    :ARG1 (s37n / NE-TYPE
+        :name (s37n2 / name
+            :op1 "Pope"))
+    :ARG2 (s37r / remission
+        :mod (s37f / form
+            :mod (s37c / cancer
+                :mod (s37b / bone
+                    :refer-number singular))
+            :mod (s37r2 / rare))
+        :refer-number singular
+        :ADVCL (s37a / arrest
+            :undergoer (s37p / person
+                :refer-person 3rd
+                :refer-number singular)
+            :OBLIQUE (s37n3 / NE-TYPE
+                :name (s37n4 / name
+                    :op1 "Russia."))
+            :manner (s37w / when)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s37n2: 0-0
+s37n4: 0-0
+s37n: 1-1
+s37c2: 2-2
+s37r: 3-4
+s37f: 5-6, 8-8
+s37r2: 7-7
+s37c: 9-9, 11-11
+s37b: 10-10
+s37w: 12-12
+s37p: 13-13
+s37a: 14-15
+s37n3: 16-17
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 38
+# :: snt38
+Index: 1       2    3       4   5   6     7    8   9      10  11   12   13   14    15 16    17       18    19 20 21      22
+Words: Doctors will examine him for signs that the cancer may have come back while he [was] awaiting trial in a  Russian jail.
+Sentence: None
+
+# sentence level graph:
+(s38e / examine
+    :actor (s38d / doctor
+        :refer-number plural)
+    :undergoer (s38p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s38s / sign
+        :refer-number plural
+        :undergoer-of (s38c2 / come
+            :ADVCL (s38a / await
+                :actor (s38p2 / person
+                    :refer-person 3rd
+                    :refer-number singular)
+                :undergoer (s38t / trial
+                    :refer-number singular)
+                :OBLIQUE (s38j / jail.
+                    :mod (s38r / Russian)
+                    :refer-number singular)
+                :manner (s38x / [was])
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :actor (s38c / cancer
+                :refer-number singular)
+            :manner (s38b / back)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s38d: 1-1
+s38e: 2-3
+s38p: 4-4
+s38s: 5-6
+s38c2: 7-7, 10-12
+s38c: 8-9
+s38b: 13-13
+s38a: 14-14, 17-17
+s38p2: 15-15
+s38x: 16-16
+s38t: 18-18
+s38j: 19-20, 22-22
+s38r: 21-21
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 39
+# :: snt39
+Index: 1 2           3    4    5    6   7         8    9            10  11   12    13       14
+Words: A spokeswoman said that Pope was suffering from malnutrition and high blood pressure .
+Sentence: None
+
+# sentence level graph:
+(s39s2 / say
+    :actor (s39s / spokeswoman
+        :refer-number singular)
+    :theme (s39s3 / suffer
+        :OBLIQUE (s39a / and
+            :op1 (s39m / malnutrition
+                :refer-number singular)
+            :op2 (s39p / pressure
+                :refer-number singular
+                :mod (s39b / blood
+                    :refer-number singular)
+                :mod (s39h / high)))
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s39n / NE-TYPE
+            :name (s39n2 / name
+                :op1 "Pope")))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s39n2: 0-0
+s39s: 1-2
+s39s2: 3-3
+s39s3: 4-4, 6-7
+s39n: 5-5
+s39m: 8-9
+s39a: 10-10
+s39h: 11-11
+s39b: 12-12
+s39p: 13-13
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 40
+# :: snt40
+Index: 1    2
+Words: Okay .
+Sentence: None
+
+# sentence level graph:
+(s40o / okay)
+
+# alignment:
+s40o: 1-1
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 41
+# :: snt41
+Index: 1   2   3 4   5     6     7  8    9  10  11  12 13   14
+Words: U—m the s the scene opens up with um you see a  tree ,
+Sentence: None
+
+# sentence level graph:
+(s41o / open-up
+    :actor (s41s / scene
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s41s2 / see
+        :actor (s41p / person
+            :refer-person 2nd
+            :refer-number singular)
+        :undergoer (s41t / tree
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s41s: 4-5
+s41o: 6-6
+s41s2: 8-8, 11-11
+s41p: 10-10
+s41t: 12-13
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 42
+# :: snt42
+Index: 1 2   3
+Words: k kay ?
+Sentence: None
+
+# sentence level graph:
+(s42k / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 43
+# :: snt43
+Index: 1   2       3 4      5      6   7 8 9 10 11  12   13
+Words: And there's a ladder coming out . . o of the tree ,
+Sentence: None
+
+# sentence level graph:
+(s43l / ladder
+    :manner (s43t / theres)
+    :mod (s43c / come-out
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s43f / FILL)
+        :OBLIQUE (s43t2 / tree
+            :refer-number singular))
+    :refer-number singular)
+
+# alignment:
+s43f: 0-0
+s43t: 2-2
+s43l: 3-4
+s43c: 5-5
+s43t2: 10-12
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 44
+# :: snt44
+Index: 1   2       3 4   5  6   7   8  9   10     11
+Words: and there's a man at the top of the ladder ,
+Sentence: None
+
+# sentence level graph:
+(s44m / man
+    :manner (s44t / there)
+    :mod (s44t2 / top
+        :mod (s44l / ladder))
+    :refer-number singular)
+
+# alignment:
+s44t: 2-2
+s44m: 3-4
+s44t2: 5-7
+s44l: 8-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 45
+# :: snt45
+Index: 1   2     3   4   5   6
+Words: you can't see him yet .
+Sentence: None
+
+# sentence level graph:
+(s45s / see
+    :actor (s45p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s45p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s45y / yet)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s45p: 1-1
+s45s: 2-3
+s45p2: 4-4
+s45y: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 46
+# :: snt46
+Index: 1    2    3 4 5  6
+Words: A-nd then . . it shifts
+Sentence: None
+
+# sentence level graph:
+(s46s / shift
+    :actor (s46t2 / thing
+        :refer-number singular)
+    :manner (s46t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s46t: 2-2
+s46t2: 5-5
+s46s: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 47
+# :: snt47
+Index: 1   2   3   4   5
+Words: and you see him ,
+Sentence: None
+
+# sentence level graph:
+(s47s / see
+    :actor (s47p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s47p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s47p: 2-2
+s47s: 3-3
+s47p2: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 48
+# :: snt48
+Index: 1        2 3    4    5   6    7
+Words: plucking a pear from the tree .
+Sentence: None
+
+# sentence level graph:
+(s48p / pluck
+    :undergoer (s48p2 / pear
+        :refer-number singular)
+    :OBLIQUE (s48t / tree
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s48p: 1-1
+s48p2: 2-3
+s48t: 4-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 49
+# :: snt49
+Index: 1   2   3     4   5     6 7   8     9
+Words: And you watch him pluck a few pears ,
+Sentence: None
+
+# sentence level graph:
+(s49w / watch
+    :actor (s49p3 / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s49p4 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s49p / pluck
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :undergoer (s49p2 / pear
+            :mod (s49f / few)
+            :refer-number plural))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s49p3: 2-2
+s49w: 3-3
+s49p4: 4-4
+s49p: 5-5
+s49p2: 6-6, 8-8
+s49f: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 50
+# :: snt50
+Index: 1   2    3    4    5    6   7
+Words: and he'd drop them into his thing
+Sentence: None
+
+# sentence level graph:
+(s50d / drop
+    :actor (s50f / FILL)
+    :undergoer (s50p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :OBLIQUE (s50t / thing
+        :refer-number singular
+        :MOD-POSS (s50p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s50f: 0-0
+s50d: 2-3
+s50p: 4-4
+s50t: 5-5, 7-7
+s50p2: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 51
+# :: snt51
+Index: 1   2 3     4 5 6    7       8    9  10    11   12   13      14
+Words: but I don't . . he's wearing like an apron with huge pockets .
+Sentence: None
+
+# sentence level graph:
+(s51w / wear
+    :actor (s51f / FILL
+        :refer-number plural)
+    :OBLIQUE (s51a / apron
+        :mod (s51p / pocket
+            :mod (s51h / huge))
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :UNATTACHED (s51d / don't
+        :actor (s51p2 / person
+            :refer-person 1st
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s51p2: 2-2
+s51d: 3-3
+s51f: 6-6
+s51w: 7-7
+s51a: 8-10
+s51p: 11-11, 13-13
+s51h: 12-12
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 52
+# :: snt52
+Index: 1   2 3     4     5   6   7   8     9  10    11
+Words: But I don't think you see the apron at first .
+Sentence: None
+
+# sentence level graph:
+(s52t / think
+    :actor (s52p / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s52s / see
+        :OBLIQUE (s52f / first
+            :refer-number FILL)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s52p2 / person
+            :refer-person 2nd
+            :refer-number singular)
+        :undergoer (s52a / apron
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s52p: 2-2
+s52t: 3-4
+s52p2: 5-5
+s52s: 6-6
+s52a: 7-8
+s52f: 9-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 53
+# :: snt53
+Index: 1 2     3    4  5      6         7  8   9
+Words: I don't know if that's important or not .
+Sentence: None
+
+# sentence level graph:
+(s53k / know
+    :actor (s53p / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s53o / or
+        :op1 (s53h / have-mod-91
+            :modal-strength MS-affirmative
+            :aspect state
+            :ARG1 (s53f / FILL
+                :refer-number singular)
+            :ARG2 (s53i / important
+                :modal-strength MS-negative
+                :aspect ASP))
+        :op2 (s53n / not))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s53h: 0-0
+s53p: 1-1
+s53k: 2-3
+s53i: 4-4, 6-6
+s53f: 5-5
+s53o: 7-7
+s53n: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 54
+# :: snt54
+Index: 1    2   3   4    5  6    7    8   9  10  11   12
+Words: A-nd u-h and then he gets down out of the tree ,
+Sentence: None
+
+# sentence level graph:
+(s54g / get-down
+    :actor (s54p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s54t2 / tree
+        :refer-number singular)
+    :manner (s54t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s54t: 4-4
+s54p: 5-5
+s54g: 6-6
+s54t2: 8-8, 10-11
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 55
+# :: snt55
+Index: 1   2  3     4   5   6     7    8   9
+Words: and he dumps all his pears into the basket
+Sentence: None
+
+# sentence level graph:
+(s55d / dump
+    :actor (s55p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s55p / pear
+        :refer-number plural
+        :MOD-POSS (s55p3 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :quant (s55a / all))
+    :OBLIQUE (s55b / basket
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s55p2: 2-2
+s55d: 3-3
+s55a: 4-4
+s55p3: 5-5
+s55p: 6-6
+s55b: 7-9
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 56
+# :: snt56
+Index: 1   2   3        4    5
+Words: and the basket's full ,
+Sentence: None
+
+# sentence level graph:
+(s56h / have-mod-91
+    :ARG1 (s56b / basket
+        :refer-number plural)
+    :ARG2 (s56f / full)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s56h: 0-0
+s56b: 2-3
+s56f: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 57
+# :: snt57
+Index: 1   2   3  4   5     6     7    8  9   10    11
+Words: and one of the pears drops down to the floor ,
+Sentence: None
+
+# sentence level graph:
+(s57d / drop-down
+    :actor (s57o / one
+        :mod (s57p / pear))
+    :OBLIQUE (s57f / floor
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s57o: 2-2
+s57p: 3-5
+s57d: 6-6
+s57f: 8-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 58
+# :: snt58
+Index: 1   2  3     4  5  6
+Words: and he picks it up ,
+Sentence: None
+
+# sentence level graph:
+(s58p / pick-up
+    :actor (s58p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s58t / thing
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s58p2: 2-2
+s58p: 3-3
+s58t: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 59
+# :: snt59
+Index: 1   2  3     4   5        6   7
+Words: and he takes his kerchief off ,
+Sentence: None
+
+# sentence level graph:
+(s59t / take-off
+    :actor (s59p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s59k / kerchief
+        :refer-number singular
+        :MOD-POSS (s59p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s59p: 2-2
+s59t: 3-3
+s59p2: 4-4
+s59k: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 60
+# :: snt60
+Index: 1   2  3     4  5   6
+Words: and he wipes it off ,
+Sentence: None
+
+# sentence level graph:
+(s60w / wipe-off
+    :actor (s60p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s60t / thing
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s60p: 2-2
+s60w: 3-3
+s60t: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 61
+# :: snt61
+Index: 1   2      3  4  5  6   7      8     9  10   11   12
+Words: and places it in in the basket which is very full .
+Sentence: None
+
+# sentence level graph:
+(s61p / place-in
+    :actor (s61f2 / FILL
+        :refer-number singular)
+    :undergoer (s61t / thing
+        :refer-number singular)
+    :OBLIQUE (s61b / basket
+        :refer-number singular
+        :ARG1-of (s61h / have-mod-91
+            :ARG2 (s61f / full
+                :manner (s61v / very))
+            :modal-strength MS-affirmative
+            :aspect state))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s61f2: 0-0
+s61p: 2-2
+s61t: 3-3
+s61b: 5-7
+s61h: 9-9
+s61v: 10-10
+s61f: 11-11
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 62
+# :: snt62
+Index: 1      2   3  4    5   6  7   8     9     10
+Words: That's why it fell off in the first place .
+Sentence: None
+
+# sentence level graph:
+(s62c / COPULAR-CONSTRUCTION
+    :ARG1 (s62f3 / FILL
+        :refer-number singular)
+    :ARG2 (s62w / why
+        :ADVCL (s62f / fall-off
+            :actor (s62t / thing
+                :refer-number singular)
+            :OBLIQUE (s62p / place
+                :mod (s62f2 / first)
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s62c: 0-0
+s62f3: 1-1
+s62w: 2-2
+s62t: 3-3
+s62f: 4-4
+s62p: 6-7, 9-9
+s62f2: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 63
+# :: snt63
+Index: 1     2    3    4  5      6    7  8   9      10
+Words: A--nd u--m then he climbs back up the ladder ,
+Sentence: None
+
+# sentence level graph:
+(s63c / climb
+    :actor (s63p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s63l / ladder
+        :refer-number singular)
+    :manner (s63b / back)
+    :manner (s63t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s63t: 3-3
+s63p: 4-4
+s63c: 5-5
+s63b: 6-6
+s63l: 7-9
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 64
+# :: snt64
+Index: 1   2  3   4  5 6 7      8       9     10    11
+Words: and he and he . . starts picking pears again .
+Sentence: None
+
+# sentence level graph:
+(s64s / start
+    :actor (s64a2 / and
+        :op1 (s64p3 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :op2 (s64p4 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :theme (s64p / pick
+        :manner (s64a / again)
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :undergoer (s64p2 / pear
+            :refer-number plural))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s64p3: 2-2
+s64a2: 3-3
+s64p4: 4-4
+s64s: 7-7
+s64p: 8-8
+s64p2: 9-9
+s64a: 10-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 65
+# :: snt65
+Index: 1   2    3     4    5  6  7   8
+Words: And then while he's up in the ladder,
+Sentence: None
+
+# sentence level graph:
+(s65c / COPULAR-CONSTRUCTION
+    :ARG1 (s65f / FILL
+        :refer-number plural)
+    :ARG2 (s65u / up
+        :OBLIQUE (s65l / ladder,
+            :refer-number singular)
+        :manner (s65t / then))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s65c: 0-0
+s65t: 2-2
+s65u: 3-3, 5-5
+s65f: 4-4
+s65l: 6-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 66
+# :: snt66
+Index: 1     2   3  4  5     6    7  8  9   10     11
+Words: let's see is it while he's up in the ladder ?
+Sentence: None
+
+# sentence level graph:
+(s66s / see
+    :actor (s66t / thing
+        :refer-number singular)
+    :actor (s66l / let
+        :refer-number plural)
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :ADVCL (s66f / FILL
+        :OBLIQUE (s66l2 / ladder
+            :refer-number singular)
+        :manner (s66u / up)
+        :refer-number plural
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :COPULA (s66b / be)
+    :mode imperative)
+
+# alignment:
+s66l: 1-1
+s66s: 2-2
+s66b: 3-3
+s66t: 4-4
+s66f: 5-6
+s66u: 7-7
+s66l2: 8-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 67
+# :: snt67
+Index: 1  2 3 4  5      6
+Words: Or . . or before .
+Sentence: None
+
+# sentence level graph:
+(s67b / before)
+
+# alignment:
+s67b: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 68
+# :: snt68
+Index: 1   2      3
+Words: U—m anyway ,
+Sentence: None
+
+# sentence level graph:
+(s68u / u—m)
+
+# alignment:
+s68u: 1-1
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 69
+# :: snt69
+Index: 1 2   3     4  5       6 7    8
+Words: a guy comes by leading a goat .
+Sentence: None
+
+# sentence level graph:
+(s69c / come
+    :actor (s69g / guy
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s69l / lead
+        :undergoer (s69g2 / goat
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s69g: 1-2
+s69c: 3-3
+s69l: 4-5
+s69g2: 6-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 70
+# :: snt70
+Index: 1   2   3      4      5   6 7 8   9    10    11   12 13   14    15
+Words: And the goat's aaarrr but . . and they don't talk to each other ,
+Sentence: None
+
+# sentence level graph:
+(s70t / talk
+    :actor (s70g / goat
+        :refer-number plural)
+    :actor (s70p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :OBLIQUE (s70f / FILL)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s70g: 2-3
+s70p: 9-9
+s70t: 10-11
+s70f: 12-13
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 71
+# :: snt71
+Index: 1    2     3 4 5 6 7     8     9    10   11   12 13   14    15
+Words: they don't e . . I don't think they even look at each other ,
+Sentence: None
+
+# sentence level graph:
+(s71t / think
+    :actor (s71p2 / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s71d / don
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s71p / person
+            :refer-person 3rd
+            :refer-number plural))
+    :theme (s71l / look
+        :OBLIQUE (s71f / FILL)
+        :manner (s71e / even)
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s71p3 / person
+            :refer-person 3rd
+            :refer-number plural))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s71p: 1-1
+s71d: 2-2
+s71p2: 6-6
+s71t: 7-8
+s71p3: 9-9
+s71e: 10-10
+s71l: 11-11
+s71f: 12-13
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 72
+# :: snt72
+Index: 1   2 3 4   5   6 7 8     9  10
+Words: and . . the guy . . walks by .
+Sentence: None
+
+# sentence level graph:
+(s72w / walk-by
+    :actor (s72f / FILL
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s72f: 0-0
+s72w: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 73
+# :: snt73
+Index: 1   2   3     4   5    6
+Words: And you watch the goat ,
+Sentence: None
+
+# sentence level graph:
+(s73w / watch
+    :actor (s73p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s73g / goat
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s73p: 2-2
+s73w: 3-3
+s73g: 4-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 74
+# :: snt74
+Index: 1            2   3   4   5
+Words: disappearing all the way ,
+Sentence: None
+
+# sentence level graph:
+(s74d / disappear
+    :OBLIQUE (s74w / way
+        :refer-number singular
+        :quant (s74a / all))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s74d: 1-1
+s74a: 2-2
+s74w: 3-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 75
+# :: snt75
+Index: 1 2   3    4    5      6    7  8   9   10 11  12   13
+Words: ? and then then you're back to the man in the tree .
+Sentence: None
+
+# sentence level graph:
+(s75y / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 76
+# :: snt76
+Index: 1   2    3  4     5  6   7    8
+Words: And he's up there in the tree .
+Sentence: None
+
+# sentence level graph:
+(s76h / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 77
+# :: snt77
+Index: 1   2    3          4    5    6  7     8
+Words: And then definitely when he's up there ,
+Sentence: None
+
+# sentence level graph:
+(s77c / COPULAR-CONSTRUCTION
+    :ARG1 (s77f / FILL
+        :refer-number plural)
+    :ARG2 (s77t2 / there
+        :manner (s77w / when)
+        :manner (s77d / definitely)
+        :manner (s77t / then)
+        :manner (s77u / up))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s77c: 0-0
+s77t: 2-2
+s77d: 3-3
+s77w: 4-4
+s77f: 5-5
+s77u: 6-6
+s77t2: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 78
+# :: snt78
+Index: 1 2 3 4   5     6  7  8 9       10
+Words: . . a kid comes by on a bicycle .
+Sentence: None
+
+# sentence level graph:
+(s78c / come-by
+    :actor (s78k / kid
+        :refer-number singular)
+    :OBLIQUE (s78b / bicycle
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s78k: 3-4
+s78c: 5-5
+s78b: 7-9
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 79
+# :: snt79
+Index: 1    2   3         4     5   6    7   8    9
+Words: From the direction where the goat man left ,
+Sentence: None
+
+# sentence level graph:
+(s79d / direction
+    :refer-number singular
+    :manner-of (s79l / leave
+        :actor (s79m / man
+            :mod (s79g / goat
+                :refer-number singular)
+            :refer-number singular)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s79d: 1-3
+s79m: 5-5, 7-7
+s79g: 6-6
+s79l: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 80
+# :: snt80
+Index: 1    2
+Words: okay ?
+Sentence: None
+
+# sentence level graph:
+(s80o / okay)
+
+# alignment:
+s80o: 1-1
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 81
+# :: snt81
+Index: 1     2 3 4    5   6         7   8   9   10  11  12  13
+Words: A--nd . . u--m the bicycle's way too big for the kid .
+Sentence: None
+
+# sentence level graph:
+(s81h / have-mod-91
+    :ARG1 (s81b / bicycle
+        :refer-number plural)
+    :ARG2 (s81b2 / big
+        :OBLIQUE (s81k / kid
+            :refer-number singular)
+        :manner (s81t / too)
+        :manner (s81w / way))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s81h: 0-0
+s81b: 5-6
+s81w: 7-7
+s81t: 8-8
+s81b2: 9-9
+s81k: 10-12
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 82
+# :: snt82
+Index: 1   2      3   4   5     6       7
+Words: I'm giving you all these details .
+Sentence: None
+
+# sentence level graph:
+(s82g / give
+    :undergoer (s82d / detail
+        :mod (s82t / this)
+        :refer-number plural
+        :quant (s82a / all))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s82g: 1-2
+s82a: 4-4
+s82t: 5-5
+s82d: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 83
+# :: snt83
+Index: 1 2     3    4  5   6    7
+Words: I don't know if you want them.
+Sentence: None
+
+# sentence level graph:
+(s83k / know
+    :actor (s83p / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s83w / want
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s83p2 / person
+            :refer-person 2nd
+            :refer-number singular)
+        :undergoer (s83f / FILL
+            :refer-number plural))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s83p: 1-1
+s83k: 2-3
+s83w: 4-4, 6-6
+s83p2: 5-5
+s83f: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 84
+# :: snt84
+Index: 1   2   3 4 5   6      7   8      9   10  11      12 13    14 15    16   17   18  19    20 21  22    23
+Words: U—m the . . the reason I'm giving you the details is cause I  don't know what the point of the movie was.
+Sentence: None
+
+# sentence level graph:
+(s84h / have-identity-91
+    :actor (s84p2 / person
+        :refer-person 1st
+        :refer-number singular)
+    :undergoer (s84f / FILL
+        :undergoer-of (s84c / COPULAR-CONSTRUCTION
+            :ARG1 (s84p / point
+                :mod (s84m / movie)
+                :refer-number singular)
+            :ARG2 (s84b / be)
+            :modal-strength MS-affirmative
+            :aspect state))
+    :ARG1 (s84r / reason
+        :mod (s84g / give
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s84i / I'm)
+            :undergoer (s84d / detail
+                :refer-number plural))
+        :refer-number singular)
+    :ARG2 (s84k / know
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :ADVCL (s84d2 / don
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s84c: 0-0
+s84r: 5-6
+s84i: 7-7
+s84g: 8-8
+s84d: 10-11
+s84h: 12-12
+s84k: 13-13, 16-16
+s84p2: 14-14
+s84d2: 15-15
+s84f: 17-17
+s84p: 18-19
+s84m: 20-22
+s84b: 23-23
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 85
+# :: snt85
+Index: 1
+Words: Okay?
+Sentence: None
+
+# sentence level graph:
+(s85o / okay?)
+
+# alignment:
+s85o: 1-1
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 86
+# :: snt86
+Index: 1  2     3   4   5   6      7       8         9    10     11    12 13
+Words: So maybe you can see {laugh begins} something that {laugh ends} I  didn't.
+Sentence: None
+
+# sentence level graph:
+(s86s / see
+    :actor (s86p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s86f / FILL
+        :mod (s86s2 / something)
+        :refer-number singular
+        :actor-of (s86e / ends}
+            :manner (s86x / {laugh)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :theme (s86b / begins}-{laugh
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :manner (s86m / maybe)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s86s2: 0-0
+s86m: 2-2
+s86p: 3-3
+s86s: 4-5
+s86b: 7-7
+s86f: 8-8
+s86x: 10-10
+s86e: 11-11
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 87
+# :: snt87
+Index: 1
+Words: Okay?
+Sentence: None
+
+# sentence level graph:
+(s87o / okay?)
+
+# alignment:
+s87o: 1-1
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 88
+# :: snt88
+Index: 1    2 3 4   5     6  7  8 9       10
+Words: U--m g a kid comes by on a bicycle ,
+Sentence: None
+
+# sentence level graph:
+(s88c / come-by
+    :actor (s88k / kid
+        :refer-number singular)
+    :OBLIQUE (s88b / bicycle
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s88k: 3-4
+s88c: 5-5
+s88b: 7-9
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 89
+# :: snt89
+Index: 1 2 3  4     5
+Words: . . he stops ,
+Sentence: None
+
+# sentence level graph:
+(s89s / stop
+    :actor (s89p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s89p: 3-3
+s89s: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 90
+# :: snt90
+Index: 1  2    3   4   5    6
+Words: he gets off his bike ,
+Sentence: None
+
+# sentence level graph:
+(s90g / get
+    :actor (s90p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s90b / bike
+        :refer-number singular
+        :MOD-POSS (s90p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s90p: 1-1
+s90g: 2-2
+s90b: 3-3, 5-5
+s90p2: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 91
+# :: snt91
+Index: 1    2   3     4   5  6     7
+Words: u--m the movie was in color .
+Sentence: None
+
+# sentence level graph:
+(s91c2 / COPULAR-CONSTRUCTION
+    :ARG1 (s91m / movie
+        :refer-number singular)
+    :ARG2 (s91c / color
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s91m: 2-3
+s91c2: 4-4
+s91c: 5-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 92
+# :: snt92
+Index: 1   2   3     4   5     6     7
+Words: And the movie had sound track .
+Sentence: None
+
+# sentence level graph:
+(s92h / have
+    :actor (s92m / movie
+        :refer-number singular)
+    :undergoer (s92t / track
+        :mod (s92s / sound
+            :refer-number singular)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s92m: 2-3
+s92h: 4-4
+s92s: 5-5
+s92t: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 93
+# :: snt93
+Index: 1    2         3
+Words: It's important .
+Sentence: None
+
+# sentence level graph:
+(s93h / have-mod-91
+    :ARG1 (s93t / thing
+        :refer-number singular)
+    :ARG2 (s93i / important)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s93h: 0-0
+s93t: 1-1
+s93i: 2-2
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 94
+# :: snt94
+Index: 1   2    3   4  5   6     7     8       9    10 11 12   13
+Words: And then the mo the whole movie started with a  a  cock crowing.
+Sentence: None
+
+# sentence level graph:
+(s94s / start
+    :actor (s94m / movie
+        :mod (s94w / whole)
+        :refer-number singular)
+    :OBLIQUE (s94c2 / crowing.
+        :mod (s94c / cock
+            :refer-number singular)
+        :refer-number singular)
+    :manner (s94t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s94t: 2-2
+s94m: 5-5, 7-7
+s94w: 6-6
+s94s: 8-8
+s94c2: 9-11, 13-13
+s94c: 12-12
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 95
+# :: snt95
+Index: 1   2    3   4   5   6
+Words: And then you see /?/ .
+Sentence: None
+
+# sentence level graph:
+(s95s / see
+    :actor (s95p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :manner (s95t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s95t: 2-2
+s95p: 3-3
+s95s: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 96
+# :: snt96
+Index: 1      2
+Words: Anyway .
+Sentence: None
+
+# sentence level graph:
+(s96a / anyway)
+
+# alignment:
+s96a: 1-1
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 97
+# :: snt97
+Index: 1 2    3          4    5
+Words: I just remembered that .
+Sentence: None
+
+# sentence level graph:
+(s97r / remember
+    :actor (s97p / person
+        :refer-person 1st
+        :refer-number singular)
+    :undergoer (s97f / FILL
+        :refer-number singular)
+    :manner (s97j / just)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s97p: 1-1
+s97j: 2-2
+s97r: 3-3
+s97f: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 98
+# :: snt98
+Index: 1      2
+Words: Anyway ,
+Sentence: None
+
+# sentence level graph:
+(s98a / anyway)
+
+# alignment:
+s98a: 1-1
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 99
+# :: snt99
+Index: 1  2    3   4   5  6   7       8
+Words: so u--m the kid on the bicycle ,
+Sentence: None
+
+# sentence level graph:
+(s99k / kid
+    :mod (s99b / bicycle)
+    :refer-number singular)
+
+# alignment:
+s99k: 3-4
+s99b: 5-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 100
+# :: snt100
+Index: 1 2 3    4   5   6       7
+Words: . . gets off the bicycle ,
+Sentence: None
+
+# sentence level graph:
+(s100g / get
+    :actor (s100f / FILL
+        :refer-number singular)
+    :OBLIQUE (s100b / bicycle
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s100f: 0-0
+s100g: 3-3
+s100b: 4-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 101
+# :: snt101
+Index: 1 2     3  4  5     6  7   8       9  10    11
+Words: I think he he picks up the b—asket of pears ,
+Sentence: None
+
+# sentence level graph:
+(s101t / think
+    :actor (s101p3 / person
+        :refer-person 1st
+        :refer-number singular)
+    :theme (s101p / pick-up
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s101p5 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :actor (s101p4 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :undergoer (s101b / b—asket
+            :mod (s101p2 / pear)
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s101p3: 1-1
+s101t: 2-2
+s101p4: 3-3
+s101p5: 4-4
+s101p: 5-5
+s101b: 7-8
+s101p2: 9-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 102
+# :: snt102
+Index: 1   2  3    4  5  6   7       8
+Words: and he puts it on his bicycle ,
+Sentence: None
+
+# sentence level graph:
+(s102p / put
+    :actor (s102p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s102t / thing
+        :refer-number singular)
+    :OBLIQUE (s102b / bicycle
+        :refer-number singular
+        :MOD-POSS (s102p3 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s102p2: 2-2
+s102p: 3-3
+s102t: 4-4
+s102b: 5-5, 7-7
+s102p3: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 103
+# :: snt103
+Index: 1 2 3  4   5     6
+Words: . . on the front ?
+Sentence: None
+
+# sentence level graph:
+(s103f / front
+    :refer-number singular)
+
+# alignment:
+s103f: 3-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 104
+# :: snt104
+Index: 1   2  3     4   5
+Words: And he rides off .
+Sentence: None
+
+# sentence level graph:
+(s104r / ride-off
+    :actor (s104p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s104p: 2-2
+s104r: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 105
+# :: snt105
+Index: 1     2   3   4   5
+Words: A--nd you see him ,
+Sentence: None
+
+# sentence level graph:
+(s105s / see
+    :actor (s105p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s105p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s105p: 2-2
+s105s: 3-3
+s105p2: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 106
+# :: snt106
+Index: 1      2   3   4   5    6     7   8   9   10
+Words: riding off and the next scene you see him ,
+Sentence: None
+
+# sentence level graph:
+(s106a / and
+    :op1 (s106r / ride
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :manner (s106o / off))
+    :op2 (s106s2 / see
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s106p / person
+            :refer-person 2nd
+            :refer-number singular)
+        :undergoer (s106p2 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :OBLIQUE (s106s / scene
+            :mod (s106n / next)
+            :refer-number singular)))
+
+# alignment:
+s106r: 1-1
+s106o: 2-2
+s106a: 3-3
+s106s: 4-4, 6-6
+s106n: 5-5
+s106p: 7-7
+s106s2: 8-8
+s106p2: 9-9
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 107
+# :: snt107
+Index: 1    2  3 4  5 6        7
+Words: like at a at a distance ,
+Sentence: None
+
+# sentence level graph:
+(s107a / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 108
+# :: snt108
+Index: 1 2   3    4
+Words: a pan shot .
+Sentence: None
+
+# sentence level graph:
+(s108s / shot
+    :mod (s108p / pan
+        :refer-number singular)
+    :refer-number singular)
+
+# alignment:
+s108s: 1-1, 3-3
+s108p: 2-2
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 109
+# :: snt109
+Index: 1   2    3      4  5 6    7
+Words: And he's riding on a lane ,
+Sentence: None
+
+# sentence level graph:
+(s109r / ride
+    :actor (s109p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s109l / lane
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s109p: 2-2
+s109r: 3-3
+s109l: 4-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 110
+# :: snt110
+Index: 1      2  3 4       5   6    7   8   9    10
+Words: riding on a bicycle and they cro you know .
+Sentence: None
+
+# sentence level graph:
+(s110a / and
+    :op1 (s110r / ride
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :UNATTACHED (s110k / know
+            :actor (s110p2 / person
+                :refer-person 2nd
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :OBLIQUE (s110b / bicycle
+            :refer-number singular))
+    :op2 (s110c2 / COPULAR-CONSTRUCTION
+        :modal-strength MS-affirmative
+        :aspect state
+        :ARG1 (s110p / person
+            :refer-person 3rd
+            :refer-number plural)
+        :ARG2 (s110c / cro)))
+
+# alignment:
+s110c2: 0-0
+s110r: 1-1
+s110b: 2-4
+s110a: 5-5
+s110p: 6-6
+s110c: 7-7
+s110p2: 8-8
+s110k: 9-9
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 111
+# :: snt111
+Index: 1     2
+Words: Cross paths.
+Sentence: None
+
+# sentence level graph:
+(s111p / paths.
+    :mod (s111c / cross
+        :refer-number singular)
+    :refer-number plural)
+
+# alignment:
+s111c: 1-1
+s111p: 2-2
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 112
+# :: snt112
+Index: 1   2  3    4  5       6   7  8  9
+Words: And he kind of watches her go by .
+Sentence: None
+
+# sentence level graph:
+(s112w / watch
+    :actor (s112p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s112p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s112g / go
+        :manner (s112b / by)
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :manner (s112k / kind-of
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s112p: 2-2
+s112k: 3-3
+s112w: 5-5
+s112p2: 6-6
+s112g: 7-7
+s112b: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 113
+# :: snt113
+Index: 1   2 3 4       5    6        7   8
+Words: And . . because he's watching her ,
+Sentence: None
+
+# sentence level graph:
+(s113w / watch
+    :actor (s113f / FILL
+        :refer-number plural)
+    :undergoer (s113p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s113w: 4-4, 6-6
+s113f: 5-5
+s113p: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 114
+# :: snt114
+Index: 1  2    3  4     5      6   7   8     9   10
+Words: he when he turns around his hat flies off .
+Sentence: None
+
+# sentence level graph:
+(s114f / fly-off
+    :actor (s114p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s114t / turn
+        :actor (s114h / hat
+            :refer-number singular
+            :MOD-POSS (s114p3 / person
+                :refer-person 3rd
+                :refer-number singular))
+        :actor (s114p2 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :manner (s114w / when)
+        :manner (s114a / around)
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s114p: 1-1
+s114w: 2-2
+s114p2: 3-3
+s114t: 4-4
+s114a: 5-5
+s114p3: 6-6
+s114h: 7-7
+s114f: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 115
+# :: snt115
+Index: 1    2
+Words: Okay ?
+Sentence: None
+
+# sentence level graph:
+(s115o / okay)
+
+# alignment:
+s115o: 1-1
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 116
+# :: snt116
+Index: 1   2    3  4     5    6 7    8
+Words: And then he bumps into a rock .
+Sentence: None
+
+# sentence level graph:
+(s116b / bump
+    :actor (s116p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s116r / rock
+        :refer-number singular)
+    :manner (s116t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s116t: 2-2
+s116p: 3-3
+s116b: 4-4
+s116r: 5-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 117
+# :: snt117
+Index: 1     2 3 4    5     6    7
+Words: A--nd . . u--m falls down ,
+Sentence: None
+
+# sentence level graph:
+(s117f / fall-down
+    :actor (s117f2 / FILL
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s117f2: 0-0
+s117f: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 118
+# :: snt118
+Index: 1   2 3 4   5 6 7     8   9       10  11   12  13    14
+Words: and . . the . . pears all s--pray all over the place ,
+Sentence: None
+
+# sentence level graph:
+(s118s / s--pray
+    :actor (s118p / pear
+        :manner (s118a / all)
+        :refer-number plural)
+    :OBLIQUE (s118p2 / place
+        :manner (s118a2 / all)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s118p: 7-7
+s118a: 8-8
+s118s: 9-9
+s118a2: 10-10
+s118p2: 11-13
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 119
+# :: snt119
+Index: 1 2   3   4    5 6 7   8   9   10   11   12
+Words: ? and and then . . you see him fall down ,
+Sentence: None
+
+# sentence level graph:
+(s119s / see
+    :actor (s119p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s119p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s119f / fall
+        :manner (s119d / down)
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :manner (s119t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s119t: 4-4
+s119p: 7-7
+s119s: 8-8
+s119p2: 9-9
+s119f: 10-10
+s119d: 11-11
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 120
+# :: snt120
+Index: 1   2  3    4  5
+Words: and he gets up ,
+Sentence: None
+
+# sentence level graph:
+(s120g / get-up
+    :actor (s120p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s120p: 2-2
+s120g: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 121
+# :: snt121
+Index: 1   2       3       4   5
+Words: and brushes himself off ,
+Sentence: None
+
+# sentence level graph:
+(s121b / brush-off
+    :actor (s121f / FILL
+        :refer-number singular)
+    :undergoer (s121p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s121f: 0-0
+s121b: 2-2
+s121p: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 122
+# :: snt122
+Index: 1 2 3   4  5    6 7 8   9    10        11       12  13   14  15  16    17    18   19    20  21  22
+Words: . . and he goes . . you know {brushing gesture} and then you see three other boys about his age .
+Sentence: None
+
+# sentence level graph:
+(s122g / go
+    :actor (s122p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :UNATTACHED (s122a2 / and
+        :op1 (s122k / know
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s122p2 / person
+                :refer-person 2nd
+                :refer-number singular)
+            :undergoer (s122g2 / gesture}
+                :mod (s122x / {brush
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s122f / FILL))
+                :refer-number singular))
+        :op2 (s122s / see
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s122p3 / person
+                :refer-person 2nd
+                :refer-number singular)
+            :undergoer (s122b / boy
+                :mod (s122o / other)
+                :mod (s122a / age
+                    :MOD-POSS (s122p4 / person
+                        :refer-person 3rd
+                        :refer-number singular))
+                :refer-number plural
+                :quant 3)
+            :manner (s122t / then))))
+
+# alignment:
+s122f: 0-0
+s122p: 4-4
+s122g: 5-5
+s122p2: 8-8
+s122k: 9-9
+s122x: 10-10
+s122g2: 11-11
+s122a2: 12-12
+s122t: 13-13
+s122p3: 14-14
+s122s: 15-15
+s122o: 17-17
+s122b: 18-18
+s122a: 19-19, 21-21
+s122p4: 20-20
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 123
+# :: snt123
+Index: 1    2    3     4 5 6    7
+Words: He's like maybe . . what ,
+Sentence: None
+
+# sentence level graph:
+(s123h / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 124
+# :: snt124
+Index: 1   2  3         4
+Words: ten or something ?
+Sentence: None
+
+# sentence level graph:
+(s124o / or
+    :op1 (s124t / ten)
+    :op2 (s124f / FILL
+        :refer-number singular
+        :mod (s124s / something)))
+
+# alignment:
+s124s: 0-0
+s124t: 1-1
+s124o: 2-2
+s124f: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 125
+# :: snt125
+Index: 1 2 3      4
+Words: . . Twelve ?
+Sentence: None
+
+# sentence level graph:
+(s125t / twelve)
+
+# alignment:
+s125t: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 126
+# :: snt126
+Index: 1 2     3    4
+Words: I don't know .
+Sentence: None
+
+# sentence level graph:
+(s126k / know
+    :actor (s126p / person
+        :refer-person 1st
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s126p: 1-1
+s126k: 2-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 127
+# :: snt127
+Index: 1     2   3   4    5  6    7
+Words: A--nd and you look at them ,
+Sentence: None
+
+# sentence level graph:
+(s127l / look
+    :actor (s127p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :OBLIQUE (s127p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s127p: 3-3
+s127l: 4-4
+s127p2: 5-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 128
+# :: snt128
+Index: 1   2   3    4   5   6
+Words: and and they see him ,
+Sentence: None
+
+# sentence level graph:
+(s128s / see
+    :actor (s128p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s128p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s128p: 3-3
+s128s: 4-4
+s128p2: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 129
+# :: snt129
+Index: 1   2    3    4  5
+Words: and they come up ,
+Sentence: None
+
+# sentence level graph:
+(s129c / come
+    :actor (s129p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :manner (s129u / up)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s129p: 2-2
+s129c: 3-3
+s129u: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 130
+# :: snt130
+Index: 1    2       3      4        5
+Words: a-nd without saying anything ,
+Sentence: None
+
+# sentence level graph:
+(s130s / say
+    :undergoer (s130f / FILL
+        :mod (s130a / anything)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s130a: 0-0
+s130s: 2-3
+s130f: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 131
+# :: snt131
+Index: 1       2  3      4  5   6     7     8
+Words: there's no speech in the whole movie .
+Sentence: None
+
+# sentence level graph:
+(s131i / identity-91
+    :ARG1 (s131s / speech
+        :mod (s131m / movie
+            :mod (s131w / whole))
+        :mod (s131n / no)
+        :refer-number singular)
+    :ARG2 (s131f / FILL)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s131i: 0-0
+s131f: 1-1
+s131n: 2-2
+s131s: 3-3
+s131m: 4-5, 7-7
+s131w: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 132
+# :: snt132
+Index: 1       2      3        4
+Words: Without saying anything ,
+Sentence: None
+
+# sentence level graph:
+(s132s / say
+    :undergoer (s132f / FILL
+        :mod (s132a / anything)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s132a: 0-0
+s132s: 1-2
+s132f: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 133
+# :: snt133
+Index: 1    2 3 4    5 6 7    8   9 10 11  12  13    14   15 16  17
+Words: they . . u--m . . help him . .  put the pears back in the basket.
+Sentence: None
+
+# sentence level graph:
+(s133h / help
+    :actor (s133p4 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s133p5 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :mode imperative
+    :UNATTACHED (s133p / put
+        :mode imperative
+        :actor (s133p3 / person
+            :refer-person 2nd
+            :refer-number FILL)
+        :undergoer (s133p2 / pear
+            :refer-number plural)
+        :OBLIQUE (s133b2 / basket.
+            :refer-number singular)
+        :manner (s133b / back)
+        :modal-strength partial-affirmative
+        :aspect ASP))
+
+# alignment:
+s133p3: 0-0
+s133p4: 1-1
+s133h: 7-7
+s133p5: 8-8
+s133p: 11-11
+s133p2: 12-13
+s133b: 14-14
+s133b2: 15-17
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 134
+# :: snt134
+Index: 1    2    3     4    5    6   7     8
+Words: Only they don't wipe them off first .
+Sentence: None
+
+# sentence level graph:
+(s134w / wipe-off
+    :actor (s134p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s134p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :manner (s134f / first)
+    :manner (s134o / only)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s134o: 1-1
+s134p: 2-2
+s134w: 3-4
+s134p2: 5-5
+s134f: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 135
+# :: snt135
+Index: 1    2    3    4  5
+Words: Just pick them up ,
+Sentence: None
+
+# sentence level graph:
+(s135p / pick-up
+    :actor (s135p2 / person
+        :refer-person 2nd
+        :refer-number FILL)
+    :undergoer (s135p3 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :manner (s135j / just)
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :mode imperative)
+
+# alignment:
+s135p2: 0-0
+s135j: 1-1
+s135p: 2-2
+s135p3: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 136
+# :: snt136
+Index: 1 2 3   4    5    6  7
+Words: . . and pour them in .
+Sentence: None
+
+# sentence level graph:
+(s136p / pour-in
+    :actor (s136p2 / person
+        :refer-person 2nd
+        :refer-number FILL)
+    :undergoer (s136p3 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :mode imperative)
+
+# alignment:
+s136p2: 0-0
+s136p: 4-4
+s136p3: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 137
+# :: snt137
+Index: 1   2      3    4   5   6   7    8    9
+Words: And they-- help him get his bike u--p ,
+Sentence: None
+
+# sentence level graph:
+(s137h / help
+    :actor (s137p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s137p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s137g / get
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :undergoer (s137b / bike
+            :refer-number singular
+            :MOD-POSS (s137p3 / person
+                :refer-person 3rd
+                :refer-number singular)))
+    :modal-strength partial-affirmative
+    :aspect ASP
+    :mode imperative)
+
+# alignment:
+s137p: 2-2
+s137h: 3-3
+s137p2: 4-4
+s137g: 5-5
+s137p3: 6-6
+s137b: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 138
+# :: snt138
+Index: 1   2   3   4     5   6    7    8  9       10 11  12 13     14 15  16 17  18   19 20  21    22
+Words: and one kid takes the rock that he tripped on and he throws it off to the side of the roa—d ,
+Sentence: None
+
+# sentence level graph:
+(s138a / and
+    :op1 (s138t / take
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s138k / kid
+            :refer-number singular
+            :quant 1)
+        :undergoer (s138r / rock
+            :refer-number singular
+            :OBLIQUE-of (s138t2 / trip
+                :actor (s138p / person
+                    :refer-person 3rd
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP)))
+    :op2 (s138t3 / throw-off
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s138p2 / person
+            :refer-person 3rd
+            :refer-number singular)
+        :undergoer (s138t4 / thing
+            :refer-number singular)
+        :OBLIQUE (s138s / side
+            :mod (s138r2 / roa—d)
+            :refer-number singular)))
+
+# alignment:
+s138k: 3-3
+s138t: 4-4
+s138r: 5-6
+s138p: 8-8
+s138t2: 9-9
+s138a: 11-11
+s138p2: 12-12
+s138t3: 13-13
+s138t4: 14-14
+s138s: 16-18
+s138r2: 19-21
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 139
+# :: snt139
+Index: 1 2   3   4    5   6   7       8
+Words: ? and and they set him upright ,
+Sentence: None
+
+# sentence level graph:
+(s139s / set
+    :actor (s139p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s139p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s139u / upright)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :mode interrogative)
+
+# alignment:
+s139p: 4-4
+s139s: 5-5
+s139p2: 6-6
+s139u: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 140
+# :: snt140
+Index: 1 2 3   4    5 6 7   8    9  10 11 12  13   14   15 16    17   18    19  20    21  22
+Words: . . and they . . and then he .  .  you know they I  don't they don't say thank you ,
+Sentence: None
+
+# sentence level graph:
+(s140a / and
+    :op1 (s140p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :op2 (s140p3 / person
+        :refer-person 3rd
+        :refer-number singular
+        :UNATTACHED (s140k / know
+            :actor (s140p4 / person
+                :refer-person 2nd
+                :refer-number singular)
+            :undergoer (s140p5 / person
+                :refer-person 3rd
+                :refer-number plural)
+            :theme (s140d / don
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s140p6 / person
+                    :refer-person 1st
+                    :refer-number singular))
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :UNATTACHED (s140s / say
+                :actor (s140p7 / person
+                    :refer-person 3rd
+                    :refer-number plural)
+                :theme (s140t2 / thank
+                    :modal-strength full-affirmative
+                    :aspect ASP
+                    :actor (s140p / person
+                        :refer-person 1st
+                        :refer-number singular)
+                    :undergoer (s140p8 / person
+                        :refer-person 2nd
+                        :refer-number singular))
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :manner (s140t / then)))
+
+# alignment:
+s140p: 0-0
+s140p2: 4-4
+s140a: 7-7
+s140t: 8-8
+s140p3: 9-9
+s140p4: 12-12
+s140k: 13-13
+s140p5: 14-14
+s140p6: 15-15
+s140d: 16-16
+s140p7: 17-17
+s140s: 18-19
+s140t2: 20-20
+s140p8: 21-21
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 141
+# :: snt141
+Index: 1  2    3      4
+Words: he just splits .
+Sentence: None
+
+# sentence level graph:
+(s141s / split
+    :actor (s141p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s141j / just)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s141p: 1-1
+s141j: 2-2
+s141s: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 142
+# :: snt142
+Index: 1   2    3 4 5    6    7 8 9   10    11   12   13   14  15   16  17   18    19 20 21  22    23  24
+Words: And then . . they walk . . the three boys walk down the road and they see-- .  .  the kid's hat .
+Sentence: None
+
+# sentence level graph:
+(s142w / walk
+    :actor (s142p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :manner (s142t / then)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :UNATTACHED (s142a / and
+        :op1 (s142w2 / walk
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s142b / boy
+                :refer-number plural
+                :quant 3)
+            :OBLIQUE (s142r / road
+                :refer-number singular))
+        :op2 (s142c / COPULAR-CONSTRUCTION
+            :modal-strength MS-affirmative
+            :aspect state
+            :ARG1 (s142p2 / person
+                :refer-person 3rd
+                :refer-number plural)
+            :ARG2 (s142s / see-))
+        :op3 (s142h / hat
+            :refer-number singular
+            :mod (s142k / kid
+                :refer-number plural))))
+
+# alignment:
+s142c: 0-0
+s142t: 2-2
+s142p: 5-5
+s142w: 6-6
+s142b: 9-9, 11-11
+s142w2: 12-12
+s142r: 13-15
+s142a: 16-16
+s142p2: 17-17
+s142s: 18-18
+s142h: 21-21, 23-23
+s142k: 22-22
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 143
+# :: snt143
+Index: 1   2  3   4  5    6        7
+Words: And so one of them whistles .
+Sentence: None
+
+# sentence level graph:
+(s143w / whistle
+    :actor (s143o / one
+        :mod (s143p / person
+            :refer-person 3rd
+            :refer-number plural))
+    :manner (s143s / so)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s143s: 2-2
+s143o: 3-3
+s143p: 4-5
+s143w: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 144
+# :: snt144
+Index: 1   2   3   4  5   6    7     8      9
+Words: And the kid on the bike turns around ,
+Sentence: None
+
+# sentence level graph:
+(s144t / turn
+    :actor (s144k / kid
+        :mod (s144b / bike)
+        :refer-number singular)
+    :manner (s144a / around)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s144k: 2-3
+s144b: 4-6
+s144t: 7-7
+s144a: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 145
+# :: snt145
+Index: 1   2    3  4      5   6   7  8   9
+Words: and then he brings his hat to him ,
+Sentence: None
+
+# sentence level graph:
+(s145b / bring
+    :actor (s145p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s145h / hat
+        :refer-number singular
+        :MOD-POSS (s145p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :OBLIQUE (s145p3 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s145t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s145t: 2-2
+s145p: 3-3
+s145b: 4-4
+s145p2: 5-5
+s145h: 6-6
+s145p3: 7-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 146
+# :: snt146
+Index: 1   2   3 4   5  6   7    8     9   10    11   12    13  14  15   16      17  18  19 20 21    22    23 24    25   26  27
+Words: and the g guy on the bike gives the other kids gives the kid that returns his hat .  .  three pears to share with his buddies.
+Sentence: None
+
+# sentence level graph:
+(s146g3 / give
+    :actor (s146g2 / guy
+        :mod (s146b / bike)
+        :mod (s146g / g
+            :refer-number singular)
+        :refer-number singular)
+    :theme (s146g4 / give
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s146f / FILL
+            :refer-number singular)
+        :undergoer (s146k / kid
+            :refer-number singular
+            :actor-of (s146r / return
+                :undergoer (s146h / hat
+                    :refer-number singular
+                    :MOD-POSS (s146p2 / person
+                        :refer-person 3rd
+                        :refer-number singular))
+                :modal-strength MS-affirmative
+                :aspect ASP)))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :UNATTACHED (s146p / pear
+        :mod (s146s / share
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s146f2 / FILL)
+            :OBLIQUE (s146b2 / buddie.
+                :refer-number plural
+                :MOD-POSS (s146p3 / person
+                    :refer-person 3rd
+                    :refer-number singular)))
+        :refer-number plural
+        :quant 3))
+
+# alignment:
+s146f2: 0-0
+s146f: 0-0
+s146g2: 2-2, 4-4
+s146g: 3-3
+s146b: 5-7
+s146g3: 8-8
+s146g4: 12-12
+s146k: 13-14
+s146r: 16-16
+s146p2: 17-17
+s146h: 18-18
+s146p: 22-22
+s146s: 24-24
+s146b2: 25-25, 27-27
+s146p3: 26-26
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 147
+# :: snt147
+Index: 1    2   3    4  5      6
+Words: So-- and then he splits .
+Sentence: None
+
+# sentence level graph:
+(s147s / split
+    :actor (s147p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :manner (s147t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s147t: 3-3
+s147p: 4-4
+s147s: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 148
+# :: snt148
+Index: 1    2   3   4
+Words: With his hat ,
+Sentence: None
+
+# sentence level graph:
+(s148h / hat
+    :refer-number singular
+    :MOD-POSS (s148p / person
+        :refer-person 3rd
+        :refer-number singular))
+
+# alignment:
+s148h: 1-1, 3-3
+s148p: 2-2
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 149
+# :: snt149
+Index: 1    2   3     4
+Words: with his pears ,
+Sentence: None
+
+# sentence level graph:
+(s149p / pear
+    :refer-number plural
+    :MOD-POSS (s149p2 / person
+        :refer-person 3rd
+        :refer-number singular))
+
+# alignment:
+s149p: 1-1, 3-3
+s149p2: 2-2
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 150
+# :: snt150
+Index: 1          2
+Words: everything .
+Sentence: None
+
+# sentence level graph:
+(s150e / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 151
+# :: snt151
+Index: 1     2  3 4    5          6       7      8
+Words: A--nd um I just remembered another detail .
+Sentence: None
+
+# sentence level graph:
+(s151r / remember
+    :actor (s151p / person
+        :refer-person 1st
+        :refer-number singular)
+    :undergoer (s151d / detail
+        :mod (s151a / another)
+        :refer-number singular)
+    :manner (s151j / just)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s151p: 3-3
+s151j: 4-4
+s151r: 5-5
+s151a: 6-6
+s151d: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 152
+# :: snt152
+Index: 1      2  3     4   5    6
+Words: Before he meets the girl ?
+Sentence: None
+
+# sentence level graph:
+(s152m / meet
+    :actor (s152p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s152g / girl
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :mode interrogative)
+
+# alignment:
+s152m: 1-1, 3-3
+s152p: 2-2
+s152g: 4-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 153
+# :: snt153
+Index: 1   2  3   4     5
+Words: One of the pears ,
+Sentence: None
+
+# sentence level graph:
+(s153o / one
+    :mod (s153p / pear))
+
+# alignment:
+s153o: 1-1
+s153p: 2-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 154
+# :: snt154
+Index: 1 2 3    4 5     6    7      8    9    10
+Words: . . it's a bumpy road little dirt road ,
+Sentence: None
+
+# sentence level graph:
+(s154r2 / road
+    :mod (s154r / road
+        :refer-number singular)
+    :mod (s154l / little)
+    :mod (s154b / bumpy)
+    :mod (s154d / dirt
+        :refer-number singular)
+    :refer-number singular
+    :MOD-POSS (s154t / thing
+        :refer-number singular))
+
+# alignment:
+s154t: 3-3
+s154r2: 4-4, 9-9
+s154b: 5-5
+s154r: 6-6
+s154l: 7-7
+s154d: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 155
+# :: snt155
+Index: 1   2  3   4     5 6 7     8   9
+Words: one of the pears . . flies out .
+Sentence: None
+
+# sentence level graph:
+(s155f / fly-out
+    :actor (s155o / one
+        :mod (s155p / pear))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s155o: 1-1
+s155p: 2-4
+s155f: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 156
+# :: snt156
+Index: 1        2
+Words: Whatever .
+Sentence: None
+
+# sentence level graph:
+(s156w / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 157
+# :: snt157
+Index: 1     2   3    4   5     6   7   8   9    10  11   12   13  14    15      16
+Words: A--nd u—m then you don't see the kid with the bike with the pears anymore .
+Sentence: None
+
+# sentence level graph:
+(s157s / see
+    :actor (s157p2 / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s157k / kid
+        :mod (s157b / bike)
+        :refer-number singular)
+    :OBLIQUE (s157p / pear
+        :refer-number plural)
+    :manner (s157a / anymore)
+    :manner (s157t / then)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s157t: 3-3
+s157p2: 4-4
+s157s: 5-6
+s157k: 7-8
+s157b: 9-11
+s157p: 12-14
+s157a: 15-15
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 158
+# :: snt158
+Index: 1   2   3     4    5    6   7       8
+Words: And the three kids that are walking ,
+Sentence: None
+
+# sentence level graph:
+(s158k / kid
+    :refer-number plural
+    :quant 3
+    :actor-of (s158w / walk
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s158k: 2-2, 4-4
+s158w: 6-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 159
+# :: snt159
+Index: 1   2  3    4   5 6 7 8    9  10  11   12    13     14     15 16
+Words: one of them has a . . what do you call those little [l.l?] um paddleball?
+Sentence: None
+
+# sentence level graph:
+(s159c / call
+    :actor (s159p3 / person
+        :refer-person 2nd
+        :refer-number singular)
+    :undergoer (s159f / FILL)
+    :undergoer (s159p / paddleball?
+        :mod (s159l / little)
+        :mod (s159t / that)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :ADVCL (s159h / have
+        :actor (s159o / one
+            :mod (s159p2 / person
+                :refer-person 3rd
+                :refer-number plural))
+        :modal-strength MS-affirmative
+        :aspect ASP))
+
+# alignment:
+s159o: 1-1
+s159p2: 2-3
+s159h: 4-4
+s159f: 8-8
+s159c: 9-9, 11-11
+s159p3: 10-10
+s159t: 12-12
+s159l: 13-13
+s159p: 16-16
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 160
+# :: snt160
+Index: 1   2    3
+Words: You know ,
+Sentence: None
+
+# sentence level graph:
+(s160k / know
+    :actor (s160p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s160p: 1-1
+s160k: 2-2
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 161
+# :: snt161
+Index: 1    2 3    4  5  6  7    8
+Words: with a ball on ay uh /??/ ?
+Sentence: None
+
+# sentence level graph:
+(s161b / ball
+    :mod (s161a / ay)
+    :refer-number singular)
+
+# alignment:
+s161b: 1-3
+s161a: 4-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 162
+# :: snt162
+Index: 1 2 3     4     5     6     7
+Words: . . chong chong chong chong .
+Sentence: None
+
+# sentence level graph:
+(s162c / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 163
+# :: snt163
+Index: 1  2       3       4     5
+Words: So they're walking along ,
+Sentence: None
+
+# sentence level graph:
+(s163w / walk
+    :actor (s163f / FILL)
+    :manner (s163a / along)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s163f: 2-2
+s163w: 3-3
+s163a: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 164
+# :: snt164
+Index: 1   2    3     4   5     6     7
+Words: and they brush off their pears ,
+Sentence: None
+
+# sentence level graph:
+(s164b / brush-off
+    :actor (s164p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :undergoer (s164p / pear
+        :refer-number plural
+        :MOD-POSS (s164p3 / person
+            :refer-person 3rd
+            :refer-number plural))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s164p2: 2-2
+s164b: 3-3
+s164p3: 5-5
+s164p: 6-6
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 165
+# :: snt165
+Index: 1   2    3     4      5  6
+Words: and they start eating it .
+Sentence: None
+
+# sentence level graph:
+(s165s / start
+    :actor (s165p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :theme (s165e / eat
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :undergoer (s165t / thing
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s165p: 2-2
+s165s: 3-3
+s165e: 4-4
+s165t: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 166
+# :: snt166
+Index: 1    2    3    4    5   6   7   8   9       10  11    12
+Words: Then they walk by-- the man who was picking the pears .
+Sentence: None
+
+# sentence level graph:
+(s166w / walk
+    :actor (s166p3 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :OBLIQUE (s166m / man
+        :refer-number singular
+        :actor-of (s166p / pick
+            :undergoer (s166p2 / pear
+                :refer-number plural)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :manner (s166t / then)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s166t: 1-1
+s166p3: 2-2
+s166w: 3-3
+s166m: 4-6
+s166p: 8-9
+s166p2: 10-11
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 167
+# :: snt167
+Index: 1   2     3    4 5                6  7      8         9
+Words: Who looks like a Mexican-American if that's important ?
+Sentence: None
+
+# sentence level graph:
+(s167l / look
+    :actor (s167f / FILL)
+    :OBLIQUE (s167n / NE-TYPE
+        :name (s167n2 / name
+            :op1 "Mexican-american"))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :mode interrogative
+    :condition (s167h / have-mod-91
+        :ARG1 (s167f2 / FILL
+            :refer-number singular)
+        :ARG2 (s167i / important
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :modal-strength MS-affirmative
+        :aspect state))
+
+# alignment:
+s167n2: 0-0
+s167h: 0-0
+s167f: 1-1
+s167l: 2-2
+s167n: 3-5
+s167i: 6-6, 8-8
+s167f2: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 168
+# :: snt168
+Index: 1   2   3    4  5    6       7    8   9  10  11   12
+Words: U-m and he's ge he's getting down out of the tree ,
+Sentence: None
+
+# sentence level graph:
+(s168h / sentence)
+
+# alignment:
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 169
+# :: snt169
+Index: 1   2       3    4   5      6
+Words: and fucking with the ladder .
+Sentence: None
+
+# sentence level graph:
+(s169f / fucking
+    :OBLIQUE (s169l / ladder
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s169f: 2-2
+s169l: 3-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 170
+# :: snt170
+Index: 1     2  3    4 5 6   7   8       9   10   11     12 13    14    15
+Words: A--nd he sees . . and and there's one full basket of pears there ,
+Sentence: None
+
+# sentence level graph:
+(s170a / and
+    :op1 (s170s / see
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s170p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :op2 (s170t / there)
+    :conj (s170c / COPULAR-CONSTRUCTION
+        :ARG1 (s170b / basket
+            :manner (s170t2 / there)
+            :mod (s170p / pear)
+            :mod (s170f / full)
+            :refer-number singular
+            :quant 1)
+        :ARG2 s170t
+        :modal-strength MS-affirmative
+        :aspect state))
+
+# alignment:
+s170c: 0-0
+s170p2: 2-2
+s170s: 3-3
+s170a: 6-6
+s170t: 8-8
+s170f: 10-10
+s170b: 11-11
+s170p: 12-13
+s170t2: 14-14
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 171
+# :: snt171
+Index: 1   2   3  4     5      6
+Words: and and an empty basket .
+Sentence: None
+
+# sentence level graph:
+(s171b / basket
+    :mod (s171e / empty)
+    :refer-number singular)
+
+# alignment:
+s171b: 3-3, 5-5
+s171e: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 172
+# :: snt172
+Index: 1   2   3     4    5      6  7    8
+Words: And the other full basket is gone .
+Sentence: None
+
+# sentence level graph:
+(s172h / have-mod-91
+    :ARG1 (s172b / basket
+        :mod (s172o / other)
+        :mod (s172f / full)
+        :refer-number singular)
+    :ARG2 (s172g / gone)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s172b: 2-2, 5-5
+s172o: 3-3
+s172f: 4-4
+s172h: 6-6
+s172g: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 173
+# :: snt173
+Index: 1   2  3    4 5 6         7
+Words: And he goes . . {counting gesture}
+Sentence: None
+
+# sentence level graph:
+(s173g / go
+    :actor (s173p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s173g2 / gesture}
+        :mod (s173x / {count
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s173f / FILL))
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s173f: 0-0
+s173p: 2-2
+s173g: 3-3
+s173x: 6-6
+s173g2: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 174
+# :: snt174
+Index: 1   2  3    4   5    6       7  8   9      10    11    12
+Words: And he sees the kids walking by and eating their pears .
+Sentence: None
+
+# sentence level graph:
+(s174s / see
+    :actor (s174p2 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s174k / kid
+        :refer-number plural)
+    :theme (s174a / and
+        :op1 (s174w / walk
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :manner (s174b / by))
+        :op2 (s174e / eat
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :undergoer (s174p / pear
+                :refer-number plural
+                :MOD-POSS (s174p3 / person
+                    :refer-person 3rd
+                    :refer-number plural))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s174p2: 2-2
+s174s: 3-3
+s174k: 4-5
+s174w: 6-6
+s174b: 7-7
+s174a: 8-8
+s174e: 9-9
+s174p3: 10-10
+s174p: 11-11
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 175
+# :: snt175
+Index: 1 2 3   4  5   6  7     8     9    10
+Words: . . And he and he looks after them ,
+Sentence: None
+
+# sentence level graph:
+(s175l / look
+    :actor (s175a / and
+        :op1 (s175p / person
+            :refer-person 3rd
+            :refer-number singular)
+        :op2 (s175p2 / person
+            :refer-person 3rd
+            :refer-number singular))
+    :OBLIQUE (s175p3 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s175p: 4-4
+s175a: 5-5
+s175p2: 6-6
+s175l: 7-7
+s175p3: 8-9
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 176
+# :: snt176
+Index: 1   2    3         4
+Words: and they disappear ,
+Sentence: None
+
+# sentence level graph:
+(s176d / disappear
+    :actor (s176p / person
+        :refer-person 3rd
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s176p: 2-2
+s176d: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 177
+# :: snt177
+Index: 1   2      3   4   5  6   7     8
+Words: and that's the end of the movie .
+Sentence: None
+
+# sentence level graph:
+(s177i / identity-91
+    :ARG1 (s177f / FILL
+        :refer-number singular)
+    :ARG2 (s177e / end
+        :mod (s177m / movie)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s177i: 0-0
+s177f: 2-2
+s177e: 3-4
+s177m: 5-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 178
+# :: snt178
+Index: 1   2       3  4  5        6
+Words: And there's no no language ,
+Sentence: None
+
+# sentence level graph:
+(s178l / language
+    :manner (s178f / FILL)
+    :mod (s178n / no)
+    :mod (s178n2 / no)
+    :refer-number singular)
+
+# alignment:
+s178f: 2-2
+s178n: 3-3
+s178n2: 4-4
+s178l: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 179
+# :: snt179
+Index: 1 2 3    4
+Words: . . used ,
+Sentence: None
+
+# sentence level graph:
+(s179u / use
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s179u: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 180
+# :: snt180
+Index: 1 2 3          4   5     6
+Words: . . throughout the whole thing.
+Sentence: None
+
+# sentence level graph:
+(s180t / thing.
+    :mod (s180w / whole)
+    :refer-number singular)
+
+# alignment:
+s180t: 3-4, 6-6
+s180w: 5-5
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 181
+# :: snt181
+Index: 1   2      3      4  5      6    7        8         9        10    11   12     13  14     15 16  17      18         19  20     21     22   23
+Words: The United States is hoping that Russia's President Vladimir Putin will follow the advice of his special commission and pardon Edmund Pope .
+Sentence: None
+
+# sentence level graph:
+(s181h / hope
+    :actor (s181n5 / NE-TYPE
+        :mod (s181u / Unite
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :name (s181n6 / name
+            :op1 "State"))
+    :theme (s181a2 / and
+        :op1 (s181f / follow
+            :modal-strength neutral-affirmative
+            :aspect ASP
+            :actor (s181n / NE-TYPE
+                :name (s181n2 / name
+                    :op1 "President"
+                    :op2 "Vladimir"
+                    :op3 "Putin"))
+            :undergoer (s181a / advice
+                :mod (s181c / commission
+                    :mod (s181s / special)
+                    :MOD-POSS (s181p2 / person
+                        :refer-person 3rd
+                        :refer-number singular))
+                :refer-number singular))
+        :op2 (s181p / pardon
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s181f2 / FILL)
+            :undergoer (s181n3 / NE-TYPE
+                :name (s181n4 / name
+                    :op1 "Edmund"
+                    :op2 "Pope"))))
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s181n2: 0-0
+s181n4: 0-0
+s181n6: 0-0
+s181f2: 0-0
+s181n5: 1-1, 3-3
+s181u: 2-2
+s181h: 4-5
+s181f: 6-6, 11-12
+s181n: 8-8
+s181a: 13-14
+s181c: 15-15, 18-18
+s181p2: 16-16
+s181s: 17-17
+s181a2: 19-19
+s181p: 20-20
+s181n3: 21-21
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 182
+# :: snt182
+Index: 1    2    3   4        5           6     7       8 9       10     11       12 13     14    15    16        17 18
+Words: This week the American businessman began serving a 20-year prison sentence in Moscow after being convicted of spying.
+Sentence: None
+
+# sentence level graph:
+(s182b2 / begin
+    :actor (s182b / businessman
+        :mod (s182a / American)
+        :refer-number singular)
+    :theme (s182s / serve
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :temporal (s182c / convict
+            :OBLIQUE (s182s3 / spying.
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :undergoer (s182s2 / sentence
+            :mod (s182x / 20-year
+                :refer-number singular)
+            :mod (s182n / NE-TYPE
+                :name (s182n2 / name
+                    :op1 "Moscow"))
+            :mod (s182p / prison
+                :refer-number singular)
+            :refer-number singular))
+    :OBLIQUE (s182w / week
+        :mod (s182t / this)
+        :refer-number singular)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s182n2: 0-0
+s182t: 1-1
+s182w: 2-2
+s182b: 3-3, 5-5
+s182a: 4-4
+s182b2: 6-6
+s182s: 7-7
+s182s2: 8-8, 11-11
+s182x: 9-9
+s182p: 10-10
+s182n: 12-13
+s182c: 14-16
+s182s3: 17-18
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 183
+# :: snt183
+Index: 1            2       3           4       5    6    7   8      9       10       11 12 13   14 15    16      17      18
+Words: Specifically Russian prosecutors charged that Pope had stolen secrets relating to a  high -  speed Russian torpedo .
+Sentence: None
+
+# sentence level graph:
+(s183c / charge
+    :actor (s183p / prosecutor
+        :mod (s183r / Russian)
+        :refer-number plural)
+    :theme (s183s2 / steal
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s183n / NE-TYPE
+            :name (s183n2 / name
+                :op1 "Pope"))
+        :undergoer (s183s3 / secret
+            :mod (s183r2 / relate
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :actor (s183f / FILL)
+                :OBLIQUE (s183t / torpedo
+                    :mod (s183s4 / speed
+                        :mod (s183h / high)
+                        :refer-number singular)
+                    :mod (s183r3 / Russian)
+                    :refer-number singular))
+            :refer-number plural))
+    :manner (s183s / specifically)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s183n2: 0-0
+s183f: 0-0
+s183s: 1-1
+s183r: 2-2
+s183p: 3-3
+s183c: 4-4
+s183s2: 5-5, 7-8
+s183n: 6-6
+s183s3: 9-9
+s183r2: 10-10
+s183t: 11-12, 17-17
+s183h: 13-13
+s183s4: 15-15
+s183r3: 16-16
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 184
+# :: snt184
+Index: 1    2      3   4       5   6          7      8   9  10
+Words: Pope denied the charges and Washington backed him up .
+Sentence: None
+
+# sentence level graph:
+(s184a / and
+    :op1 (s184d / deny
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s184n / NE-TYPE
+            :name (s184n2 / name
+                :op1 "Pope"))
+        :undergoer (s184c / charge
+            :refer-number plural))
+    :op2 (s184b / back-up
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :actor (s184n3 / NE-TYPE
+            :name (s184n4 / name
+                :op1 "Washington"))
+        :undergoer (s184p / person
+            :refer-person 3rd
+            :refer-number singular)))
+
+# alignment:
+s184n4: 0-0
+s184n2: 0-0
+s184n: 1-1
+s184d: 2-2
+s184c: 3-4
+s184a: 5-5
+s184n3: 6-6
+s184b: 7-7
+s184p: 8-8
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 185
+# :: snt185
+Index: 1      2      3  4      5  6      7     8    9        10 11    12 13
+Words: Marsha Lipman is Editor of Moscow based news magazine '  Itogi '  .
+Sentence: None
+
+# sentence level graph:
+(s185i / identity-91
+    :ARG1 (s185n2 / NE-TYPE
+        :name (s185n3 / name
+            :op1 "Marsha"
+            :op2 "Lipman"))
+    :ARG2 (s185n4 / NE-TYPE
+        :mod (s185m / magazine
+            :ARG1-of (s185i2 / identity-91
+                :ARG2 (s185n6 / NE-TYPE
+                    :name (s185n7 / name
+                        :op1 "Itogi"))
+                :modal-strength MS-affirmative
+                :aspect state)
+            :mod (s185b / base-Moscow
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :mod (s185n / news
+                :refer-number singular))
+        :name (s185n5 / name
+            :op1 "Editor"))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s185n7: 0-0
+s185i2: 0-0
+s185n5: 0-0
+s185n3: 0-0
+s185n2: 1-1
+s185i: 3-3
+s185n4: 4-4
+s185m: 5-5, 9-9
+s185b: 7-7
+s185n: 8-8
+s185n6: 11-11
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 186
+# :: snt186
+Index: 1      2 3   4   5            6       7          8    9   10     11  12    13       14
+Words: Marsha , did the Presidential Pardons Commission give any reason for their decision ?
+Sentence: None
+
+# sentence level graph:
+(s186g / give
+    :actor (s186n3 / NE-TYPE
+        :name (s186n4 / name
+            :op1 "Commission"))
+    :undergoer (s186r / reason
+        :mod (s186d / decision
+            :MOD-POSS (s186p / person
+                :refer-person 3rd
+                :refer-number plural))
+        :mod (s186a / any)
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :mode interrogative
+    :vocative (s186n / NE-TYPE
+        :name (s186n2 / name
+            :op1 "Marsha")))
+
+# alignment:
+s186n2: 0-0
+s186n4: 0-0
+s186n: 1-1
+s186g: 3-3, 8-8
+s186n3: 4-4, 7-7
+s186a: 9-9
+s186r: 10-10
+s186d: 11-11, 13-13
+s186p: 12-12
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 187
+# :: snt187
+Index: 1  2    3       4       5
+Words: It gave several reasons .
+Sentence: None
+
+# sentence level graph:
+(s187g / give
+    :actor (s187t / thing
+        :refer-number singular)
+    :undergoer (s187r / reason
+        :mod (s187s / several)
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s187t: 1-1
+s187g: 2-2
+s187s: 3-3
+s187r: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 188
+# :: snt188
+Index: 1 2  3   4    5  6     7    8   9      10      11  12      13 14  15         16   17   18          19    20 21      22      23  24   25  26   27   28   29     30 31  32  33    34     35 36     37 38   39   40      41 42  43     44         45 46   47   48     49   50  51        52 53  54      55   56 57      58  59      60 61  62  63  64 65 66 67
+Words: I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia ,  that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term ,  whereas the article of the law had 10 to 20 years.
+Sentence: None
+
+# sentence level graph:
+(s188b / but-91
+    :ARG1 (s188h2 / have-mod-91
+        :ARG1 (s188p / person
+            :refer-person 1st
+            :refer-number singular)
+        :ARG2 (s188s / sure
+            :theme (s188i2 / identity-91
+                :ARG1 (s188f3 / FILL
+                    :refer-number plural)
+                :ARG2 (s188r / reason
+                    :mod (s188f / formal)
+                    :refer-number plural
+                    :modal-strength MS-affirmative
+                    :aspect ASP)
+                :modal-strength MS-affirmative
+                :aspect state))
+        :modal-strength MS-affirmative
+        :aspect state)
+    :ARG2 (s188a3 / and
+        :op1 (s188i / interview
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s188o / outlet
+                :mod (s188v / various)
+                :refer-number plural)
+            :undergoer (s188m / member
+                :mod (s188c / commission)
+                :refer-number plural)
+            :OBLIQUE (s188t / today
+                :refer-number singular))
+        :op2 (s188s2 / say
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s188p2 / person
+                :refer-person 3rd
+                :refer-number plural)
+            :theme (s188a4 / and
+                :op1 (s188h3 / have-mod-91
+                    :modal-strength full-affirmative
+                    :aspect state
+                    :ARG1 (s188p3 / person
+                        :refer-person 3rd
+                        :refer-number plural)
+                    :ARG2 (s188a / afraid
+                        :OBLIQUE (s188m2 / mania
+                            :mod (s188r2 / rise
+                                :modal-strength MS-affirmative
+                                :aspect ASP
+                                :actor (s188f2 / FILL)
+                                :OBLIQUE (s188n3 / NE-TYPE
+                                    :name (s188n4 / name
+                                        :op1 "Russia")))
+                            :mod (s188s3 / spy
+                                :refer-number singular)
+                            :refer-number singular)
+                        :modal-strength MS-affirmative
+                        :aspect ASP))
+                :op2 (s188t2 / think
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s188p4 / person
+                        :refer-person 3rd
+                        :refer-number plural)
+                    :theme (s188h4 / have-mod-91
+                        :ARG1 (s188s5 / sentence
+                            :OBLIQUE (s188t3 / term
+                                :mod (s188m3 / maximum)
+                                :refer-number singular)
+                            :ADVCL (s188h / have
+                                :actor (s188a2 / article
+                                    :mod (s188l / law)
+                                    :refer-number singular)
+                                :undergoer (s188y / year.
+                                    :refer-number plural
+                                    :quant 10)
+                                :modal-strength MS-affirmative
+                                :aspect ASP)
+                            :undergoer (s188n / NE-TYPE
+                                :name (s188n2 / name
+                                    :op1 "Edmund"
+                                    :op2 "Pope")))
+                        :ARG2 (s188s4 / suspicious
+                            :OBLIQUE (s188p5 / person
+                                :refer-person 3rd
+                                :refer-number plural)
+                            :manner (s188r3 / really)
+                            :modal-strength MS-affirmative
+                            :aspect ASP)
+                        :modal-strength full-affirmative
+                        :aspect state))))))
+
+# alignment:
+s188f2: 0-0
+s188n4: 0-0
+s188n2: 0-0
+s188p: 1-1
+s188h2: 2-2
+s188s: 4-4
+s188r: 5-5, 8-8, 10-10
+s188f3: 6-6
+s188i2: 7-7
+s188f: 9-9
+s188b: 11-11
+s188m: 12-12
+s188c: 13-15
+s188i: 16-18
+s188t: 19-19
+s188o: 20-20, 22-22
+s188v: 21-21
+s188a3: 23-23
+s188p2: 24-24
+s188s2: 25-25
+s188a: 26-26, 29-29
+s188p3: 27-27
+s188h3: 28-28
+s188m2: 30-31, 33-33
+s188s3: 32-32
+s188r2: 34-34
+s188n3: 35-36
+s188a4: 37-37
+s188t2: 38-38, 40-40
+s188p4: 39-39
+s188h4: 42-42
+s188r3: 43-43
+s188s4: 44-44
+s188p5: 45-46
+s188s5: 47-47, 50-51
+s188n: 48-48
+s188t3: 52-53, 55-55
+s188m3: 54-54
+s188h: 57-57, 63-63
+s188a2: 58-59
+s188l: 60-62
+s188y: 67-67
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 189
+# :: snt189
+Index: 1  2   3         4  5  6 7    8      9         10 11  12      13 14  15     16         17 18  19       20   21  22        23 24  25          26  27  28   29       30
+Words: He was sentenced to 20 , even though according to the members of the Pardon Commission ,  the evidence that was presented by the prosecution was far from quotient .
+Sentence: None
+
+# sentence level graph:
+(s189s / sentence
+    :undergoer (s189p3 / person
+        :refer-person 3rd
+        :refer-number singular)
+    :OBLIQUE (s189x / 20)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :concession (s189c / COPULAR-CONSTRUCTION
+        :ARG1 (s189e2 / evidence
+            :refer-number singular
+            :undergoer-of (s189p / present
+                :actor (s189p2 / prosecution
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :ARG2 (s189f / far
+            :OBLIQUE (s189q / quotient
+                :refer-number singular)
+            :OBLIQUE (s189m / member
+                :mod (s189n / NE-TYPE
+                    :name (s189n2 / name
+                        :op1 "Commission"))
+                :refer-number plural)
+            :manner (s189e / even)
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :modal-strength MS-affirmative
+        :aspect state))
+
+# alignment:
+s189n2: 0-0
+s189p3: 1-1
+s189s: 2-3
+s189x: 4-5
+s189e: 7-7
+s189f: 8-8, 27-27
+s189m: 9-9, 11-12
+s189n: 13-14, 16-16
+s189e2: 18-19
+s189p: 21-22
+s189p2: 23-25
+s189c: 26-26
+s189q: 28-29
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 190
+# :: snt190
+Index: 1    2    3    4    5     6   7   8    9   10      11  12  13      14  15        16
+Words: They also said this court did not give the lawyers for the defense due procedure .
+Sentence: None
+
+# sentence level graph:
+(s190s / say
+    :actor (s190p2 / person
+        :refer-person 3rd
+        :refer-number plural)
+    :theme (s190g / give
+        :OBLIQUE (s190p / procedure
+            :mod (s190d / defense
+                :refer-number singular)
+            :mod (s190d2 / due)
+            :refer-number singular)
+        :modal-strength full-negative
+        :aspect ASP
+        :actor (s190c / court
+            :mod (s190t / this)
+            :refer-number singular))
+    :manner (s190a / also)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s190p2: 1-1
+s190a: 2-2
+s190s: 3-3
+s190t: 4-4
+s190c: 5-5
+s190g: 6-6, 8-8
+s190p: 11-12, 15-15
+s190d: 13-13
+s190d2: 14-14
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 191
+# :: snt191
+Index: 1   2     3        4  5   6       7    8    9    10 11  12 13  14          15
+Words: The court listened to the defense much less than it did to the prosecution .
+Sentence: None
+
+# sentence level graph:
+(s191l / listen
+    :actor (s191c / court
+        :refer-number singular)
+    :OBLIQUE (s191d / defense
+        :refer-number singular)
+    :manner (s191l2 / less
+        :ARG2-of (s191h / have-degree-91
+            :ARG3 (s191m2 / more)
+            :modal-strength MS-affirmative
+            :aspect state)
+        :ADVCL (s191c2 / COPULAR-CONSTRUCTION
+            :ARG1 (s191t / thing
+                :refer-number singular)
+            :ARG2 (s191d2 / do
+                :OBLIQUE (s191p / prosecution
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :modal-strength MS-affirmative
+            :aspect state)
+        :manner (s191m / much))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s191h: 0-0
+s191m2: 0-0
+s191c2: 0-0
+s191c: 1-2
+s191l: 3-3
+s191d: 4-6
+s191m: 7-7
+s191l2: 8-8
+s191d2: 9-9, 11-11
+s191t: 10-10
+s191p: 12-14
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 192
+# :: snt192
+Index: 1    2  3    4      5    6    7 8      9   10   11   12 13        14 15  16     17 18           19   20  21    22   23  24 25   26   27      28 29 30        31  32    33     34  35  36     37  38  39          40
+Words: Much of this sounds less like a pardon and more like a  criticism of the number of institutions that Mr. Putin also has to show some support of ,  including his court system and his police and his prosecutors .
+Sentence: None
+
+# sentence level graph:
+(s192s / sound
+    :actor (s192m / much
+        :mod (s192f / FILL
+            :refer-number singular)
+        :refer-number FILL)
+    :OBLIQUE (s192a2 / and
+        :op1 (s192p / pardon
+            :refer-number singular
+            :manner (s192l / less
+                :ARG2-of (s192h2 / have-degree-91
+                    :ARG3 (s192m3 / more)
+                    :modal-strength MS-affirmative
+                    :aspect state)))
+        :op2 (s192c / criticism
+            :refer-number singular
+            :manner (s192m2 / more
+                :ARG2-of (s192h3 / have-degree-91
+                    :ARG3 (s192m4 / more)
+                    :modal-strength MS-affirmative
+                    :aspect state))
+            :mod (s192n / number
+                :mod (s192i / institution
+                    :undergoer-of (s192h / have
+                        :actor (s192n2 / NE-TYPE
+                            :name (s192n3 / name
+                                :op1 "Mr."
+                                :op2 "Putin"))
+                        :theme (s192s2 / show
+                            :modal-strength MS-affirmative
+                            :aspect ASP
+                            :undergoer (s192f2 / FILL)
+                            :undergoer (s192s4 / support
+                                :mod (s192s3 / some)
+                                :mod (s192a3 / and
+                                    :op1 (s192s5 / system
+                                        :MOD-POSS (s192p4 / person
+                                            :refer-person 3rd
+                                            :refer-number singular)
+                                        :mod (s192c2 / court
+                                            :refer-number singular))
+                                    :op2 (s192p2 / police
+                                        :refer-number plural
+                                        :MOD-POSS (s192p5 / person
+                                            :refer-person 3rd
+                                            :refer-number singular))
+                                    :op3 (s192p3 / prosecutor
+                                        :refer-number plural
+                                        :MOD-POSS (s192p6 / person
+                                            :refer-person 3rd
+                                            :refer-number singular)))
+                                :refer-number singular))
+                        :manner (s192a / also)
+                        :modal-strength MS-affirmative
+                        :aspect ASP)))))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s192h2: 0-0
+s192h3: 0-0
+s192m3: 0-0
+s192n3: 0-0
+s192m4: 0-0
+s192m: 1-1
+s192f: 2-3
+s192s: 4-4
+s192l: 5-5
+s192p: 6-8
+s192a2: 9-9
+s192m2: 10-10
+s192c: 11-13
+s192n: 14-16
+s192i: 17-18
+s192f2: 19-19, 28-28
+s192n2: 20-20
+s192a: 22-22
+s192h: 23-23
+s192s2: 25-25
+s192s3: 26-26
+s192s4: 27-27
+s192s5: 30-30, 33-33
+s192p4: 31-31
+s192c2: 32-32
+s192a3: 34-34
+s192p5: 35-35
+s192p2: 36-36
+s192p6: 38-38
+s192p3: 39-39
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 193
+# :: snt193
+Index: 1   2  3  4     5  6       7  8    9   10   11
+Words: How is he going to respond to this and when ?
+Sentence: None
+
+# sentence level graph:
+(s193g / go
+    :actor (s193p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :theme (s193r / respond
+        :OBLIQUE (s193a / and
+            :op1 (s193f / FILL
+                :refer-number singular)
+            :op2 (s193w / when))
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :manner (s193h / how)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :mode interrogative)
+
+# alignment:
+s193h: 1-1
+s193g: 2-2, 4-4
+s193p: 3-3
+s193r: 6-6
+s193f: 7-8
+s193a: 9-9
+s193w: 10-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 194
+# :: snt194
+Index: 1 2     3     4       5     6   7 8     9     10      11   12   13    14        15    16  17        18
+Words: I don't think anybody knows and I don't think anybody will know until President Putin has responded .
+Sentence: None
+
+# sentence level graph:
+(s194a3 / and
+    :op1 (s194t / think
+        :modal-strength full-affirmative
+        :aspect ASP
+        :actor (s194p / person
+            :refer-person 1st
+            :refer-number singular)
+        :theme (s194k / know
+            :modal-strength full-affirmative
+            :aspect ASP
+            :actor (s194f / FILL
+                :mod (s194a / anybody)
+                :refer-number singular)))
+    :op2 (s194t2 / think
+        :modal-strength MS-affirmative
+        :aspect ASP
+        :temporal (s194r / respond
+            :actor (s194n / NE-TYPE
+                :name (s194n2 / name
+                    :op1 "President"
+                    :op2 "Putin"))
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :actor (s194p2 / person
+            :refer-person 1st
+            :refer-number singular)
+        :theme (s194k2 / know
+            :modal-strength full-affirmative
+            :aspect ASP
+            :actor (s194f2 / FILL
+                :mod (s194a2 / anybody)
+                :refer-number singular))))
+
+# alignment:
+s194a2: 0-0
+s194n2: 0-0
+s194a: 0-0
+s194p: 1-1
+s194t: 2-3
+s194f: 4-4
+s194k: 5-5
+s194a3: 6-6
+s194p2: 7-7
+s194t2: 8-9
+s194f2: 10-10
+s194k2: 11-12
+s194r: 13-13, 16-17
+s194n: 14-14
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 195
+# :: snt195
+Index: 1  2  3   4        5
+Words: It is his decision .
+Sentence: None
+
+# sentence level graph:
+(s195i / identity-91
+    :ARG1 (s195t / thing
+        :refer-number singular)
+    :ARG2 (s195d / decision
+        :refer-number singular
+        :MOD-POSS (s195p / person
+            :refer-person 3rd
+            :refer-number singular))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s195t: 1-1
+s195i: 2-2
+s195p: 3-3
+s195d: 4-4
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 196
+# :: snt196
+Index: 1         2  3   4       5   6   7      8          9 10    11 12  13   14  15       16 17    18 19 20  21        22  23   24 25 26  27      28 29      30 31 32  33 34  35 36
+Words: According to the Russian law the Pardon Commission , after it has made its decision ,  sends it to the President and it's up to him whether to endorse it or not to say no .
+Sentence: None
+
+# sentence level graph:
+(s196a / and
+    :op1 (s196s / send
+        :modal-strength full-affirmative
+        :aspect ASP
+        :temporal (s196m / make
+            :actor (s196t / thing
+                :refer-number singular)
+            :undergoer (s196d / decision
+                :refer-number singular
+                :MOD-POSS (s196t2 / thing
+                    :refer-number singular))
+            :modal-strength MS-affirmative
+            :aspect ASP)
+        :actor (s196n2 / NE-TYPE
+            :name (s196n3 / name
+                :op1 "Commission"))
+        :undergoer (s196t3 / thing
+            :refer-number singular)
+        :OBLIQUE (s196n4 / NE-TYPE
+            :name (s196n5 / name
+                :op1 "President"))
+        :OBLIQUE (s196l / law
+            :mod (s196r / Russian)
+            :refer-number singular))
+    :op2 (s196c / COPULAR-CONSTRUCTION
+        :modal-strength MS-affirmative
+        :aspect state
+        :ARG1 (s196t4 / thing
+            :refer-number singular)
+        :ARG2 (s196u / up
+            :OBLIQUE (s196p / person
+                :refer-person 3rd
+                :refer-number singular)
+            :ADVCL (s196o / or
+                :op1 (s196e / endorse
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s196f / FILL)
+                    :undergoer (s196t5 / thing
+                        :refer-number singular))
+                :op2 (s196s2 / say
+                    :modal-strength MS-negative
+                    :aspect ASP
+                    :actor (s196f2 / FILL)
+                    :undergoer (s196n / no))))))
+
+# alignment:
+s196c: 0-0
+s196f: 0-0
+s196n3: 0-0
+s196f2: 0-0
+s196n5: 0-0
+s196l: 1-1, 3-3, 5-5
+s196r: 4-4
+s196n2: 6-6, 8-8
+s196m: 10-10, 12-13
+s196t: 11-11
+s196t2: 14-14
+s196d: 15-15
+s196s: 17-17
+s196t3: 18-18
+s196n4: 19-21
+s196a: 22-22
+s196t4: 23-23
+s196u: 24-24
+s196p: 25-26
+s196e: 27-27, 29-29
+s196t5: 30-30
+s196o: 31-31
+s196s2: 34-34
+s196n: 35-35
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 197
+# :: snt197
+Index: 1   2    3        4   5   6 7      8
+Words: One last question for you , Marsha .
+Sentence: None
+
+# sentence level graph:
+(s197q / question
+    :mod (s197l / last)
+    :mod (s197p / person
+        :refer-person 2nd
+        :refer-number singular)
+    :refer-number singular
+    :quant 1
+    :vocative (s197n / NE-TYPE
+        :name (s197n2 / name
+            :op1 "Marsha")))
+
+# alignment:
+s197n2: 0-0
+s197l: 2-2
+s197q: 3-3
+s197p: 4-5
+s197n: 7-7
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 198
+# :: snt198
+Index: 1  2    3    4 5   6  7       8       9  10 11        12    13
+Words: He does have a lot to balance doesn't he ,  President Putin ?
+Sentence: None
+
+# sentence level graph:
+(s198h / have
+    :actor (s198p / person
+        :refer-person 3rd
+        :refer-number singular)
+    :undergoer (s198l / lot
+        :mod (s198b / balance
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s198f / FILL))
+        :refer-number singular)
+    :modal-strength MS-affirmative
+    :aspect ASP
+    :UNATTACHED (s198i / identity-91
+        :ARG1 (s198h2 / he)
+        :ARG2 (s198n / NE-TYPE
+            :name (s198n2 / name
+                :op1 "President"
+                :op2 "Putin"))
+        :modal-strength MS-affirmative
+        :aspect state)
+    :mode interrogative)
+
+# alignment:
+s198n2: 0-0
+s198f: 0-0
+s198p: 1-1
+s198h: 2-3
+s198l: 4-5
+s198b: 7-7
+s198i: 8-8
+s198h2: 9-9
+s198n: 11-11
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 199
+# :: snt199
+Index: 1   2    3   4            5 6         7   8   9    10 11   12     13      14   15 16      17
+Words: Not only the institutions I mentioned but the need to keep things somehow free of tension .
+Sentence: None
+
+# sentence level graph:
+(s199b / but-91
+    :ARG1 (s199i / institution
+        :manner (s199o / only)
+        :refer-number plural)
+    :ARG2 (s199n / need
+        :mod (s199k / keep
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s199f2 / FILL)
+            :undergoer (s199t / thing
+                :refer-number plural)
+            :theme (s199f / free
+                :OBLIQUE (s199t2 / tension
+                    :refer-number singular)
+                :manner (s199s / somehow)
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :refer-number singular))
+
+# alignment:
+s199f2: 0-0
+s199o: 2-2
+s199i: 3-4
+s199b: 7-7
+s199n: 8-9
+s199k: 11-11
+s199t: 12-12
+s199s: 13-13
+s199f: 14-14
+s199t2: 15-16
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 200
+# :: snt200
+Index: 1  2    3    4      5  6      7  8 9       10        11
+Words: Is this case likely to strain US - Russian relations ?
+Sentence: None
+
+# sentence level graph:
+(s200h / have-mod-91
+    :ARG1 (s200c / case
+        :mod (s200t / this)
+        :refer-number singular)
+    :ARG2 (s200l / likely
+        :theme (s200s / strain
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :undergoer (s200r2 / relation
+                :mod (s200r / US-Russian)
+                :refer-number plural)))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s200h: 1-1
+s200t: 2-2
+s200c: 3-3
+s200l: 4-4
+s200s: 6-6
+s200r: 9-9
+s200r2: 10-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 201
+# :: snt201
+Index: 1   2      3  4     5
+Words: I'm afraid it might .
+Sentence: None
+
+# sentence level graph:
+(s201h / have-mod-91
+    :ARG1 (s201p / person
+        :refer-person 2nd
+        :refer-number FILL)
+    :ARG2 (s201a / afraid
+        :theme (s201c / COPULAR-CONSTRUCTION
+            :ARG1 (s201t / thing
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect state))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s201p: 0-0
+s201c: 0-0
+s201h: 1-1
+s201a: 2-2
+s201t: 3-3
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 202
+# :: snt202
+Index: 1        2   3       4      5      6   7  8   9      10   11 12   13    14     15    16 17          18    19 20   21  22  23 24     25   26
+Words: Recently the Russian policy toward the US has fallen into a  line where Russia tries to demonstrate force it once had but no longer does .
+Sentence: None
+
+# sentence level graph:
+(s202f / fall
+    :actor (s202p / policy
+        :mod (s202r2 / Russian)
+        :mod (s202n / NE-TYPE
+            :name (s202n2 / name
+                :op1 "US"))
+        :refer-number singular)
+    :OBLIQUE (s202l / line
+        :refer-number singular
+        :manner-of (s202t / try
+            :actor (s202n3 / NE-TYPE
+                :name (s202n4 / name
+                    :op1 "Russia"))
+            :theme (s202d / demonstrate
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :undergoer (s202f2 / force
+                    :refer-number singular
+                    :manner-of (s202b / but-91
+                        :ARG1 (s202h / have
+                            :modal-strength MS-affirmative
+                            :aspect ASP
+                            :actor (s202t2 / thing
+                                :refer-number singular))
+                        :ARG2 (s202d2 / do
+                            :manner (s202l2 / long
+                                :ARG2-of (s202h2 / have-degree-91
+                                    :ARG3 (s202m / more)
+                                    :modal-strength MS-affirmative
+                                    :aspect state))))))
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :manner (s202r / recently)
+    :modal-strength MS-affirmative
+    :aspect ASP)
+
+# alignment:
+s202n2: 0-0
+s202n4: 0-0
+s202h2: 0-0
+s202m: 0-0
+s202r: 1-1
+s202p: 2-2, 4-4
+s202r2: 3-3
+s202n: 5-7
+s202f: 8-9
+s202l: 10-12
+s202n3: 14-14
+s202t: 15-15
+s202d: 17-17
+s202f2: 18-18
+s202t2: 19-19
+s202h: 21-21
+s202b: 22-22
+s202l2: 24-24
+s202d2: 25-25
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 203
+# :: snt203
+Index: 1  2     3  4   5  6   7  8    9  10       11 12  13      14      15         16 17          18 19  20   21    22
+Words: It wants to put an end to what is regarded by the current Russian government as humiliation of the past years .
+Sentence: None
+
+# sentence level graph:
+(s203w / want
+    :actor (s203t / thing
+        :refer-number singular)
+    :theme (s203p / put
+        :OBLIQUE (s203f / FILL
+            :OBLIQUE-of (s203r / regard
+                :actor (s203g / government
+                    :mod (s203c / current)
+                    :mod (s203r2 / Russian)
+                    :refer-number singular)
+                :OBLIQUE (s203h / humiliation
+                    :mod (s203y / year
+                        :mod (s203p2 / past))
+                    :refer-number singular)
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :modal-strength neutral-affirmative
+        :aspect ASP
+        :undergoer (s203e / end
+            :refer-number singular))
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s203t: 1-1
+s203w: 2-2
+s203p: 4-4
+s203e: 5-6
+s203f: 7-8
+s203r: 9-10
+s203g: 11-12, 15-15
+s203c: 13-13
+s203r2: 14-14
+s203h: 16-17
+s203y: 18-19, 21-21
+s203p2: 20-20
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 204
+# :: snt204
+Index: 1     2    3        4        5  6  7 8      9  10    11       12   13     14     15  16 17     18 19 20     21 22    23 24  25   26  27    28   29        30    31   32      33 34    35  36   37       38     39   40 41      42       43     44   45    46   47 48 49       50      51
+Words: There were numerous attempts to be a source of minor troubles even though Russia can no longer be a  source of scare to the west and among such instances there were several ,  there was just recently flying over by Russian military planes over Kitty Hawk ,  an American warship .
+Sentence: None
+
+# sentence level graph:
+(s204b / be
+    :actor (s204a / attempt
+        :mod (s204n / numerous)
+        :refer-number plural)
+    :modal-strength full-affirmative
+    :aspect ASP
+    :concession (s204a2 / and
+        :op1 (s204i2 / identity-91
+            :modal-strength MS-affirmative
+            :aspect state
+            :ARG1 (s204n4 / NE-TYPE
+                :name (s204n5 / name
+                    :op1 "Russia"))
+            :ARG2 (s204s / source
+                :manner (s204l / long
+                    :ARG2-of (s204h / have-degree-91
+                        :ARG3 (s204m2 / more)
+                        :modal-strength MS-affirmative
+                        :aspect state))
+                :manner (s204e / even)
+                :mod (s204s2 / scare)
+                :mod (s204w / west)
+                :refer-number singular
+                :modal-strength MS-affirmative
+                :aspect ASP))
+        :op2 (s204b2 / be
+            :modal-strength MS-affirmative
+            :aspect ASP
+            :actor (s204s4 / several
+                :refer-number FILL)
+            :actor (s204f / fly-over
+                :OBLIQUE (s204p / plane
+                    :mod (s204r2 / Russian)
+                    :mod (s204m / military)
+                    :refer-number plural)
+                :OBLIQUE (s204n2 / NE-TYPE
+                    :name (s204n3 / name
+                        :op1 "Kitty"
+                        :op2 "Hawk"))
+                :manner (s204j / just)
+                :manner (s204r / recently)
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :OBLIQUE (s204i / instance
+                :mod (s204s3 / such)
+                :refer-number plural))))
+
+# alignment:
+s204n3: 0-0
+s204n5: 0-0
+s204m2: 0-0
+s204h: 0-0
+s204b: 2-2
+s204n: 3-3
+s204a: 4-4
+s204e: 12-12
+s204s: 13-13, 15-15, 19-20
+s204n4: 14-14
+s204l: 17-17
+s204i2: 18-18
+s204s2: 21-22
+s204w: 23-25
+s204a2: 26-26
+s204i: 27-27, 29-29
+s204s3: 28-28
+s204b2: 31-31, 35-35
+s204s4: 32-32
+s204j: 36-36
+s204r: 37-37
+s204f: 38-38
+s204p: 40-40, 43-43
+s204r2: 41-41
+s204m: 42-42
+s204n2: 44-45
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 205
+# :: snt205
+Index: 1     2  3    4 5       6    7       8    9        10          11   12 13   14   15      16 17   18 19       20 21  22      23   24        25
+Words: There is also a scandal that erupted over Russia's declaration that it will sell weapons to Iran ,  contrary to the earlier made agreement .
+Sentence: None
+
+# sentence level graph:
+(s205b / be
+    :actor (s205s / scandal
+        :refer-number singular
+        :actor-of (s205e / erupt
+            :OBLIQUE (s205d / declaration
+                :mod (s205s2 / sell
+                    :modal-strength MS-affirmative
+                    :aspect ASP
+                    :actor (s205t / thing
+                        :refer-number singular)
+                    :undergoer (s205w / weapon
+                        :refer-number plural)
+                    :OBLIQUE (s205n3 / NE-TYPE
+                        :name (s205n4 / name
+                            :op1 "Iran"))
+                    :manner (s205c / contrary
+                        :OBLIQUE (s205a2 / agreement
+                            :mod (s205m / make
+                                :modal-strength MS-affirmative
+                                :aspect ASP
+                                :manner (s205e2 / early
+                                    :ARG2-of (s205h / have-degree-91
+                                        :ARG3 (s205m2 / more)
+                                        :modal-strength MS-affirmative
+                                        :aspect state)))
+                            :refer-number singular)))
+                :mod (s205n / NE-TYPE
+                    :name (s205n2 / name
+                        :op1 "Russia's"))
+                :refer-number singular)
+            :modal-strength MS-affirmative
+            :aspect ASP))
+    :manner (s205a / also)
+    :modal-strength full-affirmative
+    :aspect ASP)
+
+# alignment:
+s205n2: 0-0
+s205n4: 0-0
+s205m2: 0-0
+s205h: 0-0
+s205b: 2-2
+s205a: 3-3
+s205s: 4-5
+s205e: 7-7
+s205d: 8-8, 10-10
+s205n: 9-9
+s205s2: 11-11, 13-14
+s205t: 12-12
+s205w: 15-15
+s205n3: 16-17
+s205c: 19-19
+s205a2: 20-21, 24-24
+s205e2: 22-22
+s205m: 23-23
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 206
+# :: snt206
+Index: 1    2        3   4     5 6   7       8 9    10 11   12  13       14   15       16      17  18     19  20  21          22
+Words: Such examples are quite a few already , some of them are combined with material profits for Russia but not necessarily .
+Sentence: None
+
+# sentence level graph:
+(s206h / have-mod-91
+    :ARG1 (s206e / example
+        :mod (s206s / such)
+        :refer-number plural)
+    :ARG2 (s206f / few
+        :manner (s206a / already)
+        :mod (s206q / quite)
+        :UNATTACHED (s206b / but-91
+            :ARG1 (s206c / combine
+                :OBLIQUE (s206p / profit
+                    :mod (s206n2 / NE-TYPE
+                        :name (s206n3 / name
+                            :op1 "Russia"))
+                    :mod (s206m / material)
+                    :refer-number plural)
+                :modal-strength MS-affirmative
+                :aspect ASP
+                :undergoer (s206f2 / FILL
+                    :mod (s206s2 / some)
+                    :mod (s206p2 / person
+                        :refer-person 3rd
+                        :refer-number plural)))
+            :ARG2 (s206n / necessarily)))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s206s2: 0-0
+s206n3: 0-0
+s206s: 1-1
+s206e: 2-2
+s206h: 3-3
+s206q: 4-4
+s206f: 5-6
+s206a: 7-7
+s206f2: 9-9
+s206p2: 10-11
+s206c: 12-13
+s206p: 14-14, 16-16
+s206m: 15-15
+s206n2: 17-18
+s206b: 19-19
+s206n: 21-21
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 207
+# :: snt207
+Index: 1      2      3  4      5  6   7      8     9    10       11 12    13 14
+Words: Marsha Lipman is Editor of the Moscow based news magazine '  Itogi '  .
+Sentence: None
+
+# sentence level graph:
+(s207i / identity-91
+    :ARG1 (s207n2 / NE-TYPE
+        :name (s207n3 / name
+            :op1 "Marsha"
+            :op2 "Lipman"))
+    :ARG2 (s207n4 / NE-TYPE
+        :mod (s207m / magazine
+            :ARG1-of (s207i2 / identity-91
+                :ARG2 (s207n6 / NE-TYPE
+                    :name (s207n7 / name
+                        :op1 "Itogi"))
+                :modal-strength MS-affirmative
+                :aspect state)
+            :mod (s207b / base-Moscow
+                :modal-strength MS-affirmative
+                :aspect ASP)
+            :mod (s207n / news
+                :refer-number singular))
+        :name (s207n5 / name
+            :op1 "Editor"))
+    :modal-strength MS-affirmative
+    :aspect state)
+
+# alignment:
+s207n7: 0-0
+s207n3: 0-0
+s207i2: 0-0
+s207n5: 0-0
+s207n2: 1-1
+s207i: 3-3
+s207n4: 4-4
+s207m: 5-6, 10-10
+s207b: 8-8
+s207n: 9-9
+s207n6: 12-12
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 208
+# :: snt208
+Index: 1      2 3     4   5    6    7   8        9    10 11
+Words: Marsha , thank you very much for speaking with us .
+Sentence: None
+
+# sentence level graph:
+(s208t / thank
+    :actor (s208p / person
+        :refer-person 1st
+        :refer-number singular)
+    :undergoer (s208p2 / person
+        :refer-person 2nd
+        :refer-number singular)
+    :manner (s208m / much
+        :manner (s208v / very))
+    :modal-strength full-affirmative
+    :aspect ASP
+    :ADVCL (s208s / speak
+        :OBLIQUE (s208p3 / person
+            :refer-person 1st
+            :refer-number plural)
+        :modal-strength MS-affirmative
+        :aspect ASP)
+    :vocative (s208n / NE-TYPE
+        :name (s208n2 / name
+            :op1 "Marsha")))
+
+# alignment:
+s208p: 0-0
+s208n2: 0-0
+s208n: 1-1
+s208t: 3-3
+s208p2: 4-4
+s208v: 5-5
+s208m: 6-6
+s208s: 7-8
+s208p3: 9-10
+
+# document level annotation:
+
+
+################################################################################
+# sent_id = 209
+# :: snt209
+Index: 1        2
+Words: Pleasure .
+Sentence: None
+
+# sentence level graph:
+(s209p / pleasure
+    :refer-number singular)
+
+# alignment:
+s209p: 1-1
+
+# document level annotation:
+
+
