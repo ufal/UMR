@@ -592,9 +592,10 @@ sub compare_files
             my $p = $nj_mapped/$nj_total;
             my $r = $ni_mapped/$ni_total;
             my $f = 2*$p*$r/($p+$r);
-            printf("Out of %d total %s nodes, %d mapped to %s => recall    = %d%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, $r*100+0.5);
-            printf("Out of %d total %s nodes, %d mapped to %s => precision = %d%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, $p*100+0.5);
-            printf(" => F₁($labeli,$labelj) = %d%%.\n", $f*100+0.5);
+            my $rounding = 2; # 2 decimal places ###!!! We may want to make this configurable from the command line. Smatch has the option --significant 2.
+            printf("Out of %d total %s nodes, %d mapped to %s => recall    = %.${rounding}f%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, round_to_places($r*100, $rounding));
+            printf("Out of %d total %s nodes, %d mapped to %s => precision = %.${rounding}f%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, round_to_places($p*100, $rounding));
+            printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
             # Summarize projections that were originally ambiguous (before we symmetrized them).
             my $ni_ambiguous_src = $files[$i]{stats}{cr}{$labelj}{nodes_with_originally_ambiguous_projection};
             my $nj_ambiguous_src = $files[$j]{stats}{cr}{$labeli}{nodes_with_originally_ambiguous_projection};
@@ -610,9 +611,9 @@ sub compare_files
             $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
             $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
             $f = 2*$p*$r/($p+$r);
-            printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, $r*100+0.5);
-            printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
-            printf(" => F₁ = %d%%.\n", $f*100+0.5);
+            printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, round_to_places($r*100, $rounding));
+            printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, round_to_places($p*100, $rounding));
+            printf(" => F₁ = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
             # Summarize comparison of concepts and relations.
             print("Concept and relation comparison (for unmapped nodes all counted as incorrect):\n");
             $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
@@ -621,9 +622,9 @@ sub compare_files
             $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
             $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
             $f = 2*$p*$r/($p+$r);
-            printf("Out of %d non-empty %s values, %d found in %s => recall    %d%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, $r*100+0.5);
-            printf("Out of %d non-empty %s values, %d found in %s => precision %d%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, $p*100+0.5);
-            printf(" => juːmæʧ ($labeli, $labelj) = F₁ = %d%%.\n", $f*100+0.5); # místo "t͡ʃ" lze případně použít "ʧ"
+            printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, round_to_places($r*100, $rounding));
+            printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, round_to_places($p*100, $rounding));
+            printf(" => juːmæʧ ($labeli, $labelj) = F₁ = %.${rounding}f%%.\n", round_to_places($f*100, $rounding)); # místo "t͡ʃ" lze případně použít "ʧ"
         }
     }
 }
@@ -1606,4 +1607,17 @@ sub print_table
         }
         print("\n");
     }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Rounds a floating-point number to the specified number of decimal digits.
+#------------------------------------------------------------------------------
+sub round_to_places
+{
+    my $value = shift;
+    my $places = shift;
+    my $factor = 10**$places;
+    return int($value * $factor + 0.5) / $factor;
 }
