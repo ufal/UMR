@@ -1137,7 +1137,7 @@ Sentence: None
                             :theme (s21h3 / have-mod-91
                                 :ARG1 (s21f3 / FILL)
                                 :ARG2 (s21d / deep
-                                    :OBLIQUE (s21x / (yard)
+                                    :OBLIQUE (s21x / yard
                                         :refer-number plural)
                                     :OBLIQUE (s21a / areas.
                                         :mod (s21m5 / many)
