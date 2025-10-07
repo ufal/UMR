@@ -15,7 +15,7 @@
 ---
 ---
 
-## Monday, September 8, 2025 
+## Monday, September 8, 2025 (and update from October 6, 2025)
 
 (Dan, Federica, Jan Š., Markéta, ??)
 
@@ -27,18 +27,19 @@
 #### TODO: 
 
 - Honza: _mít_, _být_ ... implement the translation valency frames --> UMR concepts and arguments
-- Markéta, Hanka: complete the translation rules for _mít_, _být_ [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) (instructions [here](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md))
+- ~~Markéta, Hanka: complete the translation rules for _mít_, _být_ [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) (instructions [here](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md))~~ (almost) completed
 - ALL: LREC paper in [Overleaf](https://www.overleaf.com/project/68a3112a48c6e5855461ef59)
 - PLUS: see the updated [TODO list from July 14](#todo-july-14)
+- NEW: conversion: `t_lemmas + CPHR` (other verbs than _být/bývat/bývávát/mít/mít_se/mívat_)
+- NEW: conversion: `t_lemmas + DPHR`, [issue #25](https://github.com/ufal/UMR/issues/25) (both with  _být/bývat/bývávát/mít/mít_se/mívat_ and with other verbs)
 
 #### NEXT meetings
-- **Monday, Sept 15 (Vítkovice) - just after the lunch** 
-- Monday, Sept 22 - Kira's defense at 14:00 
-- Monday, Sept 29 - ITAT workshop
-- Monday, Oct 6 
-- Monday, Oct 13 ... LREC deadline: Friday, October  17, 2025 !!
-- Monday, Oct 20 
-
+- Monday, Oct 20 (S510)
+- Monday, Oct 13 (S510) ... LREC deadline: Friday, October  17, 2025 !!
+- ~~Monday, Oct 6~~  
+- ~~Monday, Sept 29 - ITAT workshop~~
+- ~~Monday, Sept 22 - Kira's defense at 14:00~~ 
+- ~~Monday, Sept 15 (Vítkovice) - just after the lunch~~
 ---
 
 ## Monday, July 14, 2025 (and update from August 18 and 28)
@@ -53,7 +54,7 @@
   - [slides](https://ufallab.ms.mff.cuni.cz/~stepanek/25dmr-slides)
   - [ACL Anthology](https://aclanthology.org/2025.dmr-1.1/) 
 - ITAT 2025: 
-  - UPDATE: final version submitted 
+  - UPDATE: [final version submitted](https://github.com/ufal/UMR/blob/main/papers/2025-ITAT-camera-ready.pdf),  [slides](https://github.com/ufal/UMR/blob/main/papers/2025-ITAT-slides-comp.pdf)
   - ~~version for reviewers submitted~~
   - ~~notification: July 29~~
   - ~~camera-ready version: August 20~~ 
@@ -62,10 +63,10 @@
 
 
 #### TODO: {#todo-july-14}
-- Markéta, Hanka: Check [UMR Schema Reference Pages](https://umr4nlp.github.io/web/UMRSchemaPages/index.html), which provide lists and lattices with definitions and examples. 
-- Markéta, Hanka: Do we want to try [UMR Writer 3.0](https://umr-tool.cs.brandeis.edu/)? 
+- ~~Markéta, Hanka: Check [UMR Schema Reference Pages](https://umr4nlp.github.io/web/UMRSchemaPages/index.html), which provide lists and lattices with definitions and examples.~~ 
+- ~~Markéta, Hanka: Do we want to try [UMR Writer 3.0](https://umr-tool.cs.brandeis.edu/)~~? No :-)
 - **Conversion:** 
-   - Markéta, Hanka: continue with _být_ and _mít_ frames, newly [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479); 
+   - ~~Markéta, Hanka: continue with _být_ and _mít_ frames, newly [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479);~~ (almost completed)
    - ~~check AMR to UMR automatic conversion [here](https://aclanthology.org/2023.tlt-1.8/)!~~
    - Markéta: suggest what to do with the `polite` attribute (todo)
    - Markéta: suggest what to do with the `mode` attribute (todo)
@@ -76,10 +77,10 @@
 
 - **Automatic conversion** - further possible steps: 
    - ~~nodes for #Gen, #Unsp, [issue #23](https://github.com/ufal/UMR/issues/23)~~  Not planned any more!
-   - Personal pronouns with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)
-   - How to describe structural changes in valency frames in a machine-readable format, [issue #27](https://github.com/ufal/UMR/issues/27)?
-   - Reification - which of (possible multiple) children with the specified functor should serve as the predicate, [issue #26](https://github.com/ufal/UMR/issues/26)
-   - Convert _být_ and _mít_ frames as described [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) 
+   - **Personal pronouns** with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)
+   - ~~How to describe structural changes in valency frames in a machine-readable format, [issue #27](https://github.com/ufal/UMR/issues/27)?~~ See the [instructions](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md) and the conversion table [(= google sheet)](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829).
+   - **Reification** - which of (possible multiple) children with the specified functor should serve as the predicate, [issue #26](https://github.com/ufal/UMR/issues/26)
+   - ~~Convert _být_ and _mít_ frames as described [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479)~~
    - **Action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
    - Fix **discourse rolesets with more than 2 ARGS** (as but-91)
 - **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
