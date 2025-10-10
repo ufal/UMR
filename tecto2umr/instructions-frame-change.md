@@ -27,9 +27,9 @@ Alternatively, **insert proper UMR concept there** to the corresponding cell (co
 ##### 2. A combination of the t_lemmas of the verb and its echild
 
 The  concept arises as a combination of the t_lemmas of the frame-evoking verb  and its echild. Then, the particular echild node is indicated by its functor. 
-In such ceses, the echild node is deleted (as described below) and its echildren must be properly processed (see the section on structural changhes below). 
+In such cases, the echild node is deleted (as described below) and its echildren must be properly processed (see the section on structural changes below). 
   
-  For simplicity, the convention concerning a node identification as not applied here (we do not explicitly specify that the node with the CPHR functor is the echild of the verb-evoking verb (and NOT not the processed verb node)).      
+  For simplicity, the convention concerning a node identification as not applied here (we do not explicitly specify that the node with the CPHR functor is the echild of the verb-evoking verb (and NOT the processed verb node)).      
  
   Examples:  
    - `být-018 --> být-CPHR-018`  (in the given sentence, find the CPHR echild of the verb and insert its t_lemma between the verb itself and its number id;   
@@ -73,7 +73,7 @@ Examples:
     (for `být-081`, exemplified e.g. with _Je na Světové bance, aby se přizpůsobila._ (= _Světová banka by měla ..._): the verb remains `být-081` but the modal-strength attribute is changed) 
   
 
-In addition, the change of the attribute can be also indicated for an echild of the verb, specified by its functor (or orther attribute). 
+In addition, the change of the attribute can be also indicated for an echild of the verb, specified by its functor (or other attribute). 
 Then the change is identified: 
 - either in the row for respective functor (if the functor has its own row in the table)
 - or the particular node must be properly identified using echild notation 
@@ -83,7 +83,7 @@ Then the change is identified:
      - preferably, the `ACT` row  indicates:  
       `if(CPHR:možný)(!modal-strength(neutral-affirmative))`  
       `if(CPHR:nutný)(!modal-strength(partial-affirmative))`  
-     - (alternativelly, it can be indiated in the verb row):  
+     - (alternatively, it can be indicated in the verb row):  
        `if(echild.CPHR:možný)(if(echild.functor:ACT)(!modal-strength(neutral-affirmative))),`  
        `if(echild.CPHR:nutný)(if(echild.functor:ACT)(!modal-strength(partial-affirmative)))`  
 ---
@@ -203,7 +203,9 @@ Examples:
  
   -	`!root` (in the functor row) ... indicates the functor that will serve as a new root (as in the case of modality, `být-021` and `být-159`).   
  
-  - `!move(node2,relation)` (in the functor row) ... indicates that the processed node (given by the row) should be moved to become an echild of `node2` (the first parameter) useng the relation `relation` (the second parameter) 
+  - `!move(node2 = new parent,relation)` (in the functor row) ... indicates that the processed node (given by the row) should be moved to become an echild of `node2` (the first parameter) using the relation `relation` (the second parameter)   
+  **NEW: If the moving node is different than the one indicated by the row, add a bracket after `move` and indicate the moving node there:**   
+   `!move(node which should be moved)(node2 = new parent,relation)`  
 
   - `!add(echild.t_lemma(person),functor(mod))` ... add an echild to the processed node, with the specified attributes  
    (as the second insertion (functor) concerns the same node as the first insertion (t_lemma), the node specification (echild of the processed node) is not repeated)  
@@ -243,7 +245,7 @@ Examples:
   - `(echild.functor:PAT,$not-adj)` ... indicates an echild of the processed node with the `PAT` functor that is NOT an adjective (gram/sempos, as indicated by the abbreviation) 
 
 - **the second bracket** contains the instruction what to do;   
-if not specified differently, the instruction is performed on the node and attribute defined by the row (t_lemma for a verb row, functor for afunctor row;  
+if not specified differently, the instruction is performed on the node and attribute defined by the row (t_lemma for a verb row, functor for a functor row;  
 another node may be specified (esp. echild of the processed node);
 more conditions are separated by comma.  
 
@@ -311,7 +313,7 @@ have-possession-91
 
   - What needs to be added is a whole new predicate `have-role-91` and state that "tanks" are its ARG1 (via an ARG1-of relation) and its ARG3 is "toys".
   - Sometimes the added predicate is `have-role-91` (má za manžela Fina "she has a Finn for a husband").
-  - So far I did a different solution, because adding a predicate is too complex - i simply labelled "toys" as :manner on the `have-possession-91` predicate, so the
+  - So far I did a different solution, because adding a predicate is too complex - I simply labelled "toys" as :manner on the `have-possession-91` predicate, so the
     implemented (incorrect) solution looks like this:
 
 ```
@@ -342,7 +344,7 @@ have-mod-91
   - How do I specify this? Do I do this in the line for ACT, or in the line for PAT?
   - The same re-structuring applies to `mít-006` ("mít něco v pořádku", "mít školu daleko","mít něco povinně") and may possibly apply to `mít-007` if we consider the main meaning to be `have-place-91`, rahter than `have-possession-91` (mít něco u sebe, mít doma fotky, mít rodinu v zahraničí, mít kolem krku hada)
 
-**Proposed solution:** Use the newly introduced`!move` instruction, see the example: 
+**Proposed solution:** Use the newly introduced `!move` instruction, see the example: 
 
 Example: 
  - `mít-005` (as in _někdo.ACT má svíčky.PAT zapálené.EFF) --> `have-mod-91`
