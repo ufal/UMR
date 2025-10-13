@@ -204,8 +204,9 @@ Examples:
   -	`!root` (in the functor row) ... indicates the functor that will serve as a new root (as in the case of modality, `být-021` and `být-159`).   
  
   - `!move(node2 = new parent,relation)` (in the functor row) ... indicates that the processed node (given by the row) should be moved to become an echild of `node2` (the first parameter) using the relation `relation` (the second parameter)   
-  **NEW: If the moving node is different than the one indicated by the row, add a bracket after `move` and indicate the moving node there:**   
-   `!move(node which should be moved)(node2 = new parent,relation)`  
+  **NEW: If the moving node is different than the one indicated by the row, add an optional first argument indicating the moving node:**   
+   `!move(node which should be moved, new parent, relation)`,   
+       e.g. `!move(echild:PAT, esibling:ACT, possessor)` finds the PAT echild of the processed node, finds the ACT esibling node of the processed node and hang the former to the latter using the possessor relation (meaning, the PAT node represents a possesor of the ACT node]  
 
   - `!add(echild.t_lemma(person),functor(mod))` ... add an echild to the processed node, with the specified attributes  
    (as the second insertion (functor) concerns the same node as the first insertion (t_lemma), the node specification (echild of the processed node) is not repeated)  
@@ -227,13 +228,13 @@ Examples:
 #### `$` ... introduce an abbreviation for a (complex) condition (esp. on sempos)  
 
 Examples:
-  -	`$actant` ... stands actants (i.e. `functor:X`, with `X~'ACT|PAT|ADDR|ORIG|EFF'`)
+  -	`$actant` ... stands for actants (i.e. `functor:X`, with `X~'ACT|PAT|ADDR|ORIG|EFF'`)
   - `$any-functor` ... stands for any functor
   -	`$noun` ... stands for nominals (i.e.,  `gram/sempos:X`, with `X~'^n.*'`)
   -	`$noun,verb` ... stands for nominals and verbs (i.e., `gram/sempos:X`, with `X~'(^n.*|v)'`)
   -	`$n.denot-v` ... stands for nominals with sempos starting with n.denot and verbs
   - `$noun-not-adj` ... identifies nominals and excludes adjectives (i.e.,  `gram/sempos:X`, with  `X~'^n.*' & X!~'adj.*'`)	 
-
+  - `$form:s+7` ... indicates nodes with the given form at the analytical layer 
 
 #### `if()() else ` ... conditional instruction
 - **the first bracket** contains the condition in the form `attribute:value`;   
