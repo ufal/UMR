@@ -36,8 +36,7 @@ In such cases, the echild node is deleted (as described below) and its echildren
        `být-018` (in _Je hanba, že …_ ) `--> být-hanba-018`;   
        `být-018` (in _… a je mi to jedno_) `--> být-jedno-018`)  
   - `být-144 --> mít-ACT-040`:  
-    `být-144` (in _Naše štěstí.ACT bylo (v tom, že ...).PAT_ (= _My máme štěstí(, že ..._)) `--> mít-štěstí-040`  
-        (PLUS identify correctly `ARG0` of the changed predicate)  
+    `být-144` (in _Naše štěstí.ACT bylo (v tom, že ...).PAT_ (= _My máme štěstí(, že ..._)) `--> mít-štěstí-040`. 
   
   The concept arising as a combination of the verb and its echild may vary, **typically depending on the t_lemma of the latter node**.    
 
@@ -54,17 +53,16 @@ When the verb concept itself should be deleted, use the `!delete`.
 In such case, **a new root of the subtree must be indicated** - this node will  (i) inherit the functor of the original verb and  (ii) become (by default) the parent node for all echildren of the deleted verb (see section on structural changes below).  
  
    Example:
-  - for `být-021` (as in _Je nutné.CPHR odejít.ACT;Je možné.CPHR, že to dopadne.ACT jinak.)_:  
-     `if(CPHR:možný,nutný)(!delete,ACT)` indicates that `být-021` is deleted;   
-     instead, the `ACT` node (for activity) is promoted as the root of the subtree and gets the respective modal value (modal-strength attribute, value neutral-affirmative and partial-affirmative, respectively) 
+  - for `být-021` (as in _Je nutné.CPHR odejít.ACT;Je možné.CPHR, že to dopadne.ACT jinak.)_, the verb row contains:  
+     `if(echild.functor:CPHR,t_lemma:možný,nutný)(!delete,ACT)` ... this indicates that `být-021` is deleted; instead, the `ACT` node (for activity) is promoted as the root of the subtree and gets the respective modal value (modal-strength attribute, value neutral-affirmative and partial-affirmative, respectively) 
   - for `být-159` (as in _Je možné.PAT odejít.ACT Je nutné.PAT odejít.ACT;Je možné.PAT, že to dopadne.ACT jinak._, should be with control (BEN)):  
-     `if(PAT:možný,nutný)(!delete,ACT)`, the same as above.  
+     `if(echild.functor:PAT,t_lemma:možný,nutný)(!delete,ACT)`, the same as above.  
 
 
 
-#### Adding an attribute
+#### Adding an attribute - a verb row
 
-If it is necessary to **add or change an attribute of the processed verb**, please indicate this change AFTER the UMR concept in the same cell.  
+If it is necessary to **add or change an attribute of the processed verb**, please indicate this change AFTER the UMR concept in the same cell.
 
 Examples:
   - `být-013 --> exist-91, !polarity(-)`  
@@ -72,20 +70,9 @@ Examples:
   -	`být-081, !modal-strength(neutral-affirmative)`  
     (for `být-081`, exemplified e.g. with _Je na Světové bance, aby se přizpůsobila._ (= _Světová banka by měla ..._): the verb remains `být-081` but the modal-strength attribute is changed) 
   
+  
 
-In addition, the change of the attribute can be also indicated for an echild of the verb, specified by its functor (or other attribute). 
-Then the change is identified: 
-- either in the row for respective functor (if the functor has its own row in the table)
-- or the particular node must be properly identified using echild notation 
-
-  Example:
-  - for `být-021` (modality, `ACT` denotes activity):
-     - preferably, the `ACT` row  indicates:  
-      `if(CPHR:možný)(!modal-strength(neutral-affirmative))`  
-      `if(CPHR:nutný)(!modal-strength(partial-affirmative))`  
-     - (alternatively, it can be indicated in the verb row):  
-       `if(echild.CPHR:možný)(if(echild.functor:ACT)(!modal-strength(neutral-affirmative))),`  
-       `if(echild.CPHR:nutný)(if(echild.functor:ACT)(!modal-strength(partial-affirmative)))`  
+ 
 ---
 
 ### II. Rows with functors
@@ -149,6 +136,22 @@ Other echildren of the deleted node (typically `CPHR` or `DPHR`) are (unless spe
 - hanged on the frame-evoking verb 
 - their functors translated **using the default functors mapping**.   
 In case of actants, `!error` should be reported.
+
+#### Adding an attribute - a functor row
+
+If it is necessary to add or change an attribute of a verb's descendant node, the change is indicated in the respective row. By default, it is applied to the processed node (if the node has its own functor row in the table). Alternatively,  the particular node must be properly identified (using echild/esibling) notation.   
+
+  Example:
+  - for `být-021` (modality, with `ACT` denoting activity),  
+  as in _Je možné.CPHR odejít.ACT_; _Je nutné.CPHR (, aby přišli).ACT_:
+     - the `ACT` row  indicates:  
+      `if(esibling.functor:CPHR,t_lemma:možný)(!modal-strength(neutral-affirmative))` ... i.e., the node for _odejít.ACT_ gets `neutral-affirmative` modality 
+      `if(esibling.functor:CPHR,t_lemma:nutný)(!modal-strength(partial-affirmative))` ... i.e., the node for _přijít.ACT_ gets `partial-affirmative` modality  
+  - for `mít-028` (as in _měli možnost.CPHR (pozorovat spoluhráče),PAT_, _všichni členové.ACT měli povinnost.CPHR se dostavit.RSTR_);  
+  here, an activity (which should bear the modal attribute) is represented as `PAT` or `RSTR` hanging on the `CPHR` node:    
+      - the `CPHR` row indicates:  
+       `if(t_lemma:možnost,echild.functor:PAT)(echild.functor:PAT,!modal-strength(neutral-affirmative)),`  
+       `if(t_lemma:povinnost,(echild.functor:RSTR,$n.denot-v))(echild.functor:RSTR,!modal-strength(partial-affirmative))`  
 
 ---
 
@@ -253,19 +256,22 @@ more conditions are separated by comma.
   Example:
   - `if(functor:RSTR,$not-adj)(ARG1)` ... a node with the `RSTR` functor that  is NOT an adjective gets the `ARG1` role  
    **TODO: What about if more nodes meet the condition - reification ??**
+  - `if(t_lemma:možnost,echild.functor:PAT)(echild.functor:PAT,!modal-strength(neutral-affirmative))` ... the action is applied to the echild node with `PAT` functor hanging on the processed node
 
 - `else` introduces instruction that is applied when the condition is not met ~~(optional)~~;  
   if no action is required, use `!ok` there.
 
  ```
-CPHR !delete if(echild.functor:PAT)(ARG1)  
+CPHR !delete, if(echild.functor:PAT)(ARG1)  
               else if(echild.functor:RSTR,$n-not-adj)(ARG1)  
+                   else !ok
 ```
+
 
 - more `if` instructions can be cumulated -- then, they are processed in a "procedural" way, as described by the following example.  
 
   Example:
-  -   In the folloing example,  the first `if` instruction searches for `ARG1` (`ARG1` is detected when `PAT` or nominal `RSTR` is found among `CPHR` children).  
+  -   In the following example,  the first `if` instruction searches for `ARG1` (`ARG1` is detected when `PAT` or nominal `RSTR` is found among `CPHR` children).  
   Then (be `ARG1` detected or not), any other potential REMAINING `RSTR` relation is translated to the `manner` relation. If there is still any actant among echildren of the deleted node, error is reported  
 
  ```
