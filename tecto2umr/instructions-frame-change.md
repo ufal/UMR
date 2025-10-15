@@ -98,8 +98,7 @@ However, in some cases -- esp. with frames for light verb constructions (`CPHR` 
 
 In case of deleting the original predicate (as in the case of the modality, `být-021` and `být-159`), **the node that will serve as the new root** gets the `!root` instruction in the functor row.
 
-In general, it must be specified **what to do with echildren of the deleted node**. 
-Unless specified differently, the following rules are applied. 
+Unless specified differently, the following rules are applied: 
 
 ##### (i) Nodes coreferring with nodes of the frame-evoking verb
 
@@ -274,14 +273,23 @@ CPHR !delete, if(echild.functor:PAT)(ARG1)
   -   In the following example,  the first `if` instruction searches for `ARG1` (`ARG1` is detected when `PAT` or nominal `RSTR` is found among `CPHR` children).  
   Then (be `ARG1` detected or not), any other potential REMAINING `RSTR` relation is translated to the `manner` relation. If there is still any actant among echildren of the deleted node, error is reported  
 
- ```
-CPHR !delete,
-      if(echild.functor:PAT)(ARG1)  
-      else if(echild.functor:RSTR,$n-not-adj)(ARG1) 
-           else !ok,  
-      if(echild.functor:RSTR)(manner) else !ok, 
-      if(echild.$actant)(!error) else !ok
 ```
+CPHR !delete,
+      if(echild.functor:PAT)(ARG1)
+      else if (echild.$actant)(!error)
+             else if(echild.functor:RSTR,$n-not-adj)(ARG1)
+                    else if(echild.functor:RSTR)(manner)
+                           else !ok
+```
+
+
+
+~~CPHR !delete,~~  
+      ~~if(echild.functor:PAT)(ARG1)~~  
+      ~~else if(echild.functor:RSTR,$n-not-adj)(ARG1)~~   
+           ~~else !ok,~~  
+      ~~if(echild.functor:RSTR)(manner) else !ok,~~   
+      ~~if(echild.$actant)(!error) else !ok~~
 
 ### More examples
 
