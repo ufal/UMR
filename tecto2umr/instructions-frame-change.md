@@ -198,31 +198,54 @@ In the case of combined conditions/instructions of the type `if(cond1,cond2)(ins
 
 #### `!` ... introduce an action for the given row (t_lemma or functor)  
 
-Examples:
-  -	`!delete` (in a functor row) ... delete the node for the given functor and hang its echildren on the frame-evoking verb (unless specified differently)   
-    `!delete,X` (in a t_lemma row) ... delete the verb node; a new root (identified by its functor `X`) must be indicated among the children of the deleted verb, e.g., `!delete,ACT`   
-    (as in the case of modality, `být-021` and `být-159`)  
- 
-  -	`!root` (in the functor row) ... indicates the functor that will serve as a new root (as in the case of modality, `být-021` and `být-159`).   
- 
-  - `!move(node2 = new parent,relation)` (in the functor row) ... indicates that the processed node (given by the row) should be moved to become an echild of `node2` (the first parameter) using the relation `relation` (the second parameter)   
-  **NEW: If the moving node is different than the one indicated by the row, add an optional first argument indicating the moving node:**   
-   `!move(node which should be moved, new parent, relation)`,   
-       e.g. `!move(echild:PAT, esibling:ACT, possessor)` finds the PAT echild of the processed node, finds the ACT esibling node of the processed node and hang the former to the latter using the possessor relation (meaning, the PAT node represents a possesor of the ACT node]  
+##### !delete
 
-  - `!add(echild.t_lemma(person),functor(mod))` ... add an echild to the processed node, with the specified attributes  
-   (as the second insertion (functor) concerns the same node as the first insertion (t_lemma), the node specification (echild of the processed node) is not repeated)  
+- `!delete` (in a functor row) ... delete the processed node and hang its echildren on the frame-evoking verb (unless specified differently)   
+
+
+- `!delete,X` (in a t_lemma row) ... delete the verb node; a new root (identified by its functor `X`) must be indicated among the children of the deleted verb, e.g., `!delete,ACT`   
+    (as in the case of modality, `být-021` and `být-159`)  
+
+- deleting a node with a functor that is not in the frame (so there is no row for it) ... this would be specified in the row of the functor that governs the echild (=eparent of the node that should be deleted).  
+Example: 
+   - `if(echild.functor:MANN)(!delete)` ... if a MANN node is found among echildren of the processed node, it is deleted.  
+
+
+##### !root 
+
+-	`!root` (in the functor row) ... indicates the functor that will serve as a new root (as in the case of modality, `být-021` and `být-159`).   
+
+##### !move
+
+- `!move(node2 = new parent,relation)` (in the functor row) ... indicates that the processed node (given by the row) should be moved to become an echild of `node2` (the first parameter) using the relation `relation` (the second parameter)   
+
+- `!move(node which should be moved, new parent, relation)` ...  if the moving node is different than the one indicated by the row, add an optional first argument indicating the moving node!!   
+
+Example:  
+  - `!move(echild:PAT, esibling:ACT, possessor)` ... find the PAT echild of the processed node, find the ACT esibling node of the processed node and hang the former (`PAT`) to the latter (`ACT`) using the possessor relation (meaning, the `PAT` node represents a possesor of the `ACT` node)  
+
+##### !add
+
+- `!add(echild.t_lemma(person),functor(mod))` ... add an echild to the processed node, with the specified attributes  
     (can be used both in a t_lemma and a functor row)  
 
-  -	`!polarity(-)` ... add the polarity attribute with the `-` value to the processed node  
- (can be used both in a t_lemma and a functor row)  
- 
-  -	`!modal-strength(partial-affirmative)` ... set the given modal-strength attribute value to the processed node   
-  (can be used both in a t_lemma and a functor row)  
+##### !polarity
 
-  -	`!ok` ... nothing to do  
+ -	`!polarity(-)` ... add the polarity attribute with the `-` value to the processed node  
+ (can be used both in a t_lemma and a functor row)  
+
+##### !modal-strength
+
+-`!modal-strength(partial-affirmative)` ... set the given modal-strength attribute value to the processed node (by default); 
+
+-`!modal-strength(echild.functor:PAT, neutral-affirmative)` ... if the instruction should apply to a different node, the node must be specified as an optional first argument (in this case,  the attribute is set to the echild of the processed node with `PAT` functor)  
+(can be used both in a t_lemma and a functor row)  
+
+##### !ok and !error
+
+-	`!ok` ... nothing to do  
     (esp. `if(cond)(instr) else !ok` ... when no activity is required when the condition is not satisfied; can be used both in a t_lemma and a functor row)
-  - `!error` ... report an error  
+ - `!error` ... report an error  
       (can be used both in a t_lemma and a functor row)
 
 
@@ -238,24 +261,32 @@ Examples:
   - `$noun-not-adj` ... identifies nominals and excludes adjectives (i.e.,  `gram/sempos:X`, with  `X~'^n.*' & X!~'adj.*'`)	 
   - `$form:s+7` ... indicates nodes with the given form at the analytical layer 
 
+#### negation
+
+  -	`no-child.functor:BEN` ... check the functor of all echildren - the condition is met if NO echild with BEN functor is found 
+ 
+
 #### `if()() else ` ... conditional instruction
 - **the first bracket** contains the condition in the form `attribute:value`;   
-  by default, the condition is applied to the node specified by the particular row (i.e., to the verb or to the particular functor, column B for Czech);   
-  another node may be specified (esp. echild of the processed verb);  
-  more conditions are separated by comma.
+   - by default, the condition is applied to the node specified by the particular row (i.e., to the verb or to the particular functor, column B for Czech);   
+   - another node may be specified (esp. echild of the processed verb);  
+   - more conditions are separated by comma; they can be applied either to a single node or several nodes may be specified (see the last example).
 
   Example:
-  - `(echild.functor:PAT,$not-adj)` ... indicates an echild of the processed node with the `PAT` functor that is NOT an adjective (gram/sempos, as indicated by the abbreviation) 
+  - `if (echild.functor:PAT,$not-adj)(...) else ...` the condition indicates an echild of the processed node with the `PAT` functor that is NOT an adjective (gram/sempos, as indicated by the abbreviation) 
+  - `if(t_lemma:možnost,echild.functor:PAT)(...) else ...` the condition specifies the t_lemma of the processed node and checks whether it has an echild with `PAT` functor hanging on it
+  -  `if(t_lemma:možnost,echild.functor:RSTR,$n.denot-v)(...) else ...` the condition specifies **the t_lemma of the processed node** and checks whether it has an **echild with `RSTR` functor and the prescribed sempos** hanging on it (i.e., all conditions following the node identification apply to this node, here both `RSTR` and `$n.denot-v` to an echild of the processed node).
+
 
 - **the second bracket** contains the instruction what to do;   
-if not specified differently, the instruction is performed on the node and attribute defined by the row (t_lemma for a verb row, functor for a functor row;  
-another node may be specified (esp. echild of the processed node);
-more conditions are separated by comma.  
+   - if not specified differently, the instruction is performed on the node and attribute defined by the row (t_lemma for a verb row, functor for a functor row);  
+   - another node may be specified (esp. echild of the processed node);  
+   - more instructions are separated by comma.  
 
   Example:
-  - `if(functor:RSTR,$not-adj)(ARG1)` ... a node with the `RSTR` functor that  is NOT an adjective gets the `ARG1` role  
+  - `if(echild.functor:RSTR,$not-adj)(ARG1) else ...` the instruction specifies that an echild node of the processed node with the `RSTR` functor that  is NOT an adjective (if exists) gets the `ARG1` role  
    **TODO: What about if more nodes meet the condition - reification ??**
-  - `if(t_lemma:možnost,echild.functor:PAT)(echild.functor:PAT,!modal-strength(neutral-affirmative))` ... the action is applied to the echild node with `PAT` functor hanging on the processed node
+  - `if(t_lemma:možnost,echild.functor:PAT)(!modal-strength(echild.functor:PAT, neutral-affirmative)) else ...` the action is applied to the echild node with `PAT` functor hanging on the processed node
 
 - `else` introduces instruction that is applied when the condition is not met ~~(optional)~~;  
   if no action is required, use `!ok` there.
@@ -283,14 +314,6 @@ CPHR !delete,
 ```
 
 
-
-~~CPHR !delete,~~  
-      ~~if(echild.functor:PAT)(ARG1)~~  
-      ~~else if(echild.functor:RSTR,$n-not-adj)(ARG1)~~   
-           ~~else !ok,~~  
-      ~~if(echild.functor:RSTR)(manner) else !ok,~~   
-      ~~if(echild.$actant)(!error) else !ok~~
-
 ### More examples
 
    Example: 
@@ -302,15 +325,26 @@ esse-0x if(no-child.functor:BEN)(!t_lemma(exist-91))
             else (!t_lemma(pred-possession-91), if(echild:BEN)(ARG2) else !ok)
 ```
 
-  Example:   
-  - Deleting a node with a functor that is not in the frame (so there is no row for it).  
-    This would be specified in the row of the functor that governs the echild (=eparent of the node that should be deleted). So, if a MANN node is found among its children, it is deleted.
 
+Example:
+  - `mít-028`, with the valency frame `ACT(1) CPHR(ambice,cíl,čas,...,možnost, ...; zapotřebí)` ... this LVC covers many different constructions, including modality (e.g., _Petr má možnost přijít._ ~ _Petr může přijít._).  
+   As a tentative solution , we use an artificial predicate merging the verb and the predicative noun, namely `mít-CPHR-028` (i.e., `mít-ambice-028` / `mít-cíl-028` / `mít-čas-028` / ...  `mít-možnost-028` / ... / `mít-zapotřebí-028`), with the `ACT` --> `ARG0` mapping.   
+   Then, we try to identify `ARG1`  (`PAT` or `RSTR` with the specified sempos hanging below `CPHR`), see the first `if` instruction.  
+   Further, if `CPHR` is filled with _možnost_, `ARG1` typically denotes an event which is modalized (_přijít_ in _Petr má možnost přijít_.); we change/add the `modal-strength` attribute respectively (`neutral-affirmative` in this case). Similarly for other  `CPHR`s expressing modality (e.g., _povinnost_ indicates `partial-affirmative` modality). Note that we have to stick to PDT-C relations/attributes, see the second `if` instruction referring to `PAT` and `RSTR` (not to `ARG1`)! 
+    
+ 
 ```
-if(echild.functor:MANN)(!delete)
+mít-028 --> mít-CPHR-028
+ACT --> ARG0
+CPHR --> !delete,
+         if(echild.functor:PAT)(ARG1)
+            else if(echild.functor:RSTR,$n.denot-v)(ARG1) else !ok,
+         if(t_lemma:možnost,echild.functor:PAT)(!modal-strength(echild.functor:PAT, neutral-affirmative))
+            else if(t_lemma:možnost,echild.functor:RSTR,$n.denot-v)(!modal-strength(echild.functor:RSTR, neutral-affirmative)) else !ok
+         ...
 ```
 
-### New problems:
+### New problems
 
 #### NOT: Adding an additional predicate
   Example:
