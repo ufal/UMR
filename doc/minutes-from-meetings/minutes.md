@@ -20,7 +20,7 @@
 
 (Dan, Federica, Jan)
 
-#### Updates:
+### Updates
 
 - **testing data for UMR shared task:**
   - submitted for ACL 2026 San Diego, CA, from July 2-7, 2026) ... Federica: rejected (??)
@@ -29,9 +29,9 @@
   
   - when accepted, we will need manually annotated testing data (how many sentences??) ...  **HOW MANY and WHEN** ??
 
-#### TODO - collected from previous meetings
+### TODO - collected from previous meetings
 
-**I. Automatic conversion** (and conversion rules):
+#### **I. Automatic conversion** (and conversion rules)
 
 - <u>Honza</u>: ***mít*, *být* ... implement the translation valency frames --> UMR concepts and arguments**
   
@@ -59,7 +59,7 @@
   
   
 
-**II. Data** (and evaluation):
+#### **II. Data** (and evaluation)
 
 - *být/mít* - **conversion evaluation** (100+100 sentences; criteria: frequency + types)
 
@@ -76,7 +76,7 @@
   
   
 
-**III. Papers:**
+#### **III. Papers**
 
 - ~~LREC paper in [Overleaf](https://www.overleaf.com/project/68a3112a48c6e5855461ef59)~~ - **find a relevant workshop/conference** (when *být/mít* are converted)
 - ??????
@@ -84,12 +84,10 @@
   
   
 
-#### NEXT meetings
+### NEXT meetings
 
 - Monday, Nov 10 (S519)
-
 - Monday, Nov 24 (S510)
-
 - Monday, Dec 1 (S510)
 
 ---
