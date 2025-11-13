@@ -32,6 +32,7 @@ sentence_id = None # The most recently read sentence id
 error_counter = {} # key: error type value: error count
 warn_on_missing_files = set() # langspec files which you should warn about in case they are missing (can be deprel, edeprel, feat_val, tokens_w_space)
 
+
 def warn(msg, testclass, testlevel, testid, lineno=0, explanation=None):
     """
     Print the error/warning message.
@@ -86,6 +87,7 @@ def debugnode(nid, node_dict):
         result = "%s (%s '%s')" % (nid, concept, alignment)
     return result
 
+
 #------------------------------------------------------------------------------
 # Support functions.
 #------------------------------------------------------------------------------
@@ -112,6 +114,7 @@ def is_punctuation(x):
 comment_re = re.compile(r"(.)\#.*")
 def remove_inline_comment(line):
     return remove_trailing_whitespace(comment_re.sub(r"\1", line))
+
 
 # For some languages (Arapaho, Navajo, Sanapana, Kukama), the initial block
 # contains multiple lines with inter-linear glossing. Each of these lines should
@@ -327,6 +330,7 @@ def sentences(inp, args):
                 corrupt = True
             if not corrupt:
                 yield blocks
+
 
 #------------------------------------------------------------------------------
 # Low-level tests: character encoding, line break format etc.
@@ -574,16 +578,42 @@ def validate_sentence_metadata(sentence, known_ids, args):
                         testmessage = "There is a sentence gloss but the (original) Sentence line is missing."
                         warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
 
+
 def dominates(var0, var1, node_dict, tried):
+    """
+    Finds out whether node var0 dominates node var1 in the sentence graph,
+    i.e., there is a directed path whose first relation starts in var0 and last
+    relation ends in var1. The function is used primarily to detect cycles,
+    hence it will ignore the single relation that is allowed to form cycles,
+    :quote.
+
+    Parameters
+    ----------
+    var0 : str
+        Variable (id) of the dominating node.
+    var1 : str
+        Variable (id) of the dominated node.
+    node_dict : dictionary indexed by node ids (variables)
+        Database of all nodes found in the corpus so far.
+    tried : dictionary indexed by node ids (variables)
+        Prevents unbounded recursion. Supply {} when calling the function from
+        outside. It will record traversing var0 before calling itself recursively.
+
+    Returns
+    -------
+    bool
+        True if var0 dominates var1 in the directed graph.
+    """
     tried[var0] = True
     if var0 in node_dict and 'relations' in node_dict[var0]:
-        children = [r['value'] for r in node_dict[var0]['relations'] if r['type'] == 'node' and r['dir'] == 'out' and r['value'] in node_dict]
+        children = [r['value'] for r in node_dict[var0]['relations'] if r['type'] == 'node' and r['dir'] == 'out' and r['value'] in node_dict and r['relation'] != ':quote']
         if var1 in children:
             return True
         for c in children:
             if not c in tried and dominates(c, var1, node_dict, tried):
                 return True
     return False
+
 
 def validate_sentence_graph(sentence, node_dict, args):
     """
@@ -816,6 +846,7 @@ def validate_sentence_graph(sentence, node_dict, args):
             if r['value'] in node_dict:
                 node_dict[r['value']]['relations'].append({'dir': 'in', 'type': 'node', 'value': nid, 'relation': r['relation'], 'line0': r['line0']})
 
+
 def validate_alignment(sentence, node_dict, args):
     """
     Verifies the third annotation block of a sentence: the alignment of the
@@ -968,6 +999,7 @@ def validate_alignment(sentence, node_dict, args):
                 testid = 'unaligned-token'
                 testmessage = f"Non-punctuation token {i+1} ('{sentence[0]['tokens'][i]}') is not aligned to any node in the sentence level graph."
                 warn(testmessage, 'Warning', testlevel, testid, lineno=iline+1) # iline is now at the end of the alignment block
+
 
 def validate_document_level(sentence, node_dict, args):
     """
@@ -1239,6 +1271,7 @@ non_event_rolesets = [
 ]
 non_event_roleset_re = re.compile(r"^(" + '|'.join(non_event_rolesets) + r")$")
 
+
 def validate_relations(sentence, node_dict, args):
     """
     Checks every sentence level relation whether we know it.
@@ -1320,6 +1353,7 @@ def validate_relations(sentence, node_dict, args):
                         warn(testmessage, testclass, testlevel, testid, lineno=relations[i]['line0'])
                         break
 
+
 def validate_name(sentence, node_dict, args):
     """
     Checks the relations of a name node.
@@ -1377,6 +1411,7 @@ def validate_name(sentence, node_dict, args):
                 testmessage = f"Missing outgoing ':op1' relation from the 'name' concept {node['variable']}."
                 warn(testmessage, 'Warning', testlevel, testid, lineno=node['line0'])
 
+
 def validate_wiki(sentence, node_dict, args):
     """
     Checks the relations of a name node.
@@ -1400,6 +1435,7 @@ def validate_wiki(sentence, node_dict, args):
                         testid = 'unexpected-value'
                         testmessage = f"Expected Wikidata id (Q+number), found '{r['value']}'."
                         warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+
 
 def detect_events(sentence, node_dict, args):
     """
@@ -1483,6 +1519,7 @@ def detect_events(sentence, node_dict, args):
                         if not 'entity_reason' in node:
                             node['entity_reason'] = "it participates in a :same-entity relation on line %d" % (r['line0'])
 
+
 def validate_events(sentence, node_dict, args):
     """
     Revisits concepts that have been identified as events and checks that they
@@ -1549,6 +1586,7 @@ def validate_events(sentence, node_dict, args):
                     testid = 'unexpected-attribute'
                     testmessage = f"Attribute {relations[rtype][0]['relation']} not expected because {node['concept']} is not an event."
                     warn(testmessage, testclass, testlevel, testid, lineno=relations[rtype][0]['line0'])
+
 
 def validate_document_relations(sentence, node_dict, args):
     """
@@ -1622,6 +1660,7 @@ def validate_document_relations(sentence, node_dict, args):
         #    testid = 'wrong-node-order'
         #    testmessage = f"Document-level relation should not go from a newer node ('{r['node0']}' defined on line {node0_line}) to an older node ('{r['node1']}' defined on line {node1_line})."
         #    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+
 
 def collect_coreference_clusters(document, node_dict, args):
     """
@@ -1724,6 +1763,7 @@ def collect_coreference_clusters(document, node_dict, args):
                         wiki += ' (' + label + ')'
                 print("  %s (%s / %s) wiki '%s' line %d" % (cm, node_dict[cm]['alignment']['tokstr'], node_dict[cm]['concept'], wiki, node_dict[cm]['line0']))
 
+
 def get_coref_cluster_id(n0, n1, node_dict):
     """
     Takes ids of two nodes from the same coreference cluster. Decides which of
@@ -1747,6 +1787,7 @@ def get_coref_cluster_id(n0, n1, node_dict):
         return n0
     else:
         return n1
+
 
 def build_temporal_graph(document, node_dict, args):
     """
@@ -1878,6 +1919,8 @@ def build_temporal_graph(document, node_dict, args):
     # We may want to see the time line with the temporal relations.
     if args.print_temporal:
         temporal.print_timeline()
+
+
 
 #==============================================================================
 class Temporal:
