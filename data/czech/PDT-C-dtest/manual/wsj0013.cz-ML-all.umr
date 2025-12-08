@@ -393,7 +393,7 @@ Words: Společnost PS of New Hampshire se sídlem v  Manchesteru v  New Hampshir
                                                        :modal-strength full-affirmative
                                                        :ARG0 s5s1
                                                        :ARG1 s5s1)
-                                                       :manner (s5i1 / interní)))
+                                                       :manner (s5i1 / interně)))
         :ARG2 (s5m2 / monetary-quantity
                       :quant (s5a1 / asi :op1 2200000000)
                       :unit (s5d1 / dolar)))
@@ -1074,7 +1074,7 @@ Words: Ross tvrdil ,  že skutečnost ,  že společnost New England navrhla pom
                                                                                    :aspect activity
                                                                                    :modal-strength neutral-affirmative  
                                                                                    :ARG0 (s14e2 / entity)
-                                                                                   :manner (s14p1 / pomalý)
+                                                                                   :manner (s14p1 / pomalu)
                                                                                    :ARG1 (s14s3 / sazba
                                                                                                   :refer-number singular))
                                                                     :ARG2 (s14h1 / have-quant-91
@@ -1217,7 +1217,7 @@ Words: Federální komise pro regulaci energetiky zamítla prozatím žádost sp
                                                                          :ARG0 s16s1
                                                                          :ARG1 (s16s3 / společnost
                                                                                         :name (s16n2 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire"))
-                                                                         :mod (s16p2 / případný))))))
+                                                                         :mod (s16p2 / případně))))))
 
 # alignment:
 s16z1: 6-6
@@ -1272,7 +1272,7 @@ Words: Společnost Northeast oznámila ,  že podá svou žádost znovu a  stál
                                       :ARG1 (s17p2 / posoudit-0
                                                      :aspect performance
                                                      :modal-strength partial-affirmative
-                                                     :manner (s17u1 / urychlený)
+                                                     :manner (s17u1 / urychleně)
                                                      :ARG0 (s17k1 / government-organization
                                                                     :refer-number singular
                                                                     :name (s17n3 / name :op1 "Federální" :op2 "komise" :op3 "pro" :op4 "regulaci" :op5 "energetiky"))
@@ -1361,24 +1361,27 @@ Words: Akcie společnosti PS of New Hampshire včera v  kompozitním obchodován
                                       :ARG0 (s18e2 / entity)
                                       :ARG1 s18a2
                                       :ARG2 (s18e1 / entity))
-                                      :manner (s18k1 / kompozitní)
+                                      :manner (s18k1 / kompozitně)
                       :place (s18b1 / burza
                                       :refer-number singular
-                                      :place (s18n2 / Newyorský)
+                                      :place (s18n2 / human-settlement
+                                                      :refer-number singular
+                                                      :name (s18n3 / name :op1 "New" :op2 "York"))
                                       :mod (s18p1 / papír
                                                     :refer-number plural
                                                     :mod (s18c1 / cenný))) 
-                     :ARG1 (s18p2 / poklesnout-001
-                                    :aspect performance
-                                    :modal-strength full-affirmative
-                                    :extent (s18c2 / monetary-quantity 
-                                                     :quant 25
-                                                     :unit (s18c3 / cent))))        
+                      :ARG1 (s18p2 / poklesnout-001
+                                     :aspect performance
+                                     :modal-strength full-affirmative
+                                     :extent (s18c2 / monetary-quantity 
+                                                      :quant 25
+                                                      :unit (s18c3 / cent))
+                                     :ARG1 s18a2))        
         :op2 (s18s2 / skončit-004
                       :aspect performance   
                       :modal-strength full-affirmative
-                      :ARG0 s18a2
-                      :goal (s18d1 / monetary-quantity 
+                      :ARG1 s18a2
+                      :ARG2 (s18d1 / monetary-quantity 
                                       :unit (s18d2 / dolar)
                                       :quant 3.75)))
 
@@ -1392,6 +1395,7 @@ s18e2: 0-0
 s18k1: 9-9
 s18b1: 11-11,13-13
 s18n2: 12-12
+s18n3: 0-0
 s18p1: 15-15
 s18c1: 14-14
 s18p2: 17-17
