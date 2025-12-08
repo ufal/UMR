@@ -55,8 +55,6 @@
 
 # UMR meeting minutes
 
----
-
 ## Monday, ... template
 
 (attendees)
