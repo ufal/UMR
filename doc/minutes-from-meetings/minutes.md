@@ -1,35 +1,4 @@
-# UMR meeting minutes
-
----
-
-## Monday, ... template
-
-()
-
-#### Updates:
-
-#### TODO:
-
-#### NEXT meetings
-
----
-
----
-
-## Monday, November 3, 2025
-
-(Dan, Federica, Jan)
-
-### Updates
-
-- **testing data for UMR shared task:**
-  - submitted for ACL 2026 San Diego, CA, from July 2-7, 2026) ... Federica: rejected (??)
-  
-  - submitted for ???
-  
-  - when accepted, we will need manually annotated testing data (how many sentences??) ...  **HOW MANY and WHEN** ??
-
-### TODO - collected from previous meetings
+# TODO list (collected from previous meetings)
 
 #### **I. Automatic conversion** (and conversion rules)
 
@@ -50,14 +19,14 @@
 
 - <u>Markéta</u>: suggest what to do with the **mode attribute** (todo)
 
+- <u>Markéta</u>: suggest more precise conversion of **t-lemma substitutes** (todo)
+
 - <u>Markéta</u>: suggest what to do with questions: **UMR-unknown** (todo)
   
   - either as a concept, see ex. 3-1-3-5 (1), [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-5-Light-verb-constructions),
   - or as a polarity value, see ex. 3-3-2 (1c) [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-3-2-mode)
 
-- <u>FUTURE TASK</u>: **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
-  
-  
+- <u>FUTURE TASKs</u>: **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
 
 #### **II. Data** (and evaluation)
 
@@ -69,22 +38,92 @@
   
   - checking and completing the unfinished files from 2.1 manual data
   
-  - selecting new files 
+  - selecting new files
 
 - **Possibility to annotate/re-arrange UMRs in TrEd?** ... postponed  
   (This would significantly speed up the annotation!)
-  
-  
 
 #### **III. Papers**
 
 - ~~LREC paper in [Overleaf](https://www.overleaf.com/project/68a3112a48c6e5855461ef59)~~ - **find a relevant workshop/conference** (when *být/mít* are converted)
 - ??????
 - **TR** - update (should reflect UMR v2.1)
-  
-  
 
-### NEXT meetings
+---
+
+---
+
+# UMR meeting minutes
+
+---
+
+## Monday, ... template
+
+(attendees)
+
+#### Updates:
+
+- xxx
+
+#### TODO:
+
+- xxx
+
+#### NEXT meetings:
+
+- Monday, ....
+
+---
+
+## Monday, December 1 and December 8, 2025
+
+(Dan, Federica, Hana, Jan, Markéta)
+
+#### Updates:
+
+- **UMR parsing shared task:**
+  
+  - [UMR Parsing Shared Task](https://ufal.mff.cuni.cz/umr-parsing) ... to be held as part of the [DMR 2026 workshop](https://dmr2026.github.io/), collocated with [LREC](https://lrec2026.info/) (Palma de Mallorca, Spain)
+  - we will need manually annotated data for testing
+  - Federica: UMR editor
+
+#### TODO:
+
+- **testing data** for the UMR shared task
+  
+  - checking and completing the unfinished files from 2.1 manual data
+  
+  - selecting new files
+
+- **automatic conversion** - low hanging fruits
+
+#### Next meetings
+
+- Monday, Dec 15, 2025 (S510)
+
+- Monday, Jan 5, 2026 (S510)
+
+---
+
+## Monday, November 3, 2025
+
+(Dan, Federica, Jan)
+
+#### Updates:
+
+- **testing data for UMR shared task:**
+  
+  - submitted for ACL 2026 San Diego, CA, from July 2-7, 2026) ... Federica: rejected (??)
+  
+  - submitted for ???
+  
+  - when accepted, we will need manually annotated testing data (how many sentences??) ...  **HOW MANY and WHEN** ??
+
+#### TODO:
+
+- moved above
+
+### NEXT meetings:
 
 - Monday, Nov 10 (S519)
 - Monday, Nov 24 (S510)
@@ -111,7 +150,7 @@
 - NEW: conversion: `t_lemmas + CPHR` (other verbs than _být/bývat/bývávát/mít/mít_se/mívat_)
 - NEW: conversion: `t_lemmas + DPHR`, [issue #25](https://github.com/ufal/UMR/issues/25) (both with  _být/bývat/bývávát/mít/mít_se/mívat_ and with other verbs)
 
-#### NEXT meetings
+#### NEXT meetings:
 
 - Monday, Oct 20 (S510)
 - Monday, Oct 13 (S510) ... LREC deadline: Friday, October  17, 2025 !!
@@ -145,8 +184,11 @@
 #### TODO: {#todo-july-14}
 
 - ~~Markéta, Hanka: Check [UMR Schema Reference Pages](https://umr4nlp.github.io/web/UMRSchemaPages/index.html), which provide lists and lattices with definitions and examples.~~ 
+
 - ~~Markéta, Hanka: Do we want to try [UMR Writer 3.0](https://umr-tool.cs.brandeis.edu/)~~? No :-)
+
 - **Conversion:** 
+  
   - ~~Markéta, Hanka: continue with _být_ and _mít_ frames, newly [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479);~~ (almost completed)
   - ~~check AMR to UMR automatic conversion [here](https://aclanthology.org/2023.tlt-1.8/)!~~
   - Markéta: suggest what to do with the `polite` attribute (todo)
@@ -156,6 +198,7 @@
     - or as a polarity value, see ex. 3-3-2 (1c) [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-3-2-mode)
 
 - **Automatic conversion** - further possible steps: 
+  
   - ~~nodes for #Gen, #Unsp, [issue #23](https://github.com/ufal/UMR/issues/23)~~  Not planned any more!
   - **Personal pronouns** with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)
   - ~~How to describe structural changes in valency frames in a machine-readable format, [issue #27](https://github.com/ufal/UMR/issues/27)?~~ See the [instructions](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md) and the conversion table [(= google sheet)](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829).
@@ -163,6 +206,7 @@
   - ~~Convert _být_ and _mít_ frames as described [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479)~~
   - **Action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
   - Fix **discourse rolesets with more than 2 ARGS** (as but-91)
+
 - **Possibility to annotate/re-arrange UMRs in TrEd?** ...   postponed  
   (This would significantly speed up the annotation!)
 
@@ -608,15 +652,25 @@
 **Czech [UMR-related projects](https://ufal.mff.cuni.cz/uniform-meaning-representation-czech):**
 
 - publications (will be specified, including the required acknowledgement);
+  
   - publications can be also on UMR for other languages than Czech, e.g., Latin or Persian (the project report will explain that it was important to gain a multi-lingual perspective)
+  
   - Publication committment:
+  
   - 1st period (until Dec. 2024): 3 conference papers (done),
+  
   - 2nd and 3rd periods (2025-Sep. 2027, end of project, will be reported as one report in 2027/8):
+  
   - 2nd period: 2 journal papers (WoS), 3 conference papers, 7 parsers (by participants in a shared task organized by us & the US UMR team), 1 dataset (CZ UMR)
+  
   - 3rd period: 2 journal papers, 2 conference papers, 2 SW: (better parser and neurosymbolic LLM)
+  
   - total for 2+3 periods: 4 journal papers, 5 conf. papers, 9 SW results
+  
   - Copy from the project contract (but does not have to folowed to the letter...) below:
-  -  2nd period:
+  
+  - 2nd period:
+  
   - 1 / J / UMR specification for multilingual annotation / Transactions of the
     
          ACL / IF 3,0, Q1 (předběžně)
@@ -636,7 +690,9 @@
        8-12 / R / UMR parser ... (podle počtu účastníků, 5-8 výsledků typu
     
          software, pouze od úspěšných účastníků)
-  -  3rd period:
+  
+  - 3rd period:
+  
   - 1 / J / Combined Language models in selected NLP tasks /
     
          Transaction of ACL / IF 3,0 (Q1)
@@ -661,6 +717,7 @@
        6 / R / UMR LLM [cs] / open source model pro češtinu (nebo
     
          vícejazyčný), LINDAT/CLARIAH-CZ repository
+    
     - Czech data:
     - **goal: approx. 10,000 manually annotated sentences (~ 5% of PDT-C)**
       10 minutes per sentence (on average) ... **??? > 200 person-days ???**
