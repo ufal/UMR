@@ -80,7 +80,6 @@
 #### Updates:
 
 - **UMR parsing shared task:**
-  
   - [UMR Parsing Shared Task](https://ufal.mff.cuni.cz/umr-parsing) ... to be held as part of the [DMR 2026 workshop](https://dmr2026.github.io/), collocated with [LREC](https://lrec2026.info/) (Palma de Mallorca, Spain)
   - we will need manually annotated data for testing
   - Federica: UMR editor
@@ -88,17 +87,13 @@
 #### TODO:
 
 - **testing data** for the UMR shared task
-  
   - checking and completing the unfinished files from 2.1 manual data
-  
   - selecting new files
-
 - **automatic conversion** - low hanging fruits
 
 #### Next meetings
 
 - Monday, Dec 15, 2025 (S510)
-
 - Monday, Jan 5, 2026 (S510)
 
 ---
@@ -110,11 +105,8 @@
 #### Updates:
 
 - **testing data for UMR shared task:**
-  
   - submitted for ACL 2026 San Diego, CA, from July 2-7, 2026) ... Federica: rejected (??)
-  
   - submitted for ???
-  
   - when accepted, we will need manually annotated testing data (how many sentences??) ...  **HOW MANY and WHEN** ??
 
 #### TODO:
@@ -134,13 +126,11 @@
 (Dan, Federica, Jan Š., Markéta, ??)
 
 #### Updates:
-
 - Dan, Honza: UMR shared task submitted (San Diego, CA, from July 2-7, 2026)  
   if accepted, we will need manually annotated testing data (how many sentences??), **end of February, 2026** 
 - Markéta, Honza: 'language' for description of changes in valency frames (esp. for *být*, *mít* frames) [HERE](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md)
 
 #### TODO:
-
 - Honza: _mít_, _být_ ... implement the translation valency frames --> UMR concepts and arguments
 - ~~Markéta, Hanka: complete the translation rules for _mít_, _být_ [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) (instructions [here](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md))~~ (almost) completed
 - ALL: LREC paper in [Overleaf](https://www.overleaf.com/project/68a3112a48c6e5855461ef59)
@@ -149,7 +139,6 @@
 - NEW: conversion: `t_lemmas + DPHR`, [issue #25](https://github.com/ufal/UMR/issues/25) (both with  _být/bývat/bývávát/mít/mít_se/mívat_ and with other verbs)
 
 #### NEXT meetings:
-
 - Monday, Oct 20 (S510)
 - Monday, Oct 13 (S510) ... LREC deadline: Friday, October  17, 2025 !!
 - ~~Monday, Oct 6~~  
