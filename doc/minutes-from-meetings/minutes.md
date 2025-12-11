@@ -84,6 +84,7 @@
   - we will need manually annotated data for testing
 - Federica: [UMR editor](https://github.com/Orange-OpenSource/metamorphosed/tree/UMR). See [UMR.md](https://github.com/Orange-OpenSource/metamorphosed/blob/UMR/UMR.md) for graph-editing instructions. \
   Other instructions received directly from Johannes Heinecke (the developer) - if helpful:
+
 ```
 # to install it, try:
 
@@ -135,11 +136,13 @@ uv run sync
 (Dan, Federica, Jan Š., Markéta, ??)
 
 #### Updates:
+
 - Dan, Honza: UMR shared task submitted (San Diego, CA, from July 2-7, 2026)  
   if accepted, we will need manually annotated testing data (how many sentences??), **end of February, 2026** 
 - Markéta, Honza: 'language' for description of changes in valency frames (esp. for *být*, *mít* frames) [HERE](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md)
 
 #### TODO:
+
 - Honza: _mít_, _být_ ... implement the translation valency frames --> UMR concepts and arguments
 - ~~Markéta, Hanka: complete the translation rules for _mít_, _být_ [HERE](https://docs.google.com/spreadsheets/d/1ocs1-IG5JUebKFT0NjlO28WgxM6NANMc/edit?gid=171036479#gid=171036479) (instructions [here](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md))~~ (almost) completed
 - ALL: LREC paper in [Overleaf](https://www.overleaf.com/project/68a3112a48c6e5855461ef59)
@@ -148,6 +151,7 @@ uv run sync
 - NEW: conversion: `t_lemmas + DPHR`, [issue #25](https://github.com/ufal/UMR/issues/25) (both with  _být/bývat/bývávát/mít/mít_se/mívat_ and with other verbs)
 
 #### NEXT meetings:
+
 - Monday, Oct 20 (S510)
 - Monday, Oct 13 (S510) ... LREC deadline: Friday, October  17, 2025 !!
 - ~~Monday, Oct 6~~  
@@ -832,4 +836,3 @@ See above.
 - for Markéta: collect information from JH
   - next release date
   - available funds for manual UMR annotation (if yes, when and how many?)
-
