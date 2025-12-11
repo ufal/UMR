@@ -82,7 +82,16 @@
 - **UMR parsing shared task:**
   - [UMR Parsing Shared Task](https://ufal.mff.cuni.cz/umr-parsing) ... to be held as part of the [DMR 2026 workshop](https://dmr2026.github.io/), collocated with [LREC](https://lrec2026.info/) (Palma de Mallorca, Spain)
   - we will need manually annotated data for testing
-  - Federica: UMR editor
+- Federica: [UMR editor](https://github.com/Orange-OpenSource/metamorphosed/tree/UMR). See [UMR.md](https://github.com/Orange-OpenSource/metamorphosed/blob/UMR/UMR.md) for graph-editing instructions. \
+  Other instructions received directly from Johannes Heinecke (the developer) - if helpful:
+```
+# to install it, try:
+
+git clone https://github.com/Orange-OpenSource/metamorphosed
+cd metamorphosed
+git checkout UMR
+uv run sync
+```
 
 #### TODO:
 
@@ -823,3 +832,4 @@ See above.
 - for Markéta: collect information from JH
   - next release date
   - available funds for manual UMR annotation (if yes, when and how many?)
+
