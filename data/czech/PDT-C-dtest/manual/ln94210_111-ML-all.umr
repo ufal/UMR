@@ -228,6 +228,7 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
                                         :quarter 4
                                         :year (s4l1 / letošní))
                       :ARG1 (s4n1 / news-media
+                                   :refer-number singular
                                    :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))
                       :ARG2 (s4k1 / monetary-quantity
                              :quant 5
