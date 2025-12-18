@@ -172,3 +172,90 @@ s3v1: 7-7
            (s2s1 :same-entity s3s1)))
 
 
+################################################################################
+# sent_id = u_tree-cs-s4-root
+# :: snt4
+Index: 1         2          3 4     5          6    7       8            9
+Words: Zanechává společnost , která předložila plán vnitřní reorganizace ...
+
+# sentence level graph:
+(s4z1 / zanechávat-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s4e1 / event
+                     :refer-number singular)                   
+:ARG1(s4s1 / společnost
+    :refer-number singular
+    :ARG0-of (s4p2 / předložit-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG1 (s4p3 / thing
+            :refer-number singular))
+    :ARG0-of (s4p5 / plánovat-001
+        :result s4p3
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG1 (s4r1 / event
+            :refer-number singular
+            :aspect process
+            :modal-strength full-affirmative))
+    :ARG0-of (s4r3 / reorganizovat-001
+        :result s4r1
+        :aspect activity
+        :modal-strength full-affirmative
+        :mod (s4v1 / vnitřní))
+    :ARG1-of s4r3))
+
+# alignment:
+s4z1: 1-1
+s4e1: 0-0
+s4s1: 2-2, 4-4
+s4p2: 5-5
+s4p3: 6-6
+s4p5: 0-0
+s4r1: 8-8
+s4r3: 0-0
+s4v1: 7-7
+    
+# document level annotation:
+(s4s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s5-root
+# :: snt5
+Index: 1      2     3 4     5       6 7    8    9  10          11
+Words: Zmínil dceru , jejíž jednání k sobě samé ho zneklidňuje ...
+
+# sentence level graph:
+(s5z1 / zmínit-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s5p1 / person
+                      :refer-person 3rd 
+                      :refer-number singular)
+        :ARG1 (s5d1 / dcera
+                      :refer-number singular
+                      :mod (s5z2 / zneklidňovat
+                                   :aspect state
+                                   :modal-strength full-affirmative
+                                   :ARG0 s5p1
+                                   :ARG1 (s5j1 / jednat-003
+                                                 :aspect activity
+                                                 :modal-strength full-affirmative
+                                                 :ARG2 (s5m1 / manner)))
+                      :ARG0-of s5j1
+                      :ARG1-of s5j1))                    
+
+# alignment:
+s5z1: 1-1
+s5p1: 9-9
+s5d1: 2-2, 4-4, 6-8
+s5z2: 10-10
+s5j1: 5-5
+s5m1: 0-0
+
+# document level annotation:
+(s5s0 / sentence)
+
+
