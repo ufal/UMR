@@ -41,15 +41,17 @@ sub read {
     while (<$fh>) {
         s/[\n\r]*//;
         s/#\s*TODO.*//;
-        if (/# *sentence level graph/ && "" eq $mode) {
+        if (/# *sentence level graph/ && 'words' eq $mode) {
             $mode = 'sentence';
 
-        } elsif (/^(?| Words :? \s* (.*)
-                     | \# \s+ :: \s+ snt[0-9]+ \s+ (.+) )/x
+        } elsif ($mode ne 'words'
+                 && /^(?| Words :? \s* (.*)
+                        | \# \s+ :: \s+ snt[0-9]+ \s+ (.+) )/x
         ) {
             my @words = split ' ', $1;
             $root = new_root(\@words, ++$sentence_index);
             $doc->append_tree($root);
+            $mode = 'words';
 
         } elsif (/^\(/ && 'sentence' eq $mode) {
             $buffer = $_;
