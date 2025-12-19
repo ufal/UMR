@@ -2,7 +2,9 @@
 
 #### AMR: `:subset` and `subset-of` relations
 
-The relation `subset` links the **whole** (represented as the head) and its **part** (child node).
+The relation `subset` links the **whole** (represented as the head) and its **part** (child node). 
+
+This means (as usual in UMR): the name of the relation should be read from the child's perspective = **the child is the subset !!!**
 
 ```
 Four survivors had the disease, including three who were diagnosed.
@@ -32,8 +34,6 @@ Nine of the twenty soldiers died.
 
 These relations are understood as "shortcuts" as they should e "automatically'' reified to the `include-91` predicate.
 
-
-
 #### AMR:  `include-91` predicate/roleset
 
 For indicating a subset relation,  AMR uses the `include-91` abstract predicate:   
@@ -52,7 +52,9 @@ For indicating a subset relation,  AMR uses the `include-91` abstract predicate:
 The `include-91` predicate has three arguments:
 
 - ARG1 for the subset
+
 - ARG2 for the whole set
+
 - ARG3 for the relative size of subset compared to superset (i.e., percentage), as is illustrated in the following sentence (from the [AMR Dictionary](https://amr.isi.edu/doc/amr-dict.html)):
 
 - [en] _10% of smokers die of lung cancer._
@@ -82,7 +84,11 @@ AMR exemplifies this relation on the following sentences:
   - (include-91 :ARG1 Thomas :ARG2 Latin speakers) ... i.e., _Thomas belongs to Latin speakers_
   - (include-91 :ARG1 Latin speakers :ARG2 boys in Kentucky :ARG3 few) ... i.e., _There are (only) few Latin speakers among boys in Kentucky_, with _few_ identified as :ARG3
 
-#### UMR
+#### UMR: `:subset-of` relation
+
+The `subset-of` relation is used only at the document level annotation, with a subset as the head and the whole set as a child - i.e., it works in the same way as the `:subset-of` relation at the sentence level.    
+
+#### UMR: `include-91` predicate/roleset
 
 UMR does not explicitly comment on the use of the `include-91` predicate, the Guidelines present only 1 example -- with confused ARGs (at least as I understand it, ML) 
 

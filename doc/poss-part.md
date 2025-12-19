@@ -32,7 +32,9 @@ AMR:
    AMR: (team :consist-of (monkey)) --> UMR: have-group-91 (ARG1 entity, ARG2 group)  
     _a ring of gold_   
    AMR: (ring :consist-of (gold))   --> UMR: have-material-91 (ARG1 entity, ARG2 material) 
+
 - `:subevent` (_presentation at a conference_) ... ???
+
 - `:subset` (with `include-91` as reification) ...UMR --> `include-91`
   
   ```
@@ -51,7 +53,7 @@ The Guidelines:
 
 > UMR uses :poss and :part relations with the possessum or part as the parent and the possessor or whole as the daughter, ...
 
-!!! possessum as the parent and the possessor/owner as the daughter !!!  
+**!!! a possessum as the parent** and **the possessor/owner as the daughter !!!**   (as usual in UMR, the name of the relation should be read from the child's perspective =  the child is the possessor)  
 
 ```
 (possessum                 
@@ -113,11 +115,41 @@ The Guidelines:
 
 > UMR uses :poss and :part relations with the possessum or part as the parent and the possessor or whole as the daughter, ...
 
-!!! part/fragment as the parent and the whole entity as the daughter !!!  
+**!!! part/fragment as the parent and the whole entity as the daughter !!!**  
 
 ```
 (part/fragment 
        :part (whole entity))
+```
+
+Two examples in the UMR Schema list for [Roles and Reifications](https://umr4nlp.github.io/web/UMRSchemaPages/Roles-and-Reifications.html) conform with this rule:
+
+_**My nose** itched._
+
+```
+(i / itch-01
+     :experiencer (n / nose
+     :part-of (p / person             <--------
+                   :refer-person 1st
+                   :refer-number singular))
+     :aspect state
+     :modal-strength full-affirmative)
+```
+
+The movers lay the box on its **side**.
+
+```
+(l / lay-01
+     :actor (p / person
+                 :refer-number plural
+                 :actor-of (m / move-01))
+    :theme (b / box)
+    :orientation (o / on-04
+                      :theme b 
+                      :part (s / side
+                                 :part-of b) <-------- 
+    :aspect performance
+    :modal-strength full-affirmative)
 ```
 
 **Summary:**
@@ -128,16 +160,19 @@ The Guidelines:
 
 ---
 
-**`:part` examples** (the UMR Guidelines, the English released data):  
+**`:part` examples** (the UMR Guidelines, the English 1.0 released data):  
 
 - his blood/hand/string/car   ... (blood/hand/string/car :part (person)) ... from the UMR Guidelines
+
 - guitar's string ... (string :part (guitar) ... from the UMR Guidelines
+
 - blood pressure = pressure of his blood  ... (pressure-01 :ARG1 (blood :part person)) ... from the UMR Guidelines     
+
 - the government office (= the office is part of the government, the data)
   
                         ... (office :part (government))  
 
---> OK in the Guidelines, OK for some examples in the English data
+--> OK in the Guidelines, OK for some examples in the English data (UMR 1.0)
 
 **KO annotation** in the English data (2/5 plus 1 unclear):
 
@@ -145,9 +180,11 @@ The Guidelines:
 - like an apron with pockets (= thing [resembling apron] with pockets ) ... (thing :part (pocket))
   Both should be annotated as `:part-of`!!
 
+
+
 **`:part-of` examples:**  
 UMR Guidelines NO example!!   
-English data 4 examples, **all of them wrong** ... should be  (part :part whole)!!
+English 1.0 data 4 examples, **all of them wrong** ... should be  (part :part whole)!!
 
 - in the south of Leyte ... (south :part-of (Leyte)    )    KO
 - at the top of the ladder ... (top :part-of (ladder))        KO
@@ -160,6 +197,7 @@ English data just 1 example:
 
 - And the movie had sound track.   (have-part-91
   
+      have-part-91        
               :ARG1 (movie)         ... entity = whole
               :ARG2 (sound-track))  ... part
   
