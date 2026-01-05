@@ -2,37 +2,62 @@
 
 #### **I. Automatic conversion** (and conversion rules)
 
-- <u>Honza</u>: ***mít*, *být* ... implement the translation valency frames --> UMR concepts and arguments**
+**Low hanging fruits (hopefully):**
+
+- <u>Markéta</u>: suggest more precise conversion of **t-lemma substitutes**, [issue #31](https://github.com/ufal/UMR/issues/31)
   
-  - 'language' for description of changes in valency frames (esp. for *být*, *mít* frames) [HERE](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md)
-  - table with conversion / conversion rules [HERE](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829)
+  - <u>Honza</u>: conversion of **lemma substitutes** (refinement) ... to be completed
+  
+  - ~~Honza - NEW: personal pronouns with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)~~ ... DONE
 
-- <u>Honza - NEW</u>: conversion: **t_lemmas + CPHR** (other verbs than *být/bývat/bývávát/mít/mít_se/mívat*)
+- Markéta: **reflexivity vs. reciprocity**, [issue#34](https://github.com/ufal/UMR/issues/34)  <mark>TODO</mark>
+  
+  - Honza - NEW: 
 
-- <u>Honza - NEW</u>: conversion: **t_lemmas + DPHR**, [issue #25](https://github.com/ufal/UMR/issues/25) (both with *být/bývat/bývávát/mít/mít_se/mívat* and with other verbs)
+- <u>Markéta</u>: suggest what to do with the **polite attribute**, [issue #32](https://github.com/ufal/UMR/issues/32):
+  
+  - <u>Honza - NEW</u>: conversion of the polite attribute ... Whenever the politeness grammateme with the value `polite` appears, assign the polite attribute with the value "+" to the event governing the respective pronoun.
 
-- <u>Honza - NEW</u>: **personal pronouns** with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)
+- <u>Markéta</u>: suggest what to do with the **mode attribute**, [issue #33](https://github.com/ufal/UMR/issues/33):
+  
+  - <u>Honza - NEW</u>: conversion of the polite attribute ... For all nodes with the `sentmod` grammateme, set the `mode` value as described in #33.
 
-- <u>Honza - NEW</u>: **reification** - which of (possible multiple) children with the specified functor should serve as the predicate, [issue #26](https://github.com/ufal/UMR/issues/26)
+- <u>Honza - NEW</u>: conversion: **t_lemmas + DPHR**, [issue #25](https://github.com/ufal/UMR/issues/25) (both with *být/bývat/bývávát/mít/mít_se/mívat* <u>and with other verbs</u>)
 
-- <u>Markéta</u>: suggest what to do with the **polite attribute** (todo)
 
-- <u>Markéta</u>: suggest what to do with the **mode attribute** (todo)
 
-- <u>Markéta</u>: suggest more precise conversion of **t-lemma substitutes** (todo)
+**Future tasks (postponed):**
 
 - <u>Markéta</u>: suggest what to do with questions: **UMR-unknown** (todo)
   
   - either as a concept, see ex. 3-1-3-5 (1), [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#Part-3-1-3-5-Light-verb-constructions),
   - or as a polarity value, see ex. 3-3-2 (1c) [Guidelines](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-3-2-mode)
 
-- <u>FUTURE TASKs</u>: **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+- <u>Honza</u>: ***mít*, *být* ... implement the translation valency frames --> UMR concepts and arguments**
+  
+  - 'language' for description of changes in valency frames (esp. for *být*, *mít* frames) [HERE](https://github.com/ufal/UMR/blob/main/tecto2umr/instructions-frame-change.md)
+  
+  - table with conversion / conversion rules [HERE](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829)
+
+- <u>Honza - NEW</u>: **reification** - which of (possible multiple) children with the specified functor should serve as the predicate, [issue #26](https://github.com/ufal/UMR/issues/26)
+
+
+
+**New (more complex) tasks:**
+
+- **light verb constructions --> t_lemmas + CPHR** (other verbs than *být/bývat/bývávát/mít/mít_se/mívat*)
+  
+  - Federica: Here's the paper about UMR annotation of multiword expressions - [paper](https://aclanthology.org/2023.dmr-1.10.pdf)
+
+- **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
+
+ 
 
 #### **II. Data** (and evaluation)
 
 - *být/mít* - **conversion evaluation** (100+100 sentences; criteria: frequency + types)
-
-- **--> UMR 2.2** ... together with action nouns (at least *-ní/-tí*), agent nouns
+  
+  **--> ?? UMR 2.2** ... together with action nouns (at least *-ní/-tí*), agent nouns
 
 - **testing data** for the UMR shared task
   
@@ -42,6 +67,8 @@
 
 - **Possibility to annotate/re-arrange UMRs in TrEd?** ... postponed  
   (This would significantly speed up the annotation!)
+
+#### 
 
 #### **III. Papers**
 
@@ -69,7 +96,29 @@
 
 #### NEXT meetings:
 
-- Monday, ....
+- Monday, xxx
+
+---
+
+## Monday, January 5, 2026
+
+(Dan, Federica, Hana, Markéta)
+
+#### Updates:
+
+- discussion on verbs with CPHR functor, see also [the paper](https://aclanthology.org/2023.dmr-1.10.pdf) about UMR annotation of multiword expressions
+- updates on the *metAMoRphosed* editor [UMR editor](https://github.com/Orange-OpenSource/metamorphosed/tree/UMR) ??
+
+#### TODO:
+
+- see above
+
+#### NEXT meetings:
+
+- Monday, January 12, S510
+- Monday, January 19, S510 (only 1 hour)
+- Monday, January 26 ?? (Markéta not available)
+- Monday, February 2, S510
 
 ---
 
