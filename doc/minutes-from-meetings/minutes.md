@@ -4,15 +4,16 @@
 
 **Low hanging fruits (hopefully):**
 
-- <u>Markéta</u>: suggest more precise conversion of **t-lemma substitutes**, [issue #31](https://github.com/ufal/UMR/issues/31)
+- <u>Markéta</u>: suggest more precise conversion of **t-lemma substitutes**, [issue #31](https://github.com/ufal/UMR/issues/31):
   
   - <u>Honza</u>: conversion of **lemma substitutes** (refinement) ... to be completed
   
   - ~~Honza - NEW: personal pronouns with 1st and 2nd person should be converted as `person` (rather than `entity`), [issue #24](https://github.com/ufal/UMR/issues/24)~~ ... DONE
 
-- Markéta: **reflexivity vs. reciprocity**, [issue#34](https://github.com/ufal/UMR/issues/34)  <mark>TODO</mark>
+- Markéta: **reflexivity vs. reciprocity**, [issue#34](https://github.com/ufal/UMR/issues/34) :
   
-  - Honza - NEW: 
+  - <u>Honza - NEW</u>: Coreferential links starting from a `#Rcp` node should be treated in the same way as other coreferential links (i.e., a `#Rcp` node should be merged with the target node for overtly expressed participant).  
+    To distinguish reciprocal and reflexive meaning, with reciprocal construction (originally containing the `#Rcp` t_lemma), *vzájemně*.MANN is added to the governing event (unless *vzájemně*.MANN or *navzájem*.MANN is already there).
 
 - <u>Markéta</u>: suggest what to do with the **polite attribute**, [issue #32](https://github.com/ufal/UMR/issues/32):
   
@@ -23,8 +24,6 @@
   - <u>Honza - NEW</u>: conversion of the polite attribute ... For all nodes with the `sentmod` grammateme, set the `mode` value as described in #33.
 
 - <u>Honza - NEW</u>: conversion: **t_lemmas + DPHR**, [issue #25](https://github.com/ufal/UMR/issues/25) (both with *být/bývat/bývávát/mít/mít_se/mívat* <u>and with other verbs</u>)
-
-
 
 **Future tasks (postponed):**
 
@@ -41,8 +40,6 @@
 
 - <u>Honza - NEW</u>: **reification** - which of (possible multiple) children with the specified functor should serve as the predicate, [issue #26](https://github.com/ufal/UMR/issues/26)
 
-
-
 **New (more complex) tasks:**
 
 - **light verb constructions --> t_lemmas + CPHR** (other verbs than *být/bývat/bývávát/mít/mít_se/mívat*)
@@ -50,8 +47,6 @@
   - Federica: Here's the paper about UMR annotation of multiword expressions - [paper](https://aclanthology.org/2023.dmr-1.10.pdf)
 
 - **action nouns**, **agent nouns** in noun-to-verbs conversion, see the description, see [the description](https://github.com/ufal/UMR/blob/main/tecto2umr/derivace-podklady/description.txt)
-
- 
 
 #### **II. Data** (and evaluation)
 
