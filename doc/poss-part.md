@@ -122,9 +122,28 @@ The Guidelines:
        :part (whole entity))
 ```
 
-Two examples in the UMR Schema list for [Roles and Reifications](https://umr4nlp.github.io/web/UMRSchemaPages/Roles-and-Reifications.html) conform with this rule:
+See, for example, the Guidelines, ex. 3-2-2-2 (1b) [Part 3-2-2-2. Modifiers](https://github.com/ufal/umr-guidelines/blob/master/guidelines.md#part-3-2-2-2-modifiers):
 
-_**My nose** itched._
+```
+Guitar strings
+(s/ string
+    :refer-number plural
+    :part (g/ guitar))
+```
+
+**Summary:**
+
+1. Use `:part` when talk about a thing that belongs to some bigger entity (like in ...)
+2. Use `:part-of` relation when talk about the whole entity (like in ...)
+3. Use `have-part-91` when interpreted as predication, with `ARG1`=the whole entity and `ARG2`= its part/fragment
+
+---
+
+---
+
+**However, two examples in the UMR Schema list for [Roles and Reifications](https://umr4nlp.github.io/web/UMRSchemaPages/Roles-and-Reifications.html) violate this rule:**
+
+- **My nose** itched.
 
 ```
 (i / itch-01
@@ -136,7 +155,7 @@ _**My nose** itched._
      :modal-strength full-affirmative)
 ```
 
-The movers lay the box on its **side**.
+- The movers lay the box on its **side**.
 
 ```
 (l / lay-01
@@ -152,13 +171,7 @@ The movers lay the box on its **side**.
     :modal-strength full-affirmative)
 ```
 
-**Summary:**
-
-1. Use `:part` when talk about a thing that belongs to some bigger entity (like in ...)
-2. Use `:part-of` relation when talk about the whole entity (like in ...)
-3. Use `have-part-91` when interpreted as predication, with `ARG1`=the whole entity and `ARG2`= its part/fragment
-
----
+#### Examples from the Guidelines
 
 **`:part` examples** (the UMR Guidelines, the English 1.0 released data):  
 
@@ -174,13 +187,13 @@ The movers lay the box on its **side**.
 
 --> OK in the Guidelines, OK for some examples in the English data (UMR 1.0)
 
+#### Examples from the UMR 1.0 (English)
+
 **KO annotation** in the English data (2/5 plus 1 unclear):
 
 - in the central Philippines ... (Philippines :part (center))
 - like an apron with pockets (= thing [resembling apron] with pockets ) ... (thing :part (pocket))
   Both should be annotated as `:part-of`!!
-
-
 
 **`:part-of` examples:**  
 UMR Guidelines NO example!!   
