@@ -184,8 +184,15 @@
         my ($node) = @_;
         return $node->{label}
             if (($node->{relation} // "") ne 'name'
-                && ($node->{label} // "") ne 'foreign-phrase')
+                && ($node->{label} // "") ne 'foreign-phrase'
+                && ($node->{label} // "") ne 'percentage-entity')
             || ! $node->{features};
+
+        if ('percentage-entity' eq $node->{label}) {
+            my ($value) = grep 'value' eq $_->{type}, ListV($node->{features});
+            return $node->{label} . ' #{grey}[' . $value->value . ']' if $value;
+            return $node->{label};
+        }
 
         my @words = map $_->value =~ s/^"|"$//gr, ListV($node->{features});
         my ($leftq, $rightq) = $node->{label} eq 'foreign-phrase'
