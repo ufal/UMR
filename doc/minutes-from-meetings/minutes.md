@@ -95,23 +95,39 @@
 
 ---
 
-## Monday, January 5, 2026
+## Monday, January 5/12/19, 2026
 
-(Dan, Federica, Hana, Markéta)
+(Dan, Federica, Hana, Markéta; Dan just on Jan 5)
 
 #### Updates:
 
+**Manual annotation:**
+
 - discussion on verbs with CPHR functor, see also [the paper](https://aclanthology.org/2023.dmr-1.10.pdf) about UMR annotation of multiword expressions
-- updates on the *metAMoRphosed* editor [UMR editor](https://github.com/Orange-OpenSource/metamorphosed/tree/UMR) ??
+- discussion on nested NEs ... NOT nested NEs, keep annotation flat (tentative solution) 
+- discussion about the difference between 
+  - :extent (measuremant phrase) ... for phrases answering the question _How much ...?__, as in
+    - _he arrived **five minutes** late_ ... How much late? 
+    - _he ran **7 miles** yeasterday_ ... How much?
+  - :degree (intensifiier/downtoner) ... modifies a property concept, as in 
+    - _**very** big_ or _**somewhat** dirty_ 
+- What about baseline for Czech data?
+- updates on the *metAMoRphosed* editor [UMR editor](https://github.com/Orange-OpenSource/metamorphosed/tree/UMR) ? Instructions below (Dec. 1, 2025)
 
-#### TODO:
+**DMR workshop:**
 
-- see above
+- Shared Task:
+  
+  - Which languages: Federica: Chinese, English, Czech, ?Latin, ?anything else
+  
+  - What about baseline for Czech?
+
+- Paper on derivations?
+  
+  
 
 #### NEXT meetings:
 
-- Monday, January 12, S510
-- Monday, January 19, S510 (only 1 hour)
 - Monday, January 26 ?? (Markéta not available)
 - Monday, February 2, S510
 
