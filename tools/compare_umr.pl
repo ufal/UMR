@@ -13,6 +13,7 @@ use Getopt::Long;
 
 ###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off.
 ###!!! TODO: Evaluate document-level relations.
+###!!! TODO: Evaluate node-token alignments. (Careful – they are used as basis for other comparisons. But at least we can say which tokens have an alignment and which do not.)
 ###!!! TODO: Add less verbose mode (only final numbers).
 ###!!! TODO: Move the script to a separate repository (umrtools?)
 
@@ -113,6 +114,7 @@ while(1)
             parse_sentence_tokens($sentence);
             parse_sentence_graph($sentence);
             parse_sentence_alignments($sentence);
+            parse_sentence_docrels($sentence);
             1;
         }
         or do
@@ -493,6 +495,145 @@ sub parse_sentence_alignments
         {
             confess(sprintf("Cannot parse the alignment line %d of file %s", $iline, $file->{label}));
         }
+    }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Takes a sentence hash. Parses the lines of the document-level relation block
+# in the given sentence and saves the resulting structure in the sentence hash.
+#------------------------------------------------------------------------------
+sub parse_sentence_docrels
+{
+    my $sentence = shift; # hash reference
+    my $file = $sentence->{file};
+    my $dgraph_block = $sentence->{blocks}[3];
+    if(!defined($dgraph_block))
+    {
+        printf STDERR ("WARNING: Missing the document-level relation block in sentence %d of file %s (lines %d–%d).\n", $i_sentence+1, $file->{label}, $sentence->{line0}, $sentence->{line1});
+    }
+    my %docrels; # hash indexed by "node0 :relation node1" triples
+    $sentence->{docrels} = \%docrels;
+    my $iline = $dgraph_block->{line0}-1;
+    my $inside_graph = 0;
+    my $current_relation_set;
+    my $after_relation_set = 0;
+    foreach my $line (@{$dgraph_block->{lines}})
+    {
+        $iline++;
+        # Make a copy of the line that we can eat without modifying the original.
+        my $cline = $line;
+        # Remove comments, leading and trailing spaces.
+        $cline =~ s/\#.*//;
+        $cline =~ s/^\s+//;
+        $cline =~ s/\s+$//;
+        next if($cline eq '');
+        while($cline)
+        {
+            # We expect the following steps:
+            # Initial bracket, sentence id and the sentence "concept": (s2s0 / sentence
+            # Label for a list of relations. Only :temporal, :modal and :coref are expected, but we can allow any string of lowercase letters following a colon.
+            # Opening brakcet of the set of relations.
+            # Each relation is a triple enclosed in its own pair of brackets: (document-creation-time :overlap s2d)
+            # - We can simplify the task and assume that this triple (including the brackets) is never split among multiple lines, i.e., we can read it in one step.
+            # Closing bracket of the set of relations.
+            # Final bracket: )
+            if($cline =~ s:^\(\s*([\pL\pN]+)\s*/\s*sentence\s*::) # )
+            {
+                # Skip initial opening bracket, sentence id and concept.
+                $inside_graph = 1;
+            }
+            elsif($cline =~ s/^(:[-\pL\pN]+)\s*//)
+            {
+                # New set of relations (:temporal, :modal, :coref).
+                $current_relation_set = $1;
+                if(!$inside_graph)
+                {
+                    confess("Expecting beginning of a document-level relation graph at line $iline of file $file->{label}");
+                }
+                elsif($after_relation_set)
+                {
+                    confess("Expecting opening bracket after relation set $current_relation_set at line $iline of file $file->{label}");
+                }
+                $after_relation_set = 1;
+            }
+            elsif($cline =~ s/^\(\s*([-\pL\pN]+)\s*(:[-\pL\pN]+)\s*([-\pL\pN]+)\s*\)//)
+            {
+                # New document-level relation. Nodes are either node ids (variables) or predefined constants such as document-creation-time.
+                my $node0 = $1;
+                my $relation = $2;
+                my $node1 = $3;
+                if(!$inside_graph)
+                {
+                    confess("Expecting beginning of a document-level relation graph at line $iline of file $file->{label}");
+                }
+                elsif($after_relation_set)
+                {
+                    confess("Expecting opening bracket after relation set $current_relation_set at line $iline of file $file->{label}");
+                }
+                if(!defined($current_relation_set))
+                {
+                    print STDERR ("Rest of line $iline of file $file->{label}: $cline\n");
+                    confess("Not expecting relation triple (we are not inside a relation set) at line $iline of file $file->{label}");
+                }
+                # Concatenate the triple again to a hashable string (but now with just one space as separator).
+                my $triple = "$node0 $relation $node1";
+                # Note that we throw away the current relation set, assuming that individual relation names are unique across sets (e.g., :overlap is a temporal relation, not modal or coreferential).
+                $docrels{$triple}++;
+            }
+            elsif($cline =~ s/^\(\s*//) # )
+            {
+                if(!$inside_graph)
+                {
+                    confess("Expecting beginning of a document-level relation graph at line $iline of file $file->{label}");
+                }
+                elsif($after_relation_set)
+                {
+                    $after_relation_set = 0;
+                }
+                else
+                {
+                    print STDERR ("Rest of line $iline of file $file->{label}: $cline\n");
+                    confess("Not expecting opening bracket at line $iline of file $file->{label}");
+                }
+            }
+            # (
+            elsif($cline =~ s/^\)//)
+            {
+                # Closing bracket of a set of relations or of the whole document-level graph.
+                if(!$inside_graph)
+                {
+                    confess("Expecting beginning of a document-level relation graph at line $iline of file $file->{label}");
+                }
+                elsif($after_relation_set)
+                {
+                    confess("Expecting opening bracket after relation set $current_relation_set at line $iline of file $file->{label}");
+                }
+                if(defined($current_relation_set))
+                {
+                    $current_relation_set = undef;
+                }
+                else # this closing bracket terminates the whole document-level relation graph
+                {
+                    $inside_graph = 0;
+                }
+            }
+            elsif($cline =~ s/^\s+//)
+            {
+                # Skip leading spaces.
+            }
+            else
+            {
+                # We should not be here.
+                print STDERR ("Rest of line $iline of file $file->{label}: $cline\n");
+                confess("Internal error");
+            }
+        }
+    }
+    if($inside_graph)
+    {
+        print STDERR ("WARNING: Missing closing bracket at line $iline of file $file->{label}: document-level relation graph not closed.\n");
     }
 }
 

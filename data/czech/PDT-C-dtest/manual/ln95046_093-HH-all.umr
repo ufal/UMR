@@ -230,7 +230,7 @@ s4n3: 0-0
 (s4s0 / sentence
     :coref ((s3p4 :same-event s4t1)
             (s3o1 :same-entity s4k1)
-            (s4k1 :same-entity s4o1))
+            (s4k1 :same-entity s4o1)))
 
 
 ################################################################################
@@ -459,7 +459,7 @@ s8s1: 13-13
 # document level annotation:
 (s8s0 / sentence
     :coref ((s6s2 :same-entity s8o1)
-            (s7p1 :subset-of s8p1))
+            (s7p1 :subset-of s8p1)))
 
 
 ################################################################################

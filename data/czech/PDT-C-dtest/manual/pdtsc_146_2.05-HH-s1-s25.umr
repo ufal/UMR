@@ -342,7 +342,7 @@ s8t5: 12-12
 (s8s0 / sentence
     :coref ((s7p1 :same-entity s8p2)
             (s7p2 :same-entity s8p1)
-            (s6p3 :same-entity s8t2))
+            (s6p3 :same-entity s8t2)))
 
 
 ################################################################################

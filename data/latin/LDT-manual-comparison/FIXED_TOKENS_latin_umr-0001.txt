@@ -586,7 +586,7 @@ s9a3: 0-0
 
 # sent_id = SlaT-2782
 # :: snt10
-Index: 1      2      3     4   5  6      7     8      9  10     11   12      13   14       15 16   17     18  
+Index: 1      2      3     4   5  6      7     8      9  10     11   12      13   14       15 16   17     18
 Words: igitur initio reges nam in terris nomen imperi id primum fuit divorsi pars ingenium ,  alii corpus exercebant
 Sentence: igitur initio reges nam in terris nomen imperi id primum fuit divorsi pars ingenium, alii corpus exercebant
 Sentence Gloss (en): in early times, accordingly, kings (for that was the first title of sovereignty in the world) applied themselves in different ways; some exercised the mind, others the body
@@ -1118,7 +1118,7 @@ s16a5: 17-18
 	:modal ((root :modal author)
 	        (author :full-affirmative s16i)
 	        (author :full-affirmative s16i2)
-	        (author :full-affirmative s16i3))
+	        (author :full-affirmative s16i3)))
 
 
 # sent_id = SlaT-2789

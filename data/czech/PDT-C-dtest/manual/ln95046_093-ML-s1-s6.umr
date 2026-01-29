@@ -223,7 +223,7 @@ s4n5: 0-0
             (s3p1 :same-event s4t1)
             (s3o1 :same-entity s4o1)
             (s3p2 :same-entity s4p4)
-            (s4o1 :same-entity s4k1))
+            (s4o1 :same-entity s4k1)))
 
 
 ################################################################################

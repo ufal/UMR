@@ -149,7 +149,7 @@ s2n3: 0-0
             (s1p1 :same-entity s2p0)
             (s1c2 :same-entity s2c2)
             (s1r1 :same-entity s2r1)
-            (s1n1 :same-entity s2n2))
+            (s1n1 :same-entity s2n2)))
 
 
 ################################################################################
