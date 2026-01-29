@@ -13903,16 +13903,16 @@ SUMMARY:
 Number of tokens: 1315
 Number of nodes per file: GOLD:1124, CONV:981
 File-to-file node mapping:
-Out of 1124 total GOLD nodes, 763 mapped to CONV => recall    = 68%.
-Out of 981 total CONV nodes, 763 mapped to GOLD => precision = 78%.
- => F₁(GOLD,CONV) = 72%.
+Out of 1124 total GOLD nodes, 763 mapped to CONV => recall    = 67.88%.
+Out of 981 total CONV nodes, 763 mapped to GOLD => precision = 77.78%.
+ => F₁(GOLD,CONV) = 72.49%.
 Before symmetrization, 102 GOLD nodes were projected ambiguously to 228 CONV nodes.
 Before symmetrization, 25 CONV nodes were projected ambiguously to 50 GOLD nodes.
 Concept and relation comparison (only mapped nodes; unmapped are ignored):
-Out of 2180 non-empty GOLD values, 1196 found in CONV => recall    55%.
-Out of 2040 non-empty CONV values, 1196 found in GOLD => precision 59%.
- => F₁ = 57%.
+Out of 2180 non-empty GOLD values, 1196 found in CONV => recall    54.86%.
+Out of 2040 non-empty CONV values, 1196 found in GOLD => precision 58.63%.
+ => F₁ = 56.68%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 3316 non-empty GOLD values, 1196 found in CONV => recall    36%.
-Out of 2443 non-empty CONV values, 1196 found in GOLD => precision 49%.
- => juːmæʧ (GOLD, CONV) = F₁ = 42%.
+Out of 3316 non-empty GOLD values, 1196 found in CONV => recall    36.07%.
+Out of 2443 non-empty CONV values, 1196 found in GOLD => precision 48.96%.
+ => juːmæʧ (GOLD, CONV) = F₁ = 41.53%.

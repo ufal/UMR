@@ -626,16 +626,16 @@ SUMMARY:
 Number of tokens: 84
 Number of nodes per file: DZ:69, ML:71
 File-to-file node mapping:
-Out of 69 total DZ nodes, 67 mapped to ML => recall    = 97%.
-Out of 71 total ML nodes, 67 mapped to DZ => precision = 94%.
- => F₁(DZ,ML) = 96%.
+Out of 69 total DZ nodes, 67 mapped to ML => recall    = 97.10%.
+Out of 71 total ML nodes, 67 mapped to DZ => precision = 94.37%.
+ => F₁(DZ,ML) = 95.71%.
 Before symmetrization, 2 DZ nodes were projected ambiguously to 4 ML nodes.
 Before symmetrization, 0 ML nodes were projected ambiguously to 0 DZ nodes.
 Concept and relation comparison (only mapped nodes; unmapped are ignored):
-Out of 222 non-empty DZ values, 199 found in ML => recall    90%.
-Out of 221 non-empty ML values, 199 found in DZ => precision 90%.
- => F₁ = 90%.
+Out of 222 non-empty DZ values, 199 found in ML => recall    89.64%.
+Out of 221 non-empty ML values, 199 found in DZ => precision 90.05%.
+ => F₁ = 89.84%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 227 non-empty DZ values, 199 found in ML => recall    88%.
-Out of 232 non-empty ML values, 199 found in DZ => precision 86%.
- => juːmæʧ (DZ, ML) = F₁ = 87%.
+Out of 227 non-empty DZ values, 199 found in ML => recall    87.67%.
+Out of 232 non-empty ML values, 199 found in DZ => precision 85.78%.
+ => juːmæʧ (DZ, ML) = F₁ = 86.71%.

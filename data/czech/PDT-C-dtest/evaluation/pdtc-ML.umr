@@ -228,6 +228,7 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
                                         :quarter 4
                                         :year (s4l1 / letošní))
                       :ARG1 (s4n1 / news-media
+                                   :refer-number singular
                                    :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))
                       :ARG2 (s4k1 / monetary-quantity
                              :quant 5
@@ -322,6 +323,667 @@ s5n1: 0-0
             (s3c1 :same-entity s5c1)
             (s4n1 :same-entity s5n1)
             (s4k2 :same-entity s5k2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s6-root
+# :: snt6
+Index: 1  2  3         4     5  6    7  8       9  10      11   12 13 14 15    16   17 18 19 20     21   22 23 24
+Words: (  Na Slovensku budou LN stát od pondělí do čtvrtka 5.50 Sk ,  v  pátek 7.50 Sk a  v  sobotu 6.50 Sk .  )
+
+# sentence level graph:
+(s6s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s6a1 / and
+        :op1 (s6s1 / stát-014
+                     :aspect state
+                     :modal-strength full-affirmative
+                     :quote s6s
+                     :place (s6s2 / country
+                                    :name (s6n3 / name :op1 "Slovensko"))
+                     :ARG1 (s6l1 / news-media
+                                   :name (s6n2 / name :op1 "Lidové" :op2 "noviny"))
+                     :temporal (s6r2 / date-interval
+                                       :op1 (s6d1 / date-entity :weekday (s6p1 / pondělí))
+                                       :op2 (s6d2 / date-entity :weekday (s6c2 / čtvrtek)))
+                     :ARG2 (s6x1 / monetary-quantity
+                                   :quant 5.5
+                                   :unit (s6s3 / Sk)))
+        :op2 (s6s4 / stát-014
+                     :aspect state
+                     :modal-strength full-affirmative
+                     :quote s6s
+                     :place s6s2
+                     :ARG1 s6l1
+                     :temporal (s6d3 / date-entity :weekday (s6p3 / pátek))
+                     :ARG2 (s6x2 / monetary-quantity
+                                        :quant 7.5
+                                        :unit s6s3 ))
+        :op3 (s6s6 / stát-014
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s6s
+                      :place s6s2
+                      :ARG1 s6l1
+                      :temporal (s6d4 / date-entity :weekday (s6s7 / sobota))
+                      :ARG2 (s6x3 / monetary-quantity
+                                    :quant 6.5
+                                    :unit s6s3))))
+
+# alignment:
+s6s: 0-0
+s6a1: 18-18
+s6s1: 4-4,6-6
+s6s2: 2-3
+s6n3: 0-0
+s6l1: 5-5
+s6n2: 0-0
+s6r2: 0-0
+s6d1: 0-0
+s6p1: 7-8
+s6d2: 0-0
+s6c2: 9-10
+s6x1: 11-11
+s6s3: 12-12,17-17,22-22
+s6s4: 0-0
+s6d3: 0-0
+s6p3: 14-15
+s6x2: 16-16
+s6s6: 0-0
+s6d4: 0-0
+s6s7: 19-20
+s6x3: 21-21
+
+# document level annotation:
+(s6s0 / sentence
+    :coref ((s6s :same-event s5s1)
+            (s5n1 :same-entity s6l1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s7-root
+# :: snt7
+Index: 1    2  3  4     5       6    7  8           9  10 11  12      13 14 15 16    17    18       19   20      21  22 23      24   25        26    27 28    29 30      31          32       33
+Words: Víme ,  že každé zvýšení ceny je nepopulární ,  a  tak doufáme ,  že s  touto cenou vydržíme opět alespoň rok ,  zatímco ceny ostatních novin se budou v  dalších čtvrtletích zvyšovat .
+
+# sentence level graph:
+(s7s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s7c / consecutive
+        :op1 (s7v1 / vědět-001
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s7s1
+                      :ARG0 (s7p / person
+                                  :refer-number plural
+                                  :refer-person 1st)
+                      :ARG1  (s7b1 / have-mod-91
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG1 (s7z1 / zvýšit-001
+                                                        :aspect performance
+                                                        :modal-strength full-affirmative
+                                                        :ARG1 (s7c1 / cena
+                                                                 :refer-number singular)
+                                                                 :quant (s7k1 / každý))
+                                          :ARG2 (s7p1 / populární
+                                                        :polarity -)))
+         :clausal-marker (s7t1 / tak)
+         :op2 (s7d1 / doufat-001
+                       :aspect activity
+                       :modal-strength full-affirmative
+                       :quote s7s1
+                       :ARG0 s7p
+                       :ARG1 (s7v2 / vydržet-002
+                                     :aspect state
+                                     :modal-strength full-affirmative
+                                     :ARG0 s7p
+                                     :ARG1 (s7c2 / cena
+                                                   :refer-number singular
+                                                   :mod (s7t2 / tento))
+                                     :mod (s7o1 / opět)
+                                     :duration (s7r1 / rok
+                                                       :refer-number singular
+                                                       :clausal-marker (s7a1 / alespoň))
+                                                       :condition (s7z2 / zvyšovat-001
+                                                       :aspect activity
+                                                       :modal-strength full-affirmative
+                                                       :ARG1 (s7c3 / cena
+                                                                     :refer-number singular
+                                                                     :part (s7n1 / noviny
+                                                                                    :refer-number singular
+                                                                                    :mod (s7o2 / ostatní)))
+                                                       :temporal (s7c4 / čtvrtletí
+                                                                          :refer-number plural
+                                                                          :mod (s7d2 / další )))))))
+
+# alignment:
+s7s1: 0-0
+s7p: 0-0
+s7c: 10-10
+s7v1: 1-1
+s7z1: 5-5
+s7c1: 6-6
+s7k1: 4-4
+s7b1: 3-3,7-7
+s7p1: 8-8
+s7t1: 11-11
+s7d1: 12-12
+s7v2: 14-14,18-18
+s7c2: 15-15,17-17
+s7t2: 16-16
+s7o1: 19-19
+s7a1: 20-20
+s7r1: 21-21
+s7z2: 23-23,27-28,32-32
+s7c3: 24-24
+s7n1: 26-26
+s7o2: 25-25
+s7c4: 29-29,31-31
+s7d2: 30-30
+
+# document level annotation:
+(s7s0 / sentence
+    :coref ((s6s :same-event s7s1)
+            (s3p :same-entity s7p)
+            (s5c1 :subset-of  s7c1)
+            (s5c1 :subset-of  s7c2)
+            (s5c1 :subset-of  s7c3)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s8-root
+# :: snt8
+Index: 1        2          3       4       5       6   7        8  9     10 11    12     13 14   15 16 17  18      19      20   21  22         23 24          25   26     27     28  29     30 31 32    33       34 35      36     37    38
+Words: Přestože oznamované zvýšení znamená měsíčně jen průměrně o  21.70 Kč vyšší vydání ,  víme ,  že pro některé čtenáře může být předplatné v  čtvrtletním nebo ročním součtu tak vysoké ,  že mohou zvažovat i  zrušení odběru novin .
+
+# sentence level graph:
+(s8s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s8v1 / vědět-001
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s8s
+        :concession (s8z1 / znamenat-001
+                            :aspect state
+                            :modal-strength full-affirmative
+                            :ARG1 (s8z2 / zvýšit-001
+                                          :aspect performance
+                                          :modal-strength full-affirmative
+                                          :ARG0 (s8e3 / person
+                                                        :refer-number plural
+                                                        :refer-person 1st)
+                                          :ARG1 (s8c0 / cena
+                                                        :refer-number singular)
+                                                        :ARG1-of (s8o1 / oznámit-001
+                                                                         :aspect performance
+                                                                         :modal-strength full-affirmative
+                                                                         :ARG0 s8e3
+                                                                         :ARG2 (s8e2 / person
+                                                                                      :refer-number plural)))
+                            :ARG2 (s8v2 / vydat-10
+                                          :aspect habitual
+                                          :modal-strength neutral-affirmative
+                                          :clausal-marker (s8j1 / jen)
+                                          :frequency (s8m1 / měsíčně)
+                                          :extent (s8p1 / průměrně)
+                                          :ARG0 s8e2
+                                          :ARG1 (s8c3 / částka
+                                                        :refer-number singular
+                                                        :ARG1-of (s8h1 / have-quant-91
+                                                                         :aspect state
+                                                                         :modal-strength full-affirmative
+                                                                         :ARG2 (s8v5 / volume-quantity)
+                                                                         :ARG3 (s8v3 / vysoký
+                                                                         :degree (s8m2 / more)
+                                                                         :extent (s8m3 / monetary-quantity
+                                                                                     :quant 21.70
+                                                                                     :unit (s8k1 / koruna)))))))
+       :ARG0 s8e3
+       :ARG1 (s8b1 / have-mod-91
+                     :aspect state
+                     :modal-strength neutral-affirmative
+                     :affectee (s8c1 / person
+                                       :refer-number plural
+                                       :ARG0-of (s8c4 / číst-002
+                                                        :aspect habitual
+                                                        :modal-strength full-affirmative)
+                                       :mod (s8n1 / některý))
+                     :ARG1 (s8p2 / předplatné
+                                   :quant (s8s1 / součet
+                                                  :mod (s8o2 / or
+                                                               :op1 (s8c2 / čtvrtletní)
+                                                               :op2 (s8r1 / roční))))
+                     :ARG2 (s8v4 / vysoký
+                               :extent (s8t1 / tak
+                                               :result (s8z3 / zvažovat-002
+                                                               :aspect activity
+                                                               :modal-strength neutral-affirmative
+                                                               :clausal-marker (s8i1 / i)
+                                                               :ARG0 s8c1
+                                                               :ARG1 (s8z4 / zrušit-001
+                                                                             :aspect performance
+                                                                             :modal-strength neutral-affirmative
+                                                                             :ARG0 s8c1
+                                                                             :ARG1 (s8o3 / odebírat-003
+                                                                                           :aspect habitual
+                                                                                           :modal-strength full-affirmative
+                                                                                           :ARG0 s8c1
+                                                                                           :ARG1 (s8n2 / noviny
+                                                                                                         :refer-number singular)))))))))
+
+# alignment:
+s8s: 0-0
+s8v1: 14-14
+s8e3: 0-0
+s8e2: 0-0
+s8z1: 1-1,4-4
+s8z2: 3-3
+s8c0: 0-0
+s8o1: 2-2
+s8m1: 5-5
+s8j1: 6-6
+s8p1: 7-7
+s8c3: 0-0
+s8h1: 0-0
+s8v5: 0-0
+s8v3: 11-11
+s8m2: 0-0
+s8v2: 12-12
+s8m3: 8-9
+s8k1: 10-10
+s8b1: 16-16,20-21
+s8c1: 17-17,19-19
+s8c4: 0-0
+s8n1: 18-18
+s8t1: 28-28
+s8v4: 29-29
+s8p2: 22-22
+s8s1: 23-23,27-27
+s8o2: 25-25
+s8c2: 24-24
+s8r1: 26-26
+s8z3: 31-33
+s8i1: 34-34
+s8z4: 35-35
+s8o3: 36-36
+s8n2: 37-37
+
+# document level annotation:
+(s8s0 / sentence
+    :coref ((s8s :same-event s7s1)
+            (s7p :same-entity s8e3)
+            (s7z1 :same-event s8z2)
+            (s7c1 :same-entity s8c0)
+            (s1p2 :same-entity s8e2)
+            (s8e2 :subset-of s8c1)
+            (s6l1 :same-entity s8n2)
+            (s5k2 :same-entity s8k1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s9-root
+# :: snt9
+Index: 1     2        3        4   5    6     7     8
+Words: Těmto čtenářům nabízíme tak jako vloni pomoc .
+
+# sentence level graph:
+(s9s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s9n1 / nabízet-001
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s9s1
+        :ARG0 (s9e1 / person
+                      :refer-number plural
+                      :refer-person 1st)
+        :ARG3 (s9c1 / person
+                     :refer-number plural
+                     :ARG0-of (s9c3 / číst-002
+                                      :aspect habitual
+                                      :modal-strength full-affirmative
+                                      :ARG1 (s9n2 / noviny
+                                                    :refer-number singular))
+                     :mod (s9t1 / tento))
+        :ARG1 (s9p1 / pomoci-002
+                      :aspect activity
+                      :modal-strength partial-affirmative
+                      :ARG0 s9e1
+                      :ARG2 s9c1)
+        :comparison (s9n3 / nabízet-001
+                            :aspect activity
+                            :modal-strength full-affirmative
+                            :ARG0 s9e1
+                            :ARG1 s9p1
+                            :ARG2 s9c1
+                            :temporal (s9v1 / vloni))))
+
+# alignment:
+s9s1: 0-0
+s9n1: 3-3
+s9e1: 0-0
+s9c1: 2-2
+s9c3: 0-0
+s9n2: 0-0
+s9t1: 1-1
+s9p1: 7-7
+s9n3: 4-5
+s9v1: 6-6
+
+# document level annotation:
+(s9s0 / sentence
+    :coref ((s8s :same-event s9s1)
+            (s8e3 :same-entity s9e1)
+            (s8c1 :same-entity s9c1)
+            (s8n2 :same-entity s9n2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s10-root
+# :: snt10
+Index: 1    2              3   4        5     6      7
+Words: Všem předplatitelům pak nabízíme novou soutěž .
+
+# sentence level graph:
+(s10s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s10n1 / nabízet-001
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s10s
+        :clausal-marker (s10p1 / pak)
+        :ARG0 (s10e1 / person
+                      :refer-number plural
+                      :refer-person 1st)
+        :ARG2 (s10p2 / person
+                       :refer-number plural
+                       :refer-person 3rd
+                       :ARG0-of (s10p3 / předplatit-001
+                                         :aspect performance
+                                         :modal-strength full-affirmative
+                                         :ARG1 (s10n3 / noviny
+                                                        :refer-number singular)
+                       :quant all))
+        :ARG1 (s10s1 / soutěžit-001
+                       :aspect activity
+                       :modal-strength partial-affirmative
+                       :ARG0 s10p2
+                       :mod (s10n2 / nový))))
+
+# alignment:
+s10s: 0-0
+s10n1: 4-4
+s10p1: 3-3
+s10e1: 0-0
+s10p2: 1-2
+s10p3: 0-0
+s10s1: 6-6
+s10n2: 5-5
+s10n3: 0-0
+
+# document level annotation:
+(s10s0 / sentence
+    :coref ((s10s :same-event s9s1)
+            (s9e1 :same-entity s10e1)
+            (s9n1 :same-event s10n1)
+            (s10p2 :subset-of s9c1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s11-root
+# :: snt11
+Index: 1      2       3  4  5      6      7    8  9  10       11     12        13    14 15    16 17       18       19        20
+Words: Vážení čtenáři ,  z  vašich dopisů víme ,  že většinou kladně hodnotíte změny ,  které v  Lidových novinách probíhají .
+
+# sentence level graph:
+(s11s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s11v1 / vědět-001
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s11s1
+         :vocative (s11p1 / person
+                            :refer-number plural
+                            :refer-person 2nd
+                            :ARG0-of (s11c1 / číst-002
+                                              :aspect habitual
+                                              :modal-strength full-affirmative
+                                              :ARG1 (s11n1 / news-media
+                                                             :wiki "Q1197747"
+                                                             :name (s11n2 / name :op1 "Lidové" :op2 "noviny")))
+                             :mod (s11v2 / vážený))
+         :ARG0 (s11e1 / person
+                        :refer-number plural
+                        :refer-person 1st)
+         :ARG2 (s11d1 / dopis
+                       :ARG0 s11c1
+                       :refer-number plural)
+         :ARG1 (s11h1 / hodnotit-003
+                        :aspect activity
+                        :modal-strength full-affirmative
+                        :extent (s11v3 / většinou)
+                        :manner (s11k1 / kladně)
+                        :ARG0 s11p1
+                        :ARG1 (s11z1 / změna
+                                       :refer-number plural
+                                       :ARG1-of (s11p2 / probíhat-002
+                                                         :aspect activity
+                                                         :modal-strength full-affirmative
+                                                         :place s11n1)))))
+
+# alignment:
+s11s1: 0-0
+s11v1: 7-7
+s11p1: 2-2,5-5
+s11c1: 0-0
+s11n1: 16-18
+s11n2: 0-0
+s11v2: 1-1
+s11e1: 0-0
+s11d1: 4-4,6-6
+s11h1: 9-9,12-12
+s11v3: 10-10
+s11k1: 11-11
+s11z1: 13-13,15-15
+s11p2: 19-19
+
+# document level annotation:
+(s11s0 / sentence
+    :coref ((s10s :same-event s11s1)
+            (s8e2 :same-entity s11p1)
+            (s10n3 :same-entity s11n1)
+            (s10e1 :same-entity s11e1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s12-root
+# :: snt12
+Index: 1    2      3       4      5          6   7    8  9  10 11   12     13     14 15 16       17 18     19      20       21    22
+Words: Také bývalí čtenáři Lidové demokracie nám píší ,  že i  když litují zániku LD ,  souhlasí s  dalším odběrem Lidových novin .
+
+# sentence level graph:
+(s12s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s12p1 / psát-007
+         :aspect activity
+         :modal-strength full-affirmative
+         :quote s12s
+         :clausal-marker (s12t1 / také)
+         :ARG0 (s12p2 / person
+                        :refer-number plural
+                        :ARG0-of (s12c1 / číst-002
+                                          :aspect habitual
+                                          :modal-strength full-affirmative
+                                          :ARG1 (s12d1 / news-media
+                                                         :wiki "Q12033489"
+                                                         :name (s12n2 / name :op1 "Lidová" :op2 "demokracie")))
+                        :mod (s12b1 / bývalý))
+         :ARG2 (s12e1 / person
+                        :refer-number plural
+                        :refer-person 1st)
+         :ARG1 (s12s1 / souhlasit-003
+                       :aspect state
+                       :modal-strength full-affirmative
+                       :quote s12p1
+                       :ARG0 s12c1
+                       :ARG2 (s12o1 / odebírat-003
+                                      :aspect habitual
+                                      :modal-strength full-affirmative
+                                      :ARG0 s12c1
+                                      :ARG1 (s12n1 / news-media
+                                                     :wiki "Q1197747"
+                                                     :name (s12n3 / name :op1 "Lidové" :op2 "noviny"))
+                                      :mod (s12d2 / další))
+                       :concession (s12l2 / litovat-001
+                                            :aspect state
+                                            :modal-strength full-affirmative
+                                            :ARG0 s12c1
+                                            :ARG1 (s12z1 / zaniknout-001
+                                                           :aspect performance
+                                                           :modal-strength full-affirmative
+                                                           :ARG1 (s12l3 / news-media
+                                                                          :wiki "Q12033489"
+                                                                          :name (s12n4 / name :op1 "LD")))))))
+
+# alignment:
+s12s: 0-0
+s12p1: 7-7
+s12t1: 1-1
+s12p2: 3-3
+s12c1: 0-0
+s12d1: 4-5
+s12n2: 0-0
+s12b1: 2-2
+s12e1: 6-6
+s12s1: 9-9,16-16
+s12o1: 17-17,19-19
+s12n1: 20-21
+s12n3: 0-0
+s12d2: 18-18
+s12l2: 10-12
+s12z1: 13-13
+s12l3: 14-14
+s12n4: 0-0
+
+# document level annotation:
+(s12s0 / sentence
+    :coref ((s12s :same-event s11s1)
+            (s11e1 :same-entity s12e1)
+            (s11n1 :same-entity s12n1)
+            (s12d1 :same-entity s12l3)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s13-root
+# :: snt13
+Index: 1      2     3  4  5         6  7  8        9       10   11 12    13 14 15 16  17        18    19
+Words: Věříme proto ,  že pochopíte ,  že současné zvýšení ceny je nutné ,  a  že nám zůstanete věrni .
+
+# sentence level graph:
+(s13s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG1 (s13v1 / věřit-001
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s13s
+        :clausal-marker (s13p1 / proto)
+        :ARG0 (s13e1 / person
+            :refer-number plural
+            :refer-person 1st)
+        :ARG1 (s13a1 / and
+            :op1 (s13p2 / pochopit-001
+                          :aspect state
+                          :modal-strength partial-affirmative
+                          :ARG0 (s13e2 / person
+                                         :refer-number plural
+                                         :refer-person 2nd)
+                          :ARG1 (s13b1 / have-mod-91
+                                         :aspect state
+                                         :modal-strength full-affirmative
+                                         :ARG0 (s13z1 / zvýšit-001
+                                                        :aspect performance
+                                                        :modal-strength full-affirmative
+                                                        :ARG0 s13e1
+                                                        :ARG1 (s13c1 / cena
+                                                                       :refer-number singular)
+                                                        :mod (s13s1 / současný))
+                                         :ARG1 (s13n1 / nutný)))
+            :op2 (s13z2 / zůstat-002
+                         :aspect state
+                         :modal-strength full-affirmative
+                         :ARG1 s13e2
+                         :ARG2 (s13h1 / have-mod-91
+                                        :aspect state
+                                        :modal-strength full-affirmative
+                                        :ARG1 s13e2
+                                        :ARG2 (s13v2 / věrný))))))
+
+# alignment:
+s13s: 0-0
+s13v1: 1-1
+s13p1: 2-2
+s13a1: 14-14
+s13p2: 4-5
+s13e1: 16-16
+s13e2: 0-0
+s13b1: 7-7,11-11
+s13z1: 9-9
+s13s1: 8-8
+s13n1: 12-12
+s13c1: 10-10
+s13z2: 15-15,17-17
+s13h1: 0-0
+s13v2: 18-18
+
+# document level annotation:
+(s13s0 / sentence
+    :coref ((s12s :same-event s13s)
+            (s12e1 :same-entity s13e1)
+            (s11p1 :same-entity s13e2)
+            (s8c0 :same-entity s13c1)
+            (s8z2 :same-event s13z1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s14-root
+# :: snt14
+Index: 1      2     3 4       5
+Words: Michal Klíma , ředitel LN
+
+# sentence level graph:
+(s14p1 / publication-91
+         :ARG0 (s14k1 / person
+                        :name (s14n1 / name :op1 "Michal" :op2 "Klíma")
+                        :ARG1-of (s14h1 / have-org-role-91
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG2 (s14n5 / news-media
+                                                         :wiki "Q1197747"
+                                                         :name (s14n2 / name :op1 "LN"))
+                                          :ARG3 (s14r1 / ředitel))))
+
+# alignment:
+s14p1: 0-0
+s14k1: 1-2
+s14n1: 0-0
+s14h1: 0-0
+s14n5: 5-5
+s14n2: 0-0
+s14r1: 4-4
+
+# document level annotation:
+(s14s0 / sentence
+    :coref ((s1p0 :same-entity s14p1)
+            (s1p1 :same-entity s14k1)
+            (s12n1 :same-entity s14n5)))
 
 
 ################################################################################
@@ -897,6 +1559,965 @@ s5d1: 3-3
             (s5m1 :subset-of s3l1)
             (s5m1 :subset-of s3r1)
             (s5m1 :subset-of s3t1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s6-root
+# :: snt6
+Index: 1   2   3  4     5
+Words: Kdo vám to dělal ?
+
+# sentence level graph:
+(s6s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s6e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s6e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s6d1 / dělat-010
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s6s1
+        :mode interoggative
+        :ARG0 (s6k1 / umr-unknown)
+        :affectee s6e2
+        :ARG1 (s6t1 / event)))
+
+# alignment:
+s6s1: 0-0
+s6e1: 0-0
+s6e2: 2-2
+s6d1: 4-4
+s6k1: 1-1
+s6t1: 3-3
+
+# document level annotation:
+(s6s0 / sentence
+    :coref ((s5e2 :same-entity s6e1)
+            (s5e1 :same-entity s6e2)
+            (s3n2 :same-event s6t1)
+            (s3e3 :same-entity s6k1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s7-root
+# :: snt7
+Index: 1  2      3        4  5        6
+Words: To dělali kamarádi ve Škodovce .
+
+# sentence level graph:
+(s7s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s7e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s7e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s7d1 / dělat-010
+        :aspect activity
+        :modal-strength full-affirmative
+        :quote s7s1
+        :ARG1 (s7t1 / event)
+        :ARG0 (s7k1 / kamarád
+            :refer-number plural)
+        :place (s7s2 / company
+                       :wiki "Q29637"
+                       :name (s7n1 / name :op1 "Škodovka"))))
+
+# alignment:
+s7s1: 0-0
+s7e1: 0-0
+s7e2: 0-0
+s7d1: 2-2
+s7t1: 1-1
+s7k1: 3-3
+s7s2: 4-5
+s7n1: 0-0
+
+# document level annotation:
+(s7s0 / sentence
+    :coref ((s6e2 :same-entity s7e1)
+            (s6e1 :same-entity s7e2)
+            (s6t1 :same-event s7t1)
+            (s6k1 :same-entity s7k1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s8-root
+# :: snt8
+Index: 1    2  3    4     5       6
+Words: Byla to vaše první motorka ?
+
+# sentence level graph:
+(s8s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s8e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s8e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s8b1 / have-ord-91
+        :aspect state
+        :modal-strength neutral-affirmative
+        :polarity umr-unknown
+        :mode interoggative
+        :quote s8s1
+        :ARG1 (s8m1 / motorka
+                     :refer-number singular
+                     :ARG1-of (s8b2 / belong-91
+                                      :aspect state
+                                      :modal-strength full-affirmative
+                                      :ARG2 s8e1))
+        :ARG2 (s8p1 / ordinal-entity :value 1)))
+
+# alignment:
+s8s1: 0-0
+s8e2: 3-3
+s8e1: 0-0
+s8b1: 1-1
+s8m1: 2-2, 5-5
+s8b2: 0-0
+s8p1: 4-4
+
+# document level annotation:
+(s8s0 / sentence
+    :coref ((s7e1 :same-entity s8e2)
+            (s7e2 :same-entity s8e1)
+            (s5m1 :same-entity s8m1)
+            (s8e2 :same-entity s6e1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s9-root
+# :: snt9
+Index: 1     2
+Words: První .
+
+# sentence level graph:
+(s9s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s9e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s9e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s9b1 / have-ord-91
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s9s1
+        :ARG1 (s9m1 / motorka
+                     :refer-number singular
+                     :ARG1-of (s9b2 / belong-91
+                                      :aspect state
+                                      :modal-strength full-affirmative
+                                      :ARG2 s9e1))
+        :ARG2 (s9p1 / ordinal-entity :value 1)))
+
+# alignment:
+s9s1: 0-0
+s9e1: 0-0
+s9e2: 0-0
+s9b1: 0-0
+s9m1: 0-0
+s9b2: 0-0
+s9p1: 1-1
+
+# document level annotation:
+(s9s0 / sentence
+    :coref ((s8e2 :same-entity s9e1)
+            (s8e1 :same-entity s9e2)
+            (s8m1 :same-entity s9m1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s10-root
+# :: snt10
+Index: 1    2    3  4  5     6
+Words: Taky jsem si jí vážil .
+
+# sentence level graph:
+(s10s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s10e2 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s10e1 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s10v1 / vážit-si-001
+        :clausal-marker (s10t1 / taky)
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s10s1
+        :ARG0 s10e2
+        :ARG1 (s10e3 / thing
+            :refer-number singular)))
+
+# alignment:
+s10s1: 0-0
+s10v1: 2-3,5-5
+s10t1: 1-1
+s10e3: 4-4
+s10e2: 0-0
+s10e1: 0-0
+
+# document level annotation:
+(s10s0 / sentence
+    :coref ((s9s1 :same-event s10s1)
+            (s9e1 :same-entity s10e2)
+            (s9e2 :same-entity s10e1)
+            (s9m1 :same-entity s10e3)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s11-root
+# :: snt11
+Index: 1        2  3  4     5     6
+Words: Podíváme se na další fotku .
+
+# sentence level graph:
+(s11s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s11e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s11e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s11p1 / podívat-se-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :quote s11s1
+        :ARG0 (s11e3 / person
+                       :refer-number plural
+                       :refer-person 1st)
+        :ARG1 (s11f1 / fotka
+                       :refer-number singular
+                       :mod (s11d1 / další))))
+
+# alignment:
+s11s1: 0-0
+s11e1: 0-0
+s11e2: 0-0
+s11p1: 1-2
+s11e3: 0-0
+s11f1: 3-3,5-5
+s11d1: 4-4
+
+# document level annotation:
+(s11s0 / sentence
+    :coref ((s10e2 :same-entity s11e1)
+            (s10e1 :same-entity s11e2)
+            (s11e3 :subset-of s11e1)
+            (s11e3 :subset-of s11e2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s12-root
+# :: snt12
+Index: 1  2  3     4   5
+Words: Co je tohle zač ?
+
+# sentence level graph:
+(s12s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s12e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s12e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s12b1 / identity-91
+         :aspect state
+         :mode interoggative
+         :modal-strength full-affirmative
+         :quote s12s1
+         :ARG1 (s12t1 / thing
+                        :refer-number singular)
+         :ARG2 (s12c1 / umr-unknown)))
+
+# alignment:
+s12s1: 0-0
+s12e1: 0-0
+s12e2: 0-0
+s12b1: 2-2
+s12t1: 3-3
+s12c1: 1-1, 4-4
+
+# document level annotation:
+(s12s0 / sentence
+    :coref ((s11s1 :same-event s12s1)
+            (s11e1 :same-entity s12e1)
+            (s11e2 :same-entity s12e2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s13-root
+# :: snt13
+Index: 1       2  3       4     5  6        7  8       9  10   11   12 13  14   15    16        17     18
+Words: Tohleto je junácký tábor ve Vrbicích u  Stříbra v  roce 1970 ,  kde jsem dělal vedoucího oddílu .
+
+# sentence level graph:
+(s13s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s13e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s13e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s13b1 / identity-91
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s13s1
+         :ARG1 (s13t1 / thing
+                        :refer-number singular)
+         :ARG2 (s13t2 / tábor
+                       :refer-number singular
+                       :mod (s13j1 / organization
+                                     :wiki "Q6314445"
+                                     :name (s13n3 / name :op1 "Junák"))
+                       :place (s13v1 / human-settlement
+                                       :name (s13n1 / name :op1 "Vrbice")
+                                       :place (s13s2 / human-settlement
+                                                       :name (s13n2 / name :op1 "Stříbro")))
+                       :temporal (s13r1 / date-entity
+                                          :year 1970)
+                       :ARG2-of (s13d1 / have-org-role-91
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG1 s13e1
+                                          :ARG3 (s13v2 / vedoucí
+                                                  :mod (s13o1 / oddíl
+                                                  :refer-number singular))))))
+
+# alignment:
+s13s1: 0-0
+s13e1: 0-0
+s13e2: 0-0
+s13b1: 2-2
+s13t1: 1-1
+s13t2: 4-4,13-13
+s13j1: 3-3
+s13n3: 0-0
+s13v1: 5-6
+s13n1: 0-0
+s13s2: 7-8
+s13n2: 0-0
+s13r1: 9-11
+s13d1: 14-15
+s13v2: 16-16
+s13o1: 17-17
+
+# document level annotation:
+(s13s0 / sentence
+    :coref ((s12e2 :same-entity s13e1)
+            (s12e1 :same-entity s13e2)
+            (s12t1 :same-entity s13t1)
+            (s12c1 :same-entity s13t2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s14-root
+# :: snt14
+Index: 1   2  3  4  5     6     7
+Words: Kdo je na té fotce vidět ?
+
+# sentence level graph:
+(s14s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s14e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s14e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s14v1 / vidět-007
+        :aspect state
+        :modal-strength full-affirmative
+        :mode interrogative
+        :quote s14s1
+        :ARG0 (s14e3 / person
+                       :refer-number plural
+                       :refer-person 1st)
+        :ARG1 (s14e4 / umr-unknown)
+        :place (s14f1 / fotka
+                :mod (s14t1 / ten))))
+
+# alignment:
+s14s1: 0-0
+s14e1: 0-0
+s14e2: 0-0
+s14v1: 2-2,6-6
+s14e3: 0-0
+s14f1: 3-3,5-5
+s14t1: 4-4
+s14e4: 1-1
+
+# document level annotation:
+(s14s0 / sentence
+    :coref ((s13e2 :same-entity s14e1)
+            (s13e1 :same-entity s14e2)
+            (s14e3 :subset-of s14e1)
+            (s14e3 :subset-of s14e2)
+            (s11f1 :same-entity s14f1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s15-root
+# :: snt15
+Index: 1     2  3      4  5  6  7       8      9      10 11  12 13  14     15 16    17
+Words: Zleva je Vlásek ,  to je vedoucí celého skautu ,  pak je tam sestra a  Pepík .
+
+# sentence level graph:
+(s15s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s15e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s15e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s15a1 / and
+        :op1 (s15b1 / have-place-91
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s15s1
+                      :ARG1 (s15v1 / person
+                                     :refer-number singular
+                                     :name (s15n1 / name :op1 "Vlásek"))
+                      :ARG2 (s15z1 / zleva)
+                      :parenthesis (s15b2 / have-org-role-91
+                                            :aspect state
+                                            :modal-strength full-affirmative
+                                            :ARG1 s15v1
+                                            :ARG3 (s15v2 / vedoucí)
+                                            :ARG2 (s15s2 / skaut
+                                                           :mod (s15c1 / celý))))
+        :op2 (s15b3 / have-place-91
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s15s1
+                      :clausal-marker (s15p1 / pak)
+                      :ARG2 (s15t2 / place)
+                      :ARG1 (s15a2 / and
+                                     :op1 (s15s3 / person
+                                                   :refer-number singular
+                                                   :ARG2-of (s15h1 / have-rel-role-92
+                                                                     :aspect state
+                                                                     :modal-strength full-affirmative
+                                                                     :ARG1 s15e1
+                                                                     :ARG4 (s15s4 / sestra)))
+                                      :op2 (s15p2 / person
+                                                    :refer-number singular
+                                                    :name (s15n2 / name :op1 "Pepík"))))))
+
+# alignment:
+s15s1: 0-0
+s15e1: 0-0
+s15e2: 0-0
+s15a1: 10-10
+s15b1: 2-2
+s15v1: 3-3, 5-5
+s15n1: 0-0
+s15z1: 1-1
+s15b2: 6-6
+s15v2: 7-7
+s15s2: 9-9
+s15c1: 8-8
+s15b3: 12-12
+s15p1: 11-11
+s15t2: 13-13
+s15a2: 15-15
+s15s3: 14-14
+s15h1: 0-0
+s15s4: 0-0
+s15p2: 16-16
+s15n2: 0-0
+
+# document level annotation:
+(s15s0 / sentence
+    :coref ((s14e2 :same-entity s15e1)
+            (s14e1 :same-entity s15e2)
+            (s14f1 :same-entity  s15t2)
+            (s13j1 :same-entity s15s2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s16-root
+# :: snt16
+Index: 1   2  3         4
+Words: Jak se jmenovala ?
+
+# sentence level graph:
+(s16s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s16e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s16e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s16j1 / jmenovat-se-002
+         :aspect state
+         :modal-strength full-affirmative
+         :mode interrogative
+         :quote s16s1
+         :ARG2 (s16j2 / umr-unknown)
+         :ARG1 (s16e3 / person
+                        :refer-number singular
+                        :refer-person 3rd)))
+
+# alignment:
+s16s1: 0-0
+s16e1: 0-0
+s16e2: 0-0
+s16j1: 2-3
+s16j2: 1-1
+s16e3: 0-0
+
+# document level annotation:
+(s16s0 / sentence
+    :coref ((s15e2 :same-entity s16e1)
+            (s15e1 :same-entity s16e2)
+            (s15s3 :same-entity s16e3)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s17-root
+# :: snt17
+Index: 1  2       3
+Words: Už zemřela .
+
+# sentence level graph:
+(s17s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s17e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s17e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s17z1 / zemřít-001
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s17s1
+        :temporal (s17u1 / už)
+        :ARG1 (s17e3 / person)))
+
+# alignment:
+s17s1: 0-0
+s17e1: 0-0
+s17e2: 0-0
+s17z1: 2-2
+s17u1: 1-1
+s17e3: 0-0
+
+# document level annotation:
+(s17s0 / sentence
+    :coref ((s16e2 :same-entity s17e1)
+            (s16e1 :same-entity s17e2)
+            (s16e3 :same-entity s17e1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s18-root
+# :: snt18
+Index: 1  2  3    4
+Words: To mě mrzí .
+
+# sentence level graph:
+(s18s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s18e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s18e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s18m1 / mrzet-001
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s18s1
+         :ARG0 s18e1
+         :ARG1 (s18t1 / event)))
+
+# alignment:
+s18s1: 0-0
+s18e1: 2-2
+s18e2: 0-0
+s18m1: 3-3
+s18t1: 1-1
+
+# document level annotation:
+(s18s0 / sentence
+    :coref ((s17e2 :same-entity s18e1)
+            (s17e1 :same-entity s18e1)
+            (s17z1 :same-event s18t1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s19-root
+# :: snt19
+Index: 1     2  3   4
+Words: Pepík je tam .
+
+# sentence level graph:
+(s19s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s19e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s19e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s19b1 / have-place-91
+              :aspect state
+              :modal-strength full-affirmative
+              :quote s19s1
+              :ARG1 (s19p1 / person
+                             :refer-number singular
+                             :name (s19n2 / name :op1 "Pepík"))
+              :ARG2 (s19t1 / place)))
+
+# alignment:
+s19s1: 0-0
+s19e1: 0-0
+s19e2: 0-0
+s19b1: 2-2
+s19p1: 1-1
+s19n2: 0-0
+s19t1: 3-3
+
+# document level annotation:
+(s19s0 / sentence
+    :coref ((s18e2 :same-entity s19e1)
+            (s18e1 :same-entity s19e2)
+            (s15p2 :same-entity s19p1)
+            (s15t2 :same-entity s19t1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s20-root
+# :: snt20
+Index: 1           2    3      4 5   6       7          8
+Words: Nejmenovali jsme jménem , ale vždycky přezdívkou .
+
+# sentence level graph:
+(s20s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s20e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s20e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s20b1 / but-91
+        :ARG1 (s20j1 / jmenovat-004
+                       :aspect habitual
+                       :modal-strength full-negative
+                       :polarity -
+                       :quote s20s1
+                       :ARG0 (s20e3 / person
+                                      :refer-number plural
+                                      :refer-person 1st)
+                       :ARG1 s20e3
+                       :ARG2 (s20j2 / jméno
+                                      :refer-number singular))
+        :ARG2 (s20j3 / jmenovat-004
+                       :aspect habitual
+                       :modal-strength full-affirmative
+                       :quote s20s1
+                       :ARG0 s20e3
+                       :ARG1 s20e3
+                       :ARG2 (s20p1 / přezdívka
+                                      :refer-number singular)
+                       :frequency (s20v1 / vždycky))))
+
+# alignment:
+s20s1: 0-0
+s20e1: 0-0
+s20e2: 0-0
+s20b1: 5-5
+s20j1: 1-2
+s20e3: 0-0
+s20j2: 3-3
+s20j3: 0-0
+s20p1: 7-7
+s20v1: 6-6
+
+# document level annotation:
+(s20s0 / sentence
+    :coref ((s19s1 :same-event s20s1)
+            (s19e1 :same-entity s20e1)
+            (s19e2 :same-entity s20e2)
+            (s20e3 :subset-of s20e1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s21-root
+# :: snt21
+Index: 1     2   3       4         5
+Words: Každý měl nějakou přezdívku .
+
+# sentence level graph:
+(s21s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s21e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s21e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s21m1 / have-91
+        :aspect state
+        :modal-strength full-affirmative
+        :quote s21s1
+        :ARG0 (s21k1 / person
+                       :quant each
+                       :refer-person 1st)
+        :ARG1 (s21p1 / přezdívka
+                       :refer-number singular
+                       :mod (s21n1 / nějaký))))
+
+# alignment:
+s21s1: 0-0
+s21e1: 0-0
+s21e2: 0-0
+s21m1: 2-2
+s21k1: 1-1
+s21p1: 4-4
+s21n1: 3-3
+
+# document level annotation:
+(s21s0 / sentence
+    :coref ((s21s1 :same-event s20s1)
+            (s21e1 :same-entity s20e1)
+            (s21e2 :same-entity s20e2)
+            (s20e3 :subset-of s21k1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s22-root
+# :: snt22
+Index: 1   2     3   4      5
+Words: Ten první byl Vlásek .
+
+# sentence level graph:
+(s22s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s22e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s22e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s22b1 / identity-91
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s22s1
+         :ARG1 (s22v1 / person
+                        :refer-number singular
+                        :refer-person 3rd
+                        :name (s22n1 /name :op1 "Vlásek"))
+         :ARG2 (s22t1 / person
+                        :refer-person 3rd
+                        :refer-number singular
+                        :ord (s22p1 / ordinal-entity :value 1))))
+
+# alignment:
+s22s1: 0-0
+s22e1: 0-0
+s22e2: 0-0
+s22b1: 3-3
+s22v1: 4-4
+s22n1: 0-0
+s22t1: 1-1
+s22p1: 1-2
+
+# document level annotation:
+(s22s0 / sentence
+    :coref ((s22s1 :same-event s21s1)
+            (s21e1 :same-entity s22e1)
+            (s21e2 :same-entity s22e2)
+            (s15v1 :same-entity s22v1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s23-root
+# :: snt23
+Index: 1  2    3   4
+Words: Já jsem byl .
+
+# sentence level graph:
+(s23s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s23e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s23e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s23b1 / identity-91
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s23s1
+         :ARG1 s23e1
+         :ARG2 (s23e3 / umr-empty)))
+
+# alignment:
+s23s1: 0-0
+s23e2: 0-0
+s23b1: 2-3
+s23e1: 1-1
+s23e3: 0-0
+
+# document level annotation:
+(s23s0 / sentence
+    :coref ((s22s1 :same-event s23s1)
+            (s22e1 :same-entity s23e1)
+            (s22e2 :same-entity s23e2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s24-root
+# :: snt24
+Index: 1     2   3     4  5  6    7        8    9     10
+Words: Pepík byl Pírko ,  i  když nevypadá jako pírko .
+
+# sentence level graph:
+(s24s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s24e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s24e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s24b1 / identity-91
+         :aspect state
+         :modal-strength full-affirmative
+         :quote s24s1
+         :ARG1 (s24p1 / person
+                        :refer-number singular
+                        :refer-person 3rd)
+         :ARG2 (s24p2 / person
+                        :refer-number singular
+                        :name (s24n2 / name :op1 "Pírko"))
+         :concession (s24v1 / vypadat-004
+                              :aspect state
+                              :modal-strength full-negative
+                              :polarity -
+                              :ARG0 s24p1
+                              :comparison (s24v2 / vypadat-004
+                                                   :aspect state
+                                                   :modal-strength full-affirmative
+                                                   :ARG0 (s24p3 / pírko
+                                                                 :refer-number singular)))))
+
+# alignment:
+s24s1: 0-0
+s24e1: 0-0
+s24e2: 0-0
+s24b1: 2-2
+s24p1: 1-1
+s24p2: 3-3
+s24n2: 0-0
+s24v1: 5-7
+s24v2: 0-0
+s24p3: 8-9
+
+# document level annotation:
+(s24s0 / sentence
+    :coref ((s24s1 :same-event s23s1)
+            (s24e1 :same-entity s23e1)
+            (s24e2 :same-entity s23e2)
+            (s19p1 :same-entity s24p1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s25-root
+# :: snt25
+Index: 1  2  3      4  5     6  7         8  9  10      11
+Words: A  ta sestra ,  Jitka se jmenovala ,  ta zemřela .
+
+# sentence level graph:
+(s25s1 / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s25e1 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG2 (s25e2 / person
+              :refer-number singular
+              :refer-person 2nd)
+:ARG1 (s25z1 / zemřít-001
+         :aspect performance
+         :modal-strength full-affirmative
+         :quote s25s1
+         :clausal-marker (s25a1 / a)
+         :ARG1 (s25s2 / person
+                        :refer-number singular
+                        :ARG2-of (s25h1 / have-rel-role-92
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG1 (s25p1 / person
+                                                         :refer-number singular
+                                                         :refer-person 1st)
+                                          :ARG4 (s25s3 / sestra))
+                        :mod (s25t1 / ten)
+                        :parenthesis (s25j1 / jmenovat-se-001
+                                              :aspect state
+                                              :modal-strength full-affirmative
+                                              :quote s25s1
+                                              :ARG2 (s25j2 / Jitka)
+                                              :ARG1 s25s1))))
+
+# alignment:
+s25s1: 0-0
+s25e1: 0-0
+s25e2: 0-0
+s25z1: 10-10
+s25a1: 1-1
+s25s2: 3-3, 9-9
+s25s3: 0-0
+s25h1: 0-0
+s25p1: 0-0
+s25t1: 2-2
+s25j1: 6-7
+s25j2: 5-5
+
+# document level annotation:
+(s25s0 / sentence
+    :coref ((s24s1 :same-event s25s1)
+            (s24e1 :same-entity s25e1)
+            (s24e2 :same-entity s25e2)
+            (s15s3 :same-entity s25s2)
+            (s23e1 :same-entity s25p1)))
 
 
 ################################################################################

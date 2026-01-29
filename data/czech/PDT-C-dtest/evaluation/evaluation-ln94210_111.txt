@@ -1,5 +1,5 @@
 Found 14 sentences in GOLD:
-1-72, 75-152, 155-208, 211-275, 278-324, 327-400, 403-492, 495-623, 626-681, 684-733, 736-800, 803-879, 882-951, 954-985
+1-72, 75-152, 155-208, 211-276, 279-325, 328-401, 404-493, 496-624, 627-682, 685-734, 737-801, 804-880, 883-952, 955-986
 Found 14 sentences in CONV:
 1-54, 57-129, 132-176, 179-238, 241-265, 268-328, 331-409, 412-503, 506-544, 547-578, 581-630, 633-690, 693-748, 751-776
 
@@ -551,23 +551,24 @@ GOLD                                                                            
                                         :quarter 4                                                            :mod (s4l2 / Lidový)
                                         :year (s4l1 / letošní))                                               :refer-number plural)
                       :ARG1 (s4n1 / news-media                                                            :ARG2 (s4k1 / koruna
-                                   :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))                           :mod (s4p3 / pět)
-                      :ARG2 (s4k1 / monetary-quantity                                                         :refer-number plural)
-                             :quant 5                                                                     :temporal (s4p4 / pondělek
-                             :unit (s4k2 / koruna))                                                           :refer-number singular)
-                      :temporal (s4r2 / date-interval                                                     :temporal (s4c2 / čtvrtek
-                                        :op1 (s4d1 / date-entity :weekday (s4p2 / pondělí))                   :refer-number singular)
-                                        :op2 (s4d2 / date-entity :weekday (s4c2 / čtvrtek))))             :aspect activity)
-            :op2 (s4s2 / stát-014                                                                     :op2 (s4s2 / stát-014
-                      :aspect state                                                                       :clausal-marker s4p1
-                      :modal-strength full-affirmative                                                    :temporal s4c1
-                      :quote s4s                                                                          :ARG1 s4n1
-                      :clausal-marker s4p1                                                                :ARG2 (s4k2 / koruna
-                      :temporal s4c1                                                                          :mod (s4s3 / šest)
-                      :ARG1 s4n1                                                                              :refer-number plural)
-                      :ARG2 (s4k3 / monetary-quantity                                                     :temporal (s4s4 / sobota
-                                    :quant 6                                                                  :refer-number singular)
-                                    :unit s4k2)                                                           :aspect activity))
+                                   :refer-number singular                                                     :mod (s4p3 / pět)
+                                   :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))                           :refer-number plural)
+                      :ARG2 (s4k1 / monetary-quantity                                                     :temporal (s4p4 / pondělek
+                             :quant 5                                                                         :refer-number singular)
+                             :unit (s4k2 / koruna))                                                       :temporal (s4c2 / čtvrtek
+                      :temporal (s4r2 / date-interval                                                         :refer-number singular)
+                                        :op1 (s4d1 / date-entity :weekday (s4p2 / pondělí))               :aspect activity)
+                                        :op2 (s4d2 / date-entity :weekday (s4c2 / čtvrtek))))         :op2 (s4s2 / stát-014
+            :op2 (s4s2 / stát-014                                                                         :clausal-marker s4p1
+                      :aspect state                                                                       :temporal s4c1
+                      :modal-strength full-affirmative                                                    :ARG1 s4n1
+                      :quote s4s                                                                          :ARG2 (s4k2 / koruna
+                      :clausal-marker s4p1                                                                    :mod (s4s3 / šest)
+                      :temporal s4c1                                                                          :refer-number plural)
+                      :ARG1 s4n1                                                                          :temporal (s4s4 / sobota
+                      :ARG2 (s4k3 / monetary-quantity                                                         :refer-number singular)
+                                    :quant 6                                                              :aspect activity))
+                                    :unit s4k2)                                               
                       :temporal (s4d3 / date-entity :weekday (s4s3 / sobota)))))              
 
 Node-token alignments:
@@ -606,7 +607,7 @@ Ambiguous projection of GOLD node s4n1 (Lidové noviny) to 2 CONV nodes [s4l2 (L
   The winner is GOLD node s4c1 (Od posledního čtvrtletí) <--> CONV node s4c1 (Od čtvrtletí): econcepts=date-entity/čtvrtletí, match=0 (), weak match=1 (concept).
   The winner is GOLD node s4k2 (korun korun) <--> CONV node s4k1 (korun): econcepts=koruna/koruna, match=1 (concept=koruna), weak match=1 (concept).
   The winner is GOLD node s4l1 (letošního roku) <--> CONV node s4l1 (letošního): econcepts=letošní/letošní, match=1 (concept=letošní), weak match=1 (concept).
-  The winner is GOLD node s4n1 (Lidové noviny) <--> CONV node s4l2 (Lidové): econcepts=news-media/Lidový, match=0 (), weak match=1 (concept).
+  The winner is GOLD node s4n1 (Lidové noviny) <--> CONV node s4n1 (noviny): econcepts=news-media/noviny, match=0 (), weak match=2 (concept,:refer-number).
 
 Correspondence GOLD s4a1 (a)                       = CONV s4a1 (a)
 Correspondence GOLD s4c1 (Od posledního čtvrtletí) = CONV s4c1 (Od čtvrtletí)
@@ -616,7 +617,7 @@ Correspondence GOLD s4k1 (pět)                     = CONV s4p3 (pět)
 Correspondence GOLD s4k2 (korun korun)             = CONV s4k1 (korun)
 Correspondence GOLD s4k3 (šest)                    = CONV s4s3 (šest)
 Correspondence GOLD s4l1 (letošního roku)          = CONV s4l1 (letošního)
-Correspondence GOLD s4n1 (Lidové noviny)           = CONV s4l2 (Lidové)
+Correspondence GOLD s4n1 (Lidové noviny)           = CONV s4n1 (noviny)
 Correspondence GOLD s4p1 (proto)                   = CONV s4p1 (proto)
 Correspondence GOLD s4p2 (od pondělka)             = CONV s4p4 (od pondělka)
 Correspondence GOLD s4s1 (budou stát)              = CONV s4s1 (budou stát)
@@ -628,7 +629,7 @@ Correspondence GOLD s4r2 (date-interval)           = CONV
 Correspondence GOLD s4s  (say-91)                  = CONV 
 Correspondence GOLD s4s3 (sobota)                  = CONV 
 Correspondence GOLD                                = CONV s4k2 (korun)
-Correspondence GOLD                                = CONV s4n1 (noviny)
+Correspondence GOLD                                = CONV s4l2 (Lidové)
 Correspondence GOLD                                = CONV s4p2 (posledního)
 Correspondence GOLD                                = CONV s4r1 (roku)
 
@@ -658,8 +659,10 @@ Node GOLD s4k2 / koruna (korun korun)                  mismatch in :refer-number
 Node GOLD s4k3 / monetary-quantity (šest)              mismatch in concept:         GOLD = monetary-quantity        CONV = šest
 Node GOLD s4k3 / monetary-quantity (šest)              mismatch in :quant:          GOLD = 6                        CONV = 
 Node GOLD s4k3 / monetary-quantity (šest)              mismatch in :unit:           GOLD = s4k2 mapped to CONV s4k1 CONV = 
-Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in concept:         GOLD = news-media               CONV = Lidový
+Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in concept:         GOLD = news-media               CONV = noviny
 Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in :name:           GOLD = s4n2 unmapped            CONV = 
+Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in :refer-number:   GOLD = singular                 CONV = plural
+Node GOLD s4n1 / news-media (Lidové noviny)            mismatch in :mod:            GOLD =                          CONV = s4l2
 Node GOLD s4n2 / name                                  mismatch in concept:         GOLD = name                     CONV = UNMAPPED
 Node GOLD s4n2 / name                                  mismatch in :op1:            GOLD = "Lidové"                 CONV = UNMAPPED
 Node GOLD s4n2 / name                                  mismatch in :op2:            GOLD = "noviny"                 CONV = UNMAPPED
@@ -672,7 +675,6 @@ Node GOLD s4s / say-91                                 mismatch in concept:     
 Node GOLD s4s / say-91                                 mismatch in :ARG1:           GOLD = s4a1                     CONV = UNMAPPED
 Node GOLD s4s / say-91                                 mismatch in :aspect:         GOLD = activity                 CONV = UNMAPPED
 Node GOLD s4s / say-91                                 mismatch in :modal-strength: GOLD = full-affirmative         CONV = UNMAPPED
-Node GOLD s4s1 / stát-014 (budou stát)                 mismatch in :ARG1:           GOLD = s4n1 mapped to CONV s4l2 CONV = s4n1
 Node GOLD s4s1 / stát-014 (budou stát)                 mismatch in :ARG2:           GOLD = s4k1 mapped to CONV s4p3 CONV = s4k1
 Node GOLD s4s1 / stát-014 (budou stát)                 mismatch in :aspect:         GOLD = state                    CONV = activity
 Node GOLD s4s1 / stát-014 (budou stát)                 mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
@@ -680,7 +682,6 @@ Node GOLD s4s1 / stát-014 (budou stát)                 mismatch in :quote:    
 Node GOLD s4s1 / stát-014 (budou stát)                 mismatch in :temporal:       GOLD = s4r2 unmapped            CONV = 
 Node GOLD s4s1 / stát-014 (budou stát)                 mismatch in :temporal:       GOLD =                          CONV = s4p4
 Node GOLD s4s1 / stát-014 (budou stát)                 mismatch in :temporal:       GOLD =                          CONV = s4c2
-Node GOLD s4s2 / stát-014                              mismatch in :ARG1:           GOLD = s4n1 mapped to CONV s4l2 CONV = s4n1
 Node GOLD s4s2 / stát-014                              mismatch in :ARG2:           GOLD = s4k3 mapped to CONV s4s3 CONV = s4k2
 Node GOLD s4s2 / stát-014                              mismatch in :aspect:         GOLD = state                    CONV = activity
 Node GOLD s4s2 / stát-014                              mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
@@ -689,16 +690,14 @@ Node GOLD s4s3 / sobota                                mismatch in concept:     
 Node CONV s4k2 / koruna (korun)                        mismatch in concept:         CONV = koruna                   GOLD = UNMAPPED
 Node CONV s4k2 / koruna (korun)                        mismatch in :mod:            CONV = s4s3                     GOLD = UNMAPPED
 Node CONV s4k2 / koruna (korun)                        mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
-Node CONV s4n1 / noviny (noviny)                       mismatch in concept:         CONV = noviny                   GOLD = UNMAPPED
-Node CONV s4n1 / noviny (noviny)                       mismatch in :mod:            CONV = s4l2                     GOLD = UNMAPPED
-Node CONV s4n1 / noviny (noviny)                       mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
+Node CONV s4l2 / Lidový (Lidové)                       mismatch in concept:         CONV = Lidový                   GOLD = UNMAPPED
 Node CONV s4p2 / poslední (posledního)                 mismatch in concept:         CONV = poslední                 GOLD = UNMAPPED
 Node CONV s4r1 / rok (roku)                            mismatch in concept:         CONV = rok                      GOLD = UNMAPPED
 Node CONV s4r1 / rok (roku)                            mismatch in :mod:            CONV = s4l1                     GOLD = UNMAPPED
 Node CONV s4r1 / rok (roku)                            mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 
-Correct 14 out of 54 non-empty GOLD values => recall    26%.
-Correct 14 out of 46 non-empty CONV values => precision 30%.
+Correct 16 out of 55 non-empty GOLD values => recall    29%.
+Correct 16 out of 46 non-empty CONV values => precision 35%.
 
 Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s4c1 / čtvrtletí (Od čtvrtletí) mismatch in concept:         CONV = čtvrtletí                GOLD = date-entity
@@ -713,11 +712,11 @@ Node CONV s4k1 / koruna (korun)           mismatch in :refer-number:   CONV = pl
 Node CONV s4k2 / koruna (korun)           mismatch in concept:         CONV = koruna                   GOLD = UNMAPPED
 Node CONV s4k2 / koruna (korun)           mismatch in :mod:            CONV = s4s3                     GOLD = UNMAPPED
 Node CONV s4k2 / koruna (korun)           mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
-Node CONV s4l2 / Lidový (Lidové)          mismatch in concept:         CONV = Lidový                   GOLD = news-media
-Node CONV s4l2 / Lidový (Lidové)          mismatch in :name:           CONV =                          GOLD = s4n2
-Node CONV s4n1 / noviny (noviny)          mismatch in concept:         CONV = noviny                   GOLD = UNMAPPED
-Node CONV s4n1 / noviny (noviny)          mismatch in :mod:            CONV = s4l2                     GOLD = UNMAPPED
-Node CONV s4n1 / noviny (noviny)          mismatch in :refer-number:   CONV = plural                   GOLD = UNMAPPED
+Node CONV s4l2 / Lidový (Lidové)          mismatch in concept:         CONV = Lidový                   GOLD = UNMAPPED
+Node CONV s4n1 / noviny (noviny)          mismatch in concept:         CONV = noviny                   GOLD = news-media
+Node CONV s4n1 / noviny (noviny)          mismatch in :mod:            CONV = s4l2 unmapped            GOLD = 
+Node CONV s4n1 / noviny (noviny)          mismatch in :refer-number:   CONV = plural                   GOLD = singular
+Node CONV s4n1 / noviny (noviny)          mismatch in :name:           CONV =                          GOLD = s4n2
 Node CONV s4p2 / poslední (posledního)    mismatch in concept:         CONV = poslední                 GOLD = UNMAPPED
 Node CONV s4p3 / pět (pět)                mismatch in concept:         CONV = pět                      GOLD = monetary-quantity
 Node CONV s4p3 / pět (pět)                mismatch in :quant:          CONV =                          GOLD = 5
@@ -727,7 +726,6 @@ Node CONV s4p4 / pondělek (od pondělka)   mismatch in :refer-number:   CONV = 
 Node CONV s4r1 / rok (roku)               mismatch in concept:         CONV = rok                      GOLD = UNMAPPED
 Node CONV s4r1 / rok (roku)               mismatch in :mod:            CONV = s4l1                     GOLD = UNMAPPED
 Node CONV s4r1 / rok (roku)               mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
-Node CONV s4s1 / stát-014 (budou stát)    mismatch in :ARG1:           CONV = s4n1 unmapped            GOLD = s4n1
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :ARG2:           CONV = s4k1 mapped to GOLD s4k2 GOLD = s4k1
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :aspect:         CONV = activity                 GOLD = state
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :temporal:       CONV = s4p4 mapped to GOLD s4p2 GOLD = 
@@ -735,7 +733,6 @@ Node CONV s4s1 / stát-014 (budou stát)    mismatch in :temporal:       CONV = 
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :quote:          CONV =                          GOLD = s4s
 Node CONV s4s1 / stát-014 (budou stát)    mismatch in :temporal:       CONV =                          GOLD = s4r2
-Node CONV s4s2 / stát-014                 mismatch in :ARG1:           CONV = s4n1 unmapped            GOLD = s4n1
 Node CONV s4s2 / stát-014                 mismatch in :ARG2:           CONV = s4k2 unmapped            GOLD = s4k3
 Node CONV s4s2 / stát-014                 mismatch in :aspect:         CONV = activity                 GOLD = state
 Node CONV s4s2 / stát-014                 mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
@@ -762,8 +759,8 @@ Node GOLD s4s / say-91                    mismatch in :aspect:         GOLD = ac
 Node GOLD s4s / say-91                    mismatch in :modal-strength: GOLD = full-affirmative         CONV = UNMAPPED
 Node GOLD s4s3 / sobota                   mismatch in concept:         GOLD = sobota                   CONV = UNMAPPED
 
-Correct 14 out of 46 non-empty CONV values => recall    30%.
-Correct 14 out of 54 non-empty GOLD values => precision 26%.
+Correct 16 out of 46 non-empty CONV values => recall    35%.
+Correct 16 out of 55 non-empty GOLD values => precision 29%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -2635,16 +2632,16 @@ SUMMARY:
 Number of tokens: 268
 Number of nodes per file: GOLD:226, CONV:198
 File-to-file node mapping:
-Out of 226 total GOLD nodes, 171 mapped to CONV => recall    = 76%.
-Out of 198 total CONV nodes, 171 mapped to GOLD => precision = 86%.
- => F₁(GOLD,CONV) = 81%.
+Out of 226 total GOLD nodes, 171 mapped to CONV => recall    = 75.66%.
+Out of 198 total CONV nodes, 171 mapped to GOLD => precision = 86.36%.
+ => F₁(GOLD,CONV) = 80.66%.
 Before symmetrization, 15 GOLD nodes were projected ambiguously to 31 CONV nodes.
 Before symmetrization, 4 CONV nodes were projected ambiguously to 8 GOLD nodes.
 Concept and relation comparison (only mapped nodes; unmapped are ignored):
-Out of 577 non-empty GOLD values, 303 found in CONV => recall    53%.
-Out of 485 non-empty CONV values, 303 found in GOLD => precision 62%.
- => F₁ = 57%.
+Out of 578 non-empty GOLD values, 305 found in CONV => recall    52.77%.
+Out of 487 non-empty CONV values, 305 found in GOLD => precision 62.63%.
+ => F₁ = 57.28%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 745 non-empty GOLD values, 303 found in CONV => recall    41%.
-Out of 537 non-empty CONV values, 303 found in GOLD => precision 56%.
- => juːmæʧ (GOLD, CONV) = F₁ = 47%.
+Out of 746 non-empty GOLD values, 305 found in CONV => recall    40.88%.
+Out of 537 non-empty CONV values, 305 found in GOLD => precision 56.80%.
+ => juːmæʧ (GOLD, CONV) = F₁ = 47.54%.

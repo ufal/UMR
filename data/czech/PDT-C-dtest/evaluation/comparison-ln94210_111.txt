@@ -1,5 +1,5 @@
 Found 14 sentences in ML:
-1-72, 75-152, 155-208, 211-275, 278-324, 327-400, 403-492, 495-623, 626-681, 684-733, 736-800, 803-879, 882-951, 954-985
+1-72, 75-152, 155-208, 211-276, 279-325, 328-401, 404-493, 496-624, 627-682, 685-734, 737-801, 804-880, 883-952, 955-986
 Found 5 sentences in HH:
 1-72, 75-155, 158-210, 213-280, 283-323
 
@@ -359,25 +359,25 @@ ML                                                                              
                                         :quarter 4                                                                	:op1 "Lidové"
                                         :year (s4l1 / letošní))                                                   	:op2 "noviny")
                       :ARG1 (s4n1 / news-media                                                                	:refer-number singular)
-                                   :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))                   	:ARG2 (s4m1 / monetary-quantity
-                      :ARG2 (s4k1 / monetary-quantity                                                 		:unit (s4k1 / koruna)
-                             :quant 5                                                                         	:quant 5)
-                             :unit (s4k2 / koruna))                                                           :temporal (s4d1 / date-entity
-                      :temporal (s4r2 / date-interval                                         			:quarter 4
-                                        :op1 (s4d1 / date-entity :weekday (s4p2 / pondělí))   			:year (s4l1 / letošní))
-                                        :op2 (s4d2 / date-entity :weekday (s4c2 / čtvrtek))))             	:temporal (s4d2 / date-interval
-            :op2 (s4s2 / stát-014                                                                         		:op1 (s4d3 / date-entity
-                      :aspect state                                                                       			:weekday (s4p4 / pondělí))
-                      :modal-strength full-affirmative                                                        	:op2 (s4d4 / date-entity
-                      :quote s4s                                                                          			:weekday (s4c2 / čtvrtek))))
-                      :clausal-marker s4p1                                                              :op2 (s4s2 / stát-014
-                      :temporal s4c1                                                                    	:aspect state
-                      :ARG1 s4n1                                                              		:modal-strength full-affirmative
-                      :ARG2 (s4k3 / monetary-quantity                                         		:clausal-marker s4p3
-                                    :quant 6                                                            	:ARG1 s4n1
-                                    :unit s4k2)                                                         	:ARG2 (s4m2 / monetary-quantity
-                      :temporal (s4d3 / date-entity :weekday (s4s3 / sobota)))))                      		:unit s4k1
-                                                                                                              	:quant 6)
+                                   :refer-number singular                                             	:ARG2 (s4m1 / monetary-quantity
+                                   :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))                   		:unit (s4k1 / koruna)
+                      :ARG2 (s4k1 / monetary-quantity                                                         	:quant 5)
+                             :quant 5                                                                         :temporal (s4d1 / date-entity
+                             :unit (s4k2 / koruna))                                           			:quarter 4
+                      :temporal (s4r2 / date-interval                                         			:year (s4l1 / letošní))
+                                        :op1 (s4d1 / date-entity :weekday (s4p2 / pondělí))               	:temporal (s4d2 / date-interval
+                                        :op2 (s4d2 / date-entity :weekday (s4c2 / čtvrtek))))             		:op1 (s4d3 / date-entity
+            :op2 (s4s2 / stát-014                                                                         			:weekday (s4p4 / pondělí))
+                      :aspect state                                                                           	:op2 (s4d4 / date-entity
+                      :modal-strength full-affirmative                                                    			:weekday (s4c2 / čtvrtek))))
+                      :quote s4s                                                                        :op2 (s4s2 / stát-014
+                      :clausal-marker s4p1                                                              	:aspect state
+                      :temporal s4c1                                                          		:modal-strength full-affirmative
+                      :ARG1 s4n1                                                              		:clausal-marker s4p3
+                      :ARG2 (s4k3 / monetary-quantity                                                   	:ARG1 s4n1
+                                    :quant 6                                                            	:ARG2 (s4m2 / monetary-quantity
+                                    :unit s4k2)                                                       		:unit s4k1
+                      :temporal (s4d3 / date-entity :weekday (s4s3 / sobota)))))                              	:quant 6)
                                                                                                               :temporal (s4d5 / date-entity
                                                                                                               	:weekday (s4s4 / sobota))
                                                                                                         	:temporal s4d1)))
@@ -448,34 +448,32 @@ Aligned 18 out of 19 ML nodes, that is 95%.
 Aligned 18 out of 19 HH nodes, that is 95%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s4d3 / date-entity (v sobotu)     mismatch in concept:       ML = date-entity            HH = sobota
-Node ML s4d3 / date-entity (v sobotu)     mismatch in :weekday:      ML = s4s3 unmapped          HH = 
-Node ML s4n1 / news-media (Lidové noviny) mismatch in :refer-number: ML =                        HH = singular
-Node ML s4s1 / stát-014 (budou stát)      mismatch in :quote:        ML = s4s mapped to HH s4s3  HH = 
-Node ML s4s2 / stát-014                   mismatch in :quote:        ML = s4s mapped to HH s4s3  HH = 
-Node ML s4s2 / stát-014                   mismatch in :temporal:     ML = s4d3 mapped to HH s4s4 HH = 
-Node ML s4s2 / stát-014                   mismatch in :temporal:     ML =                        HH = s4d5
-Node ML s4s3 / sobota                     mismatch in concept:       ML = sobota                 HH = UNMAPPED
-Node HH s4d5 / date-entity                mismatch in concept:       HH = date-entity            ML = UNMAPPED
-Node HH s4d5 / date-entity                mismatch in :weekday:      HH = s4s4                   ML = UNMAPPED
+Node ML s4d3 / date-entity (v sobotu) mismatch in concept:   ML = date-entity            HH = sobota
+Node ML s4d3 / date-entity (v sobotu) mismatch in :weekday:  ML = s4s3 unmapped          HH = 
+Node ML s4s1 / stát-014 (budou stát)  mismatch in :quote:    ML = s4s mapped to HH s4s3  HH = 
+Node ML s4s2 / stát-014               mismatch in :quote:    ML = s4s mapped to HH s4s3  HH = 
+Node ML s4s2 / stát-014               mismatch in :temporal: ML = s4d3 mapped to HH s4s4 HH = 
+Node ML s4s2 / stát-014               mismatch in :temporal: ML =                        HH = s4d5
+Node ML s4s3 / sobota                 mismatch in concept:   ML = sobota                 HH = UNMAPPED
+Node HH s4d5 / date-entity            mismatch in concept:   HH = date-entity            ML = UNMAPPED
+Node HH s4d5 / date-entity            mismatch in :weekday:  HH = s4s4                   ML = UNMAPPED
 
-Correct 48 out of 54 non-empty ML values => recall    89%.
-Correct 48 out of 53 non-empty HH values => precision 91%.
+Correct 49 out of 55 non-empty ML values => recall    89%.
+Correct 49 out of 53 non-empty HH values => precision 92%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s4d5 / date-entity                mismatch in concept:       HH = date-entity   ML = UNMAPPED
-Node HH s4d5 / date-entity                mismatch in :weekday:      HH = s4s4          ML = UNMAPPED
-Node HH s4n1 / news-media (Lidové noviny) mismatch in :refer-number: HH = singular      ML = 
-Node HH s4s1 / stát-014 (budou stát)      mismatch in :quote:        HH =               ML = s4s
-Node HH s4s2 / stát-014                   mismatch in :temporal:     HH = s4d5 unmapped ML = 
-Node HH s4s2 / stát-014                   mismatch in :quote:        HH =               ML = s4s
-Node HH s4s2 / stát-014                   mismatch in :temporal:     HH =               ML = s4d3
-Node HH s4s4 / sobota (v sobotu)          mismatch in concept:       HH = sobota        ML = date-entity
-Node HH s4s4 / sobota (v sobotu)          mismatch in :weekday:      HH =               ML = s4s3
-Node ML s4s3 / sobota                     mismatch in concept:       ML = sobota        HH = UNMAPPED
+Node HH s4d5 / date-entity           mismatch in concept:   HH = date-entity   ML = UNMAPPED
+Node HH s4d5 / date-entity           mismatch in :weekday:  HH = s4s4          ML = UNMAPPED
+Node HH s4s1 / stát-014 (budou stát) mismatch in :quote:    HH =               ML = s4s
+Node HH s4s2 / stát-014              mismatch in :temporal: HH = s4d5 unmapped ML = 
+Node HH s4s2 / stát-014              mismatch in :quote:    HH =               ML = s4s
+Node HH s4s2 / stát-014              mismatch in :temporal: HH =               ML = s4d3
+Node HH s4s4 / sobota (v sobotu)     mismatch in concept:   HH = sobota        ML = date-entity
+Node HH s4s4 / sobota (v sobotu)     mismatch in :weekday:  HH =               ML = s4s3
+Node ML s4s3 / sobota                mismatch in concept:   ML = sobota        HH = UNMAPPED
 
-Correct 48 out of 53 non-empty HH values => recall    91%.
-Correct 48 out of 54 non-empty ML values => precision 89%.
+Correct 49 out of 53 non-empty HH values => recall    92%.
+Correct 49 out of 55 non-empty ML values => precision 89%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -556,16 +554,16 @@ SUMMARY:
 Number of tokens: 92
 Number of nodes per file: ML:73, HH:72
 File-to-file node mapping:
-Out of 73 total ML nodes, 70 mapped to HH => recall    = 96%.
-Out of 72 total HH nodes, 70 mapped to ML => precision = 97%.
- => F₁(ML,HH) = 97%.
+Out of 73 total ML nodes, 70 mapped to HH => recall    = 95.89%.
+Out of 72 total HH nodes, 70 mapped to ML => precision = 97.22%.
+ => F₁(ML,HH) = 96.55%.
 Before symmetrization, 3 ML nodes were projected ambiguously to 8 HH nodes.
 Before symmetrization, 5 HH nodes were projected ambiguously to 10 ML nodes.
 Concept and relation comparison (only mapped nodes; unmapped are ignored):
-Out of 236 non-empty ML values, 224 found in HH => recall    95%.
-Out of 232 non-empty HH values, 224 found in ML => precision 97%.
- => F₁ = 96%.
+Out of 237 non-empty ML values, 225 found in HH => recall    94.94%.
+Out of 232 non-empty HH values, 225 found in ML => precision 96.98%.
+ => F₁ = 95.95%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 241 non-empty ML values, 224 found in HH => recall    93%.
-Out of 236 non-empty HH values, 224 found in ML => precision 95%.
- => juːmæʧ (ML, HH) = F₁ = 94%.
+Out of 242 non-empty ML values, 225 found in HH => recall    92.98%.
+Out of 236 non-empty HH values, 225 found in ML => precision 95.34%.
+ => juːmæʧ (ML, HH) = F₁ = 94.14%.

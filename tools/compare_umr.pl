@@ -11,12 +11,19 @@ binmode(STDERR, ':utf8');
 use Carp;
 use Getopt::Long;
 
+###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off.
+###!!! TODO: Evaluate document-level relations.
+###!!! TODO: Add less verbose mode (only final numbers).
+###!!! TODO: Move the script to a separate repository (umrtools?)
+
 sub usage
 {
     print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2]\n");
     print STDERR ("    The labels are used to refer to the files in the output.\n");
     print STDERR ("    They can be e.g. initials of the annotators, or 'GOLD' and 'SYSTEM'.\n");
-    print STDERR ("Example:\n");
+    print STDERR ("Example (system evaluation):\n");
+    print STDERR ("    perl tools/compare_umr.pl GOLD english-test.umr SYSTEM english-test-predicted.umr\n");
+    print STDERR ("Example (two annotators; Windows path fomat):\n");
     print STDERR ("    perl tools\\compare_umr.pl DZ data\\czech\\mf920922-133_estonsko-DZ.txt ML data\\czech\\mf920922-133_estonsko-ML.txt\n");
 }
 
@@ -250,10 +257,8 @@ sub add_sentence
 
 
 #------------------------------------------------------------------------------
-# Takes a file hash and a sentence number. Parses the lines of the sentence
-# tokens block in the given sentence and saves the resulting structure in the
-# sentence hash. (The only reason why we need reference to the whole file is
-# the label that we may need in error messages.)
+# Takes a sentence hash. Parses the lines of the first block of the sentence
+# (tokens) and saves the resulting structure in the sentence hash.
 #------------------------------------------------------------------------------
 sub parse_sentence_tokens
 {
@@ -283,10 +288,8 @@ sub parse_sentence_tokens
 
 
 #------------------------------------------------------------------------------
-# Takes a file hash and a sentence number. Parses the lines of the sentence
-# graph block in the given sentence and saves the resulting structure in the
-# sentence hash. (The only reason why we need reference to the whole file is
-# the label that we may need in error messages.)
+# Takes a sentence hash. Parses the lines of the sentence graph block in the
+# given sentence and saves the resulting structure in the sentence hash.
 #------------------------------------------------------------------------------
 sub parse_sentence_graph
 {
@@ -418,10 +421,8 @@ sub parse_sentence_graph
 
 
 #------------------------------------------------------------------------------
-# Takes a file hash and a sentence number. Parses the lines of the alignment
-# block in the given sentence and saves the resulting structure in the sentence
-# hash. (The only reason why we need reference to the whole file is the label
-# that we may need in error messages.)
+# Takes a sentence hash. Parses the lines of the alignment block in the given
+# sentence and saves the resulting structure in the sentence hash.
 #------------------------------------------------------------------------------
 sub parse_sentence_alignments
 {
@@ -504,8 +505,8 @@ sub parse_sentence_alignments
 
 
 #------------------------------------------------------------------------------
-# Compares two UMR files that have been read to memory (takes the hashes with
-# their contents, prints the comparison to STDOUT).
+# Compares two or more UMR files that have been read to memory (takes the
+# hashes with their contents, prints the comparison to STDOUT).
 #------------------------------------------------------------------------------
 sub compare_files
 {
@@ -1440,7 +1441,7 @@ sub compare_two_nodes
 
 #------------------------------------------------------------------------------
 # For a node, collects all attribute-value pairs (concept, edges, attributes).
-# In fact it collect triples rather than pairs, because the value is returned
+# In fact it collects triples rather than pairs, because the value is returned
 # twice and in some cases the second value is modified. This happens when the
 # value is a variable identifying another node: The modified value is the
 # corresponding variable in another file.

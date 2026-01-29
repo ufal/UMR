@@ -658,16 +658,16 @@ SUMMARY:
 Number of tokens: 100
 Number of nodes per file: ML:80, HH:78
 File-to-file node mapping:
-Out of 80 total ML nodes, 77 mapped to HH => recall    = 96%.
-Out of 78 total HH nodes, 77 mapped to ML => precision = 99%.
- => F₁(ML,HH) = 97%.
+Out of 80 total ML nodes, 77 mapped to HH => recall    = 96.25%.
+Out of 78 total HH nodes, 77 mapped to ML => precision = 98.72%.
+ => F₁(ML,HH) = 97.47%.
 Before symmetrization, 4 ML nodes were projected ambiguously to 11 HH nodes.
 Before symmetrization, 5 HH nodes were projected ambiguously to 14 ML nodes.
 Concept and relation comparison (only mapped nodes; unmapped are ignored):
-Out of 252 non-empty ML values, 226 found in HH => recall    90%.
-Out of 253 non-empty HH values, 226 found in ML => precision 89%.
- => F₁ = 90%.
+Out of 252 non-empty ML values, 226 found in HH => recall    89.68%.
+Out of 253 non-empty HH values, 226 found in ML => precision 89.33%.
+ => F₁ = 89.50%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 256 non-empty ML values, 226 found in HH => recall    88%.
-Out of 254 non-empty HH values, 226 found in ML => precision 89%.
- => juːmæʧ (ML, HH) = F₁ = 89%.
+Out of 256 non-empty ML values, 226 found in HH => recall    88.28%.
+Out of 254 non-empty HH values, 226 found in ML => precision 88.98%.
+ => juːmæʧ (ML, HH) = F₁ = 88.63%.
