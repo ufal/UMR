@@ -4,10 +4,10 @@ use strict;
 
 use Path::Tiny qw{ path };
 
--d $ENV{UFAL_PDTC} or die '$UFAL_PDTC not set!';
+-d $ENV{UFAL_PDTC30} or die '$UFAL_PDTC30 not set!';
 
 my %pdtc_path;
-my $iter = path($ENV{UFAL_PDTC}, 'WorkData2.0')->iterator({recurse => 1});
+my $iter = path($ENV{UFAL_PDTC30}, 'data')->iterator({recurse => 1});
 while (my $path = $iter->()) {
     $pdtc_path{$2} = $1 if $path =~ m{/([de]test|train[^/]*)/(.+\.t)$};
 }
