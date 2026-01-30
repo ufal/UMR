@@ -1636,7 +1636,7 @@ def validate_document_relations(sentence, node_dict, args):
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
             # Add the variable to node_dict so that we do not get KeyError later.
             node_dict[r['node0']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
-        if not r['node1'] in node_dict and not r['node1'] in ['root', 'author', 'null-conceiver', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
+        if not r['node1'] in node_dict and not r['node1'] in ['root', 'author', 'null-conceiver', 'have-condition-91', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
             testid = 'unknown-node-id'
             testmessage = f"The node id (variable) '{r['node1']}' is unknown. No such node has been defined so far."
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
