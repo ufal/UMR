@@ -182,11 +182,13 @@
 
     sub label_with_name_expanded {
         my ($node) = @_;
+
+        return $node->{label} if ($node->{relation} // "") eq 'name'
+                              && ! grep $_->{type} eq 'op1',
+                                   ListV($node->{features});
         return $node->{label}
-            if (($node->{relation} // "") ne 'name'
-                && ($node->{label} // "") ne 'foreign-phrase'
-                && ($node->{label} // "") ne 'percentage-entity')
-            || ! $node->{features};
+            if ($node->{label} // "") ne 'foreign-phrase'
+            && ($node->{label} // "") ne 'percentage-entity';
 
         if ('percentage-entity' eq $node->{label}) {
             my ($value) = grep 'value' eq $_->{type}, ListV($node->{features});
