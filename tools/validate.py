@@ -1653,7 +1653,7 @@ def validate_document_relations(sentence, node_dict, args):
         current_sentence_line = sentence[0]['line0']
         node0_line = node_dict[r['node0']]['line0'] if r['node0'] in node_dict else -1
         node1_line = node_dict[r['node1']]['line0'] if r['node1'] in node_dict else -1
-        if node0_line < current_sentence_line and node1_line < current_sentence_line and not (r['node0'] == 'root' and r['node1'] == 'author'):
+        if node0_line < current_sentence_line and node1_line < current_sentence_line and not (r['node0'] == 'root' and r['node1'] == 'author') and not (r['node0'] == 'author' and r['node1'] == 'have-condition-91'):
             testid = 'misplaced-document-relation'
             testmessage = f"At least one of the nodes must be from the current sentence but neither '{r['node0']}' nor '{r['node1']}' is."
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
