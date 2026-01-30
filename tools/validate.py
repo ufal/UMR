@@ -747,7 +747,7 @@ def validate_sentence_graph(sentence, node_dict, args):
                             warn(testmessage, testclass, testlevel, testid, lineno=iline)
                     parent['relations'][-1]['type'] = 'node'
                     parent['relations'][-1]['value'] = variable
-                    if dominates(variable, variable, node_dict, {}):
+                    if args.check_cycles and dominates(variable, variable, node_dict, {}):
                         testid = 'cycle'
                         testmessage = f"The node '{variable}', first defined on line {node_dict[variable]['line0']}, dominates itself. Use inverted relations to prevent cycles."
                         warn(testmessage, testclass, testlevel, testid, lineno=iline)
@@ -1596,7 +1596,8 @@ def validate_document_relations(sentence, node_dict, args):
     testclass = 'Document'
     for r in sentence[3]['relations']:
         if r['group'] == ':temporal':
-            if not r['relation'] in [':contained', ':before', ':after', ':overlap', ':depends-on']:
+            ###!!! UMR release 2.0 English also uses :contains (besides :contained) but it is not mentioned in the guidelines.
+            if not r['relation'] in [':contained', ':contains', ':before', ':after', ':overlap', ':depends-on']:
                 testid = 'unknown-document-relation'
                 testmessage = f"Unknown document-level {r['group']} relation '{r['relation']}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
@@ -1608,7 +1609,9 @@ def validate_document_relations(sentence, node_dict, args):
                 testmessage = f"Unknown document-level {r['group']} relation '{r['relation']}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         elif r['group'] == ':coref':
-            if not r['relation'] in [':same-entity', ':same-event', ':subset-of']:
+            ###!!! UMR release 2.0 English also uses :contains (besides :contained) but it is not mentioned in the guidelines. (Both in :temporal and :coref!)
+            ###!!! The released data also contains :subset (besides :subset-of).
+            if not r['relation'] in [':same-entity', ':same-event', ':subset-of', ':contains', ':subset']:
                 testid = 'unknown-document-relation'
                 testmessage = f"Unknown document-level {r['group']} relation '{r['relation']}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
@@ -2161,7 +2164,8 @@ def validate(inp, out, args, known_sent_ids):
         if args.level > 2:
             validate_relations(sentence, node_dict, args)
             validate_name(sentence, node_dict, args)
-            validate_wiki(sentence, node_dict, args)
+            if args.check_wiki:
+                validate_wiki(sentence, node_dict, args)
             detect_events(sentence, node_dict, args)
             if args.check_aspect_modstr:
                 validate_events(sentence, node_dict, args)
@@ -2200,8 +2204,10 @@ if __name__=="__main__":
     strict_group.add_argument('--optional-alignments', dest='check_complete_alignment', action='store_false', default=True, help='Do not require that every node has its alignment specified.')
     strict_group.add_argument('--warn-overlapping-alignment', dest='check_overlapping_alignment', action='store_true', default=False, help='Report words that are aligned to more than one node. This is a warning only, and it is turned off by default.')
     strict_group.add_argument('--no-warn-unaligned-token', dest='check_unaligned_token', action='store_false', default=True, help='Report words that are not aligned to any node. This is a warning only, and it is turned on by default.')
+    strict_group.add_argument('--no-check-wiki', dest='check_wiki', action='store_false', default=True, help='Do not require that the :wiki attribute is string and looks like Wikidata id.')
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
     strict_group.add_argument('--allow-duplicate-roles', dest='check_duplicate_roles', action='store_false', default=True, help='Any role can occur multiple times under the same parent. Normally, this is allowed for some relations and attributes but not for others. This option relaxes the test for relations (roles) but not for attributes.')
+    strict_group.add_argument('--allow-cycles', dest='check_cycles', action='store_false', default=True, help='Cyclic dependencies are allowed even outside :quot.')
     strict_group.add_argument('--allow-coref-entity-event-mismatch', dest='check_coref_entity_event_mismatch', action='store_false', default=True, help='If we know that a concept is entity, coreference cannot point to it via :same-event, and vice versa, an event cannot participate in :same-entity relations. This option relaxes the test on such mismatches.')
     strict_group.add_argument('--optional-document-level', dest='require_document_level', action='store_false', default=True, help='Do not require that every sentence has complete document-level annotation. In particular, do not report missing temporal relations for events. Another consequence is that modal strength is now expected in the sentence-level, rather than document-level graph.')
 
