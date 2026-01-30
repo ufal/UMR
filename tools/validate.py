@@ -404,7 +404,7 @@ tokrng_neg_re = re.compile(r"^-1--1|0-0|([1-9][0-9]*)-([1-9][0-9]*)$")
 tokrngs_neg_re = re.compile(r"^(?:-1--1|0-0|([1-9][0-9]*)-([1-9][0-9]*)(,\s*[1-9][0-9]*-[1-9][0-9]*)*)$")
 
 svariable_re = re.compile(r"^s[0-9]+s0")
-dvariable_re = re.compile(r"^([a-z]+(?:-[a-z]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id; we need to recognize following closing bracket but we must not consume it
+dvariable_re = re.compile(r"^([a-z]+(?:-[a-z91]+)*|s[0-9]+[a-z]+[0-9]*)(\s|\)|$)") # constant or concept node id (constant may include the have-condition-91 predicate, which is why [91] is also allowed); we need to recognize following closing bracket but we must not consume it
 
 def validate_sentence_metadata(sentence, known_ids, args):
     """
