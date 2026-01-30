@@ -129,6 +129,8 @@ root_re = re.compile(r"^\(")
 def is_root(line):
     return root_re.match(line)
 
+###!!! AMR would also allow coordinates as relations, single axis letter (:x, :y, :z).
+###!!! When that occurs, this re will not match and the error message will be misleading (claiming there was no colon, although there was).
 attr_re = re.compile(r"^:[A-Za-z][-A-Za-z0-9]+")
 def is_attribute(line):
     return attr_re.match(line)
@@ -1142,6 +1144,7 @@ known_relations = {
     ':actor': {'type': 'participant', 'repeat': False},
     ':affectee': {'type': 'participant', 'repeat': False},
     ':age': {'type': 'modifier', 'repeat': False},
+    ':anchor': {'type': 'modifier', 'repeat': True},
     ':apprehensive': {'type': 'modifier', 'repeat': False},
     ':ARG0': {'type': 'participant', 'repeat': False},
     ':ARG1': {'type': 'participant', 'repeat': False},
@@ -1151,6 +1154,7 @@ known_relations = {
     ':ARG5': {'type': 'participant', 'repeat': False},
     ':ARG6': {'type': 'participant', 'repeat': False},
     ':aspect': {'type': 'attribute', 'repeat': False, 'values': ['habitual', 'generic', 'imperfective', 'inceptive', 'process', 'atelic-process', 'perfective', 'state', 'reversible-state', 'irreversible-state', 'inherent-state', 'point-state', 'activity', 'undirected-activity', 'directed-activity', 'endeavor', 'semelfactive', 'undirected-endeavor', 'directed-endeavor', 'performance', 'incremental-accomplishment', 'nonincremental-accomplishment', 'directed-achievement', 'reversible-directed-achievement', 'irreversible-directed-achievement']},
+    ':axis': {'type': 'modifier', 'repeat': True},
     ':beneficiary': {'type': 'participant', 'repeat': False},
     ':calendar': {'type': 'modifier', 'repeat': False},
     ':cause': {'type': 'modifier', 'repeat': True},
@@ -1162,6 +1166,7 @@ known_relations = {
     ':concession': {'type': 'modifier', 'repeat': True},
     ':concessive-condition': {'type': 'modifier', 'repeat': True},
     ':condition': {'type': 'modifier', 'repeat': True},
+    ':configuration': {'type': 'modifier', 'repeat': True},
     ':consist-of': {'type': 'modifier', 'repeat': False},
     ':day': {'type': 'attribute', 'repeat': False},
     ':dayperiod': {'type': 'attribute', 'repeat': False},
@@ -1193,6 +1198,7 @@ known_relations = {
     ':name': {'type': 'modifier', 'repeat': False},
     ':op1': {'type': 'attribute', 'repeat': False}, # There is no theoretical limit on the number after ':op'. When ':op2' or higher occurs, we will clone ':op1' on the fly.
     ':ord': {'type': 'modifier', 'repeat': False},
+    ':orientation': {'type': 'modifier', 'repeat': True},
     ':other-role': {'type': 'modifier', 'repeat': True},
     ':part': {'type': 'modifier', 'repeat': True},
     ':path': {'type': 'modifier', 'repeat': True},
@@ -1214,6 +1220,7 @@ known_relations = {
     ':result': {'type': 'modifier', 'repeat': True},
     ':scale': {'type': 'modifier', 'repeat': False},
     ':season': {'type': 'modifier', 'repeat': False},
+    ':size': {'type': 'modifier', 'repeat': True},
     ':source': {'type': 'participant', 'repeat': False},
     ':start': {'type': 'participant', 'repeat': False},
     ':stimulus': {'type': 'participant', 'repeat': False},
