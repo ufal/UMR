@@ -1157,6 +1157,7 @@ known_relations = {
     ':causer': {'type': 'participant', 'repeat': False},
     ':century': {'type': 'attribute', 'repeat': False},
     ':co-actor': {'type': 'participant', 'repeat': False},
+    ':color': {'type': 'modifier', 'repeat': True},
     ':companion': {'type': 'participant', 'repeat': False},
     ':concession': {'type': 'modifier', 'repeat': True},
     ':concessive-condition': {'type': 'modifier', 'repeat': True},
@@ -1735,7 +1736,7 @@ def collect_coreference_clusters(document, node_dict, args):
                 wiki = wikidatalist[0]
             if wiki != '':
                 if cwiki != '':
-                    if wiki != cwiki:
+                    if args.check_wiki and wiki != cwiki:
                         wikilabel = wiki
                         label = get_wikidata_label(wiki)
                         if label:
