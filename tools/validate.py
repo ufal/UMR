@@ -1629,7 +1629,8 @@ def validate_document_relations(sentence, node_dict, args):
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
         # Participants in document-level relations must be either known concept nodes
         # or one of the constants: root, author, null-conceiver, document-creation-time.
-        if not r['node0'] in node_dict and not r['node0'] in ['root', 'author', 'null-conceiver', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
+        ###!!! Some annotators seem to also use the have-condition-91 abstract predicate in modal graphs. I am not sure if it is documented anywhere.
+        if not r['node0'] in node_dict and not r['node0'] in ['root', 'author', 'null-conceiver', 'have-condition-91', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
             testid = 'unknown-node-id'
             testmessage = f"The node id (variable) '{r['node0']}' is unknown. No such node has been defined so far."
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
