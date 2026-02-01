@@ -66,6 +66,8 @@ foreach my $file (@ARGV)
 }
 if(scalar(@ARGV)>1)
 {
+    my $n = scalar(@ARGV);
+    print("TOTAL $n files\n");
     print("TOTAL $total_sentences sentences\n");
     print("TOTAL $total_tokens tokens\n");
 }
