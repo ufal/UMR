@@ -535,7 +535,7 @@ def validate_sentence_metadata(sentence, known_ids, args):
             testmessage = "Missing the Words line in the first annotation block."
             warn(testmessage, testclass, testlevel, testid, lineno=iline)
             sentence[0]['tokens'] = []
-        else:
+        elif args.check_ilg:
             m = len(ilg['Words']['items'])
             for header in ilg:
                 if re.match(r"^(Index|Word Gloss \([a-z]{2,3}\))$", header):
@@ -2211,6 +2211,7 @@ if __name__=="__main__":
     strict_group.add_argument('--allow-inline-comments', dest='inline_comments', action='store_true', default=False, help='Allow comments anywhere, not just at the beginning of a block. Everything from # to end of line will be ignored. This option also implies --allow-trailing-whitespace.')
     strict_group.add_argument('--allow-trailing-whitespace', dest='check_trailing_whitespace', action='store_false', default=True, help='Do not report trailing whitespace.')
     strict_group.add_argument('--allow-wide-space', dest='check_wide_space', action='store_false', default=True, help='Do not report multiple spaces between tokens, treat them as a single space.')
+    strict_group.add_argument('--no-check-ilg', dest='check_ilg', action='store_false', default=True, help='Do not check inter-linear glossing (e.g. number of morphemes and morpheme glosses must match).')
     strict_group.add_argument('--allow-forward-references', dest='check_forward_references', action='store_false', default=True, help='Do not report forward node references within a sentence level graph.')
     strict_group.add_argument('--allow--1', dest='check_nonnegative_alignment', action='store_false', default=True, help='Do not report alignment -1--1. Unaligned nodes normally get the pseudo-alignment 0-0 but in UMR 1.0 some of them have -1--1.')
     strict_group.add_argument('--optional-block-headers', dest='check_block_headers', action='store_false', default=True, help='Do not report missing or unknown header comments for annotation blocks.')
