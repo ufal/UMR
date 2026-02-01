@@ -120,7 +120,7 @@ def remove_inline_comment(line):
 # contains multiple lines with inter-linear glossing. Each of these lines should
 # start with a header but these headers are different in Arapaho vs. the others.
 # For our standard, see https://github.com/ufal/UMR/issues/9.
-ilg_re = re.compile(r"^(Index|Words|Word Gloss \([a-z]{2,3}\)|Morphemes|Morpheme Gloss \([a-z]{2,3}\)|Sentence|Sentence Gloss \([a-z]{2,3}\)):\s*(.+)")
+ilg_re = re.compile(r"^(Index|Words|Word Gloss \([a-z]{2,3}\)|Part of Speech|Morphemes|Morpheme Gloss \([a-z]{2,3}\)|Sentence|Sentence Gloss \([a-z]{2,3}\)):\s*(.+)")
 ilg_old_re = re.compile(r"^(Words|tx|Morphemes|mb|Morpheme Gloss\((?:English|Spanish)\)|ge|Morpheme Cat|ps|Word Gloss|(?:English|Spanish) Sent Gloss:|tr)\s+(.+)")
 def is_ilg(line):
     return ilg_re.match(line) or ilg_old_re.match(line)
@@ -499,6 +499,8 @@ def validate_sentence_metadata(sentence, known_ids, args):
         # Sentence: Estonci volili parlament.
         # Sentence Gloss (en): Estonians elected the parliament.
         # Sentence Gloss (es): Los estonios eligieron el parlamento.
+        # The following was not in the proposal but it is used in Arapaho and it makes sense, so why not allow it.
+        # Part of Speech: PROPN VERB NOUN PUNCT
         lines = sentence[0]['lines']
         ilg = {}
         for l in lines:
