@@ -2188,8 +2188,9 @@ def validate(inp, out, args, known_sent_ids):
     # After we have read the input, we can ask about the line breaks observed.
     validate_newlines(inp) # level 1
     # Document-level tests.
-    collect_coreference_clusters(document, node_dict, args)
-    build_temporal_graph(document, node_dict, args)
+    if args.level > 2:
+        collect_coreference_clusters(document, node_dict, args)
+        build_temporal_graph(document, node_dict, args)
 
 if __name__=="__main__":
     opt_parser = argparse.ArgumentParser(description="UMR validation script. Python 3 is needed to run it! Optionally, if the 'requests' library is installed (try 'pip install requests'), some functions can show Wikidata labels together with Q-codes.")
