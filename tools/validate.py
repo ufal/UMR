@@ -575,12 +575,13 @@ def validate_sentence_metadata(sentence, known_ids, args):
                         testid = 'sentence-word-mismatch'
                         testmessage = f"Words have only {m} items while the (untokenized) Sentence has {n} items."
                         warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
-                elif re.match(r"^Sentence Gloss \([a-z]{2,3}\)$", header):
-                    n = len(ilg[header]['items'])
-                    if not 'Sentence' in ilg:
-                        testid = 'missing-sentence'
-                        testmessage = "There is a sentence gloss but the (original) Sentence line is missing."
-                        warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
+                # It is not clear whether we should require this. Anyway, the difference between Words and Sentence is only tokenization.
+                # And if the detokenized sentence is important, then it is actually important regardless of whether there is Sentence Gloss.
+                #elif re.match(r"^Sentence Gloss \([a-z]{2,3}\)$", header):
+                #    if not 'Sentence' in ilg:
+                #        testid = 'missing-sentence'
+                #        testmessage = "There is a sentence gloss but the (original) Sentence line is missing."
+                #        warn(testmessage, testclass, testlevel, testid, lineno=ilg[header]['line0'])
 
 
 def dominates(var0, var1, node_dict, tried):
