@@ -1143,7 +1143,7 @@ def validate_document_level(sentence, node_dict, args):
 # - attribute ... atomic / numerical / string value; not a child node.
 # Repeat=True: One node is allowed to have multiple such relations/attributes.
 known_relations = {
-    # :accompanier from AMR, maybe replaced by :companion in UMR?
+    # :accompanier from AMR, maybe replaced by :companion in UMR? ###!!! But it is used in UMR 2.0 in Arapaho.
     ':actor': {'type': 'participant', 'repeat': False},
     ':affectee': {'type': 'participant', 'repeat': False},
     ':age': {'type': 'modifier', 'repeat': False},
