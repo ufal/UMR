@@ -390,7 +390,7 @@ def validate_newlines(inp):
 # comments should not occur here).
 concept_re = re.compile(r"^[^\s\(\):\#]+")
 relation_re = re.compile(r"^:[-A-Za-z0-9]+")
-string_re = re.compile(r'^"([^"\s]+)"')
+string_re = re.compile(r'^"([^"]+)"') # occasionally there are even string values with spaces
 number_re = re.compile(r"^([0-9]+(?:[\.:][0-9]+)?)(\s|\)|$)") # we need to recognize following closing bracket but we must not consume it; besides decimal '.', also recognize ':' in time expressions ('23:45')
 atom_re = re.compile(r"^([-+a-z0-9]+)(\s|\)|$)") # enumerated values of some attributes, including integers (but also '3rd'), polarity values ('+', '-'), or node references ('s5p')
 # Atoms do not contain uppercase letters. We still need a regular expression for
