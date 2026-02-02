@@ -4,9 +4,16 @@ Relations that are in the Tecto theory annotated as coreference, i.e. those capt
 `coref_gram.rf` and `coref_text` (or `coref_text.rf` in older versions) attributes,
 are represented in three different ways in UMR:
 
-1. inversed participant role (sentence level annotation)
-2. reference to an already specified concept variable (sentence level annotation)
-3. the `:coref` attribute in the document-level annotation (document level annotation)
+- inversed participant role (sentence level annotation)
+- reference to an already specified concept variable (sentence level annotation)
+- the `:coref` attribute in the document-level annotation (document level annotation) ... 
+  - `(John :same-entity he)`
+  
+  - `(we :subset-of he)` ... *he* is annotated with a `:subset-of` relation to _we
+  
+  - `(arrests  :subset-of  arrest)`    
+    
+    **Notation:** NOT consistent with the naming convention ("read from the child node")!
 
 ## Sentence level annotation
 
@@ -15,7 +22,7 @@ are represented in three different ways in UMR:
 This annotation style is used for capturing coreference of relative pronouns and arguments
 of participles. According to the theory underlying UMR, relative clauses and participles 
 primarily serve as event concept modifiers. In such cases, an inversed numbered or general
-participant role (`:Stimulus-of` in the following example) is used to modify the parent concept:
+participant role (`:stimulus-of` in the following example) is used to modify the parent concept:
 
 ```
 I bought the sweater that you saw.
@@ -93,13 +100,16 @@ However, we would like to generalize it to cover all coreference relations as id
 Two types of relations are recognized:
 
 - identity relation, marked with the `:same-entity` relation (two expressions have the same referent), see examples Snt5 and Snt6 and their annotation below:   
+  
   - [en] Snt5: _Pope was flown to the U.S. military base at Ramstein, Germany._
   - [en] Snt6: _He will spend the next several days at the medical center there before he returns home with his wife Sherry._
+
 - `:subset-of` relation for split antecedents (relates sets of entities to entities belonging to such a set), UMR exemplifies it by the following sentence:
+  
   - [en] _He is very possessive and controlling but he has no right to be as we are not together._   
     ... UMR describes as "_he_ (p2) is annotated with a `:subset-of` relation to the _we_ (p3) node".  
-    ~~TYPO: In schema, there is  `:coref (he :subset-of we)`!! ~~
-    ML: should be rather  `:coref (we :subset-of he)` ... "he" is a subset of "we"**, compare to examples for event coreference below??
+    **TYPO:**  ~~In schema, there is  `:coref (he :subset-of we)`~~  
+    **Should be  `:coref (p3 :subset-of p2)`** ...... p2 (_he) is a subset of p3 (_we_) compare to examples for event coreference below!
     
     ```
     Snt5: Pope was flown to the U.S. military base at Ramstein, Germany.
@@ -116,67 +126,77 @@ Two types of relations are recognized:
                        :name (n4/ name :op1 "Germany"))))
      :aspect Performance
      :modstr FullAff)
+    
+    (s5/ sentence
+     :temporal(s4p :after s5f)
+     :modal(AUTH :FullAff s5f)
+     :coref(s4p4 :same-entity s5p)))
     ```
 
-(s5/ sentence
-    :temporal(s4p :after s5f)
-    :modal(AUTH :FullAff s5f)
-    :coref(s4p4 :same-entity s5p))
-
+```
 Snt6: He will spend the next several days at the medical center there before he returns home with his wife Sherry
 
 (s/ spend-02
       :ARG0 (p/ person
-         :ref-person 3rd
-     :ref-number Singular)
+         :refer-person 3rd
+	 :refer-number singular)
       :ARG1 (t/ temporal-quantity
          :quant (s2/ several)
-     :unit (d/ day
-         :mod (n/ next)))
+	 :unit (d/ day
+	 	:mod (n/ next)))
       :temporal (b/ before
          :op2 (r/ return-01
-        :ARG1 p
-        :ARG4 (h/ home)
-        :companion (p2/ person :wiki -
-           :name (n2/ name :op1 "Sherry")
-           :ARG1-of (h2/ have-role-91
-              :ARG2 p
-          :ARG3 (w/ wife)))
-        :aspect Performance
-        :modstr FullAff))
+	    :ARG1 p
+	    :ARG4 (h/ home)
+	    :companion (p2/ person :wiki -
+	       :name (n2/ name :op1 "Sherry")
+	       :ARG1-of (h2/ have-role-91
+	          :ARG2 p
+		  :ARG3 (w/ wife)))
+	    :aspect performance
+	    :modal-strength full-affirmative))
       :place (c/ center
           :mod (m/ medical)
-      :place (t2/ there))
-      :aspect State
-      :modstr FullAff)
+	  :place (t2/ there))
+      :aspect state
+      :modal-strength full-affirmative)
 
 (s6/ sentence
-  :temporal((DCT :after s6s)
-            (s6s :after s6r))
-  :modal((AUTH :FullAff s6s)
-         (AUTH :FullAff s6r))
-  :coref((s5p :same-entity s6p)
-         (s5b :same-entity s6t2))
-
+    :temporal((DCT :after s6s)
+               (s6s :after s6r))
+    :modal((AUTH :FullAff s6s)
+           (AUTH :FullAff s6r))
+    :coref((s5p :same-entity s6p)
+           (s5b :same-entity s6t2))
 ```
+
+
+
 It must be used to represent inter-sentential relations. 
 It can be also used within a single sentence, but it is not clear from the guidelines in which cases to use it.
 
+
 #### Event coreference
 
+
 Two types of relations are recognized:
+
 - identity relation `same-event`
-- subset relation `subset-of`
-  - [en] _1 **arrest** took place in the Netherlands and another **[arrest]** in Germany. **The arrests** were ordered by anti-terrorism judge fragnoli._   
-  ... _the arests_ (2nd sentence) annotated as the parent of _each of arrests_ from the first sentence (children) 
-```
-
-(:coref ((s2a :subset-of s1a2) 
-         (s2a :subset-of s1a3)))
+  
+  - subset relation `subset-of`
+    
+    - [en] _1 **arrest (s1a2)** took place in the Netherlands and another **[arrest (s1a3)]** in Germany. **The arrests (s2a)** were ordered by anti-terrorism judge fragnoli._   
+        ... _the arests_ (2nd sentence) annotated as the parent of _each of arrests_ from the first sentence (children)  ... **NOT constistent with the naming convention !!!**
 
 ```
+:coref ((s2a :subset-of s1a2) 
+        (s2a :subset-of s1a3)) 
+```
+
+
+
 # TODO
+
 Try to identify specific cases that do not belong to any of the categories above.
 The dichotomy between textual and grammatical coreference is not followed in UMR (apart from that the grammatical one is almost always intra-sentential).
-Is there any kind of special treatment based on the type of the anaphor, i.e. nouns, verbs, personal pronouns (#PersPron), relative pronouns, unexpressed (#PersPron, #Cor, #QCor, #Rcp)?
-```
+Is there any kind of special treatment based on the type of the anaphor, i.e. nouns, verbs, personal pronouns (#PersPron), relative pronouns, unexpressed (#PersPron, #Cor, #QCor, #Rcp)
