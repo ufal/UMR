@@ -488,9 +488,9 @@ s7d2: 30-30
 (s7s0 / sentence
     :coref ((s6s :same-event s7s1)
             (s3p :same-entity s7p)
-            (s5c1 :subset-of  s7c1)
-            (s5c1 :subset-of  s7c2)
-            (s5c1 :subset-of  s7c3)))
+            (s7c1 :subset-of s5c1)
+            (s7c2 :subset-of s5c1)
+            (s7c3 :subset-of s5c1)))
 
 
 ################################################################################
@@ -619,7 +619,6 @@ s8n2: 37-37
             (s7z1 :same-event s8z2)
             (s7c1 :same-entity s8c0)
             (s1p2 :same-entity s8e2)
-            (s8e2 :subset-of s8c1)
             (s6l1 :same-entity s8n2)
             (s5k2 :same-entity s8k1)))
 
@@ -731,7 +730,7 @@ s10n3: 0-0
     :coref ((s10s :same-event s9s1)
             (s9e1 :same-entity s10e1)
             (s9n1 :same-event s10n1)
-            (s10p2 :subset-of s9c1)))
+            (s9c1 :subset-of s10p2)))
 
 
 ################################################################################
