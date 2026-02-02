@@ -129,9 +129,8 @@ root_re = re.compile(r"^\(")
 def is_root(line):
     return root_re.match(line)
 
-###!!! AMR would also allow coordinates as relations, single axis letter (:x, :y, :z).
-###!!! When that occurs, this re will not match and the error message will be misleading (claiming there was no colon, although there was).
-attr_re = re.compile(r"^:[A-Za-z][-A-Za-z0-9]+")
+###!!! See also relation_re below. We should not define the same thing twice. r"^:[-A-Za-z0-9]+" (at this low level we should allow single character after the colon, but we should still require that the first character is a letter)
+attr_re = re.compile(r"^:[A-Za-z][-A-Za-z0-9]*")
 def is_attribute(line):
     return attr_re.match(line)
 
