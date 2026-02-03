@@ -117,8 +117,8 @@ Words: Nechal jsem si nachromovat ,  jak vidíte ,  lampu ,  roury ,  teleskopy 
                       :parenthesis (s3v1 / vidět-007
                                            :aspect state
                                            :modal-strength full-affirmative
-                                           :ARG0 s3e2
-                                           :ARG1 s3n2))))
+                                           :ARG0 s3e2)
+                      :ARG1-of s3v1)))
 
 # alignment:
 s3s1: 0-0
@@ -1156,8 +1156,8 @@ Words: A  ta sestra ,  Jitka se jmenovala ,  ta zemřela .
                                               :aspect state
                                               :modal-strength full-affirmative
                                               :quote s25s1
-                                              :ARG2 (s25j2 / Jitka)
-                                              :ARG1 s25s1))))
+                                              :ARG2 (s25j2 / Jitka))
+                        :ARG1-of s25j1)))
 
 # alignment:
 s25s1: 0-0

@@ -82,13 +82,13 @@ Words: Ačkoli parlamentní orgán pro kontrolu Bezpečnostní informační slu�
                                     :part (s3p2 / organization
                                                  :wiki "Q2347172"
                                                  :name (s3n1 / name :op1 "parlament"))
-                                                 :purpose (s3k1 / kontrolovat-001
-                                                                  :aspect activity
-                                                                  :modal-strength full-affirmative
-                                                                  :ARG0 s3o1
-                                                                  :ARG1 (s3o3 / organization
-                                                                                :wiki "Q854461"
-                                                                                :name (s3n2 / name :op1 "Bezpečnostní" :op2 "informační" :op3 "služba"))))
+                                    :purpose (s3k1 / kontrolovat-001
+                                                     :aspect activity
+                                                     :modal-strength full-affirmative
+                                                     :ARG1 (s3o3 / organization
+                                                                   :wiki "Q854461"
+                                                                   :name (s3n2 / name :op1 "Bezpečnostní" :op2 "informační" :op3 "služba")))
+                                    :ARG0-of s3k1)
                       :ARG1 s3o3)
         :duration (s3d2 / dále)
         :concession (s3a1 / and
@@ -102,10 +102,10 @@ Words: Ačkoli parlamentní orgán pro kontrolu Bezpečnostní informační slu�
                                                         :ARG0 s3o1
                                                         :ARG1 (s3p3 / podnět
                                                                       :refer-number plural
-                                                                      :ARG0 (s3o2 / organization
+                                                                      :actor (s3o2 / organization
                                                                                     :wiki "Q1807830"
                                                                                     :name (s3n3 / name :op1 "ODA" ))
-                                                                      :ARG1 (s3k2 / kontrarozvědka
+                                                                      :undergoer (s3k2 / kontrarozvědka
                                                                                    :refer-number singular))
                                          :temporal (s3b1 / before :op1 (s3t1 / týden))))
                             :op2 (s3k3 / konstatovat-002
@@ -309,6 +309,9 @@ Words: Stále prý jde o  to ,  zda tajná služba veškeré údaje mohla získa
 
 # sentence level graph:
 (s6s / say-91
+:aspect performance
+:modal-strength full-affirmative
+:ARG0 (s6p / person)
 :ARG1 (s6j1 / jít-035
               :aspect state
               :modal-strength full-affirmative
@@ -330,6 +333,7 @@ Words: Stále prý jde o  to ,  zda tajná služba veškeré údaje mohla získa
 
 # alignment:
 s6s: 0-0
+s6p: 0-0
 s6j1: 3-3
 s6p1: 2-2
 s6s1: 1-1

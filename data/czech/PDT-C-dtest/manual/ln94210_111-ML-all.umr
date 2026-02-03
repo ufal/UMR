@@ -487,10 +487,7 @@ s7d2: 30-30
 # document level annotation:
 (s7s0 / sentence
     :coref ((s6s :same-event s7s1)
-            (s3p :same-entity s7p)
-            (s7c1 :subset-of s5c1)
-            (s7c2 :subset-of s5c1)
-            (s7c3 :subset-of s5c1)))
+            (s3p :same-entity s7p)))
 
 
 ################################################################################
@@ -761,7 +758,7 @@ Words: Vážení čtenáři ,  z  vašich dopisů víme ,  že většinou kladn�
                         :refer-number plural
                         :refer-person 1st)
          :ARG2 (s11d1 / dopis
-                       :ARG0 s11c1
+                       :actor s11c1
                        :refer-number plural)
          :ARG1 (s11h1 / hodnotit-003
                         :aspect activity
