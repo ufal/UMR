@@ -13,7 +13,7 @@ binmode(STDOUT, ':utf8');
 binmode(STDERR, ':utf8');
 use Carp;
 
-my $root_path = 'C:/Users/zeman/Documents/lingvistika-projekty';
+my $root_path = 'C:/Users/zeman/Documents/lingvistika-projekty/umr-repos';
 my $script_path = "$root_path/umr-ufal/tools";
 my $smatch_path = "$root_path/smatch";
 my $conv_path = "$root_path/umr-from-ud/testset";
