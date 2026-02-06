@@ -1450,6 +1450,36 @@ sub compare_node_attributes
             }
         }
     }
+    # Compare document-level relations from this sentence.
+    foreach my $s0triple (sort(keys(%{$sentence0->{docrels}})))
+    {
+        my ($s0tn0, $relation, $s0tn1) = split(/ /, $s0triple);
+        my $s1tn0 = get_single_node_mapping($s0tn0, $label1, $file0->{nodes}) // $s0tn0;
+        my $s1tn1 = get_single_node_mapping($s0tn1, $label1, $file0->{nodes}) // $s0tn1;
+        my $s1triple = "$s1tn0 $relation $s1tn1";
+        if(exists($sentence1->{docrels}{$s1triple}))
+        {
+            $n_correct++;
+            $n_total_1++;
+        }
+        else
+        {
+            push(@table, ["Document-level relation from $label0", $s0triple, "mapped to $s1triple", "not found in $label1"]);
+        }
+        $n_total_0++;
+    }
+    foreach my $s1triple (sort(keys(%{$sentence1->{docrels}})))
+    {
+        my ($s1tn0, $relation, $s1tn1) = split(/ /, $s1triple);
+        my $s0tn0 = get_single_node_mapping($s1tn0, $label0, $file1->{nodes}) // $s1tn0;
+        my $s0tn1 = get_single_node_mapping($s1tn1, $label0, $file1->{nodes}) // $s1tn1;
+        my $s0triple = "$s0tn0 $relation $s0tn1";
+        if(!exists($sentence0->{docrels}{$s0triple}))
+        {
+            push(@table, ["Document-level relation from $label1", $s1triple, "mapped to $s0triple", "not found in $label0"]);
+            $n_total_1++;
+        }
+    }
     print_table(@table);
     print("\n");
     printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
@@ -1670,6 +1700,36 @@ sub get_node_mapping
     my $src_node = $src_nodes->{$src_variable};
     my @tgt_variables = sort(keys(%{$src_node->{crossfile}{$tgt_file_label}}));
     return \@tgt_variables;
+}
+
+
+
+#------------------------------------------------------------------------------
+# Like get_node_mapping() but returns a single string (variable or 'UNMAPPED'),
+# not an array reference. It should be run after symmetrization so that no node
+# has more than one mappings. If it finds multiple mappings, it will throw an
+# exception.
+#------------------------------------------------------------------------------
+sub get_single_node_mapping
+{
+    my $src_variable = shift;
+    my $tgt_file_label = shift;
+    my $src_nodes = shift; # reference to variable-indexed hash of nodes in the source file/sentence
+    my $tgt_variables = get_node_mapping($src_variable, $tgt_file_label, $src_nodes);
+    return undef if(!defined($tgt_variables));
+    my $ntv = scalar(@{$tgt_variables});
+    if($ntv == 0)
+    {
+        return 'UNMAPPED';
+    }
+    elsif($ntv == 1)
+    {
+        return $tgt_variables->[0];
+    }
+    else
+    {
+        confess("Mapping not symmetrized, found $ntv mappings");
+    }
 }
 
 

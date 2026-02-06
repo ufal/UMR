@@ -237,8 +237,8 @@ Node ML s2z2 / zvýšit-001 (zvýšení)        mismatch in :cause:        ML = 
 Node HH s2n1 / name                        mismatch in concept:       HH = name                   ML = UNMAPPED
 Node HH s2n1 / name                        mismatch in :op1:          HH = "Duha"                 ML = UNMAPPED
 
-Correct 56 out of 62 non-empty ML values => recall    90%.
-Correct 56 out of 63 non-empty HH values => precision 89%.
+Correct 61 out of 67 non-empty ML values => recall    91%.
+Correct 61 out of 68 non-empty HH values => precision 90%.
 
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s2m1 / magazín (magazínu Duha)     mismatch in :name:         HH = s2n1 unmapped          ML = s2n1
@@ -254,8 +254,8 @@ Node HH s2z2 / zvýšit-001 (zvýšení)        mismatch in :stimulus:     HH = 
 Node ML s2n1 / name (Duha)                 mismatch in concept:       ML = name                   HH = UNMAPPED
 Node ML s2n1 / name (Duha)                 mismatch in :op1:          ML = "Duha"                 HH = UNMAPPED
 
-Correct 56 out of 63 non-empty HH values => recall    89%.
-Correct 56 out of 62 non-empty ML values => precision 90%.
+Correct 61 out of 68 non-empty HH values => recall    90%.
+Correct 61 out of 67 non-empty ML values => precision 91%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 3:
@@ -331,14 +331,14 @@ Aligned 11 out of 11 HH nodes, that is 100%.
 Comparing attributes of ML nodes with their HH counterparts.
 Node ML s3p1 / promítnout-002 (musíme promítnout) mismatch in :quote: ML = s3s1 mapped to HH s3s1 HH = 
 
-Correct 35 out of 36 non-empty ML values => recall    97%.
-Correct 35 out of 35 non-empty HH values => precision 100%.
+Correct 40 out of 41 non-empty ML values => recall    98%.
+Correct 40 out of 40 non-empty HH values => precision 100%.
 
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s3p1 / promítnout-002 (musíme promítnout) mismatch in :quote: HH =  ML = s3s1
 
-Correct 35 out of 35 non-empty HH values => recall    100%.
-Correct 35 out of 36 non-empty ML values => precision 97%.
+Correct 40 out of 40 non-empty HH values => recall    100%.
+Correct 40 out of 41 non-empty ML values => precision 98%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 4:
@@ -448,32 +448,38 @@ Aligned 18 out of 19 ML nodes, that is 95%.
 Aligned 18 out of 19 HH nodes, that is 95%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s4d3 / date-entity (v sobotu) mismatch in concept:   ML = date-entity            HH = sobota
-Node ML s4d3 / date-entity (v sobotu) mismatch in :weekday:  ML = s4s3 unmapped          HH = 
-Node ML s4s1 / stát-014 (budou stát)  mismatch in :quote:    ML = s4s mapped to HH s4s3  HH = 
-Node ML s4s2 / stát-014               mismatch in :quote:    ML = s4s mapped to HH s4s3  HH = 
-Node ML s4s2 / stát-014               mismatch in :temporal: ML = s4d3 mapped to HH s4s4 HH = 
-Node ML s4s2 / stát-014               mismatch in :temporal: ML =                        HH = s4d5
-Node ML s4s3 / sobota                 mismatch in concept:   ML = sobota                 HH = UNMAPPED
-Node HH s4d5 / date-entity            mismatch in concept:   HH = date-entity            ML = UNMAPPED
-Node HH s4d5 / date-entity            mismatch in :weekday:  HH = s4s4                   ML = UNMAPPED
+Node ML s4d3 / date-entity (v sobotu) mismatch in concept:   ML = date-entity                HH = sobota
+Node ML s4d3 / date-entity (v sobotu) mismatch in :weekday:  ML = s4s3 unmapped              HH = 
+Node ML s4s1 / stát-014 (budou stát)  mismatch in :quote:    ML = s4s mapped to HH s4s3      HH = 
+Node ML s4s2 / stát-014               mismatch in :quote:    ML = s4s mapped to HH s4s3      HH = 
+Node ML s4s2 / stát-014               mismatch in :temporal: ML = s4d3 mapped to HH s4s4     HH = 
+Node ML s4s2 / stát-014               mismatch in :temporal: ML =                            HH = s4d5
+Node ML s4s3 / sobota                 mismatch in concept:   ML = sobota                     HH = UNMAPPED
+Node HH s4d5 / date-entity            mismatch in concept:   HH = date-entity                ML = UNMAPPED
+Node HH s4d5 / date-entity            mismatch in :weekday:  HH = s4s4                       ML = UNMAPPED
+Document-level relation from ML       s3r1 :subset-of s4c1   mapped to s3r1 :subset-of s4d1  not found in HH
+Document-level relation from ML       s3s1 :same-event s4s   mapped to s3s1 :same-event s4s3 not found in HH
+Document-level relation from HH       s3s1 :same-event s4s1  mapped to s3s1 :same-event s4s1 not found in ML
 
-Correct 49 out of 55 non-empty ML values => recall    89%.
-Correct 49 out of 53 non-empty HH values => precision 92%.
+Correct 50 out of 58 non-empty ML values => recall    86%.
+Correct 50 out of 55 non-empty HH values => precision 91%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s4d5 / date-entity           mismatch in concept:   HH = date-entity   ML = UNMAPPED
-Node HH s4d5 / date-entity           mismatch in :weekday:  HH = s4s4          ML = UNMAPPED
-Node HH s4s1 / stát-014 (budou stát) mismatch in :quote:    HH =               ML = s4s
-Node HH s4s2 / stát-014              mismatch in :temporal: HH = s4d5 unmapped ML = 
-Node HH s4s2 / stát-014              mismatch in :quote:    HH =               ML = s4s
-Node HH s4s2 / stát-014              mismatch in :temporal: HH =               ML = s4d3
-Node HH s4s4 / sobota (v sobotu)     mismatch in concept:   HH = sobota        ML = date-entity
-Node HH s4s4 / sobota (v sobotu)     mismatch in :weekday:  HH =               ML = s4s3
-Node ML s4s3 / sobota                mismatch in concept:   ML = sobota        HH = UNMAPPED
+Node HH s4d5 / date-entity           mismatch in concept:   HH = date-entity                ML = UNMAPPED
+Node HH s4d5 / date-entity           mismatch in :weekday:  HH = s4s4                       ML = UNMAPPED
+Node HH s4s1 / stát-014 (budou stát) mismatch in :quote:    HH =                            ML = s4s
+Node HH s4s2 / stát-014              mismatch in :temporal: HH = s4d5 unmapped              ML = 
+Node HH s4s2 / stát-014              mismatch in :quote:    HH =                            ML = s4s
+Node HH s4s2 / stát-014              mismatch in :temporal: HH =                            ML = s4d3
+Node HH s4s4 / sobota (v sobotu)     mismatch in concept:   HH = sobota                     ML = date-entity
+Node HH s4s4 / sobota (v sobotu)     mismatch in :weekday:  HH =                            ML = s4s3
+Node ML s4s3 / sobota                mismatch in concept:   ML = sobota                     HH = UNMAPPED
+Document-level relation from HH      s3s1 :same-event s4s1  mapped to s3s1 :same-event s4s1 not found in ML
+Document-level relation from ML      s3r1 :subset-of s4c1   mapped to s3r1 :subset-of s4d1  not found in HH
+Document-level relation from ML      s3s1 :same-event s4s   mapped to s3s1 :same-event s4s3 not found in HH
 
-Correct 49 out of 53 non-empty HH values => recall    92%.
-Correct 49 out of 55 non-empty ML values => precision 89%.
+Correct 50 out of 55 non-empty HH values => recall    91%.
+Correct 50 out of 58 non-empty ML values => precision 86%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -533,21 +539,33 @@ Aligned 9 out of 10 ML nodes, that is 90%.
 Aligned 9 out of 9 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s5n1 / noviny                 mismatch in concept:       ML = noviny                 HH = UNMAPPED
-Node ML s5n1 / noviny                 mismatch in :refer-number: ML = singular               HH = UNMAPPED
-Node ML s5v1 / vydání (vydání)        mismatch in :mod:          ML = s5n1 unmapped          HH = 
-Node ML s5z1 / zůstávat-004 (zůstává) mismatch in :quote:        ML = s5s1 mapped to HH s5s1 HH = 
+Node ML s5n1 / noviny                 mismatch in concept:       ML = noviny                          HH = UNMAPPED
+Node ML s5n1 / noviny                 mismatch in :refer-number: ML = singular                        HH = UNMAPPED
+Node ML s5v1 / vydání (vydání)        mismatch in :mod:          ML = s5n1 unmapped                   HH = 
+Node ML s5z1 / zůstávat-004 (zůstává) mismatch in :quote:        ML = s5s1 mapped to HH s5s1          HH = 
+Document-level relation from ML       s3c1 :same-entity s5c1     mapped to s3c1 :same-entity s5c1     not found in HH
+Document-level relation from ML       s4k2 :same-entity s5k2     mapped to s4k1 :same-entity s5k1     not found in HH
+Document-level relation from ML       s4n1 :same-entity s5n1     mapped to s4n1 :same-entity UNMAPPED not found in HH
+Document-level relation from ML       s4s :same-event s5s1       mapped to s4s3 :same-event s5s1      not found in HH
+Document-level relation from HH       s4n1 :subset-of s5v1       mapped to s4n1 :subset-of s5v1       not found in ML
+Document-level relation from HH       s4s1 :same-event s5s1      mapped to s4s1 :same-event s5s1      not found in ML
 
-Correct 26 out of 30 non-empty ML values => recall    87%.
-Correct 26 out of 26 non-empty HH values => precision 100%.
+Correct 26 out of 34 non-empty ML values => recall    76%.
+Correct 26 out of 28 non-empty HH values => precision 93%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s5z1 / zůstávat-004 (zůstává) mismatch in :quote:        HH =          ML = s5s1
-Node ML s5n1 / noviny                 mismatch in concept:       ML = noviny   HH = UNMAPPED
-Node ML s5n1 / noviny                 mismatch in :refer-number: ML = singular HH = UNMAPPED
+Node HH s5z1 / zůstávat-004 (zůstává) mismatch in :quote:        HH =                                 ML = s5s1
+Node ML s5n1 / noviny                 mismatch in concept:       ML = noviny                          HH = UNMAPPED
+Node ML s5n1 / noviny                 mismatch in :refer-number: ML = singular                        HH = UNMAPPED
+Document-level relation from HH       s4n1 :subset-of s5v1       mapped to s4n1 :subset-of s5v1       not found in ML
+Document-level relation from HH       s4s1 :same-event s5s1      mapped to s4s1 :same-event s5s1      not found in ML
+Document-level relation from ML       s3c1 :same-entity s5c1     mapped to s3c1 :same-entity s5c1     not found in HH
+Document-level relation from ML       s4k2 :same-entity s5k2     mapped to s4k1 :same-entity s5k1     not found in HH
+Document-level relation from ML       s4n1 :same-entity s5n1     mapped to s4n1 :same-entity UNMAPPED not found in HH
+Document-level relation from ML       s4s :same-event s5s1       mapped to s4s3 :same-event s5s1      not found in HH
 
-Correct 26 out of 26 non-empty HH values => recall    100%.
-Correct 26 out of 30 non-empty ML values => precision 87%.
+Correct 26 out of 28 non-empty HH values => recall    93%.
+Correct 26 out of 34 non-empty ML values => precision 76%.
 
 -------------------------------------------------------------------------------
 SUMMARY:
@@ -564,6 +582,6 @@ Out of 237 non-empty ML values, 225 found in HH => recall    94.94%.
 Out of 232 non-empty HH values, 225 found in ML => precision 96.98%.
  => F₁ = 95.95%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 242 non-empty ML values, 225 found in HH => recall    92.98%.
-Out of 236 non-empty HH values, 225 found in ML => precision 95.34%.
- => juːmæʧ (ML, HH) = F₁ = 94.14%.
+Out of 259 non-empty ML values, 236 found in HH => recall    91.12%.
+Out of 250 non-empty HH values, 236 found in ML => precision 94.40%.
+ => juːmæʧ (ML, HH) = F₁ = 92.73%.

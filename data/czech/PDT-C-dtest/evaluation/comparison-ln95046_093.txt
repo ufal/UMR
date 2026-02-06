@@ -103,16 +103,16 @@ Node ML s2p1 / human-settlement (Praha) mismatch in :wiki:         ML = "Q1085" 
 Node ML s2p1 / human-settlement (Praha) mismatch in :refer-number: ML =          HH = singular
 Node ML s2t0 / thing                    mismatch in :refer-number: ML = singular HH = 
 
-Correct 8 out of 10 non-empty ML values => recall    80%.
-Correct 8 out of 9 non-empty HH values => precision 89%.
+Correct 10 out of 12 non-empty ML values => recall    83%.
+Correct 10 out of 11 non-empty HH values => precision 91%.
 
 Comparing attributes of HH nodes with their ML counterparts.
 Node HH s2h1 / human-settlement (Praha) mismatch in :refer-number: HH = singular ML = 
 Node HH s2h1 / human-settlement (Praha) mismatch in :wiki:         HH =          ML = "Q1085"
 Node HH s2t2 / thing                    mismatch in :refer-number: HH =          ML = singular
 
-Correct 8 out of 9 non-empty HH values => recall    89%.
-Correct 8 out of 10 non-empty ML values => precision 80%.
+Correct 10 out of 11 non-empty HH values => recall    91%.
+Correct 10 out of 12 non-empty ML values => precision 83%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 3:
@@ -240,42 +240,50 @@ Aligned 22 out of 22 ML nodes, that is 100%.
 Aligned 22 out of 22 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :ARG0:         ML =                        HH = s3o1
-Node ML s3o1 / orgán (orgán)                                     mismatch in :ARG0-of:      ML = s3k1 mapped to HH s3k1 HH = 
-Node ML s3o2 / organization (ODA)                                mismatch in concept:       ML = organization           HH = political-organization
-Node ML s3o2 / organization (ODA)                                mismatch in :wiki:         ML = "Q1807830"             HH = 
-Node ML s3o2 / organization (ODA)                                mismatch in :refer-number: ML =                        HH = singular
-Node ML s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :wiki:         ML = "Q854461"              HH = 
-Node ML s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :refer-number: ML =                        HH = singular
-Node ML s3p2 / organization (parlamentní)                        mismatch in :wiki:         ML = "Q2347172"             HH = 
-Node ML s3p3 / podnět (podnětů)                                  mismatch in :actor:        ML = s3o2 mapped to HH s3p5 HH = 
-Node ML s3p3 / podnět (podnětů)                                  mismatch in :undergoer:    ML = s3k2 mapped to HH s3k2 HH = 
-Node ML s3p3 / podnět (podnětů)                                  mismatch in :regard:       ML =                        HH = s3k2
-Node ML s3p3 / podnět (podnětů)                                  mismatch in :source:       ML =                        HH = s3p5
-Node ML s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:     ML =                        HH = s3b4
-Node ML s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :temporal:     ML = s3b1 mapped to HH s3b4 HH = 
+Node ML s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :ARG0:         ML =                             HH = s3o1
+Node ML s3o1 / orgán (orgán)                                     mismatch in :ARG0-of:      ML = s3k1 mapped to HH s3k1      HH = 
+Node ML s3o2 / organization (ODA)                                mismatch in concept:       ML = organization                HH = political-organization
+Node ML s3o2 / organization (ODA)                                mismatch in :wiki:         ML = "Q1807830"                  HH = 
+Node ML s3o2 / organization (ODA)                                mismatch in :refer-number: ML =                             HH = singular
+Node ML s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :wiki:         ML = "Q854461"                   HH = 
+Node ML s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :refer-number: ML =                             HH = singular
+Node ML s3p2 / organization (parlamentní)                        mismatch in :wiki:         ML = "Q2347172"                  HH = 
+Node ML s3p3 / podnět (podnětů)                                  mismatch in :actor:        ML = s3o2 mapped to HH s3p5      HH = 
+Node ML s3p3 / podnět (podnětů)                                  mismatch in :undergoer:    ML = s3k2 mapped to HH s3k2      HH = 
+Node ML s3p3 / podnět (podnětů)                                  mismatch in :regard:       ML =                             HH = s3k2
+Node ML s3p3 / podnět (podnětů)                                  mismatch in :source:       ML =                             HH = s3p5
+Node ML s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:     ML =                             HH = s3b4
+Node ML s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :temporal:     ML = s3b1 mapped to HH s3b4      HH = 
+Document-level relation from ML                                  s1k1 :same-entity s3k2     mapped to s1k1 :same-entity s3k2 not found in HH
+Document-level relation from ML                                  s3s2 :same-event s3v1      mapped to s3s2 :same-event s3v1  not found in HH
+Document-level relation from HH                                  s3o3 :same-entity s3k2     mapped to s3o3 :same-entity s3k2 not found in ML
+Document-level relation from HH                                  s3v1 :same-event s3s2      mapped to s3v1 :same-event s3s2  not found in ML
 
-Correct 69 out of 77 non-empty ML values => recall    90%.
-Correct 69 out of 76 non-empty HH values => precision 91%.
+Correct 73 out of 83 non-empty ML values => recall    88%.
+Correct 73 out of 82 non-empty HH values => precision 89%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :ARG0:         HH = s3o1 mapped to ML s3o1 ML = 
-Node HH s3o1 / orgán (orgán)                                     mismatch in :ARG0-of:      HH =                        ML = s3k1
-Node HH s3o2 / organization (parlamentní)                        mismatch in :wiki:         HH =                        ML = "Q2347172"
-Node HH s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :refer-number: HH = singular               ML = 
-Node HH s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :wiki:         HH =                        ML = "Q854461"
-Node HH s3p2 / podnět (podnětů)                                  mismatch in :regard:       HH = s3k2 mapped to ML s3k2 ML = 
-Node HH s3p2 / podnět (podnětů)                                  mismatch in :source:       HH = s3p5 mapped to ML s3o2 ML = 
-Node HH s3p2 / podnět (podnětů)                                  mismatch in :actor:        HH =                        ML = s3o2
-Node HH s3p2 / podnět (podnětů)                                  mismatch in :undergoer:    HH =                        ML = s3k2
-Node HH s3p5 / political-organization (ODA)                      mismatch in concept:       HH = political-organization ML = organization
-Node HH s3p5 / political-organization (ODA)                      mismatch in :refer-number: HH = singular               ML = 
-Node HH s3p5 / political-organization (ODA)                      mismatch in :wiki:         HH =                        ML = "Q1807830"
-Node HH s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:     HH = s3b4 mapped to ML s3b1 ML = 
-Node HH s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :temporal:     HH =                        ML = s3b1
+Node HH s3k1 / kontrolovat-001 (pro kontrolu)                    mismatch in :ARG0:         HH = s3o1 mapped to ML s3o1      ML = 
+Node HH s3o1 / orgán (orgán)                                     mismatch in :ARG0-of:      HH =                             ML = s3k1
+Node HH s3o2 / organization (parlamentní)                        mismatch in :wiki:         HH =                             ML = "Q2347172"
+Node HH s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :refer-number: HH = singular                    ML = 
+Node HH s3o3 / organization (Bezpečnostní informační služby BIS) mismatch in :wiki:         HH =                             ML = "Q854461"
+Node HH s3p2 / podnět (podnětů)                                  mismatch in :regard:       HH = s3k2 mapped to ML s3k2      ML = 
+Node HH s3p2 / podnět (podnětů)                                  mismatch in :source:       HH = s3p5 mapped to ML s3o2      ML = 
+Node HH s3p2 / podnět (podnětů)                                  mismatch in :actor:        HH =                             ML = s3o2
+Node HH s3p2 / podnět (podnětů)                                  mismatch in :undergoer:    HH =                             ML = s3k2
+Node HH s3p5 / political-organization (ODA)                      mismatch in concept:       HH = political-organization      ML = organization
+Node HH s3p5 / political-organization (ODA)                      mismatch in :refer-number: HH = singular                    ML = 
+Node HH s3p5 / political-organization (ODA)                      mismatch in :wiki:         HH =                             ML = "Q1807830"
+Node HH s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:     HH = s3b4 mapped to ML s3b1      ML = 
+Node HH s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :temporal:     HH =                             ML = s3b1
+Document-level relation from HH                                  s3o3 :same-entity s3k2     mapped to s3o3 :same-entity s3k2 not found in ML
+Document-level relation from HH                                  s3v1 :same-event s3s2      mapped to s3v1 :same-event s3s2  not found in ML
+Document-level relation from ML                                  s1k1 :same-entity s3k2     mapped to s1k1 :same-entity s3k2 not found in HH
+Document-level relation from ML                                  s3s2 :same-event s3v1      mapped to s3s2 :same-event s3v1  not found in HH
 
-Correct 69 out of 76 non-empty HH values => recall    91%.
-Correct 69 out of 77 non-empty ML values => precision 90%.
+Correct 73 out of 82 non-empty HH values => recall    89%.
+Correct 73 out of 83 non-empty ML values => precision 88%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 4:
@@ -379,32 +387,44 @@ Aligned 18 out of 18 ML nodes, that is 100%.
 Aligned 18 out of 18 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"             HH = 
-Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =                        HH = singular
-Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"             HH = 
-Node ML s4s2 / schůze (schůzi)                    mismatch in concept:         ML = schůze                 HH = sejít-se-001
-Node ML s4s2 / schůze (schůzi)                    mismatch in :mod:            ML = s4o1 mapped to HH s4o1 HH = 
-Node ML s4s2 / schůze (schůzi)                    mismatch in :refer-number:   ML = singular               HH = 
-Node ML s4s2 / schůze (schůzi)                    mismatch in :ARG0:           ML =                        HH = s4o1
-Node ML s4s2 / schůze (schůzi)                    mismatch in :aspect:         ML =                        HH = performance
-Node ML s4s2 / schůze (schůzi)                    mismatch in :modal-strength: ML =                        HH = full-affirmative
+Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :wiki:           ML = "Q1142687"                  HH = 
+Node ML s4o2 / political-organization (KDU - ČSL) mismatch in :refer-number:   ML =                             HH = singular
+Node ML s4p4 / organization                       mismatch in :wiki:           ML = "Q2347172"                  HH = 
+Node ML s4s2 / schůze (schůzi)                    mismatch in concept:         ML = schůze                      HH = sejít-se-001
+Node ML s4s2 / schůze (schůzi)                    mismatch in :mod:            ML = s4o1 mapped to HH s4o1      HH = 
+Node ML s4s2 / schůze (schůzi)                    mismatch in :refer-number:   ML = singular                    HH = 
+Node ML s4s2 / schůze (schůzi)                    mismatch in :ARG0:           ML =                             HH = s4o1
+Node ML s4s2 / schůze (schůzi)                    mismatch in :aspect:         ML =                             HH = performance
+Node ML s4s2 / schůze (schůzi)                    mismatch in :modal-strength: ML =                             HH = full-affirmative
+Document-level relation from ML                   s2t0 :subset-of s4p1         mapped to s2t2 :subset-of s4p1   not found in HH
+Document-level relation from ML                   s3o1 :same-entity s4o1       mapped to s3o1 :same-entity s4o1 not found in HH
+Document-level relation from ML                   s3p2 :same-entity s4p4       mapped to s3o2 :same-entity s4o2 not found in HH
+Document-level relation from ML                   s4o1 :same-entity s4k1       mapped to s4o1 :same-entity s4k1 not found in HH
+Document-level relation from HH                   s3o1 :same-entity s4k1       mapped to s3o1 :same-entity s4k1 not found in ML
+Document-level relation from HH                   s4k1 :same-entity s4o1       mapped to s4k1 :same-entity s4o1 not found in ML
 
-Correct 50 out of 55 non-empty ML values => recall    91%.
-Correct 50 out of 55 non-empty HH values => precision 91%.
+Correct 51 out of 60 non-empty ML values => recall    85%.
+Correct 51 out of 58 non-empty HH values => precision 88%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s4o2 / organization                       mismatch in :wiki:           HH =                        ML = "Q2347172"
-Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :refer-number:   HH = singular               ML = 
-Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :wiki:           HH =                        ML = "Q1142687"
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001           ML = schůze
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:           HH = s4o1 mapped to ML s4o1 ML = 
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance            ML = 
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative       ML = 
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :mod:            HH =                        ML = s4o1
-Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :refer-number:   HH =                        ML = singular
+Node HH s4o2 / organization                       mismatch in :wiki:           HH =                             ML = "Q2347172"
+Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :refer-number:   HH = singular                    ML = 
+Node HH s4p6 / political-organization (KDU - ČSL) mismatch in :wiki:           HH =                             ML = "Q1142687"
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in concept:         HH = sejít-se-001                ML = schůze
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :ARG0:           HH = s4o1 mapped to ML s4o1      ML = 
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:         HH = performance                 ML = 
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative            ML = 
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :mod:            HH =                             ML = s4o1
+Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :refer-number:   HH =                             ML = singular
+Document-level relation from HH                   s3o1 :same-entity s4k1       mapped to s3o1 :same-entity s4k1 not found in ML
+Document-level relation from HH                   s4k1 :same-entity s4o1       mapped to s4k1 :same-entity s4o1 not found in ML
+Document-level relation from ML                   s2t0 :subset-of s4p1         mapped to s2t2 :subset-of s4p1   not found in HH
+Document-level relation from ML                   s3o1 :same-entity s4o1       mapped to s3o1 :same-entity s4o1 not found in HH
+Document-level relation from ML                   s3p2 :same-entity s4p4       mapped to s3o2 :same-entity s4o2 not found in HH
+Document-level relation from ML                   s4o1 :same-entity s4k1       mapped to s4o1 :same-entity s4k1 not found in HH
 
-Correct 50 out of 55 non-empty HH values => recall    91%.
-Correct 50 out of 55 non-empty ML values => precision 91%.
+Correct 51 out of 58 non-empty HH values => recall    88%.
+Correct 51 out of 60 non-empty ML values => precision 85%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 5:
@@ -515,28 +535,36 @@ Aligned 16 out of 16 ML nodes, that is 100%.
 Aligned 16 out of 16 HH nodes, that is 100%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s5d1 / dokončit-001 (na tom že dokončí) mismatch in :modal-strength: ML = partial-affirmative    HH = full-affirmative
-Node ML s5d1 / dokončit-001 (na tom že dokončí) mismatch in :example:        ML =                        HH = s5p2
-Node ML s5o1 / organization (BIS)               mismatch in :wiki:           ML = "Q854461"              HH = 
-Node ML s5o1 / organization (BIS)               mismatch in :refer-number:   ML =                        HH = singular
-Node ML s5p3 / person (Stanislava Devátého)     mismatch in :refer-number:   ML =                        HH = singular
-Node ML s5r1 / ředitel (ředitele)               mismatch in :refer-number:   ML =                        HH = singular
-Node ML s5s2 / šetřit-003 (šetření která)       mismatch in :example:        ML = s5p2 mapped to HH s5p2 HH = 
+Node ML s5d1 / dokončit-001 (na tom že dokončí) mismatch in :modal-strength: ML = partial-affirmative         HH = full-affirmative
+Node ML s5d1 / dokončit-001 (na tom že dokončí) mismatch in :example:        ML =                             HH = s5p2
+Node ML s5o1 / organization (BIS)               mismatch in :wiki:           ML = "Q854461"                   HH = 
+Node ML s5o1 / organization (BIS)               mismatch in :refer-number:   ML =                             HH = singular
+Node ML s5p3 / person (Stanislava Devátého)     mismatch in :refer-number:   ML =                             HH = singular
+Node ML s5r1 / ředitel (ředitele)               mismatch in :refer-number:   ML =                             HH = singular
+Node ML s5s2 / šetřit-003 (šetření která)       mismatch in :example:        ML = s5p2 mapped to HH s5p2      HH = 
+Document-level relation from ML                 s2t0 :subset-of s5s1         mapped to s2t2 :subset-of s5s1   not found in HH
+Document-level relation from ML                 s3s2 :same-event s5s2        mapped to s3s2 :same-event s5s2  not found in HH
+Document-level relation from ML                 s4k1 :same-entity s5k1       mapped to s4k1 :same-entity s5k1 not found in HH
+Document-level relation from HH                 s4o1 :same-entity s5k1       mapped to s4o1 :same-entity s5k1 not found in ML
 
-Correct 56 out of 59 non-empty ML values => recall    95%.
-Correct 56 out of 61 non-empty HH values => precision 92%.
+Correct 57 out of 63 non-empty ML values => recall    90%.
+Correct 57 out of 63 non-empty HH values => precision 90%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s5d1 / dokončit-001 (na tom že dokončí) mismatch in :example:        HH = s5p2 mapped to ML s5p2 ML = 
-Node HH s5d1 / dokončit-001 (na tom že dokončí) mismatch in :modal-strength: HH = full-affirmative       ML = partial-affirmative
-Node HH s5o1 / organization (BIS)               mismatch in :refer-number:   HH = singular               ML = 
-Node HH s5o1 / organization (BIS)               mismatch in :wiki:           HH =                        ML = "Q854461"
-Node HH s5p3 / person (Stanislava Devátého)     mismatch in :refer-number:   HH = singular               ML = 
-Node HH s5r1 / ředitel (ředitele)               mismatch in :refer-number:   HH = singular               ML = 
-Node HH s5s2 / šetřit-003 (šetření která)       mismatch in :example:        HH =                        ML = s5p2
+Node HH s5d1 / dokončit-001 (na tom že dokončí) mismatch in :example:        HH = s5p2 mapped to ML s5p2      ML = 
+Node HH s5d1 / dokončit-001 (na tom že dokončí) mismatch in :modal-strength: HH = full-affirmative            ML = partial-affirmative
+Node HH s5o1 / organization (BIS)               mismatch in :refer-number:   HH = singular                    ML = 
+Node HH s5o1 / organization (BIS)               mismatch in :wiki:           HH =                             ML = "Q854461"
+Node HH s5p3 / person (Stanislava Devátého)     mismatch in :refer-number:   HH = singular                    ML = 
+Node HH s5r1 / ředitel (ředitele)               mismatch in :refer-number:   HH = singular                    ML = 
+Node HH s5s2 / šetřit-003 (šetření která)       mismatch in :example:        HH =                             ML = s5p2
+Document-level relation from HH                 s4o1 :same-entity s5k1       mapped to s4o1 :same-entity s5k1 not found in ML
+Document-level relation from ML                 s2t0 :subset-of s5s1         mapped to s2t2 :subset-of s5s1   not found in HH
+Document-level relation from ML                 s3s2 :same-event s5s2        mapped to s3s2 :same-event s5s2  not found in HH
+Document-level relation from ML                 s4k1 :same-entity s5k1       mapped to s4k1 :same-entity s5k1 not found in HH
 
-Correct 56 out of 61 non-empty HH values => recall    92%.
-Correct 56 out of 59 non-empty ML values => precision 95%.
+Correct 57 out of 63 non-empty HH values => recall    90%.
+Correct 57 out of 63 non-empty ML values => precision 90%.
 
 -------------------------------------------------------------------------------
 Comparing sentence 6:
@@ -617,56 +645,62 @@ Aligned 9 out of 13 ML nodes, that is 69%.
 Aligned 9 out of 10 HH nodes, that is 90%.
 
 Comparing attributes of ML nodes with their HH counterparts.
-Node ML s6j1 / jít-035 (jde)                  mismatch in :clausal-marker: ML = s6p1 mapped to HH s6s3 HH = 
-Node ML s6j1 / jít-035 (jde)                  mismatch in :quote:          ML = s6s unmapped           HH = s6s3
-Node ML s6p / person                          mismatch in concept:         ML = person                 HH = UNMAPPED
-Node ML s6p1 / prý (prý)                      mismatch in concept:         ML = prý                    HH = say-91
-Node ML s6p1 / prý (prý)                      mismatch in :ARG1:           ML =                        HH = s6j1
-Node ML s6p1 / prý (prý)                      mismatch in :aspect:         ML =                        HH = state
-Node ML s6p1 / prý (prý)                      mismatch in :modal-strength: ML =                        HH = full-affirmative
-Node ML s6s / say-91                          mismatch in concept:         ML = say-91                 HH = UNMAPPED
-Node ML s6s / say-91                          mismatch in :ARG0:           ML = s6p                    HH = UNMAPPED
-Node ML s6s / say-91                          mismatch in :ARG1:           ML = s6j1                   HH = UNMAPPED
-Node ML s6s / say-91                          mismatch in :aspect:         ML = performance            HH = UNMAPPED
-Node ML s6s / say-91                          mismatch in :modal-strength: ML = full-affirmative       HH = UNMAPPED
-Node ML s6s2 / služba (služba)                mismatch in :refer-number:   ML = singular               HH = 
-Node ML s6t1 / tajný (tajná)                  mismatch in :refer-number:   ML =                        HH = singular
-Node ML s6u / UMR-unknown (zda)               mismatch in concept:         ML = UMR-unknown            HH = UNMAPPED
-Node ML s6u1 / údaj (údaje)                   mismatch in :quant:          ML = s6v1 unmapped          HH = all
-Node ML s6v1 / veškerý (veškeré)              mismatch in concept:         ML = veškerý                HH = UNMAPPED
-Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :ARG2:           ML = s6z2 mapped to HH s6z2 HH = 
-Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :polarity:       ML = s6u unmapped           HH = s6u2
-Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :source:         ML =                        HH = s6z2
-Node HH s6u2 / umr-unknown                    mismatch in concept:         HH = umr-unknown            ML = UNMAPPED
+Node ML s6j1 / jít-035 (jde)                  mismatch in :clausal-marker: ML = s6p1 mapped to HH s6s3      HH = 
+Node ML s6j1 / jít-035 (jde)                  mismatch in :quote:          ML = s6s unmapped                HH = s6s3
+Node ML s6p / person                          mismatch in concept:         ML = person                      HH = UNMAPPED
+Node ML s6p1 / prý (prý)                      mismatch in concept:         ML = prý                         HH = say-91
+Node ML s6p1 / prý (prý)                      mismatch in :ARG1:           ML =                             HH = s6j1
+Node ML s6p1 / prý (prý)                      mismatch in :aspect:         ML =                             HH = state
+Node ML s6p1 / prý (prý)                      mismatch in :modal-strength: ML =                             HH = full-affirmative
+Node ML s6s / say-91                          mismatch in concept:         ML = say-91                      HH = UNMAPPED
+Node ML s6s / say-91                          mismatch in :ARG0:           ML = s6p                         HH = UNMAPPED
+Node ML s6s / say-91                          mismatch in :ARG1:           ML = s6j1                        HH = UNMAPPED
+Node ML s6s / say-91                          mismatch in :aspect:         ML = performance                 HH = UNMAPPED
+Node ML s6s / say-91                          mismatch in :modal-strength: ML = full-affirmative            HH = UNMAPPED
+Node ML s6s2 / služba (služba)                mismatch in :refer-number:   ML = singular                    HH = 
+Node ML s6t1 / tajný (tajná)                  mismatch in :refer-number:   ML =                             HH = singular
+Node ML s6u / UMR-unknown (zda)               mismatch in concept:         ML = UMR-unknown                 HH = UNMAPPED
+Node ML s6u1 / údaj (údaje)                   mismatch in :quant:          ML = s6v1 unmapped               HH = all
+Node ML s6v1 / veškerý (veškeré)              mismatch in concept:         ML = veškerý                     HH = UNMAPPED
+Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :ARG2:           ML = s6z2 mapped to HH s6z2      HH = 
+Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :polarity:       ML = s6u unmapped                HH = s6u2
+Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :source:         ML =                             HH = s6z2
+Node HH s6u2 / umr-unknown                    mismatch in concept:         HH = umr-unknown                 ML = UNMAPPED
+Document-level relation from ML               s2t0 :subset-of s6j1         mapped to s2t2 :subset-of s6j1   not found in HH
+Document-level relation from ML               s5o1 :same-entity s6s2       mapped to s5o1 :same-entity s6s2 not found in HH
+Document-level relation from HH               s5k1 :same-entity s6s2       mapped to s5k1 :same-entity s6s2 not found in ML
 
-Correct 19 out of 34 non-empty ML values => recall    56%.
-Correct 19 out of 29 non-empty HH values => precision 66%.
+Correct 19 out of 36 non-empty ML values => recall    53%.
+Correct 19 out of 30 non-empty HH values => precision 63%.
 
 Comparing attributes of HH nodes with their ML counterparts.
-Node HH s6j1 / jít-035 (jde)                            mismatch in :quote:          HH = s6s3 mapped to ML s6p1 ML = s6s
-Node HH s6j1 / jít-035 (jde)                            mismatch in :clausal-marker: HH =                        ML = s6p1
-Node HH s6s2 / služba (služba)                          mismatch in :refer-number:   HH =                        ML = singular
-Node HH s6s3 / say-91 (prý)                             mismatch in concept:         HH = say-91                 ML = prý
-Node HH s6s3 / say-91 (prý)                             mismatch in :ARG1:           HH = s6j1 mapped to ML s6j1 ML = 
-Node HH s6s3 / say-91 (prý)                             mismatch in :aspect:         HH = state                  ML = 
-Node HH s6s3 / say-91 (prý)                             mismatch in :modal-strength: HH = full-affirmative       ML = 
-Node HH s6t1 / tajný (tajná)                            mismatch in :refer-number:   HH = singular               ML = 
-Node HH s6u1 / údaj (veškeré údaje)                     mismatch in :quant:          HH = all                    ML = s6v1
-Node HH s6u2 / umr-unknown                              mismatch in concept:         HH = umr-unknown            ML = UNMAPPED
-Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :polarity:       HH = s6u2 unmapped          ML = s6u
-Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :source:         HH = s6z2 mapped to ML s6z2 ML = 
-Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :ARG2:           HH =                        ML = s6z2
-Node ML s6p / person                                    mismatch in concept:         ML = person                 HH = UNMAPPED
-Node ML s6s / say-91                                    mismatch in concept:         ML = say-91                 HH = UNMAPPED
-Node ML s6s / say-91                                    mismatch in :ARG0:           ML = s6p                    HH = UNMAPPED
-Node ML s6s / say-91                                    mismatch in :ARG1:           ML = s6j1                   HH = UNMAPPED
-Node ML s6s / say-91                                    mismatch in :aspect:         ML = performance            HH = UNMAPPED
-Node ML s6s / say-91                                    mismatch in :modal-strength: ML = full-affirmative       HH = UNMAPPED
-Node ML s6u / UMR-unknown (zda)                         mismatch in concept:         ML = UMR-unknown            HH = UNMAPPED
-Node ML s6v1 / veškerý (veškeré)                        mismatch in concept:         ML = veškerý                HH = UNMAPPED
+Node HH s6j1 / jít-035 (jde)                            mismatch in :quote:          HH = s6s3 mapped to ML s6p1      ML = s6s
+Node HH s6j1 / jít-035 (jde)                            mismatch in :clausal-marker: HH =                             ML = s6p1
+Node HH s6s2 / služba (služba)                          mismatch in :refer-number:   HH =                             ML = singular
+Node HH s6s3 / say-91 (prý)                             mismatch in concept:         HH = say-91                      ML = prý
+Node HH s6s3 / say-91 (prý)                             mismatch in :ARG1:           HH = s6j1 mapped to ML s6j1      ML = 
+Node HH s6s3 / say-91 (prý)                             mismatch in :aspect:         HH = state                       ML = 
+Node HH s6s3 / say-91 (prý)                             mismatch in :modal-strength: HH = full-affirmative            ML = 
+Node HH s6t1 / tajný (tajná)                            mismatch in :refer-number:   HH = singular                    ML = 
+Node HH s6u1 / údaj (veškeré údaje)                     mismatch in :quant:          HH = all                         ML = s6v1
+Node HH s6u2 / umr-unknown                              mismatch in concept:         HH = umr-unknown                 ML = UNMAPPED
+Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :polarity:       HH = s6u2 unmapped               ML = s6u
+Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :source:         HH = s6z2 mapped to ML s6z2      ML = 
+Node HH s6z1 / získat-001 (o to zda tajná mohla získat) mismatch in :ARG2:           HH =                             ML = s6z2
+Node ML s6p / person                                    mismatch in concept:         ML = person                      HH = UNMAPPED
+Node ML s6s / say-91                                    mismatch in concept:         ML = say-91                      HH = UNMAPPED
+Node ML s6s / say-91                                    mismatch in :ARG0:           ML = s6p                         HH = UNMAPPED
+Node ML s6s / say-91                                    mismatch in :ARG1:           ML = s6j1                        HH = UNMAPPED
+Node ML s6s / say-91                                    mismatch in :aspect:         ML = performance                 HH = UNMAPPED
+Node ML s6s / say-91                                    mismatch in :modal-strength: ML = full-affirmative            HH = UNMAPPED
+Node ML s6u / UMR-unknown (zda)                         mismatch in concept:         ML = UMR-unknown                 HH = UNMAPPED
+Node ML s6v1 / veškerý (veškeré)                        mismatch in concept:         ML = veškerý                     HH = UNMAPPED
+Document-level relation from HH                         s5k1 :same-entity s6s2       mapped to s5k1 :same-entity s6s2 not found in ML
+Document-level relation from ML                         s2t0 :subset-of s6j1         mapped to s2t2 :subset-of s6j1   not found in HH
+Document-level relation from ML                         s5o1 :same-entity s6s2       mapped to s5o1 :same-entity s6s2 not found in HH
 
-Correct 19 out of 29 non-empty HH values => recall    66%.
-Correct 19 out of 34 non-empty ML values => precision 56%.
+Correct 19 out of 30 non-empty HH values => recall    63%.
+Correct 19 out of 36 non-empty ML values => precision 53%.
 
 -------------------------------------------------------------------------------
 SUMMARY:
@@ -683,6 +717,6 @@ Out of 252 non-empty ML values, 225 found in HH => recall    89.29%.
 Out of 253 non-empty HH values, 225 found in ML => precision 88.93%.
  => F₁ = 89.11%.
 Concept and relation comparison (for unmapped nodes all counted as incorrect):
-Out of 260 non-empty ML values, 225 found in HH => recall    86.54%.
-Out of 254 non-empty HH values, 225 found in ML => precision 88.58%.
- => juːmæʧ (ML, HH) = F₁ = 87.55%.
+Out of 279 non-empty ML values, 233 found in HH => recall    83.51%.
+Out of 268 non-empty HH values, 233 found in ML => precision 86.94%.
+ => juːmæʧ (ML, HH) = F₁ = 85.19%.
