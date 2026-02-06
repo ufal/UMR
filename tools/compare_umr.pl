@@ -1466,11 +1466,19 @@ sub compare_node_attributes
         }
         else
         {
-            ###!!! Better diagnostics, as above with sentence-level relations: accompany the variable by concept and aligned text.
-            #my $node0 = $sentence0->{nodes}{$f0var};
-            #my $concept0 = $node0->{concept};
-            #my $text0 = $node0->{aligned_text} ? " ($node0->{aligned_text})" : '';
-            push(@table, ["Document-level relation from node $label0 $s0tn0 ($label1 $s1tn0)", $relation, "to node $label0 $s0tn1 ($label1 $s1tn1)", "not found in $label1"]);
+            my $nodedebug0 = '';
+            if(exists($file0->{nodes}{$s0tn0}))
+            {
+                my $text0 = $file0->{nodes}{$s0tn0}{aligned_text} ? " ($file0->{nodes}{$s0tn0}{aligned_text})" : '';
+                $nodedebug0 = " / $file0->{nodes}{$s0tn0}{concept}$text0";
+            }
+            my $nodedebug1 = '';
+            if(exists($file0->{nodes}{$s0tn1}))
+            {
+                my $text1 = $file0->{nodes}{$s0tn1}{aligned_text} ? " ($file0->{nodes}{$s0tn1}{aligned_text})" : '';
+                $nodedebug1 = " / $file0->{nodes}{$s0tn1}{concept}$text1";
+            }
+            push(@table, ["Document-level relation from node $label0 $s0tn0$nodedebug0 ($label1 $s1tn0)", $relation, "to node $label0 $s0tn1$nodedebug1 ($label1 $s1tn1)", "not found in $label1"]);
         }
         $n_total_0++;
     }
@@ -1482,11 +1490,19 @@ sub compare_node_attributes
         my $s0triple = "$s0tn0 $relation $s0tn1";
         if(!exists($sentence0->{docrels}{$s0triple}))
         {
-            ###!!! Better diagnostics, as above with sentence-level relations: accompany the variable by concept and aligned text.
-            #my $node0 = $sentence0->{nodes}{$f0var};
-            #my $concept0 = $node0->{concept};
-            #my $text0 = $node0->{aligned_text} ? " ($node0->{aligned_text})" : '';
-            push(@table, ["Document-level relation from node $label1 $s1tn0 ($label0 $s0tn0)", $relation, "to node $label1 $s1tn1 ($label0 $s0tn1)", "not found in $label0"]);
+            my $nodedebug0 = '';
+            if(exists($file1->{nodes}{$s1tn0}))
+            {
+                my $text0 = $file1->{nodes}{$s1tn0}{aligned_text} ? " ($file1->{nodes}{$s1tn0}{aligned_text})" : '';
+                $nodedebug0 = " / $file1->{nodes}{$s1tn0}{concept}$text0";
+            }
+            my $nodedebug1 = '';
+            if(exists($file1->{nodes}{$s1tn1}))
+            {
+                my $text1 = $file1->{nodes}{$s1tn1}{aligned_text} ? " ($file1->{nodes}{$s1tn1}{aligned_text})" : '';
+                $nodedebug1 = " / $file1->{nodes}{$s1tn1}{concept}$text1";
+            }
+            push(@table, ["Document-level relation from node $label1 $s1tn0$nodedebug0 ($label0 $s0tn0)", $relation, "to node $label1 $s1tn1$nodedebug1 ($label0 $s0tn1)", "not found in $label0"]);
             $n_total_1++;
         }
     }

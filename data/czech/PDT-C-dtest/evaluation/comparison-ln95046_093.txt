@@ -254,10 +254,10 @@ Node ML s3p3 / podnět (podnětů)                                  mismatch in 
 Node ML s3p3 / podnět (podnětů)                                  mismatch in :source:       ML =                        HH = s3p5
 Node ML s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:     ML =                        HH = s3b4
 Node ML s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :temporal:     ML = s3b1 mapped to HH s3b4 HH = 
-Document-level relation from node ML s1k1 (HH s1k1) :same-entity to node ML s3k2 (HH s3k2) not found in HH
-Document-level relation from node ML s3s2 (HH s3s2) :same-event  to node ML s3v1 (HH s3v1) not found in HH
-Document-level relation from node HH s3o3 (ML s3o3) :same-entity to node HH s3k2 (ML s3k2) not found in ML
-Document-level relation from node HH s3v1 (ML s3v1) :same-event  to node HH s3s2 (ML s3s2) not found in ML
+Document-level relation from node ML s1k1 / kontrarozvědka (kontrarozvědky) (HH s1k1)                   :same-entity to node ML s3k2 / kontrarozvědka (vůči kontrarozvědce) (HH s3k2) not found in HH
+Document-level relation from node ML s3s2 / šetřit-003 (šetření) (HH s3s2)                              :same-event  to node ML s3v1 / vyšetřovat-001 (vyšetřování) (HH s3v1)         not found in HH
+Document-level relation from node HH s3o3 / organization (Bezpečnostní informační služby BIS) (ML s3o3) :same-entity to node HH s3k2 / kontrarozvědka (vůči kontrarozvědce) (ML s3k2) not found in ML
+Document-level relation from node HH s3v1 / vyšetřovat-001 (vyšetřování) (ML s3v1)                      :same-event  to node HH s3s2 / šetřit-003 (šetření) (ML s3s2)                 not found in ML
 
 Correct 73 out of 83 non-empty ML values => recall    88%.
 Correct 73 out of 82 non-empty HH values => precision 89%.
@@ -277,10 +277,10 @@ Node HH s3p5 / political-organization (ODA)                      mismatch in :re
 Node HH s3p5 / political-organization (ODA)                      mismatch in :wiki:         HH =                        ML = "Q1807830"
 Node HH s3u1 / ukončit-001 (Ačkoli ukončil)                      mismatch in :temporal:     HH = s3b4 mapped to ML s3b1 ML = 
 Node HH s3v1 / vyšetřovat-001 (vyšetřování)                      mismatch in :temporal:     HH =                        ML = s3b1
-Document-level relation from node HH s3o3 (ML s3o3) :same-entity to node HH s3k2 (ML s3k2) not found in ML
-Document-level relation from node HH s3v1 (ML s3v1) :same-event  to node HH s3s2 (ML s3s2) not found in ML
-Document-level relation from node ML s1k1 (HH s1k1) :same-entity to node ML s3k2 (HH s3k2) not found in HH
-Document-level relation from node ML s3s2 (HH s3s2) :same-event  to node ML s3v1 (HH s3v1) not found in HH
+Document-level relation from node HH s3o3 / organization (Bezpečnostní informační služby BIS) (ML s3o3) :same-entity to node HH s3k2 / kontrarozvědka (vůči kontrarozvědce) (ML s3k2) not found in ML
+Document-level relation from node HH s3v1 / vyšetřovat-001 (vyšetřování) (ML s3v1)                      :same-event  to node HH s3s2 / šetřit-003 (šetření) (ML s3s2)                 not found in ML
+Document-level relation from node ML s1k1 / kontrarozvědka (kontrarozvědky) (HH s1k1)                   :same-entity to node ML s3k2 / kontrarozvědka (vůči kontrarozvědce) (HH s3k2) not found in HH
+Document-level relation from node ML s3s2 / šetřit-003 (šetření) (HH s3s2)                              :same-event  to node ML s3v1 / vyšetřovat-001 (vyšetřování) (HH s3v1)         not found in HH
 
 Correct 73 out of 82 non-empty HH values => recall    89%.
 Correct 73 out of 83 non-empty ML values => precision 88%.
@@ -396,12 +396,12 @@ Node ML s4s2 / schůze (schůzi)                    mismatch in :refer-number:  
 Node ML s4s2 / schůze (schůzi)                    mismatch in :ARG0:           ML =                        HH = s4o1
 Node ML s4s2 / schůze (schůzi)                    mismatch in :aspect:         ML =                        HH = performance
 Node ML s4s2 / schůze (schůzi)                    mismatch in :modal-strength: ML =                        HH = full-affirmative
-Document-level relation from node ML s2t0 (HH s2t2) :subset-of   to node ML s4p1 (HH s4p1) not found in HH
-Document-level relation from node ML s3o1 (HH s3o1) :same-entity to node ML s4o1 (HH s4o1) not found in HH
-Document-level relation from node ML s3p2 (HH s3o2) :same-entity to node ML s4p4 (HH s4o2) not found in HH
-Document-level relation from node ML s4o1 (HH s4o1) :same-entity to node ML s4k1 (HH s4k1) not found in HH
-Document-level relation from node HH s3o1 (ML s3o1) :same-entity to node HH s4k1 (ML s4k1) not found in ML
-Document-level relation from node HH s4k1 (ML s4k1) :same-entity to node HH s4o1 (ML s4o1) not found in ML
+Document-level relation from node ML s2t0 / thing (HH s2t2)                      :subset-of   to node ML s4p1 / připustit-004 (připustil) (HH s4p1) not found in HH
+Document-level relation from node ML s3o1 / orgán (orgán) (HH s3o1)              :same-entity to node ML s4o1 / orgán (orgánu) (HH s4o1)            not found in HH
+Document-level relation from node ML s3p2 / organization (parlamentní) (HH s3o2) :same-entity to node ML s4p4 / organization (HH s4o2)              not found in HH
+Document-level relation from node ML s4o1 / orgán (orgánu) (HH s4o1)             :same-entity to node ML s4k1 / komise (komise) (HH s4k1)           not found in HH
+Document-level relation from node HH s3o1 / orgán (orgán) (ML s3o1)              :same-entity to node HH s4k1 / komise (komise) (ML s4k1)           not found in ML
+Document-level relation from node HH s4k1 / komise (komise) (ML s4k1)            :same-entity to node HH s4o1 / orgán (orgánu) (ML s4o1)            not found in ML
 
 Correct 51 out of 60 non-empty ML values => recall    85%.
 Correct 51 out of 58 non-empty HH values => precision 88%.
@@ -416,12 +416,12 @@ Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :aspect:        
 Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :modal-strength: HH = full-affirmative       ML = 
 Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :mod:            HH =                        ML = s4o1
 Node HH s4s1 / sejít-se-001 (schůzi)              mismatch in :refer-number:   HH =                        ML = singular
-Document-level relation from node HH s3o1 (ML s3o1) :same-entity to node HH s4k1 (ML s4k1) not found in ML
-Document-level relation from node HH s4k1 (ML s4k1) :same-entity to node HH s4o1 (ML s4o1) not found in ML
-Document-level relation from node ML s2t0 (HH s2t2) :subset-of   to node ML s4p1 (HH s4p1) not found in HH
-Document-level relation from node ML s3o1 (HH s3o1) :same-entity to node ML s4o1 (HH s4o1) not found in HH
-Document-level relation from node ML s3p2 (HH s3o2) :same-entity to node ML s4p4 (HH s4o2) not found in HH
-Document-level relation from node ML s4o1 (HH s4o1) :same-entity to node ML s4k1 (HH s4k1) not found in HH
+Document-level relation from node HH s3o1 / orgán (orgán) (ML s3o1)              :same-entity to node HH s4k1 / komise (komise) (ML s4k1)           not found in ML
+Document-level relation from node HH s4k1 / komise (komise) (ML s4k1)            :same-entity to node HH s4o1 / orgán (orgánu) (ML s4o1)            not found in ML
+Document-level relation from node ML s2t0 / thing (HH s2t2)                      :subset-of   to node ML s4p1 / připustit-004 (připustil) (HH s4p1) not found in HH
+Document-level relation from node ML s3o1 / orgán (orgán) (HH s3o1)              :same-entity to node ML s4o1 / orgán (orgánu) (HH s4o1)            not found in HH
+Document-level relation from node ML s3p2 / organization (parlamentní) (HH s3o2) :same-entity to node ML s4p4 / organization (HH s4o2)              not found in HH
+Document-level relation from node ML s4o1 / orgán (orgánu) (HH s4o1)             :same-entity to node ML s4k1 / komise (komise) (HH s4k1)           not found in HH
 
 Correct 51 out of 58 non-empty HH values => recall    88%.
 Correct 51 out of 60 non-empty ML values => precision 85%.
@@ -542,10 +542,10 @@ Node ML s5o1 / organization (BIS)               mismatch in :refer-number:   ML 
 Node ML s5p3 / person (Stanislava Devátého)     mismatch in :refer-number:   ML =                        HH = singular
 Node ML s5r1 / ředitel (ředitele)               mismatch in :refer-number:   ML =                        HH = singular
 Node ML s5s2 / šetřit-003 (šetření která)       mismatch in :example:        ML = s5p2 mapped to HH s5p2 HH = 
-Document-level relation from node ML s2t0 (HH s2t2) :subset-of   to node ML s5s1 (HH s5s1) not found in HH
-Document-level relation from node ML s3s2 (HH s3s2) :same-event  to node ML s5s2 (HH s5s2) not found in HH
-Document-level relation from node ML s4k1 (HH s4k1) :same-entity to node ML s5k1 (HH s5k1) not found in HH
-Document-level relation from node HH s4o1 (ML s4o1) :same-entity to node HH s5k1 (ML s5k1) not found in ML
+Document-level relation from node ML s2t0 / thing (HH s2t2)                :subset-of   to node ML s5s1 / shodnout-se-001 (se shodla) (HH s5s1) not found in HH
+Document-level relation from node ML s3s2 / šetřit-003 (šetření) (HH s3s2) :same-event  to node ML s5s2 / šetřit-003 (šetření která) (HH s5s2)  not found in HH
+Document-level relation from node ML s4k1 / komise (komise) (HH s4k1)      :same-entity to node ML s5k1 / komise (Komise) (HH s5k1)             not found in HH
+Document-level relation from node HH s4o1 / orgán (orgánu) (ML s4o1)       :same-entity to node HH s5k1 / komise (Komise) (ML s5k1)             not found in ML
 
 Correct 57 out of 63 non-empty ML values => recall    90%.
 Correct 57 out of 63 non-empty HH values => precision 90%.
@@ -558,10 +558,10 @@ Node HH s5o1 / organization (BIS)               mismatch in :wiki:           HH 
 Node HH s5p3 / person (Stanislava Devátého)     mismatch in :refer-number:   HH = singular               ML = 
 Node HH s5r1 / ředitel (ředitele)               mismatch in :refer-number:   HH = singular               ML = 
 Node HH s5s2 / šetřit-003 (šetření která)       mismatch in :example:        HH =                        ML = s5p2
-Document-level relation from node HH s4o1 (ML s4o1) :same-entity to node HH s5k1 (ML s5k1) not found in ML
-Document-level relation from node ML s2t0 (HH s2t2) :subset-of   to node ML s5s1 (HH s5s1) not found in HH
-Document-level relation from node ML s3s2 (HH s3s2) :same-event  to node ML s5s2 (HH s5s2) not found in HH
-Document-level relation from node ML s4k1 (HH s4k1) :same-entity to node ML s5k1 (HH s5k1) not found in HH
+Document-level relation from node HH s4o1 / orgán (orgánu) (ML s4o1)       :same-entity to node HH s5k1 / komise (Komise) (ML s5k1)             not found in ML
+Document-level relation from node ML s2t0 / thing (HH s2t2)                :subset-of   to node ML s5s1 / shodnout-se-001 (se shodla) (HH s5s1) not found in HH
+Document-level relation from node ML s3s2 / šetřit-003 (šetření) (HH s3s2) :same-event  to node ML s5s2 / šetřit-003 (šetření která) (HH s5s2)  not found in HH
+Document-level relation from node ML s4k1 / komise (komise) (HH s4k1)      :same-entity to node ML s5k1 / komise (Komise) (HH s5k1)             not found in HH
 
 Correct 57 out of 63 non-empty HH values => recall    90%.
 Correct 57 out of 63 non-empty ML values => precision 90%.
@@ -666,9 +666,9 @@ Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :ARG2:           ML 
 Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :polarity:       ML = s6u unmapped           HH = s6u2
 Node ML s6z1 / získat-001 (o to mohla získat) mismatch in :source:         ML =                        HH = s6z2
 Node HH s6u2 / umr-unknown                    mismatch in concept:         HH = umr-unknown            ML = UNMAPPED
-Document-level relation from node ML s2t0 (HH s2t2) :subset-of   to node ML s6j1 (HH s6j1) not found in HH
-Document-level relation from node ML s5o1 (HH s5o1) :same-entity to node ML s6s2 (HH s6s2) not found in HH
-Document-level relation from node HH s5k1 (ML s5k1) :same-entity to node HH s6s2 (ML s6s2) not found in ML
+Document-level relation from node ML s2t0 / thing (HH s2t2)              :subset-of   to node ML s6j1 / jít-035 (jde) (HH s6j1)   not found in HH
+Document-level relation from node ML s5o1 / organization (BIS) (HH s5o1) :same-entity to node ML s6s2 / služba (služba) (HH s6s2) not found in HH
+Document-level relation from node HH s5k1 / komise (Komise) (ML s5k1)    :same-entity to node HH s6s2 / služba (služba) (ML s6s2) not found in ML
 
 Correct 19 out of 36 non-empty ML values => recall    53%.
 Correct 19 out of 30 non-empty HH values => precision 63%.
@@ -695,9 +695,9 @@ Node ML s6s / say-91                                    mismatch in :aspect:    
 Node ML s6s / say-91                                    mismatch in :modal-strength: ML = full-affirmative       HH = UNMAPPED
 Node ML s6u / UMR-unknown (zda)                         mismatch in concept:         ML = UMR-unknown            HH = UNMAPPED
 Node ML s6v1 / veškerý (veškeré)                        mismatch in concept:         ML = veškerý                HH = UNMAPPED
-Document-level relation from node HH s5k1 (ML s5k1) :same-entity to node HH s6s2 (ML s6s2) not found in ML
-Document-level relation from node ML s2t0 (HH s2t2) :subset-of   to node ML s6j1 (HH s6j1) not found in HH
-Document-level relation from node ML s5o1 (HH s5o1) :same-entity to node ML s6s2 (HH s6s2) not found in HH
+Document-level relation from node HH s5k1 / komise (Komise) (ML s5k1)    :same-entity to node HH s6s2 / služba (služba) (ML s6s2) not found in ML
+Document-level relation from node ML s2t0 / thing (HH s2t2)              :subset-of   to node ML s6j1 / jít-035 (jde) (HH s6j1)   not found in HH
+Document-level relation from node ML s5o1 / organization (BIS) (HH s5o1) :same-entity to node ML s6s2 / služba (služba) (HH s6s2) not found in HH
 
 Correct 19 out of 30 non-empty HH values => recall    63%.
 Correct 19 out of 36 non-empty ML values => precision 53%.

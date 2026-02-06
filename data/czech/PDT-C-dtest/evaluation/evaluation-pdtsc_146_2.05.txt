@@ -184,8 +184,8 @@ Node GOLD s2t1 / thing (tak dále)   mismatch in concept:           GOLD = thing
 Node GOLD s2t1 / thing (tak dále)   mismatch in :refer-number:     GOLD = plural                   CONV = 
 Node CONV s2t1 / tak (tak)          mismatch in concept:           CONV = tak                      GOLD = UNMAPPED
 Node CONV s2t1 / tak (tak)          mismatch in :part-of-phraseme: CONV = s2d1                     GOLD = UNMAPPED
-Document-level relation from node GOLD s1p1 (CONV UNMAPPED) :same-entity to node GOLD s2p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s1p2 (CONV UNMAPPED) :same-entity to node GOLD s2p2 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s1p1 / person (CONV UNMAPPED) :same-entity to node GOLD s2p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s1p2 / person (CONV UNMAPPED) :same-entity to node GOLD s2p2 / person (CONV UNMAPPED) not found in CONV
 
 Correct 7 out of 30 non-empty GOLD values => recall    23%.
 Correct 7 out of 15 non-empty CONV values => precision 47%.
@@ -216,8 +216,8 @@ Node GOLD s2s1 / say-91         mismatch in :ARG1:             GOLD = s2h2      
 Node GOLD s2s1 / say-91         mismatch in :ARG2:             GOLD = s2p2                     CONV = UNMAPPED
 Node GOLD s2s1 / say-91         mismatch in :aspect:           GOLD = activity                 CONV = UNMAPPED
 Node GOLD s2s1 / say-91         mismatch in :modal-strength:   GOLD = full-affirmative         CONV = UNMAPPED
-Document-level relation from node GOLD s1p1 (CONV UNMAPPED) :same-entity to node GOLD s2p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s1p2 (CONV UNMAPPED) :same-entity to node GOLD s2p2 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s1p1 / person (CONV UNMAPPED) :same-entity to node GOLD s2p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s1p2 / person (CONV UNMAPPED) :same-entity to node GOLD s2p2 / person (CONV UNMAPPED) not found in CONV
 
 Correct 7 out of 15 non-empty CONV values => recall    47%.
 Correct 7 out of 30 non-empty GOLD values => precision 23%.
@@ -294,8 +294,8 @@ Node CONV s3b1 / být-007 (je)         mismatch in :ARG1:           CONV = s3n1 
 Node CONV s3b1 / být-007 (je)         mismatch in :ARG2:           CONV = s3v1             GOLD = UNMAPPED
 Node CONV s3b1 / být-007 (je)         mismatch in :aspect:         CONV = activity         GOLD = UNMAPPED
 Node CONV s3e1 / entity               mismatch in concept:         CONV = entity           GOLD = UNMAPPED
-Document-level relation from node GOLD s2p1 (CONV UNMAPPED) :same-entity to node GOLD s3p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s2p2 (CONV UNMAPPED) :same-entity to node GOLD s3p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s2p1 / person (CONV UNMAPPED) :same-entity to node GOLD s3p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s2p2 / person (CONV UNMAPPED) :same-entity to node GOLD s3p1 / person (CONV UNMAPPED) not found in CONV
 
 Correct 7 out of 24 non-empty GOLD values => recall    29%.
 Correct 7 out of 13 non-empty CONV values => precision 54%.
@@ -321,8 +321,8 @@ Node GOLD s3s1 / say-91            mismatch in :ARG1:           GOLD = s3v1     
 Node GOLD s3s1 / say-91            mismatch in :ARG2:           GOLD = s3p2             CONV = UNMAPPED
 Node GOLD s3s1 / say-91            mismatch in :aspect:         GOLD = activity         CONV = UNMAPPED
 Node GOLD s3s1 / say-91            mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node GOLD s2p1 (CONV UNMAPPED) :same-entity to node GOLD s3p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s2p2 (CONV UNMAPPED) :same-entity to node GOLD s3p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s2p1 / person (CONV UNMAPPED) :same-entity to node GOLD s3p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s2p2 / person (CONV UNMAPPED) :same-entity to node GOLD s3p1 / person (CONV UNMAPPED) not found in CONV
 
 Correct 7 out of 13 non-empty CONV values => recall    54%.
 Correct 7 out of 24 non-empty GOLD values => precision 29%.
@@ -408,10 +408,10 @@ Node CONV s4v1 / vidět-007      mismatch in concept:         CONV = vidět-007 
 Node CONV s4v1 / vidět-007      mismatch in :ARG0:           CONV = s4e2             GOLD = UNMAPPED
 Node CONV s4v1 / vidět-007      mismatch in :ARG1:           CONV = s4e1             GOLD = UNMAPPED
 Node CONV s4v1 / vidět-007      mismatch in :aspect:         CONV = state            GOLD = UNMAPPED
-Document-level relation from node GOLD s3p1 (CONV UNMAPPED) :same-entity to node GOLD s4p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s3p2 (CONV UNMAPPED) :same-entity to node GOLD s4p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s3v1 (CONV s3v1)     :same-event  to node GOLD s4e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s4e1 (GOLD UNMAPPED) :same-entity to node CONV s3n1 (GOLD s3n1)     not found in GOLD
+Document-level relation from node GOLD s3p1 / person (CONV UNMAPPED)           :same-entity to node GOLD s4p1 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s3p2 / person (CONV UNMAPPED)           :same-entity to node GOLD s4p2 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s3v1 / vidět-007 (je vidět) (CONV s3v1) :same-event  to node GOLD s4e1 / event (CONV UNMAPPED)       not found in CONV
+Document-level relation from node CONV s4e1 / entity (GOLD UNMAPPED)           :same-entity to node CONV s3n1 / nálada (nálada) (GOLD s3n1) not found in GOLD
 
 Correct 4 out of 26 non-empty GOLD values => recall    15%.
 Correct 4 out of 16 non-empty CONV values => precision 25%.
@@ -447,10 +447,10 @@ Node GOLD s4s1 / say-91         mismatch in :ARG1:           GOLD = s4h1        
 Node GOLD s4s1 / say-91         mismatch in :ARG2:           GOLD = s4p2             CONV = UNMAPPED
 Node GOLD s4s1 / say-91         mismatch in :aspect:         GOLD = activity         CONV = UNMAPPED
 Node GOLD s4s1 / say-91         mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node CONV s4e1 (GOLD UNMAPPED) :same-entity to node CONV s3n1 (GOLD s3n1)     not found in GOLD
-Document-level relation from node GOLD s3p1 (CONV UNMAPPED) :same-entity to node GOLD s4p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s3p2 (CONV UNMAPPED) :same-entity to node GOLD s4p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s3v1 (CONV s3v1)     :same-event  to node GOLD s4e1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s4e1 / entity (GOLD UNMAPPED)           :same-entity to node CONV s3n1 / nálada (nálada) (GOLD s3n1) not found in GOLD
+Document-level relation from node GOLD s3p1 / person (CONV UNMAPPED)           :same-entity to node GOLD s4p1 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s3p2 / person (CONV UNMAPPED)           :same-entity to node GOLD s4p2 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s3v1 / vidět-007 (je vidět) (CONV s3v1) :same-event  to node GOLD s4e1 / event (CONV UNMAPPED)       not found in CONV
 
 Correct 4 out of 16 non-empty CONV values => recall    25%.
 Correct 4 out of 26 non-empty GOLD values => precision 15%.
@@ -518,10 +518,10 @@ Node GOLD s5s1 / say-91           mismatch in :ARG1:           GOLD = s5h1      
 Node GOLD s5s1 / say-91           mismatch in :ARG2:           GOLD = s5p2             CONV = UNMAPPED
 Node GOLD s5s1 / say-91           mismatch in :aspect:         GOLD = activity         CONV = UNMAPPED
 Node GOLD s5s1 / say-91           mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node GOLD s4e1 (CONV UNMAPPED) :same-event  to node GOLD s5e1 (CONV s5t1)     not found in CONV
-Document-level relation from node GOLD s4p1 (CONV UNMAPPED) :same-entity to node GOLD s5p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s4p2 (CONV UNMAPPED) :same-entity to node GOLD s5p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s5t1 (GOLD s5e1)     :same-event  to node CONV s4b1 (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s4e1 / event (CONV UNMAPPED)  :same-event  to node GOLD s5e1 / event (To) (CONV s5t1)  not found in CONV
+Document-level relation from node GOLD s4p1 / person (CONV UNMAPPED) :same-entity to node GOLD s5p2 / person (CONV UNMAPPED)  not found in CONV
+Document-level relation from node GOLD s4p2 / person (CONV UNMAPPED) :same-entity to node GOLD s5p1 / person (CONV UNMAPPED)  not found in CONV
+Document-level relation from node CONV s5t1 / ten (To) (GOLD s5e1)   :same-event  to node CONV s4b1 / být-007 (GOLD UNMAPPED) not found in GOLD
 
 Correct 4 out of 24 non-empty GOLD values => recall    17%.
 Correct 4 out of 9 non-empty CONV values => precision 44%.
@@ -545,10 +545,10 @@ Node GOLD s5s1 / say-91       mismatch in :ARG1:           GOLD = s5h1          
 Node GOLD s5s1 / say-91       mismatch in :ARG2:           GOLD = s5p2             CONV = UNMAPPED
 Node GOLD s5s1 / say-91       mismatch in :aspect:         GOLD = activity         CONV = UNMAPPED
 Node GOLD s5s1 / say-91       mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node CONV s5t1 (GOLD s5e1)     :same-event  to node CONV s4b1 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node GOLD s4e1 (CONV UNMAPPED) :same-event  to node GOLD s5e1 (CONV s5t1)     not found in CONV
-Document-level relation from node GOLD s4p1 (CONV UNMAPPED) :same-entity to node GOLD s5p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s4p2 (CONV UNMAPPED) :same-entity to node GOLD s5p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s5t1 / ten (To) (GOLD s5e1)   :same-event  to node CONV s4b1 / být-007 (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s4e1 / event (CONV UNMAPPED)  :same-event  to node GOLD s5e1 / event (To) (CONV s5t1)  not found in CONV
+Document-level relation from node GOLD s4p1 / person (CONV UNMAPPED) :same-entity to node GOLD s5p2 / person (CONV UNMAPPED)  not found in CONV
+Document-level relation from node GOLD s4p2 / person (CONV UNMAPPED) :same-entity to node GOLD s5p1 / person (CONV UNMAPPED)  not found in CONV
 
 Correct 4 out of 9 non-empty CONV values => recall    44%.
 Correct 4 out of 24 non-empty GOLD values => precision 17%.
@@ -639,9 +639,9 @@ Node CONV s6e1 / event                                     mismatch in :aspect: 
 Node CONV s6e1 / event                                     mismatch in :clausal-marker: CONV = s6h1                     GOLD = UNMAPPED
 Node CONV s6e2 / entity                                    mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
 Node CONV s6e3 / entity                                    mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
-Document-level relation from node GOLD s5p1 (CONV UNMAPPED) :same-entity to node GOLD s6p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s5p2 (CONV UNMAPPED) :same-entity to node GOLD s6p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s6p1 (CONV UNMAPPED) :subset-of   to node GOLD s6p3 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s5p1 / person (CONV UNMAPPED) :same-entity to node GOLD s6p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s5p2 / person (CONV UNMAPPED) :same-entity to node GOLD s6p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s6p1 / person (CONV UNMAPPED) :subset-of   to node GOLD s6p3 / person (CONV UNMAPPED) not found in CONV
 
 Correct 2 out of 28 non-empty GOLD values => recall    7%.
 Correct 2 out of 11 non-empty CONV values => precision 18%.
@@ -677,9 +677,9 @@ Node GOLD s6s2 / say-91                                    mismatch in :ARG1:   
 Node GOLD s6s2 / say-91                                    mismatch in :ARG2:           GOLD = s6p2             CONV = UNMAPPED
 Node GOLD s6s2 / say-91                                    mismatch in :aspect:         GOLD = state            CONV = UNMAPPED
 Node GOLD s6s2 / say-91                                    mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node GOLD s5p1 (CONV UNMAPPED) :same-entity to node GOLD s6p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s5p2 (CONV UNMAPPED) :same-entity to node GOLD s6p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s6p1 (CONV UNMAPPED) :subset-of   to node GOLD s6p3 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s5p1 / person (CONV UNMAPPED) :same-entity to node GOLD s6p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s5p2 / person (CONV UNMAPPED) :same-entity to node GOLD s6p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s6p1 / person (CONV UNMAPPED) :subset-of   to node GOLD s6p3 / person (CONV UNMAPPED) not found in CONV
 
 Correct 2 out of 11 non-empty CONV values => recall    18%.
 Correct 2 out of 28 non-empty GOLD values => precision 7%.
@@ -755,12 +755,12 @@ Node GOLD s7v1 / vídat-001 (Vídáte) mismatch in :polarity:       GOLD = umr-u
 Node GOLD s7v1 / vídat-001 (Vídáte) mismatch in :quote:          GOLD = s7s1 unmapped       CONV = 
 Node CONV s7e1 / entity             mismatch in concept:         CONV = entity              GOLD = UNMAPPED
 Node CONV s7x1 / Rcp                mismatch in concept:         CONV = Rcp                 GOLD = UNMAPPED
-Document-level relation from node GOLD s6p1 (CONV UNMAPPED) :same-entity to node GOLD s7p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s6p2 (CONV UNMAPPED) :same-entity to node GOLD s7p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s6p3 (CONV UNMAPPED) :same-entity to node GOLD s7p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s7p3 (CONV UNMAPPED) :subset-of   to node GOLD s7p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s7e1 (GOLD UNMAPPED) :same-entity to node CONV s6e2 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node CONV s7x1 (GOLD UNMAPPED) :same-entity to node CONV s7e1 (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s6p1 / person (CONV UNMAPPED)      :same-entity to node GOLD s7p2 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s6p2 / person (CONV UNMAPPED)      :same-entity to node GOLD s7p1 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s6p3 / person (CONV UNMAPPED)      :same-entity to node GOLD s7p3 / person (se) (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s7p3 / person (se) (CONV UNMAPPED) :subset-of   to node GOLD s7p2 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node CONV s7e1 / entity (GOLD UNMAPPED)      :same-entity to node CONV s6e2 / entity (GOLD UNMAPPED)      not found in GOLD
+Document-level relation from node CONV s7x1 / Rcp (GOLD UNMAPPED)         :same-entity to node CONV s7e1 / entity (GOLD UNMAPPED)      not found in GOLD
 
 Correct 2 out of 27 non-empty GOLD values => recall    7%.
 Correct 2 out of 8 non-empty CONV values => precision 25%.
@@ -789,12 +789,12 @@ Node GOLD s7s1 / say-91             mismatch in :ARG1:           GOLD = s7v1    
 Node GOLD s7s1 / say-91             mismatch in :ARG2:           GOLD = s7p2             CONV = UNMAPPED
 Node GOLD s7s1 / say-91             mismatch in :aspect:         GOLD = state            CONV = UNMAPPED
 Node GOLD s7s1 / say-91             mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node CONV s7e1 (GOLD UNMAPPED) :same-entity to node CONV s6e2 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node CONV s7x1 (GOLD UNMAPPED) :same-entity to node CONV s7e1 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node GOLD s6p1 (CONV UNMAPPED) :same-entity to node GOLD s7p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s6p2 (CONV UNMAPPED) :same-entity to node GOLD s7p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s6p3 (CONV UNMAPPED) :same-entity to node GOLD s7p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s7p3 (CONV UNMAPPED) :subset-of   to node GOLD s7p2 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s7e1 / entity (GOLD UNMAPPED)      :same-entity to node CONV s6e2 / entity (GOLD UNMAPPED)      not found in GOLD
+Document-level relation from node CONV s7x1 / Rcp (GOLD UNMAPPED)         :same-entity to node CONV s7e1 / entity (GOLD UNMAPPED)      not found in GOLD
+Document-level relation from node GOLD s6p1 / person (CONV UNMAPPED)      :same-entity to node GOLD s7p2 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s6p2 / person (CONV UNMAPPED)      :same-entity to node GOLD s7p1 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s6p3 / person (CONV UNMAPPED)      :same-entity to node GOLD s7p3 / person (se) (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s7p3 / person (se) (CONV UNMAPPED) :subset-of   to node GOLD s7p2 / person (CONV UNMAPPED)      not found in CONV
 
 Correct 2 out of 8 non-empty CONV values => recall    25%.
 Correct 2 out of 27 non-empty GOLD values => precision 7%.
@@ -902,9 +902,9 @@ Node GOLD s8t5 / temporal-quantity (každý)   mismatch in concept:         GOLD
 Node GOLD s8t5 / temporal-quantity (každý)   mismatch in :quant:          GOLD = 1                        CONV = 
 Node GOLD s8t5 / temporal-quantity (každý)   mismatch in :unit:           GOLD = s8r1 mapped to CONV s8r1 CONV = 
 Node CONV s8e1 / entity                      mismatch in concept:         CONV = entity                   GOLD = UNMAPPED
-Document-level relation from node GOLD s6p3 (CONV UNMAPPED) :same-entity to node GOLD s8t2 (CONV s8t2)     not found in CONV
-Document-level relation from node GOLD s7p1 (CONV UNMAPPED) :same-entity to node GOLD s8p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s7p2 (CONV UNMAPPED) :same-entity to node GOLD s8p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s6p3 / person (CONV UNMAPPED) :same-entity to node GOLD s8t2 / třída (třída se kterou) (CONV s8t2) not found in CONV
+Document-level relation from node GOLD s7p1 / person (CONV UNMAPPED) :same-entity to node GOLD s8p2 / person (CONV UNMAPPED)              not found in CONV
+Document-level relation from node GOLD s7p2 / person (CONV UNMAPPED) :same-entity to node GOLD s8p1 / person (CONV UNMAPPED)              not found in CONV
 
 Correct 15 out of 43 non-empty GOLD values => recall    35%.
 Correct 15 out of 24 non-empty CONV values => precision 63%.
@@ -938,9 +938,9 @@ Node GOLD s8s1 / say-91                      mismatch in :ARG1:           GOLD =
 Node GOLD s8s1 / say-91                      mismatch in :ARG2:           GOLD = s8p2                     CONV = UNMAPPED
 Node GOLD s8s1 / say-91                      mismatch in :aspect:         GOLD = state                    CONV = UNMAPPED
 Node GOLD s8s1 / say-91                      mismatch in :modal-strength: GOLD = full-affirmative         CONV = UNMAPPED
-Document-level relation from node GOLD s6p3 (CONV UNMAPPED) :same-entity to node GOLD s8t2 (CONV s8t2)     not found in CONV
-Document-level relation from node GOLD s7p1 (CONV UNMAPPED) :same-entity to node GOLD s8p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s7p2 (CONV UNMAPPED) :same-entity to node GOLD s8p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s6p3 / person (CONV UNMAPPED) :same-entity to node GOLD s8t2 / třída (třída se kterou) (CONV s8t2) not found in CONV
+Document-level relation from node GOLD s7p1 / person (CONV UNMAPPED) :same-entity to node GOLD s8p2 / person (CONV UNMAPPED)              not found in CONV
+Document-level relation from node GOLD s7p2 / person (CONV UNMAPPED) :same-entity to node GOLD s8p1 / person (CONV UNMAPPED)              not found in CONV
 
 Correct 15 out of 24 non-empty CONV values => recall    63%.
 Correct 15 out of 43 non-empty GOLD values => precision 35%.
@@ -1092,14 +1092,14 @@ Node CONV s9r2 / rok (rok)                      mismatch in :mod:            CON
 Node CONV s9r2 / rok (rok)                      mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
 Node CONV s9t3 / ten (to)                       mismatch in concept:         CONV = ten                      GOLD = UNMAPPED
 Node CONV s9t3 / ten (to)                       mismatch in :refer-number:   CONV = singular                 GOLD = UNMAPPED
-Document-level relation from node GOLD s8p1 (CONV UNMAPPED) :same-entity to node GOLD s9p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s8p2 (CONV UNMAPPED) :same-entity to node GOLD s9p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s8r1 (CONV s8r1)     :same-entity to node GOLD s9r1 (CONV s9r1)     not found in CONV
-Document-level relation from node GOLD s8r2 (CONV UNMAPPED) :same-entity to node GOLD s9r4 (CONV s9k1)     not found in CONV
-Document-level relation from node GOLD s8s2 (CONV s8s1)     :same-event  to node GOLD s9e1 (CONV s9t1)     not found in CONV
-Document-level relation from node GOLD s8t4 (CONV s8t4)     :same-entity to node GOLD s9t4 (CONV s9t2)     not found in CONV
-Document-level relation from node CONV s9t1 (GOLD s9e1)     :same-event  to node CONV s8s1 (GOLD s8s2)     not found in GOLD
-Document-level relation from node CONV s9t3 (GOLD UNMAPPED) :same-entity to node CONV s9t1 (GOLD s9e1)     not found in GOLD
+Document-level relation from node GOLD s8p1 / person (CONV UNMAPPED)                  :same-entity to node GOLD s9p1 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s8p2 / person (CONV UNMAPPED)                  :same-entity to node GOLD s9p2 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s8r1 / rok (rok) (CONV s8r1)                   :same-entity to node GOLD s9r1 / rok (roky rok) (CONV s9r1)              not found in CONV
+Document-level relation from node GOLD s8r2 / rate-entity-91 (CONV UNMAPPED)          :same-entity to node GOLD s9r4 / rate-entity-91 (každý) (CONV s9k1)      not found in CONV
+Document-level relation from node GOLD s8s2 / scházet-se-001 (se scházím) (CONV s8s1) :same-event  to node GOLD s9e1 / event (to to) (CONV s9t1)               not found in CONV
+Document-level relation from node GOLD s8t4 / teď (teď) (CONV s8t4)                   :same-entity to node GOLD s9t4 / teď (teď) (CONV s9t2)                   not found in CONV
+Document-level relation from node CONV s9t1 / ten (to) (GOLD s9e1)                    :same-event  to node CONV s8s1 / scházet-se-001 (se scházím) (GOLD s8s2) not found in GOLD
+Document-level relation from node CONV s9t3 / ten (to) (GOLD UNMAPPED)                :same-entity to node CONV s9t1 / ten (to) (GOLD s9e1)                    not found in GOLD
 
 Correct 5 out of 51 non-empty GOLD values => recall    10%.
 Correct 5 out of 31 non-empty CONV values => precision 16%.
@@ -1160,14 +1160,14 @@ Node GOLD s9t2 / temporal-quantity mismatch in :unit:           GOLD = s9r1     
 Node GOLD s9t3 / temporal-quantity mismatch in concept:         GOLD = temporal-quantity        CONV = UNMAPPED
 Node GOLD s9t3 / temporal-quantity mismatch in :quant:          GOLD = 1                        CONV = UNMAPPED
 Node GOLD s9t3 / temporal-quantity mismatch in :unit:           GOLD = s9r1                     CONV = UNMAPPED
-Document-level relation from node CONV s9t1 (GOLD s9e1)     :same-event  to node CONV s8s1 (GOLD s8s2)     not found in GOLD
-Document-level relation from node CONV s9t3 (GOLD UNMAPPED) :same-entity to node CONV s9t1 (GOLD s9e1)     not found in GOLD
-Document-level relation from node GOLD s8p1 (CONV UNMAPPED) :same-entity to node GOLD s9p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s8p2 (CONV UNMAPPED) :same-entity to node GOLD s9p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s8r1 (CONV s8r1)     :same-entity to node GOLD s9r1 (CONV s9r1)     not found in CONV
-Document-level relation from node GOLD s8r2 (CONV UNMAPPED) :same-entity to node GOLD s9r4 (CONV s9k1)     not found in CONV
-Document-level relation from node GOLD s8s2 (CONV s8s1)     :same-event  to node GOLD s9e1 (CONV s9t1)     not found in CONV
-Document-level relation from node GOLD s8t4 (CONV s8t4)     :same-entity to node GOLD s9t4 (CONV s9t2)     not found in CONV
+Document-level relation from node CONV s9t1 / ten (to) (GOLD s9e1)                    :same-event  to node CONV s8s1 / scházet-se-001 (se scházím) (GOLD s8s2) not found in GOLD
+Document-level relation from node CONV s9t3 / ten (to) (GOLD UNMAPPED)                :same-entity to node CONV s9t1 / ten (to) (GOLD s9e1)                    not found in GOLD
+Document-level relation from node GOLD s8p1 / person (CONV UNMAPPED)                  :same-entity to node GOLD s9p1 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s8p2 / person (CONV UNMAPPED)                  :same-entity to node GOLD s9p2 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s8r1 / rok (rok) (CONV s8r1)                   :same-entity to node GOLD s9r1 / rok (roky rok) (CONV s9r1)              not found in CONV
+Document-level relation from node GOLD s8r2 / rate-entity-91 (CONV UNMAPPED)          :same-entity to node GOLD s9r4 / rate-entity-91 (každý) (CONV s9k1)      not found in CONV
+Document-level relation from node GOLD s8s2 / scházet-se-001 (se scházím) (CONV s8s1) :same-event  to node GOLD s9e1 / event (to to) (CONV s9t1)               not found in CONV
+Document-level relation from node GOLD s8t4 / teď (teď) (CONV s8t4)                   :same-entity to node GOLD s9t4 / teď (teď) (CONV s9t2)                   not found in CONV
 
 Correct 5 out of 31 non-empty CONV values => recall    16%.
 Correct 5 out of 51 non-empty GOLD values => precision 10%.
@@ -1267,11 +1267,11 @@ Node GOLD s10s1 / say-91                   mismatch in :ARG2:           GOLD = s
 Node GOLD s10s1 / say-91                   mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s10s1 / say-91                   mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node CONV s10e1 / entity                   mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
-Document-level relation from node GOLD s8t1 (CONV s8t1)     :same-entity to node GOLD s10t1 (CONV s10t1)    not found in CONV
-Document-level relation from node GOLD s8t2 (CONV s8t2)     :subset-of   to node GOLD s10p3 (CONV s10m1)    not found in CONV
-Document-level relation from node GOLD s9p1 (CONV UNMAPPED) :same-entity to node GOLD s10p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s9p2 (CONV UNMAPPED) :same-entity to node GOLD s10p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s10t1 (GOLD s10t1)   :same-entity to node CONV s8t1 (GOLD s8t1)      not found in GOLD
+Document-level relation from node GOLD s8t1 / ten (To) (CONV s8t1)                :same-entity to node GOLD s10t1 / ten (To) (CONV s10t1)                 not found in CONV
+Document-level relation from node GOLD s8t2 / třída (třída se kterou) (CONV s8t2) :subset-of   to node GOLD s10p3 / person (maturanti kteří) (CONV s10m1) not found in CONV
+Document-level relation from node GOLD s9p1 / person (CONV UNMAPPED)              :same-entity to node GOLD s10p1 / person (CONV UNMAPPED)                not found in CONV
+Document-level relation from node GOLD s9p2 / person (CONV UNMAPPED)              :same-entity to node GOLD s10p2 / person (CONV UNMAPPED)                not found in CONV
+Document-level relation from node CONV s10t1 / ten (To) (GOLD s10t1)              :same-entity to node CONV s8t1 / ten (To) (GOLD s8t1)                   not found in GOLD
 
 Correct 13 out of 41 non-empty GOLD values => recall    32%.
 Correct 13 out of 21 non-empty CONV values => precision 62%.
@@ -1303,11 +1303,11 @@ Node GOLD s10s1 / say-91                     mismatch in :ARG1:           GOLD =
 Node GOLD s10s1 / say-91                     mismatch in :ARG2:           GOLD = s10p2                      CONV = UNMAPPED
 Node GOLD s10s1 / say-91                     mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s10s1 / say-91                     mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node CONV s10t1 (GOLD s10t1)   :same-entity to node CONV s8t1 (GOLD s8t1)      not found in GOLD
-Document-level relation from node GOLD s8t1 (CONV s8t1)     :same-entity to node GOLD s10t1 (CONV s10t1)    not found in CONV
-Document-level relation from node GOLD s8t2 (CONV s8t2)     :subset-of   to node GOLD s10p3 (CONV s10m1)    not found in CONV
-Document-level relation from node GOLD s9p1 (CONV UNMAPPED) :same-entity to node GOLD s10p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s9p2 (CONV UNMAPPED) :same-entity to node GOLD s10p2 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s10t1 / ten (To) (GOLD s10t1)              :same-entity to node CONV s8t1 / ten (To) (GOLD s8t1)                   not found in GOLD
+Document-level relation from node GOLD s8t1 / ten (To) (CONV s8t1)                :same-entity to node GOLD s10t1 / ten (To) (CONV s10t1)                 not found in CONV
+Document-level relation from node GOLD s8t2 / třída (třída se kterou) (CONV s8t2) :subset-of   to node GOLD s10p3 / person (maturanti kteří) (CONV s10m1) not found in CONV
+Document-level relation from node GOLD s9p1 / person (CONV UNMAPPED)              :same-entity to node GOLD s10p1 / person (CONV UNMAPPED)                not found in CONV
+Document-level relation from node GOLD s9p2 / person (CONV UNMAPPED)              :same-entity to node GOLD s10p2 / person (CONV UNMAPPED)                not found in CONV
 
 Correct 13 out of 21 non-empty CONV values => recall    62%.
 Correct 13 out of 41 non-empty GOLD values => precision 32%.
@@ -1377,9 +1377,9 @@ Node GOLD s11s1 / say-91               mismatch in :ARG2:           GOLD = s11p2
 Node GOLD s11s1 / say-91               mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s11s1 / say-91               mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node CONV s11e1 / entity               mismatch in concept:         CONV = entity                     GOLD = UNMAPPED
-Document-level relation from node GOLD s10p1 (CONV UNMAPPED) :same-entity to node GOLD s11p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s10p2 (CONV UNMAPPED) :same-entity to node GOLD s11p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s10t1 (CONV s10t1)    :subset-of   to node GOLD s11p3 (CONV s11j1)    not found in CONV
+Document-level relation from node GOLD s10p1 / person (CONV UNMAPPED) :same-entity to node GOLD s11p1 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s10p2 / person (CONV UNMAPPED) :same-entity to node GOLD s11p2 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s10t1 / ten (To) (CONV s10t1)  :subset-of   to node GOLD s11p3 / person (Jedna) (CONV s11j1) not found in CONV
 
 Correct 2 out of 23 non-empty GOLD values => recall    9%.
 Correct 2 out of 7 non-empty CONV values => precision 29%.
@@ -1406,9 +1406,9 @@ Node GOLD s11s1 / say-91               mismatch in :ARG1:           GOLD = s11c1
 Node GOLD s11s1 / say-91               mismatch in :ARG2:           GOLD = s11p2                      CONV = UNMAPPED
 Node GOLD s11s1 / say-91               mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s11s1 / say-91               mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node GOLD s10p1 (CONV UNMAPPED) :same-entity to node GOLD s11p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s10p2 (CONV UNMAPPED) :same-entity to node GOLD s11p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s10t1 (CONV s10t1)    :subset-of   to node GOLD s11p3 (CONV s11j1)    not found in CONV
+Document-level relation from node GOLD s10p1 / person (CONV UNMAPPED) :same-entity to node GOLD s11p1 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s10p2 / person (CONV UNMAPPED) :same-entity to node GOLD s11p2 / person (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s10t1 / ten (To) (CONV s10t1)  :subset-of   to node GOLD s11p3 / person (Jedna) (CONV s11j1) not found in CONV
 
 Correct 2 out of 7 non-empty CONV values => recall    29%.
 Correct 2 out of 23 non-empty GOLD values => precision 9%.
@@ -1536,11 +1536,11 @@ Node CONV s12c1 / chodit-006             mismatch in :clausal-marker: CONV = s12
 Node CONV s12c1 / chodit-006             mismatch in :goal:           CONV = s12e1            GOLD = UNMAPPED
 Node CONV s12c1 / chodit-006             mismatch in :polarity:       CONV = -                GOLD = UNMAPPED
 Node CONV s12e1 / entity                 mismatch in concept:         CONV = entity           GOLD = UNMAPPED
-Document-level relation from node GOLD s11c1 (CONV s11c1)    :same-event  to node GOLD s12e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s11p1 (CONV UNMAPPED) :same-entity to node GOLD s12p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s11p2 (CONV UNMAPPED) :same-entity to node GOLD s12p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s11p3 (CONV s11j1)    :same-entity to node GOLD s12p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s12t1 (GOLD s12t1)    :same-entity to node CONV s11j1 (GOLD s11p3)    not found in GOLD
+Document-level relation from node GOLD s11c1 / chodit-006 (nechodí) (CONV s11c1)   :same-event  to node GOLD s12e1 / event (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s11p1 / person (CONV UNMAPPED)              :same-entity to node GOLD s12p1 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s11p2 / person (CONV UNMAPPED)              :same-entity to node GOLD s12p2 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s11p3 / person (Jedna) (CONV s11j1)         :same-entity to node GOLD s12p3 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node CONV s12t1 / tadyhleten (tadyhleta) (GOLD s12t1) :same-entity to node CONV s11j1 / jeden (Jedna) (GOLD s11p3) not found in GOLD
 
 Correct 8 out of 49 non-empty GOLD values => recall    16%.
 Correct 8 out of 20 non-empty CONV values => precision 40%.
@@ -1594,11 +1594,11 @@ Node GOLD s12s1 / say-91                 mismatch in :ARG2:           GOLD = s12
 Node GOLD s12s1 / say-91                 mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s12s1 / say-91                 mismatch in :clausal-marker: GOLD = s12z1                      CONV = UNMAPPED
 Node GOLD s12s1 / say-91                 mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node CONV s12t1 (GOLD s12t1)    :same-entity to node CONV s11j1 (GOLD s11p3)    not found in GOLD
-Document-level relation from node GOLD s11c1 (CONV s11c1)    :same-event  to node GOLD s12e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s11p1 (CONV UNMAPPED) :same-entity to node GOLD s12p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s11p2 (CONV UNMAPPED) :same-entity to node GOLD s12p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s11p3 (CONV s11j1)    :same-entity to node GOLD s12p3 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s12t1 / tadyhleten (tadyhleta) (GOLD s12t1) :same-entity to node CONV s11j1 / jeden (Jedna) (GOLD s11p3) not found in GOLD
+Document-level relation from node GOLD s11c1 / chodit-006 (nechodí) (CONV s11c1)   :same-event  to node GOLD s12e1 / event (CONV UNMAPPED)      not found in CONV
+Document-level relation from node GOLD s11p1 / person (CONV UNMAPPED)              :same-entity to node GOLD s12p1 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s11p2 / person (CONV UNMAPPED)              :same-entity to node GOLD s12p2 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s11p3 / person (Jedna) (CONV s11j1)         :same-entity to node GOLD s12p3 / person (CONV UNMAPPED)     not found in CONV
 
 Correct 8 out of 20 non-empty CONV values => recall    40%.
 Correct 8 out of 49 non-empty GOLD values => precision 16%.
@@ -1678,10 +1678,10 @@ Node CONV s13e1 / entity                   mismatch in concept:         CONV = e
 Node CONV s13e1 / entity                   mismatch in :refer-number:   CONV = singular         GOLD = UNMAPPED
 Node CONV s13s1 / smrt (po smrti)          mismatch in concept:         CONV = smrt             GOLD = UNMAPPED
 Node CONV s13s1 / smrt (po smrti)          mismatch in :refer-number:   CONV = singular         GOLD = UNMAPPED
-Document-level relation from node GOLD s12p1 (CONV UNMAPPED) :same-entity to node GOLD s13p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s12p2 (CONV UNMAPPED) :same-entity to node GOLD s13p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s12p3 (CONV UNMAPPED) :same-entity to node GOLD s13p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s13e1 (GOLD UNMAPPED) :same-entity to node CONV s12t1 (GOLD s12t1)    not found in GOLD
+Document-level relation from node GOLD s12p1 / person (CONV UNMAPPED) :same-entity to node GOLD s13p1 / person (CONV UNMAPPED)              not found in CONV
+Document-level relation from node GOLD s12p2 / person (CONV UNMAPPED) :same-entity to node GOLD s13p2 / person (CONV UNMAPPED)              not found in CONV
+Document-level relation from node GOLD s12p3 / person (CONV UNMAPPED) :same-entity to node GOLD s13p3 / person (CONV UNMAPPED)              not found in CONV
+Document-level relation from node CONV s13e1 / entity (GOLD UNMAPPED) :same-entity to node CONV s12t1 / tadyhleten (tadyhleta) (GOLD s12t1) not found in GOLD
 
 Correct 2 out of 24 non-empty GOLD values => recall    8%.
 Correct 2 out of 11 non-empty CONV values => precision 18%.
@@ -1711,10 +1711,10 @@ Node GOLD s13s1 / say-91          mismatch in :ARG1:           GOLD = s13z1     
 Node GOLD s13s1 / say-91          mismatch in :ARG2:           GOLD = s13p2            CONV = UNMAPPED
 Node GOLD s13s1 / say-91          mismatch in :aspect:         GOLD = state            CONV = UNMAPPED
 Node GOLD s13s1 / say-91          mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node CONV s13e1 (GOLD UNMAPPED) :same-entity to node CONV s12t1 (GOLD s12t1)    not found in GOLD
-Document-level relation from node GOLD s12p1 (CONV UNMAPPED) :same-entity to node GOLD s13p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s12p2 (CONV UNMAPPED) :same-entity to node GOLD s13p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s12p3 (CONV UNMAPPED) :same-entity to node GOLD s13p3 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s13e1 / entity (GOLD UNMAPPED) :same-entity to node CONV s12t1 / tadyhleten (tadyhleta) (GOLD s12t1) not found in GOLD
+Document-level relation from node GOLD s12p1 / person (CONV UNMAPPED) :same-entity to node GOLD s13p1 / person (CONV UNMAPPED)              not found in CONV
+Document-level relation from node GOLD s12p2 / person (CONV UNMAPPED) :same-entity to node GOLD s13p2 / person (CONV UNMAPPED)              not found in CONV
+Document-level relation from node GOLD s12p3 / person (CONV UNMAPPED) :same-entity to node GOLD s13p3 / person (CONV UNMAPPED)              not found in CONV
 
 Correct 2 out of 11 non-empty CONV values => recall    18%.
 Correct 2 out of 24 non-empty GOLD values => precision 8%.
@@ -1794,10 +1794,10 @@ Node GOLD s14s1 / say-91                mismatch in :ARG1:           GOLD = s14e
 Node GOLD s14s1 / say-91                mismatch in :ARG2:           GOLD = s14p2                      CONV = UNMAPPED
 Node GOLD s14s1 / say-91                mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s14s1 / say-91                mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node GOLD s13p1 (CONV UNMAPPED) :same-entity to node GOLD s14p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s13p2 (CONV UNMAPPED) :same-entity to node GOLD s14p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s4f1 (CONV s4f1)      :same-entity to node GOLD s14t1 (CONV s14t1)    not found in CONV
-Document-level relation from node CONV s14t1 (GOLD s14t1)    :same-entity to node CONV s4f1 (GOLD s4f1)      not found in GOLD
+Document-level relation from node GOLD s13p1 / person (CONV UNMAPPED)     :same-entity to node GOLD s14p1 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s13p2 / person (CONV UNMAPPED)     :same-entity to node GOLD s14p2 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s4f1 / fotka (Z fotky) (CONV s4f1) :same-entity to node GOLD s14t1 / tam (tam) (CONV s14t1)     not found in CONV
+Document-level relation from node CONV s14t1 / tam (tam) (GOLD s14t1)     :same-entity to node CONV s4f1 / fotka (Z fotky) (GOLD s4f1) not found in GOLD
 
 Correct 8 out of 30 non-empty GOLD values => recall    27%.
 Correct 8 out of 14 non-empty CONV values => precision 57%.
@@ -1823,10 +1823,10 @@ Node GOLD s14s1 / say-91       mismatch in :ARG1:           GOLD = s14e1        
 Node GOLD s14s1 / say-91       mismatch in :ARG2:           GOLD = s14p2                      CONV = UNMAPPED
 Node GOLD s14s1 / say-91       mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s14s1 / say-91       mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node CONV s14t1 (GOLD s14t1)    :same-entity to node CONV s4f1 (GOLD s4f1)      not found in GOLD
-Document-level relation from node GOLD s13p1 (CONV UNMAPPED) :same-entity to node GOLD s14p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s13p2 (CONV UNMAPPED) :same-entity to node GOLD s14p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s4f1 (CONV s4f1)      :same-entity to node GOLD s14t1 (CONV s14t1)    not found in CONV
+Document-level relation from node CONV s14t1 / tam (tam) (GOLD s14t1)     :same-entity to node CONV s4f1 / fotka (Z fotky) (GOLD s4f1) not found in GOLD
+Document-level relation from node GOLD s13p1 / person (CONV UNMAPPED)     :same-entity to node GOLD s14p1 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s13p2 / person (CONV UNMAPPED)     :same-entity to node GOLD s14p2 / person (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s4f1 / fotka (Z fotky) (CONV s4f1) :same-entity to node GOLD s14t1 / tam (tam) (CONV s14t1)     not found in CONV
 
 Correct 8 out of 14 non-empty CONV values => recall    57%.
 Correct 8 out of 30 non-empty GOLD values => precision 27%.
@@ -1977,12 +1977,12 @@ Node CONV s15e1 / entity (To)                mismatch in :refer-person:   CONV =
 Node CONV s15i1 / identity-91 (,)            mismatch in concept:         CONV = identity-91                GOLD = UNMAPPED
 Node CONV s15i1 / identity-91 (,)            mismatch in :ARG1:           CONV = s15e1                      GOLD = UNMAPPED
 Node CONV s15i1 / identity-91 (,)            mismatch in :ARG2:           CONV = s15a1                      GOLD = UNMAPPED
-Document-level relation from node GOLD s10p3 (CONV s10m1)    :same-entity to node GOLD s15p6 (CONV s15p2)    not found in CONV
-Document-level relation from node GOLD s14p1 (CONV UNMAPPED) :same-entity to node GOLD s15p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s14p2 (CONV UNMAPPED) :same-entity to node GOLD s15p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s15p6 (CONV s15p2)    :subset-of   to node GOLD s15p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s15e1 (GOLD UNMAPPED) :same-entity to node CONV s14b2 (GOLD s14b2)    not found in GOLD
-Document-level relation from node CONV s15p2 (GOLD s15p6)    :same-entity to node CONV s10m1 (GOLD s10p3)    not found in GOLD
+Document-level relation from node GOLD s10p3 / person (maturanti kteří) (CONV s10m1) :same-entity to node GOLD s15p6 / person (nás) (CONV s15p2)               not found in CONV
+Document-level relation from node GOLD s14p1 / person (CONV UNMAPPED)                :same-entity to node GOLD s15p1 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s14p2 / person (CONV UNMAPPED)                :same-entity to node GOLD s15p2 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s15p6 / person (nás) (CONV s15p2)             :subset-of   to node GOLD s15p1 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node CONV s15e1 / entity (To) (GOLD UNMAPPED)           :same-entity to node CONV s14b2 / brigádník (brigádník) (GOLD s14b2)      not found in GOLD
+Document-level relation from node CONV s15p2 / person (nás) (GOLD s15p6)             :same-entity to node CONV s10m1 / maturant (maturanti kteří) (GOLD s10p3) not found in GOLD
 
 Correct 25 out of 62 non-empty GOLD values => recall    40%.
 Correct 25 out of 41 non-empty CONV values => precision 61%.
@@ -2031,12 +2031,12 @@ Node GOLD s15s1 / say-91                     mismatch in :ARG1:           GOLD =
 Node GOLD s15s1 / say-91                     mismatch in :ARG2:           GOLD = s15p2                      CONV = UNMAPPED
 Node GOLD s15s1 / say-91                     mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s15s1 / say-91                     mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node CONV s15e1 (GOLD UNMAPPED) :same-entity to node CONV s14b2 (GOLD s14b2)    not found in GOLD
-Document-level relation from node CONV s15p2 (GOLD s15p6)    :same-entity to node CONV s10m1 (GOLD s10p3)    not found in GOLD
-Document-level relation from node GOLD s10p3 (CONV s10m1)    :same-entity to node GOLD s15p6 (CONV s15p2)    not found in CONV
-Document-level relation from node GOLD s14p1 (CONV UNMAPPED) :same-entity to node GOLD s15p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s14p2 (CONV UNMAPPED) :same-entity to node GOLD s15p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s15p6 (CONV s15p2)    :subset-of   to node GOLD s15p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s15e1 / entity (To) (GOLD UNMAPPED)           :same-entity to node CONV s14b2 / brigádník (brigádník) (GOLD s14b2)      not found in GOLD
+Document-level relation from node CONV s15p2 / person (nás) (GOLD s15p6)             :same-entity to node CONV s10m1 / maturant (maturanti kteří) (GOLD s10p3) not found in GOLD
+Document-level relation from node GOLD s10p3 / person (maturanti kteří) (CONV s10m1) :same-entity to node GOLD s15p6 / person (nás) (CONV s15p2)               not found in CONV
+Document-level relation from node GOLD s14p1 / person (CONV UNMAPPED)                :same-entity to node GOLD s15p1 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s14p2 / person (CONV UNMAPPED)                :same-entity to node GOLD s15p2 / person (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s15p6 / person (nás) (CONV s15p2)             :subset-of   to node GOLD s15p1 / person (CONV UNMAPPED)                  not found in CONV
 
 Correct 25 out of 41 non-empty CONV values => recall    61%.
 Correct 25 out of 62 non-empty GOLD values => precision 40%.
@@ -2104,12 +2104,12 @@ Node GOLD s16z1 / znát-005 (Neznám) mismatch in :ARG0:           GOLD = s16p1 
 Node GOLD s16z1 / znát-005 (Neznám) mismatch in :modal-strength: GOLD = full-negative    CONV = 
 Node GOLD s16z1 / znát-005 (Neznám) mismatch in :quote:          GOLD = s16s1 unmapped   CONV = 
 Node CONV s16e1 / entity            mismatch in concept:         CONV = entity           GOLD = UNMAPPED
-Document-level relation from node GOLD s15p1 (CONV UNMAPPED) :same-entity to node GOLD s16p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s15p2 (CONV UNMAPPED) :same-entity to node GOLD s16p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s16p3 (CONV s16e2)    :subset-of   to node GOLD s15p4 (CONV s15t1)    not found in CONV
-Document-level relation from node GOLD s16p3 (CONV s16e2)    :subset-of   to node GOLD s15p5 (CONV s15t2)    not found in CONV
-Document-level relation from node CONV s16e1 (GOLD UNMAPPED) :same-entity to node CONV s8e1 (GOLD UNMAPPED)  not found in GOLD
-Document-level relation from node CONV s16e2 (GOLD s16p3)    :same-entity to node CONV s15i1 (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s15p1 / person (CONV UNMAPPED)   :same-entity to node GOLD s16p1 / person (CONV UNMAPPED)          not found in CONV
+Document-level relation from node GOLD s15p2 / person (CONV UNMAPPED)   :same-entity to node GOLD s16p2 / person (CONV UNMAPPED)          not found in CONV
+Document-level relation from node GOLD s16p3 / person (je) (CONV s16e2) :subset-of   to node GOLD s15p4 / person (ten) (CONV s15t1)       not found in CONV
+Document-level relation from node GOLD s16p3 / person (je) (CONV s16e2) :subset-of   to node GOLD s15p5 / person (ten) (CONV s15t2)       not found in CONV
+Document-level relation from node CONV s16e1 / entity (GOLD UNMAPPED)   :same-entity to node CONV s8e1 / entity (GOLD UNMAPPED)           not found in GOLD
+Document-level relation from node CONV s16e2 / entity (je) (GOLD s16p3) :same-entity to node CONV s15i1 / identity-91 (,) (GOLD UNMAPPED) not found in GOLD
 
 Correct 6 out of 26 non-empty GOLD values => recall    23%.
 Correct 6 out of 11 non-empty CONV values => precision 55%.
@@ -2132,12 +2132,12 @@ Node GOLD s16s1 / say-91            mismatch in :ARG1:           GOLD = s16z1   
 Node GOLD s16s1 / say-91            mismatch in :ARG2:           GOLD = s16p2            CONV = UNMAPPED
 Node GOLD s16s1 / say-91            mismatch in :aspect:         GOLD = activity         CONV = UNMAPPED
 Node GOLD s16s1 / say-91            mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node CONV s16e1 (GOLD UNMAPPED) :same-entity to node CONV s8e1 (GOLD UNMAPPED)  not found in GOLD
-Document-level relation from node CONV s16e2 (GOLD s16p3)    :same-entity to node CONV s15i1 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node GOLD s15p1 (CONV UNMAPPED) :same-entity to node GOLD s16p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s15p2 (CONV UNMAPPED) :same-entity to node GOLD s16p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s16p3 (CONV s16e2)    :subset-of   to node GOLD s15p4 (CONV s15t1)    not found in CONV
-Document-level relation from node GOLD s16p3 (CONV s16e2)    :subset-of   to node GOLD s15p5 (CONV s15t2)    not found in CONV
+Document-level relation from node CONV s16e1 / entity (GOLD UNMAPPED)   :same-entity to node CONV s8e1 / entity (GOLD UNMAPPED)           not found in GOLD
+Document-level relation from node CONV s16e2 / entity (je) (GOLD s16p3) :same-entity to node CONV s15i1 / identity-91 (,) (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s15p1 / person (CONV UNMAPPED)   :same-entity to node GOLD s16p1 / person (CONV UNMAPPED)          not found in CONV
+Document-level relation from node GOLD s15p2 / person (CONV UNMAPPED)   :same-entity to node GOLD s16p2 / person (CONV UNMAPPED)          not found in CONV
+Document-level relation from node GOLD s16p3 / person (je) (CONV s16e2) :subset-of   to node GOLD s15p4 / person (ten) (CONV s15t1)       not found in CONV
+Document-level relation from node GOLD s16p3 / person (je) (CONV s16e2) :subset-of   to node GOLD s15p5 / person (ten) (CONV s15t2)       not found in CONV
 
 Correct 6 out of 11 non-empty CONV values => recall    55%.
 Correct 6 out of 26 non-empty GOLD values => precision 23%.
@@ -2231,13 +2231,13 @@ Node GOLD s17u1 / učit-001 (učili)              mismatch in :quote:          G
 Node GOLD s17v1 / vykopávat-002 (jak vykopávat) mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
 Node GOLD s17v1 / vykopávat-002 (jak vykopávat) mismatch in :manner:         GOLD =                            CONV = s17j1
 Node CONV s17j1 / jak (jak)                     mismatch in concept:         CONV = jak                        GOLD = UNMAPPED
-Document-level relation from node GOLD s15p6 (CONV s15p2)    :same-entity to node GOLD s17p4 (CONV s17p1)    not found in CONV
-Document-level relation from node GOLD s16p1 (CONV UNMAPPED) :same-entity to node GOLD s17p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s16p2 (CONV UNMAPPED) :same-entity to node GOLD s17p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s16p3 (CONV s16e2)    :same-entity to node GOLD s17p3 (CONV s17t1)    not found in CONV
-Document-level relation from node GOLD s17p4 (CONV s17p1)    :subset-of   to node GOLD s17p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s17p1 (GOLD s17p4)    :same-entity to node CONV s15p2 (GOLD s15p6)    not found in GOLD
-Document-level relation from node CONV s17t1 (GOLD s17p3)    :same-entity to node CONV s16e2 (GOLD s16p3)    not found in GOLD
+Document-level relation from node GOLD s15p6 / person (nás) (CONV s15p2) :same-entity to node GOLD s17p4 / person (nás) (CONV s17p1) not found in CONV
+Document-level relation from node GOLD s16p1 / person (CONV UNMAPPED)    :same-entity to node GOLD s17p1 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s16p2 / person (CONV UNMAPPED)    :same-entity to node GOLD s17p2 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s16p3 / person (je) (CONV s16e2)  :same-entity to node GOLD s17p3 / person (Ti) (CONV s17t1)  not found in CONV
+Document-level relation from node GOLD s17p4 / person (nás) (CONV s17p1) :subset-of   to node GOLD s17p1 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node CONV s17p1 / person (nás) (GOLD s17p4) :same-entity to node CONV s15p2 / person (nás) (GOLD s15p6) not found in GOLD
+Document-level relation from node CONV s17t1 / ten (Ti) (GOLD s17p3)     :same-entity to node CONV s16e2 / entity (je) (GOLD s16p3)  not found in GOLD
 
 Correct 18 out of 40 non-empty GOLD values => recall    45%.
 Correct 18 out of 24 non-empty CONV values => precision 75%.
@@ -2263,13 +2263,13 @@ Node GOLD s17s1 / say-91                    mismatch in :ARG1:           GOLD = 
 Node GOLD s17s1 / say-91                    mismatch in :ARG2:           GOLD = s17p2                      CONV = UNMAPPED
 Node GOLD s17s1 / say-91                    mismatch in :aspect:         GOLD = activity                   CONV = UNMAPPED
 Node GOLD s17s1 / say-91                    mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node CONV s17p1 (GOLD s17p4)    :same-entity to node CONV s15p2 (GOLD s15p6)    not found in GOLD
-Document-level relation from node CONV s17t1 (GOLD s17p3)    :same-entity to node CONV s16e2 (GOLD s16p3)    not found in GOLD
-Document-level relation from node GOLD s15p6 (CONV s15p2)    :same-entity to node GOLD s17p4 (CONV s17p1)    not found in CONV
-Document-level relation from node GOLD s16p1 (CONV UNMAPPED) :same-entity to node GOLD s17p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s16p2 (CONV UNMAPPED) :same-entity to node GOLD s17p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s16p3 (CONV s16e2)    :same-entity to node GOLD s17p3 (CONV s17t1)    not found in CONV
-Document-level relation from node GOLD s17p4 (CONV s17p1)    :subset-of   to node GOLD s17p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s17p1 / person (nás) (GOLD s17p4) :same-entity to node CONV s15p2 / person (nás) (GOLD s15p6) not found in GOLD
+Document-level relation from node CONV s17t1 / ten (Ti) (GOLD s17p3)     :same-entity to node CONV s16e2 / entity (je) (GOLD s16p3)  not found in GOLD
+Document-level relation from node GOLD s15p6 / person (nás) (CONV s15p2) :same-entity to node GOLD s17p4 / person (nás) (CONV s17p1) not found in CONV
+Document-level relation from node GOLD s16p1 / person (CONV UNMAPPED)    :same-entity to node GOLD s17p1 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s16p2 / person (CONV UNMAPPED)    :same-entity to node GOLD s17p2 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s16p3 / person (je) (CONV s16e2)  :same-entity to node GOLD s17p3 / person (Ti) (CONV s17t1)  not found in CONV
+Document-level relation from node GOLD s17p4 / person (nás) (CONV s17p1) :subset-of   to node GOLD s17p1 / person (CONV UNMAPPED)    not found in CONV
 
 Correct 18 out of 24 non-empty CONV values => recall    75%.
 Correct 18 out of 40 non-empty GOLD values => precision 45%.
@@ -2368,12 +2368,12 @@ Node GOLD s18u1 / umr-unknown (Na jak dlouho) mismatch in :extent:         GOLD 
 Node CONV s18e1 / entity                      mismatch in concept:         CONV = entity              GOLD = UNMAPPED
 Node CONV s18e2 / entity                      mismatch in concept:         CONV = entity              GOLD = UNMAPPED
 Node CONV s18j2 / jak (jak)                   mismatch in concept:         CONV = jak                 GOLD = UNMAPPED
-Document-level relation from node GOLD s10s2 (CONV s10s1)    :same-entity to node GOLD s18t1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s17p1 (CONV UNMAPPED) :same-entity to node GOLD s18p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s17p2 (CONV UNMAPPED) :same-entity to node GOLD s18p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s17p4 (CONV s17p1)    :same-entity to node GOLD s18p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s18p3 (CONV UNMAPPED) :subset-of   to node GOLD s18p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s18e1 (GOLD UNMAPPED) :same-entity to node CONV s17p1 (GOLD s17p4)    not found in GOLD
+Document-level relation from node GOLD s10s2 / sraz (na srazy) (CONV s10s1) :same-entity to node GOLD s18t1 / thing (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s17p1 / person (CONV UNMAPPED)       :same-entity to node GOLD s18p2 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s17p2 / person (CONV UNMAPPED)       :same-entity to node GOLD s18p1 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s17p4 / person (nás) (CONV s17p1)    :same-entity to node GOLD s18p3 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s18p3 / person (CONV UNMAPPED)       :subset-of   to node GOLD s18p2 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node CONV s18e1 / entity (GOLD UNMAPPED)       :same-entity to node CONV s17p1 / person (nás) (GOLD s17p4) not found in GOLD
 
 Correct 1 out of 34 non-empty GOLD values => recall    3%.
 Correct 1 out of 11 non-empty CONV values => precision 9%.
@@ -2412,12 +2412,12 @@ Node GOLD s18s1 / say-91                    mismatch in :ARG2:           GOLD = 
 Node GOLD s18s1 / say-91                    mismatch in :aspect:         GOLD = activity                   CONV = UNMAPPED
 Node GOLD s18s1 / say-91                    mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node GOLD s18t1 / thing                     mismatch in concept:         GOLD = thing                      CONV = UNMAPPED
-Document-level relation from node CONV s18e1 (GOLD UNMAPPED) :same-entity to node CONV s17p1 (GOLD s17p4)    not found in GOLD
-Document-level relation from node GOLD s10s2 (CONV s10s1)    :same-entity to node GOLD s18t1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s17p1 (CONV UNMAPPED) :same-entity to node GOLD s18p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s17p2 (CONV UNMAPPED) :same-entity to node GOLD s18p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s17p4 (CONV s17p1)    :same-entity to node GOLD s18p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s18p3 (CONV UNMAPPED) :subset-of   to node GOLD s18p2 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s18e1 / entity (GOLD UNMAPPED)       :same-entity to node CONV s17p1 / person (nás) (GOLD s17p4) not found in GOLD
+Document-level relation from node GOLD s10s2 / sraz (na srazy) (CONV s10s1) :same-entity to node GOLD s18t1 / thing (CONV UNMAPPED)     not found in CONV
+Document-level relation from node GOLD s17p1 / person (CONV UNMAPPED)       :same-entity to node GOLD s18p2 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s17p2 / person (CONV UNMAPPED)       :same-entity to node GOLD s18p1 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s17p4 / person (nás) (CONV s17p1)    :same-entity to node GOLD s18p3 / person (CONV UNMAPPED)    not found in CONV
+Document-level relation from node GOLD s18p3 / person (CONV UNMAPPED)       :subset-of   to node GOLD s18p2 / person (CONV UNMAPPED)    not found in CONV
 
 Correct 1 out of 11 non-empty CONV values => recall    9%.
 Correct 1 out of 34 non-empty GOLD values => precision 3%.
@@ -2516,12 +2516,12 @@ Node GOLD s19t3 / temporal-quantity          mismatch in :quant:          GOLD =
 Node GOLD s19t3 / temporal-quantity          mismatch in :unit:           GOLD = s19t2                      CONV = UNMAPPED
 Node CONV s19t1 / ten (to)                   mismatch in concept:         CONV = ten                        GOLD = UNMAPPED
 Node CONV s19t1 / ten (to)                   mismatch in :refer-number:   CONV = singular                   GOLD = UNMAPPED
-Document-level relation from node GOLD s18j1 (CONV s18j1)    :same-event  to node GOLD s19e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s18p1 (CONV UNMAPPED) :same-entity to node GOLD s19p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s18p2 (CONV UNMAPPED) :same-entity to node GOLD s19p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s18u1 (CONV s18d1)    :same-entity to node GOLD s19o1 (CONV s19o1)    not found in CONV
-Document-level relation from node CONV s19o1 (GOLD s19o1)    :same-entity to node CONV s18d1 (GOLD s18u1)    not found in GOLD
-Document-level relation from node CONV s19t1 (GOLD UNMAPPED) :same-event  to node CONV s18j1 (GOLD s18j1)    not found in GOLD
+Document-level relation from node GOLD s18j1 / jezdit-002 (jste jezdili) (CONV s18j1)   :same-event  to node GOLD s19e1 / event (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s18p1 / person (CONV UNMAPPED)                   :same-entity to node GOLD s19p2 / person (CONV UNMAPPED)                 not found in CONV
+Document-level relation from node GOLD s18p2 / person (CONV UNMAPPED)                   :same-entity to node GOLD s19p1 / person (CONV UNMAPPED)                 not found in CONV
+Document-level relation from node GOLD s18u1 / umr-unknown (Na jak dlouho) (CONV s18d1) :same-entity to node GOLD s19o1 / or (nebo) (CONV s19o1)                 not found in CONV
+Document-level relation from node CONV s19o1 / or (nebo) (GOLD s19o1)                   :same-entity to node CONV s18d1 / dlouho (Na dlouho) (GOLD s18u1)        not found in GOLD
+Document-level relation from node CONV s19t1 / ten (to) (GOLD UNMAPPED)                 :same-event  to node CONV s18j1 / jezdit-002 (jste jezdili) (GOLD s18j1) not found in GOLD
 
 Correct 5 out of 36 non-empty GOLD values => recall    14%.
 Correct 5 out of 16 non-empty CONV values => precision 31%.
@@ -2558,12 +2558,12 @@ Node GOLD s19s1 / say-91            mismatch in :modal-strength: GOLD = full-aff
 Node GOLD s19t3 / temporal-quantity mismatch in concept:         GOLD = temporal-quantity          CONV = UNMAPPED
 Node GOLD s19t3 / temporal-quantity mismatch in :quant:          GOLD = 1                          CONV = UNMAPPED
 Node GOLD s19t3 / temporal-quantity mismatch in :unit:           GOLD = s19t2                      CONV = UNMAPPED
-Document-level relation from node CONV s19o1 (GOLD s19o1)    :same-entity to node CONV s18d1 (GOLD s18u1)    not found in GOLD
-Document-level relation from node CONV s19t1 (GOLD UNMAPPED) :same-event  to node CONV s18j1 (GOLD s18j1)    not found in GOLD
-Document-level relation from node GOLD s18j1 (CONV s18j1)    :same-event  to node GOLD s19e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s18p1 (CONV UNMAPPED) :same-entity to node GOLD s19p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s18p2 (CONV UNMAPPED) :same-entity to node GOLD s19p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s18u1 (CONV s18d1)    :same-entity to node GOLD s19o1 (CONV s19o1)    not found in CONV
+Document-level relation from node CONV s19o1 / or (nebo) (GOLD s19o1)                   :same-entity to node CONV s18d1 / dlouho (Na dlouho) (GOLD s18u1)        not found in GOLD
+Document-level relation from node CONV s19t1 / ten (to) (GOLD UNMAPPED)                 :same-event  to node CONV s18j1 / jezdit-002 (jste jezdili) (GOLD s18j1) not found in GOLD
+Document-level relation from node GOLD s18j1 / jezdit-002 (jste jezdili) (CONV s18j1)   :same-event  to node GOLD s19e1 / event (CONV UNMAPPED)                  not found in CONV
+Document-level relation from node GOLD s18p1 / person (CONV UNMAPPED)                   :same-entity to node GOLD s19p2 / person (CONV UNMAPPED)                 not found in CONV
+Document-level relation from node GOLD s18p2 / person (CONV UNMAPPED)                   :same-entity to node GOLD s19p1 / person (CONV UNMAPPED)                 not found in CONV
+Document-level relation from node GOLD s18u1 / umr-unknown (Na jak dlouho) (CONV s18d1) :same-entity to node GOLD s19o1 / or (nebo) (CONV s19o1)                 not found in CONV
 
 Correct 5 out of 16 non-empty CONV values => recall    31%.
 Correct 5 out of 36 non-empty GOLD values => precision 14%.
@@ -2685,10 +2685,10 @@ Node CONV s20j1 / jezdit-002            mismatch in :ARG1:           CONV = s20e
 Node CONV s20j1 / jezdit-002            mismatch in :aspect:         CONV = activity                   GOLD = UNMAPPED
 Node CONV s20j1 / jezdit-002            mismatch in :temporal:       CONV = s20p1                      GOLD = UNMAPPED
 Node CONV s20j1 / jezdit-002            mismatch in :temporal:       CONV = s20o1                      GOLD = UNMAPPED
-Document-level relation from node GOLD s19e1 (CONV UNMAPPED) :same-event  to node GOLD s20e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s19p1 (CONV UNMAPPED) :same-entity to node GOLD s20p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s19p2 (CONV UNMAPPED) :same-entity to node GOLD s20p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s20e1 (GOLD UNMAPPED) :same-entity to node CONV s18e1 (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s19e1 / event (CONV UNMAPPED)  :same-event  to node GOLD s20e1 / event (CONV UNMAPPED)  not found in CONV
+Document-level relation from node GOLD s19p1 / person (CONV UNMAPPED) :same-entity to node GOLD s20p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s19p2 / person (CONV UNMAPPED) :same-entity to node GOLD s20p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s20e1 / entity (GOLD UNMAPPED) :same-entity to node CONV s18e1 / entity (GOLD UNMAPPED) not found in GOLD
 
 Correct 4 out of 41 non-empty GOLD values => recall    10%.
 Correct 4 out of 21 non-empty CONV values => precision 19%.
@@ -2741,10 +2741,10 @@ Node GOLD s20s1 / say-91                 mismatch in :ARG1:           GOLD = s20
 Node GOLD s20s1 / say-91                 mismatch in :ARG2:           GOLD = s20p2                      CONV = UNMAPPED
 Node GOLD s20s1 / say-91                 mismatch in :aspect:         GOLD = activity                   CONV = UNMAPPED
 Node GOLD s20s1 / say-91                 mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node CONV s20e1 (GOLD UNMAPPED) :same-entity to node CONV s18e1 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node GOLD s19e1 (CONV UNMAPPED) :same-event  to node GOLD s20e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s19p1 (CONV UNMAPPED) :same-entity to node GOLD s20p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s19p2 (CONV UNMAPPED) :same-entity to node GOLD s20p2 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s20e1 / entity (GOLD UNMAPPED) :same-entity to node CONV s18e1 / entity (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s19e1 / event (CONV UNMAPPED)  :same-event  to node GOLD s20e1 / event (CONV UNMAPPED)  not found in CONV
+Document-level relation from node GOLD s19p1 / person (CONV UNMAPPED) :same-entity to node GOLD s20p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s19p2 / person (CONV UNMAPPED) :same-entity to node GOLD s20p2 / person (CONV UNMAPPED) not found in CONV
 
 Correct 4 out of 21 non-empty CONV values => recall    19%.
 Correct 4 out of 41 non-empty GOLD values => precision 10%.
@@ -2891,11 +2891,11 @@ Node CONV s21j1 / jezdit-002                  mismatch in :clausal-marker: CONV 
 Node CONV s21j1 / jezdit-002                  mismatch in :duration:       CONV = s21s2               GOLD = UNMAPPED
 Node CONV s21s1 / sobota (v sobotu)           mismatch in concept:         CONV = sobota              GOLD = UNMAPPED
 Node CONV s21s1 / sobota (v sobotu)           mismatch in :refer-number:   CONV = singular            GOLD = UNMAPPED
-Document-level relation from node GOLD s20e1 (CONV UNMAPPED) :same-event  to node GOLD s21e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s20p1 (CONV UNMAPPED) :same-entity to node GOLD s21p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s20p2 (CONV UNMAPPED) :same-entity to node GOLD s21p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s20s2 (CONV s20s1)    :same-entity to node GOLD s21s2 (CONV s21s2)    not found in CONV
-Document-level relation from node CONV s21e2 (GOLD UNMAPPED) :same-entity to node CONV s20e1 (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s20e1 / event (CONV UNMAPPED)           :same-event  to node GOLD s21e1 / event (CONV UNMAPPED)                    not found in CONV
+Document-level relation from node GOLD s20p1 / person (CONV UNMAPPED)          :same-entity to node GOLD s21p1 / person (CONV UNMAPPED)                   not found in CONV
+Document-level relation from node GOLD s20p2 / person (CONV UNMAPPED)          :same-entity to node GOLD s21p2 / person (CONV UNMAPPED)                   not found in CONV
+Document-level relation from node GOLD s20s2 / sobota (do soboty) (CONV s20s1) :same-entity to node GOLD s21s2 / sobota (v sobotu do soboty) (CONV s21s2) not found in CONV
+Document-level relation from node CONV s21e2 / entity (GOLD UNMAPPED)          :same-entity to node CONV s20e1 / entity (GOLD UNMAPPED)                   not found in GOLD
 
 Correct 9 out of 49 non-empty GOLD values => recall    18%.
 Correct 9 out of 30 non-empty CONV values => precision 30%.
@@ -2956,11 +2956,11 @@ Node GOLD s21s1 / say-91                mismatch in :ARG1:           GOLD = s21h
 Node GOLD s21s1 / say-91                mismatch in :ARG2:           GOLD = s21p2               CONV = UNMAPPED
 Node GOLD s21s1 / say-91                mismatch in :aspect:         GOLD = activity            CONV = UNMAPPED
 Node GOLD s21s1 / say-91                mismatch in :modal-strength: GOLD = full-affirmative    CONV = UNMAPPED
-Document-level relation from node CONV s21e2 (GOLD UNMAPPED) :same-entity to node CONV s20e1 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node GOLD s20e1 (CONV UNMAPPED) :same-event  to node GOLD s21e1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s20p1 (CONV UNMAPPED) :same-entity to node GOLD s21p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s20p2 (CONV UNMAPPED) :same-entity to node GOLD s21p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s20s2 (CONV s20s1)    :same-entity to node GOLD s21s2 (CONV s21s2)    not found in CONV
+Document-level relation from node CONV s21e2 / entity (GOLD UNMAPPED)          :same-entity to node CONV s20e1 / entity (GOLD UNMAPPED)                   not found in GOLD
+Document-level relation from node GOLD s20e1 / event (CONV UNMAPPED)           :same-event  to node GOLD s21e1 / event (CONV UNMAPPED)                    not found in CONV
+Document-level relation from node GOLD s20p1 / person (CONV UNMAPPED)          :same-entity to node GOLD s21p1 / person (CONV UNMAPPED)                   not found in CONV
+Document-level relation from node GOLD s20p2 / person (CONV UNMAPPED)          :same-entity to node GOLD s21p2 / person (CONV UNMAPPED)                   not found in CONV
+Document-level relation from node GOLD s20s2 / sobota (do soboty) (CONV s20s1) :same-entity to node GOLD s21s2 / sobota (v sobotu do soboty) (CONV s21s2) not found in CONV
 
 Correct 9 out of 30 non-empty CONV values => recall    30%.
 Correct 9 out of 49 non-empty GOLD values => precision 18%.
@@ -3131,11 +3131,11 @@ Node CONV s22i1 / identity-91 (jako)            mismatch in :ARG2:           CON
 Node CONV s22p1 / pomoc (pomoc)                 mismatch in concept:         CONV = pomoc                      GOLD = UNMAPPED
 Node CONV s22p1 / pomoc (pomoc)                 mismatch in :mod:            CONV = s22o1                      GOLD = UNMAPPED
 Node CONV s22p1 / pomoc (pomoc)                 mismatch in :refer-number:   CONV = singular                   GOLD = UNMAPPED
-Document-level relation from node GOLD s18p3 (CONV UNMAPPED) :same-entity to node GOLD s22p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s21p1 (CONV UNMAPPED) :same-entity to node GOLD s22p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s21p2 (CONV UNMAPPED) :same-entity to node GOLD s22p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s22p3 (CONV UNMAPPED) :subset-of   to node GOLD s21p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s22e2 (GOLD UNMAPPED) :same-entity to node CONV s21e2 (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s18p3 / person (CONV UNMAPPED) :same-entity to node GOLD s22p3 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s21p1 / person (CONV UNMAPPED) :same-entity to node GOLD s22p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s21p2 / person (CONV UNMAPPED) :same-entity to node GOLD s22p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s22p3 / person (CONV UNMAPPED) :subset-of   to node GOLD s21p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s22e2 / entity (GOLD UNMAPPED) :same-entity to node CONV s21e2 / entity (GOLD UNMAPPED) not found in GOLD
 
 Correct 17 out of 61 non-empty GOLD values => recall    28%.
 Correct 17 out of 43 non-empty CONV values => precision 40%.
@@ -3194,11 +3194,11 @@ Node GOLD s22s1 / say-91                    mismatch in :aspect:         GOLD = 
 Node GOLD s22s1 / say-91                    mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node GOLD s22t2 / temporal-quantity         mismatch in concept:         GOLD = temporal-quantity          CONV = UNMAPPED
 Node GOLD s22t2 / temporal-quantity         mismatch in :unit:           GOLD = s22d1                      CONV = UNMAPPED
-Document-level relation from node CONV s22e2 (GOLD UNMAPPED) :same-entity to node CONV s21e2 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node GOLD s18p3 (CONV UNMAPPED) :same-entity to node GOLD s22p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s21p1 (CONV UNMAPPED) :same-entity to node GOLD s22p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s21p2 (CONV UNMAPPED) :same-entity to node GOLD s22p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s22p3 (CONV UNMAPPED) :subset-of   to node GOLD s21p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s22e2 / entity (GOLD UNMAPPED) :same-entity to node CONV s21e2 / entity (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s18p3 / person (CONV UNMAPPED) :same-entity to node GOLD s22p3 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s21p1 / person (CONV UNMAPPED) :same-entity to node GOLD s22p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s21p2 / person (CONV UNMAPPED) :same-entity to node GOLD s22p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s22p3 / person (CONV UNMAPPED) :subset-of   to node GOLD s21p1 / person (CONV UNMAPPED) not found in CONV
 
 Correct 17 out of 43 non-empty CONV values => recall    40%.
 Correct 17 out of 61 non-empty GOLD values => precision 28%.
@@ -3292,10 +3292,10 @@ Node GOLD s23t1 / temporal-quantity (jednodenní) mismatch in :unit:           G
 Node GOLD s23t2 / temporal-quantity (dvoudenní)  mismatch in concept:         GOLD = temporal-quantity          CONV = dvoudenní
 Node GOLD s23t2 / temporal-quantity (dvoudenní)  mismatch in :quant:          GOLD = 2                          CONV = 
 Node GOLD s23t2 / temporal-quantity (dvoudenní)  mismatch in :unit:           GOLD = s23d2 unmapped             CONV = 
-Document-level relation from node GOLD s22a1 (CONV s22a1)    :same-entity to node GOLD s23e1 (CONV s23t1)    not found in CONV
-Document-level relation from node GOLD s22p1 (CONV UNMAPPED) :same-entity to node GOLD s23p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s22p2 (CONV UNMAPPED) :same-entity to node GOLD s23p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s23t1 (GOLD s23e1)    :same-entity to node CONV s22a1 (GOLD s22a1)    not found in GOLD
+Document-level relation from node GOLD s22a1 / and (a) (CONV s22a1)   :same-entity to node GOLD s23e1 / event (To) (CONV s23t1) not found in CONV
+Document-level relation from node GOLD s22p1 / person (CONV UNMAPPED) :same-entity to node GOLD s23p1 / person (CONV UNMAPPED)  not found in CONV
+Document-level relation from node GOLD s22p2 / person (CONV UNMAPPED) :same-entity to node GOLD s23p2 / person (CONV UNMAPPED)  not found in CONV
+Document-level relation from node CONV s23t1 / ten (To) (GOLD s23e1)  :same-entity to node CONV s22a1 / and (a) (GOLD s22a1)    not found in GOLD
 
 Correct 5 out of 35 non-empty GOLD values => recall    14%.
 Correct 5 out of 15 non-empty CONV values => precision 33%.
@@ -3331,10 +3331,10 @@ Node GOLD s23s1 / say-91                  mismatch in :ARG1:           GOLD = s2
 Node GOLD s23s1 / say-91                  mismatch in :ARG2:           GOLD = s23p2                      CONV = UNMAPPED
 Node GOLD s23s1 / say-91                  mismatch in :aspect:         GOLD = activity                   CONV = UNMAPPED
 Node GOLD s23s1 / say-91                  mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Document-level relation from node CONV s23t1 (GOLD s23e1)    :same-entity to node CONV s22a1 (GOLD s22a1)    not found in GOLD
-Document-level relation from node GOLD s22a1 (CONV s22a1)    :same-entity to node GOLD s23e1 (CONV s23t1)    not found in CONV
-Document-level relation from node GOLD s22p1 (CONV UNMAPPED) :same-entity to node GOLD s23p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s22p2 (CONV UNMAPPED) :same-entity to node GOLD s23p2 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s23t1 / ten (To) (GOLD s23e1)  :same-entity to node CONV s22a1 / and (a) (GOLD s22a1)    not found in GOLD
+Document-level relation from node GOLD s22a1 / and (a) (CONV s22a1)   :same-entity to node GOLD s23e1 / event (To) (CONV s23t1) not found in CONV
+Document-level relation from node GOLD s22p1 / person (CONV UNMAPPED) :same-entity to node GOLD s23p1 / person (CONV UNMAPPED)  not found in CONV
+Document-level relation from node GOLD s22p2 / person (CONV UNMAPPED) :same-entity to node GOLD s23p2 / person (CONV UNMAPPED)  not found in CONV
 
 Correct 5 out of 15 non-empty CONV values => recall    33%.
 Correct 5 out of 35 non-empty GOLD values => precision 14%.
@@ -3408,10 +3408,10 @@ Node GOLD s24s1 / say-91                    mismatch in :ARG2:           GOLD = 
 Node GOLD s24s1 / say-91                    mismatch in :aspect:         GOLD = activity            CONV = UNMAPPED
 Node GOLD s24s1 / say-91                    mismatch in :modal-strength: GOLD = full-affirmative    CONV = UNMAPPED
 Node CONV s24e1 / entity                    mismatch in concept:         CONV = entity              GOLD = UNMAPPED
-Document-level relation from node GOLD s22p3 (CONV UNMAPPED) :same-entity to node GOLD s24p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s23p1 (CONV UNMAPPED) :same-entity to node GOLD s24p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s23p2 (CONV UNMAPPED) :same-entity to node GOLD s24p1 (CONV UNMAPPED) not found in CONV
-Document-level relation from node CONV s24e1 (GOLD UNMAPPED) :same-entity to node CONV s22e2 (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s22p3 / person (CONV UNMAPPED) :same-entity to node GOLD s24p3 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s23p1 / person (CONV UNMAPPED) :same-entity to node GOLD s24p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s23p2 / person (CONV UNMAPPED) :same-entity to node GOLD s24p1 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s24e1 / entity (GOLD UNMAPPED) :same-entity to node CONV s22e2 / entity (GOLD UNMAPPED) not found in GOLD
 
 Correct 3 out of 26 non-empty GOLD values => recall    12%.
 Correct 3 out of 7 non-empty CONV values => precision 43%.
@@ -3438,10 +3438,10 @@ Node GOLD s24s1 / say-91                    mismatch in :ARG1:           GOLD = 
 Node GOLD s24s1 / say-91                    mismatch in :ARG2:           GOLD = s24p2            CONV = UNMAPPED
 Node GOLD s24s1 / say-91                    mismatch in :aspect:         GOLD = activity         CONV = UNMAPPED
 Node GOLD s24s1 / say-91                    mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node CONV s24e1 (GOLD UNMAPPED) :same-entity to node CONV s22e2 (GOLD UNMAPPED) not found in GOLD
-Document-level relation from node GOLD s22p3 (CONV UNMAPPED) :same-entity to node GOLD s24p3 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s23p1 (CONV UNMAPPED) :same-entity to node GOLD s24p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s23p2 (CONV UNMAPPED) :same-entity to node GOLD s24p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node CONV s24e1 / entity (GOLD UNMAPPED) :same-entity to node CONV s22e2 / entity (GOLD UNMAPPED) not found in GOLD
+Document-level relation from node GOLD s22p3 / person (CONV UNMAPPED) :same-entity to node GOLD s24p3 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s23p1 / person (CONV UNMAPPED) :same-entity to node GOLD s24p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s23p2 / person (CONV UNMAPPED) :same-entity to node GOLD s24p1 / person (CONV UNMAPPED) not found in CONV
 
 Correct 3 out of 7 non-empty CONV values => recall    43%.
 Correct 3 out of 26 non-empty GOLD values => precision 12%.
@@ -3493,8 +3493,8 @@ Node GOLD s25s1 / say-91 mismatch in :ARG1:           GOLD = s25n1            CO
 Node GOLD s25s1 / say-91 mismatch in :ARG2:           GOLD = s25p2            CONV = UNMAPPED
 Node GOLD s25s1 / say-91 mismatch in :aspect:         GOLD = activity         CONV = UNMAPPED
 Node GOLD s25s1 / say-91 mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node GOLD s24p1 (CONV UNMAPPED) :same-entity to node GOLD s25p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s24p2 (CONV UNMAPPED) :same-entity to node GOLD s25p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s24p1 / person (CONV UNMAPPED) :same-entity to node GOLD s25p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s24p2 / person (CONV UNMAPPED) :same-entity to node GOLD s25p1 / person (CONV UNMAPPED) not found in CONV
 
 Correct 1 out of 15 non-empty GOLD values => recall    7%.
 Correct 1 out of 1 non-empty CONV values => precision 100%.
@@ -3512,8 +3512,8 @@ Node GOLD s25s1 / say-91 mismatch in :ARG1:           GOLD = s25n1            CO
 Node GOLD s25s1 / say-91 mismatch in :ARG2:           GOLD = s25p2            CONV = UNMAPPED
 Node GOLD s25s1 / say-91 mismatch in :aspect:         GOLD = activity         CONV = UNMAPPED
 Node GOLD s25s1 / say-91 mismatch in :modal-strength: GOLD = full-affirmative CONV = UNMAPPED
-Document-level relation from node GOLD s24p1 (CONV UNMAPPED) :same-entity to node GOLD s25p2 (CONV UNMAPPED) not found in CONV
-Document-level relation from node GOLD s24p2 (CONV UNMAPPED) :same-entity to node GOLD s25p1 (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s24p1 / person (CONV UNMAPPED) :same-entity to node GOLD s25p2 / person (CONV UNMAPPED) not found in CONV
+Document-level relation from node GOLD s24p2 / person (CONV UNMAPPED) :same-entity to node GOLD s25p1 / person (CONV UNMAPPED) not found in CONV
 
 Correct 1 out of 1 non-empty CONV values => recall    100%.
 Correct 1 out of 15 non-empty GOLD values => precision 7%.

@@ -457,9 +457,9 @@ Node ML s4s2 / stát-014               mismatch in :temporal: ML =              
 Node ML s4s3 / sobota                 mismatch in concept:   ML = sobota                 HH = UNMAPPED
 Node HH s4d5 / date-entity            mismatch in concept:   HH = date-entity            ML = UNMAPPED
 Node HH s4d5 / date-entity            mismatch in :weekday:  HH = s4s4                   ML = UNMAPPED
-Document-level relation from node ML s3r1 (HH s3r1) :subset-of  to node ML s4c1 (HH s4d1) not found in HH
-Document-level relation from node ML s3s1 (HH s3s1) :same-event to node ML s4s (HH s4s3)  not found in HH
-Document-level relation from node HH s3s1 (ML s3s1) :same-event to node HH s4s1 (ML s4s1) not found in ML
+Document-level relation from node ML s3r1 / rok (v průběhu roku) (HH s3r1) :subset-of  to node ML s4c1 / date-entity (Od posledního čtvrtletí) (HH s4d1) not found in HH
+Document-level relation from node ML s3s1 / say-91 (HH s3s1)               :same-event to node ML s4s / say-91 (HH s4s3)                                 not found in HH
+Document-level relation from node HH s3s1 / say-91 (ML s3s1)               :same-event to node HH s4s1 / stát-014 (budou stát) (ML s4s1)                 not found in ML
 
 Correct 50 out of 58 non-empty ML values => recall    86%.
 Correct 50 out of 55 non-empty HH values => precision 91%.
@@ -474,9 +474,9 @@ Node HH s4s2 / stát-014              mismatch in :temporal: HH =               
 Node HH s4s4 / sobota (v sobotu)     mismatch in concept:   HH = sobota        ML = date-entity
 Node HH s4s4 / sobota (v sobotu)     mismatch in :weekday:  HH =               ML = s4s3
 Node ML s4s3 / sobota                mismatch in concept:   ML = sobota        HH = UNMAPPED
-Document-level relation from node HH s3s1 (ML s3s1) :same-event to node HH s4s1 (ML s4s1) not found in ML
-Document-level relation from node ML s3r1 (HH s3r1) :subset-of  to node ML s4c1 (HH s4d1) not found in HH
-Document-level relation from node ML s3s1 (HH s3s1) :same-event to node ML s4s (HH s4s3)  not found in HH
+Document-level relation from node HH s3s1 / say-91 (ML s3s1)               :same-event to node HH s4s1 / stát-014 (budou stát) (ML s4s1)                 not found in ML
+Document-level relation from node ML s3r1 / rok (v průběhu roku) (HH s3r1) :subset-of  to node ML s4c1 / date-entity (Od posledního čtvrtletí) (HH s4d1) not found in HH
+Document-level relation from node ML s3s1 / say-91 (HH s3s1)               :same-event to node ML s4s / say-91 (HH s4s3)                                 not found in HH
 
 Correct 50 out of 55 non-empty HH values => recall    91%.
 Correct 50 out of 58 non-empty ML values => precision 86%.
@@ -543,12 +543,12 @@ Node ML s5n1 / noviny                 mismatch in concept:       ML = noviny    
 Node ML s5n1 / noviny                 mismatch in :refer-number: ML = singular               HH = UNMAPPED
 Node ML s5v1 / vydání (vydání)        mismatch in :mod:          ML = s5n1 unmapped          HH = 
 Node ML s5z1 / zůstávat-004 (zůstává) mismatch in :quote:        ML = s5s1 mapped to HH s5s1 HH = 
-Document-level relation from node ML s3c1 (HH s3c1) :same-entity to node ML s5c1 (HH s5c1)     not found in HH
-Document-level relation from node ML s4k2 (HH s4k1) :same-entity to node ML s5k2 (HH s5k1)     not found in HH
-Document-level relation from node ML s4n1 (HH s4n1) :same-entity to node ML s5n1 (HH UNMAPPED) not found in HH
-Document-level relation from node ML s4s (HH s4s3)  :same-event  to node ML s5s1 (HH s5s1)     not found in HH
-Document-level relation from node HH s4n1 (ML s4n1) :subset-of   to node HH s5v1 (ML s5v1)     not found in ML
-Document-level relation from node HH s4s1 (ML s4s1) :same-event  to node HH s5s1 (ML s5s1)     not found in ML
+Document-level relation from node ML s3c1 / cena (do ceny) (HH s3c1)             :same-entity to node ML s5c1 / cena (Cena) (HH s5c1)     not found in HH
+Document-level relation from node ML s4k2 / koruna (korun korun) (HH s4k1)       :same-entity to node ML s5k2 / koruna (HH s5k1)          not found in HH
+Document-level relation from node ML s4n1 / news-media (Lidové noviny) (HH s4n1) :same-entity to node ML s5n1 / noviny (HH UNMAPPED)      not found in HH
+Document-level relation from node ML s4s / say-91 (HH s4s3)                      :same-event  to node ML s5s1 / say-91 (HH s5s1)          not found in HH
+Document-level relation from node HH s4n1 / news-media (Lidové noviny) (ML s4n1) :subset-of   to node HH s5v1 / vydání (vydání) (ML s5v1) not found in ML
+Document-level relation from node HH s4s1 / stát-014 (budou stát) (ML s4s1)      :same-event  to node HH s5s1 / say-91 (ML s5s1)          not found in ML
 
 Correct 26 out of 34 non-empty ML values => recall    76%.
 Correct 26 out of 28 non-empty HH values => precision 93%.
@@ -557,12 +557,12 @@ Comparing attributes of HH nodes with their ML counterparts.
 Node HH s5z1 / zůstávat-004 (zůstává) mismatch in :quote:        HH =          ML = s5s1
 Node ML s5n1 / noviny                 mismatch in concept:       ML = noviny   HH = UNMAPPED
 Node ML s5n1 / noviny                 mismatch in :refer-number: ML = singular HH = UNMAPPED
-Document-level relation from node HH s4n1 (ML s4n1) :subset-of   to node HH s5v1 (ML s5v1)     not found in ML
-Document-level relation from node HH s4s1 (ML s4s1) :same-event  to node HH s5s1 (ML s5s1)     not found in ML
-Document-level relation from node ML s3c1 (HH s3c1) :same-entity to node ML s5c1 (HH s5c1)     not found in HH
-Document-level relation from node ML s4k2 (HH s4k1) :same-entity to node ML s5k2 (HH s5k1)     not found in HH
-Document-level relation from node ML s4n1 (HH s4n1) :same-entity to node ML s5n1 (HH UNMAPPED) not found in HH
-Document-level relation from node ML s4s (HH s4s3)  :same-event  to node ML s5s1 (HH s5s1)     not found in HH
+Document-level relation from node HH s4n1 / news-media (Lidové noviny) (ML s4n1) :subset-of   to node HH s5v1 / vydání (vydání) (ML s5v1) not found in ML
+Document-level relation from node HH s4s1 / stát-014 (budou stát) (ML s4s1)      :same-event  to node HH s5s1 / say-91 (ML s5s1)          not found in ML
+Document-level relation from node ML s3c1 / cena (do ceny) (HH s3c1)             :same-entity to node ML s5c1 / cena (Cena) (HH s5c1)     not found in HH
+Document-level relation from node ML s4k2 / koruna (korun korun) (HH s4k1)       :same-entity to node ML s5k2 / koruna (HH s5k1)          not found in HH
+Document-level relation from node ML s4n1 / news-media (Lidové noviny) (HH s4n1) :same-entity to node ML s5n1 / noviny (HH UNMAPPED)      not found in HH
+Document-level relation from node ML s4s / say-91 (HH s4s3)                      :same-event  to node ML s5s1 / say-91 (HH s5s1)          not found in HH
 
 Correct 26 out of 28 non-empty HH values => recall    93%.
 Correct 26 out of 34 non-empty ML values => precision 76%.
