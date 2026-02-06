@@ -1641,6 +1641,48 @@ sub get_node_attributes_mapped
 
 
 #------------------------------------------------------------------------------
+# Projects a node from one file to another, based on mapping computed earlier.
+# Takes a node variable and returns the projected variable. If the node has no
+# counterpart in the other file, returns the string 'UNMAPPED'. The function
+# can also return undef if anything is wrong with the input, for example if the
+# string provided as source variable does not point to a known node.
+#------------------------------------------------------------------------------
+sub get_node_mapping
+{
+    my $src_variable = shift;
+    my $tgt_file_label = shift;
+    my $src_nodes = shift; # reference to variable-indexed hash of nodes in the source file/sentence
+    return undef if(!defined($src_variable) || $src_variable eq '' || !defined($tgt_file_label) || $tgt_file_label eq '');
+    return undef if(!exists($src_nodes->{$src_variable}));
+    my $src_node = $src_nodes->{$value};
+    my @ccf = sort(keys(%{$src_node->{crossfile}{$tgt_file_label}}));
+    # Depending on whether mapping symmetrization has been performed, the source
+    # node may be mapped to multiple target nodes. At present, symmetrization is
+    # always run, hence this should not happen and we can throw an exception if
+    # it does. The alternative used in the past was to take all mappings and if
+    # the source node was a child node of a relation, we added multiple relations
+    # with different target child node each time. One could also count each of
+    # them as 1/N of an occurrence, or somehow pick one of them and throw away
+    # the rest.
+    my $nccf = scalar(@ccf);
+    if($nccf > 1)
+    {
+        my $ccf = join(', ', @ccf);
+        confess("Internal error. Node '$src_variable' mapped to $nccf nodes in $tgt_file_label: '$ccf'");
+    }
+    elsif($nccf == 0)
+    {
+        return 'UNMAPPED';
+    }
+    else
+    {
+        return $ccf[0];
+    }
+}
+
+
+
+#------------------------------------------------------------------------------
 # Takes a relation name, looks into the global configuration hash, and says
 # whether the relation should be ignored in the current evaluation.
 #------------------------------------------------------------------------------

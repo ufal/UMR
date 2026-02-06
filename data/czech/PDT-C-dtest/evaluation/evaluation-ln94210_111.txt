@@ -1,5 +1,5 @@
 Found 14 sentences in GOLD:
-1-72, 75-152, 155-208, 211-276, 279-325, 328-401, 404-493, 496-624, 627-682, 685-734, 737-801, 804-880, 883-952, 955-986
+1-72, 75-152, 155-208, 211-276, 279-325, 328-401, 404-490, 493-620, 623-678, 681-730, 733-797, 800-876, 879-948, 951-982
 Found 14 sentences in CONV:
 1-54, 57-129, 132-176, 179-238, 241-265, 268-328, 331-409, 412-503, 506-544, 547-578, 581-630, 633-690, 693-748, 751-776
 
@@ -2001,7 +2001,7 @@ GOLD                                                                            
                         :refer-number plural                                                                                            :refer-number plural)
                         :refer-person 1st)                                                                                          :aspect activity)
          :ARG2 (s11d1 / dopis                                                                                                   :refer-number plural)
-                       :ARG0 s11c1                                                                                          :aspect activity)
+                       :actor s11c1                                                                                         :aspect activity)
                        :refer-number plural)                                                                            :aspect state)
          :ARG1 (s11h1 / hodnotit-003                                                                            
                         :aspect activity                                                                        
@@ -2070,7 +2070,8 @@ Node GOLD s11c1 / číst-002                         mismatch in concept:       
 Node GOLD s11c1 / číst-002                         mismatch in :ARG1:           GOLD = s11n1                      CONV = UNMAPPED
 Node GOLD s11c1 / číst-002                         mismatch in :aspect:         GOLD = habitual                   CONV = UNMAPPED
 Node GOLD s11c1 / číst-002                         mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Node GOLD s11d1 / dopis (z dopisů)                 mismatch in :ARG0:           GOLD = s11c1 unmapped             CONV = s11c1
+Node GOLD s11d1 / dopis (z dopisů)                 mismatch in :actor:          GOLD = s11c1 unmapped             CONV = 
+Node GOLD s11d1 / dopis (z dopisů)                 mismatch in :ARG0:           GOLD =                            CONV = s11c1
 Node GOLD s11h1 / hodnotit-003 (že hodnotíte)      mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
 Node GOLD s11n1 / news-media (v Lidových novinách) mismatch in concept:         GOLD = news-media                 CONV = noviny
 Node GOLD s11n1 / news-media (v Lidových novinách) mismatch in :name:           GOLD = s11n2 unmapped             CONV = 
@@ -2101,7 +2102,8 @@ Comparing attributes of CONV nodes with their GOLD counterparts.
 Node CONV s11c1 / čtenář (čtenáři vašich)     mismatch in concept:         CONV = čtenář                     GOLD = person
 Node CONV s11c1 / čtenář (čtenáři vašich)     mismatch in :ARG0-of:        CONV =                            GOLD = s11c1
 Node CONV s11c1 / čtenář (čtenáři vašich)     mismatch in :refer-person:   CONV =                            GOLD = 2nd
-Node CONV s11d1 / dopis (z dopisů)            mismatch in :ARG0:           CONV = s11c1 mapped to GOLD s11p1 GOLD = s11c1
+Node CONV s11d1 / dopis (z dopisů)            mismatch in :ARG0:           CONV = s11c1 mapped to GOLD s11p1 GOLD = 
+Node CONV s11d1 / dopis (z dopisů)            mismatch in :actor:          CONV =                            GOLD = s11c1
 Node CONV s11h1 / hodnotit-003 (že hodnotíte) mismatch in :modal-strength: CONV =                            GOLD = full-affirmative
 Node CONV s11l1 / Lidový (Lidových)           mismatch in concept:         CONV = Lidový                     GOLD = UNMAPPED
 Node CONV s11n1 / noviny (v novinách)         mismatch in concept:         CONV = noviny                     GOLD = news-media

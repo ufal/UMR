@@ -249,8 +249,8 @@ GOLD                                                                        CONV
                       :parenthesis (s3v1 / vidět-007                        
                                            :aspect state                    
                                            :modal-strength full-affirmative 
-                                           :ARG0 s3e2                       
-                                           :ARG1 s3n2))))                   
+                                           :ARG0 s3e2)                      
+                      :ARG1-of s3v1)))                                      
 
 Node-token alignments:
 File GOLD: 4 nodes unaligned: s3a1/and, s3e2/person, s3e3/person, s3s1/say-91.
@@ -308,6 +308,7 @@ Node GOLD s3n1 / nechat-009 (Nechal jsem)      mismatch in :modal-strength: GOLD
 Node GOLD s3n1 / nechat-009 (Nechal jsem)      mismatch in :quote:          GOLD = s3s1 unmapped            CONV = 
 Node GOLD s3n2 / nachromovat-001 (nachromovat) mismatch in :ARG0:           GOLD = s3e3 unmapped            CONV = s3e2
 Node GOLD s3n2 / nachromovat-001 (nachromovat) mismatch in :ARG1:           GOLD = s3a1 unmapped            CONV = s3a1
+Node GOLD s3n2 / nachromovat-001 (nachromovat) mismatch in :ARG1-of:        GOLD = s3v1 mapped to CONV s3v1 CONV = 
 Node GOLD s3n2 / nachromovat-001 (nachromovat) mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
 Node GOLD s3s1 / say-91                        mismatch in concept:         GOLD = say-91                   CONV = UNMAPPED
 Node GOLD s3s1 / say-91                        mismatch in :ARG0:           GOLD = s3e1                     CONV = UNMAPPED
@@ -315,8 +316,8 @@ Node GOLD s3s1 / say-91                        mismatch in :ARG1:           GOLD
 Node GOLD s3s1 / say-91                        mismatch in :ARG2:           GOLD = s3e2                     CONV = UNMAPPED
 Node GOLD s3s1 / say-91                        mismatch in :aspect:         GOLD = activity                 CONV = UNMAPPED
 Node GOLD s3s1 / say-91                        mismatch in :modal-strength: GOLD = full-affirmative         CONV = UNMAPPED
-Node GOLD s3v1 / vidět-007 (jak vidíte)        mismatch in :ARG1:           GOLD = s3n2 mapped to CONV s3n2 CONV = s3n1
 Node GOLD s3v1 / vidět-007 (jak vidíte)        mismatch in :modal-strength: GOLD = full-affirmative         CONV = 
+Node GOLD s3v1 / vidět-007 (jak vidíte)        mismatch in :ARG1:           GOLD =                          CONV = s3n1
 Node CONV s3a1 / and (,)                       mismatch in concept:         CONV = and                      GOLD = UNMAPPED
 Node CONV s3a1 / and (,)                       mismatch in :op1:            CONV = s3l1                     GOLD = UNMAPPED
 Node CONV s3a1 / and (,)                       mismatch in :op2:            CONV = s3r1                     GOLD = UNMAPPED
@@ -339,9 +340,10 @@ Node CONV s3n1 / nechat-009 (Nechal jsem)      mismatch in :modal-strength: CONV
 Node CONV s3n1 / nechat-009 (Nechal jsem)      mismatch in :quote:          CONV =                          GOLD = s3s1
 Node CONV s3n2 / nachromovat-001 (nachromovat) mismatch in :ARG0:           CONV = s3e2 unmapped            GOLD = s3e3
 Node CONV s3n2 / nachromovat-001 (nachromovat) mismatch in :ARG1:           CONV = s3a1 unmapped            GOLD = s3a1
+Node CONV s3n2 / nachromovat-001 (nachromovat) mismatch in :ARG1-of:        CONV =                          GOLD = s3v1
 Node CONV s3n2 / nachromovat-001 (nachromovat) mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node CONV s3p1 / person                        mismatch in :refer-person:   CONV = 1st                      GOLD = 2nd
-Node CONV s3v1 / vidět-007 (jak vidíte)        mismatch in :ARG1:           CONV = s3n1 mapped to GOLD s3n1 GOLD = s3n2
+Node CONV s3v1 / vidět-007 (jak vidíte)        mismatch in :ARG1:           CONV = s3n1 mapped to GOLD s3n1 GOLD = 
 Node CONV s3v1 / vidět-007 (jak vidíte)        mismatch in :modal-strength: CONV =                          GOLD = full-affirmative
 Node GOLD s3a1 / and                           mismatch in concept:         GOLD = and                      CONV = UNMAPPED
 Node GOLD s3a1 / and                           mismatch in :op1:            GOLD = s3l1                     CONV = UNMAPPED
@@ -2843,8 +2845,8 @@ GOLD                                                                            
                                               :aspect state                     
                                               :modal-strength full-affirmative  
                                               :quote s25s1                      
-                                              :ARG2 (s25j2 / Jitka)             
-                                              :ARG1 s25s1))))                   
+                                              :ARG2 (s25j2 / Jitka))            
+                        :ARG1-of s25j1)))                                       
 
 Node-token alignments:
 File GOLD: 6 nodes unaligned: s25e1/person, s25e2/person, s25h1/have-rel-role-92, s25p1/person, s25s1/say-91, s25s3/sestra.
@@ -2898,10 +2900,10 @@ Node GOLD s25h1 / have-rel-role-92               mismatch in :ARG1:           GO
 Node GOLD s25h1 / have-rel-role-92               mismatch in :ARG4:           GOLD = s25s3                      CONV = UNMAPPED
 Node GOLD s25h1 / have-rel-role-92               mismatch in :aspect:         GOLD = state                      CONV = UNMAPPED
 Node GOLD s25h1 / have-rel-role-92               mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
-Node GOLD s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :ARG1:           GOLD = s25s1 unmapped             CONV = s25e1
 Node GOLD s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :aspect:         GOLD = state                      CONV = process
 Node GOLD s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :modal-strength: GOLD = full-affirmative           CONV = 
 Node GOLD s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :quote:          GOLD = s25s1 unmapped             CONV = 
+Node GOLD s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :ARG1:           GOLD =                            CONV = s25e1
 Node GOLD s25j2 / Jitka (Jitka)                  mismatch in :refer-number:   GOLD =                            CONV = singular
 Node GOLD s25p1 / person                         mismatch in concept:         GOLD = person                     CONV = UNMAPPED
 Node GOLD s25p1 / person                         mismatch in :refer-number:   GOLD = singular                   CONV = UNMAPPED
@@ -2913,6 +2915,7 @@ Node GOLD s25s1 / say-91                         mismatch in :ARG2:           GO
 Node GOLD s25s1 / say-91                         mismatch in :aspect:         GOLD = activity                   CONV = UNMAPPED
 Node GOLD s25s1 / say-91                         mismatch in :modal-strength: GOLD = full-affirmative           CONV = UNMAPPED
 Node GOLD s25s2 / person (sestra ta)             mismatch in concept:         GOLD = person                     CONV = sestra
+Node GOLD s25s2 / person (sestra ta)             mismatch in :ARG1-of:        GOLD = s25j1 mapped to CONV s25j1 CONV = 
 Node GOLD s25s2 / person (sestra ta)             mismatch in :ARG2-of:        GOLD = s25h1 unmapped             CONV = 
 Node GOLD s25s3 / sestra                         mismatch in concept:         GOLD = sestra                     CONV = UNMAPPED
 Node GOLD s25z1 / zemřít-001 (zemřela)           mismatch in :ARG1:           GOLD = s25s2 mapped to CONV s25s1 CONV = 
@@ -2934,12 +2937,13 @@ Node CONV s25e1 / entity                         mismatch in concept:         CO
 Node CONV s25i1 / identity-91 (,)                mismatch in concept:         CONV = identity-91      GOLD = UNMAPPED
 Node CONV s25i1 / identity-91 (,)                mismatch in :ARG1:           CONV = s25s1            GOLD = UNMAPPED
 Node CONV s25i1 / identity-91 (,)                mismatch in :ARG2:           CONV = s25t2            GOLD = UNMAPPED
-Node CONV s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :ARG1:           CONV = s25e1 unmapped   GOLD = s25s1
+Node CONV s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :ARG1:           CONV = s25e1 unmapped   GOLD = 
 Node CONV s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :aspect:         CONV = process          GOLD = state
 Node CONV s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :modal-strength: CONV =                  GOLD = full-affirmative
 Node CONV s25j1 / jmenovat-se-001 (se jmenovala) mismatch in :quote:          CONV =                  GOLD = s25s1
 Node CONV s25j2 / Jitka (Jitka)                  mismatch in :refer-number:   CONV = singular         GOLD = 
 Node CONV s25s1 / sestra (sestra)                mismatch in concept:         CONV = sestra           GOLD = person
+Node CONV s25s1 / sestra (sestra)                mismatch in :ARG1-of:        CONV =                  GOLD = s25j1
 Node CONV s25s1 / sestra (sestra)                mismatch in :ARG2-of:        CONV =                  GOLD = s25h1
 Node CONV s25t2 / ten (ta)                       mismatch in concept:         CONV = ten              GOLD = UNMAPPED
 Node CONV s25t2 / ten (ta)                       mismatch in :refer-number:   CONV = singular         GOLD = UNMAPPED
