@@ -418,6 +418,15 @@ sub parse_sentence_graph
         }
         $node->{econcept} = $econcept;
     }
+    # Make sure that the nodes of this sentence are also accessible globally
+    # in the current file (document).
+    foreach my $variable (sort(keys(%nodes)))
+    {
+        # Variables must be unique document-wide but we do not verify here that
+        # it is indeed the case. The files should be tested by the validator
+        # script first.
+        $file->{nodes}{$variable} = $nodes{$variable};
+    }
 }
 
 
