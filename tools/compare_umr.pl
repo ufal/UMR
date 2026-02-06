@@ -1450,6 +1450,8 @@ sub compare_node_attributes
             }
         }
     }
+    print_table(@table);
+    @table = ();
     # Compare document-level relations from this sentence.
     foreach my $s0triple (sort(keys(%{$sentence0->{docrels}})))
     {
@@ -1464,7 +1466,11 @@ sub compare_node_attributes
         }
         else
         {
-            push(@table, ["Document-level relation from $label0", $s0triple, "mapped to $s1triple", "not found in $label1"]);
+            ###!!! Better diagnostics, as above with sentence-level relations: accompany the variable by concept and aligned text.
+            #my $node0 = $sentence0->{nodes}{$f0var};
+            #my $concept0 = $node0->{concept};
+            #my $text0 = $node0->{aligned_text} ? " ($node0->{aligned_text})" : '';
+            push(@table, ["Document-level relation from node $label0 $s0tn0 ($label1 $s1tn0)", $relation, "to node $label0 $s0tn1 ($label1 $s1tn1)", "not found in $label1"]);
         }
         $n_total_0++;
     }
@@ -1476,7 +1482,11 @@ sub compare_node_attributes
         my $s0triple = "$s0tn0 $relation $s0tn1";
         if(!exists($sentence0->{docrels}{$s0triple}))
         {
-            push(@table, ["Document-level relation from $label1", $s1triple, "mapped to $s0triple", "not found in $label0"]);
+            ###!!! Better diagnostics, as above with sentence-level relations: accompany the variable by concept and aligned text.
+            #my $node0 = $sentence0->{nodes}{$f0var};
+            #my $concept0 = $node0->{concept};
+            #my $text0 = $node0->{aligned_text} ? " ($node0->{aligned_text})" : '';
+            push(@table, ["Document-level relation from node $label1 $s1tn0 ($label0 $s0tn0)", $relation, "to node $label1 $s1tn1 ($label0 $s0tn1)", "not found in $label0"]);
             $n_total_1++;
         }
     }
