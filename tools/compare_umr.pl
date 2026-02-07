@@ -12,7 +12,6 @@ use Carp;
 use Getopt::Long;
 
 ###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off. Note that most document-level relations can be inverted, too, but in a different manner.
-###!!! TODO: Make document-level evaluation observe individual relation exclusion.
 ###!!! TODO: Evaluate node-token alignments. (Careful – they are used as basis for other comparisons. But at least we can say which tokens have an alignment and which do not.)
 ###!!! TODO: Add less verbose mode (only final numbers).
 ###!!! TODO: Move the script to a separate repository (umrtools?)
@@ -1619,6 +1618,7 @@ sub compare_document_level_relations
     foreach my $s0triple (sort(keys(%{$sentence0->{docrels}})))
     {
         my ($s0tn0, $relation, $s0tn1) = split(/ /, $s0triple);
+        next if(is_relation_ignored($relation));
         my $s1tn0 = get_single_node_mapping($s0tn0, $label1, $file0->{nodes}) // $s0tn0;
         my $s1tn1 = get_single_node_mapping($s0tn1, $label1, $file0->{nodes}) // $s0tn1;
         my $s1triple = "$s1tn0 $relation $s1tn1";
@@ -1648,6 +1648,7 @@ sub compare_document_level_relations
     foreach my $s1triple (sort(keys(%{$sentence1->{docrels}})))
     {
         my ($s1tn0, $relation, $s1tn1) = split(/ /, $s1triple);
+        next if(is_relation_ignored($relation));
         my $s0tn0 = get_single_node_mapping($s1tn0, $label0, $file1->{nodes}) // $s1tn0;
         my $s0tn1 = get_single_node_mapping($s1tn1, $label0, $file1->{nodes}) // $s1tn1;
         my $s0triple = "$s0tn0 $relation $s0tn1";
