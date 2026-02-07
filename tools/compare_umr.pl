@@ -1451,62 +1451,11 @@ sub compare_node_attributes
         }
     }
     print_table(@table);
-    @table = ();
     # Compare document-level relations from this sentence.
-    foreach my $s0triple (sort(keys(%{$sentence0->{docrels}})))
-    {
-        my ($s0tn0, $relation, $s0tn1) = split(/ /, $s0triple);
-        my $s1tn0 = get_single_node_mapping($s0tn0, $label1, $file0->{nodes}) // $s0tn0;
-        my $s1tn1 = get_single_node_mapping($s0tn1, $label1, $file0->{nodes}) // $s0tn1;
-        my $s1triple = "$s1tn0 $relation $s1tn1";
-        if(exists($sentence1->{docrels}{$s1triple}))
-        {
-            $n_correct++;
-            $n_total_1++;
-        }
-        else
-        {
-            my $nodedebug0 = '';
-            if(exists($file0->{nodes}{$s0tn0}))
-            {
-                my $text0 = $file0->{nodes}{$s0tn0}{aligned_text} ? " ($file0->{nodes}{$s0tn0}{aligned_text})" : '';
-                $nodedebug0 = " / $file0->{nodes}{$s0tn0}{concept}$text0";
-            }
-            my $nodedebug1 = '';
-            if(exists($file0->{nodes}{$s0tn1}))
-            {
-                my $text1 = $file0->{nodes}{$s0tn1}{aligned_text} ? " ($file0->{nodes}{$s0tn1}{aligned_text})" : '';
-                $nodedebug1 = " / $file0->{nodes}{$s0tn1}{concept}$text1";
-            }
-            push(@table, ["Document-level relation from node $label0 $s0tn0$nodedebug0 ($label1 $s1tn0)", $relation, "to node $label0 $s0tn1$nodedebug1 ($label1 $s1tn1)", "not found in $label1"]);
-        }
-        $n_total_0++;
-    }
-    foreach my $s1triple (sort(keys(%{$sentence1->{docrels}})))
-    {
-        my ($s1tn0, $relation, $s1tn1) = split(/ /, $s1triple);
-        my $s0tn0 = get_single_node_mapping($s1tn0, $label0, $file1->{nodes}) // $s1tn0;
-        my $s0tn1 = get_single_node_mapping($s1tn1, $label0, $file1->{nodes}) // $s1tn1;
-        my $s0triple = "$s0tn0 $relation $s0tn1";
-        if(!exists($sentence0->{docrels}{$s0triple}))
-        {
-            my $nodedebug0 = '';
-            if(exists($file1->{nodes}{$s1tn0}))
-            {
-                my $text0 = $file1->{nodes}{$s1tn0}{aligned_text} ? " ($file1->{nodes}{$s1tn0}{aligned_text})" : '';
-                $nodedebug0 = " / $file1->{nodes}{$s1tn0}{concept}$text0";
-            }
-            my $nodedebug1 = '';
-            if(exists($file1->{nodes}{$s1tn1}))
-            {
-                my $text1 = $file1->{nodes}{$s1tn1}{aligned_text} ? " ($file1->{nodes}{$s1tn1}{aligned_text})" : '';
-                $nodedebug1 = " / $file1->{nodes}{$s1tn1}{concept}$text1";
-            }
-            push(@table, ["Document-level relation from node $label1 $s1tn0$nodedebug0 ($label0 $s0tn0)", $relation, "to node $label1 $s1tn1$nodedebug1 ($label0 $s0tn1)", "not found in $label0"]);
-            $n_total_1++;
-        }
-    }
-    print_table(@table);
+    my $result = compare_document_level_relations($sentence0, $sentence1);
+    $n_total_0 += $result->{total0};
+    $n_total_1 += $result->{total1};
+    $n_correct += $result->{correct};
     print("\n");
     printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
     printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
@@ -1641,6 +1590,81 @@ sub compare_two_nodes
     # and we can also update the nicer global counts for mapped nodes.
     return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct, 'mismatches' => \@mismatches, 'matches' => \@matches,
             'total0_mapped' => $n_total_0, 'total1_mapped' => $n_total_1, 'correct_mapped' => $n_correct};
+}
+
+
+
+#------------------------------------------------------------------------------
+# Compares document-level relations of two sentences. Prints the mismatches to
+# STDOUT and returns their counts.
+#------------------------------------------------------------------------------
+sub compare_document_level_relations
+{
+    my $sentence0 = shift; # hash reference
+    my $sentence1 = shift; # hash reference
+    my $file0 = $sentence0->{file};
+    my $file1 = $sentence1->{file};
+    my $label0 = $file0->{label};
+    my $label1 = $file1->{label};
+    my $n_correct = 0;
+    my $n_total_0 = 0;
+    my $n_total_1 = 0;
+    my @table = ();
+    foreach my $s0triple (sort(keys(%{$sentence0->{docrels}})))
+    {
+        my ($s0tn0, $relation, $s0tn1) = split(/ /, $s0triple);
+        my $s1tn0 = get_single_node_mapping($s0tn0, $label1, $file0->{nodes}) // $s0tn0;
+        my $s1tn1 = get_single_node_mapping($s0tn1, $label1, $file0->{nodes}) // $s0tn1;
+        my $s1triple = "$s1tn0 $relation $s1tn1";
+        if(exists($sentence1->{docrels}{$s1triple}))
+        {
+            $n_correct++;
+            $n_total_1++;
+        }
+        else
+        {
+            my $nodedebug0 = '';
+            if(exists($file0->{nodes}{$s0tn0}))
+            {
+                my $text0 = $file0->{nodes}{$s0tn0}{aligned_text} ? " ($file0->{nodes}{$s0tn0}{aligned_text})" : '';
+                $nodedebug0 = " / $file0->{nodes}{$s0tn0}{concept}$text0";
+            }
+            my $nodedebug1 = '';
+            if(exists($file0->{nodes}{$s0tn1}))
+            {
+                my $text1 = $file0->{nodes}{$s0tn1}{aligned_text} ? " ($file0->{nodes}{$s0tn1}{aligned_text})" : '';
+                $nodedebug1 = " / $file0->{nodes}{$s0tn1}{concept}$text1";
+            }
+            push(@table, ["Document-level relation from node $label0 $s0tn0$nodedebug0 ($label1 $s1tn0)", $relation, "to node $label0 $s0tn1$nodedebug1 ($label1 $s1tn1)", "not found in $label1"]);
+        }
+        $n_total_0++;
+    }
+    foreach my $s1triple (sort(keys(%{$sentence1->{docrels}})))
+    {
+        my ($s1tn0, $relation, $s1tn1) = split(/ /, $s1triple);
+        my $s0tn0 = get_single_node_mapping($s1tn0, $label0, $file1->{nodes}) // $s1tn0;
+        my $s0tn1 = get_single_node_mapping($s1tn1, $label0, $file1->{nodes}) // $s1tn1;
+        my $s0triple = "$s0tn0 $relation $s0tn1";
+        if(!exists($sentence0->{docrels}{$s0triple}))
+        {
+            my $nodedebug0 = '';
+            if(exists($file1->{nodes}{$s1tn0}))
+            {
+                my $text0 = $file1->{nodes}{$s1tn0}{aligned_text} ? " ($file1->{nodes}{$s1tn0}{aligned_text})" : '';
+                $nodedebug0 = " / $file1->{nodes}{$s1tn0}{concept}$text0";
+            }
+            my $nodedebug1 = '';
+            if(exists($file1->{nodes}{$s1tn1}))
+            {
+                my $text1 = $file1->{nodes}{$s1tn1}{aligned_text} ? " ($file1->{nodes}{$s1tn1}{aligned_text})" : '';
+                $nodedebug1 = " / $file1->{nodes}{$s1tn1}{concept}$text1";
+            }
+            push(@table, ["Document-level relation from node $label1 $s1tn0$nodedebug0 ($label0 $s0tn0)", $relation, "to node $label1 $s1tn1$nodedebug1 ($label0 $s0tn1)", "not found in $label0"]);
+            $n_total_1++;
+        }
+    }
+    print_table(@table);
+    return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct};
 }
 
 
