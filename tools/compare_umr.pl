@@ -11,15 +11,15 @@ binmode(STDERR, ':utf8');
 use Carp;
 use Getopt::Long;
 
-###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off.
-###!!! TODO: Evaluate document-level relations.
+###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off. Note that most document-level relations can be inverted, too, but in a different manner.
+###!!! TODO: Make document-level evaluation observe individual relation exclusion.
 ###!!! TODO: Evaluate node-token alignments. (Careful – they are used as basis for other comparisons. But at least we can say which tokens have an alignment and which do not.)
 ###!!! TODO: Add less verbose mode (only final numbers).
 ###!!! TODO: Move the script to a separate repository (umrtools?)
 
 sub usage
 {
-    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2]\n");
+    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2] [--no-document-level]\n");
     print STDERR ("    The labels are used to refer to the files in the output.\n");
     print STDERR ("    They can be e.g. initials of the annotators, or 'GOLD' and 'SYSTEM'.\n");
     print STDERR ("Example (system evaluation):\n");
@@ -30,13 +30,16 @@ sub usage
 
 my $only_relations;
 my $except_relations;
+my $except_document_level = 0;
 GetOptions
 (
-    'only=s'   => \$only_relations,
-    'except=s' => \$except_relations
+    'only=s'            => \$only_relations,
+    'except=s'          => \$except_relations,
+    'no-document-level' => \$except_document_level
 );
 my %config =
 (
+    'document_level'   => !$except_document_level,
     'only_relations'   => {},
     'except_relations' => {}
 );
@@ -1452,10 +1455,13 @@ sub compare_node_attributes
     }
     print_table(@table);
     # Compare document-level relations from this sentence.
-    my $result = compare_document_level_relations($sentence0, $sentence1);
-    $n_total_0 += $result->{total0};
-    $n_total_1 += $result->{total1};
-    $n_correct += $result->{correct};
+    if($config{document_level})
+    {
+        my $result = compare_document_level_relations($sentence0, $sentence1);
+        $n_total_0 += $result->{total0};
+        $n_total_1 += $result->{total1};
+        $n_correct += $result->{correct};
+    }
     print("\n");
     printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
     printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
