@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# Copyright © 2023, 2024 Dan Zeman <zeman@ufal.mff.cuni.cz>
+# Copyright © 2023–2026 Dan Zeman <zeman@ufal.mff.cuni.cz>
 import sys
 import io
 import os.path
