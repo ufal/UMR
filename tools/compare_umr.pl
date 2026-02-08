@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 # Compares annotations in two UMR files.
-# Copyright © 2025 Dan Zeman <zeman@ufal.mff.cuni.cz>
+# Copyright © 2025, 2026 Dan Zeman <zeman@ufal.mff.cuni.cz>
 # License: GNU GPL
 
 use utf8;
@@ -12,14 +12,15 @@ use Carp;
 use Getopt::Long;
 
 ###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off. Note that most document-level relations can be inverted, too, but in a different manner.
-###!!! TODO: Add less verbose mode (only final numbers).
 ###!!! TODO: Move the script to a separate repository (umrtools?)
 
 sub usage
 {
-    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2] [--no-document-level]\n");
+    # perl tools\compare_umr.pl GOLD data\czech\PDT-C-dtest\manual\ln94210_111-ML-all.umr CONV data\czech\PDT-C-dtest\converted\ln94210_111-conv.umr
+    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2] [--no-document-level] [--quiet]\n");
     print STDERR ("    The labels are used to refer to the files in the output.\n");
     print STDERR ("    They can be e.g. initials of the annotators, or 'GOLD' and 'SYSTEM'.\n");
+    print STDERR ("    --quiet ... supress all partial metrics and explanatory text. Print only the final juːmæʧ F₁ score.\n");
     print STDERR ("Example (system evaluation):\n");
     print STDERR ("    perl tools/compare_umr.pl GOLD english-test.umr SYSTEM english-test-predicted.umr\n");
     print STDERR ("Example (two annotators; Windows path fomat):\n");
@@ -29,17 +30,20 @@ sub usage
 my $only_relations;
 my $except_relations;
 my $except_document_level = 0;
+my $quiet = 0;
 GetOptions
 (
     'only=s'            => \$only_relations,
     'except=s'          => \$except_relations,
-    'no-document-level' => \$except_document_level
+    'no-document-level' => \$except_document_level,
+    'quiet'             => \$quiet
 );
 my %config =
 (
     'document_level'   => !$except_document_level,
     'only_relations'   => {},
-    'except_relations' => {}
+    'except_relations' => {},
+    'quiet'            => $quiet
 );
 if(defined($only_relations))
 {
@@ -105,8 +109,11 @@ while(1)
     $file{sentences} = read_umr_file($path, \%file);
     my $n = scalar(@{$file{sentences}});
     my $n_failed = 0;
-    print("Found $n sentences in $label:\n");
-    print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
+    unless($config{quiet})
+    {
+        print("Found $n sentences in $label:\n");
+        print(join(', ', map {"$_->{line0}-$_->{line1}"} (@{$file{sentences}})), "\n");
+    }
     my $i = 0;
     foreach my $sentence (@{$file{sentences}})
     {
@@ -148,7 +155,7 @@ foreach my $file (@files)
     }
     @{$file{sentences}} = @filtered_sentences;
 }
-print("\n");
+print("\n") unless($config{quiet});
 compare_files(@files);
 
 
@@ -691,8 +698,11 @@ sub compare_files
     # Loop over sentence numbers, look at the same-numbered sentence in each file.
     for(my $i = 0; $i < $n_sentences; $i++)
     {
-        print("-------------------------------------------------------------------------------\n");
-        printf("Comparing sentence %d:\n", $i+1);
+        unless($config{quiet})
+        {
+            print("-------------------------------------------------------------------------------\n");
+            printf("Comparing sentence %d:\n", $i+1);
+        }
         # Check that the sentence has the same tokens in all files.
         my $sentence_text;
         my @sentences;
@@ -715,17 +725,20 @@ sub compare_files
             }
             push(@sentences, $sentence);
         }
-        print("$sentence_text\n");
+        print("$sentence_text\n") unless($config{quiet});
         compare_sentences(@sentences);
     }
-    print("-------------------------------------------------------------------------------\n");
-    print("SUMMARY:\n");
-    print("Number of tokens: $files[0]{stats}{n_tokens}\n");
-    print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
+    unless($config{quiet})
+    {
+        print("-------------------------------------------------------------------------------\n");
+        print("SUMMARY:\n");
+        print("Number of tokens: $files[0]{stats}{n_tokens}\n");
+        print("Number of nodes per file: ", join(', ', map {"$_->{label}:$_->{stats}{n_nodes}"} (@files)), "\n");
+        print("File-to-file node mapping:\n");
+    }
     # Compare node alignments for each pair of files. Although both files may
     # come from annotators, imagine that the first file is the gold standard
     # and the second file is evaluated against it; the numbers are then P, R, F.
-    print("File-to-file node mapping:\n");
     for(my $i = 0; $i <= $#files; $i++)
     {
         my $labeli = $files[$i]{label};
@@ -737,7 +750,7 @@ sub compare_files
             my $nj_total = $files[$j]{stats}{n_nodes};
             next if($nj_total == 0);
             # Summarize comparison of aligned token sets.
-            print("Aligned token set comparison:\n");
+            print("Aligned token set comparison:\n") unless($config{quiet});
             my $al_correct = $files[$i]{stats}{cr}{$labelj}{correct_alignment};
             my $al_total_me = $files[$i]{stats}{cr}{$labelj}{total_me_alignment};
             my $al_total_other = $files[$i]{stats}{cr}{$labelj}{total_other_alignment};
@@ -745,9 +758,12 @@ sub compare_files
             my $p = $al_total_other > 0 ? $al_correct/$al_total_other : 0;
             my $f = $p+$r > 0 ? 2*$p*$r/($p+$r) : 0;
             my $rounding = 2; # 2 decimal places ###!!! We may want to make this configurable from the command line. Smatch has the option --significant 2.
-            printf("Out of %d aligned token sets in %s, %d found in %s => recall    %.${rounding}f%%.\n", $al_total_me, $labeli, $al_correct, $labelj, round_to_places($r*100, $rounding));
-            printf("Out of %d aligned token sets in %s, %d found in %s => precision %.${rounding}f%%.\n", $al_total_other, $labelj, $al_correct, $labeli, round_to_places($p*100, $rounding));
-            printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
+            unless($config{quiet})
+            {
+                printf("Out of %d aligned token sets in %s, %d found in %s => recall    %.${rounding}f%%.\n", $al_total_me, $labeli, $al_correct, $labelj, round_to_places($r*100, $rounding));
+                printf("Out of %d aligned token sets in %s, %d found in %s => precision %.${rounding}f%%.\n", $al_total_other, $labelj, $al_correct, $labeli, round_to_places($p*100, $rounding));
+                printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
+            }
             # Summarize node projections and correspondences.
             my $ni_mapped = $files[$i]{stats}{crossfile}{$labelj};
             my $nj_mapped = $files[$j]{stats}{crossfile}{$labeli};
@@ -756,38 +772,54 @@ sub compare_files
             $p = $nj_mapped/$nj_total;
             $r = $ni_mapped/$ni_total;
             $f = 2*$p*$r/($p+$r);
-            printf("Out of %d total %s nodes, %d mapped to %s => recall    = %.${rounding}f%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, round_to_places($r*100, $rounding));
-            printf("Out of %d total %s nodes, %d mapped to %s => precision = %.${rounding}f%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, round_to_places($p*100, $rounding));
-            printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
+            unless($config{quiet})
+            {
+                printf("Out of %d total %s nodes, %d mapped to %s => recall    = %.${rounding}f%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, round_to_places($r*100, $rounding));
+                printf("Out of %d total %s nodes, %d mapped to %s => precision = %.${rounding}f%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, round_to_places($p*100, $rounding));
+                printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
+            }
             # Summarize projections that were originally ambiguous (before we symmetrized them).
             my $ni_ambiguous_src = $files[$i]{stats}{cr}{$labelj}{nodes_with_originally_ambiguous_projection};
             my $nj_ambiguous_src = $files[$j]{stats}{cr}{$labeli}{nodes_with_originally_ambiguous_projection};
             my $ni_ambiguous_tgt = $files[$i]{stats}{cr}{$labelj}{nodes_in_originally_ambiguous_projections};
             my $nj_ambiguous_tgt = $files[$j]{stats}{cr}{$labeli}{nodes_in_originally_ambiguous_projections};
-            printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $ni_ambiguous_src, $labeli, $ni_ambiguous_tgt, $labelj);
-            printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $nj_ambiguous_src, $labelj, $nj_ambiguous_tgt, $labeli);
-            # Summarize comparison of concepts and relations (mapped nodes only).
-            print("Concept and relation comparison (only mapped nodes; unmapped are ignored):\n");
+            unless($config{quiet})
+            {
+                printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $ni_ambiguous_src, $labeli, $ni_ambiguous_tgt, $labelj);
+                printf("Before symmetrization, %d %s nodes were projected ambiguously to %d %s nodes.\n", $nj_ambiguous_src, $labelj, $nj_ambiguous_tgt, $labeli);
+                # Summarize comparison of concepts and relations (mapped nodes only).
+                print("Concept and relation comparison (only mapped nodes; unmapped are ignored):\n");
+            }
             my $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct_mapped};
             my $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me_mapped};
             my $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other_mapped};
             $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
             $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
             $f = 2*$p*$r/($p+$r);
-            printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, round_to_places($r*100, $rounding));
-            printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, round_to_places($p*100, $rounding));
-            printf(" => F₁ = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
-            # Summarize comparison of concepts and relations.
-            print("Concept and relation comparison (for unmapped nodes all counted as incorrect):\n");
+            unless($config{quiet})
+            {
+                printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, round_to_places($r*100, $rounding));
+                printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, round_to_places($p*100, $rounding));
+                printf(" => F₁ = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
+                # Summarize comparison of concepts and relations.
+                print("Concept and relation comparison (for unmapped nodes all counted as incorrect):\n");
+            }
             $cr_correct = $files[$i]{stats}{cr}{$labelj}{correct};
             $cr_total_me = $files[$i]{stats}{cr}{$labelj}{total_me};
             $cr_total_other = $files[$i]{stats}{cr}{$labelj}{total_other};
             $r = $cr_total_me > 0 ? $cr_correct/$cr_total_me : 0;
             $p = $cr_total_other > 0 ? $cr_correct/$cr_total_other : 0;
             $f = 2*$p*$r/($p+$r);
-            printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, round_to_places($r*100, $rounding));
-            printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, round_to_places($p*100, $rounding));
-            printf(" => juːmæʧ ($labeli, $labelj) = F₁ = %.${rounding}f%%.\n", round_to_places($f*100, $rounding)); # místo "t͡ʃ" lze případně použít "ʧ"
+            unless($config{quiet})
+            {
+                printf("Out of %d non-empty %s values, %d found in %s => recall    %.${rounding}f%%.\n", $cr_total_me, $labeli, $cr_correct, $labelj, round_to_places($r*100, $rounding));
+                printf("Out of %d non-empty %s values, %d found in %s => precision %.${rounding}f%%.\n", $cr_total_other, $labelj, $cr_correct, $labeli, round_to_places($p*100, $rounding));
+                printf(" => juːmæʧ ($labeli, $labelj) = F₁ = %.${rounding}f%%.\n", round_to_places($f*100, $rounding)); # místo "t͡ʃ" lze případně použít "ʧ"
+            }
+            else
+            {
+                printf("juːmæʧ F₁ ($labeli, $labelj) = %f\n", $f);
+            }
         }
     }
 }
@@ -830,34 +862,40 @@ sub compare_sentences
             last;
         }
     }
-    print("\n");
-    print_table(@table);
-    print("\n");
+    unless($config{quiet})
+    {
+        print("\n");
+        print_table(@table);
+        print("\n");
+    }
     # Assume it has been checked that the sentence has the same tokens in all files.
     my $tokens = $sentences[0]{tokens};
     # Get the mapping between tokens of the sentence and nodes in each file.
     map_node_alignments(@sentences);
     compute_crossfile_node_references(@sentences);
-    print("Node-token alignments:\n");
-    # Print the unaligned nodes.
-    foreach my $sentence (@sentences)
+    unless($config{quiet})
     {
-        my $label = $sentence->{file}{label};
-        my $nodes = $sentence->{nodes};
-        my @unaligned = @{$sentence->{unaligned_nodes}};
-        printf("File %s: %d nodes unaligned: %s.\n", $label, scalar(@unaligned), join(', ', map {"$_/$nodes->{$_}{econcept}"} (@unaligned)));
+        print("Node-token alignments:\n");
+        # Print the unaligned nodes.
+        foreach my $sentence (@sentences)
+        {
+            my $label = $sentence->{file}{label};
+            my $nodes = $sentence->{nodes};
+            my @unaligned = @{$sentence->{unaligned_nodes}};
+            printf("File %s: %d nodes unaligned: %s.\n", $label, scalar(@unaligned), join(', ', map {"$_/$nodes->{$_}{econcept}"} (@unaligned)));
+        }
+        # Print the tokens and nodes aligned to them in each file.
+        @table = ();
+        push(@table, ['', '', map {$_->{file}{label}} (@sentences)]);
+        for(my $j = 0; $j <= $#{$tokens}; $j++)
+        {
+            push(@table, [$j+1, $tokens->[$j], map {join(', ', @{$_->{aligned_nodes_by_token}[$j]})} (@sentences)]);
+        }
+        print_table(@table);
+        print("\n");
+        # Perform node-to-node comparison.
+        print("Node-node correspondences:\n\n");
     }
-    # Print the tokens and nodes aligned to them in each file.
-    @table = ();
-    push(@table, ['', '', map {$_->{file}{label}} (@sentences)]);
-    for(my $j = 0; $j <= $#{$tokens}; $j++)
-    {
-        push(@table, [$j+1, $tokens->[$j], map {join(', ', @{$_->{aligned_nodes_by_token}[$j]})} (@sentences)]);
-    }
-    print_table(@table);
-    print("\n");
-    # Perform node-to-node comparison.
-    print("Node-node correspondences:\n\n");
     for(my $i = 0; $i <= $#sentences; $i++)
     {
         for(my $j = $i+1; $j <= $#sentences; $j++)
@@ -1224,8 +1262,11 @@ sub compare_two_sentences
     my $sentence0 = shift;
     my $sentence1 = shift;
     compare_alignment_in_sentences($sentence0, $sentence1);
-    print_symmetrization_report($sentence0, $sentence1);
-    print_symmetrization_report($sentence1, $sentence0);
+    unless($config{quiet})
+    {
+        print_symmetrization_report($sentence0, $sentence1);
+        print_symmetrization_report($sentence1, $sentence0);
+    }
     compare_node_correspondences($sentence0, $sentence1);
     compare_node_attributes($sentence0, $sentence1);
     compare_node_attributes($sentence1, $sentence0);
@@ -1247,7 +1288,7 @@ sub compare_alignment_in_sentences
     my $file1 = $sentence1->{file};
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
-    print("Comparing aligned tokens in $label0 and $label1.\n");
+    print("Comparing aligned tokens in $label0 and $label1.\n") unless($config{quiet});
     # Hash token ranges from both sides.
     my @nodes0 = sort(keys(%{$sentence0->{nodes}}));
     my @nodes1 = sort(keys(%{$sentence1->{nodes}}));
@@ -1310,11 +1351,14 @@ sub compare_alignment_in_sentences
             push(@table, ["$label1 alignment $alignment", "not found in $label0"]);
         }
     }
-    print_table(@table);
-    print("\n");
-    printf("Matched %d out of %d %s token sets => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
-    printf("Matched %d out of %d %s token sets => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
-    print("\n");
+    unless($config{quiet})
+    {
+        print_table(@table);
+        print("\n");
+        printf("Matched %d out of %d %s token sets => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
+        printf("Matched %d out of %d %s token sets => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
+        print("\n");
+    }
     $file0->{stats}{cr}{$label1}{correct_alignment} += $n_correct;
     $file0->{stats}{cr}{$label1}{total_me_alignment} += $n_total_0;
     $file0->{stats}{cr}{$label1}{total_other_alignment} += $n_total_1;
@@ -1457,11 +1501,14 @@ sub compare_node_correspondences
             $n_total_1++;
         }
     }
-    print_table(@table_symmetric, @table_from_0, @table_from_1);
-    print("\n");
-    printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned_0, $n_total_0, $label0, $n_total_0 > 0 ? $n_aligned_0/$n_total_0*100+0.5 : 0);
-    printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned_1, $n_total_1, $label1, $n_total_1 > 0 ? $n_aligned_1/$n_total_1*100+0.5 : 0);
-    print("\n");
+    unless($config{quiet})
+    {
+        print_table(@table_symmetric, @table_from_0, @table_from_1);
+        print("\n");
+        printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned_0, $n_total_0, $label0, $n_total_0 > 0 ? $n_aligned_0/$n_total_0*100+0.5 : 0);
+        printf("Aligned %d out of %d %s nodes, that is %d%%.\n", $n_aligned_1, $n_total_1, $label1, $n_total_1 > 0 ? $n_aligned_1/$n_total_1*100+0.5 : 0);
+        print("\n");
+    }
 }
 
 
@@ -1485,7 +1532,7 @@ sub compare_node_attributes
     my $file1 = $sentence1->{file};
     my $label0 = $file0->{label};
     my $label1 = $file1->{label};
-    print("Comparing attributes of $label0 nodes with their $label1 counterparts.\n");
+    print("Comparing attributes of $label0 nodes with their $label1 counterparts.\n") unless($config{quiet});
     my $n_total_0;
     my $n_total_1;
     my $n_correct;
@@ -1552,7 +1599,7 @@ sub compare_node_attributes
             }
         }
     }
-    print_table(@table);
+    print_table(@table) unless($config{quiet});
     # Compare document-level relations from this sentence.
     if($config{document_level})
     {
@@ -1561,10 +1608,13 @@ sub compare_node_attributes
         $n_total_1 += $result->{total1};
         $n_correct += $result->{correct};
     }
-    print("\n");
-    printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
-    printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
-    print("\n");
+    unless($config{quiet})
+    {
+        print("\n");
+        printf("Correct %d out of %d non-empty %s values => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
+        printf("Correct %d out of %d non-empty %s values => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
+        print("\n");
+    }
     $file0->{stats}{cr}{$label1}{correct} += $n_correct;
     $file0->{stats}{cr}{$label1}{total_me} += $n_total_0;
     $file0->{stats}{cr}{$label1}{total_other} += $n_total_1;
@@ -1770,7 +1820,7 @@ sub compare_document_level_relations
             $n_total_1++;
         }
     }
-    print_table(@table);
+    print_table(@table) unless($config{quiet});
     return {'total0' => $n_total_0, 'total1' => $n_total_1, 'correct' => $n_correct};
 }
 
