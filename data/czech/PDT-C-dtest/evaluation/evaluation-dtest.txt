@@ -83,6 +83,14 @@ File CONV: 1 nodes unaligned: s1e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 5,10,12 not found in CONV
+CONV alignment 10,12   not found in GOLD
+CONV alignment 5       not found in GOLD
+
+Matched 11 out of 12 GOLD token sets => recall    92%.
+Matched 11 out of 13 CONV token sets => precision 85%.
+
 Ambiguous projection of GOLD node s1o1 (tomu jsme oznamovali) to 2 CONV nodes [s1o1 (jsme oznamovali), s1t1 (tomu)]
   The winner is GOLD node s1o1 (tomu jsme oznamovali) <--> CONV node s1o1 (jsme oznamovali): econcepts=oznamovat-002/oznamovat-002, match=4 (concept=oznamovat-002,:ARG0=s1p1 mapped to CONV s1p2,:ARG1=s1i1 mapped to CONV s1i1,:ARG2=s1p2 mapped to CONV s1c1), weak match=5 (concept,:aspect,:ARG0,:ARG1,:ARG2).
 
@@ -269,6 +277,11 @@ File CONV: 6 nodes unaligned: s2e1/entity, s2e2/entity, s2e3/entity, s2e4/entity
 24 .                
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 14 out of 14 GOLD token sets => recall    100%.
+Matched 14 out of 14 CONV token sets => precision 100%.
 
 Ambiguous projection of GOLD node s2p0 (person) to 2 CONV nodes [s2p2 (person), s2p4 (person)]
   The winner is GOLD node s2p0 (person) <--> CONV node s2p2 (person): econcepts=person/person, match=3 (concept=person,:refer-number=plural,:refer-person=1st), weak match=3 (concept,:refer-number,:refer-person).
@@ -467,6 +480,11 @@ File CONV: 1 nodes unaligned: s3p2/person.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 9 out of 9 GOLD token sets => recall    100%.
+Matched 9 out of 9 CONV token sets => precision 100%.
+
 Correspondence GOLD s3c1 (do ceny)           = CONV s3c1 (do ceny)
 Correspondence GOLD s3d1 (deníku)            = CONV s3d1 (deníku)
 Correspondence GOLD s3n1 (Nyní)              = CONV s3n1 (Nyní)
@@ -596,6 +614,23 @@ File CONV: 1 nodes unaligned: s4s2/stát-014.
 22 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2,3 not found in CONV
+GOLD alignment 16,21 not found in CONV
+GOLD alignment 4,5   not found in CONV
+GOLD alignment 8,9   not found in CONV
+CONV alignment 1,3   not found in GOLD
+CONV alignment 16    not found in GOLD
+CONV alignment 2     not found in GOLD
+CONV alignment 21    not found in GOLD
+CONV alignment 4     not found in GOLD
+CONV alignment 5     not found in GOLD
+CONV alignment 8     not found in GOLD
+CONV alignment 9     not found in GOLD
+
+Matched 8 out of 12 GOLD token sets => recall    67%.
+Matched 8 out of 16 CONV token sets => precision 50%.
 
 Ambiguous projection of GOLD node s4c1 (Od posledního čtvrtletí) to 2 CONV nodes [s4c1 (Od čtvrtletí), s4p2 (posledního)]
 Ambiguous projection of GOLD node s4k2 (korun korun) to 2 CONV nodes [s4k1 (korun), s4k2 (korun)]
@@ -804,6 +839,11 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 5 out of 5 GOLD token sets => recall    100%.
+Matched 5 out of 5 CONV token sets => precision 100%.
+
 Correspondence GOLD s5c1 (Cena)        = CONV s5c1 (Cena)
 Correspondence GOLD s5p2 (pátečního)   = CONV s5p1 (pátečního)
 Correspondence GOLD s5v1 (vydání)      = CONV s5v1 (vydání)
@@ -957,6 +997,15 @@ File CONV: 2 nodes unaligned: s6s4/stát-014, s6s6/stát-014.
 24 )              
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 12,17,22 not found in CONV
+CONV alignment 12       not found in GOLD
+CONV alignment 17       not found in GOLD
+CONV alignment 22       not found in GOLD
+
+Matched 11 out of 12 GOLD token sets => recall    92%.
+Matched 11 out of 14 CONV token sets => precision 79%.
 
 Ambiguous projection of GOLD node s6s3 (Sk Sk Sk) to 3 CONV nodes [s6s3 (Sk), s6s5 (Sk), s6s8 (Sk)]
 Ambiguous projection of GOLD node s6s4 (stát-014) to 2 CONV nodes [s6s4 (stát-014), s6s6 (stát-014)]
@@ -1222,6 +1271,11 @@ File CONV: 3 nodes unaligned: s7e1/entity, s7e2/entity, s7p1/person.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 21 out of 21 GOLD token sets => recall    100%.
+Matched 21 out of 21 CONV token sets => precision 100%.
+
 Correspondence GOLD s7a1 (alespoň)                   = CONV s7a1 (alespoň)
 Correspondence GOLD s7b1 (že je)                     = CONV s7b1 (že je)
 Correspondence GOLD s7c  (a)                         = CONV s7c1 (a)
@@ -1456,6 +1510,15 @@ File CONV: 5 nodes unaligned: s8e1/entity, s8e2/entity, s8p2/person, s8p4/předp
 38 .                
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 10   not found in CONV
+GOLD alignment 8,9  not found in CONV
+CONV alignment 8,10 not found in GOLD
+CONV alignment 9    not found in GOLD
+
+Matched 24 out of 26 GOLD token sets => recall    92%.
+Matched 24 out of 26 CONV token sets => precision 92%.
 
 Ambiguous projection of GOLD node s8m3 (o 21.70) to 2 CONV nodes [s8k1 (o Kč), s8x1 (21.70)]
   The winner is GOLD node s8m3 (o 21.70) <--> CONV node s8x1 (21.70): econcepts=monetary-quantity/21.70, match=0 (), weak match=1 (concept).
@@ -1741,6 +1804,13 @@ File CONV: 2 nodes unaligned: s9n2/nabízet-001, s9p1/person.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 4,5 not found in CONV
+CONV alignment 4   not found in GOLD
+
+Matched 5 out of 6 GOLD token sets => recall    83%.
+Matched 5 out of 6 CONV token sets => precision 83%.
+
 Correspondence GOLD s9c1 (čtenářům) = CONV s9c1 (čtenářům)
 Correspondence GOLD s9e1 (person)   = CONV s9p1 (person)
 Correspondence GOLD s9n1 (nabízíme) = CONV s9n1 (nabízíme)
@@ -1883,6 +1953,14 @@ File CONV: 1 nodes unaligned: s10p3/person.
 7 .                    
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2 not found in CONV
+CONV alignment 1   not found in GOLD
+CONV alignment 2   not found in GOLD
+
+Matched 4 out of 5 GOLD token sets => recall    80%.
+Matched 4 out of 6 CONV token sets => precision 67%.
 
 Ambiguous projection of GOLD node s10p2 (Všem předplatitelům) to 2 CONV nodes [s10p2 (předplatitelům), s10v1 (Všem)]
   The winner is GOLD node s10p2 (Všem předplatitelům) <--> CONV node s10p2 (předplatitelům): econcepts=person/předplatitel, match=1 (:refer-number=plural), weak match=2 (concept,:refer-number).
@@ -2029,6 +2107,14 @@ File CONV: 1 nodes unaligned: s11p1/person.
 20 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 16,17,18 not found in CONV
+CONV alignment 16,18    not found in GOLD
+CONV alignment 17       not found in GOLD
+
+Matched 9 out of 10 GOLD token sets => recall    90%.
+Matched 9 out of 11 CONV token sets => precision 82%.
 
 Ambiguous projection of GOLD node s11n1 (v Lidových novinách) to 2 CONV nodes [s11l1 (Lidových), s11n1 (v novinách)]
   The winner is GOLD node s11n1 (v Lidových novinách) <--> CONV node s11n1 (v novinách): econcepts=news-media/noviny, match=0 (), weak match=1 (concept).
@@ -2194,6 +2280,17 @@ File CONV: 0 nodes unaligned: .
 22 .                
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 20,21 not found in CONV
+GOLD alignment 4,5   not found in CONV
+CONV alignment 20    not found in GOLD
+CONV alignment 21    not found in GOLD
+CONV alignment 4     not found in GOLD
+CONV alignment 5     not found in GOLD
+
+Matched 11 out of 13 GOLD token sets => recall    85%.
+Matched 11 out of 15 CONV token sets => precision 73%.
 
 Ambiguous projection of GOLD node s12d1 (Lidové demokracie) to 2 CONV nodes [s12d1 (demokracie), s12l1 (Lidové)]
 Ambiguous projection of GOLD node s12n1 (Lidových novin) to 2 CONV nodes [s12l4 (Lidových), s12n1 (novin)]
@@ -2409,6 +2506,11 @@ File CONV: 2 nodes unaligned: s13e1/entity, s13p4/person.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 12 out of 12 GOLD token sets => recall    100%.
+Matched 12 out of 12 CONV token sets => precision 100%.
+
 Correspondence GOLD s13a1 (a)            = CONV s13a1 (a)
 Correspondence GOLD s13b1 (že je)        = CONV s13b1 (že je)
 Correspondence GOLD s13c1 (ceny)         = CONV s13c1 (ceny)
@@ -2525,6 +2627,15 @@ File CONV: 0 nodes unaligned: .
 5 LN      s14n5 s14l1
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2 not found in CONV
+CONV alignment 1   not found in GOLD
+CONV alignment 2   not found in GOLD
+CONV alignment 3   not found in GOLD
+
+Matched 2 out of 3 GOLD token sets => recall    67%.
+Matched 2 out of 5 CONV token sets => precision 40%.
 
 Ambiguous projection of GOLD node s14k1 (Michal Klíma) to 2 CONV nodes [s14k1 (Klíma), s14m1 (Michal)]
   The winner is GOLD node s14k1 (Michal Klíma) <--> CONV node s14m1 (Michal): econcepts=person/Michal, match=0 (), weak match=1 (concept).
@@ -2647,6 +2758,11 @@ File CONV: 1 nodes unaligned: s1e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 5 out of 5 GOLD token sets => recall    100%.
+Matched 5 out of 5 CONV token sets => precision 100%.
+
 Correspondence GOLD s1c1 (činnosti)          = CONV s1c1 (činnosti)
 Correspondence GOLD s1k1 (kontrarozvědky)    = CONV s1k1 (kontrarozvědky)
 Correspondence GOLD s1o1 (Parlamentní)       = CONV s1p2 (Parlamentní)
@@ -2731,6 +2847,11 @@ File CONV: 0 nodes unaligned: .
 2 -          
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 1 out of 1 GOLD token sets => recall    100%.
+Matched 1 out of 1 CONV token sets => precision 100%.
 
 Correspondence GOLD s2h1 (Praha)          = CONV s2p1 (Praha)
 Correspondence GOLD s2n1 (name["Praha"])  = CONV 
@@ -2868,6 +2989,21 @@ File CONV: 3 nodes unaligned: s3e1/entity, s3e2/entity, s3e3/entity.
 30 .                   
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 10       not found in CONV
+GOLD alignment 18       not found in CONV
+GOLD alignment 6,7,8,21 not found in CONV
+GOLD alignment 9        not found in CONV
+CONV alignment 1,18     not found in GOLD
+CONV alignment 21       not found in GOLD
+CONV alignment 6        not found in GOLD
+CONV alignment 7        not found in GOLD
+CONV alignment 8        not found in GOLD
+CONV alignment 9,10     not found in GOLD
+
+Matched 15 out of 19 GOLD token sets => recall    79%.
+Matched 15 out of 21 CONV token sets => precision 71%.
 
 Ambiguous projection of GOLD node s3o3 (Bezpečnostní informační služby BIS) to 4 CONV nodes [s3b1 (Bezpečnostní), s3b2 (BIS), s3i1 (informační), s3s1 (služby)]
 Ambiguous projection of GOLD node s3u1 (Ačkoli ukončil) to 2 CONV nodes [s3k3 (Ačkoli konstatoval), s3u1 (Ačkoli ukončil)]
@@ -3106,6 +3242,21 @@ File CONV: 0 nodes unaligned: .
 17 .              
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 10,11,12 not found in CONV
+GOLD alignment 14       not found in CONV
+GOLD alignment 15       not found in CONV
+GOLD alignment 7,8      not found in CONV
+CONV alignment 10       not found in GOLD
+CONV alignment 11       not found in GOLD
+CONV alignment 12       not found in GOLD
+CONV alignment 14,15    not found in GOLD
+CONV alignment 7        not found in GOLD
+CONV alignment 8        not found in GOLD
+
+Matched 7 out of 11 GOLD token sets => recall    64%.
+Matched 7 out of 13 CONV token sets => precision 54%.
 
 Ambiguous projection of GOLD node s4p4 (Pavel Severa) to 2 CONV nodes [s4p2 (Pavel), s4s1 (Severa)]
 Ambiguous projection of GOLD node s4p6 (KDU - ČSL) to 3 CONV nodes [s4a1 (-), s4c2 (ČSL), s4k2 (KDU)]
@@ -3352,6 +3503,18 @@ File CONV: 6 nodes unaligned: s5e1/entity, s5e2/entity, s5e3/entity, s5e4/entity
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 16,17,18 not found in CONV
+GOLD alignment 26,27    not found in CONV
+CONV alignment 16       not found in GOLD
+CONV alignment 17       not found in GOLD
+CONV alignment 18       not found in GOLD
+CONV alignment 26       not found in GOLD
+CONV alignment 27       not found in GOLD
+
+Matched 11 out of 13 GOLD token sets => recall    85%.
+Matched 11 out of 16 CONV token sets => precision 69%.
+
 Ambiguous projection of GOLD node s5p2 (jako například porovnání) to 3 CONV nodes [s5i1 (jako), s5n1 (například), s5p2 (porovnání)]
 Ambiguous projection of GOLD node s5p3 (Stanislava Devátého) to 2 CONV nodes [s5d2 (Devátého), s5s3 (Stanislava)]
   The winner is GOLD node s5p2 (jako například porovnání) <--> CONV node s5p2 (porovnání): econcepts=porovnat-001/porovnání, match=1 (:ARG1=s5z1 mapped to CONV s5z1), weak match=3 (concept,:ARG0,:ARG1).
@@ -3569,6 +3732,16 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 10,11         not found in CONV
+GOLD alignment 4,5,7,8,12,13 not found in CONV
+CONV alignment 10            not found in GOLD
+CONV alignment 11            not found in GOLD
+CONV alignment 4,5,7,12,13   not found in GOLD
+
+Matched 7 out of 9 GOLD token sets => recall    78%.
+Matched 7 out of 10 CONV token sets => precision 70%.
+
 Ambiguous projection of GOLD node s6u1 (veškeré údaje) to 2 CONV nodes [s6u1 (údaje), s6v1 (veškeré)]
 Ambiguous projection of GOLD node s6z1 (o to zda tajná mohla získat) to 2 CONV nodes [s6t1 (tajná), s6z1 (o to zda mohla získat)]
   The winner is GOLD node s6u1 (veškeré údaje) <--> CONV node s6u1 (údaje): econcepts=údaj/údaj, match=1 (concept=údaj), weak match=1 (concept).
@@ -3693,6 +3866,14 @@ File CONV: 2 nodes unaligned: s7e1/entity, s7e2/entity.
 14 .             
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 12,13 not found in CONV
+CONV alignment 12    not found in GOLD
+CONV alignment 13    not found in GOLD
+
+Matched 7 out of 8 GOLD token sets => recall    88%.
+Matched 7 out of 9 CONV token sets => precision 78%.
 
 Ambiguous projection of GOLD node s7p3 (Jan Kalvoda) to 2 CONV nodes [s7j1 (Jan), s7k2 (Kalvoda)]
   The winner is GOLD node s7p3 (Jan Kalvoda) <--> CONV node s7k2 (Kalvoda): econcepts=person/Kalvoda, match=1 (:refer-number=singular), weak match=2 (concept,:refer-number).
@@ -3850,6 +4031,17 @@ File CONV: 2 nodes unaligned: s8e1/entity, s8e2/entity.
 15 .                
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2,11,12 not found in CONV
+GOLD alignment 7,8,10    not found in CONV
+CONV alignment 1,2       not found in GOLD
+CONV alignment 11,12     not found in GOLD
+CONV alignment 7         not found in GOLD
+CONV alignment 8,10      not found in GOLD
+
+Matched 6 out of 8 GOLD token sets => recall    75%.
+Matched 6 out of 10 CONV token sets => precision 60%.
 
 Ambiguous projection of GOLD node s8p1 (Pozván bude o to) to 2 CONV nodes [s8p1 (Pozván bude), s8t1 (o to)]
 Ambiguous projection of GOLD node s8p4 (Michal Čelechovský který) to 2 CONV nodes [s8c1 (Čelechovský který), s8m1 (Michal)]
@@ -4032,6 +4224,16 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2,3 not found in CONV
+GOLD alignment 2,9 not found in CONV
+CONV alignment 2   not found in GOLD
+CONV alignment 3   not found in GOLD
+CONV alignment 9   not found in GOLD
+
+Matched 15 out of 17 GOLD token sets => recall    88%.
+Matched 15 out of 18 CONV token sets => precision 83%.
+
 Ambiguous projection of GOLD node s9b1 (sice ale) to 2 CONV nodes [s9b1 (ale), s9s1 (sice)]
 Ambiguous projection of GOLD node s9p1 (sice nepředpokládá) to 2 CONV nodes [s9p1 (nepředpokládá), s9s1 (sice)]
   The winner is GOLD node s9b1 (sice ale) <--> CONV node s9b1 (ale): econcepts=but-91/but-91, match=3 (concept=but-91,:ARG1=s9p1 mapped to CONV s9p1,:ARG2=s9o1 mapped to CONV s9o1), weak match=3 (concept,:ARG1,:ARG2).
@@ -4193,6 +4395,16 @@ File CONV: 5 nodes unaligned: s10e1/entity, s10e2/entity, s10e3/entity, s10x1/Rc
 19 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,3      not found in CONV
+GOLD alignment 16,17,18 not found in CONV
+CONV alignment 1        not found in GOLD
+CONV alignment 16       not found in GOLD
+CONV alignment 18       not found in GOLD
+
+Matched 10 out of 12 GOLD token sets => recall    83%.
+Matched 10 out of 13 CONV token sets => precision 77%.
 
 Ambiguous projection of GOLD node s10d3 (8 . března) to 2 CONV nodes [s10b1 (března), s10x4 (8)]
   The winner is GOLD node s10d3 (8 . března) <--> CONV node s10b1 (března): econcepts=date-entity/březen, match=0 (), weak match=1 (concept).
@@ -4394,6 +4606,17 @@ File CONV: 2 nodes unaligned: s11e1/entity, s11e2/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 12,13,15,17 not found in CONV
+GOLD alignment 2,3,23      not found in CONV
+CONV alignment 12,15,17    not found in GOLD
+CONV alignment 13          not found in GOLD
+CONV alignment 2           not found in GOLD
+CONV alignment 3,23        not found in GOLD
+
+Matched 10 out of 12 GOLD token sets => recall    83%.
+Matched 10 out of 14 CONV token sets => precision 71%.
+
 Ambiguous projection of GOLD node s11p4 (Ivan Mašek jeho) to 2 CONV nodes [s11i1 (Ivan), s11m1 (Mašek jeho)]
 Ambiguous projection of GOLD node s11u1 (na všech úkonech které) to 2 CONV nodes [s11u1 (na úkonech které), s11v1 (všech)]
   The winner is GOLD node s11p4 (Ivan Mašek jeho) <--> CONV node s11m1 (Mašek jeho): econcepts=person/Mašek, match=1 (:refer-number=singular), weak match=2 (concept,:refer-number).
@@ -4557,6 +4780,14 @@ File CONV: 1 nodes unaligned: s1e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2,3 not found in CONV
+CONV alignment 2   not found in GOLD
+CONV alignment 3   not found in GOLD
+
+Matched 1 out of 2 GOLD token sets => recall    50%.
+Matched 1 out of 3 CONV token sets => precision 33%.
+
 Ambiguous projection of GOLD node s1a1 (dvě auta) to 2 CONV nodes [s1a1 (auta), s1d1 (dvě)]
   The winner is GOLD node s1a1 (dvě auta) <--> CONV node s1a1 (auta): econcepts=auto/auto, match=1 (concept=auto), weak match=1 (concept).
 
@@ -4665,6 +4896,11 @@ File CONV: 1 nodes unaligned: s2e1/entity.
 8 ?           
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 6 out of 6 GOLD token sets => recall    100%.
+Matched 6 out of 6 CONV token sets => precision 100%.
 
 Correspondence GOLD s2e1 (mi)      = CONV s2p2 (mi)
 Correspondence GOLD s2f1 (k fotce) = CONV s2f1 (k fotce)
@@ -4785,6 +5021,12 @@ File CONV: 2 nodes unaligned: s3e2/entity, s3p1/person.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+CONV alignment 12 not found in GOLD
+
+Matched 7 out of 7 GOLD token sets => recall    100%.
+Matched 7 out of 8 CONV token sets => precision 88%.
+
 Ambiguous projection of CONV node s3p1 (person) to 2 GOLD nodes [s3e2 (person), s3e3 (person)]
   The winner is CONV node s3p1 (person) <--> GOLD node s3e2 (person): econcepts=person/person, match=2 (concept=person,:refer-number=singular), weak match=3 (concept,:refer-number,:refer-person).
 
@@ -4904,6 +5146,11 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 3 out of 3 GOLD token sets => recall    100%.
+Matched 3 out of 3 CONV token sets => precision 100%.
+
 Correspondence GOLD s4b1 (bylo)     = CONV s4b1 (bylo)
 Correspondence GOLD s4c1 (v chromu) = CONV s4c1 (v chromu)
 Correspondence GOLD s4v1 (Všechno)  = CONV s4v1 (Všechno)
@@ -5013,6 +5260,14 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2,4 not found in CONV
+CONV alignment 2   not found in GOLD
+CONV alignment 4   not found in GOLD
+
+Matched 2 out of 3 GOLD token sets => recall    67%.
+Matched 2 out of 4 CONV token sets => precision 50%.
+
 Ambiguous projection of GOLD node s5m1 (to motorka) to 2 CONV nodes [s5m1 (motorka), s5t1 (to)]
   The winner is GOLD node s5m1 (to motorka) <--> CONV node s5m1 (motorka): econcepts=motorka/motorka, match=2 (concept=motorka,:refer-number=singular), weak match=2 (concept,:refer-number).
 
@@ -5121,6 +5376,11 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 4 out of 4 GOLD token sets => recall    100%.
+Matched 4 out of 4 CONV token sets => precision 100%.
+
 Correspondence GOLD s6d1 (dělal)  = CONV s6d1 (dělal)
 Correspondence GOLD s6e2 (vám)    = CONV s6p1 (vám)
 Correspondence GOLD s6k1 (Kdo)    = CONV s6k1 (Kdo)
@@ -5219,6 +5479,11 @@ File CONV: 0 nodes unaligned: .
 6 .             
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 4 out of 4 GOLD token sets => recall    100%.
+Matched 4 out of 4 CONV token sets => precision 100%.
 
 Correspondence GOLD s7d1 (dělali)           = CONV s7d1 (dělali)
 Correspondence GOLD s7k1 (kamarádi)         = CONV s7k1 (kamarádi)
@@ -5331,6 +5596,14 @@ File CONV: 0 nodes unaligned: .
 6 ?            
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2,5 not found in CONV
+CONV alignment 2   not found in GOLD
+CONV alignment 5   not found in GOLD
+
+Matched 3 out of 4 GOLD token sets => recall    75%.
+Matched 3 out of 5 CONV token sets => precision 60%.
 
 Ambiguous projection of GOLD node s8m1 (to motorka) to 2 CONV nodes [s8m1 (motorka), s8t1 (to)]
   The winner is GOLD node s8m1 (to motorka) <--> CONV node s8m1 (motorka): econcepts=motorka/motorka, match=2 (concept=motorka,:refer-number=singular), weak match=2 (concept,:refer-number).
@@ -5453,6 +5726,11 @@ File CONV: 1 nodes unaligned: s9m1/motorka.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 1 out of 1 GOLD token sets => recall    100%.
+Matched 1 out of 1 CONV token sets => precision 100%.
+
 Correspondence GOLD s9m1 (motorka)     = CONV s9m1 (motorka)
 Correspondence GOLD s9p1 (První)       = CONV s9p1 (První)
 Correspondence GOLD s9b1 (have-ord-91) = CONV 
@@ -5563,6 +5841,11 @@ File CONV: 1 nodes unaligned: s10p1/person.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 3 out of 3 GOLD token sets => recall    100%.
+Matched 3 out of 3 CONV token sets => precision 100%.
+
 Ambiguous projection of CONV node s10p1 (person) to 2 GOLD nodes [s10e1 (person), s10e2 (person)]
   The winner is CONV node s10p1 (person) <--> GOLD node s10e1 (person): econcepts=person/person, match=2 (concept=person,:refer-person=2nd), weak match=3 (concept,:refer-number,:refer-person).
 
@@ -5663,6 +5946,11 @@ File CONV: 1 nodes unaligned: s11e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 3 out of 3 GOLD token sets => recall    100%.
+Matched 3 out of 3 CONV token sets => precision 100%.
+
 Correspondence GOLD s11d1 (další)       = CONV s11d1 (další)
 Correspondence GOLD s11f1 (na fotku)    = CONV s11f1 (na fotku)
 Correspondence GOLD s11p1 (Podíváme se) = CONV s11p1 (Podíváme se)
@@ -5760,6 +6048,14 @@ File CONV: 0 nodes unaligned: .
 5 ?           
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,4 not found in CONV
+CONV alignment 1   not found in GOLD
+CONV alignment 4   not found in GOLD
+
+Matched 2 out of 3 GOLD token sets => recall    67%.
+Matched 2 out of 4 CONV token sets => precision 50%.
 
 Ambiguous projection of GOLD node s12c1 (Co zač) to 2 CONV nodes [s12c1 (Co), s12z1 (zač)]
   The winner is GOLD node s12c1 (Co zač) <--> CONV node s12z1 (zač): econcepts=umr-unknown/zač, match=0 (), weak match=1 (concept).
@@ -5903,6 +6199,14 @@ File CONV: 1 nodes unaligned: s13e1/entity.
 18 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 9,10,11 not found in CONV
+CONV alignment 11      not found in GOLD
+CONV alignment 9,10    not found in GOLD
+
+Matched 9 out of 10 GOLD token sets => recall    90%.
+Matched 9 out of 11 CONV token sets => precision 82%.
 
 Ambiguous projection of GOLD node s13r1 (v roce 1970) to 2 CONV nodes [s13r1 (v roce), s13x1 (1970)]
   The winner is GOLD node s13r1 (v roce 1970) <--> CONV node s13r1 (v roce): econcepts=date-entity/rok, match=0 (), weak match=1 (concept).
@@ -6080,6 +6384,14 @@ File CONV: 1 nodes unaligned: s14e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2,6 not found in CONV
+CONV alignment 2   not found in GOLD
+CONV alignment 6   not found in GOLD
+
+Matched 3 out of 4 GOLD token sets => recall    75%.
+Matched 3 out of 5 CONV token sets => precision 60%.
+
 Ambiguous projection of GOLD node s14v1 (je vidět) to 2 CONV nodes [s14b1 (je), s14v1 (vidět)]
   The winner is GOLD node s14v1 (je vidět) <--> CONV node s14v1 (vidět): econcepts=vidět-007/vidět-007, match=4 (concept=vidět-007,:ARG1=s14e4 mapped to CONV s14k1,:aspect=state,:place=s14f1 mapped to CONV s14f1), weak match=5 (concept,:aspect,:ARG0,:ARG1,:place).
 
@@ -6239,6 +6551,14 @@ File CONV: 0 nodes unaligned: .
 17 .             
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 3,5 not found in CONV
+CONV alignment 3   not found in GOLD
+CONV alignment 5   not found in GOLD
+
+Matched 13 out of 14 GOLD token sets => recall    93%.
+Matched 13 out of 15 CONV token sets => precision 87%.
 
 Ambiguous projection of GOLD node s15v1 (Vlásek to) to 2 CONV nodes [s15e1 (to), s15v1 (Vlásek)]
   The winner is GOLD node s15v1 (Vlásek to) <--> CONV node s15v1 (Vlásek): econcepts=person/vlásek, match=1 (:refer-number=singular), weak match=2 (concept,:refer-number).
@@ -6425,6 +6745,11 @@ File CONV: 1 nodes unaligned: s16e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 2 out of 2 GOLD token sets => recall    100%.
+Matched 2 out of 2 CONV token sets => precision 100%.
+
 Correspondence GOLD s16j1 (se jmenovala) = CONV s16j1 (se jmenovala)
 Correspondence GOLD s16j2 (Jak)          = CONV s16j2 (Jak)
 Correspondence GOLD s16e1 (person)       = CONV 
@@ -6526,6 +6851,11 @@ File CONV: 1 nodes unaligned: s17e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 2 out of 2 GOLD token sets => recall    100%.
+Matched 2 out of 2 CONV token sets => precision 100%.
+
 Correspondence GOLD s17u1 (Už)      = CONV s17u1 (Už)
 Correspondence GOLD s17z1 (zemřela) = CONV s17z1 (zemřela)
 Correspondence GOLD s17e1 (person)  = CONV 
@@ -6618,6 +6948,11 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 3 out of 3 GOLD token sets => recall    100%.
+Matched 3 out of 3 CONV token sets => precision 100%.
+
 Correspondence GOLD s18e1 (mě)     = CONV s18p1 (mě)
 Correspondence GOLD s18m1 (mrzí)   = CONV s18m1 (mrzí)
 Correspondence GOLD s18t1 (To)     = CONV s18t1 (To)
@@ -6703,6 +7038,11 @@ File CONV: 0 nodes unaligned: .
 4 .           
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 3 out of 3 GOLD token sets => recall    100%.
+Matched 3 out of 3 CONV token sets => precision 100%.
 
 Correspondence GOLD s19b1 (je)            = CONV s19b1 (je)
 Correspondence GOLD s19p1 (Pepík)         = CONV s19p1 (Pepík)
@@ -6828,6 +7168,11 @@ File CONV: 4 nodes unaligned: s20e1/entity, s20e2/entity, s20j3/jmenovat-004, s2
 8 .                 
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 5 out of 5 GOLD token sets => recall    100%.
+Matched 5 out of 5 CONV token sets => precision 100%.
 
 Correspondence GOLD s20b1 (ale)              = CONV s20b1 (ale)
 Correspondence GOLD s20j1 (Nejmenovali jsme) = CONV s20j1 (Nejmenovali jsme)
@@ -6964,6 +7309,11 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 4 out of 4 GOLD token sets => recall    100%.
+Matched 4 out of 4 CONV token sets => precision 100%.
+
 Correspondence GOLD s21k1 (Každý)     = CONV s21k1 (Každý)
 Correspondence GOLD s21m1 (měl)       = CONV s21m1 (měl)
 Correspondence GOLD s21n1 (nějakou)   = CONV s21n1 (nějakou)
@@ -7064,6 +7414,13 @@ File CONV: 0 nodes unaligned: .
 5 .                   
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2 not found in CONV
+CONV alignment 2   not found in GOLD
+
+Matched 3 out of 4 GOLD token sets => recall    75%.
+Matched 3 out of 4 CONV token sets => precision 75%.
 
 Ambiguous projection of GOLD node s22p1 (Ten první) to 2 CONV nodes [s22p1 (první), s22t1 (Ten)]
 
@@ -7187,6 +7544,11 @@ File CONV: 1 nodes unaligned: s23e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 2 out of 2 GOLD token sets => recall    100%.
+Matched 2 out of 2 CONV token sets => precision 100%.
+
 Correspondence GOLD s23b1 (jsem byl)  = CONV s23b1 (jsem byl)
 Correspondence GOLD s23e1 (Já)        = CONV s23p1 (Já)
 Correspondence GOLD s23e2 (person)    = CONV 
@@ -7293,6 +7655,13 @@ File CONV: 2 nodes unaligned: s24e1/entity, s24v2/vypadat-004.
 10 .              
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 8,9 not found in CONV
+CONV alignment 9   not found in GOLD
+
+Matched 4 out of 5 GOLD token sets => recall    80%.
+Matched 4 out of 5 CONV token sets => precision 80%.
 
 Correspondence GOLD s24b1 (byl)             = CONV s24b1 (byl)
 Correspondence GOLD s24p1 (Pepík)           = CONV s24p1 (Pepík)
@@ -7431,6 +7800,15 @@ File CONV: 1 nodes unaligned: s25e1/entity.
 11 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 3,9 not found in CONV
+CONV alignment 3   not found in GOLD
+CONV alignment 8   not found in GOLD
+CONV alignment 9   not found in GOLD
+
+Matched 5 out of 6 GOLD token sets => recall    83%.
+Matched 5 out of 8 CONV token sets => precision 63%.
 
 Ambiguous projection of GOLD node s25s2 (sestra ta) to 2 CONV nodes [s25s1 (sestra), s25t2 (ta)]
   The winner is GOLD node s25s2 (sestra ta) <--> CONV node s25s1 (sestra): econcepts=person/sestra, match=3 (:mod=s25t1 mapped to CONV s25t1,:parenthesis=s25j1 mapped to CONV s25j1,:refer-number=singular), weak match=4 (concept,:refer-number,:mod,:parenthesis).
@@ -7580,6 +7958,11 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 5 out of 5 GOLD token sets => recall    100%.
+Matched 5 out of 5 CONV token sets => precision 100%.
+
 Correspondence GOLD s1a1 (ale)     = CONV s1a1 (ale)
 Correspondence GOLD s1e1 (byla)    = CONV s1b1 (byla)
 Correspondence GOLD s1l1 (legrace) = CONV s1l1 (legrace)
@@ -7673,6 +8056,14 @@ File CONV: 0 nodes unaligned: .
 8 .           
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 4,5 not found in CONV
+CONV alignment 4   not found in GOLD
+CONV alignment 5   not found in GOLD
+
+Matched 5 out of 6 GOLD token sets => recall    83%.
+Matched 5 out of 7 CONV token sets => precision 71%.
 
 Ambiguous projection of GOLD node s2t1 (tak dále) to 2 CONV nodes [s2d1 (dále), s2t1 (tak)]
   The winner is GOLD node s2t1 (tak dále) <--> CONV node s2d1 (dále): econcepts=thing/dále, match=0 (), weak match=1 (concept).
@@ -7785,6 +8176,14 @@ File CONV: 1 nodes unaligned: s3e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 3,4 not found in CONV
+CONV alignment 3   not found in GOLD
+CONV alignment 4   not found in GOLD
+
+Matched 2 out of 3 GOLD token sets => recall    67%.
+Matched 2 out of 4 CONV token sets => precision 50%.
+
 Ambiguous projection of GOLD node s3v1 (je vidět) to 2 CONV nodes [s3b1 (je), s3v1 (vidět)]
   The winner is GOLD node s3v1 (je vidět) <--> CONV node s3v1 (vidět): econcepts=vidět-007/vidět-007, match=3 (concept=vidět-007,:ARG1=s3n1 mapped to CONV s3n1,:aspect=state), weak match=4 (concept,:aspect,:ARG1,:ARG0).
 
@@ -7882,6 +8281,11 @@ File CONV: 4 nodes unaligned: s4b1/být-007, s4e1/entity, s4e2/entity, s4v1/vid�
 4 .          
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 2 out of 2 GOLD token sets => recall    100%.
+Matched 2 out of 2 CONV token sets => precision 100%.
 
 Correspondence GOLD s4f1 (Z fotky)        = CONV s4f1 (Z fotky)
 Correspondence GOLD s4t1 (té)             = CONV s4t1 (té)
@@ -8004,6 +8408,11 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 3 out of 3 GOLD token sets => recall    100%.
+Matched 3 out of 3 CONV token sets => precision 100%.
+
 Correspondence GOLD s5e1 (To)     = CONV s5t1 (To)
 Correspondence GOLD s5h1 (je)     = CONV s5b1 (je)
 Correspondence GOLD s5p3 (pravda) = CONV s5p1 (pravda)
@@ -8102,6 +8511,11 @@ File CONV: 3 nodes unaligned: s6e1/event, s6e2/entity, s6e3/entity.
 8 .            
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 2 out of 2 GOLD token sets => recall    100%.
+Matched 2 out of 2 CONV token sets => precision 100%.
 
 Correspondence GOLD s6h2 (Hlavně)                   = CONV s6h1 (Hlavně)
 Correspondence GOLD s6s1 (že jsme si mohli sednout) = CONV s6s1 (že jsme si mohli sednout)
@@ -8220,6 +8634,12 @@ File CONV: 2 nodes unaligned: s7e1/entity, s7x1/Rcp.
 3 ?           
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2 not found in CONV
+
+Matched 1 out of 2 GOLD token sets => recall    50%.
+Matched 1 out of 1 CONV token sets => precision 100%.
 
 Correspondence GOLD s7v1 (Vídáte) = CONV s7v1 (Vídáte)
 Correspondence GOLD s7p1 (person) = CONV 
@@ -8347,6 +8767,11 @@ File CONV: 1 nodes unaligned: s8e1/entity.
 14 .              
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 9 out of 9 GOLD token sets => recall    100%.
+Matched 9 out of 9 CONV token sets => precision 100%.
 
 Correspondence GOLD s8i1 (je)              = CONV s8b1 (je)
 Correspondence GOLD s8p3 (prakticky)       = CONV s8p1 (prakticky)
@@ -8489,6 +8914,21 @@ File CONV: 0 nodes unaligned: .
 14 .           
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2,11  not found in CONV
+GOLD alignment 4,5,6 not found in CONV
+GOLD alignment 7,13  not found in CONV
+CONV alignment 11    not found in GOLD
+CONV alignment 13    not found in GOLD
+CONV alignment 2     not found in GOLD
+CONV alignment 4     not found in GOLD
+CONV alignment 5,7   not found in GOLD
+CONV alignment 6     not found in GOLD
+CONV alignment 8     not found in GOLD
+
+Matched 5 out of 8 GOLD token sets => recall    63%.
+Matched 5 out of 12 CONV token sets => precision 42%.
 
 Ambiguous projection of GOLD node s9e1 (to to) to 2 CONV nodes [s9t1 (to), s9t3 (to)]
 Ambiguous projection of GOLD node s9r1 (roky rok) to 2 CONV nodes [s9r1 (za roky), s9r2 (rok)]
@@ -8697,6 +9137,11 @@ File CONV: 1 nodes unaligned: s10e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 7 out of 7 GOLD token sets => recall    100%.
+Matched 7 out of 7 CONV token sets => precision 100%.
+
 Correspondence GOLD s10i1 (jsou)            = CONV s10b1 (jsou)
 Correspondence GOLD s10j1 (jezdí)           = CONV s10j1 (jezdí)
 Correspondence GOLD s10p3 (maturanti kteří) = CONV s10m1 (maturanti kteří)
@@ -8807,6 +9252,11 @@ File CONV: 1 nodes unaligned: s11e1/entity.
 3 .             
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 2 out of 2 GOLD token sets => recall    100%.
+Matched 2 out of 2 CONV token sets => precision 100%.
 
 Correspondence GOLD s11c1 (nechodí) = CONV s11c1 (nechodí)
 Correspondence GOLD s11p3 (Jedna)   = CONV s11j1 (Jedna)
@@ -8923,6 +9373,11 @@ File CONV: 2 nodes unaligned: s12c1/chodit-006, s12e1/entity.
 8 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 6 out of 6 GOLD token sets => recall    100%.
+Matched 6 out of 6 CONV token sets => precision 100%.
 
 Correspondence GOLD s12s2 (s šátkem)      = CONV s12s1 (s šátkem)
 Correspondence GOLD s12t1 (tadyhleta)     = CONV s12t1 (tadyhleta)
@@ -9081,6 +9536,14 @@ File CONV: 1 nodes unaligned: s13e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,3,4 not found in CONV
+CONV alignment 1     not found in GOLD
+CONV alignment 3,4   not found in GOLD
+
+Matched 1 out of 2 GOLD token sets => recall    50%.
+Matched 1 out of 3 CONV token sets => precision 33%.
+
 Ambiguous projection of GOLD node s13z1 (Je po smrti) to 2 CONV nodes [s13b1 (Je), s13s1 (po smrti)]
   The winner is GOLD node s13z1 (Je po smrti) <--> CONV node s13b1 (Je): econcepts=zemřít-001/být-011, match=1 (:temporal=s13u1 mapped to CONV s13u1), weak match=4 (concept,:aspect,:ARG1,:temporal).
 
@@ -9195,6 +9658,11 @@ File CONV: 0 nodes unaligned: .
 7 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 6 out of 6 GOLD token sets => recall    100%.
+Matched 6 out of 6 CONV token sets => precision 100%.
 
 Correspondence GOLD s14b2 (brigádník) = CONV s14b2 (brigádník)
 Correspondence GOLD s14e1 (Je)        = CONV s14b1 (Je)
@@ -9335,6 +9803,15 @@ File CONV: 0 nodes unaligned: .
 20 .                
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2 not found in CONV
+CONV alignment 1   not found in GOLD
+CONV alignment 2   not found in GOLD
+CONV alignment 3   not found in GOLD
+
+Matched 12 out of 13 GOLD token sets => recall    92%.
+Matched 12 out of 15 CONV token sets => precision 80%.
 
 Ambiguous projection of GOLD node s15i1 (To byli) to 2 CONV nodes [s15b1 (byli), s15e1 (To)]
   The winner is GOLD node s15i1 (To byli) <--> CONV node s15b1 (byli): econcepts=identity-91/být-007, match=2 (:ARG2=s15l1 mapped to CONV s15l1,:clausal-marker=s15z1 mapped to CONV s15z1), weak match=4 (concept,:aspect,:clausal-marker,:ARG2).
@@ -9495,6 +9972,11 @@ File CONV: 1 nodes unaligned: s16e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 2 out of 2 GOLD token sets => recall    100%.
+Matched 2 out of 2 CONV token sets => precision 100%.
+
 Correspondence GOLD s16p3 (je)     = CONV s16e2 (je)
 Correspondence GOLD s16z1 (Neznám) = CONV s16z1 (Neznám)
 Correspondence GOLD s16p1 (person) = CONV 
@@ -9605,6 +10087,14 @@ File CONV: 0 nodes unaligned: .
 10 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 5,6 not found in CONV
+CONV alignment 5   not found in GOLD
+CONV alignment 6   not found in GOLD
+
+Matched 5 out of 6 GOLD token sets => recall    83%.
+Matched 5 out of 7 CONV token sets => precision 71%.
 
 Ambiguous projection of GOLD node s17v1 (jak vykopávat) to 2 CONV nodes [s17j1 (jak), s17v1 (vykopávat)]
   The winner is GOLD node s17v1 (jak vykopávat) <--> CONV node s17v1 (vykopávat): econcepts=vykopávat-002/vykopávat-002, match=4 (concept=vykopávat-002,:ARG0=s17p4 mapped to CONV s17p1,:ARG1=s17d1 mapped to CONV s17d1,:aspect=habitual), weak match=4 (concept,:aspect,:ARG0,:ARG1).
@@ -9720,6 +10210,14 @@ File CONV: 2 nodes unaligned: s18e1/entity, s18e2/entity.
 6 ?             
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2,3 not found in CONV
+CONV alignment 1,3   not found in GOLD
+CONV alignment 2     not found in GOLD
+
+Matched 1 out of 2 GOLD token sets => recall    50%.
+Matched 1 out of 3 CONV token sets => precision 33%.
 
 Ambiguous projection of GOLD node s18u1 (Na jak dlouho) to 2 CONV nodes [s18d1 (Na dlouho), s18j2 (jak)]
   The winner is GOLD node s18u1 (Na jak dlouho) <--> CONV node s18d1 (Na dlouho): econcepts=umr-unknown/dlouho, match=0 (), weak match=1 (concept).
@@ -9860,6 +10358,14 @@ File CONV: 0 nodes unaligned: .
 7 .              
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2,3 not found in CONV
+CONV alignment 2   not found in GOLD
+CONV alignment 3   not found in GOLD
+
+Matched 4 out of 5 GOLD token sets => recall    80%.
+Matched 4 out of 6 CONV token sets => precision 67%.
 
 Ambiguous projection of GOLD node s19h1 (to bylo) to 2 CONV nodes [s19b1 (bylo), s19t1 (to)]
   The winner is GOLD node s19h1 (to bylo) <--> CONV node s19b1 (bylo): econcepts=have-duration-91/být-011, match=1 (:frequency=s19v1 mapped to CONV s19v1), weak match=4 (concept,:aspect,:ARG1,:frequency).
@@ -10002,6 +10508,11 @@ File CONV: 3 nodes unaligned: s20e1/entity, s20e2/entity, s20j1/jezdit-002.
 9 .              
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 5 out of 5 GOLD token sets => recall    100%.
+Matched 5 out of 5 CONV token sets => precision 100%.
 
 Correspondence GOLD s20a1 (asi)              = CONV s20a1 (asi)
 Correspondence GOLD s20o1 (nebo)             = CONV s20o1 (nebo)
@@ -10184,6 +10695,15 @@ File CONV: 4 nodes unaligned: s21e1/entity, s21e2/entity, s21e3/entity, s21j1/je
 13 .             
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 5,6,11,12 not found in CONV
+CONV alignment 11,12     not found in GOLD
+CONV alignment 5,6       not found in GOLD
+CONV alignment 7         not found in GOLD
+
+Matched 6 out of 7 GOLD token sets => recall    86%.
+Matched 6 out of 9 CONV token sets => precision 67%.
 
 Ambiguous projection of GOLD node s21s2 (v sobotu do soboty) to 2 CONV nodes [s21s1 (v sobotu), s21s2 (do soboty)]
   The winner is GOLD node s21s2 (v sobotu do soboty) <--> CONV node s21s2 (do soboty): econcepts=sobota/sobota, match=1 (concept=sobota), weak match=1 (concept).
@@ -10410,6 +10930,17 @@ File CONV: 3 nodes unaligned: s22e1/entity, s22e2/entity, s22e3/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 11    not found in CONV
+GOLD alignment 5,6,7 not found in CONV
+CONV alignment 1,6   not found in GOLD
+CONV alignment 5     not found in GOLD
+CONV alignment 7     not found in GOLD
+CONV alignment 8,11  not found in GOLD
+
+Matched 10 out of 12 GOLD token sets => recall    83%.
+Matched 10 out of 14 CONV token sets => precision 71%.
+
 Ambiguous projection of GOLD node s22b1 (Na brigády) to 2 CONV nodes [s22b1 (Na brigády), s22b2 (Na byla)]
 Ambiguous projection of GOLD node s22o2 (při okopávání) to 2 CONV nodes [s22o2 (při okopávání), s22s1 (při sklízení)]
 Ambiguous projection of GOLD node s22p4 (jako byla pomoc) to 3 CONV nodes [s22b2 (Na byla), s22i1 (jako), s22p1 (pomoc)]
@@ -10604,6 +11135,11 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 6 out of 6 GOLD token sets => recall    100%.
+Matched 6 out of 6 CONV token sets => precision 100%.
+
 Correspondence GOLD s23b2 (brigády)    = CONV s23b2 (brigády)
 Correspondence GOLD s23e1 (To)         = CONV s23t1 (To)
 Correspondence GOLD s23i1 (byly)       = CONV s23b1 (byly)
@@ -10726,6 +11262,11 @@ File CONV: 1 nodes unaligned: s24e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 2 out of 2 GOLD token sets => recall    100%.
+Matched 2 out of 2 CONV token sets => precision 100%.
+
 Correspondence GOLD s24d1 (daleko)       = CONV s24d1 (daleko)
 Correspondence GOLD s24j1 (Jezdili jste) = CONV s24j1 (Jezdili jste)
 Correspondence GOLD s24p1 (person)       = CONV 
@@ -10816,6 +11357,11 @@ File CONV: 0 nodes unaligned: .
 2 .        
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 1 out of 1 GOLD token sets => recall    100%.
+Matched 1 out of 1 CONV token sets => precision 100%.
 
 Correspondence GOLD s25n1 (Ne)     = CONV s25n1 (Ne)
 Correspondence GOLD s25p1 (person) = CONV 
@@ -10950,6 +11496,17 @@ File CONV: 1 nodes unaligned: s1b2/být-007.
 40 .                 
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2,3,4,5                  not found in CONV
+GOLD alignment 10,11,12,13,14,15,16,17,18 not found in CONV
+CONV alignment 1                          not found in GOLD
+CONV alignment 10,11                      not found in GOLD
+CONV alignment 12,13,14,15,16,17,18       not found in GOLD
+CONV alignment 2,3,4,5                    not found in GOLD
+
+Matched 15 out of 17 GOLD token sets => recall    88%.
+Matched 15 out of 19 CONV token sets => precision 79%.
 
 Ambiguous projection of GOLD node s1s1 (Společnost New England Electric System) to 2 CONV nodes [s1n1 (New England Electric System), s1s1 (Společnost)]
 Ambiguous projection of GOLD node s1s3 (o společnost Public Service Co . of New Hampshire) to 2 CONV nodes [s1n3 (Public Service Co . of New Hampshire), s1s2 (o společnost)]
@@ -11207,6 +11764,17 @@ File CONV: 2 nodes unaligned: s2e1/entity, s2e2/entity.
 44 .                 
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 36,37,38,39,40  not found in CONV
+GOLD alignment 5,6,7,8,9,10,12 not found in CONV
+CONV alignment 36              not found in GOLD
+CONV alignment 37,38,39,40     not found in GOLD
+CONV alignment 5,6,12          not found in GOLD
+CONV alignment 7,8,9,10        not found in GOLD
+
+Matched 21 out of 23 GOLD token sets => recall    91%.
+Matched 21 out of 25 CONV token sets => precision 84%.
 
 Ambiguous projection of GOLD node s2e0 (entity) to 2 CONV nodes [s2e1 (entity), s2e2 (entity)]
 Ambiguous projection of GOLD node s2s1 (o společnost PS of New Hampshire která) to 2 CONV nodes [s2n1 (PS of New Hampshire), s2s1 (o společnost která)]
@@ -11509,6 +12077,44 @@ File CONV: 1 nodes unaligned: s3e1/entity.
 46 .                  
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2,3,4        not found in CONV
+GOLD alignment 14,15,16,17,18 not found in CONV
+GOLD alignment 19,20,23       not found in CONV
+GOLD alignment 21,30,38       not found in CONV
+GOLD alignment 26,27          not found in CONV
+GOLD alignment 28,29          not found in CONV
+GOLD alignment 32,33,34       not found in CONV
+GOLD alignment 36,37,40       not found in CONV
+GOLD alignment 41,44,45       not found in CONV
+GOLD alignment 7,8            not found in CONV
+GOLD alignment 9,10           not found in CONV
+CONV alignment 1              not found in GOLD
+CONV alignment 10             not found in GOLD
+CONV alignment 14             not found in GOLD
+CONV alignment 15,16,17,18    not found in GOLD
+CONV alignment 19             not found in GOLD
+CONV alignment 2,3,4          not found in GOLD
+CONV alignment 20             not found in GOLD
+CONV alignment 21             not found in GOLD
+CONV alignment 22             not found in GOLD
+CONV alignment 23             not found in GOLD
+CONV alignment 26             not found in GOLD
+CONV alignment 27,29          not found in GOLD
+CONV alignment 27,37          not found in GOLD
+CONV alignment 28             not found in GOLD
+CONV alignment 30             not found in GOLD
+CONV alignment 32             not found in GOLD
+CONV alignment 33,34          not found in GOLD
+CONV alignment 36             not found in GOLD
+CONV alignment 38,40          not found in GOLD
+CONV alignment 41,44          not found in GOLD
+CONV alignment 45             not found in GOLD
+CONV alignment 8              not found in GOLD
+
+Matched 9 out of 20 GOLD token sets => recall    45%.
+Matched 9 out of 31 CONV token sets => precision 29%.
 
 Ambiguous projection of GOLD node s3d1 (dolarů dolarů dolarů) to 3 CONV nodes [s3d1 (dolarů), s3d3 (dolarů), s3d4 (dolarů kterými)]
 Ambiguous projection of GOLD node s3m2 (2 miliardy což) to 3 CONV nodes [s3c1 (což), s3m1 (miliardy), s3x1 (2)]
@@ -11853,6 +12459,24 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2,3           not found in CONV
+GOLD alignment 12,13           not found in CONV
+GOLD alignment 5,6,7           not found in CONV
+GOLD alignment 8,9,10,17,18,19 not found in CONV
+CONV alignment 1               not found in GOLD
+CONV alignment 10              not found in GOLD
+CONV alignment 12              not found in GOLD
+CONV alignment 13              not found in GOLD
+CONV alignment 17,18           not found in GOLD
+CONV alignment 19              not found in GOLD
+CONV alignment 2,3             not found in GOLD
+CONV alignment 6,7             not found in GOLD
+CONV alignment 8,9             not found in GOLD
+
+Matched 4 out of 8 GOLD token sets => recall    50%.
+Matched 4 out of 13 CONV token sets => precision 31%.
+
 Ambiguous projection of GOLD node s4s2 (Společnost United Illuminating) to 2 CONV nodes [s4n1 (United Illuminating), s4s2 (Společnost)]
 Ambiguous projection of GOLD node s4s3 (ve státě Connecticut ve státě Connecticut) to 4 CONV nodes [s4c1 (Connecticut), s4c2 (Connecticut), s4s3 (ve státě), s4s6 (ve státě)]
 Ambiguous projection of GOLD node s4s5 (společnost Northeast) to 2 CONV nodes [s4n2 (Northeast), s4s5 (společnost)]
@@ -12037,6 +12661,20 @@ File CONV: 0 nodes unaligned: .
 23 .                  
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2,3,4,5,14 not found in CONV
+GOLD alignment 10,11,12     not found in CONV
+GOLD alignment 18,19,20,21  not found in CONV
+CONV alignment 1,14         not found in GOLD
+CONV alignment 11,12        not found in GOLD
+CONV alignment 18           not found in GOLD
+CONV alignment 19,21        not found in GOLD
+CONV alignment 2,3,4,5      not found in GOLD
+CONV alignment 20           not found in GOLD
+
+Matched 7 out of 10 GOLD token sets => recall    70%.
+Matched 7 out of 13 CONV token sets => precision 54%.
 
 Ambiguous projection of GOLD node s5a1 (asi na 2.2 miliardy) to 3 CONV nodes [s5a1 (asi), s5m2 (na miliardy), s5x2 (2.2)]
 Ambiguous projection of GOLD node s5s1 (Společnost PS of New Hampshire svůj) to 2 CONV nodes [s5n1 (PS of New Hampshire), s5s1 (Společnost svůj)]
@@ -12296,6 +12934,28 @@ File CONV: 3 nodes unaligned: s6e1/entity, s6e2/entity, s6e3/entity.
 52 .                      
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2                not found in CONV
+GOLD alignment 33,34,35,36,37     not found in CONV
+GOLD alignment 39,40              not found in CONV
+GOLD alignment 39,45              not found in CONV
+GOLD alignment 8,9,10,11,19,25,29 not found in CONV
+CONV alignment 1                  not found in GOLD
+CONV alignment 2                  not found in GOLD
+CONV alignment 25,29              not found in GOLD
+CONV alignment 3                  not found in GOLD
+CONV alignment 33                 not found in GOLD
+CONV alignment 34,35,36,37        not found in GOLD
+CONV alignment 38                 not found in GOLD
+CONV alignment 39                 not found in GOLD
+CONV alignment 40                 not found in GOLD
+CONV alignment 45                 not found in GOLD
+CONV alignment 8,19               not found in GOLD
+CONV alignment 9,10,11            not found in GOLD
+
+Matched 19 out of 24 GOLD token sets => recall    79%.
+Matched 19 out of 31 CONV token sets => precision 61%.
 
 Ambiguous projection of GOLD node s6n2 (kdyby nabídla) to 2 CONV nodes [s6n2 (kdyby nabídla), s6v2 (kdyby by se nevyplnily)]
 Ambiguous projection of GOLD node s6r2 (John Rowe) to 2 CONV nodes [s6j1 (John), s6r2 (Rowe)]
@@ -12658,6 +13318,21 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 11,12,22 not found in CONV
+GOLD alignment 23,24    not found in CONV
+GOLD alignment 6,7,8,9  not found in CONV
+CONV alignment 11,12    not found in GOLD
+CONV alignment 22       not found in GOLD
+CONV alignment 23       not found in GOLD
+CONV alignment 24       not found in GOLD
+CONV alignment 6,9      not found in GOLD
+CONV alignment 7        not found in GOLD
+CONV alignment 8        not found in GOLD
+
+Matched 12 out of 15 GOLD token sets => recall    80%.
+Matched 12 out of 19 CONV token sets => precision 63%.
+
 Ambiguous projection of GOLD node s1o1 (na Federální rezervní banku) to 3 CONV nodes [s1b2 (na banku), s1f1 (Federální), s1r1 (rezervní)]
 Ambiguous projection of GOLD node s1o2 (centrální banka) to 2 CONV nodes [s1b4 (banka), s1c1 (centrální)]
 Ambiguous projection of GOLD node s1s2 (aby snížila to) to 2 CONV nodes [s1s2 (aby snížila), s1t2 (to)]
@@ -12873,6 +13548,22 @@ File CONV: 2 nodes unaligned: s2e1/entity, s2e3/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 19       not found in CONV
+GOLD alignment 24,25    not found in CONV
+GOLD alignment 3,5      not found in CONV
+GOLD alignment 6,7,8    not found in CONV
+CONV alignment 19,24,25 not found in GOLD
+CONV alignment 2        not found in GOLD
+CONV alignment 3        not found in GOLD
+CONV alignment 5        not found in GOLD
+CONV alignment 6        not found in GOLD
+CONV alignment 7        not found in GOLD
+CONV alignment 8        not found in GOLD
+
+Matched 11 out of 15 GOLD token sets => recall    73%.
+Matched 11 out of 18 CONV token sets => precision 61%.
+
 Ambiguous projection of GOLD node s2b1 (12 bankami) to 2 CONV nodes [s2b1 (bankami), s2x1 (12)]
 Ambiguous projection of GOLD node s2o2 (Federální rezervní banky) to 3 CONV nodes [s2b2 (banky), s2f1 (Federální), s2r1 (rezervní)]
   The winner is GOLD node s2b1 (12 bankami) <--> CONV node s2b1 (bankami): econcepts=banka/banka, match=2 (concept=banka,:mod=s2o1 mapped to CONV s2o1), weak match=2 (concept,:mod).
@@ -13077,6 +13768,19 @@ File CONV: 2 nodes unaligned: s3e1/entity, s3e3/entity.
 16 .                
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 13,14,15 not found in CONV
+GOLD alignment 8,9      not found in CONV
+CONV alignment 10       not found in GOLD
+CONV alignment 13       not found in GOLD
+CONV alignment 14       not found in GOLD
+CONV alignment 15       not found in GOLD
+CONV alignment 8        not found in GOLD
+CONV alignment 9        not found in GOLD
+
+Matched 6 out of 8 GOLD token sets => recall    75%.
+Matched 6 out of 12 CONV token sets => precision 50%.
 
 Ambiguous projection of GOLD node s3o1 (Federální rezervní banky) to 3 CONV nodes [s3b2 (banky), s3f1 (Federální), s3r4 (rezervní)]
 Ambiguous projection of GOLD node s3p2 (Robert Black) to 2 CONV nodes [s3b1 (Black), s3r2 (Robert)]
@@ -13309,6 +14013,27 @@ File CONV: 5 nodes unaligned: s4e1/entity, s4e2/event, s4e3/entity, s4e4/entity,
 30 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 10,11    not found in CONV
+GOLD alignment 14,15,16 not found in CONV
+GOLD alignment 25,26,27 not found in CONV
+GOLD alignment 28,29    not found in CONV
+GOLD alignment 5,6,7    not found in CONV
+CONV alignment 10       not found in GOLD
+CONV alignment 11       not found in GOLD
+CONV alignment 14,16    not found in GOLD
+CONV alignment 15       not found in GOLD
+CONV alignment 25       not found in GOLD
+CONV alignment 26       not found in GOLD
+CONV alignment 27       not found in GOLD
+CONV alignment 28       not found in GOLD
+CONV alignment 29       not found in GOLD
+CONV alignment 5,7      not found in GOLD
+CONV alignment 6        not found in GOLD
+
+Matched 10 out of 15 GOLD token sets => recall    67%.
+Matched 10 out of 21 CONV token sets => precision 48%.
 
 Ambiguous projection of GOLD node s4d1 (ve čtvrtém čtvrtletí) to 2 CONV nodes [s4c2 (ve čtvrtletí), s4c3 (čtvrtém)]
 Ambiguous projection of GOLD node s4d2 (na třetí čtvrtletí) to 2 CONV nodes [s4c1 (na čtvrtletí), s4t1 (třetí)]
@@ -13611,6 +14336,11 @@ File CONV: 1 nodes unaligned: s5e1/entity.
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 10 out of 10 GOLD token sets => recall    100%.
+Matched 10 out of 10 CONV token sets => precision 100%.
+
 Correspondence GOLD s5a1 (i)              = CONV s5a1 (i)
 Correspondence GOLD s5d1 (důvodem)        = CONV s5d1 (důvodem)
 Correspondence GOLD s5i1 (že není)        = CONV s5b2 (že není)
@@ -13780,6 +14510,11 @@ File CONV: 3 nodes unaligned: s6e1/entity, s6e2/entity, s6e3/entity.
 24 .                
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+
+Matched 15 out of 15 GOLD token sets => recall    100%.
+Matched 15 out of 15 CONV token sets => precision 100%.
 
 Correspondence GOLD s6b1 (Blížíme se)     = CONV s6b1 (Blížíme se)
 Correspondence GOLD s6b2 (na bod kdy)     = CONV s6b2 (na bod kdy)
@@ -13989,6 +14724,15 @@ File CONV: 0 nodes unaligned: .
 25 .                   
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 10,11,12 not found in CONV
+CONV alignment 10       not found in GOLD
+CONV alignment 11       not found in GOLD
+CONV alignment 12       not found in GOLD
+
+Matched 15 out of 16 GOLD token sets => recall    94%.
+Matched 15 out of 18 CONV token sets => precision 83%.
 
 Ambiguous projection of GOLD node s7o2 (Federální rezervní banka) to 3 CONV nodes [s7b2 (banka), s7f1 (Federální), s7r1 (rezervní)]
   The winner is GOLD node s7o2 (Federální rezervní banka) <--> CONV node s7f1 (Federální): econcepts=organization/Federální, match=0 (), weak match=1 (concept).
@@ -14200,6 +14944,23 @@ File CONV: 1 nodes unaligned: s8e1/entity.
 38 .                  s8n1
 
 Node-node correspondences:
+
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 26,27          not found in CONV
+GOLD alignment 33,34,35,36,37 not found in CONV
+GOLD alignment 9,10,11        not found in CONV
+CONV alignment 10             not found in GOLD
+CONV alignment 11             not found in GOLD
+CONV alignment 15             not found in GOLD
+CONV alignment 26             not found in GOLD
+CONV alignment 27             not found in GOLD
+CONV alignment 28             not found in GOLD
+CONV alignment 33,34          not found in GOLD
+CONV alignment 35,36,37,38    not found in GOLD
+CONV alignment 9              not found in GOLD
+
+Matched 14 out of 17 GOLD token sets => recall    82%.
+Matched 14 out of 23 CONV token sets => precision 61%.
 
 Ambiguous projection of GOLD node s8o2 (ze společnosti Bankers Trust Co) to 2 CONV nodes [s8n1 (Bankers Trust Co .), s8s3 (ze společnosti)]
 Ambiguous projection of GOLD node s8o3 (Federální rezervní banka) to 3 CONV nodes [s8b1 (banka), s8f1 (Federální), s8r2 (rezervní)]
@@ -14480,6 +15241,29 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 1,2,3       not found in CONV
+GOLD alignment 11,12,13,14 not found in CONV
+GOLD alignment 15,16,17    not found in CONV
+GOLD alignment 23,24,25    not found in CONV
+GOLD alignment 28          not found in CONV
+GOLD alignment 30          not found in CONV
+CONV alignment 1           not found in GOLD
+CONV alignment 11,14       not found in GOLD
+CONV alignment 12          not found in GOLD
+CONV alignment 13          not found in GOLD
+CONV alignment 15,17       not found in GOLD
+CONV alignment 16          not found in GOLD
+CONV alignment 2           not found in GOLD
+CONV alignment 23,24       not found in GOLD
+CONV alignment 25          not found in GOLD
+CONV alignment 28,30       not found in GOLD
+CONV alignment 3           not found in GOLD
+CONV alignment 31          not found in GOLD
+
+Matched 15 out of 21 GOLD token sets => recall    71%.
+Matched 15 out of 27 CONV token sets => precision 56%.
+
 Ambiguous projection of GOLD node s9d3 (13 . října) to 2 CONV nodes [s9r2 (října), s9x4 (13 .)]
 Ambiguous projection of GOLD node s9o1 (Federální rezervní banka) to 3 CONV nodes [s9b2 (banka), s9f1 (Federální), s9r1 (rezervní)]
 Ambiguous projection of GOLD node s9p5 (o 0.25 procentního bodu) to 3 CONV nodes [s9b3 (o bodu), s9p1 (procentního), s9x1 (0.25)]
@@ -14693,6 +15477,15 @@ File CONV: 0 nodes unaligned: .
 
 Node-node correspondences:
 
+Comparing aligned tokens in GOLD and CONV.
+GOLD alignment 2,3,4 not found in CONV
+CONV alignment 2     not found in GOLD
+CONV alignment 3     not found in GOLD
+CONV alignment 4     not found in GOLD
+
+Matched 8 out of 9 GOLD token sets => recall    89%.
+Matched 8 out of 11 CONV token sets => precision 73%.
+
 Ambiguous projection of GOLD node s10o1 (Federální rezervní banky) to 3 CONV nodes [s10b1 (banky), s10f1 (Federální), s10r1 (rezervní)]
   The winner is GOLD node s10o1 (Federální rezervní banky) <--> CONV node s10f1 (Federální): econcepts=organization/Federální, match=0 (), weak match=1 (concept).
 
@@ -14765,6 +15558,10 @@ SUMMARY:
 Number of tokens: 1315
 Number of nodes per file: GOLD:1124, CONV:981
 File-to-file node mapping:
+Aligned token set comparison:
+Out of 749 aligned token sets in GOLD, 638 found in CONV => recall    85.18%.
+Out of 865 aligned token sets in CONV, 638 found in GOLD => precision 73.76%.
+ => F₁(GOLD,CONV) = 79.06%.
 Out of 1124 total GOLD nodes, 763 mapped to CONV => recall    = 67.88%.
 Out of 981 total CONV nodes, 763 mapped to GOLD => precision = 77.78%.
  => F₁(GOLD,CONV) = 72.49%.

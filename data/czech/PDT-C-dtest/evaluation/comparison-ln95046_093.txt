@@ -40,6 +40,11 @@ File HH: 3 nodes unaligned: s1n1/name["parlament"], s1p3/publication-91, s1t1/th
 
 Node-node correspondences:
 
+Comparing aligned tokens in ML and HH.
+
+Matched 5 out of 5 ML token sets => recall    100%.
+Matched 5 out of 5 HH token sets => precision 100%.
+
 Correspondence ML s1c1 (činnosti)          = HH s1c1 (činnosti)
 Correspondence ML s1k1 (kontrarozvědky)    = HH s1k1 (kontrarozvědky)
 Correspondence ML s1n1 (name["parlament"]) = HH s1n1 (name["parlament"])
@@ -89,6 +94,11 @@ File HH: 3 nodes unaligned: s2n1/name["Praha"], s2p1/publication-91, s2t2/thing.
 2 -          
 
 Node-node correspondences:
+
+Comparing aligned tokens in ML and HH.
+
+Matched 1 out of 1 ML token sets => recall    100%.
+Matched 1 out of 1 HH token sets => precision 100%.
 
 Correspondence ML s2n1 (name["Praha"])  = HH s2n1 (name["Praha"])
 Correspondence ML s2p0 (publication-91) = HH s2p1 (publication-91)
@@ -212,6 +222,11 @@ File HH: 3 nodes unaligned: s3n1/name["parlament"], s3n2/name["ODA"], s3n3/name[
 30 .                   
 
 Node-node correspondences:
+
+Comparing aligned tokens in ML and HH.
+
+Matched 19 out of 19 ML token sets => recall    100%.
+Matched 19 out of 19 HH token sets => precision 100%.
 
 Correspondence ML s3a1 (a)                                          = HH s3a1 (a)
 Correspondence ML s3b1 (před)                                       = HH s3b4 (před)
@@ -353,6 +368,11 @@ File HH: 7 nodes unaligned: s4h1/have-org-role-91, s4h2/have-org-role-91, s4h3/h
 17 .              
 
 Node-node correspondences:
+
+Comparing aligned tokens in ML and HH.
+
+Matched 11 out of 11 ML token sets => recall    100%.
+Matched 11 out of 11 HH token sets => precision 100%.
 
 Ambiguous projection of ML node s4h1 (have-org-role-91) to 3 HH nodes [s4h1 (have-org-role-91), s4h2 (have-org-role-91), s4h3 (have-org-role-91)]
 Ambiguous projection of ML node s4h2 (have-org-role-91) to 3 HH nodes [s4h1 (have-org-role-91), s4h2 (have-org-role-91), s4h3 (have-org-role-91)]
@@ -514,6 +534,11 @@ File HH: 3 nodes unaligned: s5h1/have-org-role-91, s5n1/name["Stanislav" "Devát
 
 Node-node correspondences:
 
+Comparing aligned tokens in ML and HH.
+
+Matched 13 out of 13 ML token sets => recall    100%.
+Matched 13 out of 13 HH token sets => precision 100%.
+
 Correspondence ML s5d1 (na tom že dokončí)          = HH s5d1 (na tom že dokončí)
 Correspondence ML s5e5 (o extremismu)               = HH s5e5 (o extremismu)
 Correspondence ML s5h1 (have-org-role-91)           = HH s5h1 (have-org-role-91)
@@ -619,6 +644,17 @@ File HH: 1 nodes unaligned: s6u2/umr-unknown.
 
 Node-node correspondences:
 
+Comparing aligned tokens in ML and HH.
+ML alignment 10            not found in HH
+ML alignment 11            not found in HH
+ML alignment 4,5,12,13     not found in HH
+ML alignment 7             not found in HH
+HH alignment 10,11         not found in ML
+HH alignment 4,5,7,8,12,13 not found in ML
+
+Matched 7 out of 11 ML token sets => recall    64%.
+Matched 7 out of 9 HH token sets => precision 78%.
+
 Ambiguous projection of ML node s6t1 (tajná) to 2 HH nodes [s6t1 (tajná), s6z1 (o to zda tajná mohla získat)]
 
 Ambiguous projection of HH node s6u1 (veškeré údaje) to 2 ML nodes [s6u1 (údaje), s6v1 (veškeré)]
@@ -707,6 +743,10 @@ SUMMARY:
 Number of tokens: 100
 Number of nodes per file: ML:81, HH:78
 File-to-file node mapping:
+Aligned token set comparison:
+Out of 60 aligned token sets in ML, 56 found in HH => recall    93.33%.
+Out of 58 aligned token sets in HH, 56 found in ML => precision 96.55%.
+ => F₁(ML,HH) = 94.92%.
 Out of 81 total ML nodes, 77 mapped to HH => recall    = 95.06%.
 Out of 78 total HH nodes, 77 mapped to ML => precision = 98.72%.
  => F₁(ML,HH) = 96.86%.

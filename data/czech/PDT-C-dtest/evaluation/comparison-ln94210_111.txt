@@ -83,6 +83,11 @@ File HH: 4 nodes unaligned: s1c1/číst-002, s1i2/identity-91, s1p1/publication-
 
 Node-node correspondences:
 
+Comparing aligned tokens in ML and HH.
+
+Matched 12 out of 12 ML token sets => recall    100%.
+Matched 12 out of 12 HH token sets => precision 100%.
+
 Correspondence ML s1c1 (číst-002)             = HH s1c1 (číst-002)
 Correspondence ML s1c2 (cena)                 = HH s1c2 (cena)
 Correspondence ML s1h1 (je)                   = HH s1h1 (je)
@@ -197,6 +202,16 @@ File HH: 4 nodes unaligned: s2n1/name["Duha"], s2n3/name["LN"], s2p4/person, s2s
 24 .                
 
 Node-node correspondences:
+
+Comparing aligned tokens in ML and HH.
+ML alignment 19      not found in HH
+ML alignment 20      not found in HH
+ML alignment 9,11    not found in HH
+HH alignment 19,20   not found in ML
+HH alignment 9,10,11 not found in ML
+
+Matched 11 out of 14 ML token sets => recall    79%.
+Matched 11 out of 13 HH token sets => precision 85%.
 
 Ambiguous projection of HH node s2m1 (magazínu Duha) to 2 ML nodes [s2m1 (magazínu), s2n1 (Duha)]
   The winner is HH node s2m1 (magazínu Duha) <--> ML node s2m1 (magazínu): econcepts=magazín/magazín, match=4 (concept=magazín,:mod=s2t1 mapped to ML s2t1,:mod=s2b1 mapped to ML s2b1,:refer-number=singular), weak match=5 (concept,:name,:mod,:mod,:refer-number).
@@ -313,6 +328,11 @@ File HH: 2 nodes unaligned: s3p2/person, s3s1/say-91.
 
 Node-node correspondences:
 
+Comparing aligned tokens in ML and HH.
+
+Matched 9 out of 9 ML token sets => recall    100%.
+Matched 9 out of 9 HH token sets => precision 100%.
+
 Correspondence ML s3c1 (do ceny)           = HH s3c1 (do ceny)
 Correspondence ML s3d1 (deníku)            = HH s3d1 (deníku)
 Correspondence ML s3n1 (Nyní)              = HH s3n1 (Nyní)
@@ -410,6 +430,13 @@ File HH: 7 nodes unaligned: s4d2/date-interval, s4d3/date-entity, s4d4/date-enti
 22 .               
 
 Node-node correspondences:
+
+Comparing aligned tokens in ML and HH.
+ML alignment 1,2,3   not found in HH
+HH alignment 1,2,3,5 not found in ML
+
+Matched 11 out of 12 ML token sets => recall    92%.
+Matched 11 out of 12 HH token sets => precision 92%.
 
 Ambiguous projection of ML node s4d1 (date-entity) to 3 HH nodes [s4d3 (date-entity), s4d4 (date-entity), s4d5 (date-entity)]
 Ambiguous projection of ML node s4d2 (date-entity) to 3 HH nodes [s4d3 (date-entity), s4d4 (date-entity), s4d5 (date-entity)]
@@ -524,6 +551,11 @@ File HH: 4 nodes unaligned: s5d1/date-entity, s5i1/identity-91, s5k1/koruna, s5s
 
 Node-node correspondences:
 
+Comparing aligned tokens in ML and HH.
+
+Matched 5 out of 5 ML token sets => recall    100%.
+Matched 5 out of 5 HH token sets => precision 100%.
+
 Correspondence ML s5c1 (Cena)        = HH s5c1 (Cena)
 Correspondence ML s5i1 (identity-91) = HH s5i1 (identity-91)
 Correspondence ML s5k2 (koruna)      = HH s5k1 (koruna)
@@ -572,6 +604,10 @@ SUMMARY:
 Number of tokens: 92
 Number of nodes per file: ML:73, HH:72
 File-to-file node mapping:
+Aligned token set comparison:
+Out of 52 aligned token sets in ML, 48 found in HH => recall    92.31%.
+Out of 51 aligned token sets in HH, 48 found in ML => precision 94.12%.
+ => F₁(ML,HH) = 93.20%.
 Out of 73 total ML nodes, 70 mapped to HH => recall    = 95.89%.
 Out of 72 total HH nodes, 70 mapped to ML => precision = 97.22%.
  => F₁(ML,HH) = 96.55%.

@@ -33,6 +33,11 @@ File ML: 3 nodes unaligned: s1c/country, s1n/name["Estonsko"], s1p/publication-9
 
 Node-node correspondences:
 
+Comparing aligned tokens in DZ and ML.
+
+Matched 3 out of 3 DZ token sets => recall    100%.
+Matched 3 out of 3 ML token sets => precision 100%.
+
 Correspondence DZ s1c  (country)          = ML s1c  (country)
 Correspondence DZ s1n2 (name["Estonsko"]) = ML s1n  (name["Estonsko"])
 Correspondence DZ s1p  (Estonci)          = ML s1p2 (Estonci)
@@ -74,6 +79,11 @@ File ML: 3 nodes unaligned: s2n/name["Estonsko"], s2p/publication-91, s2t/thing.
 2 :            
 
 Node-node correspondences:
+
+Comparing aligned tokens in DZ and ML.
+
+Matched 1 out of 1 DZ token sets => recall    100%.
+Matched 1 out of 1 ML token sets => precision 100%.
 
 Correspondence DZ s2c (ESTONSKO)         = ML s2c (ESTONSKO)
 Correspondence DZ s2n (name["Estonsko"]) = ML s2n (name["Estonsko"])
@@ -123,6 +133,11 @@ File ML: 3 nodes unaligned: s3c/country, s3n/name["Estonsko"], s3p/publication-9
 
 Node-node correspondences:
 
+Comparing aligned tokens in DZ and ML.
+
+Matched 3 out of 3 DZ token sets => recall    100%.
+Matched 3 out of 3 ML token sets => precision 100%.
+
 Correspondence DZ s3c  (country)          = ML s3c  (country)
 Correspondence DZ s3n2 (name["Estonsko"]) = ML s3n  (name["Estonsko"])
 Correspondence DZ s3p  (Estonci)          = ML s3p2 (Estonci)
@@ -164,6 +179,11 @@ File ML: 3 nodes unaligned: s4n/name["Tallin"], s4p/publication-91, s4t/thing.
 2 -          
 
 Node-node correspondences:
+
+Comparing aligned tokens in DZ and ML.
+
+Matched 1 out of 1 DZ token sets => recall    100%.
+Matched 1 out of 1 ML token sets => precision 100%.
 
 Correspondence DZ s4c (Tallin)         = ML s4c (Tallin)
 Correspondence DZ s4n (name["Tallin"]) = ML s4n (name["Tallin"])
@@ -261,6 +281,13 @@ File ML: 5 nodes unaligned: s5n/name["Vlast"], s5n2/neděle, s5n3/name["Estonsko
 23 .                  
 
 Node-node correspondences:
+
+Comparing aligned tokens in DZ and ML.
+DZ alignment 14,15,17    not found in ML
+ML alignment 14,15,16,17 not found in DZ
+
+Matched 13 out of 14 DZ token sets => recall    93%.
+Matched 13 out of 14 ML token sets => precision 93%.
 
 Correspondence DZ s5b  (blok Vlast jehož)       = ML s5b  (blok Vlast , jehož)
 Correspondence DZ s5c  (v Estonsku)             = ML s5c  (v Estonsku)
@@ -422,6 +449,16 @@ File ML: 4 nodes unaligned: s6i/include-91, s6n/name["Vlast"], s6p/person, s6p8/
 28 .                 
 
 Node-node correspondences:
+
+Comparing aligned tokens in DZ and ML.
+DZ alignment 1,2,3,4,5,6,7  not found in ML
+DZ alignment 16,17,18,19,20 not found in ML
+ML alignment 1,2,3,4,5,7    not found in DZ
+ML alignment 16             not found in DZ
+ML alignment 17,18,20       not found in DZ
+
+Matched 9 out of 11 DZ token sets => recall    82%.
+Matched 9 out of 12 ML token sets => precision 75%.
 
 Ambiguous projection of DZ node s6p2 (asi 20.5 procenta , což) to 2 ML nodes [s6a (asi), s6p2 (20.5 procenta což)]
 Ambiguous projection of DZ node s6p7 (person) to 2 ML nodes [s6p (person), s6p8 (person)]
@@ -599,6 +636,11 @@ File ML: 4 nodes unaligned: s7i/identity-91, s7i2/include-91, s7n/name["Spolehli
 
 Node-node correspondences:
 
+Comparing aligned tokens in DZ and ML.
+
+Matched 12 out of 12 DZ token sets => recall    100%.
+Matched 12 out of 12 ML token sets => precision 100%.
+
 Correspondence DZ s7b  (blok Spolehlivý dům)      = ML s7b  (blok Spolehlivý dům)
 Correspondence DZ s7d  (dosavadního)              = ML s7d  (dosavadního)
 Correspondence DZ s7h  (je)                       = ML s7h  (je)
@@ -704,6 +746,10 @@ SUMMARY:
 Number of tokens: 84
 Number of nodes per file: DZ:69, ML:71
 File-to-file node mapping:
+Aligned token set comparison:
+Out of 45 aligned token sets in DZ, 42 found in ML => recall    93.33%.
+Out of 46 aligned token sets in ML, 42 found in DZ => precision 91.30%.
+ => F₁(DZ,ML) = 92.31%.
 Out of 69 total DZ nodes, 67 mapped to ML => recall    = 97.10%.
 Out of 71 total ML nodes, 67 mapped to DZ => precision = 94.37%.
  => F₁(DZ,ML) = 95.71%.

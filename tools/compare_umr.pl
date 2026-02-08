@@ -12,7 +12,6 @@ use Carp;
 use Getopt::Long;
 
 ###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off. Note that most document-level relations can be inverted, too, but in a different manner.
-###!!! TODO: Evaluate node-token alignments. (Careful – they are used as basis for other comparisons. But at least we can say which tokens have an alignment and which do not.)
 ###!!! TODO: Add less verbose mode (only final numbers).
 ###!!! TODO: Move the script to a separate repository (umrtools?)
 
@@ -734,18 +733,29 @@ sub compare_files
         next if($ni_total == 0);
         for(my $j = $i+1; $j <= $#files; $j++)
         {
-            # Summarize node projections and correspondences.
             my $labelj = $files[$j]{label};
             my $nj_total = $files[$j]{stats}{n_nodes};
             next if($nj_total == 0);
+            # Summarize comparison of aligned token sets.
+            print("Aligned token set comparison:\n");
+            my $al_correct = $files[$i]{stats}{cr}{$labelj}{correct_alignment};
+            my $al_total_me = $files[$i]{stats}{cr}{$labelj}{total_me_alignment};
+            my $al_total_other = $files[$i]{stats}{cr}{$labelj}{total_other_alignment};
+            my $r = $al_total_me > 0 ? $al_correct/$al_total_me : 0;
+            my $p = $al_total_other > 0 ? $al_correct/$al_total_other : 0;
+            my $f = $p+$r > 0 ? 2*$p*$r/($p+$r) : 0;
+            my $rounding = 2; # 2 decimal places ###!!! We may want to make this configurable from the command line. Smatch has the option --significant 2.
+            printf("Out of %d aligned token sets in %s, %d found in %s => recall    %.${rounding}f%%.\n", $al_total_me, $labeli, $al_correct, $labelj, round_to_places($r*100, $rounding));
+            printf("Out of %d aligned token sets in %s, %d found in %s => precision %.${rounding}f%%.\n", $al_total_other, $labelj, $al_correct, $labeli, round_to_places($p*100, $rounding));
+            printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
+            # Summarize node projections and correspondences.
             my $ni_mapped = $files[$i]{stats}{crossfile}{$labelj};
             my $nj_mapped = $files[$j]{stats}{crossfile}{$labeli};
             # Precision: nodes mapped from j to i / total j nodes (how much of what we found we should have found).
             # Recall: nodes mapped from i to j / total i nodes (how much of what we should have found we found).
-            my $p = $nj_mapped/$nj_total;
-            my $r = $ni_mapped/$ni_total;
-            my $f = 2*$p*$r/($p+$r);
-            my $rounding = 2; # 2 decimal places ###!!! We may want to make this configurable from the command line. Smatch has the option --significant 2.
+            $p = $nj_mapped/$nj_total;
+            $r = $ni_mapped/$ni_total;
+            $f = 2*$p*$r/($p+$r);
             printf("Out of %d total %s nodes, %d mapped to %s => recall    = %.${rounding}f%%.\n", $ni_total, $labeli, $ni_mapped, $labelj, round_to_places($r*100, $rounding));
             printf("Out of %d total %s nodes, %d mapped to %s => precision = %.${rounding}f%%.\n", $nj_total, $labelj, $nj_mapped, $labeli, round_to_places($p*100, $rounding));
             printf(" => F₁($labeli,$labelj) = %.${rounding}f%%.\n", round_to_places($f*100, $rounding));
@@ -1213,11 +1223,101 @@ sub compare_two_sentences
 {
     my $sentence0 = shift;
     my $sentence1 = shift;
+    compare_alignment_in_sentences($sentence0, $sentence1);
     print_symmetrization_report($sentence0, $sentence1);
     print_symmetrization_report($sentence1, $sentence0);
     compare_node_correspondences($sentence0, $sentence1);
     compare_node_attributes($sentence0, $sentence1);
     compare_node_attributes($sentence1, $sentence0);
+}
+
+
+
+#------------------------------------------------------------------------------
+# Compares token-node alignments in two sentences. Focuses on tokens (whether
+# the same set of tokens is aligned to a node on both sides). Ignores unaligned
+# nodes. If the same token(s) is aligned to more than one node, it is counted
+# only once.
+#------------------------------------------------------------------------------
+sub compare_alignment_in_sentences
+{
+    my $sentence0 = shift;
+    my $sentence1 = shift;
+    my $file0 = $sentence0->{file};
+    my $file1 = $sentence1->{file};
+    my $label0 = $file0->{label};
+    my $label1 = $file1->{label};
+    print("Comparing aligned tokens in $label0 and $label1.\n");
+    # Hash token ranges from both sides.
+    my @nodes0 = sort(keys(%{$sentence0->{nodes}}));
+    my @nodes1 = sort(keys(%{$sentence1->{nodes}}));
+    my %alignments0;
+    my %alignments1;
+    foreach my $node (@nodes0)
+    {
+        my @mask = @{$sentence0->{nodes}{$node}{alignment}};
+        my @tokens;
+        for(my $i = 0; $i<=$#mask; $i++)
+        {
+            if($mask[$i])
+            {
+                push(@tokens, $i+1);
+            }
+        }
+        my $tokens = join(',', @tokens);
+        if(length($tokens) > 0)
+        {
+            $alignments0{$tokens}++;
+        }
+    }
+    foreach my $node (@nodes1)
+    {
+        my @mask = @{$sentence1->{nodes}{$node}{alignment}};
+        my @tokens;
+        for(my $i = 0; $i<=$#mask; $i++)
+        {
+            if($mask[$i])
+            {
+                push(@tokens, $i+1);
+            }
+        }
+        my $tokens = join(',', @tokens);
+        if(length($tokens) > 0)
+        {
+            $alignments1{$tokens}++;
+        }
+    }
+    # Compare the alignments.
+    my $n_total_0 = scalar(keys(%alignments0));
+    my $n_total_1 = scalar(keys(%alignments1));
+    my $n_correct = 0;
+    my @table = ();
+    foreach my $alignment (sort(keys(%alignments0)))
+    {
+        if(exists($alignments1{$alignment}))
+        {
+            $n_correct++;
+        }
+        else
+        {
+            push(@table, ["$label0 alignment $alignment", "not found in $label1"]);
+        }
+    }
+    foreach my $alignment (sort(keys(%alignments1)))
+    {
+        if(!exists($alignments0{$alignment}))
+        {
+            push(@table, ["$label1 alignment $alignment", "not found in $label0"]);
+        }
+    }
+    print_table(@table);
+    print("\n");
+    printf("Matched %d out of %d %s token sets => recall    %d%%.\n", $n_correct, $n_total_0, $label0, $n_total_0 > 0 ? $n_correct/$n_total_0*100+0.5 : 0);
+    printf("Matched %d out of %d %s token sets => precision %d%%.\n", $n_correct, $n_total_1, $label1, $n_total_1 > 0 ? $n_correct/$n_total_1*100+0.5 : 0);
+    print("\n");
+    $file0->{stats}{cr}{$label1}{correct_alignment} += $n_correct;
+    $file0->{stats}{cr}{$label1}{total_me_alignment} += $n_total_0;
+    $file0->{stats}{cr}{$label1}{total_other_alignment} += $n_total_1;
 }
 
 
