@@ -649,11 +649,18 @@ def validate_sentence_graph(sentence, node_dict, args):
     # string / node reference), or it is the beginning of the sentence. In both
     # cases we are expecting a full node definition.
     expecting_node_definition = True
+    # graph_ended makes sure that if there is premature topmost closing bracket,
+    # the following relation will be reported as error.
+    graph_ended = False
     iline = sentence[1]['line0'] + len(sentence[1]['comments']) - 1
     for l in sentence[1]['lines']:
         iline += 1
         pline = l # processed line: we will remove stuff from pline but not from l
         while pline:
+            if graph_ended:
+                testid = 'premature-closing-bracket'
+                testmessage = f"Not expecting further content after the topmost closing bracket, found '{pline}'."
+                warn(testmessage, testclass, testlevel, testid, lineno=iline)
             # Remove leading whitespace.
             pline = remove_leading_whitespace(pline)
             if pline.startswith('('):
@@ -797,6 +804,9 @@ def validate_sentence_graph(sentence, node_dict, args):
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 else:
                     stack.pop()
+                    # If we just popped the topmost node, the graph is over and it must not start again.
+                    if not stack:
+                        graph_ended = True
                 pline = remove_leading_whitespace(pline[1:])
                 expecting_node_definition = False
             else:
