@@ -652,6 +652,7 @@ def validate_sentence_graph(sentence, node_dict, args):
     # graph_ended makes sure that if there is premature topmost closing bracket,
     # the following relation will be reported as error.
     graph_ended = False
+    graph_ended_error_reported = False
     iline = sentence[1]['line0'] + len(sentence[1]['comments']) - 1
     for l in sentence[1]['lines']:
         iline += 1
@@ -661,6 +662,8 @@ def validate_sentence_graph(sentence, node_dict, args):
                 testid = 'premature-closing-bracket'
                 testmessage = f"Not expecting further content after the topmost closing bracket, found '{pline}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
+                graph_ended_error_reported = True
+                break
             # Remove leading whitespace.
             pline = remove_leading_whitespace(pline)
             if pline.startswith('('):
@@ -819,6 +822,9 @@ def validate_sentence_graph(sentence, node_dict, args):
                     testmessage = f"Expected colon or closing bracket, found '{pline}'."
                     warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
+        # If there is extra content after the topmost closing bracket, do not complain about every line again.
+        if graph_ended_error_reported:
+            break
     # The stack should be empty now. If not, then there were missing closing brackets!
     if stack:
         n = len(stack)
