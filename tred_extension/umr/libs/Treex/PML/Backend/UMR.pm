@@ -187,14 +187,17 @@ sub parse_sentence {
                 die "XXX!!! Can't parse:\n$$buffer"
             }
         }
+    } else {
+        die "Can't parse: $$buffer";
     }
     if ($$buffer =~ s{\)\s*}{}) {
         #warn "\n\n\nEnd of node";
         return $node
 
-    } elsif (length $$buffer) {
-        die "Can't parse:\n<<$$buffer>>\n.";
     }
+
+    die "Can't parse:\n<<$$buffer>>\n." if length $$buffer;
+    die "Unfinished sentence tree at line $..\n"
 }
 
 sub add_to_links {
