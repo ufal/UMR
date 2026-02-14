@@ -13,6 +13,7 @@ use Getopt::Long;
 
 ###!!! TODO: Match inverse relations with the basic ones (see issue tracker). By default on, optionally can be turned off. Note that most document-level relations can be inverted, too, but in a different manner.
 ###!!! TODO: Move the script to a separate repository (umrtools?)
+###!!! TODO: Add node mapping criteria so that comparing a file to itself cannot end with any node mapped wrongly (now it can happen when there are multiple unaligned nodes with the same concept and no difference in children or attributes; we only avoid it by also comparing the variables, but those should not matter at all).
 
 sub usage
 {
@@ -1140,7 +1141,8 @@ sub get_ambiguous_links_from_node
             my $weak_comparison = compare_two_nodes($n, $sentence0->{nodes}, $sentence1->{nodes}{$cf}, $sentence1->{nodes}, $label1, 1);
             my $strong_match = join(',', map {"$_->[0]=$_->[1]"} (@{$comparison->{matches}}));
             my $weak_match = join(',', map {$_->[0]} (@{$weak_comparison->{matches}}));
-            push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'same_concept' => $same_concept, 'attribute_match' => $comparison->{correct}." ($strong_match)", 'weak_attribute_match' => $weak_comparison->{correct}." ($weak_match)"});
+            my $same_variable = $variable eq $cf;
+            push(@to_resolve, {'srcnode' => $n, 'tgtnode' => $sentence1->{nodes}{$cf}, 'srclabel' => $label0, 'tgtlabel' => $label1, 'same_concept' => $same_concept, 'attribute_match' => $comparison->{correct}." ($strong_match)", 'weak_attribute_match' => $weak_comparison->{correct}." ($weak_match)", 'same_variable' => $same_variable});
         }
     }
     return @to_resolve;
@@ -1179,9 +1181,22 @@ sub compare_ambiguous_links
                 # Alignment to longer words is better (try to avoid aligning to function words).
                 $r = 2*(length($b->{srcnode}{aligned_text})+length($b->{tgtnode}{aligned_text}) <=> length($a->{srcnode}{aligned_text})+length($a->{tgtnode}{aligned_text}));
                 ###!!! This is the last resort and there should be better sorting criteria before.
+                ###!!! Testing for same_variable only helps avoid mismappings when comparing a file with itself and there are two same-looking unaligned nodes in the sentence.
+                ###!!! Perhaps we should also look at the parent (climb similarly to what AnCast does?)
                 unless($r)
                 {
-                    $r = $a->{srcnode}{variable}.$a->{tgtnode}{variable} cmp $b->{srcnode}{variable}.$b->{tgtnode}{variable};
+                    if($a->{same_variable} && !$b->{same_variable})
+                    {
+                        $r = -1;
+                    }
+                    elsif(!$a->{same_variable} && $b->{same_variable})
+                    {
+                        $r = 1;
+                    }
+                    else
+                    {
+                        $r = $a->{srcnode}{variable}.$a->{tgtnode}{variable} cmp $b->{srcnode}{variable}.$b->{tgtnode}{variable};
+                    }
                 }
             }
         }
