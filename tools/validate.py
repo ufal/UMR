@@ -589,8 +589,8 @@ def dominates(var0, var1, node_dict, tried):
     Finds out whether node var0 dominates node var1 in the sentence graph,
     i.e., there is a directed path whose first relation starts in var0 and last
     relation ends in var1. The function is used primarily to detect cycles,
-    hence it will ignore the single relation that is allowed to form cycles,
-    :quote.
+    hence it will ignore the few relations that are allowed to form cycles,
+    :quote and :modal-predicate.
 
     Parameters
     ----------
@@ -611,7 +611,7 @@ def dominates(var0, var1, node_dict, tried):
     """
     tried[var0] = True
     if var0 in node_dict and 'relations' in node_dict[var0]:
-        children = [r['value'] for r in node_dict[var0]['relations'] if r['type'] == 'node' and r['dir'] == 'out' and r['value'] in node_dict and r['relation'] != ':quote']
+        children = [r['value'] for r in node_dict[var0]['relations'] if r['type'] == 'node' and r['dir'] == 'out' and r['value'] in node_dict and r['relation'] not in [':quote', ':modal-predicate']]
         if var1 in children:
             return True
         for c in children:
@@ -2237,7 +2237,7 @@ if __name__=="__main__":
     strict_group.add_argument('--no-check-wiki', dest='check_wiki', action='store_false', default=True, help='Do not require that the :wiki attribute is string and looks like Wikidata id.')
     strict_group.add_argument('--optional-aspect-modstr', dest='check_aspect_modstr', action='store_false', default=True, help='Do not require that every eventive concept has :aspect and :modstr.')
     strict_group.add_argument('--allow-duplicate-roles', dest='check_duplicate_roles', action='store_false', default=True, help='Any role can occur multiple times under the same parent. Normally, this is allowed for some relations and attributes but not for others. This option relaxes the test for relations (roles) but not for attributes.')
-    strict_group.add_argument('--allow-cycles', dest='check_cycles', action='store_false', default=True, help='Cyclic dependencies are allowed even outside :quot.')
+    strict_group.add_argument('--allow-cycles', dest='check_cycles', action='store_false', default=True, help='Cyclic dependencies are allowed even outside :quot and :modal-predicate.')
     strict_group.add_argument('--allow-coref-entity-event-mismatch', dest='check_coref_entity_event_mismatch', action='store_false', default=True, help='If we know that a concept is entity, coreference cannot point to it via :same-event, and vice versa, an event cannot participate in :same-entity relations. This option relaxes the test on such mismatches.')
     strict_group.add_argument('--optional-document-level', dest='require_document_level', action='store_false', default=True, help='Do not require that every sentence has complete document-level annotation. In particular, do not report missing temporal relations for events. Another consequence is that modal strength is now expected in the sentence-level, rather than document-level graph.')
 
