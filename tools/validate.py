@@ -1142,7 +1142,8 @@ def validate_document_level(sentence, node_dict, args):
                 testmessage = f"Not expected this: '{pline}'."
                 warn(testmessage, testclass, testlevel, testid, lineno=iline)
                 pline = ''
-    if expecting != 'end of document level annotation':
+    # The graph can be completely empty, so we also allow expecting initial bracket here.
+    if expecting not in ['initial opening bracket', 'end of document level annotation']:
         testid = 'missing-closing-bracket'
         testmessage = f"Sentence graph ended prematurely, expecting {expecting}."
         warn(testmessage, testclass, testlevel, testid, lineno=iline)
