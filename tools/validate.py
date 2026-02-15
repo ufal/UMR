@@ -1149,6 +1149,64 @@ def validate_document_level(sentence, node_dict, args):
         warn(testmessage, testclass, testlevel, testid, lineno=iline)
 
 
+def validate_document_nodes(sentence, node_dict, args):
+    """
+    Checks for every document level relation whether we know the nodes in it.
+    This is not done in the function validate_document_relations() because
+    checking that a relation is known is a level 3 test, while not referring
+    to unknown nodes should be checked on level 2 (same for sentence-level
+    graphs).
+    """
+    testlevel = 2
+    testclass = 'Document'
+    for r in sentence[3]['relations']:
+        # Participants in document-level relations must be either known concept nodes
+        # or one of the constants: root, author, null-conceiver, document-creation-time.
+        ###!!! Some annotators seem to also use the have-condition-91 abstract predicate in modal graphs. I am not sure if it is documented anywhere.
+        if not r['node0'] in node_dict and not r['node0'] in ['root', 'author', 'null-conceiver', 'have-condition-91', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
+            testid = 'unknown-node-id'
+            testmessage = f"The node id (variable) '{r['node0']}' is unknown. No such node has been defined so far."
+            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+            # Add the variable to node_dict so that we do not get KeyError later.
+            node_dict[r['node0']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
+        if not r['node1'] in node_dict and not r['node1'] in ['root', 'author', 'null-conceiver', 'have-condition-91', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
+            testid = 'unknown-node-id'
+            testmessage = f"The node id (variable) '{r['node1']}' is unknown. No such node has been defined so far."
+            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+            # Add the variable to node_dict so that we do not get KeyError later.
+            node_dict[r['node1']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
+        # At least one of the participants must be a concept node from the current
+        # sentence. For example, it is not allowed to annotate coreference between
+        # nodes s2p (from sentence 2) and s3p (from sentence 3) in the document-
+        # level graph of sentence 4. We have a global dictionary of nodes, which
+        # does not tell us the sentence to which the node belongs. We can use
+        # either the node variable (so far we require that variables start with
+        # 's' and the sentence number) or the line where the node is defined
+        # (and compare it with the first line of the current sentence).
+        current_sentence_line = sentence[0]['line0']
+        node0_line = node_dict[r['node0']]['line0'] if r['node0'] in node_dict else -1
+        node1_line = node_dict[r['node1']]['line0'] if r['node1'] in node_dict else -1
+        if node0_line < current_sentence_line and node1_line < current_sentence_line and not (r['node0'] == 'root' and r['node1'] == 'author') and not (r['node0'] == 'author' and r['node1'] == 'have-condition-91'):
+            testid = 'misplaced-document-relation'
+            testmessage = f"At least one of the nodes must be from the current sentence but neither '{r['node0']}' nor '{r['node1']}' is."
+            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+        # By convention, node0 of a document-level relation is from the same
+        # sentence as node1 or from an earlier one. We could probably extend this
+        # convention so that node0 is the one defined before node1 (line-wise).
+        # We only cannot extend it to the ':contained' relations because there
+        # is no way of inverting them following the guidelines.
+        # EDIT 2024-05-06: Markéta says that this rule cannot stand because she
+        # wants to order the relations in the temporal annotation as they were
+        # added. And sometimes we must (according to the guidelines) first add
+        # a node that occurs later in the sentence graph. For example, we must
+        # wait with adding events until all temporal expressions have been
+        # added, even if a temporal expression occurs later in the sentence.
+        #if r['relation'] != ':contained' and node0_line > node1_line:
+        #    testid = 'wrong-node-order'
+        #    testmessage = f"Document-level relation should not go from a newer node ('{r['node0']}' defined on line {node0_line}) to an older node ('{r['node1']}' defined on line {node1_line})."
+        #    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
+
+
 
 #==============================================================================
 # Level 3 tests. Concept-relation compatibility, attribute-value compatibility,
@@ -1622,7 +1680,8 @@ def validate_events(sentence, node_dict, args):
 
 def validate_document_relations(sentence, node_dict, args):
     """
-    Checks for every document level relation whether we know it.
+    Checks for every document level relation whether we know it. Note that
+    there is also the function validate_document_nodes() but it is on level 2.
     """
     testlevel = 3
     testclass = 'Document'
@@ -1651,51 +1710,6 @@ def validate_document_relations(sentence, node_dict, args):
             testid = 'unknown-document-relation-group'
             testmessage = f"Unknown document-level relation group '{r['group']}'."
             warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-        # Participants in document-level relations must be either known concept nodes
-        # or one of the constants: root, author, null-conceiver, document-creation-time.
-        ###!!! Some annotators seem to also use the have-condition-91 abstract predicate in modal graphs. I am not sure if it is documented anywhere.
-        if not r['node0'] in node_dict and not r['node0'] in ['root', 'author', 'null-conceiver', 'have-condition-91', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
-            testid = 'unknown-node-id'
-            testmessage = f"The node id (variable) '{r['node0']}' is unknown. No such node has been defined so far."
-            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-            # Add the variable to node_dict so that we do not get KeyError later.
-            node_dict[r['node0']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
-        if not r['node1'] in node_dict and not r['node1'] in ['root', 'author', 'null-conceiver', 'have-condition-91', 'document-creation-time', 'past-reference', 'present-reference', 'future-reference']:
-            testid = 'unknown-node-id'
-            testmessage = f"The node id (variable) '{r['node1']}' is unknown. No such node has been defined so far."
-            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-            # Add the variable to node_dict so that we do not get KeyError later.
-            node_dict[r['node1']] = {'concept': 'UNKNOWN', 'relations': [], 'alignment': {'tokids': [], 'tokstr': ''}, 'line0': r['line0']}
-        # At least one of the participants must be a concept node from the current
-        # sentence. For example, it is not allowed to annotate coreference between
-        # nodes s2p (from sentence 2) and s3p (from sentence 3) in the document-
-        # level graph of sentence 4. We have a global dictionary of nodes, which
-        # does not tell us the sentence to which the node belongs. We can use
-        # either the node variable (so far we require that variables start with
-        # 's' and the sentence number) or the line where the node is defined
-        # (and compare it with the first line of the current sentence).
-        current_sentence_line = sentence[0]['line0']
-        node0_line = node_dict[r['node0']]['line0'] if r['node0'] in node_dict else -1
-        node1_line = node_dict[r['node1']]['line0'] if r['node1'] in node_dict else -1
-        if node0_line < current_sentence_line and node1_line < current_sentence_line and not (r['node0'] == 'root' and r['node1'] == 'author') and not (r['node0'] == 'author' and r['node1'] == 'have-condition-91'):
-            testid = 'misplaced-document-relation'
-            testmessage = f"At least one of the nodes must be from the current sentence but neither '{r['node0']}' nor '{r['node1']}' is."
-            warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
-        # By convention, node0 of a document-level relation is from the same
-        # sentence as node1 or from an earlier one. We could probably extend this
-        # convention so that node0 is the one defined before node1 (line-wise).
-        # We only cannot extend it to the ':contained' relations because there
-        # is no way of inverting them following the guidelines.
-        # EDIT 2024-05-06: Markéta says that this rule cannot stand because she
-        # wants to order the relations in the temporal annotation as they were
-        # added. And sometimes we must (according to the guidelines) first add
-        # a node that occurs later in the sentence graph. For example, we must
-        # wait with adding events until all temporal expressions have been
-        # added, even if a temporal expression occurs later in the sentence.
-        #if r['relation'] != ':contained' and node0_line > node1_line:
-        #    testid = 'wrong-node-order'
-        #    testmessage = f"Document-level relation should not go from a newer node ('{r['node0']}' defined on line {node0_line}) to an older node ('{r['node1']}' defined on line {node1_line})."
-        #    warn(testmessage, testclass, testlevel, testid, lineno=r['line0'])
 
 
 def collect_coreference_clusters(document, node_dict, args):
@@ -2194,6 +2208,7 @@ def validate(inp, out, args, known_sent_ids):
             validate_sentence_graph(sentence, node_dict, args)
             validate_alignment(sentence, node_dict, args)
             validate_document_level(sentence, node_dict, args)
+            validate_document_nodes(sentence, node_dict, args)
         if args.level > 2:
             validate_relations(sentence, node_dict, args)
             validate_name(sentence, node_dict, args)
