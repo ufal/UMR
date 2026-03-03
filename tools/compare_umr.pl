@@ -19,12 +19,14 @@ use Getopt::Long;
 sub usage
 {
     # perl tools\compare_umr.pl GOLD data\czech\PDT-C-dtest\manual\ln94210_111-ML-all.umr CONV data\czech\PDT-C-dtest\converted\ln94210_111-conv.umr
-    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2] [--no-document-level] [--verbose|--quiet] [--tsv]\n");
+    print STDERR ("Usage: $0 label1 file1 label2 file2 [...] [--only rel1,rel2] [--except rel1,rel2] [--top] [--no-document-level] [--verbose|--quiet] [--tsv]\n");
     print STDERR ("    The labels are used to refer to the files in the output.\n");
     print STDERR ("    They can be e.g. initials of the annotators, or 'GOLD' and 'SYSTEM'.\n");
+    print STDERR ("    --top ... add special attribute marking the top node of each sentence (smatch does it). Default: false.\n");
     print STDERR ("    --verbose ... print detailed node comparison for each sentence. Without this flag, only the final summary will be printed.\n");
     print STDERR ("    --quiet ... supress all partial metrics and explanatory text. Print only the final juːmæʧ F₁ score.\n");
     print STDERR ("    --tsv ... tab-separated values. Omits explanatory prose and produces output that is easier to process automatically.\n");
+    print STDERR ("    --help ... print this text and exit.\n");
     print STDERR ("Example (system evaluation):\n");
     print STDERR ("    perl tools/compare_umr.pl GOLD english-test.umr SYSTEM english-test-predicted.umr\n");
     print STDERR ("Example (two annotators; Windows path fomat):\n");
@@ -33,24 +35,34 @@ sub usage
 
 my $only_relations;
 my $except_relations;
+my $top = 0;
 my $except_document_level = 0;
 my $verbose = 0;
 my $quiet = 0;
 my $tsv = 0;
+my $help = 0;
 GetOptions
 (
     'only=s'            => \$only_relations,
     'except=s'          => \$except_relations,
+    'top'               => \$top,
     'no-document-level' => \$except_document_level,
     'verbose'           => \$verbose,
     'quiet'             => \$quiet,
-    'tsv'               => \$tsv
+    'tsv'               => \$tsv,
+    'help'              => \$help
 );
+if($help)
+{
+    usage();
+    exit(0);
+}
 my %config =
 (
     'document_level'   => !$except_document_level,
     'only_relations'   => {},
     'except_relations' => {},
+    'top'              => $top,
     'verbose'          => $verbose,
     'quiet'            => $quiet,
     'tsv'              => $tsv
@@ -341,6 +353,10 @@ sub parse_sentence_graph
     my $iline = $sgraph_block->{line0}-1;
     my @stack;
     my $current_relation = 'START';
+    # The first variable encountered will be considered the "top node".
+    # Proper identification of top nodes can be one of the attributes evaluated
+    # (at least smatch does it).
+    my $top_node;
     foreach my $line (@{$sgraph_block->{lines}})
     {
         $iline++;
@@ -357,6 +373,7 @@ sub parse_sentence_graph
             {
                 # New node.
                 my $variable = $1;
+                $top_node = $variable if(!defined($top_node));
                 # Now we also expect the concept.
                 if($cline =~ s:([^\s\(\)]+)::)
                 {
@@ -452,6 +469,11 @@ sub parse_sentence_graph
         my $n = scalar(@stack);
         print STDERR ("WARNING: Topmost node on stack: $stack[-1]{variable} / $stack[-1]{concept}\n");
         print STDERR ("WARNING: Missing closing bracket at line $iline of file $file->{label}: $n node(s) not closed.\n");
+    }
+    # Add to the top node the information that it is top node.
+    if($config{top} && defined($top_node))
+    {
+        push(@{$nodes{$top_node}{relations}}, {'name' => ':TOP', 'value' => 'TOP'});
     }
     # Extended concepts should better identify nodes for debugging and, possibly, alignment.
     # Currently we define one extension: a 'name' concept will be extended by the values of its :opX attributes.
