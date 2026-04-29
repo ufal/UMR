@@ -2,85 +2,144 @@
 
 In UMR, temporal annotation is done at both the sentence level and the document level representation.
 
-  
-
 ## Short HowTo for Czech annotations:
 
 ### Sentence level representation:
-  - Any **time expression** (overtly present) should be identified and annotated using the `:temporal` relation.  
-  **Comment:** We do **NOT** annotate (for the time being?) temporal relations between events and DCT!
+
+- Any **time expression** (overtly present) should be identified and annotated using the `:temporal` relation modifying the respective **event**.  
+
+- Relations between an **event** and **its DCT** are supposed to be annotated at the sentence levem as well: 
   
+  - Guidelines: "The temporal relation between an event and the DCT is annotated when this temporal relation is defined in that context."
+  
+  > **Comment:** We do **NOT** annotate (for the time being?) temporal relations between events and DCT just on the basis of the verb tense! 
 
-### Document level annotation:**
+### Document level annotation:
 
-**Disclaimer:**   
-Note that this HowTo recaps our interpretation of the Guidelines (rather than the Guidelines themselves -- as there are many unclear points there). 
+> **Disclaimer:**   
+> Note that this HowTo recaps our interpretation of the Guidelines (rather than the Guidelines themselves -- as there are many unclear points there). 
 
-**First**, create **a timeline**  with all detected time expressions and all events (if possible)  for (at least part of) the analyzed document. This timeline serves as a guide for the temporal annotation (it is not part of the annotation itself). 
+#### Pass 0: Create a timeline
 
-**Second**, create a temporal **superstructure** (= the top levels of the dependency structure) for (at least part of) the document:
-- Create a **"metanode"**, typically corresponding to `DCT` (= document creation time);   
-  (in fact, there are 3 other types of metanodes in the Guidelines: `past/present/future-reference` -- we will only use them for vague time expressions (as _nowadays_), see below);
-   - any metanode is (by definition) connected directly  to the `root` by the generic `:depends-on` relation (thus, it is not necessary to annotate it); 
+First, create **a timeline**  with all detected **time expressions** and all **events **(if possible)  for (at least part of) the analyzed document. This timeline serves as a guide for the temporal annotation (it is not part of the annotation itself). 
+
+#### Pass 1: Setting up the temporal superstructure
+
+Temporal superstructure represents the top levels of the dependency structure. It contains all **temporal expressions (timexs)** in the text and **pre-defined metanodes** and their temporal relations to each other.
+
+- Create a **"metanode"**, typically corresponding to `DCT` (= document creation time) or to the  `ROOT` (for absolute time expression, like May 2015);   
+  
+  - In fact, there are 3 other types of metanodes in the Guidelines: `past/present/future-reference` -- we will only use them for vague time expressions (as _nowadays_), see below.
+  - Any metanode is (by definition) connected directly  to the `root` by the generic `:depends-on` relation (thus, it is not necessary to annotate it). 
+
 - Add one node for each **locatable temporal expression** (from the text) and relate it to the existing structure: 
-  - **concrete relative** values (as _today_, _two days later_):  to the metanode `DCT` or to another (already annotated) concrete time expression -- here use one of the "normal"  relations: `:after`, `:before`, `:overlap`, `:contained` (see below).;  
-  - **concrete absolute** values (as _May 15, 2024_): to the `root` -- in that case, use the `:depends-on` relation;
-  - **vague** values (as _nowadays_): to `past/present/future-reference` **!!!** (as the only exception different than `DCT`??);
-  - (**unlocatable temporal expression** (as _every month_): they are not represented in the temporal structure (but they influence, e.g., the aspect value)).   
-  **Decision:**  There should be "a generic `:depends-on` relation between all nodes in the temporal superstructure". However, this relation appears only sporadically in the data (typically, "normal" temporal relations are used, see below).  
-  Thus, we will its use to concrete absolute time expressions, unless we find contexts where "normal" ones seem to be inadequate.)
+  
+  - for **concrete relative** values (as _today_, _two days later_): 
+    - indicate their relation to the metanode `DCT` **!!!** or to another (already annotated) concrete time expression; 
+    - use one of the "normal"  relations;  
+  - for **concrete absolute** values (as _May 15, 2024_): 
+    - relate them to the  `ROOT`  **!!!** 
+    - use the `:depends-on` relation;
+  - for **vague** values (as _nowadays_): 
+    - relate them to  `past/present/future-reference` **!!!** 
+    - use one of the "normal" relations;
 
-**Third**, add all events to the temporal annotation -- each event is annotated as **the child of either a time expression** in the superstructure **or another event** (or both). In other words, each event (child) is related to a time expression (which is already anchored) OR to other already anchored event.   
-Guidelines: As a backup (no time expression, no relevant parent event), it should be added to the appropriate tense metanode.    
+- For **unlocatable temporal expression** (as _every month_): they are not represented in the temporal structure (but they influence, e.g., the aspect value)).   
+
+> **Decision:**  There should be "a generic `:depends-on` relation between all nodes in the temporal superstructure". However, this relation appears only sporadically in the data (typically, "normal" temporal relations are used, see below).  
+> Thus, we will limit its use to concrete absolute time expressions, unless we find contexts where "normal" ones seem to be inadequate.
+
+**Choosing the right temporal relation ("normal" relations)**
+
+- `:contained`: child is entirely contained within the parent; parent begins before child and parent ends after child; use this also for <u>subevents!</u>
+
+- `:after`... child is after parent; use also for <u>purpose clauses</u> and <u>causally-related events</u> .
+
+- `:before` ... child is before parent.
+
+- `:overlap` ... child and parent overlap (but one is not fully contained in the other); use this also for <u>perfectly simultaneous events</u>. 
+
+Note that the <span>labels</span> characterize the relation **from a child to its parent** !!!
+
+#### Pass 2: Adding events
+
+Now add all events to the temporal annotation -- each event is annotated as **the child of either a time expression** in the superstructure **or another event** (or both). In other words, each event (child) is related to a time expression (which is already anchored) OR to other already anchored event.   
+
+> Guidelines: As a backup (no time expression, no relevant parent event), it should be added to the appropriate tense metanode.    
 
 Process in the following way: 
-- If necessary, update **the timeline** with all detected time expressions and all events (if possible); this will help you to select the "main" event to which you will relate the other events in the given sentence (not anchored in a time expression). 
+
+- If necessary, update **the timeline** with all detected time expressions and all events (if possible, Pass 0); this will help you to select the "main" event to which you will relate the other events in the given sentence (not anchored in a time expression). 
 - Add the **"main" event** to the temporal annotation (the one which is "closest" to the referential time expression) -- relate it:
-    - to the referential **time expression** (esp. to those in the same line as the event), or one of the **metanodes**;
-    - use one of the following relations: `:contained`, `:overlap`, `:after`, `:before` (see below).
+  - to the referential **time expression** (esp. to those in the same line as the event); if no such timex exists, use one of the **metanodes** (as a backup);
+  - use one of the following relations: `:contained` (preferred), `:overlap`, `:after`, `:before`.
 - Step by step, add all **other events** -- relate them:     
-   - primarily to the relevant time expression (esp. to those in the same line as the event), or
-   - to other event(s)  
-      (this parent event must be a process and has the same modal annotation OR `:full-affirmative` relation to the `author`).
-   - Use one of the following relations: `:before`, `:after`, `:overlap`, `:contained` (see below).
-   - In cases when an event overlaps with its referential expression (time or event), its temporal characteristics cannot be inferred. Thus, we should also add its relation to the metanode (typically `DCT`)  to express it explicitly. 
-   - The **labels** characterize the relation **from child to parent** !!!
+  - <u>primarily</u> to the relevant **time expression** (esp. to those in the same line as the event), 
+  - use one of the following relations: `:contained` (preferrred), `:before`, `:after`, `:overlap`;
+  - if <u>no such times exists</u>, relate it **to other event(s)**   ... this parent event 
+    - must be <u>a process</u> and 
+    - either (i) has the same modal annotation OR (ii) has `:full-affirmative` relation to the `author`).
+  - Guidelines: If an event does get a relation to a time expression, a second 
+    annotation that specifies its relationship with another event may also 
+    be added.
+- **Exception**: In cases when an event overlaps with its referential expression (time or event), its temporal characteristics cannot be inferred. Thus, we should also add its relation to the metanode (typically `DCT`)  to express it explicitly. 
 
-**Fourth**, take care of **special cases**:
-  - **complement-taking predicates**  
-  (see below; main idea: the complement-taking predicate serves as the parent/reference point for its complement);
-  - **reporting predicates**  
-  (see below; main idea: the reporting event serves as the parent/reference point for reported events);
-  - **purpose clauses** --> always `:after` temporal relation  
-   (the main clause as a parent, the purpose clause/infinitive as a child).
+#### Special cases
 
+##### **1. Complement-taking predicates**
 
-**Fifth,** check whether **repeated mentions** of the same event got consistent annotation:
+All events under the scope of complement-taking predicates (exemplified by *see, want*) should be linked with `:modal-predicate`  to their parent. Then this parent (= the complement-taking predicate) serves as the parent/reference point for its complement. 
+
+In cases of multiple events under the scope of a complement-taking predicate, at least one of them must be temporally related to the parent event (others may be linked to each other).     
+
+##### **2. Reporting predicates**
+
+The same principle as for complement-taking predicates, i.e., a reporting predicate serves as the tome reference for at least one reported event.
+
+##### **3. Purpose clauses**
+
+Always use the  `:after` temporal relation for events linked with the `:purpose` relation to the main predicate (the main clause as a parent, the purpose clause/infinitive as a child).
+
+##### **4. Causally-related events**
+
+Always use the `:after` temporal relation for an event causally related to other event.
+
+##### 5. Repeated mentions
+
+Check whether **repeated mentions** of the same event got consistent annotation:
+
 - the two (or more) mentions must have the same relation to `DCT`:
-   - check that they do not specify colliding relations to `DCT`;
-   - **Dan's comment:** Perhaps also check that none of them omits the relation?   
-   This could be actually generalized: 
-   Besides conflicts between explicit and inferred relations, we should also check that time expressions and events specify the minimally required relations
+  - check that they do not specify colliding relations to `DCT`;
+  - **Dan's comment:** Perhaps also check that none of them omits the relation?   
+    This could be actually generalized: 
+    Besides conflicts between explicit and inferred relations, we should also check that time expressions and events specify the minimally required relations
 - if both of them specify their relation to a third node (or to a third and a fourth node which are coreferential), it must be the same relation.
-- **More complex situations** (as suggested by Dan):
-   - the relations `:before`, `:after`, and `:contained` are transitive 
-   - `:before` is the opposite of `:after`
-   - if X is contained in Y and Z is `:before/:after` Y, then Z is also `:before/:after X`  
-**Dan's comments:** The validator can use the above rules to infer temporal relations between other pairs of nodes, where the relation is not annotated explicitly. And it must never happen that two information sources lead to conflicting relations between a given pair of nodes.
+
+##### 6. More complex situations
+
+As suggested by Dan:
+
+- the relations `:before`, `:after`, and `:contained` are transitive 
+- `:before` is the opposite of `:after`
+- if X is contained in Y and Z is `:before/:after` Y, then Z is also `:before/:after X`  
+  **Dan's comments:** The validator can use the above rules to infer temporal relations between other pairs of nodes, where the relation is not annotated explicitly. And it must never happen that two information sources lead to conflicting relations between a given pair of nodes.
   - `:overlap` does not provide information that can be used for inference but it is mutually exclusive with `:before`, `:after`, and `:contained`;
-  -  `:depends-on` does not provide useful information and it should be probably avoided because usually we can use one of the more specific relations.  
-  **Markéta's comment:** _Na druhém místě je zatím blok Spolehlivý dům ..._ ... the temporal relation _zatím_ seems to depend on `DCT` but I am not sure about the appropriate relation -- what about to reserve `:depends-on` for such cases?  
+  - `:depends-on` does not provide useful information and it should be probably avoided because usually we can use one of the more specific relations.  
+    **Markéta's comment:** _Na druhém místě je zatím blok Spolehlivý dům ..._ ... the temporal relation _zatím_ seems to depend on `DCT` but I am not sure about the appropriate relation -- what about to reserve `:depends-on` for such cases?  
 
 ---
+
 ---
 
 ## Sentence level annotation
+
 According to the UMR guidelines, the sentence level annotation captures two cases:
+
 - **Time expressions** -- like _včera_ "yesterday", _minulý týden_ "last week",  _4. dubna_ "April 4th", _každý rok_ "every year", _poté co dokončil školu_ "after he finished the school" -- that serve as temporal modifiers of a predicate are annotated using the `:temporal` relation, similarly as in PDT.  
-Not surprisingly, this annotation is used for any time expression overtly present in a sentence.
+  Not surprisingly, this annotation is used for any time expression overtly present in a sentence.
 
 - In addition, ``**the temporal relation between an event and the document creation time** (DCT) is annotated'' using the same `:temporal` relation -- the UMR Guidelines illustrate this on the following sentence:
-
+  
   - [en] _In April 1998 Arab countries signed an anti-terrorism agreement ..._
     ... it gets `:temporal (b2 / before :op1 (n/now))` annotation indicating that the event described by the predicate _sign_ happened before the sentence were written.  
 
@@ -90,74 +149,78 @@ The Guideline examples suggest that this should be the case of any finite verb i
 
 > **Preliminary rule for Czech annotations:**  
 > The temporal annotation at the sentence level is limited to time expressions expressions (or other "clues") overtly present in sentences (past/future tense is not enough).   
-The temporal relation between an event and the DCT may be added later based on the tense grammateme where possible.  
-
-
+> The temporal relation between an event and the DCT may be added later based on the tense grammateme where possible.  
 
 ## Document level annotation
+
 The document level annotation focuses on 
+
 - time-time relations (when interpretation of a relative time depends on another time expression);
 - event-time relations;
 - event-events 
   - only when the temporal relations are clearly supported by morpho-syntactic clues, or
   - clear temporal sequence can be inferred.
 
+#### 1. phase: Setting up the temporal superstructure
 
-#### 1. phase: Setting up the temporal superstructure 
 The temporal superstructure contains: 
+
 - the **locatable temporal expressions** in the text (see below for their classification),  
 - **pre-defined metanodes**, namely `past-reference`, `present-reference`, `future-reference`, and `document-creation-time` or (`DCT`) ... and also `root` (not explicitely mentioned in the Guidelines),
 - and their temporal relations to each other -- just 1 relation is mentioned in the guidelines, namely the `:depends-on` relation.
 
 As for temporal expressions, all of them should be identified in a document and annotated. Further, they should be related to the metanodes whenever possible:
+
 - locatable time expressions:
   - concrete absolute (_May 15:) to the `root`;
   - concrete relative (_today_, _two days later_) to the `DCT` or to other concrete time expression
   - vague (_nowadays_) to the `present/past/future-reference`
 - unlocatable time expressions (_each month_): without reference
- 
 
 #### 2. phase: Adding events to the temporal dependency structure
 
 4 temporal relations -- **note that the labels characterize the relation from child to parent!!!**
+
 - `:contained` ... parent begins before child and parent ends after child, including
   - **subevent structures** (a subevent as a child)
   - events with a **purely temporal** (not causal or conceptual) relation between them
 - `:after`
   - incl. **causally-related** events   
-  _The crops grew well because it rained enough_ ... (rain :after grow) 
+    _The crops grew well because it rained enough_ ... (rain :after grow) 
 - `:before`
 - `:overlap`
   - incl. perfectly **simultaneous events** (beginning and ending at the exact same time point)
 
 **For each event:**  
 **A. Relate it to a time expression** (if possible, i.e., to those in the same line as the event or other in the text)
-  - exception:  when an event is contained in another event contained in a time expression  
+
+- exception:  when an event is contained in another event contained in a time expression  
 
 **B. Relate it to other event** (if no time expression is available) -- the parent event must meet the following criteria:
-  - there is a **clear temporal relation** between both events;
-  - the parent event is (a subtype of) a **process** (in particular, not state, not habitual);
-  - both events have **the same modal annotation** (parent+value)   
+
+- there is a **clear temporal relation** between both events;
+- the parent event is (a subtype of) a **process** (in particular, not state, not habitual);
+- both events have **the same modal annotation** (parent+value)   
   OR the parent event has `:full-affirmative` relation to the `author`.
 
 **Principle**: Make a **timeline** and try to relate each event to **immediately preceding / following** event or time expression! 
 
 - [en] _The opening of the food can prompted my cat to meow_   ... first, I open a can (1), and this is a prompt (2) causing my cat to meow (3); thus the annotation should be the following:  
-```  
+  
+  ```
   :temporal ((present-reference: contained open)  
              (open :after prompt)  
              (prompt :after meow))
-```
+  ```
 
 For events related to a time expression, a second annotation specifying its relationship with another event may also be added!!
 
 **C.** Events with NO such relations should be related to the appropriate tense metanode
 
-
-
-
 ### Special cases:
+
 #### Complement-taking predicates
+
 The complement-taking predicate acts as the reference time for its complement.
 
 - First, find the complement-taking predicate and add the corresponding event event to the document level temporal structure, i.e., relate it to appropriate time expression (or to the DCT/past/present/future-reference node).  
@@ -183,9 +246,8 @@ Example:
            (see :overlap knock)))
 ```
 
-
-  
 #### Reporting events
+
 The reporting event serves as the reference time for the reported events.
 
 - First, find the reporting verb and add the reporting event to the document level temporal structure, i.e., relate it to appropriate time expression (or to the DCT/past/present/future-reference node).  
@@ -205,14 +267,14 @@ Examples:
            (s1s :after s1m)))
 ```
 
-
-
 #### Purpose clauses
+
 Events in purpose clauses are always linked to their main clauses in the temporal structure using the `:after` relation.
 
 - [en]  _He went home (in order) to wash the dishes._  
   :temporal ((past-reference :contained s1g)
-		 (s1g :after s1w)))
+  
+         (s1g :after s1w)))
 
 ```
 :temporal ((past-reference :contained go)
