@@ -89,7 +89,7 @@ Temporal superstructure represents the top levels of the dependency structure. I
 
 - `:before` ... child is before parent.
 
-- `:overlap` ... child and parent overlap (but one is not fully contained in the other); use this also for <u>perfectly simultaneous events</u> and for <u>phase verbs</u> (_začal křičet_)!  
+- `:overlap` ... child and parent overlap (but one is not fully contained in the other); use this also for <u>perfectly simultaneous events</u>, for <u>phase verbs</u> (_začít křičet_) or for some <u>semi-modals</u> (_dokázat využít_)!  
 
 Note that the <span>labels</span> characterize the relation **from a child to its parent** !!!
 
