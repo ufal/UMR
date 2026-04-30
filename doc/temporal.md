@@ -46,7 +46,7 @@ Example (from the Guidelines):
   timeline: open ... prompt ... meow
   
   ```
-  :temporal ((present-reference: contained open)  
+  :temporal ((present-reference :contained open)  
              (open :after prompt)  
              (prompt :after meow))
   ```
