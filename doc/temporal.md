@@ -139,13 +139,14 @@ All events under the scope of complement-taking predicates (exemplified by *see,
 
 In cases of multiple events under the scope of a complement-taking predicate, at least one of them must be temporally related to the parent event (others may be linked to each other).     
 
-Examples:
+Examples (from the guidelines):
 
 - [en] *I want to go to the city and visit a museum.*  
   timeline: ... **want** ... go ... visit ... *want* as being a complement-taking verb  
 
    ```
    :temporal ((present-reference :contained want)
+              (want :after go)     !!missing in the Guidelines??
               (want :after visit)) !!not city (as in the Guidelines)!!
    ```
 
