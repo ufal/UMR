@@ -21,7 +21,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
 * [Entities](doc/entities.md)
 * [Events](doc/eventive-concepts.md), see also
   * [Specific verbal constructions](doc/verbal-constructions.md) and 
-  * separate notes on [Aspectual verbs](doc/aspectual-phase-verbs.md)
+  * separate notes on [Aspectual verbs](doc/aspectual-phasal.md)
 * [Frame files](doc/frames.md) and [participant roles](doc/roles.md) (and [PDT-frames to PropBank rolesets mapping](tecto2umr/functors-to-args-mapping-instructions.md))
 * Special constructions
   * [Ellipsis](doc/ellipsis.md)
