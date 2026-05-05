@@ -240,7 +240,7 @@ o    UMR: “hlavní” predikát non-finite She wants to go to school … jak v
 
 ---
 
-## Phasal aspectual meaning - see [Aspectual verbs](aspectual-phasal.md)
+## Phasal aspectual meaning - see [Aspectual verbs](aspectual-phase-verbs.md)
 
 ### MOVE TO MODAL DEPENDENCY ANNOTATION
 
