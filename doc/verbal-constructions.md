@@ -233,92 +233,11 @@ o	UMR: “hlavní” predikát non-finite She wants to go to school … jak vyti
 
 ---
 
-## Phasal aspectual meaning - one event with aspect attribute label
-
-Phasal aspectual meanings such as  
-- `inchoative` (denoting an aspect of a verb expressing the beginning of an action, typically one occurring of its own accord), 
-- `completive` (adds a sense of completeness to a word or phrase (e.g. in the phrase _break up_,  _up_ is a completive)), and 
-- `continuative` (relating to the durative aspect or a durative verb or verb form, i.e.,  that expresses action continuing unbroken for a period of time),
-  
-are **never identified as separate events**, even if they are expressed through independent words. Instead, they will simply inform **the aspect attribute label of the event** they modify [Part 3-3-1. Aspect] (https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-1-Aspect)
-
-```
-ce	əsi	mu-re
-paper	this	black-change (Manipuri)
-'This paper has become black.'
-(h/ have-mod-91					(h/ have-mod-91
-    :ARG1 (c/ ce 'paper')			    :ARG1 (p/ paper)
-    	:mod (s/ əsi 'this')			        :mod (t/ this)
-    :ARG2 (m/ mu 'black')			    :ARG2 (b/ black)
-    :aspect Performance)			    :aspect Performance)
-```
+## Phasal aspectual meaning - see ???
 
 
-Possible UMR Aspect values at the **default level** of granularity include:   
-`Activity` - process that does not end,  
-`Habitual` - occurs/occurred usually or habitually,  
-`State` - unspecified type of state,  
-`Endeavor` - process that ends without reaching a result state,  
-`Performance` - process that ends and reaches a result state.  
 
-Further, `Process` value is used for event nominals.
-
-### Phasal verbs in English
-
-The UMR Guidelines provides several examples with phasal verbs in Part 3 with sentence -level annotation. However, the document-level annotation is not described there  :-((   
  
-According to [Part 3-3-1-4 Aspect/Activity](https://github.com/umr4nlp/umr-guidelines/blob/master/guidelines.md#part-3-3-1-4-activity), thus the following sentences will have same sentence-level annotation (regardless the phase verbs):
-* [en] _He is playing the violin._  3-3-1-4 (2) 
-* [en] _He started playing the violin._ 3-3-1-4 (3a) 
-* [en] _He kept on playing the violin._ 3-3-1-4 (3b) 
-
-```
-He started playing the violin.
-(p/ play-01
-	:ARG0 (p2/ person
-		:ref-person 3rd
-		:ref-number Singular)
-	:ARG2 (v/ violin)
-	:aspect Activity
-	:modstr FullAff)
-```
-
-The UMR Guidelines do not provide a list of English phasal verbs.  
-(AMR does not elaborate this phenomenon.) 
- 
-### Phasal verbs in Czech
-
-Mluvnice 3 ... nic :-((
-
-Čas a modalita v češtině ??? 
-
-In PDT, phasal verbs are conceived as lexical words (= autosemantics), thus they are represented as separate nodes in t-trees. 
- 
-Criteria for distinguishing phasal verbs in Czech [NESČ, Fázové sloveso](https://www.czechency.org/slovnik/F%C3%81ZOV%C3%89%20SLOVESO):  
-(a) phasal meaning  
-(b) phasal verb combines with infinitives (c) of imperfective verbs (no other forms!)  
-
-NESČ lists the following verbs (not necessarily exhaustive):  
-**inceptives**: _jmout se_, _začínat - začít_  
-**terminatives**: _přestávat - přestat_  
-**continuatives**: _zůstávat - zůstat_  
-
-<!--([Slovesa fázová](https://www.cestinadoma.cz/ucivo/slovesa-fazova-a-modalni) the same list)-->
-
-VALLEX provides a bit broader set of verbs (class of phase verbs / phase of action, both limited to those with an infinitive complementation):   
-**inceptives**: _jmout se_, _počínat - počít_, _začínat - začít_, _započít_  
-**terminatives**: _přestávat - přestat_, _ustávat - ustat_  
-**continuatives**: _zůstávat - zůstat_  
-
-<!-- VALLEX: problém s (b): infinitiv alternující s dalšími formami:   
-počínat-počít, začínat-začít, započít ... 4,s+7,inf  
-přestávat-přestat ... s+7,inf; ustávat1-ustat ... s+7,v+6,inf 
-NE vrhat_se - vrhnout_se (nesplněné b, do+2,na+4,inf)-->
-
-When these verbs combines with infinitives, they should NOT be identified as separate events (based on examples 3-3-1-4 (2) and 3-3-1-4 (3a), (3b)).  
-Instead, they will be represented at the document level -- HOW? 
-The Guidelines does not describe their treatment (unless I missed something important)! -->
-
 
 
 ### MOVE TO MODAL DEPENDENCY ANNOTATION 

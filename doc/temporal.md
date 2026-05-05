@@ -5,8 +5,6 @@ In UMR, temporal annotation is done at both the sentence level and the document 
 > **Disclaimer:**  
 > Note that this HowTo recaps our interpretation of the Guidelines (rather than the Guidelines themselves -- as there are many unclear points there).
 
- 
-
 ## 1. Sentence level representation:
 
 - Any **time expression** (any overtly present) should be identified and annotated using the `:temporal` relation modifying the respective **event**.  
@@ -53,8 +51,6 @@ Example (from the Guidelines):
 
 For events related to a time expression, a second annotation specifying its relationship with another event may also be added!!
 
-
-
 ### Pass 1: Setting up the temporal superstructure
 
 Temporal superstructure represents the top levels of the dependency structure. It contains all **temporal expressions (timexs)** in the text and **pre-defined metanodes** and their temporal relations to each other.
@@ -89,11 +85,19 @@ Temporal superstructure represents the top levels of the dependency structure. I
 
 - `:before` ... child is before parent.
 
-- `:overlap` ... child and parent overlap (but one is not fully contained in the other); use this also for <u>perfectly simultaneous events</u>, for <u>phase verbs</u> (_začít křičet_) or for some <u>semi-modals</u> (_dokázat využít_)!  
+- `:overlap` ... child and parent overlap (but one is not fully contained in the other); 
+  
+  - use this also for <u>perfectly simultaneous events</u>, 
+  
+  - for some <u>semi-modals</u> (*dokázat využít*),
+  
+  - <mark>!!! prototypical <u>phase verbs</u> (_začít_) are merged with their lexical verbs !!!</mark>
+    
+    (_začít křičet_ --> *křičet* with the `:inceptive` aspect value)
+  
+  - <mark>??? deverbal nouns captured using the result-of relation (and similar) ???</mark>
 
 Note that the <span>labels</span> characterize the relation **from a child to its parent** !!!
-
-
 
 ### Pass 2: Adding events
 
@@ -128,8 +132,6 @@ Process in the following way:
     > be added.
 
 - **Exception**: In cases when an event overlaps with its referential expression (time or event), its temporal characteristics cannot be inferred. Thus, we should also add its relation to the metanode (typically `DCT`)  to express it explicitly. 
-  
-  
 
 ### Special cases
 
@@ -143,20 +145,20 @@ Examples (from the guidelines):
 
 - [en] *I want to go to the city and visit a museum.*  
   timeline: ... **want** ... go ... visit ... *want* as being a complement-taking verb  
-
-   ```
-   :temporal ((present-reference :contained want)
-              (want :after go)     !!missing in the Guidelines??
-              (want :after visit)) !!not city (as in the Guidelines)!!
-   ```
+  
+  ```
+  :temporal ((present-reference :contained want)
+             (want :after go)     !!missing in the Guidelines??
+             (want :after visit)) !!not city (as in the Guidelines)!!
+  ```
 
 - [en] *I saw him knock on the door.* ... *see* as a complement-taking verb  
   timeline: *seeing* and *knocking* overlap
-
-   ```
-   :temporal ((past-reference :contained see)
-              (see :overlap knock)))
-   ```
+  
+  ```
+  :temporal ((past-reference :contained see)
+             (see :overlap knock)))
+  ```
 
 #### 2 Reporting predicates
 
@@ -166,13 +168,13 @@ Example:
 
 - [en] *Magdalena said she arrived home, ate dinner, and will meet us at the theater..* ... *say* as the reporting verb  
   timeline: ... arrive ... eat ... **say** ... meet ...
-
-   ```
-   :temporal ((past-reference :contained say)
-              (say :before eat)
-              (eat :before arrive)
-              (say :after meet)))
-   ```
+  
+  ```
+  :temporal ((past-reference :contained say)
+             (say :before eat)
+             (eat :before arrive)
+             (say :after meet)))
+  ```
 
 #### 3 Purpose clauses
 
@@ -180,11 +182,11 @@ Always use the  `:after` temporal relation for events linked with the `:purpose`
 
 - [en] *He went home (in order) to wash the dishes.*  
    timeline: ... **go** ... wash ...
-
-   ```
-   :temporal ((past-reference :contained go)
-              (go :after wash))
-   ```
+  
+  ```
+  :temporal ((past-reference :contained go)
+             (go :after wash))
+  ```
 
 #### 4 Causally-related events
 
@@ -222,19 +224,18 @@ Check whether **repeated mentions** of the same event got consistent annotation:
     Besides conflicts between explicit and inferred relations, we should also check that time expressions and events specify the minimally required relations
 - if both of them specify their relation to a third node (or to a third and a fourth node which are coreferential), it must be the same relation.
 
-
-
 **Mutual relations among temporal relations:**
 
 As suggested by Dan:  
+
 - the relations `:before`, `:after`, and `:contained` are transitive 
 - `:before` is the opposite of `:after`
 - if X is contained in Y and Z is `:before/:after` Y, then Z is also `:before/:after X` 
-  
+
 **Dan's comments:** The validator can use the above rules to infer temporal relations between other pairs of nodes, where the relation is not annotated explicitly. And it must never happen that two information sources lead to conflicting relations between a given pair of nodes.
-  - `:overlap` does not provide information that can be used for inference but it is mutually exclusive with `:before`, `:after`, and `:contained`;
-  - `:depends-on` does not provide useful information and it should be probably avoided because usually we can use one of the more specific relations.  
-  
+
+- `:overlap` does not provide information that can be used for inference but it is mutually exclusive with `:before`, `:after`, and `:contained`;
+- `:depends-on` does not provide useful information and it should be probably avoided because usually we can use one of the more specific relations.  
 
 **Further remarks:**
 
