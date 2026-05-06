@@ -1,0 +1,1613 @@
+################################################################################
+# sent_id = u_tree-cs-s1-root
+# :: snt1
+Index: 1      2    3  4       5   6     7       8  9        10 11    12        13
+Words: Kazeta šest ,  vypráví pan Karel Redlich ,  Bedihošť ,  Česká republika .
+
+# sentence level graph:
+(s1p / publication-91
+        :ARG3 (s1a1 / and
+                      :op1 (s1k1 / kazeta
+                                   :refer-number singular
+                                   :mod (s1s1 / šest))
+                      :op2 (s1v1 / vyprávět-001
+                                   :aspect activity
+                                   :modal-strength full-affirmative
+                                   :ARG1 (s1e1 / thing)
+                                   :ARG2 (s1e2 / person)
+                                   :ARG0 (s1p0 / person
+                                                 :refer-number singular
+                                                 :name (s1r1 / name :op1 "pan" :op2 "Karel" :op3 "Redlich"))
+                                   :place (s1a2 / and
+                                                  :op1 (s1b1 / place
+                                                               :refer-number singular
+                                                               :name (s1b2 /name :op1 "Bedihošť"))
+                                                  :op2 (s1r2 / place
+                                                               :refer-number singular
+                                                               :name (s1r3 / name :op1 "Česká" :op2 "republika"))))))
+
+# alignment:
+s1p: 0-0
+s1a1: 3-3
+s1k1: 1-1
+s1s1: 2-2
+s1v1: 4-4
+s1e1: 0-0
+s1e2: 0-0
+s1p0: 5-7
+s1r1: 0-0
+s1a2: 10-10
+s1b1: 9-9
+s1b2: 0-0
+s1r2: 11-12
+s1r3: 0-0
+
+# document level annotation:
+(s1s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s2-root
+# :: snt2
+Index: 1  2     3    4  5        6  7       8    9  10  11   12     13    14 15     16 17   18      19   20 21    22 23     24    25 26   27       28
+Words: V  Linci jsme se obrátili na Červený kříž ,  kde jsem dostal masti ,  obvazy na moji bolavou nohu a  kapky a  zelené brýle na moje spojivky .
+
+# sentence level graph:
+(s2s / say-91
+       :aspect activity
+       :modal-strength full-affirmative
+:ARG0 (s2p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s2o1 / obrátit-se-003
+              :aspect performance
+              :modal-strength full-affirmative
+              :quote s2s
+              :place (s2l1 / place
+                             :refer-number singular
+                             :name (s2l2 / name :op1 "Linec"))
+              :ARG0 (s2p1 / person
+                            :refer-number plural
+                            :refer-person 1st)
+              :ARG2 (s2k1 / organization
+                            :refer-number singular
+                            :name (s2c1 / name :op1 "Červený" :op2 "kříž")
+                            :place-of (s2d1 / dostat-001
+                                              :aspect performance
+                                              :modal-strength full-affirmative
+                                              :quote s2s
+                                              :ARG0 s2p0
+                                              :ARG1 (s2a1 / and
+                                                            :op1 (s2a2 / and
+                                                                         :op1 (s2m1 / mast
+                                                                                      :refer-number plural)
+                                                                         :op2 (s2o2 / obvaz
+                                                                                      :refer-number plural)
+                                                                         :purpose (s2n1 / noha
+                                                                                          :refer-number singular
+                                                                                          :part s2p0
+                                                                                          :mod (s2b1 / bolavý)))
+                                                            :op2 (s2a3 / and
+                                                                        :op1 (s2k2 / kapka
+                                                                                     :refer-number plural)
+                                                                        :op2 (s2b2 / brýle
+                                                                                     :refer-number plural
+                                                                                     :mod (s2z1 / zelený))
+                                                                        :purpose (s2s1 / spojivka
+                                                                                         :refer-number plural
+                                                                                         :part s2p0)))))))
+
+# alignment:
+s2s: 0-0
+s2p0: 17-17,26-26
+s2o1: 3-5
+s2l1: 1-2
+s2l2: 0-0
+s2p1: 0-0
+s2k1: 6-8,10-10
+s2c1: 0-0
+s2d1: 11-12
+s2a1: 20-20
+s2a2: 14-14
+s2m1: 13-13
+s2o2: 15-15
+s2n1: 16-16,19-19
+s2b1: 18-18
+s2a3: 22-22
+s2k2: 21-21
+s2b2: 24-24
+s2z1: 23-23
+s2s1: 25-25,27-27
+
+# document level annotation:
+(s2s0 / sentence
+    :coref ((s1v1 :same-event s2s)   # vyprávění
+            (s2p0 :same-entity s1p0)  # p. Redlich (kdo vypráví)
+            (s2p1 :subset-of s1p0)))  # (we :subset-of he)
+
+
+################################################################################
+# sent_id = u_tree-cs-s3-root
+# :: snt3
+Index: 1        2   3    4          5  6       7  8       9  10          11 12    13 14          15     16       17    18             19     20 21          22          23
+Words: Současně nám bylo doporučeno ,  abychom se vrátili do Mauthausenu ,  odkud se organizoval návrat bývalých vězňů koncentračních táborů po zdravotních prohlídkách .
+
+# sentence level graph:
+(s3s / say-91
+       :aspect activity
+       :modal-strength full-affirmative
+:ARG0 (s3p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s3d1 / doporučit-001
+              :aspect performance
+              :modal-strength full-affirmative
+              :quote s3s
+              :temporal (s3s1 / současně)
+              :ARG2 (s3p1 / person
+                            :refer-number plural
+                            :refer-person 1st)
+              :ARG0 (s3e1 / person
+                            :refer-number plural
+                            :refer-person 3rd)
+              :ARG1 (s3v1 / vrátit-se-004
+                            :aspect performance
+                            :modal-strength partial-affirmative
+                            :quote s3s
+                            :ARG0 s3p1
+                            :place (s3m1 / place
+                                           :refer-number singular
+                                           :name (s3m2 / name :op1 "Mauthausen")
+                                                         :place-of (s3o1 / organizovat-001
+                                                                           :aspect activity
+                                                                           :modal-strength partial-affirmative
+                                                                           :quote s3s
+                                                                           :ARG0 (s3e2 / person
+                                                                                         :refer-number plural)
+                                                                           :ARG1 (s3n1 / navracet-se-002
+                                                                                         :aspect activity
+                                                                                         :modal-strength partial-affirmative
+                                                                                         :ARG0 (s3v2 / person
+                                                                                                       :refer-number plural
+                                                                                                       :ARG1-of (s3v3 / věznit-001
+                                                                                                                        :aspect activity
+                                                                                                                        :modal-strength full-affirmative
+                                                                                                                        :ARG0 (s3p5 / person
+                                                                                                                                     :refer-number plural))
+                                                                                                       :mod (s3b1 / bývalý)
+                                                                                                       :mod (s3t1 / tábor
+                                                                                                                    :refer-number plural
+                                                                                                                    :mod (s3k1 / koncentrační)))
+                                                                                         :ARG4 (s3p3 / place)
+                                                                                         :temporal (s3p2 / prohlédnout-001
+                                                                                                           :aspect activity
+                                                                                                           :modal-strength neutral-affirmative
+                                                                                                           :ARG0 (s3p4 / person
+                                                                                                                         :refer-number plural)
+                                                                                                           :ARG1 s3v2
+                                                                                                           :manner (s3z1 / zdravotní))))))))
+
+# alignment:
+s3s: 0-0
+s3p0: 0-0
+s3d1: 3-4
+s3s1: 1-1
+s3p1: 2-2
+s3e1: 0-0
+s3v1: 6-8
+s3m1: 9-10,12-12
+s3m2: 0-0
+s3o1: 13-14
+s3e2: 0-0
+s3n1: 15-15
+s3v2: 17-17
+s3v3: 0-0
+s3p5: 0-0
+s3b1: 16-16
+s3t1: 19-19
+s3k1: 18-18
+s3p3: 0-0
+s3p2: 20-20,22-22
+s3p4: 0-0
+s3z1: 21-21
+
+# document level annotation:
+(s3s0 / sentence
+    :coref ((s3s :same-event s2s) # vyprávění
+            (s3p0 :same-entity s2p0) # p. Redlich (kdo vypráví)
+            (s3p1 :same-entity s2p1) # my = o kom p. Řehla vypráví
+            (s3p1 :subset-of s3p0)   # (we :subset-of he)
+            (s3e1 :same-entity s2k1))) # oni = Červený kříž
+
+
+################################################################################
+# sent_id = u_tree-cs-s4-root
+# :: snt4
+Index: 1          2   3  4  5        6       7     8  9        10       11        12     13  14         15
+Words: Upozornili nás ,  že možnosti dopravy ještě v  částečně bojující republice nejsou tak jednoduché .
+
+# sentence level graph:
+(s4s / say-91
+       :aspect activity
+       :modal-strength full-affirmative
+:ARG0 (s4p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s4u1 / upozornit-001
+              :aspect performance
+              :modal-strength full-affirmative
+              :quote s4s
+              :ARG0 (s4e1 / person
+                            :refer-number plural
+                            :refer-person 3rd)
+              :ARG2 (s4p1 / person
+                            :refer-number plural
+                            :refer-person 1st)
+              :ARG1 (s4b1 / copula-91
+                            :aspect state
+                            :modal-strength full-affirmative
+                            :quote s4u1
+                            :polarity -
+                            :ARG1 (s4m1 / možnost
+                                          :refer-number plural
+                                          :mod (s4d1 / doprava))
+                            :temporal (s4j1 / ještě)
+                            :place (s4r1 / republika
+                                           :refer-number singular
+                                           :mod (s4b2 / state
+                                                        :ARG0-of (s4b3 / bojovat-002
+                                                                         :aspect activity
+                                                                         :modal-strength full-affirmative
+                                                                         :ARG1 (s5p3 / person
+                                                                                       :refer-number plural))
+                                                        :degree (s4c1 / částečně)))
+                            :ARG2 (s4j2 / jednoduchý
+                                          :degree (s4t1 / tak)))))
+
+# alignment:
+s4s: 0-0
+s4p0: 0-0
+s4u1: 1-1
+s4e1: 0-0
+s4p1: 2-2
+s4b1: 4-4,12-12
+s4m1: 5-5
+s4d1: 6-6
+s4j1: 7-7
+s4r1: 8-8,11-11
+s4b2: 10-10
+s4b3: 0-0
+s5p3: 0-0
+s4c1: 9-9
+s4j2: 14-14
+s4t1: 13-13
+
+# document level annotation:
+(s4s0 / sentence
+    :coref ((s4s :same-event s3s) # vyprávění
+            (s4p0 :same-entity s3p0) # p. Redlich (kdo vypráví)
+            (s4e1 :same-entity s3e1) # oni = Červený kříž
+            (s4p1 :subset-of s4p0)   # (we :subset-of he)
+            (s4p1 :same-entity s3p1))) # my = o kom p. Řehla vypráví
+
+
+################################################################################
+# sent_id = u_tree-cs-s5-root
+# :: snt5
+Index: 1    2  3     4   5    6       7        8      9  10     11   12 13  14 15     16 17     18       19   20    21 22    23 24         25
+Words: Češi ,  kteří tam byli totálně nasazeni čekali na parník nebo na loď ,  kterou se chtěli dopravit přes Linec ,  Vídeň a  Bratislavu .
+
+# sentence level graph:
+(s5s / say-91
+       :aspect activity
+       :modal-strength full-affirmative
+:ARG0 (s5p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s5c1 / čekat-003
+              :aspect activity
+              :modal-strength full-affirmative
+              :quote s5s
+              :ARG0 (s5c2 / person
+                            :refer-number plural
+                            :mod (s5c4 / country
+                                         :refer-number plural
+                                         :name (s5c5 / name :op1 "Česká" :op2 "republika"))
+                            :ARG1-of (s5n1 / nasadit-003
+                                             :aspect activity
+                                             :modal-strength full-affirmative
+                                             :quote s5s
+                                             :place (s5t1 / tam)
+                                             :manner (s5t2 / totálně)
+                                             :ARG0 (s5e1 / entity)))
+              :ARG1 (s5o1 / or
+                            :op1 (s5p1 / parník
+                                         :refer-number singular)
+                            :op2 (s5l1 / loď
+                                         :refer-number singular
+                                         :instrument-of (s5d1 / dopravit-002
+                                                                :aspect performance
+                                                                :modal-strength neutral-affirmative
+                                                                :quote s5s
+                                                                :ARG0 s5c2
+                                                                :ARG1 s5c2
+                                                                :ARG2 s5t1
+                                                                :ARG3 (s5c3 / place)
+                                                                :ARG4 (s5a1 / and
+                                                                              :op1 (s5l2 / place
+                                                                                           :refer-number singular
+                                                                                           :name (s5l3 / name :op1 "Linec"))
+                                                                              :op2 (s5v1 / place
+                                                                                           :refer-number singular
+                                                                                           :name (s5v2 / name :op1 "Vídeň"))
+                                                                              :op3 (s5b1 / place
+                                                                                           :refer-number singular
+                                                                                           :name (s5b2 / name :op1 "Bratislava"))))))))
+
+# alignment:
+s5s: 0-0
+s5p0: 0-0
+s5c1: 8-8
+s5c2: 1-1,3-3,16-16
+s5c4: 0-0
+s5c5: 0-0
+s5n1: 5-5,7-7
+s5t1: 4-4
+s5t2: 6-6
+s5e1: 0-0
+s5o1: 11-11
+s5p1: 9-10
+s5l1: 12-13,15-15
+s5d1: 17-18
+s5c3: 0-0
+s5a1: 23-23
+s5l2: 19-20
+s5l3: 0-0
+s5v1: 19-19,22-22
+s5v2: 0-0
+s5b1: 19-19,24-24
+s5b2: 0-0
+
+# document level annotation:
+(s5s0 / sentence
+    :coref ((s5s :same-event s4s) # vyprávění
+            (s5p0 :same-entity s4p0) # p. Redlich (kdo vypráví)
+            (s5t1 :same-entity s3m1)   # tam = Mathousen
+            (s5l2 :same-entity s2l1)))  #Linec
+
+
+################################################################################
+# sent_id = u_tree-cs-s6-root
+# :: snt6
+Index: 1  2   3    4      5   6  7      8      9      10
+Words: To ale byla jejich věc ,  trochu jiného původu .
+
+# sentence level graph:
+(s6s / say-91
+       :aspect activity
+       :modal-strength full-affirmative
+:ARG0 (s6p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s6b1 / have-mod-91
+              :aspect state
+              :modal-strength full-affirmative
+              :quote s6s
+              :ARG1 (s6t1 / event
+                            :refer-number singular
+                            :aspect activity
+                            :modal-strength full-affirmative)
+              :clausal-marker (s6a1 / ale)
+              :ARG2 (s6v1 / věc
+                           :refer-number singular
+                           :possessor (s6e1 / person
+                                              :refer-number plural
+                                              :refer-person 3rd)
+                           :mod (s6p1 / původ
+                                        :refer-number singular
+                                        :mod (s6j1 / jiný
+                                                     :degree (s6t2 / trochu))))))
+
+# alignment:
+s6s: 0-0
+s6p0: 0-0
+s6b1: 3-3
+s6t1: 1-1
+s6a1: 2-2
+s6v1: 5-5
+s6e1: 4-4
+s6p1: 9-9
+s6j1: 8-8
+s6t2: 7-7
+
+# document level annotation:
+(s6s0 / sentence
+    :coref ((s6s :same-event s5s)    # vyprávění
+            (s6p0 :same-entity s5p0) # p. Redlich (kdo vypráví)
+            (s6t1 :same-event s5c1)  # čekání
+            (s6e1 :same-entity s5c2))) # Češi
+
+
+################################################################################
+# sent_id = u_tree-cs-s7-root
+# :: snt7
+Index: 1   2       3  4     5  6    7  8         9  10     11 12 13     14 15   16             17  18     19 20          21 22  23   24   25       26          27
+Words: Tři chlapci ,  vězni ,  jsme se domluvili a  myslím ,  že někerý z  těch červenokřižáků nás zavezl do Mauthausenu ,  kde jsme byli lékařsky prohlídnuti .
+
+# sentence level graph:
+(s7s / say-91
+       :aspect activity
+       :modal-strength full-affirmative
+:ARG0 (s7p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s7a1 / and
+              :op1 (s7d1 / domluvit-se-001
+                           :aspect performance
+                           :modal-strength full-affirmative
+                           :quote s7s
+                           :ARG0 (s7c1 / chlapec
+                                         :refer-number plural
+                                         :quant (s7t1 / tři)
+                                         :ARG1-of (s7i1 / identity-91
+                                                          :aspect state
+                                                          :modal-strength full-affirmative
+                                                          :quote s7s
+                                                          :ARG2 (s7v1 / vězeň
+                                                                        :refer-number plural)))
+                           :ARG1 s7c1
+                           :manner (s7v2 / vzájemně))
+              :op2 (s7m1 / myslit-003
+                           :aspect activity
+                           :modal-strength full-affirmative
+                           :quote s7s
+                           :ARG0 s7p0
+                           :ARG1 (s7z1 / zavézt-001
+                                         :aspect performance
+                                         :modal-predicate s7m1
+                                         :ARG0 (s7c2 / červenokřižák
+                                                       :refer-number plural
+                                                       :mod (s7t2 / ten)
+                                                       :mod (s7n1 / některý))
+                                         :ARG1 s7c1
+                                         :ARG2 (s7m2 / place
+                                                       :refer-number singular
+                                                       :name (s7m3 / name :op1 "Mauthausen")
+                                                       :place-of (s7p3 / prohlédnout-001
+                                                                         :aspect performance
+                                                                         :modal-strength full-affirmative
+                                                                         :quote s7s
+                                                                         :ARG0 (s7l1 / lékař)
+                                                                         :ARG1 s7c1))))))
+
+# alignment:
+s7s: 0-0
+s7p0: 0-0
+s7a1: 9-9
+s7d1: 6-8
+s7i1: 3-3
+s7c1: 1-2, 17-17
+s7t1: 0-0
+s7v1: 4-4
+s7v2: 0-0
+s7m1: 10-10
+s7m3: 0-0
+s7z1: 12-12,18-18
+s7n1: 13-13
+s7c2: 14-14,16-16
+s7t2: 15-15
+s7m2: 19-20,22-22
+s7p3: 23-24,26-26
+s7l1: 25-25
+
+# document level annotation:
+(s7s0 / sentence
+    :coref ((s7s :same-event s6s)    # vyprávění
+            (s7p0 :same-entity s6p0) # p. Redlich (kdo vypráví)
+            (s7c1 :same-entity s4p1) # my = 3 vězni = 3 chlapci
+            (s7c1 :subset-of s7p0)   # (we :subset-of he)
+            (s7c2 :same-entity s4e1) # oni = Červený kříž
+            (s7m2 :same-entity s5t1))) # Mauthausen
+
+
+################################################################################
+# sent_id = u_tree-cs-s8-root
+# :: snt8
+Index: 1       2    3      4  5      6  7   8        9  10 11 12  13  14   15     16 17        18 19   20         21 22   23        24
+Words: Dostali jsme pořadí ,  rozvrh ,  kdy odjedeme ,  a  za dva dny jsme vyjeli do Budějovic ,  část náklaďákem ,  část autobusem .
+
+# sentence level graph:
+(s8s / say-91
+       :aspect activity
+       :modal-strength full-affirmative
+:ARG0 (s8p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s8a1 / and
+              :op1 (s8d1 / dostat-001
+                          :aspect performance
+                          :modal-strength full-affirmative
+                          :quote s8s
+                          :ARG0 (s8e1 / person
+                                        :refer-number plural
+                                        :refer-person 1st)
+                          :ARG1 (s8p1 / pořadí
+                                        :refer-number singular
+                                        :ARG1-of (s8i1 / identity-91
+                                                         :aspect state
+                                                         :modal-strength full-affirmative
+                                                         :quote s8s
+                                                         :ARG2 (s8r1 / rozvrh
+                                                                       :refer-number singular))
+                                        :mod (s8o1 / odjet-001
+                                                     :aspect performance
+                                                     :modal-strength partial-affirmative
+                                                     :quote s8s
+                                                     :ARG0 s8e1
+                                                     :ARG1 (s8c1 / place))))
+              :op2 (s8v1 / vyjet-002
+                           :aspect performance
+                           :modal-strength full-affirmative
+                           :quote s8s
+                           :ARG0 s8e1
+                           :temporal (s8d2 / den
+                                             :refer-number plural
+                                             :quant (s8d3 / dva))
+                           :ARG1 s8c1
+                           :ARG2 (s8b1 / place
+                                        :refer-number plural
+                                        :name (s8b2 / name :op1 "Budějovice"))
+                           :parenthesis (s8a2 / and
+                                                :op1 (s8e2 / event
+                                                             :aspect activity
+                                                             :modal-strength full-affirmative
+                                                             :quote s8s
+                                                             :undergoer (s8c2 / person
+                                                                                :refer-number plural
+                                                                                :part s8e1)
+                                                             :instrument (s8n1 / náklaďák
+                                                                                 :refer-number singular))
+                                                :op2 (s8e3 / event
+                                                             :aspect activity
+                                                             :modal-strength full-affirmative
+                                                             :quote s8s
+                                                             :undergoer (s8c3 / person
+                                                                                :refer-number plural
+                                                                                :part s8e1)
+                                                             :instrument (s8a3 / autobus
+                                                                                 :refer-number singular))))))
+
+# alignment:
+s8s: 0-0
+s8p0: 0-0
+s8a1: 10-10
+s8d1: 1-2
+s8i1: 4-4
+s8p1: 3-3
+s8r1: 5-5,7-7
+s8o1: 8-8
+s8c1: 0-0
+s8e1: 0-0
+s8v1: 14-15
+s8d2: 11-13
+s8d3: 0-0
+s8b1: 16-17
+s8b2: 0-0
+s8a2: 21-21
+s8e2: 0-0
+s8c2: 19-19
+s8n1: 20-20
+s8e3: 0-0
+s8c3: 22-22
+s8a3: 23-23
+
+# document level annotation:
+(s8s0 / sentence
+    :coref ((s8s :same-event s7s)    # vyprávění
+            (s8p0 :same-entity s7p0) # p. Redlich (kdo vypráví)
+            (s8c1 :same-entity s7m2) # Mathausen 
+            (s8e1 :subset-of s8p0)   # (we :subset-of he)
+            (s8v1 :subset-of s8e2)   # část "jet" náklaďákem
+            (s8v1 :subset-of s8e3)   # část "jet" autobusem
+            (s8e1 :same-entity s7c1))) # my
+
+
+################################################################################
+# sent_id = u_tree-cs-s9-root
+# :: snt9
+Index: 1  2            3    4       5  6           7  8            9     10 11    12   13    14 15    16    17   18   19       20
+Words: V  Budějovicích jsme nasedli do přeplněného ,  natřískaného vlaku ,  sotva jsme stáli ,  pořád ještě jsme byli vysláblí .
+
+# sentence level graph:
+(s9s / say-91
+       :aspect activity
+       :modal-strength full-affirmative
+:ARG0 (s9p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s9a1 / and
+              :op1 (s9n1 / nasednout-001
+                           :aspect performance
+                           :modal-strength full-affirmative
+                           :quote s9s
+                           :place (s9b1 / place
+                                          :refer-number singular
+                                          :name (s9b3 / name :op1 "Budějovice"))
+                           :ARG1 (s9v1 / vlak
+                                         :refer-number singular
+                                         :mod (s9p1 / přeplněný)
+                                         :mod (s9n2 / natřískaný))
+                           :ARG0 (s9e1 / person
+                                         :refer-number plural
+                                         :refer-person 1st))
+              :op2 (s9a2 / and
+                           :op1 (s9s1 / stát-015
+                                        :aspect activity
+                                        :modal-strength full-affirmative
+                                        :quote s9s
+                                        :ARG0 s9e1
+                                        :degree (s9s2 / sotva))
+                           :op2 (s9b2 / have-mod-91
+                                        :aspect activity
+                                        :modal-strength full-affirmative
+                                        :quote s9s
+                                        :ARG1 s9e1
+                                        :duration (s9p2 / pořád)
+                                        :clausal-marker (s9j1 / ještě)
+                                        :ARG2 (s9v2 / vysláblý)))))
+
+# alignment:
+s9s: 0-0
+s9p0: 0-0
+s9a1: 10-10
+s9n1: 3-4
+s9b1: 1-2
+s9b3: 0-0
+s9v1: 5-5,9-9
+s9p1: 6-6
+s9n2: 8-8
+s9e1: 0-0
+s9a2: 14-14
+s9s1: 12-13
+s9s2: 11-11
+s9b2: 17-18
+s9p2: 15-15
+s9j1: 16-16
+s9v2: 19-19
+
+# document level annotation:
+(s9s0 / sentence
+    :coref ((s9s :same-event s8s)    # vyprávění
+            (s9p0 :same-entity s8p0) # p. Redlich (kdo vypráví)
+            (s9b1 :same-entity s8b1) # Budějovice
+            (s9e1 :subset-of s9p0)   # (we :subset-of he)
+            (s9e1 :same-entity s8e1))) # my
+
+
+################################################################################
+# sent_id = u_tree-cs-s10-root
+# :: snt10
+Index: 1  2    3  4  5        6       7  8    9    10 11      12 13       14 15 16   17 18        19 20 21
+Words: To jsme se s  Brožíkem nasmáli ,  když jsme se potkali v  Terezíně a  já jsem mu připomněl .  .  .
+
+# sentence level graph:
+(s10s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s10p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s10n1 / nasmát-se-001
+              :aspect performance
+              :modal-strength full-affirmative
+              :quote s10s
+              :companion (s10b1 / person
+                                  :refer-number singular
+                                  :name (s10b2 / name :op1 "Brožík"))
+              :ARG0 (s10e1 / person
+                             :refer-number plural
+                             :refer-person 1st)
+              :temporal (s10a1 / and
+                                 :op1 (s10p1 / potkat-001
+                                               :aspect performance
+                                               :modal-strength full-affirmative
+                                               :quote s10s
+                                               :ARG0 s10e1
+                                               :ARG1 s10e1
+                                               :manner (s10v1 / vzájemně)
+                                               :place (s10t1 / place
+                                                               :refer-number singular
+                                                               :name (s10t2 / name :op1 "Terezín")))
+                                 :op2 (s10p2 / připomenout-002
+                                               :aspect performance
+                                               :modal-strength full-affirmative
+                                               :quote s10s
+                                               :ARG0 s10p0
+                                               :ARG2 s10b1
+                                               :ARG1 (s10e2 / event)))))
+
+# alignment:
+s10s: 0-0
+s10p0: 15-15
+s10n1: 1-3,6-6
+s10b1: 4-5,17-17
+s10b2: 0-0
+s10e1: 0-0
+s10a1: 14-14
+s10p1: 8-11
+s10v1: 0-0
+s10t1: 12-13
+s10t2: 0-0
+s10p2: 8-8,16-16,18-18
+s10e2: 0-0
+
+# document level annotation:
+(s10s0 / sentence
+    :coref ((s10s :same-event s9s)    # vyprávění
+            (s10p0 :same-entity s9p0) # p. Redlich (kdo vypráví)
+            (s10e1 :subset-of s10b1) # Brožík jako podmn. "my 2"  
+            (s10e1 :subset-of s10p0))) # já jako podmn. "my 2"  
+
+
+################################################################################
+# sent_id = u_tree-cs-s11-root
+# :: snt11
+Index: 1       2  3  4     5     6       7  8  9   10 11 12      13     14 15    16    17
+Words: Podíval se a  říkám Otovi Bendovi :  "  Oto ,  ty vypadáš nejhůř ,  sekni sebou .
+
+# sentence level graph:
+(s11s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s11p0 / person
+              :refer-number singular
+              :refer-person 1st)
+:ARG1 (s11a1 / and
+               :op1 (s11p1 / podívat-se-004
+                             :aspect performance
+                             :modal-strength full-affirmative
+                             :quote s11s
+                             :ARG0 (s11e1 / entity
+                                            :refer-number singular
+                                            :refer-person 3rd)
+                             :ARG1 (s11c1 / entity))
+               :op2 (s11r1 / říkat-007
+                             :aspect activity
+                             :modal-strength full-affirmative
+                             :quote s11s
+                             :ARG0 s11p0
+                             :ARG2 (s11b1 / person
+                                            :refer-number singular
+                                            :name (s11b2 / name :op1 "Oto" :op2 "Benda"))
+                             :ARG1 (s11a2 / and
+                                            :op1 (s11v1 / vypadat-004
+                                                          :aspect activity
+                                                          :modal-strength full-affirmative
+                                                          :quote s11r1
+                                                          :vocative (s11o2 / person
+                                                                             :refer-number singular
+                                                                             :refer-person 2nd
+                                                                             :name (s11o3 / name :op1 "Ota"))
+                                                          :ARG0 s11o2
+                                                          :ARG1 (s11s1 / špatně
+                                                                         :degree most))
+                                              :op2 (s11s2 / seknout-002
+                                                            :aspect performance
+                                                            :modal-strength partial-affirmative
+                                                            :mode imperative
+                                                            :quote s11r1
+                                                            :ARG1 s11o2
+                                                            :ARG0 s11o2)))))
+
+# alignment:
+s11s: 0-0
+s11p0: 0-0
+s11a1: 3-3
+s11p1: 1-2
+s11e1: 0-0
+s11c1: 0-0
+s11r1: 4-4
+s11b1: 5-6
+s11b2: 0-0
+s11a2: 14-14
+s11v1: 12-12
+s11o2: 9-9,11-11,16-16
+s11o3: 0-0
+s11s1: 13-13
+s11s2: 15-15
+
+# document level annotation:
+(s11s0 / sentence
+    :coref ((s11s :same-event s10s)    # vyprávění
+            (s11p0 :same-entity s10p0) # p. Redlich (kdo vypráví)
+            (s11e1 :same-entity s10b1) # Brožík
+            (s11o2 :same-entity s11b1))) # Oto! = Oto Benda #(s11s2 / nejvíce)
+
+
+################################################################################
+# sent_id = u_tree-cs-s12-root
+# :: snt12
+Index: 1     2     3 4
+Words: Sekni sebou ! "
+
+# sentence level graph:
+(s12s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s12p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s12s1 / seknout-002
+               :aspect performance
+               :modal-strength partial-affirmative
+               :mode imperative
+               :quote s12s
+               :ARG1 (s12e1 / person
+                              :refer-number singular
+                              :refer-person 2nd)
+               :ARG0 s12e1))
+
+# alignment:
+s12s: 0-0
+s12p0: 0-0
+s12s1: 1-1
+s12e1: 2-2
+
+# document level annotation:
+(s12s0 / sentence
+    :coref ((s12s :same-event s11r1)    # pokrač. přímé řeči
+            (s12p0 :same-entity s11p0) # p. Redlich (kdo vypráví)
+            (s12e1 :same-entity s11o2))) # Oto = Oto Benda
+
+
+################################################################################
+# sent_id = u_tree-cs-s13-root
+# :: snt13
+Index: 1   2      3  4  5      6  7  8    9     10 11 12     13  14 15       16
+Words: Tak udělal ,  že omdlel a  já jsem říkal :  "  Prosím vás ,  promiňte .
+
+# sentence level graph:
+(s13s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s13p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s13a1 / and
+               :op1 (s13u1 / udělat-006
+                             :aspect performance
+                             :modal-strength full-affirmative
+                             :quote s13s
+                             :clausal-marker (s13t1 / tak)
+                             :ARG0 (s13e1 / person
+                                            :refer-number singular
+                                            :refer-person 3rd)
+                             :ARG1 (s13o1 / omdlít-001
+                                            :aspect performance
+                                            :modal-strength full-affirmative
+                                            :quote s13s
+                                            :ARG0 s13e1))
+               :op2 (s13r1 / říkat-007
+                             :aspect activity
+                             :modal-strength full-affirmative
+                             :quote s13s
+                             :ARG0 s13p0
+                             :ARG2 (s13e2 / person
+                                            :refer-number plural
+                                            :refer-person 3rd)
+                             :ARG1 (s13p2 / prominout-001
+                                            :aspect performance
+                                            :modal-strength neutral-affirmative
+                                            :mode imperative
+                                            :polite +
+                                            :quote s13r1
+                                            :clausal-marker (s13p3 / prosím-vás)
+                                            :ARG0 s13e2
+                                            :ARG2 s13o1
+                                            :ARG1 s13e1))))
+
+# alignment:
+s13s: 0-0
+s13p0: 7-7
+s13a1: 6-6
+s13u1: 2-2
+s13t1: 1-1
+s13e1: 0-0
+s13o1: 4-5
+s13r1: 8-9
+s13e2: 0-0
+s13p2: 15-15
+s13p3: 12-13
+
+# document level annotation:
+(s13s0 / sentence
+    :coref ((s13s :same-event s11s)    # vyprávění
+            (s13p0 :same-entity s12p0) # p. Redlich (kdo vypráví)
+            (s13e1 :same-entity s12e1))) # Oto = Oto Benda
+
+
+################################################################################
+# sent_id = u_tree-cs-s14-root
+# :: snt14
+Index: 1    2  3  4    5       6
+Words: Mohl by si tady lehnout ?
+
+# sentence level graph:
+(s14s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s14p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s14m1 / umožnit-001
+               :aspect performance
+               :modal-strength partial-affirmative
+               :mode imperative
+               :polite +
+               :quote s14s
+               :ARG0 (s14e2 / person
+                              :refer-number plural
+                              :refer-person 2nd)
+               :ARG2 (s14e1 / person
+                              :refer-number singular
+                              :refer-person 3rd)
+               :ARG1 (s14l1 / lehnout-si-001
+                              :aspect performance
+                              :modal-strength partial-affirmative
+                              :ARG0 s14e1
+                              :place (s14t1 / tady))))
+
+# alignment:
+s14s: 0-0
+s14p0: 0-0
+s14m1: 1-2
+s14l1: 3-3,5-5
+s14t1: 4-4
+s14e1: 0-0
+s14e2: 0-0
+
+# document level annotation:
+(s14s0 / sentence
+    :coref ((s14s :same-event s13r1)    # pokrač. přímé řeči
+            (s14p0 :same-entity s13p0)  # p. Redlich (kdo vypráví)
+            (s14e2 :same-entity s13e2)  # ostatní cestující ve vlaku
+            (s14e1 :same-entity s13e1))) # Oto = Oto Benda
+
+
+################################################################################
+# sent_id = u_tree-cs-s15-root
+# :: snt15
+Index: 1  2     3 4
+Words: Má tyfus . "
+
+# sentence level graph:
+(s15s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s15p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s15m1 / mít-002
+               :aspect state
+               :ARG0 (s15e1 / person
+                              :refer-number singular
+                              :refer-person 3rd)
+               :ARG1 (s15t1 / tyfus
+                              :refer-number singular)))
+
+# alignment:
+s15s: 0-0
+s15p0: 0-0
+s15m1: 1-1
+s15e1: 0-0
+s15t1: 2-2
+
+# document level annotation:
+(s15s0 / sentence
+    :coref ((s15s :same-event s14s)    # pokrač. přímé řeči
+            (s15p0 :same-entity s14p0)  # p. Redlich (kdo vypráví)
+            (s15e1 :same-entity s14e1))) # Oto = Oto Benda
+
+
+################################################################################
+# sent_id = u_tree-cs-s16-root
+# :: snt16
+Index: 1      2  3    4      5  6   7   8  9    10 11        12
+Words: Nebylo to sice slušné ,  ale pak už jsme se netlačili .
+
+# sentence level graph:
+(s16s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s16p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s16b1 / but-91
+              :ARG1 (s16b2 / have-mod-91
+                             :aspect activity
+                             :modal-strength full-negative
+                             :quote s16s
+                             :polarity -
+                             :ARG1 (s16t1 / event
+                                            :aspect activity
+                                            :refer-number singular)
+                             :ARG2 (s16s1 / slušný))
+              :clausal-marker (s16s2 / sice)
+              :ARG2 (s16t2 / tlačit-se-002
+                             :aspect activity
+                             :modal-strength full-negative
+                             :quote s16s
+                             :polarity -
+                             :temporal (s16p1 / pak)
+                             :temporal (s16u1 / už)
+                             :ARG0 (s16e1 / person
+                                            :refer-number plural
+                                            :refer-person 1st)
+                             :ARG1 (s16c1 / place))))
+
+# alignment:
+s16s: 0-0
+s16p0: 0-0
+s16b1: 6-6
+s16b2: 1-1
+s16t1: 2-2
+s16s1: 4-4
+s16s2: 3-3
+s16t2: 9-11
+s16p1: 7-7
+s16u1: 8-8
+s16e1: 0-0
+s16c1: 0-0
+
+# document level annotation:
+(s16s0 / sentence
+    :coref ((s16s :same-event s13s)    # vyprávění
+            (s16p0 :same-entity s15p0) # p. Redlich (kdo vypráví)
+            (s16t1 :same-event s13r1) # ta přímá řeč
+            (s16c1 :same-entity s9v1)   # vlak
+            (s16e1 :subset-of s16p0)     # on jako podmn. my 3
+            (s16e1 :same-entity s9e1))) # my 3
+
+
+################################################################################
+# sent_id = u_tree-cs-s17-root
+# :: snt17
+Index: 1     2    3    4      5  6        7    8  9  10   11   12   13 14      15 16 17    18
+Words: Každý jsme měli lavici ,  střídali jsme se a  díky tyfu jsme se vyspali až do Prahy .
+
+# sentence level graph:
+(s17s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s17p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s17a1 / and
+              :op1 (s17m1 / have-possession-91
+                            :aspect state
+                            :modal-strength full-affirmative
+                            :quote s17s
+                            :ARG1 (s17l1 / lavice
+                                           :refer-number singular)
+                            :ARG0 (s17e1 / person
+                                           :refer-number singular
+                                           :refer-person 1st
+                                           :quant (s17k1 / každý)))
+              :op2 (s17s1 / střídat-se-001
+                            :aspect activity
+                            :modal-strength full-affirmative
+                            :quote s17s
+                            :ARG0 s17e1
+                            :ARG1 s17e1
+                            :manner (s17v2 / vzájemně))
+              :op3 (s17v1 / vyspat-se-001
+                            :aspect performance
+                            :modal-strength full-affirmative
+                            :quote s17s
+                            :ARG0 s17e1
+                            :cause (s17t1 / tyfus
+                                            :refer-number singular)
+                            :clausal-marker (s17a2 / až)
+                            :goal (s17p1 / place
+                                           :refer-number singular
+                                           :name (s17p2 / name :op1 "Praha")))))
+
+# alignment:
+s17s: 0-0
+s17p0: 0-0
+s17a1: 9-9
+s17m1: 2-3
+s17k1: 1-1
+s17l1: 4-4
+s17e1: 0-0
+s17s1: 6-8
+s17v2: 0-0
+s17v1: 12-14
+s17t1: 10-11
+s17a2: 15-15
+s17p1: 16-17
+s17p2: 0-0
+
+# document level annotation:
+(s17s0 / sentence
+    :coref ((s17s :same-event s16s)    # vyprávění
+            (s17p0 :same-entity s16p0) # p. Redlich (kdo vypráví)
+            (s17e1 :same-entity s16e1)  # my 3
+            (s17e1 :subset-of s17p0)     # on jako podmn. my 3
+            (s17t1 :same-entity s15t1))) # tyfus
+
+
+################################################################################
+# sent_id = u_tree-cs-s18-root
+# :: snt18
+Index: 1      2    3  4     5      6    7   8    9
+Words: Slyšel jsem že Benda zemřel před pár roky .
+
+# sentence level graph:
+(s18s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s18p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s18s1 / slyšet-003
+               :aspect performance
+               :modal-strength full-affirmative
+               :quote s18s
+               :ARG0 s18p0
+               :ARG1 (s18z1 / zemřít-001
+                              :aspect performance
+                              :modal-strength full-affirmative
+                              :quote s18s1
+                              :ARG1 (s18b1 / person
+                                             :refer-number singular
+                                             :name (s18b2 / name :op1 "Benda"))
+                              :temporal (s18r1 / rok
+                                                 :refer-number plural
+                                                 :quant (s18p1 / pár)))))
+
+# alignment:
+s18s: 0-0
+s18p0: 0-0
+s18s1: 1-2
+s18z1: 3-3,5-5
+s18b1: 4-4
+s18b2: 0-0
+s18r1: 6-6,8-8
+s18p1: 7-7
+
+# document level annotation:
+(s18s0 / sentence
+    :coref ((s18s :same-event s17s)    # vyprávění
+            (s18p0 :same-entity s17p0) # p. Redlich (kdo vypráví)
+            (s18b1 :same-entity s15e1)))  # Benda
+
+
+################################################################################
+# sent_id = u_tree-cs-s19-root
+# :: snt19
+Index: 1  2     3    4    5  6       7  8   9        10   11 12      13   14              15
+Words: Z  Prahy jsme jeli do Blanska ,  kde skončila trať ,  protože byla rozbombardovaná .
+
+# sentence level graph:
+(s19s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s19p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s19j1 / jet-004
+               :aspect activity
+               :modal-strength full-affirmative
+               :quote s19s
+               :start (s19p1 / place
+                               :refer-number singular
+                               :name (s19p2 / name :op1 "Praha"))
+               :ARG0 (s19e1 / person
+                              :refer-number plural
+                              :refer-person 1st)
+               :ARG4 (s19b1 / place
+                              :refer-number singular
+                              :name (s19b3 / name :op1 "Blansko")
+                              :place-of (s19s1 / skončit-005
+                                                 :aspect performance
+                                                 :modal-strength full-affirmative
+                                                 :quote s19s
+                                                 :ARG1 (s19t1 / trať
+                                                                :refer-number singular
+                                                                :cause (s19b2 / have-mod-91
+                                                                                :aspect state
+                                                                                :modal-strength full-affirmative
+                                                                                :quote s19s
+                                                                                :ARG2 (s19r1 / rozbombardovaný))
+                                                                :ARG1-of s19b2)))))
+
+# alignment:
+s19s: 0-0
+s19p0: 0-0
+s19j1: 3-4
+s19p1: 1-2
+s19p2: 0-0
+s19e1: 0-0
+s19b1: 5-6,8-8
+s19b3: 0-0
+s19s1: 9-9
+s19t1: 10-10
+s19b2: 12-13
+s19r1: 14-14
+
+# document level annotation:
+(s19s0 / sentence
+    :coref ((s19s :same-event s18s)    # vyprávění
+            (s19p0 :same-entity s18p0) # p. Redlich (kdo vypráví)
+            (s19p1 :same-entity s17p1) # Praha
+            (s19e1 :subset-of s19p0))) # on jako podmn. my OK; s19e1 .... jiné "my" (NE s17e1)
+
+
+################################################################################
+# sent_id = u_tree-cs-s20-root
+# :: snt20
+Index: 1      2    3   4   5   6  7       8
+Words: Čekali jsme tam dva dny na autobus .
+
+# sentence level graph:
+(s20s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s20p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s20c1 / čekat-003
+               :aspect activity
+               :modal-strength full-affirmative
+               :quote s20s
+               :ARG0 (s20e1 / person)
+               :place (s20t1 / tam)
+               :duration (s20d1 / den
+                                  :refer-number plural
+                                  :quant (s20d2 / dva))
+               :ARG1 (s20a1 / autobus
+                              :refer-number singular)))
+
+# alignment:
+s20s: 0-0
+s20p0: 0-0
+s20c1: 1-2
+s20e1: 0-0
+s20t1: 3-3
+s20d1: 5-5
+s20d2: 4-4
+s20a1: 6-7
+
+# document level annotation:
+(s20s0 / sentence
+    :coref ((s20s :same-event s19s)    # vyprávění
+            (s20p0 :same-entity s19p0) # p. Redlich (kdo vypráví)
+            (s20e1 :same-entity s19e1) # jiné my
+            (s20e1 :subset-of s20p0)    # on jako podmn. my 
+            (s20t1 :same-entity s19b1))) # Blansko
+
+
+################################################################################
+# sent_id = u_tree-cs-s21-root
+# :: snt21
+Index: 1    2     3     4    5    6    7  8    9      10 11 12    13   14       15
+Words: Bylo totiž hodně lidí před námi ,  taky říkali ,  že vězni mají přednost .
+
+# sentence level graph:
+(s21s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s21p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s21a1 / and
+               :op1 (s21b1 / exist-91
+                               :aspect state
+                               :modal-strength full-affirmative
+                               :quote s21s
+                               :clausal-marker (s21t1 / totiž)
+                               :ARG1 (s21c1 / člověk
+                                              :refer-number plural
+                                              :quant (s21h1 / hodně))
+                               :place (s21p1 / person
+                                               :refer-number plural
+                                               :refer-person 1st))
+               :op2 (s21r1 / říkat-007
+                             :aspect activity
+                             :modal-strength full-affirmative
+                             :quote s21s
+                             :clausal-marker (s21t2 / taky)
+                             :ARG0 s21c1
+                             :ARG2 s21p1
+                             :ARG1 (s21m1 / mít-přednost-033
+                                            :aspect state
+                                            :modal-strength full-affirmative
+                                            :quote s21r1
+                                            :ARG1 (s21v1 / vězeň
+                                                           :refer-number plural)))))
+
+# alignment:
+s21s: 0-0
+s21p0: 0-0
+s21a1: 7-7
+s21b1: 1-1
+s21t1: 2-2
+s21c1: 4-4
+s21h1: 3-3
+s21p1: 5-6
+s21r1: 9-9
+s21t2: 8-8
+s21m1: 11-11,13-14
+s21v1: 12-12
+
+# document level annotation:
+(s21s0 / sentence
+    :coref ((s21s :same-event s20s)    # vyprávění
+            (s21p0 :same-entity s20p0) # p. Redlich (kdo vypráví)
+            (s21p1 :subset-of s21p0)    # on jako podmn. my 
+            (s21p1 :same-entity s20e1))) # jiné my 
+
+
+################################################################################
+# sent_id = u_tree-cs-s22-root
+# :: snt22
+Index: 1       2    3  4  5        6     7       8  9       10   11 12 13   14
+Words: Nakonec jsme se do autobusu přece dostali a  dostali jsme se do Brna .
+
+# sentence level graph:
+(s22s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s22p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s22a1 / and
+               :op1 (s22d1 / dostat-se-008
+                             :aspect performance
+                             :modal-strength full-affirmative
+                             :quote s22s
+                             :temporal (s22n1 / nakonec)
+                             :ARG1 (s22a2 / autobus
+                                            :refer-number singular)
+                             :clausal-marker (s22p1 / přece)
+                             :ARG0 (s22e1 / person
+                                            :refer-number plural
+                                            :refer-person 1st))
+               :op2 (s22d2 / dostat-se-008
+                             :aspect performance
+                             :modal-strength full-affirmative
+                             :quote s22s
+                             :ARG0 s22e1
+                             :ARG1 (s22b1 / place
+                                            :refer-number singular
+                                            :name (s22b2 / name :op1 "Brno")))))
+
+# alignment:
+s22s: 0-0
+s22p0: 0-0
+s22a1: 8-8
+s22d1: 2-3,7-7
+s22n1: 1-1
+s22a2: 4-5
+s22p1: 6-6
+s22e1: 0-0
+s22d2: 9-11
+s22b1: 12-13
+s22b2: 0-0
+
+# document level annotation:
+(s22s0 / sentence
+    :coref ((s22s :same-event s21s)    # vyprávění
+            (s22p0 :same-entity s21p0) # p. Redlich (kdo vypráví)
+            (s22a2 :same-entity s20a1) # autobus
+            (s22e1 :subset-of s22p0)    # on jako podmn. my 
+            (s22e1 :same-entity s21p1))) # jiné "my"
+
+
+################################################################################
+# sent_id = u_tree-cs-s23-root
+# :: snt23
+Index: 1  2    3   4   5  6    7  8      9  10      11     12  13 14     15 16     17 18    19
+Words: Už jsem byl sám ,  zase s  jinými ,  protože Abeles jel do Teplic a  zůstal v  Praze .
+
+# sentence level graph:
+(s23s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s23p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s23a1 / and
+               :op1 (s23b1 / have-mod-91
+                             :aspect state
+                             :modal-strength full-affirmative
+                             :quote s23s
+                             :temporal (s23u1 / už)
+                             :ARG1 s23p0
+                             :ARG2 (s23s1 / sám))
+                             :op2 (s23e2 / stav
+                                           :undergoer s23p0
+                                           :clausal-marker (s23z1 / zase)
+                                           :companion (s23j1 / jiný)
+                                           :cause (s23a2 / and
+                                                          :op1 (s23j2 / jet-004
+                                                                        :aspect activity
+                                                                        :modal-strength full-affirmative
+                                                                        :quote s23s
+                                                                        :ARG0 (s23a3 / person
+                                                                                       :refer-number singular
+                                                                                       :name (s23a4 / name :op1 "Abeles"))
+                                                                        :ARG4 (s23t1 / place
+                                                                                      :refer-number singular
+                                                                                      :name (s23t2 / name :op1 "Teplice")))
+                                                          :op2 (s23z2 / zůstat-005
+                                                                        :aspect performance
+                                                                        :modal-strength full-affirmative
+                                                                        :quote s23s
+                                                                        :ARG0 s23a3
+                                                                        :place (s23p1 / place
+                                                                                        :refer-number singular
+                                                                                        :name (s23p2 / name :op1 "Praha")))))))
+
+# alignment:
+s23s: 0-0
+s23p0: 0-0
+s23a1: 5-5
+s23b1: 2-3
+s23u1: 1-1
+s23s1: 4-4
+s23e2: 0-0
+s23z1: 6-6
+s23j1: 7-8
+s23a2: 15-15
+s23j2: 10-10,12-12
+s23t1: 13-14
+s23t2: 0-0
+s23a3: 11-11
+s23a4: 0-0
+s23z2: 10-10,16-16
+s23p1: 17-18
+s23p2: 0-0
+
+# document level annotation:
+(s23s0 / sentence
+    :coref ((s23s :same-event s22s)    # vyprávění
+            (s23p0 :same-entity s22p0) # p. Redlich (kdo vypráví)
+            (s23p1 :same-entity s19p1)))  # Praha
+
+
+################################################################################
+# sent_id = u_tree-cs-s24-root
+# :: snt24
+Index: 1     2  3        4        5    6       7  8      9       10 11      12 13    14 15  16            17   18
+Words: Ještě s  nějakými kamarády jsem přespal v  hotelu Padovec u  nádraží ,  tehdy to byl repatriantský azyl .
+
+# sentence level graph:
+(s24s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s24p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s24p1 / přespat-001
+               :aspect performance
+               :modal-strength full-affirmative
+               :quote s24s
+               :clausal-marker (s24j1 / ještě)
+               :companion (s24k1 / kamarád
+                                   :refer-number plural
+                                   :mod (s24n1 / nějaký))
+               :ARG0 s24p0
+               :place (s24h1 / hotel
+                               :refer-number singular
+                               :name (s24p2 / name :op1 "Padovec")
+                               :place (s24n2 / nádraží
+                                               :refer-number singular)
+                               :ARG1-of  (s24b1 / have-role-91
+                                                    :aspect state
+                                                    :modal-strength full-affirmative
+                                                    :quote s24s
+                                                    :temporal (s24t1 / tehdy)
+                                                    :ARG2 (s24a1 / azyl
+                                                                   :refer-number singular
+                                                                   :mod (s24r1 / repatriantský))))))
+
+# alignment:
+s24s: 0-0
+s24p0: 0-0
+s24p1: 5-6
+s24j1: 1-1
+s24k1: 2-2,4-4
+s24n1: 3-3
+s24h1: 7-8,14-14
+s24p2: 9-9
+s24n2: 10-11
+s24b1: 15-15
+s24t1: 13-13
+s24a1: 17-17
+s24r1: 16-16
+
+# document level annotation:
+(s24s0 / sentence
+    :coref ((s24s :same-event s23s)    # vyprávění
+            (s24p0 :same-entity s23p0))) # p. Redlich (kdo vypráví)
+
+
+################################################################################
+# sent_id = u_tree-cs-s25-root
+# :: snt25
+Index: 1       2    3      4  5       6    7       8        9  10 11     12   13      14        15      16 17    18
+Words: Dostali jsme najíst ,  dostali jsme jakousi kartičku ,  na kterou jsme dostali vyplacené kapesné a  jídlo .
+
+# sentence level graph:
+(s25s / say-91
+        :aspect activity
+        :modal-strength full-affirmative
+:ARG0 (s25p0 / person
+               :refer-number singular
+               :refer-person 1st)
+:ARG1 (s25a1 / and
+              :op1 (s25d1 / dostat-001
+                            :aspect performance
+                            :modal-strength full-affirmative
+                            :quote s25s
+                            :ARG0 (s25e1 / person
+                                           :refer-number plural
+                                           :refer-person 1st)
+                            :ARG1 (s25n1 / najíst-se-001
+                                           :aspect performance
+                                           :modal-strength full-affirmative
+                                           :quote s25s
+                                           :ARG0 s25e1))
+              :op2 (s25d2 / dostat-001
+                            :aspect performance
+                            :modal-strength full-affirmative
+                            :quote s25s
+                            :ARG0 s25e1
+                            :ARG1 (s25k1 / kartička
+                                           :refer-number singular
+                                           :mod (s25j1 / jakýsi)
+                                           :instrument-of (s25a2 / and
+                                                                   :op1 (s25v1 / vyplatit-001
+                                                                                 :aspect performance
+                                                                                 :modal-strength full-affirmative
+                                                                                 :quote s25s
+                                                                                 :ARG0 (s25p1 / person
+                                                                                                :refer-number plural
+                                                                                                :refer-person 3rd)
+                                                                                 :ARG1 (s25k2 / kapesné
+                                                                                                :refer-number singular)
+                                                                                 :ARG2 s25e1)
+                                                                   :op2 (s25d3 / dostat-001
+                                                                                 :aspect performance
+                                                                                 :modal-strength full-affirmative
+                                                                                 :quote s25s
+                                                                                 :ARG0 s25e1
+                                                                                 :ARG1 (s25j2 / jídlo
+                                                                                                :refer-number singular)))))))
+
+# alignment:
+s25s: 0-0
+s25p0: 0-0
+s25a1: 4-4
+s25d1: 1-2
+s25n1: 3-3
+s25e1: 0-0
+s25d2: 5-6
+s25k1: 8-8,10-11
+s25j1: 7-7
+s25a2: 16-16
+s25k2: 15-15
+s25v1: 12-14
+s25p1: 0-0
+s25d3: 0-0
+s25j2: 17-17
+
+# document level annotation:
+(s25s0 / sentence
+    :coref ((s25s :same-event s24s)    # vyprávění
+            (s25p0 :same-entity s24p0) # p. Redlich (kdo vypráví)
+            (s25e1 :subset-of s25p0))) # my
+
+

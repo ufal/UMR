@@ -1,0 +1,2452 @@
+################################################################################
+# sent_id = u_tree-cs-s1-root
+# :: snt1
+Index: 1       2       3       4
+Words: Štěnice zničila volební kampaň
+
+# sentence level graph:
+(s1p0 / publication-91
+:ARG1 (s1z1 / zničit-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s1s1 / štěnice
+                      :refer-number singular)
+        :ARG1 (s1k1 / kampaň
+                      :refer-number singular
+                      :aspect activity
+                      :modal-strength full-affirmative
+                      :mod (s1v1 / volební))))
+
+# alignment:
+s1p0: 0-0
+s1z1: 2-2
+s1s1: 1-1
+s1k1: 4-4
+s1v1: 3-3
+
+# document level annotation:
+(s1s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s2-root
+# :: snt2
+Index: 1 2          3       4 5            6    7      8        9
+Words: V brazilském souboji o prezidentský úřad nastal nečekaný zvrat
+
+# sentence level graph:
+(s2p0 / publication-91
+:ARG1 (s2n1 / nastat-001
+              :aspect performance
+              :modal-strength full-affirmative
+              :place (s2s1 / souboj
+                             :refer-number singular
+                             :aspect process
+                             :modal-strength full-affirmative
+                             :ARG1 (s2u1 / úřad
+                                           :refer-number singular
+                                           :mod (s2p1 / prezidentský))
+                             :mod (s2b1 / country
+                                          :refer-number singular
+                                          :name (s2n2 / name :op1 "Brazílie")))
+              :ARG1 (s2z1 / event
+                            :refer-number singular
+                            :aspect performance
+                            :modal-strength full-affirmative
+                            :ARG1-of (s2z2 / zvrátit
+                                             :aspect performance
+                                             :modal-strength full-affirmative
+                                             :ARG0 (s2e1 / entity))
+                            :ARG1-of (s2c1 / čekat-002
+                                             :aspect state
+                                             :modal-strength full-affirmative
+                                             :ARG0 (s2e2 / entity)
+                                             :polarity -))))
+
+# alignment:
+s2p0: 0-0
+s2n1: 7-7
+s2s1: 1-1,3-3
+s2u1: 4-4,6-6
+s2p1: 5-5
+s2b1: 2-2
+s2n2: 0-0
+s2z1: 9-9
+s2z2: 0-0
+s2e1: 0-0
+s2c1: 8-8
+s2e2: 0-0
+
+# document level annotation:
+(s2s0 / sentence
+    :coref ((s1p0 :same-event s2p0))) # publication-91
+
+
+################################################################################
+# sent_id = u_tree-cs-s3-root
+# :: snt3
+Index: 1    2
+Words: Jana Blažková
+
+# sentence level graph:
+(s3p0 / publication-91
+:ARG0 (s3b1 / person
+              :refer-number singular
+              :name (s3n1 / name :op1 "Jana" :op2 "Blažková")))
+
+# alignment:
+s3p0: 0-0
+s3b1: 1-2
+s3n1: 0-0
+
+# document level annotation:
+(s3s0 / sentence
+    :coref ((s2p0 :same-event s3p0)))  # publication-91
+
+
+################################################################################
+# sent_id = u_tree-cs-s4-root
+# :: snt4
+Index: 1     2     3        4
+Words: Nemám žádné skrupule .
+
+# sentence level graph:
+(s4s2 / say-91
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s4p1 / person
+                      :refer-number singular
+                      :refer-person 1st)
+        :ARG1 (s4m1 / mít-008
+                      :aspect state
+                      :modal-strength full-affirmative
+                      :quote s4s2
+                      :polarity -
+                      :ARG0 s4p1
+                      :ARG1 (s4s1 / skrupule
+                                    :refer-number plural
+                                    :quant (s4z1 / žádný))))
+
+# alignment:
+s4s2: 0-0
+s4m1: 1-1
+s4p1: 0-0
+s4s1: 3-3
+s4z1: 2-2
+
+# document level annotation:
+(s4s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s5-root
+# :: snt5
+Index: 1  2      3           4        5  6          7  8      9        10 11   12 13        14        15        16      17      18 19   20       21           22     23     24       25
+Words: Co našemu kandidátovi prospěje ,  zveřejníme ,  zbytek zatajíme ,  řekl v  soukromém rozhovoru brazilský ministr financí a  člen Sociálně demokratické strany Rubens Ricupero .
+
+# sentence level graph:
+(s5r1 / říci-009
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s5r2 / person
+                      :refer-number singular
+                      :name (s5r3 / name :op1 "Rubens" :op2 "Ricupero")
+                      :ARG1-of (s5h1 / have-org-role-92
+                                       :aspect state
+                                       :modal-strength full-affirmative
+                                       :ARG3 (s5a1 / and
+                                                     :op1 (s5m1 / ministr
+                                                                  :refer-number singular
+                                                                  :mod (s5f1 / finance
+                                                                                     :refer-number singular)
+                                                                  :mod (s5b1 / country
+                                                                               :refer-number singular
+                                                                               :name (s5n2 / name :op1 "Brazílie")))
+                                                     :op2 (s5c1 / člen
+                                                                  :refer-number singular
+                                                                  :part (s5s1 / political-organization
+                                                                                :refer-number singular
+                                                                                :name (s5n3 / name :op1 "Sociálně" :op2 "Demokratický" :op3 "strana"))))))
+        :ARG2 (s5e1 / person)
+        :temporal (s5r4 / rozhovor
+                          :refer-number singular
+                          :mod (s5s3 / soukromý))
+        :ARG1 (s5a2 / and
+                      :op1 (s5z1 / zveřejnit-002
+                                   :aspect performance
+                                   :modal-strength partial-affirmative
+                                   :quote s5r1
+                                   :ARG0 (s5p1 / person
+                                                 :refer-number plural
+                                                 :refer-person 1st)
+                                   :ARG1 (s5c2 / thing
+                                                 :refer-number singular
+                                                 :ARG1-of (s5p2 / prospět-001
+                                                                  :aspect performance
+                                                                  :modal-strength full-affirmative
+                                                                  :ARG2 (s5k1 / person
+                                                                                :refer-number singular
+                                                                                :ARG1-of (s5k2 / kandidovat-001
+                                                                                                 :aspect performance
+                                                                                                 :modal-strength full-affirmative
+                                                                                                 :ARG0 s5p1)))))
+                      :op2 (s5z2 / zatajit-002
+                                   :aspect performance
+                                   :modal-strength full-affirmative
+                                   :quote s5r1
+                                   :ARG0 s5p1
+                                   :ARG1 (s5z3 / zbytek
+                                                 :refer-number singular))))
+
+# alignment:
+s5r1: 11-11
+s5r2: 23-24
+s5r3: 0-0
+s5h1: 0-0
+s5a1: 18-18
+s5m1: 16-16
+s5f1: 17-17
+s5b1: 15-15
+s5n2: 0-0
+s5c1: 19-19
+s5n3: 0-0
+s5s1: 20-22
+s5e1: 0-0
+s5r4: 12-12,14-14
+s5s3: 13-13
+s5a2: 0-0
+s5z1: 6-6
+s5p1: 2-2
+s5c2: 1-1
+s5p2: 4-4
+s5k1: 3-3
+s5k2: 0-0
+s5z2: 9-9
+s5z3: 8-8
+
+# document level annotation:
+(s5s0 / sentence
+    :coref ((s5r1 :same-event s4s2)     # sloveso mluvení
+            (s5r2 :same-entity s4p1)    # Rubens Ricupero
+            (s5b1 :same-entity s2b1)    # Brazílie
+            (s5p1 :subset-of s5r2)))    # Rubens Ricupero (s5r2) je částí "my" (s5p1), OK
+
+
+################################################################################
+# sent_id = u_tree-cs-s6-root
+# :: snt6
+Index: 1         2      3  4        5    6   7     8     9      10
+Words: Víkendová debata s  přítelem však tak úplně tajná nebyla .
+
+# sentence level graph:
+(s6b1 / have-mod-007
+        :aspect state
+        :modal-strength full-affirmative
+        :clausal-marker (s6v1 / však)
+        :ARG1 (s6d1 / event
+                      :refer-number singular
+                      :aspect activity
+                      :modal-strength full-affirmative
+                      :result-of (s6d2 / debatovat-001
+                                         :aspect state
+                                         :modal-strength full-affirmative
+                                         :ARG0 (s6p2 / person
+                                                       :refer-number singular
+                                                       :refer-person 3rd)
+                                         :ARG1 (s6e1 / concept)
+                                         :ARG2 (s6p1 / person
+                                                       :refer-number singular
+                                                       :ARG1-of (s6p3 / přátelit-se
+                                                                        :aspect habitual
+                                                                        :modal-strength full-affirmative
+                                                                        :ARG0 s6p2))
+                                                       :temporal (s6v2 / víkendový)))
+        :ARG2 (s6t1 / tajný
+                      :degree (s6u1 / úplně
+                      :degree (s6t2 / tak)))
+        :polarity -)
+
+# alignment:
+s6b1: 9-9
+s6v1: 5-5
+s6d1: 2-2
+s6d2: 0-0
+s6p2: 0-0
+s6e1: 0-0
+s6v2: 1-1
+s6p1: 3-4
+s6p3: 0-0
+s6t1: 8-8
+s6u1: 7-7
+s6t2: 6-6
+
+# document level annotation:
+(s6s0 / sentence
+    :coref ((s6d1 :same-event s5r4)   # rozhovor
+            (s6p2 :same-entity s5r2))) # Rubens Ricupero
+
+
+################################################################################
+# sent_id = u_tree-cs-s7-root
+# :: snt7
+Index: 1  2         3   4       5        6        7         8           9  10    11 12        13      14       15        16
+Words: V  místnosti byl zapnutý mikrofon soukromé televizní společnosti ,  která s  ministrem předtím natáčela interview .
+
+# sentence level graph:
+(s7b1 / have-mod-91
+        :aspect state
+        :modal-strength full-affirmative
+        :place (s7m1 / místnost
+                       :refer-number singular)
+        :ARG1 (s7m2 / mikrofon
+                      :refer-number singular
+                      :possessor (s7s1 / společnost
+                                         :refer-number singular
+                                         :mod (s7t1 / televizní)
+                                         :mod (s7s2 / soukromý)
+                                         :ARG0-of (s7n1 / natáčet-001
+                                                          :aspect activity
+                                                          :modal-strength full-affirmative
+                                                          :companion (s7m3 / ministr
+                                                                             :refer-number singular)
+                                                          :temporal (s7p1 / předtím)
+                                                          :ARG1 (s7i1 / interview
+                                                                        :refer-number singular))))
+        :ARG2 (s7z1 / state
+                      :result-of (s7z2 / zapnout-001
+                                         :aspect state
+                                         :modal-strength full-affirmative
+                                         :ARG0 (s7e1 / entity)
+                                         :ARG1 s7m2)))
+
+# alignment:
+s7b1: 3-3
+s7m1: 1-2
+s7z1: 4-4
+s7z2: 0-0
+s7e1: 0-0
+s7m2: 5-5
+s7s1: 8-8,10-10
+s7t1: 7-7
+s7s2: 6-6
+s7n1: 14-14
+s7m3: 11-12
+s7p1: 13-13
+s7i1: 15-15
+
+# document level annotation:
+(s7s0 / sentence
+    :coref ((s7m2 :same-entity s1s1)    # štěnice = mikrofon
+            (s7m3 :same-entity s5r2)))  # Rubens Ricupero (=ministr)
+
+
+################################################################################
+# sent_id = u_tree-cs-s8-root
+# :: snt8
+Index: 1        2         3    4       5  6       7       8       9  10          11       12        13 14     15      16 17      18          19     20
+Words: Mikrofon posloužil jako štěnice :  upřímné vyznání zároveň s  ministrovým přítelem vyslechly v  přímém přenosu i  miliony televizních diváků .
+
+# sentence level graph:
+(s8a1 / and
+        :op1 (s8p1 / posloužit-001
+                     :aspect performance
+                     :modal-strength full-affirmative
+                     :ARG0 (s8m1 / mikrofon
+                                   :refer-number singular)
+                     :ARG2 (s8e1 / entity)
+                     :ARG1 (s8s1 / štěnice
+                                   :refer-number singular))
+        :op2 (s8v1 / vyslechnout-001
+                     :aspect performance
+                     :modal-strength full-affirmative
+                     :ARG1 (s8v2 / event
+                                   :refer-number singular
+                                   :aspect performance
+                                   :modal-strength full-affirmative
+                                   :result-of (s8v3 / vyznat-se-002
+                                                      :aspect performance
+                                                      :modal-strength full-affirmative
+                                                      :ARG0 (s8m2 / ministr
+                                                                    :refer-number singular)
+                                                      :ARG1 (s8e2 / event))
+                                   :manner (s8u1 / upřímný))
+                     :companion (s8p2 / person
+                                        :refer-number singular
+                                        :ARG1-of (s8p0 / přátelit-se-001
+                                                         :aspect habitual
+                                                         :modal-strength full-affirmative
+                                                         :ARG0 s8m2))
+                     :clausal-marker (s8z1 / zároveň)
+                     :place (s8p3 / přenos
+                                    :refer-number singular
+                                    :mod (s8p4 / přímý))
+                     :clausal-marker (s8i1 / i)
+                     :ARG0 (s8d1 / person
+                                   :quant 1000000
+                                   :refer-number plural
+                                   :ARG0-of (s8d2 / dívat-se-001
+                                                    :aspect habitual
+                                                    :modal-strength full-affirmative
+                                                    :ARG1 (s8t1 / televize
+                                                                  :refer-number singular)))))
+
+# alignment:
+s8a1: 5-5
+s8p1: 2-2
+s8m1: 1-1
+s8e1: 0-0
+s8s1: 3-4
+s8v1: 12-12
+s8v2: 7-7
+s8v3: 0-0
+s8e2: 0-0
+s8u1: 6-6
+s8p2: 9-9,11-11
+s8p0: 0-0
+s8m2: 10-10
+s8z1: 8-8
+s8p3: 13-13,15-15
+s8p4: 14-14
+s8i1: 16-16
+s8d1: 17-17, 19-19
+s8d2: 0-0
+s8t1: 18-18
+
+# document level annotation:
+(s8s0 / sentence
+    :coref ((s8m1 :same-entity s7m2)   # mikrofon
+            (s8s1 :same-entity s1s1)   # štěnice
+            (s8p2 :same-entity s6p1)   # přítel
+            (s8e2 :same-event s5r1)    # vyznání = to, co RR řekl příteli
+            (s8p2 :same-entity s6p1)   # přítel
+            (s8m2 :same-entity s7m3))) # Rubens Ricupero ( = ministr)
+
+
+################################################################################
+# sent_id = u_tree-cs-s9-root
+# :: snt9
+Index: 1          2       3   4     5      6
+Words: Ricuperovi nezbylo než podat demisi .
+
+# sentence level graph:
+(s9z1 / zbýt-001
+        :aspect performance
+        :modal-strength full-affirmative
+        :ARG2 (s9r1 / person
+                      :refer-number singular
+                      :name (s9r2 / name :op1 "Rubens" :op2 "Ricupero"))
+        :ARG1 (s9p1 / podat-demisi-011
+                      :aspect performance
+                      :modal-strength full-affirmative
+                      :ARG0 s9r1))
+
+# alignment:
+s9z1: 2-2
+s9r1: 1-1
+s9r2: 0-0
+s9p1: 3-5
+
+# document level annotation:
+(s9s0 / sentence
+    :coref ((s9r1 :same-entity s8m2))) # Rubens Ricupero (= ministr)
+
+
+################################################################################
+# sent_id = u_tree-cs-s10-root
+# :: snt10
+Index: 1     2
+Words: Pozdě .
+
+# sentence level graph:
+(s10e1 / have-temporal-91
+         :aspect state
+         :modal-strength full-affirmative
+         :ARG1 (s10e2 / event)
+         :ARG2 (s10p1 / pozdě))
+
+# alignment:
+s10e1: 0-0
+s10p1: 1-1
+s10e2: 0-0
+
+# document level annotation:
+(s10s0 / sentence
+         :coref ((s10e2 :same-event s9p1))) # podání demise
+
+
+################################################################################
+# sent_id = u_tree-cs-s11-root
+# :: snt11
+Index: 1          2    3  4     5
+Words: Katastrofa byla na světě .
+
+# sentence level graph:
+(s11b1 / exist-011
+         :aspect state
+         :modal-strength full-affirmative
+         :ARG1 (s11k1 / katastrofa
+                        :refer-number singular)
+        :place (s11s1 / svět
+                        :refer-number singular))
+
+# alignment:
+s11b1: 2-2
+s11k1: 1-1
+s11s1: 3-4
+
+# document level annotation:
+(s11s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s12-root
+# :: snt12
+Index: 1       2    3        4        5           6      7       8     9       10      11          12      13       14       15      16 17        18 19     20       21 22            23     24 25        26             27    28
+Words: Ministr svým upřímným cynickým prohlášením patrně zahájil zkázu doposud nadějné předvolební kampaně Fernanda Henriqua Cardosa -  kandidáta za vládní Sociálně ,  demokratickou stranu do říjnových prezidentských voleb .
+
+# sentence level graph:
+(s12z1 / zahájit-001
+         :aspect performance
+         :modal-strength full-affirmative
+         :ARG0 (s12m1 / ministr
+                        :refer-number singular)
+         :instrument (s12p1 / event
+                              :refer-number singular
+                              :aspect performance
+                              :modal-strength full-affirmative
+                              :ARG1-of (s12p5   / prohlásit-003
+                                                  :aspect performance
+                                                  :modal-strength full-affirmative
+                                                  :ARG0 s12m1)
+                              :manner (s12u1 / upřímný)
+                              :manner (s12c1 / cynický))
+        :clausal-marker (s12p2 / patrně)
+        :ARG1 (s12z2 / event
+                       :refer-number singular
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :result-of (s12z3 / zkazit-001
+                                           :aspect performance
+                                           :modal-strength full-affirmative
+                                           :ARG0 s12m1
+                                           :ARG1 (s12k1 / kampaň
+                                                          :refer-number singular
+                                                          :aspect activity
+                                                          :modal-strength full-affirmative
+                                                          :mod (s12p3 / předvolební)
+                                                          :actor (s12c2 / person
+                                                                         :refer-number singular
+                                                                         :name (s12c3 / name :op1 "Fernando" :op2 "Henrique" :op3 "Cardoso")
+                                                                         :ARG0-of (s12h1 / have-org-role
+                                                                                           :aspect state
+                                                                                           :modal-strength full-affirmative
+                                                                                           :ARG2 (s12k2 / person
+                                                                                                          :refer-number singular
+                                                                                                          :ARG1-of (s12k3 / kandidovat-001
+                                                                                                                            :aspect performance
+                                                                                                                            :modal-strength full-affirmative
+                                                                                                                            :ARG0 (s12s1 / political-organization
+                                                                                                                                           :refer-number singular
+                                                                                                                                           :name (s12s2 / name :op1 "Sociálně" :op2 "demokratický" :op3 "strana")
+                                                                                                                                           :mod (s12v1 / vládní))
+                                                                                                                            :place (s12v2 / volit-002
+                                                                                                                                            :aspect activity
+                                                                                                                                            :modal-strength full-affirmative
+                                                                                                                                            :ARG0 (s12p6 / person
+                                                                                                                                                           :refer-number plural)
+                                                                                                                                            :ARG1 (s12p7 / person
+                                                                                                                                                           :refer-number singular)
+                                                                                                                                            :ARG2 (s12p4 / prezident
+                                                                                                                                                           :refer-number singular)
+                                                                                                                                            :temporal (s12r1 / date-entity
+                                                                                                                                                               :month (s12r2 / říjen)))))))
+                                                          :mod (s12n1 / nadějný
+                                                                        :temporal (s12d2 / doposud))))))
+
+# alignment:
+s12z1: 7-7
+s12m1: 1-2
+s12p1: 5-5
+s12p5: 0-0
+s12u1: 3-3
+s12c1: 4-4
+s12p2: 6-6
+s12z2: 8-8
+s12z3: 0-0
+s12k1: 12-12
+s12p3: 11-11
+s12c2: 13-15
+s12c3: 0-0
+s12h1: 0-0
+s12k2: 17-17
+s12k3: 0-0
+s12s1: 18-18,20-23
+s12s2: 0-0
+s12v1: 19-19
+s12v2: 24-24,27-27
+s12p6: 0-0
+s12p7: 0-0
+s12p4: 26-26
+s12r1: 25-25
+s12r2: 0-0
+s12n1: 10-10
+s12d2: 9-9
+
+# document level annotation:
+(s12s0 / sentence
+    :coref ((s12m1 :same-entity s9r1)   # Rubens Ricupero (= ministr)
+            (s12p1 :same-event s8v2)    # vyznání = prohlášení
+            (s12v2 :same-event s1v1)    # volby = volební
+            (s12p3 :same-event s12v2)   # předvolební
+            (s12p4 :same-entity s2p1)   # prezident/ský
+            (s12k1 :same-event s1k1)    # kampaň
+            (s12k2 :same-entity s5k1)   # kandidát  
+            (s12s1 :same-entity s5s1))) # Sociálně demokratická stranu (jejímž je RR ministr)
+
+
+################################################################################
+################################################################################
+# sent_id = u_tree-cs-s13-root
+# :: snt13
+Index: 1        2      3     4   5  6     7  8            9       10          11      12 13    14 15      16
+Words: Opoziční Strana práce eso ,  které v  předvolebním mariáši zčistajasna dostala do rukou ,  uvítala .
+
+# sentence level graph:
+(s13u1 / uvítat-002
+         :aspect performance
+         :modal-strength full-affirmative
+         :ARG0 (s13s1 / political-organization
+                        :refer-number singular
+                        :name (s13p1 / name :op1 "Strana" :op2 "práce")
+                        :mod (s13o1 / opoziční))
+         :ARG1 (s13e1 / eso
+                        :refer-number singular
+                        :ARG1-of (s13d1 / dostat-001
+                                          :aspect performance
+                                          :modal-strength full-affirmative
+                                          :ARG0 s13s1
+                                          :place (s13m1 / mariáš
+                                                          :refer-number singular
+                                                          :mod (s13p2 / předvolební))
+                                          :manner (s13z1 / zčistajasna)
+                                          :goal (s13r1 / ruka
+                                                         :refer-number singular
+                                                         :part s13s1))))
+
+# alignment:
+s13u1: 15-15
+s13s1: 2-3
+s13p1: 0-0
+s13o1: 1-1
+s13e1: 4-4,6-6
+s13d1: 11-11
+s13m1: 7-7,9-9
+s13p2: 8-8
+s13z1: 10-10
+s13r1: 12-13
+
+# document level annotation:
+(s13s0 / sentence
+    :coref ((s13e1 :same-event s12p1)    # eso = vyznání = prohlášení 
+            (s13p2 :same-event s12p3)))  # předvolební
+
+
+################################################################################
+# sent_id = u_tree-cs-s14-root
+# :: snt14
+Index: 1     2      3         4        5  6        7  8    9     10 11          12      13     14       15        16
+Words: Podle nových volebních předpisů v  Brazílii se musí vláda v  předvolební kampani chovat naprosto neutrálně .
+
+# sentence level graph:
+(s14c1 / chovat-se-001
+         :aspect activity
+         :modal-strength partial-affirmative
+         :regard (s14p1 / předpis
+                          :refer-number plural
+                          :place (s14b1 / country
+                                         :refer-number singular
+                                         :name (s14b2 / name :op1 "Brazílie"))
+                          :mod (s14v1 / volební)
+                          :mod (s14n1 / nový))
+         :ARG0 (s14v2 / vláda
+                       :refer-number singular)
+         :temporal (s14k1 / kampaň
+                            :refer-number singular
+                            :aspect activity
+                            :modal-strength full-affirmative
+                            :mod (s14p2 / předvolební))
+         :manner (s14n2 / neutrálně
+                          :degree (s14n3 / naprosto)))
+
+# alignment:
+s14c1: 7-8,13-13
+s14p1: 1-1,4-4
+s14b1: 5-6
+s14b2: 0-0
+s14v1: 3-3
+s14n1: 2-2
+s14v2: 9-9
+s14k1: 10-10,12-12
+s14p2: 11-11
+s14n2: 15-15
+s14n3: 14-14
+
+# document level annotation:
+(s14s0 / sentence
+    :coref ((s14b1 :same-entity s5b1)   # Brazílie
+            (s14v2 :same-entity s12v1)))  # vláda = vládní
+
+
+################################################################################
+# sent_id = u_tree-cs-s15-root
+# :: snt15
+Index: 1        2        3  4        5  6     7        8      9           10       11      12 13 14    15   16 17          18    19 20       21      22            23   24
+Words: Ricupero společně s  Cardosem ,  který zastával funkci brazilského ministra financí až do dubna 1994 ,  odstartoval letos v  červenci nadějný protiinflační plán .
+
+# sentence level graph:
+(s15o1 / odstartovat-001
+         :aspect performance
+         :modal-strength full-affirmative
+         :ARG0 (s15r1 / person
+                        :refer-number singular
+                        :name (s15r2 / name :op1 "Ricupero"))
+         :companion (s15c1 /  person
+                              :refer-number singular
+                              :name (s15c3 / name :op1 "Cardoso")
+                              :ARG0-of (s15z1 / zastávat-001
+                                               :aspect habitual
+                                               :modal-strength full-affirmative
+                                               :ARG1 (s15f1 / funkce
+                                                              :refer-number singular
+                                                              :mod (s15m1 / ministr
+                                                                            :refer-number singular
+                                                                            :mod (s15b1 / country
+                                                                                          :refer-number singular
+                                                                                          :name (s15b2 / name :op1 "Brazílie"))
+                                                                            :mod (s15f2 / finance)))
+                                               :clausal-marker (s15a1 / až)
+                                               :temporal (s15d1 / date-entity
+                                                                  :month (s15x1 / duben)
+                                                                  :year 1994)))
+         :temporal (s15l1 / letos)
+         :temporal (s15c2 / date-entity
+                            :month (s15c4 / červenec))
+         :ARG1 (s15p1 / plán
+                        :refer-number singular
+                        :mod (s15p2 / protiinflační)
+                        :mod (s15n1 / nadějný)))
+
+# alignment:
+s15o1: 17-17
+s15r1: 1-1
+s15r2: 0-0
+s15c1: 2-4,6-6
+s15c3: 0-0
+s15z1: 7-7
+s15f1: 8-8
+s15m1: 10-10
+s15b1: 9-9
+s15b2: 0-0
+s15f2: 11-11
+s15a1: 12-12
+s15d1: 13-15
+s15x1: 0-0
+s15l1: 18-18
+s15c2: 19-20
+s15c4: 0-0
+s15p1: 23-23
+s15p2: 22-22
+s15n1: 21-21
+
+# document level annotation:
+(s15s0 / sentence
+    :coref ((s15r1 :same-entity s12m1)  # ministr = Rubens Ricupero
+            (s15c2 :same-entity s12c2)  # Cardoso (= kandidát na ?prezidenta)
+            (s15b1 :same-entity s14b1)  # Brazílie
+            (s15m1 :same-entity s5m1))) # ministr financí (jako funkce)
+
+
+################################################################################
+# sent_id = u_tree-cs-s16-root
+# :: snt16
+Index: 1         2    3    4  5     6  7     8  9      10      11      12   13       14    15 16 17  18       19     20      21      22 23        24 25      26 27    28    29       30
+Words: Zavedením nové měny -  realu ,  který má zhruba stejnou hodnotu jako americký dolar -  se jim podařilo snížit měsíční inflaci z  původních 54 procent na pouhá čtyři procenta .
+
+# sentence level graph:
+(s16p1 / podařit-se-001
+         :aspect performance
+         :modal-strength full-affirmative
+         :instrument (s16z1 / zavést-003
+                              :refer-number singular
+                              :aspect performance
+                              :modal-strength full-affirmative
+                              :ARG0 (s16e1 / person
+                                             :refer-number plural
+                                             :refer-person 3rd)
+                              :ARG1 (s16i1 / identity-91
+                                             :aspect state
+                                             :modal-strength full-affirmative
+                                             :ARG1 (s16m1 / měna
+                                                            :refer-number singular
+                                                            :mod (s16n1 / nový))
+                                             :ARG2 (s16r1 / reál
+                                                            :refer-number singular
+                                                            :ARG0-of (s16m2 / mít-008
+                                                                              :aspect state
+                                                                              :modal-strength full-affirmative
+                                                                              :ARG1 (s16h1 / hodnota
+                                                                                             :refer-number singular
+                                                                                             :mod (s16s1 / stejný
+                                                                                                           :comparison (s16m3 / mít-008
+                                                                                                                                :aspect state
+                                                                                                                                :modal-strength full-affirmative
+                                                                                                                                :ARG0 (s16d1 / dolar
+                                                                                                                                               :refer-number singular
+                                                                                                                                               :mod (s16a1 / americký)))
+                                                                                                           :degree (s16z2 / zhruba))
+                                                                                             :ARG1-of s16m3)))))
+         :ARG0 s16e1
+         :ARG1 (s16s2 / snížit-001
+                        :aspect performance
+                        :modal-strength full-affirmative
+                        :ARG0 s16e1
+                        :ARG1 (s16i2 / inflace
+                                       :refer-number singular
+                                       :mod (s16m4 / měsíční))
+                        :ARG2 (s16p2 / percentage-entity
+                                       :value 54
+                                       :mod (s16p3 / původní))
+                        :ARG3 (s16p4 / percentage-entity
+                                       :value 4
+                                       :mod (s16p5 / pouhý))))
+
+# alignment:
+s16p1: 16-16,18-18
+s16z1: 1-1
+s16e1: 17-17
+s16m1: 3-3
+s16i1: 0-0
+s16n1: 2-2
+s16r1: 5-5,7-7
+s16m2: 8-8
+s16h1: 11-11
+s16s1: 10-10
+s16m3: 0-0
+s16d1: 12-12,14-14
+s16a1: 13-13
+s16z2: 9-9
+s16s2: 19-19
+s16i2: 21-21
+s16m4: 20-20
+s16p2: 22-22,24-25
+s16p3: 23-23
+s16p4: 26-26,28-29
+s16p5: 27-27
+
+# document level annotation:
+(s16s0 / sentence
+    :coref ((s16i2 :same-entity s15p2) # inflace = protiinflační???
+            (s16e1 :subset-of s15r1)   # Rubens Ricupero (= ministr) jako jeden z "my"
+            (s16e1 :subset-of s15c2))) # Cardoso (= kandidát na ?prezidenta) jako jeden z "my"
+
+
+################################################################################
+# sent_id = u_tree-cs-s17-root
+# :: snt17
+Index: 1       2      3        4      5       6  7         8          9  10      11 12     13
+Words: Životní úroveň Brazilců rychle stoupla a  Cardosova popularita se zvýšila o  pětinu .
+
+# sentence level graph:
+(s17a1 / and
+         :op1 (s17s1 / stoupnout-001
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :ARG0 (s17u1 / úroveň
+                                      :refer-number singular
+                                      :mod (s17z1 / životní)
+                                      :mod (s17b1 / person
+                                                    :refer-number plural
+                                                    :mod (s17c2 / country
+                                                                  :refer-number singular
+                                                                  :name (s17c3 / name :op1 "Brazílie"))))
+                       :manner (s17r1 / rychle))
+         :op2 (s17z2 / zvýšit-se-001
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :ARG1 (s17p1 / popularita
+                                     :refer-number singular
+                                     :mod (s17c1 / person
+                                                   :refer-number singular
+                                                   :name (s17c4 / name :op1 "Cardos"))
+                       :extent (s17p2 / pětina
+                                        :quant 1))))
+
+# alignment:
+s17a1: 6-6
+s17s1: 5-5
+s17u1: 2-2
+s17z1: 1-1
+s17b1: 3-3
+s17c2: 0-0
+s17c3: 0-0
+s17r1: 4-4
+s17z2: 9-10
+s17p1: 8-8
+s17c1: 7-7
+s17c4: 0-0
+s17p2: 11-12
+
+# document level annotation:
+(s17s0 / sentence
+    :coref ((s17c1 :same-entity s15c1)  # Cardoso (= kandidát na ?prezidenta)
+            (s17c2 :same-entity s15b1)  # Brazílie OK
+            (s17b1 :same-entity s12p6)))  # Brazilci OK
+
+
+################################################################################
+# sent_id = u_tree-cs-s18-root
+# :: snt18
+Index: 1  2          3         4      5    6  7  8        9       10     11   12   13           14          15     16      17 18     19 20     21    22 23 24      25 26
+Words: V  průzkumech veřejného mínění vedl se 45 procenty podpory národa před svým nejsilnějším protivníkem Luizem Inaciem da Silvou ze Strany práce (  23 procent )  .
+
+# sentence level graph:
+(s18v1 / vést-002
+         :aspect activity
+         :modal-strength full-affirmative
+         :ARG2 (s18p1 / event
+                        :refer-number plural
+                        :aspect performance
+                        :modal-strength full-affirmative
+                        :result-of (s18p9 / prozkoumat-002
+                                            :aspect performance
+                                            :modal-strength full-affirmative
+                                            :ARG0 (s18e4 / entity)
+                                            :ARG1 (s18m1 / mínit-004
+                                                           :aspect activity
+                                                           :modal-strength full-affirmative
+                                                           :ARG0 (s18v2 / veřejnost
+                                                                          :refer-number singular)
+                                                           :ARG1 (s18e2 / entity))))
+        :ARG0 (s18e3 / entity
+                       :refer-number singular
+                       :refer-person 3rd)
+        :extent (s18h1 / include-91
+                         :aspect state
+                         :modal-strength full-affirmative
+                         :ARG3 (s18p2 / percentage-entity
+                                        :value 45)
+                         :ARG2 (s18n1 / národ
+                                        :refer-number singular)
+                         :ARG1 (s18p7 / person
+                                        :refer-number plural
+                                        :ARG0-of (s18p3 / podporovat-001
+                                                          :aspect activity
+                                                          :modal-strength full-affirmative
+                                                          :ARG1 s18e3)))
+        :ARG1 (s18d1 / person
+                       :refer-number singular
+                       :name (s18l1 / name :op1 "Luiz" :op2 "Inacio" :op3 "da" :op4 "Silva")
+                       :ARG1-of (s18i1 / identity-91
+                                         :aspect state
+                                         :modal-strength full-affirmative
+                                         :ARG2 (s18p4 / protivník
+                                                        :refer-number singular
+                                                        :mod s18e3
+                                                        :mod (s18s1 / silný)))
+                       :ARG1-of (s18h2 / have-org-role-92
+                                         :aspect state
+                                         :modal-strength full-affirmative
+                                         :ARG2 (s18s2 / political-organization
+                                                        :refer-number singular
+                                                        :name (s18p5 / name :op1 "Strana" :op2 "práce")))
+                       :ARG1-of (s18p8 / podporovat-001
+                                         :aspect activity
+                                         :modal-strength full-affirmative
+                                         :ARG2 s18n1
+                                         :extent (s18h3 / include-91
+                                                          :aspect state
+                                                          :modal-strength full-affirmative
+                                                          :ARG3 (s18p6 / percentage-entity
+                                                          :value 23)))))
+
+# alignment:
+s18v1: 5-5
+s18p1: 1-2
+s18p9: 0-0
+s18e4: 0-0
+s18m1: 4-4
+s18e2: 0-0
+s18v2: 3-3
+s18e3: 12-12
+s18h1: 0-0
+s18p2: 6-8
+s18p3: 9-9
+s18p7: 0-0
+s18n1: 10-10
+s18d1: 11-11,15-18
+s18l1: 0-0
+s18i1: 0-0
+s18p4: 14-14
+s18h2: 0-0
+s18s1: 13-13
+s18s2: 19-21
+s18p5: 0-0
+s18h3: 0-0
+s18p6: 23-24
+s18p8: 0-0
+
+# document level annotation:
+(s18s0 / sentence
+    :coref ((s18e3 :same-entity s17c1)  # Cardoso (= kandidát na ?prezidenta)
+            (s18n1 :same-entity s17b1)  # národ = Brazilci (person)
+            (s18s2 :same-entity s13s1))) # Strana práce
+
+
+################################################################################
+# sent_id = u_tree-cs-s19-root
+# :: snt19
+Index: 1     2  3  4  5        6         7  8     9  10 11    12    13 14      15     16        17
+Words: Zdálo se ,  že sociální demokraté se mohou 3  .  října těšit na poměrně snadné vítězství .
+
+# sentence level graph:
+(s19z1 / zdát-se-004
+         :aspect state
+         :modal-strength full-affirmative
+         :ARG0 (s19e1 / entity)
+         :ARG1 (s19t1 / těšit-se-002
+                        :aspect state
+                        :modal-strength partial-affirmative
+                        :ARG0 (s19d1 / demokrat
+                                       :refer-number plural
+                                       :mod (s19s1 / sociální))
+                        :temporal (s19r1 / date-entity
+                                           :month (s19r2 / říjen)
+                                           :day 3)
+                        :ARG1 (s19v1 / vítězství
+                                       :refer-number singular
+                                       :mod (s19s2 / snadný
+                                       :extent (s19p1 / poměrně)))))
+
+# alignment:
+s19z1: 1-2
+s19e1: 0-0
+s19t1: 4-4,7-8,12-12
+s19d1: 6-6
+s19s1: 5-5
+s19r1: 9-11
+s19r2: 0-0
+s19v1: 13-13,16-16
+s19s2: 15-15
+s19p1: 14-14
+
+# document level annotation:
+(s19s0 / sentence
+    :coref ((s19d1 :same-entity s12s1)))  # sociální demokraté = Sociálně demokratická stranu (jejímž je RR ministr)
+
+
+################################################################################
+# sent_id = u_tree-cs-s20-root
+# :: snt20
+Index: 1      2     3  4    5       6     7      8        9
+Words: Koncem srpna se však inflace znovu začala zvyšovat .
+
+# sentence level graph:
+(s20z1 / začít-001
+         :aspect state
+         :modal-strength full-affirmative
+         :clausal-marker (s20v1 / však)
+         :ARG1 (s20i1 / inflace
+                        :refer-number singular)
+         :temporal (s20s1 / date-entity
+                            :month (s20s2 / srpen)
+                            :ARG1-of (s20k1 / končit-001
+                                              :aspect state
+                                              :modal-strength full-affirmative))
+         :mod (s20z2 / znovu)
+         :ARG2 (s20z3 / zvyšovat-se-001
+                        :aspect activity
+                        :modal-strength full-affirmative
+                        :ARG1 s20i1))
+
+# alignment:
+s20z1: 7-7
+s20v1: 4-4
+s20i1: 5-5
+s20s1: 2-2
+s20k1: 1-1
+s20s2: 0-0
+s20z2: 6-6
+s20z3: 3-3,8-8
+
+# document level annotation:
+(s20s0 / sentence
+    :coref ((s20i1 :same-entity s16i2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s21-root
+# :: snt21
+Index: 1    2  3     4     5       6     7       8  9     10 11      12 13       14   15   16   17 18 19    20       21
+Words: Když za tento měsíc dosáhla šesti procent ,  ocitl se Cardoso ,  duchovní otec nové měny ,  ve stavu ohrožení .
+
+# sentence level graph:
+(s21o1 / ocitnout-se-001
+         :aspect performance
+         :modal-strength full-affirmative
+         :temporal (s21d1 / dosáhnout-002
+                            :aspect performance
+                            :modal-strength full-affirmative
+                            :duration (s21m1 / date-entity
+                                               :refer-number singular
+                                               :month (s21m3 / srpen)
+                                               :mod (s21t1 / tento))
+                            :ARG0 (s21e1 / thing
+                                           :refer-number singular
+                                           :refer-person 3rd)
+                            :ARG1 (s21p1 / percentage-entity
+                                           :quant 6))
+         :ARG1 (s21c1 / person
+                        :refer-number singular
+                        :name (s21n2 / name :op1 "Cardoso")
+                        :ARG1-of (s21i1 / have-rel-role-92
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG3 (s21o2 / otec
+                                                         :refer-number singular
+                                                         :mod (s21d2 / duchovní))
+                                          :ARG2 (s21m2 / měna
+                                                         :refer-number singular
+                                                         :mod (s21n1 / nový))))
+         :ARG2 (s21s2 / stav
+                        :refer-number singular
+                        :mod (s21o3 / ohrožovat-001
+                                      :aspect activity
+                                      :modal-strength full-affirmative
+                                      :ARG0 (s21e2 / entity)
+                                      :ARG1 s21c1)))
+
+# alignment:
+s21o1: 9-10
+s21d1: 1-1,5-5
+s21m1: 2-2,4-4
+s21m3: 0-0
+s21t1: 3-3
+s21e1: 0-0
+s21p1: 6-7
+s21i1: 0-0
+s21c1: 11-11
+s21n2: 0-0
+s21o2: 14-14
+s21m2: 16-16
+s21n1: 15-15
+s21d2: 13-13
+s21s2: 18-19
+s21o3: 20-20
+s21e2: 0-0
+
+# document level annotation:
+(s21s0 / sentence
+    :coref ((s21m1 :same-entity s20s1)  #(tento) měsíc = srpen
+            (s21e1 :same-entity s20i1)  # inflace
+            (s21m2 :same-entity s16r1)  # nová měna - reál
+            (s21c1 :same-entity s18e3))) # Cardoso (= kandidát na ?prezidenta)
+
+
+################################################################################
+# sent_id = u_tree-cs-s22-root
+# :: snt22
+Index: 1        2         3      4   5  6       7
+Words: Sociální demokraté začali bít na poplach .
+
+# sentence level graph:
+(s22z1 / začít-001
+         :aspect activity
+         :modal-strength full-affirmative
+         :ARG0 (s22d1 / demokrat
+                        :refer-number plural
+                        :mod (s22s1 / sociální))
+        :ARG1 (s22b1 / bít-na-poplach-002
+                       :aspect activity
+                       :modal-strength full-affirmative
+                       :ARG0 s22d1))
+
+# alignment:
+s22z1: 3-3
+s22d1: 2-2
+s22s1: 1-1
+s22b1: 4-6
+
+# document level annotation:
+(s22s0 / sentence
+    :coref ((s22d1 :same-entity s19d1)))   # sociální demokraté = Sociálně demokratická strana (jejímž je RR ministr)
+
+
+################################################################################
+# sent_id = u_tree-cs-s23-root
+# :: snt23
+Index: 1        2      3   4    5        6       7  8     9     10        11
+Words: Ricupero využil své moci ministra financí a  začal čísla upravovat .
+
+# sentence level graph:
+(s23a1 / and
+         :op1 (s23v1 / využít-001
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :ARG0 (s23r1 / person
+                                      :refer-number singular
+                                      :name (s23r2 / name :op1 "Ricupero"))
+                       :ARG1 (s23m1 / moc
+                                      :refer-number singular
+                                      :possessor s23r1
+                                      :possessor (s23m2 / ministr
+                                                          :refer-number singular
+                                                          :mod (s23f1 / finance
+                                                                        :refer-number singular))))
+         :op2 (s23z1 / začít-001
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :ARG0 s23r1
+                       :ARG1 (s23u1 / upravovat-001
+                                      :aspect activity
+                                      :modal-strength full-affirmative
+                                      :ARG0 s23r1
+                                      :ARG1 (s23c1 / číslo
+                                                     :refer-number plural))))
+
+# alignment:
+s23a1: 7-7
+s23v1: 2-2
+s23m1: 4-4
+s23m2: 5-5
+s23f1: 6-6
+s23r1: 1-1,3-3
+s23r2: 0-0
+s23z1: 8-8
+s23u1: 10-10
+s23c1: 9-9
+
+# document level annotation:
+(s23s0 / sentence
+    :coref ((s23m2 :same-entity s15m1)    # ministr financí (jako funkce)
+            (s23r1 :same-entity s15r1)))  # Rubens Ricupero (Soc. dem. strana)
+
+
+################################################################################
+# sent_id = u_tree-cs-s24-root
+# :: snt24
+Index: 1       2  3        4       5  6      7  8    9        10      11 12        13    14    15      16       17      18       19
+Words: Nejenže se dopustil podvodu na lidech ,  svou podporou jednoho z  kandidátů navíc hrubě porušil striktní volební předpisy .
+
+# sentence level graph:
+(s24g1 / and
+         :op1 (s24p1 / podvést-001
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :clausal-marker (s24n1 / nejenže)
+                       :ARG0 (s24e1 / person
+                                      :refer-number singular
+                                      :refer-person 3rd)
+                       :ARG1 (s24c1 / člověk
+                                      :refer-number plural))
+        :op2 (s24p2 / porušit-001
+                      :aspect performance
+                      :modal-strength full-affirmative
+                      :clausal-marker (s24n2 / navíc)
+                      :ARG0 s24e1
+                      :ARG1 (s24p4 / předpis
+                                     :refer-number plural
+                                     :mod (s24v1 / volební)
+                                     :mod (s24s1 / striktní))
+                      :instrument (s24p3 / podporovat-002
+                                           :aspect activity
+                                           :modal-strength full-affirmative
+                                           :ARG0 s24e1
+                                           :ARG1 (s24k1 / person
+                                                          :refer-number singular
+                                                          :quant 1
+                                                          :ARG0-of (s24k2 / kandidovat-002
+                                                                            :aspect activity
+                                                                            :modal-strength full-affirmative)
+                                                          :part (s24k3 / person
+                                                                         :refer-number plural
+                                                                         :ARG0-of (s24k4 / kandidovat-002
+                                                                                           :aspect activity
+                                                                                           :modal-strength full-affirmative))))
+                      :manner (s24h1 / hrubě)))
+
+# alignment:
+s24g1: 7-7
+s24n1: 1-1
+s24p1: 2-4
+s24c1: 5-6
+s24e1: 8-8
+s24n2: 13-13
+s24p2: 15-15
+s24p3: 9-9
+s24k1: 10-10
+s24k2: 0-0
+s24k3: 11-12
+s24k4: 0-0
+s24h1: 14-14
+s24p4: 18-18
+s24v1: 17-17
+s24s1: 16-16
+
+# document level annotation:
+(s24s0 / sentence
+    :coref ((s24c1 :same-entity s18n1) # lidé = národ
+            (s24e1 :same-entity s23r1) # Rubens Ricupero (Soc. dem. strana)
+            (s24k1 :same-entity s21c1) # kandidát Cardoso
+            (s24p4 :same-entity s14p1))) # volební předpisy
+
+
+################################################################################
+# sent_id = u_tree-cs-s25-root
+# :: snt25
+Index: 1       2  3   4  5  6  7         8  9       10  11      12
+Words: Počítal s  tím ,  že se veřejnost o  podvodu nic nedozví .
+
+# sentence level graph:
+(s25p1 / počítat-007
+        :aspect activity
+        :modal-strength full-affirmative
+        :ARG0 (s25e1 / entity
+                       :refer-number singular
+                       :refer-person 3rd)
+        :ARG1 (s25d1 / dozvědět-se-002
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :polarity -
+                       :ARG0 (s25v1 / veřejnost
+                                      :refer-number singular)
+                       :ARG1 (s25p2 / podvést-001
+                                      :aspect performance
+                                      :modal-strength full-affirmative
+                                      :ARG0 s25e1
+                                      :ARG1 s25v1)))
+
+# alignment:
+s25p1: 1-1
+s25e1: 0-0
+s25d1: 2-3,5-6,10-11
+s25v1: 7-7
+s25p2: 8-9
+
+# document level annotation:
+(s25s0 / sentence
+    :coref ((s25e1 :same-entity s24e1)  # Rubens Ricupero (Soc. dem. strana)
+            (s25v1 :same-entity s24c1)  # veřejnost = národ = podvedení lidé
+            (s25p2 :same-event s24p1))) # podvod
+
+
+################################################################################
+# sent_id = u_tree-cs-s26-root
+# :: snt26
+Index: 1      2         3  4  5      6  7         8     9       10  11      12  13      14    15   16
+Words: Zřejmě oprávněně -  k  údajům o  skutečném stavu inflace měl přístup jen omezený počet lidí .
+
+# sentence level graph:
+(s26a1 / and
+         :op1 (s26p1 / počítat-007
+                       :aspect activity
+                       :modal-strength partial-affirmative
+                       :ARG0 (s26e3 / entity
+                                      :refer-number singular
+                                       :refer-person 3rd)
+                       :ARG1 (s26d1 / event)
+                       :clausal-marker (s26z1 / zřejmě)
+                       :cause (s26o1 / oprávněně))
+         :op2 (s26m1 / mít-přístup-028
+                       :aspect state
+                       :modal-strength full-affirmative
+                       :clausal-marker (s26j1 / jen)
+                       :ARG1 (s26u1 / údaj
+                                      :refer-number plural
+                                      :theme (s26s1 / stav
+                                                      :refer-number singular
+                                                      :part (s26i1 / inflace
+                                                                     :refer-number singular)
+                                                      :mod (s26s2 / skutečný)))
+                       :ARG0 (s26c1 / člověk
+                                      :refer-number plural
+                                      :quant (s26o2 / omezený))))
+
+# alignment:
+s26a1: 3-3
+s26p1: 0-0
+s26d1: 0-0
+s26e3: 0-0
+s26z1: 1-1
+s26o1: 2-2
+s26m1: 10-11
+s26u1: 4-5
+s26s1: 6-6,8-8
+s26i1: 9-9
+s26s2: 7-7
+s26j1: 12-12
+s26c1: 14-15
+s26o2: 13-13
+
+# document level annotation:
+(s26s0 / sentence
+    :coref ((s26p1 :same-event s25p1)  # počítat
+            (s26d1 :same-event s26d1)  # nedozvědět se
+            (s26e3 :same-entity s25e1) # Rubens Ricupero (Soc. dem. strana)
+            (s26i1 :same-entity s21e1))) # inflace
+
+
+################################################################################
+# sent_id = u_tree-cs-s27-root
+# :: snt27
+Index: 1  2          3        4          5
+Words: Na zapomenutý mikrofon nepomyslel .
+
+# sentence level graph:
+(s27p1 / pomyslet-001
+         :aspect performance
+         :modal-strength partial-affirmative
+         :polarity -
+         :ARG1 (s27m1 / mikrofon
+                        :refer-number singular
+                        :ARG1-of (s27z1 / zapomenout-002
+                                          :aspect performance
+                                          :modal-strength full-affirmative
+                                          :ARG0 (s27p2 / entity
+                                                         :refer-number singular)))
+         :ARG0 (s27e1 / entity
+                        :refer-number singular
+                        :refer-person 3rd))
+
+# alignment:
+s27p1: 4-4
+s27m1: 1-1,3-3
+s27z1: 2-2
+s27e1: 0-0
+s27p2: 0-0
+
+# document level annotation:
+(s27s0 / sentence
+    :coref ((s27m1 :same-entity s8m1)   # mikrofon
+            (s27e1 :same-entity s26e3)  # Rubens Ricupero (Soc. dem. strana)
+            (s27p2 :same-entity s7s1)))  # televizní společnost
+
+
+################################################################################
+# sent_id = u_tree-cs-s28-root
+# :: snt28
+Index: 1       2         3         4   5        6         7         8      9      10 11     12   13       14         15 16 17   18         19     20       21     22
+Words: Situaci nedokázal zachránit ani současný brazilský prezident Itamar Franco (  rovněž člen sociální demokracie )  ,  když ministrovu demisi okamžitě přijal .
+
+# sentence level graph:
+(s28d1 / dokázat-002
+         :aspect performance
+         :modal-strength full-negative
+         :polarity -
+         :clausal-marker (s28a1 / ani)
+         :ARG0 (s28f1 / person
+                        :refer-number singular
+                        :name (s27f2 / name :op1 "Itamar" :op2 "Franco")
+                        :ARG1-of (s28i1 / and
+                                          :op1 (s27h1 / have-org-role-92
+                                                        :aspect state
+                                                        :modal-strength full-affirmative
+                                                        :ARG3 (s28p1 / prezident
+                                                                       :refer-number singular
+                                                                       :mod (s28s2 / současný)
+                                                                       :mod (s28b1 / country
+                                                                                     :refer-number singular
+                                                                                     :name (s28n2 / name :op1 "Brazílie"))))
+                                          :clausal-marker (s28r1 / rovněž)
+                                          :op2 (s27h2 / have-org-role-92
+                                                        :aspect state
+                                                        :modal-strength full-affirmative
+                                                        :ARG3 (s28c1 / člen
+                                                                       :refer-number singular)
+                                                        :ARG2 (s28d2 / demokracie
+                                                                       :refer-number singular
+                                                                       :mod (s28s3 / sociální)))))
+         :ARG1 (s28z1 / zachránit-001
+                        :aspect performance
+                        :modal-strength full-negative
+                        :ARG1 (s28s1 / situace
+                                       :refer-number singular)
+                        :ARG0 s28f1)
+         :purpose-of (s28p2 / přijmout-demisi-005
+                              :aspect performance
+                              :ARG1 (s28m1 / ministr
+                                             :refer-number singular)
+                              :ARG0 s28f1
+                              :temporal (s28o1 / okamžitě)))
+
+# alignment:
+s28d1: 2-2
+s28z1: 3-3
+s28s1: 1-1
+s28a1: 4-4
+s28i1: 10-10
+s28f1: 8-9
+s27f2: 0-0
+s27h1: 0-0
+s28p1: 7-7
+s28b1: 6-6
+s28n2: 0-0
+s28s2: 5-5
+s28r1: 11-11
+s28c1: 12-12
+s27h2: 0-0
+s28d2: 14-14
+s28s3: 13-13
+s28p2: 17-17,19-19,21-21
+s28m1: 18-18
+s28o1: 20-20
+
+# document level annotation:
+(s28s0 / sentence
+    :coref ((s28b1 :same-entity s17c2) # Brazílie
+            (s28d2 :same-entity s22d1) # Soc. demokracie
+            (s28p1 :same-entity s12p4)  #  prezident/ský
+            (s28m1 :same-entity s27e1))) # ministr = Rubens Ricupero (Soc. dem. strana) # demise (s28d3 :same-entity s9d1)... ALE s9d1 zrušeno a sloučeno do LVC podat demisi s9p1
+
+
+################################################################################
+# sent_id = u_tree-cs-s29-root
+# :: snt29
+Index: 1         2   3  4          5       6           7  8  9  10          11        12     13    14  15       16        17  18         19
+Words: Prezident pak v  prohlášení občanům vysvětloval ,  že s  Ricuperovou aktivitou nemají vláda ani sociální demokraté nic společného .
+
+# sentence level graph:
+(s29v1 / vysvětlovat-001
+         :aspect activity
+         :modal-strength full-affirmative
+         :ARG0 (s29p1 / prezident
+                        :refer-number singular)
+         :temporal (s29p2 / pak)
+         :medium (s29p3 / thing
+                          :refer-number singular
+                          :ARG1-of (s29p4 / prohlásit-003
+                                              :aspect performance
+                                              :modal-strength full-affirmative
+                                              :ARG0 s29p1
+                                              :recipient (s29o1 / občan
+                                                                  :refer-number plural)))
+         :ARG1 (s29m1 / mít-společné-s-001
+                        :aspect state
+                        :modal-strength full-affirmative
+                        :polarity -
+                        :actor (s29a1 / and
+                                       :op1 (s29v2 / vláda
+                                                     :refer-number singular)
+                                       :op2 (s29d1 / demokrat
+                                                     :refer-number plural
+                                                     :mod (s29s1 / sociální)))
+                        :effect (s29a2 / aktivita
+                                         :refer-number singular
+                                         :aspect activity
+                                         :modal-strength full-affirmative
+                                         :actor (s29r1 / person
+                                                         :refer-number singular
+                                                         :name (s29r2 / name :op1 "Ricupero")))))
+
+# alignment:
+s29v1: 6-6
+s29p1: 1-1
+s29p2: 2-2
+s29p3: 3-4
+s29p4: 0-0
+s29o1: 5-5
+s29m1: 8-8,12-12,17-18
+s29a1: 14-14
+s29v2: 13-13
+s29d1: 16-16
+s29s1: 15-15
+s29a2: 9-9,11-11
+s29r1: 10-10
+s29r2: 0-0
+
+# document level annotation:
+(s29s0 / sentence
+    :coref ((s29p1 :same-entity s28f1)  # prezident = Itamar Franco
+            (s29o1 :same-entity s25v1)  # veřejnost = národ = podvedení lidé
+            (s29v2 :same-entity s14v2)  # vláda
+            (s29d1 :same-entity s28d2)  # Soc. demokracie
+            (s29r1 :same-entity s28m1)  # ministr = Rubens Ricupero (Soc. dem. strana)
+            (s29a2 :same-event s25p2))) # podvádění
+
+
+################################################################################
+# sent_id = u_tree-cs-s30-root
+# :: snt30
+Index: 1        2        3  4     5  6          7   8    9  10    11    12        13     14      15     16
+Words: Opoziční kandidát da Silva -  přezdívaný syn lidu -  zatím svého čerstvého trumfu dokázal využít .
+
+# sentence level graph:
+(s30d1 / dokázat-002
+         :aspect performance
+         :modal-strength full-affirmative
+         :ARG0 (s30d2 / person
+                        :refer-number singular
+                        :name (s30d3 / name :op1 "da" :op2 "Silva")
+                        :ARG1-of (s30k1 / kandidovat-001
+                                          :aspect performance
+                                          :modal-strength full-affirmative
+                                          :ARG0 (s30o1 / opozice
+                                                     :refer-number singular))
+                        :ARG1-of (s30p1 / přezdívat-001
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG0 (s30p2 / person)
+                                          :ARG2 (s30s1 / syn
+                                                         :refer-number singular))
+                        :ARG1-of  (s30h1 / have-rel-role-92
+                                           :aspect state
+                                           :modal-strength full-affirmative
+                                           :ARG2 (s30l1 / lid
+                                                          :refer-number singular)
+                                           :ARG3 s30s1))
+         :temporal (s30z1 / zatím)
+         :ARG1 (s30v1 / využít-001
+                        :aspect performance
+                        :modal-strength full-affirmative
+                        :ARG1 (s30t1 / trumf
+                                       :refer-number singular
+                                       :possessor s30d2
+                                       :mod (s30c1 / čerstvý))
+                        :ARG0 s30d2))
+
+# alignment:
+s30d1: 14-14
+s30d2: 3-4,11-11
+s30d3: 0-0
+s30k1: 2-2
+s30o1: 1-1
+s30p1: 6-6
+s30p2: 0-0
+s30s1: 7-7
+s30h1: 0-0
+s30l1: 8-8
+s30z1: 10-10
+s30v1: 15-15
+s30t1: 13-13
+s30c1: 12-12
+
+# document level annotation:
+(s30s0 / sentence
+    :coref ((s30d2 :same-entity s18d1) # da Silva
+            (s30o1 :same-entity s18s2))) # opozice = Strana práce
+
+
+################################################################################
+# sent_id = u_tree-cs-s31-root
+# :: snt31
+Index: 1       2    3  4   5       6      7         8           9   10      11      12
+Words: Hlasitě žádá ,  aby volební komise Cardosovu kandidaturu pro podvody zrušila .
+
+# sentence level graph:
+(s31z1 / žádat-001
+         :aspect activity
+         :modal-strength full-affirmative
+         :ARG0 (s31e1 / person
+                        :refer-number singular
+                        :refer-person 3rd)
+         :ARG1 (s31k1 / komise
+                        :refer-number singular
+                        :mod (s31v1 / volební))
+         :manner (s31h1 / hlasitě)
+         :ARG2 (s31z2 / zrušit-001
+                        :aspect performance
+                        :modal-strength neutral-affirmative
+                        :ARG0 s31k1
+                        :ARG1 (s31t1 / thing
+                                       :refer-number singular
+                                       :result-of (s31k2 / kandidovat-001
+                                                           :aspect performance
+                                                           :modal-strength full-affirmative
+                                                           :ARG1 (s31c1 / person
+                                                                          :refer-number singular
+                                                                          :name (s31c2 / name :op1 "Cardos"))
+                                                           :ARG0 (s31e2 / thing)))
+                        :cause (s31p1 / podvést-001
+                                        :aspect performance
+                                        :modal-strength full-affirmative
+                                        :ARG0 (s31p2 / person
+                                                     :refer-number singular
+                                                     :refer-person 3rd)
+                                        :ARG1 (s31p3 / person
+                                                     :refer-number plural
+                                                     :refer-person 3rd))))
+
+# alignment:
+s31z1: 2-2
+s31e1: 0-0
+s31h1: 1-1
+s31z2: 4-4,11-11
+s31t1: 0-0
+s31k1: 6-6
+s31v1: 5-5
+s31k2: 8-8
+s31e2: 0-0
+s31c1: 7-7
+s31c2: 0-0
+s31p1: 9-10
+s31p2: 0-0
+s31p3: 0-0
+
+# document level annotation:
+(s31s0 / sentence
+    :coref ((s31e1 :same-entity s30d2)  # da Silva
+            (s31c1 :same-entity s24k1)  # Cardos = kandidát za Soc.dem.
+            (s31e2 :same-entity s29d1)  # Soc. demokracie
+            (s31p1 :same-event s29a2)   # podvody
+            (s31v1 :same-event s12v2)   # volby = volební
+            (s31p2 :same-entity s29r1)  # ministr = Rubens Ricupero (Soc. dem. strana)
+            (s31p3 :same-entity s29o1))) # veřejnost = národ = podvedení lidé
+
+
+################################################################################
+# sent_id = u_tree-cs-s32-root
+# :: snt32
+Index: 1       2  3  4     5         6     7     8        9        10 11        12      13       14    15      16    17
+Words: Ačkoliv se mu tento požadavek téměř jistě nepodaří prosadit ,  naklíčené semínko nedůvěry ještě vydatně zalil .
+
+# sentence level graph:
+(s32z1 / zalít-001
+         :aspect performance
+         :modal-strength full-affirmative
+         :concession (s32p1 / podařit-se-001
+                              :aspect performance
+                              :modal-strength partial-negative
+                              :polarity -
+                              :ARG0 (s32e1 / entity
+                                             :refer-number singular
+                                             :refer-person 3rd)
+                              :clausal-marker (s32j1 / jistě
+                                                       :degree (s32t1 / téměř))
+                              :ARG1 (s32p2 / prosadit-002
+                                             :aspect performance
+                                             :modal-predicate s32p1
+                                             :ARG1 (s32p3 / požadavek
+                                                            :refer-number singular
+                                                            :aspect process
+                                                            :modal-strength full-affirmative
+                                                            :mod (s32t2 / tento))
+                              :ARG0 s32e1))
+         :ARG1 (s32s1 / semínko
+                        :refer-number singular
+                        :mod (s32n1 / nedůvěra
+                                      :refer-number singular)
+                        :mod (s32n2 / naklíčený))
+         :ARG0 s32e1
+         :clausal-marker (s32j2 / ještě)
+         :extent (s32v1 / vydatně))
+
+# alignment:
+s32z1: 16-16
+s32p1: 1-2,8-8
+s32e1: 3-3
+s32j1: 7-7
+s32t1: 6-6
+s32p2: 9-9
+s32p3: 5-5
+s32t2: 4-4
+s32s1: 12-12
+s32n1: 13-13
+s32n2: 11-11
+s32j2: 14-14
+s32v1: 15-15
+
+# document level annotation:
+(s32s0 / sentence
+    :coref ((s32e1 :same-entity s31e1)   # da Silva
+            (s32p3 :same-event s31z1)))  # požadavek (zrušit kandidaturu C.)
+
+
+################################################################################
+# sent_id = u_tree-cs-s33-root
+# :: snt33
+Index: 1      2     3  4     5  6  7        8  9     10   11
+Words: Straně práce ,  která je v  ofenzívě ,  stačí málo .
+
+# sentence level graph:
+(s33s1 / stačit-005
+         :aspect activity
+         :modal-strength full-affirmative
+         :ARG1 (s33s2 / political-organization
+                        :refer-number singular
+                        :name (s33s3 / name :op1 "Strana" :op2 "práce")
+                        :ARG1-of (s33b1 / have-role-91
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG2 (s33o1 / ofenzíva
+                                                         :refer-number singular)))
+         :ARG0 (s33m1 / málo))
+
+# alignment:
+s33s1: 9-9
+s33s2: 1-2,4-4
+s33s3: 0-0
+s33b1: 5-5
+s33o1: 6-7
+s33m1: 10-10
+
+# document level annotation:
+(s33s0 / sentence
+    :coref ((s33s2 :same-entity s30o1)))  # opozice = Strana práce
+
+
+################################################################################
+# sent_id = u_tree-cs-s34-root
+# :: snt34
+Index: 1  2      3    4              5     6  7        8    9        10  11       12 13    14    15   16    17  18      19   20         21        22
+Words: V  prvním kole prezidentských voleb v  Brazílii může zvítězit ten kandidát ,  který získá více hlasů než všichni jeho protivníci dohromady .
+
+# sentence level graph:
+(s34z1 / zvítězit-001
+         :aspect performance
+         :modal-strength neutral-affirmative
+         :ARG1 (s34k1 / kolo
+                        :refer-number singular
+                        :possessor (s34v1 / volit-002
+                                            :aspect process
+                                            :modal-strength full-affirmative
+                                            :ARG0 (s34p6 / person
+                                                           :refer-number plural)
+                                            :ARG1 (s34p7 / person
+                                                           :refer-number singular)
+                                            :ARG2 (s34p1 / prezident
+                                                           :refer-number singular)
+                                            :place (s34b1 / country
+                                                            :refer-number singular
+                                                            :name (s34n1 / name :op1 "Brazílie")))
+                        :ord (s34p2 / první))
+         :ARG0 (s34k2 / person
+                        :refer-number singular
+                        :ARG0-of (s34k3 / kandidovat-002
+                                         :aspect activity
+                                         :modal-strength neutral-affirmative)
+                        :mod (s34t1 / ten)
+                        :ARG0-of (s34z2 / získat-001
+                                          :aspect performance
+                                          :modal-strength neutral-affirmative
+                                          :ARG1 (s34h1 / hlas
+                                                         :refer-number plural
+                                                         :ARG1-of (s34h3 / have-quant-91
+                                                                           :aspect state
+                                                                           :modal-strength neutral-affirmative
+                                                                           :ARG3 (s34h2 / více)
+                                                                           :ARG4 (s34h4 / hlas
+                                                                                          :refer-number plural
+                                                                                          :ARG1-of (s34z3 / získat-001
+                                                                                                            :aspect performance
+                                                                                                            :modal-strength neutral-affirmative
+                                                                                                            :ARG0 (s34p3 / protivník
+                                                                                                                           :refer-number plural
+                                                                                                                           :quant (s34v2 / všechen))
+                                                                                                            :manner (s34d1 / dohromady))))))
+                        :mod-of s34p3))
+
+# alignment:
+s34z1: 8-9
+s34k1: 1-1,3-3
+s34v1: 5-5
+s34p6: 0-0
+s34p7: 0-0
+s34b1: 6-7
+s34n1: 0-0
+s34p1: 4-4
+s34p2: 2-2
+s34k2: 11-11,13-13,19-19
+s34k3: 0-0
+s34t1: 10-10
+s34z2: 14-14
+s34h1: 16-16
+s34h3: 0-0
+s34h2: 15-15
+s34h4: 0-0
+s34z3: 0-0
+s34p3: 17-17,20-20
+s34v2: 18-18
+s34d1: 21-21
+
+# document level annotation:
+(s34s0 / sentence
+    :coref ((s34b1 :same-entity s28b1) # Brazílie
+            (s34p6 :same-entity s31p3) # Brazilci
+            (s34p1 :same-entity s28p1))) # prezident/ský (jako funkce)
+
+
+################################################################################
+# sent_id = u_tree-cs-s35-root
+# :: snt35
+Index: 1   2       3  4     5        6         7      8      9     10        11 12      13     14
+Words: Pro Cardosu by podle průzkumů veřejného mínění minulý týden hlasovalo 45 procent voličů .
+
+# sentence level graph:
+(s35h1 / hlasovat-003
+         :aspect activity
+         :modal-strength neutral-affirmative
+         :ARG1 (s35c1 / person
+                        :refer-number singular
+                        :name (s35c2 / name :op1 "Cardoso"))
+         :regard (s35p1 / event
+                          :refer-number plural
+                          :aspect performance
+                          :modal-strength full-affirmative
+                          :result-of (s35p3 / prozkoumat-002
+                                              :aspect performance
+                                              :modal-strength full-affirmative
+                                              :ARG0 (s35e1 / entity)
+                                              :ARG1 (s35m1 / mínit-004
+                                                             :aspect activity
+                                                             :modal-strength full-affirmative
+                                                             :ARG0 (s35v1 / veřejnost
+                                                                            :refer-number singular)
+                                                             :ARG1 (s35e2 / entity))))
+         :temporal (s35t1 /  týden
+                             :refer-number singular
+                             :mod (s35m2 / minulý))
+         :ARG0 (s35v2 / person
+                        :refer-number plural
+                        :ARG0-of (s35v3 / volit-001
+                                          :aspect habitual
+                                          :modal-strength full-affirmative
+                                          :ARG1 s35c1)
+                        :ARG1-of (s35i1 / include-91
+                                          :aspect state
+                                          :modal-strength full-affirmative
+                                          :ARG3 (s35p2 / percentage-entity
+                                                         :value 45))))
+
+# alignment:
+s35h1: 3-3,10-10
+s35c1: 1-2
+s35c2: 0-0
+s35p1: 4-5
+s35p3: 0-0
+s35m1: 7-7
+s35e1: 0-0
+s35e2: 0-0
+s35v1: 6-6
+s35t1: 9-9
+s35m2: 8-8
+s35p2: 11-12
+s35v2: 13-13
+s35v3: 0-0
+s35i1: 0-0
+
+# document level annotation:
+(s35s0 / sentence
+    :coref ((s35c1 :same-entity s31c1)   # Cardoso 
+            (s35p1 :same-event s18p1)    # průzkum
+            (s35m1 :same-event s18m1)    # mínění
+            (s35v1 :same-entity s18v2))) # veřejnost
+
+
+################################################################################
+# sent_id = u_tree-cs-s36-root
+# :: snt36
+Index: 1     2        3  4        5  6    7       8    9     10 11  12 13      14      15      16             17        18
+Words: Tento výsledek by znamenal o  šest procent více hlasů ,  než by dostali všichni ostatní protikandidáti dohromady .
+
+# sentence level graph:
+(s36z1 / znamenat-001
+         :aspect state
+         :modal-strength neutral-affirmative
+         :ARG1 (s36v1 / výsledek
+                        :refer-number singular
+                        :mod (s36t1 / tento))
+         :ARG2 (s36d0 / dostat-001
+                        :aspect performance
+                        :modal-strength neutral-affirmative
+                        :ARG0 (s36p3 / person
+                                       :refer-number singular
+                                       :refer-person 3rd)
+                        :ARG1 (s36h1 / hlas
+                                       :refer-number plural
+                                       :ARG1-of (s36h3 / have-quant-91
+                                                         :aspect state
+                                                         :modal-strength neutral-affirmative
+                                                         :ARG3 (s36h2 / více)
+                                                         :ARG4 (s36h4 / hlas
+                                                                        :refer-number plural
+                                                                        :ARG1-of (s36d1 / dostat-001
+                                                                                          :aspect performance
+                                                                                          :modal-strength neutral-affirmative
+                                                                                          :ARG0 (s36p1 / protikandidát
+                                                                                                         :refer-number plural
+                                                                                                         :quant (s36v2 / všechen)
+                                                                                                         :mod (s36o1 / ostatní))
+                                                                                          :manner (s36d2 / dohromady)))
+                                                         :ARG2 (s36p2 / percentage-entity
+                                                                        :value 6)))))
+
+# alignment:
+s36z1: 3-4
+s36v1: 2-2
+s36d0: 0-0
+s36p3: 0-0
+s36t1: 1-1
+s36h1: 9-9
+s36h2: 8-8
+s36h3: 0-0
+s36h4: 0-0
+s36d1: 11-13
+s36p1: 16-16
+s36v2: 14-14
+s36o1: 15-15
+s36d2: 17-17
+s36p2: 5-7
+
+# document level annotation:
+(s36s0 / sentence
+    :coref ((s36p3 :same-entity s35c1)))    # Cardoso   # (s36v1 :same-event s35h1)  hlasování = výsledek
+
+
+################################################################################
+# sent_id = u_tree-cs-s37-root
+# :: snt37
+Index: 1  2     3           4       5     6
+Words: Da Silva nepotřebuje zásadní zvrat .
+
+# sentence level graph:
+(s37p1 / potřebovat-002
+         :aspect activity
+         :modal-strength full-affirmative
+         :polarity -
+         :ARG0 (s37d1 / person
+                        :refer-number singular
+                        :name (s37n1 / name :op1 "da" :op2 "Silva"))
+         :ARG1 (s37z1 / zvrat
+                        :refer-number singular
+                        :mod (s37z2 / zásadní)))
+
+# alignment:
+s37p1: 3-3
+s37d1: 1-2
+s37n1: 0-0
+s37z1: 5-5
+s37z2: 4-4
+
+# document level annotation:
+(s37s0 / sentence
+    :coref ((s37d1 :same-entity s32e1)))  # da Silva
+
+
+################################################################################
+# sent_id = u_tree-cs-s38-root
+# :: snt38
+Index: 1  2    3      4  5    6   7  8       9       10     11 12    13  14 15        16     17      18       19 20        21   22      23     24 25     26 27    28   29    30 31 32      33       34  35  36            37
+Words: V  této chvíli má sice jen 23 procent podpory voličů ,  pokud ale s  ostatními adepty Cardose připraví o  zmíněných šest procent přízně ,  vynutí si druhé kolo voleb ,  do kterého postoupí jen dva nejúspěšnější .
+
+# sentence level graph:
+(s38b1 / but-91
+         :clausal-marker (s38s1 / sice)
+         :ARG1 (s38m1 / podporovat-008
+                        :aspect state
+                        :modal-strength full-affirmative
+                        :ARG1 (s38e1 / entity
+                                       :refer-number singular
+                                       :refer-person 3rd)
+                        :temporal (s38c1 / chvíle
+                                           :refer-number singular
+                                           :mod (s38t1 / tento))
+                        :ARG0 (s38v1 / person
+                                       :refer-number plural
+                                       :ARG0-of (s38v4 / volit-001
+                                                         :aspect state
+                                                         :modal-strength full-affirmative
+                                                         :ARG1 s38e1)
+                                       :ARG1-of (s38i1 / include-91
+                                                         :aspect state
+                                                         :modal-strength full-affirmative
+                                                         :ARG2 (s38p1 / percentage-entity
+                                                                        :value 23
+                                                                        :mod (s38j1 / jen)))))
+         :ARG2 (s38v2 / vynutit-si-001
+                        :aspect performance
+                        :modal-strength neutral-affirmative
+                        :ARG0 s38e1
+                        :condition (s38p3 / připravit-001
+                                           :aspect performance
+                                           :modal-strength neutral-affirmative
+                                           :companion (s38a1 / adept
+                                                               :refer-number plural
+                                                               :mod (s38o1 / ostatní))
+                                           :ARG2 (s38c2 / person
+                                                          :refer-number singular
+                                                          :name (s38n1 / name :op1 "Cardoso"))
+                                           :ARG0 s38e1
+                                           :ARG1 (s38p5 / přízeň
+                                                          :aspect process
+                                                          :modal-strength neutral-affirmative
+                                                          :refer-number singular
+                                                          :experiencer s38v1
+                                                          :quant (s38p4 / percentage-entity
+                                                                          :value (s38s2 / šest)
+                                                                          :mod (s38z1 / zmíněný))))
+                        :ARG1 (s38k1 / kolo
+                                       :refer-number singular
+                                       :part (s38v3 / volba
+                                                      :refer-number plural
+                                                      :aspect process
+                                                      :modal-strength full-affirmative)
+                                       :ord (s38d1 / druhý)
+                                       :mod (s38p6 / postoupit-003
+                                                     :aspect performance
+                                                     :modal-strength neutral-affirmative
+                                                     :ARG0 (s38e2 / person
+                                                                    :refer-number plural
+                                                                    :mod (s38j2 / jen)
+                                                                    :quant (s38d2 / dva)
+                                                                    :ARG1-of (s38h1 / have-degree-91
+                                                                                      :aspect state
+                                                                                      :modal-strength full-affirmative
+                                                                                      :ARG2 (s38u1 / úspěšný)
+                                                                                      :ARG5 s38a1))))))
+
+# alignment:
+s38b1: 13-13
+s38s1: 5-5
+s38m1: 4-4,9-9
+s38c1: 1-1,3-3
+s38t1: 2-2
+s38p1: 7-8
+s38i1: 0-0
+s38v1: 10-10
+s38v4: 0-0
+s38j1: 6-6
+s38e1: 0-0
+s38v2: 25-26
+s38p3: 12-12,18-18
+s38a1: 14-14,16-16
+s38o1: 15-15
+s38c2: 17-17
+s38n1: 0-0
+s38p4: 19-19,22-22
+s38p5: 23-23
+s38s2: 21-21
+s38z1: 20-20
+s38k1: 28-28,31-32
+s38v3: 29-29
+s38d1: 27-27
+s38p6: 33-33
+s38e2: 0-0
+s38h1: 0-0
+s38j2: 34-34
+s38d2: 35-35
+s38u1: 36-36
+
+# document level annotation:
+(s38s0 / sentence
+    :coref ((s38m1 :same-event s38p5)  # podpora = přízeň
+            (s38v1 :same-entity s35v2)  # voliči
+            (s38e1 :same-entity s37d1)  # da Silva
+            (s38c2 :same-entity s35c1)  # Cordoso
+            (s38p4 :same-entity s36p2)  # 6 procent
+            (s38v3 :same-event s34v1)   # volby (-> volit)
+            (s38a1 :subset-of s38e2)))  # 2 postupující (s38e2) = část adeptů s38a1
+
+
+################################################################################
+# sent_id = u_tree-cs-s39-root
+# :: snt39
+Index: 1  2       3          4  5  6     7  8  9         10
+Words: S  vládním kandidátem by se utkal 15 .  listopadu .
+
+# sentence level graph:
+(s39u1 / utkat-se-002
+         :aspect performance
+         :modal-strength neutral-affirmative
+         :ARG2 (s39k1 / person
+                        :refer-number singular
+                        :ARG1-of (s39k2 / kandidovat-001
+                                          :aspect performance
+                                          :modal-strength full-affirmative
+                                          :ARG0 (s39v1 / vláda
+                                                         :refer-number singular)))
+         :ARG0 (s39e1 / person
+                        :refer-number singular
+                        :refer-person 3rd)
+         :temporal (s39l1 / date-entity
+                            :month (s39l2 / listopad)
+                            :day  15))
+
+# alignment:
+s39u1: 4-6
+s39k1: 1-1,3-3
+s39k2: 0-0
+s39v1: 2-2
+s39e1: 0-0
+s39l1: 7-9
+s39l2: 0-0
+
+# document level annotation:
+(s39s0 / sentence
+    :coref ((s39k1 :same-entity s38c2) # Cardoso = vládní kandidát
+            (s39v1 :same-entity s29v2) # vláda
+            (s39e1 :same-entity s38e1)))  # da Silva
+
+
+################################################################################
+# sent_id = u_tree-cs-s40-root
+# :: snt40
+Index: 1        2  3     4          5         6  7  8  9       10   11      12 13       14 15 16             17     18 19      20   21  22       23  24
+Words: Obohacen o  hlasy poražených kandidátů ,  by ve volbách mohl nakonec i  zvítězit a  do prezidentského křesla na dalších šest let usednout sám .
+
+# sentence level graph:
+(s40a1 / and
+         :condition (s40o1 / obohatit-001
+                             :aspect performance
+                             :modal-strength neutral-affirmative
+                             :ARG0 (s40e2 / entity)
+                             :ARG1 (s40e1 / entity
+                                            :refer-number singular
+                                            :refer-person 3rd)
+                             :ARG2 (s40h1 / hlas
+                                            :refer-number plural
+                                            :mod (s40k1 / person
+                                                          :refer-number plural
+                                                          :ARG0-of (s40k3 / kandidovat-002
+                                                                            :aspect activity
+                                                                            :modal-strength full-affirmative)
+                                                          :ARG1-of (s40p1 / porazit
+                                                                            :aspect performance
+                                                                            :modal-strength neutral-affirmative
+                                                                            :ARG0 (s40p3 / person
+                                                                                           :refer-number plural)))))
+         :op1 (s40z1 / zvítězit-001
+                       :aspect performance
+                       :clausal-marker (s40i1 / i)
+                       :modal-strength neutral-affirmative
+                       :ARG0 s40e1
+                       :ARG1 (s40v1 / volba
+                                      :refer-number plural
+                                      :aspect process
+                                      :modal-strength full-affirmative)
+                       :temporal (s40n1 / nakonec))
+         :op2 (s40u1 / usednout-002
+                       :aspect performance
+                       :modal-strength neutral-affirmative
+                       :ARG0 s40e1
+                       :place (s40k2 / křeslo
+                                       :refer-number singular
+                                       :mod (s40p2 / prezidentský))
+                       :duration (s40r1 / rok
+                                          :refer-number plural
+                                          :quant (s40s1 / šest)
+                                          :mod (s40d1 / další))
+                       :manner (s40s2 / sám
+                                        :mod-of s40e1)))
+
+# alignment:
+s40a1: 14-14
+s40z1: 7-7,10-10,13-13
+s40v1: 8-9
+s40n1: 11-11
+s40i1: 12-12
+s40o1: 1-1
+s40e2: 0-0
+s40h1: 2-3
+s40k1: 5-5
+s40k3: 0-0
+s40p1: 4-4
+s40p3: 0-0
+s40e1: 0-0
+s40u1: 7-7,10-10,22-22
+s40k2: 15-15,17-17
+s40p2: 15-16
+s40r1: 18-18,21-21
+s40s1: 20-20
+s40d1: 19-19
+s40s2: 23-23
+
+# document level annotation:
+(s40s0 / sentence
+    :coref ((s40v1 :same-event s38v3)   # volba
+            (s40k1 :same-entity s38a1)   # kandidáti
+            (s40p3 :subset-of s40e1)     # da Silva jako jeden z dvojice vítězů (s40p3 = dvojivca, která porazila ostatní kandidáty) 
+            (s40p3 :subset-of s39k1)     # Cardoso (= kandidát) jako jeden z dvojice  vítězů (s40p3 = dvojivca, která porazila ostatní kandidáty)
+            (s40e1 :same-entity s39e1))) # da Silva
+
+
+################################################################################
+# sent_id = u_tree-cs-s41-root
+# :: snt41
+Index: 1        2        3  4    5       6          7
+Words: Odvolaný Ricupero se svým výrokem nezavděčil .
+
+# sentence level graph:
+(s41z1 / zavděčit-se-001
+         :aspect performance
+         :modal-strength full-affirmative
+         :polarity -
+         :ARG0 (s41r1 / person
+                        :refer-number singular
+                        :name (s41r2 / name :op1 "Ricupero")
+                        :ARG1-of (s41o1 / odvolat-001
+                                          :aspect performance
+                                          :modal-strength full-affirmative
+                                          :ARG0 (s41e2 / person
+                                                         :refer-number singular
+                                                         :refer-person 3rd)
+                                          :ARG2 (s41e3 / thing
+                                                         :refer-number singular)))
+         :instrument (s41v1 / výrok
+                              :refer-number singular
+                              :actor s41r1)
+         :ARG1 (s41e1 / entity))
+
+# alignment:
+s41z1: 3-3,6-6
+s41r1: 2-2,4-4
+s41r2: 0-0
+s41o1: 1-1
+s41v1: 5-5
+s41e1: 0-0
+s41e2: 0-0
+s41e3: 0-0
+
+# document level annotation:
+(s41s0 / sentence
+    :coref ((s41e2 :same-entity s29p1)    # prezident
+            (s41e3 :same-entity s23m2)    # ministr financí (jako funkce)
+            (s41r1 :same-entity s31p2)))  # ministr = Rubens Ricupero (Soc. dem. strana)
+
+
+################################################################################
+# sent_id = u_tree-cs-s42-root
+# :: snt42
+Index: 1      2     3      4     5   6      7  8     9       10 11         12   13 14    15        16     17 18   19   20 21  22     23       24      25   26 27       28   29 30        31
+Words: Udělal nejen těžkou hlavu své straně ,  navíc ohrozil i  ekonomický plán ,  který Brazilcům poprvé od roku 1986 ,  kdy začala nevídaná inflace měny ,  sliboval krok k  blahobytu .
+
+# sentence level graph:
+(s42g1 / and
+         :clausal-marker (s42n1 / nejen)
+         :op1 (s42u1 / udělat-001
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :ARG0 (s42e1 / entity
+                                      :refer-number singular
+                                      :refer-person 3rd)
+                       :ARG1 (s42h1 / hlava
+                                      :refer-number singular
+                                      :mod (s42t1 / těžký))
+                       :ARG2 (s42s1 / strana
+                                      :refer-number singular
+                                      :possessor s42e1))
+         :clausal-marker (s42n2 / navíc)
+         :clausal-marker (s42i1 / i)
+         :op2 (s42o1 / ohrozit-001
+                       :aspect performance
+                       :modal-strength full-affirmative
+                       :ARG0 s42e1
+                       :ARG1 (s42p1 / plán
+                                      :refer-number singular
+                                      :mod (s42e2 / ekonomický)
+                                      :ARG0-of (s42s2 / slibovat-001
+                                                        :aspect activity
+                                                        :modal-strength full-affirmative
+                                                        :ARG1 (s42b1 / person
+                                                                       :refer-number plural
+                                                                       :mod (s42b3 / country
+                                                                                     :refer-number singular
+                                                                                     :name (s42b4 / name :op1 "Brazílie")))
+                                                                       :ord (s42p2 / poprvé
+                                                                                     :temporal (s42r1 / date-entity
+                                                                                                        :year 1986
+                                                                                                        :temporal-of (s42z1 / začít-002
+                                                                                                                     :aspect performance
+                                                                                                                     :modal-strength full-affirmative
+                                                                                                                     :ARG1 (s42i2 / inflace
+                                                                                                                                    :refer-number singular
+                                                                                                                                    :undergoer (s42m1 / měna
+                                                                                                                                                        :refer-number singular)
+                                                                                                                                    :mod (s42n3 / nevídaný)))))
+                                                        :ARG2 (s42k1 / krok
+                                                                       :refer-number singular
+                                                                       :goal (s42b2 / blahobyt
+                                                                                      :refer-number singular))))))
+
+# alignment:
+s42g1: 7-7
+s42n1: 2-2
+s42u1: 1-1
+s42h1: 4-4
+s42t1: 3-3
+s42s1: 6-6
+s42e1: 5-5
+s42n2: 8-8
+s42i1: 10-10
+s42o1: 9-9
+s42p1: 12-12,14-14
+s42e2: 11-11
+s42s2: 27-27
+s42b1: 15-15
+s42b3: 0-0
+s42b4: 0-0
+s42p2: 16-16
+s42r1: 17-19,21-21
+s42z1: 22-22
+s42i2: 24-24
+s42m1: 25-25
+s42n3: 23-23
+s42k1: 28-28
+s42b2: 29-30
+
+# document level annotation:
+(s42s0 / sentence
+    :coref ((s42s1 :same-entity s31e2)   # Soc. dem. strana
+            (s42e1 :same-entity s41r1)   # ministr = Rubens Ricupero (Soc. dem. strana)
+            (s42b1 :same-entity s34p6))) # Brazilci
+
+
+################################################################################
+# sent_id = u_tree-cs-s43-root
+# :: snt43
+Index: 1        2  3          4       5  6     7       8  9         10   11 12        13     14
+Words: Nedůvěra k  ministrovi financí s  sebou přináší i  nahlodání víry v  používané peníze .
+
+# sentence level graph:
+(s43p1 / přinášet-003
+         :aspect activity
+         :modal-strength full-affirmative
+         :ARG0 (s43n1 / důvěřovat-001
+                        :aspect state
+                        :modal-strength full-negative
+                        :polarity -
+                        :ARG0 (s43e2 / person
+                                       :refer-number plural)
+                        :ARG1 (s43m1 / ministr
+                                       :refer-number singular
+                                       :mod (s43f1 / finance
+                                                     :refer-number singular)))
+         :companion s43n1
+         :clausal-marker (s43i1 / i)
+         :ARG1 (s43n2 / nahlodat-001
+                        :aspect performance
+                        :modal-strength full-affirmative
+                        :ARG0 (s43e1 / entity)
+                        :ARG1 (s43v1 / víra
+                                       :refer-number singular
+                                       :experiencer s43e2
+                                       :undergoer (s43p2 / peníze
+                                                           :refer-number plural
+                                                           :mod (s43p3 / používaný)))))
+
+# alignment:
+s43p1: 7-7
+s43n1: 1-1,5-6
+s43e2: 0-0
+s43m1: 2-3
+s43f1: 4-4
+s43i1: 8-8
+s43n2: 9-9
+s43e1: 0-0
+s43v1: 10-10
+s43p2: 11-11,13-13
+s43p3: 12-12
+
+# document level annotation:
+(s43s0 / sentence
+    :coref ((s43m1 :same-entity s42e1)))  # ministr = Rubens Ricupero (Soc. dem. strana)
+
+
