@@ -114,11 +114,13 @@ Words: Celý rok jsme přečkali bez změny ceny ,  nepočítáme -  li zvýšen
                                                            :modal-strength full-affirmative
                                                            :ARG0 s2p0
                                                            :ARG1 (s2m1 / magazín
+                                                                         :wiki "Wiki-unknown"
                                                                          :name (s2n1 / name :op1 "Duha")
                                                                          :mod (s2t1 / televizní)
                                                                          :mod (s2b1 / barevný)
                                                                          :refer-number singular)
                                                            :ARG2 (s2n2 / news-media
+                                                                         :wiki "Q1197747"
                                                                          :name (s2n3 / name :op1 "LN"))
                                                            :manner (s2p3 / příloha
                                                                            :mod-of s2m1
@@ -229,6 +231,7 @@ Words: Od posledního čtvrtletí letošního roku budou proto Lidové noviny st
                                         :year (s4l1 / letošní))
                       :ARG1 (s4n1 / news-media
                                    :refer-number singular
+                                   :wiki "Q1197747"
                                    :name (s4n2 / name :op1 "Lidové" :op2 "noviny"))
                       :ARG2 (s4k1 / monetary-quantity
                              :quant 5
@@ -341,8 +344,10 @@ Words: (  Na Slovensku budou LN stát od pondělí do čtvrtka 5.50 Sk ,  v  pá
                      :modal-strength full-affirmative
                      :quote s6s
                      :place (s6s2 / country
+                                    :wiki "Q214"
                                     :name (s6n3 / name :op1 "Slovensko"))
                      :ARG1 (s6l1 / news-media
+                                   :wiki "Q1197747"
                                    :name (s6n2 / name :op1 "Lidové" :op2 "noviny"))
                      :temporal (s6r2 / date-interval
                                        :op1 (s6d1 / date-entity :weekday (s6p1 / pondělí))
@@ -957,6 +962,7 @@ Words: Michal Klíma , ředitel LN
 # sentence level graph:
 (s14p1 / publication-91
          :ARG0 (s14k1 / person
+                        :wiki "Q16773522"
                         :name (s14n1 / name :op1 "Michal" :op2 "Klíma")
                         :ARG1-of (s14h1 / have-org-role-91
                                           :aspect state

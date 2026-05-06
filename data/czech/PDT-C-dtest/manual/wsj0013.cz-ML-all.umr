@@ -10,6 +10,7 @@ Words: Společnost New England Electric System vycouvala z  nabídkového říze
         :modal-strength full-affirmative
         :ARG0 (s1s1 / společnost
                       :refer-number singular
+                      :wiki "Wiki-unknown"
                       :name (s1x1 / name :op1 "New" :op2 "England" :op3 "Electric" :op4 "System"))
         :ARG1 (s1r1 / řízení
                       :refer-number singular
@@ -18,6 +19,7 @@ Words: Společnost New England Electric System vycouvala z  nabídkového říze
                       :modal-strength full-affirmative
                       :undergoer (s1s3 / společnost
                                     :refer-number singular
+                                    :wiki "Q86749900"
                                     :name (s1x2 / name :op1 "Public" :op2 "Service" :op3 "Co." :op4 "of" :op5 "New" :op6 "Hampshire")))
         :cause (s1a1 / and
                        :op1 (s1b1 / have-mod-91
@@ -101,6 +103,7 @@ Words: Tento tah ve hře o  společnost PS of New Hampshire ,  která také pře
                                                  :ARG0 s2e0
                                                  :ARG3 (s2s1 / společnost
                                                                :refer-number singular
+                                                               :wiki "Q86749900"
                                                                :name (s2x1 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")
                                                                :ARG0-of (s2p2 / předložit-001
                                                                     :aspect performance
@@ -143,9 +146,11 @@ Words: Tento tah ve hře o  společnost PS of New Hampshire ,  která také pře
        :ARG1 (s2a1 / and
                       :op1 (s2s3 / společnost
                                    :refer-number singular
+                                   :wiki "Q7771571"
                                    :name (s2x5 / name :op1 "United" :op2 "Illuminating" :op3 "Co."))
                       :op2 (s2s4 / společnost
                                    :refer-number singular
+                                   :wiki "Q3344199"
                                    :name (s2x7 / name :op1 "Northeast" :op2 "Utilities"))
                       :mod (s2z4 / entity
                                   :refer-number plural
@@ -215,14 +220,18 @@ Words: Společnost New England Electric se sídlem ve Westborough v  Massachuset
         :ARG2 (s3e / entity)
         :ARG0 (s3s1 / společnost
                       :refer-number singular
+                      :wiki "Wiki-unknown"
                       :name (s3x1 / name :op1 "New" :op2 "England" :op3 "Electric")
                       :ARG0-of (s3s2 / sídlit-001
                                    :aspect state
                                    :modal-strength full-affirmative
                                    :ARG1 (s3h1 / human-settlement
                                                  :refer-number singular
+                                                 :wiki "Q386170"
                                                  :name (s3x2 / name :op1 "Westborough")
                                                  :place (s3h2 / human-settlement
+                                                                 :refer-number singular
+                                                                 :wiki "Q771"
                                                                  :name (s3x3 / name :op1 "Massachusetts")))))
         :ARG3 (s3a1 / akvizice
                       :refer-number singular
@@ -230,6 +239,7 @@ Words: Společnost New England Electric se sídlem ve Westborough v  Massachuset
                       :modal-strength full-affirmative
                       :undergoer (s3s3 / společnost
                                     :refer-number singular
+                                    :wiki "Q86749900"
                                     :name (s3x4 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")))
         :ARG1 (s3a2 / identity-91
                       :aspect state
@@ -252,6 +262,7 @@ Words: Společnost New England Electric se sídlem ve Westborough v  Massachuset
                                                                   :modal-strength full-affirmative
                                                                   :ARG0 (s3s4 / společnost
                                                                                 :refer-number singular
+                                                                                :wiki "Q7771571"
                                                                                 :name (s3x7 / name :op1 "United" :op2 "Illuminating"))))
                                            :op2 (s3m5 / monetary-quantity
                                                  :quant 2250000000
@@ -266,6 +277,7 @@ Words: Společnost New England Electric se sídlem ve Westborough v  Massachuset
                                                                                                  :modal-strength full-affirmative
                                                                                                  :ARG0 (s3s5 / společnost
                                                                                                               :refer-number singular
+                                                                                                              :wiki "Q3344199"
                                                                                                               :name (s3n6 / name :op1 "Northeast"))))
                                                                   :ARG0 s3s5))))))
 
@@ -321,21 +333,26 @@ Words: Společnost United Illuminating sídlí v  New Haven ve státě Connectic
                      :modal-strength full-affirmative
             :ARG0 (s4s2 / společnost
                           :refer-number singular
+                          :wiki "Q7771571"
                           :name (s4x1 / name :op1 "United" :op2 "Illuminating"))
             :ARG1 (s4h3 / human-settlement
                               :refer-number singular
+                              :wiki "Q49145"
                               :name (s4x2 / name :op1 "New" :op2 "Haven")
                               :place (s4s3 / stát
                                              :refer-number singular
+                                             :wiki "Q779"
                                              :name (s4c1 / name :op1 "Connecticut"))))
         :op2 (s4s4 / sídlit-001
                      :aspect state
                      :modal-strength full-affirmative
             :ARG0 (s4s5 / společnost
                           :refer-number singular
+                          :wiki "Q3344199"
                           :name (s4n2 / name :op1 "Northeast" ))
             :ARG1 (s4h2 / human-settlement
                               :refer-number singular
+                              :wiki "Q33486"
                               :name (s4x3 / name :op1 "Hartford")
                               :place s4s3)))
 
@@ -372,15 +389,18 @@ Words: Společnost PS of New Hampshire se sídlem v  Manchesteru v  New Hampshir
         :modal-strength full-affirmative
         :ARG0 (s5s1 / společnost
                       :refer-number singular
+                      :wiki "Q86749900"
                       :name (s5x1 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")
                       :ARG0-of (s5s2 / sídlit-001
                                    :aspect state
                                    :modal-strength full-affirmative
                                    :ARG1 (s5m1 / human-settlement
                                                   :refer-number singular
+                                                  :wiki "Q4837"
                                                   :name (s5n1 / name :op1 "Manchester")
                                                   :place (s5h2 / human-settlement
                                                                  :refer-number singular
+                                                                 :wiki "Q759"
                                                                  :name (s5x2 / name :op1 "New" :op2 "Hampshire")))))
         :ARG1 (s5e1 / thing
                       :refer-number singular
@@ -438,6 +458,7 @@ Words: John Rowe ,  prezident a  generální ředitel společnosti New England E
                       :ARG1 (s6r2 / person
                                     :refer-number singular
                                     :refer-person 3rd
+                                    :wiki "Q6255808"
                                     :name (s6n5 / name :op1 "John" :op2 "Rowe"))
                       :ARG2 (s6p3 / person
                                     :refer-number singular
@@ -446,6 +467,7 @@ Words: John Rowe ,  prezident a  generální ředitel společnosti New England E
                                                      :modal-strength full-affirmative
                                                      :ARG2 (s6s1 / společnost
                                                                    :refer-number singular
+                                                                   :wiki "Wiki-unknown"
                                                                    :name  (s6x1 / name :op1 "New" :op2 "England" :op3 "Electric"))
                                                      :ARG3 (s6a1 / and
                                                                    :op1 (s6p1 / prezident
@@ -495,6 +517,7 @@ Words: John Rowe ,  prezident a  generální ředitel společnosti New England E
                                                                                                                      :modal-strength neutral-affirmative
                                                                                                                      :ARG1 (s6s3 / společnost
                                                                                                                                    :refer-number singular
+                                                                                                                                   :wiki "Q86749900"
                                                                                                                                    :name (s6x5 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")))))
                                                                     :example (s6a4 / and
                                                                                     :op1 (s6r4 / růst-002
@@ -561,7 +584,7 @@ s6p9: 0-0
 (s6s0 / sentence
     :coref ((s6s1 :same-entity s3s1)   # New England Electric System
             (s6s3 :same-entity s5s1)   # Public Service Co. of New Hampshire
-            (s6m2 :same-entity s3m2))) # nabídka New England Electric System 
+            (s6m2 :same-entity s3m2))) # nabídka New England Electric System
 
 
 ################################################################################
@@ -655,7 +678,7 @@ s7h1: 24-24
 (s7s0 / sentence
     :coref ((s6r1 :same-event s7s1) # sloveso mluvení
             (s6r2 :same-entity s7p1) # Rowe
-            (s7p2 :subset-of s7p1)   # Rowe je z vedení New England Electric System (množina :subset-of podmnožina)  
+            (s7p2 :subset-of s7p1)   # Rowe je z vedení New England Electric System (množina :subset-of podmnožina)
             (s6n2 :same-event s7n1)   # nabídnout
             (s3m2 :same-entity  s7n2)   # nabídka
             (s6s1 :same-entity s7p2))) # New England Electric System
@@ -716,6 +739,7 @@ Words: Rowe také podotkl ,  že společnost New England Electric byla rovněž 
         :modal-strength full-affirmative
         :ARG0 (s9r1 / person
                       :refer-number singular
+                      :wiki "Q6255808"
                       :name (s9n / name :op1 "Rowe"))
         :clausal-marker (s9t1 / také)
         :ARG1 (s9z1 / znepokojit-001
@@ -724,6 +748,7 @@ Words: Rowe také podotkl ,  že společnost New England Electric byla rovněž 
                       :quote s9p1
                       :ARG1 (s9s1 / společnost
                                     :refer-number singular
+                                    :wiki "Wiki-unknown"
                                     :name (s9n1 / name :op1 "New" :op2 "England" :op3 "Electric"))
                       :ARG0 (s9z2 / event
                                     :refer-number plural
@@ -789,6 +814,7 @@ Words: Řekl ,  že ať už je vlastníkem společnosti PS of New Hampshire kdok
                                                                             :modal-strength full-affirmative
                                                                             :ARG1 (s10s1 / společnost
                                                                                            :refer-number singular
+                                                                                           :wiki "Q86749900"
                                                                                            :name (s10n1 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire"))))
                                           :ARG1 (s10k1 / entity
                                                          :refer-number singular))
@@ -836,7 +862,7 @@ s10s4: 0-0
     :coref ((s9r1 :same-entity s10e2)  # Rowe
             (s6p0 :same-entity s10e1)  # posluchači
             (s6s3 :same-entity s10s1)  # spol. PS of New Hampshire
-            (s9p1 :same-event s10r1))) # sloveso mluvení 
+            (s9p1 :same-event s10r1))) # sloveso mluvení
 
 
 ################################################################################
@@ -872,7 +898,7 @@ s11p2: 4-4
 (s11s0 / sentence
     :coref ((s10e2 :same-entity s11p3)  # Rowe
             (s11t1 :same-event s10b1)   # vysoké sazby
-            (s10r2 :same-event s11s1))) # sloveso mluvení 
+            (s10r2 :same-event s11s1))) # sloveso mluvení
 
 
 ################################################################################
@@ -917,7 +943,7 @@ Words: byl to prostě další z  rizikových faktorů "  ,  které vedly naši s
                                                                                                                           :modal-strength full-affirmative
                                                                                                                           :ARG0 s12s1
                                                                                                                           :start (s12r3 / řízení
-                                                                                                                                          :refer-number singular 
+                                                                                                                                          :refer-number singular
                                                                                                                                           :aspect process
                                                                                                                                           :modal-strength full-affirmative
                                                                                                                                           :mod (s12n1 / nabídkový))))))))))
@@ -942,7 +968,7 @@ s12n1: 19-19
 
 # document level annotation:
 (s12s0 / sentence
-    :coref ((s11s1 :same-event s12d1)   # sloveso mluvení 
+    :coref ((s11s1 :same-event s12d1)   # sloveso mluvení
             (s11p3 :same-entity s12e1)  # Rowe
             (s11t1 :same-event s12t1)   # vysoké sazby
             (s9s1 :same-entity s12s1)   # New England Electric
@@ -965,8 +991,10 @@ Words: Wilbur Ross Jr .  ze společnosti Rothschild Inc .  ,  finanční poradce
                         :refer-person 3rd)
          :ARG0 (s13r2 / person
                         :refer-number singular
+                        :wiki "Q8000233"
                         :name (s13n3 /name :op1 "Wilbur" :op2 "Ross" :op3 "Jr.")
                         :part (s13s1 / společnost
+                                       :wiki "Q1537151"
                                        :name (s13n1 / name :op1 "Rothschild" :op2 "Inc."))
                         :ARG1-of (s13i1 / have-role-91
                                          :aspect state
@@ -984,12 +1012,12 @@ Words: Wilbur Ross Jr .  ze společnosti Rothschild Inc .  ,  finanční poradce
                                                                                                            :ARG1 (s13a1 / akcie
                                                                                                                           :refer-number plural
                                                                                                                           :mod (s13s2 / společnost
-                                                                                                                                        :refer-number singular                                                                                                                                        
+                                                                                                                                        :refer-number singular
                                                                                                                                         :mod (s13p2 / problémový)))))
                                                                           :ARG2 (s13t1 / thing))
-                                                        :mod (s13f1 / finanční))))                    
+                                                        :mod (s13f1 / finanční))))
           :ARG1 (s13u1 / urychlit-001
-                         :quote s13r1 
+                         :quote s13r1
                          :aspect performance
                          :modal-strength neutral-affirmative
                          :ARG0 (s13u2 / ustoupit-002
@@ -997,15 +1025,16 @@ Words: Wilbur Ross Jr .  ze společnosti Rothschild Inc .  ,  finanční poradce
                                         :modal-strength full-affirmative
                                         :ARG0 (s13s3 / společnost
                                                        :refer-number singular
+                                                       :wiki "Wiki-unknown"
                                                        :name (s13n2 / name :op1 "New" :op2 "England" :op3 "Electric"))
                                         :source (s13r5 / řízení
-                                                         :refer-number singular 
+                                                         :refer-number singular
                                                          :aspect process
                                                          :modal-strength full-affirmative))
                          :ARG1 (s13p3 / proces
-                                        :refer-number singular 
+                                        :refer-number singular
                                         :aspect process
-                                        :modal-strength full-affirmative 
+                                        :modal-strength full-affirmative
                                         :mod (s13r3 / reorganizační))))
 
 # alignment:
@@ -1052,7 +1081,8 @@ Words: Ross tvrdil ,  že skutečnost ,  že společnost New England navrhla pom
          :aspect performance
          :modal-strength full-affirmative
          :ARG0 (s14r1 / person
-                        :refer-number singular 
+                        :refer-number singular
+                        :wiki "Q8000233"
                         :name (s14n4 /name :op1 "Ross" ))
          :ARG1 (s14k1 / komplikovat-001
                         :aspect activity
@@ -1066,13 +1096,14 @@ Words: Ross tvrdil ,  že skutečnost ,  že společnost New England navrhla pom
                                                      :ARG2 (s14e1 / entity)
                                                      :ARG0 (s14s2 / společnost
                                                                     :refer-number singular
+                                                                    :wiki "Wiki-unknown"
                                                                     :name (s14n2 / name :op1 "New" :op2 "England"))
                                                      :ARG1 (s14i1 / identity-91
                                                                     :aspect state
                                                                     :modal-strength full-affirmative
                                                                     :ARG1 (s14z1 / zvyšovat-001
                                                                                    :aspect activity
-                                                                                   :modal-strength neutral-affirmative  
+                                                                                   :modal-strength neutral-affirmative
                                                                                    :ARG0 (s14e2 / entity)
                                                                                    :manner (s14p1 / pomalu)
                                                                                    :ARG1 (s14s3 / sazba
@@ -1081,9 +1112,9 @@ Words: Ross tvrdil ,  že skutečnost ,  že společnost New England navrhla pom
                                                                                    :aspect state
                                                                                    :modal-strength neutral-affirmative
                                                                                    :ARG1 s14s3
-                                                                                   :ARG2 (s14x2 / percentage-entity 
+                                                                                   :ARG2 (s14x2 / percentage-entity
                                                                                                   :value 4.8)
-                                                                                   :ARG4 (s14x4 / percentage-entity 
+                                                                                   :ARG4 (s14x4 / percentage-entity
                                                                                                   :mod (s14a1 / asi)
                                                                                                   :value 5.5
                                                                                                   :ARG1-of (s14n3 / navrhovat-002
@@ -1140,10 +1171,10 @@ s14s5: 34-34
 # document level annotation:
 (s14s0 / sentence
     :coref ((s14r1 :same-entity s13r2) # Ross
-            (s14t1 :same-event s13r1)  # sloveso mluvení 
+            (s14t1 :same-event s13r1)  # sloveso mluvení
             (s14s2 :same-entity s13s3) # New England Electric System
             (s14e2 :same-entity s13s2) # Public Service Co. of New HampshirePublic Service Co. of New Hampshire
-            (s14z2 :subset-of s4s5)    # ostatní zájemci Northeast Utilities  (množina :subset-of podmnožina)  
+            (s14z2 :subset-of s4s5)    # ostatní zájemci Northeast Utilities  (množina :subset-of podmnožina)
             (s14z2 :subset-of s4s2)))  # ostatní zájemci United Illuminating
 
 
@@ -1181,7 +1212,7 @@ s15v2: 0-0
 # document level annotation:
 (s15s0 / sentence
     :coref ((s15e1 :same-entity s14r1) # Ross
-            (s15d1 :same-event s14t1)))  # sloveso mluvení    
+            (s15d1 :same-event s14t1)))  # sloveso mluvení
 
 
 ################################################################################
@@ -1196,6 +1227,7 @@ Words: Federální komise pro regulaci energetiky zamítla prozatím žádost sp
          :modal-strength full-affirmative
          :ARG0 (s16k1 / government-organization
                         :refer-number singular
+                        :wiki "Q3067862"
                         :name (s16n3 / name :op1 "Federální" :op2 "komise" :op3 "pro" :op4 "regulaci" :op5 "energetiky"))
         :temporal (s16p1 / prozatím)
         :ARG1 (s16z2 / thing
@@ -1205,6 +1237,7 @@ Words: Federální komise pro regulaci energetiky zamítla prozatím žádost sp
                                            :modal-strength full-affirmative
                                            :ARG0 (s16s1 / společnost
                                                           :refer-number singular
+                                                          :wiki "Q3344199"
                                                           :name (s16n1 / name :op1 "Northeast"))
                                            :ARG1 s16k1
                                            :ARG2 (s16s2 / schválit-002
@@ -1216,6 +1249,7 @@ Words: Federální komise pro regulaci energetiky zamítla prozatím žádost sp
                                                                          :modal-strength neutral-affirmative
                                                                          :ARG0 s16s1
                                                                          :ARG1 (s16s3 / společnost
+                                                                                        :wiki "Q86749900"
                                                                                         :name (s16n2 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire"))
                                                                          :mod (s16p2 / případně))))))
 
@@ -1252,6 +1286,7 @@ Words: Společnost Northeast oznámila ,  že podá svou žádost znovu a  stál
          :modal-strength full-affirmative
          :ARG2 (s17e1 / entity)
          :ARG0 (s17s1 / společnost
+                        :wiki "Q3344199"
                         :name (s17n1 / name :op1 "Northeast"))
          :ARG1 (s17a1 / and
                         :op1 (s17p1 / podat-008
@@ -1275,11 +1310,12 @@ Words: Společnost Northeast oznámila ,  že podá svou žádost znovu a  stál
                                                      :manner (s17u1 / urychleně)
                                                      :ARG0 (s17k1 / government-organization
                                                                     :refer-number singular
+                                                                    :wiki "Q3067862"
                                                                     :name (s17n3 / name :op1 "Federální" :op2 "komise" :op3 "pro" :op4 "regulaci" :op5 "energetiky"))
                                                      :ARG1 s17z1)
                                       :purpose (s17d2 / dokončit-002
                                                         :aspect performance
-                                                        :modal-strength neutral-affirmative                    
+                                                        :modal-strength neutral-affirmative
                                                         :ARG0 s17s1
                                                         :ARG1 (s17k2 / kupovat-001
                                                                        :aspect activity
@@ -1294,7 +1330,7 @@ Words: Společnost Northeast oznámila ,  že podá svou žádost znovu a  stál
                                                                            :aspect performance
                                                                            :modal-strength neutral-affirmative
                                                                            :ARG0 (s17s3 / soud
-                                                                                          :refer-number singular 
+                                                                                          :refer-number singular
                                                                                           :mod (s17k3 / konkurzní
                                                                                                         :aspect process
                                                                                                         :modal-strength full-affirmative))
@@ -1353,6 +1389,7 @@ Words: Akcie společnosti PS of New Hampshire včera v  kompozitním obchodován
                                      :refer-number plural
                                      :possessor (s18s1 / společnost
                                                          :refer-number singular
+                                                         :wiki "Q86749900"
                                                          :name (s18n1 / name :op1 "PS" :op2 "of" :op3 "New" :op4 "Hampshire")))
                       :temporal (s18v1 / včera)
                       :place (s18o1 / obchodovat-001
@@ -1362,26 +1399,22 @@ Words: Akcie společnosti PS of New Hampshire včera v  kompozitním obchodován
                                       :ARG1 s18a2
                                       :ARG2 (s18e1 / entity))
                                       :manner (s18k1 / kompozitně)
-                      :place (s18b1 / burza
+                      :place (s18b1 / business
                                       :refer-number singular
-                                      :place (s18n2 / human-settlement
-                                                      :refer-number singular
-                                                      :name (s18n3 / name :op1 "New" :op2 "York"))
-                                      :mod (s18p1 / papír
-                                                    :refer-number plural
-                                                    :mod (s18c1 / cenný))) 
+                                      :wiki "Q13677"
+                                      :name (s18n3 / name :op1 "Newyorská" :op2 "burza" :op3 "cenných" :op4 "papírů"))
                       :ARG1 (s18p2 / poklesnout-001
                                      :aspect performance
                                      :modal-strength full-affirmative
-                                     :extent (s18c2 / monetary-quantity 
+                                     :extent (s18c2 / monetary-quantity
                                                       :quant 25
                                                       :unit (s18c3 / cent))
-                                     :ARG1 s18a2))        
+                                     :ARG1 s18a2))
         :op2 (s18s2 / skončit-004
-                      :aspect performance   
+                      :aspect performance
                       :modal-strength full-affirmative
                       :ARG1 s18a2
-                      :ARG2 (s18d1 / monetary-quantity 
+                      :ARG2 (s18d1 / monetary-quantity
                                       :unit (s18d2 / dolar)
                                       :quant 3.75)))
 
@@ -1393,11 +1426,8 @@ s18o1: 8-8,10-10
 s18e1: 0-0
 s18e2: 0-0
 s18k1: 9-9
-s18b1: 11-11,13-13
-s18n2: 12-12
+s18b1: 11-15
 s18n3: 0-0
-s18p1: 15-15
-s18c1: 14-14
 s18p2: 17-17
 s18c3: 0-0
 s18c2: 18-20

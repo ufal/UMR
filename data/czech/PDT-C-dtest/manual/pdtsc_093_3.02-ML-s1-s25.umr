@@ -553,9 +553,8 @@ Words: Tohleto je junácký tábor ve Vrbicích u  Stříbra v  roce 1970 ,  kde
                                      :wiki "Q6314445"
                                      :name (s13n3 / name :op1 "Junák"))
                        :place (s13v1 / human-settlement
-                                       :name (s13n1 / name :op1 "Vrbice")
-                                       :place (s13s2 / human-settlement
-                                                       :name (s13n2 / name :op1 "Stříbro")))
+                                       :wiki "Q11939918"
+                                       :name (s13n1 / name :op1 "Vrbice" :op2 "u" :op3 "Stříbra"))
                        :temporal (s13r1 / date-entity
                                           :year 1970)
                        :ARG2-of (s13d1 / have-org-role-91
@@ -575,10 +574,8 @@ s13t1: 1-1
 s13t2: 4-4,13-13
 s13j1: 3-3
 s13n3: 0-0
-s13v1: 5-6
+s13v1: 5-8
 s13n1: 0-0
-s13s2: 7-8
-s13n2: 0-0
 s13r1: 9-11
 s13d1: 14-15
 s13v2: 16-16
@@ -662,6 +659,7 @@ Words: Zleva je Vlásek ,  to je vedoucí celého skautu ,  pak je tam sestra a 
                       :quote s15s1
                       :ARG1 (s15v1 / person
                                      :refer-number singular
+                                     :wiki "Wiki-unknown"
                                      :name (s15n1 / name :op1 "Vlásek"))
                       :ARG2 (s15z1 / zleva)
                       :parenthesis (s15b2 / have-org-role-91
@@ -687,6 +685,7 @@ Words: Zleva je Vlásek ,  to je vedoucí celého skautu ,  pak je tam sestra a 
                                                                      :ARG4 (s15s4 / sestra)))
                                       :op2 (s15p2 / person
                                                     :refer-number singular
+                                                    :wiki "Wiki-unknown"
                                                     :name (s15n2 / name :op1 "Pepík"))))))
 
 # alignment:
@@ -858,6 +857,7 @@ Words: Pepík je tam .
               :quote s19s1
               :ARG1 (s19p1 / person
                              :refer-number singular
+                             :wiki "Wiki-unknown"
                              :name (s19n2 / name :op1 "Pepík"))
               :ARG2 (s19t1 / place)))
 
@@ -1002,7 +1002,7 @@ Words: Ten první byl Vlásek .
          :quote s22s1
          :ARG1 (s22v1 / person
                         :refer-number singular
-                        :refer-person 3rd
+                        :wiki "Wiki-unknown"
                         :name (s22n1 /name :op1 "Vlásek"))
          :ARG2 (s22t1 / person
                         :refer-person 3rd
@@ -1089,6 +1089,7 @@ Words: Pepík byl Pírko ,  i  když nevypadá jako pírko .
                         :refer-person 3rd)
          :ARG2 (s24p2 / person
                         :refer-number singular
+                        :wiki "Wiki-unknown"
                         :name (s24n2 / name :op1 "Pírko"))
          :concession (s24v1 / vypadat-004
                               :aspect state
