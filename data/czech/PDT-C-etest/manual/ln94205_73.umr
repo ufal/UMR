@@ -1,0 +1,1839 @@
+################################################################################
+# sent_id = u_tree-cs-s1-root
+# :: snt1
+Index: 1            2  3    4     5
+Words: Neuvěřitelné se snad stalo skutkem
+
+# sentence level graph:
+(s1p1 / publication-91
+	:ARG3 (s1t1 / thing
+		:refer-number singular)
+	:ARG1 (s1s1 / stát-se-001
+		:modal-strength partial-affirmative
+        	:ARG1 (s1e1 / event
+            		:mod (s1u1 / uvěřitelný
+               			:polarity -))
+        	:clausal-marker (s1s2 / snad)
+        	:ARG2 (s1s3 / skutek
+            		:refer-number singular)
+        	:aspect performance))
+
+# alignment:
+s1s1: 2-2,4-4
+s1e1: 0-0
+s1u1: 1-1
+s1s2: 3-3
+s1s3: 5-5
+s1p1: 0-0
+s1t1: 0-0
+
+# document level annotation:
+(s1s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s2-root
+# :: snt2
+Index: 1     2             3      4         5             6    7
+Words: Irská republikánská armáda vyhlásila bezpodmínečný klid zbraní
+
+# sentence level graph:
+(s2p1 / publication-91
+	:ARG3 (s2t1 / thing
+		:refer-number singular)
+	:ARG1 (s2v1 / vyhlásit-002
+		:aspect performance
+		:modal-strength full-affirmative
+        	:ARG0 (s2a1 / armed-organization
+        		    :wiki "Q175284"
+                    :name (s2n1 / name
+            			:op1 "Irská"
+            			:op2 "republikánská"
+            			:op3 "armáda")
+            		:refer-number singular)
+        	:ARG1 (s2k1 / klid
+            		:mod (s2z1 / zbraň
+                		:refer-number plural)
+            		:mod (s2b1 / bezpodmínečný)
+            		:refer-number singular)))
+
+# alignment:
+s2v1: 4-4
+s2a1: 1-3
+s2k1: 6-6
+s2z1: 7-7
+s2b1: 5-5
+s2p1: 0-0
+s2t1: 0-0
+s2n1: 0-0
+
+# document level annotation:
+(s2s0 / sentence
+    :coref ((s1e1 :same-event s2v1)
+    	    (s1p1 :same-entity s2p1)
+    	    (s1t1 :same-entity s2t1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s3-root
+# :: snt3
+Index: 1     2           3 4
+Words: Jarka Stuchlíková , Belfast
+
+# sentence level graph:
+(s3p1 / publication-91
+	:ARG3 (s3t1 / thing
+		:refer-number singular)
+	:ARG0 (s3p2 / person
+              :refer-number singular
+              :wiki "Wiki-unknown"
+              :name (s3n1 / name
+        		:op1 "Jana"
+              		:op2 "Stuchlíková"))
+        :place (s3h1 / human-settlement
+        	:wiki "Q10686"
+            :name (s3n2 / name
+        		:op1 "Belfast")
+        	:refer-number singular))
+
+# alignment:
+s3p1: 0-0
+s3t1: 0-0
+s3p2: 1-2
+s3n1: 0-0
+s3h1: 4-4
+s3n2: 0-0
+
+# document level annotation:
+(s3s0 / sentence
+    :coref ((s2p1 :same-entity s3p1)
+    	    (s2t1 :same-entity s3t1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s4-root
+# :: snt4
+Index: 1          2     3     4             5      6  7   8  9  10     11    12        13 14       15 16       17 18       19        20        21 22  23       24       25           26     27     28
+Words: Prohlášení vůdců Irské republikánské armády (  IRA )  ,  vydané včera dopoledne ,  oznamuje :  Vzhledem k  výhodným současným podmínkám se IRA rozhodla podpořit demokratický mírový proces .
+
+# sentence level graph:
+(s4o1 / oznamovat-002
+	:aspect activity
+	:modal-strength full-affirmative
+	:ARG2 (s4p6 / person)
+        :ARG0 (s4t1 / thing
+        	:refer-number singular
+        	:ARG1-of (s4p1 / prohlásit-002
+        		:aspect performance
+        		:modal-strength full-affirmative
+            		:ARG0 (s4p5 / person
+            			:ARG0-of (s4v1 / vést-006
+            				:aspect activity
+        				:modal-strength full-affirmative
+        				:ARG1 (s4i1 / identity-91
+        					:aspect state
+                    				:modal-strength full-affirmative
+        					:ARG1 (s4a1 / armed-organization
+        						    :wiki "Q175284"
+                                    :name (s4n1 / name
+            							:op1 "Irská"
+            							:op2 "republikánská"
+            							:op3 "armáda")
+            						:refer-number singular)
+                    		:ARG2 (s4a2 / armed-organization
+        						    :wiki "Q175284"
+                                    :name (s4n2 / name
+            							:op1 "IRA")
+            						:refer-number singular)))))
+            :ARG1-of (s4v2 / vydat-006
+            	:aspect performance
+                :modal-strength full-affirmative
+                :ARG0 (s4e3 / entity)
+                :temporal (s4v3 / včera)
+                :temporal (s4d1 / dopoledne)))
+        :ARG1 (s4r2 / rozhodnout-se-002
+            :aspect performance
+            :modal-strength full-affirmative
+            :ARG0 s4a2
+            :reason (s4p2 / podmínka
+                :temporal (s4s1 / současný)
+                :mod (s4v4 / výhodný)
+                :refer-number plural)
+            :ARG1 (s4p3 / podpořit-001
+            	:aspect performance
+            	:modal-strength full-affirmative
+                :ARG0 s4a2
+                :ARG1 (s4p4 / proces
+                    :mod (s4m1 / mírový)
+                    :mod (s4d2 / demokratický)
+                    :refer-number singular))))
+
+# alignment:
+s4o1: 14-14
+s4p6: 0-0
+s4t1: 1-1
+s4p1: 0-0
+s4p5: 2-2
+s4v1: 0-0
+s4i1: 0-0
+s4a1: 3-5
+s4n1: 0-0
+s4a2: 7-7,22-22
+s4n2: 0-0
+s4v2: 10-10
+s4v3: 11-11
+s4d1: 12-12
+s4e3: 0-0
+s4r2: 21-21,23-23
+s4p2: 16-17,20-20
+s4s1: 19-19
+s4v4: 18-18
+s4p3: 24-24
+s4p4: 27-27
+s4m1: 26-26
+s4d2: 25-25
+
+# document level annotation:
+(s4s0 / sentence
+    :coref ((s4o1 :subset-of s3t1)
+    	    (s4a1 :same-entity s2a1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s5-root
+# :: snt5
+Index: 1     2         3    4      5  6       7  8      9  10 11    12
+Words: Tímto vyhlašuje klid zbraní od půlnoci ve středu 31 .  srpna .
+
+# sentence level graph:
+(s5v1 / vyhlašovat-001
+	:aspect performance
+	:modal-strength full-affirmative
+        :instrument (s5t1 / thing
+            :refer-number singular)
+        :ARG0 (s5e2 / entity
+            :refer-number singular)
+        :ARG1 (s5k1 / klid
+            :refer-number singular
+            :mod (s5z1 / zbraň
+                :refer-number plural)
+            :temporal (s5s3 / since
+            	:op1 (s5d1 / date-entity
+            		:time 0:00
+            		:weekday (s5s1 / středa)
+                    	:day 31
+                    	:month 8))))
+
+# alignment:
+s5v1: 2-2
+s5t1: 1-1
+s5e2: 0-0
+s5k1: 3-3
+s5z1: 4-4
+s5s3: 5-5
+s5d1: 6-6,9-11
+s5s1: 7-8
+
+# document level annotation:
+(s5s0 / sentence
+    :coref ((s5t1 :same-entity s4t1)
+            (s5e2 :same-entity s4a2)
+            (s5k1 :same-entity s2k1)
+            (s5z1 :same-entity s2z1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s6-root
+# :: snt6
+Index: 1         2       3     4         5         6          7       8
+Words: Vyhlášení znamená úplné zastavení veškerých vojenských operací .
+
+# sentence level graph:
+(s6z1 / znamenat-001
+	:aspect state
+	:modal-strength full-affirmative
+        :ARG1 (s6v1 / vyhlásit-002
+            :aspect performance
+            :modal-strength full-affirmative
+            :ARG0 (s6e1 / entity)
+            :ARG1 (s6t1 / thing))
+        :ARG2 (s6z2 / zastavit-001
+            :aspect performance
+            :modal-strength full-affirmative
+            :ARG0 (s6e3 / entity)
+            :ARG1 (s6o1 / operovat-003
+            	:aspect activity
+            	:modal-strength full-affirmative
+                :manner (s6v2 / vojensky)
+                :quant all)
+            :manner (s6u1 / úplně)))
+
+# alignment:
+s6z1: 2-2
+s6v1: 1-1
+s6e1: 0-0
+s6t1: 0-0
+s6z2: 4-4
+s6e3: 0-0
+s6o1: 5-5,7-7
+s6v2: 6-6
+s6u1: 3-3
+
+# document level annotation:
+(s6s0 / sentence
+    :coref ((s6v1 :same-event s5v1)
+    	    (s6e1 :same-entity s5e2)
+    	    (s6t1 :same-entity s5k1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s7-root
+# :: snt7
+Index: 1  2         3  4    5     6  7         8  9  10 11         12 13   14      15 16 17  18 19        20   21       22 23 24      25      26 27 28        29 30      31     32        33     34 35  36     37     38     39   40     41        42
+Words: V  dokumentu se dále praví :  Domníváme se ,  že vstupujeme do nové situace ,  v  níž se otevírají nové možnosti ,  a  zároveň tvrdíme ,  že Deklarace z  Downing Street neznamená řešení a  ani jejími autory nebyla jako řešení zamýšlena .
+
+# sentence level graph:
+(s7p1 / pravit-003
+	:aspect performance
+	:modal-strength full-affirmative
+        :place (s7d1 / dokument
+            :refer-number singular)
+        :duration (s7d2 / dále)
+        :ARG0 (s7e1 / entity)
+        :ARG2 (s7p4 / person)
+        :ARG1 (s7a1 / and
+            :op1 (s7d3 / domnívat-se-001
+            	:quote s7p1
+            	:aspect state
+            	:modal-strength full-affirmative
+                :ARG0 (s7p2 / person
+                    :refer-number plural
+                    :refer-person 1st)
+                :ARG1 (s7v1 / vstupovat-002
+                    :aspect activity
+                    :modal-strength partial-affirmative
+                    :ARG0 (s7p3 / person
+                        :refer-number plural
+                        :refer-person 1st)
+                    :ARG1 (s7s1 / situace
+                        :mod (s7n1 / nový)
+                        :refer-number singular
+                        :place-of (s7o1 / otevírat-se-001
+                            :aspect activity
+                            :modal-strength full-affirmative
+                            :ARG1 (s7m1 / možnost
+                                :mod (s7n2 / nový)
+                                :refer-number plural)))))
+            :op2 (s7t1 / tvrdit-002
+            	:aspect activity
+            	:modal-strength full-affirmative
+                :ARG0 s7p2
+                :clausal-marker (s7z1 / zároveň)
+                :ARG1 (s7a2 / and
+                    :op1 (s7z2 / znamenat-001
+                    	:aspect state
+                        :modal-strength full-negative
+                        :polarity -
+                        :ARG1 (s7p5 / publication
+                            :wiki "Q3038322"
+                            :name (s7n3 / name
+                        		:op1 "Deklarace"
+                        		:op2 "z"
+                        		:op3 "Downing"
+                        		:op4 "Street")
+                            :refer-number singular)
+                        :ARG2 (s7r1 / řešit-001
+                            :aspect activity
+                            :modal-strength full-negative
+                            :ARG0 s7p5
+                            :ARG1 (s7e5 / entity)))
+                    :op2 (s7z3 / zamýšlet-001
+                    	:aspect activity
+                    	:modal-strength full-negative
+                    	:polarity -
+                        :ARG0 (s7a3 / autor
+                            :possessor-of s7p5
+                            :refer-number plural)
+                        :ARG2 s7r1
+                        :ARG1 s7p5
+                        :clausal-marker (s7a4 / ani))))))
+
+# alignment:
+s7p1: 3-3,5-5
+s7d1: 1-2
+s7d2: 4-4
+s7e1: 0-0
+s7p4: 0-0
+s7a1: 23-23
+s7d3: 7-8
+s7v1: 10-11
+s7p3: 0-0
+s7s1: 12-12,14-14,16-17
+s7n1: 13-13
+s7o1: 18-19
+s7m1: 21-21
+s7n2: 20-20
+s7p2: 0-0
+s7t1: 25-25
+s7z1: 24-24
+s7a2: 34-34
+s7z2: 27-27,32-32
+s7p5: 28-31,36-36
+s7n3: 0-0
+s7e5: 0-0
+s7r1: 33-33,39-40
+s7z3: 38-38,41-41
+s7a3: 37-37
+s7a4: 35-35
+
+# document level annotation:
+(s7s0 / sentence
+    :coref ((s7d1 :same-entity s5t1)
+    	    (s7p2 :subset-of s7p3)
+            (s7p2 :same-entity s6e1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s8-root
+# :: snt8
+Index: 1 2      3     4      5  6            7         8
+Words: K řešení dojde jedině po následovných jednáních .
+
+# sentence level graph:
+(s8r1 / vyřešit-001
+	:aspect performance
+        :modal-strength partial-affirmative
+        :ARG0 (s8e1 / entity)
+        :ARG1 (s8e5 / entity)
+        :clausal-marker (s8j1 / jedině)
+        :temporal (s8a1 / after
+        	:op1 (s8j2 / jednat-001
+        		:aspect activity
+        		:modal-strength full-affirmative
+        		:ARG0 (s8e2 / entity)
+        		:ARG1 (s8e3 / entity)
+        		:ARG2 (s8e4 / entity)
+            		:temporal (s8n1 / následně))))
+
+# alignment:
+s8r1: 1-3
+s8e1: 0-0
+s8e5: 0-0
+s8j1: 4-4
+s8a1: 5-5
+s8j2: 7-7
+s8e2: 0-0
+s8e3: 0-0
+s8e4: 0-0
+s8n1: 6-6
+
+# document level annotation:
+(s8s0 / sentence
+    :coref ((s8r1 :same-event s7r1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s9-root
+# :: snt9
+Index: 1   2  3          4      5  6  7     8    9       10    11 12  13 14    15  16           17
+Words: Teď je povinností jiných ,  v  první řadě britské vlády ,  aby se ujali své odpovědnosti .
+
+# sentence level graph:
+(s9i2 / identity-91
+	:aspect state
+	:modal-strength full-affirmative
+        :temporal (s9t1 / teď)
+        :ARG2 (s9p1 / povinnost
+            :refer-number singular
+            :possessor (s9p3 / person
+            	:refer-number plural
+                :mod (s9j1 / jiný))
+                :example (s9g1 / government-organization
+                    :wiki "Q6063"
+                    :name (s9n1 / name
+                	:op1 "britská"
+                	:op2 "vláda")
+                    :refer-number singular
+                    :clausal-marker (s9v1 / v-první-řadě)))
+        :ARG1 (s9u1 / ujmout-se-001
+            :aspect performance
+	    :modal-strength full-affirmative
+            :ARG0 s9p3
+            :ARG1 (s9o1 / odpovědnost
+                :possessor s9p3
+                :refer-number singular)))
+
+# alignment:
+s9i2: 2-2
+s9t1: 1-1
+s9p1: 3-3
+s9p3: 15-15
+s9j1: 4-4
+s9g1: 9-10
+s9n1: 0-0
+s9v1: 6-8
+s9u1: 12-14
+s9o1: 16-16
+
+# document level annotation:
+(s9s0 / sentence)
+
+
+################################################################################
+# sent_id = u_tree-cs-s10-root
+# :: snt10
+Index: 1      2       3       4  5         6        7        8  9     10 11   12       13 14 15       16      17 18  19 20 21   22      23         24 25          26 27          28
+Words: Chceme výrazně přispět k  vytvoření takových podmínek ,  které by toto umožnily ,  a  vyzýváme každého ,  aby se v  nové situaci orientoval s  rozhodností a  trpělivostí !
+
+# sentence level graph:
+(s10a1 / and
+        :op1 (s10c1 / chtít-001
+        	:aspect state
+        	:modal-strength full-affirmative
+        	:ARG0 (s10p2 / person
+                	:refer-number plural
+                	:refer-person 1st)
+        	:ARG1 (s10p1 / přispět-002
+        		:aspect performance
+        		:modal-strength partial-affirmative
+        		:ARG0 s10p2
+            		:degree (s10v1 / výrazně)
+            		:ARG1 (s10v2 / vytvořit-003
+            			:aspect performance
+        			:modal-strength partial-affirmative
+                		:ARG0 (s10p4 / person)
+                		:ARG1 (s10p3 / podmínka
+                			:refer-number plural
+                			:ARG0-of (s10u1 / umožnit-001
+                				:aspect performance
+        					:modal-strength partial-affirmative
+                        			:ARG1 (s10e3 / event)
+                        			:ARG2 (s10p5 / person))))))
+        :op2 (s10v3 / vyzývat-001
+            :aspect activity
+            :modal-strength full-affirmative
+            :ARG0 s10p2
+            :ARG1 (s10p6 / person
+                :quant all)
+            :ARG2 (s10o1 / orientovat-se-002
+        	:aspect activity
+        	:modal-strength partial-affirmative
+                :ARG1 (s10s1 / situace
+                    :mod (s10n1 / nový)
+                    :refer-number singular)
+                :ARG0 s10p2
+                :manner (s10a2 / and
+                    :op1 (s10r1 / rozhodně)
+                    :op2 (s10t2 / trpělivě)))))
+
+# alignment:
+s10a1: 14-14
+s10c1: 1-1
+s10p2: 0-0
+s10p1: 3-3
+s10v1: 2-2
+s10v2: 4-5
+s10p4: 0-0
+s10p3: 7-7,9-9
+s10u1: 6-6,10-10,12-12
+s10e3: 11-11
+s10p5: 0-0
+s10v3: 15-15
+s10p6: 16-16
+s10o1: 18-19,23-23
+s10s1: 20-20,22-22
+s10n1: 21-21
+s10a2: 26-26
+s10r1: 24-25
+s10t2: 27-27
+
+# document level annotation:
+(s10s0 / sentence
+    :coref ((s10e3 :same-event s9u1)
+    	    (s10p4 :subset-of s10p2)
+            (s10p2 :same-entity s7p2)
+            (s10s1 :same-entity s7s1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s11-root
+# :: snt11
+Index: 1        2  3              4     5      6  7       8       9  10    11      12   13  14       15       16 17   18         19  20 21  22    23        24   25     26     27 28         29      30             31       32
+Words: Oznámení o  bezpodmínečném klidu zbraní (  nikoliv trvalém ,  takže příměří může být kdykoliv odvoláno )  bylo načasováno tak ,  aby mohlo figurovat jako hlavní zpráva v  amerických ranních zpravodajských relacích .
+
+# sentence level graph:
+(s11n1 / načasovat-001
+	:aspect performance
+	:modal-strength full-affirmative
+        :ARG1 (s11o1 / oznámit-001
+            :aspect performance
+	    :modal-strength full-affirmative
+            :ARG0 (s11e1 / entity)
+            :ARG2 (s11e2 / entity)
+            :ARG1 (s11k1 / klid
+                :mod (s11b1 / bezpodmínečný)
+                :mod (s11z1 / zbraň
+                    :refer-number plural)
+                :refer-number singular
+            	:mod (s11t1 / trvalý
+                        :polarity -
+                        :reason-of (s11o2 / odvolat-003
+                        	:aspect performance
+                        	:modal-strength partial-affirmative
+                    		:ARG1 (s11p1 / příměří
+                        		:refer-number singular)
+                    		:ARG0 s11e1
+                    		:temporal (s11k2 / kdykoliv)))))
+        :ARG0 s11e1
+        :purpose (s11f1 / figurovat-001
+            :aspect state
+            :modal-strength neutral-affirmative
+            :ARG0 s11o1
+            :manner (s11z2 / zpráva
+                :mod-of s11o1
+                :mod (s11h1 / hlavní)
+                :refer-number singular)
+            :ARG1 (s11r1 / relace
+                :mod (s11z3 / zpravodajský)
+                :mod (s11r2 / ranní)
+                :mod (s11a1 / americký)
+                :refer-number plural)))
+
+# alignment:
+s11n1: 17-18
+s11o1: 1-1
+s11e1: 0-0
+s11e2: 0-0
+s11k1: 2-2,4-4
+s11b1: 3-3
+s11z1: 5-5
+s11t1: 7-8
+s11o2: 10-10,12-13,15-15
+s11p1: 11-11
+s11k2: 14-14
+s11f1: 19-19,21-23
+s11z2: 24-24,26-26
+s11h1: 25-25
+s11r1: 27-27,31-31
+s11z3: 30-30
+s11r2: 29-29
+s11a1: 28-28
+
+# document level annotation:
+(s11s0 / sentence
+    :coref ((s11o1 :same-event s6v1)
+    	    (s11e1 :same-entity s10p2)
+            (s11k1 :same-entity s6t1)
+            (s11z1 :same-entity s5z1)
+            (s11p1 :same-entity s11k1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s12-root
+# :: snt12
+Index: 1         2           3             4        5
+Words: Američané zareagovali odpovídajícím způsobem .
+
+# sentence level graph:
+(s12z1 / zareagovat-001
+        :ARG0 (s12n1 / nationality
+        	:wiki "Q30"
+            :name (s12n2 / name
+        		  :op1 "Američan")
+            :refer-number plural)
+        :ARG1 (s12e1 / event)
+        :manner (s12z2 / způsob
+            :mod (s12o1 / odpovídající)
+            :refer-number singular)
+        :aspect performance
+        :modal-strength full-affirmative)
+
+# alignment:
+s12z1: 2-2
+s12n1: 1-1
+s12n2: 0-0
+s12e1: 0-0
+s12z2: 4-4
+s12o1: 3-3
+
+# document level annotation:
+(s12s0 / sentence
+	:coref ((s12e1 :same-event s11o1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s13-root
+# :: snt13
+Index: 1         2       3   4     5  6   7   8      9  10             11      12  13 14      15   16   17      18    19         20 21    22    23 24 25  26      27 28         29   30   31 32      33   34 35        36    37
+Words: Prezident Clinton dal pokyn ,  aby Joe Cahill ,  sedmdesátiletý veterán IRA ,  kterého před lety Spojené státy vypověděly ze svého území ,  a  Pat Treanor ,  funkcionář Sinn Fein ,  dostali víza do Spojených států .
+
+# sentence level graph:
+(s13d1 / dát-pokyn-026
+	:aspect performance
+        :modal-strength full-affirmative
+        :ARG0 (s13p4 / person
+        	:refer-number singular
+        	:wiki "Q1124"
+            :name (s13n1 / name
+        		:op1 "Clinton")
+        	:ARG1-of (s13h1 / have-org-role-92
+        		:aspect state
+        		:modal-strength full-affirmative
+        		:ARG3 (s13p1 / prezident
+        			:refer-number singular)))
+        :ARG1 (s13p5 / person)
+        :ARG2 (s13d2 / dostat-001
+        	:aspect performance
+        	:modal-strength full-affirmative
+                :ARG0 (s13a1 / and
+                    :op1 (s13p6 / person
+                    	:refer-number singular
+                    	:wiki "Q331474"
+                        :name (s13n2 / name
+                    		:op1 "Joe"
+                    		:op2 "Cahill")
+                    	:ARG1-of (s13h2 / have-role-91
+                    		:aspect state
+        			:modal-strength full-affirmative
+                    		:ARG3 (s13v2 / veterán
+                    			:refer-number singular
+                            		:mod (s13a2 / armed-organization
+        					             :wiki "Q175284"
+                                         :name (s13n6 / name
+            						         :op1 "IRA")
+            					:refer-number singular)))
+                        :age (s13t2 / temporal-quantity
+               			:quant 70
+                		:unit (s13r2 / rok))
+                        :ARG1-of (s13v1 / vypovědět-001
+                        	:aspect performance
+                        	:modal-strength full-affirmative
+                                :temporal (s13b1 / before
+                                	:op1 (s13r1 / rok
+                                    		:refer-number plural))
+                                :ARG0 (s13c3 / country
+                                	:refer-number singular
+                                	:wiki "Q30"
+                                    :name (s13n3 / name
+                                		:op1 "Spojené"
+                                		:op2 "státy"))
+                                :ARG2 (s13u1 / území
+                                    :possessor s13c3
+                                    :refer-number singular)))
+                    :op2 (s13p7 / person
+                    	:wiki "Wiki-unknown"
+                        :name (s13n4 / name
+                    		:op1 "Pat"
+                    		:op2 "Treanor")
+                        :refer-number singular
+                        :ARG1-of (s13h3 / have-org-role-92
+                        	:aspect state
+        			:modal-strength full-affirmative
+                        	:ARG3 (s13f1 / funkcionář
+                        		:refer-number singular)
+                        	:ARG2 (s13p8 / political-organization
+                        		:refer-number singular
+                        		:wiki "Q76382"
+                                :name (s13n5 / name
+                        			:op1 "Sinn"
+                        			:op2 "Fein")))))
+                :ARG1 (s13v3 / vízum
+                    :mod s13c3
+                    :refer-number plural)))
+
+# alignment:
+s13d1: 3-4
+s13p4: 2-2
+s13n1: 0-0
+s13h1: 0-0
+s13p1: 1-1
+s13p5: 0-0
+s13d2: 6-6,32-32
+s13a1: 24-24
+s13p6: 7-8,14-14
+s13n2: 0-0
+s13h2: 0-0
+s13v1: 19-19
+s13a2: 12-12
+s13n6: 0-0
+s13t2: 10-10
+s13r2: 0-0
+s13v2: 11-11
+s13b1: 15-15
+s13r1: 16-16
+s13c3: 17-18,21-21,34-36
+s13n3: 0-0
+s13u1: 20-20,22-22
+s13p7: 25-26
+s13n4: 0-0
+s13h3: 0-0
+s13f1: 28-28
+s13p8: 29-30
+s13v3: 33-33
+s13n5: 0-0
+
+# document level annotation:
+(s13s0 / sentence
+    :coref ((s13c3 :same-entity s11a1)
+    	    (s13a2 :same-entity s4a1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s14-root
+# :: snt14
+Index: 1   2    3           4         5     6     7   8     9  10              11        12
+Words: Tam mají vysvětlovat zastáncům tvrdé linie IRA změnu v  nacionalistické strategii .
+
+# sentence level graph:
+(s14v1 / vysvětlovat-001
+	:aspect activity
+	:modal-strength partial-affirmative
+        :place (s14t1 / tam)
+        :ARG0 (s14p1 / person
+            :refer-number plural
+            :refer-person 3rd)
+        :ARG2 (s14p2 / person
+        	:ARG0-of (s14z1 / zastávat-se-001
+        		:aspect activity
+            		:modal-strength full-affirmative
+        		:ARG1 (s14l1 / linie
+        		:possessor (s14a1 / armed-organization
+        			:wiki "Q175284"
+                    :name (s14n2 / name
+            				:op1 "IRA")
+            				:refer-number singular)
+                	:mod (s14t2 / tvrdý)
+                	:refer-number singular))
+            	:refer-number plural)
+        :ARG1 (s14z2 / změnit-001
+            :aspect performance
+            :modal-strength full-affirmative
+            :ARG0 (s14p3 / person)
+            :ARG1 (s14s1 / strategie
+                :mod (s14n1 / nacionalistický)
+                :refer-number singular)))
+
+# alignment:
+s14v1: 2-3
+s14t1: 1-1
+s14p1: 0-0
+s14p2: 4-4
+s14z1: 0-0
+s14l1: 6-6
+s14a1: 7-7
+s14n2: 0-0
+s14t2: 5-5
+s14z2: 8-8
+s14p3: 0-0
+s14s1: 9-9,11-11
+s14n1: 10-10
+
+# document level annotation:
+(s14s0 / sentence
+    :coref ((s14t1 :same-entity s13c3)
+            (s14p1 :same-entity s13a1)
+            (s14a1 :same-entity s13a2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s15-root
+# :: snt15
+Index: 1      2  3       4    5       6       7  8         9     10
+Words: Zpráva o  příměří byla nejprve poslána do Spojených států .
+
+# sentence level graph:
+(s15p1 / poslat-003
+	:aspect performance
+	:modal-strength full-affirmative
+        :ARG1 (s15z1 / zpráva
+            :topic (s15p2 / příměří
+                :refer-number singular)
+            :refer-number singular)
+        :ARG0 (s15p3 / person)
+        :temporal (s15n1 / nejprve)
+        :ARG2 (s15c3 / country
+                :refer-number singular
+                :wiki "Q30"
+                :name (s15n2 / name
+                	:op1 "Spojené"
+                        :op2 "státy")))
+
+# alignment:
+s15p1: 4-4,6-6
+s15z1: 1-1
+s15p2: 2-3
+s15p3: 0-0
+s15n1: 5-5
+s15c3: 7-9
+s15n2: 0-0
+
+# document level annotation:
+(s15s0 / sentence
+    :coref ((s15p2 :same-entity s11p1)
+            (s15c3 :same-entity s14t1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s16-root
+# :: snt16
+Index: 1       2   3          4     5       6      7        8  9     10 11      12    13      14        15       16
+Words: Zároveň byl informován irský premiér Albert Reynolds ,  který o  příměří ihned zpravil britského premiéra .
+
+# sentence level graph:
+(s16i1 / informovat-001
+	:aspect performance
+	:modal-strength full-affirmative
+        :clausal-marker (s16z1 / zároveň)
+        :ARG0 (s16p6 / person)
+        :ARG2 (s16p2 / příměří
+        	:refer-number singular)
+        :ARG1 (s16p4 / person
+        	:wiki "Q380182"
+            :name (s16n2 / name
+        		:op1 "Albert"
+        		:op2 "Reynolds")
+        	:ARG1-of (s16h1 / have-org-role-92
+                        :aspect state
+        		:modal-strength full-affirmative
+                        :ARG3 (s16p1 / premiér
+                        	:refer-number singular)
+                        :ARG2 (s16c1 / country
+                        	:refer-number singular
+                        	:wiki "Q27"
+                            :name (s16n1 / name
+                        		:op1 "Irsko")))
+            	:ARG0-of (s16z2 / zpravit-001
+            		:aspect performance
+            		:modal-strength full-affirmative
+                	:ARG2 s16p2
+                	:temporal (s16i3 / ihned)
+                	:ARG1 (s16p5 / person
+                		:refer-number singular
+                		:ARG1-of (s16h2 / have-org-role-92
+                        		:aspect state
+        				:modal-strength full-affirmative
+                        		:ARG3 (s16p3 / premiér
+                        			:refer-number singular)
+                        		:ARG2 (s16c2 / country
+                        			:refer-number singular
+                        			:wiki "Q145"
+                                    :name (s16n3 / name
+                        				:op1 "Británie")))))))
+
+# alignment:
+s16i1: 2-3
+s16z1: 1-1
+s16p6: 0-0
+s16p2: 10-11
+s16p4: 6-7,9-9
+s16h1: 0-0
+s16p1: 5-5
+s16c1: 4-4
+s16n2: 0-0
+s16n1: 0-0
+s16z2: 13-13
+s16i3: 12-12
+s16p5: 0-0
+s16h2: 0-0
+s16p3: 15-15
+s16c2: 14-14
+s16n3: 0-0
+
+# document level annotation:
+(s16s0 / sentence
+    :coref ((s16p2 :same-entity s15p2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s17-root
+# :: snt17
+Index: 1    2     3         4  5  6  7  8        9       10 11     12     13 14       15  16   17
+Words: John Major prohlásil ,  že to je nejlepší novinka ,  kterou slyšel za poslední tři roky .
+
+# sentence level graph:
+(s17p1 / prohlásit-003
+	:aspect performance
+	:modal-strength full-affirmative
+	:ARG0 (s17p3 / person
+		:refer-number singular
+		:wiki "Q9559"
+        :name (s17n2 / name
+			:op1 "Major"
+			:op2 "John"))
+        :ARG1 (s17i1 / identity-91
+            :aspect state
+            :modal-strength full-affirmative
+            :quote s17p1
+            :ARG1 (s17t2 / thing
+            	:refer-number singular)
+            :ARG2 (s17n1 / novinka
+            	:refer-number singular
+                :mod (s17d1 / dobrý
+                	:degree (s17m2 / most)))
+                :ARG1-of (s17s1 / slyšet-003
+                    :aspect performance
+                    :modal-strength full-affirmative
+                    :ARG0 s17p3
+                    :temporal (s17t3 / temporal-quantity
+                    	:quant 3
+                    	:unit (s17r1 / rok)
+                        :mod (s17p2 / poslední)))))
+
+# alignment:
+s17p1: 3-3
+s17p3: 1-2
+s17n2: 0-0
+s17i1: 5-5,7-7
+s17t2: 6-6
+s17n1: 9-9,11-11
+s17d1: 8-8
+s17m2: 0-0
+s17s1: 12-12
+s17r1: 13-13,16-16
+s17t3: 15-15
+s17p2: 14-14
+
+# document level annotation:
+(s17s0 / sentence
+    :coref ((s17p3 :same-entity s16p5)
+            (s17t2 :same-entity s16p2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s18-root
+# :: snt18
+Index: 1        2      3    4    5  6           7      8   9  10    11    12   13      14     15 16  17 18  19    20 21          22   23         24      25 26       27       28   29
+Words: Předseda strany Sinn Fein ,  politického křídla IRA ,  Gerry Adams však varoval Majora ,  aby si dal pozor a  nepromarnil tuto jedinečnou možnost k  dosažení trvalého míru .
+
+# sentence level graph:
+(s18v1 / varovat-001
+	:aspect performance
+	:modal-strength full-affirmative
+        :clausal-marker (s18v2 / však)
+        :ARG0 (s18p5 / person
+            :refer-number singular
+            :wiki "Q76139"
+            :name (s18n2 / name
+            	:op1 "Gerry"
+            	:op2 "Adams")
+            :ARG1-of (s18h1 / have-org-role-92
+                        :aspect state
+        		:modal-strength full-affirmative
+                        :ARG3 (s18p1 / předseda
+                        	:refer-number singular)
+                        :ARG2 (s18p6 / political-organization
+                        	:refer-number singular
+                        	:wiki "Q76382"
+                            :name (s18n1 / name
+                        		:op1 "Sinn"
+                        		:op2 "Fein")
+                        	:ARG1-of (s18i4 / identity-91
+                        		:aspect state
+                        		:modal-strength full-affirmative
+                        		:ARG2 (s18k1 / křídlo
+                        			:refer-number singular
+                        			:mod (s18p2 / politický)
+                        			:possessor (s18a3 / armed-organization
+        						:wiki "Q175284"
+                                :name (s18n3 / name
+            							:op1 "IRA")
+            						:refer-number singular))))))
+        :ARG2 (s18p7 / person
+        	:wiki "Q9559"
+            :name (s18n4 / name
+        		:op1 "Major")
+            :refer-number singular)
+        :ARG1 (s18a2 / and
+            :op1 (s18d1 / dát-si-pozor-005
+                :ARG0 s18p7
+                :aspect performance
+                :modal-strength partial-affirmative)
+            :op2 (s18p4 / promarnit-001
+            	:aspect performance
+            	:modal-strength partial-negative
+                :polarity -
+                :ARG0 s18p7
+                :ARG1 (s18m2 / možnost
+                    :refer-number singular
+                    :mod (s18t1 / tento)
+                    :purpose (s18d2 / dosáhnout-001
+                    	:aspect performance
+                    	:modal-strength neutral-affirmative
+                        :ARG0 (s18p8 /person)
+                        :ARG1 (s18m3 / mír
+                            :mod (s18t2 / trvalý)
+                            :refer-number singular))
+                    :mod (s18j1 / jedinečný)))))
+
+# alignment:
+s18v1: 13-13
+s18v2: 12-12
+s18p5: 10-11
+s18n2: 0-0
+s18h1: 0-0
+s18p1: 1-1
+s18p6: 2-4
+s18n1: 0-0
+s18i4: 0-0
+s18k1: 7-7
+s18p2: 6-6
+s18a3: 8-8
+s18n3: 0-0
+s18p7: 14-14
+s18n4: 0-0
+s18a2: 20-20
+s18d1: 16-19
+s18p4: 21-21
+s18m2: 24-24
+s18t1: 22-22
+s18j1: 23-23
+s18d2: 25-26
+s18m3: 28-28
+s18t2: 27-27
+s18p8: 0-0
+
+# document level annotation:
+(s18s0 / sentence
+    :coref ((s18p6 :same-entity s13p8)
+            (s18a3 :same-entity s14a1)
+            (s18p7 :same-entity s17p3)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s19-root
+# :: snt19
+Index: 1       2       3     4     5     6      7
+Words: Odpověď britské vlády včera známa nebyla .
+
+# sentence level graph:
+(s19h1 / have-mod-91
+	:aspect state
+	:modal-strength full-negative
+	:polarity -
+        :ARG1 (s19t1 / thing
+        	:refer-number singular
+        	:ARG2-of (s19o1 / odpovědět-003
+            		:aspect performance
+            		:modal-strength full-affirmative
+            		:ARG1 (s19e1 / entity)
+            		:ARG0 (s19g1 / government-organization
+                   		:wiki "Q6063"
+                        :name (s19n1 / name
+                			:op1 "britská"
+                			:op2 "vláda")
+                		:refer-number singular)))
+        :temporal (s19v2 / včera)
+        :ARG2 (s19z1 / známý))
+
+# alignment:
+s19h1: 6-6
+s19t1: 1-1
+s19o1: 0-0
+s19e1: 0-0
+s19g1: 2-3
+s19n1: 0-0
+s19v2: 4-4
+s19z1: 5-5
+
+# document level annotation:
+(s19s0 / sentence
+    :coref ((s19g1 :same-entity s9g1)
+            (s19v2 :same-entity s4v3)
+            (s19e1 :same-entity s18a3)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s20-root
+# :: snt20
+Index: 1       2  3    4        5       6      7         8   9    10   11 12       13   14     15 16       17 18       19    20 21          22        23    24 25 26      27      28      29
+Words: Odpověď by měla znamenat zrušení zákazu publicity pro Sinn Fein ,  přizvání této strany k  jednáním u  kulatého stolu o  budoucnosti Severního Irska a  i  některé ústavní ústupky .
+
+# sentence level graph:
+(s20z1 / znamenat-001
+	:aspect state
+	:modal-strength partial-affirmative
+        :ARG1 (s20t3 / thing
+        	:refer-number singular
+        	:ARG2-of (s20o1 / odpovědět-003
+            		:aspect performance
+            		:modal-strength full-affirmative
+            		:ARG1 (s20e5 / entity)
+            		:ARG0 (s20e6 / entity)))
+        :ARG2 (s20a1 / and
+            :op1 (s20z2 / zrušit-001
+            	:aspect performance
+                :modal-strength partial-affirmative
+                :ARG0 s20e6
+                :ARG1 (s20s4 / state
+                    :result-of (s20z3 / zakázat-001
+                    	:aspect performance
+                    	:modal-strength full-affirmative
+                    	:ARG0 s20e6
+                    	:ARG1 (s20d1 / dělat-publicitu-001
+                    		:aspect performance
+                    		:modal-strength full-negative
+                    		:ARG0 (s20e8 / entity)
+                    		:ARG1 (s20p3 / political-organization
+                        		:refer-number singular
+                        		:wiki "Q76382"
+                                :name (s20n2 / name
+                        			:op1 "Sinn"
+                        			:op2 "Fein"))))))
+            :op2 (s20p2 / přizvat-001
+            	:aspect performance
+                :modal-strength partial-affirmative
+                :ARG1 (s20s1 / strana
+                    :mod (s20t1 / tento)
+                    :refer-number singular)
+                :ARG0 s20e6
+                :goal (s20j1 / jednat-001
+                    :aspect activity
+                    :modal-strength partial-affirmative
+                    :ARG0 (s20e3 / entity)
+                    :ARG2 (s20e4 / entity)
+                    :place (s20s2 / stůl
+                        :mod (s20k1 / kulatý)
+                        :refer-number singular)
+                    :ARG1 (s20b1 / budoucnost
+                        :possessor (s20c1 / country
+                        	:refer-number singular
+                        	:wiki "Q26"
+                            :name (s20n3 / name
+                        		:op1 "Severní"
+                        		:op2 "Irsko")))))
+            :op3 (s20s5 / state
+            	:result-of (s20u1 / ustoupit-001
+            		:aspect performance
+                	:modal-strength partial-affirmative
+                	:ARG0 s20e6
+                	:ARG1 s20s1
+            		:clausal-marker (s20i2 / i)
+                	:manner (s20u2 / ústavně))
+                :mod (s20n1 / některý)
+                :refer-number plural)))
+
+# alignment:
+s20z1: 2-4
+s20t3: 1-1
+s20o1: 0-0
+s20e5: 0-0
+s20e6: 0-0
+s20a1: 24-24
+s20z2: 5-5
+s20z3: 0-0
+s20s4: 6-6
+s20d1: 7-7
+s20e8: 0-0
+s20p3: 8-10
+s20p2: 12-12
+s20s1: 14-14
+s20t1: 13-13
+s20j1: 15-16
+s20e3: 0-0
+s20e4: 0-0
+s20s2: 17-17,19-19
+s20k1: 18-18
+s20b1: 20-21
+s20c1: 22-23
+s20s5: 28-28
+s20u1: 0-0
+s20i2: 25-25
+s20u2: 27-27
+s20n1: 26-26
+s20n2: 0-0
+s20n3: 0-0
+
+# document level annotation:
+(s20s0 / sentence
+    :coref ((s20t3 :same-entity s19t1)
+    	    (s20o1 :same-event s19o1)
+    	    (s20e6 :same-entity s19g1)
+    	    (s20e5 :same-entity s19e1)
+        (s20p3 :same-entity s18p6)
+        (s20s1 :same-entity s20p3)
+        (s20s1 :subset-of s20e4)
+        (s20e6 :subset-of s20e3)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s21-root
+# :: snt21
+Index: 1            2  3     4      5         6  7         8     9  10  11
+Words: Nacionalisté v  Irsku rovněž spoléhají na rozsáhlou pomoc z  USA .
+
+# sentence level graph:
+(s21s1 / spoléhat-001
+	:aspect activity
+	:modal-strength full-affirmative
+        :ARG0 (s21n1 / nacionalista
+            :place (s21c1 / country
+                       :refer-number singular
+                       :wiki "Q27"
+                       :name (s21n2 / name
+                       		:op1 "Irsko"))
+            :refer-number plural)
+        :clausal-marker (s21r1 / rovněž)
+        :ARG1 (s21p1 / pomoci-002
+            :aspect performance
+	        :modal-strength full-affirmative
+            :ARG0 (s21c2 / country
+                       :refer-number singular
+                       :wiki "Q30"
+                       :name (s21n3 / name
+                       		:op1 "USA"))
+            :ARG2 s21n1
+            :degree (s21r2 / rozsáhlý)))
+
+# alignment:
+s21s1: 5-5
+s21n1: 1-1
+s21c1: 2-3
+s21n2: 0-0
+s21r1: 4-4
+s21p1: 6-6,8-8
+s21c2: 9-10
+s21n3: 0-0
+s21r2: 7-7
+
+# document level annotation:
+(s21s0 / sentence
+    :coref ((s21c1 :same-entity s16c1)
+            (s21c2 :same-entity s15c3)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s22-root
+# :: snt22
+Index: 1       2     3    4   5  6   7      8       9  10      11 12    13   14 15  16    17 18      19       20            21        22
+Words: Britská vláda musí být ve své reakci opatrná ,  protože se ještě neví ,  jak budou na situaci reagovat protestantští teroristé .
+
+# sentence level graph:
+(s22r1 / reagovat-001
+	:aspect performance
+	:modal-strength partial-affirmative
+        :ARG0 (s22g1 / government-organization
+		:wiki "Q6063"
+        :name (s22n1 / name
+                	:op1 "britská"
+                	:op2 "vláda")
+                    :refer-number singular)
+        :ARG1 (s22s1 / situace
+                    :refer-number singular)
+        :manner (s22o1 / opatrně)
+        :cause (s22v2 / vědět-004
+            :aspect state
+	       :modal-strength full-negative
+	       :polarity -
+            :temporal (s22j1 / ještě)
+            :ARG0 (s22e1 / entity)
+            :ARG1 (s22r2 / reagovat-001
+                :aspect performance
+		        :modal-strength partial-affirmative
+                :ARG1 s22s1
+                :manner (s22u1 / umr-unknown)
+                :ARG0 (s22t1 / terorista
+                    :mod (s22p1 / protestantský)
+                    :refer-number plural))))
+
+# alignment:
+s22g1: 1-2,6-6
+s22n1: 0-0
+s22r1: 3-5,7-7
+s22o1: 8-8
+s22v2: 10-11,13-13
+s22j1: 12-12
+s22e1: 0-0
+s22r2: 16-16,19-19
+s22s1: 17-18
+s22u1: 15-15
+s22t1: 21-21
+s22p1: 20-20
+
+# document level annotation:
+(s22s0 / sentence
+    :coref ((s22g1 :same-entity s20e6)
+            (s22r1 :same-event s20o1)
+            (s22s1 :same-entity s10s1)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s23-root
+# :: snt23
+Index: 1  2    3       4       5  6  7    8   9     10      11 12     13           14 15     16  17 18  19 20   21      22 23    24       25 26 27    28              29           30   31    32       33 34 35     36 37 38    39        40             41 42   43      44
+Words: Ti sice vždycky tvrdili ,  že jsou jen silou reakční ,  neboli odpovídající na násilí IRA ,  ale v  této situaci se mohou domnívat ,  že zájmy protestantského obyvatelstva jsou silně ohrožené ,  a  změnit se po zradě britského establishmentu v  sílu útočnou .
+
+# sentence level graph:
+(s23b1 / but-91
+        :clausal-marker (s23s1 / sice)
+        :ARG1 (s23t1 / tvrdit-002
+            :aspect activity
+            :modal-strength full-affirmative
+            :ARG0 (s23p2 / person
+                :refer-number plural
+                :refer-person 3rd)
+            :temporal (s23v1 / vždycky)
+            :ARG1 (s23h1 / have-role-91
+            	:aspect state
+            	:modal-strength full-affirmative
+            	:quote s23t1
+            	:manner (s23j1 / jen)
+                :ARG1 s23p2
+                :ARG2 (s23s2 / síla
+                    :refer-number singular
+                    :ARG0-of (s23r1 / reagovat-001
+                    	:aspect activity
+                    	:modal-strength full-affirmative
+                    	:ARG1 (s23n1 / páchat-násilí-001
+                    		:aspect activity
+                    		:modal-strength full-affirmative
+                                :ARG0 (s23a2 / armed-organization
+        				:wiki "Q175284"
+                        :name (s23n2 / name
+            					:op1 "IRA")
+            					:refer-number singular)
+            			:ARG1 (s32e1 / entity)))
+            	    :ARG0-of (s23o1 / odpovídat-003
+                        	:aspect activity
+                    		:modal-strength full-affirmative
+                        	:ARG1 s23n1))))
+        :ARG2 (s23a1 / and
+            :op1 (s23d1 / domnívat-se-002
+            	:aspect state
+            	:modal-strength neutral-affirmative
+                :ARG0 s23p2
+                :temporal (s23s3 / situace
+                    :mod (s23t2 / tento)
+                    :refer-number singular)
+                :ARG2 (s23h2 / have-mod-91
+                    :aspect state
+                    :modal-strength full-affirmative
+                    :modal-predicate s23d1
+                    :ARG1 (s23z1 / zájem
+                        :possessor (s23p3 / person
+                        	:ARG0-of (s23o2 / obývat-001
+                        		:aspect state
+                        		:modal-strength full-affirmative
+                        		:ARG1 (s32e2 / entity))
+                            :mod (s23p1 / protestantský)
+                            :refer-number plural)
+                        :refer-number plural)
+                    :ARG2 (s23o3 / ohrožený
+                        :degree (s23s4 / silně))))
+            :op2 (s23z2 / změnit-se-001
+            	:aspect performance
+            	:modal-strength partial-affirmative
+                :ARG1 s23p2
+                :temporal (s23a3 / after
+                	:op1 (s23z3 / zradit-001
+                		:aspect performance
+                		:modal-strength full-affirmative
+                		:ARG1 s23p3
+                		:ARG0 (s23e2 / establishment
+                        		:mod (s23b4 / britský)
+                        		:refer-number singular)))
+                :ARG2 (s23s5 / síla
+                    :mod (s23u1 / útočný)
+                    :refer-number singular))))
+
+# alignment:
+s23b1: 18-18
+s23s1: 2-2
+s23t1: 4-4
+s23v1: 3-3
+s23h1: 6-7
+s23p2: 1-1
+s23s2: 9-9
+s23j1: 8-8
+s23r1: 10-10
+s32e1: 0-0
+s23o1: 12-13
+s23n1: 14-15
+s23a2: 16-16
+s23n2: 0-0
+s23a1: 34-34
+s23d1: 22-24
+s23s3: 19-19,21-21
+s23t2: 20-20
+s23h2: 26-26,30-30
+s23z1: 27-27
+s23p3: 29-29
+s23o2: 0-0
+s32e2: 0-0
+s23p1: 28-28
+s23o3: 32-32
+s23s4: 31-31
+s23z2: 35-36
+s23a3: 37-37
+s23z3: 38-38
+s23e2: 40-40
+s23b4: 39-39
+s23s5: 41-42
+s23u1: 43-43
+
+# document level annotation:
+(s23s0 / sentence
+    :coref ((s23a2 :same-entity s20e5)
+            (s23p2 :same-entity s22t1)
+            (s23s3 :same-entity s22s1)
+            (s23e2 :same-entity s16c2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s24-root
+# :: snt24
+Index: 1  2        3          4  5  6  7       8     9               10        11 12       13        14
+Words: Je veřejným tajemstvím ,  že v  hlavním stanu protestantských teroristů se bouřlivě diskutuje .
+
+# sentence level graph:
+(s24i1 / identity-91
+	:aspect state
+	:modal-strength full-affirmative
+        :ARG2 (s24t1 / tajemství
+            :mod (s24v1 / veřejný)
+            :refer-number singular)
+        :ARG1 (s24d1 / diskutovat-001
+            :aspect activity
+            :modal-strength full-affirmative
+            :place (s24s1 / stan
+                :possessor (s24t2 / terorista
+                    :mod (s24p1 / protestantský)
+                    :refer-number plural)
+                :mod (s24h1 / hlavní)
+                :refer-number singular)
+            :ARG0 (s24p2 / person)
+            :ARG1 (s24e2 / entity)
+            :ARG2 (s24p3 / person)
+            :manner (s24b2 / bouřlivě)))
+
+# alignment:
+s24i1: 1-1
+s24t1: 3-3
+s24v1: 2-2
+s24d1: 5-5,11-11,13-13
+s24s1: 6-6,8-8
+s24t2: 10-10
+s24p1: 9-9
+s24h1: 7-7
+s24p2: 0-0
+s24e2: 0-0
+s24p3: 0-0
+s24b2: 12-12
+
+# document level annotation:
+(s24s0 / sentence
+    :coref ((s24t2 :same-entity s23p2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s25-root
+# :: snt25
+Index: 1        2     3  4  5          6  7       8    9       10     11   12 13 14 15   16 17  18  19     20      21 22      23 24   25       26       27 28       29 30  31 32      33       34        35
+Words: Převládá názor ,  že loajalisté si nebudou moci dovolit žádnou akci až do té doby ,  než IRA poruší příměří ,  protože by byli okamžitě označeni za agresory a  IRA by získala svatozář mučedníků .
+
+# sentence level graph:
+(s25p1 / převládat-001
+	:aspect state
+	:modal-strength full-affirmative
+        :ARG0 (s25n1 / názor
+            :refer-number singular
+            :ARG1-of (s25i3 / identity-91
+            	:aspect state
+            	:modal-strength full-affirmative
+            	:ARG2 (s25d1 / dovolit-si-002
+            		:aspect performance
+            		:modal-strength partial-negative
+            		:ARG0 (s25l1 / loajalista
+                    		:refer-number plural)
+                	:ARG1 (s25p4 / provést-akci-004
+                		:aspect performance
+                		:modal-strength full-negative
+                        	:polarity -
+                        	:ARG0 s25l1)
+                        :temporal (s25u1 / until
+                        	:op1 (s25p2 / porušit-001
+                        		:aspect performance
+                        		:modal-strength neutral-affirmative
+                        		:ARG0 (s25a5 / armed-organization
+        					:wiki "Q175284"
+                            :name (s25n2 / name
+            						:op1 "IRA")
+            					:refer-number singular)
+                        		:ARG1 (s25p3 / příměří
+                            			:refer-number singular)))
+                	:cause (s25a3 / and
+                    		:op1 (s25o1 / označit-001
+                    			:aspect performance
+                    			:modal-strength partial-affirmative
+                        		:temporal (s25o2 / okamžitě)
+                        		:ARG0 (s25e1 / entity)
+                        		:ARG1 s25l1
+                        		:ARG2 (s25a4 / agresor
+                            			:refer-number plural))
+                    		:op2 (s25z2 / získat-001
+                    			:aspect performance
+                    			:modal-strength partial-affirmative
+                        		:ARG0 s25a5
+                        		:ARG1 (s25s1 / svatozář
+                            			:possessor (s25m1 / mučedník
+                                			:refer-number plural)
+                            			:refer-number singular)))))))
+
+# alignment:
+s25p1: 1-1
+s25n1: 2-2
+s25i3: 0-0
+s25d1: 4-4,6-9
+s25l1: 5-5
+s25p4: 10-11
+s25u1: 12-15
+s25p2: 17-17,19-19
+s25a5: 18-18,30-30
+s25n2: 0-0
+s25p3: 20-20
+s25a3: 29-29
+s25o1: 22-24,26-26
+s25o2: 25-25
+s25e1: 0-0
+s25a4: 27-28
+s25z2: 31-32
+s25s1: 33-33
+s25m1: 34-34
+
+# document level annotation:
+(s25s0 / sentence
+    :coref ((s25l1 :same-entity s24t2)
+            (s25a5 :same-entity s23a2)
+            (s25p3 :same-entity s17t2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s26-root
+# :: snt26
+Index: 1  2               3      4        5  6     7  8         9        10           11    12       13     14
+Words: Do protestantských čtvrtí Belfastu se včera v  očekávání nepokojů přemisťovalo velké množství vojska .
+
+# sentence level graph:
+(s26p1 / přemisťovat-001
+	:aspect activity
+	:modal-strength full-affirmative
+        :ARG2 (s26c1 / čtvrť
+            :mod (s26p2 / protestantský)
+            :place (s26h1 / human-settlement
+            	:refer-number singular
+            :wiki "Q10686"	
+            :name (s26n2 / name
+            		:op1 "Belfast"))
+            :refer-number plural)
+        :temporal (s26v1 / včera)
+        :cause (s26o1 / očekávat-001
+        	:aspect activity
+        	:modal-strength full-affirmative
+            	:ARG0 (s26e1 / entity)
+            	:ARG1 (s26n1 / nepokoj
+                	:refer-number plural))
+        :ARG0 (s26e2 / entity)
+        :ARG3 (s26e3 / entity)
+        :ARG1 (s26v2 / vojsko
+                :refer-number plural
+                :quant (s26m1 / množství
+            		:mod (s26v3 / velký))))
+
+# alignment:
+s26p1: 5-5,10-10
+s26c1: 1-1,3-3
+s26p2: 2-2
+s26h1: 4-4
+s26n2: 0-0
+s26v1: 6-6
+s26o1: 7-8
+s26e1: 0-0
+s26n1: 9-9
+s26e2: 0-0
+s26e3: 0-0
+s26m1: 12-12
+s26v2: 13-13
+s26v3: 11-11
+
+# document level annotation:
+(s26s0 / sentence
+    :coref ((s26h1 :same-entity s3h1)
+            (s26v1 :same-entity s19v2)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s27-root
+# :: snt27
+Index: 1       2        3            4      5        6  7          8  9      10          11   12          13        14 15      16        17          18 19      20        21  22 23     24        25
+Words: Zatímco skupinky nacionalistů mávaly zelenými ,  oranžovými a  bílými trikolorami před policejními stanicemi ,  hleděli ulsterští protestanté na příměří vyhlášené IRA s  krajní nedůvěrou .
+
+# sentence level graph:
+(s27h1 / hledět-003
+	:aspect activity
+	:modal-strength full-affirmative
+	:ARG0 (s27p2 / protestant
+            :place (s27c1 / country-region
+            	:refer-number singular
+            	:wiki "Q93195"
+                :name (s27n3 / name
+            		:op1 "Ulster"))
+            :refer-number plural)
+        :ARG1 (s27p3 / příměří
+            :refer-number singular
+            :ARG1-of (s27v1 / vyhlásit-002
+            	:aspect performance
+            	:modal-strength full-affirmative
+                :ARG0 (s27a2 / armed-organization
+        		:wiki "Q175284"
+                :name (s27n4 / name
+            			:op1 "IRA")
+            		:refer-number singular)))
+        :ARG2 (s27n2 / nedůvěra
+            :mod (s27k1 / krajní)
+            :refer-number singular)
+        :temporal (s27m1 / mávat-001
+            :aspect activity
+	    :modal-strength full-affirmative
+            :ARG0 (s27s1 / skupinka
+                :group (s27n1 / nacionalista
+                    :refer-number plural)
+                :refer-number plural)
+            :ARG1 (s27t1 / trikolóra
+                :mod (s27a1 / and
+                    :op1 (s27z1 / zelený)
+                    :op2 (s27o1 / oranžový)
+                    :op3 (s27b1 / bílý))
+                :refer-number plural)
+            :place (s27s2 / stanice
+                :mod (s27p1 / policejní)
+                :refer-number plural)))
+
+# alignment:
+s27h1: 15-15
+s27m1: 1-1,4-4
+s27s1: 2-2
+s27n1: 3-3
+s27t1: 10-10
+s27a1: 8-8
+s27z1: 5-5
+s27o1: 7-7
+s27b1: 9-9
+s27s2: 11-11,13-13
+s27p1: 12-12
+s27p2: 17-17
+s27c1: 16-16
+s27n3: 0-0
+s27p3: 18-19
+s27v1: 20-20
+s27a2: 21-21
+s27n4: 0-0
+s27n2: 22-22,24-24
+s27k1: 23-23
+
+# document level annotation:
+(s27s0 / sentence
+    :coref ((s27p2 :same-entity s23p3)
+            (s27p3 :same-entity s25p3)
+            (s27a2 :same-entity s25a5)))
+
+
+################################################################################
+# sent_id = u_tree-cs-s28-root
+# :: snt28
+Index: 1     2        3  4        5     6  7    8      9           10 11    12    13   14    15 16 17      18   19       20 21   22     23 24 25   26      27 28 29    30      31   32
+Words: Konec vraždění a  pumových útoků je sice lákavá perspektiva ,  ovšem zatím není jasné ,  co vlastně bylo vyměněno za klid zbraní ,  co bylo slíbeno a  co ještě slíbeno bude .
+
+# sentence level graph:
+(s28b1 / but-91
+        :ARG1 (s28h1 / have-mod-91
+            :aspect state
+            :modal-strength full-affirmative
+            :clausal-marker (s28s1 / sice)
+            :ARG1 (s28s4 / skončit-005
+            	:aspect performance
+            	:modal-strength full-affirmative
+                :ARG1 (s28a1 / and
+                    :op1 (s28v1 / vraždit-001
+                    	:aspect performance
+            		:modal-strength full-affirmative
+                        :ARG0 (s28p3 / person)
+                        :ARG1 (s28p4 / person)
+                        :refer-number singular)
+                    :op2 (s28u1 / útočit-001
+                    	:aspect performance
+            		:modal-strength full-affirmative
+            		:ARG0 (s28p5 / person)
+            		:ARG1 (s28p6 / person)
+                        :instrument (s28p1 / puma
+                        	:refer-number plural))))
+            :ARG2 (s28p2 / perspektiva
+                :mod (s28l1 / lákavý)
+                :refer-number singular))
+        :ARG2 (s28h2 / have-mod-91
+            :aspect state
+            :modal-strength full-negative
+            :polarity -
+            :temporal (s28z1 / zatím)
+            :ARG2 (s28j1 / jasný)
+            :ARG1 (s28a2 / and
+                :op1 (s28v2 / vyměnit-001
+                    :aspect performance
+            	    :modal-strength full-affirmative
+                    :ARG0 (s28e3 / entity)
+                    :clausal-marker (s28v3 / vlastně)
+                    :ARG3 (s28k2 / klid
+                        :mod (s28z2 / zbraň
+                            :refer-number plural)
+                        :refer-number singular)
+                    :ARG1 (s28u2 / umr-unknown))
+                :op2 (s28s2 / slíbit-001
+                    :aspect performance
+                    :modal-strength full-affirmative
+                    :ARG0 s28e3
+                    :ARG2 (s28u3 / umr-unknown)
+                    :ARG1 (s28e4 / entity))
+                :op3 (s28s3 / slíbit-001
+                    :aspect performance
+                    :modal-strength full-affirmative
+                    :ARG0 s28e3
+                    :ARG2 (s28u4 / umr-unknown)
+                    :ARG1 s28e4
+                    :temporal (s28j2 / ještě)))))
+
+# alignment:
+s28b1: 11-11
+s28s1: 7-7
+s28h1: 6-6
+s28s4: 1-1
+s28a1: 3-3
+s28v1: 2-2
+s28p3: 0-0
+s28p4: 0-0
+s28u1: 5-5
+s28p1: 4-4
+s28p5: 0-0
+s28p6: 0-0
+s28p2: 9-9
+s28l1: 8-8
+s28h2: 13-13
+s28z1: 12-12
+s28j1: 14-14
+s28a2: 27-27
+s28v2: 18-19
+s28v3: 17-17
+s28k2: 20-21
+s28z2: 22-22
+s28u2: 16-16
+s28e3: 0-0
+s28s2: 25-26
+s28u3: 24-24
+s28e4: 0-0
+s28s3: 30-31
+s28u4: 28-28
+s28j2: 29-29
+
+# document level annotation:
+(s28s0 / sentence
+    :coref ((s28k2 :same-entity s27p3)
+            (s28z2 :same-entity s11z1)))
+
+
