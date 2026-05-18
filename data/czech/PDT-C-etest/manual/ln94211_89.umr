@@ -26,8 +26,9 @@ s1v1: 3-3
 
 # document level annotation:
 (s1s0 / sentence
-    :temporal ((DCT :before s1z1)
+    :temporal ((document-creation-time :before s1z1)
                (s1k1 :contained s1z1)))
+
 
 ################################################################################
 # sent_id = u_tree-cs-s2-root
@@ -53,9 +54,7 @@ Words: V brazilském souboji o prezidentský úřad nastal nečekaný zvrat
                                           :name (s2n2 / name :op1 "Brazílie")))
               :ARG1 (s2z1 / event
                             :refer-number singular
-                            :aspect performance
-                            :modal-strength full-affirmative
-                            :ARG1-of (s2z2 / zvrátit
+                            :ARG1-of (s2z2 / zvrátit-se-001
                                              :aspect performance
                                              :modal-strength full-affirmative
                                              :ARG0 (s2e1 / entity))
@@ -83,11 +82,9 @@ s2e2: 0-0
 (s2s0 / sentence
     :temporal ((s1k1 :overlap s2s1)
                (s1k1 :contained s2n1)
-               (s1k1 :contained s2z1)
-               (s2n1 :overlap s2z1)
-               (s2z1 :overlap s2z2)
-               (s1z1 :overlap s2z1)
-               (s2z1 :before s2c1))
+               (s1k1 :contained s2z2)
+               (s2n1 :overlap s2z2)
+               (s2z2 :before s2c1))
     :coref ((s1p0 :same-event s2p0)
             (s1z1 :same-event s2z1))) # publication-91
 
@@ -242,8 +239,8 @@ s5z3: 8-8
 
 # document level annotation:
 (s5s0 / sentence
-    :temporal ((s5r4 :overlap s5r1)
-               (s5r1 :overlap s4s2)
+    :temporal ((s5r1 :after s2z1)
+               (s5r4 :overlap s5r1)
                (s5h1 :overlap s1k1)
                (s5r4 :after s5z1)
                (s5z1 :after s5p2)
@@ -268,10 +265,8 @@ Words: Víkendová debata s  přítelem však tak úplně tajná nebyla .
         :clausal-marker (s6v1 / však)
         :ARG1 (s6d1 / event
                       :refer-number singular
-                      :aspect activity
-                      :modal-strength full-affirmative
                       :result-of (s6d2 / debatovat-001
-                                         :aspect state
+                                         :aspect activity
                                          :modal-strength full-affirmative
                                          :ARG0 (s6p2 / person
                                                        :refer-number singular
@@ -305,12 +300,11 @@ s6t2: 6-6
 
 # document level annotation:
 (s6s0 / sentence
-    :temporal ((DCT :before s6v2)
+    :temporal ((document-creation-time :before s6v2)
                (s6v2 :after s2z1)
                (s6b1 :overlap s6v2)
-               (s6v2 :contained s6d1)
-               (s6d2 :overlap s6d1)
-               (DCT :overlap s6p3))
+               (s6v2 :contained s6d2)
+               (document-creation-time :overlap s6p3))
     :coref ((s6d1 :same-event s5r4)   # rozhovor
             (s6p2 :same-entity s5r2))) # Rubens Ricupero
 
@@ -365,9 +359,9 @@ s7i1: 15-15
 
 # document level annotation:
 (s7s0 / sentence
-    :temporal ((s7p1 :after s6d1)
+    :temporal ((s7p1 :after s6d2)
                (s7p1 :overlap s7n1)
-               (s7b1 :contained s6d1)
+               (s7b1 :contained s6d2)
                (s7z2 :after s7b1))
     :coref ((s7m2 :same-entity s1s1)    # štěnice = mikrofon
             (s7m3 :same-entity s5r2)))  # Rubens Ricupero (=ministr)
@@ -394,8 +388,6 @@ Words: Mikrofon posloužil jako štěnice :  upřímné vyznání zároveň s  m
                      :modal-strength full-affirmative
                      :ARG1 (s8v2 / event
                                    :refer-number singular
-                                   :aspect performance
-                                   :modal-strength full-affirmative
                                    :result-of (s8v3 / vyznat-se-002
                                                       :aspect performance
                                                       :modal-strength full-affirmative
@@ -447,10 +439,9 @@ s8t1: 18-18
 
 # document level annotation:
 (s8s0 / sentence
-    :temporal ((s8p1 :overlap s6d1)
-               (s6d1 :after s8v1)
-               (s8v2 :overlap s8v1)
-               (s8v2 :overlap s8v3)
+    :temporal ((s8p1 :overlap s6d2)
+               (s6d2 :after s8v1)
+               (s8v3 :overlap s8v1)
                (s8p0 :contained s1k1)
                (s8d2 :overlap s8v1))
     :coref ((s8m1 :same-entity s7m2)   # mikrofon
@@ -556,19 +547,15 @@ Words: Ministr svým upřímným cynickým prohlášením patrně zahájil zkáz
                         :refer-number singular)
          :instrument (s12p1 / event
                               :refer-number singular
-                              :aspect performance
-                              :modal-strength full-affirmative
-                              :ARG1-of (s12p5   / prohlásit-003
-                                                  :aspect performance
-                                                  :modal-strength full-affirmative
-                                                  :ARG0 s12m1)
+                              :ARG1-of (s12p5 / prohlásit-003
+                                                :aspect performance
+                                                :modal-strength full-affirmative
+                                                :ARG0 s12m1)
                               :manner (s12u1 / upřímný)
                               :manner (s12c1 / cynický))
         :clausal-marker (s12p2 / patrně)
         :ARG1 (s12z2 / event
                        :refer-number singular
-                       :aspect performance
-                       :modal-strength full-affirmative
                        :result-of (s12z3 / zkazit-001
                                            :aspect performance
                                            :modal-strength full-affirmative
@@ -588,7 +575,7 @@ Words: Ministr svým upřímným cynickým prohlášením patrně zahájil zkáz
                                                                                            :ARG2 (s12k2 / person
                                                                                                           :refer-number singular
                                                                                                           :ARG1-of (s12k3 / kandidovat-001
-                                                                                                                            :aspect performance
+                                                                                                                            :aspect habitual
                                                                                                                             :modal-strength full-affirmative
                                                                                                                             :ARG0 (s12s1 / political-organization
                                                                                                                                            :refer-number singular
@@ -640,22 +627,20 @@ s12d2: 9-9
 
 # document level annotation:
 (s12s0 / sentence
-    :temporal ((DCT :after s12r1)
-               (DCT :overlap s12d2)
-               (s8v2 :overlap s12p1)
-               (s12p1 :overlap s12p5)
-               (s12p1 :overlap s12z1)
-               (s12z1 :overlap s12z2)
-               (s12z2 :overlap s12z3)
-               (s12k1 :contained s12p1)
-               (s12k1 :overlap s1k1)
+    :temporal ((document-creation-time :after s12r1)
+               (document-creation-time :overlap s12d2)
+               (document-creation-time :overlap s12k1)
+               (s8v3 :overlap s12p5)
+               (s12p5 :overlap s12z1)
+               (s12z1 :overlap s12z3)
+               (s12k1 :contained s12p5)
                (s12h1 :overlap s1k1)
                (s12k3 :overlap s1k1)
-               (s12r1 :contain s12v2))
+               (s12r1 :contained s12v2))
     :coref ((s12m1 :same-entity s9r1)   # Rubens Ricupero (= ministr)
             (s12p1 :same-event s8v2)    # vyznání = prohlášení
             (s12v2 :same-event s1v1)    # volby = volební
-            (s12p3 :same-event s12v2)   # předvolební
+            (s12v2 :subset-of s12p3)   # předvolební
             (s12p4 :same-entity s2p1)   # prezident/ský
             (s12k1 :same-event s1k1)    # kampaň
             (s12k2 :same-entity s5k1)   # kandidát
@@ -709,7 +694,7 @@ s13r1: 12-13
     :temporal ((s12p1 :after s13u1)
                (s13d1 :overlap s12p1))
     :coref ((s13e1 :same-event s12p1)    # eso = vyznání = prohlášení
-            (s13p2 :same-event s12p3)))  # předvolební
+            (s12p3 :same-entity s13p2)))  # předvolební
 
 
 ################################################################################
@@ -755,7 +740,7 @@ s14n3: 14-14
 
 # document level annotation:
 (s14s0 / sentence
-    :temporal ((DCT :overlap s14k1)
+    :temporal ((document-creation-time :overlap s14k1)
                (s14c1 :overlap s14k1))
     :coref ((s14b1 :same-entity s5b1)   # Brazílie
             (s14v2 :same-entity s12v1)))  # vláda = vládní
@@ -829,8 +814,8 @@ s15n1: 21-21
 
 # document level annotation:
 (s15s0 / sentence
-    :temporal ((DCT :before s15d1)
-               (DCT :before s15c2)
+    :temporal ((document-creation-time :before s15d1)
+               (document-creation-time :before s15c2)
                (s15z1 :after s15d1)
                (s15c2 :contained s15o1)
                (s15o1 :overlap s15p1))
@@ -923,9 +908,9 @@ s16p5: 27-27
                (s15c2 :after s16p1)
                (s16p1 :overlap s16s2)
                (s16z1 :after s16s2)
-               (DCT :overlap s16i1)
-               (DCT :overlap s16m2)
-               (DCT :overlap s16m3))
+               (document-creation-time :overlap s16i1)
+               (document-creation-time :overlap s16m2)
+               (document-creation-time :overlap s16m3))
     :coref ((s16i2 :same-entity s15p2) # inflace = protiinflační???
             (s16e1 :subset-of s15r1)   # Rubens Ricupero (= ministr) jako jeden z "my"
             (s16e1 :subset-of s15c2))) # Cardoso (= kandidát na ?prezidenta) jako jeden z "my"
@@ -1002,18 +987,17 @@ Words: V  průzkumech veřejného mínění vedl se 45 procenty podpory národa 
          :modal-strength full-affirmative
          :ARG2 (s18p1 / event
                         :refer-number plural
-                        :aspect performance
-                        :modal-strength full-affirmative
                         :result-of (s18p9 / prozkoumat-002
                                             :aspect performance
                                             :modal-strength full-affirmative
                                             :ARG0 (s18e4 / entity)
-                                            :ARG1 (s18m1 / mínit-004
-                                                           :aspect activity
-                                                           :modal-strength full-affirmative
-                                                           :ARG0 (s18v2 / veřejnost
-                                                                          :refer-number singular)
-                                                           :ARG1 (s18e2 / entity))))
+                                            :ARG1 (s18m1 / thing
+                                                           :refer-number singular
+                                                           :ARG1-of (s18m2 / mínit-004
+                                                                             :aspect activity
+                                                                             :modal-strength full-affirmative
+                                                                             :ARG0 (s18v2 / veřejnost
+                                                                                            :refer-number singular)))))
         :ARG0 (s18e3 / entity
                        :refer-number singular
                        :refer-person 3rd)
@@ -1064,7 +1048,7 @@ s18p1: 1-2
 s18p9: 0-0
 s18e4: 0-0
 s18m1: 4-4
-s18e2: 0-0
+s18m2: 0-0
 s18v2: 3-3
 s18e3: 12-12
 s18h1: 0-0
@@ -1089,15 +1073,14 @@ s18p8: 0-0
     :temporal ((s15c2 :after s18v1)
                (s17s1 :after s18v1)
                (s17z2 :after s18v1)
-               (s18v1 :contained s18p1)
-               (s18p1 :overlap s18p1)
-               (s18m1 :overlap s18p9)
-               (s18h1 :overlap s18p1)
-               (s18p3 :overlap s18p1)
+               (s18v1 :contained s18p9)
+               (s18m2 :overlap s18p9)
+               (s18h1 :overlap s18p9)
+               (s18p3 :overlap s18p9)
                (s14k1 :overlap s18i1)
                (s14k1 :overlap s18h2)
-               (s18p8 :overlap s18p1)
-               (s18h3 :overlap s18p1))
+               (s18p8 :overlap s18p9)
+               (s18h3 :overlap s18p9))
     :coref ((s18e3 :same-entity s17c1)  # Cardoso (= kandidát na prezidenta)
             (s18n1 :same-entity s17b1)  # národ = Brazilci (person)
             (s18s2 :same-entity s13s1))) # Strana práce
@@ -1142,7 +1125,7 @@ s19p1: 14-14
 
 # document level annotation:
 (s19s0 / sentence
-    :temporal ((DCT :after s19r1)
+    :temporal ((document-creation-time :after s19r1)
                (s18p1 :overlap s19z1)
                (s19z1 :after s19r1)
                (s18p1 :overlap s19t1)
@@ -1157,7 +1140,6 @@ Index: 1      2     3  4    5       6     7      8        9
 Words: Koncem srpna se však inflace znovu začala zvyšovat .
 
 # sentence level graph:
-
 (s20z3 / zvyšovat-se-001
          :aspect inceptive
          :modal-strength full-affirmative
@@ -1182,7 +1164,7 @@ s20z3: 3-3,7-8  #s20z1 ... začít-001
 
 # document level annotation:
 (s20s0 / sentence
-    :temporal ((DCT :before s20s1)
+    :temporal ((document-creation-time :before s20s1)
                (s20s1 :contained s20k1)
                (s20s1 :contained s20z3))
     :coref ((s20i1 :same-entity s16i2)))
@@ -1252,8 +1234,7 @@ s21e2: 0-0
 
 # document level annotation:
 (s21s0 / sentence
-    :temporal ((DCT :before s21m1)
-               (s21m1 :contained s20s1)
+    :temporal ((document-creation-time :before s21m1)
                (s20s1 :overlap s21d1)
                (s20s1 :after s21o1)
                (s16z1 :after s21i1)
@@ -1508,7 +1489,6 @@ s26o2: 13-13
 # document level annotation:
 (s26s0 / sentence
     :temporal ((s20s1 :after s26p1)
-               (s26p1 :overlap s25p1)
                (s26m1 :contained  s26p1))
     :coref ((s26p1 :same-event s25p1)  # počítat
             (s26d1 :same-event s26d1)  # nedozvědět se
@@ -1628,13 +1608,13 @@ s28o1: 20-20
 
 # document level annotation:
 (s28s0 / sentence
-    :temporal ((DCT :before s28o1)
+    :temporal ((document-creation-time :before s28o1)
+               (document-creation-time :overlap s28h1)
+               (document-creation-time :overlap s28h2)
                (s9p1 :after s28d1)
                (s28d1 :overlap s28z1)
                (s28o1 :contained s28p2)
-               (s28z1 :overlap s28p2)
-               (DCT :overlap 28h1)
-               (DCT :overlap 28h2))
+               (s28z1 :overlap s28p2))
     :coref ((s28b1 :same-entity s17c2) # Brazílie
             (s28d2 :same-entity s22d1) # Soc. demokracie
             (s28p1 :same-entity s12p4)  #  prezident/ský
@@ -1699,12 +1679,12 @@ s29r2: 0-0
 
 # document level annotation:
 (s29s0 / sentence
-    :temporal ((DCT :before s29p2)
+    :temporal ((document-creation-time :before s29p2)
                (s29p2 :overlap s29v1)
                (s28p2 :after s29v1)
                (s29p4 :overlap s29v1)
-               (DCT :overlap s29m1)
-               (s29a2 :overlap s25p2))
+               (document-creation-time :overlap s29m1)
+               (s20s1 :after s29a2))
     :coref ((s29p1 :same-entity s28f1)  # prezident = Itamar Franco
             (s29o1 :same-entity s25v1)  # veřejnost = národ = podvedení lidé
             (s29v2 :same-entity s14v2)  # vláda
@@ -1772,13 +1752,13 @@ s30c1: 12-12
 
 # document level annotation:
 (s30s0 / sentence
-    :temporal ((DCT :before s30z1)
+    :temporal ((document-creation-time :before s30z1)
                (s30z1 :overlap s29v1)
-               (s30z1 :overlap 30d1)
-               (s29v1 :overlap 30d1)
+               (s30z1 :overlap s30d1)
+               (s29v1 :overlap s30d1)
                (s30d1 :overlap s30v1)
                (s12k1 :contained s30k1)
-               (DCT :overlap s30p1)
+               (document-creation-time :overlap s30p1)
                (s30p1 :overlap s30h1))
     :coref ((s30d2 :same-entity s18d1) # da Silva
             (s30o1 :same-entity s18s2))) # opozice = Strana práce
@@ -1967,19 +1947,19 @@ Words: V  prvním kole prezidentských voleb v  Brazílii může zvítězit ten 
          :modal-strength neutral-affirmative
          :ARG1 (s34k1 / kolo
                         :refer-number singular
-                        :possessor (s34v1 / volit-002
-                                            :aspect process
-                                            :modal-strength full-affirmative
-                                            :ARG0 (s34p6 / person
-                                                           :refer-number plural)
-                                            :ARG1 (s34p7 / person
-                                                           :refer-number singular)
-                                            :ARG2 (s34p1 / prezident
-                                                           :refer-number singular)
-                                            :place (s34b1 / country
-                                                            :refer-number singular
-                                                            :wiki "Q155"
-                                                            :name (s34n1 / name :op1 "Brazílie")))
+                        :part (s34v1 / volit-002
+                                      :aspect process
+                                      :modal-strength full-affirmative
+                                      :ARG0 (s34p6 / person
+                                                     :refer-number plural)
+                                      :ARG1 (s34p7 / person
+                                                     :refer-number singular)
+                                      :ARG2 (s34p1 / prezident
+                                                     :refer-number singular)
+                                      :place (s34b1 / country
+                                                      :refer-number singular
+                                                      :wiki "Q155"
+                                                      :name (s34n1 / name :op1 "Brazílie")))
                         :ord (s34p2 / první))
          :ARG0 (s34k2 / person
                         :refer-number singular
@@ -2059,18 +2039,17 @@ Words: Pro Cardosu by podle průzkumů veřejného mínění minulý týden hlas
                         :name (s35c2 / name :op1 "Cardoso"))
          :regard (s35p1 / event
                           :refer-number plural
-                          :aspect performance
-                          :modal-strength full-affirmative
                           :result-of (s35p3 / prozkoumat-002
                                               :aspect performance
                                               :modal-strength full-affirmative
                                               :ARG0 (s35e1 / entity)
-                                              :ARG1 (s35m1 / mínit-004
+                                              :ARG1 (s35m3 / thing
+                                                             :refer-number singular
+                                                             :ARG1-of (s35m1 / mínit-004
                                                              :aspect activity
                                                              :modal-strength full-affirmative
                                                              :ARG0 (s35v1 / veřejnost
-                                                                            :refer-number singular)
-                                                             :ARG1 (s35e2 / entity))))
+                                                                            :refer-number singular)))))
          :temporal (s35t1 /  týden
                              :refer-number singular
                              :mod (s35m2 / minulý))
@@ -2092,9 +2071,9 @@ s35c1: 1-2
 s35c2: 0-0
 s35p1: 4-5
 s35p3: 0-0
-s35m1: 7-7
+s35m1: 0-0
+s35m3: 7-7
 s35e1: 0-0
-s35e2: 0-0
 s35v1: 6-6
 s35t1: 9-9
 s35m2: 8-8
@@ -2105,10 +2084,9 @@ s35i1: 0-0
 
 # document level annotation:
 (s35s0 / sentence
-    :temporal ((DCT :before )
+    :temporal ((document-creation-time :before s35t1)
                (s35t1 :contained s35h1)
-               (s35t1 :contained s35p1)
-               (s35p3 :overlap s35p1)
+               (s35t1 :contained s35p3)
                (s35t1 :contained s35m1)
                (s35v3 :overlap s12k1)
                (s35t1 :contained s35i1))
@@ -2175,6 +2153,10 @@ s36p2: 5-7
 
 # document level annotation:
 (s36s0 / sentence
+    :temporal ((s35h1 :after s36z1)
+               (s35h1 :after s36d0)
+               (s35h1 :after s36d1)
+               (s36z1 :overlap s36h3))
     :coref ((s36p3 :same-entity s35c1)))    # Cardoso   # (s36v1 :same-event s35h1)  hlasování = výsledek
 
 
@@ -2193,19 +2175,26 @@ Words: Da Silva nepotřebuje zásadní zvrat .
                         :refer-number singular
                         :wiki "Q37181"
                         :name (s37n1 / name :op1 "da" :op2 "Silva"))
-         :ARG1 (s37z1 / zvrat
+         :ARG1 (s37z1 / event
                         :refer-number singular
-                        :mod (s37z2 / zásadní)))
+                        :manner (s37z2 / zásadní)
+                        :ARG1-of (s37z3 / zvrátit-se-001
+                                         :aspect performance
+                                         :modal-strength full-affirmative
+                                         :ARG0 (s37e1 / entity))))
 
 # alignment:
 s37p1: 3-3
 s37d1: 1-2
 s37n1: 0-0
 s37z1: 5-5
+s37z3: 0-0
 s37z2: 4-4
+s37e1: 0-0
 
 # document level annotation:
 (s37s0 / sentence
+    :temporal ((present-reference :contained s37p1))
     :coref ((s37d1 :same-entity s32e1)))  # da Silva
 
 
@@ -2264,10 +2253,15 @@ Words: V  této chvíli má sice jen 23 procent podpory voličů ,  pokud ale s 
                                                                           :mod (s38z1 / zmíněný))))
                         :ARG1 (s38k1 / kolo
                                        :refer-number singular
-                                       :part (s38v3 / volba
-                                                      :refer-number plural
+                                       :part (s38v3 / volit-002
                                                       :aspect process
-                                                      :modal-strength full-affirmative)
+                                                      :modal-strength full-affirmative
+                                                      :ARG0 (s38p7 / person
+                                                                     :refer-number plural)
+                                                      :ARG1 (s38p8 / person
+                                                                     :refer-number singular)
+                                                      :ARG2 (s38p9 / person
+                                                                     :refer-number singular))
                                        :ord (s38d1 / druhý)
                                        :mod (s38p6 / postoupit-003
                                                      :aspect performance
@@ -2306,6 +2300,9 @@ s38s2: 21-21
 s38z1: 20-20
 s38k1: 28-28,31-32
 s38v3: 29-29
+s38p7: 0-0
+s38p8: 0-0
+s38p9: 0-0
 s38d1: 27-27
 s38p6: 33-33
 s38e2: 0-0
@@ -2316,6 +2313,16 @@ s38u1: 36-36
 
 # document level annotation:
 (s38s0 / sentence
+    :temporal ((document-creation-time :contained s38c1)
+               (s38c1 :overlap s38m1)
+               (s38v4 :overlap s12k1)
+               (s38i1 :overlap s38v4)
+               (s38c1 :after s38p3)
+               (s38p3 :overlap s38p5)
+               (s38p3 :after s38v2)
+               (s38v2 :after s38v3)
+               (s38v3 :before s38p6)
+               (s38p6 :overlap s38h1))
     :coref ((s38m1 :same-event s38p5)  # podpora = přízeň
             (s38v1 :same-entity s35v2)  # voliči
             (s38e1 :same-entity s37d1)  # da Silva
@@ -2397,10 +2404,15 @@ Words: Obohacen o  hlasy poražených kandidátů ,  by ve volbách mohl nakonec
                        :clausal-marker (s40i1 / i)
                        :modal-strength neutral-affirmative
                        :ARG0 s40e1
-                       :ARG1 (s40v1 / volba
-                                      :refer-number plural
+                       :ARG1 (s40v1 / volit-002
                                       :aspect process
-                                      :modal-strength full-affirmative)
+                                      :modal-strength full-affirmative
+                                      :ARG0 (s40p4 / person
+                                                     :refer-number plural)
+                                      :ARG1 (s40p5 / person
+                                                     :refer-number singular)
+                                      :ARG2 (s40p6 / person
+                                                     :refer-number singular))
                        :temporal (s40n1 / nakonec))
          :op2 (s40u1 / usednout-002
                        :aspect performance
@@ -2420,6 +2432,9 @@ Words: Obohacen o  hlasy poražených kandidátů ,  by ve volbách mohl nakonec
 s40a1: 14-14
 s40z1: 7-7,10-10,13-13
 s40v1: 8-9
+s40p4: 0-0
+s40p5: 0-0
+s40p6: 0-0
 s40n1: 11-11
 s40i1: 12-12
 s40o1: 1-1
@@ -2629,3 +2644,5 @@ s43p3: 12-12
 # document level annotation:
 (s43s0 / sentence
     :coref ((s43m1 :same-entity s42e1)))  # ministr = Rubens Ricupero (Soc. dem. strana)
+
+
