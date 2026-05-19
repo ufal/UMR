@@ -23,7 +23,7 @@ LUSyD](https://ufal.mff.cuni.cz/grants/lusyd).
   * [Specific verbal constructions](doc/verbal-constructions.md) and 
   * separate notes on [Aspectual verbs](doc/aspectual-phase-verbs.md) (~ fázová slovesa)
   * verbs: PDT-Vallex and its [conversion to PB-like frames](https://docs.google.com/spreadsheets/d/1lVo7a8hPBReI4VrgNkUGem8uC_sCQCXJJvLFCbwPuok/edit?gid=1270330829#gid=1270330829) 
-  * deverbal nouns: consult the following lists and follow ![the schema](doc/scheme.pdf)
+  * deverbal nouns: consult the following lists and follow [the schema](doc/schema.pdf)
     * [NomVallex -ní/tí action nouns](tecto2umr/derivace-podklady/nomvallex_lexemes_single_frame_action.tsv)
     * [conversion action nouns](tecto2umr/derivace-podklady/conversion_action_nouns_final.tsv)
     * [agent nouns](tecto2umr/derivace-podklady/agent_nouns_single_frame.tsv)
