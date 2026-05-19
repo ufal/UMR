@@ -195,8 +195,6 @@ The government **stopping** the recognition of a spouse ... (english_umr-0065.um
   - *skončit (se čtením /  *s deštěm)*
   - ***ustat - ustávat (číst / pršet)***.
 
-
-
 ##### Known problems
 
 ###### Perfective vs. imperfective aspectual verbs
