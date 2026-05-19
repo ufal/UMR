@@ -95,7 +95,9 @@ Temporal superstructure represents the top levels of the dependency structure. I
     
     (_začít křičet_ --> *křičet* with the `:inceptive` aspect value)
   
-  - <mark>??? deverbal nouns captured using the result-of relation (and similar) ???</mark>
+  - <mark>!!! deverbal nouns captured using the result-of relation (and similar) !!!</mark> 
+  
+  - ... event annotation only with verbs
 
 Note that the <span>labels</span> characterize the relation **from a child to its parent** !!!
 

@@ -1,10 +1,30 @@
 #### Aspectual verbs ( ~ fázová slovesa)
 
-##### 1. Tentative solution for Czech
+##### Tentative solution for Czech
 
 > **Czech aspectual verbs:**
 > 
-> - For the time being, only **prototypical aspectual verbs** -- see the list below, i.e., verbs satisfying both aspectual semantics (1 above) and two morphosyntactic properties (2) -- are treated in the way required by the Guidelines in manual annotations.    
+> - For the time being, only **prototypical aspectual verbs** combined with an infinitive  are treated in the way required by the UMR Guidelines in manual annotations:
+>   
+>   - <u>inceptive / inchoative</u>:
+>     
+>     - *začít - začínat (číst / pršet)*
+>     - *započít - započínat (číst / pršet)*
+>     - *počít - počínat (číst / pršet)*
+>     - *jmout se*;
+>     
+>     - <u>continuative</u>:
+>       
+>       - *zůstat - zůstávat (sedět / pracovat)* (partially)
+>         
+>         ... NOT combined with adverbs like *postupně* ("phases within the phase")
+>     
+>     - <u>terminative / completive</u>:
+>       
+>       - *přestat - přestávat (číst / pršet)*
+>       - *ustat - ustávat (číst / pršet)*.  
+>   
+>   See section [Czech aspectual verbs](#czech-aspectual-verbs) below for broader list of verbs.
 > 
 > - Merge the pair (aspectual verb - lexical verb) **into a single node**.
 > 
@@ -17,7 +37,7 @@
 
 ---
 
-##### 2. Aspectual verbs: Guidelines and English data
+##### Aspectual verbs: Guidelines and English data
 
 Guidelines, Part 3-1-3-3. **TAM categories**:
 
@@ -133,7 +153,7 @@ The government **stopping** the recognition of a spouse ... (english_umr-0065.um
 
 ---
 
-##### 3. Czech aspectual verbs
+##### Czech aspectual verbs
 
 **Czech grammars and LRs:**
 
