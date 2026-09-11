@@ -46,8 +46,12 @@ while(<>)
                 }
                 push(@indices, $index);
             }
-            print("Index: ", join(' ', @indices), "\n");
-            print("Words: ", join(' ', @words), "\n");
+            my $iline = 'Index: '.join(' ', @indices);
+            my $wline = 'Words: '.join(' ', @words);
+            $iline =~ s/\s+$//;
+            $wline =~ s/\s+$//;
+            print("$iline\n");
+            print("$wline\n");
         }
         else
         {
