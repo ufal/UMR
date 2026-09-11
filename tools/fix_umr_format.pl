@@ -106,6 +106,7 @@ sub fix_file
         s/^Morphemes\(Spanish\):\s*/Morpheme Gloss (es): /;
         s/^Morpheme Gloss\(Spanish\):\s*/Morpheme Gloss (es): /;
         s/^Translation\(English\):\s*/Sentence Gloss (en): /;
+        s/^Translation\(Spanish\):\s*/Sentence Gloss (es): /;
         # Unaligned nodes should have alignment 0-0, not -1--1.
         s/:\s*-1--1$/: 0-0/;
         # The guidelines originally defined :poss but it has been changed to :possessor (see the Google spreadsheet).
