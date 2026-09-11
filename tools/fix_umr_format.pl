@@ -13,7 +13,7 @@ use Carp;
 
 
 ###!!! For now, hardcoded path to the UMR validator.
-my $validator = '/net/work/people/zeman/umr/umr-ufal/tools/validate.py';
+my $validator = '/net/work/people/zeman/umr/umrtools/validate.py';
 my $validator_options = '--level 2 --no-check-ilg --allow-forward-references --optional-alignments --no-warn-unaligned-token --no-check-wiki --optional-aspect-modstr --allow-duplicate-roles --allow-cycles --allow-coref-entity-event-mismatch';
 ###!!! For now, assume we are in the top folder of a UMR release, so the path to the data is known. We only need to specify the language (English is default).
 #@ARGV = grep {m/^(english|chinese|czech|latin|arapaho|navajo|kukama|sanapana)$/} (map {lc($_)} (@ARGV));
