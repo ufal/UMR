@@ -1,0 +1,9 @@
+
+---
+A Federica říkala (z letní školy): Modal strength se už vůbec nemá uvádět na úrovni věty (i když jejich data tomu zatím úplně neodpovídají).
+
+Validátor UD by měl varovat, pokud se v MISC objeví atribut Transliteration místo Translit.
+
+skript na opravu end of lines (Markétě WinEdt ukládá CRLF, neumí to změnit)
+
+a možná prosadit příponu .umr, aby se dalo nastavit v editorech chování specifické pro tento formát.

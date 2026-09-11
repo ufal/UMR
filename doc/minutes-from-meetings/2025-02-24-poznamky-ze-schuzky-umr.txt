@@ -1,0 +1,16 @@
+umr project:
+- slíbena řada publikací, honza pošle ta čísla
+  - už se pracuje na journal paperech, ale potřebujeme conference papers
+  - nějak se tam dbá, aby byli spoluautoři z americké strany (i když jde o projekt českého ministerstva?)
+- jaký je teď acknowledgement?
+
+honzův hlavní cíl:
+- mít české umr (jiné jazyky jsou fajn, ale ten projekt je asi neslíbil)
+  - na konci by část z toho měla být ručně zkontrolovaná (např. 5% of PDT-C by bylo 10000 vět; ale formálně pro projekt není problém mít míň)
+- potom další případný cíl: aplikovat SynSemClass nad UMR daty
+
+markéta navrhuje mid-june termín na něco?
+udělejme si todo list a co je kdy jak doable
+HH: na konci roku bychom měli začít s ruční anotací.
+  A v létě by se někdo (Hanka?) měl začít dívat na aplikaci SynSemClass na ta data.
+  Ten projekt končí až v roce 2027.
