@@ -20,7 +20,7 @@ while(<>)
     if(m/^Word Gloss \([a-z]+\):/)
     {
         my $glossline = $_;
-        $glossline =~ s/^(Words Gloss \([a-z]+\)):\s*//;
+        $glossline =~ s/^(Word Gloss \([a-z]+\)):\s*//;
         my $header = $1;
         $glossline =~ s/\s*\r?\n$//;
         # Sequences of two or more spaces or tabulators separate clusters.
@@ -29,6 +29,7 @@ while(<>)
         # What remains should be just single spaces separating words within one
         # cluster. Replace them with periods.
         $glossline =~ s/ /./g;
+        $glossline =~ s/\t/ /g;
         print("$header: $glossline\n");
     }
     else
