@@ -17,7 +17,7 @@ binmode(STDERR, ':utf8');
 
 while(<>)
 {
-    if(m/^Word Gloss \([a-z]+\)):/)
+    if(m/^Word Gloss \([a-z]+\):/)
     {
         my $glossline = $_;
         $glossline =~ s/^(Words Gloss \([a-z]+\)):\s*//;
