@@ -12,23 +12,32 @@ binmode(STDIN, ':utf8');
 binmode(STDOUT, ':utf8');
 binmode(STDERR, ':utf8');
 
-my $indexline;
-my $wordline;
+my %sinfo;
 while(<>)
 {
-    if(m/^Index:/)
+    # If this is a sentence/token information line, save it for later.
+    if(m/^(Index|Words|Word Gloss \([a-z]+\)|Morphemes|Morpheme Gloss \([a-z]+\)|Morpheme Category|Sentence|Sentence Gloss \([a-z]+\)):\s*(.+)/)
     {
-        # Save the line but do not print anything yet.
-        $indexline = $_;
-    }
-    elsif(m/^Words:/)
-    {
-        # This line is expected immediately after an Index line. Check it.
-        if(defined($indexline))
+        my $header = $1;
+        my $contents = $2;
+        $contents =~ s/\s*\r?\n$//;
+        if(exists($sinfo{$header}))
         {
-            $wordline = $_;
-            $wordline =~ s/^Words:\s*//;
-            $wordline =~ s/\s*\r?\n$//;
+            die("Repeated header '$header'");
+        }
+        $sinfo{$header} = $contents;
+    }
+    else
+    {
+        # On the first line after sentence/token information lines, process them and print them.
+        if(scalar(keys(%sinfo)))
+        {
+            #print STDERR ("Found the following headers: ", join(', ', sort(keys(%sinfo))), "\n");
+            #print STDERR ("Current line: $_");
+            my $indexline = $sinfo{Index};
+            my $wordline = $sinfo{Words};
+            die("Missing Index line") if(!defined($indexline));
+            die("Missing Words line") if(!defined($wordline));
             my @words = split(/\s+/, $wordline);
             my @indices;
             for(my $i = 0; $i <= $#words; $i++)
@@ -52,19 +61,17 @@ while(<>)
             $wline =~ s/\s+$//;
             print("$iline\n");
             print("$wline\n");
+            # Now print the other sinfo lines that we did not modify.
+            foreach my $header ('Word Gloss (en)', 'Word Gloss (es)', 'Morphemes', 'Morpheme Gloss (en)', 'Morpheme Gloss (es)', 'Morpheme Category', 'Sentence', 'Sentence Gloss (en)', 'Sentence Gloss (es)')
+            {
+                if(defined($sinfo{$header}))
+                {
+                    print("$header: $sinfo{$header}\n");
+                }
+            }
+            %sinfo = ();
         }
-        else
-        {
-            die("Words line not immediately preceded by an Index line");
-        }
-        $indexline = undef;
-        $wordline = undef;
-    }
-    else
-    {
         # Pass all other lines simply through.
         print;
-        $indexline = undef;
-        $wordline = undef;
     }
 }
