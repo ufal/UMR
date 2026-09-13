@@ -43,26 +43,32 @@ while(<>)
             for(my $i = 0; $i <= $#words; $i++)
             {
                 my $index = $i+1;
-                my $lw = length($words[$i]);
-                my $li = length($index);
-                if($li > $lw)
-                {
-                    $words[$i] .= ' ' x ($li-$lw);
-                }
-                elsif($lw > $li)
-                {
-                    $index .= ' ' x ($lw-$li);
-                }
                 push(@indices, $index);
             }
-            my $iline = 'Index: '.join(' ', @indices);
-            my $wline = 'Words: '.join(' ', @words);
-            $iline =~ s/\s+$//;
-            $wline =~ s/\s+$//;
-            print("$iline\n");
-            print("$wline\n");
+            unshift(@indices, 'Index:');
+            unshift(@words, 'Words:');
+            my @table = (\@indices, \@words);
+            if(exists($sinfo{'Word Gloss (en)'}))
+            {
+                my @englosses = split(/\s+/, $sinfo{'Word Gloss (en)'});
+                unshift(@englosses, 'Word Gloss (en):');
+                push(@table, \@englosses);
+            }
+            if(exists($sinfo{'Word Gloss (es)'}))
+            {
+                my @esglosses = split(/\s+/, $sinfo{'Word Gloss (es)'});
+                unshift(@esglosses, 'Word Gloss (es):');
+                push(@table, \@esglosses);
+            }
+            my @formatted = format_table(@table);
+            foreach my $row (@formatted)
+            {
+                my $line = join(' ', @{$row});
+                $line =~ s/\s+$//;
+                print("$line\n");
+            }
             # Now print the other sinfo lines that we did not modify.
-            foreach my $header ('Word Gloss (en)', 'Word Gloss (es)', 'Morphemes', 'Morpheme Gloss (en)', 'Morpheme Gloss (es)', 'Morpheme Category', 'Sentence', 'Sentence Gloss (en)', 'Sentence Gloss (es)')
+            foreach my $header ('Morphemes', 'Morpheme Gloss (en)', 'Morpheme Gloss (es)', 'Morpheme Category', 'Sentence', 'Sentence Gloss (en)', 'Sentence Gloss (es)')
             {
                 if(defined($sinfo{$header}))
                 {
@@ -74,4 +80,57 @@ while(<>)
         # Pass all other lines simply through.
         print;
     }
+}
+
+
+
+#------------------------------------------------------------------------------
+# Formats a table using spaces, assuming a fixed-width font. Strings align to
+# the left (they are padded by spaces from the right).
+#------------------------------------------------------------------------------
+sub format_table
+{
+    my @srctable = @_; # array of array references
+    # Determine the required width of each column.
+    my @widths;
+    foreach my $row (@srctable)
+    {
+        for(my $i = 0; $i <= $#{$row}; $i++)
+        {
+            my $cell = $row->[$i];
+            my $l = vlength($cell);
+            if(!defined($widths[$i]) || $l > $widths[$i])
+            {
+                $widths[$i] = $l;
+            }
+        }
+    }
+    # Create a new table with cells padded with spaces as needed.
+    my @tgttable = ();
+    foreach my $row (@srctable)
+    {
+        my @tgtrow = ();
+        for(my $i = 0; $i <= $#widths; $i++)
+        {
+            my $cell = $row->[$i] // '';
+            my $pad = ' ' x ($widths[$i]-vlength($cell));
+            $tgtrow[$i] = $cell.$pad;
+        }
+        push(@tgttable, \@tgtrow);
+    }
+    return @tgttable;
+}
+
+
+
+#------------------------------------------------------------------------------
+# Estimates visible length of a string. Ignores combining diacritics because
+# they should use the position of the previous character.
+#------------------------------------------------------------------------------
+sub vlength
+{
+    my $x = shift;
+    # Remove modifier characters.
+    $x =~ s/\pM//g;
+    return length($x);
 }
