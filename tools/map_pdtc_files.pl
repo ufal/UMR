@@ -25,6 +25,15 @@ foreach my $part ('train', 'dev', 'test')
             if($target)
             {
                 $directory{$basename} = abs_path($target);
+                # We will work with converted UMR files, so the extension is .umr.
+                $directory{$basename} =~ s/\.t$/.umr/;
+                # Remove the local file system prefix.
+                $directory{$basename} =~ s:/lnet/work/people/zeman/PDT-C-2.0/::;
+                # Lowercase and simplify the subcorpus prefix.
+                $directory{$basename} =~ s:^PDT/pml:pdt:;
+                $directory{$basename} =~ s:^PCEDT-cz/pml:pcedt:;
+                $directory{$basename} =~ s:^PDTSC/pml:pdtsc:;
+                $directory{$basename} =~ s:^Faust/pml:faust:;
             }
         }
     }
