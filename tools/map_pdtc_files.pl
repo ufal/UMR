@@ -44,3 +44,34 @@ foreach my $basename (@basenames)
     print("$basename\t--->\t$directory{$basename}\n");
 }
 printf("TOTAL %d files\n", scalar(@basenames));
+# Use the paths to modify UMR file mapping.
+my $umrdir = '/net/work/people/zeman/umr/umr-data-choroba';
+open my $ifh, "$umrdir/umr_file_name_mapping.txt" or die("Cannot read file name mapping: $!");
+my %target_directory;
+while(<$ifh>)
+{
+    s/\r?\n$//;
+    if(m:^czech/umr_data/czech_(.+)\.umr\t(.+)$:)
+    {
+        my $basename = $1;
+        my $target = $2;
+        if(exists($directory{$basename}))
+        {
+            $target_directory{$target} = "czech/converted/$directory{$basename}";
+        }
+        else
+        {
+            die("Unknown Czech file '$basename'");
+        }
+    }
+    elsif(m:(.+?)\t(.+):)
+    {
+        $target_directory{$2} = $1;
+    }
+}
+my @targets = sort(keys(%target_directory));
+open my $ofh, ">$umrdir/new_file_name_mapping.txt" or die("Cannot write file name mapping: $!");
+foreach my $target (@targets)
+{
+    print $ofh ("$target_directory{$target}\t$target\n");
+}
