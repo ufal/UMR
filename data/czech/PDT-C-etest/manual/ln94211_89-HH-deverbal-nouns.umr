@@ -36,7 +36,8 @@ s1p3: 0-0
 # document level annotation:
 (s1s0 / sentence
     :temporal ((document-creation-time :before s1z1)
-               (s1k1 :contained s1z1)))
+               (s1k1 :contained s1z1)
+               (s1k1 :after s1v1)))
 
 
 ################################################################################
@@ -668,7 +669,6 @@ s12d2: 9-9
 
 
 ################################################################################
-################################################################################
 # sent_id = u_tree-cs-s13-root
 # :: snt13
 Index: 1        2      3     4   5  6     7  8            9       10          11      12 13    14 15      16
@@ -747,6 +747,7 @@ Words: Podle nových volebních předpisů v  Brazílii se musí vláda v  před
          :temporal (s14k1 / vést-kampaň-013
                             :aspect activity
                             :modal-strength full-affirmative
+                            :ARG0 (s14e3 / entity)
                             :mod (s14p2 / předvolební))
          :ARG1 (s14n2 / neutrálně
                        :degree (s14n3 / naprosto)))
@@ -760,16 +761,18 @@ s14v1: 3-3
 s14n1: 2-2
 s14v2: 9-9
 s14k1: 10-10,12-12
+s14e2: 0-0
 s14p2: 11-11
 s14n2: 15-15
 s14n3: 14-14
 s14p3: 0-0
 s14e1: 0-0
-s14e2: 0-0
+s14e3: 0-0
 
 # document level annotation:
 (s14s0 / sentence
     :temporal ((document-creation-time :overlap s14k1)
+               (document-creation-time :overlap s14p3)
                (s14c1 :overlap s14k1))
     :coref ((s14b1 :same-entity s5b1)
             (s14v2 :same-entity s12v1)))
@@ -851,7 +854,7 @@ s15p3: 0-0
                (document-creation-time :before s15c2)
                (s15z1 :after s15d1)
                (s15c2 :contained s15o1)
-               (s15o1 :overlap s15p1))
+               (s15o1 :overlap s15p3))
     :coref ((s15r1 :same-entity s12m1)
             (s15c2 :same-entity s12c2)
             (s15b1 :same-entity s14b1)
@@ -1161,10 +1164,11 @@ s19p1: 14-14
 # document level annotation:
 (s19s0 / sentence
     :temporal ((document-creation-time :after s19r1)
-               (s18p1 :overlap s19z1)
+               (s18p9 :overlap s19z1)
                (s19r1 :before s19z1)
-               (s18p1 :overlap s19t1)
-               (s19r1 :before s19t1))
+               (s18p9 :overlap s19t1)
+               (s19r1 :before s19t1)
+               (s19r1 :contained s19v1))
     :coref ((s19d1 :same-entity s12s1)
             (s12r1 :subset-of s19r1)))
 
@@ -1377,7 +1381,7 @@ Words: Nejenže se dopustil podvodu na lidech ,  svou podporou jednoho z  kandid
                       :clausal-marker (s24n2 / navíc)
                       :ARG0 s24e1
                       :ARG1 (s24p4 / thing
-         			:ARG1-of (s24p5 / předepsat-001
+         			  :ARG1-of (s24p5 / předepsat-001
          				:aspect performance
          				:modal-strength full-affirmative
          				:ARG0 (s24e2 / entity)
@@ -1429,6 +1433,7 @@ s24e3: 0-0
                (s23u1 :overlap s24p1)
                (s20s1 :after s24p3)
                (s23u1 :overlap s24p3)
+               (document-creation-time :overlap s24p4)
                (s20s1 :after s24p2)
                (s23u1 :overlap s24p2)
                (s14k1 :overlap s24k2)
@@ -1686,6 +1691,7 @@ Words: Prezident pak v  prohlášení občanům vysvětloval ,  že s  Ricuperov
                                               :ARG0 s29p1
                                               :recipient (s29o1 / občan
                                                                   :refer-number plural)))
+         :ARG2 s29o1
          :ARG1 (s29m1 / mít-společné-s-001
                         :aspect state
                         :modal-strength full-affirmative
@@ -1699,7 +1705,7 @@ Words: Prezident pak v  prohlášení občanům vysvětloval ,  že s  Ricuperov
                         :effect (s29a2 / podniknout-aktivitu-003
                                          :aspect performance
                                          :modal-strength full-affirmative
-                                         :actor (s29r1 / person
+                                         :ARG0 (s29r1 / person
                                                          :refer-number singular
                                                          :wiki "Q9070985"
                                                          :name (s29r2 / name :op1 "Ricupero")))))
@@ -1876,7 +1882,8 @@ s31p5: 0-0
     :temporal ((s30d1 :overlap s31z1)
                (s31z1 :after s31z2)
                (s31p1 :after s31z2)
-               (s12k1 :contained s31k2))
+               (s12k1 :contained s31k2)
+               (s12r1 :contained s31v1))
     :coref ((s31e1 :same-entity s30d2)
             (s31c1 :same-entity s24k1)
             (s31e2 :same-entity s29d1)
@@ -1902,7 +1909,7 @@ Words: Ačkoliv se mu tento požadavek téměř jistě nepodaří prosadit ,  na
                               :aspect performance
                               :modal-strength partial-negative
                               :polarity -
-                              :ARG0 (s32e1 / entity
+                              :ARG0 (s32e1 / person
                                              :refer-number singular
                                              :refer-person 3rd)
                               :clausal-marker (s32j1 / jistě
@@ -1911,10 +1918,11 @@ Words: Ačkoliv se mu tento požadavek téměř jistě nepodaří prosadit ,  na
                                              :aspect performance
                                              :modal-predicate s32p1
                                              :ARG1 (s32p3 / event
-                                             		:ARG1-of (s32p4 / požadovat-001
+                                             		:result-of (s32p4 / požadovat-001
                                              			:aspect activity
                                              			:modal-strength full-affirmative
-                                             			:ARG0 s32e1)
+                                             			:ARG0 s32e1
+                                                        :ARG1 (s32e2 / event) )
                                                 	:refer-number singular
                                                 	:mod (s32t2 / tento))
                              		     :ARG0 s32e1))
@@ -1942,15 +1950,17 @@ s32n2: 11-11
 s32j2: 14-14
 s32v1: 15-15
 s32p4: 0-0
+s32e2: 0-0
 
 # document level annotation:
 (s32s0 / sentence
     :temporal ((s31z1 :after s32z1)
                (s31z1 :after s32p1)
                (s32p1 :overlap s32p2)
-               (s32p2 :overlap s32p3))
+               (s32p2 :overlap s32p4))
     :coref ((s32e1 :same-entity s31e1)
-            (s32p3 :same-event s31z1)))
+            (s32e2 :same-event s31z2)
+            (s32p4 :same-event s31z1)))
 
 
 ################################################################################
@@ -2076,6 +2086,7 @@ s34d1: 21-21
     :coref ((s34b1 :same-entity s28b1)
     	    (s34v1 :same-event s31v1)
             (s34p6 :same-entity s31p3)
+            (s34p7 :same-entity s31p4)
             (s34p1 :same-entity s31p5)))
 
 
@@ -2147,7 +2158,7 @@ s35i1: 0-0
                (s12k1 :overlap s35v3)
                (s35t1 :contained s35i1))
     :coref ((s35c1 :same-entity s31c1)
-            (s35p1 :same-event s18p1)
+            (s35p3 :same-event s18p9)
             (s35m1 :same-event s18m1)
             (s35v1 :same-entity s18v2)))
 
@@ -2386,6 +2397,9 @@ s38u1: 36-36
             (s38c2 :same-entity s35c1)
             (s38p4 :same-entity s36p2)
             (s38v3 :same-event s34v1)
+            (s38p7 :same-entity s34p6)
+            (s38p8 :same-entity s34p7)
+            (s38p9 :same-entity s34p1)
             (s38a1 :subset-of s38e2)))
 
 
@@ -2515,15 +2529,17 @@ s40s2: 23-23
 
 # document level annotation:
 (s40s0 / sentence
-    :temporal ((document-creation-time :after s40z1)
-               (document-creation-time :after s40u1)
-               (document-creation-time :after s40v1)
-               (s40z1 :after s40u1)
+    :temporal ((s19r1 :after s40v1)
                (s40v1 :after s40z1)
+               (s40z1 :after s40u1)
+               (s40o1 :overlap s40v1)
                (s40o1 :after s40z1)
-               (s40p1 :after s40o1)
+               (s40o1 :after s40p1)
                (s14k1 :overlap s40k3))
     :coref ((s40v1 :same-event s38v3)
+            (s40p4 :same-entity s38p7)
+            (s40p5 :same-entity s38p8)
+            (s40p6 :same-entity s38p9)
             (s40k1 :same-entity s38a1)
             (s40p3 :subset-of s40e1)
             (s40p3 :subset-of s39k1)
@@ -2606,10 +2622,10 @@ Words: Udělal nejen těžkou hlavu své straně ,  navíc ohrozil i  ekonomick�
                        :modal-strength full-affirmative
                        :ARG0 s42e1
                        :ARG1 (s42p1 / thing
-         		   :ARG1-of (s42n4 / naplánovat-001
-         			:aspect performance
-                        	:modal-strength full-affirmative
-                        	:ARG0 (s42e3 / entity))
+         		             :ARG1-of (s42n4 / naplánovat-001
+         			                        :aspect performance
+                        	                :modal-strength full-affirmative
+                        	                :ARG0 (s42e3 / entity))
                             :refer-number singular
                             :mod (s42e2 / ekonomický)
                             :ARG0-of (s42s2 / slibovat-001
@@ -2673,8 +2689,10 @@ s42e4: 0-0
     :temporal ((root :depends-on s42r1)
                (s31p1 :after s42u1)
                (s31p1 :after s42o1)
+               (document-creation-time :before s42n4)
                (s42r1 :after s42s2)
-               (s42r1 :after s42z1))
+               (s42r1 :after s42z1)
+               (s42n4 :after s42k1))
     :coref ((s42s1 :same-entity s31e2)
             (s42e1 :same-entity s41r1)
             (s42b1 :same-entity s34p6)))
@@ -2731,7 +2749,8 @@ s43p3: 12-12
 (s43s0 / sentence
     :temporal ((document-creation-time :overlap s43p1)
                (s43p1 :before s43n1)
-               (s43p1 :after s43n2))
+               (s43p1 :after s43n2)
+               (s43n1 :after s43v1))
     :coref ((s43m1 :same-entity s42e1)))
 
 
