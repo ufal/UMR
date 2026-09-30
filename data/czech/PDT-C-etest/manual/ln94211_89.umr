@@ -99,7 +99,7 @@ s2e4: 0-0
                (s1k1 :contained s2z2)
                (s2n1 :overlap s2z2)
                (s2z2 :before s2c1))
-    :coref ((s1p0 :same-event s2p0)
+    :coref ((s1p0 :same-entity s2p0)
             (s1z1 :same-event s2z1)))
 
 
@@ -123,7 +123,7 @@ s3n1: 0-0
 
 # document level annotation:
 (s3s0 / sentence
-    :coref ((s2p0 :same-event s3p0)))
+    :coref ((s2p0 :same-entity s3p0)))
 
 
 ################################################################################
