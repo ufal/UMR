@@ -75,6 +75,29 @@
 
 # UMR meeting minutes
 
+## Monday, November 2, 2026
+
+(Markéta, Dan, Federica, Hana)
+
+- Feedback from LiLT review:
+  - the results of the UMR parsing shared task need to be compared to a baseline
+  - evaluation metrics: compare Umatch with Smatch and Acast
+
+- Markle et al. (2026): parser for English UMR, AMR parser BiBL fine-tuned on UMR data
+  - possbile baseline?
+  - git repository: https://github.com/ACNLPlab/UMR_Parsing
+  - BiBL git repository: https://github.com/KHAKhazeus/BiBL
+  - running it on English data should be possible easily
+  - experiments on other languages: try to replicate the procedure by re-training the parser on AMR data where available for the given language, and then fine-tune on UMR?
+    - for Czech, using the large UMR data converted from PDT instead?
+    - MASSIVE-AMR project could be helpful? https://github.com/amazon-science/MASSIVE-AMR
+
+- AnCast: newest version seems to be here: https://github.com/umr4nlp/ancast
+  - issue with discontinuous alignment persists, the only feasible option currently seems to be running it without alignment being considered
+
+- Smatch: newest version seems to be here: https://github.com/flipz357/smatchpp
+
+
 ## Monday, February 16, 2026
 
 (Dan, Markéta)
