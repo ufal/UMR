@@ -8,21 +8,21 @@ In UMR, temporal annotation is done at both the sentence level and the document 
 ## 1. Sentence level representation:
 
 - Any **time expression** (any overtly present) should be identified and annotated using the `:temporal` relation modifying the respective **event**.  
-
+  
   (Examples:  *včera* "yesterday", *minulý týden* "last week", *4. dubna* "April 4th", *každý rok* "every year", *poté co dokončil školu* "after he finished the school" )
 
 - Relations between an **event** and **its DCT** are supposed to be annotated at the sentence level as well: 
-
+  
   - <u>Guidelines</u>: "The temporal relation between an event and the DCT is annotated when this temporal relation is defined in that context."
-
+  
   The Guideline examples suggest that this should be the case of any finite verb if it clearly indicates whether the described event precedes the DCT or follows after DCT. However, it seems that the released English data limit temporal annotation at the sentence level to time expressions overtly present in sentences
-
+  
   - [en] *In April 1998 Arab countries signed an anti-terrorism agreement ...* 
-
+    
     It gets `:temporal (b2 / before :op1 (n/now))` annotation indicating that the event described by the predicate *sign* happened before the sentence were written.
 
 > **Preliminary rule for Czech annotations:**  
->
+> 
 > The temporal annotation at the sentence level is limited to time expressions expressions (or other "clues") overtly present in sentences (past/future tense is not enough). 
 > We do **NOT annotate (for the time being?) temporal relations between events and DCT just on the basis of the verb tense!** 
 
@@ -42,7 +42,7 @@ Example (from the Guidelines, [Part 4-2-2-3](https://github.com/ufal/umr-guideli
 
 - [en] *The opening of the food can prompted my cat to meow* ... first, I open a can (1), and this is a prompt (2) causing my cat to meow (3); thus the annotation should be the following:   
   timeline: open ... prompt ... meow
-
+  
   ```
   :temporal ((present-reference :contained open)  
              (open :after prompt)  
@@ -56,23 +56,18 @@ For events related to a time expression, a second annotation specifying its rela
 Temporal superstructure represents the top levels of the dependency structure. It contains all **temporal expressions (timexs)** in the text and **pre-defined metanodes** and their temporal relations to each other.
 
 - Create a **"metanode"**, typically corresponding to `DCT` (= document creation time) or to the  `ROOT` (for absolute time expression, like May 2015);   
-
+  
   - In fact, there are 3 other types of metanodes in the Guidelines: `past/present/future-reference` -- we will only use them for vague time expressions (as _nowadays_), see below.
   - Any metanode is (by definition) connected directly  to the `root` by the generic `:depends-on` relation (thus, it is not necessary to annotate it).
 
 - Add one node for each **locatable temporal expression** (from the text) and relate it to the existing structure: 
-
-  - for **concrete relative** values (as _today_, _two days later_): 
-    - indicate their relation to the metanode  **!!!**  `DCT` **!!!** or to another (already annotated) concrete time expression; 
-    - use one of the "normal"  relations;
-  - for **concrete absolute** values (as _May 15, 2024_): 
-    - relate them to the  **!!!**   `ROOT`  **!!!** 
-    - use the `:depends-on` relation;   **??? ZKONTROLOVAT ???**
-  - for **vague** values (as _nowadays, *in the old days*_): 
-    - relate them to  **!!!** `past/present/future-reference` **!!!** 
-    - use one of the "normal" relations;
-
-- For **unlocatable temporal expression** (as _every month_): they are not represented in the temporal structure (but they influence, e.g., the aspect value)).
+  
+  | type                  | reference                                     | relation                 | examples                |
+  | --------------------- | --------------------------------------------- | ------------------------ | ----------------------- |
+  | **concrete absolute** | **`ROOT`**                                    | `:depends-on`            | *May 2015*              |
+  | **concrete relative** | **`DCT`**, other concrete (already annotated) | `:before`, `:after`, ... | *today, two days later* |
+  | **vague**             | **`present/past/future-reference`**           | `:before`, `:after`, ... | *nowadays*              |
+  | unlocatable           | NOT in the temporal structure                 | ---                      | *every month*           |
 
 > **Decision:**  There should be "a generic `:depends-on` relation between all nodes in the temporal superstructure". However, this relation appears only sporadically in the data (typically, "normal" temporal relations are used, see below).  
 > Thus, we will limit its use to concrete absolute time expressions, unless we find contexts where "normal" ones seem to be inadequate.
@@ -88,28 +83,28 @@ Process in the following way:
 1. If necessary, update **the timeline** with all detected time expressions and all events (if possible, Pass 0); this will help you to select the "main" event to which you will relate the other events in the given sentence (not anchored in a time expression). 
 
 2. For each **event**: give it the most precise temporal location **!!!**
-
+   
    <u>exception:</u> When A is `:contained` within B (A is a subevent) and B is `:contained` within a time expression --> the relation of A to the time expression is NOT annotated (as it logically implies)
-
+   
    Event should be related:
 - primarily to the referential **time expression**
-
+  
   (a) esp. to those in the same line as the event; 
-
+  
   (b) otherwise consider time expressions in other lines in the text);
 
 - otherwise consider **another event in the text** (Guidelines: "*Starting with the immediately preceding event in the text and working back through the events in the preceding lines, find an event that is a good parent*"). 
-
+  
   The parent must:
-
+  
   (i) be <u>a process</u> (NOT, e.g., habitual or state),
-
+  
   (ii) either (a) has the same modal annotation OR (a) has `:full-affirmative` relation to the `author`
-
+  
   (iii) there is a clear temporal relation between the parent event and the child event
 
 - as a backup: if no such timex or event exist, use one of the **metanodes** (e.g., `DCT`).
-
+  
   - In cases when an event overlaps with its referential expression (time or event), its temporal characteristics cannot be inferred. Thus, we should also add its relation to the metanode (typically `DCT`)  to express it explicitly.use one of the following relations: `:contained` (preferred), `:overlap`, `:after`, `:before`.
 4. Guidelines: *If an event does get a relation to a time expression, **a second annotation that specifies its relationship with another event may also be added.** This is the case when a set of events are all `:contained` within the same time expression. The first event in the set of events only needs to be linked to the time expression. Subsequent events can receive two temporal annotations: one that relates it to the time expression and one that relates it to another event in the set.*  
 
@@ -117,22 +112,26 @@ Process in the following way:
 
 - `:contained` ... child is entirely contained within the parent; parent begins before child and parent ends after child; use this also for <u>subevents!</u>
 
-- `:after`... child is after parent; use also for <u>purpose clauses</u> and <u>causally-related events</u>; for <u>modals</u> if they indicate futre event (_he wants to come_).
+- `:contains` ... inverse relation, i.e., child contains the parent node (parent is entirely contained within the child); necessary when the child node is a state (and thus cannot serve as referential point);   
+  
+  NOT in the Guidelines but present in English files (both `:contained` and `:contains` are used there)
 
-- `:before` ... child is before parent.
+- `:after`... child is after parent; use also for <u>purpose clauses</u> and <u>causally-related events</u>; for <u>modals</u> if they indicate future event (_he wants to come_).
+
+- `:before` ... child is before parent (inverse to `:after`).
 
 - `:overlap` ... child and parent overlap (but one is not fully contained in the other); 
-
+  
   - use this also for <u>perfectly simultaneous events</u>, 
-
+  
   - for some <u>semi-modals</u> (*dokázat využít*),
-
+  
   - <mark>!!! prototypical <u>phase verbs</u> (_začít_) are merged with their lexical verbs !!!</mark>
-
+    
     (_začít křičet_ --> *křičet* with the `:inceptive` aspect value)
-
+  
   - <mark>!!! deverbal nouns captured using the result-of relation (and similar) !!!</mark> 
-
+  
   - ... event annotation only with verbs
 
 Note that the <span>labels</span> characterize the relation **from a child to its parent** !!!
@@ -149,7 +148,7 @@ Examples (from the guidelines):
 
 - [en] *I want to go to the city and visit a museum.*  
   timeline: ... **want** ... go ... visit ... *want* as being a complement-taking verb  
-
+  
   ```
   :temporal ((present-reference :contained want)
              (want :after go)     !!missing in the Guidelines??
@@ -158,7 +157,7 @@ Examples (from the guidelines):
 
 - [en] *I saw him knock on the door.* ... *see* as a complement-taking verb  
   timeline: *seeing* and *knocking* overlap
-
+  
   ```
   :temporal ((past-reference :contained see)
              (see :overlap knock)))
@@ -172,7 +171,7 @@ Example:
 
 - [en] *Magdalena said she arrived home, ate dinner, and will meet us at the theater..* ... *say* as the reporting verb  
   timeline: ... arrive ... eat ... **say** ... meet ...
-
+  
   ```
   :temporal ((past-reference :contained say)
              (say :before eat)
@@ -186,7 +185,7 @@ Example:
 
 - [en] *He went home (in order) to wash the dishes.*  
    timeline: ... **go** ... wash ...
-
+  
   ```
   :temporal ((past-reference :contained go)
              (go :after wash))
@@ -200,14 +199,14 @@ Examples:
 
 - [en] *the crops grew well because it rained enough*  
   timeline: ... rain ... grow ...
-
+  
   ```
   (rain :after grow)
   ```
 
 - [en] *the opening of the food can prompted my cat to meow*  
     timeline: ... open ... promt ... meow
-
+  
   ```
   (open :after prompt)
   (prompt :after meow)
