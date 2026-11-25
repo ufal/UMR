@@ -1611,12 +1611,13 @@ Words: Pan Heinemann řekl ,  že změny reprezentují nové zaměření v  čas
             	:ARG1 (s21a2 / and
                 	:op1 (s21m1 / monetary-quantity
                 		:mod (s21c2 / čistý)
-                		:ARG1-of (s21p3 / příjímat-001
+                		:result-of (s21p3 / příjímat-001
                 			:aspect habitual
                 			:modal-strength full-affirmative
                 			:ARG0 (s21c3 / časopis
                 				:refer-number singular)
-                			:ARG2 (s21p9 / person
+                			:ARG1 (s21t1 / thing)
+                            :ARG2 (s21p9 / person
                     				:refer-number singular
                     				:ARG0-of (s21p4 / předplatit-001
                     					:aspect generic
@@ -1624,10 +1625,11 @@ Words: Pan Heinemann řekl ,  že změny reprezentují nové zaměření v  čas
                     					:ARG1 s21c3))))
                 	:op2 (s21m2 / monetary-quantity
                 		:mod (s21s1 / skutečný)
-                		:ARG1-of (s21p5 / příjímat-001
+                		:result-of (s21p5 / příjímat-001
                 			:aspect habitual
                 			:modal-strength full-affirmative
   					:ARG0 s21c3
+                    :ARG1 s21t1
   					:ARG2 s21p9)
   				:temporal (s21a4 / after
   					:op1 (s21o2 / odečíst-001
@@ -1667,6 +1669,7 @@ s21a2: 19-19
 s21m1: 15-15
 s21p3: 0-0
 s21c2: 14-14
+s21t1: 0-0
 s21c3: 16-16
 s21p9: 17-18,22-23
 s21p4: 0-0
@@ -1706,10 +1709,11 @@ Words: "  Otázkou je ,  kolik dostáváme od každého čtenáře ,  "  řekl p
             :aspect state
 	    :modal-strength full-affirmative
             :ARG2 (s22t1 / thing
-            	:ARG1-of (s22o1 / otázat-se-001
+            	:result-of (s22o1 / otázat-se-001
             		:aspect performance
             		:modal-strength full-affirmative
             		:ARG0 (s22p5 / person)
+                    :ARG1 (s22t2 / thing)
             		:ARG2 (s22p6 / person))
             	:refer-number singular)
             :ARG1 (s22d1 / dostávat-001
@@ -1739,6 +1743,7 @@ s22i1: 3-3
 s22t1: 2-2
 s22o1: 0-0
 s22p5: 0-0
+s22t2: 0-0
 s22p6: 0-0
 s22d1: 6-6
 s22p2: 0-0

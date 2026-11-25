@@ -176,7 +176,7 @@ Words: Současně nám bylo doporučeno ,  abychom se vrátili do Mauthausenu , 
                                                                                          :ARG0 (s3v2 / person
                                                                                                        :refer-number plural
                                                                                                        :ARG1-of (s3v3 / věznit-001
-                                                                                                                        :aspect activity
+                                                                                                                        :aspect generic
                                                                                                                         :modal-strength full-affirmative
                                                                                                                         :ARG0 (s3p5 / person
                                                                                                                                      :refer-number plural))

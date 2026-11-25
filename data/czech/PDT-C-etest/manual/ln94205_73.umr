@@ -123,12 +123,12 @@ Words: Prohlášení vůdců Irské republikánské armády (  IRA )  ,  vydané
 	:ARG2 (s4p6 / person)
         :ARG0 (s4t1 / thing
         	:refer-number singular
-        	:ARG1-of (s4p1 / prohlásit-002
+        	:result-of (s4p1 / prohlásit-002
         		:aspect performance
         		:modal-strength full-affirmative
             		:ARG0 (s4p5 / person
             			:ARG0-of (s4v1 / vést-006
-            				:aspect activity
+            				:aspect generic
         				:modal-strength full-affirmative
         				:ARG1 (s4i1 / identity-91
         					:aspect state
@@ -144,7 +144,8 @@ Words: Prohlášení vůdců Irské republikánské armády (  IRA )  ,  vydané
         						    :wiki "Q175284"
                                     :name (s4n2 / name
             							:op1 "IRA")
-            						:refer-number singular)))))
+            						:refer-number singular))))
+                    :ARG1 (s4e4 / entity))
             :ARG1-of (s4v2 / vydat-006
             	:aspect performance
                 :modal-strength full-affirmative
@@ -569,8 +570,8 @@ Words: Oznámení o  bezpodmínečném klidu zbraní (  nikoliv trvalém ,  tak�
             :aspect performance
 	    :modal-strength full-affirmative
             :ARG0 (s11e1 / entity)
-            :ARG2 (s11e2 / entity)
-            :ARG1 (s11k1 / klid
+            :ARG1 (s11p4 / person)
+            :ARG2 (s11k1 / klid
                 :mod (s11b1 / bezpodmínečný)
                 :mod (s11z1 / zbraň
                     :refer-number plural)
@@ -590,11 +591,12 @@ Words: Oznámení o  bezpodmínečném klidu zbraní (  nikoliv trvalém ,  tak�
             :modal-strength neutral-affirmative
             :ARG0 s11o1
             :manner (s11t2 / thing
-            	:ARG2-of (s11z2 / zpravit-001
+            	:result-of (s11z2 / zpravit-001
                         :aspect performance
                         :modal-strength full-affirmative
                         :ARG0 (s11p2 / person)
-                        :ARG1 (s11p3 / person))
+                        :ARG1 (s11p3 / person)
+                        :ARG2 (s11e3 / entity)
                 :mod-of s11o1
                 :mod (s11h1 / hlavní)
                 :refer-number singular)
@@ -608,7 +610,7 @@ Words: Oznámení o  bezpodmínečném klidu zbraní (  nikoliv trvalém ,  tak�
 s11n1: 17-18
 s11o1: 1-1
 s11e1: 0-0
-s11e2: 0-0
+s11p4: 0-0
 s11k1: 2-2,4-4
 s11b1: 3-3
 s11z1: 5-5
@@ -621,6 +623,7 @@ s11t2: 24-24,26-26
 s11z2: 0-0
 s11p2: 0-0
 s11p3: 0-0
+s11e3: 0-0
 s11h1: 25-25
 s11r1: 27-27,31-31
 s11z3: 30-30
@@ -1054,7 +1057,7 @@ Words: Předseda strany Sinn Fein ,  politického křídla IRA ,  Gerry Adams v�
             						:refer-number singular))))
             			:ARG3 (s18p9 / person
             				:ARG0-of (s18p1 / předsedat-001
-        			    		:aspect activity
+        			    		:aspect generic
         			    		:modal-strength full-affirmative
         			    		:ARG1 s18p6)
                         	:refer-number singular)))
@@ -1133,10 +1136,11 @@ Words: Odpověď britské vlády včera známa nebyla .
 	:polarity -
         :ARG1 (s19t1 / thing
         	:refer-number singular
-        	:ARG2-of (s19o1 / odpovědět-003
+        	:result-of (s19o1 / odpovědět-003
             		:aspect performance
             		:modal-strength full-affirmative
-            		:ARG1 (s19e1 / entity)
+            		:ARG1 (s19p1 / person)
+                    :ARG2 (s19e2 / entity)
             		:ARG0 (s19g1 / government-organization
                    		:wiki "Q6063"
                         :name (s19n1 / name
@@ -1151,6 +1155,7 @@ s19h1: 6-6
 s19t1: 1-1
 s19o1: 0-0
 s19e1: 0-0
+s19p1: 0-0
 s19g1: 2-3
 s19n1: 0-0
 s19v2: 4-4
@@ -1175,10 +1180,11 @@ Words: Odpověď by měla znamenat zrušení zákazu publicity pro Sinn Fein ,  
 	:modal-strength partial-affirmative
         :ARG1 (s20t3 / thing
         	:refer-number singular
-        	:ARG2-of (s20o1 / odpovědět-003
+        	:result-of (s20o1 / odpovědět-003
             		:aspect performance
             		:modal-strength full-affirmative
-            		:ARG1 (s20e5 / entity)
+            		:ARG1 (s20p5 / person)
+                    :ARG2 (s20e7 / entity)
             		:ARG0 (s20e6 / entity)))
         :ARG2 (s20a1 / and
             :op1 (s20z2 / zrušit-001
@@ -1190,6 +1196,7 @@ Words: Odpověď by měla znamenat zrušení zákazu publicity pro Sinn Fein ,  
                     	:aspect performance
                     	:modal-strength full-affirmative
                     	:ARG0 s20e6
+                        :ARG2 (s20p4 / person )
                     	:ARG1 (s20d1 / dělat-publicitu-001
                     		:aspect performance
                     		:modal-strength full-negative
@@ -1237,12 +1244,13 @@ Words: Odpověď by měla znamenat zrušení zákazu publicity pro Sinn Fein ,  
 s20z1: 2-4
 s20t3: 1-1
 s20o1: 0-0
-s20e5: 0-0
+s20p5: 0-0
 s20e6: 0-0
 s20a1: 24-24
 s20z2: 5-5
 s20z3: 0-0
 s20s4: 6-6
+s20p4: 0-0
 s20d1: 7-7
 s20e8: 0-0
 s20p3: 8-10
@@ -1252,6 +1260,7 @@ s20t1: 13-13
 s20j1: 15-16
 s20e3: 0-0
 s20e4: 0-0
+s20e7: 0-0
 s20s2: 17-17,19-19
 s20k1: 18-18
 s20b1: 20-21
